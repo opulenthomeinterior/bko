@@ -17,10 +17,10 @@ use App\Models\Style;
     <?php $current_uri = request()->segments(); ?>
     <?php $page_slug = ucwords(str_replace(['-', '_'], ' ', last($current_uri))); ?>
 
-    <title>Opulenthomeinteriors - <?php echo !empty($page_slug) ? $page_slug : 'Home page'; ?></title>
+    <title>BKOnline - <?php echo !empty($page_slug) ? $page_slug : 'Home page'; ?></title>
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('images/opulenthomelogo.png') }}">
+    <link rel="shortcut icon" href="{{ asset('images/BKO_LOGO.png') }}">
 
     <!-- Layout config Js -->
     <script src="{{ asset('js/layout.js') }}"></script>
@@ -216,7 +216,7 @@ use App\Models\Style;
         <nav class="nav container">
             <div class="nav__data">
                 <a href="{{ route('home') }}" class="nav__logo text-start flex-grow-1">
-                    <img src="{{ asset('images/opulenthomelogo.png') }}" width="100px" />
+                    <img src="{{ asset('images/BKO_LOGO.png') }}" width="100px" />
                 </a>
 
                 <a href="#" class="d-lg-none show-small d-flex" id="searchIcon"><i
@@ -253,23 +253,21 @@ use App\Models\Style;
                                 @php
                                     $styles = Style::all();
                                 @endphp
-                                @if (!empty($styles))
                                 @foreach ($styles as $index => $style)
                                     @if ($index % 2 == 0)
                                         <div class="dropdown__group">
                                             <ul class="dropdown__list">
                                     @endif
-                                            <li>
-                                                <a href="{{ route('orderkitchenbyname', $style->slug) }}" class="dropdown__link">
-                                                    <i class="ri-arrow-right-s-fill"></i>{{ $style->name }} Kitchen</a>
-                                            </li>
-                                                @if (($index + 1) % 2 == 0 || $loop->last)
-                                            </ul>
-                                        </div>
-                                    @endif
-                                @endforeach
-                                @else
-                                <div class="dropdown__group">
+                    <li>
+                        <a href="{{ route('orderkitchenbyname', $style->slug) }}" class="dropdown__link">
+                            <i class="ri-arrow-right-s-fill"></i>{{ $style->name }} Kitchen</a>
+                    </li>
+                    @if (($index + 1) % 2 == 0 || $loop->last)
+                </ul>
+            </div>
+            @endif
+            @endforeach
+            {{-- <div class="dropdown__group">
                                     <ul class="dropdown__list">
                                         <li>
                                             <a href="{{ route('orderkitchenbyname', 'slab') }}"
@@ -304,114 +302,113 @@ use App\Models\Style;
                                             </a>
                                         </li>
                                     </ul>
-                                </div>
-                                @endif
-                            </div>
-                        </div>
-                    </li>
-                    <li class="dropdown__item">
-                        <div class="nav__link dropdown__button">
-                            <a href="{{ route('ordercomponent') }}">ORDER COMPONENT </a>
-                            <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                        </div>
-                        <div class="dropdown__container">
-                            <div class="dropdown__content">
-                                @php
-                                    $categories = Category::where('parent_category_id', null)->get();
-                                @endphp
-                                @foreach ($categories as $index => $category)
-                                    @if ($index % 4 == 0)
-                                        <div class="dropdown__group">
-                                            <ul class="dropdown__list">
-                                    @endif
-                                                <li>
-                                                    <a href="{{ route('ordercomponentbyname', $category->slug) }}" class="dropdown__link">
-                                                        <i class="ri-arrow-right-s-fill"></i>{{ $category->name }}</a>
-                                                </li>
-                                                @if (($index + 1) % 4 == 0 || $loop->last)
-                                            </ul>
-                                        </div>
-                                    @endif
-                                @endforeach
-                            </div>
-                        </div>
-                    </li>
-                    <li class="dropdown__item">
-                        <div class="nav__link dropdown__button">
-                            <a href="{{ route('help_and_guides') }}">
-                                HELP & GUIDES
-                            </a>
-                            <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                        </div>
-
-                        <div class="dropdown__container">
-                            <div class="dropdown__content">
-                                <div class="dropdown__group">
-                                    <ul class="dropdown__list">
-                                        <li>
-                                            <a href="{{ route('terminology') }}" class="dropdown__link">
-                                                <i class="ri-arrow-right-s-fill"></i>KITCHEN TERMINOLOGY</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('faq') }}" class="dropdown__link">
-                                                <i class="ri-arrow-right-s-fill"></i>KITCHEN KIT FAQS</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('fittingguide') }}" class="dropdown__link">
-                                                <i class="ri-arrow-right-s-fill"></i>FITTING GUIDES</a>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <div class="dropdown__group">
-                                    <ul class="dropdown__list">
-                                        <li>
-                                            <a href="{{ route('needhelp') }}" class="dropdown__link">
-                                                <i class="ri-arrow-right-s-fill"></i>NEED HELP MEASURING?</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('kitchenarrive') }}" class="dropdown__link">
-                                                <i class="ri-arrow-right-s-fill"></i>HOW WILL MY KITCHEN ARRIVE?</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('about') }}" class="dropdown__link">
-                                                <i class="ri-arrow-right-s-fill"></i>ABOUT US</a>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                            </div>
-                        </div>
-                    </li>
-                    <li class="dropdown__item">
-                        <div class="nav__link dropdown__button">
-                            <a class="" href="{{ route('designservice') }}">
-                                DESIGN SERVICE
-                            </a>
-                        </div>
-                    </li>
-                </ul>
+                                </div> --}}
             </div>
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list p-2">
-                    <li class="d-lg-flex d-none hide-small">
-                        <a href="#" class="nav__link" id="searchIcon-desktop"><i class="ri-search-2-line"></i></a>
-                    </li>
-                    <li class="d-lg-flex d-none hide-small">
-                        <a href="{{ route('cart') }}"
-                            class="d-flex align-items-center justify-content-center px-3 text-dark">
-                            <i class="position-relative ri-shopping-cart-line">
-                                <span id="calculateProductsQuantity2" class="position-absolute right-0"
-                                    style="top: -8px;"></span>
-                            </i>
-                        </a>
-                    </li>
-                    <li class="d-lg-flex d-none hide-small">
-                        <a href="#" id="openSidebar-desktop"
-                            class="d-flex align-items-center justify-content-center px-1 text-dark"><i
-                                class="ri-user-line"></i></a>
-                    </li>
+            </div>
+            </li>
+
+            <li class="dropdown__item">
+                <div class="nav__link dropdown__button">
+                    <a href="{{ route('ordercomponent') }}">ORDER COMPONENT </a>
+                    <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                </div>
+                <div class="dropdown__container">
+                    <div class="dropdown__content">
+                        @php
+                            $categories = Category::where('parent_category_id', null)->get();
+                        @endphp
+                        @foreach ($categories as $index => $category)
+                            @if ($index % 4 == 0)
+                                <div class="dropdown__group">
+                                    <ul class="dropdown__list">
+                            @endif
+            <li>
+                <a href="{{ route('ordercomponentbyname', $category->slug) }}" class="dropdown__link">
+                    <i class="ri-arrow-right-s-fill"></i>{{ $category->name }}</a>
+            </li>
+            @if (($index + 1) % 4 == 0 || $loop->last)
                 </ul>
+                </div>
+            @endif
+            @endforeach
+            </div>
+            </div>
+            </li>
+
+            <li class="dropdown__item">
+                <div class="nav__link dropdown__button">
+                    <a href="{{ route('help_and_guides') }}">
+                        HELP & GUIDES
+                    </a>
+                    <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                </div>
+
+                <div class="dropdown__container">
+                    <div class="dropdown__content">
+                        <div class="dropdown__group">
+                            <ul class="dropdown__list">
+                                <li>
+                                    <a href="{{ route('terminology') }}" class="dropdown__link">
+                                        <i class="ri-arrow-right-s-fill"></i>KITCHEN TERMINOLOGY</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('faq') }}" class="dropdown__link">
+                                        <i class="ri-arrow-right-s-fill"></i>KITCHEN KIT FAQS</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('fittingguide') }}" class="dropdown__link">
+                                        <i class="ri-arrow-right-s-fill"></i>FITTING GUIDES</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown__group">
+                            <ul class="dropdown__list">
+                                <li>
+                                    <a href="{{ route('needhelp') }}" class="dropdown__link">
+                                        <i class="ri-arrow-right-s-fill"></i>NEED HELP MEASURING?</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('kitchenarrive') }}" class="dropdown__link">
+                                        <i class="ri-arrow-right-s-fill"></i>HOW WILL MY KITCHEN ARRIVE?</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('about') }}" class="dropdown__link">
+                                        <i class="ri-arrow-right-s-fill"></i>ABOUT US</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+
+            <li class="dropdown__item">
+                <div class="nav__link dropdown__button">
+                    <a class="" href="{{ route('designservice') }}">
+                        DESIGN SERVICE
+                    </a>
+                </div>
+            </li>
+
+            <li class="d-lg-flex d-none hide-small">
+                <a href="#" class="nav__link" id="searchIcon-desktop"><i class="ri-search-2-line"></i></a>
+            </li>
+            <li class="d-lg-flex d-none hide-small">
+                <a href="{{ route('cart') }}"
+                    class="d-flex align-items-center justify-content-center px-3 text-dark">
+                    <i class="position-relative ri-shopping-cart-line">
+                        <span id="calculateProductsQuantity2" class="position-absolute right-0"
+                            style="top: -8px;"></span>
+                    </i>
+                </a>
+            </li>
+            <li class="d-lg-flex d-none hide-small">
+                <a href="#" id="openSidebar-desktop"
+                    class="d-flex align-items-center justify-content-center px-1 text-dark"><i
+                        class="ri-user-line"></i></a>
+            </li>
+            </ul>
             </div>
         </nav>
 
@@ -425,7 +422,7 @@ use App\Models\Style;
             <section class="">
                 <div class="row">
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-start">
-                        <img src="{{ asset('images/opulenthomelogo.png') }}" width="100px" />
+                        <img src="{{ asset('images/BKO_LOGO.png') }}" width="100px" />
                         <h6 class="my-3">Customer Service Hours</h6>
 
                         <ul class="footer-ul list-unstyled mb-0">
@@ -497,7 +494,7 @@ use App\Models\Style;
                                     href="{{ route('cookies') }}"><i class="ri-arrow-right-s-fill"></i>Cookies
                                     Policy</a>
                             </li>
-                            <!-- <li class="my-1 footer-li">
+                            <li class="my-1 footer-li">
                                 <a class="text-body text-decoration-none footer-links"
                                     href="{{ route('privacy') }}"><i class="ri-arrow-right-s-fill"></i>Privacy
                                     Policy</a>
@@ -506,19 +503,19 @@ use App\Models\Style;
                                 <a class="text-body text-decoration-none footer-links"
                                     href="{{ route('termandcondition') }}"><i class="ri-arrow-right-s-fill"></i>Terms
                                     and Conditions</a>
-                            </li> -->
+                            </li>
                             <li class="my-1 footer-li">
                                 <a class="text-body text-decoration-none footer-links"
                                     href="{{ route('pricepromise') }}"><i class="ri-arrow-right-s-fill"></i>Price
                                     Promise Guarantee: Terms &
                                     Conditions</a>
                             </li>
-                            <!-- <li class="my-1 footer-li">
+                            <li class="my-1 footer-li">
                                 <a class="text-body text-decoration-none footer-links"
                                     href="{{ route('pricebeat') }}"><i class="ri-arrow-right-s-fill"></i>Terms and
                                     Conditions – We Can’t Be Beaten on
                                     Price</a>
-                            </li> -->
+                            </li>
                             <li class="my-1 footer-li">
                                 <a class="text-body text-decoration-none footer-links"
                                     href="{{ route('site_maps') }}"><i class="ri-arrow-right-s-fill"></i>Sitemap</a>

@@ -24,7 +24,6 @@ $(document).ready(function () {
         $("input[name='styles[]']:checked").each(function () {
             styleIds.push($(this).val());
         });
-        console.log(styleIds);
         return styleIds;
     }
 
@@ -34,8 +33,6 @@ $(document).ready(function () {
         $("input[name='colours[]']:checked").each(function () {
             colorIds.push($(this).val());
         });
-        console.log(colorIds);
-        
         return colorIds;
     }
 
@@ -165,7 +162,7 @@ $(document).ready(function () {
         // console.log("Selected Types:", selectedTypes);
         // console.log("Selected Assemblies:", selectedAssemblies);
         // console.log("Selected Styles:", selectedStyles);
-        console.log("Selected Colors:", selectedColors);
+        // console.log("Selected Colors:", selectedColors);
         // console.log("Slug:", slug);
 
         // Get the CSRF token from the meta tag
@@ -186,7 +183,7 @@ $(document).ready(function () {
             },
             success: function (response) {
                 // Handle success response
-                // console.log("AJAX response:", response);
+                console.log("AJAX response:", response);
                 var productsContainer = $('#products_container');
                 var productListHTML = '';
 
@@ -302,7 +299,7 @@ $(document).ready(function () {
             },
             success: function (response) {
                 // Handle success response
-                // console.log("AJAX response:", response);
+                console.log("AJAX response:", response);
                 var productsContainer = $('#products_container');
                 var productListHTML = '';
 

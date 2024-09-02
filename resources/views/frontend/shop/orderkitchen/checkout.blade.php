@@ -87,9 +87,9 @@
                                     <select class="form-select" id="delivery_country" name="delivery_country"
                                         aria-label="Default select example" required>
                                         <option selected>Select your country</option>
-                                        <!-- <option value="United States">United States</option>
-                                        <option value="Ireland">Ireland</option> -->
-                                        <option value="United Kingdom" selected>United Kingdom</option>
+                                        <option value="United States">United States</option>
+                                        <option value="Ireland">Ireland</option>
+                                        <option value="United Kingdom">United Kingdom</option>
                                     </select>
                                 </div>
                             </div>
