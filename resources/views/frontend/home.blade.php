@@ -2,10 +2,10 @@
     <section class="container-fluid bg-dark px-lg-5 py-4 px-md-3 px-3">
         <div class="row py-4">
             <div class="col-12 text-center">
-                <h1 class="fs-1 text-white text-uppercase fw-bolder">
-                    KITCHEN KIT. TRADE KITCHENS
+                <h1 class="fs-3 text-white text-uppercase fw-bolder">
+                    Opulent Home Kitchens: Quality Design, Installation, and Affordability in One Package
                 </h1>
-                <a href="{{ route('orderkitchen') }}" class="btn btn-md bg-white fw-bolder text-uppercase rounded-0"
+                <a href="{{ route('orderkitchen') }}" class="mt-4 btn btn-md bg-white fw-bolder text-uppercase rounded-0"
                     href="{{ route('orderkitchen') }}">Order Now</a>
             </div>
         </div>
@@ -56,32 +56,20 @@
         <div class="row">
             <div class="col-12">
                 <p>
-                    Kitchen Kit is a Kitchen trade brand of BA operating in the Merchant and e-Commerce trade channels.
-                    <br><br>
-                    BA is proud to be one of the UK’s leading manufacturers of factory-built kitchens and bedrooms,
-                    bespoke, made-to-measure doors and one of the largest ranges of matching accessories in the market
-                    place today.
-                    <br><br>
-                    BA’s knowledge and passion for kitchens, bedrooms and components enables our customers to keep the
-                    promises they make to their clients. Every product is crafted with pride by our skilled workforce in
-                    our UK factories to provide years of enjoyment.
-                    <br><br>
-                    Continuous investment in sustainable manufacturing, design and innovation ensures that our customers
-                    can be confident of always staying ahead. Our dedicated, agile teams deliver on every front, every
-                    time.
-                    <br><br>
-                    Born out of a desire to offer better products and service in the market, BA was established in 1990
-                    and has gone from strength to strength since. BA operates from three state of the art factories in
-                    Cookstown, Co. Tyrone and two in Yorkshire at Rotherham and Doncaster.
-                    <br><br>
-                    At Kitchen Kit which operates from our Doncaster site serving the UK & Ireland, we aim to make the
-                    journey of ordering your kitchen as easy as possible; from support with kitchen design and quotes,
-                    pre-selecting the most on trend colours and styles, ensuring our products are easy to buy with the
-                    hinge, door and cabinet all on one sku with only one pric, to ensuring our units are easy to build
-                    with clic technology and guaranteeing fast delivery times. From order to delivery you can receive
-                    your flat-pack kitchen in 3 working days (UK Mainland). We also offer pre-assembled units or rigid
-                    cabinets on a 10 working day lead time until despatch. Standard sizes and made to measure available
-                    across our J-Pull Handleless Kitchens and Slab Kitchens.
+                    Opulent Home Interiors is a premier provider of complete kitchen solutions, specialising in the design and delivery of ready-made kitchens, rigid kitchen units, and components in slab, shaker, or J-pull styles. Serving London and the surrounding areas, we pride ourselves on delivering showroom-quality kitchens directly to your door.
+                </p>
+                <p>
+                    At Opulent Home Interiors, we are committed to crafting every kitchen with precision and care, ensuring that our customers receive only the highest quality products. Our years of experience in kitchen design and manufacturing allow us to offer a seamless and stress-free ordering process, from initial design consultation to final delivery.
+                </p>
+                <p>
+                    Operating from state-of-the-art facilities, our skilled workforce uses the latest sustainable manufacturing techniques to create kitchens that not only meet but exceed our clients' expectations. Our dedication to innovation ensures that our customers always have access to the most up-to-date designs and materials.
+                </p>
+                <p>
+                    Whether you're looking for a modern slab kitchen, a timeless shaker design, or the sleek lines of a J-pull handleless kitchen, Opulent Home Interiors makes it easy. Our kitchens are designed to be user-friendly, with components that are straightforward to assemble, thanks to our advanced clic technology. We offer both flat-pack and pre-assembled options, with fast and reliable delivery times—receive your flat-pack kitchen in just 3 working days (UK Mainland) or opt for our pre-assembled units with a lead time of 10 working days until dispatch.
+                </p>
+                <p>
+                    Born out of a passion for offering better kitchen solutions, Opulent Home Interiors stands as a trusted partner in creating kitchens that bring joy for years to come. We invite you to explore our range and experience the difference that quality craftsmanship can make.
+
                 </p>
             </div>
         </div>
