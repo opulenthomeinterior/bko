@@ -129,7 +129,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <p class="fs-5 fw-bold mt-lg-2">
-                                                                    £{{ $baseCabinet->price }}
+                                                                    {{ $baseCabinet->price == 0 ? 'Out of Stock' : '£' . $baseCabinet->price }}
                                                                 </p>
                                                                 <div class="container-fluid">
                                                                     @if ($baseCabinet->style)
@@ -288,7 +288,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <p class="fs-5 fw-bold mt-lg-2">
-                                                                    £{{ $wallCabinet->price }}
+                                                                    {{ $wallCabinet->price == 0 ? 'Out of Stock' : '£' . $wallCabinet->price }}
                                                                 </p>
                                                                 <div class="container-fluid">
                                                                     @if ($wallCabinet->style)
@@ -447,7 +447,8 @@
                                                                     </div>
                                                                 </div>
                                                                 <p class="fs-5 fw-bold mt-lg-2">
-                                                                    £{{ $tallCabinet->price }}</p>
+                                                                    {{ $tallCabinet->price == 0 ? 'Out of Stock' : '£' . $tallCabinet->price }}
+                                                                </p>
                                                                 <div class="container-fluid">
                                                                     @if ($tallCabinet->style)
                                                                         <div class="row">
@@ -604,7 +605,8 @@
                                                                             onclick="increaseQuantity('{{ $panel->id }}', '{{ $panel->product_code }}', '{{ $panel->full_title }}', {{ $panel->price }}, {{ $panel->discounted_price }}, {{ $panel->discounted_percentage ?? 0 }}, '{{ $panel->ParentCategory->slug }}')" />
                                                                     </div>
                                                                 </div>
-                                                                <p class="fs-5 fw-bold mt-lg-2">£{{ $panel->price }}
+                                                                <p class="fs-5 fw-bold mt-lg-2">
+                                                                    {{ $panel->price == 0 ? 'Out of Stock' : '£' . $panel->price }}
                                                                 </p>
                                                                 <div class="container-fluid">
                                                                     @if ($panel->style)
@@ -768,7 +770,8 @@
                                                                     onclick="increaseQuantity('{{ $accessory->id }}', '{{ $accessory->product_code }}', '{{ $accessory->full_title }}', {{ $accessory->price }}, {{ $accessory->discounted_price }}, {{ $accessory->discounted_percentage ?? 0 }}, '{{ $accessory->ParentCategory->slug }}')" />
                                                             </div>
                                                         </div>
-                                                        <p class="fs-5 fw-bold mt-lg-2">£{{ $accessory->price }}
+                                                        <p class="fs-5 fw-bold mt-lg-2">
+                                                            {{ $accessory->price == 0 ? 'Out of Stock' : '£' . $accessory->price }}
                                                         </p>
                                                         <div class="container-fluid">
                                                             @if ($accessory->style)
@@ -927,7 +930,7 @@
                                                             </div>
                                                         </div>
                                                         <p class="fs-5 fw-bold mt-lg-2">
-                                                            £{{ $handle->price }}
+                                                            {{ $handle->price == 0 ? 'Out of Stock' : '£' . $handle->price }}
                                                         </p>
                                                         <div class="container-fluid">
                                                             @if ($handle->style)
@@ -1113,7 +1116,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <p class="fs-5 fw-bold mt-lg-2">
-                                                                    £{{ $worktop->price }}
+                                                                    {{ $worktop->price == 0 ? 'Out of Stock' : '£' . $worktop->price }}
                                                                 </p>
                                                                 <div class="container-fluid">
                                                                     @if ($worktop->style)
@@ -1275,7 +1278,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <p class="fs-5 fw-bold mt-lg-2">
-                                                                    £{{ $worktopsAndUpStand->price }}
+                                                                    {{ $worktopsAndUpStand->price == 0 ? 'Out of Stock' : '£' . $worktopsAndUpStand->price }}
                                                                 </p>
                                                                 <div class="container-fluid">
                                                                     @if ($worktopsAndUpStand->style)
@@ -1434,7 +1437,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <p class="fs-5 fw-bold mt-lg-2">
-                                                                    £{{ $breakfastBar->price }}
+                                                                    {{ $breakfastBar->price == 0 ? 'Out of Stock' : '£' . $breakfastBar->price }}
                                                                 </p>
                                                                 <div class="container-fluid">
                                                                     @if ($breakfastBar->style)
@@ -1593,7 +1596,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <p class="fs-5 fw-bold mt-lg-2">
-                                                                    £{{ $edging->price }}
+                                                                    {{ $edging->price == 0 ? 'Out of Stock' : '£' . $edging->price }}
                                                                 </p>
                                                                 <div class="container-fluid">
                                                                     @if ($edging->style)
@@ -1776,7 +1779,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <p class="fs-5 fw-bold mt-lg-2">
-                                                                    £{{ $sink->price }}
+                                                                    {{ $sink->price == 0 ? 'Out of Stock' : '£' . $sink->price }}
                                                                 </p>
                                                                 <div class="container-fluid">
                                                                     @if ($sink->style)
@@ -1935,7 +1938,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <p class="fs-5 fw-bold mt-lg-2">
-                                                                    £{{ $tap->price }}
+                                                                    {{ $tap->price == 0 ? 'Out of Stock' : '£' . $tap->price }}
                                                                 </p>
                                                                 <div class="container-fluid">
                                                                     @if ($tap->style)
@@ -2100,7 +2103,7 @@
                                                             </div>
                                                         </div>
                                                         <p class="fs-5 fw-bold mt-lg-2">
-                                                            £{{ $appliance->price }}
+                                                            {{ $appliance->price == 0 ? 'Out of Stock' : '£' . $appliance->price }}
                                                         </p>
                                                         <div class="container-fluid">
                                                             @if ($appliance->style)

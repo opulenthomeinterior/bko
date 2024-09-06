@@ -538,7 +538,7 @@ function updateCartItemsList() {
    $cartItemsList.empty();
 
    products.forEach(product => {
-      $cartItemsList.append(`<h4><i class="ri-delete-bin-line text-danger" onclick="removeFromCart(${product.id}, '${product.productCode}')" ></i>&nbsp; ${product.quantity} x ${product.full_title}</h4>`);
+      $cartItemsList.append(`<h4><i class="ri-btn ri-delete-bin-line text-danger" onclick="removeFromCart(${product.id}, '${product.productCode}')" ></i>&nbsp; ${product.quantity} x ${product.full_title}</h4>`);
    });
 }
 
@@ -554,7 +554,7 @@ function orderKitchenCartItemsList() {
    $cartItemsList.empty();
 
    products.forEach(product => {
-      $cartItemsList.append(`<div class="col-12"><p class="text-white fw-bold m-0"><i class="ri-delete-bin-line" onclick="removeFromCart(${product.id}, '${product.productCode}')" ></i>&nbsp; <small class="fw-normal">${product.quantity} x ${product.full_title}</small></p></div>`);
+      $cartItemsList.append(`<div class="col-12"><p class="text-white fw-bold m-0"><i class="ri-btn ri-delete-bin-line" onclick="removeFromCart(${product.id}, '${product.productCode}')" ></i>&nbsp; <small class="fw-normal">${product.quantity} x ${product.full_title}</small></p></div>`);
    });
 }
 
@@ -573,9 +573,9 @@ function updateCartPage() {
    products.forEach(product => {
       cartTableHtml += `<tr>`;
       cartTableHtml += `<td>`;
-      cartTableHtml += `<i class='ri-subtract-line' onclick="decreaseQuantityInCartPage('${product.id}', '${product.productCode}', '${product.full_title}', ${product.price}, ${product.discount_price}, ${product.discount_percentage}, '${product.p_category}')"></i>`;
-      cartTableHtml += `<i class='ri-add-line' onclick="increaseQuantityInCartPage('${product.id}', '${product.productCode}', '${product.full_title}', ${product.price}, ${product.discount_price}, ${product.discount_percentage}, '${product.p_category}')"></i>`;
-      cartTableHtml += `<i class='ri-delete-bin-line' onclick="removeFromCart(${product.id}, '${product.productCode}')"></i>`;
+      cartTableHtml += `<i class='ri-btn ri-subtract-line' onclick="decreaseQuantityInCartPage('${product.id}', '${product.productCode}', '${product.full_title}', ${product.price}, ${product.discount_price}, ${product.discount_percentage}, '${product.p_category}')"></i>`;
+      cartTableHtml += `<i class='ri-btn ri-add-line' onclick="increaseQuantityInCartPage('${product.id}', '${product.productCode}', '${product.full_title}', ${product.price}, ${product.discount_price}, ${product.discount_percentage}, '${product.p_category}')"></i>`;
+      cartTableHtml += `<i class='ri-btn ri-delete-bin-line' onclick="removeFromCart(${product.id}, '${product.productCode}')"></i>`;
       cartTableHtml += `</td>`;
       cartTableHtml += `<td>${product.full_title}&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" data-productId="${product.id}" class="openCompareModel text-decoration-underline text-danger" style="font-size: 12px;" data-toggle="modal" data-target="#myModal">Compare</a></td>`;
       cartTableHtml += `<td>£${(product.price).toFixed(2)}</td>`;
