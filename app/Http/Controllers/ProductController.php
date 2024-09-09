@@ -196,7 +196,7 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         $request->validate([
-            'product_code' => 'required|string|max:255|unique:products,product_code,' . $product->id,
+            'product_code' => 'required|string|max:255',
             'short_title' => 'required|string|max:255',
             // 'full_title' => 'required|string|max:255',
             'full_title' => 'required|string|max:255|unique:products,full_title,' . $product->id,
