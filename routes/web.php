@@ -50,7 +50,7 @@ Route::prefix('admin')->middleware(['auth', 'verified', 'role:super-admin'])->gr
         Route::post('create', [UserController::class, 'store'])->name('user.store');
         Route::get('edit/{id}', [UserController::class, 'edit'])->name('user.edit');
         Route::put('update/{id}', [UserController::class, 'update'])->name('user.update');
-        Route::delete('destroy/{id}', [UserController::class, 'destroy'])->name('user.destroy');
+        Route::post('destroy/{id}', [UserController::class, 'destroy'])->name('user.destroy');
         // Profile
         Route::get('profile', [UserController::class, 'profile'])->name('user.profile');
         Route::post('profile/store', [UserController::class, 'profile_save'])->name('user.profile.save');
