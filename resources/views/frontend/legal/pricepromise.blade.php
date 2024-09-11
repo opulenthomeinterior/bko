@@ -52,10 +52,10 @@
                     <li class="my-1"><i class="ri-arrow-right-s-fill"></i><small>Applies to UK and NI only</small>
                     </li>
                     <li class="my-1"><i class="ri-arrow-right-s-fill"></i><small>Applies to Trade Account customers
-                            only who register for a Trade Account on the Kitchen Kit e-commerce site</small></li>
+                            only who register for a Trade Account on the BKOnline e-commerce site</small></li>
                     <li class="my-1"><i class="ri-arrow-right-s-fill"></i><small>Any successful claims against the
                             promise will generate a virtual credit note which must be used against a future kitchen
-                            order on the Kitchen Kit e-commerce site within 365 days</small></li>
+                            order on the BKOnline e-commerce site within 365 days</small></li>
                     <li class="my-1"><i class="ri-arrow-right-s-fill"></i><small>Extends to all kitchen furniture
                             excluding worktops, sinks, and taps</small></li>
                     <li class="my-1"><i class="ri-arrow-right-s-fill"></i><small>Applies to Howdens Trade prices at
@@ -74,7 +74,7 @@
                 </h2>
                 <ul class="p-0 py-1">
                     <li class="my-1"><i class="ri-arrow-right-s-fill"></i><small>Price promise claim requests can be
-                            made within 14 working days in the customers’ trade account on kitchenkit.co.uk
+                            made within 14 working days in the customers’ trade account on bkonline.uk
                         </small></li>
                     <li class="my-1"><i class="ri-arrow-right-s-fill"></i><small>Approval for price promise claims
                             will be made within 1-2 working days.
