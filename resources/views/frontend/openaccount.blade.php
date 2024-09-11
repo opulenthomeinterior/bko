@@ -127,9 +127,8 @@
                                     <label class="py-1">Country <span class="text-danger">*</span></label>
                                     <select name="country" class="form-select border-dark"
                                         aria-label="Default select example">
-                                        <option selected>Select your country</option>
-                                        <option value="unitedstate">United States</option>
-                                        <option value="ireland">Ireland</option>
+                                        <option selected disabled>Select your country</option>
+                                        <option value="United Kingdom" selected>United Kingdom</option>
                                     </select>
                                 </div>
                             </div>
