@@ -449,7 +449,7 @@ use App\Models\Style;
                                     role="button"><i class="ri-linkedin-fill"></i></a>
                             </li>
 
-                            <li><i class="ri-mail-line mt-1"></i>customerservices@kitchenkit.co.uk</li>
+                            <li><i class="ri-mail-line mt-1"></i>customerservices@bkonline.co.uk</li>
                             <li><i class="ri-phone-line"></i>+44 (0)333 0348 581</li>
                         </ul>
                     </div>
