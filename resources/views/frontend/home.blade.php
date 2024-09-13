@@ -3,7 +3,7 @@
         <div class="row py-4">
             <div class="col-12 text-center">
                 <h1 class="fs-3 text-white text-uppercase fw-bolder">
-                    BKOnline Kitchens: Quality Design, Installation, and Affordability in One Package
+                    BK Online Kitchens: Quality Design, Installation, and Affordability in One Package
                 </h1>
                 <a href="{{ route('orderkitchen') }}" class="mt-4 btn btn-md bg-white fw-bolder text-uppercase rounded-0"
                     href="{{ route('orderkitchen') }}">Order Now</a>
