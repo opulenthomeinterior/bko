@@ -1102,3 +1102,7 @@ footer {
     background-color: rgb(255, 52, 52) !important;
     color: #fff !important;
 }
+
+.component-card {
+    border-radius: 0;
+}

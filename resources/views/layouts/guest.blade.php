@@ -3,7 +3,7 @@ use App\Models\Category;
 use App\Models\Style;
 ?>
 <!doctype html>
-<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="light" data-sidebar-size="lg"
+<html lang="en-GB" data-layout="vertical" data-topbar="light" data-sidebar="light" data-sidebar-size="lg"
     data-sidebar-image="none" data-preloader="disable">
 
 <head>
@@ -11,14 +11,14 @@ use App\Models\Style;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="XprnAzefcxw_6ShJcZrtRn21FuOT8qEGzuZRyhMp05I" />
-    <meta content="BKO" name="description" />
+    <meta name="description" content="Customize your Dream Kitchen with our Bespoke Kitchen Units in London. Our Bespoke Designer Kitchens include Slab, Shaker, True handleless & J-pull Styles.">
     <meta content="Themesbrand" name="author" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <?php $current_uri = request()->segments(); ?>
     <?php $page_slug = ucwords(str_replace(['-', '_'], ' ', last($current_uri))); ?>
 
-    <title>Opulenthomeinteriors - <?php echo !empty($page_slug) ? $page_slug : 'Home page'; ?></title>
+    <title>Affordable Kitchen & Custom Kitchen Units in London | BK Online - <?php echo !empty($page_slug) ? $page_slug : 'Home page'; ?></title>
 
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ asset('images/BKO_LOGO.png') }}">
@@ -391,6 +391,13 @@ use App\Models\Style;
                             </a>
                         </div>
                     </li>
+                    <li class="dropdown__item">
+                        <div class="nav__link dropdown__button">
+                            <a class="" href="{{ route('blog') }}">
+                                BLOG
+                            </a>
+                        </div>
+                    </li>
                 </ul>
             </div>
             <div class="nav__menu" id="nav-menu">
@@ -421,7 +428,7 @@ use App\Models\Style;
         {{ $slot }}
     </div>
 
-    <footer class="text-center border-top">
+    <footer class="text-center border-top mt-4">
         <div class="container py-lg-5 py-4">
             <section class="">
                 <div class="row">

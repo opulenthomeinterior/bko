@@ -14,7 +14,7 @@
     <section class="container-fluid px-lg-5 px-md-3 px-3 py-lg-5 py-3" style="background-color: #f0f0f0;">
         <div class="row">
             <div class="col-lg-6 text-center">
-                <h1 class="text-uppercase text-dark fw-bolder" style="font-size: 4rem">20% OFF </h1>
+                <h2 class="text-uppercase text-dark fw-bolder" style="font-size: 4rem">20% OFF </h2>
                 <h3 class="text-uppercase fw-bolder text-dark">GET 20% OFF ALL ORDERS WHEN YOU OPEN A TRADE ACCOUNT</h3>
             </div>
             <div class="col-lg-6">
@@ -39,43 +39,256 @@
         </div>
     </section>
 
-    <section class="container-fluid position-relative"
-        style="background-image: url('{{ asset('images/Slab-Kitchen.jpg') }}'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 70vh;">
-        <div class="row">
-            <div class="col-12 text-center text-over-image">
-                <h1 class="text-white fw-bolder" style="text-shadow: 1px 1px 3px black;">WE CAN'T BE BEATEN ON PRICE!
-                </h1>
+    <section class="container-fluid position-relative" style="height: 70vh; overflow: hidden;">
+        <img src="{{ asset('images/Slab-Kitchen.jpg') }}"
+            alt="Bespoke Kitchen Units in London and Surroundings"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: -1;">
+        <div class="row h-100">
+            <div class="col-12 text-center text-over-image align-self-center">
+                <h2 class="text-white fw-bolder" style="text-shadow: 1px 1px 3px black;">WE CAN'T BE BEATEN ON PRICE!</h2>
                 <a href="{{ route('orderkitchen') }}"
                     class="btn btn-md bg-dark fw-bolder text-white text-uppercase rounded-0">Shop now</a>
             </div>
         </div>
-
     </section>
 
     <section class="container-fluid px-lg-5 px-md-3 px-3 py-lg-5 py-3" style="background-color: #f0f0f0;">
         <div class="row">
             <div class="col-12">
                 <p>
-                    BKOnline Interiors is a premier provider of complete kitchen solutions, specialising in the design and delivery of ready-made kitchens, rigid kitchen units, and components in slab, shaker, or J-pull styles. Serving London and the surrounding areas, we pride ourselves on delivering showroom-quality kitchens directly to your door.
+                    BK Online is a premier provider of complete kitchen solutions, specialising in the design and delivery of ready-made kitchens, rigid kitchen units, and components in slab, shaker, or J-pull styles. Serving London and the surrounding areas, we pride ourselves on delivering showroom-quality kitchens directly to your door.
                 </p>
                 <p>
-                    At BKOnline Interiors, we are committed to crafting every kitchen with precision and care, ensuring that our customers receive only the highest quality products. Our years of experience in kitchen design and manufacturing allow us to offer a seamless and stress-free ordering process, from initial design consultation to final delivery.
+                    At BK Online, we are committed to crafting every kitchen with precision and care, ensuring that our customers receive only the highest quality products. Our years of experience in kitchen design and manufacturing allow us to offer a seamless and stress-free ordering process, from initial design consultation to final delivery.
                 </p>
                 <p>
                     Operating from state-of-the-art facilities, our skilled workforce uses the latest sustainable manufacturing techniques to create kitchens that not only meet but exceed our clients' expectations. Our dedication to innovation ensures that our customers always have access to the most up-to-date designs and materials.
                 </p>
                 <p>
-                    Whether you're looking for a modern slab kitchen, a timeless shaker design, or the sleek lines of a J-pull handleless kitchen, BKOnline Interiors makes it easy. Our kitchens are designed to be user-friendly, with components that are straightforward to assemble, thanks to our advanced clic technology. We offer both flat-pack and pre-assembled options, with fast and reliable delivery times—receive your flat-pack kitchen in just 3 working days (UK Mainland) or opt for our pre-assembled units with a lead time of 10 working days until dispatch.
+                    Whether you're looking for a modern slab kitchen, a timeless shaker design, or the sleek lines of a J-pull handleless kitchen, BK Online makes it easy. Our kitchens are designed to be user-friendly, with components that are straightforward to assemble, thanks to our advanced clic technology. We offer both flat-pack and pre-assembled options, with fast and reliable delivery times—receive your flat-pack kitchen in just 3 working days (UK Mainland) or opt for our pre-assembled units with a lead time of 10 working days until dispatch.
                 </p>
                 <p>
-                    Born out of a passion for offering better kitchen solutions, BKOnline Interiors stands as a trusted partner in creating kitchens that bring joy for years to come. We invite you to explore our range and experience the difference that quality craftsmanship can make.
+                    Born out of a passion for offering better kitchen solutions, BK Online stands as a trusted partner in creating kitchens that bring joy for years to come. We invite you to explore our range and experience the difference that quality craftsmanship can make.
 
                 </p>
             </div>
         </div>
     </section>
 
+    <section class="container-fluid py-lg-5 py-3">
+        <div class="row">
+            <h3 class="text-uppercase fw-bolder text-dark text-center">ORDER KITCHEN</h3>
+        </div>
+        <div class="row mt-4">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 mb-4">
+                <a href="{{route('orderkitchenbyname', 'j-pull')}}">
+                    <div class="card component-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">J-PULL Kitchen</h5>
+                        </div>
+        
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 mb-4">
+                <a href="{{route('orderkitchenbyname', 'true-handleless')}}">
+                    <div class="card component-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">TRUE HANDLELESS Kitchen</h5>
+                        </div>
+        
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 mb-4">
+                <a href="{{route('orderkitchenbyname', 'shaker')}}">
+                    <div class="card component-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">SHAKER Kitchen</h5>
+                        </div>
+        
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 mb-4">
+                <a href="{{route('orderkitchenbyname', 'slab-kitchens')}}">
+                    <div class="card component-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">SLAB Kitchen</h5>
+                        </div>
+        
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
 
-
+    <section class="container-fluid py-lg-5 py-3" style="background-color: #f0f0f0;">
+        <div class="row">
+            <h3 class="text-uppercase fw-bolder text-dark text-center">ORDER COMPONENT</h3>
+        </div>
+        <div class="row mt-4">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
+                <a href="{{route('ordercomponentbyname', 'doors')}}">
+                    <div class="card component-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">DOORS</h5>
+                        </div>
+        
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
+                <a href="{{route('ordercomponentbyname', 'panels-&-appliance-doors')}}">
+                    <div class="card component-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">PANELS & APPLIANCE DOORS</h5>
+                        </div>
+        
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
+                <a href="{{route('ordercomponentbyname', 'appliances')}}">
+                    <div class="card component-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">APPLIANCES</h5>
+                        </div>
+        
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
+                <a href="{{route('ordercomponentbyname', 'edging')}}">
+                    <div class="card component-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">EDGING</h5>
+                        </div>
+        
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
+                <a href="{{route('ordercomponentbyname', 'base-cabinets')}}">
+                    <div class="card component-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">BASE CABINETS</h5>
+                        </div>
+        
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
+                <a href="{{route('ordercomponentbyname', 'handles')}}">
+                    <div class="card component-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">HANDLES</h5>
+                        </div>
+        
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
+                <a href="{{route('ordercomponentbyname', 'worktops')}}">
+                    <div class="card component-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">WORKTOPS</h5>
+                        </div>
+        
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
+                <a href="{{route('ordercomponentbyname', 'taps')}}">
+                    <div class="card component-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">TAPS</h5>
+                        </div>
+        
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
+                <a href="{{route('ordercomponentbyname', 'wall-cabinets')}}">
+                    <div class="card component-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">WALL CABINETS</h5>
+                        </div>
+        
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
+                <a href="{{route('ordercomponentbyname', 'gola-handleless-rails')}}">
+                    <div class="card component-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">GOLA HANDLELESS RAILS</h5>
+                        </div>
+        
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
+                <a href="{{route('ordercomponentbyname', 'worktops-and-upstands')}}">
+                    <div class="card component-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">WORKTOPS AND UPSTANDS</h5>
+                        </div>
+        
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
+                <a href="{{route('ordercomponentbyname', 'sinks')}}">
+                    <div class="card component-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">SINKS</h5>
+                        </div>
+        
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
+                <a href="{{route('ordercomponentbyname', 'tall-cabinets')}}">
+                    <div class="card component-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">TALL CABINETS</h5>
+                        </div>
+        
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
+                <a href="{{route('ordercomponentbyname', 'accessories')}}">
+                    <div class="card component-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">ACCESSORIES</h5>
+                        </div>
+        
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
+                <a href="{{route('ordercomponentbyname', 'breakfast-bars')}}">
+                    <div class="card component-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">BREAKFAST BARDS</h5>
+                        </div>
+        
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
+                <a href="{{route('ordercomponentbyname', 'swatches-and-samples')}}">
+                    <div class="card component-card">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">SWATCHES AND SAMPLES</h5>
+                        </div>
+        
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
 
 </x-guest-layout>
