@@ -18,7 +18,7 @@ use App\Models\Style;
     <?php $current_uri = request()->segments(); ?>
     <?php $page_slug = ucwords(str_replace(['-', '_'], ' ', last($current_uri))); ?>
 
-    <title>Affordable Kitchen & Custom Kitchen Units in London | BK Online - <?php echo !empty($page_slug) ? $page_slug : 'Home page'; ?></title>
+    <title>Affordable Kitchen & Custom Kitchen Units in London | BK Online</title>
 
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ asset('images/BKO_LOGO.png') }}">
