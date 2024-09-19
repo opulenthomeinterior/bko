@@ -302,7 +302,7 @@
 
     <section class="container-fluid py-5 p-0">
         <div class="row">
-            <h3 class="text-dark text-uppercase fw-bolder text-center">General BK Online FAQ</h3>
+            <h3 class="text-dark text-uppercase fw-bolder text-center">General BK Online FAQs</h3>
         </div>
         <div class="row">
             <div class="col-lg-12">
@@ -334,7 +334,7 @@
 
         <div class="row pt-3">
             <div class="col-lg-12">
-                <h3 class="text-dark text-uppercase fw-bolder">Deliveries FAQ</h3>
+                <h3 class="text-dark text-uppercase fw-bolder">Deliveries FAQs</h3>
                 <div class="accordion accordion-flush" id="accordionFlushExample2">
                     @if ($deliveryFaqs->count() > 0)
                         @foreach ($deliveryFaqs as $faq)
