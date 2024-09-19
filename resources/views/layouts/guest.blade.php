@@ -355,7 +355,7 @@ use App\Models\Style;
                                         </li>
                                         <li>
                                             <a href="{{ route('faq') }}" class="dropdown__link">
-                                                <i class="ri-arrow-right-s-fill"></i>KITCHEN KIT FAQS</a>
+                                                <i class="ri-arrow-right-s-fill"></i>BK Online FAQS</a>
                                         </li>
                                         <li>
                                             <a href="{{ route('fittingguide') }}" class="dropdown__link">
@@ -457,7 +457,7 @@ use App\Models\Style;
                             </li>
 
                             <li><i class="ri-mail-line mt-1"></i>customerservices@bkonline.co.uk</li>
-                            <li><i class="ri-phone-line"></i>+44 (0)333 0348 581</li>
+                            <li><i class="ri-phone-line"></i>0800 043 0804</li>
                         </ul>
                     </div>
 
@@ -465,10 +465,10 @@ use App\Models\Style;
                         <h5 class="fw-bolder">Support</h5>
 
                         <ul class="footer-ul list-unstyled mb-0">
-                            <li class="my-1 footer-li">
+                            {{-- <li class="my-1 footer-li">
                                 <a class="text-body text-decoration-none footer-links" href="{{ route('blog') }}"><i
                                         class="ri-arrow-right-s-fill"></i>Blog</a>
-                            </li>
+                            </li> --}}
                             <li class="my-1 footer-li">
                                 <a class="text-body text-decoration-none footer-links"
                                     href="{{ route('downloadable') }}"><i
@@ -479,10 +479,10 @@ use App\Models\Style;
                                     href="{{ route('installationvideos') }}"><i
                                         class="ri-arrow-right-s-fill"></i>Installation Videos</a>
                             </li>
-                            <li class="my-1 footer-li">
+                            {{-- <li class="my-1 footer-li">
                                 <a class="text-body text-decoration-none footer-links" href="{{ route('faq') }}"><i
                                         class="ri-arrow-right-s-fill"></i>FAQs</a>
-                            </li>
+                            </li> --}}
                             <li class="my-1 footer-li">
                                 <a class="text-body text-decoration-none footer-links"
                                     href="{{ route('deliveries') }}"><i
@@ -527,10 +527,10 @@ use App\Models\Style;
                                     Conditions – We Can’t Be Beaten on
                                     Price</a>
                             </li> -->
-                            <li class="my-1 footer-li">
+                            {{-- <li class="my-1 footer-li">
                                 <a class="text-body text-decoration-none footer-links"
                                     href="{{ route('site_maps') }}"><i class="ri-arrow-right-s-fill"></i>Sitemap</a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                 </div>

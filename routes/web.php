@@ -20,6 +20,7 @@ use App\Http\Controllers\DesignserviceController;
 use App\Http\Controllers\UserAuthController;
 use App\Http\Controllers\DiscountController;
 use App\Http\Controllers\OrdersController;
+use App\Models\Faq;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -211,7 +212,9 @@ Route::prefix('my-account')->middleware(['auth', 'verified', 'role:user'])->grou
 Route::prefix('/')->middleware([])->group(function () {
 
     Route::get('/', function () {
-        return view('frontend.home');
+        $generalFaqs = Faq::where('type', 'general')->get();
+        $deliveryFaqs = Faq::where('type', 'delivery')->get();
+        return view('frontend.home', compact('generalFaqs', 'deliveryFaqs'));
     })->name('home');
 
     // Shop Prefix

@@ -1,4 +1,13 @@
 <x-guest-layout>
+    <style>
+        ol li {
+            list-style-type: unset;
+        }
+
+        ul li {
+            list-style-type: disc;
+        }
+    </style>
     <section class="container-fluid bg-dark px-lg-5 py-4 px-md-3 px-3">
         <div class="row py-4">
             <div class="col-12 text-center">
@@ -287,6 +296,70 @@
         
                     </div>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid py-5 p-0">
+        <div class="row">
+            <h3 class="text-dark text-uppercase fw-bolder text-center">General BK Online FAQ</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    @if ($generalFaqs->count() > 0)
+                        @foreach ($generalFaqs as $faq)
+                            <div class="accordion-item">
+                                <h2 class="accordion-header text-decoration-underline">
+                                    <button class="accordion-button collapsed fw-bolder" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapse{{ $loop->index + 1 }}"
+                                        aria-expanded="false" aria-controls="flush-collapse{{ $loop->index + 1 }}">
+                                        {{ $faq->question }}
+                                    </button>
+                                </h2>
+                                <div id="flush-collapse{{ $loop->index + 1 }}" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">{!! $faq->answer !!}</div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @else
+                        <div class="alert alert-info" role="alert">
+                            No FAQ's found.
+                        </div>
+                    @endif
+                </div>
+            </div>
+        </div>
+
+        <div class="row pt-3">
+            <div class="col-lg-12">
+                <h3 class="text-dark text-uppercase fw-bolder">Deliveries FAQ</h3>
+                <div class="accordion accordion-flush" id="accordionFlushExample2">
+                    @if ($deliveryFaqs->count() > 0)
+                        @foreach ($deliveryFaqs as $faq)
+                            <div class="accordion-item">
+                                <h2 class="accordion-header text-decoration-underline">
+                                    <button class="accordion-button collapsed fw-bolder" type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapsedelivery{{ $loop->index + 1 }}"
+                                        aria-expanded="false"
+                                        aria-controls="flush-collapsedelivery{{ $loop->index + 1 }}">
+                                        {{ $faq->question }}
+                                    </button>
+                                </h2>
+                                <div id="flush-collapsedelivery{{ $loop->index + 1 }}"
+                                    class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample2">
+                                    <div class="accordion-body">{!! $faq->answer !!}</div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @else
+                        <div class="alert alert-info" role="alert">
+                            No FAQ's found.
+                        </div>
+                    @endif
+                </div>
             </div>
         </div>
     </section>
