@@ -446,9 +446,7 @@ use App\Models\Style;
     <div class="account-pages">
         {{ $slot }}
     </div>
-    <a href="https://wa.me/15551234567" target="_blank">
-        <img src="whatsapp-icon.png" alt="WhatsApp Chat"> Chat with us!
-    </a>
+    
     <footer class="text-center border-top mt-4">
         <div class="container py-lg-5 py-4">
             <section class="">
