@@ -40,10 +40,8 @@ class ProductsImport implements ToCollection, WithChunkReading
     
                 $row[1] = trim($row[1]);
                 $parent_category = Category::find($row[1]);
-    
+                $category = Category::where('name', $row[2])->first();
                 if (!empty($parent_category) && !empty($row[1])) {
-    
-                    $category = Category::where('name', $row[2])->first();
                     if (empty($category) && !empty($row[2])) {
     
                         $category = new Category();
@@ -58,9 +56,8 @@ class ProductsImport implements ToCollection, WithChunkReading
                         $category->save();
                     }
                 } else {
-                    continue;
+                    // continue;
                 }
-    
                 $row[7] = trim($row[7]);
                 $style = Style::where('name', $row[7])->first();
     
