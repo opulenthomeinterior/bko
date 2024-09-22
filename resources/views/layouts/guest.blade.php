@@ -36,7 +36,19 @@ use App\Models\Style;
     <link rel="stylesheet" type="text/css" href="{{ asset('css/slick-theme.css') }}" />
     {{-- Custom CSS --}}
     <link href="{{ asset('css/frontend.css') }}" rel="stylesheet" type="text/css" />
+    <style>
+        #whatsapp-icon {
+            position: fixed; /* Fix it in place relative to the viewport */
+            bottom: 20px; /* Adjust the vertical position */
+            left: 20px; /* Move it to the left side */
+            z-index: 1000; /* Ensure it stays on top of other elements */
+        }
 
+        #whatsapp-icon i {
+            font-size: 24px; /* Adjust the icon size as needed */
+            color: #000; /* Customize icon color */
+        }
+    </style>
 </head>
 
 <body>
@@ -148,6 +160,13 @@ use App\Models\Style;
                 <span id="calculateProductsQuantityBottom" class="position-absolute right-0"
                     style="top: -8px;"></span>
             </i>
+        </div>
+
+        <div class="whatsapp-icon d-lg-block d-md-block d-none" id="whatsapp-icon">
+            <a href="https://wa.me/15551234567" target="_blank">
+                <i class="ri-whatsapp-line">
+                </i>
+            </a>
         </div>
 
         <div id="cartSidebar" class="cart-sidebar">
@@ -427,7 +446,9 @@ use App\Models\Style;
     <div class="account-pages">
         {{ $slot }}
     </div>
-
+    <a href="https://wa.me/15551234567" target="_blank">
+        <img src="whatsapp-icon.png" alt="WhatsApp Chat"> Chat with us!
+    </a>
     <footer class="text-center border-top mt-4">
         <div class="container py-lg-5 py-4">
             <section class="">
