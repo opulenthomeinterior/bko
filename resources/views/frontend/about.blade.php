@@ -12,7 +12,7 @@
                 <h1 class="fs-1 text-dark text-uppercase fw-bolder">
                     About Us
                 </h1>
-                <h4 class="text-dark">BA is proud to be one of the UK’s leading manufacturers of factory-built
+                <h4 class="text-dark">BK Online is proud to be one of the UK’s leading manufacturers of factory-built
                     kitchens
                     and bedrooms, bespoke, made-to-measure doors and one of the largest ranges of matching accessories
                     in the market place today.</h4>
@@ -29,8 +29,8 @@
                     We eat, sleep and breathe kitchens and bedrooms, making them look incredible using the perfect mix
                     of quality, sustainable materials and cutting-edge design.
                     <br><br>
-                    Born out of a desire to offer better products and service in the market, BA was established in 1990
-                    and has gone from strength to strength since. BA operates from three state of the art factories in
+                    Born out of a desire to offer better products and service in the market, BK Online was established in 1990
+                    and has gone from strength to strength since. BK Online operates from three state of the art factories in
                     Cookstown, Co. Tyrone and two in Yorkshire at Rotherham and Doncaster.
                 </p>
 
@@ -56,8 +56,8 @@
                     We eat, sleep and breathe kitchens and bedrooms, making them look incredible using the perfect mix
                     of quality, sustainable materials and cutting-edge design.
                     <br><br>
-                    Born out of a desire to offer better products and service in the market, BA was established in 1990
-                    and has gone from strength to strength since. BA operates from three state of the art factories in
+                    Born out of a desire to offer better products and service in the market, BK Online was established in 1990
+                    and has gone from strength to strength since. BK Online operates from three state of the art factories in
                     Cookstown, Co. Tyrone and two in Yorkshire at Rotherham and Doncaster.
                 </p>
             </div>
