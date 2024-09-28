@@ -1,4 +1,5 @@
 <?php
+
 use App\Models\Category;
 use App\Models\Style;
 ?>
@@ -38,15 +39,21 @@ use App\Models\Style;
     <link href="{{ asset('css/frontend.css') }}" rel="stylesheet" type="text/css" />
     <style>
         #whatsapp-icon {
-            position: fixed; /* Fix it in place relative to the viewport */
-            bottom: 20px; /* Adjust the vertical position */
-            left: 20px; /* Move it to the left side */
-            z-index: 1000; /* Ensure it stays on top of other elements */
+            position: fixed;
+            /* Fix it in place relative to the viewport */
+            bottom: 20px;
+            /* Adjust the vertical position */
+            left: 20px;
+            /* Move it to the left side */
+            z-index: 1000;
+            /* Ensure it stays on top of other elements */
         }
 
         #whatsapp-icon i {
-            font-size: 24px; /* Adjust the icon size as needed */
-            color: #000; /* Customize icon color */
+            font-size: 24px;
+            /* Adjust the icon size as needed */
+            color: #000;
+            /* Customize icon color */
         }
     </style>
 </head>
@@ -57,102 +64,102 @@ use App\Models\Style;
             <button id="closeSidebar">&times;</button>
             <div class="sidebar-content">
                 @unless (Auth::check() && Auth::user()->hasRole('user'))
-                    <h3 class="text-dark">Login</h3>
-                    <form action="{{ route('login') }}" class="auth-input py-4" method="POST" id="loginform">
-                        @csrf
-                        <div class="form-group mb-2">
-                            <label for="email" class="form-label">Email
-                                <span class="text-danger">*</span>
-                            </label>
-                            <input type="text" class="form-control" id="email" name="email"
-                                placeholder="Enter Email" value="{{ old('email') }}" autofocus autocomplete="username">
-                        </div>
+                <h3 class="text-dark">Login</h3>
+                <form action="{{ route('login') }}" class="auth-input py-4" method="POST" id="loginform">
+                    @csrf
+                    <div class="form-group mb-2">
+                        <label for="email" class="form-label">Email
+                            <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" class="form-control" id="email" name="email"
+                            placeholder="Enter Email" value="{{ old('email') }}" autofocus autocomplete="username">
+                    </div>
 
-                        <div class="form-group mb-2">
-                            <label for="userpassword" class="form-label">Password
-                                <span class="text-danger">*</span>
-                            </label>
-                            <div class="position-relative auth-pass-inputgroup mb-3">
-                                <input type="password" class="form-control pe-5 password-input" name="password"
-                                    placeholder="Enter Password" id="userpassword" autocomplete="current-password">
-                                <button
-                                    class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon"
-                                    type="button" id="password-addon"><i
-                                        class="las la-eye align-middle fs-18"></i></button>
-                            </div>
+                    <div class="form-group mb-2">
+                        <label for="userpassword" class="form-label">Password
+                            <span class="text-danger">*</span>
+                        </label>
+                        <div class="position-relative auth-pass-inputgroup mb-3">
+                            <input type="password" class="form-control pe-5 password-input" name="password"
+                                placeholder="Enter Password" id="userpassword" autocomplete="current-password">
+                            <button
+                                class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon"
+                                type="button" id="password-addon"><i
+                                    class="las la-eye align-middle fs-18"></i></button>
                         </div>
+                    </div>
 
-                        <div class="form-check form-check-primary fs-16 py-2">
-                            <input class="form-check-input" type="checkbox" id="remember_me" name="remember">
-                            <label class="form-check-label fs-14" for="remember_me">
-                                Remember me
-                            </label>
-                            {{-- <div class="float-end">
+                    <div class="form-check form-check-primary fs-16 py-2">
+                        <input class="form-check-input" type="checkbox" id="remember_me" name="remember">
+                        <label class="form-check-label fs-14" for="remember_me">
+                            Remember me
+                        </label>
+                        {{-- <div class="float-end">
                             <a href="{{ route('password.request') }}"
-                                class="text-muted text-decoration-underline fs-14">Forgot
-                                your password?</a>
-                        </div> --}}
-                        </div>
-
-                        <div class="mt-2">
-                            <button class="btn btn-dark rounded-0 w-100" type="submit" id="loginbutton">Log
-                                In</button>
-                        </div>
-
-                        <div class="mt-4 text-center">
-                            <p class="mb-0">Don't have an account ? <a href="{{ route('open-account') }}"
-                                    class="fw-medium text-dark text-decoration-underline">
-                                    Signup now </a> </p>
-                        </div>
-                    </form>
-                @endunless
-
-                @role('user')
-                    <div class="row py-3">
-                        <div class="col-12 py-2 text-center">
-                            <img src="{{ asset('images/users/user-dummy-img.jpg') }}" alt="user"
-                                class="img-fluid rounded-circle border border-dark" width="100px" />
-                        </div>
-                        <div class="col-12 py-1">
-                            <h5 class="text-dark text-center fw-bolder">
-                                {{ Auth::user()->name }}
-                            </h5>
-                        </div>
-                        <div class="col-12 py-1">
-                            <h5 class="text-dark text-center fw-bolder">
-                                {{ Auth::user()->email }}
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="row py-2">
-                        <div class="col-12">
-                            <a href="{{ route('user-profile') }}" class="btn btn-dark w-100 rounded-0">
-                                <i class="ri-user-line"></i>
-                                Profile
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="row py-2">
-                        <div class="col-12">
-                            <a href="{{ route('order-history') }}" class="btn btn-dark w-100 rounded-0">
-                                <i class="ri-shopping-bag-line"></i>
-                                Order History
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="row py-2">
-                        <div class="col-12">
-                            <a href="{{ route('logout') }}" class="btn btn-danger w-100 rounded-0">
-                                <i class="ri-logout-box-r-line"></i>
-                                Logout
-                            </a>
-                        </div>
-                    </div>
-                @endrole
-
+                        class="text-muted text-decoration-underline fs-14">Forgot
+                        your password?</a>
+                    </div> --}}
             </div>
+
+            <div class="mt-2">
+                <button class="btn btn-dark rounded-0 w-100" type="submit" id="loginbutton">Log
+                    In</button>
+            </div>
+
+            <div class="mt-4 text-center">
+                <p class="mb-0">Don't have an account ? <a href="{{ route('open-account') }}"
+                        class="fw-medium text-dark text-decoration-underline">
+                        Signup now </a> </p>
+            </div>
+            </form>
+            @endunless
+
+            @role('user')
+            <div class="row py-3">
+                <div class="col-12 py-2 text-center">
+                    <img src="{{ asset('images/users/user-dummy-img.jpg') }}" alt="user"
+                        class="img-fluid rounded-circle border border-dark" width="100px" />
+                </div>
+                <div class="col-12 py-1">
+                    <h5 class="text-dark text-center fw-bolder">
+                        {{ Auth::user()->name }}
+                    </h5>
+                </div>
+                <div class="col-12 py-1">
+                    <h5 class="text-dark text-center fw-bolder">
+                        {{ Auth::user()->email }}
+                    </h5>
+                </div>
+            </div>
+            <div class="row py-2">
+                <div class="col-12">
+                    <a href="{{ route('user-profile') }}" class="btn btn-dark w-100 rounded-0">
+                        <i class="ri-user-line"></i>
+                        Profile
+                    </a>
+                </div>
+            </div>
+
+            <div class="row py-2">
+                <div class="col-12">
+                    <a href="{{ route('order-history') }}" class="btn btn-dark w-100 rounded-0">
+                        <i class="ri-shopping-bag-line"></i>
+                        Order History
+                    </a>
+                </div>
+            </div>
+
+            <div class="row py-2">
+                <div class="col-12">
+                    <a href="{{ route('logout') }}" class="btn btn-danger w-100 rounded-0">
+                        <i class="ri-logout-box-r-line"></i>
+                        Logout
+                    </a>
+                </div>
+            </div>
+            @endrole
+
+        </div>
         </div>
 
         <div class="cart-icon d-lg-block d-md-block d-none" id="cart-icon">
@@ -268,8 +275,83 @@ use App\Models\Style;
                             <a href="{{ route('orderkitchen') }}">ORDER KITCHEN </a>
                             <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                         </div>
-                        <div class="dropdown__container">
-                            <div class="dropdown__content">
+                        <div class="dropdown__container py-4">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-3 text-center">
+                                        <h4 class="text-start bg-dark text-white p-2">Choose Style:</h4>
+                                        <ul class="dropdown__list">
+                                            <li>
+                                                <input type="radio" value="j-pull" name="style_name" class="style_type"> &nbsp; J-Pull Kitchen
+                                            </li>
+                                            <li>
+                                                <input type="radio" value="true-handleless" name="style_name" class="style_type"> &nbsp; True Handleless Kitchen
+                                            </li>
+                                            <li>
+                                                <input type="radio" value="shaker" name="style_name" class="style_type"> &nbsp; Shaker Kitchen
+                                            </li>
+                                            <li>
+                                                <input type="radio" value="slab-kitchens" name="style_name" class="style_type"> &nbsp; Slab Kitchen
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6 text-center">
+                                        <h4 class="text-start bg-dark text-white p-2">Choose Color:</h4>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <ul class="dropdown__list">
+                                                    <li><input type="radio" name="colour_name" class="colour_type" id="superGlossWhite" value="superglosswhite"> &nbsp; SuperGloss White</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type" id="superGlossCashmere" value="superglosscashmere"> &nbsp; SuperGloss Cashmere</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type" id="ultraMattIndigo" value="ultramattindigo"> &nbsp; UltraMatt Indigo</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type" id="ultraMattWhite" value="ultramattwhite"> &nbsp; UltraMatt White</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type" id="ultraMattCashmere" value="ultramattcashmere"> &nbsp; UltraMatt Cashmere</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type" id="superGlossCream" value="superglosscream"> &nbsp; SuperGloss Cream</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type" id="ultraMattCream" value="ultramattcream"> &nbsp; UltraMatt Cream</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type" id="superGlossLightGrey" value="superglosslight-grey"> &nbsp; SuperGloss Light Grey</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type" id="ultraMattLightGrey" value="ultramattlight-grey"> &nbsp; UltraMatt Light Grey</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type" id="superGlossDarkGrey" value="superglossdark-grey"> &nbsp; SuperGloss Dark Grey</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type" id="ultraMattDarkGrey" value="ultramattdark-grey"> &nbsp; UltraMatt Dark Grey</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type" id="superGlossAnthracite" value="superglossanthracite"> &nbsp; SuperGloss Anthracite</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-6">
+                                                <ul class="dropdown__list">
+                                                    <li><input type="radio" name="colour_name" class="colour_type" id="ultraMattAnthracite" value="ultramattanthracite"> &nbsp; UltraMatt Anthracite</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type" id="superGlossPaintToOrder" value="superglosspaint-to-order"> &nbsp; SuperGloss Paint to Order</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type" id="ultraMattPaintToOrder" value="ultramattpaint-to-order"> &nbsp; UltraMatt Paint to Order</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type" id="ultraMattFirGreen" value="ultramattfir-green"> &nbsp; UltraMatt Fir Green</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type" id="superGlossIvory" value="superglossivory"> &nbsp; SuperGloss Ivory</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type" id="ultraMattSageGreen" value="ultramattsage-green"> &nbsp; UltraMatt Sage Green</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type" id="ultraMattIvory" value="ultramattivory"> &nbsp; UltraMatt Ivory</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type" id="ultraMattBlackPowderCoated" value="ultramattblack-powder-coated"> &nbsp; UltraMatt Black Powder Coated</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type" id="superGlossDustGrey" value="superglossdust-grey"> &nbsp; SuperGloss Dust Grey</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type" id="ultraMattDustGrey" value="ultramattdust-grey"> &nbsp; UltraMatt Dust Grey</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type" id="superGlossIndigo" value="superglossindigo"> &nbsp; SuperGloss Indigo</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type" id="superGlossLightGray" value="superglosslight-gray"> &nbsp; SuperGloss Light Gray</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 text-center">
+                                        <h4 class="text-start bg-dark text-white p-2">Choose Assembly:</h4>
+                                        <ul class="dropdown__list">
+                                            <li>
+                                                <input type="radio" value="rigid" name="assembly_name" class="assembly_type"> &nbsp; Rigid
+                                            </li>
+                                            <li>
+                                                <input type="radio" value="flatpack" name="assembly_name" class="assembly_type"> &nbsp; Flat Pack
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-center mt-4">
+                                <button class="btn btn-sm btn-dark rounded-0 w-50 disabled" id="order-now">
+                                    ORDER NOW
+                                </button>
+                            </div>
+                            <!-- <div class="dropdown__content">
                                 @php
                                     $styles = Style::all();
                                 @endphp
@@ -326,7 +408,7 @@ use App\Models\Style;
                                     </ul>
                                 </div>
                                 @endif
-                            </div>
+                            </div> -->
                         </div>
                     </li>
                     <li class="dropdown__item">
@@ -337,21 +419,21 @@ use App\Models\Style;
                         <div class="dropdown__container">
                             <div class="dropdown__content">
                                 @php
-                                    $categories = Category::where('parent_category_id', null)->get();
+                                $categories = Category::where('parent_category_id', null)->get();
                                 @endphp
                                 @foreach ($categories as $index => $category)
-                                    @if ($index % 4 == 0)
-                                        <div class="dropdown__group">
-                                            <ul class="dropdown__list">
-                                    @endif
-                                                <li>
-                                                    <a href="{{ route('ordercomponentbyname', $category->slug) }}" class="dropdown__link">
-                                                        <i class="ri-arrow-right-s-fill"></i>{{ $category->name }}</a>
-                                                </li>
-                                                @if (($index + 1) % 4 == 0 || $loop->last)
-                                            </ul>
-                                        </div>
-                                    @endif
+                                @if ($index % 4 == 0)
+                                <div class="dropdown__group">
+                                    <ul class="dropdown__list">
+                                        @endif
+                                        <li>
+                                            <a href="{{ route('ordercomponentbyname', $category->slug) }}" class="dropdown__link">
+                                                <i class="ri-arrow-right-s-fill"></i>{{ $category->name }}</a>
+                                        </li>
+                                        @if (($index + 1) % 4 == 0 || $loop->last)
+                                    </ul>
+                                </div>
+                                @endif
                                 @endforeach
                             </div>
                         </div>
@@ -446,7 +528,7 @@ use App\Models\Style;
     <div class="account-pages">
         {{ $slot }}
     </div>
-    
+
     <footer class="text-center border-top mt-4">
         <div class="container py-lg-5 py-4">
             <section class="">
@@ -486,7 +568,7 @@ use App\Models\Style;
                         <ul class="footer-ul list-unstyled mb-0">
                             {{-- <li class="my-1 footer-li">
                                 <a class="text-body text-decoration-none footer-links" href="{{ route('blog') }}"><i
-                                        class="ri-arrow-right-s-fill"></i>Blog</a>
+                                class="ri-arrow-right-s-fill"></i>Blog</a>
                             </li> --}}
                             <li class="my-1 footer-li">
                                 <a class="text-body text-decoration-none footer-links"
@@ -500,7 +582,7 @@ use App\Models\Style;
                             </li>
                             {{-- <li class="my-1 footer-li">
                                 <a class="text-body text-decoration-none footer-links" href="{{ route('faq') }}"><i
-                                        class="ri-arrow-right-s-fill"></i>FAQs</a>
+                                class="ri-arrow-right-s-fill"></i>FAQs</a>
                             </li> --}}
                             <li class="my-1 footer-li">
                                 <a class="text-body text-decoration-none footer-links"
@@ -596,7 +678,7 @@ use App\Models\Style;
      */
     $message = '';
     $icon = '';
-    
+
     if (!empty($errors->all())) {
         $icon = 'error';
         $message = $errors->first();
@@ -610,9 +692,41 @@ use App\Models\Style;
         $icon = 'success';
         $message = $success;
     }
-    
-    ?>
 
+    ?>
+    <script>
+        $(document).ready(function() {
+            // Define url globally inside the scope of the document ready function
+            var url = '';
+
+            $(document).on('click', '.style_type, .colour_type, .assembly_type', function() {
+                // Get the latest values of the selected radios inside the event listener
+                var selectedStyle = $('input[name="style_name"]:checked').val();
+                var selectedColour = $('input[name="colour_name"]:checked').val();
+                var selectedAssembly = $('input[name="assembly_name"]:checked').val();
+
+                // Check if all selections are made and none are undefined, null, or empty
+                if (selectedStyle && selectedColour && selectedAssembly) {
+                    $('#order-now').removeClass('disabled');
+
+                    // Generate the URL with the selected values
+                    url = "{{route('orderkitchenbycolouronce', [':style', ':assembly', ':colour'])}}";
+                    url = url.replace(':style', selectedStyle)
+                        .replace(':colour', selectedColour)
+                        .replace(':assembly', selectedAssembly);
+                } else {
+                    $('#order-now').addClass('disabled'); // Optionally, disable the button if not all values are selected
+                }
+            });
+
+            // Redirect to the generated URL when 'order-now' is clicked
+            $(document).on('click', '#order-now', function() {
+                if (url) {
+                    window.location.href = url;
+                }
+            });
+        });
+    </script>
     <script>
         var Toast = Swal.mixin({
             toast: true,

@@ -101,7 +101,7 @@ class HomeController extends Controller
         }
     }
 
-    public function orderkitchenbycolour(Request $request, $style, $assembly, $colour)
+    public function orderkitchenbycolour(Request $request, $style = null, $assembly = null, $colour = null)
     {
         $style = Style::where('slug', $style)->firstOrFail();
         $assembly = Assembly::where('slug', $assembly)->firstOrFail();
