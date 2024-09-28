@@ -710,7 +710,7 @@ use App\Models\Style;
                     $('#order-now').removeClass('disabled');
 
                     // Generate the URL with the selected values
-                    url = "{{route('orderkitchenbycolouronce', [':style', ':assembly', ':colour'])}}";
+                    url = "{{route('orderkitchenbycolour', [':style', ':assembly', ':colour'])}}";
                     url = url.replace(':style', selectedStyle)
                         .replace(':colour', selectedColour)
                         .replace(':assembly', selectedAssembly);

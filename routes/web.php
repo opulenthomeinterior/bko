@@ -225,7 +225,6 @@ Route::prefix('/')->middleware([])->group(function () {
         Route::get('/order-kitchen', [HomeController::class, 'orderkitchen'])->name('orderkitchen');
         Route::get('/order-kitchen/{style}', [HomeController::class, 'orderkitchenbyname'])->name('orderkitchenbyname');
         Route::get('/order-kitchen/{style?}/{assembly?}/{colour?}', [HomeController::class, 'orderkitchenbycolour'])->name('orderkitchenbycolour');
-        Route::get('/order-kitchen/{style}/{assembly}/{colour}', [HomeController::class, 'orderkitchenbycolour'])->name('orderkitchenbycolouronce');
 
         // Order By Component
         Route::get('/order-component', [HomeController::class, 'ordercomponent'])->name('ordercomponent');
