@@ -355,32 +355,32 @@
     </section>
 
     @push('scripts')
-        <script>
-            $(document).ready(function() {
-                var code = localStorage.getItem('discountCode');
-                if (code) {
-                    $.ajax({
-                        url: "{{ route('apply.promocode') }}",
-                        type: "POST",
-                        data: {
-                            code: code
-                        },
-                        headers: {
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        },
-                        success: function(response) {
-                            if (response.status === 'success') {
-                                if (response.result) {
-                                    $('#discount_code').val(code);
-                                }
-                            } else {
-                                localStorage.removeItem('discountCode');
-                                $('#discount_code').val('');
+    <script>
+        $(document).ready(function() {
+            var code = localStorage.getItem('discountCode');
+            if (code) {
+                $.ajax({
+                    url: "{{ route('apply.promocode') }}",
+                    type: "POST",
+                    data: {
+                        code: code
+                    },
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function(response) {
+                        if (response.status === 'success') {
+                            if (response.result) {
+                                $('#discount_code').val(code);
                             }
+                        } else {
+                            localStorage.removeItem('discountCode');
+                            $('#discount_code').val('');
                         }
-                    });
-                }
-            });
-        </script>
+                    }
+                });
+            }
+        });
+    </script>
     @endpush
 </x-guest-layout>

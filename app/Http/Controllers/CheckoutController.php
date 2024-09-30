@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SendNotificationEmail;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Support\Facades\Mail;
 use Stripe\Stripe;
 use Stripe\Checkout\Session as StripeSession;
 
@@ -184,6 +186,16 @@ class CheckoutController extends Controller
             'contact_details' => $contact_details,
             'payment_details' => $payment_details,
         ]);
+
+        $data = [
+            'notification_type' => 'Order placed successfully',
+            'customer_name' => $validatedData['first_name'] . ' ' . $validatedData['last_name'],
+            'customer_email' => $validatedData['contact_email_address'],
+            'customer_contact' => $validatedData['contact_mobile_number'],
+            'payment_method' => $validatedData['payment_method']
+        ];
+
+        Mail::to($customer_email)->send(new SendNotificationEmail($data));
 
         if (isset($session->id) && !empty($session->id)) {
             return redirect($session->url, 303);

@@ -7,6 +7,15 @@
         ul li {
             list-style-type: disc;
         }
+
+        .hover-button:hover {
+            background-color: #000; /* Change background color to dark */
+        }
+
+        .hover-button:hover .card-title {
+            color: #fff; /* Change text color to white */
+        }
+
     </style>
     <section class="container-fluid bg-dark px-lg-5 py-4 px-md-3 px-3">
         <div class="row py-4">
@@ -91,9 +100,9 @@
         <div class="row mt-4">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 mb-4">
                 <a href="{{route('orderkitchenbyname', 'j-pull')}}">
-                    <div class="card component-card">
+                    <div class="card component-card hover-button">
                         <div class="card-body">
-                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">J-PULL Kitchen</h5>
+                            <h5 class="card-title text-uppercase fw-bold text-center">J-PULL Kitchen</h5>
                         </div>
         
                     </div>
@@ -101,9 +110,9 @@
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 mb-4">
                 <a href="{{route('orderkitchenbyname', 'true-handleless')}}">
-                    <div class="card component-card">
+                    <div class="card component-card hover-button">
                         <div class="card-body">
-                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">TRUE HANDLELESS Kitchen</h5>
+                            <h5 class="card-title text-uppercase fw-bold text-center">TRUE HANDLELESS Kitchen</h5>
                         </div>
         
                     </div>
@@ -111,9 +120,9 @@
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 mb-4">
                 <a href="{{route('orderkitchenbyname', 'shaker')}}">
-                    <div class="card component-card">
+                    <div class="card component-card hover-button">
                         <div class="card-body">
-                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">SHAKER Kitchen</h5>
+                            <h5 class="card-title text-uppercase fw-bold text-center">SHAKER Kitchen</h5>
                         </div>
         
                     </div>
@@ -121,9 +130,9 @@
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 mb-4">
                 <a href="{{route('orderkitchenbyname', 'slab-kitchens')}}">
-                    <div class="card component-card">
+                    <div class="card component-card hover-button">
                         <div class="card-body">
-                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">SLAB Kitchen</h5>
+                            <h5 class="card-title text-uppercase fw-bold text-center">SLAB Kitchen</h5>
                         </div>
         
                     </div>
@@ -139,9 +148,9 @@
         <div class="row mt-4">
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
                 <a href="{{route('ordercomponentbyname', 'doors')}}">
-                    <div class="card component-card">
+                    <div class="card component-card hover-button">
                         <div class="card-body">
-                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">DOORS</h5>
+                            <h5 class="card-title text-uppercase fw-bold text-center">DOORS</h5>
                         </div>
         
                     </div>
@@ -149,9 +158,9 @@
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
                 <a href="{{route('ordercomponentbyname', 'panels-&-appliance-doors')}}">
-                    <div class="card component-card">
+                    <div class="card component-card hover-button">
                         <div class="card-body">
-                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">PANELS & APPLIANCE DOORS</h5>
+                            <h5 class="card-title text-uppercase fw-bold text-center">PANELS & APPLIANCE DOORS</h5>
                         </div>
         
                     </div>
@@ -159,9 +168,9 @@
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
                 <a href="{{route('ordercomponentbyname', 'appliances')}}">
-                    <div class="card component-card">
+                    <div class="card component-card hover-button">
                         <div class="card-body">
-                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">APPLIANCES</h5>
+                            <h5 class="card-title text-uppercase fw-bold text-center">APPLIANCES</h5>
                         </div>
         
                     </div>
@@ -169,9 +178,9 @@
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
                 <a href="{{route('ordercomponentbyname', 'edging')}}">
-                    <div class="card component-card">
+                    <div class="card component-card hover-button">
                         <div class="card-body">
-                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">EDGING</h5>
+                            <h5 class="card-title text-uppercase fw-bold text-center">EDGING</h5>
                         </div>
         
                     </div>
@@ -179,9 +188,9 @@
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
                 <a href="{{route('ordercomponentbyname', 'base-cabinets')}}">
-                    <div class="card component-card">
+                    <div class="card component-card hover-button">
                         <div class="card-body">
-                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">BASE CABINETS</h5>
+                            <h5 class="card-title text-uppercase fw-bold text-center">BASE CABINETS</h5>
                         </div>
         
                     </div>
@@ -189,9 +198,9 @@
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
                 <a href="{{route('ordercomponentbyname', 'handles')}}">
-                    <div class="card component-card">
+                    <div class="card component-card hover-button">
                         <div class="card-body">
-                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">HANDLES</h5>
+                            <h5 class="card-title text-uppercase fw-bold text-center">HANDLES</h5>
                         </div>
         
                     </div>
@@ -199,9 +208,9 @@
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
                 <a href="{{route('ordercomponentbyname', 'worktops')}}">
-                    <div class="card component-card">
+                    <div class="card component-card hover-button">
                         <div class="card-body">
-                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">WORKTOPS</h5>
+                            <h5 class="card-title text-uppercase fw-bold text-center">WORKTOPS</h5>
                         </div>
         
                     </div>
@@ -209,9 +218,9 @@
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
                 <a href="{{route('ordercomponentbyname', 'taps')}}">
-                    <div class="card component-card">
+                    <div class="card component-card hover-button">
                         <div class="card-body">
-                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">TAPS</h5>
+                            <h5 class="card-title text-uppercase fw-bold text-center">TAPS</h5>
                         </div>
         
                     </div>
@@ -219,9 +228,9 @@
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
                 <a href="{{route('ordercomponentbyname', 'wall-cabinets')}}">
-                    <div class="card component-card">
+                    <div class="card component-card hover-button">
                         <div class="card-body">
-                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">WALL CABINETS</h5>
+                            <h5 class="card-title text-uppercase fw-bold text-center">WALL CABINETS</h5>
                         </div>
         
                     </div>
@@ -229,9 +238,9 @@
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
                 <a href="{{route('ordercomponentbyname', 'gola-handleless-rails')}}">
-                    <div class="card component-card">
+                    <div class="card component-card hover-button">
                         <div class="card-body">
-                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">GOLA HANDLELESS RAILS</h5>
+                            <h5 class="card-title text-uppercase fw-bold text-center">GOLA HANDLELESS RAILS</h5>
                         </div>
         
                     </div>
@@ -239,9 +248,9 @@
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
                 <a href="{{route('ordercomponentbyname', 'worktops-and-upstands')}}">
-                    <div class="card component-card">
+                    <div class="card component-card hover-button">
                         <div class="card-body">
-                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">WORKTOPS AND UPSTANDS</h5>
+                            <h5 class="card-title text-uppercase fw-bold text-center">WORKTOPS AND UPSTANDS</h5>
                         </div>
         
                     </div>
@@ -249,9 +258,9 @@
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
                 <a href="{{route('ordercomponentbyname', 'sinks')}}">
-                    <div class="card component-card">
+                    <div class="card component-card hover-button">
                         <div class="card-body">
-                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">SINKS</h5>
+                            <h5 class="card-title text-uppercase fw-bold text-center">SINKS</h5>
                         </div>
         
                     </div>
@@ -259,9 +268,9 @@
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
                 <a href="{{route('ordercomponentbyname', 'tall-cabinets')}}">
-                    <div class="card component-card">
+                    <div class="card component-card hover-button">
                         <div class="card-body">
-                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">TALL CABINETS</h5>
+                            <h5 class="card-title text-uppercase fw-bold text-center">TALL CABINETS</h5>
                         </div>
         
                     </div>
@@ -269,9 +278,9 @@
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
                 <a href="{{route('ordercomponentbyname', 'accessories')}}">
-                    <div class="card component-card">
+                    <div class="card component-card hover-button">
                         <div class="card-body">
-                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">ACCESSORIES</h5>
+                            <h5 class="card-title text-uppercase fw-bold text-center">ACCESSORIES</h5>
                         </div>
         
                     </div>
@@ -279,9 +288,9 @@
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
                 <a href="{{route('ordercomponentbyname', 'breakfast-bars')}}">
-                    <div class="card component-card">
+                    <div class="card component-card hover-button">
                         <div class="card-body">
-                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">BREAKFAST BARDS</h5>
+                            <h5 class="card-title text-uppercase fw-bold text-center">BREAKFAST BARDS</h5>
                         </div>
         
                     </div>
@@ -289,9 +298,9 @@
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
                 <a href="{{route('ordercomponentbyname', 'swatches-and-samples')}}">
-                    <div class="card component-card">
+                    <div class="card component-card hover-button">
                         <div class="card-body">
-                            <h5 class="card-title text-uppercase text-dark fw-bold text-center">SWATCHES AND SAMPLES</h5>
+                            <h5 class="card-title text-uppercase fw-bold text-center">SWATCHES AND SAMPLES</h5>
                         </div>
         
                     </div>

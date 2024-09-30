@@ -55,6 +55,15 @@ use App\Models\Style;
             color: #000;
             /* Customize icon color */
         }
+
+        .hover-button:hover {
+            background-color: #000; /* Change background color to dark */
+        }
+
+        .hover-button:hover .card-title {
+            color: #fff; /* Change text color to white */
+        }
+
     </style>
 </head>
 
