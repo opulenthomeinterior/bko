@@ -179,7 +179,7 @@ use App\Models\Style;
         </div>
 
         <div class="whatsapp-icon d-lg-block d-md-block d-none" id="whatsapp-icon">
-            <a href="https://wa.me/15551234567" target="_blank">
+            <a href="https://wa.me/08000430804" target="_blank">
                 <i class="ri-whatsapp-line" style="font-size: 40px;">
                 </i>
             </a>
