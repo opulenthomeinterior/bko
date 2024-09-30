@@ -29,7 +29,7 @@
         </div>
     </section>
 
-    <section class="container-fluid px-lg-5 px-md-3 px-3 py-lg-5 py-3" style="background-color: #f0f0f0;">
+    <!-- <section class="container-fluid px-lg-5 px-md-3 px-3 py-lg-5 py-3" style="background-color: #f0f0f0;">
         <div class="row">
             <div class="col-lg-6 text-center">
                 <h2 class="text-uppercase text-dark fw-bolder" style="font-size: 4rem">20% OFF </h2>
@@ -55,7 +55,7 @@
                 </ul>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section class="container-fluid position-relative" style="height: 70vh; overflow: hidden;">
         <img src="{{ asset('images/Slab-Kitchen.jpg') }}"
