@@ -341,7 +341,7 @@
             </div>
         </div>
 
-        <div class="row pt-3">
+        <!-- <div class="row pt-3">
             <div class="col-lg-12">
                 <h3 class="text-dark text-uppercase fw-bolder">Deliveries FAQs</h3>
                 <div class="accordion accordion-flush" id="accordionFlushExample2">
@@ -370,7 +370,7 @@
                     @endif
                 </div>
             </div>
-        </div>
+        </div> -->
     </section>
 
 </x-guest-layout>
