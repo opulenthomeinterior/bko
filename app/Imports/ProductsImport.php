@@ -20,7 +20,10 @@ class ProductsImport implements ToCollection, WithChunkReading
     {
         try {
             foreach ($rows as $index => $row) {
-    
+                if (empty($row[21])) {
+                    continue;
+                }
+
                 if ($row[0] == 'Product Code (0)') {
                     continue;
                 }
@@ -28,7 +31,7 @@ class ProductsImport implements ToCollection, WithChunkReading
                 if (empty($row[0])) {
                     continue;
                 }
-                $product = Product::where('product_code', $row[0])->first();
+                // $product = Product::where('product_code', $row[0])->first();
     
                 // if (!empty($product)) {
                 //     continue;
@@ -115,11 +118,12 @@ class ProductsImport implements ToCollection, WithChunkReading
                 }
     
                 $row[4] = trim($row[4]);
-                $product = Product::where('product_code', $row[0])->where('slug', str_replace(' ', '-', strtolower($row[4])))->first();
+                $product = Product::where('serial_number', $row[21])->where('product_code', $row[0])->first();
     
                 if (empty($product)) {
                     $product = new Product();
                     $product->product_code = $row[0];
+                    $product->serial_number = $row[21];
                     $product->slug = str_replace(' ', '-', strtolower($row[3]));
                     $product->short_title = $row[4];
                     $product->full_title = $row[3];
@@ -158,6 +162,10 @@ class ProductsImport implements ToCollection, WithChunkReading
                         // $file = $row[19];
                         // $product->image_path = mmadev_store_and_get_image_path_from_url('products', $file);
                     // }
+                    $product->image_path = $row[19] ?? null;
+                    $product->save();
+                } else {
+                    $product->slug = str_replace(' ', '-', strtolower($row[3]));
                     $product->image_path = $row[19] ?? null;
                     $product->save();
                 }

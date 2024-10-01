@@ -58,6 +58,7 @@ class ProductController extends Controller
         $arrData = Product::with(['category', 'style', 'colour', 'assembly'])
             ->select(
                 'products.id as product_id',
+                'products.serial_number as product_serial_number',
                 'products.product_code',
                 'products.image_path',
                 'products.short_title',

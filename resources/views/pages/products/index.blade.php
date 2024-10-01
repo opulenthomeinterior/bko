@@ -87,6 +87,7 @@
                             <table id="product_table" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
+                                        <th>Sr#</th>
                                         <th>Product Code</th>
                                         <th>Image</th>
                                         <th>Short Title</th>
@@ -105,6 +106,7 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
+                                        <th>Sr#</th>
                                         <th>Product Code</th>
                                         <th>Image</th>
                                         <th>Short Title</th>
@@ -143,6 +145,9 @@
                     [0, "desc"]
                 ],
                 columns: [{
+                        data: 'product_serial_number'
+                    },
+                    {
                         data: 'product_code'
                     },
                     {
