@@ -23,7 +23,7 @@
                 <h1 class="fs-3 text-white text-uppercase fw-bolder">
                     BK Online Kitchens - Quality Design, Installation, and Affordability in One Package
                 </h1>
-                <a href="{{ route('orderkitchen') }}" class="mt-4 btn btn-md bg-white fw-bolder text-uppercase rounded-0"
+                <a href="{{ route('orderkitchen') }}" class="mt-4 btn btn-md btn-outline-warning fw-bolder text-uppercase rounded-0"
                     href="{{ route('orderkitchen') }}">Order Now</a>
             </div>
         </div>
@@ -57,15 +57,15 @@
         </div>
     </section> -->
 
-    <section class="container-fluid position-relative" style="height: 70vh; overflow: hidden;">
+    <section class="container-fluid position-relative" style="height: 70vh; overflow: hidden; border-bottom: 7px solid #febd49; border-right: 5px solid #febd49">
         <img src="{{ asset('images/Slab-Kitchen.jpg') }}"
             alt="Bespoke Kitchen Units in London and Surroundings"
             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: -1;">
         <div class="row h-100">
-            <div class="col-12 text-center text-over-image align-self-center">
+            <div class="col-12 text-center text-over-image align-self-center py-2">
                 <h2 class="text-white fw-bolder" style="text-shadow: 1px 1px 3px black;">WE CAN'T BE BEATEN ON PRICE!</h2>
                 <a href="{{ route('orderkitchen') }}"
-                    class="btn btn-md bg-dark fw-bolder text-white text-uppercase rounded-0">Shop now</a>
+                    class="btn btn-md fw-bolder btn-warning text-uppercase rounded-0">Shop now</a>
             </div>
         </div>
     </section>
@@ -98,41 +98,45 @@
             <h3 class="text-uppercase fw-bolder text-dark text-center">ORDER KITCHEN</h3>
         </div>
         <div class="row mt-4">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 mb-4">
-                <a href="{{route('orderkitchenbyname', 'j-pull-22')}}">
-                    <div class="card component-card hover-button">
-                        <div class="card-body">
-                            <h5 class="card-title text-uppercase fw-bold text-center">J-PULL Kitchen</h5>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
+                <a class="btn btn-outline-warning p-1 border-0" href="{{route('orderkitchenbyname', 'j-pull-22')}}">
+                    <div class="card component-card border-0" style="height: 220px">
+                        <div class="card-body p-0 border-warning">
+                            <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">J-PULL Kitchen</h4>
+                            <p class="p-4 bg-light border-warning border">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sequi. Alias autem eum ut voluptatum, error porro officia eaque accusamus architecto, provident numquam incidunt hic eveniet nulla atque! Porro, hic.</p>
                         </div>
         
                     </div>
                 </a>
             </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 mb-4">
-                <a href="{{route('orderkitchenbyname', 'true-handleless')}}">
-                    <div class="card component-card hover-button">
-                        <div class="card-body">
-                            <h5 class="card-title text-uppercase fw-bold text-center">TRUE HANDLELESS Kitchen</h5>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
+                <a class="btn btn-outline-warning p-1 border-0" href="{{route('orderkitchenbyname', 'true-handleless')}}">
+                    <div class="card component-card border-0" style="height: 220px">
+                        <div class="card-body p-0 border-warning">
+                            <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">TRUE HANDLELESS Kitchen</h4>
+                            <p class="p-4 bg-light border-warning border">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sequi. Alias autem eum ut voluptatum, error porro officia eaque accusamus architecto, provident numquam incidunt hic eveniet nulla atque! Porro, hic.</p>
                         </div>
         
                     </div>
                 </a>
             </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 mb-4">
-                <a href="{{route('orderkitchenbyname', 'shaker-22')}}">
-                    <div class="card component-card hover-button">
-                        <div class="card-body">
-                            <h5 class="card-title text-uppercase fw-bold text-center">SHAKER Kitchen</h5>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
+                <a class="btn btn-outline-warning p-1 border-0" href="{{route('orderkitchenbyname', 'shaker-22')}}">
+                    <div class="card component-card border-0" style="height: 220px">
+                        <div class="card-body p-0 border-warning">
+                            <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">SHAKER Kitchen</h4>
+                            <p class="p-4 bg-light border-warning border">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sequi. Alias autem eum ut voluptatum, error porro officia eaque accusamus architecto, provident numquam incidunt hic eveniet nulla atque! Porro, hic.</p>
                         </div>
         
                     </div>
                 </a>
             </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 mb-4">
-                <a href="{{route('orderkitchenbyname', 'slab-kitchens')}}">
-                    <div class="card component-card hover-button">
-                        <div class="card-body">
-                            <h5 class="card-title text-uppercase fw-bold text-center">SLAB Kitchen</h5>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
+                <a class="btn btn-outline-warning p-1 border-0" href="{{route('orderkitchenbyname', 'slab-kitchens')}}">
+                    <div class="card component-card border-0" style="height: 220px">
+                        <div class="card-body p-0 border-warning">
+                            <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">SLAB Kitchen</h4>
+                            <p class="p-4 bg-light border-warning border">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sequi. Alias autem eum ut voluptatum, error porro officia eaque accusamus architecto, provident numquam incidunt hic eveniet nulla atque! Porro, hic.</p>
                         </div>
         
                     </div>

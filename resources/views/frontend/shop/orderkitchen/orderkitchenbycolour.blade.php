@@ -11,7 +11,7 @@
         <h1 class="fs-1 fw-bolder text-dark mb-lg-5 mb-5"></h1>
         <h1 class="fs-4 fw-bolder text-dark">SLAB STANDARD WHITE RIGID KITCHEN </h1>
 
-        <div class="row">
+        <div class="row" style="background-color: #e0e0e0;">
             <div class="col-lg-9">
                 <div class="collapse-wrapper my-4">
                     <a class="fw-semibold text-dark text-uppercase collapse-heading" data-bs-toggle="collapse"
@@ -2171,7 +2171,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3">
+            <div class="col-lg-3 p-4">
                 <div class="container">
                     <div class="row bg-dark">
                         <div class="col-lg-12 px-4 py-3">

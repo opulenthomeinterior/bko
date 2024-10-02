@@ -249,8 +249,8 @@ use App\Models\Style;
             </div>
         </div> --}}
 
-        <nav class="nav container">
-            <div class="nav__data">
+        <nav class="nav container-fluid p-0">
+            <div class="nav__data ps-5">
                 <a href="{{ route('home') }}" class="nav__logo text-start flex-grow-1">
                     <img src="{{ asset('images/BKO_LOGO.png') }}" width="100px" />
                 </a>
@@ -510,7 +510,7 @@ use App\Models\Style;
                     </li>
                 </ul>
             </div>
-            <div class="nav__menu" id="nav-menu">
+            <div class="nav__menu px-5" id="nav-menu" style="background-color: #febd49;">
                 <ul class="nav__list p-2">
                     <li class="d-lg-flex d-none hide-small">
                         <a href="#" class="nav__link" id="searchIcon-desktop"><i class="ri-search-2-line"></i></a>
