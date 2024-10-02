@@ -99,7 +99,7 @@
         </div>
         <div class="row mt-4">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 mb-4">
-                <a href="{{route('orderkitchenbyname', 'j-pull')}}">
+                <a href="{{route('orderkitchenbyname', 'j-pull-22')}}">
                     <div class="card component-card hover-button">
                         <div class="card-body">
                             <h5 class="card-title text-uppercase fw-bold text-center">J-PULL Kitchen</h5>
@@ -119,7 +119,7 @@
                 </a>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 mb-4">
-                <a href="{{route('orderkitchenbyname', 'shaker')}}">
+                <a href="{{route('orderkitchenbyname', 'shaker-22')}}">
                     <div class="card component-card hover-button">
                         <div class="card-body">
                             <h5 class="card-title text-uppercase fw-bold text-center">SHAKER Kitchen</h5>

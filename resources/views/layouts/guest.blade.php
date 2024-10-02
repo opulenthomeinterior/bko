@@ -291,13 +291,13 @@ use App\Models\Style;
                                         <h4 class="text-start bg-dark text-white p-2">Choose Style:</h4>
                                         <ul class="dropdown__list">
                                             <li>
-                                                <input type="radio" value="j-pull" name="style_name" class="style_type"> &nbsp; J-Pull Kitchen
+                                                <input type="radio" value="j-pull-22" name="style_name" class="style_type"> &nbsp; J-Pull Kitchen
                                             </li>
                                             <li>
                                                 <input type="radio" value="true-handleless" name="style_name" class="style_type"> &nbsp; True Handleless Kitchen
                                             </li>
                                             <li>
-                                                <input type="radio" value="shaker" name="style_name" class="style_type"> &nbsp; Shaker Kitchen
+                                                <input type="radio" value="shaker-22" name="style_name" class="style_type"> &nbsp; Shaker Kitchen
                                             </li>
                                             <li>
                                                 <input type="radio" value="slab-kitchens" name="style_name" class="style_type"> &nbsp; Slab Kitchen
