@@ -17,7 +17,7 @@
         }
 
     </style>
-    <section class="container-fluid bg-dark px-lg-5 py-4 px-md-3 px-3 mt-4">
+    <section class="container-fluid bg-dark px-lg-5 py-4 px-md-3 px-3 mt-4" style="border-top: 5px solid #febd49; border-right: 5px solid #febd49">
         <div class="row py-4">
             <div class="col-12 text-center">
                 <h1 class="fs-3 text-white text-uppercase fw-bolder">
@@ -57,7 +57,7 @@
         </div>
     </section> -->
 
-    <section class="container-fluid position-relative" style="height: 70vh; overflow: hidden; border-bottom: 5px solid #febd49; border-left: 5px solid #febd49">
+    <section class="container-fluid position-relative" style="height: 70vh; overflow: hidden; border-top: 5px solid #febd49; border-bottom: 5px solid #febd49; border-left: 5px solid #febd49">
         <img src="{{ asset('images/Slab-Kitchen.jpg') }}"
             alt="Bespoke Kitchen Units in London and Surroundings"
             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: -1;">
@@ -70,7 +70,7 @@
         </div>
     </section>
 
-    <section class="container-fluid px-lg-5 px-md-3 px-3 py-lg-5 py-3" style="background-color: #f0f0f0; border-bottom: 1px solid #febd49">
+    <section class="container-fluid px-lg-5 px-md-3 px-3 py-lg-5 py-3" style="background-color: #f0f0f0; border-bottom: 5px solid #febd49; border-right: 5px solid #febd49">
         <div class="row">
             <div class="col-12">
                 <p>
@@ -93,7 +93,7 @@
         </div>
     </section>
 
-    <section class="container-fluid py-lg-5 py-3" style="border-bottom: 1px solid #febd49">
+    <section class="container-fluid py-lg-5 py-3" style="border-bottom: 5px solid #febd49; border-left: 5px solid #febd49">
         <div class="row">
             <h3 class="text-uppercase fw-bolder text-dark text-center">ORDER KITCHEN</h3>
         </div>
@@ -145,7 +145,7 @@
         </div>
     </section>
 
-    <section class="container-fluid bg-light py-5" style="width: 100%; border-bottom: 1px solid #febd49">
+    <section class="container-fluid bg-light py-5" style="width: 100%; border-bottom: 5px solid #febd49; border-right: 5px solid #febd49">
         <div class="row">
             <h3 class="text-uppercase fw-bolder text-dark text-center">ORDER COMPONENT</h3>
         </div>
@@ -313,7 +313,7 @@
         </div>
     </section>
 
-    <section class="container-fluid py-5 p-0">
+    <section class="container-fluid py-5 p-0" style="border-bottom: 5px solid #febd49; border-left: 5px solid #febd49">
         <div class="row">
             <h3 class="text-dark text-uppercase fw-bolder text-center">General BK Online FAQs</h3>
         </div>
