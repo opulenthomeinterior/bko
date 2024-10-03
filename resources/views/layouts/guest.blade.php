@@ -538,7 +538,7 @@ use App\Models\Style;
         {{ $slot }}
     </div>
 
-    <footer class="text-center border-top mt-4 bg-light">
+    <footer class="text-center mt-4 bg-light border-top border-warning">
         <div class="container py-lg-5 py-4">
             <section class="">
                 <div class="row">

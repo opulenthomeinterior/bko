@@ -70,7 +70,7 @@
         </div>
     </section>
 
-    <section class="container-fluid px-lg-5 px-md-3 px-3 py-lg-5 py-3" style="background-color: #f0f0f0; border-top: 1px solid #febd49">
+    <section class="container-fluid px-lg-5 px-md-3 px-3 py-lg-5 py-3" style="background-color: #f0f0f0; border-bottom: 1px solid #febd49">
         <div class="row">
             <div class="col-12">
                 <p>
@@ -93,7 +93,7 @@
         </div>
     </section>
 
-    <section class="container-fluid py-lg-5 py-3 px-0" style="border-top: 1px solid #febd49">
+    <section class="container-fluid py-lg-5 py-3 px-0" style="border-bottom: 1px solid #febd49">
         <div class="row">
             <h3 class="text-uppercase fw-bolder text-dark text-center">ORDER KITCHEN</h3>
         </div>
@@ -141,7 +141,7 @@
         </div>
     </section>
 
-    <section class="container-fluid bg-light py-5" style="width: 100%; border-top: 1px solid #febd49">
+    <section class="container-fluid bg-light py-5" style="width: 100%; border-bottom: 1px solid #febd49">
         <div class="row">
             <h3 class="text-uppercase fw-bolder text-dark text-center">ORDER COMPONENT</h3>
         </div>
