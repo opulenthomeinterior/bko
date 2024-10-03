@@ -62,10 +62,10 @@
             alt="Bespoke Kitchen Units in London and Surroundings"
             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: -1;">
         <div class="row h-100">
-            <div class="col-12 text-center text-over-image align-self-center py-2">
-                <h2 class="text-white fw-bolder" style="text-shadow: 1px 1px 3px black;">WE CAN'T BE BEATEN ON PRICE!</h2>
-                <a href="{{ route('orderkitchen') }}"
-                    class="btn btn-md fw-bolder btn-warning text-uppercase rounded-0">Shop now</a>
+            <div class="col-12 text-center text-over-image d-flex justify-content-center align-self-center p-0">
+                <h2 class="text-white fw-bolder text-center py-2" style="text-shadow: 5px 5px 5px black; background-color: rgba(0, 0, 0, 0.5); width: 50%; border-radius: 50px">WE CAN'T BE BEATEN ON PRICE!</h2>
+                <!-- <a href="{{ route('orderkitchen') }}"
+                    class="btn btn-md fw-bolder btn-warning text-uppercase rounded-0">Shop now</a> -->
             </div>
         </div>
     </section>
