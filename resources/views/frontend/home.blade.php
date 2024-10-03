@@ -17,7 +17,7 @@
         }
 
     </style>
-    <section class="container-fluid bg-dark px-lg-5 py-4 px-md-3 px-3">
+    <section class="container-fluid bg-dark px-lg-5 py-4 px-md-3 px-3 mt-4">
         <div class="row py-4">
             <div class="col-12 text-center">
                 <h1 class="fs-3 text-white text-uppercase fw-bolder">
@@ -70,7 +70,7 @@
         </div>
     </section>
 
-    <section class="container-fluid px-lg-5 px-md-3 px-3 py-lg-5 py-3" style="background-color: #f0f0f0;">
+    <section class="container-fluid px-lg-5 px-md-3 px-3 py-lg-5 py-3" style="background-color: #f0f0f0; border-top: 1px solid #febd49">
         <div class="row">
             <div class="col-12">
                 <p>
@@ -93,66 +93,62 @@
         </div>
     </section>
 
-    <section class="container-fluid py-lg-5 py-3">
+    <section class="container-fluid py-lg-5 py-3 px-0" style="border-top: 1px solid #febd49">
         <div class="row">
             <h3 class="text-uppercase fw-bolder text-dark text-center">ORDER KITCHEN</h3>
         </div>
-        <div class="row mt-4">
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
-                <a class="btn btn-outline-warning p-1 border-0" href="{{route('orderkitchenbyname', 'j-pull-22')}}">
-                    <div class="card component-card border-0" style="height: 220px">
-                        <div class="card-body p-0 border-warning">
-                            <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">J-PULL Kitchen</h4>
-                            <p class="p-4 bg-light border-warning border">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sequi. Alias autem eum ut voluptatum, error porro officia eaque accusamus architecto, provident numquam incidunt hic eveniet nulla atque! Porro, hic.</p>
+        <div class="row mt-4 px-0">
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12 col-12 mb-4">
+                <a class="btn btn-outline-warning p-1 border-0" style="border-radius: 0;" href="{{ route('orderkitchenbyname', 'j-pull-22') }}">
+                    <div class="card component-card border-0 h-100 d-flex flex-column justify-content-between">
+                        <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">J-PULL Kitchen</h4>
+                        <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end">
+                            <p class="p-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sequi. Alias autem eum ut voluptatum, error porro officia eaque accusamus architecto, provident numquam incidunt hic eveniet nulla atque! Porro, hic.</p>
                         </div>
-        
                     </div>
                 </a>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
-                <a class="btn btn-outline-warning p-1 border-0" href="{{route('orderkitchenbyname', 'true-handleless')}}">
-                    <div class="card component-card border-0" style="height: 220px">
-                        <div class="card-body p-0 border-warning">
-                            <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">TRUE HANDLELESS Kitchen</h4>
-                            <p class="p-4 bg-light border-warning border">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sequi. Alias autem eum ut voluptatum, error porro officia eaque accusamus architecto, provident numquam incidunt hic eveniet nulla atque! Porro, hic.</p>
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12 col-12 mb-4">
+                <a class="btn btn-outline-warning p-1 border-0" style="border-radius: 0;" href="{{ route('orderkitchenbyname', 'true-handleless') }}">
+                    <div class="card component-card border-0 h-100 d-flex flex-column justify-content-between">
+                        <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">TRUE HANDLELESS Kitchen</h4>
+                        <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end">
+                            <p class="p-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sequi. Alias autem eum ut voluptatum, error porro officia eaque accusamus architecto, provident numquam incidunt hic eveniet nulla atque! Porro, hic.</p>
                         </div>
-        
                     </div>
                 </a>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
-                <a class="btn btn-outline-warning p-1 border-0" href="{{route('orderkitchenbyname', 'shaker-22')}}">
-                    <div class="card component-card border-0" style="height: 220px">
-                        <div class="card-body p-0 border-warning">
-                            <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">SHAKER Kitchen</h4>
-                            <p class="p-4 bg-light border-warning border">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sequi. Alias autem eum ut voluptatum, error porro officia eaque accusamus architecto, provident numquam incidunt hic eveniet nulla atque! Porro, hic.</p>
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12 col-12 mb-4">
+                <a class="btn btn-outline-warning p-1 border-0" style="border-radius: 0;" href="{{ route('orderkitchenbyname', 'shaker-22') }}">
+                    <div class="card component-card border-0 h-100 d-flex flex-column justify-content-between">
+                        <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">SHAKER Kitchen</h4>
+                        <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end">
+                            <p class="p-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sequi. Alias autem eum ut voluptatum, error porro officia eaque accusamus architecto, provident numquam incidunt hic eveniet nulla atque! Porro, hic.</p>
                         </div>
-        
                     </div>
                 </a>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
-                <a class="btn btn-outline-warning p-1 border-0" href="{{route('orderkitchenbyname', 'slab-kitchens')}}">
-                    <div class="card component-card border-0" style="height: 220px">
-                        <div class="card-body p-0 border-warning">
-                            <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">SLAB Kitchen</h4>
-                            <p class="p-4 bg-light border-warning border">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sequi. Alias autem eum ut voluptatum, error porro officia eaque accusamus architecto, provident numquam incidunt hic eveniet nulla atque! Porro, hic.</p>
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12 col-12 mb-4">
+                <a class="btn btn-outline-warning p-1 border-0" style="border-radius: 0;" href="{{ route('orderkitchenbyname', 'slab-kitchens') }}">
+                    <div class="card component-card border-0 h-100 d-flex flex-column justify-content-between">
+                        <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">SLAB Kitchen</h4>
+                        <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end">
+                            <p class="p-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sequi. Alias autem eum ut voluptatum, error porro officia eaque accusamus architecto, provident numquam incidunt hic eveniet nulla atque! Porro, hic.</p>
                         </div>
-        
                     </div>
                 </a>
             </div>
         </div>
     </section>
 
-    <section class="container-fluid py-lg-5 py-3" style="background-color: #f0f0f0;">
+    <section class="container-fluid bg-light py-5" style="width: 100%; border-top: 1px solid #febd49">
         <div class="row">
             <h3 class="text-uppercase fw-bolder text-dark text-center">ORDER COMPONENT</h3>
         </div>
         <div class="row mt-4">
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
-                <a href="{{route('ordercomponentbyname', 'doors')}}">
-                    <div class="card component-card hover-button">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
+                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'doors')}}">
+                    <div class="card-old">
                         <div class="card-body">
                             <h5 class="card-title text-uppercase fw-bold text-center">DOORS</h5>
                         </div>
@@ -160,9 +156,9 @@
                     </div>
                 </a>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
-                <a href="{{route('ordercomponentbyname', 'panels-&-appliance-doors')}}">
-                    <div class="card component-card hover-button">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
+                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'panels-&-appliance-doors')}}">
+                    <div class="card-old">
                         <div class="card-body">
                             <h5 class="card-title text-uppercase fw-bold text-center">PANELS & APPLIANCE DOORS</h5>
                         </div>
@@ -170,9 +166,9 @@
                     </div>
                 </a>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
-                <a href="{{route('ordercomponentbyname', 'appliances')}}">
-                    <div class="card component-card hover-button">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
+                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'appliances')}}">
+                    <div class="card-old">
                         <div class="card-body">
                             <h5 class="card-title text-uppercase fw-bold text-center">APPLIANCES</h5>
                         </div>
@@ -180,9 +176,9 @@
                     </div>
                 </a>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
-                <a href="{{route('ordercomponentbyname', 'edging')}}">
-                    <div class="card component-card hover-button">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
+                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'edging')}}">
+                    <div class="card-old">
                         <div class="card-body">
                             <h5 class="card-title text-uppercase fw-bold text-center">EDGING</h5>
                         </div>
@@ -190,9 +186,9 @@
                     </div>
                 </a>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
-                <a href="{{route('ordercomponentbyname', 'base-cabinets')}}">
-                    <div class="card component-card hover-button">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
+                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'base-cabinets')}}">
+                    <div class="card-old">
                         <div class="card-body">
                             <h5 class="card-title text-uppercase fw-bold text-center">BASE CABINETS</h5>
                         </div>
@@ -200,9 +196,9 @@
                     </div>
                 </a>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
-                <a href="{{route('ordercomponentbyname', 'handles')}}">
-                    <div class="card component-card hover-button">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
+                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'handles')}}">
+                    <div class="card-old">
                         <div class="card-body">
                             <h5 class="card-title text-uppercase fw-bold text-center">HANDLES</h5>
                         </div>
@@ -210,9 +206,9 @@
                     </div>
                 </a>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
-                <a href="{{route('ordercomponentbyname', 'worktops')}}">
-                    <div class="card component-card hover-button">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
+                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'worktops')}}">
+                    <div class="card-old">
                         <div class="card-body">
                             <h5 class="card-title text-uppercase fw-bold text-center">WORKTOPS</h5>
                         </div>
@@ -220,9 +216,9 @@
                     </div>
                 </a>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
-                <a href="{{route('ordercomponentbyname', 'taps')}}">
-                    <div class="card component-card hover-button">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
+                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'taps')}}">
+                    <div class="card-old">
                         <div class="card-body">
                             <h5 class="card-title text-uppercase fw-bold text-center">TAPS</h5>
                         </div>
@@ -230,9 +226,9 @@
                     </div>
                 </a>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
-                <a href="{{route('ordercomponentbyname', 'wall-cabinets')}}">
-                    <div class="card component-card hover-button">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
+                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'wall-cabinets')}}">
+                    <div class="card-old">
                         <div class="card-body">
                             <h5 class="card-title text-uppercase fw-bold text-center">WALL CABINETS</h5>
                         </div>
@@ -240,9 +236,9 @@
                     </div>
                 </a>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
-                <a href="{{route('ordercomponentbyname', 'gola-handleless-rails')}}">
-                    <div class="card component-card hover-button">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
+                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'gola-handleless-rails')}}">
+                    <div class="card-old">
                         <div class="card-body">
                             <h5 class="card-title text-uppercase fw-bold text-center">GOLA HANDLELESS RAILS</h5>
                         </div>
@@ -250,9 +246,9 @@
                     </div>
                 </a>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
-                <a href="{{route('ordercomponentbyname', 'worktops-and-upstands')}}">
-                    <div class="card component-card hover-button">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
+                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'worktops-and-upstands')}}">
+                    <div class="card-old">
                         <div class="card-body">
                             <h5 class="card-title text-uppercase fw-bold text-center">WORKTOPS AND UPSTANDS</h5>
                         </div>
@@ -260,9 +256,9 @@
                     </div>
                 </a>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
-                <a href="{{route('ordercomponentbyname', 'sinks')}}">
-                    <div class="card component-card hover-button">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
+                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'sinks')}}">
+                    <div class="card-old">
                         <div class="card-body">
                             <h5 class="card-title text-uppercase fw-bold text-center">SINKS</h5>
                         </div>
@@ -270,9 +266,9 @@
                     </div>
                 </a>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
-                <a href="{{route('ordercomponentbyname', 'tall-cabinets')}}">
-                    <div class="card component-card hover-button">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
+                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'tall-cabinets')}}">
+                    <div class="card-old">
                         <div class="card-body">
                             <h5 class="card-title text-uppercase fw-bold text-center">TALL CABINETS</h5>
                         </div>
@@ -280,9 +276,9 @@
                     </div>
                 </a>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
-                <a href="{{route('ordercomponentbyname', 'accessories')}}">
-                    <div class="card component-card hover-button">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
+                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'accessories')}}">
+                    <div class="card-old">
                         <div class="card-body">
                             <h5 class="card-title text-uppercase fw-bold text-center">ACCESSORIES</h5>
                         </div>
@@ -290,9 +286,9 @@
                     </div>
                 </a>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
-                <a href="{{route('ordercomponentbyname', 'breakfast-bars')}}">
-                    <div class="card component-card hover-button">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
+                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'breakfast-bars')}}">
+                    <div class="card-old">
                         <div class="card-body">
                             <h5 class="card-title text-uppercase fw-bold text-center">BREAKFAST BARDS</h5>
                         </div>
@@ -300,9 +296,9 @@
                     </div>
                 </a>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 mb-4">
-                <a href="{{route('ordercomponentbyname', 'swatches-and-samples')}}">
-                    <div class="card component-card hover-button">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
+                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'swatches-and-samples')}}">
+                    <div class="card-old">
                         <div class="card-body">
                             <h5 class="card-title text-uppercase fw-bold text-center">SWATCHES AND SAMPLES</h5>
                         </div>

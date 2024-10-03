@@ -249,7 +249,7 @@ use App\Models\Style;
             </div>
         </div> --}}
 
-        <nav class="nav container-fluid p-0">
+        <nav class="nav container-fluid p-0" style="border-bottom: 1px solid #febd49;">
             <div class="nav__data ps-5">
                 <a href="{{ route('home') }}" class="nav__logo text-start flex-grow-1">
                     <img src="{{ asset('images/BKO_LOGO.png') }}" width="100px" />
@@ -510,7 +510,7 @@ use App\Models\Style;
                     </li>
                 </ul>
             </div>
-            <div class="nav__menu px-5" id="nav-menu" style="background-color: #febd49;">
+            <div class="nav__menu px-5" id="nav-menu" style="background-color: #febd49; clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);">
                 <ul class="nav__list p-2">
                     <li class="d-lg-flex d-none hide-small">
                         <a href="#" class="nav__link" id="searchIcon-desktop"><i class="ri-search-2-line"></i></a>
@@ -538,7 +538,7 @@ use App\Models\Style;
         {{ $slot }}
     </div>
 
-    <footer class="text-center border-top mt-4">
+    <footer class="text-center border-top mt-4 bg-light">
         <div class="container py-lg-5 py-4">
             <section class="">
                 <div class="row">
@@ -547,15 +547,15 @@ use App\Models\Style;
                         <h6 class="my-3">Customer Service Hours</h6>
 
                         <ul class="footer-ul list-unstyled mb-0">
-                            <li>
+                            <li class="list-unstyled">
                                 <i class="ri-arrow-right-s-fill"></i>
                                 Mon-Thu: 8am to 5pm
                             </li>
-                            <li>
+                            <li class="list-unstyled">
                                 <i class="ri-arrow-right-s-fill"></i>
                                 Fri: 8am to 2:30pm
                             </li>
-                            <li class="mt-2">
+                            <li class="mt-2 list-unstyled">
                                 <a data-mdb-ripple-init class="btn btn-outline btn-floating" href="#!"
                                     role="button"><i class="ri-facebook-fill pl-0"></i></a>
                                 <a data-mdb-ripple-init class="btn btn-outline btn-floating" href="#!"
@@ -566,8 +566,8 @@ use App\Models\Style;
                                     role="button"><i class="ri-linkedin-fill"></i></a>
                             </li>
 
-                            <li><i class="ri-mail-line mt-1"></i>customerservices@bkonline.co.uk</li>
-                            <li><i class="ri-phone-line"></i>0800 043 0804</li>
+                            <li class="mt-2 list-unstyled"><i class="ri-mail-line mt-1"></i>customerservices@bkonline.co.uk</li>
+                            <li class="mt-2 list-unstyled"><i class="ri-phone-line"></i>0800 043 0804</li>
                         </ul>
                     </div>
 
