@@ -104,6 +104,7 @@
                         <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">J-PULL Kitchen</h4>
                         <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end">
                             <p class="p-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sequi. Alias autem eum ut voluptatum, error porro officia eaque accusamus architecto, provident numquam incidunt hic eveniet nulla atque! Porro, hic.</p>
+                            <p style="text-decoration: underline;">Order now</p>
                         </div>
                     </div>
                 </a>
@@ -114,6 +115,7 @@
                         <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">TRUE HANDLELESS Kitchen</h4>
                         <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end">
                             <p class="p-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sequi. Alias autem eum ut voluptatum, error porro officia eaque accusamus architecto, provident numquam incidunt hic eveniet nulla atque! Porro, hic.</p>
+                            <p style="text-decoration: underline;">Order now</p>
                         </div>
                     </div>
                 </a>
@@ -124,6 +126,7 @@
                         <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">SHAKER Kitchen</h4>
                         <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end">
                             <p class="p-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sequi. Alias autem eum ut voluptatum, error porro officia eaque accusamus architecto, provident numquam incidunt hic eveniet nulla atque! Porro, hic.</p>
+                            <p style="text-decoration: underline;">Order now</p>
                         </div>
                     </div>
                 </a>
@@ -134,6 +137,7 @@
                         <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">SLAB Kitchen</h4>
                         <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end">
                             <p class="p-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sequi. Alias autem eum ut voluptatum, error porro officia eaque accusamus architecto, provident numquam incidunt hic eveniet nulla atque! Porro, hic.</p>
+                            <p style="text-decoration: underline;">Order now</p>
                         </div>
                     </div>
                 </a>
