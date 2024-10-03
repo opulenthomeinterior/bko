@@ -93,7 +93,7 @@
         </div>
     </section>
 
-    <section class="container-fluid py-lg-5 py-3 px-0" style="border-bottom: 1px solid #febd49">
+    <section class="container-fluid py-lg-5 py-3" style="border-bottom: 1px solid #febd49">
         <div class="row">
             <h3 class="text-uppercase fw-bolder text-dark text-center">ORDER KITCHEN</h3>
         </div>
