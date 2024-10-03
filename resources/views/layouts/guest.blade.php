@@ -556,13 +556,13 @@ use App\Models\Style;
                                 Fri: 8am to 2:30pm
                             </li>
                             <li class="mt-2 list-unstyled">
-                                <a data-mdb-ripple-init class="btn btn-outline btn-floating" href="#!"
+                                <a data-mdb-ripple-init class="text-dark btn btn-outline-warning btn-floating rounded-circle" href="#!"
                                     role="button"><i class="ri-facebook-fill pl-0"></i></a>
-                                <a data-mdb-ripple-init class="btn btn-outline btn-floating" href="#!"
+                                <a data-mdb-ripple-init class="text-dark btn btn-outline-warning btn-floating rounded-circle" href="#!"
                                     role="button"><i class="ri-twitter-fill"></i></a>
-                                <a data-mdb-ripple-init class="btn btn-outline btn-floating" href="#!"
+                                <a data-mdb-ripple-init class="text-dark btn btn-outline-warning btn-floating rounded-circle" href="#!"
                                     role="button"><i class="ri-youtube-fill"></i></a>
-                                <a data-mdb-ripple-init class="btn btn-outline btn-floating" href="#!"
+                                <a data-mdb-ripple-init class="text-dark btn btn-outline-warning btn-floating rounded-circle" href="#!"
                                     role="button"><i class="ri-linkedin-fill"></i></a>
                             </li>
 
