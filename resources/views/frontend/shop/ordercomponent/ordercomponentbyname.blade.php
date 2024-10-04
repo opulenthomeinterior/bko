@@ -247,7 +247,7 @@
                                                     <div class="row">
                                                         <div class="col-lg-9 col-md-9 col-9">
                                                             <img src="{{ $product->image_path ? $product->image_path : asset('images/no-image-available.jpg') }}"
-                                                                class="img-fluid product-image" />
+                                                                class="img-fluid product-image" style="height: 400px;" />
                                                         </div>
                                                         <div class="col-lg-3 col-md-3 col-3 text-start text-dark">
                                                             <h6 class="fs-6 fw-bolder text-dark">Styling</h6>
