@@ -376,7 +376,8 @@
                                                             onclick="increaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}')" />
                                                     </div>
                                                     <div class="col-6">
-                                                        <p class="fs-5 fw-bold mt-lg-2 text-dark">£{{ $product->price }}
+                                                        <p class="fs-5 fw-bold mt-lg-2 text-dark">
+                                                            £{{ $product->price == 0 ? 'Out of Stock' : '£' . $product->price }}
                                                         </p>
                                                     </div>
                                                 </div>
