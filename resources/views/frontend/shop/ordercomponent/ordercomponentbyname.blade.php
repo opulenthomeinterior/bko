@@ -32,8 +32,8 @@
         }
 
         .product-image:hover {
-            transform: scale(1.2);
-            transition: 0.5s ease;
+            /* transform: scale(1.2);
+            transition: 0.5s ease; */
         }
     </style>
     <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
@@ -214,7 +214,8 @@
                     @if ($products->count() > 0)
                     @foreach ($products as $index => $product)
                     <div class="col-lg-4 col-6 mb-3">
-                        <div class="card btn btn-outline-warning border-1 bg-light p-0" style="border-radius: 0;">
+                        <div class="card btn btn-outline-warning border-1 bg-light p-0" style="border-radius: 0;" data-bs-toggle="modal"
+                        data-bs-target="#productModal{{ $index }}">
                             <div class="card-header px-0 py-0">
                                 <div class="p-0 product-short-title-container w-100">
                                     <a href="{{ route('orderbyproduct', $product->slug) }}" class="product-short-title fw-bold text-decoration-underline fs-4">
@@ -224,10 +225,10 @@
                             </div>
                             <div class="card-body text-center">
                                 <!-- Button trigger modal -->
-                                <a class="modal-icon z-3" href="#" data-bs-toggle="modal"
+                                <!-- <a class="modal-icon z-3" href="#" data-bs-toggle="modal"
                                     data-bs-target="#productModal{{ $index }}">
                                     <i class="ri-add-circle-line text-black fs-4"></i>
-                                </a>
+                                </a> -->
                                 <!-- Modal -->
                                 <div class="modal fade" id="productModal{{ $index }}" tabindex="-1"
                                     aria-labelledby="productModalLabel{{ $index }}"
