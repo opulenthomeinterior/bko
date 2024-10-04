@@ -61,79 +61,11 @@
                     <h4 class="text-dark text-decoration-underline" style="font-weight: 600; font-size: 1.3rem">Filters</h4>
                     <!-- <h3 style="font-weight: 600; font-size: 1.3rem" class="text-dark">CURRENT ITEMS:<span id="number-of-products">{{ $count }}</span></h3> -->
                 </div>
-                <div class="bg-light border border-dark border-1 px-2 py-2 mt-2">
-                    <!-- <h4 class="text-dark text-decoration-underline" style="font-weight: 600; font-size: 1.3rem">Filters</h4> -->
+                <!-- <div class="bg-light border border-dark border-1 px-2 py-2 mt-2">
                     <h3 style="font-weight: 600; font-size: 1.3rem" class="text-dark">CURRENT ITEMS:<span id="number-of-products">{{ $count }}</span></h3>
-                </div>
+                </div> -->
                 <form action="" class="mt-2">
                     <input type="hidden" name="slug" id="slug" value="{{ $category->slug }}">
-                    @if ($types->count() > 0)
-                    <div class="accordion accordion-flush" id="accordionFlushExample1">
-                        <div class="accordion-item bg-transparent border border-dark border-1 rounded-0 px-2">
-                            <h2 class="accordion-header" id="flush-headingOne">
-                                <button class="accordion-button legend collapsed text-uppercase" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
-                                    aria-expanded="true" aria-controls="flush-collapseOne">
-                                    TYPE
-                                </button>
-                            </h2>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse"
-                                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample1">
-                                <div class="accordion-body px-0 py-0 pb-1">
-                                    <div class="ps-2">
-                                        <div class="row g-1">
-                                            @foreach ($types as $index => $type)
-                                            <div class="col-12">
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox"
-                                                        name="types[]" id="type{{ $index }}"
-                                                        value="{{ $type->id }}">
-                                                    <label class="form-check-label"
-                                                        for="type{{ $index }}">{{ $type->name }}
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            @endforeach
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endif
-
-                    @if ($assemblies->count() > 0)
-                    <div class="accordion accordion-flush mt-3" id="accordionFlushExample2">
-                        <div class="accordion-item bg-transparent border border-dark border-1 rounded-0 px-2">
-                            <h2 class="accordion-header" id="flush-headingTwo">
-                                <button class="accordion-button legend collapsed text-uppercase" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
-                                    aria-expanded="true" aria-controls="flush-collapseTwo">
-                                    ASSEMBLY
-                                </button>
-                            </h2>
-                            <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                                aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample2">
-                                <div class="accordion-body px-0 py-0 pb-1">
-                                    <div class="row g-1">
-                                        @foreach ($assemblies as $index => $assembly)
-                                        <div class="col-lg-12 col-md-12 col-6">
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox"
-                                                    name="assemblies[]" id="assembly{{ $index }}"
-                                                    value="{{ $assembly->id }}">
-                                                <label class="form-check-label"
-                                                    for="assembly{{ $index }}">{{ $assembly->name }}
-                                                </label>
-                                            </div>
-                                        </div>
-                                        @endforeach
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endif
 
                     @if ($styles->count() > 0)
                     <div class="accordion accordion-flush mt-3" id="accordionFlushExample3">
@@ -200,6 +132,76 @@
                                             </div>
                                         </div>
                                         @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+
+                    @if ($assemblies->count() > 0)
+                    @if ($category->name != 'DOORS')
+                    <div class="accordion accordion-flush mt-3" id="accordionFlushExample2">
+                        <div class="accordion-item bg-transparent border border-dark border-1 rounded-0 px-2">
+                            <h2 class="accordion-header" id="flush-headingTwo">
+                                <button class="accordion-button legend collapsed text-uppercase" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+                                    aria-expanded="true" aria-controls="flush-collapseTwo">
+                                    ASSEMBLY
+                                </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample2">
+                                <div class="accordion-body px-0 py-0 pb-1">
+                                    <div class="row g-1">
+                                        @foreach ($assemblies as $index => $assembly)
+                                        <div class="col-lg-12 col-md-12 col-6">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox"
+                                                    name="assemblies[]" id="assembly{{ $index }}"
+                                                    value="{{ $assembly->id }}">
+                                                <label class="form-check-label"
+                                                    for="assembly{{ $index }}">{{ $assembly->name }}
+                                                </label>
+                                            </div>
+                                        </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+                    @endif
+
+                    @if ($types->count() > 0)
+                    <div class="accordion accordion-flush mt-3" id="accordionFlushExample1">
+                        <div class="accordion-item bg-transparent border border-dark border-1 rounded-0 px-2">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button legend collapsed text-uppercase" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                    aria-expanded="true" aria-controls="flush-collapseOne">
+                                    SIZES
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample1">
+                                <div class="accordion-body px-0 py-0 pb-1">
+                                    <div class="ps-2">
+                                        <div class="row g-1">
+                                            @foreach ($types as $index => $type)
+                                            <div class="col-12">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        name="types[]" id="type{{ $index }}"
+                                                        value="{{ $type->id }}">
+                                                    <label class="form-check-label"
+                                                        for="type{{ $index }}">{{ $type->name }}
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            @endforeach
+                                        </div>
                                     </div>
                                 </div>
                             </div>

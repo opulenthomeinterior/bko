@@ -231,9 +231,9 @@ class HomeController extends Controller
         $category = Category::where('slug', $slug)->firstOrFail();
         $children = Category::where('parent_category_id', $category->id)->pluck('id')->toArray();
 
-        $types = Category::whereIn('id', $children)->get();
+        $types = Category::whereIn('id', $children)->orderBy('name', 'ASC')->get();
         $assemblies = Assembly::all();
-        $styles = Style::all();
+        $styles = Style::where('slug', '!=', 'j-pull')->get();
 
         $colours = Colour::whereIn('id', Product::whereIn('category_id', $children)->pluck('colour_id')->unique())->whereNotNull('finishing')->get();
 
