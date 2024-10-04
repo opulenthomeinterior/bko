@@ -412,6 +412,7 @@
                                                     </div>
                                                 </div>
                                                 @endif
+                                                @if ($category->name != 'DOORS')
                                                 @if ($product->assembly)
                                                 <div class="row">
                                                     <div class="col-4 p-0 d-md-flex d-none">
@@ -426,6 +427,7 @@
                                                         </p>
                                                     </div>
                                                 </div>
+                                                @endif
                                                 @endif
                                             </div>
                                         </div>
