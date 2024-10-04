@@ -22,7 +22,7 @@ use App\Models\Style;
     <title>Affordable Kitchen & Custom Kitchen Units in London | BK Online</title>
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('images/BKO_LOGO.png') }}">
+    <link rel="shortcut icon" href="{{ asset('images/logoBko.png') }}">
 
     <!-- Layout config Js -->
     <script src="{{ asset('js/layout.js') }}"></script>
@@ -252,7 +252,7 @@ use App\Models\Style;
         <nav class="nav container-fluid p-0" style="border-bottom: 1px solid #febd49;">
             <div class="nav__data ps-5">
                 <a href="{{ route('home') }}" class="nav__logo text-start flex-grow-1">
-                    <img src="{{ asset('images/BKO_LOGO.png') }}" width="100px" />
+                    <img src="{{ asset('images/logoBko.png') }}" width="100px" />
                 </a>
 
                 <a href="#" class="d-lg-none show-small d-flex" id="searchIcon"><i
@@ -543,7 +543,7 @@ use App\Models\Style;
             <section class="">
                 <div class="row">
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-start">
-                        <img src="{{ asset('images/BKO_LOGO.png') }}" width="100px" />
+                        <img src="{{ asset('images/logoBko.png') }}" width="100px" />
                         <h6 class="my-3">Customer Service Hours</h6>
 
                         <ul class="footer-ul list-unstyled mb-0">

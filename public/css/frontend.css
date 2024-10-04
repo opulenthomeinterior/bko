@@ -1094,13 +1094,13 @@ footer {
 }
 
 .plus:hover {
-    background-color: rgb(63, 224, 104) !important;
+    background-color: #febd49 !important;
     color: #000 !important;
 }
 
 .minus:hover {
-    background-color: rgb(255, 52, 52) !important;
-    color: #fff !important;
+    background-color: #febd49 !important;
+    color: #000 !important;
 }
 
 .component-card {
