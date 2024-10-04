@@ -233,7 +233,7 @@
                                 <div class="modal fade" id="productModal{{ $index }}" tabindex="-1"
                                     aria-labelledby="productModalLabel{{ $index }}"
                                     aria-hidden="true">
-                                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered">
                                         <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
                                             <div class="modal-header border-bottom border-light">
                                                 <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
@@ -245,78 +245,84 @@
                                             <div class="modal-body">
                                                 <div class="container-fluid">
                                                     <div class="row">
-                                                        <div class="col-lg-9 col-md-9 col-9">
+                                                        <div class="col-lg-8 col-md-8 col-8 border-bottom border-warning bg-light">
                                                             <img src="{{ $product->image_path ? $product->image_path : asset('images/no-image-available.jpg') }}"
-                                                                class="img-fluid product-image" style="height: 400px;" />
+                                                                class="img-fluid product-image" style="height: 300px;" />
                                                         </div>
-                                                        <div class="col-lg-3 col-md-3 col-3 text-start text-dark">
-                                                            <h6 class="fs-6 fw-bolder text-dark">Styling</h6>
-                                                            <ul>
-                                                                @if ($product->style)
-                                                                <li>
-                                                                    <p class="mb-0">
-                                                                        <small
-                                                                            class="fw-bold text-uppercase text-dark">Style:</small>
-                                                                        {{ $product->style->name }}
-                                                                    </p>
-                                                                </li>
-                                                                @endif
-                                                                @if ($product->assembly)
-                                                                <li>
-                                                                    <p class="mb-0">
-                                                                        <small
-                                                                            class="fw-bold text-uppercase text-dark">Assembly:</small>
-                                                                        {{ $product->assembly->name }}
-                                                                    </p>
-                                                                </li>
-                                                                @endif
-                                                                @if ($product->colour)
-                                                                <li>
-                                                                    <p class="mb-0">
-                                                                        <small
-                                                                            class="fw-bold text-uppercase text-dark">Colour:</small>
-                                                                        {{ $product->colour->trade_colour ? $product->colour->trade_colour : $product->colour->name }}
-                                                                    </p>
-                                                                </li>
-                                                                @endif
-                                                            </ul>
-                                                            <h6 class="fs-6 fw-bolder text-dark">Dimensions
-                                                            </h6>
-                                                            <ul>
-                                                                <li>
-                                                                    <p class="mb-0">
-                                                                        <small
-                                                                            class="fw-bold text-uppercase text-dark">HEIGHT:</small>
-                                                                        {{ intval($product->height) }}mm
-                                                                    </p>
-                                                                </li>
-                                                                <li>
-                                                                    <p class="mb-0">
-                                                                        <small
-                                                                            class="fw-bold text-uppercase text-dark">WIDTH:</small>
-                                                                        {{ intval($product->width) }}mm
-                                                                    </p>
-                                                                </li>
-                                                                <li>
-                                                                    <p class="mb-0">
-                                                                        <small
-                                                                            class="fw-bold text-uppercase text-dark">DEPTH:</small>
-                                                                        {{ intval($product->depth) }}mm
-                                                                    </p>
-                                                                </li>
-                                                            </ul>
-                                                            <h6 class="fs-6 fw-bolder text-dark">
-                                                                Range Specification
-                                                            </h6>
-                                                            <p class="mb-0">
-                                                                <small>
-                                                                    @if ($product->category?->description)
-                                                                    {!! $product->category->description !!}
-                                                                    @elseif ($product->category?->parentCategory?->description)
-                                                                    {!! $product->category->parentCategory->description !!}
+                                                        <div class="col-lg-4 col-md-4 col-4 text-start text-dark">
+                                                            <div>
+                                                                <h6 class="fs-6 fw-bolder text-dark">Styling</h6>
+                                                                <ul style="list-style: none; padding: 0">
+                                                                    @if ($product->style)
+                                                                    <li>
+                                                                        <p class="mb-0">
+                                                                            <small
+                                                                                class="fw-bold text-uppercase text-dark">Style:</small>
+                                                                            {{ $product->style->name }}
+                                                                        </p>
+                                                                    </li>
                                                                     @endif
-                                                                </small>
-                                                            </p>
+                                                                    @if ($product->assembly)
+                                                                    <li>
+                                                                        <p class="mb-0">
+                                                                            <small
+                                                                                class="fw-bold text-uppercase text-dark">Assembly:</small>
+                                                                            {{ $product->assembly->name }}
+                                                                        </p>
+                                                                    </li>
+                                                                    @endif
+                                                                    @if ($product->colour)
+                                                                    <li>
+                                                                        <p class="mb-0">
+                                                                            <small
+                                                                                class="fw-bold text-uppercase text-dark">Colour:</small>
+                                                                            {{ $product->colour->trade_colour ? $product->colour->trade_colour : $product->colour->name }}
+                                                                        </p>
+                                                                    </li>
+                                                                    @endif
+                                                                </ul>
+                                                            </div>
+                                                            <div>
+                                                                <h6 class="fs-6 fw-bolder text-dark">Dimensions
+                                                                </h6>
+                                                                <ul style="list-style: none; padding: 0">
+                                                                    <li>
+                                                                        <p class="mb-0">
+                                                                            <small
+                                                                                class="fw-bold text-uppercase text-dark">HEIGHT:</small>
+                                                                            {{ intval($product->height) }}mm
+                                                                        </p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <p class="mb-0">
+                                                                            <small
+                                                                                class="fw-bold text-uppercase text-dark">WIDTH:</small>
+                                                                            {{ intval($product->width) }}mm
+                                                                        </p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <p class="mb-0">
+                                                                            <small
+                                                                                class="fw-bold text-uppercase text-dark">DEPTH:</small>
+                                                                            {{ intval($product->depth) }}mm
+                                                                        </p>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div>
+                                                                <h6 class="fs-6 fw-bolder text-dark">
+                                                                    Range Specification
+                                                                </h6>
+                                                                <p class="mb-0">
+                                                                    <small>
+                                                                        @if ($product->category?->description)
+                                                                        {!! $product->category->description !!}
+                                                                        @elseif ($product->category?->parentCategory?->description)
+                                                                        {!! $product->category->parentCategory->description !!}
+                                                                        @endif
+                                                                    </small>
+                                                                </p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
