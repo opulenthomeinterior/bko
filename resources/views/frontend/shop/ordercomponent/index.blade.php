@@ -26,7 +26,7 @@
             @if ($components->count() > 0)
                 @foreach ($components as $index => $component)
                     <div class="col-lg-4 col-md-6 col-12 mb-4">
-                        <div class="card component-card card-hover position-relative">
+                        <div class="card component-card btn btn-outline-warning">
                             <a href="{{ route('ordercomponentbyname', $component->slug) }}"
                                 class="position-absolute top-0 bottom-0 start-0 end-0"></a>
                             <div class="card-header p-0"
