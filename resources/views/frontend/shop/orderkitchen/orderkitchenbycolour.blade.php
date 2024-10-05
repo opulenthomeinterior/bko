@@ -99,7 +99,7 @@
                                                         <div class="">
                                                             <figure>
                                                                 <img class="product-image px-0"
-                                                                    src="{{ !empty($baseCabinet->image_path) ? asset('uploads/products'.$baseCabinet->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                    src="{{ !empty($baseCabinet->image_path) ? asset('uploads/products/'.$baseCabinet->image_path) : asset('images/no-image-available.jpg') }}"
                                                                     alt="Card image cap">
                                                             </figure>
                                                             <div class="">
@@ -758,7 +758,7 @@
                                                 <div class="">
                                                     <figure>
                                                         <img class="product-image px-0"
-                                                            src="{{ !empty($accessory->image_path) ? asset('uploads/products'.$accessory->image_path) : asset('images/no-image-available.jpg') }}"
+                                                            src="{{ !empty($accessory->image_path) ? asset('uploads/products/'.$accessory->image_path) : asset('images/no-image-available.jpg') }}"
                                                             alt="Card image cap">
                                                     </figure>
                                                     <div class="">
