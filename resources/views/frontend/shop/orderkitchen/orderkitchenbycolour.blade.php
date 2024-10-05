@@ -758,7 +758,7 @@
                                                 <div class="">
                                                     <figure>
                                                         <img class="product-image px-0"
-                                                            src="{{ $accessory->image_path ? $accessory->image_path : asset('images/no-image-available.jpg') }}"
+                                                            src="{{ $accessory->image_path ? asset('uploads/products'.$accessory->image_path) : asset('images/no-image-available.jpg') }}"
                                                             alt="Card image cap">
                                                     </figure>
                                                     <div class="">
