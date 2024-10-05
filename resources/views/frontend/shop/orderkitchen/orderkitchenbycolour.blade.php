@@ -109,6 +109,10 @@
                                                                 </a>
                                                                 <p class="py-lg-3 py-2">
                                                                     <small
+                                                                        class="fw-bold text-center">{{ $baseCabinet->product_code }}</small>
+                                                                </p>
+                                                                <p class="py-lg-3 py-2">
+                                                                    <small
                                                                         class="fw-bold text-center">{{ $baseCabinet->dimensions }}</small>
                                                                 </p>
                                                                 <div class="container-fluid">
@@ -266,6 +270,10 @@
                                                                     class="text-center text-decoration-underline fs-5 fw-bold">
                                                                     {{ $wallCabinet->short_title }}
                                                                 </a>
+                                                                <p class="py-lg-3 py-2">
+                                                                    <small
+                                                                        class="fw-bold text-center">{{ $wallCabinet->product_code }}</small>
+                                                                </p>
                                                                 <p class="py-lg-3 py-2">
                                                                     <small
                                                                         class="fw-bold text-center">{{ $wallCabinet->dimensions }}</small>
@@ -427,6 +435,10 @@
                                                                 </a>
                                                                 <p class="py-lg-3 py-2">
                                                                     <small
+                                                                        class="fw-bold text-center">{{ $tallCabinet->product_code }}</small>
+                                                                </p>
+                                                                <p class="py-lg-3 py-2">
+                                                                    <small
                                                                         class="fw-bold text-center">{{ $tallCabinet->dimensions }}</small>
                                                                 </p>
                                                                 <div class="container-fluid">
@@ -584,6 +596,10 @@
                                                                     class="text-center text-decoration-underline fs-5 fw-bold">
                                                                     {{ $panel->short_title }}
                                                                 </a>
+                                                                <p class="py-lg-3 py-2">
+                                                                    <small
+                                                                        class="fw-bold text-center">{{ $panel->product_code }}</small>
+                                                                </p>
                                                                 <p class="py-lg-3 py-2">
                                                                     <small
                                                                         class="fw-bold text-center">{{ $panel->dimensions }}</small>
@@ -752,6 +768,10 @@
                                                         </a>
                                                         <p class="py-lg-3 py-2">
                                                             <small
+                                                                class="fw-bold text-center">{{ $accessory->product_code }}</small>
+                                                        </p>
+                                                        <p class="py-lg-3 py-2">
+                                                            <small
                                                                 class="fw-bold text-center">{{ $accessory->dimensions }}</small>
                                                         </p>
                                                         <div class="container-fluid">
@@ -909,6 +929,10 @@
                                                             class="text-center text-decoration-underline fs-5 fw-bold">
                                                             {{ $handle->short_title }}
                                                         </a>
+                                                        <p class="py-lg-3 py-2">
+                                                            <small
+                                                                class="fw-bold text-center">{{ $handle->product_code }}</small>
+                                                        </p>
                                                         <p class="py-lg-3 py-2">
                                                             <small
                                                                 class="fw-bold text-center">{{ $handle->dimensions }}</small>
@@ -1094,6 +1118,11 @@
                                                                     class="text-center text-decoration-underline fs-5 fw-bold">
                                                                     {{ $worktop->short_title }}
                                                                 </a>
+                                                                
+                                                                <p class="py-lg-3 py-2">
+                                                                    <small
+                                                                        class="fw-bold text-center">{{ $worktop->product_code }}</small>
+                                                                </p>
                                                                 <p class="py-lg-3 py-2">
                                                                     <small
                                                                         class="fw-bold text-center">{{ $worktop->dimensions }}</small>
@@ -1254,6 +1283,10 @@
                                                                     class="text-center text-decoration-underline fs-5 fw-bold">
                                                                     {{ $worktopsAndUpStand->short_title }}
                                                                 </a>
+                                                                <p class="py-lg-3 py-2">
+                                                                    <small
+                                                                        class="fw-bold text-center">{{ $worktopsAndUpStand->product_code }}</small>
+                                                                </p>
                                                                 <p class="py-lg-3 py-2">
                                                                     <small
                                                                         class="fw-bold text-center">{{ $worktopsAndUpStand->dimensions }}</small>
@@ -1417,6 +1450,10 @@
                                                                 </a>
                                                                 <p class="py-lg-3 py-2">
                                                                     <small
+                                                                        class="fw-bold text-center">{{ $breakfastBar->product_code }}</small>
+                                                                </p>
+                                                                <p class="py-lg-3 py-2">
+                                                                    <small
                                                                         class="fw-bold text-center">{{ $breakfastBar->dimensions }}</small>
                                                                 </p>
                                                                 <div class="container-fluid">
@@ -1574,6 +1611,10 @@
                                                                     class="text-center text-decoration-underline fs-5 fw-bold">
                                                                     {{ $edging->short_title }}
                                                                 </a>
+                                                                <p class="py-lg-3 py-2">
+                                                                    <small
+                                                                        class="fw-bold text-center">{{ $edging->product_code }}</small>
+                                                                </p>
                                                                 <p class="py-lg-3 py-2">
                                                                     <small
                                                                         class="fw-bold text-center">{{ $edging->dimensions }}</small>
@@ -1759,6 +1800,10 @@
                                                                 </a>
                                                                 <p class="py-lg-3 py-2">
                                                                     <small
+                                                                        class="fw-bold text-center">{{ $sink->product_code }}</small>
+                                                                </p>
+                                                                <p class="py-lg-3 py-2">
+                                                                    <small
                                                                         class="fw-bold text-center">{{ $sink->dimensions }}</small>
                                                                 </p>
                                                                 <div class="container-fluid">
@@ -1916,6 +1961,10 @@
                                                                     class="text-center text-decoration-underline fs-5 fw-bold">
                                                                     {{ $tap->short_title }}
                                                                 </a>
+                                                                <p class="py-lg-3 py-2">
+                                                                    <small
+                                                                        class="fw-bold text-center">{{ $tap->product_code }}</small>
+                                                                </p>
                                                                 <p class="py-lg-3 py-2">
                                                                     <small
                                                                         class="fw-bold text-center">{{ $tap->dimensions }}</small>
@@ -2082,6 +2131,10 @@
                                                             class="text-center text-decoration-underline fs-5 fw-bold">
                                                             {{ $appliance->short_title }}
                                                         </a>
+                                                                <p class="py-lg-3 py-2">
+                                                                    <small
+                                                                        class="fw-bold text-center">{{ $appliance->product_code }}</small>
+                                                                </p>
                                                         <p class="py-lg-3 py-2">
                                                             <small
                                                                 class="fw-bold text-center">{{ $appliance->dimensions }}</small>

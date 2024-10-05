@@ -351,6 +351,7 @@
                                                     src="{{ $product->image_path ? $product->image_path : asset('images/no-image-available.jpg') }}"
                                                     alt="Card image cap">
                                             </figure>
+                                            <p class="mt-2"><small class="fw-bold text-start text-dark">{{ $product->product_code }}</small></p>
                                             <p class="">
                                                 <small
                                                     class="fw-bold text-start text-dark">{{ $product->dimensions }}</small>
