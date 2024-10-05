@@ -262,7 +262,7 @@
                                                         <div class="">
                                                             <figure>
                                                                 <img class="product-image px-0"
-                                                                    src="{{ !empty($wallCabinet->image_path) ? $wallCabinet->image_path : asset('images/no-image-available.jpg') }}"
+                                                                    src="{{ !empty($wallCabinet->image_path) ? asset('uploads/products/'.$wallCabinet->image_path) : asset('images/no-image-available.jpg') }}"
                                                                     alt="Card image cap">
                                                             </figure>
                                                             <div class="">
@@ -425,7 +425,7 @@
                                                         <div class="">
                                                             <figure>
                                                                 <img class="product-image px-0"
-                                                                    src="{{ !empty($tallCabinet->image_path) ? $tallCabinet->image_path : asset('images/no-image-available.jpg') }}"
+                                                                    src="{{ !empty($tallCabinet->image_path) ? asset('uploads/products/'.$tallCabinet->image_path) : asset('images/no-image-available.jpg') }}"
                                                                     alt="Card image cap">
                                                             </figure>
                                                             <div class="">
@@ -588,7 +588,7 @@
                                                         <div class="">
                                                             <figure>
                                                                 <img class="product-image px-0"
-                                                                    src="{{ !empty($panel->image_path) ? $panel->image_path : asset('images/no-image-available.jpg') }}"
+                                                                    src="{{ !empty($panel->image_path) ? asset('uploads/products/'.$panel->image_path) : asset('images/no-image-available.jpg') }}"
                                                                     alt="Card image cap">
                                                             </figure>
                                                             <div class="">
@@ -921,7 +921,7 @@
                                                 <div class="">
                                                     <figure>
                                                         <img class="product-image px-0"
-                                                            src="{{ !empty($handle->image_path) ? $handle->image_path : asset('images/no-image-available.jpg') }}"
+                                                            src="{{ !empty($handle->image_path) ? asset('uploads/products/'.$handle->image_path) : asset('images/no-image-available.jpg') }}"
                                                             alt="Card image cap">
                                                     </figure>
                                                     <div class="">
@@ -1110,7 +1110,7 @@
                                                         <div class="">
                                                             <figure>
                                                                 <img class="product-image px-0"
-                                                                    src="{{ !empty($worktop->image_path) ? $worktop->image_path : asset('images/no-image-available.jpg') }}"
+                                                                    src="{{ !empty($worktop->image_path) ? asset('uploads/products/'.$worktop->image_path) : asset('images/no-image-available.jpg') }}"
                                                                     alt="Card image cap">
                                                             </figure>
                                                             <div class="">
@@ -1275,7 +1275,7 @@
                                                         <div class="">
                                                             <figure>
                                                                 <img class="product-image px-0"
-                                                                    src="{{ !empty($worktopsAndUpStand->image_path) ? $worktopsAndUpStand->image_path : asset('images/no-image-available.jpg') }}"
+                                                                    src="{{ !empty($worktopsAndUpStand->image_path) ? asset('uploads/products/'.$worktopsAndUpStand->image_path) : asset('images/no-image-available.jpg') }}"
                                                                     alt="Card image cap">
                                                             </figure>
                                                             <div class="">
@@ -1440,7 +1440,7 @@
                                                         <div class="">
                                                             <figure>
                                                                 <img class="product-image px-0"
-                                                                    src="{{ !empty($breakfastBar->image_path) ? $breakfastBar->image_path : asset('images/no-image-available.jpg') }}"
+                                                                    src="{{ !empty($breakfastBar->image_path) ? asset('uploads/products/'.$breakfastBar->image_path) : asset('images/no-image-available.jpg') }}"
                                                                     alt="Card image cap">
                                                             </figure>
                                                             <div class="">
@@ -1603,7 +1603,7 @@
                                                         <div class="">
                                                             <figure>
                                                                 <img class="product-image px-0"
-                                                                    src="{{ !empty($edging->image_path) ? $edging->image_path : asset('images/no-image-available.jpg') }}"
+                                                                    src="{{ !empty($edging->image_path) ? asset('uploads/products/'.$edging->image_path) : asset('images/no-image-available.jpg') }}"
                                                                     alt="Card image cap">
                                                             </figure>
                                                             <div class="">
@@ -1790,7 +1790,7 @@
                                                         <div class="">
                                                             <figure>
                                                                 <img class="product-image px-0"
-                                                                    src="{{ !empty($sink->image_path) ? $sink->image_path : asset('images/no-image-available.jpg') }}"
+                                                                    src="{{ !empty($sink->image_path) ? asset('uploads/products/'.$sink->image_path) : asset('images/no-image-available.jpg') }}"
                                                                     alt="Card image cap">
                                                             </figure>
                                                             <div class="">
@@ -1953,7 +1953,7 @@
                                                         <div class="">
                                                             <figure>
                                                                 <img class="product-image px-0"
-                                                                    src="{{ !empty($tap->image_path) ? $tap->image_path : asset('images/no-image-available.jpg') }}"
+                                                                    src="{{ !empty($tap->image_path) ? asset('uploads/products/'.$tap->image_path) : asset('images/no-image-available.jpg') }}"
                                                                     alt="Card image cap">
                                                             </figure>
                                                             <div class="">
@@ -2123,7 +2123,7 @@
                                                 <div class="">
                                                     <figure>
                                                         <img class="product-image px-0"
-                                                            src="{{ !empty($appliance->image_path) ? $appliance->image_path : asset('images/no-image-available.jpg') }}"
+                                                            src="{{ !empty($appliance->image_path) ? asset('uploads/products/'.$appliance->image_path) : asset('images/no-image-available.jpg') }}"
                                                             alt="Card image cap">
                                                     </figure>
                                                     <div class="">
