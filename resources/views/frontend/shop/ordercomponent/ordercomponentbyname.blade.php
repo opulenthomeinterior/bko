@@ -216,8 +216,7 @@
                     @if ($products->count() > 0)
                     @foreach ($products as $index => $product)
                     <div class="col-lg-4 col-6 mb-3">
-                        <div class="card btn btn-outline-warning border-1 bg-light p-0" style="border-radius: 0;" data-bs-toggle="modal"
-                        data-bs-target="#productModal{{ $index }}">
+                        <div class="card btn btn-outline-warning border-1 bg-light p-0" style="border-radius: 0;">
                             <div class="card-header px-0 py-0">
                                 <div class="p-0 product-short-title-container w-100">
                                     <a href="{{ route('orderbyproduct', $product->slug) }}" class="product-short-title fw-bold text-decoration-underline fs-4">
@@ -248,7 +247,7 @@
                                                 <div class="container-fluid">
                                                     <div class="row">
                                                         <div class="col-lg-8 col-md-8 col-8 border-bottom border-warning bg-light">
-                                                            <img src="{{ $product->image_path ? $product->image_path : asset('images/no-image-available.jpg') }}"
+                                                            <img src="{{ $product->image_path ? asset('uploads/products/'.$product->image_path) : asset('images/no-image-available.jpg') }}"
                                                                 class="img-fluid product-image" style="height: 300px;" />
                                                         </div>
                                                         <div class="col-lg-4 col-md-4 col-4 text-start text-dark">
@@ -348,8 +347,9 @@
                                             <figure class="my-0" style="margin-bottom: 0px !important;">
                                                 <img class="product-image px-0"
                                                     style="margin-bottom: 0px !important;min-height:175px;max-height:175px;object-fit:contain"
-                                                    src="{{ $product->image_path ? $product->image_path : asset('images/no-image-available.jpg') }}"
-                                                    alt="Card image cap">
+                                                    src="{{ $product->image_path ? asset('uploads/products/'.$product->image_path) : asset('images/no-image-available.jpg') }}"
+                                                    alt="Card image cap" data-bs-toggle="modal"
+                                                    data-bs-target="#productModal{{ $index }}">
                                             </figure>
                                             <p class="mt-2"><small class="fw-bold text-start text-dark">{{ $product->product_code }}</small></p>
                                             <p class="">
@@ -435,6 +435,11 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="card-footer p-0">
+                                <a href="{{ route('orderbyproduct', $product->slug) }}" class="product-short-title text-decoration-underline">
+                                   <small>View more</small>
+                                </a>
                             </div>
                         </div>
                     </div>
