@@ -70,7 +70,7 @@
                                                                         <div class="container-fluid">
                                                                             <div class="row">
                                                                                 <div class="col-lg-4 col-md-5 col-12">
-                                                                                    <img src="{{ $baseCabinet->image_path }}"
+                                                                                    <img src="{{ $baseCabinet->image_path ? asset('uploads/products/'.$baseCabinet->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                         class="img-fluid" />
                                                                                 </div>
                                                                                 <div
@@ -233,7 +233,7 @@
                                                                         <div class="container-fluid">
                                                                             <div class="row">
                                                                                 <div class="col-lg-4 col-md-5 col-12">
-                                                                                    <img src="{{ $wallCabinet->image_path }}"
+                                                                                    <img src="{{ $wallCabinet->image_path ? asset('uploads/products/'.$wallCabinet->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                         class="img-fluid" />
                                                                                 </div>
                                                                                 <div
@@ -396,7 +396,7 @@
                                                                         <div class="container-fluid">
                                                                             <div class="row">
                                                                                 <div class="col-lg-4 col-md-5 col-12">
-                                                                                    <img src="{{ $tallCabinet->image_path }}"
+                                                                                    <img src="{{ $tallCabinet->image_path ? asset('uploads/products/'.$tallCabinet->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                         class="img-fluid" />
                                                                                 </div>
                                                                                 <div
@@ -559,7 +559,7 @@
                                                                         <div class="container-fluid">
                                                                             <div class="row">
                                                                                 <div class="col-lg-4 col-md-5 col-12">
-                                                                                    <img src="{{ $panel->image_path }}"
+                                                                                    <img src="{{ $panel->image_path ? asset('uploads/products/'.$panel->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                         class="img-fluid" />
                                                                                 </div>
                                                                                 <div
@@ -730,7 +730,7 @@
                                                                 <div class="container-fluid">
                                                                     <div class="row">
                                                                         <div class="col-lg-4 col-md-5 col-12">
-                                                                            <img src="{{ asset('uploads/products/' . $accessory->image_path) }}"
+                                                                            <img src="{{ $accessory->image_path ? asset('uploads/products/'.$accessory->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                 class="img-fluid" />
                                                                         </div>
                                                                         <div
@@ -893,7 +893,7 @@
                                                                 <div class="container-fluid">
                                                                     <div class="row">
                                                                         <div class="col-lg-4 col-md-5 col-12">
-                                                                            <img src="{{ asset('uploads/products/' . $handle->image_path) }}"
+                                                                            <img src="{{ $handle->image_path ? asset('uploads/products/'.$handle->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                 class="img-fluid" />
                                                                         </div>
                                                                         <div
@@ -1081,7 +1081,7 @@
                                                                         <div class="container-fluid">
                                                                             <div class="row">
                                                                                 <div class="col-lg-4 col-md-5 col-12">
-                                                                                    <img src="{{ asset('uploads/products/' . $worktop->image_path) }}"
+                                                                                    <img src="{{ $worktop->image_path ? asset('uploads/products/'.$worktop->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                         class="img-fluid" />
                                                                                 </div>
                                                                                 <div
@@ -1246,7 +1246,7 @@
                                                                         <div class="container-fluid">
                                                                             <div class="row">
                                                                                 <div class="col-lg-4 col-md-5 col-12">
-                                                                                    <img src="{{ asset('uploads/products/' . $worktopsAndUpStand->image_path) }}"
+                                                                                    <img src="{{ $worktopsAndUpStand->image_path ? asset('uploads/products/'.$worktopsAndUpStand->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                         class="img-fluid" />
                                                                                 </div>
                                                                                 <div
@@ -1411,7 +1411,7 @@
                                                                         <div class="container-fluid">
                                                                             <div class="row">
                                                                                 <div class="col-lg-4 col-md-5 col-12">
-                                                                                    <img src="{{ asset('uploads/products/' . $breakfastBar->image_path) }}"
+                                                                                    <img src="{{ $breakfastBar->image_path ? asset('uploads/products/'.$breakfastBar->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                         class="img-fluid" />
                                                                                 </div>
                                                                                 <div
@@ -1574,7 +1574,7 @@
                                                                         <div class="container-fluid">
                                                                             <div class="row">
                                                                                 <div class="col-lg-4 col-md-5 col-12">
-                                                                                    <img src="{{ asset('uploads/products/' . $edging->image_path) }}"
+                                                                                    <img src="{{ $edging->image_path ? asset('uploads/products/'.$edging->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                         class="img-fluid" />
                                                                                 </div>
                                                                                 <div
@@ -1761,7 +1761,7 @@
                                                                         <div class="container-fluid">
                                                                             <div class="row">
                                                                                 <div class="col-lg-4 col-md-5 col-12">
-                                                                                    <img src="{{ asset('uploads/products/' . $sink->image_path) }}"
+                                                                                    <img src="{{ $sink->image_path ? asset('uploads/products/'.$sink->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                         class="img-fluid" />
                                                                                 </div>
                                                                                 <div
@@ -1924,7 +1924,7 @@
                                                                         <div class="container-fluid">
                                                                             <div class="row">
                                                                                 <div class="col-lg-4 col-md-5 col-12">
-                                                                                    <img src="{{ asset('uploads/products/' . $tap->image_path) }}"
+                                                                                    <img src="{{ $tap->image_path ? asset('uploads/products/'.$tap->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                         class="img-fluid" />
                                                                                 </div>
                                                                                 <div
@@ -2095,7 +2095,7 @@
                                                                 <div class="container-fluid">
                                                                     <div class="row">
                                                                         <div class="col-lg-4 col-md-5 col-12">
-                                                                            <img src="{{ asset('uploads/products/' . $appliance->image_path) }}"
+                                                                            <img src="{{ $appliance->image_path ? asset('uploads/products/'.$appliance->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                 class="img-fluid" />
                                                                         </div>
                                                                         <div
