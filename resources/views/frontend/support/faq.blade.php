@@ -36,8 +36,8 @@
                     @if ($generalFaqs->count() > 0)
                         @foreach ($generalFaqs as $faq)
                             <div class="accordion-item">
-                                <h2 class="accordion-header text-decoration-underline">
-                                    <button class="accordion-button collapsed fw-bolder" type="button"
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fw-bolder btn btn-outline-warning text-dark" type="button"
                                         data-bs-toggle="collapse" data-bs-target="#flush-collapse{{ $loop->index + 1 }}"
                                         aria-expanded="false" aria-controls="flush-collapse{{ $loop->index + 1 }}">
                                         {{ $faq->question }}

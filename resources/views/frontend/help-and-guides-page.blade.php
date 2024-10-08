@@ -18,7 +18,7 @@
     <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
         <div class="row py-3">
             <div class="col-lg-4 col-md-6 col-12 mb-4">
-                <div class="card component-card card-hover position-relative">
+                <div class="card component-card position-relative btn btn-outline-warning">
                     <a href="{{ route('terminology') }}" class="position-absolute top-0 bottom-0 start-0 end-0"></a>
                     <div class="card-header p-0"
                         style="background-image: url('{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}'); min-height: 300px;background-size: cover;background-position: center center;background-repeat: no-repeat;">
@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12 mb-4">
-                <div class="card component-card card-hover position-relative">
+                <div class="card component-card position-relative btn btn-outline-warning">
                     <a href="{{ route('kitchenarrive') }}" class="position-absolute top-0 bottom-0 start-0 end-0"></a>
                     <div class="card-header p-0"
                         style="background-image: url('{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}'); min-height: 300px;background-size: cover;background-position: center center;background-repeat: no-repeat;">
@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12 mb-4">
-                <div class="card component-card card-hover position-relative">
+                <div class="card component-card position-relative btn btn-outline-warning">
                     <a href="{{ route('fittingguide') }}" class="position-absolute top-0 bottom-0 start-0 end-0"></a>
                     <div class="card-header p-0"
                         style="background-image: url('{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}'); min-height: 300px;background-size: cover;background-position: center center;background-repeat: no-repeat;">
@@ -69,7 +69,7 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12 mb-4">
-                <div class="card component-card card-hover position-relative">
+                <div class="card component-card position-relative btn btn-outline-warning">
                     <a href="{{ route('faq') }}" class="position-absolute top-0 bottom-0 start-0 end-0"></a>
                     <div class="card-header p-0"
                         style="background-image: url('{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}'); min-height: 300px;background-size: cover;background-position: center center;background-repeat: no-repeat;">
@@ -86,7 +86,7 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12 mb-4">
-                <div class="card component-card card-hover position-relative">
+                <div class="card component-card position-relative btn btn-outline-warning">
                     <a href="{{ route('about') }}" class="position-absolute top-0 bottom-0 start-0 end-0"></a>
                     <div class="card-header p-0"
                         style="background-image: url('{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}'); min-height: 300px;background-size: cover;background-position: center center;background-repeat: no-repeat;">
@@ -103,7 +103,7 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12 mb-4">
-                <div class="card component-card card-hover position-relative">
+                <div class="card component-card position-relative btn btn-outline-warning">
                     <a href="{{ route('needhelp') }}" class="position-absolute top-0 bottom-0 start-0 end-0"></a>
                     <div class="card-header p-0"
                         style="background-image: url('{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}'); min-height: 300px;background-size: cover;background-position: center center;background-repeat: no-repeat;">

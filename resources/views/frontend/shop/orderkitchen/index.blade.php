@@ -41,7 +41,7 @@
 
                     @foreach ($styleData['assemblies'] as $assemblyName => $assemblyData)
                         <button type="button" id="{{ $assemblyName == 'Rigid' ? 'rigid_btn' : 'flatpacked_btn' }}"
-                            class="btn btn-sm btn-outline-dark rounded-0">{{ $assemblyName }}</button>
+                            class="btn btn-sm btn-outline-warning text-dark rounded-0">{{ $assemblyName }}</button>
                     @endforeach
 
                     @foreach ($styleData['assemblies'] as $assemblyName => $assemblyData)

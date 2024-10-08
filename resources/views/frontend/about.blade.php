@@ -34,7 +34,7 @@
                     Cookstown, Co. Tyrone and two in Yorkshire at Rotherham and Doncaster.
                 </p>
 
-                <a href="{{ route('orderkitchen') }}" class="btn btn-md btn-dark rounded-0">Order Now</a>
+                <a href="{{ route('orderkitchen') }}" class="btn btn-md btn-outline-warning border-dark text-dark rounded-0">Order Now</a>
             </div>
 
             <div class="col-lg-6 py-lg-0 py-md-3 py-4">

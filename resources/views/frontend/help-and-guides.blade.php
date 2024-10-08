@@ -7,7 +7,7 @@
     <div class="row slick-slider">
         <div class="px-3">
             <a href="{{ route('terminology') }}">
-                <div class="card">
+                <div class="card btn btn-outline-warning border-dark">
                     <div class="card-header p-0">
                         <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" class="img-fluid"
                             style="max-height: 200px;object-fit: cover;" />
@@ -27,7 +27,7 @@
 
         <div class="px-3">
             <a href="{{ route('kitchenarrive') }}">
-                <div class="card">
+                <div class="card card btn btn-outline-warning border-dark">
                     <div class="card-header p-0">
                         <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" class="img-fluid" />
                     </div>
@@ -46,7 +46,7 @@
 
         <div class="px-3">
             <a href="{{ route('faq') }}">
-                <div class="card">
+                <div class="card card btn btn-outline-warning border-dark">
                     <div class="card-header p-0">
                         <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" class="img-fluid" />
                     </div>
@@ -65,7 +65,7 @@
 
         <div class="px-3">
             <a href="{{ route('fittingguide') }}">
-                <div class="card">
+                <div class="card card btn btn-outline-warning border-dark">
                     <div class="card-header p-0">
                         <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" class="img-fluid" />
                     </div>
@@ -84,7 +84,7 @@
 
         <div class="px-3">
             <a href="{{ route('needhelp') }}">
-                <div class="card">
+                <div class="card card btn btn-outline-warning border-dark">
                     <div class="card-header p-0">
                         <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" class="img-fluid" />
                     </div>
@@ -103,7 +103,7 @@
 
         <div class="px-3">
             <a href="{{ route('designservice') }}">
-                <div class="card">
+                <div class="card card btn btn-outline-warning border-dark">
                     <div class="card-header p-0">
                         <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" class="img-fluid" />
                     </div>
