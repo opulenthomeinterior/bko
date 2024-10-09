@@ -7,6 +7,8 @@ use App\Http\Controllers\FaqController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ColourController;
+use App\Http\Controllers\ContactUs;
+use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\DashboardConroller;
 use App\Http\Controllers\DownloadableGuideController;
 use App\Http\Controllers\GroupController;
@@ -216,6 +218,8 @@ Route::prefix('/')->middleware([])->group(function () {
         $deliveryFaqs = Faq::where('type', 'delivery')->get();
         return view('frontend.home', compact('generalFaqs', 'deliveryFaqs'));
     })->name('home');
+
+    Route::post('contact-us-inquiry', [ContactUsController::class, 'sendMail'])->name('contact_us_inquiry');
 
     // Shop Prefix
     Route::prefix('/shop')->group(function () {
