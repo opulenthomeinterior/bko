@@ -225,12 +225,6 @@
                                 </div>
                             </div>
                             <div class="card-body text-center">
-                                <!-- Button trigger modal -->
-                                <!-- <a class="modal-icon z-3" href="#" data-bs-toggle="modal"
-                                    data-bs-target="#productModal{{ $index }}">
-                                    <i class="ri-add-circle-line text-black fs-4"></i>
-                                </a> -->
-                                <!-- Modal -->
                                 <div class="modal fade" id="productModal{{ $index }}" tabindex="-1"
                                     aria-labelledby="productModalLabel{{ $index }}"
                                     aria-hidden="true">
@@ -335,14 +329,6 @@
 
                                 <div class="container-fluid">
                                     <div class="row">
-                                        <!-- <div class="col-lg-12">
-                                            <div class="text-start">
-                                                <a href="{{ route('orderbyproduct', $product->slug) }}"
-                                                    class="text-start text-dark text-decoration-underline fs-5 fw-bold">
-                                                    {{ $product->short_title }}
-                                                </a>
-                                            </div>
-                                        </div> -->
                                         <div class="col-lg-12">
                                             <figure class="my-0" style="margin-bottom: 0px !important;">
                                                 <img class="product-image px-0"
