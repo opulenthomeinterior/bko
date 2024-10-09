@@ -132,6 +132,7 @@
     @push('scripts')
         <script>
             var productDataRoute = "{{ route('products.data') }}";
+            var imageURL = "{{ asset('uploads/products') }}";
             // Products Table
             var table = $("#product_table").DataTable({
                 processing: true,
@@ -155,7 +156,7 @@
                         render: function(data, type, row) {
                             if (type === 'display' && data) {
                                 return `
-                                <a href="${data}" class="d-inline-block" target="_blank" rel="noopener noreferrer">
+                                <a href="${imageURL}/`+data+`" class="d-inline-block" target="_blank" rel="noopener noreferrer">
                                     <img src="${data}" alt="Image Preview" width="100" class="img-thumbnail box-image-preview d-block" />
                                 </a>`;
                             } else {

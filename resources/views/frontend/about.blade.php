@@ -29,9 +29,7 @@
                     We eat, sleep and breathe kitchens and bedrooms, making them look incredible using the perfect mix
                     of quality, sustainable materials and cutting-edge design.
                     <br><br>
-                    Born out of a desire to offer better products and service in the market, BK Online was established in 1990
-                    and has gone from strength to strength since. BK Online operates from three state of the art factories in
-                    Cookstown, Co. Tyrone and two in Yorkshire at Rotherham and Doncaster.
+                    Born out of a desire to offer better products and service in the market.
                 </p>
 
                 <a href="{{ route('orderkitchen') }}" class="btn btn-md btn-outline-warning border-dark text-dark rounded-0">Order Now</a>
@@ -56,9 +54,7 @@
                     We eat, sleep and breathe kitchens and bedrooms, making them look incredible using the perfect mix
                     of quality, sustainable materials and cutting-edge design.
                     <br><br>
-                    Born out of a desire to offer better products and service in the market, BK Online was established in 1990
-                    and has gone from strength to strength since. BK Online operates from three state of the art factories in
-                    Cookstown, Co. Tyrone and two in Yorkshire at Rotherham and Doncaster.
+                    Born out of a desire to offer better products and service in the market.
                 </p>
             </div>
         </div>

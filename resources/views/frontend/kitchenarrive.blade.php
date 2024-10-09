@@ -13,7 +13,7 @@
                     HOW WILL MY KITCHEN ARRIVE?
                 </h1>
                 <h4 class="text-dark">
-                    Having been making, packing and distributing kitchens since 1990, we have developed trusted methods
+                    Having been making, packing and distributing kitchens, we have developed trusted methods
                     to get what it is you need, to where you need it.
                 </h4>
             </div>
@@ -58,7 +58,7 @@
 
                         <div class="card-body">
                             <h3 class="fw-bold text-dark text-uppercase">Kitchen Terminology</h3>
-                            <p>Having been making, packing and distributing kitchens since 1990, we have developed
+                            <p>Having been making, packing and distributing kitchens, we have developed
                                 trusted
                                 methods to get what it is you need, to where you need it.</p>
                         </div>
@@ -75,7 +75,7 @@
 
                         <div class="card-body h-100">
                             <h3 class="fw-bold text-dark text-uppercase">How will my kitchen arrive?</h3>
-                            <p>Having been making, packing and distributing kitchens since 1990, we have developed
+                            <p>Having been making, packing and distributing kitchens, we have developed
                                 trusted
                                 methods to get what it is you need, to where you need it.</p>
                         </div>
@@ -92,7 +92,7 @@
 
                         <div class="card-body h-100">
                             <h3 class="fw-bold text-dark text-uppercase">BK Online faqs</h3>
-                            <p>Having been making, packing and distributing kitchens since 1990, we have developed
+                            <p>Having been making, packing and distributing kitchens, we have developed
                                 trusted
                                 methods to get what it is you need, to where you need it.</p>
                         </div>
@@ -109,7 +109,7 @@
 
                         <div class="card-body">
                             <h3 class="fw-bold text-dark text-uppercase">Fitting guides</h3>
-                            <p>Having been making, packing and distributing kitchens since 1990, we have developed
+                            <p>Having been making, packing and distributing kitchens, we have developed
                                 trusted
                                 methods to get what it is you need, to where you need it.</p>
                         </div>
@@ -126,7 +126,7 @@
 
                         <div class="card-body">
                             <h3 class="fw-bold text-dark text-uppercase">Need help measuring?</h3>
-                            <p>Having been making, packing and distributing kitchens since 1990, we have developed
+                            <p>Having been making, packing and distributing kitchens, we have developed
                                 trusted
                                 methods to get what it is you need, to where you need it.</p>
                         </div>
@@ -143,7 +143,7 @@
 
                         <div class="card-body">
                             <h3 class="fw-bold text-dark text-uppercase">Virtual Design Service</h3>
-                            <p>Having been making, packing and distributing kitchens since 1990, we have developed
+                            <p>Having been making, packing and distributing kitchens, we have developed
                                 trusted
                                 methods to get what it is you need, to where you need it.</p>
                         </div>
