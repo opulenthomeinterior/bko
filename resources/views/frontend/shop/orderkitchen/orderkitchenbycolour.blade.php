@@ -203,8 +203,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="card-body text-center">
-                                                        <div class="modal fade" id="productModal{{ $index }}" tabindex="-1"
-                                                            aria-labelledby="productModalLabel{{ $index }}"
+                                                        <div class="modal fade" id="productModal{{ $baseCabinet->id }}" tabindex="-1"
+                                                            aria-labelledby="productModalLabel{{ $baseCabinet->id }}"
                                                             aria-hidden="true">
                                                             <div class="modal-dialog modal-lg modal-dialog-centered">
                                                                 <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
@@ -313,7 +313,7 @@
                                                                             style="margin-bottom: 0px !important;min-height:175px;max-height:175px;object-fit:contain"
                                                                             src="{{ !empty($baseCabinet->image_path) ? asset('uploads/products/'.$baseCabinet->image_path) : asset('images/no-image-available.jpg') }}"
                                                                             alt="Card image cap" data-bs-toggle="modal"
-                                                                            data-bs-target="#productModal{{ $index }}">
+                                                                            data-bs-target="#productModal{{ $baseCabinet->id }}">
                                                                     </figure>
                                                                     <p class="mt-2"><small class="fw-bold text-start text-dark">{{ $baseCabinet->product_code }}</small></p>
                                                                     <p class="">
@@ -574,8 +574,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="card-body text-center">
-                                                        <div class="modal fade" id="productModal{{ $index }}" tabindex="-1"
-                                                            aria-labelledby="productModalLabel{{ $index }}"
+                                                        <div class="modal fade" id="productModal{{ $wallCabinet->id }}" tabindex="-1"
+                                                            aria-labelledby="productModalLabel{{ $wallCabinet->id }}"
                                                             aria-hidden="true">
                                                             <div class="modal-dialog modal-lg modal-dialog-centered">
                                                                 <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
@@ -684,7 +684,7 @@
                                                                             style="margin-bottom: 0px !important;min-height:175px;max-height:175px;object-fit:contain"
                                                                             src="{{ !empty($wallCabinet->image_path) ? asset('uploads/products/'.$wallCabinet->image_path) : asset('images/no-image-available.jpg') }}"
                                                                             alt="Card image cap" data-bs-toggle="modal"
-                                                                            data-bs-target="#productModal{{ $index }}">
+                                                                            data-bs-target="#productModal{{ $wallCabinet->id }}">
                                                                     </figure>
                                                                     <p class="mt-2"><small class="fw-bold text-start text-dark">{{ $wallCabinet->product_code }}</small></p>
                                                                     <p class="">
@@ -945,8 +945,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="card-body text-center">
-                                                        <div class="modal fade" id="productModal{{ $index }}" tabindex="-1"
-                                                            aria-labelledby="productModalLabel{{ $index }}"
+                                                        <div class="modal fade" id="productModal{{ $tallCabinet->id }}" tabindex="-1"
+                                                            aria-labelledby="productModalLabel{{ $tallCabinet->id }}"
                                                             aria-hidden="true">
                                                             <div class="modal-dialog modal-lg modal-dialog-centered">
                                                                 <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
@@ -1055,7 +1055,7 @@
                                                                             style="margin-bottom: 0px !important;min-height:175px;max-height:175px;object-fit:contain"
                                                                             src="{{ !empty($tallCabinet->image_path) ? asset('uploads/products/'.$tallCabinet->image_path) : asset('images/no-image-available.jpg') }}"
                                                                             alt="Card image cap" data-bs-toggle="modal"
-                                                                            data-bs-target="#productModal{{ $index }}">
+                                                                            data-bs-target="#productModal{{ $tallCabinet->id }}">
                                                                     </figure>
                                                                     <p class="mt-2"><small class="fw-bold text-start text-dark">{{ $tallCabinet->product_code }}</small></p>
                                                                     <p class="">
@@ -1316,8 +1316,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="card-body text-center">
-                                                        <div class="modal fade" id="productModal{{ $index }}" tabindex="-1"
-                                                            aria-labelledby="productModalLabel{{ $index }}"
+                                                        <div class="modal fade" id="productModal{{ $panel->id }}" tabindex="-1"
+                                                            aria-labelledby="productModalLabel{{ $panel->id }}"
                                                             aria-hidden="true">
                                                             <div class="modal-dialog modal-lg modal-dialog-centered">
                                                                 <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
@@ -1426,7 +1426,7 @@
                                                                             style="margin-bottom: 0px !important;min-height:175px;max-height:175px;object-fit:contain"
                                                                             src="{{ !empty($panel->image_path) ? asset('uploads/products/'.$panel->image_path) : asset('images/no-image-available.jpg') }}"
                                                                             alt="Card image cap" data-bs-toggle="modal"
-                                                                            data-bs-target="#productModal{{ $index }}">
+                                                                            data-bs-target="#productModal{{ $panel->id }}">
                                                                     </figure>
                                                                     <p class="mt-2"><small class="fw-bold text-start text-dark">{{ $panel->product_code }}</small></p>
                                                                     <p class="">
@@ -1690,8 +1690,8 @@
                                                 </div>
                                             </div>
                                             <div class="card-body text-center">
-                                                <div class="modal fade" id="productModal{{ $index }}" tabindex="-1"
-                                                    aria-labelledby="productModalLabel{{ $index }}"
+                                                <div class="modal fade" id="productModal{{ $accessory->id }}" tabindex="-1"
+                                                    aria-labelledby="productModalLabel{{ $accessory->id }}"
                                                     aria-hidden="true">
                                                     <div class="modal-dialog modal-lg modal-dialog-centered">
                                                         <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
@@ -1800,7 +1800,7 @@
                                                                     style="margin-bottom: 0px !important;min-height:175px;max-height:175px;object-fit:contain"
                                                                     src="{{ !empty($accessory->image_path) ? asset('uploads/products/'.$accessory->image_path) : asset('images/no-image-available.jpg') }}"
                                                                     alt="Card image cap" data-bs-toggle="modal"
-                                                                    data-bs-target="#productModal{{ $index }}">
+                                                                    data-bs-target="#productModal{{ $accessory->id }}">
                                                             </figure>
                                                             <p class="mt-2"><small class="fw-bold text-start text-dark">{{ $accessory->product_code }}</small></p>
                                                             <p class="">
@@ -2065,8 +2065,8 @@
                                                 </div>
                                             </div>
                                             <div class="card-body text-center">
-                                                <div class="modal fade" id="productModal{{ $index }}" tabindex="-1"
-                                                    aria-labelledby="productModalLabel{{ $index }}"
+                                                <div class="modal fade" id="productModal{{ $handle->id }}" tabindex="-1"
+                                                    aria-labelledby="productModalLabel{{ $handle->id }}"
                                                     aria-hidden="true">
                                                     <div class="modal-dialog modal-lg modal-dialog-centered">
                                                         <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
@@ -2175,7 +2175,7 @@
                                                                     style="margin-bottom: 0px !important;min-height:175px;max-height:175px;object-fit:contain"
                                                                     src="{{ !empty($handle->image_path) ? asset('uploads/products/'.$handle->image_path) : asset('images/no-image-available.jpg') }}"
                                                                     alt="Card image cap" data-bs-toggle="modal"
-                                                                    data-bs-target="#productModal{{ $index }}">
+                                                                    data-bs-target="#productModal{{ $handle->id }}">
                                                             </figure>
                                                             <p class="mt-2"><small class="fw-bold text-start text-dark">{{ $handle->product_code }}</small></p>
                                                             <p class="">
