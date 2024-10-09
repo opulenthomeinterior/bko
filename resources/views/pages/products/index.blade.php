@@ -157,7 +157,7 @@
                             if (type === 'display' && data) {
                                 return `
                                 <a href="${imageURL}/`+data+`" class="d-inline-block" target="_blank" rel="noopener noreferrer">
-                                    <img src="${data}" alt="Image Preview" width="100" class="img-thumbnail box-image-preview d-block" />
+                                    <img src="${imageURL}/`+data+`" alt="Image Preview" width="100" class="img-thumbnail box-image-preview d-block" />
                                 </a>`;
                             } else {
                                 return data;
