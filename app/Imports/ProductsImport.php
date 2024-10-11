@@ -54,7 +54,8 @@ class ProductsImport implements ToCollection, WithChunkReading
                         $category->parent_category_id = $parent_category->id;
                         if (!empty($row[20])) {
                             $file = $row[20];
-                            $category->image_path = mmadev_store_and_get_image_path_from_url('categories', $file);
+                            $category->image_path = $file;
+                            // $category->image_path = mmadev_store_and_get_image_path_from_url('categories', $file);
                         }
                         $category->save();
                     }
