@@ -667,6 +667,7 @@ use App\Models\Style;
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="{{ asset('js/slick.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.7-beta.24/inputmask.min.js"></script>
 
     <!-- password-addon init -->
     <script src="{{ asset('js/pages/password-addon.init.js') }}"></script>
@@ -734,6 +735,31 @@ use App\Models\Style;
                     window.location.href = url;
                 }
             });
+        });
+    </script>
+    
+    <script>
+        document.getElementById('call-me-at').addEventListener('input', function (e) {
+            let value = e.target.value.replace(/\D/g, ''); // Remove non-numeric characters
+
+            if (value.length >= 2) {
+                let hours = value.slice(0, 2);
+                let minutes = value.slice(2, 4);
+
+                // Restrict hours between 00 and 23
+                if (parseInt(hours, 10) > 23) {
+                    hours = '23';
+                }
+
+                // Restrict minutes between 00 and 59
+                if (parseInt(minutes, 10) > 59) {
+                    minutes = '59';
+                }
+
+                value = hours + (minutes ? ':' + minutes : ''); // Add colon between hours and minutes
+            }
+
+            e.target.value = value;
         });
     </script>
     <script>

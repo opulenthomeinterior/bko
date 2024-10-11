@@ -35,6 +35,11 @@
             opacity: 1; /* Ensures the color is fully applied */
         }
 
+        #call-me-at::placeholder {
+            color: black;
+            opacity: 1; /* Ensures the color is fully applied */
+        }
+
         #description::placeholder {
             color: black;
             opacity: 1; /* Ensures the color is fully applied */
@@ -81,45 +86,48 @@
         </div>
     </section> -->
 
-    <section class="container-fluid position-relative" style="height: 70vh; overflow: hidden; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49; border-left: 3px solid #febd49">
-    <img src="{{ asset('images/Slab-Kitchen.jpg') }}"
-        alt="Bespoke Kitchen Units in London and Surroundings"
-        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: -1;">
+    <section class="container-fluid position-relative" style="height: 90vh; overflow: hidden; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49; border-left: 3px solid #febd49">
+        <img src="{{ asset('images/Slab-Kitchen.jpg') }}"
+            alt="Bespoke Kitchen Units in London and Surroundings"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: -1;">
 
-    <div class="row h-100 w-100 d-flex justify-content-between align-items-center">
-        <!-- Left div content -->
-        <div class="col-md-6 text-center">
-            <h2 class="text-white fw-bolder text-center p-2" 
-                style="text-shadow: 5px 5px 5px black; background-color: rgba(0, 0, 0, 0.5); width: 90%; border-radius: 50px">
-                WE CAN'T BE BEATEN ON PRICE!
-            </h2>
-        </div>
+        <div class="row h-100 w-100 d-flex justify-content-between align-items-center">
+            <!-- Left div content -->
+            <div class="col-xl-7 col-lg-7 col-md-5 col-sm-12 col-xs-12 col-12 text-center d-flex justify-content-center">
+                <h2 class="text-white fw-bolder text-center p-2" 
+                    style="text-shadow: 5px 5px 5px black; background-color: rgba(0, 0, 0, 0.5); width: 90%; border-radius: 50px; border-left: 1px solid #febd49; border-top: 1px solid #febd49; border-bottom: 1px solid #febd49; border-right: 1px solid #febd49">
+                    WE CAN'T BE BEATEN ON PRICE!
+                </h2>
+            </div>
 
-        <!-- Right form content -->
-        <div class="col-md-5 p-0 d-flex justify-content-center">
-            <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning w-75" style="background-color: rgba(0, 0, 0, 0.5); padding: 20px; border-radius: 0px;">
-                @csrf
-                <h3 class="text-warning fw-bold text-center">
-                    Contact Us
-                </h3>
-                <hr class="border border-warning">
-                <div class="mb-3">
-                    <input type="text" style="color: black" class="border border-warning form-control text-dark" name="name" id="name" placeholder="Enter your name">
-                </div>
-                <div class="mb-3">
-                    <input type="email" style="color: black" class="border border-warning form-control text-dark" name="email" id="email" placeholder="Enter your email">
-                </div>
-                <div class="mb-3">
-                    <input type="number" style="color: black" class="border border-warning form-control text-dark" name="phone" id="phone" placeholder="Enter your phone number">
-                </div>
-                <div class="mb-3">
-                    <textarea name="description" id="description" name="description" rows="3" class="w-100 border border-warning form-control text-dark" placeholder="Enter your message"></textarea>
-                </div>
-                <button type="button" class="btn btn-warning fw-bolder text-uppercase" style="border-radius: 0;">Submit</button>
-            </form>
+            <!-- Right form content -->
+            <div class="col-xl-5 col-lg-5 col-md-7 col-sm-12 col-xs-12 col-12 p-0 d-flex justify-content-center">
+                <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning w-75" style="background-color: rgba(0, 0, 0, 0.5); padding: 20px; border-radius: 0px;">
+                    @csrf
+                    <h3 class="text-warning fw-bold text-center">
+                        Contact Us
+                    </h3>
+                    <hr class="border border-warning">
+                    <div class="mb-3">
+                        <input type="text" style="color: black" class="border border-warning form-control text-dark" name="name" id="name" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" style="color: black" class="border border-warning form-control text-dark" name="email" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-3">
+                        <input type="number" style="color: black" class="border border-warning form-control text-dark" name="phone" id="phone" placeholder="Enter your phone number">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" style="color: black" class="border border-warning form-control text-dark" name="call_me_at" id="call-me-at" placeholder="Call me at (HH:MM)">
+                    </div>
+                    <div class="mb-3">
+                        <textarea name="description" id="description" name="description" rows="3" class="w-100 border border-warning form-control text-dark" placeholder="Enter your message"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-warning fw-bolder text-uppercase" style="border-radius: 0;">Submit</button>
+                </form>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <section class="container-fluid px-lg-5 px-md-3 px-3 py-lg-5 py-3" style="background-color: #f0f0f0; border-bottom: 3px solid #febd49; border-right: 3px solid #febd49">
         <div class="row">
