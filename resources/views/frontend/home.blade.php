@@ -118,7 +118,8 @@
                         <input type="number" style="color: black" class="border border-warning form-control text-dark" name="phone" id="phone" placeholder="Enter your phone number">
                     </div>
                     <div class="mb-3">
-                        <input type="text" style="color: black" class="border border-warning form-control text-dark" name="call_time" id="call-me-at" placeholder="Call me at (HH:MM)">
+                        <label for="" class="text-white bg-warning p-2 text-end fw-bold">Call me at</label>
+                        <input type="datetime-local" style="color: black" class="border border-warning form-control text-dark" name="call_time">
                     </div>
                     <div class="mb-3">
                         <textarea name="message" id="message" name="message" rows="3" class="w-100 border border-warning form-control text-dark" placeholder="Enter your message"></textarea>

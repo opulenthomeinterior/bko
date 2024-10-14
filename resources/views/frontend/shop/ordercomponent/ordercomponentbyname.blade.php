@@ -183,7 +183,7 @@
                                 <button class="accordion-button legend collapsed text-uppercase" type="button"
                                     data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
                                     aria-expanded="true" aria-controls="flush-collapseOne">
-                                    SIZES
+                                    @if ($category->name != 'HANDLES') SIZES @else TYPES @endif
                                 </button>
                             </h2>
                             <div id="flush-collapseOne" class="accordion-collapse collapse"
