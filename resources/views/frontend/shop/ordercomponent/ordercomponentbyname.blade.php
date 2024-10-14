@@ -67,7 +67,7 @@
                 <form action="" class="mt-2">
                     <input type="hidden" name="slug" id="slug" value="{{ $category->slug }}">
 
-                    @if ($category->name != 'SINKS' && $category->name != 'HANDLES')
+                    @if ($category->name != 'SINKS' && $category->name != 'HANDLES' && $category->name != 'TAPS')
                     @if ($styles->count() > 0)
                     <div class="accordion accordion-flush mt-3" id="accordionFlushExample3">
                         <div class="accordion-item bg-transparent border border-dark border-1 rounded-0 px-2">
@@ -142,7 +142,7 @@
                     @endif
 
                     @if ($assemblies->count() > 0)
-                    @if ($category->name != 'DOORS' && $category->name != 'SINKS' && $category->name != 'HANDLES')
+                    @if ($category->name != 'DOORS' && $category->name != 'SINKS' && $category->name != 'HANDLES' && $category->name != 'TAPS')
                     <div class="accordion accordion-flush mt-3" id="accordionFlushExample2">
                         <div class="accordion-item bg-transparent border border-dark border-1 rounded-0 px-2">
                             <h2 class="accordion-header" id="flush-headingTwo">
@@ -183,7 +183,7 @@
                                 <button class="accordion-button legend collapsed text-uppercase" type="button"
                                     data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
                                     aria-expanded="true" aria-controls="flush-collapseOne">
-                                    @if ($category->name != 'HANDLES') SIZES @else TYPES @endif
+                                    @if ($category->name != 'HANDLES' && $category->name != 'TAPS') SIZES @else TYPES @endif
                                 </button>
                             </h2>
                             <div id="flush-collapseOne" class="accordion-collapse collapse"
