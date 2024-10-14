@@ -32,8 +32,8 @@
         }
 
         .product-image:hover {
-            /* transform: scale(1.2);
-            transition: 0.5s ease; */
+            transform: scale(1.1);
+            transition: 0.5s ease;
         }
     </style>
     <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
