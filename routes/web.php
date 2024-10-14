@@ -21,6 +21,7 @@ use App\Http\Controllers\PrintingController;
 use App\Http\Controllers\DesignserviceController;
 use App\Http\Controllers\UserAuthController;
 use App\Http\Controllers\DiscountController;
+use App\Http\Controllers\InquiryController;
 use App\Http\Controllers\OrdersController;
 use App\Models\Faq;
 use Illuminate\Support\Facades\Auth;
@@ -219,7 +220,7 @@ Route::prefix('/')->middleware([])->group(function () {
         return view('frontend.home', compact('generalFaqs', 'deliveryFaqs'));
     })->name('home');
 
-    Route::post('contact-us-inquiry', [ContactUsController::class, 'sendMail'])->name('contact_us_inquiry');
+    Route::post('contact-us-inquiry', [InquiryController::class, 'sendInquiry'])->name('contact_us_inquiry');
 
     // Shop Prefix
     Route::prefix('/shop')->group(function () {

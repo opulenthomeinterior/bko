@@ -16,7 +16,7 @@
             color: #fff; /* Change text color to white */
         }
    
-        #description {
+        #message {
             resize: none; /* Prevents resizing */
         }
    
@@ -40,7 +40,7 @@
             opacity: 1; /* Ensures the color is fully applied */
         }
 
-        #description::placeholder {
+        #message::placeholder {
             color: black;
             opacity: 1; /* Ensures the color is fully applied */
         }
@@ -118,12 +118,12 @@
                         <input type="number" style="color: black" class="border border-warning form-control text-dark" name="phone" id="phone" placeholder="Enter your phone number">
                     </div>
                     <div class="mb-3">
-                        <input type="text" style="color: black" class="border border-warning form-control text-dark" name="call_me_at" id="call-me-at" placeholder="Call me at (HH:MM)">
+                        <input type="text" style="color: black" class="border border-warning form-control text-dark" name="call_time" id="call-me-at" placeholder="Call me at (HH:MM)">
                     </div>
                     <div class="mb-3">
-                        <textarea name="description" id="description" name="description" rows="3" class="w-100 border border-warning form-control text-dark" placeholder="Enter your message"></textarea>
+                        <textarea name="message" id="message" name="message" rows="3" class="w-100 border border-warning form-control text-dark" placeholder="Enter your message"></textarea>
                     </div>
-                    <button type="button" class="btn btn-warning fw-bolder text-uppercase" style="border-radius: 0;">Submit</button>
+                    <button type="submit" class="btn btn-warning fw-bolder text-uppercase" style="border-radius: 0;">Submit</button>
                 </form>
             </div>
         </div>
