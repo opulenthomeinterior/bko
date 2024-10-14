@@ -22,6 +22,7 @@
                     $imageOrderClass = 'order-md-0';
                 }
             @endphp
+            @if ($styleData['data']->name != 'Shaker-22' && $styleData['data']->name != 'Dual lever' && $styleData['data']->name != 'Single Lever' && $styleData['data']->name != 'Singlel lever' && $styleData['data']->name != 'Cashmere')
             <div class="row mb-md-5 mb-4">
                 <div class="col-lg-6 col-md-6 col-12 pr-4 {{ $imageOrderClass }}">
                     <img src="{{ $styleData['data']->image_path ? asset('uploads/styles/' . $styleData['data']->image_path) : asset('images/Slab-Kitchen.jpg') }}"
@@ -65,6 +66,7 @@
                     @endforeach
                 </div>
             </div>
+            @endif
         @endforeach
 
     </div>
