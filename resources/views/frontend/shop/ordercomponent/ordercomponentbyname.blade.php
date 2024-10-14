@@ -67,7 +67,7 @@
                 <form action="" class="mt-2">
                     <input type="hidden" name="slug" id="slug" value="{{ $category->slug }}">
 
-                    @if ($category->name != 'SINKS')
+                    @if ($category->name != 'SINKS' && $category->name != 'HANDLES')
                     @if ($styles->count() > 0)
                     <div class="accordion accordion-flush mt-3" id="accordionFlushExample3">
                         <div class="accordion-item bg-transparent border border-dark border-1 rounded-0 px-2">
@@ -142,7 +142,7 @@
                     @endif
 
                     @if ($assemblies->count() > 0)
-                    @if ($category->name != 'DOORS' && $category->name != 'SINKS')
+                    @if ($category->name != 'DOORS' && $category->name != 'SINKS' && $category->name != 'HANDLES')
                     <div class="accordion accordion-flush mt-3" id="accordionFlushExample2">
                         <div class="accordion-item bg-transparent border border-dark border-1 rounded-0 px-2">
                             <h2 class="accordion-header" id="flush-headingTwo">
