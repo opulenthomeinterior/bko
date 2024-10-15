@@ -57,13 +57,14 @@ use App\Models\Style;
         }
 
         .hover-button:hover {
-            background-color: #000; /* Change background color to dark */
+            background-color: #000;
+            /* Change background color to dark */
         }
 
         .hover-button:hover .card-title {
-            color: #fff; /* Change text color to white */
+            color: #fff;
+            /* Change text color to white */
         }
-
     </style>
 </head>
 
@@ -281,6 +282,111 @@ use App\Models\Style;
                 <ul class="nav__list p-2">
                     <li class="dropdown__item">
                         <div class="nav__link dropdown__button">
+                            <a href="{{ route('orderkitchen') }}">Explore </a>
+                            <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        </div>
+                        <div class="dropdown__container">
+                            <div class="dropdown__content">
+                                
+                                <div class="dropdown__group">
+                                    <ul class="dropdown__list">
+                                        <li>
+                                            <a href="{{ route('orderkitchenbyname', 'slab') }}"
+                                                class="dropdown__link">
+                                                <i class="ri-arrow-right-s-fill"></i>
+                                                SLAB KITCHENS
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('orderkitchenbyname', 'j-pull-22') }}"
+                                                class="dropdown__link">
+                                                <i class="ri-arrow-right-s-fill"></i>
+                                                j-PULL 22 KITCHENS
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown__group">
+                                    <ul class="dropdown__list">
+                                        <li>
+                                            <a href="{{ route('orderkitchenbyname', 'shaker-22') }}"
+                                                class="dropdown__link">
+                                                <i class="ri-arrow-right-s-fill"></i>
+                                                SHAKER 22 KITCHENS
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('orderkitchenbyname', 'true-handleless') }}"
+                                                class="dropdown__link">
+                                                <i class="ri-arrow-right-s-fill"></i>
+                                                TRUE HANDLESS KITCHENS
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- <div class="dropdown__content">
+                                @php
+                                    $styles = Style::all();
+                                @endphp
+                                @if (!empty($styles))
+                                @foreach ($styles as $index => $style)
+                                    @if ($index % 2 == 0)
+                                        <div class="dropdown__group">
+                                            <ul class="dropdown__list">
+                                    @endif
+                                            <li>
+                                                <a href="{{ route('orderkitchenbyname', $style->slug) }}" class="dropdown__link">
+                                                    <i class="ri-arrow-right-s-fill"></i>{{ $style->name }} Kitchen</a>
+                                            </li>
+                                                @if (($index + 1) % 2 == 0 || $loop->last)
+                                            </ul>
+                                        </div>
+                                    @endif
+                                @endforeach
+                                @else
+                                <div class="dropdown__group">
+                                    <ul class="dropdown__list">
+                                        <li>
+                                            <a href="{{ route('orderkitchenbyname', 'slab') }}"
+                                                class="dropdown__link">
+                                                <i class="ri-arrow-right-s-fill"></i>
+                                                SLAB KITCHENS
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('orderkitchenbyname', 'j-pull') }}"
+                                                class="dropdown__link">
+                                                <i class="ri-arrow-right-s-fill"></i>
+                                                j-PULL KITCHENS
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown__group">
+                                    <ul class="dropdown__list">
+                                        <li>
+                                            <a href="{{ route('orderkitchenbyname', 'shaker') }}"
+                                                class="dropdown__link">
+                                                <i class="ri-arrow-right-s-fill"></i>
+                                                SHAKER KITCHENS
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('orderkitchenbyname', 'true-handleless') }}"
+                                                class="dropdown__link">
+                                                <i class="ri-arrow-right-s-fill"></i>
+                                                TRUE HANDLESS KITCHENS
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                @endif
+                            </div> -->
+                    <li class="dropdown__item">
+                        <div class="nav__link dropdown__button">
                             <a href="{{ route('orderkitchen') }}">ORDER KITCHEN </a>
                             <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                         </div>
@@ -360,64 +466,6 @@ use App\Models\Style;
                                     ORDER NOW
                                 </button>
                             </div>
-                            <!-- <div class="dropdown__content">
-                                @php
-                                    $styles = Style::all();
-                                @endphp
-                                @if (!empty($styles))
-                                @foreach ($styles as $index => $style)
-                                    @if ($index % 2 == 0)
-                                        <div class="dropdown__group">
-                                            <ul class="dropdown__list">
-                                    @endif
-                                            <li>
-                                                <a href="{{ route('orderkitchenbyname', $style->slug) }}" class="dropdown__link">
-                                                    <i class="ri-arrow-right-s-fill"></i>{{ $style->name }} Kitchen</a>
-                                            </li>
-                                                @if (($index + 1) % 2 == 0 || $loop->last)
-                                            </ul>
-                                        </div>
-                                    @endif
-                                @endforeach
-                                @else
-                                <div class="dropdown__group">
-                                    <ul class="dropdown__list">
-                                        <li>
-                                            <a href="{{ route('orderkitchenbyname', 'slab') }}"
-                                                class="dropdown__link">
-                                                <i class="ri-arrow-right-s-fill"></i>
-                                                SLAB KITCHENS
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('orderkitchenbyname', 'j-pull') }}"
-                                                class="dropdown__link">
-                                                <i class="ri-arrow-right-s-fill"></i>
-                                                j-PULL KITCHENS
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="dropdown__group">
-                                    <ul class="dropdown__list">
-                                        <li>
-                                            <a href="{{ route('orderkitchenbyname', 'shaker') }}"
-                                                class="dropdown__link">
-                                                <i class="ri-arrow-right-s-fill"></i>
-                                                SHAKER KITCHENS
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('orderkitchenbyname', 'true-handleless') }}"
-                                                class="dropdown__link">
-                                                <i class="ri-arrow-right-s-fill"></i>
-                                                TRUE HANDLESS KITCHENS
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                @endif
-                            </div> -->
                         </div>
                     </li>
                     <li class="dropdown__item">
@@ -428,7 +476,7 @@ use App\Models\Style;
                         <div class="dropdown__container">
                             <div class="dropdown__content">
                                 @php
-                                $categories = Category::where('parent_category_id', null)->get();
+                                $categories = Category::where('parent_category_id', null)->whereNotIn('name', ['BASE CABINETS', 'WALL CABINETS', 'TALL CABINETS'])->get();
                                 @endphp
                                 @foreach ($categories as $index => $category)
                                 @if ($index % 4 == 0)
@@ -737,9 +785,9 @@ use App\Models\Style;
             });
         });
     </script>
-    
+
     <script>
-        document.getElementById('call-me-at').addEventListener('input', function (e) {
+        document.getElementById('call-me-at').addEventListener('input', function(e) {
             let value = e.target.value.replace(/\D/g, ''); // Remove non-numeric characters
 
             if (value.length >= 2) {

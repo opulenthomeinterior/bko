@@ -14,6 +14,7 @@ use App\Models\Order;
 use App\Models\Printing;
 use App\Models\VideoGuide;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -231,7 +232,16 @@ class HomeController extends Controller
         $category = Category::where('slug', $slug)->firstOrFail();
         $children = Category::where('parent_category_id', $category->id)->pluck('id')->toArray();
 
-        $types = Category::whereIn('id', $children)->orderBy('name', 'ASC')->get();
+        $types = Category::whereIn('id', $children)
+        ->select('id', 'name')
+        ->whereIn('id', function($query) use ($children) {
+            $query->select(DB::raw('MIN(id)'))
+                ->from('categories')
+                ->whereIn('id', $children)
+                ->groupBy('name');
+        })
+        ->orderBy('name', 'ASC')
+        ->get();
         $assemblies = Assembly::all();
         $styles = Style::where('slug', '!=', 'j-pull')->get();
 

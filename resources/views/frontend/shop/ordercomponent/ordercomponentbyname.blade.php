@@ -83,6 +83,7 @@
                                 <div class="accordion-body px-0 py-0 pb-1">
                                     <div class="row g-1">
                                         @foreach ($styles as $index => $style)
+                                        @if ($style->name != 'Shaker-22' && $style->name != 'Dual lever' && $style->name != 'Single Lever' && $style->name != 'Singlel lever' && $style->name != 'Cashmere')
                                         <div class="col-lg-12 col-md-12 col-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" name="styles[]"
@@ -93,6 +94,7 @@
                                                 </label>
                                             </div>
                                         </div>
+                                        @endif
                                         @endforeach
                                     </div>
                                 </div>

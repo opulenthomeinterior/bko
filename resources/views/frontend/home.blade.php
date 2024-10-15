@@ -161,7 +161,7 @@
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12 col-12 mb-4">
                 <a class="btn btn-outline-warning p-1 border-0" style="border-radius: 0;" href="{{ route('orderkitchenbyname', 'j-pull-22') }}">
                     <div class="card component-card border-0 h-100 d-flex flex-column justify-content-between">
-                        <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">J-PULL Kitchen</h4>
+                        <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">J-PULL 22 Kitchen</h4>
                         <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end">
                             <p class="p-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sequi. Alias autem eum ut voluptatum, error porro officia eaque accusamus architecto, provident numquam incidunt hic eveniet nulla atque! Porro, hic.</p>
                             <p style="text-decoration: underline;">Order now</p>
@@ -183,7 +183,7 @@
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12 col-12 mb-4">
                 <a class="btn btn-outline-warning p-1 border-0" style="border-radius: 0;" href="{{ route('orderkitchenbyname', 'shaker-22') }}">
                     <div class="card component-card border-0 h-100 d-flex flex-column justify-content-between">
-                        <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">SHAKER Kitchen</h4>
+                        <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">SHAKER 22 Kitchen</h4>
                         <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end">
                             <p class="p-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sequi. Alias autem eum ut voluptatum, error porro officia eaque accusamus architecto, provident numquam incidunt hic eveniet nulla atque! Porro, hic.</p>
                             <p style="text-decoration: underline;">Order now</p>
@@ -250,7 +250,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
+            {{-- <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
                 <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'base-cabinets')}}">
                     <div class="card-old">
                         <div class="card-body">
@@ -259,7 +259,7 @@
         
                     </div>
                 </a>
-            </div>
+            </div> --}}
             <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
                 <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'handles')}}">
                     <div class="card-old">
@@ -290,7 +290,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
+            {{--<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
                 <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'wall-cabinets')}}">
                     <div class="card-old">
                         <div class="card-body">
@@ -299,7 +299,7 @@
         
                     </div>
                 </a>
-            </div>
+            </div>--}}
             <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
                 <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'gola-handleless-rails')}}">
                     <div class="card-old">
@@ -330,7 +330,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
+            {{--<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
                 <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'tall-cabinets')}}">
                     <div class="card-old">
                         <div class="card-body">
@@ -339,7 +339,7 @@
         
                     </div>
                 </a>
-            </div>
+            </div>--}}
             <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
                 <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'accessories')}}">
                     <div class="card-old">

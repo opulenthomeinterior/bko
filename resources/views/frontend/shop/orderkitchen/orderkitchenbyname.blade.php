@@ -34,7 +34,7 @@
                 <p>First select your choice of assembly:</p>
                 @foreach ($styleData['assemblies'] as $assemblyName => $assemblyData)
                     <button type="button" id="{{ $assemblyName == 'Rigid' ? 'rigid_btn' : 'flatpacked_btn' }}"
-                        class="btn btn-sm btn-outline-dark rounded-0">{{ $assemblyName }}</button>
+                        class="btn btn-sm btn-outline-warning text-dark rounded-0">{{ $assemblyName }}</button>
                 @endforeach
             </div>
 
@@ -47,7 +47,7 @@
                             @foreach ($assemblyData['colours'] as $colour)
                                 <div class="col-6 d-flex position-relative align-items-center justify-content-center">
                                     <div
-                                        class="colour-div position-absolute start-0 top-50 translate-middle-y ms-2 bg-danger">
+                                        class="colour-div position-absolute start-0 top-50 translate-middle-y ms-2" style="background-color: {{$colour->colour_code}};">
                                     </div>
                                     <a href="{{ route('orderkitchenbycolour', ['style' => $styleData['data']->slug, 'assembly' => $assemblyData['data']->slug, 'colour' => $colour->slug]) }}"
                                         class="colour-btn btn w-100 rounded-0 sidebar-btn text-start">
