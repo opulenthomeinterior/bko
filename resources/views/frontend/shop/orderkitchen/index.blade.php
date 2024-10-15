@@ -30,7 +30,10 @@
                 </div>
 
                 <div class="col-lg-6 col-md-6 col-12 px-4 mt-md-0 my-3">
-                    <h1 class="fs-3 fw-bolder text-dark text-uppercase">{{ $styleData['data']->name }}</h1>
+                    <div class="d-flex justify-content-between align-items-center border-bottom border-warning mb-3">
+                        <h1 class="fs-3 fw-bolder text-dark text-uppercase">{{ $styleData['data']->name }}</h1>
+                        <a class="btn btn-sm btn-outline-warning text-dark" href="{{route('orderkitchenbyname', [$styleData['data']->slug])}}" style="border-radius: 0;">Explore</a>
+                    </div>
 
                     <p>
                         18mm MDF slab doors available in 12 SuperGloss and UltraMatt finishes. Also available in 2 MFC
