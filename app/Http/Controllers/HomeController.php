@@ -108,7 +108,9 @@ class HomeController extends Controller
             $style = Style::where('slug', $style)->firstOrFail();
             $assembly = Assembly::where('slug', $assembly)->firstOrFail();
             $colour = Colour::where('slug', $colour)->firstOrFail();
-    
+
+            $title = trim(($style->name ?? '') . ' ' . ($assembly->name ?? '') . ' ' . ($colour->name ?? ''));
+
             // echo '<pre>';
             // print_r($assembly);
             // print_r($colour);
@@ -210,7 +212,7 @@ class HomeController extends Controller
             // echo '</pre>';
             // exit;
     
-            return view('frontend.shop.orderkitchen.orderkitchenbycolour', compact('style', 'assembly', 'colour', 'baseCabinets', 'wallCabinets', 'tallCabinets', 'panels', 'handles', 'golaHandlelessRails', 'accessories', 'appliances', 'worktops', 'worktopsAndUpStands', 'breakfastBars', 'edgings', 'taps', 'sinks', 'swatchesAndSamples'));
+            return view('frontend.shop.orderkitchen.orderkitchenbycolour', compact('style', 'assembly', 'colour', 'baseCabinets', 'wallCabinets', 'tallCabinets', 'panels', 'handles', 'golaHandlelessRails', 'accessories', 'appliances', 'worktops', 'worktopsAndUpStands', 'breakfastBars', 'edgings', 'taps', 'sinks', 'swatchesAndSamples', 'title'));
         } catch (\Exception $e) {
             return redirect()->back();
         }
