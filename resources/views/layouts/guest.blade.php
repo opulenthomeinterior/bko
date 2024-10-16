@@ -291,7 +291,7 @@ use App\Models\Style;
                                 <div class="dropdown__group">
                                     <ul class="dropdown__list">
                                         <li>
-                                            <a href="{{ route('orderkitchenbyname', 'slab') }}"
+                                            <a href="{{ route('orderkitchenbyname', 'slab-painted') }}"
                                                 class="dropdown__link">
                                                 <i class="ri-arrow-right-s-fill"></i>
                                                 SLAB KITCHENS
@@ -406,7 +406,7 @@ use App\Models\Style;
                                                 <input type="radio" value="shaker-22" name="style_name" class="style_type"> &nbsp; Shaker 22 Kitchen
                                             </li>
                                             <li>
-                                                <input type="radio" value="slab-kitchens" name="style_name" class="style_type"> &nbsp; Slab Kitchen
+                                                <input type="radio" value="slab-painted" name="style_name" class="style_type"> &nbsp; Slab Painted Kitchen
                                             </li>
                                         </ul>
                                     </div>
