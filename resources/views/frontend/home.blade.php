@@ -192,7 +192,7 @@
                 </a>
             </div>
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12 col-12 mb-4">
-                <a class="btn btn-outline-warning p-1 border-0" style="border-radius: 0;" href="{{ route('orderkitchenbyname', 'slab-kitchens') }}">
+                <a class="btn btn-outline-warning p-1 border-0" style="border-radius: 0;" href="{{ route('orderkitchenbyname', 'slab-painted') }}">
                     <div class="card component-card border-0 h-100 d-flex flex-column justify-content-between">
                         <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">SLAB Kitchen</h4>
                         <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end">
