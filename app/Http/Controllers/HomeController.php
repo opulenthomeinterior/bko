@@ -109,7 +109,7 @@ class HomeController extends Controller
             $assembly = Assembly::where('slug', $assembly)->firstOrFail();
             $colour = Colour::where('slug', $colour)->firstOrFail();
 
-            $title = trim(($style->name ?? '') . ' ' . ($assembly->name ?? '') . ' ' . ($colour->name ?? ''));
+            $title = trim(($style->name ?? '') . ' ' . ($assembly->name ?? '') . ' ' . ($colour->trade_colour ?? ''));
 
             // echo '<pre>';
             // print_r($assembly);
