@@ -324,6 +324,24 @@ use App\Models\Style;
                                         </li>
                                     </ul>
                                 </div>
+                                <div class="dropdown__group">
+                                    <ul class="dropdown__list">
+                                        <li>
+                                            <a href="{{ route('orderkitchenbyname', 'slab-laminate') }}"
+                                                class="dropdown__link">
+                                                <i class="ri-arrow-right-s-fill"></i>
+                                                SLAB LAMINATE KITCHENS
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('orderkitchenbyname', 'standard-mfc-kitchen') }}"
+                                                class="dropdown__link">
+                                                <i class="ri-arrow-right-s-fill"></i>
+                                                STANDARD MFC KITCHENS
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </li>
@@ -407,6 +425,12 @@ use App\Models\Style;
                                             </li>
                                             <li>
                                                 <input type="radio" value="slab-painted" name="style_name" class="style_type"> &nbsp; Slab Painted Kitchen
+                                            </li>
+                                            <li>
+                                                <input type="radio" value="slab-laminate" name="style_name" class="style_type"> &nbsp; Slab Laminate Kitchen
+                                            </li>
+                                            <li>
+                                                <input type="radio" value="standard-mfc-kitchen" name="style_name" class="style_type"> &nbsp; Standard MFC Kitchen
                                             </li>
                                         </ul>
                                     </div>
