@@ -166,7 +166,46 @@ class ProductsImport implements ToCollection, WithChunkReading
                     $product->image_path = $row[19] ?? null;
                     $product->save();
                 } else {
+                    $product->product_code = $row[0];
+                    // $product->serial_number = $row[21];
                     $product->slug = str_replace(' ', '-', strtolower($row[3]));
+                    $product->short_title = $row[4];
+                    $product->full_title = $row[3];
+                    $product->product_description = $row[18];
+                    if (empty(trim($row[5]))) {
+                        $product->price = 0;
+                        // skip this row
+                        // continue;
+                    } else {
+                        $product->price = $row[5];
+                    }
+                    // $product->price = $row[5];
+                    $product->discounted_percentage = empty(trim($row[6])) ? 0 : $row[6];
+    
+                    if ($row[6] >= 0 && $row[6] <= 100) {
+                        $discountPercentage = $row[6];
+                        $discountedPrice = $product->price * (1 - ($discountPercentage / 100));
+                        $product->discounted_price = $discountedPrice;
+                    } else {
+                        $product->discounted_price = $row[5];
+                    }
+                    
+                    $product->parent_category_id = $parent_category ? $parent_category->id : null;
+                    $product->category_id = $category ? $category->id : null;
+                    $product->style_id = $style ? $style->id : null;
+                    $product->colour_id = isset($colour) && $colour ? $colour->id : null;
+    
+                    $product->assembly_id = $assembly ? $assembly->id : null;
+                    $product->height = (float)trim(preg_replace('/[^0-9]/', '', $row[12]));
+                    $product->width = (float)trim(preg_replace('/[^0-9]/', '', $row[13]));
+                    $product->depth = (float)trim(preg_replace('/[^0-9]/', '', $row[14]));
+                    $product->length = (float)trim(preg_replace('/[^0-9]/', '', $row[15]));
+                    $product->weight = (float)trim(preg_replace('/[^0-9]/', '', $row[16]));
+                    $product->dimensions = $row[11];
+                    // if (!empty($row[19])) {
+                        // $file = $row[19];
+                        // $product->image_path = mmadev_store_and_get_image_path_from_url('products', $file);
+                    // }
                     $product->image_path = $row[19] ?? null;
                     $product->save();
                 }
