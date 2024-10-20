@@ -46,7 +46,6 @@ class ProductsImport implements ToCollection, WithChunkReading
                 $category = Category::where('name', $row[2])->first();
                 if (!empty($parent_category) && !empty($row[1])) {
                     if (empty($category) && !empty($row[2])) {
-    
                         $category = new Category();
                         $category->name = $row[2];
                         $category->slug = str_replace(' ', '-', strtolower($row[2]));
@@ -134,7 +133,12 @@ class ProductsImport implements ToCollection, WithChunkReading
                         // skip this row
                         // continue;
                     } else {
-                        $product->price = $row[5];
+                        $price = $row[5];
+                        // Remove anything that is not a number or a decimal point
+                        $sanitized_price = preg_replace('/[^0-9.]/', '', $price);
+                        // Optionally, you can cast it to a float or integer
+                        $sanitized_price = (float) $sanitized_price;
+                        $product->price = $sanitized_price;
                     }
                     // $product->price = $row[5];
                     $product->discounted_percentage = empty(trim($row[6])) ? 0 : $row[6];
@@ -177,7 +181,12 @@ class ProductsImport implements ToCollection, WithChunkReading
                         // skip this row
                         // continue;
                     } else {
-                        $product->price = $row[5];
+                        $price = $row[5];
+                        // Remove anything that is not a number or a decimal point
+                        $sanitized_price = preg_replace('/[^0-9.]/', '', $price);
+                        // Optionally, you can cast it to a float or integer
+                        $sanitized_price = (float) $sanitized_price;
+                        $product->price = $sanitized_price;
                     }
                     // $product->price = $row[5];
                     $product->discounted_percentage = empty(trim($row[6])) ? 0 : $row[6];
