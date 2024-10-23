@@ -25,7 +25,7 @@
         <div class="row py-4">
             @if ($components->count() > 0)
                 @foreach ($components as $index => $component)
-                @if ($component->name != 'BASE CABINETS' && $component->name != 'WALL CABINETS' && $component->name != 'TALL CABINETS')
+                @if ($component->slug != 'base-cabinets' && $component->slug != 'wall-cabinets' && $component->slug != 'tall-cabinets')
                     <div class="col-lg-4 col-md-6 col-12 mb-4">
                         <div class="card component-card btn btn-outline-warning">
                             <a href="{{ route('ordercomponentbyname', $component->slug) }}"
