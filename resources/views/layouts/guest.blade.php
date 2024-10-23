@@ -298,7 +298,7 @@ use App\Models\Style;
                                             <div class="row">
                                                 @foreach ($styles as $index => $style)
                                                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
-                                                    <li style="width: 100%;">
+                                                    <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
                                                         <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['j-pull-22']) }}" class="dropdown__link">
                                                             <i class="ri-arrow-right-s-fill"></i> {{$style->name}} KITCHENS</a>
                                                     </li>
@@ -315,37 +315,37 @@ use App\Models\Style;
                                         <div class="container">
                                             <div class="row">
                                                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
-                                                    <li style="width: 100%;">
+                                                    <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
                                                         <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['j-pull-22']) }}" class="dropdown__link">
                                                             <i class="ri-arrow-right-s-fill"></i> J-PULL 22 KITCHENS</a>
                                                     </li>
                                                 </div>
                                                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
-                                                    <li style="width: 100%;">
+                                                    <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
                                                         <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['true-handleless']) }}" class="dropdown__link">
                                                             <i class="ri-arrow-right-s-fill"></i> TRUE HANDLELESS KITCHENS</a>
                                                     </li>
                                                 </div>
                                                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
-                                                    <li style="width: 100%;">
+                                                    <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
                                                         <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['shaker-22']) }}" class="dropdown__link">
                                                             <i class="ri-arrow-right-s-fill"></i> SHAKER 22 KITCHENS</a>
                                                     </li>
                                                 </div>
                                                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
-                                                    <li style="width: 100%;">
+                                                    <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
                                                         <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['slab-painted']) }}" class="dropdown__link">
                                                             <i class="ri-arrow-right-s-fill"></i> SLAB PAINTED KITCHENS</a>
                                                     </li>
                                                 </div>
                                                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
-                                                    <li style="width: 100%;">
+                                                    <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
                                                         <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['slab-laminate']) }}" class="dropdown__link">
                                                             <i class="ri-arrow-right-s-fill"></i> SLAB LAMINATE KITCHENS</a>
                                                     </li>
                                                 </div>
                                                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
-                                                    <li style="width: 100%;">
+                                                    <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
                                                         <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['standard-mfc']) }}" class="dropdown__link">
                                                             <i class="ri-arrow-right-s-fill"></i> STANDARD MFC KITCHENS</a>
                                                     </li>
@@ -523,7 +523,7 @@ use App\Models\Style;
                                             <div class="row">
                                                 @foreach ($categories as $index => $category)
                                                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
-                                                    <li style="width: 100%;">
+                                                    <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
                                                         <a style="width: 100%;" href="{{ route('ordercomponentbyname', [$category->slug]) }}" class="dropdown__link">
                                                             <i class="ri-arrow-right-s-fill"></i> {{$category->name}} </a>
                                                     </li>
@@ -550,25 +550,25 @@ use App\Models\Style;
                                             <h4 class="text-start bg-dark text-white p-2">HELP & GUIDES</h4>
                                             <div class="row">
                                                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
-                                                    <li style="width: 100%;">
+                                                    <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
                                                         <a href="{{ route('needhelp') }}" class="dropdown__link">
                                                             <i class="ri-arrow-right-s-fill"></i> NEED HELP MEASURING?</a>
                                                     </li>
                                                 </div>
                                                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
-                                                    <li style="width: 100%;">
+                                                    <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
                                                         <a href="{{ route('kitchenarrive') }}" class="dropdown__link">
                                                             <i class="ri-arrow-right-s-fill"></i> HOW WILL MY KITCHEN ARRIVE?</a>
                                                     </li>
                                                 </div>
                                                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
-                                                    <li style="width: 100%;">
+                                                    <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
                                                         <a href="{{ route('about') }}" class="dropdown__link">
                                                             <i class="ri-arrow-right-s-fill"></i> ABOUT US</a>
                                                     </li>
                                                 </div>
                                                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
-                                                    <li style="width: 100%;">
+                                                    <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
                                                         <a href="{{ route('needhelp') }}" class="dropdown__link">
                                                             <i class="ri-arrow-right-s-fill"></i> NEED HELP MEASURING?</a>
                                                     </li>
