@@ -285,63 +285,76 @@ use App\Models\Style;
                             <a href="{{ route('orderkitchen') }}">Explore </a>
                             <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                         </div>
-                        <div class="dropdown__container">
-                            <div class="dropdown__content">
-                                
+                        <div class="dropdown__container border-bottom border-warning border-2">
+                            <div class="dropdown__content px-4" style="max-width: 100% !important; margin: 0px !important; grid-template-columns: none; column-gap: 0;">
+                                @php
+                                $styles = Style::all();
+                                @endphp
+                                @if (!empty($styles))
                                 <div class="dropdown__group">
                                     <ul class="dropdown__list">
-                                        <li>
-                                            <a href="{{ route('orderkitchenbyname', 'slab-painted') }}"
-                                                class="dropdown__link">
-                                                <i class="ri-arrow-right-s-fill"></i>
-                                                SLAB KITCHENS
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('orderkitchenbyname', 'j-pull-22') }}"
-                                                class="dropdown__link">
-                                                <i class="ri-arrow-right-s-fill"></i>
-                                                j-PULL 22 KITCHENS
-                                            </a>
-                                        </li>
+                                        <div class="container">
+                                            <h4 class="text-start bg-dark text-white p-2">Choose Style:</h4>
+                                            <div class="row">
+                                                @foreach ($styles as $index => $style)
+                                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
+                                                    <li style="width: 100%;">
+                                                        <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['j-pull-22']) }}" class="dropdown__link">
+                                                            <i class="ri-arrow-right-s-fill"></i> {{$style->name}} KITCHENS</a>
+                                                    </li>
+                                                </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
                                     </ul>
                                 </div>
+                                @else
                                 <div class="dropdown__group">
                                     <ul class="dropdown__list">
-                                        <li>
-                                            <a href="{{ route('orderkitchenbyname', 'shaker-22') }}"
-                                                class="dropdown__link">
-                                                <i class="ri-arrow-right-s-fill"></i>
-                                                SHAKER 22 KITCHENS
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('orderkitchenbyname', 'true-handleless') }}"
-                                                class="dropdown__link">
-                                                <i class="ri-arrow-right-s-fill"></i>
-                                                TRUE HANDLESS KITCHENS
-                                            </a>
-                                        </li>
+                                        <h4 class="text-start bg-dark text-white p-2">Choose Style:</h4>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
+                                                    <li style="width: 100%;">
+                                                        <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['j-pull-22']) }}" class="dropdown__link">
+                                                            <i class="ri-arrow-right-s-fill"></i> J-PULL 22 KITCHENS</a>
+                                                    </li>
+                                                </div>
+                                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
+                                                    <li style="width: 100%;">
+                                                        <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['true-handleless']) }}" class="dropdown__link">
+                                                            <i class="ri-arrow-right-s-fill"></i> TRUE HANDLELESS KITCHENS</a>
+                                                    </li>
+                                                </div>
+                                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
+                                                    <li style="width: 100%;">
+                                                        <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['shaker-22']) }}" class="dropdown__link">
+                                                            <i class="ri-arrow-right-s-fill"></i> SHAKER 22 KITCHENS</a>
+                                                    </li>
+                                                </div>
+                                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
+                                                    <li style="width: 100%;">
+                                                        <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['slab-painted']) }}" class="dropdown__link">
+                                                            <i class="ri-arrow-right-s-fill"></i> SLAB PAINTED KITCHENS</a>
+                                                    </li>
+                                                </div>
+                                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
+                                                    <li style="width: 100%;">
+                                                        <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['slab-laminate']) }}" class="dropdown__link">
+                                                            <i class="ri-arrow-right-s-fill"></i> SLAB LAMINATE KITCHENS</a>
+                                                    </li>
+                                                </div>
+                                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
+                                                    <li style="width: 100%;">
+                                                        <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['standard-mfc']) }}" class="dropdown__link">
+                                                            <i class="ri-arrow-right-s-fill"></i> STANDARD MFC KITCHENS</a>
+                                                    </li>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </ul>
                                 </div>
-                                <div class="dropdown__group">
-                                    <ul class="dropdown__list">
-                                        <li>
-                                            <a href="{{ route('orderkitchenbyname', 'slab-laminate') }}"
-                                                class="dropdown__link">
-                                                <i class="ri-arrow-right-s-fill"></i>
-                                                SLAB LAMINATE KITCHENS
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('orderkitchenbyname', 'standard-mfc-kitchen') }}"
-                                                class="dropdown__link">
-                                                <i class="ri-arrow-right-s-fill"></i>
-                                                STANDARD MFC KITCHENS
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                @endif
                             </div>
                         </div>
                     </li>
@@ -408,7 +421,7 @@ use App\Models\Style;
                             <a href="{{ route('orderkitchen') }}">ORDER KITCHEN </a>
                             <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                         </div>
-                        <div class="dropdown__container py-4">
+                        <div class="dropdown__container py-4 border-bottom border-warning border-2">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-3 text-center">
@@ -497,72 +510,73 @@ use App\Models\Style;
                             <a href="{{ route('ordercomponent') }}">ORDER COMPONENT </a>
                             <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                         </div>
-                        <div class="dropdown__container">
-                            <div class="dropdown__content">
+                        <div class="dropdown__container border-bottom border-warning border-2">
+                            <div class="dropdown__content px-4" style="max-width: 100% !important; margin: 0px !important; grid-template-columns: none; column-gap: 0;">
                                 @php
-                                $categories = Category::where('parent_category_id', null)->whereNotIn('name', ['BASE CABINETS', 'WALL CABINETS', 'TALL CABINETS'])->get();
+                                    $categories = Category::where('parent_category_id', null)->whereNotIn('name', ['BASE CABINETS', 'WALL CABINETS', 'TALL CABINETS'])->get();
                                 @endphp
-                                @foreach ($categories as $index => $category)
-                                @if ($index % 4 == 0)
+                                @if (!empty($categories))
                                 <div class="dropdown__group">
                                     <ul class="dropdown__list">
-                                        @endif
-                                        <li>
-                                            <a href="{{ route('ordercomponentbyname', $category->slug) }}" class="dropdown__link">
-                                                <i class="ri-arrow-right-s-fill"></i>{{ $category->name }}</a>
-                                        </li>
-                                        @if (($index + 1) % 4 == 0 || $loop->last)
+                                        <div class="container">
+                                            <h4 class="text-start bg-dark text-white p-2">Choose Unit:</h4>
+                                            <div class="row">
+                                                @foreach ($categories as $index => $category)
+                                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
+                                                    <li style="width: 100%;">
+                                                        <a style="width: 100%;" href="{{ route('ordercomponentbyname', [$category->slug]) }}" class="dropdown__link">
+                                                            <i class="ri-arrow-right-s-fill"></i> {{$category->name}} </a>
+                                                    </li>
+                                                </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
                                     </ul>
                                 </div>
                                 @endif
-                                @endforeach
                             </div>
                         </div>
                     </li>
                     <li class="dropdown__item">
                         <div class="nav__link dropdown__button">
-                            <a href="{{ route('help_and_guides') }}">
-                                HELP & GUIDES
-                            </a>
+                            <a href="{{ route('help_and_guides') }}">HELP & GUIDES </a>
                             <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                         </div>
-
-                        <div class="dropdown__container">
-                            <div class="dropdown__content">
+                        <div class="dropdown__container border-bottom border-warning border-2">
+                            <div class="dropdown__content px-4" style="max-width: 100% !important; margin: 0px !important; grid-template-columns: none; column-gap: 0;">
                                 <div class="dropdown__group">
                                     <ul class="dropdown__list">
-                                        <li>
-                                            <a href="{{ route('terminology') }}" class="dropdown__link">
-                                                <i class="ri-arrow-right-s-fill"></i>KITCHEN TERMINOLOGY</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('faq') }}" class="dropdown__link">
-                                                <i class="ri-arrow-right-s-fill"></i>BK Online FAQS</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('fittingguide') }}" class="dropdown__link">
-                                                <i class="ri-arrow-right-s-fill"></i>FITTING GUIDES</a>
-                                        </li>
+                                        <div class="container">
+                                            <h4 class="text-start bg-dark text-white p-2">HELP & GUIDES</h4>
+                                            <div class="row">
+                                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
+                                                    <li style="width: 100%;">
+                                                        <a href="{{ route('needhelp') }}" class="dropdown__link">
+                                                            <i class="ri-arrow-right-s-fill"></i> NEED HELP MEASURING?</a>
+                                                    </li>
+                                                </div>
+                                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
+                                                    <li style="width: 100%;">
+                                                        <a href="{{ route('kitchenarrive') }}" class="dropdown__link">
+                                                            <i class="ri-arrow-right-s-fill"></i> HOW WILL MY KITCHEN ARRIVE?</a>
+                                                    </li>
+                                                </div>
+                                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
+                                                    <li style="width: 100%;">
+                                                        <a href="{{ route('about') }}" class="dropdown__link">
+                                                            <i class="ri-arrow-right-s-fill"></i> ABOUT US</a>
+                                                    </li>
+                                                </div>
+                                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
+                                                    <li style="width: 100%;">
+                                                        <a href="{{ route('needhelp') }}" class="dropdown__link">
+                                                            <i class="ri-arrow-right-s-fill"></i> NEED HELP MEASURING?</a>
+                                                    </li>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </ul>
                                 </div>
-
-                                <div class="dropdown__group">
-                                    <ul class="dropdown__list">
-                                        <li>
-                                            <a href="{{ route('needhelp') }}" class="dropdown__link">
-                                                <i class="ri-arrow-right-s-fill"></i>NEED HELP MEASURING?</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('kitchenarrive') }}" class="dropdown__link">
-                                                <i class="ri-arrow-right-s-fill"></i>HOW WILL MY KITCHEN ARRIVE?</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('about') }}" class="dropdown__link">
-                                                <i class="ri-arrow-right-s-fill"></i>ABOUT US</a>
-                                        </li>
-                                    </ul>
-                                </div>
-
                             </div>
                         </div>
                     </li>
