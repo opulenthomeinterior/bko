@@ -45,6 +45,36 @@
             opacity: 1; /* Ensures the color is fully applied */
         }
 
+    /* Ensure the image fades out smoothly on hover */
+    .card-body:hover img {
+        opacity: 0.3;
+        transition: opacity 0.4s ease-in-out;
+    }
+
+    /* Display the hover text when hovering over the card */
+    .card-body:hover .hover-text {
+        opacity: 1;
+    }
+
+    /* Ensure the hover text is initially hidden */
+    .hover-text {
+        opacity: 0;
+        transition: opacity 0.4s ease-in-out;
+        z-index: 2; /* Make sure text is above the image */
+    }
+
+    /* Ensure the image has a lower z-index */
+    .img-container img {
+        z-index: 1;
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    /* Ensuring relative positioning for hover text and image */
+    .img-container {
+        position: relative;
+    }
     </style>
     <section class="container-fluid bg-dark px-lg-5 py-4 px-md-3 px-3 mt-4" style="border-top: 3px solid #febd49; border-right: 3px solid #febd49">
         <div class="row py-4">
@@ -160,44 +190,72 @@
         <div class="row mt-4 px-0">
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12 col-12 mb-4">
                 <a class="btn btn-outline-warning p-1 border-0" style="border-radius: 0;" href="{{ route('orderkitchenbyname', 'j-pull-22') }}">
-                    <div class="card component-card border-0 h-100 d-flex flex-column justify-content-between">
-                        <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">J-PULL 22 Kitchen</h4>
-                        <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end">
-                            <p class="p-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sequi. Alias autem eum ut voluptatum, error porro officia eaque accusamus architecto, provident numquam incidunt hic eveniet nulla atque! Porro, hic.</p>
-                            <p style="text-decoration: underline;">Order now</p>
+                    <div style="height: 200px;" class="card component-card border-0 h-100 d-flex flex-column justify-content-between">
+                        <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">J-PULL 22 KITCHEN</h4>
+                        <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end position-relative">
+                            <!-- Image container -->
+                            <div class="position-relative img-container">
+                                <img src="{{ asset('images/j-pull-22.jpeg') }}" class="img-fluid w-100 h-100">
+                                <!-- Hover text -->
+                                <div class="hover-text position-absolute w-100 h-100 bg-warning text-dark d-flex justify-content-center align-items-center" style="top: 0; left: 0; transition: opacity 0.4s;">
+                                    <h5 class="text-dark">J-PULL 22 KITCHEN <br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur hic dolorum cum, dignissimos quo explicabo ipsa consectetur quibusdam doloribus ratione unde commodi tenetur voluptatibus inventore eveniet nobis beatae libero ipsum.</h5>
+                                </div>
+                            </div>
+                            <p class="text-center mt-3" style="text-decoration: underline;">Order now</p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12 col-12 mb-4">
                 <a class="btn btn-outline-warning p-1 border-0" style="border-radius: 0;" href="{{ route('orderkitchenbyname', 'true-handleless') }}">
-                    <div class="card component-card border-0 h-100 d-flex flex-column justify-content-between">
-                        <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">TRUE HANDLELESS Kitchen</h4>
-                        <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end">
-                            <p class="p-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sequi. Alias autem eum ut voluptatum, error porro officia eaque accusamus architecto, provident numquam incidunt hic eveniet nulla atque! Porro, hic.</p>
-                            <p style="text-decoration: underline;">Order now</p>
+                    <div style="height: 200px;" class="card component-card border-0 h-100 d-flex flex-column justify-content-between">
+                        <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">TRUE HANDLELESS KITCHEN</h4>
+                        <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end position-relative">
+                            <!-- Image container -->
+                            <div class="position-relative img-container">
+                                <img src="{{ asset('images/true-handleless.jpeg') }}" class="img-fluid w-100 h-100">
+                                <!-- Hover text -->
+                                <div class="hover-text position-absolute w-100 h-100 bg-warning text-dark d-flex justify-content-center align-items-center" style="top: 0; left: 0; transition: opacity 0.4s;">
+                                    <h5 class="text-dark">TRUE HANDLELESS KITCHEN <br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur hic dolorum cum, dignissimos quo explicabo ipsa consectetur quibusdam doloribus ratione unde commodi tenetur voluptatibus inventore eveniet nobis beatae libero ipsum.</h5>
+                                </div>
+                            </div>
+                            <p class="text-center mt-3" style="text-decoration: underline;">Order now</p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12 col-12 mb-4">
                 <a class="btn btn-outline-warning p-1 border-0" style="border-radius: 0;" href="{{ route('orderkitchenbyname', 'shaker-22') }}">
-                    <div class="card component-card border-0 h-100 d-flex flex-column justify-content-between">
-                        <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">SHAKER 22 Kitchen</h4>
-                        <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end">
-                            <p class="p-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sequi. Alias autem eum ut voluptatum, error porro officia eaque accusamus architecto, provident numquam incidunt hic eveniet nulla atque! Porro, hic.</p>
-                            <p style="text-decoration: underline;">Order now</p>
+                    <div style="height: 200px;" class="card component-card border-0 h-100 d-flex flex-column justify-content-between">
+                        <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">SHAKER 22 KITCHEN</h4>
+                        <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end position-relative">
+                            <!-- Image container -->
+                            <div class="position-relative img-container">
+                                <img src="{{ asset('images/shaker-22.jpeg') }}" class="img-fluid w-100 h-100">
+                                <!-- Hover text -->
+                                <div class="hover-text position-absolute w-100 h-100 bg-warning text-dark d-flex justify-content-center align-items-center" style="top: 0; left: 0; transition: opacity 0.4s;">
+                                    <h5 class="text-dark">SHAKER 22 KITCHEN <br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur hic dolorum cum, dignissimos quo explicabo ipsa consectetur quibusdam doloribus ratione unde commodi tenetur voluptatibus inventore eveniet nobis beatae libero ipsum.</h5>
+                                </div>
+                            </div>
+                            <p class="text-center mt-3" style="text-decoration: underline;">Order now</p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12 col-12 mb-4">
                 <a class="btn btn-outline-warning p-1 border-0" style="border-radius: 0;" href="{{ route('orderkitchenbyname', 'slab-painted') }}">
-                    <div class="card component-card border-0 h-100 d-flex flex-column justify-content-between">
-                        <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">SLAB Kitchen</h4>
-                        <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end">
-                            <p class="p-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sequi. Alias autem eum ut voluptatum, error porro officia eaque accusamus architecto, provident numquam incidunt hic eveniet nulla atque! Porro, hic.</p>
-                            <p style="text-decoration: underline;">Order now</p>
+                    <div style="height: 200px;" class="card component-card border-0 h-100 d-flex flex-column justify-content-between">
+                        <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">SLAB PAINTED KITCHEN</h4>
+                        <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end position-relative">
+                            <!-- Image container -->
+                            <div class="position-relative img-container">
+                                <img src="{{ asset('images/slab.jpeg') }}" class="img-fluid w-100 h-100">
+                                <!-- Hover text -->
+                                <div class="hover-text position-absolute w-100 h-100 bg-warning text-dark d-flex justify-content-center align-items-center" style="top: 0; left: 0; transition: opacity 0.4s;">
+                                    <h5 class="text-dark">SLAB PAINTED KITCHEN <br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur hic dolorum cum, dignissimos quo explicabo ipsa consectetur quibusdam doloribus ratione unde commodi tenetur voluptatibus inventore eveniet nobis beatae libero ipsum.</h5>
+                                </div>
+                            </div>
+                            <p class="text-center mt-3" style="text-decoration: underline;">Order now</p>
                         </div>
                     </div>
                 </a>
