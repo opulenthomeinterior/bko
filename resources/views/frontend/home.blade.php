@@ -87,7 +87,7 @@
     </section> -->
 
     <section class="container-fluid position-relative" style="height: 90vh; overflow: hidden; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49; border-left: 3px solid #febd49">
-        <img src="{{ asset('images/Slab-Kitchen.jpg') }}"
+        <img src="{{ asset('images/homepage.jpeg') }}"
             alt="Bespoke Kitchen Units in London and Surroundings"
             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: -1;">
 
