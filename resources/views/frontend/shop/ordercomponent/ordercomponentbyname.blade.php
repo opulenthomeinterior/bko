@@ -216,6 +216,55 @@
             </div>
 
             <div class="col-lg-9 col-md-8 col-sm-12">
+
+                <div id="custom-pagination-container" class="d-flex justify-content-end">
+                    {{-- {{ $products->links() }} --}}
+                    {{-- <nav aria-label="...">
+                        <ul class="pagination">
+                            @for ($i = 1; $i <= $pages; $i++)
+                                <li class="page-item {{ $currentPage == $i ? 'active' : '' }}">
+                    <a class="page-link" href="javascript:void(0)"
+                        data-page="{{ $i }}">{{ $i }}</a>
+                    </li>
+                    @endfor
+                    </ul>
+                    </nav> --}}
+                    <nav aria-label="...">
+                        <ul class="pagination">
+                            <!-- Back arrow -->
+                            @if ($currentPage > 1)
+                            <li class="page-item">
+                                <a class="page-link" href="javascript:void(0)" data-page="{{ $currentPage - 1 }}">Back</a>
+                            </li>
+                            @endif
+
+                            <!-- Page numbers -->
+                            @php
+                            $start = max(1, $currentPage - 4);
+                            $end = min($pages, $currentPage + 5);
+                            if ($end - $start < 9) {
+                                $start=max(1, $end - 9);
+                                $end=min($pages, $start + 9);
+                                }
+                                @endphp
+
+                                @for ($i=$start; $i <=$end; $i++)
+                                <li class="page-item {{ $currentPage == $i ? 'active' : '' }}">
+                                <a class="page-link" href="javascript:void(0)" data-page="{{ $i }}">{{ $i }}</a>
+                                </li>
+                                @endfor
+
+                                <!-- Next arrow -->
+                                @if ($currentPage < $pages)
+                                    <li class="page-item">
+                                    <a class="page-link" href="javascript:void(0)" data-page="{{ $currentPage + 1 }}">Next</a>
+                                    </li>
+                                    @endif
+                        </ul>
+                    </nav>
+
+                </div>
+
                 <div class="row text-sm-center" id="products_container">
                     @if ($products->count() > 0)
                     @foreach ($products as $index => $product)
@@ -443,7 +492,7 @@
                     @endif
                 </div>
 
-                <div id="custom-pagination-container">
+                <div id="custom-pagination-container" class="d-flex justify-content-end">
                     {{-- {{ $products->links() }} --}}
                     {{-- <nav aria-label="...">
                         <ul class="pagination">
