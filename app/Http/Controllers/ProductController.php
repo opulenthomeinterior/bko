@@ -178,6 +178,8 @@ class ProductController extends Controller
                 $product->image_path = mmadev_store_and_get_image_path('products', $file);
             }
 
+            $product->status = !empty($product->status) ? 'active' : 'in_active';
+            
             $product->save();
 
             return redirect()->route('products')->with('success', 'Product created successfully.');
@@ -261,6 +263,8 @@ class ProductController extends Controller
                 // store image in folder and return image path
                 $product->image_path = mmadev_store_and_get_image_path('products', $file);
             }
+
+            $product->status = !empty($product->status) ? 'active' : 'in_active';
 
             $product->save();
 

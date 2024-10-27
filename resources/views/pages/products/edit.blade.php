@@ -201,7 +201,11 @@
                                         name="image_path" onchange="display_image(this)">
                                 </div>
 
-                                <div class="col-lg-6"></div>
+                                <div class="col-lg-6 form-group mb-2">
+                                    <label for="status" class="form-label">Status</label>
+                                    <br>
+                                    <input type="checkbox" name="status" {{ $product->status == 'active' ? 'checked' : ''}}>
+                                </div>
 
                                 <div
                                     class="col-lg-6 form-group mb-2 preview-image-wrapper {{ $product->image_path ? 'd-block' : 'd-none' }}">

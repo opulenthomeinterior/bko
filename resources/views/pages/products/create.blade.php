@@ -170,7 +170,13 @@
                                     <input type="file" accept="image/*" class="form-control" id="image_path"
                                         name="image_path" onchange="display_image(this)">
                                 </div>
-                                <div class="col-lg-6"></div>
+
+                                <div class="col-lg-6 form-group mb-2">
+                                    <label for="status" class="form-label">Status</label>
+                                    <br>
+                                    <input type="checkbox" name="status">
+                                </div>
+
                                 <div class="col-lg-6 form-group mb-lg-3 mb-2 preview-image-wrapper d-none">
                                     <label for="image_preview" class="form-label fw-bold">Image Preview</label>
                                     <img id="image_preview" src="#" alt="Image Preview"
