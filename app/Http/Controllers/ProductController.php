@@ -133,7 +133,6 @@ class ProductController extends Controller
             'dimensions' => 'nullable|string',
             'image_path' => 'nullable|image|mimes:jpeg,png,jpg,gif',
         ]);
-
         try {
             $product = new Product();
             $product->product_code = $request->input('product_code');
@@ -179,7 +178,7 @@ class ProductController extends Controller
                 $product->image_path = mmadev_store_and_get_image_path('products', $file);
             }
 
-            $product->status = !empty($product->status) ? 'active' : 'in_active';
+            $product->status = !empty($request->status) ? 'active' : 'in_active';
             
             $product->save();
 
@@ -265,7 +264,7 @@ class ProductController extends Controller
                 $product->image_path = mmadev_store_and_get_image_path('products', $file);
             }
 
-            $product->status = !empty($product->status) ? 'active' : 'in_active';
+            $product->status = !empty($request->status) ? 'active' : 'in_active';
 
             $product->save();
 
