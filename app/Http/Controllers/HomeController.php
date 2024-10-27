@@ -51,7 +51,7 @@ class HomeController extends Controller
             $styleData['assemblies'] = [];
 
             foreach ($uniqueAssemblies as $assembly) {
-                $products = Product::where('style_id', $style->id)->where('assembly_id', $assembly->id)->get();
+                $products = Product::where('style_id', $style->id)->where('assembly_id', $assembly->id)->where('status', 'active')->get();
 
                 // Extract color records from products
                 $assemblyData['data'] = $assembly;
@@ -83,7 +83,7 @@ class HomeController extends Controller
             $styleData['assemblies'] = [];
 
             foreach ($uniqueAssemblies as $assembly) {
-                $products = Product::where('style_id', $style->id)->where('assembly_id', $assembly->id)->get();
+                $products = Product::where('style_id', $style->id)->where('assembly_id', $assembly->id)->where('status', 'active')->get();
 
                 $assemblyData['data'] = $assembly;
                 // Extract color records from products
@@ -120,91 +120,91 @@ class HomeController extends Controller
             $baseCabinets = Product::where('parent_category_id', 2)
                 ->where('style_id', $style->id)
                 ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)
+                ->where('colour_id', $colour->id)->where('status', 'active')
                 ->get();
     
             $wallCabinets = Product::where('parent_category_id', 3)
                 ->where('style_id', $style->id)
                 ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)
+                ->where('colour_id', $colour->id)->where('status', 'active')
                 ->get();
     
             $tallCabinets = Product::where('parent_category_id', 4)
                 ->where('style_id', $style->id)
                 ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)
+                ->where('colour_id', $colour->id)->where('status', 'active')
                 ->get();
     
             $panels = Product::where('parent_category_id', 5)
                 ->where('style_id', $style->id)
                 ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)
+                ->where('colour_id', $colour->id)->where('status', 'active')
                 ->get();
     
             $handles = Product::where('parent_category_id', 6)
                 ->where('style_id', $style->id)
                 ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)
+                ->where('colour_id', $colour->id)->where('status', 'active')
                 ->get();
     
             $golaHandlelessRails = Product::where('parent_category_id', 7)
                 ->where('style_id', $style->id)
                 ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)
+                ->where('colour_id', $colour->id)->where('status', 'active')
                 ->get();
     
             $accessories = Product::where('parent_category_id', 8)
                 ->where('style_id', $style->id)
                 ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)
+                ->where('colour_id', $colour->id)->where('status', 'active')
                 ->get();
     
             $appliances = Product::where('parent_category_id', 9)
                 ->where('style_id', $style->id)
                 ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)
+                ->where('colour_id', $colour->id)->where('status', 'active')
                 ->get();
     
             $worktops = Product::where('parent_category_id', 10)
                 ->where('style_id', $style->id)
                 ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)
+                ->where('colour_id', $colour->id)->where('status', 'active')
                 ->get();
     
             $worktopsAndUpStands = Product::where('parent_category_id', 11)
                 ->where('style_id', $style->id)
                 ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)
+                ->where('colour_id', $colour->id)->where('status', 'active')
                 ->get();
     
             $breakfastBars = Product::where('parent_category_id', 12)
                 ->where('style_id', $style->id)
                 ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)
+                ->where('colour_id', $colour->id)->where('status', 'active')
                 ->get();
     
             $edgings = Product::where('parent_category_id', 13)
                 ->where('style_id', $style->id)
                 ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)
+                ->where('colour_id', $colour->id)->where('status', 'active')
                 ->get();
     
             $taps = Product::where('parent_category_id', 14)
                 ->where('style_id', $style->id)
                 ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)
+                ->where('colour_id', $colour->id)->where('status', 'active')
                 ->get();
     
             $sinks = Product::where('parent_category_id', 15)
                 ->where('style_id', $style->id)
                 ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)
+                ->where('colour_id', $colour->id)->where('status', 'active')
                 ->get();
     
             $swatchesAndSamples = Product::where('parent_category_id', 16)
                 ->where('style_id', $style->id)
                 ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)
+                ->where('colour_id', $colour->id)->where('status', 'active')
                 ->get();
     
             // echo '<pre>';
@@ -252,7 +252,7 @@ class HomeController extends Controller
         // Include the current category in the list of children
         $children[] = $category->id;
 
-        $count = Product::whereIn('category_id', $children)->count();
+        $count = Product::whereIn('category_id', $children)->where('status', 'active')->count();
         $currentPage = 1;
         $limit = 50;
         $offset = ($currentPage - 1) * $limit;
@@ -266,7 +266,7 @@ class HomeController extends Controller
             $currentPage = 1;
         }
 
-        $products = Product::whereIn('category_id', $children)->offset($offset)->limit($limit)->get();
+        $products = Product::whereIn('category_id', $children)->where('status', 'active')->offset($offset)->limit($limit)->get();
 
         // $products = Product::whereIn('category_id', $children)->paginate($limit);
 
@@ -290,7 +290,7 @@ class HomeController extends Controller
 
         $parent_category = Category::where('slug', $slug)->firstOrFail();
 
-        $productsQuery = Product::query();
+        $productsQuery = Product::where('status', 'active');
 
         if (!empty($t)) {
             $productsQuery->whereIn('category_id', $t);
@@ -335,7 +335,7 @@ class HomeController extends Controller
         $types = Category::whereIn('id', $children)->get();
         $assemblies = Assembly::all();
         $styles = Style::all();
-        $colours = Colour::whereIn('id', Product::whereIn('category_id', $children)->pluck('colour_id')->unique())->whereNotNull('finishing')->get();
+        $colours = Colour::whereIn('id', Product::whereIn('category_id', $children)->where('status', 'active')->pluck('colour_id')->unique())->whereNotNull('finishing')->get();
 
         return response()->json([
             'category' => $parent_category,
@@ -353,9 +353,9 @@ class HomeController extends Controller
 
     public function orderbyproduct(Request $request, $slug)
     {
-        $product = Product::where('slug', $slug)->firstOrFail();
+        $product = Product::where('slug', $slug)->where('status', 'active')->firstOrFail();
 
-        $products = Product::where('style_id', $product->style_id)->where('assembly_id', $product->assembly_id)->get();
+        $products = Product::where('style_id', $product->style_id)->where('assembly_id', $product->assembly_id)->where('status', 'active')->get();
 
         $colours = Colour::whereIn('id', $products->pluck('colour_id')->unique())
             ->whereNotNull('finishing')
@@ -365,7 +365,7 @@ class HomeController extends Controller
         $relatedProducts = Product::where('style_id', $product->style_id)
             ->where('assembly_id', $product->assembly_id)
             ->where('colour_id', $product->colour_id)
-            ->where('id', '!=', $product->id)
+            ->where('id', '!=', $product->id)->where('status', 'active')
             ->get();
 
         // echo '<pre>';
@@ -523,7 +523,7 @@ class HomeController extends Controller
             return redirect()->route('shop');
         }
 
-        $products = Product::where('full_title', 'like', '%' . $search . '%')->paginate(100);
+        $products = Product::where('full_title', 'like', '%' . $search . '%')->where('status', 'active')->paginate(100);
 
         return view('frontend.search', compact('products', 'search'));
     }
@@ -533,7 +533,7 @@ class HomeController extends Controller
         try {
             $id = $request->productId;
 
-            $product = Product::where('id', $id)->with('style', 'assembly', 'colour')->first();
+            $product = Product::where('id', $id)->with('style', 'assembly', 'colour')->where('status', 'active')->first();
 
             $styles = Style::where('id', '!=', $product->style_id)->pluck('id');
 
@@ -545,7 +545,7 @@ class HomeController extends Controller
             $products = Product::where('parent_category_id', $product->parent_category_id)
                 ->where('category_id', $product->category_id)
                 ->where('assembly_id', $product->assembly_id)
-                ->where('colour_id', $product->colour_id)
+                ->where('colour_id', $product->colour_id)->where('status', 'active')
                 ->whereIn('style_id', $styles)->with('style', 'assembly', 'colour', 'ParentCategory')->get();
 
             return response()->json(['status' => 'success', 'products' => $products, 'product' => $product]);
@@ -569,7 +569,7 @@ class HomeController extends Controller
             $styleData['assemblies'] = [];
 
             foreach ($uniqueAssemblies as $assembly) {
-                $products = Product::where('style_id', $style->id)->where('assembly_id', $assembly->id)->get(['colour_id']);
+                $products = Product::where('style_id', $style->id)->where('assembly_id', $assembly->id)->where('status', 'active')->get(['colour_id']);
 
                 // Extract color records from products
                 $assemblyData['data'] = $assembly;

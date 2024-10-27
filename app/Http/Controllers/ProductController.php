@@ -57,7 +57,7 @@ class ProductController extends Controller
         // $arrData = DB::table('products');
         // $arrData = $arrData->skip($start)->take($rowPerPage);
         // $arrData = $arrData->orderBy($columnName, $columnSortOrder);
-        $arrData = Product::with(['category', 'style', 'colour', 'assembly'])
+        $arrData = Product::with(['category', 'style', 'colour', 'assembly'])->where('status', 'active')
             ->select(
                 'products.id as product_id',
                 'products.serial_number as product_serial_number',
