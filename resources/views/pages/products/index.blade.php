@@ -108,6 +108,7 @@
                                         <th>Style</th>
                                         <th>Colour</th>
                                         <th>Assembly</th>
+                                        <th>Status</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -127,6 +128,7 @@
                                         <th>Style</th>
                                         <th>Colour</th>
                                         <th>Assembly</th>
+                                        <th>Status</th>
                                         <th>Actions</th>
                                     </tr>
                                 </tfoot>
@@ -196,7 +198,13 @@
                         data: 'colour_name'
                     },
                     {
-                        data: 'assembly_name'
+                        data: 'assembly_name',
+                    },
+                    {
+                        data: 'status',
+                        render: function(data, type, row) {
+                            return data == 'active' ? '<span class="badge bg-primary">Active</span>' : '<span class="badge bg-danger">In Active</span>';
+                        }
                     },
                     {
                         data: 'product_id',
