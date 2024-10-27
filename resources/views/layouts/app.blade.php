@@ -836,6 +836,26 @@
         }
     </script>
     <script>
+        // Truncate Confirmation
+        function confirm_truncate(element) {
+            var form = $(element).closest("form");
+            Swal.fire({
+                title: `Are you sure you want to truncate all the data?`,
+                text: "If you truncate all the data, it will be gone forever.",
+                customClass: {
+                    cancelButton: 'btn btn-danger'
+                },
+                showCancelButton: true,
+                cancelButtonText: 'No',
+                cancelButtonColor: '#ce4242',
+                confirmButtonColor: '#004A99',
+                confirmButtonText: `Yes`,
+                closeOnConfirm: false
+            }).then((result) => {
+                if (!result.isConfirmed) return;
+                jQuery(form).submit();
+            });
+        }
         // Delete Confirmation
         function confirm_form_delete(element) {
             var form = $(element).closest("form");

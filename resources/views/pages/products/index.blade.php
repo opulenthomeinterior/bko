@@ -37,6 +37,16 @@
                                         Import Products
                                     </button>
 
+                                    <form action="{{ route('truncate_all_data') }}" method="post" class="d-inline">
+                                        @csrf
+                                        @method('POST')
+                                        <a href="javascript:void(0)"
+                                            onclick="confirm_truncate(this)"
+                                            class="btn btn-icon btn-soft-danger btn-sm d-flex flex-column justify-content-center remove-btn">
+                                            <i class="las la-trash fs-17 align-middle"></i>
+                                        </a>
+                                    </form>
+
                                     <!-- Modal -->
                                     <div class="modal fade" id="importProducts" tabindex="-1"
                                         aria-labelledby="importProductsLabel" aria-hidden="true">

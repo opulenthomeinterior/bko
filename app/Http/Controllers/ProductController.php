@@ -8,7 +8,9 @@ use App\Models\Category;
 use App\Models\Colour;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\ProductFile;
 use App\Models\Style;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -312,11 +314,31 @@ class ProductController extends Controller
         // exit;
         
         try {
+            // Get the file name
+            $filename = $request->file('file')->getClientOriginalName();
+
+            // Count the rows in the CSV
+            $rowCount = count(file($request->file('file')->getRealPath()));
+
+            $rowCount = $rowCount - 1;
+
+            if (ProductFile::where('name', $filename)->where('records', $rowCount)->exists()) {
+                $productFile = ProductFile::where('name', $filename)->where('records', $rowCount)->first();
+                $productFile->name = $filename;
+                $productFile->records = $rowCount;
+                $productFile->updated_at = Carbon::now();
+                $productFile->save();
+            } else {
+                $productFile = ProductFile::create([
+                    'name' => $filename,
+                    'records' => $rowCount,
+                ]);
+            }
 
             $originalTimeLimit = ini_get('max_execution_time');
             set_time_limit(7200);
             gc_disable();
-            Excel::import(new ProductsImport, $request->file('file'));
+            Excel::import(new ProductsImport($productFile->id), $request->file('file'));
 
             exit;
             gc_enable();

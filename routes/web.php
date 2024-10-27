@@ -23,7 +23,12 @@ use App\Http\Controllers\UserAuthController;
 use App\Http\Controllers\DiscountController;
 use App\Http\Controllers\InquiryController;
 use App\Http\Controllers\OrdersController;
+use App\Models\Assembly;
+use App\Models\Category;
+use App\Models\Colour;
 use App\Models\Faq;
+use App\Models\Product;
+use App\Models\Style;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -37,6 +42,14 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::post('/truncate-all-data', function () {
+    Assembly::truncate();
+    // Category::truncate();
+    Colour::truncate();
+    Product::truncate();
+    Style::truncate();
+    return redirect()->back();
+})->name('truncate_all_data');
 
 Route::prefix('admin')->middleware(['auth', 'verified', 'role:super-admin'])->group(function () {
     // Dashboard

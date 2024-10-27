@@ -411,7 +411,7 @@ $(document).ready(function () {
 
         // Show spinner and disable buttons
         $('#importBtn').prop('disabled', true);
-        $('#file').addClass('d-none');
+        $('#file').prop('disabled', true);
         $('#loadingText').html('<p class=\'py-3\'>Please don\'t refresh the page. Importing is in progress...</p>');
         $('.spinner-border').addClass('d-block').removeClass('d-none');
 
@@ -433,8 +433,8 @@ $(document).ready(function () {
             complete: function () {
                 // Enable buttons and hide spinner
                 $('#importBtn').prop('disabled', false);
-                $('#file').removeClass('d-none');
-                $('#file').val('');
+                $('#file').prop('disabled', false);
+                // $('#file').val('');
                 $('#loadingText').empty();
                 $('.spinner-border').removeClass('d-block').addClass('d-none');
             }

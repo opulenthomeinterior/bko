@@ -13,6 +13,13 @@ use Maatwebsite\Excel\Concerns\WithChunkReading;
 
 class ProductsImport implements ToCollection, WithChunkReading
 {
+
+    public $productId;
+
+    public function __construct($productId) {
+        $this->productId = $productId;
+    }
+
     /**
      * @param Collection $collection
      */
@@ -168,6 +175,8 @@ class ProductsImport implements ToCollection, WithChunkReading
                         // $product->image_path = mmadev_store_and_get_image_path_from_url('products', $file);
                     // }
                     $product->image_path = $row[19] ?? null;
+                    $product->status = (!empty($row[22]) && ($row[22] == 'in_active' || $row[22] == 'In_Active')) ? 'in_active' : 'active';
+                    $product->product_file_id = $this->productId;
                     $product->save();
                 } else {
                     $product->product_code = $row[0];
@@ -216,6 +225,8 @@ class ProductsImport implements ToCollection, WithChunkReading
                         // $product->image_path = mmadev_store_and_get_image_path_from_url('products', $file);
                     // }
                     $product->image_path = $row[19] ?? null;
+                    $product->status = (!empty($row[22]) && ($row[22] == 'in_active' || $row[22] == 'In_Active')) ? 'in_active' : 'active';
+                    $product->product_file_id = $this->productId;
                     $product->save();
                 }
             }
