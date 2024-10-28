@@ -299,7 +299,7 @@ use App\Models\Style;
                                                 @foreach ($styles as $index => $style)
                                                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
                                                     <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
-                                                        <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['j-pull-22']) }}" class="dropdown__link">
+                                                        <a style="width: 100%;" href="{{ route('orderkitchenbyname', [$style->slug]) }}" class="dropdown__link">
                                                             <i class="ri-arrow-right-s-fill"></i> {{$style->name}} KITCHENS</a>
                                                     </li>
                                                 </div>
