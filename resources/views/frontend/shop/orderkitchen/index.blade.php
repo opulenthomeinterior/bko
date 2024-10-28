@@ -16,7 +16,7 @@
         {{-- Loop through each style --}}
         @foreach ($data as $styleName => $styleData)
             @php 
-            if ($styleData['data']->name == 'Shaker 22' || $styleData['data']->name == 'Dual lever' || $styleData['data']->name == 'Single Lever' || $styleData['data']->name == 'Singlel lever' || $styleData['data']->name == 'Cashmere') {
+            if ($styleData['data']->name == 'Dual lever' || $styleData['data']->name == 'Single Lever' || $styleData['data']->name == 'Singlel lever' || $styleData['data']->name == 'Cashmere') {
                 continue;
             }
             @endphp
