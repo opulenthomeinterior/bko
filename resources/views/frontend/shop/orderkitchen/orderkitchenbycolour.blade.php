@@ -402,15 +402,15 @@
                                                 </div>
                                             </div> -->
                                         @endforeach
-                                        <div class="col-lg-8 col-md-8 col-sm-12 base-cabinets-section">
+                                        <div class="col-lg-7 col-md-7 col-sm-12 base-cabinets-section">
                                             
                                         </div>
 
-                                        <div class="col-lg-4 col-md-4 col-sm-12">
-                                            <label for="">ALL BASE CABINETS</label>
-                                            <select class="form-control base-cabinet-dropdown">
+                                        <div class="col-lg-5 col-md-5 col-sm-12">
+                                            <label for="" class="fw-bold">ALL BASE CABINETS</label>
+                                            <select class="form-control base-cabinet-dropdown select-2 fw-bold">
                                                 @foreach ($baseCabinets as $index => $baseCabinet)
-                                                    <option value="{{$baseCabinet->id }}" data-product-short-title="{{ $baseCabinet->short_title }}" data-product-fullname="{{ $baseCabinet->full_title }}" data-product-image="{{ !empty($baseCabinet->image_path) ? asset('uploads/products/'.$baseCabinet->image_path) : asset('images/no-image-available.jpg') }}" data-product-price="{{ $baseCabinet->price }}" data-product-parent-category-slug="{{ $baseCabinet->ParentCategory?->slug }}" data-product-discountedprice="{{ $baseCabinet->discounted_price }}" data-product-assembly-name="{{ $baseCabinet->assembly?->name }}" data-product-discountedpercentage="{{ $baseCabinet->discounted_percentage ?? 0 }}" data-product-code="{{ $baseCabinet->product_code }}" data-product-dimensions="{{ $baseCabinet->dimensions }}" data-product-style="{{ $baseCabinet->style->name }}" data-product-colour="{{ $baseCabinet->colour?->trade_colour ? $baseCabinet->colour?->trade_colour : $baseCabinet->colour?->name }}" data-product-id="{{ $baseCabinet->id }}">{{ $baseCabinet->full_title }}</option>
+                                                    <option class="fw-bold" value="{{$baseCabinet->id }}" data-product-short-title="{{ $baseCabinet->short_title }}" data-product-fullname="{{ $baseCabinet->full_title }}" data-product-image="{{ !empty($baseCabinet->image_path) ? asset('uploads/products/'.$baseCabinet->image_path) : asset('images/no-image-available.jpg') }}" data-product-price="{{ $baseCabinet->price }}" data-product-parent-category-slug="{{ $baseCabinet->ParentCategory?->slug }}" data-product-discountedprice="{{ $baseCabinet->discounted_price }}" data-product-assembly-name="{{ $baseCabinet->assembly?->name }}" data-product-discountedpercentage="{{ $baseCabinet->discounted_percentage ?? 0 }}" data-product-code="{{ $baseCabinet->product_code }}" data-product-dimensions="{{ $baseCabinet->dimensions }}" data-product-style="{{ $baseCabinet->style->name }}" data-product-colour="{{ $baseCabinet->colour?->trade_colour ? $baseCabinet->colour?->trade_colour : $baseCabinet->colour?->name }}" data-product-id="{{ $baseCabinet->id }}">{{ $baseCabinet->full_title }}</option>
                                                 @endforeach
                                             </select>
                                         </div>

@@ -36,7 +36,8 @@ use App\Models\Style;
     <link rel="stylesheet" type="text/css" href="{{ asset('css/slick.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/slick-theme.css') }}" />
     {{-- Custom CSS --}}
-    <link href="{{ asset('css/frontend.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css/frontend.css') }}" rel="stylesheet" type="text/css" /><!-- Style -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
     <style>
         #whatsapp-icon {
             position: fixed;
@@ -65,6 +66,83 @@ use App\Models\Style;
             color: #fff;
             /* Change text color to white */
         }
+
+        /* Container styling for Select2 */
+        .select2-container--default .select2-selection--single {
+            height: 60px; /* Custom height */
+            border: 2px solid #febd49; /* Yellow border for the selected item */
+            padding: 0 10px; /* Horizontal padding */
+            background-color: white; /* Background color */
+            color: black; /* Text color */
+            border-radius: 0; /* No rounded corners */
+            display: flex; /* Flexbox for centering */
+            align-items: center; /* Center text vertically */
+            box-sizing: border-box; /* Prevents padding from increasing total height */
+            position: relative; /* To position arrow */
+        }
+
+        /* Make the selected item bold */
+        .select2-container--default .select2-selection--single .select2-selection__rendered {
+            font-weight: bold; /* Make the text bold */
+        }
+
+        /* Styling the arrow */
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            display: none; /* Hide the default arrow */
+        }
+
+        /* Custom arrow with background */
+        .select2-container--default .select2-selection--single {
+            position: relative; /* To position custom arrow */
+        }
+
+        /* Custom arrow triangle */
+        .select2-container--default .select2-selection--single:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 10px; /* Adjust position */
+            width: 0; 
+            height: 0; 
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid #febd49; /* Yellow arrow */
+            transform: translateY(-50%);
+            transition: transform 0.2s; /* Smooth transition for rotation */
+        }
+
+        /* Change arrow direction when dropdown is open */
+        .select2-container--default .select2-selection--single.select2-selection--expanded:after {
+            transform: translateY(-50%) rotate(180deg); /* Rotate arrow when expanded */
+        }
+
+        /* Adding border and padding to options */
+        .select2-results__option {
+            padding: 10px; /* Padding for options */
+            border-bottom: 1px solid #ccc; /* Bottom border for each option */
+            font-weight: bold; /* Make the option text bold */
+        }
+
+        /* Hover effect for options */
+        .select2-results__option--highlighted {
+            background-color: #febd49; /* Highlight color */
+            color: white; /* Text color when highlighted */
+        }
+
+        /* Remove default border and apply custom styles */
+        .select2-container--default .select2-results {
+            border: none; /* Remove default border */
+            border-radius: 0; /* No rounded corners */
+            box-shadow: none; /* Remove any default shadow for a cleaner look */
+        }
+
+        /* Add a custom border to the dropdown */
+        .select2-container--default .select2-dropdown {
+            border: 2px solid #febd49; /* Custom border color */
+            border-radius: 0; /* No rounded corners */
+            outline: none; /* Remove outline */
+        }
+
     </style>
 </head>
 
@@ -754,6 +832,8 @@ use App\Models\Style;
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="{{ asset('js/slick.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.7-beta.24/inputmask.min.js"></script>
+    <!-- Script -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 
     <!-- password-addon init -->
     <script src="{{ asset('js/pages/password-addon.init.js') }}"></script>
@@ -792,6 +872,18 @@ use App\Models\Style;
     ?>
     <script>
         $(document).ready(function() {
+            $('.select-2').select2({
+                minimumResultsForSearch: Infinity,
+                dropdownCssClass: 'custom-select-dropdown',
+                templateResult: function (data) {
+                    if (!data.id) {
+                        return data.text; // Return the text of the option
+                    }
+                    // Create a custom option
+                    var $result = $('<span style="padding: 10px">' + data.text + '</span>');
+                    return $result;
+                }
+            });
             // Define url globally inside the scope of the document ready function
             var url = '';
 
