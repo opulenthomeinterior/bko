@@ -1070,6 +1070,7 @@ $(document).ready(function () {
       var parentCategorySlug = selectedOption.data('product-parent-category-slug');
       var discountedPrice = selectedOption.data('product-discountedprice');
       var assemblyName = selectedOption.data('product-assembly-name');
+      var styleName = selectedOption.data('product-style');
       var discountedPercentage = selectedOption.data('product-discountedpercentage');
       var productCode = selectedOption.data('product-code');
       var productDimensions = selectedOption.data('product-dimensions');
@@ -1107,6 +1108,11 @@ $(document).ready(function () {
                                           <div>
                                               <h6 class="fs-6 fw-bolder text-dark">Styling</h6>
                                               <ul style="list-style: none; padding: 0">
+                                                  ${styleName ? `<li>
+                                                      <p class="mb-0">
+                                                          <small class="fw-bold text-uppercase text-dark">Assembly:</small> ${styleName}
+                                                      </p>
+                                                  </li>` : ''}
                                                   ${assemblyName ? `<li>
                                                       <p class="mb-0">
                                                           <small class="fw-bold text-uppercase text-dark">Assembly:</small> ${assemblyName}
@@ -1185,15 +1191,15 @@ $(document).ready(function () {
                                   </div>
                               </div>
                           </div>
-                          ${assemblyName ? `<div class="row">
+                          ${styleName ? `<div class="row">
                               <div class="col-4 p-0 d-md-flex d-none">
                                   <p class="category-text text-start text-dark text-uppercase m-0 pt-1">
-                                      <small>Assembly</small>
+                                      <small>Style</small>
                                   </p>
                               </div>
                               <div class="col-md-8 col-sm-12 p-0 text-center">
                                   <p class="category-value fw-semibold py-1 mb-2 text-dark">
-                                      <small>${assemblyName}</small>
+                                      <small>${styleName}</small>
                                   </p>
                               </div>
                           </div>` : ''}
@@ -1206,6 +1212,18 @@ $(document).ready(function () {
                               <div class="col-md-8 col-sm-12 p-0 text-center">
                                   <p class="category-value fw-semibold py-1 mb-2 text-dark">
                                       <small>${productColour}</small>
+                                  </p>
+                              </div>
+                          </div>` : ''}
+                          ${assemblyName ? `<div class="row">
+                              <div class="col-4 p-0 d-md-flex d-none">
+                                  <p class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                      <small>Assembly</small>
+                                  </p>
+                              </div>
+                              <div class="col-md-8 col-sm-12 p-0 text-center">
+                                  <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                      <small>${assemblyName}</small>
                                   </p>
                               </div>
                           </div>` : ''}
