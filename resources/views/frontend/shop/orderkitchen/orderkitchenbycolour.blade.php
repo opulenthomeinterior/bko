@@ -193,7 +193,7 @@
                                                     </div>
                                                 </div>
                                             </div>--}}
-                                            <div class="col-lg-4 col-6 mb-3">
+                                            <!-- <div class="col-lg-4 col-6 mb-3">
                                                 <div class="card border-1 btn btn-outline-warning bg-light p-0" style="border-radius: 0;">
                                                     <div class="bg-warning card-header px-0 py-0">
                                                         <div class="py-2 text-center product-short-title-container w-100">
@@ -400,8 +400,20 @@
                                                     </div>
                                                     
                                                 </div>
-                                            </div>
+                                            </div> -->
                                         @endforeach
+                                        <div class="col-lg-8 col-md-8 col-sm-12 base-cabinets-section">
+                                            
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-4 col-sm-12">
+                                            <label for="">ALL BASE CABINETS</label>
+                                            <select class="form-control base-cabinet-dropdown">
+                                                @foreach ($baseCabinets as $index => $baseCabinet)
+                                                    <option value="{{$baseCabinet->id }}" data-product-short-title="{{ $baseCabinet->short_title }}" data-product-fullname="{{ $baseCabinet->full_title }}" data-product-image="{{ !empty($baseCabinet->image_path) ? asset('uploads/products/'.$baseCabinet->image_path) : asset('images/no-image-available.jpg') }}" data-product-price="{{ $baseCabinet->price }}" data-product-parent-category-slug="{{ $baseCabinet->ParentCategory?->slug }}" data-product-discountedprice="{{ $baseCabinet->discounted_price }}" data-product-assembly-name="{{ $baseCabinet->assembly?->name }}" data-product-discountedpercentage="{{ $baseCabinet->discounted_percentage ?? 0 }}" data-product-code="{{ $baseCabinet->product_code }}" data-product-dimensions="{{ $baseCabinet->dimensions }}" data-product-style="{{ $baseCabinet->style->name }}" data-product-colour="{{ $baseCabinet->colour?->trade_colour ? $baseCabinet->colour?->trade_colour : $baseCabinet->colour?->name }}" data-product-id="{{ $baseCabinet->id }}">{{ $baseCabinet->full_title }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
                                     @else
                                         <div class="col-12">
                                             <p class="">No Base Cabinets available</p>
