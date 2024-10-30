@@ -218,7 +218,7 @@ class HomeController extends Controller
         }
     }
 
-    public function orderkitchenbycolour(Request $request, $style = null, $assembly = null, $colour = null)
+    public function viewallorderkitchenbycolour(Request $request, $style = null, $assembly = null, $colour = null)
     {
         try {
             $style = Style::where('slug', $style)->firstOrFail();
