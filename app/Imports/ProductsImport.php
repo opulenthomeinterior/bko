@@ -164,11 +164,11 @@ class ProductsImport implements ToCollection, WithChunkReading
                     $product->colour_id = isset($colour) && $colour ? $colour->id : null;
     
                     $product->assembly_id = $assembly ? $assembly->id : null;
-                    $product->height = (float)trim(preg_replace('/[^0-9]/', '', $row[12]));
-                    $product->width = (float)trim(preg_replace('/[^0-9]/', '', $row[13]));
-                    $product->depth = (float)trim(preg_replace('/[^0-9]/', '', $row[14]));
-                    $product->length = (float)trim(preg_replace('/[^0-9]/', '', $row[15]));
-                    $product->weight = (float)trim(preg_replace('/[^0-9]/', '', $row[16]));
+                    $product->height = trim(preg_replace('/[^0-9]/', '', $row[12]));
+                    $product->width = trim(preg_replace('/[^0-9]/', '', $row[13]));
+                    $product->depth = trim(preg_replace('/[^0-9]/', '', $row[14]));
+                    $product->length = trim(preg_replace('/[^0-9]/', '', $row[15]));
+                    $product->weight = trim(preg_replace('/[^0-9]/', '', $row[16]));
                     $product->dimensions = $row[11];
                     // if (!empty($row[19])) {
                         // $file = $row[19];
@@ -214,11 +214,11 @@ class ProductsImport implements ToCollection, WithChunkReading
                     $product->colour_id = isset($colour) && $colour ? $colour->id : null;
     
                     $product->assembly_id = $assembly ? $assembly->id : null;
-                    $product->height = (float)trim(preg_replace('/[^0-9]/', '', $row[12]));
-                    $product->width = (float)trim(preg_replace('/[^0-9]/', '', $row[13]));
-                    $product->depth = (float)trim(preg_replace('/[^0-9]/', '', $row[14]));
-                    $product->length = (float)trim(preg_replace('/[^0-9]/', '', $row[15]));
-                    $product->weight = (float)trim(preg_replace('/[^0-9]/', '', $row[16]));
+                    $product->height = trim(preg_replace('/[^0-9]/', '', $row[12]));
+                    $product->width = trim(preg_replace('/[^0-9]/', '', $row[13]));
+                    $product->depth = trim(preg_replace('/[^0-9]/', '', $row[14]));
+                    $product->length = trim(preg_replace('/[^0-9]/', '', $row[15]));
+                    $product->weight = trim(preg_replace('/[^0-9]/', '', $row[16]));
                     $product->dimensions = $row[11];
                     // if (!empty($row[19])) {
                         // $file = $row[19];
