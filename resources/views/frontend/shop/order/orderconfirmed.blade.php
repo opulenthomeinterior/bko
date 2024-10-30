@@ -89,7 +89,7 @@
                             <li class="list-group-item p-4">
                                 <div class="d-flex gap-3">
                                     <div class="flex-shrink-0">
-                                        <img src="{{ asset('uploads/products/' . $item['image_path']) }}"
+                                        <img src="{{ asset('imgs/products/' . $item['image_path']) }}"
                                             class="image-fluid"
                                             style="width:150px;height:150px;object-fit:cover;object-position:center;"
                                             alt="{{ $item['full_title'] }}">

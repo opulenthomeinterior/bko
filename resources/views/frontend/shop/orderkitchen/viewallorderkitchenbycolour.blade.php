@@ -70,7 +70,7 @@
                                                                         <div class="container-fluid">
                                                                             <div class="row">
                                                                                 <div class="col-lg-4 col-md-5 col-12">
-                                                                                    <img src="{{ !empty($baseCabinet->image_path) ? asset('uploads/products/'.$baseCabinet->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                                    <img src="{{ !empty($baseCabinet->image_path) ? asset('imgs/products/'.$baseCabinet->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                         class="img-fluid" />
                                                                                 </div>
                                                                                 <div
@@ -99,7 +99,7 @@
                                                         <div class="">
                                                             <figure>
                                                                 <img class="product-image px-0"
-                                                                    src="{{ !empty($baseCabinet->image_path) ? asset('uploads/products/'.$baseCabinet->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                    src="{{ !empty($baseCabinet->image_path) ? asset('imgs/products/'.$baseCabinet->image_path) : asset('images/no-image-available.jpg') }}"
                                                                     alt="Card image cap">
                                                             </figure>
                                                             <div class="">
@@ -219,7 +219,7 @@
                                                                         <div class="container-fluid">
                                                                             <div class="row">
                                                                                 <div class="col-lg-8 col-md-8 col-8 border-bottom border-warning bg-light">
-                                                                                    <img src="{{ !empty($baseCabinet->image_path) ? asset('uploads/products/'.$baseCabinet->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                                    <img src="{{ !empty($baseCabinet->image_path) ? asset('imgs/products/'.$baseCabinet->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                         class="img-fluid product-image" style="height: 300px;" />
                                                                                 </div>
                                                                                 <div class="col-lg-4 col-md-4 col-4 text-start text-dark">
@@ -311,7 +311,7 @@
                                                                     <figure class="my-0" style="margin-bottom: 0px !important;">
                                                                         <img class="product-image px-0"
                                                                             style="margin-bottom: 0px !important;min-height:175px;max-height:175px;object-fit:contain"
-                                                                            src="{{ !empty($baseCabinet->image_path) ? asset('uploads/products/'.$baseCabinet->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                            src="{{ !empty($baseCabinet->image_path) ? asset('imgs/products/'.$baseCabinet->image_path) : asset('images/no-image-available.jpg') }}"
                                                                             alt="Card image cap" data-bs-toggle="modal"
                                                                             data-bs-target="#productModal{{ $baseCabinet->id }}">
                                                                     </figure>
@@ -441,7 +441,7 @@
                                                                         <div class="container-fluid">
                                                                             <div class="row">
                                                                                 <div class="col-lg-4 col-md-5 col-12">
-                                                                                    <img src="{{ !empty($wallCabinet->image_path) ? asset('uploads/products/'.$wallCabinet->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                                    <img src="{{ !empty($wallCabinet->image_path) ? asset('imgs/products/'.$wallCabinet->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                         class="img-fluid" />
                                                                                 </div>
                                                                                 <div
@@ -470,7 +470,7 @@
                                                         <div class="">
                                                             <figure>
                                                                 <img class="product-image px-0"
-                                                                    src="{{ !empty($wallCabinet->image_path) ? asset('uploads/products/'.$wallCabinet->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                    src="{{ !empty($wallCabinet->image_path) ? asset('imgs/products/'.$wallCabinet->image_path) : asset('images/no-image-available.jpg') }}"
                                                                     alt="Card image cap">
                                                             </figure>
                                                             <div class="">
@@ -590,7 +590,7 @@
                                                                         <div class="container-fluid">
                                                                             <div class="row">
                                                                                 <div class="col-lg-8 col-md-8 col-8 border-bottom border-warning bg-light">
-                                                                                    <img src="{{ !empty($wallCabinet->image_path) ? asset('uploads/products/'.$wallCabinet->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                                    <img src="{{ !empty($wallCabinet->image_path) ? asset('imgs/products/'.$wallCabinet->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                         class="img-fluid product-image" style="height: 300px;" />
                                                                                 </div>
                                                                                 <div class="col-lg-4 col-md-4 col-4 text-start text-dark">
@@ -682,7 +682,7 @@
                                                                     <figure class="my-0" style="margin-bottom: 0px !important;">
                                                                         <img class="product-image px-0"
                                                                             style="margin-bottom: 0px !important;min-height:175px;max-height:175px;object-fit:contain"
-                                                                            src="{{ !empty($wallCabinet->image_path) ? asset('uploads/products/'.$wallCabinet->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                            src="{{ !empty($wallCabinet->image_path) ? asset('imgs/products/'.$wallCabinet->image_path) : asset('images/no-image-available.jpg') }}"
                                                                             alt="Card image cap" data-bs-toggle="modal"
                                                                             data-bs-target="#productModal{{ $wallCabinet->id }}">
                                                                     </figure>
@@ -812,7 +812,7 @@
                                                                         <div class="container-fluid">
                                                                             <div class="row">
                                                                                 <div class="col-lg-4 col-md-5 col-12">
-                                                                                    <img src="{{ !empty($tallCabinet->image_path) ? asset('uploads/products/'.$tallCabinet->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                                    <img src="{{ !empty($tallCabinet->image_path) ? asset('imgs/products/'.$tallCabinet->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                         class="img-fluid" />
                                                                                 </div>
                                                                                 <div
@@ -841,7 +841,7 @@
                                                         <div class="">
                                                             <figure>
                                                                 <img class="product-image px-0"
-                                                                    src="{{ !empty($tallCabinet->image_path) ? asset('uploads/products/'.$tallCabinet->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                    src="{{ !empty($tallCabinet->image_path) ? asset('imgs/products/'.$tallCabinet->image_path) : asset('images/no-image-available.jpg') }}"
                                                                     alt="Card image cap">
                                                             </figure>
                                                             <div class="">
@@ -961,7 +961,7 @@
                                                                         <div class="container-fluid">
                                                                             <div class="row">
                                                                                 <div class="col-lg-8 col-md-8 col-8 border-bottom border-warning bg-light">
-                                                                                    <img src="{{ !empty($tallCabinet->image_path) ? asset('uploads/products/'.$tallCabinet->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                                    <img src="{{ !empty($tallCabinet->image_path) ? asset('imgs/products/'.$tallCabinet->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                         class="img-fluid product-image" style="height: 300px;" />
                                                                                 </div>
                                                                                 <div class="col-lg-4 col-md-4 col-4 text-start text-dark">
@@ -1053,7 +1053,7 @@
                                                                     <figure class="my-0" style="margin-bottom: 0px !important;">
                                                                         <img class="product-image px-0"
                                                                             style="margin-bottom: 0px !important;min-height:175px;max-height:175px;object-fit:contain"
-                                                                            src="{{ !empty($tallCabinet->image_path) ? asset('uploads/products/'.$tallCabinet->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                            src="{{ !empty($tallCabinet->image_path) ? asset('imgs/products/'.$tallCabinet->image_path) : asset('images/no-image-available.jpg') }}"
                                                                             alt="Card image cap" data-bs-toggle="modal"
                                                                             data-bs-target="#productModal{{ $tallCabinet->id }}">
                                                                     </figure>
@@ -1183,7 +1183,7 @@
                                                                         <div class="container-fluid">
                                                                             <div class="row">
                                                                                 <div class="col-lg-4 col-md-5 col-12">
-                                                                                    <img src="{{ !empty($panel->image_path) ? asset('uploads/products/'.$panel->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                                    <img src="{{ !empty($panel->image_path) ? asset('imgs/products/'.$panel->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                         class="img-fluid" />
                                                                                 </div>
                                                                                 <div
@@ -1212,7 +1212,7 @@
                                                         <div class="">
                                                             <figure>
                                                                 <img class="product-image px-0"
-                                                                    src="{{ !empty($panel->image_path) ? asset('uploads/products/'.$panel->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                    src="{{ !empty($panel->image_path) ? asset('imgs/products/'.$panel->image_path) : asset('images/no-image-available.jpg') }}"
                                                                     alt="Card image cap">
                                                             </figure>
                                                             <div class="">
@@ -1332,7 +1332,7 @@
                                                                         <div class="container-fluid">
                                                                             <div class="row">
                                                                                 <div class="col-lg-8 col-md-8 col-8 border-bottom border-warning bg-light">
-                                                                                    <img src="{{ !empty($panel->image_path) ? asset('uploads/products/'.$panel->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                                    <img src="{{ !empty($panel->image_path) ? asset('imgs/products/'.$panel->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                         class="img-fluid product-image" style="height: 300px;" />
                                                                                 </div>
                                                                                 <div class="col-lg-4 col-md-4 col-4 text-start text-dark">
@@ -1424,7 +1424,7 @@
                                                                     <figure class="my-0" style="margin-bottom: 0px !important;">
                                                                         <img class="product-image px-0"
                                                                             style="margin-bottom: 0px !important;min-height:175px;max-height:175px;object-fit:contain"
-                                                                            src="{{ !empty($panel->image_path) ? asset('uploads/products/'.$panel->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                            src="{{ !empty($panel->image_path) ? asset('imgs/products/'.$panel->image_path) : asset('images/no-image-available.jpg') }}"
                                                                             alt="Card image cap" data-bs-toggle="modal"
                                                                             data-bs-target="#productModal{{ $panel->id }}">
                                                                     </figure>
@@ -1562,7 +1562,7 @@
                                                                 <div class="container-fluid">
                                                                     <div class="row">
                                                                         <div class="col-lg-4 col-md-5 col-12">
-                                                                            <img src="{{ !empty($accessory->image_path) ? asset('uploads/products/'.$accessory->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                            <img src="{{ !empty($accessory->image_path) ? asset('imgs/products/'.$accessory->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                 class="img-fluid" />
                                                                         </div>
                                                                         <div
@@ -1590,7 +1590,7 @@
                                                 <div class="">
                                                     <figure>
                                                         <img class="product-image px-0"
-                                                            src="{{ !empty($accessory->image_path) ? asset('uploads/products/'.$accessory->image_path) : asset('images/no-image-available.jpg') }}"
+                                                            src="{{ !empty($accessory->image_path) ? asset('imgs/products/'.$accessory->image_path) : asset('images/no-image-available.jpg') }}"
                                                             alt="Card image cap">
                                                     </figure>
                                                     <div class="">
@@ -1706,7 +1706,7 @@
                                                                 <div class="container-fluid">
                                                                     <div class="row">
                                                                         <div class="col-lg-8 col-md-8 col-8 border-bottom border-warning bg-light">
-                                                                            <img src="{{ !empty($accessory->image_path) ? asset('uploads/products/'.$accessory->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                            <img src="{{ !empty($accessory->image_path) ? asset('imgs/products/'.$accessory->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                 class="img-fluid product-image" style="height: 300px;" />
                                                                         </div>
                                                                         <div class="col-lg-4 col-md-4 col-4 text-start text-dark">
@@ -1798,7 +1798,7 @@
                                                             <figure class="my-0" style="margin-bottom: 0px !important;">
                                                                 <img class="product-image px-0"
                                                                     style="margin-bottom: 0px !important;min-height:175px;max-height:175px;object-fit:contain"
-                                                                    src="{{ !empty($accessory->image_path) ? asset('uploads/products/'.$accessory->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                    src="{{ !empty($accessory->image_path) ? asset('imgs/products/'.$accessory->image_path) : asset('images/no-image-available.jpg') }}"
                                                                     alt="Card image cap" data-bs-toggle="modal"
                                                                     data-bs-target="#productModal{{ $accessory->id }}">
                                                             </figure>
@@ -1937,7 +1937,7 @@
                                                                 <div class="container-fluid">
                                                                     <div class="row">
                                                                         <div class="col-lg-4 col-md-5 col-12">
-                                                                            <img src="{{ !empty($handle->image_path) ? asset('uploads/products/'.$handle->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                            <img src="{{ !empty($handle->image_path) ? asset('imgs/products/'.$handle->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                 class="img-fluid" />
                                                                         </div>
                                                                         <div
@@ -1965,7 +1965,7 @@
                                                 <div class="">
                                                     <figure>
                                                         <img class="product-image px-0"
-                                                            src="{{ !empty($handle->image_path) ? asset('uploads/products/'.$handle->image_path) : asset('images/no-image-available.jpg') }}"
+                                                            src="{{ !empty($handle->image_path) ? asset('imgs/products/'.$handle->image_path) : asset('images/no-image-available.jpg') }}"
                                                             alt="Card image cap">
                                                     </figure>
                                                     <div class="">
@@ -2081,7 +2081,7 @@
                                                                 <div class="container-fluid">
                                                                     <div class="row">
                                                                         <div class="col-lg-8 col-md-8 col-8 border-bottom border-warning bg-light">
-                                                                            <img src="{{ !empty($handle->image_path) ? asset('uploads/products/'.$handle->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                            <img src="{{ !empty($handle->image_path) ? asset('imgs/products/'.$handle->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                 class="img-fluid product-image" style="height: 300px;" />
                                                                         </div>
                                                                         <div class="col-lg-4 col-md-4 col-4 text-start text-dark">
@@ -2173,7 +2173,7 @@
                                                             <figure class="my-0" style="margin-bottom: 0px !important;">
                                                                 <img class="product-image px-0"
                                                                     style="margin-bottom: 0px !important;min-height:175px;max-height:175px;object-fit:contain"
-                                                                    src="{{ !empty($handle->image_path) ? asset('uploads/products/'.$handle->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                    src="{{ !empty($handle->image_path) ? asset('imgs/products/'.$handle->image_path) : asset('images/no-image-available.jpg') }}"
                                                                     alt="Card image cap" data-bs-toggle="modal"
                                                                     data-bs-target="#productModal{{ $handle->id }}">
                                                             </figure>
@@ -2337,7 +2337,7 @@
                                                                         <div class="container-fluid">
                                                                             <div class="row">
                                                                                 <div class="col-lg-4 col-md-5 col-12">
-                                                                                    <img src="{{ !empty($worktop->image_path) ? asset('uploads/products/'.$worktop->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                                    <img src="{{ !empty($worktop->image_path) ? asset('imgs/products/'.$worktop->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                         class="img-fluid" />
                                                                                 </div>
                                                                                 <div
@@ -2366,7 +2366,7 @@
                                                         <div class="">
                                                             <figure>
                                                                 <img class="product-image px-0"
-                                                                    src="{{ !empty($worktop->image_path) ? asset('uploads/products/'.$worktop->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                    src="{{ !empty($worktop->image_path) ? asset('imgs/products/'.$worktop->image_path) : asset('images/no-image-available.jpg') }}"
                                                                     alt="Card image cap">
                                                             </figure>
                                                             <div class="">
@@ -2502,7 +2502,7 @@
                                                                         <div class="container-fluid">
                                                                             <div class="row">
                                                                                 <div class="col-lg-4 col-md-5 col-12">
-                                                                                    <img src="{{ !empty($worktopsAndUpStand->image_path) ? asset('uploads/products/'.$worktopsAndUpStand->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                                    <img src="{{ !empty($worktopsAndUpStand->image_path) ? asset('imgs/products/'.$worktopsAndUpStand->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                         class="img-fluid" />
                                                                                 </div>
                                                                                 <div
@@ -2531,7 +2531,7 @@
                                                         <div class="">
                                                             <figure>
                                                                 <img class="product-image px-0"
-                                                                    src="{{ !empty($worktopsAndUpStand->image_path) ? asset('uploads/products/'.$worktopsAndUpStand->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                    src="{{ !empty($worktopsAndUpStand->image_path) ? asset('imgs/products/'.$worktopsAndUpStand->image_path) : asset('images/no-image-available.jpg') }}"
                                                                     alt="Card image cap">
                                                             </figure>
                                                             <div class="">
@@ -2667,7 +2667,7 @@
                                                                         <div class="container-fluid">
                                                                             <div class="row">
                                                                                 <div class="col-lg-4 col-md-5 col-12">
-                                                                                    <img src="{{ !empty($breakfastBar->image_path) ? asset('uploads/products/'.$breakfastBar->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                                    <img src="{{ !empty($breakfastBar->image_path) ? asset('imgs/products/'.$breakfastBar->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                         class="img-fluid" />
                                                                                 </div>
                                                                                 <div
@@ -2696,7 +2696,7 @@
                                                         <div class="">
                                                             <figure>
                                                                 <img class="product-image px-0"
-                                                                    src="{{ !empty($breakfastBar->image_path) ? asset('uploads/products/'.$breakfastBar->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                    src="{{ !empty($breakfastBar->image_path) ? asset('imgs/products/'.$breakfastBar->image_path) : asset('images/no-image-available.jpg') }}"
                                                                     alt="Card image cap">
                                                             </figure>
                                                             <div class="">
@@ -2830,7 +2830,7 @@
                                                                         <div class="container-fluid">
                                                                             <div class="row">
                                                                                 <div class="col-lg-4 col-md-5 col-12">
-                                                                                    <img src="{{ !empty($edging->image_path) ? asset('uploads/products/'.$edging->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                                    <img src="{{ !empty($edging->image_path) ? asset('imgs/products/'.$edging->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                         class="img-fluid" />
                                                                                 </div>
                                                                                 <div
@@ -2859,7 +2859,7 @@
                                                         <div class="">
                                                             <figure>
                                                                 <img class="product-image px-0"
-                                                                    src="{{ !empty($edging->image_path) ? asset('uploads/products/'.$edging->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                    src="{{ !empty($edging->image_path) ? asset('imgs/products/'.$edging->image_path) : asset('images/no-image-available.jpg') }}"
                                                                     alt="Card image cap">
                                                             </figure>
                                                             <div class="">
@@ -3017,7 +3017,7 @@
                                                                         <div class="container-fluid">
                                                                             <div class="row">
                                                                                 <div class="col-lg-4 col-md-5 col-12">
-                                                                                    <img src="{{ !empty($sink->image_path) ? asset('uploads/products/'.$sink->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                                    <img src="{{ !empty($sink->image_path) ? asset('imgs/products/'.$sink->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                         class="img-fluid" />
                                                                                 </div>
                                                                                 <div
@@ -3046,7 +3046,7 @@
                                                         <div class="">
                                                             <figure>
                                                                 <img class="product-image px-0"
-                                                                    src="{{ !empty($sink->image_path) ? asset('uploads/products/'.$sink->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                    src="{{ !empty($sink->image_path) ? asset('imgs/products/'.$sink->image_path) : asset('images/no-image-available.jpg') }}"
                                                                     alt="Card image cap">
                                                             </figure>
                                                             <div class="">
@@ -3180,7 +3180,7 @@
                                                                         <div class="container-fluid">
                                                                             <div class="row">
                                                                                 <div class="col-lg-4 col-md-5 col-12">
-                                                                                    <img src="{{ !empty($tap->image_path) ? asset('uploads/products/'.$tap->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                                    <img src="{{ !empty($tap->image_path) ? asset('imgs/products/'.$tap->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                         class="img-fluid" />
                                                                                 </div>
                                                                                 <div
@@ -3209,7 +3209,7 @@
                                                         <div class="">
                                                             <figure>
                                                                 <img class="product-image px-0"
-                                                                    src="{{ !empty($tap->image_path) ? asset('uploads/products/'.$tap->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                    src="{{ !empty($tap->image_path) ? asset('imgs/products/'.$tap->image_path) : asset('images/no-image-available.jpg') }}"
                                                                     alt="Card image cap">
                                                             </figure>
                                                             <div class="">
@@ -3351,7 +3351,7 @@
                                                                 <div class="container-fluid">
                                                                     <div class="row">
                                                                         <div class="col-lg-4 col-md-5 col-12">
-                                                                            <img src="{{ !empty($appliance->image_path) ? asset('uploads/products/'.$appliance->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                            <img src="{{ !empty($appliance->image_path) ? asset('imgs/products/'.$appliance->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                 class="img-fluid" />
                                                                         </div>
                                                                         <div
@@ -3379,7 +3379,7 @@
                                                 <div class="">
                                                     <figure>
                                                         <img class="product-image px-0"
-                                                            src="{{ !empty($appliance->image_path) ? asset('uploads/products/'.$appliance->image_path) : asset('images/no-image-available.jpg') }}"
+                                                            src="{{ !empty($appliance->image_path) ? asset('imgs/products/'.$appliance->image_path) : asset('images/no-image-available.jpg') }}"
                                                             alt="Card image cap">
                                                     </figure>
                                                     <div class="">

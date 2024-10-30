@@ -33,7 +33,7 @@
                                         <div class="col-12">
                                             <figure>
                                                 <img class="product-image px-0"
-                                                    src="{{ $product->image_path ? asset('uploads/products/' . $product->image_path) : asset('images/no-image-available.jpg') }}"
+                                                    src="{{ $product->image_path ? asset('imgs/products/' . $product->image_path) : asset('images/no-image-available.jpg') }}"
                                                     alt="{{ $product->full_title }}">
                                             </figure>
                                         </div>

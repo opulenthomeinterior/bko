@@ -58,7 +58,7 @@
                                                     class="text-inherit">
                                                     <div class="d-lg-flex">
                                                         <div>
-                                                            <img src="{{ asset('uploads/products/' . $item['image_path']) }}"
+                                                            <img src="{{ asset('imgs/products/' . $item['image_path']) }}"
                                                                 class="image-fluid rounded"
                                                                 style="width:150px;height:150px;object-fit:cover;object-position:center;"
                                                                 alt="{{ $item['full_title'] }}">

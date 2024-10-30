@@ -42,7 +42,7 @@
                                     <div class="container-fluid">
                                         <div class="row">
                                             <div class="col-lg-4 col-md-5 col-12 mx-auto">
-                                                <img src="{{ asset('uploads/products/' . $product->image_path) }}"
+                                                <img src="{{ asset('imgs/products/' . $product->image_path) }}"
                                                     class="img-fluid" />
                                             </div>
                                         </div>
@@ -53,7 +53,7 @@
                         </div>
                     </div>
                     <img class="img-fluid px-0" style="width: 300px; height: auto;"
-                        src="{{ $product->image_path ? asset('uploads/products/' . $product->image_path) : asset('images/no-image-available.jpg') }}"
+                        src="{{ $product->image_path ? asset('imgs/products/' . $product->image_path) : asset('images/no-image-available.jpg') }}"
                         alt="Card image cap">
                 </figure>
             </div>

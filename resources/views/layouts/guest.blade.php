@@ -569,7 +569,7 @@ use App\Models\Style;
                                                 <input type="radio" value="rigid" name="assembly_name" class="assembly_type"> &nbsp; Rigid
                                             </li>
                                             <li>
-                                                <input type="radio" value="flatpack" name="assembly_name" class="assembly_type"> &nbsp; Flat Pack
+                                                <input type="radio" value="flat-pack" name="assembly_name" class="assembly_type"> &nbsp; Flat Pack
                                             </li>
                                         </ul>
                                     </div>
@@ -843,7 +843,7 @@ use App\Models\Style;
         var compare_route = "{{ route('compare_product') }}";
         var APP_URL = "{{ config('app.url') }}";
         var ASSET_URL = "{{ asset('') }}";
-        var product_BIU = "{{ asset('uploads/products/') }}";
+        var product_BIU = "{{ asset('imgs/products/') }}";
     </script>
     @stack('scripts')
     <script src="{{ asset('js/frontend.js') }}"></script>

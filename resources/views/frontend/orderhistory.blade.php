@@ -56,7 +56,7 @@
                                         <div class="d-md-flex">
                                             <div>
                                                 <!-- img -->
-                                                <img src="{{ asset('uploads/products/' . $item['image_path']) }}"
+                                                <img src="{{ asset('imgs/products/' . $item['image_path']) }}"
                                                     class="image-fluid rounded"
                                                     style="width:150px;height:150px;object-fit:cover;object-position:center;"
                                                     alt="{{ $item['full_title'] }}">

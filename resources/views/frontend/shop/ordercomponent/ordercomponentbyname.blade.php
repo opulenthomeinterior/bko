@@ -245,7 +245,7 @@
                                                 <div class="container-fluid">
                                                     <div class="row">
                                                         <div class="col-lg-8 col-md-8 col-8 border-bottom border-warning bg-light">
-                                                            <img src="{{ !empty($product->image_path) ? asset('uploads/products/'.$product->image_path) : asset('images/no-image-available.jpg') }}"
+                                                            <img src="{{ !empty($product->image_path) ? asset('imgs/products/'.$product->image_path) : asset('images/no-image-available.jpg') }}"
                                                                 class="img-fluid product-image" style="height: 300px;" />
                                                         </div>
                                                         <div class="col-lg-4 col-md-4 col-4 text-start text-dark">
@@ -337,7 +337,7 @@
                                             <figure class="my-0" style="margin-bottom: 0px !important;">
                                                 <img class="product-image px-0"
                                                     style="margin-bottom: 0px !important;min-height:175px;max-height:175px;object-fit:contain"
-                                                    src="{{ !empty($product->image_path) ? asset('uploads/products/'.$product->image_path) : asset('images/no-image-available.jpg') }}"
+                                                    src="{{ !empty($product->image_path) ? asset('imgs/products/'.$product->image_path) : asset('images/no-image-available.jpg') }}"
                                                     alt="Card image cap" data-bs-toggle="modal"
                                                     data-bs-target="#productModal{{ $index }}">
                                             </figure>

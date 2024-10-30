@@ -102,7 +102,7 @@
                 @foreach ($attachments as $attachment)
                     <div class="col-md-2 col-sm-4">
                         <div class="card">
-                            <img src="{{ asset('uploads/products/' . $attachment->path) }}" class="card-img-top"
+                            <img src="{{ asset('imgs/products/' . $attachment->path) }}" class="card-img-top"
                                 alt="...">
                             <div class="card-body">
                                 <form action="{{ route('attachments.destroy', $attachment->id) }}" method="POST">
@@ -124,7 +124,7 @@
                                             {{-- copy link button with tooltip --}}
                                             <button type="button" class="btn btn-sm btn-secondary"
                                                 data-bs-toggle="tooltip" data-bs-placement="top" title="Copy Link"
-                                                onclick="copyToClipboard('{{ asset('uploads/products/' . $attachment->path) }}')">
+                                                onclick="copyToClipboard('{{ asset('imgs/products/' . $attachment->path) }}')">
                                                 <i class="mdi mdi-link"></i>
                                             </button>
                                         </div>

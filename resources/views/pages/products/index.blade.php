@@ -144,7 +144,7 @@
     @push('scripts')
         <script>
             var productDataRoute = "{{ route('products.data') }}";
-            var imageURL = "{{ asset('uploads/products') }}";
+            var imageURL = "{{ asset('imgs/products') }}";
             // Products Table
             var table = $("#product_table").DataTable({
                 processing: true,

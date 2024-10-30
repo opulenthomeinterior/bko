@@ -65,7 +65,7 @@ class CheckoutController extends Controller
                 if (!$product) {
                     continue; // Skip if product not found
                 }
-                $imageUrl = $product->image_path ? asset("uploads/products/" . $product->image_path) : '';
+                $imageUrl = $product->image_path ? asset("imgs/products/" . $product->image_path) : '';
 
                 $lineItems[] = [
                     'price_data' => [
@@ -88,7 +88,7 @@ class CheckoutController extends Controller
                 if (!$product) {
                     continue; // Skip if product not found
                 }
-                $imageUrl = $product->image_path ? asset("uploads/products/" . $product->image_path) : '';
+                $imageUrl = $product->image_path ? asset("imgs/products/" . $product->image_path) : '';
 
                 $lineItems[] = [
                     'price_data' => [

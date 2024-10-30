@@ -114,7 +114,7 @@ class ProductsImport implements ToCollection, WithChunkReading
                     }
                 }
     
-                $row[10] = trim($row[10]);
+                $row[10] = trim($row[10]) == 'Flatpack' ? 'Flat Pack' : trim($row[10]);
                 $assembly = Assembly::where('name', $row[10])->first();
     
                 if (empty($assembly) && !empty($row[10])) {

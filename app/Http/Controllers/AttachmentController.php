@@ -41,7 +41,7 @@ class AttachmentController extends Controller
 
             // $imageName = time() . '_' . uniqid() . '.' . $image->extension();
 
-            $image->move(public_path('uploads/products'), $imageName);
+            $image->move(public_path('imgs/products'), $imageName);
             $all_images[$key]['path'] = $imageName;
         }
 
@@ -63,7 +63,7 @@ class AttachmentController extends Controller
     public function destroy($id)
     {
         $attachment = Attachment::findOrFail($id);
-        $imagePath = public_path('uploads/products/' . $attachment->path); // 'uploads/products/' is the path where images are stored, you can change it to your own path
+        $imagePath = public_path('imgs/products/' . $attachment->path); // 'imgs/products/' is the path where images are stored, you can change it to your own path
         if (file_exists($imagePath)) {
             unlink($imagePath);
         }
@@ -81,10 +81,10 @@ class AttachmentController extends Controller
         $ids = explode(',', $request->selectedIds);
 
         if (!empty($ids)) {
-            $attachments = Attachment::whereIn('id', $ids)->get();
+            $attachments = Attachment::get();
 
             foreach ($attachments as $attachment) {
-                $imagePath = public_path('uploads/products/' . $attachment->path); // 'uploads/products/' is the path where images are stored, you can change it to your own path
+                $imagePath = public_path('imgs/products/' . $attachment->path); // 'imgs/products/' is the path where images are stored, you can change it to your own path
                 if (file_exists($imagePath)) {
                     unlink($imagePath);
                 }
