@@ -28,6 +28,7 @@ use App\Models\Category;
 use App\Models\Colour;
 use App\Models\Faq;
 use App\Models\Product;
+use App\Models\ProductFile;
 use App\Models\Style;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -47,6 +48,7 @@ Route::post('/truncate-all-data', function () {
     // Category::truncate();
     Colour::truncate();
     Product::truncate();
+    ProductFile::truncate();
     Style::truncate();
     return redirect()->back();
 })->name('truncate_all_data');
