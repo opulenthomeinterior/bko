@@ -1076,162 +1076,169 @@ $(document).ready(function () {
       var productDimensions = selectedOption.data('product-dimensions');
       var productColour = selectedOption.data('product-colour');
       var _html = `
-      <div class="card border-1 btn btn-outline-warning bg-light p-0" style="border-radius: 0;">
-          <div class="bg-warning card-header px-0 py-0">
-              <div class="py-2 text-center product-short-title-container w-100">
-                  <a href="#" class="product-short-title fw-bold text-decoration-underline fs-4">
-                      ${shortTitle}
-                  </a>
-              </div>
-          </div>
-          <div class="card-body text-center">
-              <div class="modal fade" id="productModal${productId}" tabindex="-1"
-                  aria-labelledby="productModalLabel${productId}"
-                  aria-hidden="true">
-                  <div class="modal-dialog modal-lg modal-dialog-centered">
-                      <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
-                          <div class="modal-header border-bottom border-light">
-                              <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
-                                  ${fullTitle}
-                              </h1>
-                              <button type="button" class="btn-close"
-                                  data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                              <div class="container-fluid">
-                                  <div class="row">
-                                      <div class="col-lg-8 col-md-8 col-8 border-bottom border-warning bg-light">
-                                          <img src="${productImage}"
-                                              class="img-fluid product-image" style="height: 300px;" />
-                                      </div>
-                                      <div class="col-lg-4 col-md-4 col-4 text-start text-dark">
-                                          <div>
-                                              <h6 class="fs-6 fw-bolder text-dark">Styling</h6>
-                                              <ul style="list-style: none; padding: 0">
-                                                  ${styleName ? `<li>
+         <div class="card bg-light p-0 border border-warning" style="border-radius: 0; border: none">
+            <div class="bg-warning card-header px-0 py-0">
+               <div class="py-2 text-center product-short-title-container w-100">
+                     <a href="#" class="product-short-title fw-bold text-decoration-underline fs-4">
+                        ${shortTitle}
+                     </a>
+               </div>
+            </div>
+            <div class="card-body text-center">
+               <div class="modal fade" id="productModal${productId}" tabindex="-1"
+                     aria-labelledby="productModalLabel${productId}"
+                     aria-hidden="true">
+                     <div class="modal-dialog modal-xl modal-dialog-centered">
+                        <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                           <div class="modal-header border-bottom border-light">
+                                 <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
+                                    ${fullTitle}
+                                 </h1>
+                                 <button type="button" class="btn-close"
+                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                           </div>
+                           <div class="modal-body">
+                                 <div class="container-fluid">
+                                    <div class="row">
+                                       <div class="col-lg-8 col-md-8 col-8 border-bottom border-warning bg-light">
+                                             <img src="${productImage}"
+                                                class="img-fluid product-image" style="height: 300px;" />
+                                       </div>
+                                       <div class="col-lg-4 col-md-4 col-4 text-start text-dark">
+                                             <div>
+                                                <h6 class="fs-6 fw-bolder text-dark">Styling</h6>
+                                                <ul style="list-style: none; padding: 0">
+                                                   ${styleName ? `<li>
+                                                         <p class="mb-0">
+                                                            <small class="fw-bold text-uppercase text-dark">Assembly:</small> ${styleName}
+                                                         </p>
+                                                   </li>` : ''}
+                                                   ${assemblyName ? `<li>
+                                                         <p class="mb-0">
+                                                            <small class="fw-bold text-uppercase text-dark">Assembly:</small> ${assemblyName}
+                                                         </p>
+                                                   </li>` : ''}
+                                                   ${productColour ? `<li>
+                                                         <p class="mb-0">
+                                                            <small class="fw-bold text-uppercase text-dark">Colour:</small> ${productColour}
+                                                         </p>
+                                                   </li>` : ''}
+                                                </ul>
+                                             </div>
+                                             <div>
+                                             <h6 class="fs-6 fw-bolder text-dark">Dimensions</h6>
+                                             <ul style="list-style: none; padding: 0">
+                                                ${productDimensions ? `<li>
                                                       <p class="mb-0">
-                                                          <small class="fw-bold text-uppercase text-dark">Assembly:</small> ${styleName}
+                                                         <small class="fw-bold text-uppercase text-dark">Dimensions:</small> ${productDimensions}
                                                       </p>
-                                                  </li>` : ''}
-                                                  ${assemblyName ? `<li>
-                                                      <p class="mb-0">
-                                                          <small class="fw-bold text-uppercase text-dark">Assembly:</small> ${assemblyName}
-                                                      </p>
-                                                  </li>` : ''}
-                                                  ${productColour ? `<li>
-                                                      <p class="mb-0">
-                                                          <small class="fw-bold text-uppercase text-dark">Colour:</small> ${productColour}
-                                                      </p>
-                                                  </li>` : ''}
-                                              </ul>
-                                          </div>
-                                          <div>
-                                              <h6 class="fs-6 fw-bolder text-dark">Dimensions</h6>
-                                              <ul style="list-style: none; padding: 0">
-                                                  ${productDimensions ? `<li>
-                                                      <p class="mb-0">
-                                                          <small class="fw-bold text-uppercase text-dark">Dimensions:</small> ${productDimensions}
-                                                      </p>
-                                                  </li>` : ''}
-                                              </ul>
-                                          </div>
-                                          <div>
-                                              <h6 class="fs-6 fw-bolder text-dark">Range Specification</h6>
-                                              <p class="mb-0">
-                                                  <small>
+                                                </li>` : ''}
+                                             </ul>
+                                             </div>
+                                             <div>
+                                             <h6 class="fs-6 fw-bolder text-dark">Range Specification</h6>
+                                             <p class="mb-0">
+                                                <small>
                                                       ${parentCategorySlug ? parentCategorySlug : 'N/A'}
-                                                  </small>
-                                              </p>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="modal-footer"></div>
-                      </div>
-                  </div>
-              </div>
-              <div class="container-fluid">
-                  <div class="row">
-                      <div class="col-lg-12">
-                          <figure class="my-0" style="margin-bottom: 0px !important;">
-                              <img class="product-image px-0"
-                                  style="margin-bottom: 0px !important;min-height:175px;max-height:175px;object-fit:contain"
-                                  src="${productImage ? productImage : 'images/no-image-available.jpg'}"
-                                  alt="Card image cap" data-bs-toggle="modal"
-                                  data-bs-target="#productModal${productId}">
-                          </figure>
-                          <p class="mt-2"><small class="fw-bold text-start text-dark">${productCode}</small></p>
-                          <p class="">
-                              <small class="fw-bold text-start text-dark">${productDimensions}</small>
-                          </p>
-                      </div>
-                      <div class="col-12">
-                          <div class="container-fluid">
-                              <div class="row justify-content-center">
-                                  <div class="col-6 d-flex justify-content-center product-counter">
-                                      <input id="minus${productId}"
-                                          class="minus border bg-dark text-light p-0"
-                                          type="button" value="-"
-                                          onclick="decreaseQuantity('${productId}', '${productCode}', '${fullTitle}', ${price}, ${discountedPrice}, ${discountedPercentage || 0}, '${parentCategorySlug}')" />
-                                      <input id="quantity${productId}"
-                                          class="quantity border border-black text-center"
-                                          type="text" value="0" name="quantity"
-                                          disabled />
-                                      <input id="plus${productId}"
-                                          class="plus border bg-dark text-light p-0"
-                                          type="button" value="+" type="number"
-                                          max="10"
-                                          onclick="increaseQuantity('${productId}', '${productCode}', '${fullTitle}', ${price}, ${discountedPrice}, ${discountedPercentage || 0}, '${parentCategorySlug}')" />
-                                  </div>
-                                  <div class="col-6">
-                                      <p class="fs-5 fw-bold mt-lg-2 text-dark">
-                                          ${price == 0 ? 'Out of Stock' : '£' + price}
-                                      </p>
-                                  </div>
-                              </div>
-                          </div>
-                          ${styleName ? `<div class="row">
-                              <div class="col-4 p-0 d-md-flex d-none">
-                                  <p class="category-text text-start text-dark text-uppercase m-0 pt-1">
-                                      <small>Style</small>
-                                  </p>
-                              </div>
-                              <div class="col-md-8 col-sm-12 p-0 text-center">
-                                  <p class="category-value fw-semibold py-1 mb-2 text-dark">
-                                      <small>${styleName}</small>
-                                  </p>
-                              </div>
-                          </div>` : ''}
-                          ${productColour ? `<div class="row">
-                              <div class="col-4 p-0 d-md-flex d-none">
-                                  <p class="category-text text-start text-dark text-uppercase m-0 pt-1">
-                                      <small>Color</small>
-                                  </p>
-                              </div>
-                              <div class="col-md-8 col-sm-12 p-0 text-center">
-                                  <p class="category-value fw-semibold py-1 mb-2 text-dark">
-                                      <small>${productColour}</small>
-                                  </p>
-                              </div>
-                          </div>` : ''}
-                          ${assemblyName ? `<div class="row">
-                              <div class="col-4 p-0 d-md-flex d-none">
-                                  <p class="category-text text-start text-dark text-uppercase m-0 pt-1">
-                                      <small>Assembly</small>
-                                  </p>
-                              </div>
-                              <div class="col-md-8 col-sm-12 p-0 text-center">
-                                  <p class="category-value fw-semibold py-1 mb-2 text-dark">
-                                      <small>${assemblyName}</small>
-                                  </p>
-                              </div>
-                          </div>` : ''}
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+                                                </small>
+                                             </p>
+                                             </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                           </div>
+                           <div class="modal-footer"></div>
+                        </div>
+                     </div>
+               </div>
+
+               <div class="container-fluid">
+                     <div class="row">
+                        <div class="col-lg-6 p-0">
+                           <figure class="my-0" style="margin-bottom: 0px !important;">
+                                 <img class="product-image px-0"
+                                    style="margin-bottom: 0px !important;object-fit:contain"
+                                    src="${productImage}"
+                                    alt="Card image cap" data-bs-toggle="modal"
+                                    data-bs-target="#productModal${productId}">
+                           </figure>
+                        </div>
+                        <div class="col-6 border border-default">
+                           <div class="container-fluid">
+                                 <div class="row">
+                                    <div class="col-12 p-0">
+                                       <p class="mt-2 text-start"><small class="fw-bold text-dark">Product Code: ${productCode}</small></p>
+                                       <p class="text-start">
+                                             <small
+                                                class="fw-bold text-dark">Product Dimensions: ${productDimensions}</small>
+                                       </p>
+                                    </div>
+                                 </div>
+                                 ${styleName ? `<div class="row">
+                                       <div class="col-4 p-0 d-md-flex d-none">
+                                          <p class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                             <small class="fw-bold">Style</small>
+                                          </p>
+                                       </div>
+                                       <div class="col-md-8 col-sm-12 p-0 text-center">
+                                          <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                             <small>${styleName}</small>
+                                          </p>
+                                       </div>
+                                 </div>` : ''}
+                                 ${productColour ? `<div class="row">
+                                       <div class="col-4 p-0 d-md-flex d-none">
+                                          <p class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                             <small class="fw-bold">Color</small>
+                                          </p>
+                                       </div>
+                                       <div class="col-md-8 col-sm-12 p-0 text-center">
+                                          <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                             <small>${productColour}</small>
+                                          </p>
+                                       </div>
+                                 </div>` : ''}
+                                 ${assemblyName ? `<div class="row">
+                                       <div class="col-4 p-0 d-md-flex d-none">
+                                          <p class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                             <small class="fw-bold">Assembly</small>
+                                          </p>
+                                       </div>
+                                       <div class="col-md-8 col-sm-12 p-0 text-center">
+                                          <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                             <small>${assemblyName}</small>
+                                          </p>
+                                       </div>
+                                 </div>` : ''}
+                           </div>
+                           <div class="row justify-content-center border-top border-default">
+                                 <div class="col-12">
+                                    <p class="fs-5 fw-bold text-dark">
+                                       ${price == 0 ? 'Out of Stock' : '£' + price}
+                                    </p>
+                                 </div>
+                                 <div
+                                    class="col-12 d-flex justify-content-center product-counter">
+                                    <input id="minus${productId}"
+                                       class="minus border bg-dark text-light p-0"
+                                       type="button" value="-"
+                                       onclick="decreaseQuantity('${productId}', '${ productCode }', '${fullTitle}', ${ price }, ${ discountedPercentage }, ${ discountedPercentage ?? 0 }, '${ parentCategorySlug }')" />
+                                    <input id="quantity${productId}"
+                                       class="quantity border border-black text-center"
+                                       type="text" value="0" name="quantity"
+                                       disabled />
+                                    <input id="plus${productId}"
+                                       class="plus border bg-dark text-light p-0"
+                                       type="button" value="+" type="number"
+                                       max="10"
+                                       onclick="increaseQuantity('${productId}', '${ productCode }', '${fullTitle}', ${ price }, ${ discountedPercentage }, ${ discountedPercentage ?? 0 }, '${ parentCategorySlug }')" />
+                                 </div>
+                           </div>
+                        </div>
+                     </div>
+               </div>
+            </div>
+         </div>
   `;
       $('.base-cabinets-section').html(_html);
   });
