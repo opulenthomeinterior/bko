@@ -37,7 +37,7 @@ use App\Models\Style;
     <link rel="stylesheet" type="text/css" href="{{ asset('css/slick-theme.css') }}" />
     {{-- Custom CSS --}}
     <link href="{{ asset('css/frontend.css') }}" rel="stylesheet" type="text/css" /><!-- Style -->
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" />
     <style>
         #whatsapp-icon {
             position: fixed;
@@ -121,6 +121,7 @@ use App\Models\Style;
             padding: 10px; /* Padding for options */
             border-bottom: 1px solid #ccc; /* Bottom border for each option */
             font-weight: bold; /* Make the option text bold */
+            max-height: 400px;
         }
 
         /* Hover effect for options */
@@ -141,6 +142,12 @@ use App\Models\Style;
             border: 1px solid #febd49; /* Custom border color */
             border-radius: 0; /* No rounded corners */
             outline: none; /* Remove outline */
+        }
+        
+        /* Customize the maximum height of the Select2 dropdown */
+        .select2-results__options {
+            max-height: 280px !important; /* Adjust this value as needed */
+            overflow-y: auto; /* Enable scrolling if items exceed the height */
         }
 
     </style>
@@ -833,7 +840,7 @@ use App\Models\Style;
     <script type="text/javascript" src="{{ asset('js/slick.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.7-beta.24/inputmask.min.js"></script>
     <!-- Script -->
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script src="{{ asset('js/select2.min.js') }}"></script>
 
     <!-- password-addon init -->
     <script src="{{ asset('js/pages/password-addon.init.js') }}"></script>
@@ -877,10 +884,21 @@ use App\Models\Style;
                 dropdownCssClass: 'custom-select-dropdown',
                 templateResult: function (data) {
                     if (!data.id) {
-                        return data.text; // Return the text of the option
+                        return data.text; // Return the text of the option if there's no id
                     }
-                    // Create a custom option
-                    var $result = $('<span style="padding: 10px">' + data.text + '</span>');
+
+                    // Retrieve image URL and other data attributes
+                    var imageUrl = $(data.element).data('product-image');
+                    var text = data.text;
+
+                    // Create a custom option with image and text
+                    var $result = $(
+                        '<div style="display: flex; align-items: center; gap: 10px;">' +
+                        '<img src="' + imageUrl + '" style="width: 50px; height: 50px; object-fit: cover; border-radius: 0px;" />' +
+                        '<span>' + text + '</span>' +
+                        '</div>'
+                    );
+
                     return $result;
                 }
             });
