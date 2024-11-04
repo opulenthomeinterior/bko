@@ -373,7 +373,7 @@ use App\Models\Style;
                         <div class="dropdown__container border-bottom border-warning border-2">
                             <div class="dropdown__content px-4" style="max-width: 100% !important; margin: 0px !important; grid-template-columns: none; column-gap: 0;">
                                 @php
-                                $styles = Style::all();
+                                $styles = Style::whereIn('id', [1,2,3,4])->get();
                                 @endphp
                                 @if (!empty($styles))
                                 <div class="dropdown__group">
@@ -423,7 +423,7 @@ use App\Models\Style;
                                                             <i class="ri-arrow-right-s-fill"></i> SLAB PAINTED KITCHENS</a>
                                                     </li>
                                                 </div>
-                                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
+                                                <!-- <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
                                                     <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
                                                         <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['slab-laminate']) }}" class="dropdown__link">
                                                             <i class="ri-arrow-right-s-fill"></i> SLAB LAMINATE KITCHENS</a>
@@ -434,7 +434,7 @@ use App\Models\Style;
                                                         <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['standard-mfc']) }}" class="dropdown__link">
                                                             <i class="ri-arrow-right-s-fill"></i> STANDARD MFC KITCHENS</a>
                                                     </li>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
                                     </ul>
@@ -524,12 +524,12 @@ use App\Models\Style;
                                             <li>
                                                 <input type="radio" value="slab-painted" name="style_name" class="style_type"> &nbsp; Slab Painted Kitchen
                                             </li>
-                                            <li>
+                                            <!-- <li>
                                                 <input type="radio" value="slab-laminate" name="style_name" class="style_type"> &nbsp; Slab Laminate Kitchen
                                             </li>
                                             <li>
                                                 <input type="radio" value="standard-mfc-kitchen" name="style_name" class="style_type"> &nbsp; Standard MFC Kitchen
-                                            </li>
+                                            </li> -->
                                         </ul>
                                     </div>
                                     <div class="col-6 text-center">

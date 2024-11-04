@@ -15,11 +15,6 @@
 
         {{-- Loop through each style --}}
         @foreach ($data as $styleName => $styleData)
-            @php 
-            if ($styleData['data']->name == 'Dual lever' || $styleData['data']->name == 'Single Lever' || $styleData['data']->name == 'Singlel lever' || $styleData['data']->name == 'Cashmere') {
-                continue;
-            }
-            @endphp
             @php
                 if ($loop->iteration % 2 == 0) {
                     $imageOrderClass = 'order-md-1';

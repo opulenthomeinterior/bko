@@ -39,7 +39,7 @@ class HomeController extends Controller
     public function orderkitchen()
     {
         // Get all unique styles and assemblies
-        $uniqueStyles = Style::distinct()->get();
+        $uniqueStyles = Style::distinct()->whereIn('id', [1,2,3,4])->get();
         // $uniqueAssemblies = Assembly::whereIn('name', ['Flat-Packed', 'Rigid'])->get();
         $uniqueAssemblies = Assembly::whereIn('name', ['Flat Pack', 'Rigid'])->get();
 
