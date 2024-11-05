@@ -960,32 +960,55 @@ use App\Models\Style;
                     window.location.href = url;
                 }
             });
+
+            $('#call-me-at').on('input', function(e) {
+                let value = $(this).val().replace(/\D/g, ''); // Remove non-numeric characters
+
+                if (value.length >= 2) {
+                    let hours = value.slice(0, 2);
+                    let minutes = value.slice(2, 4);
+
+                    // Restrict hours between 00 and 23
+                    if (parseInt(hours, 10) > 23) {
+                        hours = '23';
+                    }
+
+                    // Restrict minutes between 00 and 59
+                    if (parseInt(minutes, 10) > 59) {
+                        minutes = '59';
+                    }
+
+                    value = hours + (minutes ? ':' + minutes : ''); // Add colon between hours and minutes
+                }
+
+                $(this).val(value);
+            });
         });
     </script>
 
     <script>
-        document.getElementById('call-me-at').addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, ''); // Remove non-numeric characters
+        // document.getElementById('call-me-at').addEventListener('input', function(e) {
+        //     let value = e.target.value.replace(/\D/g, ''); // Remove non-numeric characters
 
-            if (value.length >= 2) {
-                let hours = value.slice(0, 2);
-                let minutes = value.slice(2, 4);
+        //     if (value.length >= 2) {
+        //         let hours = value.slice(0, 2);
+        //         let minutes = value.slice(2, 4);
 
-                // Restrict hours between 00 and 23
-                if (parseInt(hours, 10) > 23) {
-                    hours = '23';
-                }
+        //         // Restrict hours between 00 and 23
+        //         if (parseInt(hours, 10) > 23) {
+        //             hours = '23';
+        //         }
 
-                // Restrict minutes between 00 and 59
-                if (parseInt(minutes, 10) > 59) {
-                    minutes = '59';
-                }
+        //         // Restrict minutes between 00 and 59
+        //         if (parseInt(minutes, 10) > 59) {
+        //             minutes = '59';
+        //         }
 
-                value = hours + (minutes ? ':' + minutes : ''); // Add colon between hours and minutes
-            }
+        //         value = hours + (minutes ? ':' + minutes : ''); // Add colon between hours and minutes
+        //     }
 
-            e.target.value = value;
-        });
+        //     e.target.value = value;
+        // });
     </script>
     <script>
         var Toast = Swal.mixin({
