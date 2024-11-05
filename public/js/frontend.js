@@ -1058,9 +1058,10 @@ $(document).ready(function () {
 
 // Products Filter
 $(document).ready(function () {
-   $(document).on('change', '.base-cabinet-dropdown', function (e) {
+   $(document).on('change', '.order-component-dropdown', function (e) {
       // Get the selected option
       var selectedOption = $(this).find('option:selected');
+      var dropdownType = $(this).data('dropdown-type');
       // Access data-product-id from the selected option
       var productId = selectedOption.data('product-id');
       var fullTitle = selectedOption.data('product-fullname');
@@ -1239,7 +1240,7 @@ $(document).ready(function () {
                </div>
             </div>
          </div>
-  `;
-      $('.base-cabinets-section').html(_html);
-  });
+      `;
+      $('.'+dropdownType).html(_html);
+   });
  });

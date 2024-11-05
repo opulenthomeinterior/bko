@@ -902,6 +902,35 @@ use App\Models\Style;
                     return $result;
                 }
             });
+            
+            // Reinitialize Select2 on tab change
+            $('button[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
+                // Select the dropdown in the currently active tab
+                $('.tab-pane.active .select-2').select2({
+                    minimumResultsForSearch: Infinity,
+                    dropdownCssClass: 'custom-select-dropdown',
+                    templateResult: function (data) {
+                        if (!data.id) {
+                            return data.text; // Return the text of the option if there's no id
+                        }
+
+                        // Retrieve image URL and other data attributes
+                        var imageUrl = $(data.element).data('product-image');
+                        var text = data.text;
+
+                        // Create a custom option with image and text
+                        var $result = $(
+                            '<div style="display: flex; align-items: center; gap: 10px;">' +
+                            '<img src="' + imageUrl + '" style="width: 50px; height: 50px; object-fit: cover; border-radius: 0px;" />' +
+                            '<span>' + text + '</span>' +
+                            '</div>'
+                        );
+
+                        return $result;
+                    }
+                });
+            });
+
             // Define url globally inside the scope of the document ready function
             var url = '';
 
