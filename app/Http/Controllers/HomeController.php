@@ -138,73 +138,85 @@ class HomeController extends Controller
             $panels = Product::where('parent_category_id', 5)
                 ->where('style_id', $style->id)
                 ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)->where('status', 'active')
-                ->get();
-    
-            $handles = Product::where('parent_category_id', 6)
-                ->where('style_id', $style->id)
-                ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)->where('status', 'active')
-                ->get();
-    
-            $golaHandlelessRails = Product::where('parent_category_id', 7)
-                ->where('style_id', $style->id)
-                ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)->where('status', 'active')
+                ->where('colour_id', $colour->id)
+                ->where('status', 'active')
                 ->get();
     
             $accessories = Product::where('parent_category_id', 8)
                 ->where('style_id', $style->id)
                 ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)->where('status', 'active')
+                ->where('colour_id', $colour->id)
+                ->where('status', 'active')
                 ->get();
     
-            $appliances = Product::where('parent_category_id', 9)
-                ->where('style_id', $style->id)
-                ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)->where('status', 'active')
+            $handles = Product::where('parent_category_id', 6)
+                // ->where('style_id', $style->id)
+                // ->where('assembly_id', $assembly->id)
+                ->where('colour_id', $colour->id)
+                ->where('status', 'active')
                 ->get();
     
-            $worktops = Product::where('parent_category_id', 10)
-                ->where('style_id', $style->id)
-                ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)->where('status', 'active')
-                ->get();
-    
-            $worktopsAndUpStands = Product::where('parent_category_id', 11)
-                ->where('style_id', $style->id)
-                ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)->where('status', 'active')
-                ->get();
-    
-            $breakfastBars = Product::where('parent_category_id', 12)
-                ->where('style_id', $style->id)
-                ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)->where('status', 'active')
-                ->get();
-    
-            $edgings = Product::where('parent_category_id', 13)
-                ->where('style_id', $style->id)
-                ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)->where('status', 'active')
-                ->get();
-    
-            $taps = Product::where('parent_category_id', 14)
-                ->where('style_id', $style->id)
-                ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)->where('status', 'active')
-                ->get();
-    
-            $sinks = Product::where('parent_category_id', 15)
-                ->where('style_id', $style->id)
-                ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)->where('status', 'active')
+            $golaHandlelessRails = Product::where('parent_category_id', 7)
+                // ->where('style_id', $style->id)
+                // ->where('assembly_id', $assembly->id)
+                // ->where('colour_id', $colour->id)
+                ->where('status', 'active')
                 ->get();
     
             $swatchesAndSamples = Product::where('parent_category_id', 16)
-                ->where('style_id', $style->id)
-                ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)->where('status', 'active')
+                // ->where('style_id', $style->id)
+                // ->where('assembly_id', $assembly->id)
+                // ->where('colour_id', $colour->id)
+                ->where('status', 'active')
+                ->get();
+    
+            $worktops = Product::where('parent_category_id', 10)
+                // ->where('style_id', $style->id)
+                // ->where('assembly_id', $assembly->id)
+                // ->where('colour_id', $colour->id)
+                ->where('status', 'active')
+                ->get();
+
+            $worktopsAndUpStands = Product::where('parent_category_id', 11)
+                // ->where('style_id', $style->id)
+                // ->where('assembly_id', $assembly->id)
+                // ->where('colour_id', $colour->id)
+                ->where('status', 'active')
+                ->get();
+    
+            $breakfastBars = Product::where('parent_category_id', 12)
+                // ->where('style_id', $style->id)
+                // ->where('assembly_id', $assembly->id)
+                // ->where('colour_id', $colour->id)
+                ->where('status', 'active')
+                ->get();
+    
+            $edgings = Product::where('parent_category_id', 13)
+                // ->where('style_id', $style->id)
+                // ->where('assembly_id', $assembly->id)
+                // ->where('colour_id', $colour->id)
+                ->where('status', 'active')
+                ->get();
+    
+            $sinks = Product::where('parent_category_id', 15)
+                // ->where('style_id', $style->id)
+                // ->where('assembly_id', $assembly->id)
+                ->where('colour_id', $colour->id)
+                ->where('status', 'active')
+                ->get();
+
+            $taps = Product::where('parent_category_id', 14)
+                // ->where('style_id', $style->id)
+                // ->where('assembly_id', $assembly->id)
+                // ->where('colour_id', $colour->id)
+                ->where('status', 'active')
+                ->get();
+    
+            $appliances = Product::where('parent_category_id', 9)
+                // ->where('style_id', $style->id)
+                // ->where('assembly_id', $assembly->id)
+                // ->where('colour_id', $colour->id)
+                ->where('status', 'active')
                 ->get();
     
             // echo '<pre>';
