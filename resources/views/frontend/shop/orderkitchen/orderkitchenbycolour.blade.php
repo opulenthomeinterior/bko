@@ -2295,282 +2295,77 @@
                     <div class="collapse-container collapse mt-3" id="accessories">
                         <div class="row">
                             @if ($accessories->count() > 0)
-                            @foreach ($accessories as $index => $accessory)
-                            {{--<div class="col-lg-4 col-6 mb-3">
-                                    <div class="card">
-                                        <div class="card-body text-center">
-                                            <!-- Button trigger modal -->
-                                            <a class="modal-icon z-3" href="#" data-bs-toggle="modal"
-                                                data-bs-target="#accessories{{ $index }}">
-                                                <i class="ri-add-circle-line text-black fs-4"></i>
-                                            </a>
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="accessories{{ $index }}"
-                                                tabindex="-1"
-                                                aria-labelledby="accessoriesLabel{{ $index }}"
-                                                aria-hidden="true">
-                                                <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal"
-                                                                aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <div class="container-fluid">
-                                                                <div class="row">
-                                                                    <div class="col-lg-4 col-md-5 col-12">
-                                                                        <img src="{{ !empty($accessory->image_path) ? asset('imgs/products/'.$accessory->image_path) : asset('images/no-image-available.jpg') }}"
-                                                                            class="img-fluid" />
-                                                                    </div>
-                                                                    <div
-                                                                        class="col-lg-8 col-md-7 col-12 text-start">
-                                                                        <h1 class="fs-5 fw-bold">
-                                                                            {{ $accessory->full_title }}
-                                                                        </h1>
-                                                                        <hr>
-                                                                        <h6 class="fs-6 fw-bolder text-dark">
-                                                                            Styling</h6>
-                                                                        <ul>
-                                                                            <li>HEIGHT: 720mm</li>
-                                                                            <li>WIDTH: 1000mm</li>
-                                                                            <li>DEPTH: 570mm</li>
-                                                                        </ul>
+                                @foreach ($accessories as $index => $accessory)
+                                {{--<div class="col-lg-4 col-6 mb-3">
+                                        <div class="card">
+                                            <div class="card-body text-center">
+                                                <!-- Button trigger modal -->
+                                                <a class="modal-icon z-3" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#accessories{{ $index }}">
+                                                    <i class="ri-add-circle-line text-black fs-4"></i>
+                                                </a>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="accessories{{ $index }}"
+                                                    tabindex="-1"
+                                                    aria-labelledby="accessoriesLabel{{ $index }}"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="container-fluid">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-4 col-md-5 col-12">
+                                                                            <img src="{{ !empty($accessory->image_path) ? asset('imgs/products/'.$accessory->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                                class="img-fluid" />
+                                                                        </div>
+                                                                        <div
+                                                                            class="col-lg-8 col-md-7 col-12 text-start">
+                                                                            <h1 class="fs-5 fw-bold">
+                                                                                {{ $accessory->full_title }}
+                                                                            </h1>
+                                                                            <hr>
+                                                                            <h6 class="fs-6 fw-bolder text-dark">
+                                                                                Styling</h6>
+                                                                            <ul>
+                                                                                <li>HEIGHT: 720mm</li>
+                                                                                <li>WIDTH: 1000mm</li>
+                                                                                <li>DEPTH: 570mm</li>
+                                                                            </ul>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                            <div class="modal-footer"></div>
                                                         </div>
-                                                        <div class="modal-footer"></div>
                                                     </div>
                                                 </div>
-                                            </div>
 
-                                            <div class="">
-                                                <figure>
-                                                    <img class="product-image px-0"
-                                                        src="{{ !empty($accessory->image_path) ? asset('imgs/products/'.$accessory->image_path) : asset('images/no-image-available.jpg') }}"
-                                                        alt="Card image cap">
-                                                </figure>
                                                 <div class="">
-                                                    <a href=""
-                                                        class="text-center text-decoration-underline fs-5 fw-bold">
-                                                        {{ $accessory->short_title }}
-                                                    </a>
-                                                    <p class="py-lg-3 py-2">
-                                                        <small
-                                                            class="fw-bold text-center">{{ $accessory->product_code }}</small>
-                                                    </p>
-                                                    <p class="py-lg-3 py-2">
-                                                        <small
-                                                            class="fw-bold text-center">{{ $accessory->dimensions }}</small>
-                                                    </p>
-                                                    <div class="container-fluid">
-                                                        <div class="row justify-content-center product-counter">
-                                                            <input id="minus{{ $accessory->id }}"
-                                                                class="minus border bg-dark text-light p-0"
-                                                                type="button" value="-"
-                                                                onclick="decreaseQuantity('{{ $accessory->id }}', '{{ $accessory->product_code }}', '{{ $accessory->full_title }}', {{ $accessory->price }}, {{ $accessory->discounted_price }}, {{ $accessory->discounted_percentage ?? 0 }}, '{{ $accessory->ParentCategory->slug }}')" />
-                                                            <input id="quantity{{ $accessory->id }}"
-                                                                class="quantity border border-black text-center"
-                                                                type="text" value="0" name="quantity"
-                                                                disabled />
-                                                            <input id="plus{{ $accessory->id }}"
-                                                                class="plus border bg-dark text-light p-0"
-                                                                type="button" value="+"
-                                                                onclick="increaseQuantity('{{ $accessory->id }}', '{{ $accessory->product_code }}', '{{ $accessory->full_title }}', {{ $accessory->price }}, {{ $accessory->discounted_price }}, {{ $accessory->discounted_percentage ?? 0 }}, '{{ $accessory->ParentCategory->slug }}')" />
-                                                        </div>
-                                                    </div>
-                                                    <p class="fs-5 fw-bold mt-lg-2">
-                                                        {{ $accessory->price == 0 ? 'Out of Stock' : '£' . $accessory->price }}
-                                                    </p>
-                                                    <div class="container-fluid">
-                                                        @if ($accessory->style)
-                                                        <div class="row">
-                                                            <div class="col-4 p-0 d-md-flex d-none">
-                                                                <p
-                                                                    class="category-text text-start text-uppercase m-0 pt-1">
-                                                                    <small>Style</small>
-                                                                </p>
-                                                            </div>
-                                                            <div class="col-md-8 col-sm-12 p-0 text-center">
-                                                                <p
-                                                                    class="category-value fw-semibold py-1 mb-2">
-                                                                    <small>{{ $accessory->style->name }}</small>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        @endif
-                                                        @if ($accessory->colour)
-                                                        <div class="row">
-                                                            <div class="col-4 p-0 d-md-flex d-none">
-                                                                <p
-                                                                    class="category-text text-start text-uppercase m-0 pt-1">
-                                                                    <small>Color</small>
-                                                                </p>
-                                                            </div>
-                                                            <div class="col-md-8 col-sm-12 p-0 text-center">
-                                                                <p
-                                                                    class="category-value fw-semibold py-1 mb-2">
-                                                                    <small>{{ $accessory->colour->trade_colour ? $accessory->colour->trade_colour : $accessory->colour->name }}</small>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        @endif
-                                                        @if ($accessory->assembly)
-                                                        <div class="row">
-                                                            <div class="col-4 p-0 d-md-flex d-none">
-                                                                <p
-                                                                    class="category-text text-start text-uppercase m-0 pt-1">
-                                                                    <small>Assembly</small>
-                                                                </p>
-                                                            </div>
-                                                            <div class="col-md-8 col-sm-12 p-0 text-center">
-                                                                <p
-                                                                    class="category-value fw-semibold py-1 mb-2">
-                                                                    <small>{{ $accessory->assembly->name }}</small>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        @endif
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>--}}
-                            <div class="col-lg-4 col-6 mb-3">
-                                <div class="card border-1 btn btn-outline-warning bg-light p-0" style="border-radius: 0;">
-                                    <div class="bg-warning card-header px-0 py-0">
-                                        <div class="py-2 text-center product-short-title-container w-100">
-                                            <a href="#" class="product-short-title fw-bold text-decoration-underline fs-4">
-                                                {{ $accessory->short_title }}
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="card-body text-center">
-                                        <div class="modal fade" id="productModal{{ $accessory->id }}" tabindex="-1"
-                                            aria-labelledby="productModalLabel{{ $accessory->id }}"
-                                            aria-hidden="true">
-                                            <div class="modal-dialog modal-lg modal-dialog-centered">
-                                                <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
-                                                    <div class="modal-header border-bottom border-light">
-                                                        <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
-                                                            {{ $accessory->full_title }}
-                                                        </h1>
-                                                        <button type="button" class="btn-close"
-                                                            data-bs-dismiss="modal" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <div class="container-fluid">
-                                                            <div class="row">
-                                                                <div class="col-lg-8 col-md-8 col-8 border-bottom border-warning bg-light">
-                                                                    <img src="{{ !empty($accessory->image_path) ? asset('imgs/products/'.$accessory->image_path) : asset('images/no-image-available.jpg') }}"
-                                                                        class="img-fluid product-image" style="height: 300px;" />
-                                                                </div>
-                                                                <div class="col-lg-4 col-md-4 col-4 text-start text-dark">
-                                                                    <div>
-                                                                        <h6 class="fs-6 fw-bolder text-dark">Styling</h6>
-                                                                        <ul style="list-style: none; padding: 0">
-                                                                            @if ($accessory->style)
-                                                                            <li>
-                                                                                <p class="mb-0">
-                                                                                    <small
-                                                                                        class="fw-bold text-uppercase text-dark">Style:</small>
-                                                                                    {{ $accessory->style->name }}
-                                                                                </p>
-                                                                            </li>
-                                                                            @endif
-                                                                            @if ($accessory->assembly)
-                                                                            <li>
-                                                                                <p class="mb-0">
-                                                                                    <small
-                                                                                        class="fw-bold text-uppercase text-dark">Assembly:</small>
-                                                                                    {{ $accessory->assembly->name }}
-                                                                                </p>
-                                                                            </li>
-                                                                            @endif
-                                                                            @if ($accessory->colour)
-                                                                            <li>
-                                                                                <p class="mb-0">
-                                                                                    <small
-                                                                                        class="fw-bold text-uppercase text-dark">Colour:</small>
-                                                                                    {{ $accessory->colour->trade_colour ? $accessory->colour->trade_colour : $accessory->colour->name }}
-                                                                                </p>
-                                                                            </li>
-                                                                            @endif
-                                                                        </ul>
-                                                                    </div>
-                                                                    <div>
-                                                                        <h6 class="fs-6 fw-bolder text-dark">Dimensions
-                                                                        </h6>
-                                                                        <ul style="list-style: none; padding: 0">
-                                                                            <li>
-                                                                                <p class="mb-0">
-                                                                                    <small
-                                                                                        class="fw-bold text-uppercase text-dark">HEIGHT:</small>
-                                                                                    {{ intval($accessory->height) }}mm
-                                                                                </p>
-                                                                            </li>
-                                                                            <li>
-                                                                                <p class="mb-0">
-                                                                                    <small
-                                                                                        class="fw-bold text-uppercase text-dark">WIDTH:</small>
-                                                                                    {{ intval($accessory->width) }}mm
-                                                                                </p>
-                                                                            </li>
-                                                                            <li>
-                                                                                <p class="mb-0">
-                                                                                    <small
-                                                                                        class="fw-bold text-uppercase text-dark">DEPTH:</small>
-                                                                                    {{ intval($accessory->depth) }}mm
-                                                                                </p>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                    <div>
-                                                                        <h6 class="fs-6 fw-bolder text-dark">
-                                                                            Range Specification
-                                                                        </h6>
-                                                                        <p class="mb-0">
-                                                                            <small>
-                                                                                @if ($accessory->category?->description)
-                                                                                {!! $accessory->category->description !!}
-                                                                                @elseif ($accessory->category?->parentCategory?->description)
-                                                                                {!! $accessory->category->parentCategory->description !!}
-                                                                                @endif
-                                                                            </small>
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="container-fluid">
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <figure class="my-0" style="margin-bottom: 0px !important;">
+                                                    <figure>
                                                         <img class="product-image px-0"
-                                                            style="margin-bottom: 0px !important;min-height:175px;max-height:175px;object-fit:contain"
                                                             src="{{ !empty($accessory->image_path) ? asset('imgs/products/'.$accessory->image_path) : asset('images/no-image-available.jpg') }}"
-                                                            alt="Card image cap" data-bs-toggle="modal"
-                                                            data-bs-target="#productModal{{ $accessory->id }}">
+                                                            alt="Card image cap">
                                                     </figure>
-                                                    <p class="mt-2"><small class="fw-bold text-start text-dark">{{ $accessory->product_code }}</small></p>
-                                                    <p class="">
-                                                        <small
-                                                            class="fw-bold text-start text-dark">{{ $accessory->dimensions }}</small>
-                                                    </p>
-                                                </div>
-                                                <div class="col-12">
-                                                    <div class="container-fluid">
-                                                        <div class="row justify-content-center">
-                                                            <div
-                                                                class="col-6 d-flex justify-content-center product-counter">
+                                                    <div class="">
+                                                        <a href=""
+                                                            class="text-center text-decoration-underline fs-5 fw-bold">
+                                                            {{ $accessory->short_title }}
+                                                        </a>
+                                                        <p class="py-lg-3 py-2">
+                                                            <small
+                                                                class="fw-bold text-center">{{ $accessory->product_code }}</small>
+                                                        </p>
+                                                        <p class="py-lg-3 py-2">
+                                                            <small
+                                                                class="fw-bold text-center">{{ $accessory->dimensions }}</small>
+                                                        </p>
+                                                        <div class="container-fluid">
+                                                            <div class="row justify-content-center product-counter">
                                                                 <input id="minus{{ $accessory->id }}"
                                                                     class="minus border bg-dark text-light p-0"
                                                                     type="button" value="-"
@@ -2581,254 +2376,86 @@
                                                                     disabled />
                                                                 <input id="plus{{ $accessory->id }}"
                                                                     class="plus border bg-dark text-light p-0"
-                                                                    type="button" value="+" type="number"
-                                                                    max="10"
+                                                                    type="button" value="+"
                                                                     onclick="increaseQuantity('{{ $accessory->id }}', '{{ $accessory->product_code }}', '{{ $accessory->full_title }}', {{ $accessory->price }}, {{ $accessory->discounted_price }}, {{ $accessory->discounted_percentage ?? 0 }}, '{{ $accessory->ParentCategory->slug }}')" />
                                                             </div>
-                                                            <div class="col-6">
-                                                                <p class="fs-5 fw-bold mt-lg-2 text-dark">
-                                                                    {{ $accessory->price == 0 ? 'Out of Stock' : '£' . $accessory->price }}
-                                                                </p>
-                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="container-fluid">
-                                                        @if ($accessory->style)
-                                                        <div class="row">
-                                                            <div class="col-4 p-0 d-md-flex d-none">
-                                                                <p
-                                                                    class="category-text text-start text-dark text-uppercase m-0 pt-1">
-                                                                    <small>Style</small>
-                                                                </p>
-                                                            </div>
-                                                            <div class="col-md-8 col-sm-12 p-0 text-center">
-                                                                <p class="category-value fw-semibold py-1 mb-2 text-dark">
-                                                                    <small>{{ $accessory->style->name }}</small>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        @endif
-                                                        @if ($accessory->colour)
-                                                        <div class="row">
-                                                            <div class="col-4 p-0 d-md-flex d-none">
-                                                                <p
-                                                                    class="category-text text-start text-dark text-uppercase m-0 pt-1">
-                                                                    <small>Color</small>
-                                                                </p>
-                                                            </div>
-                                                            <div class="col-md-8 col-sm-12 p-0 text-center">
-                                                                <p class="category-value fw-semibold py-1 mb-2 text-dark">
-                                                                    <small>{{ $accessory->colour->trade_colour ? $accessory->colour->trade_colour : $accessory->colour->name }}</small>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        @endif
-                                                        @if ($accessory->assembly)
-                                                        <div class="row">
-                                                            <div class="col-4 p-0 d-md-flex d-none">
-                                                                <p
-                                                                    class="category-text text-start text-dark text-uppercase m-0 pt-1">
-                                                                    <small>Assembly</small>
-                                                                </p>
-                                                            </div>
-                                                            <div class="col-md-8 col-sm-12 p-0 text-center">
-                                                                <p class="category-value fw-semibold py-1 mb-2 text-dark">
-                                                                    <small>{{ $accessory->assembly->name }}</small>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        @endif
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-footer p-0">
-                                        <a href="#" class="product-short-title text-decoration-underline">
-                                            <small>View more</small>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                        @else
-                            <div class="col-12">
-                                <p class="">No accessories available</p>
-                            </div>
-                        @endif
-                        </div>
-                    </div>
-                </div>
-                <div class="collapse-wrapper my-4">
-                    <a class="fw-semibold text-dark text-uppercase collapse-heading" data-bs-toggle="collapse"
-                        href="#handles" role="button" aria-expanded="false" aria-controls="handles">
-                        <span
-                            class="bg-dark text-white fw-semibold py-2 px-2 text-center me-2 collapse-heading-number">3</span>
-                        Handles
-                    </a>
-                    <div class="collapse-container collapse mt-3" id="handles">
-                        <div class="row">
-                            @if ($handles->count() > 0)
-                            @foreach ($handles as $index => $handle)
-                            {{--<div class="col-lg-4 col-6 mb-3">
-                                    <div class="card">
-                                        <div class="card-body text-center">
-                                            <!-- Button trigger modal -->
-                                            <a class="modal-icon z-3" href="#" data-bs-toggle="modal"
-                                                data-bs-target="#handles{{ $index }}">
-                                                <i class="ri-add-circle-line text-black fs-4"></i>
-                                            </a>
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="handles{{ $index }}"
-                                                tabindex="-1" aria-labelledby="handlesLabel{{ $index }}"
-                                                aria-hidden="true">
-                                                <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal"
-                                                                aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <div class="container-fluid">
-                                                                <div class="row">
-                                                                    <div class="col-lg-4 col-md-5 col-12">
-                                                                        <img src="{{ !empty($handle->image_path) ? asset('imgs/products/'.$handle->image_path) : asset('images/no-image-available.jpg') }}"
-                                                                            class="img-fluid" />
-                                                                    </div>
-                                                                    <div
-                                                                        class="col-lg-8 col-md-7 col-12 text-start">
-                                                                        <h1 class="fs-5 fw-bold">
-                                                                            {{ $handle->full_title }}
-                                                                        </h1>
-                                                                        <hr>
-                                                                        <h6 class="fs-6 fw-bolder text-dark">
-                                                                            Styling</h6>
-                                                                        <ul>
-                                                                            <li>HEIGHT: 720mm</li>
-                                                                            <li>WIDTH: 1000mm</li>
-                                                                            <li>DEPTH: 570mm</li>
-                                                                        </ul>
-                                                                    </div>
+                                                        <p class="fs-5 fw-bold mt-lg-2">
+                                                            {{ $accessory->price == 0 ? 'Out of Stock' : '£' . $accessory->price }}
+                                                        </p>
+                                                        <div class="container-fluid">
+                                                            @if ($accessory->style)
+                                                            <div class="row">
+                                                                <div class="col-4 p-0 d-md-flex d-none">
+                                                                    <p
+                                                                        class="category-text text-start text-uppercase m-0 pt-1">
+                                                                        <small>Style</small>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                    <p
+                                                                        class="category-value fw-semibold py-1 mb-2">
+                                                                        <small>{{ $accessory->style->name }}</small>
+                                                                    </p>
                                                                 </div>
                                                             </div>
+                                                            @endif
+                                                            @if ($accessory->colour)
+                                                            <div class="row">
+                                                                <div class="col-4 p-0 d-md-flex d-none">
+                                                                    <p
+                                                                        class="category-text text-start text-uppercase m-0 pt-1">
+                                                                        <small>Color</small>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                    <p
+                                                                        class="category-value fw-semibold py-1 mb-2">
+                                                                        <small>{{ $accessory->colour->trade_colour ? $accessory->colour->trade_colour : $accessory->colour->name }}</small>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            @endif
+                                                            @if ($accessory->assembly)
+                                                            <div class="row">
+                                                                <div class="col-4 p-0 d-md-flex d-none">
+                                                                    <p
+                                                                        class="category-text text-start text-uppercase m-0 pt-1">
+                                                                        <small>Assembly</small>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                    <p
+                                                                        class="category-value fw-semibold py-1 mb-2">
+                                                                        <small>{{ $accessory->assembly->name }}</small>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            @endif
                                                         </div>
-                                                        <div class="modal-footer"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="">
-                                                <figure>
-                                                    <img class="product-image px-0"
-                                                        src="{{ !empty($handle->image_path) ? asset('imgs/products/'.$handle->image_path) : asset('images/no-image-available.jpg') }}"
-                                                        alt="Card image cap">
-                                                </figure>
-                                                <div class="">
-                                                    <a href=""
-                                                        class="text-center text-decoration-underline fs-5 fw-bold">
-                                                        {{ $handle->short_title }}
-                                                    </a>
-                                                    <p class="py-lg-3 py-2">
-                                                        <small
-                                                            class="fw-bold text-center">{{ $handle->product_code }}</small>
-                                                    </p>
-                                                    <p class="py-lg-3 py-2">
-                                                        <small
-                                                            class="fw-bold text-center">{{ $handle->dimensions }}</small>
-                                                    </p>
-                                                    <div class="container-fluid">
-                                                        <div class="row justify-content-center product-counter">
-                                                            <input id="minus{{ $handle->id }}"
-                                                                class="minus border bg-dark text-light p-0"
-                                                                type="button" value="-"
-                                                                onclick="decreaseQuantity('{{ $handle->id }}', '{{ $handle->product_code }}', '{{ $handle->full_title }}', {{ $handle->price }}, {{ $handle->discounted_price }}, {{ $handle->discounted_percentage ?? 0 }}, '{{ $handle->ParentCategory->slug }}')" />
-                                                            <input id="quantity{{ $handle->id }}"
-                                                                class="quantity border border-black text-center"
-                                                                type="text" value="0" name="quantity"
-                                                                disabled />
-                                                            <input id="plus{{ $handle->id }}"
-                                                                class="plus border bg-dark text-light p-0"
-                                                                type="button" value="+"
-                                                                onclick="increaseQuantity('{{ $handle->id }}', '{{ $handle->product_code }}', '{{ $handle->full_title }}', {{ $handle->price }}, {{ $handle->discounted_price }}, {{ $handle->discounted_percentage ?? 0 }}, '{{ $handle->ParentCategory->slug }}')" />
-                                                        </div>
-                                                    </div>
-                                                    <p class="fs-5 fw-bold mt-lg-2">
-                                                        {{ $handle->price == 0 ? 'Out of Stock' : '£' . $handle->price }}
-                                                    </p>
-                                                    <div class="container-fluid">
-                                                        @if ($handle->style)
-                                                        <div class="row">
-                                                            <div class="col-4 p-0 d-md-flex d-none">
-                                                                <p
-                                                                    class="category-text text-start text-uppercase m-0 pt-1">
-                                                                    <small>Style</small>
-                                                                </p>
-                                                            </div>
-                                                            <div class="col-md-8 col-sm-12 p-0 text-center">
-                                                                <p
-                                                                    class="category-value fw-semibold py-1 mb-2">
-                                                                    <small>{{ $handle->style->name }}</small>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        @endif
-                                                        @if ($handle->colour)
-                                                        <div class="row">
-                                                            <div class="col-4 p-0 d-md-flex d-none">
-                                                                <p
-                                                                    class="category-text text-start text-uppercase m-0 pt-1">
-                                                                    <small>Color</small>
-                                                                </p>
-                                                            </div>
-                                                            <div class="col-md-8 col-sm-12 p-0 text-center">
-                                                                <p
-                                                                    class="category-value fw-semibold py-1 mb-2">
-                                                                    <small>{{ $handle->colour->trade_colour ? $handle->colour->trade_colour : $handle->colour->name }}</small>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        @endif
-                                                        @if ($handle->assembly)
-                                                        <div class="row">
-                                                            <div class="col-4 p-0 d-md-flex d-none">
-                                                                <p
-                                                                    class="category-text text-start text-uppercase m-0 pt-1">
-                                                                    <small>Assembly</small>
-                                                                </p>
-                                                            </div>
-                                                            <div class="col-md-8 col-sm-12 p-0 text-center">
-                                                                <p
-                                                                    class="category-value fw-semibold py-1 mb-2">
-                                                                    <small>{{ $handle->assembly->name }}</small>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>--}}
-                                <div class="col-lg-4 col-6 mb-3">
+                                    </div>--}}
+                                <!-- <div class="col-lg-4 col-6 mb-3">
                                     <div class="card border-1 btn btn-outline-warning bg-light p-0" style="border-radius: 0;">
                                         <div class="bg-warning card-header px-0 py-0">
                                             <div class="py-2 text-center product-short-title-container w-100">
                                                 <a href="#" class="product-short-title fw-bold text-decoration-underline fs-4">
-                                                    {{ $handle->short_title }}
+                                                    {{ $accessory->short_title }}
                                                 </a>
                                             </div>
                                         </div>
                                         <div class="card-body text-center">
-                                            <div class="modal fade" id="productModal{{ $handle->id }}" tabindex="-1"
-                                                aria-labelledby="productModalLabel{{ $handle->id }}"
+                                            <div class="modal fade" id="productModal{{ $accessory->id }}" tabindex="-1"
+                                                aria-labelledby="productModalLabel{{ $accessory->id }}"
                                                 aria-hidden="true">
                                                 <div class="modal-dialog modal-lg modal-dialog-centered">
                                                     <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
                                                         <div class="modal-header border-bottom border-light">
                                                             <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
-                                                                {{ $handle->full_title }}
+                                                                {{ $accessory->full_title }}
                                                             </h1>
                                                             <button type="button" class="btn-close"
                                                                 data-bs-dismiss="modal" aria-label="Close"></button>
@@ -2837,37 +2464,37 @@
                                                             <div class="container-fluid">
                                                                 <div class="row">
                                                                     <div class="col-lg-8 col-md-8 col-8 border-bottom border-warning bg-light">
-                                                                        <img src="{{ !empty($handle->image_path) ? asset('imgs/products/'.$handle->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                        <img src="{{ !empty($accessory->image_path) ? asset('imgs/products/'.$accessory->image_path) : asset('images/no-image-available.jpg') }}"
                                                                             class="img-fluid product-image" style="height: 300px;" />
                                                                     </div>
                                                                     <div class="col-lg-4 col-md-4 col-4 text-start text-dark">
                                                                         <div>
                                                                             <h6 class="fs-6 fw-bolder text-dark">Styling</h6>
                                                                             <ul style="list-style: none; padding: 0">
-                                                                                @if ($handle->style)
+                                                                                @if ($accessory->style)
                                                                                 <li>
                                                                                     <p class="mb-0">
                                                                                         <small
                                                                                             class="fw-bold text-uppercase text-dark">Style:</small>
-                                                                                        {{ $handle->style->name }}
+                                                                                        {{ $accessory->style->name }}
                                                                                     </p>
                                                                                 </li>
                                                                                 @endif
-                                                                                @if ($handle->assembly)
+                                                                                @if ($accessory->assembly)
                                                                                 <li>
                                                                                     <p class="mb-0">
                                                                                         <small
                                                                                             class="fw-bold text-uppercase text-dark">Assembly:</small>
-                                                                                        {{ $handle->assembly->name }}
+                                                                                        {{ $accessory->assembly->name }}
                                                                                     </p>
                                                                                 </li>
                                                                                 @endif
-                                                                                @if ($handle->colour)
+                                                                                @if ($accessory->colour)
                                                                                 <li>
                                                                                     <p class="mb-0">
                                                                                         <small
                                                                                             class="fw-bold text-uppercase text-dark">Colour:</small>
-                                                                                        {{ $handle->colour->trade_colour ? $handle->colour->trade_colour : $handle->colour->name }}
+                                                                                        {{ $accessory->colour->trade_colour ? $accessory->colour->trade_colour : $accessory->colour->name }}
                                                                                     </p>
                                                                                 </li>
                                                                                 @endif
@@ -2881,21 +2508,21 @@
                                                                                     <p class="mb-0">
                                                                                         <small
                                                                                             class="fw-bold text-uppercase text-dark">HEIGHT:</small>
-                                                                                        {{ intval($handle->height) }}mm
+                                                                                        {{ intval($accessory->height) }}mm
                                                                                     </p>
                                                                                 </li>
                                                                                 <li>
                                                                                     <p class="mb-0">
                                                                                         <small
                                                                                             class="fw-bold text-uppercase text-dark">WIDTH:</small>
-                                                                                        {{ intval($handle->width) }}mm
+                                                                                        {{ intval($accessory->width) }}mm
                                                                                     </p>
                                                                                 </li>
                                                                                 <li>
                                                                                     <p class="mb-0">
                                                                                         <small
                                                                                             class="fw-bold text-uppercase text-dark">DEPTH:</small>
-                                                                                        {{ intval($handle->depth) }}mm
+                                                                                        {{ intval($accessory->depth) }}mm
                                                                                     </p>
                                                                                 </li>
                                                                             </ul>
@@ -2906,10 +2533,10 @@
                                                                             </h6>
                                                                             <p class="mb-0">
                                                                                 <small>
-                                                                                    @if ($handle->category?->description)
-                                                                                    {!! $handle->category->description !!}
-                                                                                    @elseif ($handle->category?->parentCategory?->description)
-                                                                                    {!! $handle->category->parentCategory->description !!}
+                                                                                    @if ($accessory->category?->description)
+                                                                                    {!! $accessory->category->description !!}
+                                                                                    @elseif ($accessory->category?->parentCategory?->description)
+                                                                                    {!! $accessory->category->parentCategory->description !!}
                                                                                     @endif
                                                                                 </small>
                                                                             </p>
@@ -2929,14 +2556,14 @@
                                                         <figure class="my-0" style="margin-bottom: 0px !important;">
                                                             <img class="product-image px-0"
                                                                 style="margin-bottom: 0px !important;min-height:175px;max-height:175px;object-fit:contain"
-                                                                src="{{ !empty($handle->image_path) ? asset('imgs/products/'.$handle->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                src="{{ !empty($accessory->image_path) ? asset('imgs/products/'.$accessory->image_path) : asset('images/no-image-available.jpg') }}"
                                                                 alt="Card image cap" data-bs-toggle="modal"
-                                                                data-bs-target="#productModal{{ $handle->id }}">
+                                                                data-bs-target="#productModal{{ $accessory->id }}">
                                                         </figure>
-                                                        <p class="mt-2"><small class="fw-bold text-start text-dark">{{ $handle->product_code }}</small></p>
+                                                        <p class="mt-2"><small class="fw-bold text-start text-dark">{{ $accessory->product_code }}</small></p>
                                                         <p class="">
                                                             <small
-                                                                class="fw-bold text-start text-dark">{{ $handle->dimensions }}</small>
+                                                                class="fw-bold text-start text-dark">{{ $accessory->dimensions }}</small>
                                                         </p>
                                                     </div>
                                                     <div class="col-12">
@@ -2944,29 +2571,29 @@
                                                             <div class="row justify-content-center">
                                                                 <div
                                                                     class="col-6 d-flex justify-content-center product-counter">
-                                                                    <input id="minus{{ $handle->id }}"
+                                                                    <input id="minus{{ $accessory->id }}"
                                                                         class="minus border bg-dark text-light p-0"
                                                                         type="button" value="-"
-                                                                        onclick="decreaseQuantity('{{ $handle->id }}', '{{ $handle->product_code }}', '{{ $handle->full_title }}', {{ $handle->price }}, {{ $handle->discounted_price }}, {{ $handle->discounted_percentage ?? 0 }}, '{{ $handle->ParentCategory->slug }}')" />
-                                                                    <input id="quantity{{ $handle->id }}"
+                                                                        onclick="decreaseQuantity('{{ $accessory->id }}', '{{ $accessory->product_code }}', '{{ $accessory->full_title }}', {{ $accessory->price }}, {{ $accessory->discounted_price }}, {{ $accessory->discounted_percentage ?? 0 }}, '{{ $accessory->ParentCategory->slug }}')" />
+                                                                    <input id="quantity{{ $accessory->id }}"
                                                                         class="quantity border border-black text-center"
                                                                         type="text" value="0" name="quantity"
                                                                         disabled />
-                                                                    <input id="plus{{ $handle->id }}"
+                                                                    <input id="plus{{ $accessory->id }}"
                                                                         class="plus border bg-dark text-light p-0"
                                                                         type="button" value="+" type="number"
                                                                         max="10"
-                                                                        onclick="increaseQuantity('{{ $handle->id }}', '{{ $handle->product_code }}', '{{ $handle->full_title }}', {{ $handle->price }}, {{ $handle->discounted_price }}, {{ $handle->discounted_percentage ?? 0 }}, '{{ $handle->ParentCategory->slug }}')" />
+                                                                        onclick="increaseQuantity('{{ $accessory->id }}', '{{ $accessory->product_code }}', '{{ $accessory->full_title }}', {{ $accessory->price }}, {{ $accessory->discounted_price }}, {{ $accessory->discounted_percentage ?? 0 }}, '{{ $accessory->ParentCategory->slug }}')" />
                                                                 </div>
                                                                 <div class="col-6">
                                                                     <p class="fs-5 fw-bold mt-lg-2 text-dark">
-                                                                        {{ $handle->price == 0 ? 'Out of Stock' : '£' . $handle->price }}
+                                                                        {{ $accessory->price == 0 ? 'Out of Stock' : '£' . $accessory->price }}
                                                                     </p>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="container-fluid">
-                                                            @if ($handle->style)
+                                                            @if ($accessory->style)
                                                             <div class="row">
                                                                 <div class="col-4 p-0 d-md-flex d-none">
                                                                     <p
@@ -2976,12 +2603,12 @@
                                                                 </div>
                                                                 <div class="col-md-8 col-sm-12 p-0 text-center">
                                                                     <p class="category-value fw-semibold py-1 mb-2 text-dark">
-                                                                        <small>{{ $handle->style->name }}</small>
+                                                                        <small>{{ $accessory->style->name }}</small>
                                                                     </p>
                                                                 </div>
                                                             </div>
                                                             @endif
-                                                            @if ($handle->colour)
+                                                            @if ($accessory->colour)
                                                             <div class="row">
                                                                 <div class="col-4 p-0 d-md-flex d-none">
                                                                     <p
@@ -2991,12 +2618,12 @@
                                                                 </div>
                                                                 <div class="col-md-8 col-sm-12 p-0 text-center">
                                                                     <p class="category-value fw-semibold py-1 mb-2 text-dark">
-                                                                        <small>{{ $handle->colour->trade_colour ? $handle->colour->trade_colour : $handle->colour->name }}</small>
+                                                                        <small>{{ $accessory->colour->trade_colour ? $accessory->colour->trade_colour : $accessory->colour->name }}</small>
                                                                     </p>
                                                                 </div>
                                                             </div>
                                                             @endif
-                                                            @if ($handle->assembly)
+                                                            @if ($accessory->assembly)
                                                             <div class="row">
                                                                 <div class="col-4 p-0 d-md-flex d-none">
                                                                     <p
@@ -3006,7 +2633,7 @@
                                                                 </div>
                                                                 <div class="col-md-8 col-sm-12 p-0 text-center">
                                                                     <p class="category-value fw-semibold py-1 mb-2 text-dark">
-                                                                        <small>{{ $handle->assembly->name }}</small>
+                                                                        <small>{{ $accessory->assembly->name }}</small>
                                                                     </p>
                                                                 </div>
                                                             </div>
@@ -3022,8 +2649,506 @@
                                             </a>
                                         </div>
                                     </div>
+                                </div> -->
+                                @endforeach
+                                @php 
+                                    $accessoriesData = $accessories->first();
+                                @endphp
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 order-sm-1 order-xs-1">
+                                    <label for="" class="fw-bold d-flex justify-content-between"><span>ALL ACCESSORIES</span><span><a href="{{route('viewallorderkitchenbycolour', ['style' => $accessoriesData->style?->slug , 'assembly' => $accessoriesData->assembly?->slug, 'colour' => $accessoriesData->colour?->slug])}}">View All</a></span></label>
+                                    <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="accessories-section">
+                                        @foreach ($accessories as $index => $accessory)
+                                        <option class="fw-bold" value="{{$accessory->id }}" data-product-short-title="{{ $accessory->short_title }}" data-product-fullname="{{ $accessory->full_title }}" data-product-image="{{ !empty($accessory->image_path) ? asset('imgs/products/'.$accessory->image_path) : asset('images/no-image-available.jpg') }}" data-product-price="{{ $accessory->price }}" data-product-parent-category-slug="{{ $accessory->ParentCategory?->slug }}" data-product-discountedprice="{{ $accessory->discounted_price }}" data-product-assembly-name="{{ $accessory->assembly?->name }}" data-product-discountedpercentage="{{ $accessory->discounted_percentage ?? 0 }}" data-product-code="{{ $accessory->product_code }}" data-product-dimensions="{{ $accessory->dimensions }}" data-product-style="{{ $accessory->style?->name }}" data-product-colour="{{ $accessory->colour?->trade_colour ? $accessory->colour?->trade_colour : $accessory->colour?->name }}" data-product-id="{{ $accessory->id }}">{{ $accessory->full_title }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
-                            @endforeach
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 accessories-section order-sm-2 order-xs-2 mt-4">
+                                    <div class="card bg-light p-0 border border-warning" style="border-radius: 0; border: none">
+                                        <div class="bg-warning card-header px-0 py-0">
+                                            <div class="py-2 text-center product-short-title-container w-100">
+                                                <a href="#" class="product-short-title fw-bold text-decoration-underline fs-4">
+                                                    {{ $accessoriesData->short_title }}
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <div class="modal fade" id="productModal{{ $accessoriesData->id }}" tabindex="-1"
+                                                aria-labelledby="productModalLabel{{ $accessoriesData->id }}"
+                                                aria-hidden="true">
+                                                <div class="modal-dialog modal-xl modal-dialog-centered">
+                                                    <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                        <div class="modal-header border-bottom border-light">
+                                                            <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
+                                                                {{ $accessoriesData->full_title }}
+                                                            </h1>
+                                                            <button type="button" class="btn-close"
+                                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="container-fluid">
+                                                                <div class="row">
+                                                                    <div class="col-lg-8 col-md-8 col-8 border-bottom border-warning bg-light">
+                                                                        <img src="{{ !empty($accessoriesData->image_path) ? asset('imgs/products/'.$accessoriesData->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                            class="img-fluid product-image" style="height: 300px;" />
+                                                                    </div>
+                                                                    <div class="col-lg-4 col-md-4 col-4 text-start text-dark">
+                                                                        <div>
+                                                                            <h6 class="fs-6 fw-bolder text-dark">Styling</h6>
+                                                                            <ul style="list-style: none; padding: 0">
+                                                                                @if ($accessoriesData->style)
+                                                                                <li>
+                                                                                    <p class="mb-0">
+                                                                                        <small
+                                                                                            class="fw-bold text-uppercase text-dark">Style:</small>
+                                                                                        {{ $accessoriesData->style->name }}
+                                                                                    </p>
+                                                                                </li>
+                                                                                @endif
+                                                                                @if ($accessoriesData->assembly)
+                                                                                <li>
+                                                                                    <p class="mb-0">
+                                                                                        <small
+                                                                                            class="fw-bold text-uppercase text-dark">Assembly:</small>
+                                                                                        {{ $accessoriesData->assembly->name }}
+                                                                                    </p>
+                                                                                </li>
+                                                                                @endif
+                                                                                @if ($accessoriesData->colour)
+                                                                                <li>
+                                                                                    <p class="mb-0">
+                                                                                        <small
+                                                                                            class="fw-bold text-uppercase text-dark">Colour:</small>
+                                                                                        {{ $accessoriesData->colour->trade_colour ? $accessoriesData->colour->trade_colour : $accessoriesData->colour->name }}
+                                                                                    </p>
+                                                                                </li>
+                                                                                @endif
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div>
+                                                                            <h6 class="fs-6 fw-bolder text-dark">Dimensions
+                                                                            </h6>
+                                                                            <ul style="list-style: none; padding: 0">
+                                                                                <li>
+                                                                                    <p class="mb-0">
+                                                                                        <small
+                                                                                            class="fw-bold text-uppercase text-dark">HEIGHT:</small>
+                                                                                        {{ intval($accessoriesData->height) }}mm
+                                                                                    </p>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <p class="mb-0">
+                                                                                        <small
+                                                                                            class="fw-bold text-uppercase text-dark">WIDTH:</small>
+                                                                                        {{ intval($accessoriesData->width) }}mm
+                                                                                    </p>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <p class="mb-0">
+                                                                                        <small
+                                                                                            class="fw-bold text-uppercase text-dark">DEPTH:</small>
+                                                                                        {{ intval($accessoriesData->depth) }}mm
+                                                                                    </p>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div>
+                                                                            <h6 class="fs-6 fw-bolder text-dark">
+                                                                                Range Specification
+                                                                            </h6>
+                                                                            <p class="mb-0">
+                                                                                <small>
+                                                                                    @if ($accessoriesData->category?->description)
+                                                                                    {!! $accessoriesData->category->description !!}
+                                                                                    @elseif ($accessoriesData->category?->parentCategory?->description)
+                                                                                    {!! $accessoriesData->category->parentCategory->description !!}
+                                                                                    @endif
+                                                                                </small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p-0">
+                                                        <figure class="my-0" style="margin-bottom: 0px !important;">
+                                                            <img class="product-image px-0"
+                                                                style="margin-bottom: 0px !important;object-fit:contain"
+                                                                src="{{ !empty($accessoriesData->image_path) ? asset('imgs/products/'.$accessoriesData->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                alt="Card image cap" data-bs-toggle="modal"
+                                                                data-bs-target="#productModal{{ $accessoriesData->id }}">
+                                                        </figure>
+                                                    </div>
+                                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 border border-default">
+                                                        <div class="container-fluid">
+                                                            <div class="row">
+                                                                <div class="col-4 p-0 d-md-flex d-none">
+                                                                    <p
+                                                                        class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                        <small class="fw-bold">Product Code</small>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                    <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                        <small>{{ $accessoriesData->product_code }}</small>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-4 p-0 d-md-flex d-none">
+                                                                    <p
+                                                                        class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                        <small class="fw-bold">Dimensions</small>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                    <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                        <small>{{ $accessoriesData->dimensions }}</small>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            @if ($accessoriesData->style)
+                                                            <div class="row">
+                                                                <div class="col-4 p-0 d-md-flex d-none">
+                                                                    <p
+                                                                        class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                        <small class="fw-bold">Style</small>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                    <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                        <small>{{ $accessoriesData->style->name }}</small>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            @endif
+                                                            @if ($accessoriesData->colour)
+                                                            <div class="row">
+                                                                <div class="col-4 p-0 d-md-flex d-none">
+                                                                    <p
+                                                                        class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                        <small class="fw-bold">Color</small>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                    <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                        <small>{{ $accessoriesData->colour->trade_colour ? $accessoriesData->colour->trade_colour : $baseCabinet->colour->name }}</small>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            @endif
+                                                            @if ($accessoriesData->assembly)
+                                                            <div class="row">
+                                                                <div class="col-4 p-0 d-md-flex d-none">
+                                                                    <p
+                                                                        class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                        <small class="fw-bold">Assembly</small>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                    <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                        <small>{{ $accessoriesData->assembly->name }}</small>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            @endif
+                                                        </div>
+                                                        <div class="row justify-content-center border-top border-default">
+                                                            <div class="col-12">
+                                                                <p class="fs-5 fw-bold text-dark">
+                                                                    {{ $accessoriesData->price == 0 ? 'Out of Stock' : '£' . $accessoriesData->price }}
+                                                                </p>
+                                                            </div>
+                                                            <div
+                                                                class="col-12 d-flex justify-content-center product-counter">
+                                                                <input id="minus{{ $accessoriesData->id }}"
+                                                                    class="minus border bg-dark text-light p-0"
+                                                                    type="button" value="-"
+                                                                    onclick="decreaseQuantity('{{ $accessoriesData->id }}', '{{ $accessoriesData->product_code }}', '{{ $accessoriesData->full_title }}', {{ $accessoriesData->price }}, {{ $accessoriesData->discounted_price }}, {{ $accessoriesData->discounted_percentage ?? 0 }}, '{{ $accessoriesData->ParentCategory->slug }}')" />
+                                                                <input id="quantity{{ $accessoriesData->id }}"
+                                                                    class="quantity border border-black text-center"
+                                                                    type="text" value="0" name="quantity"
+                                                                    disabled />
+                                                                <input id="plus{{ $accessoriesData->id }}"
+                                                                    class="plus border bg-dark text-light p-0"
+                                                                    type="button" value="+" type="number"
+                                                                    max="10"
+                                                                    onclick="increaseQuantity('{{ $accessoriesData->id }}', '{{ $accessoriesData->product_code }}', '{{ $accessoriesData->full_title }}', {{ $accessoriesData->price }}, {{ $accessoriesData->discounted_price }}, {{ $accessoriesData->discounted_percentage ?? 0 }}, '{{ $accessoriesData->ParentCategory->slug }}')" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            @else
+                                <div class="col-12">
+                                    <p class="">No accessories available</p>
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+                <div class="collapse-wrapper my-4">
+                    <a class="fw-semibold text-dark text-uppercase collapse-heading" data-bs-toggle="collapse"
+                        href="#handles" role="button" aria-expanded="false" aria-controls="handles">
+                        <span
+                            class="bg-dark text-white fw-semibold py-2 px-2 text-center me-2 collapse-heading-number">3</span>
+                        Handles
+                    </a>
+                    <div class="collapse-container collapse mt-3" id="handles">
+                        <div class="row">
+                            @if ($handles->count() > 0)
+                                @php 
+                                    $handlesData = $handles->first();
+                                @endphp
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 order-sm-1 order-xs-1">
+                                    <label for="" class="fw-bold d-flex justify-content-between"><span>ALL HANDLES</span><span><a href="{{route('viewallorderkitchenbycolour', ['style' => $handlesData->style?->slug , 'assembly' => $handlesData->assembly?->slug, 'colour' => $handlesData->colour?->slug])}}">View All</a></span></label>
+                                    <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="handles-section">
+                                        @foreach ($handles as $index => $handle)
+                                        <option class="fw-bold" value="{{$handle->id }}" data-product-short-title="{{ $handle->short_title }}" data-product-fullname="{{ $handle->full_title }}" data-product-image="{{ !empty($handle->image_path) ? asset('imgs/products/'.$handle->image_path) : asset('images/no-image-available.jpg') }}" data-product-price="{{ $handle->price }}" data-product-parent-category-slug="{{ $handle->ParentCategory?->slug }}" data-product-discountedprice="{{ $handle->discounted_price }}" data-product-assembly-name="{{ $handle->assembly?->name }}" data-product-discountedpercentage="{{ $handle->discounted_percentage ?? 0 }}" data-product-code="{{ $handle->product_code }}" data-product-dimensions="{{ $handle->dimensions }}" data-product-style="{{ $handle->style?->name }}" data-product-colour="{{ $handle->colour?->trade_colour ? $handle->colour?->trade_colour : $handle->colour?->name }}" data-product-id="{{ $handle->id }}">{{ $handle->full_title }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 handles-section order-sm-2 order-xs-2 mt-4">
+                                    <div class="card bg-light p-0 border border-warning" style="border-radius: 0; border: none">
+                                        <div class="bg-warning card-header px-0 py-0">
+                                            <div class="py-2 text-center product-short-title-container w-100">
+                                                <a href="#" class="product-short-title fw-bold text-decoration-underline fs-4">
+                                                    {{ $handlesData->short_title }}
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <div class="modal fade" id="productModal{{ $handlesData->id }}" tabindex="-1"
+                                                aria-labelledby="productModalLabel{{ $handlesData->id }}"
+                                                aria-hidden="true">
+                                                <div class="modal-dialog modal-xl modal-dialog-centered">
+                                                    <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                        <div class="modal-header border-bottom border-light">
+                                                            <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
+                                                                {{ $handlesData->full_title }}
+                                                            </h1>
+                                                            <button type="button" class="btn-close"
+                                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="container-fluid">
+                                                                <div class="row">
+                                                                    <div class="col-lg-8 col-md-8 col-8 border-bottom border-warning bg-light">
+                                                                        <img src="{{ !empty($handlesData->image_path) ? asset('imgs/products/'.$handlesData->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                            class="img-fluid product-image" style="height: 300px;" />
+                                                                    </div>
+                                                                    <div class="col-lg-4 col-md-4 col-4 text-start text-dark">
+                                                                        <div>
+                                                                            <h6 class="fs-6 fw-bolder text-dark">Styling</h6>
+                                                                            <ul style="list-style: none; padding: 0">
+                                                                                @if ($handlesData->style)
+                                                                                <li>
+                                                                                    <p class="mb-0">
+                                                                                        <small
+                                                                                            class="fw-bold text-uppercase text-dark">Style:</small>
+                                                                                        {{ $handlesData->style->name }}
+                                                                                    </p>
+                                                                                </li>
+                                                                                @endif
+                                                                                @if ($handlesData->assembly)
+                                                                                <li>
+                                                                                    <p class="mb-0">
+                                                                                        <small
+                                                                                            class="fw-bold text-uppercase text-dark">Assembly:</small>
+                                                                                        {{ $handlesData->assembly->name }}
+                                                                                    </p>
+                                                                                </li>
+                                                                                @endif
+                                                                                @if ($handlesData->colour)
+                                                                                <li>
+                                                                                    <p class="mb-0">
+                                                                                        <small
+                                                                                            class="fw-bold text-uppercase text-dark">Colour:</small>
+                                                                                        {{ $handlesData->colour->trade_colour ? $handlesData->colour->trade_colour : $handlesData->colour->name }}
+                                                                                    </p>
+                                                                                </li>
+                                                                                @endif
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div>
+                                                                            <h6 class="fs-6 fw-bolder text-dark">Dimensions
+                                                                            </h6>
+                                                                            <ul style="list-style: none; padding: 0">
+                                                                                <li>
+                                                                                    <p class="mb-0">
+                                                                                        <small
+                                                                                            class="fw-bold text-uppercase text-dark">HEIGHT:</small>
+                                                                                        {{ intval($handlesData->height) }}mm
+                                                                                    </p>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <p class="mb-0">
+                                                                                        <small
+                                                                                            class="fw-bold text-uppercase text-dark">WIDTH:</small>
+                                                                                        {{ intval($handlesData->width) }}mm
+                                                                                    </p>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <p class="mb-0">
+                                                                                        <small
+                                                                                            class="fw-bold text-uppercase text-dark">DEPTH:</small>
+                                                                                        {{ intval($handlesData->depth) }}mm
+                                                                                    </p>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div>
+                                                                            <h6 class="fs-6 fw-bolder text-dark">
+                                                                                Range Specification
+                                                                            </h6>
+                                                                            <p class="mb-0">
+                                                                                <small>
+                                                                                    @if ($handlesData->category?->description)
+                                                                                    {!! $handlesData->category->description !!}
+                                                                                    @elseif ($handlesData->category?->parentCategory?->description)
+                                                                                    {!! $handlesData->category->parentCategory->description !!}
+                                                                                    @endif
+                                                                                </small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p-0">
+                                                        <figure class="my-0" style="margin-bottom: 0px !important;">
+                                                            <img class="product-image px-0"
+                                                                style="margin-bottom: 0px !important;object-fit:contain"
+                                                                src="{{ !empty($handlesData->image_path) ? asset('imgs/products/'.$handlesData->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                alt="Card image cap" data-bs-toggle="modal"
+                                                                data-bs-target="#productModal{{ $handlesData->id }}">
+                                                        </figure>
+                                                    </div>
+                                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 border border-default">
+                                                        <div class="container-fluid">
+                                                            <div class="row">
+                                                                <div class="col-4 p-0 d-md-flex d-none">
+                                                                    <p
+                                                                        class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                        <small class="fw-bold">Product Code</small>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                    <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                        <small>{{ $handlesData->product_code }}</small>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-4 p-0 d-md-flex d-none">
+                                                                    <p
+                                                                        class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                        <small class="fw-bold">Dimensions</small>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                    <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                        <small>{{ $handlesData->dimensions }}</small>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            @if ($handlesData->style)
+                                                            <div class="row">
+                                                                <div class="col-4 p-0 d-md-flex d-none">
+                                                                    <p
+                                                                        class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                        <small class="fw-bold">Style</small>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                    <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                        <small>{{ $handlesData->style->name }}</small>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            @endif
+                                                            @if ($handlesData->colour)
+                                                            <div class="row">
+                                                                <div class="col-4 p-0 d-md-flex d-none">
+                                                                    <p
+                                                                        class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                        <small class="fw-bold">Color</small>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                    <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                        <small>{{ $handlesData->colour->trade_colour ? $handlesData->colour->trade_colour : $baseCabinet->colour->name }}</small>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            @endif
+                                                            @if ($handlesData->assembly)
+                                                            <div class="row">
+                                                                <div class="col-4 p-0 d-md-flex d-none">
+                                                                    <p
+                                                                        class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                        <small class="fw-bold">Assembly</small>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                    <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                        <small>{{ $handlesData->assembly->name }}</small>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            @endif
+                                                        </div>
+                                                        <div class="row justify-content-center border-top border-default">
+                                                            <div class="col-12">
+                                                                <p class="fs-5 fw-bold text-dark">
+                                                                    {{ $handlesData->price == 0 ? 'Out of Stock' : '£' . $handlesData->price }}
+                                                                </p>
+                                                            </div>
+                                                            <div
+                                                                class="col-12 d-flex justify-content-center product-counter">
+                                                                <input id="minus{{ $handlesData->id }}"
+                                                                    class="minus border bg-dark text-light p-0"
+                                                                    type="button" value="-"
+                                                                    onclick="decreaseQuantity('{{ $handlesData->id }}', '{{ $handlesData->product_code }}', '{{ $handlesData->full_title }}', {{ $handlesData->price }}, {{ $handlesData->discounted_price }}, {{ $handlesData->discounted_percentage ?? 0 }}, '{{ $handlesData->ParentCategory->slug }}')" />
+                                                                <input id="quantity{{ $handlesData->id }}"
+                                                                    class="quantity border border-black text-center"
+                                                                    type="text" value="0" name="quantity"
+                                                                    disabled />
+                                                                <input id="plus{{ $handlesData->id }}"
+                                                                    class="plus border bg-dark text-light p-0"
+                                                                    type="button" value="+" type="number"
+                                                                    max="10"
+                                                                    onclick="increaseQuantity('{{ $handlesData->id }}', '{{ $handlesData->product_code }}', '{{ $handlesData->full_title }}', {{ $handlesData->price }}, {{ $handlesData->discounted_price }}, {{ $handlesData->discounted_percentage ?? 0 }}, '{{ $handlesData->ParentCategory->slug }}')" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
                             @else
                                 <div class="col-12">
                                     <p class="">No Handles available</p>
@@ -3065,653 +3190,1009 @@
                                 aria-labelledby="nav-worktops-tab" tabindex="0">
                                 <div class="row">
                                     @if ($worktops->count() > 0)
-                                    @foreach ($worktops as $index => $worktop)
-                                    <div class="col-lg-4 col-6 mb-3">
-                                        <div class="card">
-                                            <div class="card-body text-center">
-                                                <!-- Button trigger modal -->
-                                                <a class="modal-icon z-3" href="#"
-                                                    data-bs-toggle="modal"
-                                                    data-bs-target="#worktops{{ $index }}">
-                                                    <i class="ri-add-circle-line text-black fs-4"></i>
-                                                </a>
-                                                <!-- Modal -->
-                                                <div class="modal fade" id="worktops{{ $index }}"
-                                                    tabindex="-1"
-                                                    aria-labelledby="worktopsLabel{{ $index }}"
-                                                    aria-hidden="true">
-                                                    <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <button type="button" class="btn-close"
-                                                                    data-bs-dismiss="modal"
-                                                                    aria-label="Close"></button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <div class="container-fluid">
-                                                                    <div class="row">
-                                                                        <div class="col-lg-4 col-md-5 col-12">
-                                                                            <img src="{{ !empty($worktop->image_path) ? asset('imgs/products/'.$worktop->image_path) : asset('images/no-image-available.jpg') }}"
-                                                                                class="img-fluid" />
-                                                                        </div>
-                                                                        <div
-                                                                            class="col-lg-8 col-md-7 col-12 text-start">
-                                                                            <h1 class="fs-5 fw-bold">
-                                                                                {{ $worktop->full_title }}
-                                                                            </h1>
-                                                                            <hr>
-                                                                            <h6
-                                                                                class="fs-6 fw-bolder text-dark">
-                                                                                Styling</h6>
-                                                                            <ul>
-                                                                                <li>HEIGHT: 720mm</li>
-                                                                                <li>WIDTH: 1000mm</li>
-                                                                                <li>DEPTH: 570mm</li>
-                                                                            </ul>
+                                        @php 
+                                            $worktopsData = $worktops->first();
+                                        @endphp
+
+                                        <div class="col-lg-12 col-md-12 col-sm-12 order-sm-1 order-xs-1">
+                                            <label for="" class="fw-bold d-flex justify-content-between"><span>ALL WORKTOPS</span><span><a href="{{route('viewallorderkitchenbycolour', ['style' => $worktopsData->style?->slug , 'assembly' => $worktopsData->assembly?->slug, 'colour' => $worktopsData->colour?->slug])}}">View All</a></span></label>
+                                            <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="worktops-section">
+                                                @foreach ($worktops as $index => $worktop)
+                                                <option class="fw-bold" value="{{$worktop->id }}" data-product-short-title="{{ $worktop->short_title }}" data-product-fullname="{{ $worktop->full_title }}" data-product-image="{{ !empty($worktop->image_path) ? asset('imgs/products/'.$worktop->image_path) : asset('images/no-image-available.jpg') }}" data-product-price="{{ $worktop->price }}" data-product-parent-category-slug="{{ $worktop->ParentCategory?->slug }}" data-product-discountedprice="{{ $worktop->discounted_price }}" data-product-assembly-name="{{ $worktop->assembly?->name }}" data-product-discountedpercentage="{{ $worktop->discounted_percentage ?? 0 }}" data-product-code="{{ $worktop->product_code }}" data-product-dimensions="{{ $worktop->dimensions }}" data-product-style="{{ $worktop->style?->name }}" data-product-colour="{{ $worktop->colour?->trade_colour ? $worktop->colour?->trade_colour : $worktop->colour?->name }}" data-product-id="{{ $worktop->id }}">{{ $worktop->full_title }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-12 col-md-12 col-sm-12 worktops-section order-sm-2 order-xs-2 mt-4">
+                                            <div class="card bg-light p-0 border border-warning" style="border-radius: 0; border: none">
+                                                <div class="bg-warning card-header px-0 py-0">
+                                                    <div class="py-2 text-center product-short-title-container w-100">
+                                                        <a href="#" class="product-short-title fw-bold text-decoration-underline fs-4">
+                                                            {{ $worktopsData->short_title }}
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body text-center">
+                                                    <div class="modal fade" id="productModal{{ $worktopsData->id }}" tabindex="-1"
+                                                        aria-labelledby="productModalLabel{{ $worktopsData->id }}"
+                                                        aria-hidden="true">
+                                                        <div class="modal-dialog modal-xl modal-dialog-centered">
+                                                            <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                                <div class="modal-header border-bottom border-light">
+                                                                    <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
+                                                                        {{ $worktopsData->full_title }}
+                                                                    </h1>
+                                                                    <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <div class="container-fluid">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-8 col-md-8 col-8 border-bottom border-warning bg-light">
+                                                                                <img src="{{ !empty($worktopsData->image_path) ? asset('imgs/products/'.$worktopsData->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                                    class="img-fluid product-image" style="height: 300px;" />
+                                                                            </div>
+                                                                            <div class="col-lg-4 col-md-4 col-4 text-start text-dark">
+                                                                                <div>
+                                                                                    <h6 class="fs-6 fw-bolder text-dark">Styling</h6>
+                                                                                    <ul style="list-style: none; padding: 0">
+                                                                                        @if ($worktopsData->style)
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">Style:</small>
+                                                                                                {{ $worktopsData->style->name }}
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        @endif
+                                                                                        @if ($worktopsData->assembly)
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">Assembly:</small>
+                                                                                                {{ $worktopsData->assembly->name }}
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        @endif
+                                                                                        @if ($worktopsData->colour)
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">Colour:</small>
+                                                                                                {{ $worktopsData->colour->trade_colour ? $worktopsData->colour->trade_colour : $worktopsData->colour->name }}
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        @endif
+                                                                                    </ul>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <h6 class="fs-6 fw-bolder text-dark">Dimensions
+                                                                                    </h6>
+                                                                                    <ul style="list-style: none; padding: 0">
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">HEIGHT:</small>
+                                                                                                {{ intval($worktopsData->height) }}mm
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">WIDTH:</small>
+                                                                                                {{ intval($worktopsData->width) }}mm
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">DEPTH:</small>
+                                                                                                {{ intval($worktopsData->depth) }}mm
+                                                                                            </p>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <h6 class="fs-6 fw-bolder text-dark">
+                                                                                        Range Specification
+                                                                                    </h6>
+                                                                                    <p class="mb-0">
+                                                                                        <small>
+                                                                                            @if ($worktopsData->category?->description)
+                                                                                            {!! $worktopsData->category->description !!}
+                                                                                            @elseif ($worktopsData->category?->parentCategory?->description)
+                                                                                            {!! $worktopsData->category->parentCategory->description !!}
+                                                                                            @endif
+                                                                                        </small>
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
+                                                                <div class="modal-footer"></div>
                                                             </div>
-                                                            <div class="modal-footer"></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="container-fluid">
+                                                        <div class="row">
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p-0">
+                                                                <figure class="my-0" style="margin-bottom: 0px !important;">
+                                                                    <img class="product-image px-0"
+                                                                        style="margin-bottom: 0px !important;object-fit:contain"
+                                                                        src="{{ !empty($worktopsData->image_path) ? asset('imgs/products/'.$worktopsData->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                        alt="Card image cap" data-bs-toggle="modal"
+                                                                        data-bs-target="#productModal{{ $worktopsData->id }}">
+                                                                </figure>
+                                                            </div>
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 border border-default">
+                                                                <div class="container-fluid">
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Product Code</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $worktopsData->product_code }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Dimensions</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $worktopsData->dimensions }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    @if ($worktopsData->style)
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Style</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $worktopsData->style->name }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    @endif
+                                                                    @if ($worktopsData->colour)
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Color</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $worktopsData->colour->trade_colour ? $worktopsData->colour->trade_colour : $worktopsData->colour->name }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    @endif
+                                                                    @if ($worktopsData->assembly)
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Assembly</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $worktopsData->assembly->name }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    @endif
+                                                                </div>
+                                                                <div class="row justify-content-center border-top border-default">
+                                                                    <div class="col-12">
+                                                                        <p class="fs-5 fw-bold text-dark">
+                                                                            {{ $worktopsData->price == 0 ? 'Out of Stock' : '£' . $worktopsData->price }}
+                                                                        </p>
+                                                                    </div>
+                                                                    <div
+                                                                        class="col-12 d-flex justify-content-center product-counter">
+                                                                        <input id="minus{{ $worktopsData->id }}"
+                                                                            class="minus border bg-dark text-light p-0"
+                                                                            type="button" value="-"
+                                                                            onclick="decreaseQuantity('{{ $worktopsData->id }}', '{{ $worktopsData->product_code }}', '{{ $worktopsData->full_title }}', {{ $worktopsData->price }}, {{ $worktopsData->discounted_price }}, {{ $worktopsData->discounted_percentage ?? 0 }}, '{{ $worktopsData->ParentCategory->slug }}')" />
+                                                                        <input id="quantity{{ $worktopsData->id }}"
+                                                                            class="quantity border border-black text-center"
+                                                                            type="text" value="0" name="quantity"
+                                                                            disabled />
+                                                                        <input id="plus{{ $worktopsData->id }}"
+                                                                            class="plus border bg-dark text-light p-0"
+                                                                            type="button" value="+" type="number"
+                                                                            max="10"
+                                                                            onclick="increaseQuantity('{{ $worktopsData->id }}', '{{ $worktopsData->product_code }}', '{{ $worktopsData->full_title }}', {{ $worktopsData->price }}, {{ $worktopsData->discounted_price }}, {{ $worktopsData->discounted_percentage ?? 0 }}, '{{ $worktopsData->ParentCategory->slug }}')" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <div class="">
-                                                    <figure>
-                                                        <img class="product-image px-0"
-                                                            src="{{ !empty($worktop->image_path) ? asset('imgs/products/'.$worktop->image_path) : asset('images/no-image-available.jpg') }}"
-                                                            alt="Card image cap">
-                                                    </figure>
-                                                    <div class="">
-                                                        <a href=""
-                                                            class="text-center text-decoration-underline fs-5 fw-bold">
-                                                            {{ $worktop->short_title }}
-                                                        </a>
-
-                                                        <p class="py-lg-3 py-2">
-                                                            <small
-                                                                class="fw-bold text-center">{{ $worktop->product_code }}</small>
-                                                        </p>
-                                                        <p class="py-lg-3 py-2">
-                                                            <small
-                                                                class="fw-bold text-center">{{ $worktop->dimensions }}</small>
-                                                        </p>
-                                                        <div class="container-fluid">
-                                                            <div
-                                                                class="row justify-content-center product-counter">
-                                                                <input id="minus{{ $worktop->id }}"
-                                                                    class="minus border bg-dark text-light p-0"
-                                                                    type="button" value="-"
-                                                                    onclick="decreaseQuantity('{{ $worktop->id }}', '{{ $worktop->product_code }}', '{{ $worktop->full_title }}', {{ $worktop->price }}, {{ $worktop->discounted_price }}, {{ $worktop->discounted_percentage ?? 0 }}, '{{ $worktop->ParentCategory->slug }}')" />
-                                                                <input id="quantity{{ $worktop->id }}"
-                                                                    class="quantity border border-black text-center"
-                                                                    type="text" value="0"
-                                                                    name="quantity" disabled />
-                                                                <input id="plus{{ $worktop->id }}"
-                                                                    class="plus border bg-dark text-light p-0"
-                                                                    type="button" value="+"
-                                                                    onclick="increaseQuantity('{{ $worktop->id }}', '{{ $worktop->product_code }}', '{{ $worktop->full_title }}', {{ $worktop->price }}, {{ $worktop->discounted_price }}, {{ $worktop->discounted_percentage ?? 0 }}, '{{ $worktop->ParentCategory->slug }}')" />
-                                                            </div>
-                                                        </div>
-                                                        <p class="fs-5 fw-bold mt-lg-2">
-                                                            {{ $worktop->price == 0 ? 'Out of Stock' : '£' . $worktop->price }}
-                                                        </p>
-                                                        <div class="container-fluid">
-                                                            @if ($worktop->style)
-                                                            <div class="row">
-                                                                <div class="col-4 p-0 d-md-flex d-none">
-                                                                    <p
-                                                                        class="category-text text-start text-uppercase m-0 pt-1">
-                                                                        <small>Style</small>
-                                                                    </p>
-                                                                </div>
-                                                                <div
-                                                                    class="col-md-8 col-sm-12 p-0 text-center">
-                                                                    <p
-                                                                        class="category-value fw-semibold py-1 mb-2">
-                                                                        <small>{{ $worktop->style->name }}</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            @endif
-                                                            @if ($worktop->colour)
-                                                            <div class="row">
-                                                                <div class="col-4 p-0 d-md-flex d-none">
-                                                                    <p
-                                                                        class="category-text text-start text-uppercase m-0 pt-1">
-                                                                        <small>Color</small>
-                                                                    </p>
-                                                                </div>
-                                                                <div
-                                                                    class="col-md-8 col-sm-12 p-0 text-center">
-                                                                    <p
-                                                                        class="category-value fw-semibold py-1 mb-2">
-                                                                        <small>{{ $worktop->colour->trade_colour ? $worktop->colour->trade_colour : $worktop->colour->name }}</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            @endif
-                                                            @if ($worktop->assembly)
-                                                            <div class="row">
-                                                                <div class="col-4 p-0 d-md-flex d-none">
-                                                                    <p
-                                                                        class="category-text text-start text-uppercase m-0 pt-1">
-                                                                        <small>Assembly</small>
-                                                                    </p>
-                                                                </div>
-                                                                <div
-                                                                    class="col-md-8 col-sm-12 p-0 text-center">
-                                                                    <p
-                                                                        class="category-value fw-semibold py-1 mb-2">
-                                                                        <small>{{ $worktop->assembly->name }}</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            @endif
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    @endforeach
                                     @else
-                                    <div class="col-12">
-                                        <p class="">No Worktops available</p>
-                                    </div>
+                                        <div class="col-12">
+                                            <p class="">No Worktops available</p>
+                                        </div>
                                     @endif
                                 </div>
                             </div>
 
                             {{-- Worktops and Upstands --}}
-                            <div class="tab-pane fade" id="nav-upstands" role="tabpanel"
+                            <div class="tab-pane fade active" id="nav-upstands" role="tabpanel"
                                 aria-labelledby="nav-upstands-tab" tabindex="0">
                                 <div class="row">
                                     @if ($worktopsAndUpStands->count() > 0)
-                                    @foreach ($worktopsAndUpStands as $index => $worktopsAndUpStand)
-                                    <div class="col-lg-4 col-6 mb-3">
-                                        <div class="card">
-                                            <div class="card-body text-center">
-                                                <!-- Button trigger modal -->
-                                                <a class="modal-icon z-3" href="#"
-                                                    data-bs-toggle="modal"
-                                                    data-bs-target="#worktopsAndUpStands{{ $index }}">
-                                                    <i class="ri-add-circle-line text-black fs-4"></i>
-                                                </a>
-                                                <!-- Modal -->
-                                                <div class="modal fade"
-                                                    id="worktopsAndUpStands{{ $index }}"
-                                                    tabindex="-1"
-                                                    aria-labelledby="worktopsAndUpStandsLabel{{ $index }}"
-                                                    aria-hidden="true">
-                                                    <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <button type="button" class="btn-close"
-                                                                    data-bs-dismiss="modal"
-                                                                    aria-label="Close"></button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <div class="container-fluid">
-                                                                    <div class="row">
-                                                                        <div class="col-lg-4 col-md-5 col-12">
-                                                                            <img src="{{ !empty($worktopsAndUpStand->image_path) ? asset('imgs/products/'.$worktopsAndUpStand->image_path) : asset('images/no-image-available.jpg') }}"
-                                                                                class="img-fluid" />
-                                                                        </div>
-                                                                        <div
-                                                                            class="col-lg-8 col-md-7 col-12 text-start">
-                                                                            <h1 class="fs-5 fw-bold">
-                                                                                {{ $worktopsAndUpStand->full_title }}
-                                                                            </h1>
-                                                                            <hr>
-                                                                            <h6
-                                                                                class="fs-6 fw-bolder text-dark">
-                                                                                Styling</h6>
-                                                                            <ul>
-                                                                                <li>HEIGHT: 720mm</li>
-                                                                                <li>WIDTH: 1000mm</li>
-                                                                                <li>DEPTH: 570mm</li>
-                                                                            </ul>
+                                        @php 
+                                            $worktopsAndUpStandData = $worktopsAndUpStands->first();
+                                        @endphp
+
+                                        <div class="col-lg-12 col-md-12 col-sm-12 order-sm-1 order-xs-1">
+                                            <label for="" class="fw-bold d-flex justify-content-between"><span>ALL WORKTOPS</span><span><a href="{{route('viewallorderkitchenbycolour', ['style' => $worktopsAndUpStandData->style?->slug , 'assembly' => $worktopsAndUpStandData->assembly?->slug, 'colour' => $worktopsAndUpStandData->colour?->slug])}}">View All</a></span></label>
+                                            <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="worktopandupstands-section">
+                                                @foreach ($worktopsAndUpStands as $index => $worktopsAndUpStand)
+                                                <option class="fw-bold" value="{{$worktopsAndUpStand->id }}" data-product-short-title="{{ $worktopsAndUpStand->short_title }}" data-product-fullname="{{ $worktopsAndUpStand->full_title }}" data-product-image="{{ !empty($worktopsAndUpStand->image_path) ? asset('imgs/products/'.$worktopsAndUpStand->image_path) : asset('images/no-image-available.jpg') }}" data-product-price="{{ $worktopsAndUpStand->price }}" data-product-parent-category-slug="{{ $worktopsAndUpStand->ParentCategory?->slug }}" data-product-discountedprice="{{ $worktopsAndUpStand->discounted_price }}" data-product-assembly-name="{{ $worktopsAndUpStand->assembly?->name }}" data-product-discountedpercentage="{{ $worktopsAndUpStand->discounted_percentage ?? 0 }}" data-product-code="{{ $worktopsAndUpStand->product_code }}" data-product-dimensions="{{ $worktopsAndUpStand->dimensions }}" data-product-style="{{ $worktopsAndUpStand->style?->name }}" data-product-colour="{{ $worktopsAndUpStand->colour?->trade_colour ? $worktopsAndUpStand->colour?->trade_colour : $worktopsAndUpStand->colour?->name }}" data-product-id="{{ $worktopsAndUpStand->id }}">{{ $worktopsAndUpStand->full_title }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-12 col-md-12 col-sm-12 worktopandupstands-section order-sm-2 order-xs-2 mt-4">
+                                            <div class="card bg-light p-0 border border-warning" style="border-radius: 0; border: none">
+                                                <div class="bg-warning card-header px-0 py-0">
+                                                    <div class="py-2 text-center product-short-title-container w-100">
+                                                        <a href="#" class="product-short-title fw-bold text-decoration-underline fs-4">
+                                                            {{ $worktopsAndUpStandData->short_title }}
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body text-center">
+                                                    <div class="modal fade" id="productModal{{ $worktopsAndUpStandData->id }}" tabindex="-1"
+                                                        aria-labelledby="productModalLabel{{ $worktopsAndUpStandData->id }}"
+                                                        aria-hidden="true">
+                                                        <div class="modal-dialog modal-xl modal-dialog-centered">
+                                                            <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                                <div class="modal-header border-bottom border-light">
+                                                                    <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
+                                                                        {{ $worktopsAndUpStandData->full_title }}
+                                                                    </h1>
+                                                                    <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <div class="container-fluid">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-8 col-md-8 col-8 border-bottom border-warning bg-light">
+                                                                                <img src="{{ !empty($worktopsAndUpStandData->image_path) ? asset('imgs/products/'.$worktopsAndUpStandData->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                                    class="img-fluid product-image" style="height: 300px;" />
+                                                                            </div>
+                                                                            <div class="col-lg-4 col-md-4 col-4 text-start text-dark">
+                                                                                <div>
+                                                                                    <h6 class="fs-6 fw-bolder text-dark">Styling</h6>
+                                                                                    <ul style="list-style: none; padding: 0">
+                                                                                        @if ($worktopsAndUpStandData->style)
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">Style:</small>
+                                                                                                {{ $worktopsAndUpStandData->style->name }}
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        @endif
+                                                                                        @if ($worktopsAndUpStandData->assembly)
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">Assembly:</small>
+                                                                                                {{ $worktopsAndUpStandData->assembly->name }}
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        @endif
+                                                                                        @if ($worktopsAndUpStandData->colour)
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">Colour:</small>
+                                                                                                {{ $worktopsAndUpStandData->colour->trade_colour ? $worktopsAndUpStandData->colour->trade_colour : $worktopsAndUpStandData->colour->name }}
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        @endif
+                                                                                    </ul>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <h6 class="fs-6 fw-bolder text-dark">Dimensions
+                                                                                    </h6>
+                                                                                    <ul style="list-style: none; padding: 0">
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">HEIGHT:</small>
+                                                                                                {{ intval($worktopsAndUpStandData->height) }}mm
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">WIDTH:</small>
+                                                                                                {{ intval($worktopsAndUpStandData->width) }}mm
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">DEPTH:</small>
+                                                                                                {{ intval($worktopsAndUpStandData->depth) }}mm
+                                                                                            </p>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <h6 class="fs-6 fw-bolder text-dark">
+                                                                                        Range Specification
+                                                                                    </h6>
+                                                                                    <p class="mb-0">
+                                                                                        <small>
+                                                                                            @if ($worktopsAndUpStandData->category?->description)
+                                                                                            {!! $worktopsAndUpStandData->category->description !!}
+                                                                                            @elseif ($worktopsAndUpStandData->category?->parentCategory?->description)
+                                                                                            {!! $worktopsAndUpStandData->category->parentCategory->description !!}
+                                                                                            @endif
+                                                                                        </small>
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
+                                                                <div class="modal-footer"></div>
                                                             </div>
-                                                            <div class="modal-footer"></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="container-fluid">
+                                                        <div class="row">
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p-0">
+                                                                <figure class="my-0" style="margin-bottom: 0px !important;">
+                                                                    <img class="product-image px-0"
+                                                                        style="margin-bottom: 0px !important;object-fit:contain"
+                                                                        src="{{ !empty($worktopsAndUpStandData->image_path) ? asset('imgs/products/'.$worktopsAndUpStandData->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                        alt="Card image cap" data-bs-toggle="modal"
+                                                                        data-bs-target="#productModal{{ $worktopsAndUpStandData->id }}">
+                                                                </figure>
+                                                            </div>
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 border border-default">
+                                                                <div class="container-fluid">
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Product Code</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $worktopsAndUpStandData->product_code }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Dimensions</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $worktopsAndUpStandData->dimensions }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    @if ($worktopsAndUpStandData->style)
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Style</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $worktopsAndUpStandData->style->name }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    @endif
+                                                                    @if ($worktopsAndUpStandData->colour)
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Color</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $worktopsAndUpStandData->colour->trade_colour ? $worktopsAndUpStandData->colour->trade_colour : $worktopsAndUpStandData->colour->name }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    @endif
+                                                                    @if ($worktopsAndUpStandData->assembly)
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Assembly</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $worktopsAndUpStandData->assembly->name }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    @endif
+                                                                </div>
+                                                                <div class="row justify-content-center border-top border-default">
+                                                                    <div class="col-12">
+                                                                        <p class="fs-5 fw-bold text-dark">
+                                                                            {{ $worktopsAndUpStandData->price == 0 ? 'Out of Stock' : '£' . $worktopsAndUpStandData->price }}
+                                                                        </p>
+                                                                    </div>
+                                                                    <div
+                                                                        class="col-12 d-flex justify-content-center product-counter">
+                                                                        <input id="minus{{ $worktopsAndUpStandData->id }}"
+                                                                            class="minus border bg-dark text-light p-0"
+                                                                            type="button" value="-"
+                                                                            onclick="decreaseQuantity('{{ $worktopsAndUpStandData->id }}', '{{ $worktopsAndUpStandData->product_code }}', '{{ $worktopsAndUpStandData->full_title }}', {{ $worktopsAndUpStandData->price }}, {{ $worktopsAndUpStandData->discounted_price }}, {{ $worktopsAndUpStandData->discounted_percentage ?? 0 }}, '{{ $worktopsAndUpStandData->ParentCategory->slug }}')" />
+                                                                        <input id="quantity{{ $worktopsAndUpStandData->id }}"
+                                                                            class="quantity border border-black text-center"
+                                                                            type="text" value="0" name="quantity"
+                                                                            disabled />
+                                                                        <input id="plus{{ $worktopsAndUpStandData->id }}"
+                                                                            class="plus border bg-dark text-light p-0"
+                                                                            type="button" value="+" type="number"
+                                                                            max="10"
+                                                                            onclick="increaseQuantity('{{ $worktopsAndUpStandData->id }}', '{{ $worktopsAndUpStandData->product_code }}', '{{ $worktopsAndUpStandData->full_title }}', {{ $worktopsAndUpStandData->price }}, {{ $worktopsAndUpStandData->discounted_price }}, {{ $worktopsAndUpStandData->discounted_percentage ?? 0 }}, '{{ $worktopsAndUpStandData->ParentCategory->slug }}')" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <div class="">
-                                                    <figure>
-                                                        <img class="product-image px-0"
-                                                            src="{{ !empty($worktopsAndUpStand->image_path) ? asset('imgs/products/'.$worktopsAndUpStand->image_path) : asset('images/no-image-available.jpg') }}"
-                                                            alt="Card image cap">
-                                                    </figure>
-                                                    <div class="">
-                                                        <a href=""
-                                                            class="text-center text-decoration-underline fs-5 fw-bold">
-                                                            {{ $worktopsAndUpStand->short_title }}
-                                                        </a>
-                                                        <p class="py-lg-3 py-2">
-                                                            <small
-                                                                class="fw-bold text-center">{{ $worktopsAndUpStand->product_code }}</small>
-                                                        </p>
-                                                        <p class="py-lg-3 py-2">
-                                                            <small
-                                                                class="fw-bold text-center">{{ $worktopsAndUpStand->dimensions }}</small>
-                                                        </p>
-                                                        <div class="container-fluid">
-                                                            <div
-                                                                class="row justify-content-center product-counter">
-                                                                <input
-                                                                    id="minus{{ $worktopsAndUpStand->id }}"
-                                                                    class="minus border bg-dark text-light p-0"
-                                                                    type="button" value="-"
-                                                                    onclick="decreaseQuantity('{{ $worktopsAndUpStand->id }}', '{{ $worktopsAndUpStand->product_code }}', '{{ $worktopsAndUpStand->full_title }}', {{ $worktopsAndUpStand->price }}, {{ $worktopsAndUpStand->discounted_price }}, {{ $worktopsAndUpStand->discounted_percentage ?? 0 }}, '{{ $worktopsAndUpStand->ParentCategory->slug }}')" />
-                                                                <input
-                                                                    id="quantity{{ $worktopsAndUpStand->id }}"
-                                                                    class="quantity border border-black text-center"
-                                                                    type="text" value="0"
-                                                                    name="quantity" disabled />
-                                                                <input id="plus{{ $worktopsAndUpStand->id }}"
-                                                                    class="plus border bg-dark text-light p-0"
-                                                                    type="button" value="+"
-                                                                    onclick="increaseQuantity('{{ $worktopsAndUpStand->id }}', '{{ $worktopsAndUpStand->product_code }}', '{{ $worktopsAndUpStand->full_title }}', {{ $worktopsAndUpStand->price }}, {{ $worktopsAndUpStand->discounted_price }}, {{ $worktopsAndUpStand->discounted_percentage ?? 0 }}, '{{ $worktopsAndUpStand->ParentCategory->slug }}')" />
-                                                            </div>
-                                                        </div>
-                                                        <p class="fs-5 fw-bold mt-lg-2">
-                                                            {{ $worktopsAndUpStand->price == 0 ? 'Out of Stock' : '£' . $worktopsAndUpStand->price }}
-                                                        </p>
-                                                        <div class="container-fluid">
-                                                            @if ($worktopsAndUpStand->style)
-                                                            <div class="row">
-                                                                <div class="col-4 p-0 d-md-flex d-none">
-                                                                    <p
-                                                                        class="category-text text-start text-uppercase m-0 pt-1">
-                                                                        <small>Style</small>
-                                                                    </p>
-                                                                </div>
-                                                                <div
-                                                                    class="col-md-8 col-sm-12 p-0 text-center">
-                                                                    <p
-                                                                        class="category-value fw-semibold py-1 mb-2">
-                                                                        <small>{{ $worktopsAndUpStand->style->name }}</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            @endif
-                                                            @if ($worktopsAndUpStand->colour)
-                                                            <div class="row">
-                                                                <div class="col-4 p-0 d-md-flex d-none">
-                                                                    <p
-                                                                        class="category-text text-start text-uppercase m-0 pt-1">
-                                                                        <small>Color</small>
-                                                                    </p>
-                                                                </div>
-                                                                <div
-                                                                    class="col-md-8 col-sm-12 p-0 text-center">
-                                                                    <p
-                                                                        class="category-value fw-semibold py-1 mb-2">
-                                                                        <small>{{ $worktopsAndUpStand->colour->trade_colour ? $worktopsAndUpStand->colour->trade_colour : $worktopsAndUpStand->colour->name }}</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            @endif
-                                                            @if ($worktopsAndUpStand->assembly)
-                                                            <div class="row">
-                                                                <div class="col-4 p-0 d-md-flex d-none">
-                                                                    <p
-                                                                        class="category-text text-start text-uppercase m-0 pt-1">
-                                                                        <small>Assembly</small>
-                                                                    </p>
-                                                                </div>
-                                                                <div
-                                                                    class="col-md-8 col-sm-12 p-0 text-center">
-                                                                    <p
-                                                                        class="category-value fw-semibold py-1 mb-2">
-                                                                        <small>{{ $worktopsAndUpStand->assembly->name }}</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            @endif
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    @endforeach
                                     @else
-                                    <div class="col-12">
-                                        <p class="">No Worktops and Upstands available</p>
-                                    </div>
+                                        <div class="col-12">
+                                            <p class="">No Worktops and Upstands available</p>
+                                        </div>
                                     @endif
                                 </div>
                             </div>
 
                             {{-- Breakfast Bars --}}
-                            <div class="tab-pane fade" id="nav-breakfast" role="tabpanel"
+                            <div class="tab-pane fade active" id="nav-breakfast" role="tabpanel"
                                 aria-labelledby="nav-breakfast-tab" tabindex="0">
                                 <div class="row">
                                     @if ($breakfastBars->count() > 0)
-                                    @foreach ($breakfastBars as $index => $breakfastBar)
-                                    <div class="col-lg-4 col-6 mb-3">
-                                        <div class="card">
-                                            <div class="card-body text-center">
-                                                <!-- Button trigger modal -->
-                                                <a class="modal-icon z-3" href="#"
-                                                    data-bs-toggle="modal"
-                                                    data-bs-target="#breakfastBars{{ $index }}">
-                                                    <i class="ri-add-circle-line text-black fs-4"></i>
-                                                </a>
-                                                <!-- Modal -->
-                                                <div class="modal fade"
-                                                    id="breakfastBars{{ $index }}" tabindex="-1"
-                                                    aria-labelledby="breakfastBarsLabel{{ $index }}"
-                                                    aria-hidden="true">
-                                                    <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <button type="button" class="btn-close"
-                                                                    data-bs-dismiss="modal"
-                                                                    aria-label="Close"></button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <div class="container-fluid">
-                                                                    <div class="row">
-                                                                        <div class="col-lg-4 col-md-5 col-12">
-                                                                            <img src="{{ !empty($breakfastBar->image_path) ? asset('imgs/products/'.$breakfastBar->image_path) : asset('images/no-image-available.jpg') }}"
-                                                                                class="img-fluid" />
-                                                                        </div>
-                                                                        <div
-                                                                            class="col-lg-8 col-md-7 col-12 text-start">
-                                                                            <h1 class="fs-5 fw-bold">
-                                                                                {{ $breakfastBar->full_title }}
-                                                                            </h1>
-                                                                            <hr>
-                                                                            <h6
-                                                                                class="fs-6 fw-bolder text-dark">
-                                                                                Styling</h6>
-                                                                            <ul>
-                                                                                <li>HEIGHT: 720mm</li>
-                                                                                <li>WIDTH: 1000mm</li>
-                                                                                <li>DEPTH: 570mm</li>
-                                                                            </ul>
+                                        @php 
+                                            $breakfastBarData = $breakfastBars->first();
+                                        @endphp
+
+                                        <div class="col-lg-12 col-md-12 col-sm-12 order-sm-1 order-xs-1">
+                                            <label for="" class="fw-bold d-flex justify-content-between"><span>ALL BREAKFAST BARS</span><span><a href="{{route('viewallorderkitchenbycolour', ['style' => $breakfastBarData->style?->slug , 'assembly' => $breakfastBarData->assembly?->slug, 'colour' => $breakfastBarData->colour?->slug])}}">View All</a></span></label>
+                                            <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="breakfastbars-section">
+                                                @foreach ($breakfastBars as $index => $breakfastBar)
+                                                <option class="fw-bold" value="{{$breakfastBar->id }}" data-product-short-title="{{ $breakfastBar->short_title }}" data-product-fullname="{{ $breakfastBar->full_title }}" data-product-image="{{ !empty($breakfastBar->image_path) ? asset('imgs/products/'.$breakfastBar->image_path) : asset('images/no-image-available.jpg') }}" data-product-price="{{ $breakfastBar->price }}" data-product-parent-category-slug="{{ $breakfastBar->ParentCategory?->slug }}" data-product-discountedprice="{{ $breakfastBar->discounted_price }}" data-product-assembly-name="{{ $breakfastBar->assembly?->name }}" data-product-discountedpercentage="{{ $breakfastBar->discounted_percentage ?? 0 }}" data-product-code="{{ $breakfastBar->product_code }}" data-product-dimensions="{{ $breakfastBar->dimensions }}" data-product-style="{{ $breakfastBar->style?->name }}" data-product-colour="{{ $breakfastBar->colour?->trade_colour ? $breakfastBar->colour?->trade_colour : $breakfastBar->colour?->name }}" data-product-id="{{ $breakfastBar->id }}">{{ $breakfastBar->full_title }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-12 col-md-12 col-sm-12 breakfastbars-section order-sm-2 order-xs-2 mt-4">
+                                            <div class="card bg-light p-0 border border-warning" style="border-radius: 0; border: none">
+                                                <div class="bg-warning card-header px-0 py-0">
+                                                    <div class="py-2 text-center product-short-title-container w-100">
+                                                        <a href="#" class="product-short-title fw-bold text-decoration-underline fs-4">
+                                                            {{ $breakfastBarData->short_title }}
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body text-center">
+                                                    <div class="modal fade" id="productModal{{ $breakfastBarData->id }}" tabindex="-1"
+                                                        aria-labelledby="productModalLabel{{ $breakfastBarData->id }}"
+                                                        aria-hidden="true">
+                                                        <div class="modal-dialog modal-xl modal-dialog-centered">
+                                                            <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                                <div class="modal-header border-bottom border-light">
+                                                                    <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
+                                                                        {{ $breakfastBarData->full_title }}
+                                                                    </h1>
+                                                                    <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <div class="container-fluid">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-8 col-md-8 col-8 border-bottom border-warning bg-light">
+                                                                                <img src="{{ !empty($breakfastBarData->image_path) ? asset('imgs/products/'.$breakfastBarData->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                                    class="img-fluid product-image" style="height: 300px;" />
+                                                                            </div>
+                                                                            <div class="col-lg-4 col-md-4 col-4 text-start text-dark">
+                                                                                <div>
+                                                                                    <h6 class="fs-6 fw-bolder text-dark">Styling</h6>
+                                                                                    <ul style="list-style: none; padding: 0">
+                                                                                        @if ($breakfastBarData->style)
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">Style:</small>
+                                                                                                {{ $breakfastBarData->style->name }}
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        @endif
+                                                                                        @if ($breakfastBarData->assembly)
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">Assembly:</small>
+                                                                                                {{ $breakfastBarData->assembly->name }}
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        @endif
+                                                                                        @if ($breakfastBarData->colour)
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">Colour:</small>
+                                                                                                {{ $breakfastBarData->colour->trade_colour ? $breakfastBarData->colour->trade_colour : $breakfastBarData->colour->name }}
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        @endif
+                                                                                    </ul>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <h6 class="fs-6 fw-bolder text-dark">Dimensions
+                                                                                    </h6>
+                                                                                    <ul style="list-style: none; padding: 0">
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">HEIGHT:</small>
+                                                                                                {{ intval($breakfastBarData->height) }}mm
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">WIDTH:</small>
+                                                                                                {{ intval($breakfastBarData->width) }}mm
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">DEPTH:</small>
+                                                                                                {{ intval($breakfastBarData->depth) }}mm
+                                                                                            </p>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <h6 class="fs-6 fw-bolder text-dark">
+                                                                                        Range Specification
+                                                                                    </h6>
+                                                                                    <p class="mb-0">
+                                                                                        <small>
+                                                                                            @if ($breakfastBarData->category?->description)
+                                                                                            {!! $breakfastBarData->category->description !!}
+                                                                                            @elseif ($breakfastBarData->category?->parentCategory?->description)
+                                                                                            {!! $breakfastBarData->category->parentCategory->description !!}
+                                                                                            @endif
+                                                                                        </small>
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
+                                                                <div class="modal-footer"></div>
                                                             </div>
-                                                            <div class="modal-footer"></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="container-fluid">
+                                                        <div class="row">
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p-0">
+                                                                <figure class="my-0" style="margin-bottom: 0px !important;">
+                                                                    <img class="product-image px-0"
+                                                                        style="margin-bottom: 0px !important;object-fit:contain"
+                                                                        src="{{ !empty($breakfastBarData->image_path) ? asset('imgs/products/'.$breakfastBarData->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                        alt="Card image cap" data-bs-toggle="modal"
+                                                                        data-bs-target="#productModal{{ $breakfastBarData->id }}">
+                                                                </figure>
+                                                            </div>
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 border border-default">
+                                                                <div class="container-fluid">
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Product Code</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $breakfastBarData->product_code }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Dimensions</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $breakfastBarData->dimensions }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    @if ($breakfastBarData->style)
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Style</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $breakfastBarData->style->name }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    @endif
+                                                                    @if ($breakfastBarData->colour)
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Color</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $breakfastBarData->colour->trade_colour ? $breakfastBarData->colour->trade_colour : $breakfastBarData->colour->name }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    @endif
+                                                                    @if ($breakfastBarData->assembly)
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Assembly</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $breakfastBarData->assembly->name }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    @endif
+                                                                </div>
+                                                                <div class="row justify-content-center border-top border-default">
+                                                                    <div class="col-12">
+                                                                        <p class="fs-5 fw-bold text-dark">
+                                                                            {{ $breakfastBarData->price == 0 ? 'Out of Stock' : '£' . $breakfastBarData->price }}
+                                                                        </p>
+                                                                    </div>
+                                                                    <div
+                                                                        class="col-12 d-flex justify-content-center product-counter">
+                                                                        <input id="minus{{ $breakfastBarData->id }}"
+                                                                            class="minus border bg-dark text-light p-0"
+                                                                            type="button" value="-"
+                                                                            onclick="decreaseQuantity('{{ $breakfastBarData->id }}', '{{ $breakfastBarData->product_code }}', '{{ $breakfastBarData->full_title }}', {{ $breakfastBarData->price }}, {{ $breakfastBarData->discounted_price }}, {{ $breakfastBarData->discounted_percentage ?? 0 }}, '{{ $breakfastBarData->ParentCategory->slug }}')" />
+                                                                        <input id="quantity{{ $breakfastBarData->id }}"
+                                                                            class="quantity border border-black text-center"
+                                                                            type="text" value="0" name="quantity"
+                                                                            disabled />
+                                                                        <input id="plus{{ $breakfastBarData->id }}"
+                                                                            class="plus border bg-dark text-light p-0"
+                                                                            type="button" value="+" type="number"
+                                                                            max="10"
+                                                                            onclick="increaseQuantity('{{ $breakfastBarData->id }}', '{{ $breakfastBarData->product_code }}', '{{ $breakfastBarData->full_title }}', {{ $breakfastBarData->price }}, {{ $breakfastBarData->discounted_price }}, {{ $breakfastBarData->discounted_percentage ?? 0 }}, '{{ $breakfastBarData->ParentCategory->slug }}')" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <div class="">
-                                                    <figure>
-                                                        <img class="product-image px-0"
-                                                            src="{{ !empty($breakfastBar->image_path) ? asset('imgs/products/'.$breakfastBar->image_path) : asset('images/no-image-available.jpg') }}"
-                                                            alt="Card image cap">
-                                                    </figure>
-                                                    <div class="">
-                                                        <a href=""
-                                                            class="text-center text-decoration-underline fs-5 fw-bold">
-                                                            {{ $breakfastBar->short_title }}
-                                                        </a>
-                                                        <p class="py-lg-3 py-2">
-                                                            <small
-                                                                class="fw-bold text-center">{{ $breakfastBar->product_code }}</small>
-                                                        </p>
-                                                        <p class="py-lg-3 py-2">
-                                                            <small
-                                                                class="fw-bold text-center">{{ $breakfastBar->dimensions }}</small>
-                                                        </p>
-                                                        <div class="container-fluid">
-                                                            <div
-                                                                class="row justify-content-center product-counter">
-                                                                <input id="minus{{ $breakfastBar->id }}"
-                                                                    class="minus border bg-dark text-light p-0"
-                                                                    type="button" value="-"
-                                                                    onclick="decreaseQuantity('{{ $breakfastBar->id }}', '{{ $breakfastBar->product_code }}', '{{ $breakfastBar->full_title }}', {{ $breakfastBar->price }}, {{ $breakfastBar->discounted_price }}, {{ $breakfastBar->discounted_percentage ?? 0 }}, '{{ $breakfastBar->ParentCategory->slug }}')" />
-                                                                <input id="quantity{{ $breakfastBar->id }}"
-                                                                    class="quantity border border-black text-center"
-                                                                    type="text" value="0"
-                                                                    name="quantity" disabled />
-                                                                <input id="plus{{ $breakfastBar->id }}"
-                                                                    class="plus border bg-dark text-light p-0"
-                                                                    type="button" value="+"
-                                                                    onclick="increaseQuantity('{{ $breakfastBar->id }}', '{{ $breakfastBar->product_code }}', '{{ $breakfastBar->full_title }}', {{ $breakfastBar->price }}, {{ $breakfastBar->discounted_price }}, {{ $breakfastBar->discounted_percentage ?? 0 }}, '{{ $breakfastBar->ParentCategory->slug }}')" />
-                                                            </div>
-                                                        </div>
-                                                        <p class="fs-5 fw-bold mt-lg-2">
-                                                            {{ $breakfastBar->price == 0 ? 'Out of Stock' : '£' . $breakfastBar->price }}
-                                                        </p>
-                                                        <div class="container-fluid">
-                                                            @if ($breakfastBar->style)
-                                                            <div class="row">
-                                                                <div class="col-4 p-0 d-md-flex d-none">
-                                                                    <p
-                                                                        class="category-text text-start text-uppercase m-0 pt-1">
-                                                                        <small>Style</small>
-                                                                    </p>
-                                                                </div>
-                                                                <div
-                                                                    class="col-md-8 col-sm-12 p-0 text-center">
-                                                                    <p
-                                                                        class="category-value fw-semibold py-1 mb-2">
-                                                                        <small>{{ $breakfastBar->style->name }}</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            @endif
-                                                            @if ($breakfastBar->colour)
-                                                            <div class="row">
-                                                                <div class="col-4 p-0 d-md-flex d-none">
-                                                                    <p
-                                                                        class="category-text text-start text-uppercase m-0 pt-1">
-                                                                        <small>Color</small>
-                                                                    </p>
-                                                                </div>
-                                                                <div
-                                                                    class="col-md-8 col-sm-12 p-0 text-center">
-                                                                    <p
-                                                                        class="category-value fw-semibold py-1 mb-2">
-                                                                        <small>{{ $breakfastBar->colour->trade_colour ? $breakfastBar->colour->trade_colour : $breakfastBar->colour->name }}</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            @endif
-                                                            @if ($breakfastBar->assembly)
-                                                            <div class="row">
-                                                                <div class="col-4 p-0 d-md-flex d-none">
-                                                                    <p
-                                                                        class="category-text text-start text-uppercase m-0 pt-1">
-                                                                        <small>Assembly</small>
-                                                                    </p>
-                                                                </div>
-                                                                <div
-                                                                    class="col-md-8 col-sm-12 p-0 text-center">
-                                                                    <p
-                                                                        class="category-value fw-semibold py-1 mb-2">
-                                                                        <small>{{ $breakfastBar->assembly->name }}</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            @endif
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    @endforeach
                                     @else
-                                    <div class="col-12">
-                                        <p class="">No Breakfast Bars available</p>
-                                    </div>
+                                        <div class="col-12">
+                                            <p class="">No Breakfast Bars available</p>
+                                        </div>
                                     @endif
                                 </div>
                             </div>
 
                             {{-- Edging Doors --}}
-                            <div class="tab-pane fade" id="nav-edging" role="tabpanel"
+                            <div class="tab-pane fade active" id="nav-edging" role="tabpanel"
                                 aria-labelledby="nav-edging-tab" tabindex="0">
                                 <div class="row">
                                     @if ($edgings->count() > 0)
-                                    @foreach ($edgings as $index => $edging)
-                                    <div class="col-lg-4 col-6 mb-3">
-                                        <div class="card">
-                                            <div class="card-body text-center">
-                                                <!-- Button trigger modal -->
-                                                <a class="modal-icon z-3" href="#"
-                                                    data-bs-toggle="modal"
-                                                    data-bs-target="#edgings{{ $index }}">
-                                                    <i class="ri-add-circle-line text-black fs-4"></i>
-                                                </a>
-                                                <!-- Modal -->
-                                                <div class="modal fade" id="edgings{{ $index }}"
-                                                    tabindex="-1"
-                                                    aria-labelledby="edgingsLabel{{ $index }}"
-                                                    aria-hidden="true">
-                                                    <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <button type="button" class="btn-close"
-                                                                    data-bs-dismiss="modal"
-                                                                    aria-label="Close"></button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <div class="container-fluid">
-                                                                    <div class="row">
-                                                                        <div class="col-lg-4 col-md-5 col-12">
-                                                                            <img src="{{ !empty($edging->image_path) ? asset('imgs/products/'.$edging->image_path) : asset('images/no-image-available.jpg') }}"
-                                                                                class="img-fluid" />
-                                                                        </div>
-                                                                        <div
-                                                                            class="col-lg-8 col-md-7 col-12 text-start">
-                                                                            <h1 class="fs-5 fw-bold">
-                                                                                {{ $edging->full_title }}
-                                                                            </h1>
-                                                                            <hr>
-                                                                            <h6
-                                                                                class="fs-6 fw-bolder text-dark">
-                                                                                Styling</h6>
-                                                                            <ul>
-                                                                                <li>HEIGHT: 720mm</li>
-                                                                                <li>WIDTH: 1000mm</li>
-                                                                                <li>DEPTH: 570mm</li>
-                                                                            </ul>
+                                        @php 
+                                            $edgingData = $edgings->first();
+                                        @endphp
+
+                                        <div class="col-lg-12 col-md-12 col-sm-12 order-sm-1 order-xs-1">
+                                            <label for="" class="fw-bold d-flex justify-content-between"><span>ALL EDGINGS</span><span><a href="{{route('viewallorderkitchenbycolour', ['style' => $edgingData->style?->slug , 'assembly' => $edgingData->assembly?->slug, 'colour' => $edgingData->colour?->slug])}}">View All</a></span></label>
+                                            <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="edgings-section">
+                                                @foreach ($$edgings as $index => $edging)
+                                                <option class="fw-bold" value="{{$edging->id }}" data-product-short-title="{{ $edging->short_title }}" data-product-fullname="{{ $edging->full_title }}" data-product-image="{{ !empty($edging->image_path) ? asset('imgs/products/'.$edging->image_path) : asset('images/no-image-available.jpg') }}" data-product-price="{{ $edging->price }}" data-product-parent-category-slug="{{ $edging->ParentCategory?->slug }}" data-product-discountedprice="{{ $edging->discounted_price }}" data-product-assembly-name="{{ $edging->assembly?->name }}" data-product-discountedpercentage="{{ $edging->discounted_percentage ?? 0 }}" data-product-code="{{ $edging->product_code }}" data-product-dimensions="{{ $edging->dimensions }}" data-product-style="{{ $edging->style?->name }}" data-product-colour="{{ $edging->colour?->trade_colour ? $edging->colour?->trade_colour : $edging->colour?->name }}" data-product-id="{{ $edging->id }}">{{ $edging->full_title }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-12 col-md-12 col-sm-12 edgings-section order-sm-2 order-xs-2 mt-4">
+                                            <div class="card bg-light p-0 border border-warning" style="border-radius: 0; border: none">
+                                                <div class="bg-warning card-header px-0 py-0">
+                                                    <div class="py-2 text-center product-short-title-container w-100">
+                                                        <a href="#" class="product-short-title fw-bold text-decoration-underline fs-4">
+                                                            {{ $edgingData->short_title }}
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body text-center">
+                                                    <div class="modal fade" id="productModal{{ $edgingData->id }}" tabindex="-1"
+                                                        aria-labelledby="productModalLabel{{ $edgingData->id }}"
+                                                        aria-hidden="true">
+                                                        <div class="modal-dialog modal-xl modal-dialog-centered">
+                                                            <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                                <div class="modal-header border-bottom border-light">
+                                                                    <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
+                                                                        {{ $edgingData->full_title }}
+                                                                    </h1>
+                                                                    <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <div class="container-fluid">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-8 col-md-8 col-8 border-bottom border-warning bg-light">
+                                                                                <img src="{{ !empty($edgingData->image_path) ? asset('imgs/products/'.$edgingData->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                                    class="img-fluid product-image" style="height: 300px;" />
+                                                                            </div>
+                                                                            <div class="col-lg-4 col-md-4 col-4 text-start text-dark">
+                                                                                <div>
+                                                                                    <h6 class="fs-6 fw-bolder text-dark">Styling</h6>
+                                                                                    <ul style="list-style: none; padding: 0">
+                                                                                        @if ($edgingData->style)
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">Style:</small>
+                                                                                                {{ $edgingData->style->name }}
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        @endif
+                                                                                        @if ($edgingData->assembly)
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">Assembly:</small>
+                                                                                                {{ $edgingData->assembly->name }}
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        @endif
+                                                                                        @if ($edgingData->colour)
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">Colour:</small>
+                                                                                                {{ $edgingData->colour->trade_colour ? $edgingData->colour->trade_colour : $edgingData->colour->name }}
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        @endif
+                                                                                    </ul>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <h6 class="fs-6 fw-bolder text-dark">Dimensions
+                                                                                    </h6>
+                                                                                    <ul style="list-style: none; padding: 0">
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">HEIGHT:</small>
+                                                                                                {{ intval($edgingData->height) }}mm
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">WIDTH:</small>
+                                                                                                {{ intval($edgingData->width) }}mm
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">DEPTH:</small>
+                                                                                                {{ intval($edgingData->depth) }}mm
+                                                                                            </p>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <h6 class="fs-6 fw-bolder text-dark">
+                                                                                        Range Specification
+                                                                                    </h6>
+                                                                                    <p class="mb-0">
+                                                                                        <small>
+                                                                                            @if ($edgingData->category?->description)
+                                                                                            {!! $edgingData->category->description !!}
+                                                                                            @elseif ($edgingData->category?->parentCategory?->description)
+                                                                                            {!! $edgingData->category->parentCategory->description !!}
+                                                                                            @endif
+                                                                                        </small>
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
+                                                                <div class="modal-footer"></div>
                                                             </div>
-                                                            <div class="modal-footer"></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="container-fluid">
+                                                        <div class="row">
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p-0">
+                                                                <figure class="my-0" style="margin-bottom: 0px !important;">
+                                                                    <img class="product-image px-0"
+                                                                        style="margin-bottom: 0px !important;object-fit:contain"
+                                                                        src="{{ !empty($edgingData->image_path) ? asset('imgs/products/'.$edgingData->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                        alt="Card image cap" data-bs-toggle="modal"
+                                                                        data-bs-target="#productModal{{ $edgingData->id }}">
+                                                                </figure>
+                                                            </div>
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 border border-default">
+                                                                <div class="container-fluid">
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Product Code</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $edgingData->product_code }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Dimensions</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $edgingData->dimensions }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    @if ($edgingData->style)
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Style</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $edgingData->style->name }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    @endif
+                                                                    @if ($edgingData->colour)
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Color</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $edgingData->colour->trade_colour ? $edgingData->colour->trade_colour : $edgingData->colour->name }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    @endif
+                                                                    @if ($edgingData->assembly)
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Assembly</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $edgingData->assembly->name }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    @endif
+                                                                </div>
+                                                                <div class="row justify-content-center border-top border-default">
+                                                                    <div class="col-12">
+                                                                        <p class="fs-5 fw-bold text-dark">
+                                                                            {{ $edgingData->price == 0 ? 'Out of Stock' : '£' . $edgingData->price }}
+                                                                        </p>
+                                                                    </div>
+                                                                    <div
+                                                                        class="col-12 d-flex justify-content-center product-counter">
+                                                                        <input id="minus{{ $edgingData->id }}"
+                                                                            class="minus border bg-dark text-light p-0"
+                                                                            type="button" value="-"
+                                                                            onclick="decreaseQuantity('{{ $edgingData->id }}', '{{ $edgingData->product_code }}', '{{ $edgingData->full_title }}', {{ $edgingData->price }}, {{ $edgingData->discounted_price }}, {{ $edgingData->discounted_percentage ?? 0 }}, '{{ $edgingData->ParentCategory->slug }}')" />
+                                                                        <input id="quantity{{ $edgingData->id }}"
+                                                                            class="quantity border border-black text-center"
+                                                                            type="text" value="0" name="quantity"
+                                                                            disabled />
+                                                                        <input id="plus{{ $edgingData->id }}"
+                                                                            class="plus border bg-dark text-light p-0"
+                                                                            type="button" value="+" type="number"
+                                                                            max="10"
+                                                                            onclick="increaseQuantity('{{ $edgingData->id }}', '{{ $edgingData->product_code }}', '{{ $edgingData->full_title }}', {{ $edgingData->price }}, {{ $edgingData->discounted_price }}, {{ $edgingData->discounted_percentage ?? 0 }}, '{{ $edgingData->ParentCategory->slug }}')" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <div class="">
-                                                    <figure>
-                                                        <img class="product-image px-0"
-                                                            src="{{ !empty($edging->image_path) ? asset('imgs/products/'.$edging->image_path) : asset('images/no-image-available.jpg') }}"
-                                                            alt="Card image cap">
-                                                    </figure>
-                                                    <div class="">
-                                                        <a href=""
-                                                            class="text-center text-decoration-underline fs-5 fw-bold">
-                                                            {{ $edging->short_title }}
-                                                        </a>
-                                                        <p class="py-lg-3 py-2">
-                                                            <small
-                                                                class="fw-bold text-center">{{ $edging->product_code }}</small>
-                                                        </p>
-                                                        <p class="py-lg-3 py-2">
-                                                            <small
-                                                                class="fw-bold text-center">{{ $edging->dimensions }}</small>
-                                                        </p>
-                                                        <div class="container-fluid">
-                                                            <div
-                                                                class="row justify-content-center product-counter">
-                                                                <input id="minus{{ $edging->id }}"
-                                                                    class="minus border bg-dark text-light p-0"
-                                                                    type="button" value="-"
-                                                                    onclick="decreaseQuantity('{{ $edging->id }}', '{{ $edging->product_code }}', '{{ $edging->full_title }}', {{ $edging->price }}, {{ $edging->discounted_price }}, {{ $edging->discounted_percentage ?? 0 }}, '{{ $edging->ParentCategory->slug }}')" />
-                                                                <input id="quantity{{ $edging->id }}"
-                                                                    class="quantity border border-black text-center"
-                                                                    type="text" value="0"
-                                                                    name="quantity" disabled />
-                                                                <input id="plus{{ $edging->id }}"
-                                                                    class="plus border bg-dark text-light p-0"
-                                                                    type="button" value="+"
-                                                                    onclick="increaseQuantity('{{ $edging->id }}', '{{ $edging->product_code }}', '{{ $edging->full_title }}', {{ $edging->price }}, {{ $edging->discounted_price }}, {{ $edging->discounted_percentage ?? 0 }}, '{{ $edging->ParentCategory->slug }}')" />
-                                                            </div>
-                                                        </div>
-                                                        <p class="fs-5 fw-bold mt-lg-2">
-                                                            {{ $edging->price == 0 ? 'Out of Stock' : '£' . $edging->price }}
-                                                        </p>
-                                                        <div class="container-fluid">
-                                                            @if ($edging->style)
-                                                            <div class="row">
-                                                                <div class="col-4 p-0 d-md-flex d-none">
-                                                                    <p
-                                                                        class="category-text text-start text-uppercase m-0 pt-1">
-                                                                        <small>Style</small>
-                                                                    </p>
-                                                                </div>
-                                                                <div
-                                                                    class="col-md-8 col-sm-12 p-0 text-center">
-                                                                    <p
-                                                                        class="category-value fw-semibold py-1 mb-2">
-                                                                        <small>{{ $edging->style->name }}</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            @endif
-                                                            @if ($edging->colour)
-                                                            <div class="row">
-                                                                <div class="col-4 p-0 d-md-flex d-none">
-                                                                    <p
-                                                                        class="category-text text-start text-uppercase m-0 pt-1">
-                                                                        <small>Color</small>
-                                                                    </p>
-                                                                </div>
-                                                                <div
-                                                                    class="col-md-8 col-sm-12 p-0 text-center">
-                                                                    <p
-                                                                        class="category-value fw-semibold py-1 mb-2">
-                                                                        <small>{{ $edging->colour->trade_colour ? $edging->colour->trade_colour : $edging->colour->name }}</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            @endif
-                                                            @if ($edging->assembly)
-                                                            <div class="row">
-                                                                <div class="col-4 p-0 d-md-flex d-none">
-                                                                    <p
-                                                                        class="category-text text-start text-uppercase m-0 pt-1">
-                                                                        <small>Assembly</small>
-                                                                    </p>
-                                                                </div>
-                                                                <div
-                                                                    class="col-md-8 col-sm-12 p-0 text-center">
-                                                                    <p
-                                                                        class="category-value fw-semibold py-1 mb-2">
-                                                                        <small>{{ $edging->assembly->name }}</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            @endif
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    @endforeach
                                     @else
-                                    <div class="col-12">
-                                        <p class="">No Edging Doors available</p>
-                                    </div>
+                                        <div class="col-12">
+                                            <p class="">No Edgings available</p>
+                                        </div>
                                     @endif
                                 </div>
                             </div>
@@ -3737,329 +4218,508 @@
                             </div>
                         </nav>
                         <div class="tab-content p-3" style="border: 1px solid black !important" id="nav-tabContent">
-
                             {{-- Sinks --}}
                             <div class="tab-pane fade show active" id="nav-sinks" role="tabpanel"
                                 aria-labelledby="nav-sinks-tab" tabindex="0">
                                 <div class="row">
                                     @if ($sinks->count() > 0)
-                                    @foreach ($sinks as $index => $sink)
-                                    <div class="col-lg-4 col-6 mb-3">
-                                        <div class="card">
-                                            <div class="card-body text-center">
-                                                <!-- Button trigger modal -->
-                                                <a class="modal-icon z-3" href="#"
-                                                    data-bs-toggle="modal"
-                                                    data-bs-target="#sinks{{ $index }}">
-                                                    <i class="ri-add-circle-line text-black fs-4"></i>
-                                                </a>
-                                                <!-- Modal -->
-                                                <div class="modal fade" id="sinks{{ $index }}"
-                                                    tabindex="-1"
-                                                    aria-labelledby="sinksLabel{{ $index }}"
-                                                    aria-hidden="true">
-                                                    <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <button type="button" class="btn-close"
-                                                                    data-bs-dismiss="modal"
-                                                                    aria-label="Close"></button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <div class="container-fluid">
-                                                                    <div class="row">
-                                                                        <div class="col-lg-4 col-md-5 col-12">
-                                                                            <img src="{{ !empty($sink->image_path) ? asset('imgs/products/'.$sink->image_path) : asset('images/no-image-available.jpg') }}"
-                                                                                class="img-fluid" />
-                                                                        </div>
-                                                                        <div
-                                                                            class="col-lg-8 col-md-7 col-12 text-start">
-                                                                            <h1 class="fs-5 fw-bold">
-                                                                                {{ $sink->full_title }}
-                                                                            </h1>
-                                                                            <hr>
-                                                                            <h6
-                                                                                class="fs-6 fw-bolder text-dark">
-                                                                                Styling</h6>
-                                                                            <ul>
-                                                                                <li>HEIGHT: 720mm</li>
-                                                                                <li>WIDTH: 1000mm</li>
-                                                                                <li>DEPTH: 570mm</li>
-                                                                            </ul>
+                                        @php 
+                                            $sinkData = $sinks->first();
+                                        @endphp
+
+                                        <div class="col-lg-12 col-md-12 col-sm-12 order-sm-1 order-xs-1">
+                                            <label for="" class="fw-bold d-flex justify-content-between"><span>ALL WORKTOPS</span><span><a href="{{route('viewallorderkitchenbycolour', ['style' => $sinkData->style?->slug , 'assembly' => $sinkData->assembly?->slug, 'colour' => $sinkData->colour?->slug])}}">View All</a></span></label>
+                                            <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="sinks-section">
+                                                @foreach ($sinks as $index => $sink)
+                                                <option class="fw-bold" value="{{$sink->id }}" data-product-short-title="{{ $sink->short_title }}" data-product-fullname="{{ $sink->full_title }}" data-product-image="{{ !empty($sink->image_path) ? asset('imgs/products/'.$sink->image_path) : asset('images/no-image-available.jpg') }}" data-product-price="{{ $sink->price }}" data-product-parent-category-slug="{{ $sink->ParentCategory?->slug }}" data-product-discountedprice="{{ $sink->discounted_price }}" data-product-assembly-name="{{ $sink->assembly?->name }}" data-product-discountedpercentage="{{ $sink->discounted_percentage ?? 0 }}" data-product-code="{{ $sink->product_code }}" data-product-dimensions="{{ $sink->dimensions }}" data-product-style="{{ $sink->style?->name }}" data-product-colour="{{ $sink->colour?->trade_colour ? $sink->colour?->trade_colour : $sink->colour?->name }}" data-product-id="{{ $sink->id }}">{{ $sink->full_title }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-12 col-md-12 col-sm-12 sinks-section order-sm-2 order-xs-2 mt-4">
+                                            <div class="card bg-light p-0 border border-warning" style="border-radius: 0; border: none">
+                                                <div class="bg-warning card-header px-0 py-0">
+                                                    <div class="py-2 text-center product-short-title-container w-100">
+                                                        <a href="#" class="product-short-title fw-bold text-decoration-underline fs-4">
+                                                            {{ $sinkData->short_title }}
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body text-center">
+                                                    <div class="modal fade" id="productModal{{ $sinkData->id }}" tabindex="-1"
+                                                        aria-labelledby="productModalLabel{{ $sinkData->id }}"
+                                                        aria-hidden="true">
+                                                        <div class="modal-dialog modal-xl modal-dialog-centered">
+                                                            <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                                <div class="modal-header border-bottom border-light">
+                                                                    <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
+                                                                        {{ $sinkData->full_title }}
+                                                                    </h1>
+                                                                    <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <div class="container-fluid">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-8 col-md-8 col-8 border-bottom border-warning bg-light">
+                                                                                <img src="{{ !empty($sinkData->image_path) ? asset('imgs/products/'.$sinkData->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                                    class="img-fluid product-image" style="height: 300px;" />
+                                                                            </div>
+                                                                            <div class="col-lg-4 col-md-4 col-4 text-start text-dark">
+                                                                                <div>
+                                                                                    <h6 class="fs-6 fw-bolder text-dark">Styling</h6>
+                                                                                    <ul style="list-style: none; padding: 0">
+                                                                                        @if ($sinkData->style)
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">Style:</small>
+                                                                                                {{ $sinkData->style->name }}
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        @endif
+                                                                                        @if ($sinkData->assembly)
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">Assembly:</small>
+                                                                                                {{ $sinkData->assembly->name }}
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        @endif
+                                                                                        @if ($sinkData->colour)
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">Colour:</small>
+                                                                                                {{ $sinkData->colour->trade_colour ? $sinkData->colour->trade_colour : $sinkData->colour->name }}
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        @endif
+                                                                                    </ul>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <h6 class="fs-6 fw-bolder text-dark">Dimensions
+                                                                                    </h6>
+                                                                                    <ul style="list-style: none; padding: 0">
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">HEIGHT:</small>
+                                                                                                {{ intval($sinkData->height) }}mm
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">WIDTH:</small>
+                                                                                                {{ intval($sinkData->width) }}mm
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">DEPTH:</small>
+                                                                                                {{ intval($sinkData->depth) }}mm
+                                                                                            </p>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <h6 class="fs-6 fw-bolder text-dark">
+                                                                                        Range Specification
+                                                                                    </h6>
+                                                                                    <p class="mb-0">
+                                                                                        <small>
+                                                                                            @if ($sinkData->category?->description)
+                                                                                            {!! $sinkData->category->description !!}
+                                                                                            @elseif ($sinkData->category?->parentCategory?->description)
+                                                                                            {!! $sinkData->category->parentCategory->description !!}
+                                                                                            @endif
+                                                                                        </small>
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
+                                                                <div class="modal-footer"></div>
                                                             </div>
-                                                            <div class="modal-footer"></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="container-fluid">
+                                                        <div class="row">
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p-0">
+                                                                <figure class="my-0" style="margin-bottom: 0px !important;">
+                                                                    <img class="product-image px-0"
+                                                                        style="margin-bottom: 0px !important;object-fit:contain"
+                                                                        src="{{ !empty($sinkData->image_path) ? asset('imgs/products/'.$sinkData->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                        alt="Card image cap" data-bs-toggle="modal"
+                                                                        data-bs-target="#productModal{{ $sinkData->id }}">
+                                                                </figure>
+                                                            </div>
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 border border-default">
+                                                                <div class="container-fluid">
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Product Code</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $sinkData->product_code }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Dimensions</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $sinkData->dimensions }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    @if ($sinkData->style)
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Style</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $sinkData->style->name }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    @endif
+                                                                    @if ($sinkData->colour)
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Color</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $sinkData->colour->trade_colour ? $sinkData->colour->trade_colour : $sinkData->colour->name }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    @endif
+                                                                    @if ($sinkData->assembly)
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Assembly</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $sinkData->assembly->name }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    @endif
+                                                                </div>
+                                                                <div class="row justify-content-center border-top border-default">
+                                                                    <div class="col-12">
+                                                                        <p class="fs-5 fw-bold text-dark">
+                                                                            {{ $sinkData->price == 0 ? 'Out of Stock' : '£' . $sinkData->price }}
+                                                                        </p>
+                                                                    </div>
+                                                                    <div
+                                                                        class="col-12 d-flex justify-content-center product-counter">
+                                                                        <input id="minus{{ $sinkData->id }}"
+                                                                            class="minus border bg-dark text-light p-0"
+                                                                            type="button" value="-"
+                                                                            onclick="decreaseQuantity('{{ $sinkData->id }}', '{{ $sinkData->product_code }}', '{{ $sinkData->full_title }}', {{ $sinkData->price }}, {{ $sinkData->discounted_price }}, {{ $sinkData->discounted_percentage ?? 0 }}, '{{ $sinkData->ParentCategory->slug }}')" />
+                                                                        <input id="quantity{{ $sinkData->id }}"
+                                                                            class="quantity border border-black text-center"
+                                                                            type="text" value="0" name="quantity"
+                                                                            disabled />
+                                                                        <input id="plus{{ $sinkData->id }}"
+                                                                            class="plus border bg-dark text-light p-0"
+                                                                            type="button" value="+" type="number"
+                                                                            max="10"
+                                                                            onclick="increaseQuantity('{{ $sinkData->id }}', '{{ $sinkData->product_code }}', '{{ $sinkData->full_title }}', {{ $sinkData->price }}, {{ $sinkData->discounted_price }}, {{ $sinkData->discounted_percentage ?? 0 }}, '{{ $sinkData->ParentCategory->slug }}')" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <div class="">
-                                                    <figure>
-                                                        <img class="product-image px-0"
-                                                            src="{{ !empty($sink->image_path) ? asset('imgs/products/'.$sink->image_path) : asset('images/no-image-available.jpg') }}"
-                                                            alt="Card image cap">
-                                                    </figure>
-                                                    <div class="">
-                                                        <a href=""
-                                                            class="text-center text-decoration-underline fs-5 fw-bold">
-                                                            {{ $sink->short_title }}
-                                                        </a>
-                                                        <p class="py-lg-3 py-2">
-                                                            <small
-                                                                class="fw-bold text-center">{{ $sink->product_code }}</small>
-                                                        </p>
-                                                        <p class="py-lg-3 py-2">
-                                                            <small
-                                                                class="fw-bold text-center">{{ $sink->dimensions }}</small>
-                                                        </p>
-                                                        <div class="container-fluid">
-                                                            <div
-                                                                class="row justify-content-center product-counter">
-                                                                <input id="minus{{ $sink->id }}"
-                                                                    class="minus border bg-dark text-light p-0"
-                                                                    type="button" value="-"
-                                                                    onclick="decreaseQuantity('{{ $sink->id }}', '{{ $sink->product_code }}', '{{ $sink->full_title }}', {{ $sink->price }}, {{ $sink->discounted_price }}, {{ $sink->discounted_percentage ?? 0 }}, '{{ $sink->ParentCategory->slug }}')" />
-                                                                <input id="quantity{{ $sink->id }}"
-                                                                    class="quantity border border-black text-center"
-                                                                    type="text" value="0"
-                                                                    name="quantity" disabled />
-                                                                <input id="plus{{ $sink->id }}"
-                                                                    class="plus border bg-dark text-light p-0"
-                                                                    type="button" value="+"
-                                                                    onclick="increaseQuantity('{{ $sink->id }}', '{{ $sink->product_code }}', '{{ $sink->full_title }}', {{ $sink->price }}, {{ $sink->discounted_price }}, {{ $sink->discounted_percentage ?? 0 }}, '{{ $sink->ParentCategory->slug }}')" />
-                                                            </div>
-                                                        </div>
-                                                        <p class="fs-5 fw-bold mt-lg-2">
-                                                            {{ $sink->price == 0 ? 'Out of Stock' : '£' . $sink->price }}
-                                                        </p>
-                                                        <div class="container-fluid">
-                                                            @if ($sink->style)
-                                                            <div class="row">
-                                                                <div class="col-4 p-0 d-md-flex d-none">
-                                                                    <p
-                                                                        class="category-text text-start text-uppercase m-0 pt-1">
-                                                                        <small>Style</small>
-                                                                    </p>
-                                                                </div>
-                                                                <div
-                                                                    class="col-md-8 col-sm-12 p-0 text-center">
-                                                                    <p
-                                                                        class="category-value fw-semibold py-1 mb-2">
-                                                                        <small>{{ $sink->style->name }}</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            @endif
-                                                            @if ($sink->colour)
-                                                            <div class="row">
-                                                                <div class="col-4 p-0 d-md-flex d-none">
-                                                                    <p
-                                                                        class="category-text text-start text-uppercase m-0 pt-1">
-                                                                        <small>Color</small>
-                                                                    </p>
-                                                                </div>
-                                                                <div
-                                                                    class="col-md-8 col-sm-12 p-0 text-center">
-                                                                    <p
-                                                                        class="category-value fw-semibold py-1 mb-2">
-                                                                        <small>{{ $sink->colour->trade_colour ? $sink->colour->trade_colour : $sink->colour->name }}</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            @endif
-                                                            @if ($sink->assembly)
-                                                            <div class="row">
-                                                                <div class="col-4 p-0 d-md-flex d-none">
-                                                                    <p
-                                                                        class="category-text text-start text-uppercase m-0 pt-1">
-                                                                        <small>Assembly</small>
-                                                                    </p>
-                                                                </div>
-                                                                <div
-                                                                    class="col-md-8 col-sm-12 p-0 text-center">
-                                                                    <p
-                                                                        class="category-value fw-semibold py-1 mb-2">
-                                                                        <small>{{ $sink->assembly->name }}</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            @endif
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    @endforeach
                                     @else
-                                    <div class="col-12">
-                                        <p class="">No Sinks available</p>
-                                    </div>
+                                        <div class="col-12">
+                                            <p class="">No Sinks available</p>
+                                        </div>
                                     @endif
                                 </div>
                             </div>
-
+                            
                             {{-- Taps --}}
-                            <div class="tab-pane fade" id="nav-taps" role="tabpanel"
+                            <div class="tab-pane fade active" id="nav-taps" role="tabpanel"
                                 aria-labelledby="nav-taps-tab" tabindex="0">
                                 <div class="row">
                                     @if ($taps->count() > 0)
-                                    @foreach ($taps as $index => $tap)
-                                    <div class="col-lg-4 col-6 mb-3">
-                                        <div class="card">
-                                            <div class="card-body text-center">
-                                                <!-- Button trigger modal -->
-                                                <a class="modal-icon z-3" href="#"
-                                                    data-bs-toggle="modal"
-                                                    data-bs-target="#taps{{ $index }}">
-                                                    <i class="ri-add-circle-line text-black fs-4"></i>
-                                                </a>
-                                                <!-- Modal -->
-                                                <div class="modal fade" id="taps{{ $index }}"
-                                                    tabindex="-1"
-                                                    aria-labelledby="tapsLabel{{ $index }}"
-                                                    aria-hidden="true">
-                                                    <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <button type="button" class="btn-close"
-                                                                    data-bs-dismiss="modal"
-                                                                    aria-label="Close"></button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <div class="container-fluid">
-                                                                    <div class="row">
-                                                                        <div class="col-lg-4 col-md-5 col-12">
-                                                                            <img src="{{ !empty($tap->image_path) ? asset('imgs/products/'.$tap->image_path) : asset('images/no-image-available.jpg') }}"
-                                                                                class="img-fluid" />
-                                                                        </div>
-                                                                        <div
-                                                                            class="col-lg-8 col-md-7 col-12 text-start">
-                                                                            <h1 class="fs-5 fw-bold">
-                                                                                {{ $tap->full_title }}
-                                                                            </h1>
-                                                                            <hr>
-                                                                            <h6
-                                                                                class="fs-6 fw-bolder text-dark">
-                                                                                Styling</h6>
-                                                                            <ul>
-                                                                                <li>HEIGHT: 720mm</li>
-                                                                                <li>WIDTH: 1000mm</li>
-                                                                                <li>DEPTH: 570mm</li>
-                                                                            </ul>
+                                        @php 
+                                            $tapsData = $taps->first();
+                                        @endphp
+
+                                        <div class="col-lg-12 col-md-12 col-sm-12 order-sm-1 order-xs-1">
+                                            <label for="" class="fw-bold d-flex justify-content-between"><span>ALL TAPS</span><span><a href="{{route('viewallorderkitchenbycolour', ['style' => $tapsData->style?->slug , 'assembly' => $tapsData->assembly?->slug, 'colour' => $tapsData->colour?->slug])}}">View All</a></span></label>
+                                            <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="taps-section">
+                                                @foreach ($taps as $index => $tap)
+                                                <option class="fw-bold" value="{{$tap->id }}" data-product-short-title="{{ $tap->short_title }}" data-product-fullname="{{ $tap->full_title }}" data-product-image="{{ !empty($tap->image_path) ? asset('imgs/products/'.$tap->image_path) : asset('images/no-image-available.jpg') }}" data-product-price="{{ $tap->price }}" data-product-parent-category-slug="{{ $tap->ParentCategory?->slug }}" data-product-discountedprice="{{ $tap->discounted_price }}" data-product-assembly-name="{{ $tap->assembly?->name }}" data-product-discountedpercentage="{{ $tap->discounted_percentage ?? 0 }}" data-product-code="{{ $tap->product_code }}" data-product-dimensions="{{ $tap->dimensions }}" data-product-style="{{ $tap->style?->name }}" data-product-colour="{{ $tap->colour?->trade_colour ? $tap->colour?->trade_colour : $tap->colour?->name }}" data-product-id="{{ $tap->id }}">{{ $tap->full_title }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-12 col-md-12 col-sm-12 taps-section order-sm-2 order-xs-2 mt-4">
+                                            <div class="card bg-light p-0 border border-warning" style="border-radius: 0; border: none">
+                                                <div class="bg-warning card-header px-0 py-0">
+                                                    <div class="py-2 text-center product-short-title-container w-100">
+                                                        <a href="#" class="product-short-title fw-bold text-decoration-underline fs-4">
+                                                            {{ $tapsData->short_title }}
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body text-center">
+                                                    <div class="modal fade" id="productModal{{ $tapsData->id }}" tabindex="-1"
+                                                        aria-labelledby="productModalLabel{{ $tapsData->id }}"
+                                                        aria-hidden="true">
+                                                        <div class="modal-dialog modal-xl modal-dialog-centered">
+                                                            <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                                <div class="modal-header border-bottom border-light">
+                                                                    <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
+                                                                        {{ $tapsData->full_title }}
+                                                                    </h1>
+                                                                    <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <div class="container-fluid">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-8 col-md-8 col-8 border-bottom border-warning bg-light">
+                                                                                <img src="{{ !empty($tapsData->image_path) ? asset('imgs/products/'.$tapsData->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                                    class="img-fluid product-image" style="height: 300px;" />
+                                                                            </div>
+                                                                            <div class="col-lg-4 col-md-4 col-4 text-start text-dark">
+                                                                                <div>
+                                                                                    <h6 class="fs-6 fw-bolder text-dark">Styling</h6>
+                                                                                    <ul style="list-style: none; padding: 0">
+                                                                                        @if ($tapsData->style)
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">Style:</small>
+                                                                                                {{ $tapsData->style->name }}
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        @endif
+                                                                                        @if ($tapsData->assembly)
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">Assembly:</small>
+                                                                                                {{ $tapsData->assembly->name }}
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        @endif
+                                                                                        @if ($tapsData->colour)
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">Colour:</small>
+                                                                                                {{ $tapsData->colour->trade_colour ? $tapsData->colour->trade_colour : $tapsData->colour->name }}
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        @endif
+                                                                                    </ul>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <h6 class="fs-6 fw-bolder text-dark">Dimensions
+                                                                                    </h6>
+                                                                                    <ul style="list-style: none; padding: 0">
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">HEIGHT:</small>
+                                                                                                {{ intval($tapsData->height) }}mm
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">WIDTH:</small>
+                                                                                                {{ intval($tapsData->width) }}mm
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">DEPTH:</small>
+                                                                                                {{ intval($tapsData->depth) }}mm
+                                                                                            </p>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <h6 class="fs-6 fw-bolder text-dark">
+                                                                                        Range Specification
+                                                                                    </h6>
+                                                                                    <p class="mb-0">
+                                                                                        <small>
+                                                                                            @if ($tapsData->category?->description)
+                                                                                            {!! $tapsData->category->description !!}
+                                                                                            @elseif ($tapsData->category?->parentCategory?->description)
+                                                                                            {!! $tapsData->category->parentCategory->description !!}
+                                                                                            @endif
+                                                                                        </small>
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
+                                                                <div class="modal-footer"></div>
                                                             </div>
-                                                            <div class="modal-footer"></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="container-fluid">
+                                                        <div class="row">
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p-0">
+                                                                <figure class="my-0" style="margin-bottom: 0px !important;">
+                                                                    <img class="product-image px-0"
+                                                                        style="margin-bottom: 0px !important;object-fit:contain"
+                                                                        src="{{ !empty($tapsData->image_path) ? asset('imgs/products/'.$tapsData->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                        alt="Card image cap" data-bs-toggle="modal"
+                                                                        data-bs-target="#productModal{{ $tapsData->id }}">
+                                                                </figure>
+                                                            </div>
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 border border-default">
+                                                                <div class="container-fluid">
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Product Code</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $tapsData->product_code }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Dimensions</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $tapsData->dimensions }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    @if ($tapsData->style)
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Style</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $tapsData->style->name }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    @endif
+                                                                    @if ($tapsData->colour)
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Color</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $tapsData->colour->trade_colour ? $tapsData->colour->trade_colour : $tapsData->colour->name }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    @endif
+                                                                    @if ($tapsData->assembly)
+                                                                    <div class="row">
+                                                                        <div class="col-4 p-0 d-md-flex d-none">
+                                                                            <p
+                                                                                class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                                <small class="fw-bold">Assembly</small>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                            <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                                <small>{{ $tapsData->assembly->name }}</small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    @endif
+                                                                </div>
+                                                                <div class="row justify-content-center border-top border-default">
+                                                                    <div class="col-12">
+                                                                        <p class="fs-5 fw-bold text-dark">
+                                                                            {{ $tapsData->price == 0 ? 'Out of Stock' : '£' . $tapsData->price }}
+                                                                        </p>
+                                                                    </div>
+                                                                    <div
+                                                                        class="col-12 d-flex justify-content-center product-counter">
+                                                                        <input id="minus{{ $tapsData->id }}"
+                                                                            class="minus border bg-dark text-light p-0"
+                                                                            type="button" value="-"
+                                                                            onclick="decreaseQuantity('{{ $tapsData->id }}', '{{ $tapsData->product_code }}', '{{ $tapsData->full_title }}', {{ $tapsData->price }}, {{ $tapsData->discounted_price }}, {{ $tapsData->discounted_percentage ?? 0 }}, '{{ $tapsData->ParentCategory->slug }}')" />
+                                                                        <input id="quantity{{ $tapsData->id }}"
+                                                                            class="quantity border border-black text-center"
+                                                                            type="text" value="0" name="quantity"
+                                                                            disabled />
+                                                                        <input id="plus{{ $tapsData->id }}"
+                                                                            class="plus border bg-dark text-light p-0"
+                                                                            type="button" value="+" type="number"
+                                                                            max="10"
+                                                                            onclick="increaseQuantity('{{ $tapsData->id }}', '{{ $tapsData->product_code }}', '{{ $tapsData->full_title }}', {{ $tapsData->price }}, {{ $tapsData->discounted_price }}, {{ $tapsData->discounted_percentage ?? 0 }}, '{{ $tapsData->ParentCategory->slug }}')" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <div class="">
-                                                    <figure>
-                                                        <img class="product-image px-0"
-                                                            src="{{ !empty($tap->image_path) ? asset('imgs/products/'.$tap->image_path) : asset('images/no-image-available.jpg') }}"
-                                                            alt="Card image cap">
-                                                    </figure>
-                                                    <div class="">
-                                                        <a href=""
-                                                            class="text-center text-decoration-underline fs-5 fw-bold">
-                                                            {{ $tap->short_title }}
-                                                        </a>
-                                                        <p class="py-lg-3 py-2">
-                                                            <small
-                                                                class="fw-bold text-center">{{ $tap->product_code }}</small>
-                                                        </p>
-                                                        <p class="py-lg-3 py-2">
-                                                            <small
-                                                                class="fw-bold text-center">{{ $tap->dimensions }}</small>
-                                                        </p>
-                                                        <div class="container-fluid">
-                                                            <div
-                                                                class="row justify-content-center product-counter">
-                                                                <input id="minus{{ $tap->id }}"
-                                                                    class="minus border bg-dark text-light p-0"
-                                                                    type="button" value="-"
-                                                                    onclick="decreaseQuantity('{{ $tap->id }}', '{{ $tap->product_code }}', '{{ $tap->full_title }}', {{ $tap->price }}, {{ $tap->discounted_price }}, {{ $tap->discounted_percentage ?? 0 }}, '{{ $tap->ParentCategory->slug }}')" />
-                                                                <input id="quantity{{ $tap->id }}"
-                                                                    class="quantity border border-black text-center"
-                                                                    type="text" value="0"
-                                                                    name="quantity" disabled />
-                                                                <input id="plus{{ $tap->id }}"
-                                                                    class="plus border bg-dark text-light p-0"
-                                                                    type="button" value="+"
-                                                                    onclick="increaseQuantity('{{ $tap->id }}', '{{ $tap->product_code }}', '{{ $tap->full_title }}', {{ $tap->price }}, {{ $tap->discounted_price }}, {{ $tap->discounted_percentage ?? 0 }}, '{{ $tap->ParentCategory->slug }}')" />
-                                                            </div>
-                                                        </div>
-                                                        <p class="fs-5 fw-bold mt-lg-2">
-                                                            {{ $tap->price == 0 ? 'Out of Stock' : '£' . $tap->price }}
-                                                        </p>
-                                                        <div class="container-fluid">
-                                                            @if ($tap->style)
-                                                            <div class="row">
-                                                                <div class="col-4 p-0 d-md-flex d-none">
-                                                                    <p
-                                                                        class="category-text text-start text-uppercase m-0 pt-1">
-                                                                        <small>Style</small>
-                                                                    </p>
-                                                                </div>
-                                                                <div
-                                                                    class="col-md-8 col-sm-12 p-0 text-center">
-                                                                    <p
-                                                                        class="category-value fw-semibold py-1 mb-2">
-                                                                        <small>{{ $tap->style->name }}</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            @endif
-                                                            @if ($tap->colour)
-                                                            <div class="row">
-                                                                <div class="col-4 p-0 d-md-flex d-none">
-                                                                    <p
-                                                                        class="category-text text-start text-uppercase m-0 pt-1">
-                                                                        <small>Color</small>
-                                                                    </p>
-                                                                </div>
-                                                                <div
-                                                                    class="col-md-8 col-sm-12 p-0 text-center">
-                                                                    <p
-                                                                        class="category-value fw-semibold py-1 mb-2">
-                                                                        <small>{{ $tap->colour->trade_colour ? $tap->colour->trade_colour : $tap->colour->name }}</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            @endif
-                                                            @if ($tap->assembly)
-                                                            <div class="row">
-                                                                <div class="col-4 p-0 d-md-flex d-none">
-                                                                    <p
-                                                                        class="category-text text-start text-uppercase m-0 pt-1">
-                                                                        <small>Assembly</small>
-                                                                    </p>
-                                                                </div>
-                                                                <div
-                                                                    class="col-md-8 col-sm-12 p-0 text-center">
-                                                                    <p
-                                                                        class="category-value fw-semibold py-1 mb-2">
-                                                                        <small>{{ $tap->assembly->name }}</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            @endif
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    @endforeach
                                     @else
-                                    <div class="col-12">
-                                        <p class="">No Taps available</p>
-                                    </div>
+                                        <div class="col-12">
+                                            <p class="">No Taps available</p>
+                                        </div>
                                     @endif
                                 </div>
                             </div>
@@ -4075,154 +4735,250 @@
                     <div class="collapse-container collapse mt-3" id="appliances">
                         <div class="row">
                             @if ($appliances->count() > 0)
-                            @foreach ($appliances as $index => $appliance)
-                            <div class="col-lg-4 col-6 mb-3">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <!-- Button trigger modal -->
-                                        <a class="modal-icon z-3" href="#" data-bs-toggle="modal"
-                                            data-bs-target="#appliances{{ $index }}">
-                                            <i class="ri-add-circle-line text-black fs-4"></i>
-                                        </a>
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="appliances{{ $index }}"
-                                            tabindex="-1"
-                                            aria-labelledby="appliancesLabel{{ $index }}"
-                                            aria-hidden="true">
-                                            <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="btn-close"
-                                                            data-bs-dismiss="modal"
-                                                            aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <div class="container-fluid">
-                                                            <div class="row">
-                                                                <div class="col-lg-4 col-md-5 col-12">
-                                                                    <img src="{{ !empty($appliance->image_path) ? asset('imgs/products/'.$appliance->image_path) : asset('images/no-image-available.jpg') }}"
-                                                                        class="img-fluid" />
-                                                                </div>
-                                                                <div
-                                                                    class="col-lg-8 col-md-7 col-12 text-start">
-                                                                    <h1 class="fs-5 fw-bold">
-                                                                        {{ $appliance->full_title }}
-                                                                    </h1>
-                                                                    <hr>
-                                                                    <h6 class="fs-6 fw-bolder text-dark">
-                                                                        Styling</h6>
-                                                                    <ul>
-                                                                        <li>HEIGHT: 720mm</li>
-                                                                        <li>WIDTH: 1000mm</li>
-                                                                        <li>DEPTH: 570mm</li>
-                                                                    </ul>
+                                @php 
+                                    $applianceData = $appliances->first();
+                                @endphp
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 order-sm-1 order-xs-1">
+                                    <label for="" class="fw-bold d-flex justify-content-between"><span>ALL APPLIANCES</span><span><a href="{{route('viewallorderkitchenbycolour', ['style' => $applianceData->style?->slug , 'assembly' => $applianceData->assembly?->slug, 'colour' => $applianceData->colour?->slug])}}">View All</a></span></label>
+                                    <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="sinks-section">
+                                        @foreach ($appliances as $index => $appliance)
+                                        <option class="fw-bold" value="{{$appliance->id }}" data-product-short-title="{{ $appliance->short_title }}" data-product-fullname="{{ $appliance->full_title }}" data-product-image="{{ !empty($appliance->image_path) ? asset('imgs/products/'.$appliance->image_path) : asset('images/no-image-available.jpg') }}" data-product-price="{{ $appliance->price }}" data-product-parent-category-slug="{{ $appliance->ParentCategory?->slug }}" data-product-discountedprice="{{ $appliance->discounted_price }}" data-product-assembly-name="{{ $appliance->assembly?->name }}" data-product-discountedpercentage="{{ $appliance->discounted_percentage ?? 0 }}" data-product-code="{{ $appliance->product_code }}" data-product-dimensions="{{ $appliance->dimensions }}" data-product-style="{{ $appliance->style?->name }}" data-product-colour="{{ $appliance->colour?->trade_colour ? $appliance->colour?->trade_colour : $appliance->colour?->name }}" data-product-id="{{ $appliance->id }}">{{ $appliance->full_title }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 sinks-section order-sm-2 order-xs-2 mt-4">
+                                    <div class="card bg-light p-0 border border-warning" style="border-radius: 0; border: none">
+                                        <div class="bg-warning card-header px-0 py-0">
+                                            <div class="py-2 text-center product-short-title-container w-100">
+                                                <a href="#" class="product-short-title fw-bold text-decoration-underline fs-4">
+                                                    {{ $applianceData->short_title }}
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <div class="modal fade" id="productModal{{ $applianceData->id }}" tabindex="-1"
+                                                aria-labelledby="productModalLabel{{ $applianceData->id }}"
+                                                aria-hidden="true">
+                                                <div class="modal-dialog modal-xl modal-dialog-centered">
+                                                    <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                        <div class="modal-header border-bottom border-light">
+                                                            <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
+                                                                {{ $applianceData->full_title }}
+                                                            </h1>
+                                                            <button type="button" class="btn-close"
+                                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="container-fluid">
+                                                                <div class="row">
+                                                                    <div class="col-lg-8 col-md-8 col-8 border-bottom border-warning bg-light">
+                                                                        <img src="{{ !empty($applianceData->image_path) ? asset('imgs/products/'.$applianceData->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                            class="img-fluid product-image" style="height: 300px;" />
+                                                                    </div>
+                                                                    <div class="col-lg-4 col-md-4 col-4 text-start text-dark">
+                                                                        <div>
+                                                                            <h6 class="fs-6 fw-bolder text-dark">Styling</h6>
+                                                                            <ul style="list-style: none; padding: 0">
+                                                                                @if ($applianceData->style)
+                                                                                <li>
+                                                                                    <p class="mb-0">
+                                                                                        <small
+                                                                                            class="fw-bold text-uppercase text-dark">Style:</small>
+                                                                                        {{ $applianceData->style->name }}
+                                                                                    </p>
+                                                                                </li>
+                                                                                @endif
+                                                                                @if ($applianceData->assembly)
+                                                                                <li>
+                                                                                    <p class="mb-0">
+                                                                                        <small
+                                                                                            class="fw-bold text-uppercase text-dark">Assembly:</small>
+                                                                                        {{ $applianceData->assembly->name }}
+                                                                                    </p>
+                                                                                </li>
+                                                                                @endif
+                                                                                @if ($applianceData->colour)
+                                                                                <li>
+                                                                                    <p class="mb-0">
+                                                                                        <small
+                                                                                            class="fw-bold text-uppercase text-dark">Colour:</small>
+                                                                                        {{ $applianceData->colour->trade_colour ? $applianceData->colour->trade_colour : $applianceData->colour->name }}
+                                                                                    </p>
+                                                                                </li>
+                                                                                @endif
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div>
+                                                                            <h6 class="fs-6 fw-bolder text-dark">Dimensions
+                                                                            </h6>
+                                                                            <ul style="list-style: none; padding: 0">
+                                                                                <li>
+                                                                                    <p class="mb-0">
+                                                                                        <small
+                                                                                            class="fw-bold text-uppercase text-dark">HEIGHT:</small>
+                                                                                        {{ intval($applianceData->height) }}mm
+                                                                                    </p>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <p class="mb-0">
+                                                                                        <small
+                                                                                            class="fw-bold text-uppercase text-dark">WIDTH:</small>
+                                                                                        {{ intval($applianceData->width) }}mm
+                                                                                    </p>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <p class="mb-0">
+                                                                                        <small
+                                                                                            class="fw-bold text-uppercase text-dark">DEPTH:</small>
+                                                                                        {{ intval($applianceData->depth) }}mm
+                                                                                    </p>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div>
+                                                                            <h6 class="fs-6 fw-bolder text-dark">
+                                                                                Range Specification
+                                                                            </h6>
+                                                                            <p class="mb-0">
+                                                                                <small>
+                                                                                    @if ($applianceData->category?->description)
+                                                                                    {!! $applianceData->category->description !!}
+                                                                                    @elseif ($applianceData->category?->parentCategory?->description)
+                                                                                    {!! $applianceData->category->parentCategory->description !!}
+                                                                                    @endif
+                                                                                </small>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        <div class="modal-footer"></div>
                                                     </div>
-                                                    <div class="modal-footer"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p-0">
+                                                        <figure class="my-0" style="margin-bottom: 0px !important;">
+                                                            <img class="product-image px-0"
+                                                                style="margin-bottom: 0px !important;object-fit:contain"
+                                                                src="{{ !empty($applianceData->image_path) ? asset('imgs/products/'.$applianceData->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                alt="Card image cap" data-bs-toggle="modal"
+                                                                data-bs-target="#productModal{{ $applianceData->id }}">
+                                                        </figure>
+                                                    </div>
+                                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 border border-default">
+                                                        <div class="container-fluid">
+                                                            <div class="row">
+                                                                <div class="col-4 p-0 d-md-flex d-none">
+                                                                    <p
+                                                                        class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                        <small class="fw-bold">Product Code</small>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                    <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                        <small>{{ $applianceData->product_code }}</small>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-4 p-0 d-md-flex d-none">
+                                                                    <p
+                                                                        class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                        <small class="fw-bold">Dimensions</small>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                    <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                        <small>{{ $applianceData->dimensions }}</small>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            @if ($applianceData->style)
+                                                            <div class="row">
+                                                                <div class="col-4 p-0 d-md-flex d-none">
+                                                                    <p
+                                                                        class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                        <small class="fw-bold">Style</small>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                    <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                        <small>{{ $applianceData->style->name }}</small>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            @endif
+                                                            @if ($applianceData->colour)
+                                                            <div class="row">
+                                                                <div class="col-4 p-0 d-md-flex d-none">
+                                                                    <p
+                                                                        class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                        <small class="fw-bold">Color</small>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                    <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                        <small>{{ $applianceData->colour->trade_colour ? $applianceData->colour->trade_colour : $applianceData->colour->name }}</small>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            @endif
+                                                            @if ($applianceData->assembly)
+                                                            <div class="row">
+                                                                <div class="col-4 p-0 d-md-flex d-none">
+                                                                    <p
+                                                                        class="category-text text-start text-dark text-uppercase m-0 pt-1">
+                                                                        <small class="fw-bold">Assembly</small>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                                    <p class="category-value fw-semibold py-1 mb-2 text-dark">
+                                                                        <small>{{ $applianceData->assembly->name }}</small>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            @endif
+                                                        </div>
+                                                        <div class="row justify-content-center border-top border-default">
+                                                            <div class="col-12">
+                                                                <p class="fs-5 fw-bold text-dark">
+                                                                    {{ $applianceData->price == 0 ? 'Out of Stock' : '£' . $applianceData->price }}
+                                                                </p>
+                                                            </div>
+                                                            <div
+                                                                class="col-12 d-flex justify-content-center product-counter">
+                                                                <input id="minus{{ $applianceData->id }}"
+                                                                    class="minus border bg-dark text-light p-0"
+                                                                    type="button" value="-"
+                                                                    onclick="decreaseQuantity('{{ $applianceData->id }}', '{{ $applianceData->product_code }}', '{{ $applianceData->full_title }}', {{ $applianceData->price }}, {{ $applianceData->discounted_price }}, {{ $applianceData->discounted_percentage ?? 0 }}, '{{ $applianceData->ParentCategory->slug }}')" />
+                                                                <input id="quantity{{ $applianceData->id }}"
+                                                                    class="quantity border border-black text-center"
+                                                                    type="text" value="0" name="quantity"
+                                                                    disabled />
+                                                                <input id="plus{{ $applianceData->id }}"
+                                                                    class="plus border bg-dark text-light p-0"
+                                                                    type="button" value="+" type="number"
+                                                                    max="10"
+                                                                    onclick="increaseQuantity('{{ $applianceData->id }}', '{{ $applianceData->product_code }}', '{{ $applianceData->full_title }}', {{ $applianceData->price }}, {{ $applianceData->discounted_price }}, {{ $applianceData->discounted_percentage ?? 0 }}, '{{ $applianceData->ParentCategory->slug }}')" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div class="">
-                                            <figure>
-                                                <img class="product-image px-0"
-                                                    src="{{ !empty($appliance->image_path) ? asset('imgs/products/'.$appliance->image_path) : asset('images/no-image-available.jpg') }}"
-                                                    alt="Card image cap">
-                                            </figure>
-                                            <div class="">
-                                                <a href=""
-                                                    class="text-center text-decoration-underline fs-5 fw-bold">
-                                                    {{ $appliance->short_title }}
-                                                </a>
-                                                <p class="py-lg-3 py-2">
-                                                    <small
-                                                        class="fw-bold text-center">{{ $appliance->product_code }}</small>
-                                                </p>
-                                                <p class="py-lg-3 py-2">
-                                                    <small
-                                                        class="fw-bold text-center">{{ $appliance->dimensions }}</small>
-                                                </p>
-                                                <div class="container-fluid">
-                                                    <div class="row justify-content-center product-counter">
-                                                        <input id="minus{{ $appliance->id }}"
-                                                            class="minus border bg-dark text-light p-0"
-                                                            type="button" value="-"
-                                                            onclick="decreaseQuantity('{{ $appliance->id }}', '{{ $appliance->product_code }}', '{{ $appliance->full_title }}', {{ $appliance->price }}, {{ $appliance->discounted_price }}, {{ $appliance->discounted_percentage ?? 0 }}, '{{ $appliance->ParentCategory->slug }}')" />
-                                                        <input id="quantity{{ $appliance->id }}"
-                                                            class="quantity border border-black text-center"
-                                                            type="text" value="0" name="quantity"
-                                                            disabled />
-                                                        <input id="plus{{ $appliance->id }}"
-                                                            class="plus border bg-dark text-light p-0"
-                                                            type="button" value="+"
-                                                            onclick="increaseQuantity('{{ $appliance->id }}', '{{ $appliance->product_code }}', '{{ $appliance->full_title }}', {{ $appliance->price }}, {{ $appliance->discounted_price }}, {{ $appliance->discounted_percentage ?? 0 }}, '{{ $appliance->ParentCategory->slug }}')" />
-                                                    </div>
-                                                </div>
-                                                <p class="fs-5 fw-bold mt-lg-2">
-                                                    {{ $appliance->price == 0 ? 'Out of Stock' : '£' . $appliance->price }}
-                                                </p>
-                                                <div class="container-fluid">
-                                                    @if ($appliance->style)
-                                                    <div class="row">
-                                                        <div class="col-4 p-0 d-md-flex d-none">
-                                                            <p
-                                                                class="category-text text-start text-uppercase m-0 pt-1">
-                                                                <small>Style</small>
-                                                            </p>
-                                                        </div>
-                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
-                                                            <p
-                                                                class="category-value fw-semibold py-1 mb-2">
-                                                                <small>{{ $appliance->style->name }}</small>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                    @endif
-                                                    @if ($appliance->colour)
-                                                    <div class="row">
-                                                        <div class="col-4 p-0 d-md-flex d-none">
-                                                            <p
-                                                                class="category-text text-start text-uppercase m-0 pt-1">
-                                                                <small>Color</small>
-                                                            </p>
-                                                        </div>
-                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
-                                                            <p
-                                                                class="category-value fw-semibold py-1 mb-2">
-                                                                <small>{{ $appliance->colour->trade_colour ? $appliance->colour->trade_colour : $appliance->colour->name }}</small>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                    @endif
-                                                    @if ($appliance->assembly)
-                                                    <div class="row">
-                                                        <div class="col-4 p-0 d-md-flex d-none">
-                                                            <p
-                                                                class="category-text text-start text-uppercase m-0 pt-1">
-                                                                <small>Assembly</small>
-                                                            </p>
-                                                        </div>
-                                                        <div class="col-md-8 col-sm-12 p-0 text-center">
-                                                            <p
-                                                                class="category-value fw-semibold py-1 mb-2">
-                                                                <small>{{ $appliance->assembly->name }}</small>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                    @endif
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            @endforeach
                             @else
-                            <div class="col-12">
-                                <p class="">No Appliances available</p>
-                            </div>
+                                <div class="col-12">
+                                    <p class="">No Appliances available</p>
+                                </div>
                             @endif
                         </div>
                     </div>

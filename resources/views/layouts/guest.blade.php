@@ -931,6 +931,34 @@ use App\Models\Style;
                 });
             });
 
+            // Listen for the collapse event
+            $('.collapse-container').on('shown.bs.collapse', function () {
+                // Initialize Select2 within the visible collapse section
+                $(this).find('.select-2').select2({
+                    minimumResultsForSearch: Infinity,
+                    dropdownCssClass: 'custom-select-dropdown',
+                    templateResult: function (data) {
+                        if (!data.id) {
+                            return data.text; // Return the text of the option if there's no id
+                        }
+
+                        // Retrieve image URL and other data attributes
+                        var imageUrl = $(data.element).data('product-image');
+                        var text = data.text;
+
+                        // Create a custom option with image and text
+                        var $result = $(
+                            '<div style="display: flex; align-items: center; gap: 10px;">' +
+                            '<img src="' + imageUrl + '" style="width: 50px; height: 50px; object-fit: cover; border-radius: 0px;" />' +
+                            '<span>' + text + '</span>' +
+                            '</div>'
+                        );
+
+                        return $result;
+                    }
+                });
+            });
+
             // Define url globally inside the scope of the document ready function
             var url = '';
 
