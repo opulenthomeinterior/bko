@@ -24,7 +24,8 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        .product-card:hover, .card-header {
+        .product-card:hover,
+        .card-header {
             background-color: #febd49;
             /* Warning color background on hover */
             color: #000;
@@ -201,6 +202,42 @@
                                                         value="{{ $type->id }}">
                                                     <label class="form-check-label"
                                                         for="type{{ $index }}">{{ $type->name }}
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+
+                    @if ($heights->count() > 0)
+                    <div class="accordion accordion-flush mt-3" id="accordionFlushExample5">
+                        <div class="accordion-item bg-transparent border border-dark border-1 rounded-0 px-2">
+                            <h2 class="accordion-header" id="flush-headingFive">
+                                <button class="accordion-button legend collapsed text-uppercase" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseFive"
+                                    aria-expanded="true" aria-controls="flush-collapseFive">
+                                    Heights
+                                </button>
+                            </h2>
+                            <div id="flush-collapseFive" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample5">
+                                <div class="accordion-body px-0 py-0 pb-1">
+                                    <div class="ps-2">
+                                        <div class="row g-1">
+                                            @foreach ($heights as $index => $height)
+                                            <div class="col-12">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        name="heights[]" id="height{{ $index }}"
+                                                        value="{{ $height->height }}">
+                                                    <label class="form-check-label"
+                                                        for="height{{ $index }}">
+                                                        {{ $height->height }} ({{$height->count}})
                                                     </label>
                                                 </div>
                                             </div>
@@ -428,7 +465,7 @@
                             </div>
                             <div class="card-footer p-0">
                                 <a href="{{ route('orderbyproduct', $product->slug) }}" class="product-short-title text-decoration-underline">
-                                   <small>View more</small>
+                                    <small>View more</small>
                                 </a>
                             </div>
                         </div>
@@ -497,6 +534,25 @@
     @push('scripts')
     <script>
         var order_component_filter = '{{ route('order_component_filter', $category->slug) }}';
+        let selectedHeights = [];
+
+        function toggleHeightSelection(button) {
+            const heightId = button.getAttribute('data-height-id');
+
+            // Toggle selected state
+            if (selectedHeights.includes(heightId)) {
+                selectedHeights = selectedHeights.filter(id => id !== heightId);
+                button.classList.remove('btn-success');
+                button.classList.add('btn-primary');
+            } else {
+                selectedHeights.push(heightId);
+                button.classList.remove('btn-primary');
+                button.classList.add('btn-success');
+            }
+
+            // Update the hidden input with selected heights
+            document.getElementById('selectedHeights').value = selectedHeights.join(',');
+        }
     </script>
     <script src="{{ asset('js/order-component-by-name.js') }}"></script>
     @endpush

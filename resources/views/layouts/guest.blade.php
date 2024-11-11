@@ -720,7 +720,7 @@ use App\Models\Style;
                         <ul class="footer-ul list-unstyled mb-0">
                             <li class="list-unstyled">
                                 <i class="ri-arrow-right-s-fill"></i>
-                                Mon-Thu: 8am to 5pm
+                                Mon-Sat: 9am to 5pm
                             </li>
                             <li class="list-unstyled">
                                 <i class="ri-arrow-right-s-fill"></i>
@@ -737,7 +737,7 @@ use App\Models\Style;
                                     role="button"><i class="ri-linkedin-fill"></i></a>
                             </li>
 
-                            <li class="mt-2 list-unstyled"><i class="ri-mail-line mt-1"></i>customerservices@bkonline.co.uk</li>
+                            <li class="mt-2 list-unstyled"><i class="ri-mail-line mt-1"></i>customerservices@bkonline.uk</li>
                             <li class="mt-2 list-unstyled"><i class="ri-phone-line"></i>0800 043 0804</li>
                         </ul>
                     </div>

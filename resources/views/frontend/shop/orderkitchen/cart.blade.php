@@ -9,7 +9,7 @@
         </nav>
 
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 d-flex justify-content-between align-items-center">
                 <h1 class="fs-1 text-dark text-uppercase fw-bolder">
                     Cart
                 </h1>
@@ -268,6 +268,32 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-dark rounded-0 hideCompareModel" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="cart-items-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog w-100" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="myModalLabel">Change Styles</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <table class="table">
+                                <thead>
+                                    <th>Item</th>
+                                </thead>
+                                <tbody id="changeStyleTableBody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark rounded-0 hideCompareModel" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

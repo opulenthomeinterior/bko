@@ -36,6 +36,15 @@ $(document).ready(function () {
         return colorIds;
     }
 
+    // Function to get the selected color IDs
+    function getSelectedHeights() {
+        var heights = [];
+        $("input[name='heights[]']:checked").each(function () {
+            heights.push($(this).val());
+        });
+        return heights;
+    }
+
     function createProductModal(product, index) {
         var productModal = `<div class="modal fade" id="productModal${index}" tabindex="-1" aria-labelledby="productModalLabel${index}" aria-hidden="true">`;
         productModal += `<div class="modal-dialog modal-lg modal-dialog-centered">`;
@@ -175,6 +184,7 @@ $(document).ready(function () {
         var selectedAssemblies = getSelectedAssemblies();
         var selectedStyles = getSelectedStyles();
         var selectedColors = getSelectedColors();
+        var selectedHeights = getSelectedHeights();
         var slug = $("#slug").val();
         // Do something with the selected IDs
         // console.log("Selected Types:", selectedTypes);
@@ -198,6 +208,7 @@ $(document).ready(function () {
                 assemblies: selectedAssemblies,
                 styles: selectedStyles,
                 colors: selectedColors,
+                heights: selectedHeights,
             },
             success: function (response) {
                 // Handle success response
@@ -296,6 +307,7 @@ $(document).ready(function () {
         var selectedAssemblies = getSelectedAssemblies();
         var selectedStyles = getSelectedStyles();
         var selectedColors = getSelectedColors();
+        var selectedHeights = getSelectedColors();
         var slug = $("#slug").val();
 
         // Get the CSRF token from the meta tag
@@ -313,6 +325,7 @@ $(document).ready(function () {
                 assemblies: selectedAssemblies,
                 styles: selectedStyles,
                 colors: selectedColors,
+                heights: selectedHeights,
                 page: page,
             },
             success: function (response) {

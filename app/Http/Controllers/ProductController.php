@@ -353,4 +353,16 @@ class ProductController extends Controller
             return response()->json(['status' => 'error', 'message' => 'Something went wrong. ' . $e->getMessage()], 200);
         }
     }
+
+    public function getCategoryProducts(Request $request)
+    {
+        $products = [];
+        $product = Product::where('id', $request->product_id)->first();
+        if (isset($product)) {
+            $category_id = $product->category_id;
+            $products = Product::where('category_id', $category_id)->get();
+        }
+        $baseUrl = asset('');
+        return response()->json(['status' => 'success', 'products' => $products, 'product_details' => $product, 'base_url' => $baseUrl]);
+    }
 }

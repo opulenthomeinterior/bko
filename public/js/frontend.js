@@ -577,7 +577,7 @@ function updateCartPage() {
       cartTableHtml += `<i class='ri-btn ri-add-line' onclick="increaseQuantityInCartPage('${product.id}', '${product.productCode}', '${product.full_title}', ${product.price}, ${product.discount_price}, ${product.discount_percentage}, '${product.p_category}')"></i>`;
       cartTableHtml += `<i class='ri-btn ri-delete-bin-line' onclick="removeFromCart(${product.id}, '${product.productCode}')"></i>`;
       cartTableHtml += `</td>`;
-      cartTableHtml += `<td>${product.full_title}&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" data-productId="${product.id}" class="openCompareModel text-decoration-underline text-danger" style="font-size: 12px;" data-toggle="modal" data-target="#myModal">Compare</a></td>`;
+      cartTableHtml += `<td>${product.full_title}&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" data-productId="${product.id}" class="openCompareModel text-decoration-underline text-danger" style="font-size: 12px;" data-toggle="modal" data-target="#myModal">Compare</a>&nbsp;&nbsp;<a href="javascript:void(0)" data-productId="${product.id}" class="openChangeStyleModal text-decoration-underline text-primary" style="font-size: 12px;" data-bs-toggle="modal" data-bs-target="#cart-items-modal" data-product-id="${product.id}">Change Style</a></td>`;
       cartTableHtml += `<td>£${(product.price).toFixed(2)}</td>`;
       cartTableHtml += `<td>${product.quantity}</td>`;
       cartTableHtml += `<td class='text-end'>£${(product.quantity * product.price).toFixed(2)}</td>`;
@@ -710,6 +710,162 @@ $(document).ready(function () {
    $(document).on("click", ".hideCompareModel", function (e) {
       e.preventDefault();
       $('#myModal').modal('hide');
+   });
+
+   $(document).on("click", ".openChangeStyleModal", function (e) {
+      e.preventDefault();
+      var _this = $(this);
+      var productId = _this.data('product-id');
+      var parentCategoryId = _this.data('parent-category-id');
+      var productQty = _this.data('product-qty');
+      var _URL = "/get-category-products";
+      var _html = '';
+      
+      $.ajax({
+         url: _URL,
+         type: "POST",
+         data: {
+            product_id: productId,
+         },
+         headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+         },
+         success: function (response) {
+            if (response.status === 'success') {
+               if (response.products.length > 0) {
+                  const $cartTableBody = $('#changeStyleTableBody');
+                  $cartTableBody.empty();
+               
+                  var cartTableHtml = ``;
+                  var productDetails = response.product_details;
+                  var _baseURL = response.base_url;
+                  
+                  cartTableHtml += `
+                     <div class="col-lg-12 col-md-12 col-sm-12 order-sm-1 order-xs-1">
+                        <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="base-cabinets-section">`;
+               
+                           response.products.forEach(product => {
+                                 cartTableHtml += `<option class="fw-bold" 
+                                    value="${product.id}" 
+                                    data-product-short-title="${product.short_title}" 
+                                    data-product-fullname="${product.full_title}" 
+                                    data-product-image="${product.image_path ? `${_baseURL}imgs/products/${product.image_path}` : `${_baseURL}images/no-image-available.jpg`}" 
+                                    data-product-price="${product.price}" 
+                                    data-product-parent-category-slug="${product.ParentCategory?.slug || ''}" 
+                                    data-product-discountedprice="${product.discounted_price}" 
+                                    data-product-assembly-name="${product.assembly?.name || ''}" 
+                                    data-product-discountedpercentage="${product.discounted_percentage || 0}" 
+                                    data-product-code="${product.product_code}" 
+                                    data-product-dimensions="${product.dimensions}" 
+                                    data-product-style="${product.style?.name || ''}" 
+                                    data-product-colour="${product.colour?.trade_colour || product.colour?.name || ''}" 
+                                    data-product-id="${product.id}">
+                                       ${product.full_title} &nbsp;&nbsp;(£${product.price})
+                                 </option>`;
+                           });
+                           
+                           cartTableHtml += `</select>
+                     </div>
+                     <div class="col-lg-12 col-md-12 col-sm-12 base-cabinets-section order-sm-2 order-xs-2 mt-4">
+                        <div class="card bg-light p-0 border border-warning" style="border-radius: 0; border: none">
+                           <div class="bg-warning card-header px-0 py-0">
+                                 <div class="py-2 text-center product-short-title-container w-100">
+                                    <a href="#" class="product-short-title fw-bold text-decoration-underline fs-4">
+                                       ${productDetails.short_title}
+                                    </a>
+                                 </div>
+                           </div>
+                           <div class="card-body text-center">
+                                 <div class="container-fluid">
+                                    <div class="row">
+                                       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p-0">
+                                             <figure class="my-0" style="margin-bottom: 0px !important;">
+                                                <img class="product-image px-0" style="margin-bottom: 0px !important; object-fit:contain" 
+                                                   src="${productDetails.image_path ? `${_baseURL}imgs/products/${productDetails.image_path}` : `${_baseURL}images/no-image-available.jpg`}"
+                                                   alt="Card image cap">
+                                             </figure>
+                                       </div>
+                                       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 border border-default">
+                                             <div class="container-fluid">
+                                                <div class="row">
+                                                   <div class="col-4 p-0 d-md-flex d-none">
+                                                         <p class="category-text text-start text-dark text-uppercase m-0 pt-1"><small class="fw-bold">Product Code</small></p>
+                                                   </div>
+                                                   <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                         <p class="category-value fw-semibold py-1 mb-2 text-dark"><small>${productDetails.product_code}</small></p>
+                                                   </div>
+                                                </div>
+                                                <div class="row">
+                                                   <div class="col-4 p-0 d-md-flex d-none">
+                                                         <p class="category-text text-start text-dark text-uppercase m-0 pt-1"><small class="fw-bold">Dimensions</small></p>
+                                                   </div>
+                                                   <div class="col-md-8 col-sm-12 p-0 text-center">
+                                                         <p class="category-value fw-semibold py-1 mb-2 text-dark"><small>${productDetails.dimensions}</small></p>
+                                                   </div>
+                                                </div>
+                                                ${productDetails.style ? `<div class="row">
+                                                   <div class="col-4 p-0 d-md-flex d-none"><p class="category-text text-start text-dark text-uppercase m-0 pt-1"><small class="fw-bold">Style</small></p></div>
+                                                   <div class="col-md-8 col-sm-12 p-0 text-center"><p class="category-value fw-semibold py-1 mb-2 text-dark"><small>${productDetails.style.name}</small></p></div>
+                                                </div>` : ''}
+                                                ${productDetails.colour ? `<div class="row">
+                                                   <div class="col-4 p-0 d-md-flex d-none"><p class="category-text text-start text-dark text-uppercase m-0 pt-1"><small class="fw-bold">Color</small></p></div>
+                                                   <div class="col-md-8 col-sm-12 p-0 text-center"><p class="category-value fw-semibold py-1 mb-2 text-dark"><small>${productDetails.colour.trade_colour || productDetails.colour.name}</small></p></div>
+                                                </div>` : ''}
+                                                ${productDetails.assembly ? `<div class="row">
+                                                   <div class="col-4 p-0 d-md-flex d-none"><p class="category-text text-start text-dark text-uppercase m-0 pt-1"><small class="fw-bold">Assembly</small></p></div>
+                                                   <div class="col-md-8 col-sm-12 p-0 text-center"><p class="category-value fw-semibold py-1 mb-2 text-dark"><small>${productDetails.assembly.name}</small></p></div>
+                                                </div>` : ''}
+                                             </div>
+                                             <div class="row justify-content-center border-top border-default">
+                                                <div class="col-12">
+                                                   <p class="fs-5 fw-bold text-dark">
+                                                         ${productDetails.price == 0 ? 'Out of Stock' : '£' + productDetails.price}
+                                                   </p>
+                                                </div>
+                                                <div class="col-12 d-flex justify-content-center product-counter">
+                                                   <input id="minus${productDetails.id}" class="minus border bg-dark text-light p-0" type="button" value="-"
+                                                         onclick="decreaseQuantity('${productDetails.id}', '${productDetails.product_code}', '${productDetails.full_title}', ${productDetails.price}, ${productDetails.discounted_price}, ${productDetails.discounted_percentage || 0}, '${productDetails.ParentCategory?.slug || ''}')" />
+                                                   <input id="quantity${productDetails.id}" class="quantity border border-black text-center" type="text" value="0" name="quantity" disabled />
+                                                   <input id="plus${productDetails.id}" class="plus border bg-dark text-light p-0" type="button" value="+" max="10"
+                                                         onclick="increaseQuantity('${productDetails.id}', '${productDetails.product_code}', '${productDetails.full_title}', ${productDetails.price}, ${productDetails.discounted_price}, ${productDetails.discounted_percentage || 0}, '${productDetails.ParentCategory?.slug || ''}')" />
+                                                </div>
+                                             </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                           </div>
+                        </div>
+                     </div>
+                  `;
+
+
+
+
+                  // cartTableHtml += `<tr>`;
+                  // cartTableHtml += `<td>`;
+                  // cartTableHtml += `<select class="form-control">`;
+                  // response.products.forEach(product => {
+                  //    // cartTableHtml += `<td>`;
+                  //    // cartTableHtml += `<i class='ri-btn ri-subtract-line' onclick="decreaseQuantityInCartPage('${product.id}', '${product.productCode}', '${product.full_title}', ${product.price}, ${product.discount_price}, ${product.discount_percentage}, '${product.p_category}')"></i>`;
+                  //    // cartTableHtml += `<i class='ri-btn ri-add-line' onclick="increaseQuantityInCartPage('${product.id}', '${product.productCode}', '${product.full_title}', ${product.price}, ${product.discount_price}, ${product.discount_percentage}, '${product.p_category}')"></i>`;
+                  //    // cartTableHtml += `<i class='ri-btn ri-delete-bin-line' onclick="removeFromCart(${product.id}, '${product.productCode}')"></i>`;
+                  //    // cartTableHtml += `</td>`;
+                  //    cartTableHtml += `<option>${product.full_title}&nbsp;&nbsp; (£${product.price})</option>`;
+                  //    // cartTableHtml += `<td>£${product.price}</td>`;
+                  //    // cartTableHtml += `<td>${product.quantity}</td>`;
+                  //    // cartTableHtml += `<td class='text-end'>£${product.quantity * product.price}</td>`;
+                  // });
+                  // cartTableHtml += `</select>`;
+                  // cartTableHtml += `</td>`;
+                  // cartTableHtml += `<td>£</td>`;
+                  // cartTableHtml += `<td></td>`;
+                  // cartTableHtml += `</tr>`;
+            
+                  $cartTableBody.html(cartTableHtml);
+               }
+            }
+         }
+      });
    });
 
 });

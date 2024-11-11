@@ -396,9 +396,15 @@ class HomeController extends Controller
 
         $products = Product::whereIn('category_id', $children)->where('status', 'active')->offset($offset)->limit($limit)->get();
 
+        $heights = Product::whereIn('category_id', $children)
+                ->where('status', 'active')
+                ->select('height', DB::raw('COUNT(*) as count'))
+                ->groupBy('height')
+                ->get();
+
         // $products = Product::whereIn('category_id', $children)->paginate($limit);
 
-        return view('frontend.shop.ordercomponent.ordercomponentbyname', compact('category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count'));
+        return view('frontend.shop.ordercomponent.ordercomponentbyname', compact('category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights'));
     }
 
     public function order_component_by_filter(Request $request, $slug)
@@ -407,6 +413,8 @@ class HomeController extends Controller
         $a = $request->assemblies ? $request->assemblies : [];
         $s = $request->styles ? $request->styles : [];
         $c = $request->colors ? $request->colors : [];
+        $h = $request->heights ? $request->heights : [];
+        $w = $request->widths ? $request->widths : [];
         $filterChanged = $request->filterChanged;
         $currentPage = 1;
 
@@ -434,6 +442,14 @@ class HomeController extends Controller
 
         if (!empty($c)) {
             $productsQuery->whereIn('colour_id', $c);
+        }
+
+        if (!empty($h)) {
+            $productsQuery->whereIn('height', $h);
+        }
+
+        if (!empty($w)) {
+            $productsQuery->whereIn('width', $w);
         }
 
         ///////////////////////////////
