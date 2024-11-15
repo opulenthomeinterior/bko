@@ -348,7 +348,7 @@ class HomeController extends Controller
 
     public function ordercomponent(Request $request)
     {
-        $components = Category::whereNull('parent_category_id')->get();
+        $components = Category::whereNull('parent_category_id')->whereIn('slug', ['doors', 'accessories', 'internals', 'sinks', 'handles'])->get();
 
         // echo '<pre>';
         // print_r($components);
