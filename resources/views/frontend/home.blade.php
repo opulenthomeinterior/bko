@@ -310,7 +310,7 @@
                         <div class="ms-2">
                             Smith
                             <br>
-                            <small>2024-09-25</small>
+                            <small>2023-11-19</small>
                         </div>
                     </div>
                     <div class="card-footer">
@@ -327,7 +327,7 @@
                         <div class="ms-2">
                             Daisy
                             <br>
-                            <small>2024-09-25</small>
+                            <small>2024-09-27</small>
                         </div>
                     </div>
                     <div class="card-footer">
@@ -344,7 +344,7 @@
                         <div class="ms-2">
                             Katherine Kate
                             <br>
-                            <small>2024-09-25</small>
+                            <small>2024-03-12</small>
                         </div>
                     </div>
                     <div class="card-footer">
@@ -361,7 +361,7 @@
                         <div class="ms-2">
                             Amelia Turner
                             <br>
-                            <small>2024-09-25</small>
+                            <small>2024-07-21</small>
                         </div>
                     </div>
                     <div class="card-footer">
