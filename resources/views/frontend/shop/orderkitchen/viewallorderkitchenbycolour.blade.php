@@ -129,7 +129,7 @@
                                                                         <input id="plus{{ $baseCabinet->id }}"
                                                                             class="plus border bg-dark text-light p-0"
                                                                             type="button" value="+"
-                                                                            {{$baseCabinet->price == 0 ? disabled : '' }} 
+                                                                            {{$baseCabinet->price == 0 ? 'disabled' : '' }} 
                                                                             onclick="increaseQuantity('{{ $baseCabinet->id }}', '{{ $baseCabinet->product_code }}', '{{ $baseCabinet->full_title }}', {{ $baseCabinet->price }}, {{ $baseCabinet->discounted_price }}, {{ $baseCabinet->discounted_percentage ?? 0 }}, '{{ $baseCabinet->ParentCategory->slug }}')" />
                                                                     </div>
                                                                 </div>
@@ -339,7 +339,7 @@
                                                                                     class="plus border bg-dark text-light p-0"
                                                                                     type="button" value="+" type="number"
                                                                                     max="10"
-                                                                                    {{$baseCabinet->price == 0 ? disabled : '' }} 
+                                                                                    {{$baseCabinet->price == 0 ? 'disabled' : '' }} 
                                                                                     onclick="increaseQuantity('{{ $baseCabinet->id }}', '{{ $baseCabinet->product_code }}', '{{ $baseCabinet->full_title }}', {{ $baseCabinet->price }}, {{ $baseCabinet->discounted_price }}, {{ $baseCabinet->discounted_percentage ?? 0 }}, '{{ $baseCabinet->ParentCategory->slug }}')" />
                                                                             </div>
                                                                             <div class="col-6">
@@ -502,7 +502,7 @@
                                                                         <input id="plus{{ $wallCabinet->id }}"
                                                                             class="plus border bg-dark text-light p-0"
                                                                             type="button" value="+"
-                                                                            {{$wallCabinet->price == 0 ? disabled : '' }} 
+                                                                            {{$wallCabinet->price == 0 ? 'disabled' : '' }} 
                                                                             onclick="increaseQuantity('{{ $wallCabinet->id }}', '{{ $wallCabinet->product_code }}', '{{ $wallCabinet->full_title }}', {{ $wallCabinet->price }}, {{ $wallCabinet->discounted_price }}, {{ $wallCabinet->discounted_percentage ?? 0 }}, '{{ $wallCabinet->ParentCategory->slug }}')" />
                                                                     </div>
                                                                 </div>
@@ -712,7 +712,7 @@
                                                                                     class="plus border bg-dark text-light p-0"
                                                                                     type="button" value="+" type="number"
                                                                                     max="10"
-                                                                                    {{$wallCabinet->price == 0 ? disabled : '' }} 
+                                                                                    {{$wallCabinet->price == 0 ? 'disabled' : '' }} 
                                                                                     onclick="increaseQuantity('{{ $wallCabinet->id }}', '{{ $wallCabinet->product_code }}', '{{ $wallCabinet->full_title }}', {{ $wallCabinet->price }}, {{ $wallCabinet->discounted_price }}, {{ $wallCabinet->discounted_percentage ?? 0 }}, '{{ $wallCabinet->ParentCategory->slug }}')" />
                                                                             </div>
                                                                             <div class="col-6">
@@ -875,7 +875,7 @@
                                                                         <input id="plus{{ $tallCabinet->id }}"
                                                                             class="plus border bg-dark text-light p-0"
                                                                             type="button" value="+"
-                                                                            {{$tallCabinet->price == 0 ? disabled : '' }} 
+                                                                            {{$tallCabinet->price == 0 ? 'disabled' : '' }} 
                                                                             onclick="increaseQuantity('{{ $tallCabinet->id }}', '{{ $tallCabinet->product_code }}', '{{ $tallCabinet->full_title }}', {{ $tallCabinet->price }}, {{ $tallCabinet->discounted_price }}, {{ $tallCabinet->discounted_percentage ?? 0 }}, '{{ $tallCabinet->ParentCategory->slug }}')" />
                                                                     </div>
                                                                 </div>
@@ -1085,7 +1085,7 @@
                                                                                     class="plus border bg-dark text-light p-0"
                                                                                     type="button" value="+" type="number"
                                                                                     max="10"
-                                                                                    {{$tallCabinet->price == 0 ? disabled : '' }} 
+                                                                                    {{$tallCabinet->price == 0 ? 'disabled' : '' }} 
                                                                                     onclick="increaseQuantity('{{ $tallCabinet->id }}', '{{ $tallCabinet->product_code }}', '{{ $tallCabinet->full_title }}', {{ $tallCabinet->price }}, {{ $tallCabinet->discounted_price }}, {{ $tallCabinet->discounted_percentage ?? 0 }}, '{{ $tallCabinet->ParentCategory->slug }}')" />
                                                                             </div>
                                                                             <div class="col-6">
@@ -1248,7 +1248,7 @@
                                                                         <input id="plus{{ $panel->id }}"
                                                                             class="plus border bg-dark text-light p-0"
                                                                             type="button" value="+"
-                                                                            {{$panel->price == 0 ? disabled : '' }} 
+                                                                            {{$panel->price == 0 ? 'disabled' : '' }} 
                                                                             onclick="increaseQuantity('{{ $panel->id }}', '{{ $panel->product_code }}', '{{ $panel->full_title }}', {{ $panel->price }}, {{ $panel->discounted_price }}, {{ $panel->discounted_percentage ?? 0 }}, '{{ $panel->ParentCategory->slug }}')" />
                                                                     </div>
                                                                 </div>
@@ -1458,7 +1458,7 @@
                                                                                     class="plus border bg-dark text-light p-0"
                                                                                     type="button" value="+" type="number"
                                                                                     max="10"
-                                                                                    {{$panel->price == 0 ? disabled : '' }} 
+                                                                                    {{$panel->price == 0 ? 'disabled' : '' }} 
                                                                                     onclick="increaseQuantity('{{ $panel->id }}', '{{ $panel->product_code }}', '{{ $panel->full_title }}', {{ $panel->price }}, {{ $panel->discounted_price }}, {{ $panel->discounted_percentage ?? 0 }}, '{{ $panel->ParentCategory->slug }}')" />
                                                                             </div>
                                                                             <div class="col-6">
@@ -1627,7 +1627,7 @@
                                                                 <input id="plus{{ $accessory->id }}"
                                                                     class="plus border bg-dark text-light p-0"
                                                                     type="button" value="+"
-                                                                    {{$accessory->price == 0 ? disabled : '' }} 
+                                                                    {{$accessory->price == 0 ? 'disabled' : '' }} 
                                                                     onclick="increaseQuantity('{{ $accessory->id }}', '{{ $accessory->product_code }}', '{{ $accessory->full_title }}', {{ $accessory->price }}, {{ $accessory->discounted_price }}, {{ $accessory->discounted_percentage ?? 0 }}, '{{ $accessory->ParentCategory->slug }}')" />
                                                             </div>
                                                         </div>
@@ -1834,7 +1834,7 @@
                                                                             class="plus border bg-dark text-light p-0"
                                                                             type="button" value="+" type="number"
                                                                             max="10"
-                                                                            {{$accessory->price == 0 ? disabled : '' }} 
+                                                                            {{$accessory->price == 0 ? 'disabled' : '' }} 
                                                                             onclick="increaseQuantity('{{ $accessory->id }}', '{{ $accessory->product_code }}', '{{ $accessory->full_title }}', {{ $accessory->price }}, {{ $accessory->discounted_price }}, {{ $accessory->discounted_percentage ?? 0 }}, '{{ $accessory->ParentCategory->slug }}')" />
                                                                     </div>
                                                                     <div class="col-6">
@@ -2004,7 +2004,7 @@
                                                                 <input id="plus{{ $handle->id }}"
                                                                     class="plus border bg-dark text-light p-0"
                                                                     type="button" value="+"
-                                                                    {{$handle->price == 0 ? disabled : '' }} 
+                                                                    {{$handle->price == 0 ? 'disabled' : '' }} 
                                                                     onclick="increaseQuantity('{{ $handle->id }}', '{{ $handle->product_code }}', '{{ $handle->full_title }}', {{ $handle->price }}, {{ $handle->discounted_price }}, {{ $handle->discounted_percentage ?? 0 }}, '{{ $handle->ParentCategory->slug }}')" />
                                                             </div>
                                                         </div>
@@ -2211,7 +2211,7 @@
                                                                             class="plus border bg-dark text-light p-0"
                                                                             type="button" value="+" type="number"
                                                                             max="10"
-                                                                            {{$handle->price == 0 ? disabled : '' }} 
+                                                                            {{$handle->price == 0 ? 'disabled' : '' }} 
                                                                             onclick="increaseQuantity('{{ $handle->id }}', '{{ $handle->product_code }}', '{{ $handle->full_title }}', {{ $handle->price }}, {{ $handle->discounted_price }}, {{ $handle->discounted_percentage ?? 0 }}, '{{ $handle->ParentCategory->slug }}')" />
                                                                     </div>
                                                                     <div class="col-6">
@@ -2409,7 +2409,7 @@
                                                                         <input id="plus{{ $worktop->id }}"
                                                                             class="plus border bg-dark text-light p-0"
                                                                             type="button" value="+"
-                                                                            {{$worktop->price == 0 ? disabled : '' }} 
+                                                                            {{$worktop->price == 0 ? 'disabled' : '' }} 
                                                                             onclick="increaseQuantity('{{ $worktop->id }}', '{{ $worktop->product_code }}', '{{ $worktop->full_title }}', {{ $worktop->price }}, {{ $worktop->discounted_price }}, {{ $worktop->discounted_percentage ?? 0 }}, '{{ $worktop->ParentCategory->slug }}')" />
                                                                     </div>
                                                                 </div>
@@ -2576,7 +2576,7 @@
                                                                         <input id="plus{{ $worktopsAndUpStand->id }}"
                                                                             class="plus border bg-dark text-light p-0"
                                                                             type="button" value="+"
-                                                                            {{$worktopsAndUpStand->price == 0 ? disabled : '' }} 
+                                                                            {{$worktopsAndUpStand->price == 0 ? 'disabled' : '' }} 
                                                                             onclick="increaseQuantity('{{ $worktopsAndUpStand->id }}', '{{ $worktopsAndUpStand->product_code }}', '{{ $worktopsAndUpStand->full_title }}', {{ $worktopsAndUpStand->price }}, {{ $worktopsAndUpStand->discounted_price }}, {{ $worktopsAndUpStand->discounted_percentage ?? 0 }}, '{{ $worktopsAndUpStand->ParentCategory->slug }}')" />
                                                                     </div>
                                                                 </div>
@@ -2740,7 +2740,7 @@
                                                                         <input id="plus{{ $breakfastBar->id }}"
                                                                             class="plus border bg-dark text-light p-0"
                                                                             type="button" value="+"
-                                                                            {{$breakfastBar->price == 0 ? disabled : '' }} 
+                                                                            {{$breakfastBar->price == 0 ? 'disabled' : '' }} 
                                                                             onclick="increaseQuantity('{{ $breakfastBar->id }}', '{{ $breakfastBar->product_code }}', '{{ $breakfastBar->full_title }}', {{ $breakfastBar->price }}, {{ $breakfastBar->discounted_price }}, {{ $breakfastBar->discounted_percentage ?? 0 }}, '{{ $breakfastBar->ParentCategory->slug }}')" />
                                                                     </div>
                                                                 </div>
@@ -2904,7 +2904,7 @@
                                                                         <input id="plus{{ $edging->id }}"
                                                                             class="plus border bg-dark text-light p-0"
                                                                             type="button" value="+"
-                                                                            {{$edging->price == 0 ? disabled : '' }} 
+                                                                            {{$edging->price == 0 ? 'disabled' : '' }} 
                                                                             onclick="increaseQuantity('{{ $edging->id }}', '{{ $edging->product_code }}', '{{ $edging->full_title }}', {{ $edging->price }}, {{ $edging->discounted_price }}, {{ $edging->discounted_percentage ?? 0 }}, '{{ $edging->ParentCategory->slug }}')" />
                                                                     </div>
                                                                 </div>
@@ -3092,7 +3092,7 @@
                                                                         <input id="plus{{ $sink->id }}"
                                                                             class="plus border bg-dark text-light p-0"
                                                                             type="button" value="+"
-                                                                            {{$sink->price == 0 ? disabled : '' }} 
+                                                                            {{$sink->price == 0 ? 'disabled' : '' }} 
                                                                             onclick="increaseQuantity('{{ $sink->id }}', '{{ $sink->product_code }}', '{{ $sink->full_title }}', {{ $sink->price }}, {{ $sink->discounted_price }}, {{ $sink->discounted_percentage ?? 0 }}, '{{ $sink->ParentCategory->slug }}')" />
                                                                     </div>
                                                                 </div>
@@ -3256,7 +3256,7 @@
                                                                         <input id="plus{{ $tap->id }}"
                                                                             class="plus border bg-dark text-light p-0"
                                                                             type="button" value="+"
-                                                                            {{$tap->price == 0 ? disabled : '' }} 
+                                                                            {{$tap->price == 0 ? 'disabled' : '' }} 
                                                                             onclick="increaseQuantity('{{ $tap->id }}', '{{ $tap->product_code }}', '{{ $tap->full_title }}', {{ $tap->price }}, {{ $tap->discounted_price }}, {{ $tap->discounted_percentage ?? 0 }}, '{{ $tap->ParentCategory->slug }}')" />
                                                                     </div>
                                                                 </div>
@@ -3426,7 +3426,7 @@
                                                                 <input id="plus{{ $appliance->id }}"
                                                                     class="plus border bg-dark text-light p-0"
                                                                     type="button" value="+"
-                                                                    {{$appliance->price == 0 ? disabled : '' }} 
+                                                                    {{$appliance->price == 0 ? 'disabled' : '' }} 
                                                                     onclick="increaseQuantity('{{ $appliance->id }}', '{{ $appliance->product_code }}', '{{ $appliance->full_title }}', {{ $appliance->price }}, {{ $appliance->discounted_price }}, {{ $appliance->discounted_percentage ?? 0 }}, '{{ $appliance->ParentCategory->slug }}')" />
                                                             </div>
                                                         </div>
