@@ -574,7 +574,7 @@ function updateCartPage() {
       cartTableHtml += `<tr>`;
       cartTableHtml += `<td>`;
       cartTableHtml += `<i class='ri-btn ri-subtract-line' onclick="decreaseQuantityInCartPage('${product.id}', '${product.productCode}', '${product.full_title}', ${product.price}, ${product.discount_price}, ${product.discount_percentage}, '${product.p_category}')"></i>`;
-      cartTableHtml += `<i class='ri-btn ri-add-line' onclick="increaseQuantityInCartPage('${product.id}', '${product.productCode}', '${product.full_title}', ${product.price}, ${product.discount_price}, ${product.discount_percentage}, '${product.p_category}')"></i>`;
+      cartTableHtml += `<i class='ri-btn ri-add-line' ${product.price == 0 ? 'disabled' : ''} onclick="increaseQuantityInCartPage('${product.id}', '${product.productCode}', '${product.full_title}', ${product.price}, ${product.discount_price}, ${product.discount_percentage}, '${product.p_category}')"></i>`;
       cartTableHtml += `<i class='ri-btn ri-delete-bin-line' onclick="removeFromCart(${product.id}, '${product.productCode}')"></i>`;
       cartTableHtml += `</td>`;
       cartTableHtml += `<td>${product.full_title}&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" data-productId="${product.id}" class="openCompareModel text-decoration-underline text-danger" style="font-size: 12px;" data-toggle="modal" data-target="#myModal">Compare</a>&nbsp;&nbsp;<a href="javascript:void(0)" data-productId="${product.id}" class="openChangeStyleModal text-decoration-underline text-primary" style="font-size: 12px;" data-bs-toggle="modal" data-bs-target="#cart-items-modal" data-product-id="${product.id}">Change Style</a></td>`;
@@ -826,7 +826,7 @@ $(document).ready(function () {
                                                    <input id="minus${productDetails.id}" class="minus border bg-dark text-light p-0" type="button" value="-"
                                                          onclick="decreaseQuantity('${productDetails.id}', '${productDetails.product_code}', '${productDetails.full_title}', ${productDetails.price}, ${productDetails.discounted_price}, ${productDetails.discounted_percentage || 0}, '${productDetails.ParentCategory?.slug || ''}')" />
                                                    <input id="quantity${productDetails.id}" class="quantity border border-black text-center" type="text" value="0" name="quantity" disabled />
-                                                   <input id="plus${productDetails.id}" class="plus border bg-dark text-light p-0" type="button" value="+" max="10"
+                                                   <input ${productDetails.price == 0 ? 'disabled' : ''} id="plus${productDetails.id}" class="plus border bg-dark text-light p-0" type="button" value="+" max="10"
                                                          onclick="increaseQuantity('${productDetails.id}', '${productDetails.product_code}', '${productDetails.full_title}', ${productDetails.price}, ${productDetails.discounted_price}, ${productDetails.discounted_percentage || 0}, '${productDetails.ParentCategory?.slug || ''}')" />
                                                 </div>
                                              </div>
@@ -1388,6 +1388,7 @@ $(document).ready(function () {
                                        class="plus border bg-dark text-light p-0"
                                        type="button" value="+" type="number"
                                        max="10"
+                                       ${price == 0 ? 'disabled' : ''}
                                        onclick="increaseQuantity('${productId}', '${ productCode }', '${fullTitle}', ${ price }, ${ discountedPercentage }, ${ discountedPercentage ?? 0 }, '${ parentCategorySlug }')" />
                                  </div>
                            </div>

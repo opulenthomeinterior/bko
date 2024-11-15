@@ -403,6 +403,7 @@
                                                             class="plus border bg-dark text-light p-0"
                                                             type="button" value="+" type="number"
                                                             max="10"
+                                                            {{$product->price == 0 ? disabled : '' }} 
                                                             onclick="increaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}')" />
                                                     </div>
                                                     <div class="col-6">
