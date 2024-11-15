@@ -259,7 +259,7 @@
                     @if ($products->count() > 0)
                     @foreach ($products as $index => $product)
                     <div class="col-lg-4 col-6 mb-3">
-                        <div class="card btn btn-outline-warning border-1 bg-light p-0" style="border-radius: 0;">
+                        <div class="card btn btn-outline-warning text-dark border-1 bg-light p-0" style="border-radius: 0;">
                             <div class="card-header px-0 py-0">
                                 <div class="p-0 product-short-title-container w-100">
                                     <a href="{{ route('orderbyproduct', $product->slug) }}" class="product-short-title fw-bold text-decoration-underline fs-4">

@@ -115,7 +115,7 @@ $(document).ready(function () {
         productCard += `<div class="text-start">`;
         productCard += `<a href="${APP_URL + '/shop/by-product/' + product.slug}" class="text-start text-decoration-underline fs-5 fw-bold">${product.short_title}</a>`;
         productCard += `<p class="mt-2"><small class="fw-bold text-start text-dark">${product.product_code}</small></p>`;
-        productCard += `<p class="py-lg-3 py-2"><small class="fw-bold text-start">${product.dimensions}</small></p>`;
+        productCard += `<p class="py-lg-3 py-2"><small class="fw-bold text-start text-dark">${product.dimensions}</small></p>`;
         productCard += `</div>`;
         productCard += `</div>`;
         productCard += `<div class="col-12">`;
