@@ -303,12 +303,14 @@
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                 <div class="card border border-default">
-                    <div class="card-body d-flex">
+                    <div class="card-body d-flex align-items-center">
                         <div>
-                            <img src="" height="100px" width="100px" class="img-fluid rounded-circle">
+                            <img src="https://cdn-icons-png.flaticon.com/512/9385/9385289.png" height="100px" width="100px" class="img-fluid rounded-circle">
                         </div>
                         <div class="ms-2">
                             Smith
+                            <br>
+                            <small>2024-09-25</small>
                         </div>
                     </div>
                     <div class="card-footer">
@@ -318,12 +320,14 @@
             </div>
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                 <div class="card border border-default">
-                    <div class="card-body d-flex">
+                    <div class="card-body d-flex align-items-center">
                         <div>
-                            <img src="" height="100px" width="100px" class="img-fluid rounded-circle">
+                            <img src="https://cdn-icons-png.flaticon.com/512/9385/9385289.png" height="100px" width="100px" class="img-fluid rounded-circle">
                         </div>
                         <div class="ms-2">
                             Daisy
+                            <br>
+                            <small>2024-09-25</small>
                         </div>
                     </div>
                     <div class="card-footer">
@@ -333,12 +337,14 @@
             </div>
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                 <div class="card border border-default">
-                    <div class="card-body d-flex">
+                    <div class="card-body d-flex align-items-center">
                         <div>
-                            <img src="" height="100px" width="100px" class="img-fluid rounded-circle">
+                            <img src="https://cdn-icons-png.flaticon.com/512/9385/9385289.png" height="100px" width="100px" class="img-fluid rounded-circle">
                         </div>
                         <div class="ms-2">
                             Katherine Kate
+                            <br>
+                            <small>2024-09-25</small>
                         </div>
                     </div>
                     <div class="card-footer">
@@ -348,12 +354,14 @@
             </div>
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                 <div class="card border border-default">
-                    <div class="card-body d-flex">
+                    <div class="card-body d-flex align-items-center">
                         <div>
-                            <img src="" height="100px" width="100px" class="img-fluid rounded-circle">
+                            <img src="https://cdn-icons-png.flaticon.com/512/9385/9385289.png" height="100px" width="100px" class="img-fluid rounded-circle">
                         </div>
                         <div class="ms-2">
                             Amelia Turner
+                            <br>
+                            <small>2024-09-25</small>
                         </div>
                     </div>
                     <div class="card-footer">
