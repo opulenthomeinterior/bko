@@ -63,11 +63,6 @@ class HomeController extends Controller
             $data[$style->name] = $styleData;
         }
 
-        // echo '<pre>';
-        // print_r($data);
-        // echo '</pre>';
-        // exit;
-
         return view('frontend.shop.orderkitchen.index', compact('data'));
     }
 

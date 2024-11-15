@@ -168,7 +168,7 @@ $(document).ready(function () {
         productCard += `</div>`;
         productCard += `</div>`;
         productCard += `<div class="card-footer p-0">
-                            <a href="#" class="product-short-title text-decoration-underline">
+                            <a href="/shop/by-product/${product.slug}" class="product-short-title text-decoration-underline">
                                 <small>View more</small>
                             </a>
                         </div>`;

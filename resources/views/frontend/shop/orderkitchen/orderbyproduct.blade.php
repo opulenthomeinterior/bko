@@ -78,6 +78,7 @@
                             type="text" value="0" name="quantity" disabled />
                         <input id="plus{{ $product->id }}" class="plus border bg-dark text-light p-0" type="button"
                             value="+"
+                            {{$product->price == 0 ? 'disabled' : '' }} 
                             onclick="increaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }})" />
                     </div>
                 </div>
@@ -223,7 +224,7 @@
                                 @endif
                             </div>
                         </div>
-                        @if ($product->category->image_path)
+                        {{-- @if ($product->category->image_path)
                             <div class="col-lg-12 col-md-6 position-relative">
                                 <!-- Button trigger modal -->
                                 <a class="modal-icon z-3" href="#" data-bs-toggle="modal"
@@ -268,7 +269,7 @@
                                     src="{{ asset('uploads/categories/' . $product->category->parentCategory->image_path) }}"
                                     alt="Card image cap">
                             </div>
-                        @endif
+                        @endif --}}
                     </div>
                 </section>
             </div>
