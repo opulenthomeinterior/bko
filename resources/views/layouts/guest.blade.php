@@ -38,6 +38,8 @@ use App\Models\Style;
     {{-- Custom CSS --}}
     <link href="{{ asset('css/frontend.css') }}" rel="stylesheet" type="text/css" /><!-- Style -->
     <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
+
     <style>
         #whatsapp-icon {
             position: fixed;
@@ -148,6 +150,35 @@ use App\Models\Style;
         .select2-results__options {
             max-height: 280px !important; /* Adjust this value as needed */
             overflow-y: auto; /* Enable scrolling if items exceed the height */
+        }
+        
+        /* Hide the native radio button */
+        .radio-btn {
+            appearance: none; /* Removes default style */
+            width: 15px;
+            height: 15px;
+            border: 2px solid #ffc107; /* Warning border color */
+            border-radius: 50%;
+            position: relative;
+            cursor: pointer;
+        }
+
+        /* Create inner dot when selected */
+        .radio-btn:checked::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 6px;
+            height: 6px;
+            background-color: #ffc107; /* Warning color for checked state */
+            border-radius: 50%;
+        }
+
+        /* Focus style */
+        .radio-btn:focus {
+            outline: none;
         }
 
     </style>
@@ -367,13 +398,13 @@ use App\Models\Style;
                 <ul class="nav__list p-2">
                     <li class="dropdown__item">
                         <div class="nav__link dropdown__button">
-                            <a href="{{ route('orderkitchen') }}">Explore </a>
+                            <a href="{{ route('orderkitchen') }}">EXPLORE </a>
                             <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                         </div>
                         <div class="dropdown__container border-bottom border-warning border-2">
                             <div class="dropdown__content px-4" style="max-width: 100% !important; margin: 0px !important; grid-template-columns: none; column-gap: 0;">
                                 @php
-                                $styles = Style::whereIn('id', [1,2,3,4])->get();
+                                    $styles = Style::whereIn('id', [1,2,3,4])->get();
                                 @endphp
                                 @if (!empty($styles))
                                 <div class="dropdown__group">
@@ -385,7 +416,7 @@ use App\Models\Style;
                                                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
                                                     <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
                                                         <a style="width: 100%;" href="{{ route('orderkitchenbyname', [$style->slug]) }}" class="dropdown__link">
-                                                            <i class="ri-arrow-right-s-fill"></i> {{$style->name}} KITCHENS</a>
+                                                            <i class="ri-arrow-right-s-fill"></i> {{$style->name}} KITCHEN</a>
                                                     </li>
                                                 </div>
                                                 @endforeach
@@ -401,40 +432,28 @@ use App\Models\Style;
                                             <div class="row">
                                                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
                                                     <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
-                                                        <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['j-pull-22']) }}" class="dropdown__link">
-                                                            <i class="ri-arrow-right-s-fill"></i> J-PULL 22 KITCHENS</a>
+                                                        <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['j-pull']) }}" class="dropdown__link">
+                                                            <i class="ri-arrow-right-s-fill"></i> J-PULL KITCHEN</a>
                                                     </li>
                                                 </div>
                                                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
                                                     <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
                                                         <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['true-handleless']) }}" class="dropdown__link">
-                                                            <i class="ri-arrow-right-s-fill"></i> TRUE HANDLELESS KITCHENS</a>
+                                                            <i class="ri-arrow-right-s-fill"></i> TRUE HANDLELESS KITCHEN</a>
                                                     </li>
                                                 </div>
                                                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
                                                     <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
-                                                        <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['shaker-22']) }}" class="dropdown__link">
-                                                            <i class="ri-arrow-right-s-fill"></i> SHAKER 22 KITCHENS</a>
+                                                        <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['shaker']) }}" class="dropdown__link">
+                                                            <i class="ri-arrow-right-s-fill"></i> SHAKER KITCHEN</a>
                                                     </li>
                                                 </div>
                                                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
                                                     <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
                                                         <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['slab-painted']) }}" class="dropdown__link">
-                                                            <i class="ri-arrow-right-s-fill"></i> SLAB PAINTED KITCHENS</a>
+                                                            <i class="ri-arrow-right-s-fill"></i> SLAB PAINTED KITCHEN</a>
                                                     </li>
                                                 </div>
-                                                <!-- <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
-                                                    <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
-                                                        <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['slab-laminate']) }}" class="dropdown__link">
-                                                            <i class="ri-arrow-right-s-fill"></i> SLAB LAMINATE KITCHENS</a>
-                                                    </li>
-                                                </div>
-                                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
-                                                    <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
-                                                        <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['standard-mfc']) }}" class="dropdown__link">
-                                                            <i class="ri-arrow-right-s-fill"></i> STANDARD MFC KITCHENS</a>
-                                                    </li>
-                                                </div> -->
                                             </div>
                                         </div>
                                     </ul>
@@ -512,23 +531,34 @@ use App\Models\Style;
                                     <div class="col-3 text-center">
                                         <h4 class="text-start bg-dark text-white p-2">Choose Style:</h4>
                                         <ul class="dropdown__list">
-                                            <li>
-                                                <input type="radio" value="j-pull-22" name="style_name" class="style_type"> &nbsp; J-Pull 22 Kitchen
-                                            </li>
-                                            <li>
-                                                <input type="radio" value="true-handleless" name="style_name" class="style_type"> &nbsp; True Handleless Kitchen
-                                            </li>
-                                            <li>
-                                                <input type="radio" value="shaker-22" name="style_name" class="style_type"> &nbsp; Shaker 22 Kitchen
-                                            </li>
-                                            <li>
-                                                <input type="radio" value="slab-painted" name="style_name" class="style_type"> &nbsp; Slab Painted Kitchen
-                                            </li>
+                                            @php
+                                                $styles = Style::whereIn('id', [1,2,3,4])->get();
+                                            @endphp
+                                            @if (!empty($styles))
+                                                @foreach ($styles as $style)
+                                                    <li>
+                                                        <input type="radio" value="{{$style->slug}}" name="style_name" class="radio-btn"> &nbsp; {{$style->name}} KITCHEN
+                                                    </li>
+                                                @endforeach
+                                            @else
+                                                <li>
+                                                    <input type="radio" value="j-pull" name="style_name" class="radio-btn"> &nbsp; J-Pull KITCHEN
+                                                </li>
+                                                <li>
+                                                    <input type="radio" value="true-handleless" name="style_name" class="radio-btn"> &nbsp; True Handleless KITCHEN
+                                                </li>
+                                                <li>
+                                                    <input type="radio" value="shaker" name="style_name" class="radio-btn"> &nbsp; Shaker KITCHEN
+                                                </li>
+                                                <li>
+                                                    <input type="radio" value="slab-painted" name="style_name" class="radio-btn"> &nbsp; Slab Painted KITCHEN
+                                                </li>
+                                            @endif
                                             <!-- <li>
-                                                <input type="radio" value="slab-laminate" name="style_name" class="style_type"> &nbsp; Slab Laminate Kitchen
+                                                <input type="radio" value="slab-laminate" name="style_name" class="radio-btn"> &nbsp; Slab Laminate KITCHEN
                                             </li>
                                             <li>
-                                                <input type="radio" value="standard-mfc-kitchen" name="style_name" class="style_type"> &nbsp; Standard MFC Kitchen
+                                                <input type="radio" value="standard-mfc-kitchen" name="style_name" class="radio-btn"> &nbsp; Standard MFC KITCHEN
                                             </li> -->
                                         </ul>
                                     </div>
@@ -537,34 +567,34 @@ use App\Models\Style;
                                         <div class="row">
                                             <div class="col-6">
                                                 <ul class="dropdown__list">
-                                                    <li><input type="radio" name="colour_name" class="colour_type" id="superGlossWhite" value="superglosswhite"> &nbsp; SuperGloss White</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type" id="superGlossCashmere" value="superglosscashmere"> &nbsp; SuperGloss Cashmere</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type" id="ultraMattIndigo" value="ultramattindigo"> &nbsp; UltraMatt Indigo</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type" id="ultraMattWhite" value="ultramattwhite"> &nbsp; UltraMatt White</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type" id="ultraMattCashmere" value="ultramattcashmere"> &nbsp; UltraMatt Cashmere</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type" id="superGlossCream" value="superglosscream"> &nbsp; SuperGloss Cream</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type" id="ultraMattCream" value="ultramattcream"> &nbsp; UltraMatt Cream</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type" id="superGlossLightGrey" value="superglosslight-grey"> &nbsp; SuperGloss Light Grey</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type" id="ultraMattLightGrey" value="ultramattlight-grey"> &nbsp; UltraMatt Light Grey</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type" id="superGlossDarkGrey" value="superglossdark-grey"> &nbsp; SuperGloss Dark Grey</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type" id="ultraMattDarkGrey" value="ultramattdark-grey"> &nbsp; UltraMatt Dark Grey</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type" id="superGlossAnthracite" value="superglossanthracite"> &nbsp; SuperGloss Anthracite</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossWhite" value="superglosswhite"> &nbsp; SuperGloss White</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossCashmere" value="superglosscashmere"> &nbsp; SuperGloss Cashmere</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattIndigo" value="ultramattindigo"> &nbsp; UltraMatt Indigo</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattWhite" value="ultramattwhite"> &nbsp; UltraMatt White</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattCashmere" value="ultramattcashmere"> &nbsp; UltraMatt Cashmere</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossCream" value="superglosscream"> &nbsp; SuperGloss Cream</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattCream" value="ultramattcream"> &nbsp; UltraMatt Cream</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossLightGrey" value="superglosslight-grey"> &nbsp; SuperGloss Light Grey</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattLightGrey" value="ultramattlight-grey"> &nbsp; UltraMatt Light Grey</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossDarkGrey" value="superglossdark-grey"> &nbsp; SuperGloss Dark Grey</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattDarkGrey" value="ultramattdark-grey"> &nbsp; UltraMatt Dark Grey</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossAnthracite" value="superglossanthracite"> &nbsp; SuperGloss Anthracite</li>
                                                 </ul>
                                             </div>
                                             <div class="col-6">
                                                 <ul class="dropdown__list">
-                                                    <li><input type="radio" name="colour_name" class="colour_type" id="ultraMattAnthracite" value="ultramattanthracite"> &nbsp; UltraMatt Anthracite</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type" id="superGlossPaintToOrder" value="superglosspaint-to-order"> &nbsp; SuperGloss Paint to Order</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type" id="ultraMattPaintToOrder" value="ultramattpaint-to-order"> &nbsp; UltraMatt Paint to Order</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type" id="ultraMattFirGreen" value="ultramattfir-green"> &nbsp; UltraMatt Fir Green</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type" id="superGlossIvory" value="superglossivory"> &nbsp; SuperGloss Ivory</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type" id="ultraMattSageGreen" value="ultramattsage-green"> &nbsp; UltraMatt Sage Green</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type" id="ultraMattIvory" value="ultramattivory"> &nbsp; UltraMatt Ivory</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type" id="ultraMattBlackPowderCoated" value="ultramattblack-powder-coated"> &nbsp; UltraMatt Black Powder Coated</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type" id="superGlossDustGrey" value="superglossdust-grey"> &nbsp; SuperGloss Dust Grey</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type" id="ultraMattDustGrey" value="ultramattdust-grey"> &nbsp; UltraMatt Dust Grey</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type" id="superGlossIndigo" value="superglossindigo"> &nbsp; SuperGloss Indigo</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type" id="superGlossLightGray" value="superglosslight-gray"> &nbsp; SuperGloss Light Gray</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattAnthracite" value="ultramattanthracite"> &nbsp; UltraMatt Anthracite</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossPaintToOrder" value="superglosspaint-to-order"> &nbsp; SuperGloss Paint to Order</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattPaintToOrder" value="ultramattpaint-to-order"> &nbsp; UltraMatt Paint to Order</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattFirGreen" value="ultramattfir-green"> &nbsp; UltraMatt Fir Green</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossIvory" value="superglossivory"> &nbsp; SuperGloss Ivory</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattSageGreen" value="ultramattsage-green"> &nbsp; UltraMatt Sage Green</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattIvory" value="ultramattivory"> &nbsp; UltraMatt Ivory</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattBlackPowderCoated" value="ultramattblack-powder-coated"> &nbsp; UltraMatt Black Powder Coated</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossDustGrey" value="superglossdust-grey"> &nbsp; SuperGloss Dust Grey</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattDustGrey" value="ultramattdust-grey"> &nbsp; UltraMatt Dust Grey</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossIndigo" value="superglossindigo"> &nbsp; SuperGloss Indigo</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossLightGray" value="superglosslight-gray"> &nbsp; SuperGloss Light Gray</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -573,10 +603,10 @@ use App\Models\Style;
                                         <h4 class="text-start bg-dark text-white p-2">Choose Assembly:</h4>
                                         <ul class="dropdown__list">
                                             <li>
-                                                <input type="radio" value="rigid" name="assembly_name" class="assembly_type"> &nbsp; Rigid
+                                                <input type="radio" value="rigid" name="assembly_name" class="assembly_type radio-btn"> &nbsp; Rigid
                                             </li>
                                             <li>
-                                                <input type="radio" value="flat-pack" name="assembly_name" class="assembly_type"> &nbsp; Flat Pack
+                                                <input type="radio" value="flat-pack" name="assembly_name" class="assembly_type radio-btn"> &nbsp; Flat Pack
                                             </li>
                                         </ul>
                                     </div>
@@ -598,7 +628,7 @@ use App\Models\Style;
                         <div class="dropdown__container border-bottom border-warning border-2">
                             <div class="dropdown__content px-4" style="max-width: 100% !important; margin: 0px !important; grid-template-columns: none; column-gap: 0;">
                                 @php
-                                    $categories = Category::where('parent_category_id', null)->whereNotIn('name', ['BASE CABINETS', 'WALL CABINETS', 'TALL CABINETS'])->get();
+                                    $categories = Category::where('parent_category_id', null)->whereIn('slug', ['doors', 'accessories', 'internals', 'sinks', 'handles'])->get();
                                 @endphp
                                 @if (!empty($categories))
                                 <div class="dropdown__group">
@@ -637,25 +667,19 @@ use App\Models\Style;
                                                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
                                                     <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
                                                         <a href="{{ route('needhelp') }}" class="dropdown__link">
-                                                            <i class="ri-arrow-right-s-fill"></i> NEED HELP MEASURING?</a>
+                                                            <i class="ri-arrow-right-s-fill"></i> Need Help Measuring?</a>
                                                     </li>
                                                 </div>
                                                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
                                                     <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
                                                         <a href="{{ route('kitchenarrive') }}" class="dropdown__link">
-                                                            <i class="ri-arrow-right-s-fill"></i> HOW WILL MY KITCHEN ARRIVE?</a>
+                                                            <i class="ri-arrow-right-s-fill"></i> How Will My Kitchen Arrive?</a>
                                                     </li>
                                                 </div>
                                                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
                                                     <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
                                                         <a href="{{ route('about') }}" class="dropdown__link">
-                                                            <i class="ri-arrow-right-s-fill"></i> ABOUT US</a>
-                                                    </li>
-                                                </div>
-                                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
-                                                    <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
-                                                        <a href="{{ route('needhelp') }}" class="dropdown__link">
-                                                            <i class="ri-arrow-right-s-fill"></i> NEED HELP MEASURING?</a>
+                                                            <i class="ri-arrow-right-s-fill"></i> About Us</a>
                                                     </li>
                                                 </div>
                                             </div>
@@ -722,10 +746,10 @@ use App\Models\Style;
                                 <i class="ri-arrow-right-s-fill"></i>
                                 Mon-Sat: 9am to 5pm
                             </li>
-                            <li class="list-unstyled">
+                            <!-- <li class="list-unstyled">
                                 <i class="ri-arrow-right-s-fill"></i>
                                 Fri: 8am to 2:30pm
-                            </li>
+                            </li> -->
                             <li class="mt-2 list-unstyled">
                                 <a data-mdb-ripple-init class="text-dark btn btn-outline-warning btn-floating rounded-circle" href="#!"
                                     role="button"><i class="ri-facebook-fill pl-0"></i></a>

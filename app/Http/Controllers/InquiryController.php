@@ -27,17 +27,17 @@ class InquiryController extends Controller
             'message' => 'required|string|max:1000',
         ]);
 
-        $inquiry = Inquiry::create($request->all());
-
         $data = [
-            'name' => $inquiry->name,
-            'email' => $inquiry->email,
-            'phone' => $inquiry->phone,
-            'call_time' => $inquiry->call_time,
-            'message' => $inquiry->message,
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'call_time' => $request->call_time,
+            'message' => $request->message,
         ];
 
-        Mail::to($inquiry->email)->send(new InquiryEmail($data));
+        Mail::to('customerservices@bkonline.uk')->send(new InquiryEmail($data));
+
+        Inquiry::create($request->all());
 
         return redirect()->back()->with('success', 'Your inquiry has been sent successfully!');
     }

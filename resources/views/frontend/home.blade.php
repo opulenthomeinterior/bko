@@ -75,15 +75,20 @@
     .img-container {
         position: relative;
     }
+
+    .unique-font {
+        font-family: 'Merienda', cursive;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Optional shadow for emphasis */
+        letter-spacing: 0.02rem;
+    }
+
     </style>
-    <section class="container-fluid bg-dark px-lg-5 py-4 px-md-3 px-3 mt-4" style="border-top: 3px solid #febd49; border-right: 3px solid #febd49">
-        <div class="row py-4">
+    <section class="container-fluid bg-white px-lg-5 py-3 px-md-3 px-3 mt-4" style="border-top: 3px solid #febd49; border-right: 3px solid #febd49">
+        <div class="row">
             <div class="col-12 text-center">
-                <h1 class="fs-3 text-white text-uppercase fw-bolder">
+                <h1 class="fs-4 text-dark text-uppercase fw-bolder unique-font">
                     BK Online Kitchens - Quality Design, Installation, and Affordability in One Package
                 </h1>
-                <a href="{{ route('orderkitchen') }}" class="mt-4 btn btn-md btn-outline-warning fw-bolder text-uppercase rounded-0"
-                    href="{{ route('orderkitchen') }}">Order Now</a>
             </div>
         </div>
     </section>
@@ -116,27 +121,32 @@
         </div>
     </section> -->
 
-    <section class="container-fluid position-relative" style="height: 90vh; overflow: hidden; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49; border-left: 3px solid #febd49">
+    <section class="container-fluid position-relative" style="height: 100vh; overflow: hidden; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49; border-left: 3px solid #febd49">
         <img src="{{ asset('images/homepage.jpeg') }}"
             alt="Bespoke Kitchen Units in London and Surroundings"
             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: -1;">
 
         <div class="row h-100 w-100 d-flex justify-content-between align-items-center">
             <!-- Left div content -->
-            <div class="col-xl-7 col-lg-7 col-md-5 col-sm-12 col-xs-12 col-12 text-center d-flex justify-content-center">
-                <h2 class="text-white fw-bolder text-center p-2" 
-                    style="text-shadow: 5px 5px 5px black; background-color: rgba(0, 0, 0, 0.5); width: 90%; border-radius: 50px; border-left: 1px solid #febd49; border-top: 1px solid #febd49; border-bottom: 1px solid #febd49; border-right: 1px solid #febd49">
-                    WE CAN'T BE BEATEN ON PRICE!
+            <div class="col-xl-7 col-lg-7 col-md-5 col-sm-12 col-xs-12 col-12 text-center d-flex flex-column justify-content-center align-items-center">
+                <h2 class="unique-font text-white fw-bolder text-center p-2" 
+                    style="text-shadow: 5px 5px 5px black; background-color: rgba(0, 0, 0, 0.5); width: 90%; border-radius: 50px; border: 1px solid #febd49;">
+                    Retail Quality at Online Prices!
                 </h2>
+                <div class="mt-auto p-2">
+                    <a href="{{ route('orderkitchen') }}" class="btn btn-md btn-warning text-dark fw-bolder text-uppercase rounded-0">
+                        Order Now
+                    </a>
+                </div>
             </div>
 
             <!-- Right form content -->
             <div class="col-xl-5 col-lg-5 col-md-7 col-sm-12 col-xs-12 col-12 p-0 d-flex justify-content-center">
                 <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning w-75" style="background-color: rgba(0, 0, 0, 0.5); padding: 20px; border-radius: 0px;">
                     @csrf
-                    <h3 class="text-warning fw-bold text-center">
-                        Contact Us
-                    </h3>
+                    <h4 class="text-warning fw-bold text-center">
+                        Book a free consultation now!
+                    </h4>
                     <hr class="border border-warning">
                     <div class="mb-3">
                         <input type="text" style="color: black" class="border border-warning form-control text-dark" name="name" id="name" placeholder="Enter your name">
@@ -198,10 +208,10 @@
                                 <img src="{{ asset('images/j-pull-22.jpeg') }}" class="img-fluid w-100 h-100">
                                 <!-- Hover text -->
                                 <div class="hover-text position-absolute w-100 h-100 bg-warning text-dark d-flex justify-content-center align-items-center" style="top: 0; left: 0; transition: opacity 0.4s;">
-                                    <h5 class="text-dark">J-PULL 22 KITCHEN <br>If you are looking for J-pull Kitchen designs and installation in 1 package but at a lower price, you are at the right place!  BKO Kitchen can be your trusted partner in this kitchen renovation journey from consultation to installation.</h5>
+                                    <h5 class="text-dark">If you are looking for J-pull Kitchen designs and installation in 1 package but at a lower price, you are at the right place!  BKO Kitchen can be your trusted partner in this kitchen renovation journey from consultation to installation.</h5>
                                 </div>
                             </div>
-                            <p class="text-center mt-3" style="text-decoration: underline;">Order now</p>
+                            <p class="text-center mt-3" style="text-decoration: underline;">See our range</p>
                         </div>
                     </div>
                 </a>
@@ -216,10 +226,10 @@
                                 <img src="{{ asset('images/true-handleless.jpeg') }}" class="img-fluid w-100 h-100">
                                 <!-- Hover text -->
                                 <div class="hover-text position-absolute w-100 h-100 bg-warning text-dark d-flex justify-content-center align-items-center" style="top: 0; left: 0; transition: opacity 0.4s;">
-                                    <h5 class="text-dark">TRUE HANDLELESS KITCHEN <br>Do you find it challenging to find the dream luxury true-handleless kitchen within your budget? No more with BKO kitchen, we are here with our true handleless style kitchens that combine elegance and style with affordability.</h5>
+                                    <h5 class="text-dark">Do you find it challenging to find the dream luxury true-handleless kitchen within your budget? No more with BKO kitchen, we are here with our true handleless style kitchens that combine elegance and style with affordability.</h5>
                                 </div>
                             </div>
-                            <p class="text-center mt-3" style="text-decoration: underline;">Order now</p>
+                            <p class="text-center mt-3" style="text-decoration: underline;">See our range</p>
                         </div>
                     </div>
                 </a>
@@ -234,10 +244,10 @@
                                 <img src="{{ asset('images/shaker-22.jpeg') }}" class="img-fluid w-100 h-100">
                                 <!-- Hover text -->
                                 <div class="hover-text position-absolute w-100 h-100 bg-warning text-dark d-flex justify-content-center align-items-center" style="top: 0; left: 0; transition: opacity 0.4s;">
-                                    <h5 class="text-dark">SHAKER 22 KITCHEN <br>Are you struggling to find an online kitchen partner in the UK that installs shaker kitchens with retail quality at online prices? Consider BKO Kitchen as your trusted partner for streamlining your kitchen remodeling journey.</h5>
+                                    <h5 class="text-dark">Are you struggling to find an online kitchen partner in the UK that installs shaker kitchens with retail quality at online prices? Consider BKO Kitchen as your trusted partner for streamlining your kitchen remodeling journey.</h5>
                                 </div>
                             </div>
-                            <p class="text-center mt-3" style="text-decoration: underline;">Order now</p>
+                            <p class="text-center mt-3" style="text-decoration: underline;">See our range</p>
                         </div>
                     </div>
                 </a>
@@ -252,10 +262,10 @@
                                 <img src="{{ asset('images/slab.jpeg') }}" class="img-fluid w-100 h-100">
                                 <!-- Hover text -->
                                 <div class="hover-text position-absolute w-100 h-100 bg-warning text-dark d-flex justify-content-center align-items-center" style="top: 0; left: 0; transition: opacity 0.4s;">
-                                    <h5 class="text-dark">SLAB PAINTED KITCHEN <br>Are you thinking of renovating your old kitchen with a blend of aesthetics and modern touches? If so, it’s time to ease your life with BKO Kitchen. choose from our Slab Kitchen designs in your preferred colour to refresh your home vibes.</h5>
+                                    <h5 class="text-dark">Are you thinking of renovating your old kitchen with a blend of aesthetics and modern touches? If so, it’s time to ease your life with BKO Kitchen. choose from our Slab Kitchen designs in your preferred colour to refresh your home vibes.</h5>
                                 </div>
                             </div>
-                            <p class="text-center mt-3" style="text-decoration: underline;">Order now</p>
+                            <p class="text-center mt-3" style="text-decoration: underline;">See our range</p>
                         </div>
                     </div>
                 </a>
@@ -268,172 +278,95 @@
             <h3 class="text-uppercase fw-bolder text-dark text-center">ORDER COMPONENT</h3>
         </div>
         <div class="row mt-4">
+            @php
+                $categories = \App\Models\Category::where('parent_category_id', null)->whereIn('slug', ['doors', 'accessories', 'internals', 'sinks', 'handles'])->get();
+            @endphp
+            @foreach($categories as $category)
             <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
-                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'doors')}}">
+                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', [$category->slug])}}">
                     <div class="card-old">
                         <div class="card-body">
-                            <h5 class="card-title text-uppercase fw-bold text-center">DOORS</h5>
+                            <h5 class="card-title fw-bold text-center">{{$category->name}}</h5>
                         </div>
         
                     </div>
                 </a>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
-                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'panels-&-appliance-doors')}}">
-                    <div class="card-old">
-                        <div class="card-body">
-                            <h5 class="card-title text-uppercase fw-bold text-center">PANELS & APPLIANCE DOORS</h5>
+            @endforeach
+        </div>
+    </section>
+
+    <section class="container-fluid py-5" style="border-bottom: 3px solid #febd49; border-left: 3px solid #febd49">
+        <div class="row">
+            <h3 class="text-dark text-uppercase fw-bolder text-center mb-4">Testimonials</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="card border border-default">
+                    <div class="card-body d-flex">
+                        <div>
+                            <img src="" height="100px" width="100px" class="img-fluid rounded-circle">
                         </div>
-        
+                        <div class="ms-2">
+                            Smith
+                        </div>
                     </div>
-                </a>
+                    <div class="card-footer">
+                        <p class="text-dark text-center">My name is Smith, and my colleague told me about BKO Kitchen's online services. I contacted them via WhatsApp at my convenience, and they promptly arranged a free Consultation Call. My experience with BKO Kitchen was tremendous! Everything went smoothly from the planning stage to the installation of my shaker kitchen. I would definitely recommend their kitchen design and installation services to my friends.</p>
+                    </div>
+                </div>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
-                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'appliances')}}">
-                    <div class="card-old">
-                        <div class="card-body">
-                            <h5 class="card-title text-uppercase fw-bold text-center">APPLIANCES</h5>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="card border border-default">
+                    <div class="card-body d-flex">
+                        <div>
+                            <img src="" height="100px" width="100px" class="img-fluid rounded-circle">
                         </div>
-        
+                        <div class="ms-2">
+                            Daisy
+                        </div>
                     </div>
-                </a>
+                    <div class="card-footer">
+                        <p class="text-dark text-center">I am Daisy, and for a long time, I had been planning to update some utilities in my kitchen. I decided to purchase from BKO Kitchen and ordered their grey sink, tap, and a tall L-shaped blind corner unit. They delivered everything within the promised time frame, and the quality was exceptional. Plus, their prices were very affordable. I highly recommend BKO Kitchen to anyone seeking quality and affordability.</p>
+                    </div>
+                </div>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
-                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'edging')}}">
-                    <div class="card-old">
-                        <div class="card-body">
-                            <h5 class="card-title text-uppercase fw-bold text-center">EDGING</h5>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="card border border-default">
+                    <div class="card-body d-flex">
+                        <div>
+                            <img src="" height="100px" width="100px" class="img-fluid rounded-circle">
                         </div>
-        
+                        <div class="ms-2">
+                            Katherine Kate
+                        </div>
                     </div>
-                </a>
+                    <div class="card-footer">
+                        <p class="text-dark text-center">My name is Katherine Kate, and I love exploring luxurious handle-less kitchens online. I had the chance to buy from BKO Kitchen and their installation services as well.  I was amazed by their commitment to spot-on,  kitchen designs. They installed my dream handle-less kitchen in my small space, and ever since my kitchen has become my happy place to cook and create memories.</p>
+                    </div>
+                </div>
             </div>
-            {{-- <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
-                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'base-cabinets')}}">
-                    <div class="card-old">
-                        <div class="card-body">
-                            <h5 class="card-title text-uppercase fw-bold text-center">BASE CABINETS</h5>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="card border border-default">
+                    <div class="card-body d-flex">
+                        <div>
+                            <img src="" height="100px" width="100px" class="img-fluid rounded-circle">
                         </div>
-        
-                    </div>
-                </a>
-            </div> --}}
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
-                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'handles')}}">
-                    <div class="card-old">
-                        <div class="card-body">
-                            <h5 class="card-title text-uppercase fw-bold text-center">HANDLES</h5>
+                        <div class="ms-2">
+                            Amelia Turner
                         </div>
-        
                     </div>
-                </a>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
-                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'worktops')}}">
-                    <div class="card-old">
-                        <div class="card-body">
-                            <h5 class="card-title text-uppercase fw-bold text-center">WORKTOPS</h5>
-                        </div>
-        
+                    <div class="card-footer">
+                        <p class="text-dark text-center">My name is Amelia Turner, and I contacted BKO Kitchen through WhatsApp for their bespoke kitchen designs and installation services in London. They made my kitchen renovation journey incredibly easy. After conducting a thorough kitchen survey, they installed a bespoke kitchen in my small space, and the result was magical. Everything was spot on, and my kitchen even feels more roomy now. I'm fully satisfied with BKO Kitchen and highly recommend their services."</p>
                     </div>
-                </a>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
-                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'taps')}}">
-                    <div class="card-old">
-                        <div class="card-body">
-                            <h5 class="card-title text-uppercase fw-bold text-center">TAPS</h5>
-                        </div>
-        
-                    </div>
-                </a>
-            </div>
-            {{--<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
-                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'wall-cabinets')}}">
-                    <div class="card-old">
-                        <div class="card-body">
-                            <h5 class="card-title text-uppercase fw-bold text-center">WALL CABINETS</h5>
-                        </div>
-        
-                    </div>
-                </a>
-            </div>--}}
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
-                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'gola-handleless-rails')}}">
-                    <div class="card-old">
-                        <div class="card-body">
-                            <h5 class="card-title text-uppercase fw-bold text-center">GOLA HANDLELESS RAILS</h5>
-                        </div>
-        
-                    </div>
-                </a>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
-                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'worktops-and-upstands')}}">
-                    <div class="card-old">
-                        <div class="card-body">
-                            <h5 class="card-title text-uppercase fw-bold text-center">WORKTOPS AND UPSTANDS</h5>
-                        </div>
-        
-                    </div>
-                </a>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
-                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'sinks')}}">
-                    <div class="card-old">
-                        <div class="card-body">
-                            <h5 class="card-title text-uppercase fw-bold text-center">SINKS</h5>
-                        </div>
-        
-                    </div>
-                </a>
-            </div>
-            {{--<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
-                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'tall-cabinets')}}">
-                    <div class="card-old">
-                        <div class="card-body">
-                            <h5 class="card-title text-uppercase fw-bold text-center">TALL CABINETS</h5>
-                        </div>
-        
-                    </div>
-                </a>
-            </div>--}}
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
-                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'accessories')}}">
-                    <div class="card-old">
-                        <div class="card-body">
-                            <h5 class="card-title text-uppercase fw-bold text-center">ACCESSORIES</h5>
-                        </div>
-        
-                    </div>
-                </a>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
-                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'breakfast-bars')}}">
-                    <div class="card-old">
-                        <div class="card-body">
-                            <h5 class="card-title text-uppercase fw-bold text-center">BREAKFAST BARDS</h5>
-                        </div>
-        
-                    </div>
-                </a>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
-                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', 'swatches-and-samples')}}">
-                    <div class="card-old">
-                        <div class="card-body">
-                            <h5 class="card-title text-uppercase fw-bold text-center">SWATCHES AND SAMPLES</h5>
-                        </div>
-        
-                    </div>
-                </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="container-fluid py-5 p-0" style="border-bottom: 3px solid #febd49; border-left: 3px solid #febd49">
+    <section class="container-fluid py-5 p-0" style="border-bottom: 3px solid #febd49; border-right: 3px solid #febd49">
         <div class="row">
-            <h3 class="text-dark text-uppercase fw-bolder text-center">General BK Online FAQs</h3>
+            <h3 class="text-dark text-uppercase fw-bolder text-center">FAQs</h3>
         </div>
         <div class="row">
             <div class="col-lg-12">

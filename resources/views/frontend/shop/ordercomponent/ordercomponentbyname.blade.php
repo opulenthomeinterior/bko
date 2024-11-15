@@ -145,7 +145,6 @@
                     @endif
 
                     @if ($assemblies->count() > 0)
-                    @if ($category->name != 'DOORS' && $category->name != 'SINKS' && $category->name != 'HANDLES' && $category->name != 'TAPS')
                     <div class="accordion accordion-flush mt-3" id="accordionFlushExample2">
                         <div class="accordion-item bg-transparent border border-dark border-1 rounded-0 px-2">
                             <h2 class="accordion-header" id="flush-headingTwo">
@@ -160,23 +159,26 @@
                                 <div class="accordion-body px-0 py-0 pb-1">
                                     <div class="row g-1">
                                         @foreach ($assemblies as $index => $assembly)
-                                        <div class="col-lg-12 col-md-12 col-6">
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox"
-                                                    name="assemblies[]" id="assembly{{ $index }}"
-                                                    value="{{ $assembly->id }}">
-                                                <label class="form-check-label"
-                                                    for="assembly{{ $index }}">{{ $assembly->name }}
-                                                </label>
-                                            </div>
-                                        </div>
+                                            @if ($assembly->slug == 'stock' && ($category->slug == 'doors' || $category->slug == 'accessories' || $category->slug == 'handles' || $category->slug == 'sinks' || $category->slug == 'internals'))
+                                                <div class="col-lg-12 col-md-12 col-6">
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            name="assemblies[]" id="assembly{{ $index }}"
+                                                            value="{{ $assembly->id }}">
+                                                        <label class="form-check-label"
+                                                            for="assembly{{ $index }}">{{ $assembly->name }}
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            @else
+                                                
+                                            @endif
                                         @endforeach
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    @endif
                     @endif
 
                     @if ($types->count() > 0)
