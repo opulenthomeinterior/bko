@@ -528,7 +528,7 @@ use App\Models\Style;
                         <div class="dropdown__container py-4 border-bottom border-warning border-2">
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-3 text-center">
+                                    <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 text-start">
                                         <h4 class="text-start bg-dark text-white p-2">Choose Style:</h4>
                                         <ul class="dropdown__list">
                                             @php
@@ -562,7 +562,7 @@ use App\Models\Style;
                                             </li> -->
                                         </ul>
                                     </div>
-                                    <div class="col-6 text-center">
+                                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 text-start">
                                         <h4 class="text-start bg-dark text-white p-2">Choose Color:</h4>
                                         <div class="row">
                                             <div class="col-6">
@@ -599,7 +599,7 @@ use App\Models\Style;
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-3 text-center">
+                                    <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 text-start">
                                         <h4 class="text-start bg-dark text-white p-2">Choose Assembly:</h4>
                                         <ul class="dropdown__list">
                                             <li>
