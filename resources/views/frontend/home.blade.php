@@ -199,7 +199,7 @@
         </div>
         <div class="row mt-4 px-0">
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12 col-12 mb-4">
-                <a class="btn btn-outline-warning p-1 border-0" style="border-radius: 0;" href="{{ route('orderkitchenbyname', 'j-pull-22') }}">
+                <a class="btn btn-outline-warning p-1 border-0" style="border-radius: 0;" href="{{ route('orderkitchenbyname', 'j-pull') }}">
                     <div style="height: 200px;" class="card component-card border-0 h-100 d-flex flex-column justify-content-between">
                         <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">J-PULL 22 KITCHEN</h4>
                         <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end position-relative">
@@ -235,7 +235,7 @@
                 </a>
             </div>
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12 col-12 mb-4">
-                <a class="btn btn-outline-warning p-1 border-0" style="border-radius: 0;" href="{{ route('orderkitchenbyname', 'shaker-22') }}">
+                <a class="btn btn-outline-warning p-1 border-0" style="border-radius: 0;" href="{{ route('orderkitchenbyname', 'shaker') }}">
                     <div style="height: 200px;" class="card component-card border-0 h-100 d-flex flex-column justify-content-between">
                         <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">SHAKER 22 KITCHEN</h4>
                         <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end position-relative">
