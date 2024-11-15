@@ -205,7 +205,7 @@
                         <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end position-relative">
                             <!-- Image container -->
                             <div class="position-relative img-container">
-                                <img src="{{ asset('images/j-pull-22.jpeg') }}" class="img-fluid w-100 h-100">
+                                <img src="https://bkonline.uk/public/uploads/styles/15_11_2024_121241_67373ab9d8f19-j-pull-22.jpeg" class="img-fluid w-100 h-100">
                                 <!-- Hover text -->
                                 <div class="hover-text position-absolute w-100 h-100 bg-warning text-dark d-flex justify-content-center align-items-center" style="top: 0; left: 0; transition: opacity 0.4s;">
                                     <h5 class="text-dark">If you are looking for J-pull Kitchen designs and installation in 1 package but at a lower price, you are at the right place!  BKO Kitchen can be your trusted partner in this kitchen renovation journey from consultation to installation.</h5>
@@ -223,7 +223,7 @@
                         <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end position-relative">
                             <!-- Image container -->
                             <div class="position-relative img-container">
-                                <img src="{{ asset('images/true-handleless.jpeg') }}" class="img-fluid w-100 h-100">
+                                <img src="https://bkonline.uk/public/uploads/styles/15_11_2024_171644_673781fcba4e5-true-handleless.jpeg" class="img-fluid w-100 h-100">
                                 <!-- Hover text -->
                                 <div class="hover-text position-absolute w-100 h-100 bg-warning text-dark d-flex justify-content-center align-items-center" style="top: 0; left: 0; transition: opacity 0.4s;">
                                     <h5 class="text-dark">Do you find it challenging to find the dream luxury true-handleless kitchen within your budget? No more with BKO kitchen, we are here with our true handleless style kitchens that combine elegance and style with affordability.</h5>
@@ -241,7 +241,7 @@
                         <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end position-relative">
                             <!-- Image container -->
                             <div class="position-relative img-container">
-                                <img src="{{ asset('images/shaker-22.jpeg') }}" class="img-fluid w-100 h-100">
+                                <img src="https://bkonline.uk/public/uploads/styles/15_11_2024_171606_673781d675f0e-shaker-22.jpeg" class="img-fluid w-100 h-100">
                                 <!-- Hover text -->
                                 <div class="hover-text position-absolute w-100 h-100 bg-warning text-dark d-flex justify-content-center align-items-center" style="top: 0; left: 0; transition: opacity 0.4s;">
                                     <h5 class="text-dark">Are you struggling to find an online kitchen partner in the UK that installs shaker kitchens with retail quality at online prices? Consider BKO Kitchen as your trusted partner for streamlining your kitchen remodeling journey.</h5>
@@ -259,7 +259,7 @@
                         <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end position-relative">
                             <!-- Image container -->
                             <div class="position-relative img-container">
-                                <img src="{{ asset('images/slab.jpeg') }}" class="img-fluid w-100 h-100">
+                                <img src="https://bkonline.uk/public/uploads/styles/15_11_2024_171731_6737822b56477-slab-painted.jpeg" class="img-fluid w-100 h-100">
                                 <!-- Hover text -->
                                 <div class="hover-text position-absolute w-100 h-100 bg-warning text-dark d-flex justify-content-center align-items-center" style="top: 0; left: 0; transition: opacity 0.4s;">
                                     <h5 class="text-dark">Are you thinking of renovating your old kitchen with a blend of aesthetics and modern touches? If so, it’s time to ease your life with BKO Kitchen. choose from our Slab Kitchen designs in your preferred colour to refresh your home vibes.</h5>
