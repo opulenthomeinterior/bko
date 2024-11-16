@@ -563,7 +563,7 @@ use App\Models\Style;
                                         </ul>
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 text-start">
-                                        <h4 class="text-start bg-dark text-white p-2">Choose Color:</h4>
+                                        <h4 class="text-start bg-dark text-white p-2">Choose Colour:</h4>
                                         <div class="row">
                                             <div class="col-6">
                                                 <ul class="dropdown__list">
@@ -613,7 +613,7 @@ use App\Models\Style;
                                 </div>
                             </div>
                             <hr>
-                            <div class="d-flex justify-content-center mt-4">
+                            <div class="d-flex justify-content-center my-4">
                                 <button class="btn btn-sm btn-dark rounded-0 w-50 disabled" id="order-now">
                                     ORDER NOW
                                 </button>
