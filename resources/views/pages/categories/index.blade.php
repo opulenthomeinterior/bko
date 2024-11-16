@@ -42,6 +42,7 @@
                                         <th>Category Name</th>
                                         <th>Category Description</th>
                                         <th>Parent Category</th>
+                                        <th>Status</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -63,6 +64,7 @@
                                                 {{ Str::limit(strip_tags($category->description ?? 'N/A'), 20, '...') }}
                                             </td>
                                             <td class="align-middle">{{ $category->parentCategory->name ?? 'N/A' }}</td>
+                                            <td class="align-middle">{!! $category->status == 1 ? '<span class="badge bg-primary">Active</span>' : '<span class="badge bg-danger">In Active</span>' !!}</td>
                                             <td class="align-middle" align="center">
                                                 <div class="d-flex flex-row gap-2">
                                                     <a class="btn btn-soft-info btn-sm d-inline-block edit-button"

@@ -33,6 +33,7 @@ class ColourController extends Controller
             // $colour->slug = str_replace(' ', '-', strtolower($request->input('name')));
             $colour->colour_code = $request->input('colour_code');
             $colour->finishing = $request->input('finishing');
+            $colour->status = !empty($request->input('status')) ? 1 : 0;
 
             // Handle image upload (if a new image is provided)
             if ($request->hasFile('image_path')) {
@@ -73,6 +74,7 @@ class ColourController extends Controller
             // $colour->slug = str_replace(' ', '-', strtolower($request->input('name')));
             $colour->colour_code = $request->input('colour_code');
             $colour->finishing = $request->input('finishing');
+            $colour->status = !empty($request->input('status')) ? 1 : 0;
 
             // Handle image upload (if a new image is provided)
             if ($request->hasFile('image_path')) {

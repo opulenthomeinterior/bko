@@ -39,9 +39,9 @@ class HomeController extends Controller
     public function orderkitchen()
     {
         // Get all unique styles and assemblies
-        $uniqueStyles = Style::distinct()->whereIn('id', [1,2,3,4])->get();
+        $uniqueStyles = Style::distinct()->where('status', 1)->get();
         // $uniqueAssemblies = Assembly::whereIn('name', ['Flat-Packed', 'Rigid'])->get();
-        $uniqueAssemblies = Assembly::whereIn('name', ['Flat Pack', 'Rigid'])->get();
+        $uniqueAssemblies = Assembly::whereIn('name', ['Flat Pack', 'Rigid'])->where('status', 1)->get();
 
         $data = [];
         $assemblyData = [];
@@ -55,7 +55,7 @@ class HomeController extends Controller
 
                 // Extract color records from products
                 $assemblyData['data'] = $assembly;
-                $assemblyData['colours'] = Colour::whereIn('id', $products->pluck('colour_id')->unique())->whereNotNull('finishing')->get();
+                $assemblyData['colours'] = Colour::whereIn('id', $products->pluck('colour_id')->unique())->whereNotNull('finishing')->where('status', 1)->get();
 
                 $styleData['assemblies'][$assembly->name] = $assemblyData;
             }
@@ -70,9 +70,9 @@ class HomeController extends Controller
     public function orderkitchenbyname(Request $request, $slug)
     {
         try {
-            $style = Style::where('slug', $slug)->firstOrFail();
+            $style = Style::where('slug', $slug)->where('status', 1)->firstOrFail();
 
-            $uniqueAssemblies = Assembly::whereIn('name', ['Flat Pack', 'Rigid'])->get();
+            $uniqueAssemblies = Assembly::whereIn('name', ['Flat Pack', 'Rigid'])->where('status', 1)->get();
 
             $styleData['data'] = $style;
             $styleData['assemblies'] = [];
@@ -100,9 +100,9 @@ class HomeController extends Controller
     public function orderkitchenbycolour(Request $request, $style = null, $assembly = null, $colour = null)
     {
         try {
-            $style = Style::where('slug', $style)->firstOrFail();
-            $assembly = Assembly::where('slug', $assembly)->firstOrFail();
-            $colour = Colour::where('slug', $colour)->firstOrFail();
+            $style = Style::where('slug', $style)->where('status', 1)->firstOrFail();
+            $assembly = Assembly::where('slug', $assembly)->where('status', 1)->firstOrFail();
+            $colour = Colour::where('slug', $colour)->where('status', 1)->firstOrFail();
 
             $title = trim(($style->name ?? '') . ' ' . ($colour->trade_colour ?? '') . ' ' . ($assembly->name ?? ''));
 
@@ -228,9 +228,9 @@ class HomeController extends Controller
     public function viewallorderkitchenbycolour(Request $request, $style = null, $assembly = null, $colour = null)
     {
         try {
-            $style = Style::where('slug', $style)->firstOrFail();
-            $assembly = Assembly::where('slug', $assembly)->firstOrFail();
-            $colour = Colour::where('slug', $colour)->firstOrFail();
+            $style = Style::where('slug', $style)->where('status', 1)->firstOrFail();
+            $assembly = Assembly::where('slug', $assembly)->where('status', 1)->firstOrFail();
+            $colour = Colour::where('slug', $colour)->where('status', 1)->firstOrFail();
 
             $title = trim(($style->name ?? '') . ' ' . ($colour->trade_colour ?? '') . ' ' . ($assembly->name ?? ''));
 
@@ -343,7 +343,7 @@ class HomeController extends Controller
 
     public function ordercomponent(Request $request)
     {
-        $components = Category::whereNull('parent_category_id')->whereIn('slug', ['doors', 'accessories', 'internals', 'sinks', 'handles'])->get();
+        $components = Category::whereNull('parent_category_id')->where('status', 1)->get();
 
         // echo '<pre>';
         // print_r($components);
@@ -367,10 +367,10 @@ class HomeController extends Controller
         })
         ->orderBy('name', 'ASC')
         ->get();
-        $assemblies = Assembly::all();
-        $styles = Style::where('slug', '!=', 'j-pull')->get();
+        $assemblies = Assembly::where('slug', 'stock')->where('status', 1)->get();
+        $styles = Style::where('slug', '!=', 'j-pull')->where('status', 1)->get();
 
-        $colours = Colour::whereIn('id', Product::whereIn('category_id', $children)->pluck('colour_id')->unique())->whereNotNull('finishing')->get();
+        $colours = Colour::whereIn('id', Product::whereIn('category_id', $children)->pluck('colour_id')->unique())->whereNotNull('finishing')->where('status', 1)->get();
 
         // Include the current category in the list of children
         $children[] = $category->id;
@@ -472,9 +472,9 @@ class HomeController extends Controller
         $children[] = $parent_category->id;
 
         $types = Category::whereIn('id', $children)->get();
-        $assemblies = Assembly::all();
-        $styles = Style::all();
-        $colours = Colour::whereIn('id', Product::whereIn('category_id', $children)->where('status', 'active')->pluck('colour_id')->unique())->whereNotNull('finishing')->get();
+        $assemblies = Assembly::where('status', 1)->get();
+        $styles = Style::where('status', 1)->get();
+        $colours = Colour::whereIn('id', Product::whereIn('category_id', $children)->where('status', 'active')->pluck('colour_id')->unique())->where('status', 1)->whereNotNull('finishing')->get();
 
         return response()->json([
             'category' => $parent_category,
@@ -497,7 +497,7 @@ class HomeController extends Controller
         $products = Product::where('style_id', $product->style_id)->where('assembly_id', $product->assembly_id)->where('status', 'active')->get();
 
         $colours = Colour::whereIn('id', $products->pluck('colour_id')->unique())
-            ->whereNotNull('finishing')
+            ->whereNotNull('finishing')->where('status', 1)
             ->where('id', '!=', $product->colour_id)
             ->get();
 
@@ -674,7 +674,7 @@ class HomeController extends Controller
 
             $product = Product::where('id', $id)->with('style', 'assembly', 'colour')->where('status', 'active')->first();
 
-            $styles = Style::where('id', '!=', $product->style_id)->pluck('id');
+            $styles = Style::where('id', '!=', $product->style_id)->where('status', 1)->pluck('id');
 
             // echo '<pre>';
             // print_r($product);
@@ -696,8 +696,8 @@ class HomeController extends Controller
     public function site_maps() {
 
         // Get all unique styles and assemblies
-        $uniqueStyles = Style::distinct()->get();
-        $uniqueAssemblies = Assembly::whereIn('name', ['Flat Pack', 'Rigid'])->get();
+        $uniqueStyles = Style::distinct()->where('status', 1)->get();
+        $uniqueAssemblies = Assembly::whereIn('name', ['Flat Pack', 'Rigid'])->where('status', 1)->get();
 
         // Order Kitchen
         $orderKitchen = [];
@@ -712,7 +712,7 @@ class HomeController extends Controller
 
                 // Extract color records from products
                 $assemblyData['data'] = $assembly;
-                $assemblyData['colours'] = Colour::whereIn('id', $products->pluck('colour_id')->unique())->whereNotNull('finishing')->get();
+                $assemblyData['colours'] = Colour::whereIn('id', $products->pluck('colour_id')->unique())->whereNotNull('finishing')->where('status', 1)->get();
 
                 $styleData['assemblies'][$assembly->name] = $assemblyData;
             }

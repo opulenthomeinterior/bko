@@ -32,6 +32,7 @@ class StyleController extends Controller
             $style->slug = str_replace(' ', '-', strtolower($request->input('name')));
             $style->style_title = $request->input('style_title');
             $style->style_description = $request->input('style_description');
+            $style->status = !empty($request->input('status')) ? 1 : 0;
 
             if ($request->hasFile('image_path')) {
 
@@ -66,6 +67,7 @@ class StyleController extends Controller
             $style->slug = str_replace(' ', '-', strtolower($request->input('name')));
             $style->style_title = $request->input('style_title');
             $style->style_description = $request->input('style_description');
+            $style->status = !empty($request->input('status')) ? 1 : 0;
 
             // Handle image upload (if a new image is provided)
             if ($request->hasFile('image_path')) {

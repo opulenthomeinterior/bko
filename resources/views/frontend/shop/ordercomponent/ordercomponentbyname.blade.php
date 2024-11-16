@@ -68,7 +68,6 @@
                 <form action="" class="mt-2">
                     <input type="hidden" name="slug" id="slug" value="{{ $category->slug }}">
 
-                    @if ($category->name != 'SINKS' && $category->name != 'HANDLES' && $category->name != 'TAPS')
                     @if ($styles->count() > 0)
                     <div class="accordion accordion-flush mt-3" id="accordionFlushExample3">
                         <div class="accordion-item bg-transparent border border-dark border-1 rounded-0 px-2">
@@ -84,7 +83,6 @@
                                 <div class="accordion-body px-0 py-0 pb-1">
                                     <div class="row g-1">
                                         @foreach ($styles as $index => $style)
-                                        @if ($style->name != 'Shaker-22' && $style->name != 'Dual lever' && $style->name != 'Single Lever' && $style->name != 'Singlel lever' && $style->name != 'Cashmere')
                                         <div class="col-lg-12 col-md-12 col-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" name="styles[]"
@@ -95,14 +93,12 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        @endif
                                         @endforeach
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    @endif
                     @endif
 
                     @if ($colours->count() > 0)

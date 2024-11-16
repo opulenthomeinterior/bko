@@ -49,6 +49,11 @@
                                     <label for="image_path" class="form-label">Upload Image</label>
                                     <input type="file" accept="image/*" class="form-control" id="image_path" name="image_path" onchange="display_image(this)">
                                 </div>
+                                <div class="col-lg-6">
+                                    <label for="colour_status" class="form-label">Status</label>
+                                    <br>
+                                    <input type="checkbox" id="colour_status" name="status" {{$colour->status == 1 ? 'checked' : ''}}>
+                                </div>
                                 <div class="col-lg-6 form-group mb-2 preview-image-wrapper {{ $colour->image_path ? 'd-block' : 'd-none' }}">
                                     <label for="image_preview" class="form-label">Image Preview</label>
                                     <img id="image_preview" style="height: 100px;width: 100px;"

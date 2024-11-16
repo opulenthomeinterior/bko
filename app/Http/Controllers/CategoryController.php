@@ -51,6 +51,7 @@ class CategoryController extends Controller
             $category->slug = str_replace(' ', '-', strtolower($request->input('name')));
             $category->description = $request->input('description');
             $category->parent_category_id = $request->input('parent_category_id');
+            $category->status = !empty($request->input('status')) ? 1 : 0;
 
             if ($request->hasFile('image_path')) {
 
@@ -130,6 +131,7 @@ class CategoryController extends Controller
             $category->slug = str_replace(' ', '-', strtolower($request->input('name')));
             $category->description = $request->input('description');
             $category->parent_category_id = $request->input('parent_category_id');
+            $category->status = !empty($request->input('status')) ? 1 : 0;
 
             // Handle image upload (if a new image is provided)
             if ($request->hasFile('image_path')) {

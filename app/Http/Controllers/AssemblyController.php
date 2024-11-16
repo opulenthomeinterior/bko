@@ -28,6 +28,7 @@ class AssemblyController extends Controller
             $assembly = new Assembly();
             $assembly->name = $request->input('name');
             $assembly->slug = str_replace(' ', '-', strtolower($request->input('name')));
+            $assembly->status = !empty($request->input('status')) ? 1 : 0;
             $assembly->save();
 
             return redirect()->route('assemblies')->with('success', 'Assembly created successfully.');
@@ -50,6 +51,7 @@ class AssemblyController extends Controller
         try {
             $assembly->name = $request->input('name');
             $assembly->slug = str_replace(' ', '-', strtolower($request->input('name')));
+            $assembly->status = !empty($request->input('status')) ? 1 : 0;
             $assembly->save();
 
             return redirect()->route('assemblies')->with('success', 'Assembly updated successfully.');

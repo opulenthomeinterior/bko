@@ -404,7 +404,7 @@ use App\Models\Style;
                         <div class="dropdown__container border-bottom border-warning border-2">
                             <div class="dropdown__content px-4" style="max-width: 100% !important; margin: 0px !important; grid-template-columns: none; column-gap: 0;">
                                 @php
-                                    $styles = Style::whereIn('id', [1,2,3,4])->get();
+                                    $styles = Style::where('status', 1)->get();
                                 @endphp
                                 @if (!empty($styles))
                                 <div class="dropdown__group">
@@ -525,14 +525,14 @@ use App\Models\Style;
                             <a href="{{ route('orderkitchen') }}">ORDER KITCHEN </a>
                             <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                         </div>
-                        <div class="dropdown__container py-4 border-bottom border-warning border-2">
-                            <div class="container">
+                        <div class="dropdown__container border-bottom border-warning border-2">
+                            <div class="container my-3">
                                 <div class="row">
                                     <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 text-start">
                                         <h4 class="text-start bg-dark text-white p-2">Choose Style:</h4>
                                         <ul class="dropdown__list">
                                             @php
-                                                $styles = Style::whereIn('id', [1,2,3,4])->get();
+                                                $styles = Style::where('status', 1)->get();
                                             @endphp
                                             @if (!empty($styles))
                                                 @foreach ($styles as $style)
@@ -542,7 +542,7 @@ use App\Models\Style;
                                                 @endforeach
                                             @else
                                                 <li>
-                                                    <input type="radio" value="j-pull" name="style_name" class="radio-btn"> &nbsp; J-Pull KITCHEN
+                                                    <input type="radio" value="j-pull" name="style_name" class="radio-btn"> &nbsp; J Pull KITCHEN
                                                 </li>
                                                 <li>
                                                     <input type="radio" value="true-handleless" name="style_name" class="radio-btn"> &nbsp; True Handleless KITCHEN
@@ -628,7 +628,7 @@ use App\Models\Style;
                         <div class="dropdown__container border-bottom border-warning border-2">
                             <div class="dropdown__content px-4" style="max-width: 100% !important; margin: 0px !important; grid-template-columns: none; column-gap: 0;">
                                 @php
-                                    $categories = Category::where('parent_category_id', null)->whereIn('slug', ['doors', 'accessories', 'internals', 'sinks', 'handles'])->get();
+                                    $categories = Category::where('parent_category_id', null)->where('status', 1)->get();
                                 @endphp
                                 @if (!empty($categories))
                                 <div class="dropdown__group">

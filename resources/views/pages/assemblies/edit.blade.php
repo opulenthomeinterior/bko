@@ -34,6 +34,12 @@
                                     <input type="text" class="form-control" id="name" name="name"
                                         placeholder="Enter Assembly Name" value="{{ $assembly->name }}">
                                 </div>
+                                <div class="col-lg-6 mb-2">
+                                    <label for="assembly_status" class="form-label">Status
+                                    </label>
+                                    <br>
+                                    <input type="checkbox" id="assembly_status" name="status" {{$assembly->status == 1 ? 'checked' : ''}}>
+                                </div>
                                 <div class="col-lg-12 form-group mt-2">
                                     <button class="btn btn-primary" type="submit">
                                         Update Assembly

@@ -38,6 +38,7 @@
                                     <tr>
                                         <th>Sr</th>
                                         <th>Name</th>
+                                        <th>Status</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -46,6 +47,7 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $assembly->name }}</td>
+                                            <td>{!! $assembly->status == 1 ? '<span class="badge bg-primary">Active</span>' : '<span class="badge bg-danger">In Active</span>' !!}</td>
                                             <td align="center">
                                                 <div class="d-flex flex-row gap-2">
                                                     <a class="btn btn-soft-info btn-sm d-inline-block edit-button" href="{{ route('assembly.edit', $assembly->id) }}"

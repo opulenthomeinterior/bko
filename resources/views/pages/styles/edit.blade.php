@@ -49,7 +49,11 @@
                                     <input type="file" accept="image/*" class="form-control" id="image_path"
                                         name="image_path" onchange="display_image(this)">
                                 </div>
-                                <div class="col-lg-6"></div>
+                                <div class="col-lg-6">
+                                    <label for="style_status" class="form-label">Status</label>
+                                    <br>
+                                    <input type="checkbox" id="style_status" name="status" {{$style->status == 1 ? 'checked' : ''}}>
+                                </div>
                                 <div class="col-lg-6 form-group mb-2 preview-image-wrapper {{ $style->image_path ? 'd-block' : 'd-none' }}">
                                     <label for="image_preview" class="form-label">Image Preview</label>
                                     <img id="image_preview"

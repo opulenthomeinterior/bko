@@ -39,6 +39,7 @@
                                         <th>Sr</th>
                                         <th>Image</th>
                                         <th>Name</th>
+                                        <th>Status</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -56,6 +57,7 @@
                                                 </a>
                                             </td>
                                             <td class="align-middle">{{ $style->name }}</td>
+                                            <td class="align-middle">{!! $style->status == 1 ? '<span class="badge bg-primary">Active</span>' : '<span class="badge bg-danger">In Active</span>' !!}</td>
                                             <td class="align-middle" align="center">
                                                 <div class="d-flex flex-row gap-2">
                                                     <a class="btn btn-soft-info btn-sm d-inline-block edit-button"

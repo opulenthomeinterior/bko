@@ -42,6 +42,7 @@
                                         <th>Finishing</th>
                                         <th>Trade Colour</th>
                                         <th>Image</th>
+                                        <th>Status</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -77,6 +78,7 @@
                                                         class="img-thumbnail box-image-preview {{ $colour->image_path ? 'd-block' : 'd-none' }}" />
                                                 </a>
                                             </td>
+                                            <td class="align-middle">{!! $colour->status == 1 ? '<span class="badge bg-primary">Active</span>' : '<span class="badge bg-danger">In Active</span>' !!}</td>
                                             <td class="align-middle" align="center">
                                                 <div class="d-flex flex-row gap-2">
                                                     <a class="btn btn-soft-info btn-sm d-inline-block edit-button"
