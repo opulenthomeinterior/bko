@@ -141,7 +141,7 @@
                     @endif
 
                     @if ($assemblies->count() > 0)
-                    <div class="accordion accordion-flush mt-3" id="accordionFlushExample2">
+                    {{--<div class="accordion accordion-flush mt-3" id="accordionFlushExample2">
                         <div class="accordion-item bg-transparent border border-dark border-1 rounded-0 px-2">
                             <h2 class="accordion-header" id="flush-headingTwo">
                                 <button class="accordion-button legend collapsed text-uppercase" type="button"
@@ -174,7 +174,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>--}}
                     @endif
 
                     @if ($types->count() > 0)
