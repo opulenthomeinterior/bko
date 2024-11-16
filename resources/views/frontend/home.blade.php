@@ -314,7 +314,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <p class="text-dark text-center">My name is Smith, and my colleague told me about BKO Kitchen's online services. I contacted them via WhatsApp at my convenience, and they promptly arranged a free Consultation Call. My experience with BKO Kitchen was tremendous! Everything went smoothly from the planning stage to the installation of my shaker kitchen. I would definitely recommend their kitchen design and installation services to my friends.</p>
+                        <p class="text-dark text-center">I discovered BKO Kitchen's online services through a recommendation from a colleague. Reaching out to them via WhatsApp was incredibly convenient, and they quickly arranged a free consultation call. From the initial planning to the seamless installation of my shaker kitchen, the entire experience was outstanding. I wouldn’t hesitate to recommend their design and installation services to others!</p>
                     </div>
                 </div>
             </div>
@@ -331,7 +331,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <p class="text-dark text-center">I am Daisy, and for a long time, I had been planning to update some utilities in my kitchen. I decided to purchase from BKO Kitchen and ordered their grey sink, tap, and a tall L-shaped blind corner unit. They delivered everything within the promised time frame, and the quality was exceptional. Plus, their prices were very affordable. I highly recommend BKO Kitchen to anyone seeking quality and affordability.</p>
+                        <p class="text-dark text-center">After much planning to upgrade my kitchen utilities, I decided to order from BKO Kitchen. I purchased their grey sink, tap, and a tall L-shaped blind corner unit. Everything was delivered on time, and the quality exceeded my expectations. On top of that, their prices were very reasonable. I highly recommend BKO Kitchen for anyone looking for a perfect blend of quality and affordability.</p>
                     </div>
                 </div>
             </div>
@@ -348,7 +348,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <p class="text-dark text-center">My name is Katherine Kate, and I love exploring luxurious handle-less kitchens online. I had the chance to buy from BKO Kitchen and their installation services as well.  I was amazed by their commitment to spot-on,  kitchen designs. They installed my dream handle-less kitchen in my small space, and ever since my kitchen has become my happy place to cook and create memories.</p>
+                        <p class="text-dark text-center">I’ve always loved exploring luxurious handleless kitchens online, and BKO Kitchen gave me the opportunity to bring that dream to life. Their commitment to precision and design excellence truly impressed me. They transformed my small space into a stunning handle-less kitchen that has become my favourite spot to cook and create cherished memories.</p>
                     </div>
                 </div>
             </div>
@@ -365,7 +365,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <p class="text-dark text-center">My name is Amelia Turner, and I contacted BKO Kitchen through WhatsApp for their bespoke kitchen designs and installation services in London. They made my kitchen renovation journey incredibly easy. After conducting a thorough kitchen survey, they installed a bespoke kitchen in my small space, and the result was magical. Everything was spot on, and my kitchen even feels more roomy now. I'm fully satisfied with BKO Kitchen and highly recommend their services."</p>
+                        <p class="text-dark text-center">I reached out to BKO Kitchen through WhatsApp for their bespoke kitchen design and installation services in London, and the experience was seamless. They conducted a detailed kitchen survey and crafted a bespoke kitchen for my small space, with results that were nothing short of magical. Everything was perfectly executed, and my kitchen now feels more spacious and functional. I’m beyond satisfied with BKO Kitchen and highly recommend their services!</p>
                     </div>
                 </div>
             </div>
