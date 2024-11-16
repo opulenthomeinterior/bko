@@ -159,7 +159,7 @@
                                                                     <div class="col-4 p-0 d-md-flex d-none">
                                                                         <p
                                                                             class="category-text text-start text-uppercase m-0 pt-1">
-                                                                            <small>Color</small>
+                                                                            <small>Colour</small>
                                                                         </p>
                                                                     </div>
                                                                     <div
@@ -370,7 +370,7 @@
                                                                     <div class="col-4 p-0 d-md-flex d-none">
                                                                         <p
                                                                             class="category-text text-start text-dark text-uppercase m-0 pt-1">
-                                                                            <small>Color</small>
+                                                                            <small>Colour</small>
                                                                         </p>
                                                                     </div>
                                                                     <div class="col-md-8 col-sm-12 p-0 text-center">
@@ -589,7 +589,7 @@
                                                                     <div class="col-4 p-0 d-md-flex d-none">
                                                                         <p
                                                                             class="category-text text-start text-dark text-uppercase m-0 pt-1">
-                                                                            <small class="fw-bold">Color</small>
+                                                                            <small class="fw-bold">Colour</small>
                                                                         </p>
                                                                     </div>
                                                                     <div class="col-md-8 col-sm-12 p-0 text-center">
@@ -775,7 +775,7 @@
                                                                     <div class="col-4 p-0 d-md-flex d-none">
                                                                         <p
                                                                             class="category-text text-start text-uppercase m-0 pt-1">
-                                                                            <small>Color</small>
+                                                                            <small>Colour</small>
                                                                         </p>
                                                                     </div>
                                                                     <div
@@ -986,7 +986,7 @@
                                                                         <div class="col-4 p-0 d-md-flex d-none">
                                                                             <p
                                                                                 class="category-text text-start text-dark text-uppercase m-0 pt-1">
-                                                                                <small>Color</small>
+                                                                                <small>Colour</small>
                                                                             </p>
                                                                         </div>
                                                                         <div class="col-md-8 col-sm-12 p-0 text-center">
@@ -1205,7 +1205,7 @@
                                                                     <div class="col-4 p-0 d-md-flex d-none">
                                                                         <p
                                                                             class="category-text text-start text-dark text-uppercase m-0 pt-1">
-                                                                            <small class="fw-bold">Color</small>
+                                                                            <small class="fw-bold">Colour</small>
                                                                         </p>
                                                                     </div>
                                                                     <div class="col-md-8 col-sm-12 p-0 text-center">
@@ -1391,7 +1391,7 @@
                                                                     <div class="col-4 p-0 d-md-flex d-none">
                                                                         <p
                                                                             class="category-text text-start text-uppercase m-0 pt-1">
-                                                                            <small>Color</small>
+                                                                            <small>Colour</small>
                                                                         </p>
                                                                     </div>
                                                                     <div
@@ -1602,7 +1602,7 @@
                                                                         <div class="col-4 p-0 d-md-flex d-none">
                                                                             <p
                                                                                 class="category-text text-start text-dark text-uppercase m-0 pt-1">
-                                                                                <small>Color</small>
+                                                                                <small>Colour</small>
                                                                             </p>
                                                                         </div>
                                                                         <div class="col-md-8 col-sm-12 p-0 text-center">
@@ -1821,7 +1821,7 @@
                                                                     <div class="col-4 p-0 d-md-flex d-none">
                                                                         <p
                                                                             class="category-text text-start text-dark text-uppercase m-0 pt-1">
-                                                                            <small class="fw-bold">Color</small>
+                                                                            <small class="fw-bold">Colour</small>
                                                                         </p>
                                                                     </div>
                                                                     <div class="col-md-8 col-sm-12 p-0 text-center">
@@ -2007,7 +2007,7 @@
                                                                     <div class="col-4 p-0 d-md-flex d-none">
                                                                         <p
                                                                             class="category-text text-start text-uppercase m-0 pt-1">
-                                                                            <small>Color</small>
+                                                                            <small>Colour</small>
                                                                         </p>
                                                                     </div>
                                                                     <div
@@ -2228,7 +2228,7 @@
                                                                     <div class="col-4 p-0 d-md-flex d-none">
                                                                         <p
                                                                             class="category-text text-start text-dark text-uppercase m-0 pt-1">
-                                                                            <small class="fw-bold">Color</small>
+                                                                            <small class="fw-bold">Colour</small>
                                                                         </p>
                                                                     </div>
                                                                     <div class="col-md-8 col-sm-12 p-0 text-center">
@@ -2417,7 +2417,7 @@
                                                                 <div class="col-4 p-0 d-md-flex d-none">
                                                                     <p
                                                                         class="category-text text-start text-uppercase m-0 pt-1">
-                                                                        <small>Color</small>
+                                                                        <small>Colour</small>
                                                                     </p>
                                                                 </div>
                                                                 <div class="col-md-8 col-sm-12 p-0 text-center">
@@ -2626,7 +2626,7 @@
                                                                 <div class="col-4 p-0 d-md-flex d-none">
                                                                     <p
                                                                         class="category-text text-start text-dark text-uppercase m-0 pt-1">
-                                                                        <small>Color</small>
+                                                                        <small>Colour</small>
                                                                     </p>
                                                                 </div>
                                                                 <div class="col-md-8 col-sm-12 p-0 text-center">
@@ -2848,7 +2848,7 @@
                                                                 <div class="col-4 p-0 d-md-flex d-none">
                                                                     <p
                                                                         class="category-text text-start text-dark text-uppercase m-0 pt-1">
-                                                                        <small class="fw-bold">Color</small>
+                                                                        <small class="fw-bold">Colour</small>
                                                                     </p>
                                                                 </div>
                                                                 <div class="col-md-8 col-sm-12 p-0 text-center">
@@ -3107,7 +3107,7 @@
                                                                 <div class="col-4 p-0 d-md-flex d-none">
                                                                     <p
                                                                         class="category-text text-start text-dark text-uppercase m-0 pt-1">
-                                                                        <small class="fw-bold">Color</small>
+                                                                        <small class="fw-bold">Colour</small>
                                                                     </p>
                                                                 </div>
                                                                 <div class="col-md-8 col-sm-12 p-0 text-center">
@@ -3389,7 +3389,7 @@
                                                                         <div class="col-4 p-0 d-md-flex d-none">
                                                                             <p
                                                                                 class="category-text text-start text-dark text-uppercase m-0 pt-1">
-                                                                                <small class="fw-bold">Color</small>
+                                                                                <small class="fw-bold">Colour</small>
                                                                             </p>
                                                                         </div>
                                                                         <div class="col-md-8 col-sm-12 p-0 text-center">
@@ -3643,7 +3643,7 @@
                                                                         <div class="col-4 p-0 d-md-flex d-none">
                                                                             <p
                                                                                 class="category-text text-start text-dark text-uppercase m-0 pt-1">
-                                                                                <small class="fw-bold">Color</small>
+                                                                                <small class="fw-bold">Colour</small>
                                                                             </p>
                                                                         </div>
                                                                         <div class="col-md-8 col-sm-12 p-0 text-center">
@@ -3897,7 +3897,7 @@
                                                                         <div class="col-4 p-0 d-md-flex d-none">
                                                                             <p
                                                                                 class="category-text text-start text-dark text-uppercase m-0 pt-1">
-                                                                                <small class="fw-bold">Color</small>
+                                                                                <small class="fw-bold">Colour</small>
                                                                             </p>
                                                                         </div>
                                                                         <div class="col-md-8 col-sm-12 p-0 text-center">
@@ -4151,7 +4151,7 @@
                                                                         <div class="col-4 p-0 d-md-flex d-none">
                                                                             <p
                                                                                 class="category-text text-start text-dark text-uppercase m-0 pt-1">
-                                                                                <small class="fw-bold">Color</small>
+                                                                                <small class="fw-bold">Colour</small>
                                                                             </p>
                                                                         </div>
                                                                         <div class="col-md-8 col-sm-12 p-0 text-center">
@@ -4426,7 +4426,7 @@
                                                                         <div class="col-4 p-0 d-md-flex d-none">
                                                                             <p
                                                                                 class="category-text text-start text-dark text-uppercase m-0 pt-1">
-                                                                                <small class="fw-bold">Color</small>
+                                                                                <small class="fw-bold">Colour</small>
                                                                             </p>
                                                                         </div>
                                                                         <div class="col-md-8 col-sm-12 p-0 text-center">
@@ -4680,7 +4680,7 @@
                                                                         <div class="col-4 p-0 d-md-flex d-none">
                                                                             <p
                                                                                 class="category-text text-start text-dark text-uppercase m-0 pt-1">
-                                                                                <small class="fw-bold">Color</small>
+                                                                                <small class="fw-bold">Colour</small>
                                                                             </p>
                                                                         </div>
                                                                         <div class="col-md-8 col-sm-12 p-0 text-center">
@@ -4940,7 +4940,7 @@
                                                                 <div class="col-4 p-0 d-md-flex d-none">
                                                                     <p
                                                                         class="category-text text-start text-dark text-uppercase m-0 pt-1">
-                                                                        <small class="fw-bold">Color</small>
+                                                                        <small class="fw-bold">Colour</small>
                                                                     </p>
                                                                 </div>
                                                                 <div class="col-md-8 col-sm-12 p-0 text-center">
