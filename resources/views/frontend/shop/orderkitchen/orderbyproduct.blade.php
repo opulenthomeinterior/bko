@@ -114,7 +114,7 @@
                     <div class="row">
                         <div class="col-4 d-md-flex d-none">
                             <p class="category-text text-start text-uppercase m-0 pt-1">
-                                <small>Color</small>
+                                <small>Colour</small>
                             </p>
                         </div>
                         <div class="col-md-8 col-sm-12">

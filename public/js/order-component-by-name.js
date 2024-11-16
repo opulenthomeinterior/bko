@@ -145,7 +145,7 @@ $(document).ready(function () {
         if (product.colour) {
             productCard += `<div class="row">`;
             productCard += `<div class="col-4 p-0 d-md-flex d-none">`;
-            productCard += `<p class="category-text text-start text-uppercase m-0 pt-1 text-dark"><small>Color</small></p>`;
+            productCard += `<p class="category-text text-start text-uppercase m-0 pt-1 text-dark"><small>Colour</small></p>`;
             productCard += `</div>`;
             productCard += `<div class="col-md-8 col-sm-12 p-0 text-center text-dark">`;
             productCard += `<p class="category-value fw-semibold py-1 mb-2 text-dark"><small>${product.colour.trade_colour ? product.colour.trade_colour : product.colour.name}</small></p>`;

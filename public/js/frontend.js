@@ -632,7 +632,7 @@ function createProductCard(product, type, cart_product_id = null, cart_product_c
    if (product.colour) {
       productCard += `<div class="row">`;
       productCard += `<div class="col-4 p-0 d-md-flex d-none">`;
-      productCard += `<p class="category-text text-start text-uppercase m-0 pt-1"><small>Color</small></p>`;
+      productCard += `<p class="category-text text-start text-uppercase m-0 pt-1"><small>Colour</small></p>`;
       productCard += `</div>`;
       productCard += `<div class="col-md-8 col-sm-12 p-0 text-center">`;
       productCard += `<p class="category-value fw-semibold py-1 mb-2"><small>${product.colour.trade_colour ? product.colour.trade_colour : product.colour.name}</small></p>`;
@@ -808,7 +808,7 @@ $(document).ready(function () {
                                                    <div class="col-md-8 col-sm-12 p-0 text-center"><p class="category-value fw-semibold py-1 mb-2 text-dark"><small>${productDetails.style.name}</small></p></div>
                                                 </div>` : ''}
                                                 ${productDetails.colour ? `<div class="row">
-                                                   <div class="col-4 p-0 d-md-flex d-none"><p class="category-text text-start text-dark text-uppercase m-0 pt-1"><small class="fw-bold">Color</small></p></div>
+                                                   <div class="col-4 p-0 d-md-flex d-none"><p class="category-text text-start text-dark text-uppercase m-0 pt-1"><small class="fw-bold">Colour</small></p></div>
                                                    <div class="col-md-8 col-sm-12 p-0 text-center"><p class="category-value fw-semibold py-1 mb-2 text-dark"><small>${productDetails.colour.trade_colour || productDetails.colour.name}</small></p></div>
                                                 </div>` : ''}
                                                 ${productDetails.assembly ? `<div class="row">
@@ -1346,7 +1346,7 @@ $(document).ready(function () {
                                  ${productColour ? `<div class="row">
                                        <div class="col-4 p-0 d-md-flex d-none">
                                           <p class="category-text text-start text-dark text-uppercase m-0 pt-1">
-                                             <small class="fw-bold">Color</small>
+                                             <small class="fw-bold">Colour</small>
                                           </p>
                                        </div>
                                        <div class="col-md-8 col-sm-12 p-0 text-center">
