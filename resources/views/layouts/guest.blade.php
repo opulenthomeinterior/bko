@@ -945,13 +945,14 @@ use App\Models\Style;
             $carousel.owlCarousel({
                 loop: true,
                 margin: 30,
-                rtl: false, // Enable right-to-left mode
+                stagePadding: 15, // Add padding to avoid clipping
+                rtl: false,
                 autoplay: true,
                 autoplayTimeout: 3000,
                 autoplayHoverPause: true,
                 responsive: {
                     0: {
-                        items: 3
+                        items: 1
                     },
                     768: {
                         items: 4
@@ -960,10 +961,10 @@ use App\Models\Style;
                         items: 4
                     },
                     1200: {
-                        items: 5
+                        items: 4
                     },
                     1400: {
-                        items: 5
+                        items: 4
                     }
                 }
             });

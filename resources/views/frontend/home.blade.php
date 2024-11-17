@@ -82,6 +82,51 @@
         letter-spacing: 0.02rem;
     }
 
+    .carousel {
+        margin: 0 auto; /* Center the carousel */
+        padding: 0; /* Remove extra padding */
+        overflow: hidden; /* Hide any overflowing content */
+    }
+
+    .owl-carousel, .owl-carousel .item {
+        box-sizing: border-box;
+    }
+
+    .owl-stage-outer {
+        padding: 20px 0px;
+    }
+
+    .item {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+    }
+
+    .carousel-card {
+        display: flex;
+        flex-direction: column; /* Stack content vertically */
+        justify-content: flex-start; /* Align content at the top */
+        height: 400px; /* Set fixed height for all cards */
+        padding: 20px; /* Add consistent padding for inner spacing */
+        box-sizing: border-box; /* Include padding in the height calculation */
+    }
+
+    .carousel-card-body {
+        flex-grow: 1; /* Allow card body to take available space */
+    }
+
+    .carousel-card-footer {
+        margin-top: auto; /* Push footer to the bottom */
+        padding: 15px 15px;
+        overflow-y: auto; /* Enable scroll if content overflows */
+        scrollbar-width: none; /* For Firefox, hide the scrollbar */
+        -ms-overflow-style: none; /* For Internet Explorer and Edge, hide the scrollbar */
+    }
+
+    .carousel-card-footer::-webkit-scrollbar {
+        display: none;
+    }
+
     </style>
     <section class="container-fluid bg-white px-lg-5 py-3 px-md-3 px-3 mt-4" style="border-top: 3px solid #febd49; border-right: 3px solid #febd49">
         <div class="row">
@@ -307,10 +352,10 @@
                     data-dots="false"
                     data-autoplay="true"
                     data-autoplay-timeout="3000"
-                    data-responsive='{"0":{"items": "3"}, "768":{"items": "3"}, "992":{"items": "3"}, "1200":{"items": "4"}, "1400":{"items": "5"}}'>
+                    data-responsive='{"0":{"items": "3"}, "768":{"items": "4"}, "992":{"items": "4"}, "1200":{"items": "4"}, "1400":{"items": "4"}}'>
                     <div class="item mx-10 px-0">
-                        <div class="card border border-default">
-                            <div class="card-body">
+                        <div class="carousel-card card border border-default" style="border-radius: 0px; box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.1);">
+                            <div class="card-body carousel-card-body">
                                 <div class="col-12 mb-4 d-flex justify-content-center">
                                     <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
                                 </div>
@@ -321,14 +366,14 @@
                                     <small class="text-center">2023-11-19</small>
                                 </div>
                             </div>
-                            <div class="card-footer">
-                                <small class="text-dark text-start" style="font-size: 12px">I’m thrilled with my new J Pull kitchen from BKO Kitchen. The sleek design blends perfectly with my modern London apartment, and the craftsmanship is superb. The installation team was punctual and professional, making the entire process stress-free!</small>
+                            <div class="card-footer carousel-card-footer">
+                                <small class="text-dark text-start" style="font-size: 12px">I discovered BKO Kitchen's online services through a recommendation from a colleague. Reaching out to them via WhatsApp was incredibly convenient, and they quickly arranged a free consultation call. From the initial planning to the seamless installation of my shaker kitchen, the entire experience was outstanding. I wouldn’t hesitate to recommend their design and installation services to others!</small>
                             </div>
                         </div>
                     </div>
                     <div class="item mx-10 px-0">
-                        <div class="card border border-default">
-                            <div class="card-body">
+                        <div class="carousel-card card border border-default" style="border-radius: 0px; box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.1);">
+                            <div class="card-body carousel-card-body">
                                 <div class="col-12 mb-4 d-flex justify-content-center">
                                     <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
                                 </div>
@@ -339,14 +384,14 @@
                                     <small class="text-center">2024-04-03</small>
                                 </div>
                             </div>
-                            <div class="card-footer">
-                                <small class="text-dark text-start" style="font-size: 12px">I couldn’t be happier with the result! The timeless elegance of my new Shaker kitchen has completely transformed my London home. BKO Kitchen exceeded my expectations with their attention to detail and high-quality finishes.</small>
+                            <div class="card-footer carousel-card-footer">
+                                <small class="text-dark text-start" style="font-size: 12px">After much planning to upgrade my kitchen utilities, I decided to order from BKO Kitchen. I purchased their grey sink, tap, and a tall L-shaped blind corner unit. Everything was delivered on time, and the quality exceeded my expectations. On top of that, their prices were very reasonable. I highly recommend BKO Kitchen for anyone looking for a perfect blend of quality and affordability.</small>
                             </div>
                         </div>
                     </div>
                     <div class="item mx-10 px-0">
-                        <div class="card border border-default">
-                            <div class="card-body">
+                        <div class="carousel-card card border border-default" style="border-radius: 0px; box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.1);">
+                            <div class="card-body carousel-card-body">
                                 <div class="col-12 mb-4 d-flex justify-content-center">
                                     <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
                                 </div>
@@ -357,14 +402,14 @@
                                     <small class="text-center">2024-07-14</small>
                                 </div>
                             </div>
-                            <div class="card-footer">
-                                <small class="text-dark text-start" style="font-size: 12px">The whole experience, from consultation to installation, was top-notch! The slab laminated kitchen I purchased from BKO Kitchen is a game-changer. It’s stylish, durable, and easy to maintain—perfect for the busy city living in London.</small>
+                            <div class="card-footer carousel-card-footer">
+                                <small class="text-dark text-start" style="font-size: 12px">I reached out to BKO Kitchen through WhatsApp for their bespoke kitchen design and installation services in London, and the experience was seamless. They conducted a detailed kitchen survey and crafted a bespoke kitchen for my small space, with results that were nothing short of magical. Everything was perfectly executed, and my kitchen now feels more spacious and functional. I’m beyond satisfied with BKO Kitchen and highly recommend their services!</small>
                             </div>
                         </div>
                     </div>
                     <div class="item mx-10 px-0">
-                        <div class="card border border-default">
-                            <div class="card-body">
+                        <div class="carousel-card card border border-default" style="border-radius: 0px; box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.1);">
+                            <div class="card-body carousel-card-body">
                                 <div class="col-12 mb-4 d-flex justify-content-center">
                                     <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
                                 </div>
@@ -375,26 +420,8 @@
                                     <small class="text-center">2023-08-08</small>
                                 </div>
                             </div>
-                            <div class="card-footer">
+                            <div class="card-footer carousel-card-footer">
                                 <small class="text-dark text-start" style="font-size: 12px">It’s ideal for my contemporary London home, and the team ensured a flawless installation. Highly recommend their services! My True Handleless kitchen from BKO Kitchen is everything I dreamed of—minimalistic, chic, and functional.</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item mx-10 px-0">
-                        <div class="card border border-default">
-                            <div class="card-body">
-                                <div class="col-12 mb-4 d-flex justify-content-center">
-                                    <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
-                                </div>
-                                <div class="fw-bold text-center">
-                                    Goseph
-                                </div>
-                                <div class="text-center">
-                                    <small class="text-center">2023-09-25</small>
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-dark text-start" style="font-size: 12px">The MFC kitchen from BKO Kitchen was the perfect choice for my /London flat. It combines affordability with quality, and the finish is stunning. The team was incredibly professional and delivered everything on time. I’m so happy with my new kitchen!</small>
                             </div>
                         </div>
                     </div>
