@@ -153,6 +153,19 @@
         opacity: 1;
     }
 
+    /* #blinking-text {
+        animation: blink 3s infinite;
+    }
+
+    @keyframes blink {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+    } */
+
     </style>
 
     <!-- <section class="container-fluid bg-white px-lg-5 py-3 px-md-3 px-3 mt-4" style="border-top: 3px solid #febd49; border-right: 3px solid #febd49">
@@ -232,7 +245,7 @@
             <div class="col-xl-5 col-lg-5 col-md-7 col-sm-12 col-xs-12 col-12 p-0 d-flex justify-content-center">
                 <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning w-75" style="background-color: rgba(0, 0, 0, 0.5); padding: 20px; border-radius: 0px;">
                     @csrf
-                    <h4 class="text-warning fw-bold text-center">
+                    <h4 id="blinking-text" class="text-warning fw-bold text-center">
                         Book a free consultation now!
                     </h4>
                     <hr class="border border-warning">
