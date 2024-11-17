@@ -238,6 +238,7 @@ Route::prefix('/')->middleware([])->group(function () {
     Route::post('contact-us-inquiry', [InquiryController::class, 'sendInquiry'])->name('contact_us_inquiry');
     //
     Route::post('get-category-products', [ProductController::class, 'getCategoryProducts'])->name('get_category_products');
+    Route::post('style-colours', [HomeController::class, 'styleColours'])->name('style_colours');
 
     // Shop Prefix
     Route::prefix('/shop')->group(function () {

@@ -530,44 +530,41 @@ use App\Models\Style;
                                 <div class="row">
                                     <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 text-start">
                                         <h4 class="text-start bg-dark text-white p-2">Choose Style:</h4>
-                                        <ul class="dropdown__list">
+                                        <ul class="dropdown__list" id="styles-list">
                                             @php
                                                 $styles = Style::where('status', 1)->get();
                                             @endphp
                                             @if (!empty($styles))
-                                                @foreach ($styles as $style)
+                                                @foreach ($styles as $index => $style)
                                                     <li>
-                                                        <input type="radio" value="{{$style->slug}}" name="style_name" class="radio-btn"> &nbsp; {{$style->name}} KITCHEN
+                                                        <input data-style-id="{{$style->id}}" type="radio" value="{{$style->slug}}" name="style_name" class="radio-btn style-item"> &nbsp; {{$style->name}} KITCHEN
                                                     </li>
                                                 @endforeach
-                                            @else
-                                                <li>
-                                                    <input type="radio" value="j-pull" name="style_name" class="radio-btn"> &nbsp; J Pull KITCHEN
-                                                </li>
-                                                <li>
-                                                    <input type="radio" value="true-handleless" name="style_name" class="radio-btn"> &nbsp; True Handleless KITCHEN
-                                                </li>
-                                                <li>
-                                                    <input type="radio" value="shaker" name="style_name" class="radio-btn"> &nbsp; Shaker KITCHEN
-                                                </li>
-                                                <li>
-                                                    <input type="radio" value="slab-painted" name="style_name" class="radio-btn"> &nbsp; Slab Painted KITCHEN
-                                                </li>
                                             @endif
-                                            <!-- <li>
-                                                <input type="radio" value="slab-laminate" name="style_name" class="radio-btn"> &nbsp; Slab Laminate KITCHEN
-                                            </li>
-                                            <li>
-                                                <input type="radio" value="standard-mfc-kitchen" name="style_name" class="radio-btn"> &nbsp; Standard MFC KITCHEN
-                                            </li> -->
                                         </ul>
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 text-start">
                                         <h4 class="text-start bg-dark text-white p-2">Choose Colour:</h4>
                                         <div class="row">
-                                            <div class="col-6">
+                                            <div class="col-12">
                                                 <ul class="dropdown__list">
-                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossWhite" value="superglosswhite"> &nbsp; SuperGloss White</li>
+                                                    @php 
+                                                        $colours = \App\Models\Colour::distinct()->whereNotNull('finishing')->get();
+                                                    @endphp
+                                                    <div class="row" id="colours-list">
+                                                        @foreach ($colours as $index => $colour)
+                                                            <div class="col-6 mb-2">
+                                                                <li>
+                                                                    <input data-colour-id="{{$colour->id}}" type="radio" name="colour_name" class="colour_type radio-btn colour-item colour{{$colour->id}}" disabled="disabled" id="superGlossWhite" value="{{$colour->slug}}">
+                                                                    &nbsp; <span class="textcolour">{{$colour->trade_colour}}</span>
+                                                                </li>
+                                                            </div>
+                                                        @endforeach
+                                                    </div>
+                                                    <!-- <li>
+                                                        <input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossWhite" value="superglosswhite">
+                                                        &nbsp; SuperGloss White
+                                                    </li>
                                                     <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossCashmere" value="superglosscashmere"> &nbsp; SuperGloss Cashmere</li>
                                                     <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattIndigo" value="ultramattindigo"> &nbsp; UltraMatt Indigo</li>
                                                     <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattWhite" value="ultramattwhite"> &nbsp; UltraMatt White</li>
@@ -578,10 +575,10 @@ use App\Models\Style;
                                                     <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattLightGrey" value="ultramattlight-grey"> &nbsp; UltraMatt Light Grey</li>
                                                     <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossDarkGrey" value="superglossdark-grey"> &nbsp; SuperGloss Dark Grey</li>
                                                     <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattDarkGrey" value="ultramattdark-grey"> &nbsp; UltraMatt Dark Grey</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossAnthracite" value="superglossanthracite"> &nbsp; SuperGloss Anthracite</li>
+                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossAnthracite" value="superglossanthracite"> &nbsp; SuperGloss Anthracite</li> -->
                                                 </ul>
                                             </div>
-                                            <div class="col-6">
+                                            <!-- <div class="col-6">
                                                 <ul class="dropdown__list">
                                                     <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattAnthracite" value="ultramattanthracite"> &nbsp; UltraMatt Anthracite</li>
                                                     <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossPaintToOrder" value="superglosspaint-to-order"> &nbsp; SuperGloss Paint to Order</li>
@@ -596,18 +593,23 @@ use App\Models\Style;
                                                     <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossIndigo" value="superglossindigo"> &nbsp; SuperGloss Indigo</li>
                                                     <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossLightGray" value="superglosslight-gray"> &nbsp; SuperGloss Light Gray</li>
                                                 </ul>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 text-start">
                                         <h4 class="text-start bg-dark text-white p-2">Choose Assembly:</h4>
-                                        <ul class="dropdown__list">
-                                            <li>
-                                                <input type="radio" value="rigid" name="assembly_name" class="assembly_type radio-btn"> &nbsp; Rigid
-                                            </li>
-                                            <li>
+                                        <ul class="dropdown__list" id="assemblies-list">
+                                            @php 
+                                                $assemblies = \App\Models\Assembly::whereNot('slug', 'stock')->get();
+                                            @endphp
+                                            @foreach ($assemblies as $index => $assembly)
+                                                <li class="assembly-item">
+                                                    <input data-assembly-id="{{$assembly->id}}" type="radio" value="{{$assembly->slug}}" name="assembly_name" class="assembly_type assembly-item radio-btn"> &nbsp; {{$assembly->name}}
+                                                </li>
+                                            @endforeach
+                                            <!-- <li>
                                                 <input type="radio" value="flat-pack" name="assembly_name" class="assembly_type radio-btn"> &nbsp; Flat Pack
-                                            </li>
+                                            </li> -->
                                         </ul>
                                     </div>
                                 </div>
@@ -927,6 +929,46 @@ use App\Models\Style;
                 }
             });
             
+            $(document).on('click', '.style-item', function () {
+                var _this = $(this);
+                var styleId = _this.attr('data-style-id');
+                var _url = "{{route('style_colours')}}";
+                $.ajax({
+                    url: _url,
+                    type: "POST",
+                    data: {
+                        _token: "{{ csrf_token() }}",
+                        style_id: styleId
+                    },
+                    success: function(response) {
+                        if (response.success == true) {
+                            $('.colour-item').each(function () { 
+                                var colourId = $(this).attr('data-colour-id'); // Get the value
+                                colourId = parseInt(colourId, 10);
+
+                                $(this).attr('checked', false); // Uncheck the radio button
+                                if (colourId) {
+                                    console.log(response.colours.includes(colourId));
+                                    // Add your comparison logic here, e.g.:
+                                    if (response.colours.includes(colourId)) {
+                                        // Perform an action if `colourId` matches
+                                        $(this).attr('disabled', false); // Enable this element
+                                        $(this).siblings('.textcolour').css("color", "black"); // Change text color
+                                    } else {
+                                        $(this).attr('disabled', true); // Disable this element
+                                        $(this).siblings('.textcolour').css("color", "lightgray"); // Change text color
+                                    }
+                                    checkFilters();
+                                }
+                            });
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("AJAX error:", error);
+                    }
+                });
+            });
+            
             // Reinitialize Select2 on tab change
             $('button[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
                 // Select the dropdown in the currently active tab
@@ -988,6 +1030,10 @@ use App\Models\Style;
 
             $(document).on('click', '.style_type, .colour_type, .assembly_type', function() {
                 // Get the latest values of the selected radios inside the event listener
+                checkFilters();
+            });
+
+            function checkFilters() {
                 var selectedStyle = $('input[name="style_name"]:checked').val();
                 var selectedColour = $('input[name="colour_name"]:checked').val();
                 var selectedAssembly = $('input[name="assembly_name"]:checked').val();
@@ -1004,7 +1050,7 @@ use App\Models\Style;
                 } else {
                     $('#order-now').addClass('disabled'); // Optionally, disable the button if not all values are selected
                 }
-            });
+            }
 
             // Redirect to the generated URL when 'order-now' is clicked
             $(document).on('click', '#order-now', function() {
