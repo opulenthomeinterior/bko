@@ -20,49 +20,20 @@
             </div>
         </div>
 
-
         <div class="row">
-            <div class="col-12 mb-3">
+            <div class="col-12">
                 <h1 class="fs-3 fw-bold text-uppercase text-dark">
                     Ordering a {{ $styleData['data']['name'] }} Kitchen
                 </h1>
                 <p>To start ordering a {{ $styleData['data']['name'] }} kitchen, first choose your preferred assembly,
                     then from our range of colours and finishes.</p>
+                <hr>
             </div>
-            <div class="col-lg-4 mb-3">
-                <h2 class="fs-5 text-dark text-uppercase fw-bold">Despatch</h2>
-                <p>First select your choice of assembly:</p>
-                @foreach ($styleData['assemblies'] as $assemblyName => $assemblyData)
-                    <button type="button" id="{{ $assemblyName == 'Rigid' ? 'rigid_btn' : 'flatpacked_btn' }}"
-                        class="btn btn-sm btn-outline-warning text-dark rounded-0">{{ $assemblyName }}</button>
-                @endforeach
-            </div>
-
-            <div class="col-lg-6 mt-lg-0 mt-3">
-                @foreach ($styleData['assemblies'] as $assemblyName => $assemblyData)
-                    <div class="d-none" id="{{ $assemblyName == 'Rigid' ? 'rigid' : 'flatpacked' }}">
-                        <h2 class="fs-6 text-dark fw-bold">MDF COLOURS ({{ $assemblyName }})</h2>
-                        <p>Choose a colour:</p>
-                        <div class="row g-1">
-                            @foreach ($assemblyData['colours'] as $colour)
-                                <div class="col-6 d-flex position-relative align-items-center justify-content-center">
-                                    <div
-                                        class="colour-div position-absolute start-0 top-50 translate-middle-y ms-2" style="background-color: {{$colour->colour_code}};">
-                                    </div>
-                                    <a href="{{ route('orderkitchenbycolour', ['style' => $styleData['data']->slug, 'assembly' => $assemblyData['data']->slug, 'colour' => $colour->slug]) }}"
-                                        class="colour-btn btn w-100 rounded-0 sidebar-btn text-start">
-                                        {{ $colour->trade_colour }}
-                                    </a>
-                                    {{-- <button type="button"
-                                        class="colour-btn btn w-100 rounded-0 sidebar-btn text-start">
-                                        {{ $colour->trade_colour }}
-                                    </button> --}}
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                @endforeach
-            </div>
+            @if ($styleData['data']['style_description'])
+                <div class="col-md-12">
+                    {!! $styleData['data']['style_description'] !!}
+                </div>
+            @endif
         </div>
     </section>
 
@@ -80,11 +51,45 @@
                             class="img-fluid" />
                     </div>
                 @endif
-                @if ($styleData['data']['style_description'])
-                    <div class="col-md-6">
-                        {!! $styleData['data']['style_description'] !!}
+                <div class="col-6 mb-4">
+                    <div class="row">
+                        <!-- Assemblies -->
+                        <div class="col-lg-12 mb-3">
+                            <h2 class="fs-5 text-dark text-uppercase fw-bold">Despatch</h2>
+                            <p>First select your choice of assembly:</p>
+                            @foreach ($styleData['assemblies'] as $assemblyName => $assemblyData)
+                                <button type="button" id="{{ $assemblyName == 'Rigid' ? 'rigid_btn' : 'flatpacked_btn' }}"
+                                    class="btn btn-sm btn-outline-warning text-dark rounded-0">{{ $assemblyName }}</button>
+                            @endforeach
+                        </div>
+                        <!-- Colours -->
+                        <div class="col-lg-12 mt-lg-0 mt-3">
+                            @foreach ($styleData['assemblies'] as $assemblyName => $assemblyData)
+                                <div class="d-none" id="{{ $assemblyName == 'Rigid' ? 'rigid' : 'flatpacked' }}">
+                                    <h2 class="fs-6 text-dark fw-bold">MDF COLOURS ({{ $assemblyName }})</h2>
+                                    <p>Choose a colour:</p>
+                                    <div class="row g-1">
+                                        @foreach ($assemblyData['colours'] as $colour)
+                                            <div class="col-6 d-flex position-relative align-items-center justify-content-center">
+                                                <div
+                                                    class="colour-div position-absolute start-0 top-50 translate-middle-y ms-2" style="background-color: {{$colour->colour_code}};">
+                                                </div>
+                                                <a href="{{ route('orderkitchenbycolour', ['style' => $styleData['data']->slug, 'assembly' => $assemblyData['data']->slug, 'colour' => $colour->slug]) }}"
+                                                    class="colour-btn btn w-100 rounded-0 sidebar-btn text-start">
+                                                    {{ $colour->trade_colour }}
+                                                </a>
+                                                {{-- <button type="button"
+                                                    class="colour-btn btn w-100 rounded-0 sidebar-btn text-start">
+                                                    {{ $colour->trade_colour }}
+                                                </button> --}}
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
-                @endif
+                </div>
             </div>
         </section>
     @endif

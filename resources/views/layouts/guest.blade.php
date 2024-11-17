@@ -39,7 +39,10 @@ use App\Models\Style;
     <link href="{{ asset('css/frontend.css') }}" rel="stylesheet" type="text/css" /><!-- Style -->
     <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
-
+    <!-- owl carousel css link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <!-- owl carousel theme.css link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"> 
     <style>
         #whatsapp-icon {
             position: fixed;
@@ -179,6 +182,11 @@ use App\Models\Style;
         /* Focus style */
         .radio-btn:focus {
             outline: none;
+        }
+
+        .owl-carousel .owl-item img {
+            height: 100px !important;
+            width: 100px !important;
         }
 
     </style>
@@ -867,6 +875,8 @@ use App\Models\Style;
     <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.7-beta.24/inputmask.min.js"></script>
     <!-- Script -->
     <script src="{{ asset('js/select2.min.js') }}"></script>
+    <!-- owl carousel js file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
     <!-- password-addon init -->
     <script src="{{ asset('js/pages/password-addon.init.js') }}"></script>
@@ -927,6 +937,40 @@ use App\Models\Style;
 
                     return $result;
                 }
+            });
+
+            const $carousel = $('.owl-carousel');
+
+            // Initialize OwlCarousel
+            $carousel.owlCarousel({
+                loop: true,
+                margin: 30,
+                rtl: false, // Enable right-to-left mode
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: {
+                        items: 3
+                    },
+                    768: {
+                        items: 4
+                    },
+                    992: {
+                        items: 4
+                    },
+                    1200: {
+                        items: 5
+                    },
+                    1400: {
+                        items: 5
+                    }
+                }
+            });
+
+            // Customize the autoplay behavior to reverse the direction
+            $carousel.on('translated.owl.carousel', function() {
+                $carousel.find('.owl-item.active').css('animation', 'move-right 0.3s ease-in-out');
             });
             
             $(document).on('click', '.style-item', function () {

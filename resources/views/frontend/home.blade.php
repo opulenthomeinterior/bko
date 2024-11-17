@@ -301,73 +301,103 @@
             <h3 class="text-dark text-uppercase fw-bolder text-center mb-4">Testimonials</h3>
         </div>
         <div class="row">
-            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                <div class="card border border-default">
-                    <div class="card-body d-flex align-items-center">
-                        <div>
-                            <img src="https://cdn-icons-png.flaticon.com/512/9385/9385289.png" height="100px" width="100px" class="img-fluid rounded-circle">
-                        </div>
-                        <div class="ms-2">
-                            Smith
-                            <br>
-                            <small>2023-11-19</small>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <p class="text-dark text-center">I discovered BKO Kitchen's online services through a recommendation from a colleague. Reaching out to them via WhatsApp was incredibly convenient, and they quickly arranged a free consultation call. From the initial planning to the seamless installation of my shaker kitchen, the entire experience was outstanding. I wouldn’t hesitate to recommend their design and installation services to others!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                <div class="card border border-default">
-                    <div class="card-body d-flex align-items-center">
-                        <div>
-                            <img src="https://cdn-icons-png.flaticon.com/512/9385/9385289.png" height="100px" width="100px" class="img-fluid rounded-circle">
-                        </div>
-                        <div class="ms-2">
-                            Daisy
-                            <br>
-                            <small>2024-09-27</small>
+            <div class="carousel main-carousel-banner owl-carousel clients mb-0"
+                    data-margin="30"
+                    data-loop="true"
+                    data-dots="false"
+                    data-autoplay="true"
+                    data-autoplay-timeout="3000"
+                    data-responsive='{"0":{"items": "3"}, "768":{"items": "3"}, "992":{"items": "3"}, "1200":{"items": "4"}, "1400":{"items": "5"}}'>
+                    <div class="item mx-10 px-0">
+                        <div class="card border border-default">
+                            <div class="card-body">
+                                <div class="col-12 mb-4 d-flex justify-content-center">
+                                    <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
+                                </div>
+                                <div class="fw-bold text-center">
+                                    Smith
+                                </div>
+                                <div class="text-center">
+                                    <small class="text-center">2023-11-19</small>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-dark text-start" style="font-size: 12px">I’m thrilled with my new J Pull kitchen from BKO Kitchen. The sleek design blends perfectly with my modern London apartment, and the craftsmanship is superb. The installation team was punctual and professional, making the entire process stress-free!</small>
+                            </div>
                         </div>
                     </div>
-                    <div class="card-footer">
-                        <p class="text-dark text-center">After much planning to upgrade my kitchen utilities, I decided to order from BKO Kitchen. I purchased their grey sink, tap, and a tall L-shaped blind corner unit. Everything was delivered on time, and the quality exceeded my expectations. On top of that, their prices were very reasonable. I highly recommend BKO Kitchen for anyone looking for a perfect blend of quality and affordability.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                <div class="card border border-default">
-                    <div class="card-body d-flex align-items-center">
-                        <div>
-                            <img src="https://cdn-icons-png.flaticon.com/512/9385/9385289.png" height="100px" width="100px" class="img-fluid rounded-circle">
-                        </div>
-                        <div class="ms-2">
-                            Katherine Kate
-                            <br>
-                            <small>2024-03-12</small>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <p class="text-dark text-center">I’ve always loved exploring luxurious handleless kitchens online, and BKO Kitchen gave me the opportunity to bring that dream to life. Their commitment to precision and design excellence truly impressed me. They transformed my small space into a stunning handle-less kitchen that has become my favourite spot to cook and create cherished memories.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                <div class="card border border-default">
-                    <div class="card-body d-flex align-items-center">
-                        <div>
-                            <img src="https://cdn-icons-png.flaticon.com/512/9385/9385289.png" height="100px" width="100px" class="img-fluid rounded-circle">
-                        </div>
-                        <div class="ms-2">
-                            Amelia Turner
-                            <br>
-                            <small>2024-07-21</small>
+                    <div class="item mx-10 px-0">
+                        <div class="card border border-default">
+                            <div class="card-body">
+                                <div class="col-12 mb-4 d-flex justify-content-center">
+                                    <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
+                                </div>
+                                <div class="fw-bold text-center">
+                                    Daisy
+                                </div>
+                                <div class="text-center">
+                                    <small class="text-center">2024-04-03</small>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-dark text-start" style="font-size: 12px">I couldn’t be happier with the result! The timeless elegance of my new Shaker kitchen has completely transformed my London home. BKO Kitchen exceeded my expectations with their attention to detail and high-quality finishes.</small>
+                            </div>
                         </div>
                     </div>
-                    <div class="card-footer">
-                        <p class="text-dark text-center">I reached out to BKO Kitchen through WhatsApp for their bespoke kitchen design and installation services in London, and the experience was seamless. They conducted a detailed kitchen survey and crafted a bespoke kitchen for my small space, with results that were nothing short of magical. Everything was perfectly executed, and my kitchen now feels more spacious and functional. I’m beyond satisfied with BKO Kitchen and highly recommend their services!</p>
+                    <div class="item mx-10 px-0">
+                        <div class="card border border-default">
+                            <div class="card-body">
+                                <div class="col-12 mb-4 d-flex justify-content-center">
+                                    <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
+                                </div>
+                                <div class="fw-bold text-center">
+                                    Katherine Kate
+                                </div>
+                                <div class="text-center">
+                                    <small class="text-center">2024-07-14</small>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-dark text-start" style="font-size: 12px">The whole experience, from consultation to installation, was top-notch! The slab laminated kitchen I purchased from BKO Kitchen is a game-changer. It’s stylish, durable, and easy to maintain—perfect for the busy city living in London.</small>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    <div class="item mx-10 px-0">
+                        <div class="card border border-default">
+                            <div class="card-body">
+                                <div class="col-12 mb-4 d-flex justify-content-center">
+                                    <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
+                                </div>
+                                <div class="fw-bold text-center">
+                                    Amelia Turner
+                                </div>
+                                <div class="text-center">
+                                    <small class="text-center">2023-08-08</small>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-dark text-start" style="font-size: 12px">It’s ideal for my contemporary London home, and the team ensured a flawless installation. Highly recommend their services! My True Handleless kitchen from BKO Kitchen is everything I dreamed of—minimalistic, chic, and functional.</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item mx-10 px-0">
+                        <div class="card border border-default">
+                            <div class="card-body">
+                                <div class="col-12 mb-4 d-flex justify-content-center">
+                                    <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
+                                </div>
+                                <div class="fw-bold text-center">
+                                    Goseph
+                                </div>
+                                <div class="text-center">
+                                    <small class="text-center">2023-09-25</small>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-dark text-start" style="font-size: 12px">The MFC kitchen from BKO Kitchen was the perfect choice for my /London flat. It combines affordability with quality, and the finish is stunning. The team was incredibly professional and delivered everything on time. I’m so happy with my new kitchen!</small>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
     </section>
