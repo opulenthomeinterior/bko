@@ -914,6 +914,34 @@ use App\Models\Style;
 
     ?>
     <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const images = document.querySelectorAll('.fade-img');
+            let currentIndex = 0;
+
+            setInterval(() => {
+                images[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].classList.add('active');
+            }, 5000); // Change image every 5 seconds
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const text = "Retail Quality at Online Prices!";
+            const typingElement = document.getElementById('typing-effect');
+            let index = 0;
+
+            function typeEffect() {
+                if (index < text.length) {
+                    typingElement.textContent += text.charAt(index);
+                    index++;
+                    setTimeout(typeEffect, 50); // Adjust the typing speed (50ms per character)
+                }
+            }
+
+            typeEffect();
+        });
+
         $(document).ready(function() {
             $('.select-2').select2({
                 minimumResultsForSearch: Infinity,

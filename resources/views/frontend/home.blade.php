@@ -127,7 +127,43 @@
         display: none;
     }
 
+    .image-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+    }
+
+    .fade-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        opacity: 0;
+        transition: opacity 2s ease-in-out;
+    }
+
+    .fade-img.active {
+        opacity: 1;
+    }
+
     </style>
+
+    <!-- <section class="container-fluid bg-white px-lg-5 py-3 px-md-3 px-3 mt-4" style="border-top: 3px solid #febd49; border-right: 3px solid #febd49">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 id="typing-effect" class="fs-4 text-dark text-uppercase fw-bolder unique-font">
+                </h1>
+            </div>
+        </div>
+    </section> -->
+
     <section class="container-fluid bg-white px-lg-5 py-3 px-md-3 px-3 mt-4" style="border-top: 3px solid #febd49; border-right: 3px solid #febd49">
         <div class="row">
             <div class="col-12 text-center">
@@ -167,16 +203,21 @@
     </section> -->
 
     <section class="container-fluid position-relative" style="height: 100vh; overflow: hidden; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49; border-left: 3px solid #febd49">
-        <img src="{{ asset('images/homepage.jpeg') }}"
+        <div class="image-container">
+            <img src="{{ asset('images/homepage.jpeg') }}" alt="Image 1" class="fade-img active">
+            <img src="{{ asset('images/Slab-Kitchen.jpg') }}" alt="Image 2" class="fade-img">
+            <img src="{{ asset('images/slab.jpeg') }}" alt="Image 3" class="fade-img">
+        </div>
+        <!-- <img src="{{ asset('images/homepage.jpeg') }}"
             alt="Bespoke Kitchen Units in London and Surroundings"
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: -1;">
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: -1;"> -->
 
         <div class="row h-100 w-100 d-flex justify-content-between align-items-center">
             <!-- Left div content -->
             <div class="col-xl-7 col-lg-7 col-md-5 col-sm-12 col-xs-12 col-12 text-center d-flex flex-column justify-content-center align-items-center">
-                <h2 class="unique-font text-white fw-bolder text-center p-2" 
+                <h2 class="unique-font text-white fw-bolder text-center p-2" id="typing-effect" 
                     style="text-shadow: 5px 5px 5px black; background-color: rgba(0, 0, 0, 0.5); width: 90%; border-radius: 50px; border: 1px solid #febd49;">
-                    Retail Quality at Online Prices!
+                    
                 </h2>
                 <div class="mt-auto p-2">
                     <a href="{{ route('orderkitchen') }}" class="btn btn-md btn-warning text-dark fw-bolder text-uppercase rounded-0">
