@@ -747,7 +747,7 @@ class HomeController extends Controller
 
     public function styleColours(Request $request) {
         $styleId = $request->style_id;
-        $colours = Product::where('style_id', $styleId)->groupBy('colour_id')->pluck('colour_id');
+        $colours = Product::where('style_id', $styleId)->where('status', 'active')->groupBy('colour_id')->pluck('colour_id');
         return response()->json(['success' => true, 'colours' => $colours]);
     }
 }
