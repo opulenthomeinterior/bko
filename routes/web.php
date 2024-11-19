@@ -7,11 +7,8 @@ use App\Http\Controllers\FaqController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ColourController;
-use App\Http\Controllers\ContactUs;
-use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\DashboardConroller;
 use App\Http\Controllers\DownloadableGuideController;
-use App\Http\Controllers\GroupController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StyleController;
@@ -232,7 +229,9 @@ Route::prefix('/')->middleware([])->group(function () {
     Route::get('/', function () {
         $generalFaqs = Faq::where('type', 'general')->get();
         $deliveryFaqs = Faq::where('type', 'delivery')->get();
-        return view('frontend.home', compact('generalFaqs', 'deliveryFaqs'));
+        $categories = Category::where('status', 1)->get();
+        $styles = Style::where('status', 1)->get();
+        return view('frontend.home', compact('generalFaqs', 'deliveryFaqs', 'categories', 'styles'));
     })->name('home');
 
     Route::post('contact-us-inquiry', [InquiryController::class, 'sendInquiry'])->name('contact_us_inquiry');

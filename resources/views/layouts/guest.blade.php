@@ -189,6 +189,51 @@ use App\Models\Style;
             width: 100px !important;
         }
 
+        .carousel {
+            margin: 0 auto; /* Center the carousel */
+            padding: 0; /* Remove extra padding */
+            overflow: hidden; /* Hide any overflowing content */
+        }
+
+        .owl-carousel, .owl-carousel .item {
+            box-sizing: border-box;
+        }
+
+        .owl-stage-outer {
+            padding: 20px 0px;
+        }
+
+        .item {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        .carousel-card {
+            display: flex;
+            flex-direction: column; /* Stack content vertically */
+            justify-content: flex-start; /* Align content at the top */
+            height: 400px; /* Set fixed height for all cards */
+            padding: 20px; /* Add consistent padding for inner spacing */
+            box-sizing: border-box; /* Include padding in the height calculation */
+        }
+
+        .carousel-card-body {
+            flex-grow: 1; /* Allow card body to take available space */
+        }
+
+        .carousel-card-footer {
+            margin-top: auto; /* Push footer to the bottom */
+            padding: 15px 15px;
+            overflow-y: auto; /* Enable scroll if content overflows */
+            scrollbar-width: none; /* For Firefox, hide the scrollbar */
+            -ms-overflow-style: none; /* For Internet Explorer and Edge, hide the scrollbar */
+        }
+
+        .carousel-card-footer::-webkit-scrollbar {
+            display: none;
+        }
+
     </style>
 </head>
 
@@ -940,6 +985,32 @@ use App\Models\Style;
             }
 
             typeEffect();
+        });
+
+        const showMoreButton = $('#showMoreButton');
+        const styleCards = $('.style-card');
+        let visibleCards = 4; // Number of initially visible cards
+
+        // Hide cards beyond the initial visible count
+        styleCards.slice(visibleCards).hide();
+
+        showMoreButton.click(function () {
+            // Show 4 more items each time the button is clicked
+            let shownCount = 0;
+            styleCards.each(function (index) {
+                if (index >= visibleCards && shownCount < 4) {
+                    $(this).fadeIn(); // Use fadeIn for a smooth transition
+                    shownCount++;
+                }
+            });
+
+            // Update visible count
+            visibleCards += shownCount;
+
+            // Hide the button if all items are visible
+            if (visibleCards >= styleCards.length) {
+                showMoreButton.hide();
+            }
         });
 
         $(document).ready(function() {

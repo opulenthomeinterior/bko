@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Style;
+use App\Models\Testimonial;
 
 class StyleController extends Controller
 {
@@ -51,6 +52,7 @@ class StyleController extends Controller
 
     public function edit(Style $style)
     {
+        $style->load(['testimonials']); 
         return view('pages.styles.edit', compact('style'));
     }
 
@@ -82,6 +84,28 @@ class StyleController extends Controller
             }
 
             $style->save();
+
+            $testimonialDates = $request->date;
+            $testimonialUserNames = $request->user_name;
+            $testimonials = $request->testimonial;
+            
+            if (!empty($style->testimonials)) {
+                // Delete existing testimonials for this style
+                Testimonial::where('style_id', $style->id)->delete();
+                // Create new testimonials for this style
+                foreach ($testimonials as $key => $testimonial) {
+                    // Check if the testimonial is not empty
+                    if (!empty($testimonial)) {
+                        // Create new testimonial
+                        $new_testimonial = new Testimonial();
+                        $new_testimonial->style_id = $style->id;
+                        $new_testimonial->date = $testimonialDates[$key];
+                        $new_testimonial->user_name = $testimonialUserNames[$key];
+                        $new_testimonial->testimonial = $testimonial;
+                        $new_testimonial->save();
+                    }
+                }
+            }
 
             return redirect()->route('styles')->with('success', 'Style updated successfully.');
         } catch (\Exception $e) {

@@ -70,7 +70,7 @@ class HomeController extends Controller
     public function orderkitchenbyname(Request $request, $slug)
     {
         try {
-            $style = Style::where('slug', $slug)->where('status', 1)->firstOrFail();
+            $style = Style::with('testimonials')->where('slug', $slug)->where('status', 1)->firstOrFail();
 
             $uniqueAssemblies = Assembly::whereIn('name', ['Flat Pack', 'Rigid'])->where('status', 1)->get();
 

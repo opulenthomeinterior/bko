@@ -47,7 +47,7 @@
 
     /* Ensure the image fades out smoothly on hover */
     .card-body:hover img {
-        opacity: 0.3;
+        /* opacity: 0.3; */
         transition: opacity 0.4s ease-in-out;
     }
 
@@ -80,51 +80,6 @@
         font-family: 'Merienda', cursive;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Optional shadow for emphasis */
         letter-spacing: 0.02rem;
-    }
-
-    .carousel {
-        margin: 0 auto; /* Center the carousel */
-        padding: 0; /* Remove extra padding */
-        overflow: hidden; /* Hide any overflowing content */
-    }
-
-    .owl-carousel, .owl-carousel .item {
-        box-sizing: border-box;
-    }
-
-    .owl-stage-outer {
-        padding: 20px 0px;
-    }
-
-    .item {
-        display: flex;
-        justify-content: center;
-        align-items: stretch;
-    }
-
-    .carousel-card {
-        display: flex;
-        flex-direction: column; /* Stack content vertically */
-        justify-content: flex-start; /* Align content at the top */
-        height: 400px; /* Set fixed height for all cards */
-        padding: 20px; /* Add consistent padding for inner spacing */
-        box-sizing: border-box; /* Include padding in the height calculation */
-    }
-
-    .carousel-card-body {
-        flex-grow: 1; /* Allow card body to take available space */
-    }
-
-    .carousel-card-footer {
-        margin-top: auto; /* Push footer to the bottom */
-        padding: 15px 15px;
-        overflow-y: auto; /* Enable scroll if content overflows */
-        scrollbar-width: none; /* For Firefox, hide the scrollbar */
-        -ms-overflow-style: none; /* For Internet Explorer and Edge, hide the scrollbar */
-    }
-
-    .carousel-card-footer::-webkit-scrollbar {
-        display: none;
     }
 
     .image-container {
@@ -165,6 +120,36 @@
             opacity: 0;
         }
     } */
+    .styles-card {
+        height: 100%; /* Ensures card stretches to fill the container */
+        min-height: 350px; /* Set a minimum height for consistent sizing */
+        display: flex;
+        flex-direction: column; /* Ensures vertical layout */
+        justify-content: space-between; /* Distribute content evenly */
+        align-items: stretch; /* Stretch content to align evenly */
+    }
+
+    .styles-card-body {
+        flex-grow: 1; /* Ensures the card body stretches to fill space */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; /* Align content at the bottom */
+    }
+
+    .img-container {
+        height: 200px; /* Fixed height for the image container */
+        background-color: #f5f5f5; /* Light background for missing images */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden; /* Prevents content from spilling out */
+    }
+
+    .img-container img {
+        object-fit: cover; /* Ensures the image fits without distortion */
+        width: 100%;
+        height: 100%;
+    }
 
     </style>
 
@@ -217,11 +202,11 @@
 
     <section class="container-fluid position-relative" style="height: 100vh; overflow: hidden; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49; border-left: 3px solid #febd49">
         <div class="image-container">
-            <img src="{{ asset('images/homepage.jpeg') }}" alt="Image 1" class="fade-img active">
-            <img src="{{ asset('images/shaker-22.jpeg') }}" alt="Image 1" class="fade-img">
-            <img src="{{ asset('images/True-Handleless-SuperGloss-Graphite.jpg') }}" alt="Image 2" class="fade-img">
-            <img src="{{ asset('images/Slab-Kitchen.jpg') }}" alt="Image 3" class="fade-img">
-            <img src="{{ asset('images/slab.jpeg') }}" alt="Image 4" class="fade-img">
+            <img src="{{ asset('images/homepage.jpeg') }}" alt="Image 1" class="fade-img py-1 active">
+            <img src="{{ asset('images/shaker-22.jpeg') }}" alt="Image 1" class="fade-img py-1">
+            <img src="{{ asset('images/True-Handleless-SuperGloss-Graphite.jpg') }}" alt="Image 2" class="fade-img py-1">
+            <img src="{{ asset('images/Slab-Kitchen.jpg') }}" alt="Image 3" class="fade-img py-1">
+            <img src="{{ asset('images/slab.jpeg') }}" alt="Image 4" class="fade-img py-1">
         </div>
         <!-- <img src="{{ asset('images/homepage.jpeg') }}"
             alt="Bespoke Kitchen Units in London and Surroundings"
@@ -298,25 +283,41 @@
         <div class="row">
             <h3 class="text-uppercase fw-bolder text-dark text-center">ORDER KITCHEN</h3>
         </div>
-        <div class="row mt-4 px-0">
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12 col-12 mb-4">
-                <a class="btn btn-outline-warning p-1 border-0" style="border-radius: 0;" href="{{ route('orderkitchenbyname', 'j-pull') }}">
-                    <div style="height: 200px;" class="card component-card border-0 h-100 d-flex flex-column justify-content-between">
-                        <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">J PULL KITCHEN</h4>
-                        <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end position-relative">
-                            <!-- Image container -->
-                            <div class="position-relative img-container">
-                                <img src="https://bkonline.uk/public/uploads/styles/15_11_2024_121241_67373ab9d8f19-j-pull-22.jpeg" class="img-fluid w-100 h-100">
-                                <!-- Hover text -->
-                                <div class="hover-text position-absolute w-100 h-100 bg-warning text-dark d-flex justify-content-center align-items-center" style="top: 0; left: 0; transition: opacity 0.4s;">
-                                    <h5 class="text-dark">If you are looking for J-pull Kitchen designs and installation in 1 package but at a lower price, you are at the right place!  BKO Kitchen can be your trusted partner in this kitchen renovation journey from consultation to installation.</h5>
+        <div class="row mt-4 px-0" id="stylesContainer">
+            @foreach ($styles as $key => $style)
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-4 style-card" style="display: {{ $key < 4 ? 'flex' : 'none' }};">
+                    <a class="btn btn-outline-warning p-1 border-0 w-100" style="border-radius: 0" href="{{ route('orderkitchenbyname', $style->slug) }}">
+                        <div class="card styles-card component-card border-0 h-100 d-flex flex-column justify-content-between">
+                            <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">{{$style->name}}</h4>
+                            <div class="card-body styles-card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end position-relative" style="box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
+                                <div class="position-relative img-container">
+                                    @if ($style->image_path)
+                                        <img src="{{asset('uploads/styles/'.$style->image_path)}}" alt="{{$style->name}}">
+                                    @else
+                                        <div class="text-center w-100 h-100 d-flex align-items-center justify-content-center">
+                                            <span class="text-muted">No Image Available</span>
+                                        </div>
+                                    @endif
+                                    <!-- Hover text -->
+                                    <!-- <div class="hover-text position-absolute w-100 h-100 bg-warning text-dark d-flex justify-content-center align-items-center" style="top: 0; left: 0; transition: opacity 0.4s;">
+                                        <h5 class="text-dark">Do you find it challenging to find the dream luxury true-handleless kitchen within your budget? No more with BKO kitchen, we are here with our true handleless style kitchens that combine elegance and style with affordability.</h5>
+                                    </div> -->
                                 </div>
+                                <p class="text-center mt-3" style="text-decoration: underline;">See our range</p>
                             </div>
-                            <p class="text-center mt-3" style="text-decoration: underline;">See our range</p>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
+            @endforeach
+        </div>
+        <div class="row mt-3">
+            <div class="col-12 text-center">
+                <button id="showMoreButton" class="btn btn-warning px-4 py-2 text-dark" style="border-radius: 0;">Show More</button>
             </div>
+        </div>
+    </section>
+    {{--<section>
+        <div>
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12 col-12 mb-4">
                 <a class="btn btn-outline-warning p-1 border-0" style="border-radius: 0;" href="{{ route('orderkitchenbyname', 'true-handleless') }}">
                     <div style="height: 200px;" class="card component-card border-0 h-100 d-flex flex-column justify-content-between">
@@ -372,7 +373,7 @@
                 </a>
             </div>
         </div>
-    </section>
+    </section>--}}
 
     <section class="container-fluid bg-light py-5" style="width: 100%; border-bottom: 3px solid #febd49; border-right: 3px solid #febd49">
         <div class="row">
@@ -384,7 +385,7 @@
             @endphp
             @foreach($categories as $category)
             <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
-                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0;" href="{{route('ordercomponentbyname', [$category->slug])}}">
+                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);" href="{{route('ordercomponentbyname', [$category->slug])}}">
                     <div class="card-old">
                         <div class="card-body">
                             <h5 class="card-title fw-bold text-center">{{$category->name}}</h5>
@@ -409,8 +410,8 @@
                     data-autoplay="true"
                     data-autoplay-timeout="3000"
                     data-responsive='{"0":{"items": "3"}, "768":{"items": "4"}, "992":{"items": "4"}, "1200":{"items": "4"}, "1400":{"items": "4"}}'>
-                    <div class="item mx-10 px-0">
-                        <div class="carousel-card card border border-default" style="border-radius: 0px; box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.1);">
+                    <div class="item mx-10 px-0" style="border: 2px solid #febd49">
+                        <div class="carousel-card card border border-default" style="border-radius: 0px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
                             <div class="card-body carousel-card-body">
                                 <div class="col-12 mb-4 d-flex justify-content-center">
                                     <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
@@ -427,8 +428,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="item mx-10 px-0">
-                        <div class="carousel-card card border border-default" style="border-radius: 0px; box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.1);">
+                    <div class="item mx-10 px-0" style="border: 2px solid #febd49">
+                        <div class="carousel-card card border border-default" style="border-radius: 0px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);">
                             <div class="card-body carousel-card-body">
                                 <div class="col-12 mb-4 d-flex justify-content-center">
                                     <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
@@ -445,8 +446,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="item mx-10 px-0">
-                        <div class="carousel-card card border border-default" style="border-radius: 0px; box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.1);">
+                    <div class="item mx-10 px-0" style="border: 2px solid #febd49">
+                        <div class="carousel-card card border border-default" style="border-radius: 0px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);">
                             <div class="card-body carousel-card-body">
                                 <div class="col-12 mb-4 d-flex justify-content-center">
                                     <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
@@ -463,8 +464,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="item mx-10 px-0">
-                        <div class="carousel-card card border border-default" style="border-radius: 0px; box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.1);">
+                    <div class="item mx-10 px-0" style="border: 2px solid #febd49">
+                        <div class="carousel-card card border border-default" style="border-radius: 0px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);">
                             <div class="card-body carousel-card-body">
                                 <div class="col-12 mb-4 d-flex justify-content-center">
                                     <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">

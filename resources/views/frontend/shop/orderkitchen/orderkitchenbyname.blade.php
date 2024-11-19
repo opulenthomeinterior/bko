@@ -92,6 +92,43 @@
                 </div>
             </div>
         </section>
+        @if (count($styleData['data']->testimonials) > 0)
+        <section class="container-fluid py-5">
+            <div class="row">
+                <h3 class="text-dark text-uppercase fw-bolder text-center mb-4">Testimonials</h3>
+            </div>
+            <div class="row">
+                <div class="carousel main-carousel-banner owl-carousel clients mb-0"
+                        data-margin="30"
+                        data-loop="true"
+                        data-dots="false"
+                        data-autoplay="true"
+                        data-autoplay-timeout="3000"
+                        data-responsive='{"0":{"items": "3"}, "768":{"items": "4"}, "992":{"items": "4"}, "1200":{"items": "4"}, "1400":{"items": "4"}}'>
+                        @foreach ($styleData['data']->testimonials as $testimonial)
+                        <div class="item mx-10 px-0 w-100" style="border: 2px solid #febd49">
+                            <div class="carousel-card card border border-default w-100" style="border-radius: 0px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
+                                <div class="card-body carousel-card-body">
+                                    <div class="col-12 mb-4 d-flex justify-content-center">
+                                        <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
+                                    </div>
+                                    <div class="fw-bold text-center">
+                                        {{$testimonial->user_name}}
+                                    </div>
+                                    <div class="text-center">
+                                        <small class="text-center">{{$testimonial->date}}</small>
+                                    </div>
+                                </div>
+                                <div class="card-footer carousel-card-footer">
+                                    <small class="text-dark text-start" style="font-size: 12px">{{$testimonial->testimonial}}</small>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                </div>
+            </div>
+        </section>
+        @endif
     @endif
 
 </x-guest-layout>

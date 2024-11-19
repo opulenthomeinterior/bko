@@ -14,4 +14,9 @@ class Style extends Model
     {
         return $this->hasMany(Product::class, 'style_id', 'id');
     }
+
+    public function testimonials()
+    {
+        return $this->hasMany(Testimonial::class, 'style_id', 'id');
+    }
 }

@@ -44,6 +44,83 @@
                                     </label>
                                     <textarea name="style_description" id="editor"><?= str_replace('&', '&', $style->style_description) ?></textarea>
                                 </div>
+                                <div class="col-md-12 form-group mb-2">
+                                    @if (count($style->testimonials) > 0)
+                                        @foreach ($style->testimonials as $key => $testimonial)
+                                        <div class="card border border-default p-3">
+                                            <label for="" class="form-label">
+                                                Testimonial {{$key+1}}
+                                            </label>
+                                            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
+                                                <input type="date" name="date[]" class="form-control">
+                                            </div>
+                                            <label for="" class="form-label">
+                                            </label>
+                                            <input type="text" name="user_name[]" class="form-control" placeholder="Enter User Name">
+                                            <label for="" class="form-label">
+                                            </label>
+                                            <textarea name="testimonial[]" class="form-control" placeholder="Enter Testimonial"><?= str_replace('&', '&', $testimonial->testimonial) ?></textarea>
+                                        </div>
+                                        @endforeach
+                                    @else
+                                        <div class="card border border-default p-3">
+                                            <label for="" class="form-label">
+                                                Testimonial 1
+                                            </label>
+                                            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
+                                                <input type="date" name="date[]" class="form-control">
+                                            </div>
+                                            <label for="" class="form-label">
+                                            </label>
+                                            <input type="text" name="user_name[]" class="form-control" placeholder="Enter User Name">
+                                            <label for="" class="form-label">
+                                            </label>
+                                            <textarea name="testimonial[]" class="form-control" placeholder="Enter Testimonial"></textarea>
+                                        </div>
+                                        <div class="card border border-default p-3">
+                                            <label for="" class="form-label">
+                                                Testimonial 2
+                                            </label>
+                                            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
+                                                <input type="date" name="date[]" class="form-control">
+                                            </div>
+                                            <label for="" class="form-label">
+                                            </label>
+                                            <input type="text" name="user_name[]" class="form-control" placeholder="Enter User Name">
+                                            <label for="" class="form-label">
+                                            </label>
+                                            <textarea name="testimonial[]" class="form-control" placeholder="Enter Testimonial"></textarea>
+                                        </div>
+                                        <div class="card border border-default p-3">
+                                            <label for="" class="form-label">
+                                                Testimonial 3
+                                            </label>
+                                            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
+                                                <input type="date" name="date[]" class="form-control">
+                                            </div>
+                                            <label for="" class="form-label">
+                                            </label>
+                                            <input type="text" name="user_name[]" class="form-control" placeholder="Enter User Name">
+                                            <label for="" class="form-label">
+                                            </label>
+                                            <textarea name="testimonial[]" class="form-control" placeholder="Enter Testimonial"></textarea>
+                                        </div>
+                                        <div class="card border border-default p-3">
+                                            <label for="" class="form-label">
+                                                Testimonial 4
+                                            </label>
+                                            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
+                                                <input type="date" name="date[]" class="form-control">
+                                            </div>
+                                            <label for="" class="form-label">
+                                            </label>
+                                            <input type="text" name="user_name[]" class="form-control" placeholder="Enter User Name">
+                                            <label for="" class="form-label">
+                                            </label>
+                                            <textarea name="testimonial[]" class="form-control" placeholder="Enter Testimonial"></textarea>
+                                        </div>
+                                    @endif
+                                </div>
                                 <div class="col-lg-6 form-group mb-2">
                                     <label for="image_path" class="form-label">Upload Image</label>
                                     <input type="file" accept="image/*" class="form-control" id="image_path"
