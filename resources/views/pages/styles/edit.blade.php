@@ -62,6 +62,22 @@
                                             <textarea name="testimonial[]" class="form-control" placeholder="Enter Testimonial"><?= str_replace('&', '&', $testimonial->testimonial) ?></textarea>
                                         </div>
                                         @endforeach
+                                        @if (count($style->testimonials) < 5)
+                                            <div class="card border border-default p-3">
+                                                <label for="" class="form-label">
+                                                    Testimonial {{$key+1}}
+                                                </label>
+                                                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
+                                                    <input type="date" name="date[]" class="form-control">
+                                                </div>
+                                                <label for="" class="form-label">
+                                                </label>
+                                                <input type="text" name="user_name[]" class="form-control" placeholder="Enter User Name">
+                                                <label for="" class="form-label">
+                                                </label>
+                                                <textarea name="testimonial[]" class="form-control" placeholder="Enter Testimonial"><?= str_replace('&', '&', $testimonial->testimonial) ?></textarea>
+                                            </div>
+                                        @endif
                                     @else
                                         <div class="card border border-default p-3">
                                             <label for="" class="form-label">
