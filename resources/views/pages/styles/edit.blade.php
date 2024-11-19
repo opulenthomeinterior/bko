@@ -119,6 +119,20 @@
                                             </label>
                                             <textarea name="testimonial[]" class="form-control" placeholder="Enter Testimonial"></textarea>
                                         </div>
+                                        <div class="card border border-default p-3">
+                                            <label for="" class="form-label">
+                                                Testimonial 5
+                                            </label>
+                                            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
+                                                <input type="date" name="date[]" class="form-control">
+                                            </div>
+                                            <label for="" class="form-label">
+                                            </label>
+                                            <input type="text" name="user_name[]" class="form-control" placeholder="Enter User Name">
+                                            <label for="" class="form-label">
+                                            </label>
+                                            <textarea name="testimonial[]" class="form-control" placeholder="Enter Testimonial"></textarea>
+                                        </div>
                                     @endif
                                 </div>
                                 <div class="col-lg-6 form-group mb-2">
