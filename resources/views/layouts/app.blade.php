@@ -980,11 +980,29 @@
                             FAQ
                         </label>
                         <input type="text" name="question[]" class="form-control" placeholder="Enter Question">
-                        <textarea name="answer[]" class="form-control mt-2" placeholder="Enter Answer"></textarea>
+                        <textarea name="answer[]" class="form-control mt-2 editor" placeholder="Enter Answer"></textarea>
                         <button type="button" class="btn btn-sm btn-danger w-25 mt-2 remove-current-style-faq">Remove</button>
                     </div>
                 `;
                 $('.faq-card').append(faqTemplate);
+                // Initialize CKEditor for the newly added `.editor` element
+                const newEditor = $('.faq-card .current-faq-card:last .editor')[0];
+                ClassicEditor.create(newEditor, {
+                    toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote'],
+                    heading: {
+                        options: [
+                            { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                            { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+                            { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
+                            { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
+                            { model: 'heading4', view: 'h4', title: 'Heading 4', class: 'ck-heading_heading4' },
+                            { model: 'heading5', view: 'h5', title: 'Heading 5', class: 'ck-heading_heading5' },
+                            { model: 'heading6', view: 'h6', title: 'Heading 6', class: 'ck-heading_heading6' }
+                        ]
+                    }
+                }).catch(error => {
+                    console.log(error);
+                });
             });
 
             // Remove an FAQ and update FAQ numbers

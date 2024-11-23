@@ -214,7 +214,7 @@
     </script>
     <script>
         document.querySelectorAll('.editor').forEach((editorElement) => {
-        ClassicEditor.create(editorElement, {
+            ClassicEditor.create(editorElement, {
                 toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote'],
                 heading: {
                     options: [{
