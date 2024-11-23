@@ -980,6 +980,8 @@
                             FAQ
                         </label>
                         <input type="text" name="question[]" class="form-control" placeholder="Enter Question">
+                        <label for="" class="form-label">
+                        </label>
                         <textarea name="answer[]" class="form-control mt-2 editor" placeholder="Enter Answer"></textarea>
                         <button type="button" class="btn btn-sm btn-danger w-25 mt-2 remove-current-style-faq">Remove</button>
                     </div>

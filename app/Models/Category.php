@@ -20,4 +20,15 @@ class Category extends Model
     {
         return $this->hasMany(Category::class, 'parent_category_id');
     }
+
+    public function testimonials()
+    {
+        return $this->hasMany(Testimonial::class, 'category_id', 'id');
+    }
+
+    public function faqs()
+    {
+        return $this->hasMany(Faq::class, 'category_id', 'id');
+    }
+
 }
