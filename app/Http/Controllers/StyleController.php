@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Faq;
 use Illuminate\Http\Request;
 use App\Models\Style;
 use App\Models\Testimonial;
@@ -52,7 +53,7 @@ class StyleController extends Controller
 
     public function edit(Style $style)
     {
-        $style->load(['testimonials']); 
+        $style->load(['testimonials', 'faqs']); 
         return view('pages.styles.edit', compact('style'));
     }
 
@@ -107,9 +108,30 @@ class StyleController extends Controller
                 }
             }
 
+            $questions = $request->question;
+            $answers = $request->answer;
+            
+            if (!empty($style->faqs)) {
+                // Delete existing testimonials for this style
+                Faq::where('style_id', $style->id)->delete();
+                // Create new testimonials for this style
+                foreach ($questions as $key => $question) {
+                    // Check if the testimonial is not empty
+                    if (!empty($question)) {
+                        // Create new testimonial
+                        $newFaq = new Faq();
+                        $newFaq->style_id = $style->id;
+                        $newFaq->question = $questions[$key];
+                        $newFaq->answer = $answers[$key];
+                        $newFaq->save();
+                    }
+                }
+            }
+
             return redirect()->route('styles')->with('success', 'Style updated successfully.');
         } catch (\Exception $e) {
-            return redirect()->route('styles.edit', $style->id)->with('error', 'Error updating style: ' . $e->getMessage());
+            dd($e);
+            return redirect()->back()->with('error', 'Error updating style: ' . $e->getMessage());
         }
     }
 

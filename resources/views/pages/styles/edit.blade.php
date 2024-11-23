@@ -38,119 +38,145 @@
                                     <input type="text" class="form-control" id="style_title" name="style_title"
                                         placeholder="Enter Style Title" value="{{ $style->style_title }}">
                                 </div>
-                                <div class="col-md-12 form-group mb-2">
+                                <div class="col-md-12 form-group mb-4">
                                     <label for="editor" class="form-label">
                                         Style Description
                                     </label>
                                     <textarea name="style_description" id="editor"><?= str_replace('&', '&', $style->style_description) ?></textarea>
                                 </div>
-                                <div class="col-md-12 form-group mb-2">
-                                    @if (count($style->testimonials) > 0)
-                                        @foreach ($style->testimonials as $key => $testimonial)
-                                        <div class="card border border-default p-3">
-                                            <label for="" class="form-label">
-                                                Testimonial {{$key+1}}
-                                            </label>
-                                            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
-                                                <input type="date" name="date[]" class="form-control">
-                                            </div>
-                                            <label for="" class="form-label">
-                                            </label>
-                                            <input type="text" name="user_name[]" class="form-control" placeholder="Enter User Name">
-                                            <label for="" class="form-label">
-                                            </label>
-                                            <textarea name="testimonial[]" class="form-control" placeholder="Enter Testimonial"><?= str_replace('&', '&', $testimonial->testimonial) ?></textarea>
-                                        </div>
-                                        @endforeach
-                                        @if (count($style->testimonials) < 5)
-                                            <div class="card border border-default p-3">
-                                                <label for="" class="form-label">
-                                                    Testimonial {{count($style->testimonials)+1}}
-                                                </label>
-                                                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
-                                                    <input type="date" name="date[]" class="form-control">
+
+                                <!-- Tetimonials -->
+                                <div class="col-md-12 form-group mb-4">
+                                    <section class="container-fluid p-0">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="accordion accordion-flush" id="accordionFlushExample">
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header">
+                                                            <button class="accordion-button collapsed fw-bolder text-dark bg-light" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#flush-collapse"
+                                                                aria-expanded="false" aria-controls="flush-collapse">
+                                                                <span class="text-dark text-uppercase fw-bold text-center">Testimonials</span>
+                                                            </button>
+                                                        </h2>
+                                                        <div id="flush-collapse" class="accordion-collapse collapse"
+                                                            data-bs-parent="#accordionFlushExample">
+                                                            <div class="accordion-body">
+                                                                @if (count($style->testimonials) > 0)
+                                                                    @foreach ($style->testimonials as $key => $testimonial)
+                                                                        <div class="card border border-default p-3 current-testimonial-card">
+                                                                            <label for="" class="form-label">
+                                                                                Testimonial
+                                                                            </label>
+                                                                            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
+                                                                                <input type="date" name="date[]" class="form-control" value="{{$testimonial->date}}">
+                                                                            </div>
+                                                                            <label for="" class="form-label">
+                                                                            </label>
+                                                                            <input type="text" name="user_name[]" class="form-control" placeholder="Enter User Name" value="{{$testimonial->user_name}}">
+                                                                            <label for="" class="form-label">
+                                                                            </label>
+                                                                            <textarea name="testimonial[]" class="form-control" placeholder="Enter Testimonial"><?= str_replace('&', '&', $testimonial->testimonial) ?></textarea>
+                                                                            <label for="" class="form-label">
+                                                                            </label>
+                                                                            @if ($loop->first)
+                                                                                <button type="button" id="add-new-style-testimonial" class="btn btn-sm btn-warning w-25">Add New Testimonial</button>
+                                                                            @else
+                                                                                <button type="button" class="btn btn-sm btn-danger w-25 mt-2 remove-current-style-testimonial">Remove</button>
+                                                                            @endif
+                                                                        </div>
+                                                                    @endforeach
+                                                                @else
+                                                                    <div class="card border border-default p-3">
+                                                                        <label for="" class="form-label">
+                                                                            Testimonial
+                                                                        </label>
+                                                                        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
+                                                                            <input type="date" name="date[]" class="form-control">
+                                                                        </div>
+                                                                        <label for="" class="form-label">
+                                                                        </label>
+                                                                        <input type="text" name="user_name[]" class="form-control" placeholder="Enter User Name">
+                                                                        <label for="" class="form-label">
+                                                                        </label>
+                                                                        <textarea name="testimonial[]" class="form-control" placeholder="Enter Testimonial"></textarea>
+                                                                        <label for="" class="form-label">
+                                                                        </label>
+                                                                        <button type="button" id="add-new-style-testimonial" class="btn btn-sm btn-warning w-25">Add New Testimonial</button>
+                                                                    </div>
+                                                                @endif
+                                                                <div class="testimonial-card">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <label for="" class="form-label">
-                                                </label>
-                                                <input type="text" name="user_name[]" class="form-control" placeholder="Enter User Name">
-                                                <label for="" class="form-label">
-                                                </label>
-                                                <textarea name="testimonial[]" class="form-control" placeholder="Enter Testimonial"></textarea>
                                             </div>
-                                        @endif
-                                    @else
-                                        <div class="card border border-default p-3">
-                                            <label for="" class="form-label">
-                                                Testimonial 1
-                                            </label>
-                                            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
-                                                <input type="date" name="date[]" class="form-control">
-                                            </div>
-                                            <label for="" class="form-label">
-                                            </label>
-                                            <input type="text" name="user_name[]" class="form-control" placeholder="Enter User Name">
-                                            <label for="" class="form-label">
-                                            </label>
-                                            <textarea name="testimonial[]" class="form-control" placeholder="Enter Testimonial"></textarea>
                                         </div>
-                                        <div class="card border border-default p-3">
-                                            <label for="" class="form-label">
-                                                Testimonial 2
-                                            </label>
-                                            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
-                                                <input type="date" name="date[]" class="form-control">
-                                            </div>
-                                            <label for="" class="form-label">
-                                            </label>
-                                            <input type="text" name="user_name[]" class="form-control" placeholder="Enter User Name">
-                                            <label for="" class="form-label">
-                                            </label>
-                                            <textarea name="testimonial[]" class="form-control" placeholder="Enter Testimonial"></textarea>
-                                        </div>
-                                        <div class="card border border-default p-3">
-                                            <label for="" class="form-label">
-                                                Testimonial 3
-                                            </label>
-                                            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
-                                                <input type="date" name="date[]" class="form-control">
-                                            </div>
-                                            <label for="" class="form-label">
-                                            </label>
-                                            <input type="text" name="user_name[]" class="form-control" placeholder="Enter User Name">
-                                            <label for="" class="form-label">
-                                            </label>
-                                            <textarea name="testimonial[]" class="form-control" placeholder="Enter Testimonial"></textarea>
-                                        </div>
-                                        <div class="card border border-default p-3">
-                                            <label for="" class="form-label">
-                                                Testimonial 4
-                                            </label>
-                                            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
-                                                <input type="date" name="date[]" class="form-control">
-                                            </div>
-                                            <label for="" class="form-label">
-                                            </label>
-                                            <input type="text" name="user_name[]" class="form-control" placeholder="Enter User Name">
-                                            <label for="" class="form-label">
-                                            </label>
-                                            <textarea name="testimonial[]" class="form-control" placeholder="Enter Testimonial"></textarea>
-                                        </div>
-                                        <div class="card border border-default p-3">
-                                            <label for="" class="form-label">
-                                                Testimonial 5
-                                            </label>
-                                            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
-                                                <input type="date" name="date[]" class="form-control">
-                                            </div>
-                                            <label for="" class="form-label">
-                                            </label>
-                                            <input type="text" name="user_name[]" class="form-control" placeholder="Enter User Name">
-                                            <label for="" class="form-label">
-                                            </label>
-                                            <textarea name="testimonial[]" class="form-control" placeholder="Enter Testimonial"></textarea>
-                                        </div>
-                                    @endif
+                                    </section>
                                 </div>
+                                
+                                <!-- FAQs -->
+                                <div class="col-md-12 form-group mb-4">
+                                    <section class="container-fluid p-0">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="accordion accordion-flush" id="faqsaccordionFlush">
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header">
+                                                            <button class="accordion-button collapsed fw-bolder text-dark bg-light" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#faqs-flush-collapse"
+                                                                aria-expanded="false" aria-controls="faqs-flush-collapse">
+                                                                <span class="text-dark text-uppercase fw-bold text-center">FAQs</span>
+                                                            </button>
+                                                        </h2>
+                                                        <div id="faqs-flush-collapse" class="accordion-collapse collapse"
+                                                            data-bs-parent="#faqsaccordionFlush">
+                                                            <div class="accordion-body">
+                                                                @if (count($style->faqs) > 0)
+                                                                    @foreach ($style->faqs as $key => $faq)
+                                                                        <div class="card border border-default p-3 current-faq-card">
+                                                                            <label for="" class="form-label">
+                                                                                FAQ
+                                                                            </label>
+                                                                            <input type="text" name="question[]" value="{{$faq->question}}" class="form-control" placeholder="Enter Question">
+                                                                            <label for="" class="form-label">
+                                                                            </label>
+                                                                            <textarea name="answer[]" class="form-control" placeholder="Enter Answer">{!! $faq->answer !!}</textarea>
+                                                                            <label for="" class="form-label">
+                                                                            </label>
+                                                                            @if ($loop->first)
+                                                                                <button type="button" id="add-new-style-faq" class="btn btn-sm btn-warning w-25">Add New FAQ</button>
+                                                                            @else
+                                                                                <button type="button" class="btn btn-sm btn-danger w-25 mt-2 remove-current-style-faq">Remove</button>
+                                                                            @endif
+                                                                        </div>
+                                                                    @endforeach
+                                                                @else
+                                                                    <div class="card border border-default p-3">
+                                                                        <label for="" class="form-label">
+                                                                            FAQ
+                                                                        </label>
+                                                                        <input type="text" name="question[]" class="form-control" placeholder="Enter Question">
+                                                                        <label for="" class="form-label">
+                                                                        </label>
+                                                                        <textarea name="answer[]" class="form-control" placeholder="Enter Answer"></textarea>
+                                                                        <label for="" class="form-label">
+                                                                        </label>
+                                                                        <button type="button" id="add-new-style-faq" class="btn btn-sm btn-warning w-25">Add New FAQ</button>
+                                                                    </div>
+                                                                @endif
+                                                                <div class="faq-card">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                                
                                 <div class="col-lg-6 form-group mb-2">
                                     <label for="image_path" class="form-label">Upload Image</label>
                                     <input type="file" accept="image/*" class="form-control" id="image_path"

@@ -942,6 +942,55 @@
                     }
                 });
             });
+            
+            // Add a new Testimonial
+            $(document).on('click', '#add-new-style-testimonial', function() {
+                const faqTemplate = `
+                    <div class="card border border-default p-3 current-testimonial-card">
+                        <label for="" class="form-label">
+                            Testimonial
+                        </label>
+                        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
+                            <input type="date" name="date[]" class="form-control">
+                        </div>
+                        <label for="" class="form-label">
+                        </label>
+                        <input type="text" name="user_name[]" class="form-control" placeholder="Enter User Name">
+                        <label for="" class="form-label">
+                        </label>
+                        <textarea name="testimonial[]" class="form-control" placeholder="Enter Testimonial"></textarea>
+                        <label for="" class="form-label">
+                        </label>
+                        <button type="button" class="btn btn-sm btn-danger w-25 mt-2 remove-current-style-testimonial">Remove</button>
+                    </div>
+                `;
+                $('.testimonial-card').append(faqTemplate);
+            });
+
+            // Remove an FAQ and update FAQ numbers
+            $(document).on('click', '.remove-current-style-testimonial', function() {
+                $(this).closest('.current-testimonial-card').remove();
+            });
+            
+            // Add a new FAQ
+            $(document).on('click', '#add-new-style-faq', function() {
+                const faqTemplate = `
+                    <div class="card border border-default p-3 current-faq-card">
+                        <label class="form-label current-faq-count">
+                            FAQ
+                        </label>
+                        <input type="text" name="question[]" class="form-control" placeholder="Enter Question">
+                        <textarea name="answer[]" class="form-control mt-2" placeholder="Enter Answer"></textarea>
+                        <button type="button" class="btn btn-sm btn-danger w-25 mt-2 remove-current-style-faq">Remove</button>
+                    </div>
+                `;
+                $('.faq-card').append(faqTemplate);
+            });
+
+            // Remove an FAQ and update FAQ numbers
+            $(document).on('click', '.remove-current-style-faq', function() {
+                $(this).closest('.current-faq-card').remove();
+            });
         });
     </script>
 

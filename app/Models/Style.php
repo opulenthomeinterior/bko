@@ -9,6 +9,8 @@ class Style extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     // Define the relationship with Product
     public function products()
     {
@@ -18,5 +20,10 @@ class Style extends Model
     public function testimonials()
     {
         return $this->hasMany(Testimonial::class, 'style_id', 'id');
+    }
+
+    public function faqs()
+    {
+        return $this->hasMany(Faq::class, 'style_id', 'id');
     }
 }
