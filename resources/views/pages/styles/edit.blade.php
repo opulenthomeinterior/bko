@@ -42,7 +42,7 @@
                                     <label for="editor" class="form-label">
                                         Style Description
                                     </label>
-                                    <textarea name="style_description" id="editor"><?= str_replace('&', '&', $style->style_description) ?></textarea>
+                                    <textarea name="style_description" class="editor"><?= str_replace('&', '&', $style->style_description) ?></textarea>
                                 </div>
 
                                 <!-- Tetimonials -->
@@ -115,7 +115,6 @@
                                         </div>
                                     </section>
                                 </div>
-                                
                                 <!-- FAQs -->
                                 <div class="col-md-12 form-group mb-4">
                                     <section class="container-fluid p-0">
@@ -142,7 +141,7 @@
                                                                             <input type="text" name="question[]" value="{{$faq->question}}" class="form-control" placeholder="Enter Question">
                                                                             <label for="" class="form-label">
                                                                             </label>
-                                                                            <textarea name="answer[]" class="form-control" placeholder="Enter Answer">{!! $faq->answer !!}</textarea>
+                                                                            <textarea name="answer[]" class="form-control editor" placeholder="Enter Answer">{!! $faq->answer !!}</textarea>
                                                                             <label for="" class="form-label">
                                                                             </label>
                                                                             @if ($loop->first)
@@ -160,7 +159,7 @@
                                                                         <input type="text" name="question[]" class="form-control" placeholder="Enter Question">
                                                                         <label for="" class="form-label">
                                                                         </label>
-                                                                        <textarea name="answer[]" class="form-control" placeholder="Enter Answer"></textarea>
+                                                                        <textarea name="answer[]" class="form-control editor" placeholder="Enter Answer"></textarea>
                                                                         <label for="" class="form-label">
                                                                         </label>
                                                                         <button type="button" id="add-new-style-faq" class="btn btn-sm btn-warning w-25">Add New FAQ</button>
@@ -214,8 +213,8 @@
         var removeImageUrl = "{{ route('style.removeImage', $style->id) }}";
     </script>
     <script>
-        ClassicEditor
-            .create(document.querySelector('#editor'), {
+        document.querySelectorAll('.editor').forEach((editorElement) => {
+        ClassicEditor.create(editorElement, {
                 toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote'],
                 heading: {
                     options: [{
@@ -265,5 +264,6 @@
             .catch(error => {
                 console.log(error);
             });
+        });
     </script>
 </x-app-layout>

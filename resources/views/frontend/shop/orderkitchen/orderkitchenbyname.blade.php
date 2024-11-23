@@ -129,6 +129,40 @@
             </div>
         </section>
         @endif
+        @if (count($styleData['data']->faqs) > 0)
+        <section class="container-fluid py-5 p-0">
+            <div class="row">
+                <h3 class="text-dark text-uppercase fw-bolder text-center">FAQs</h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        @if (count($styleData['data']->faqs) > 0)
+                            @foreach ($styleData['data']->faqs as $faq)
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed fw-bolder text-dark btn btn-outline-warning" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapse{{ $loop->index + 1 }}"
+                                            aria-expanded="false" aria-controls="flush-collapse{{ $loop->index + 1 }}">
+                                            {{ $faq->question }}
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapse{{ $loop->index + 1 }}" class="accordion-collapse collapse"
+                                        data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">{!! $faq->answer !!}</div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @else
+                            <div class="alert alert-info" role="alert">
+                                No FAQ's found.
+                            </div>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </section>
+        @endif
     @endif
 
 </x-guest-layout>

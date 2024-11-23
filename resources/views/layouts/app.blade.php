@@ -958,7 +958,7 @@
                         <input type="text" name="user_name[]" class="form-control" placeholder="Enter User Name">
                         <label for="" class="form-label">
                         </label>
-                        <textarea name="testimonial[]" class="form-control" placeholder="Enter Testimonial"></textarea>
+                        <textarea name="testimonial[]" class="form-control editor" placeholder="Enter Testimonial"></textarea>
                         <label for="" class="form-label">
                         </label>
                         <button type="button" class="btn btn-sm btn-danger w-25 mt-2 remove-current-style-testimonial">Remove</button>
