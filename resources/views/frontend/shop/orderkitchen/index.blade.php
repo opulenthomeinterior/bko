@@ -24,7 +24,7 @@
         @endphp
         <div class="row mb-md-5 mb-4">
             <div class="col-lg-6 col-md-6 col-12 pr-4 {{ $imageOrderClass }}">
-                <img src="{{ $styleData['data']->image_path ? asset('uploads/styles/' . $styleData['data']->image_path) : asset('images/Slab-Kitchen.jpg') }}"
+                <img src="{{ $styleData['data']->image_path ? asset('uploads/styles/' . $styleData['data']->image_path) : asset('images/order-component.jpg') }}"
                     class="img-fluid" />
             </div>
 

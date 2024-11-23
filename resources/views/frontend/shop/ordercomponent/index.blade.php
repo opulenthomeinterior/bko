@@ -1,6 +1,6 @@
 <x-guest-layout>
     <section class="container-fluid"
-        style="background-image: url('{{ asset('images/Slab-Kitchen.jpg') }}'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 80vh;">
+        style="background-image: url('{{ asset('images/order-component.jpg') }}'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 80vh;">
     </section>
     <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
         <nav aria-label="breadcrumb">
