@@ -67,12 +67,12 @@
                                 @foreach ($colours as $key => $colour)
                                     <div class="col-4 mb-4">
                                         <div class="card border border-warning w-100" style="border-radius: 0px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
-                                            <div class="card-header fw-bold border-bottom border-default">
-                                                <div class="mb-2">
+                                            <div class="card-header border-bottom border-default">
+                                                <div class="mb-2 fw-bold">
                                                     {{$styleData['data']['name']}} {{$colour->trade_colour}}
                                                 </div>
                                                 <div>
-                                                    <a href="{{route('orderkitchenbycolour', [$styleData['data']['slug'], 'rigid', $colour->slug])}}" class="btn btn-sm btn-outline-warning text-dark rounded-0">Rigid</a>
+                                                    Assembly Type: <a href="{{route('orderkitchenbycolour', [$styleData['data']['slug'], 'rigid', $colour->slug])}}" class="btn btn-sm btn-outline-warning text-dark rounded-0">Rigid</a>
                                                     <a href="{{route('orderkitchenbycolour', [$styleData['data']['slug'], 'flat-pack', $colour->slug])}}" class="btn btn-sm btn-outline-warning text-dark rounded-0">Flat Pack</a>
                                                 </div>
                                             </div>
