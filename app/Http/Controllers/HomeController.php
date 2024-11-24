@@ -72,6 +72,15 @@ class HomeController extends Controller
         try {
             $style = Style::with('testimonials')->where('slug', $slug)->where('status', 1)->firstOrFail();
 
+            // Fetch all products with the given style_id and status
+            $styleProducts = Product::where('style_id', $style->id)->where('status', 'active')->get();
+
+            // Collect all unique colour_ids from the products
+            $colourIds = $styleProducts->pluck('colour_id')->unique();
+
+            // Fetch only the colours related to those products
+            $colours = Colour::whereIn('id', $colourIds)->whereNotNull('finishing')->get();
+
             $uniqueAssemblies = Assembly::whereIn('name', ['Flat Pack', 'Rigid'])->where('status', 1)->get();
 
             $styleData['data'] = $style;
@@ -91,7 +100,7 @@ class HomeController extends Controller
             // echo '</pre>';
             // exit;
 
-            return view('frontend.shop.orderkitchen.orderkitchenbyname', compact('styleData'));
+            return view('frontend.shop.orderkitchen.orderkitchenbyname', compact('styleData', 'colours'));
         } catch (\Exception $e) {
             return redirect()->route('orderkitchen');
         }

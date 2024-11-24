@@ -47,256 +47,46 @@
                                     @if ($baseCabinets->count() > 0)
                                     @foreach ($baseCabinets as $index => $baseCabinet)
                                     {{--<div class="col-lg-4 col-6 mb-3">
-                                            <div class="card">
-                                                <div class="card-body text-center">
-                                                    <!-- Button trigger modal -->
-                                                    <a class="modal-icon z-3" href="#" data-bs-toggle="modal"
-                                                        data-bs-target="#baseCabinets{{ $index }}">
-                                                        <i class="ri-add-circle-line text-black fs-4"></i>
-                                                    </a>
-                                                    <!-- Modal -->
-                                                    <div class="modal fade" id="baseCabinets{{ $index }}"
-                                                        tabindex="-1"
-                                                        aria-labelledby="baseCabinetsLabel{{ $index }}"
-                                                        aria-hidden="true">
-                                                        <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <button type="button" class="btn-close"
-                                                                        data-bs-dismiss="modal"
-                                                                        aria-label="Close"></button>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    <div class="container-fluid">
-                                                                        <div class="row">
-                                                                            <div class="col-lg-4 col-md-5 col-12">
-                                                                                <img src="{{ !empty($baseCabinet->image_path) ? asset('imgs/products/'.$baseCabinet->image_path) : asset('images/no-image-available.jpg') }}"
-                                                                                    class="img-fluid" />
-                                                                            </div>
-                                                                            <div
-                                                                                class="col-lg-8 col-md-7 col-12 text-start">
-                                                                                <h1 class="fs-5 fw-bold">
-                                                                                    {{ $baseCabinet->full_title }}
-                                                                                </h1>
-                                                                                <hr>
-                                                                                <h6
-                                                                                    class="fs-6 fw-bolder text-dark">
-                                                                                    Styling</h6>
-                                                                                <ul>
-                                                                                    <li>HEIGHT: 720mm</li>
-                                                                                    <li>WIDTH: 1000mm</li>
-                                                                                    <li>DEPTH: 570mm</li>
-                                                                                </ul>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="modal-footer"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="">
-                                                        <figure>
-                                                            <img class="product-image px-0"
-                                                                src="{{ !empty($baseCabinet->image_path) ? asset('imgs/products/'.$baseCabinet->image_path) : asset('images/no-image-available.jpg') }}"
-                                                                alt="Card image cap">
-                                                        </figure>
-                                                        <div class="">
-                                                            <a href=""
-                                                                class="text-center text-decoration-underline fs-5 fw-bold">
-                                                                {{ $baseCabinet->short_title }}
-                                                            </a>
-                                                            <p class="py-lg-3 py-2">
-                                                                <small
-                                                                    class="fw-bold text-center">{{ $baseCabinet->product_code }}</small>
-                                                            </p>
-                                                            <p class="py-lg-3 py-2">
-                                                                <small
-                                                                    class="fw-bold text-center">{{ $baseCabinet->dimensions }}</small>
-                                                            </p>
-                                                            <div class="container-fluid">
-                                                                <div
-                                                                    class="row justify-content-center product-counter">
-                                                                    <input id="minus{{ $baseCabinet->id }}"
-                                                                        class="minus border bg-dark text-light p-0"
-                                                                        type="button" value="-"
-                                                                        onclick="decreaseQuantity('{{ $baseCabinet->id }}', '{{ $baseCabinet->product_code }}', '{{ $baseCabinet->full_title }}', {{ $baseCabinet->price }}, {{ $baseCabinet->discounted_price }}, {{ $baseCabinet->discounted_percentage ?? 0 }}, '{{ $baseCabinet->ParentCategory->slug }}')" />
-                                                                    <input id="quantity{{ $baseCabinet->id }}"
-                                                                        class="quantity border border-black text-center"
-                                                                        type="text" value="0"
-                                                                        name="quantity" disabled />
-                                                                    <input id="plus{{ $baseCabinet->id }}"
-                                                                        class="plus border bg-dark text-light p-0"
-                                                                        type="button" value="+"
-                                                                        {{$baseCabinet->price == 0 ? 'disabled' : '' }} 
-                                                                        onclick="increaseQuantity('{{ $baseCabinet->id }}', '{{ $baseCabinet->product_code }}', '{{ $baseCabinet->full_title }}', {{ $baseCabinet->price }}, {{ $baseCabinet->discounted_price }}, {{ $baseCabinet->discounted_percentage ?? 0 }}, '{{ $baseCabinet->ParentCategory->slug }}')" />
-                                                                </div>
-                                                            </div>
-                                                            <p class="fs-5 fw-bold mt-lg-2">
-                                                                {{ $baseCabinet->price == 0 ? 'Out of Stock' : '£' . $baseCabinet->price }}
-                                                            </p>
-                                                            <div class="container-fluid">
-                                                                @if ($baseCabinetData->style)
-                                                                <div class="row">
-                                                                    <div class="col-4 p-0 d-md-flex d-none">
-                                                                        <p
-                                                                            class="category-text text-start text-uppercase m-0 pt-1">
-                                                                            <small>Style</small>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div
-                                                                        class="col-md-8 col-sm-12 p-0 text-center">
-                                                                        <p
-                                                                            class="category-value fw-semibold py-1 mb-2">
-                                                                            <small>{{ $baseCabinet->style->name }}</small>
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                                @endif
-                                                                @if ($baseCabinetData->colour)
-                                                                <div class="row">
-                                                                    <div class="col-4 p-0 d-md-flex d-none">
-                                                                        <p
-                                                                            class="category-text text-start text-uppercase m-0 pt-1">
-                                                                            <small>Colour</small>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div
-                                                                        class="col-md-8 col-sm-12 p-0 text-center">
-                                                                        <p
-                                                                            class="category-value fw-semibold py-1 mb-2">
-                                                                            <small>{{ $baseCabinet->colour->trade_colour ? $baseCabinet->colour->trade_colour : $baseCabinet->colour->name }}</small>
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                                @endif
-                                                                @if ($baseCabinetData->assembly)
-                                                                <div class="row">
-                                                                    <div class="col-4 p-0 d-md-flex d-none">
-                                                                        <p
-                                                                            class="category-text text-start text-uppercase m-0 pt-1">
-                                                                            <small>Assembly</small>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div
-                                                                        class="col-md-8 col-sm-12 p-0 text-center">
-                                                                        <p
-                                                                            class="category-value fw-semibold py-1 mb-2">
-                                                                            <small>{{ $baseCabinet->assembly->name }}</small>
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                                @endif
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>--}}
-                                    <!-- <div class="col-lg-4 col-6 mb-3">
-                                        <div class="card border-1 btn btn-outline-warning bg-light p-0" style="border-radius: 0;">
-                                            <div class="bg-warning card-header px-0 py-0">
-                                                <div class="py-2 text-center product-short-title-container w-100">
-                                                    <a href="#" class="product-short-title fw-bold text-decoration-underline fs-4">
-                                                        {{ $baseCabinet->short_title }}
-                                                    </a>
-                                                </div>
-                                            </div>
+                                        <div class="card">
                                             <div class="card-body text-center">
-                                                <div class="modal fade" id="productModal{{ $baseCabinet->id }}" tabindex="-1"
-                                                    aria-labelledby="productModalLabel{{ $baseCabinet->id }}"
+                                                <!-- Button trigger modal -->
+                                                <a class="modal-icon z-3" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#baseCabinets{{ $index }}">
+                                                    <i class="ri-add-circle-line text-black fs-4"></i>
+                                                </a>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="baseCabinets{{ $index }}"
+                                                    tabindex="-1"
+                                                    aria-labelledby="baseCabinetsLabel{{ $index }}"
                                                     aria-hidden="true">
-                                                    <div class="modal-dialog modal-lg modal-dialog-centered">
-                                                        <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
-                                                            <div class="modal-header border-bottom border-light">
-                                                                <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
-                                                                    {{ $baseCabinet->full_title }}
-                                                                </h1>
+                                                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
                                                                 <button type="button" class="btn-close"
-                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    data-bs-dismiss="modal"
+                                                                    aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
                                                                 <div class="container-fluid">
                                                                     <div class="row">
-                                                                        <div class="col-lg-8 col-md-8 col-8 border-bottom border-warning bg-light">
+                                                                        <div class="col-lg-4 col-md-5 col-12">
                                                                             <img src="{{ !empty($baseCabinet->image_path) ? asset('imgs/products/'.$baseCabinet->image_path) : asset('images/no-image-available.jpg') }}"
-                                                                                class="img-fluid product-image" style="height: 300px;" />
+                                                                                class="img-fluid" />
                                                                         </div>
-                                                                        <div class="col-lg-4 col-md-4 col-4 text-start text-dark">
-                                                                            <div>
-                                                                                <h6 class="fs-6 fw-bolder text-dark">Styling</h6>
-                                                                                <ul style="list-style: none; padding: 0">
-                                                                                    @if ($baseCabinet->style)
-                                                                                    <li>
-                                                                                        <p class="mb-0">
-                                                                                            <small
-                                                                                                class="fw-bold text-uppercase text-dark">Style:</small>
-                                                                                            {{ $baseCabinet->style->name }}
-                                                                                        </p>
-                                                                                    </li>
-                                                                                    @endif
-                                                                                    @if ($baseCabinet->assembly)
-                                                                                    <li>
-                                                                                        <p class="mb-0">
-                                                                                            <small
-                                                                                                class="fw-bold text-uppercase text-dark">Assembly:</small>
-                                                                                            {{ $baseCabinet->assembly->name }}
-                                                                                        </p>
-                                                                                    </li>
-                                                                                    @endif
-                                                                                    @if ($baseCabinet->colour)
-                                                                                    <li>
-                                                                                        <p class="mb-0">
-                                                                                            <small
-                                                                                                class="fw-bold text-uppercase text-dark">Colour:</small>
-                                                                                            {{ $baseCabinet->colour->trade_colour ? $baseCabinet->colour->trade_colour : $baseCabinet->colour->name }}
-                                                                                        </p>
-                                                                                    </li>
-                                                                                    @endif
-                                                                                </ul>
-                                                                            </div>
-                                                                            <div>
-                                                                                <h6 class="fs-6 fw-bolder text-dark">Dimensions
-                                                                                </h6>
-                                                                                <ul style="list-style: none; padding: 0">
-                                                                                    <li>
-                                                                                        <p class="mb-0">
-                                                                                            <small
-                                                                                                class="fw-bold text-uppercase text-dark">HEIGHT:</small>
-                                                                                            {{ intval($baseCabinet->height) }}mm
-                                                                                        </p>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <p class="mb-0">
-                                                                                            <small
-                                                                                                class="fw-bold text-uppercase text-dark">WIDTH:</small>
-                                                                                            {{ intval($baseCabinet->width) }}mm
-                                                                                        </p>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <p class="mb-0">
-                                                                                            <small
-                                                                                                class="fw-bold text-uppercase text-dark">DEPTH:</small>
-                                                                                            {{ intval($baseCabinet->depth) }}mm
-                                                                                        </p>
-                                                                                    </li>
-                                                                                </ul>
-                                                                            </div>
-                                                                            <div>
-                                                                                <h6 class="fs-6 fw-bolder text-dark">
-                                                                                    Range Specification
-                                                                                </h6>
-                                                                                <p class="mb-0">
-                                                                                    <small>
-                                                                                        @if ($baseCabinet->category?->description)
-                                                                                        {!! $baseCabinet->category->description !!}
-                                                                                        @elseif ($baseCabinet->category?->parentCategory?->description)
-                                                                                        {!! $baseCabinet->category->parentCategory->description !!}
-                                                                                        @endif
-                                                                                    </small>
-                                                                                </p>
-                                                                            </div>
+                                                                        <div
+                                                                            class="col-lg-8 col-md-7 col-12 text-start">
+                                                                            <h1 class="fs-5 fw-bold">
+                                                                                {{ $baseCabinet->full_title }}
+                                                                            </h1>
+                                                                            <hr>
+                                                                            <h6
+                                                                                class="fs-6 fw-bolder text-dark">
+                                                                                Styling</h6>
+                                                                            <ul>
+                                                                                <li>HEIGHT: 720mm</li>
+                                                                                <li>WIDTH: 1000mm</li>
+                                                                                <li>DEPTH: 570mm</li>
+                                                                            </ul>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -306,103 +96,105 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="container-fluid">
-                                                    <div class="row">
-                                                        <div class="col-lg-12">
-                                                            <figure class="my-0" style="margin-bottom: 0px !important;">
-                                                                <img class="product-image px-0"
-                                                                    style="margin-bottom: 0px !important;min-height:175px;max-height:175px;object-fit:contain"
-                                                                    src="{{ !empty($baseCabinet->image_path) ? asset('imgs/products/'.$baseCabinet->image_path) : asset('images/no-image-available.jpg') }}"
-                                                                    alt="Card image cap" data-bs-toggle="modal"
-                                                                    data-bs-target="#productModal{{ $baseCabinet->id }}">
-                                                            </figure>
-                                                            <p class="mt-2"><small class="fw-bold text-start text-dark">{{ $baseCabinet->product_code }}</small></p>
-                                                            <p class="">
-                                                                <small
-                                                                    class="fw-bold text-start text-dark">{{ $baseCabinet->dimensions }}</small>
-                                                            </p>
+                                                <div class="">
+                                                    <figure>
+                                                        <img class="product-image px-0"
+                                                            src="{{ !empty($baseCabinet->image_path) ? asset('imgs/products/'.$baseCabinet->image_path) : asset('images/no-image-available.jpg') }}"
+                                                            alt="Card image cap">
+                                                    </figure>
+                                                    <div class="">
+                                                        <a href=""
+                                                            class="text-center text-decoration-underline fs-5 fw-bold">
+                                                            {{ $baseCabinet->short_title }}
+                                                        </a>
+                                                        <p class="py-lg-3 py-2">
+                                                            <small
+                                                                class="fw-bold text-center">{{ $baseCabinet->product_code }}</small>
+                                                        </p>
+                                                        <p class="py-lg-3 py-2">
+                                                            <small
+                                                                class="fw-bold text-center">{{ $baseCabinet->dimensions }}</small>
+                                                        </p>
+                                                        <div class="container-fluid">
+                                                            <div
+                                                                class="row justify-content-center product-counter">
+                                                                <input id="minus{{ $baseCabinet->id }}"
+                                                                    class="minus border bg-dark text-light p-0"
+                                                                    type="button" value="-"
+                                                                    onclick="decreaseQuantity('{{ $baseCabinet->id }}', '{{ $baseCabinet->product_code }}', '{{ $baseCabinet->full_title }}', {{ $baseCabinet->price }}, {{ $baseCabinet->discounted_price }}, {{ $baseCabinet->discounted_percentage ?? 0 }}, '{{ $baseCabinet->ParentCategory->slug }}')" />
+                                                                <input id="quantity{{ $baseCabinet->id }}"
+                                                                    class="quantity border border-black text-center"
+                                                                    type="text" value="0"
+                                                                    name="quantity" disabled />
+                                                                <input id="plus{{ $baseCabinet->id }}"
+                                                                    class="plus border bg-dark text-light p-0"
+                                                                    type="button" value="+"
+                                                                    {{$baseCabinet->price == 0 ? 'disabled' : '' }} 
+                                                                    onclick="increaseQuantity('{{ $baseCabinet->id }}', '{{ $baseCabinet->product_code }}', '{{ $baseCabinet->full_title }}', {{ $baseCabinet->price }}, {{ $baseCabinet->discounted_price }}, {{ $baseCabinet->discounted_percentage ?? 0 }}, '{{ $baseCabinet->ParentCategory->slug }}')" />
+                                                            </div>
                                                         </div>
-                                                        <div class="col-12">
-                                                            <div class="container-fluid">
-                                                                <div class="row justify-content-center">
-                                                                    <div
-                                                                        class="col-6 d-flex justify-content-center product-counter">
-                                                                        <input id="minus{{ $baseCabinet->id }}"
-                                                                            class="minus border bg-dark text-light p-0"
-                                                                            type="button" value="-"
-                                                                            onclick="decreaseQuantity('{{ $baseCabinet->id }}', '{{ $baseCabinet->product_code }}', '{{ $baseCabinet->full_title }}', {{ $baseCabinet->price }}, {{ $baseCabinet->discounted_price }}, {{ $baseCabinet->discounted_percentage ?? 0 }}, '{{ $baseCabinet->ParentCategory->slug }}')" />
-                                                                        <input id="quantity{{ $baseCabinet->id }}"
-                                                                            class="quantity border border-black text-center"
-                                                                            type="text" value="0" name="quantity"
-                                                                            disabled />
-                                                                        <input id="plus{{ $baseCabinet->id }}"
-                                                                            class="plus border bg-dark text-light p-0"
-                                                                            type="button" value="+" type="number"
-                                                                            max="10"
-                                                                            {{$baseCabinet->price == 0 ? 'disabled' : '' }} 
-                                                                            onclick="increaseQuantity('{{ $baseCabinet->id }}', '{{ $baseCabinet->product_code }}', '{{ $baseCabinet->full_title }}', {{ $baseCabinet->price }}, {{ $baseCabinet->discounted_price }}, {{ $baseCabinet->discounted_percentage ?? 0 }}, '{{ $baseCabinet->ParentCategory->slug }}')" />
-                                                                    </div>
-                                                                    <div class="col-6">
-                                                                        <p class="fs-5 fw-bold mt-lg-2 text-dark">
-                                                                            {{ $baseCabinet->price == 0 ? 'Out of Stock' : '£' . $baseCabinet->price }}
-                                                                        </p>
-                                                                    </div>
+                                                        <p class="fs-5 fw-bold mt-lg-2">
+                                                            {{ $baseCabinet->price == 0 ? 'Out of Stock' : '£' . $baseCabinet->price }}
+                                                        </p>
+                                                        <div class="container-fluid">
+                                                            @if ($baseCabinetData->style)
+                                                            <div class="row">
+                                                                <div class="col-4 p-0 d-md-flex d-none">
+                                                                    <p
+                                                                        class="category-text text-start text-uppercase m-0 pt-1">
+                                                                        <small>Style</small>
+                                                                    </p>
+                                                                </div>
+                                                                <div
+                                                                    class="col-md-8 col-sm-12 p-0 text-center">
+                                                                    <p
+                                                                        class="category-value fw-semibold py-1 mb-2">
+                                                                        <small>{{ $baseCabinet->style->name }}</small>
+                                                                    </p>
                                                                 </div>
                                                             </div>
-                                                            <div class="container-fluid">
-                                                                @if ($baseCabinet->style)
-                                                                <div class="row">
-                                                                    <div class="col-4 p-0 d-md-flex d-none">
-                                                                        <p
-                                                                            class="category-text text-start text-dark text-uppercase m-0 pt-1">
-                                                                            <small>Style</small>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="col-md-8 col-sm-12 p-0 text-center">
-                                                                        <p class="category-value fw-semibold py-1 mb-2 text-dark">
-                                                                            <small>{{ $baseCabinet->style->name }}</small>
-                                                                        </p>
-                                                                    </div>
+                                                            @endif
+                                                            @if ($baseCabinetData->colour)
+                                                            <div class="row">
+                                                                <div class="col-4 p-0 d-md-flex d-none">
+                                                                    <p
+                                                                        class="category-text text-start text-uppercase m-0 pt-1">
+                                                                        <small>Colour</small>
+                                                                    </p>
                                                                 </div>
-                                                                @endif
-                                                                @if ($baseCabinet->colour)
-                                                                <div class="row">
-                                                                    <div class="col-4 p-0 d-md-flex d-none">
-                                                                        <p
-                                                                            class="category-text text-start text-dark text-uppercase m-0 pt-1">
-                                                                            <small>Colour</small>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="col-md-8 col-sm-12 p-0 text-center">
-                                                                        <p class="category-value fw-semibold py-1 mb-2 text-dark">
-                                                                            <small>{{ $baseCabinet->colour->trade_colour ? $baseCabinet->colour->trade_colour : $baseCabinet->colour->name }}</small>
-                                                                        </p>
-                                                                    </div>
+                                                                <div
+                                                                    class="col-md-8 col-sm-12 p-0 text-center">
+                                                                    <p
+                                                                        class="category-value fw-semibold py-1 mb-2">
+                                                                        <small>{{ $baseCabinet->colour->trade_colour ? $baseCabinet->colour->trade_colour : $baseCabinet->colour->name }}</small>
+                                                                    </p>
                                                                 </div>
-                                                                @endif
-                                                                @if ($baseCabinet->assembly)
-                                                                <div class="row">
-                                                                    <div class="col-4 p-0 d-md-flex d-none">
-                                                                        <p
-                                                                            class="category-text text-start text-dark text-uppercase m-0 pt-1">
-                                                                            <small>Assembly</small>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="col-md-8 col-sm-12 p-0 text-center">
-                                                                        <p class="category-value fw-semibold py-1 mb-2 text-dark">
-                                                                            <small>{{ $baseCabinet->assembly->name }}</small>
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                                @endif
                                                             </div>
+                                                            @endif
+                                                            @if ($baseCabinetData->assembly)
+                                                            <div class="row">
+                                                                <div class="col-4 p-0 d-md-flex d-none">
+                                                                    <p
+                                                                        class="category-text text-start text-uppercase m-0 pt-1">
+                                                                        <small>Assembly</small>
+                                                                    </p>
+                                                                </div>
+                                                                <div
+                                                                    class="col-md-8 col-sm-12 p-0 text-center">
+                                                                    <p
+                                                                        class="category-value fw-semibold py-1 mb-2">
+                                                                        <small>{{ $baseCabinet->assembly->name }}</small>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            
                                         </div>
-                                    </div> -->
+                                    </div>--}}
+                                    
                                     @endforeach
 
                                     @php 

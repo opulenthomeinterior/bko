@@ -2,7 +2,7 @@
     <section class="container-fluid"
         style="background-image: url('{{ $styleData['data']['image_path'] ? asset('uploads/styles/' . $styleData['data']['image_path']) : asset('images/order-component.jpg') }}'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 50vh;">
     </section>
-    <section class="container-fluid px-lg-5 py-lg-5 py-4 px-md-3 px-3">
+    <section class="container-fluid px-lg-5 py-lg-5 py-4 px-md-3 px-3" style="background-color: #f0f0f0;">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase">Home</a></li>
@@ -38,7 +38,7 @@
     </section>
 
     @if ($styleData['data']['style_title'] || $styleData['data']['style_description'] || $styleData['data']['image_path'])
-        <section class="container-fluid px-lg-5 px-md-3 px-3 py-lg-4 py-md-3 py-2" style="background-color: #f0f0f0;">
+        <section class="container-fluid px-lg-5 px-md-3 px-3" style="background-color: #fff;">
             <div class="row">
                 <div class="col-12 mb-lg-5 mb-4">
                     <h1 class="fs-1 fw-bolder text-dark text-uppercase">
@@ -46,50 +46,47 @@
                     </h1>
                 </div>
                 @if ($styleData['data']['image_path'])
-                    <div class="col-md-6">
+                    <!-- <div class="col-md-6">
                         <img src="{{ asset('uploads/styles/' . $styleData['data']['image_path']) }}"
                             class="img-fluid" />
-                    </div>
+                    </div> -->
                 @endif
-                <div class="col-6 mb-4">
                     <div class="row">
                         <!-- Assemblies -->
                         <div class="col-lg-12 mb-3">
                             <h2 class="fs-5 text-dark text-uppercase fw-bold">Despatch</h2>
-                            <p>First select your choice of assembly:</p>
+                            <!-- <p>First select your choice of assembly:</p> -->
                             @foreach ($styleData['assemblies'] as $assemblyName => $assemblyData)
-                                <button type="button" id="{{ $assemblyName == 'Rigid' ? 'rigid_btn' : 'flatpacked_btn' }}"
-                                    class="btn btn-sm btn-outline-warning text-dark rounded-0">{{ $assemblyName }}</button>
+                                <!-- <button type="button" id="{{ $assemblyName == 'Rigid' ? 'rigid_btn' : 'flatpacked_btn' }}"
+                                    class="btn btn-sm btn-outline-warning text-dark rounded-0">{{ $assemblyName }}</button> -->
                             @endforeach
                         </div>
                         <!-- Colours -->
-                        <div class="col-lg-12 mt-lg-0 mt-3">
-                            @foreach ($styleData['assemblies'] as $assemblyName => $assemblyData)
-                                <div class="d-none" id="{{ $assemblyName == 'Rigid' ? 'rigid' : 'flatpacked' }}">
-                                    <h2 class="fs-6 text-dark fw-bold">MDF COLOURS ({{ $assemblyName }})</h2>
-                                    <p>Choose a colour:</p>
-                                    <div class="row g-1">
-                                        @foreach ($assemblyData['colours'] as $colour)
-                                            <div class="col-6 d-flex position-relative align-items-center justify-content-center">
-                                                <div
-                                                    class="colour-div position-absolute start-0 top-50 translate-middle-y ms-2" style="background-color: {{$colour->colour_code}};">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                @foreach ($colours as $key => $colour)
+                                    <div class="col-4 mb-4">
+                                        <div class="card border border-warning w-100" style="border-radius: 0px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
+                                            <div class="card-header fw-bold border-bottom border-default">
+                                                <div class="mb-2">
+                                                    {{$styleData['data']['name']}} {{$colour->trade_colour}}
                                                 </div>
-                                                <a href="{{ route('orderkitchenbycolour', ['style' => $styleData['data']->slug, 'assembly' => $assemblyData['data']->slug, 'colour' => $colour->slug]) }}"
-                                                    class="colour-btn btn w-100 rounded-0 sidebar-btn text-start">
-                                                    {{ $colour->trade_colour }}
-                                                </a>
-                                                {{-- <button type="button"
-                                                    class="colour-btn btn w-100 rounded-0 sidebar-btn text-start">
-                                                    {{ $colour->trade_colour }}
-                                                </button> --}}
+                                                <div>
+                                                    <a href="{{route('orderkitchenbycolour', [$styleData['data']['slug'], 'rigid', $colour->slug])}}" class="btn btn-sm btn-outline-warning text-dark rounded-0">Rigid</a>
+                                                    <a href="{{route('orderkitchenbycolour', [$styleData['data']['slug'], 'flat-pack', $colour->slug])}}" class="btn btn-sm btn-outline-warning text-dark rounded-0">Flat Pack</a>
+                                                </div>
                                             </div>
-                                        @endforeach
+                                            <div class="card-body carousel-card-body p-0">
+                                                <div class="col-12 d-flex justify-content-center">
+                                                    <img src="@if(!empty($colour->image_path)){{asset('uploads/colours/'.$colour->image_path)}}@else{{asset('images/no-image-available.jpg')}}@endif" class="img-fluid">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            @endforeach
+                                @endforeach
+                            </div>
                         </div>
                     </div>
-                </div>
             </div>
         </section>
         @if (count($styleData['data']->testimonials) > 0)
