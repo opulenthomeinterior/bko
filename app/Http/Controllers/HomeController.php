@@ -363,7 +363,7 @@ class HomeController extends Controller
 
     public function ordercomponentbyname(Request $request, $slug)
     {
-        $category = Category::with('testimonials', 'faqs')->where('slug', $slug)->firstOrFail();
+        $category = Category::where('slug', $slug)->firstOrFail();
         $children = Category::where('parent_category_id', $category->id)->pluck('id')->toArray();
 
         $types = Category::whereIn('id', $children)
@@ -386,7 +386,7 @@ class HomeController extends Controller
 
         $count = Product::whereIn('category_id', $children)->where('status', 'active')->count();
         $currentPage = 1;
-        $limit = 12;
+        $limit = 50;
         $offset = ($currentPage - 1) * $limit;
         $pages = ceil($count / $limit);
 
@@ -459,7 +459,7 @@ class HomeController extends Controller
         ///////////////////////////////
         $count = $productsQuery->where('parent_category_id', $parent_category->id)->count();
         // $currentPage = 1;
-        $limit = 12;
+        $limit = 50;
         $offset = ($currentPage - 1) * $limit;
         $pages = ceil($count / $limit);
 

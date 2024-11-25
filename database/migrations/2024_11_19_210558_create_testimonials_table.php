@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('user_name')->nullable();
             $table->string('date')->nullable();
-            $table->integer('style_id')->nullable();
+            $table->integer('style_id');
             $table->longText('testimonial')->nullable();
             $table->string('user_img')->nullable();
             $table->timestamps();

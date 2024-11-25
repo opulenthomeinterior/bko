@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Models\Faq;
-use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -148,48 +146,6 @@ class CategoryController extends Controller
             }
 
             $category->save();
-
-            $testimonialDates = $request->date;
-            $testimonialUserNames = $request->user_name;
-            $testimonials = $request->testimonial;
-            
-            if (!empty($category->testimonials)) {
-                // Delete existing testimonials for this style
-                Testimonial::where('category_id', $category->id)->delete();
-                // Create new testimonials for this style
-                foreach ($testimonials as $key => $testimonial) {
-                    // Check if the testimonial is not empty
-                    if (!empty($testimonial)) {
-                        // Create new testimonial
-                        $new_testimonial = new Testimonial();
-                        $new_testimonial->category_id = $category->id;
-                        $new_testimonial->date = $testimonialDates[$key];
-                        $new_testimonial->user_name = $testimonialUserNames[$key];
-                        $new_testimonial->testimonial = $testimonial;
-                        $new_testimonial->save();
-                    }
-                }
-            }
-
-            $questions = $request->question;
-            $answers = $request->answer;
-            
-            if (!empty($category->faqs)) {
-                // Delete existing testimonials for this style
-                Faq::where('category_id', $category->id)->delete();
-                // Create new testimonials for this style
-                foreach ($questions as $key => $question) {
-                    // Check if the testimonial is not empty
-                    if (!empty($question)) {
-                        // Create new testimonial
-                        $newFaq = new Faq();
-                        $newFaq->category_id = $category->id;
-                        $newFaq->question = $questions[$key];
-                        $newFaq->answer = $answers[$key];
-                        $newFaq->save();
-                    }
-                }
-            }
 
             return redirect()->route('categories')->with('success', 'Category updated successfully.');
         } catch (\Exception $e) {
