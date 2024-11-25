@@ -23,7 +23,7 @@
     <section class="container-fluid px-lg-5 px-md-3 px-3">
         <div class="row mx-auto">
             <div class="col-lg-9 col-md-10 col-sm-12 mx-auto p-0">
-                <img src="{{ asset('images/order-component.jpg') }}" class="img-fluid" />
+                <img src="{{ asset('images/Slab-Kitchen.jpg') }}" class="img-fluid" />
 
                 <p class="text-dark pt-3">Not sure where to start? Our clever, easy to use Kitchen Builder tool will
                     help you work out the best use of your space. Simply choose your kitchen style, input the overall

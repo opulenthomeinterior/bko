@@ -35,7 +35,7 @@
                 </p>
             </div>
             <div class="col-lg-6 col-md-6 col-12">
-                <img src="{{ asset('images/order-component.jpg') }}" class="img-fluid" />
+                <img src="{{ asset('images/Slab-Kitchen.jpg') }}" class="img-fluid" />
             </div>
         </div>
     </section>
