@@ -202,8 +202,8 @@
 
     <section class="container-fluid position-relative" style="height: 100vh; overflow: hidden; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49; border-left: 3px solid #febd49">
         <div class="image-container">
-            <img src="{{ asset('images/homepage.jpeg') }}" alt="Image 1" class="fade-img py-1 active">
-            <img src="{{ asset('images/shaker-22.jpeg') }}" alt="Image 1" class="fade-img py-1">
+            <!-- <img src="{{ asset('images/homepage.jpeg') }}" alt="Image 1" class="fade-img py-1 active"> -->
+            <img src="{{ asset('images/shaker-22.jpeg') }}" alt="Image 1" class="fade-img py-1 active">
             <img src="{{ asset('images/True-Handleless-SuperGloss-Graphite.jpg') }}" alt="Image 2" class="fade-img py-1">
             <img src="{{ asset('images/Slab-Kitchen.jpg') }}" alt="Image 3" class="fade-img py-1">
             <img src="{{ asset('images/slab.jpeg') }}" alt="Image 4" class="fade-img py-1">
