@@ -5,6 +5,6 @@
 <p><strong>Phone Number:</strong> {{ $data['phone'] }}</p>
 <p><strong>Call Time:</strong> {{ $data['call_time'] }}</p>
 <p><strong>Message:</strong> {{ $data['message'] }}</p>
-Thanks, <br>
+<br>
 {{config('app.name')}}
 @endcomponent
