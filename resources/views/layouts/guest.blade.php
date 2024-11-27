@@ -817,7 +817,7 @@ use App\Models\Style;
                             </li>
 
                             <li class="mt-2 list-unstyled"><i class="ri-mail-line mt-1"></i>customerservices@bkonline.uk</li>
-                            <li class="mt-2 list-unstyled"><i class="ri-phone-line"></i>0800 043 0804</li>
+                            <li class="mt-2 list-unstyled"><i class="ri-phone-line"></i>+44 7847 776297</li>
                         </ul>
                     </div>
 

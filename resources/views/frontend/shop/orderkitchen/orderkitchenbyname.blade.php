@@ -72,7 +72,7 @@
                                                     {{$styleData['data']['name']}} {{$colour->trade_colour}}
                                                 </div>
                                                 <div>
-                                                    Assembly Type: <a href="{{route('orderkitchenbycolour', [$styleData['data']['slug'], 'rigid', $colour->slug])}}" class="btn btn-sm btn-outline-warning text-dark rounded-0">Rigid</a>
+                                                    <small>Assembly Type:</small> <a href="{{route('orderkitchenbycolour', [$styleData['data']['slug'], 'rigid', $colour->slug])}}" class="btn btn-sm btn-outline-warning text-dark rounded-0">Rigid</a>
                                                     <a href="{{route('orderkitchenbycolour', [$styleData['data']['slug'], 'flat-pack', $colour->slug])}}" class="btn btn-sm btn-outline-warning text-dark rounded-0">Flat Pack</a>
                                                 </div>
                                             </div>
