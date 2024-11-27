@@ -35,7 +35,7 @@ class InquiryController extends Controller
             'message' => $request->message,
         ];
 
-        Mail::to('customerservices@bkonline.uk')->send(new InquiryEmail($data));
+        Mail::to('admin@bkonline.uk')->send(new InquiryEmail($data));
 
         Inquiry::create($request->all());
 
