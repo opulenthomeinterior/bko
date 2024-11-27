@@ -21,7 +21,7 @@ class InquiryController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:inquiries',
+            'email' => 'required|string|email|max:255',
             'phone' => 'required|string|max:255',
             'call_time' => 'required|string|max:255',
             'message' => 'required|string|max:1000',
