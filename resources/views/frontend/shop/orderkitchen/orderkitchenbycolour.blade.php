@@ -32,9 +32,9 @@
                                 <button class="nav-link" id="nav-tallCabinet-tab" data-bs-toggle="tab"
                                     data-bs-target="#nav-tallCabinet" type="button" role="tab"
                                     aria-controls="nav-tallCabinet" aria-selected="false">Tall Cabinets</button>
-                                <button class="nav-link" id="nav-aaacessories-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-aaacessories" type="button" role="tab"
-                                    aria-controls="nav-aaacessories" aria-selected="false">Accessories</button>
+                                <button class="nav-link" id="nav-accessories-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-accessories" type="button" role="tab"
+                                    aria-controls="nav-accessories" aria-selected="false">Accessories</button>
                             </div>
                         </nav>
                         <div class="tab-content p-3" style="border: 1px solid black !important" id="nav-tabContent">
