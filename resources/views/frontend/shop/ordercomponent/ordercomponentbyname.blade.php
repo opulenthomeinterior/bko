@@ -121,15 +121,20 @@
                                                 <input class="form-check-input" type="checkbox"
                                                     name="colours[]" id="colour{{ $index }}"
                                                     value="{{ $colour->id }}">
-                                                <label class="form-check-label d-flex gap-1"
-                                                    for="colour{{ $index }}">
-                                                    @if ($colour->colour_code)
-                                                    <div class="d-inline"
-                                                        style="width: 20px;height:20px;background-color:{{ $colour->colour_code }}">
-                                                    </div>
+                                                    @if (!empty($colour->colour_code))
+                                                    <label class="form-check-label d-flex gap-1" for="colour{{ $index }}">
+                                                        <div class="d-inline border border-dark"
+                                                            style="width: 20px;height:20px; background-color:{{ $colour->colour_code }};">
+                                                        </div>
+                                                        {{ $colour->trade_colour ? $colour->trade_colour : $colour->name }}
+                                                    </label>
+                                                    @else
+                                                    <label class="form-check-label d-flex gap-1" for="colour{{ $index }}">
+                                                        <div class="border border-dark" style="width: 20px;height:20px; background: linear-gradient(to right, red, yellow, green);">
+                                                        </div>
+                                                        {{ $colour->trade_colour ? $colour->trade_colour : $colour->name }}
+                                                    </label>
                                                     @endif
-                                                    {{ $colour->trade_colour ? $colour->trade_colour : $colour->name }}
-                                                </label>
                                             </div>
                                         </div>
                                         @endforeach
@@ -184,7 +189,7 @@
                                 <button class="accordion-button legend collapsed text-uppercase" type="button"
                                     data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
                                     aria-expanded="true" aria-controls="flush-collapseOne">
-                                    @if ($category->name != 'HANDLES' && $category->name != 'TAPS') SIZES @else TYPES @endif
+                                    @if (strtolower($category->name) != 'handles' && strtolower($category->name) != 'taps') SIZES @else TYPES @endif
                                 </button>
                             </h2>
                             <div id="flush-collapseOne" class="accordion-collapse collapse"

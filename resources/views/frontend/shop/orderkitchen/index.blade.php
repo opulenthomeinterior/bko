@@ -55,9 +55,15 @@
                         @foreach ($assemblyData['colours'] as $colour)
                         <div
                             class="col-6 d-flex position-relative align-items-center justify-content-center">
+                            @if (!empty($colour->colour_code))
                             <div
-                                class="colour-div position-absolute start-0 top-50 translate-middle-y ms-2" style="background-color: {{$colour->colour_code}};">
+                                class="colour-div position-absolute start-0 top-50 translate-middle-y ms-2 border border-dark" style="background-color: {{$colour->colour_code}};">
                             </div>
+                            @else
+                            <div
+                                class="colour-div position-absolute start-0 top-50 translate-middle-y ms-2 border border-dark" style="background: linear-gradient(to right, red, yellow, green);">
+                            </div>
+                            @endif
                             <a href="{{ route('orderkitchenbycolour', ['style' => $styleData['data']->slug , 'assembly' => $assemblyData['data']->slug, 'colour' => $colour->slug]) }}" class="colour-btn btn w-100 rounded-0 sidebar-btn text-start">
                                 {{ $colour->trade_colour }}
                             </a>
