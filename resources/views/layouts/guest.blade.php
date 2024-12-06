@@ -972,7 +972,7 @@ use App\Models\Style;
         });
 
         document.addEventListener('DOMContentLoaded', function () {
-            const text = "Retail Quality at Online Prices!";
+            const text = "Premium Quality, Affordable Prices!";
             const typingElement = document.getElementById('typing-effect');
             let index = 0;
 
