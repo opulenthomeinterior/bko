@@ -166,7 +166,7 @@
         <div class="row">
             <div class="col-12 text-center">
                 <h1 class="fs-4 text-dark text-uppercase fw-bolder unique-font">
-                    BK Online Kitchens - Quality Design, Installation, and Affordability in One Package
+                    BK Online Kitchens - Elevate Your Space, Elevate Your Lifestyle
                 </h1>
             </div>
         </div>
