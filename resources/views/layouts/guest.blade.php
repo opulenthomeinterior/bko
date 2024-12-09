@@ -810,6 +810,7 @@ use App\Models\Style;
                         <h6 class="my-3">Customer Service Hours</h6>
 
                         <ul class="footer-ul list-unstyled mb-0">
+                            <li class="mb-2 list-unstyled"><i class="ri-phone-line"></i>020 805 05605</li>
                             <li class="list-unstyled">
                                 <i class="ri-arrow-right-s-fill"></i>
                                 Mon-Sat: 9am to 5pm
@@ -830,7 +831,6 @@ use App\Models\Style;
                             </li>
 
                             <li class="mt-2 list-unstyled"><i class="ri-mail-line mt-1"></i>customerservices@bkonline.uk</li>
-                            <li class="mt-2 list-unstyled"><i class="ri-phone-line"></i>+44 7847 776297</li>
                         </ul>
                     </div>
 
