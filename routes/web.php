@@ -238,6 +238,7 @@ Route::prefix('/')->middleware([])->group(function () {
     //
     Route::post('get-category-products', [ProductController::class, 'getCategoryProducts'])->name('get_category_products');
     Route::post('style-colours', [HomeController::class, 'styleColours'])->name('style_colours');
+    Route::get('wardrobes', [HomeController::class, 'wardrobes'])->name('wardrobes');
 
     // Shop Prefix
     Route::prefix('/shop')->group(function () {

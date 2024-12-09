@@ -766,4 +766,26 @@ class HomeController extends Controller
         $colours = Product::where('style_id', $styleId)->where('status', 'active')->groupBy('colour_id')->pluck('colour_id');
         return response()->json(['success' => true, 'colours' => $colours]);
     }
+
+    public function wardrobes(Request $request) {
+        $products = collect(range(1, 30))->map(function ($index) {
+            return (object) [
+                'id' => $index,
+                'slug' => 'Wardrobe ' . $index,
+                'short_title' => 'Wardrobe ' . $index,
+                'full_title' => 'Wardrobe ' . $index,
+                'image_path' => 'Wardrobe ' . $index,
+                'product_code' => $index,
+                'discounted_price' => 0,
+                'ParentCategory' => null,
+                // 'discounted_price' => 0,
+                // 'discounted_price' => 0,
+                // 'discounted_price' => 0,
+                'material' => ['Wood', 'Metal', 'Glass', 'Composite'][array_rand(['Wood', 'Metal', 'Glass', 'Composite'])],
+                'price' => rand(100, 1000), // Random price between 100 and 1000
+                'dimensions' => rand(50, 200) . 'x' . rand(50, 200) . 'x' . rand(50, 200) . ' cm',
+            ];
+        });
+        return view('frontend.shop.wardrobes.index', compact('products'));
+    }
 }
