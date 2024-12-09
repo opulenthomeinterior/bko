@@ -230,6 +230,18 @@
             <div class="col-xl-5 col-lg-5 col-md-7 col-sm-12 col-xs-12 col-12 p-0 d-flex justify-content-center">
                 <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning w-75" style="background-color: rgba(0, 0, 0, 0.5); padding: 20px; border-radius: 0px;">
                     @csrf
+                    <div>
+                        <div class="d-block">
+                            <div class="text-center text-warning fw-bold">CALL US NOW FOR FREE SURVEY AND QUOTE</div>
+                            <div class="d-flex justify-content-center">
+                                <a href="tel:02080505605" class="text-center text-white fs-4 fw-bold">
+                                    020 805 05605
+                                </a>
+                            </div>
+                        </div>
+                    </div>                    <hr class="border border-warning">
+
+                    <h6 class="text-warning text-center fw-bold">OR</h6>
                     <h4 id="blinking-text" class="text-warning fw-bold text-center">
                         Book a free consultation now!
                     </h4>
