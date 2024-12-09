@@ -771,7 +771,7 @@ class HomeController extends Controller
         $adjectives = ['Elegant', 'Modern', 'Classic', 'Rustic', 'Compact', 'Spacious', 'Versatile', 'Chic', 'Minimalist', 'Luxurious'];
         $nouns = ['Aurora', 'Haven', 'Sanctuary', 'Vista', 'Oasis', 'Summit', 'Harmony', 'Zenith', 'Realm', 'Echo'];
 
-        $products = collect(range(1, 30))->map(function ($index) use ($adjectives, $nouns) {
+        $products = collect(range(1, 40))->map(function ($index) use ($adjectives, $nouns) {
             return (object) [
                 'id' => $index,
                 'slug' => 'Wardrobe ' . $index,
