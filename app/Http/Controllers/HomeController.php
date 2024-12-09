@@ -778,7 +778,7 @@ class HomeController extends Controller
                 'short_title' => $adjectives[array_rand($adjectives)] . ' ' . $nouns[array_rand($nouns)],
                 'full_title' => $adjectives[array_rand($adjectives)] . ' ' . $nouns[array_rand($nouns)],
                 'image_path' => 'Wardrobe ' . $index,
-                'product_code' => 'wrb-'.$index.rand(0,100),
+                'product_code' => 'wrb-'.$index,
                 'discounted_price' => 0,
                 'ParentCategory' => null,
                 // 'discounted_price' => 0,
