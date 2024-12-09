@@ -768,14 +768,17 @@ class HomeController extends Controller
     }
 
     public function wardrobes(Request $request) {
-        $products = collect(range(1, 30))->map(function ($index) {
+        $adjectives = ['Elegant', 'Modern', 'Classic', 'Rustic', 'Compact', 'Spacious', 'Versatile', 'Chic', 'Minimalist', 'Luxurious'];
+        $nouns = ['Aurora', 'Haven', 'Sanctuary', 'Vista', 'Oasis', 'Summit', 'Harmony', 'Zenith', 'Realm', 'Echo'];
+
+        $products = collect(range(1, 30))->map(function ($index) use ($adjectives, $nouns) {
             return (object) [
                 'id' => $index,
                 'slug' => 'Wardrobe ' . $index,
-                'short_title' => 'Wardrobe ' . $index,
-                'full_title' => 'Wardrobe ' . $index,
+                'short_title' => $adjectives[array_rand($adjectives)] . ' ' . $nouns[array_rand($nouns)],
+                'full_title' => $adjectives[array_rand($adjectives)] . ' ' . $nouns[array_rand($nouns)],
                 'image_path' => 'Wardrobe ' . $index,
-                'product_code' => $index,
+                'product_code' => 'wrb-'.$index.rand(0,100),
                 'discounted_price' => 0,
                 'ParentCategory' => null,
                 // 'discounted_price' => 0,
