@@ -137,18 +137,23 @@
     }
 
     .img-container {
-        height: 200px; /* Fixed height for the image container */
+        /* height: 200px; Fixed height for the image container */
         background-color: #f5f5f5; /* Light background for missing images */
         display: flex;
         justify-content: center;
         align-items: center;
         overflow: hidden; /* Prevents content from spilling out */
+        border-radius: 20px 20px 0px 0px;
     }
 
     .img-container img {
         object-fit: cover; /* Ensures the image fits without distortion */
         width: 100%;
         height: 100%;
+    }
+
+    .cat-card-title {
+        text-align: center;
     }
 
     </style>
@@ -162,7 +167,7 @@
         </div>
     </section> -->
 
-    <section class="container-fluid bg-white px-lg-5 py-3 px-md-3 px-3 mt-4" style="border-top: 3px solid #febd49; border-right: 3px solid #febd49">
+    <section class="container-fluid px-lg-5 py-3 px-md-3 px-3 mt-1 bg-warning mx-0" style="border-top: 3px solid #febd49; border-right: 3px solid #febd49">
         <div class="row">
             <div class="col-12 text-center">
                 <h1 class="fs-4 text-dark text-uppercase fw-bolder unique-font">
@@ -202,11 +207,11 @@
 
     <section class="container-fluid position-relative" style="height: 100vh; overflow: hidden; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49; border-left: 3px solid #febd49">
         <div class="image-container">
-            <img src="{{ asset('images/homepage.jpeg') }}" alt="Image 1" class="fade-img py-1 active">
-            <img src="{{ asset('images/shaker-22.jpeg') }}" alt="Image 1" class="fade-img py-1">
-            <img src="{{ asset('images/True-Handleless-SuperGloss-Graphite.jpg') }}" alt="Image 2" class="fade-img py-1">
-            <!-- <img src="{{ asset('images/Slab-Kitchen.jpg') }}" alt="Image 3" class="fade-img py-1"> -->
-            <img src="{{ asset('images/slab.jpeg') }}" alt="Image 4" class="fade-img py-1">
+            <img src="{{ asset('images/homepage.jpeg') }}" alt="Image 1" class="fade-img active">
+            <img src="{{ asset('images/shaker-22.jpeg') }}" alt="Image 1" class="fade-img">
+            <img src="{{ asset('images/True-Handleless-SuperGloss-Graphite.jpg') }}" alt="Image 2" class="fade-img">
+            <!-- <img src="{{ asset('images/Slab-Kitchen.jpg') }}" alt="Image 3" class="fade-img"> -->
+            <img src="{{ asset('images/slab.jpeg') }}" alt="Image 4" class="fade-img">
         </div>
         <!-- <img src="{{ asset('images/homepage.jpeg') }}"
             alt="Bespoke Kitchen Units in London and Surroundings"
@@ -219,8 +224,8 @@
                     style="text-shadow: 5px 5px 5px black; background-color: rgba(0, 0, 0, 0.5); width: 90%; border-radius: 50px; border: 1px solid #febd49;">
                     
                 </h2>
-                <div class="mt-auto p-2">
-                    <a href="{{ route('orderkitchen') }}" class="btn btn-md btn-warning text-dark fw-bolder text-uppercase rounded-0">
+                <div class="p-2">
+                    <a href="{{ route('orderkitchen') }}" class="btn btn-md btn-warning text-dark fw-bolder text-uppercase" style="border-radius: 20px;">
                         Order Now
                     </a>
                 </div>
@@ -228,9 +233,21 @@
 
             <!-- Right form content -->
             <div class="col-xl-5 col-lg-5 col-md-7 col-sm-12 col-xs-12 col-12 p-0 d-flex justify-content-center">
-                <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning w-75" style="background-color: rgba(0, 0, 0, 0.5); padding: 20px; border-radius: 0px;">
+                <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning w-75" style="background-color: rgba(0, 0, 0, 0.5); padding: 20px; border-radius: 20px;">
                     @csrf
-                    <h4 id="blinking-text" class="text-warning fw-bold text-center">
+                    <div>
+                        <div class="d-block">
+                            <div class="text-center text-warning fw-bold">CALL US NOW FOR FREE SURVEY AND QUOTE</div>
+                            <div class="d-flex justify-content-center">
+                                <a href="tel:02080505605" class="text-center text-white fs-4 fw-bold">
+                                    020 805 05605
+                                </a>
+                            </div>
+                        </div>
+                    </div>                    <hr class="border border-warning">
+
+                    <h6 class="text-warning text-center fw-bold">OR</h6>
+                    <h4 id="blinking-text" class="bg-warning text-dark fw-bold text-center py-2" style="border-radius: 20px;">
                         Book a free consultation now!
                     </h4>
                     <hr class="border border-warning">
@@ -244,53 +261,66 @@
                         <input type="number" style="color: black" class="border border-warning form-control text-dark" name="phone" id="phone" placeholder="Enter your phone number">
                     </div>
                     <div class="mb-3">
-                        <label for="" class="text-white bg-warning p-2 text-end fw-bold">Call me at</label>
+                        <label for="" class="text-dark bg-warning p-2 text-end fw-bold">Call me at</label>
                         <input type="datetime-local" style="color: black" class="border border-warning form-control text-dark" name="call_time">
                     </div>
                     <div class="mb-3">
                         <textarea name="message" id="message" name="message" rows="3" class="w-100 border border-warning form-control text-dark" placeholder="Enter your message"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-warning fw-bolder text-uppercase" style="border-radius: 0;">Submit</button>
+                    <button type="submit" class="btn btn-warning fw-bolder text-uppercase text-dark" style="border-radius: 0;">Submit</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <section class="container-fluid px-lg-5 px-md-3 px-3 py-lg-5 py-3" style="background-color: #f0f0f0; border-bottom: 3px solid #febd49; border-right: 3px solid #febd49">
+    <section class="container-fluid bg-light py-5" style="width: 100%; border-bottom: 3px solid #febd49; border-right: 3px solid #febd49">
         <div class="row">
-            <div class="col-12">
-                <p>
-                    BK Online is a premier provider of complete kitchen solutions, specialising in the design and delivery of ready-made kitchens, rigid kitchen units, and components in slab, shaker, or J-pull styles. Serving London and the surrounding areas, we pride ourselves on delivering showroom-quality kitchens directly to your door.
-                </p>
-                <p>
-                    At BK Online, we are committed to crafting every kitchen with precision and care, ensuring that our customers receive only the highest quality products. Our years of experience in kitchen design and manufacturing allow us to offer a seamless and stress-free ordering process, from initial design consultation to final delivery.
-                </p>
-                <p>
-                    Operating from state-of-the-art facilities, our skilled workforce uses the latest sustainable manufacturing techniques to create kitchens that not only meet but exceed our clients' expectations. Our dedication to innovation ensures that our customers always have access to the most up-to-date designs and materials.
-                </p>
-                <p>
-                    Whether you're looking for a modern slab kitchen, a timeless shaker design, or the sleek lines of a J-pull handleless kitchen, BK Online makes it easy. Our kitchens are designed to be user-friendly, with components that are straightforward to assemble, thanks to our advanced clic technology. We offer both flat-pack and pre-assembled options, with fast and reliable delivery.
-                </p>
-                <p>
-                    Born out of a passion for offering better kitchen solutions, BK Online stands as a trusted partner in creating kitchens that bring joy for years to come. We invite you to explore our range and experience the difference that quality craftsmanship can make.
-
-                </p>
+            <h3 class="text-uppercase fw-bolder text-dark text-center">ORDER COMPONENT</h3>
+        </div>
+        <div class="row mt-4 d-flex align-items-center justify-content-center">
+            @php
+                $categories = \App\Models\Category::where('parent_category_id', null)->whereIn('slug', ['doors', 'accessories', 'internals', 'sinks', 'handles'])->get();
+            @endphp
+            @foreach($categories as $category)
+            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-xs-12 col-12 mb-4 d-flex flex-column align-items-center justify-content-center" style="border-radius: 50%;">
+                <div class="text-center">
+                    <a class="text-dark btn btn-outline-warning d-flex align-items-center justify-content-center" style="height: 100px; width: 100px; border-radius: 100%; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);" href="{{route('ordercomponentbyname', [$category->slug])}}">
+                        <div class="card-old">
+                            <div class="card-body">
+                                 @if($category->slug == 'doors')
+                                 <img height="55px" width="50px" src="https://cdn-icons-png.flaticon.com/512/2237/2237440.png" alt="">
+                                 @elseif($category->slug == 'handles')
+                                 <img height="55px" width="50px" src="https://cdn4.iconfinder.com/data/icons/thin-home-living-2/24/thin-1459_door_handle_lock-512.png" alt="">
+                                 @elseif($category->slug == 'accessories')
+                                 <img height="55px" width="50px" src="https://cdn-icons-png.flaticon.com/512/3365/3365678.png" alt="">
+                                 @elseif($category->slug == 'sinks')
+                                 <img height="55px" width="50px" src="https://cdn-icons-png.flaticon.com/512/810/810192.png" alt="">
+                                 @elseif($category->slug == 'internals')
+                                 <img height="55px" width="50px" src="https://cdn-icons-png.flaticon.com/512/4717/4717615.png" alt="">
+                                 @elseif($category->slug == 'taps')
+                                 <img height="55px" width="50px" src="https://cdn-icons-png.flaticon.com/512/2237/2237440.png" alt="">
+                                 @endif
+                            </div>
+                        </div>
+                    </a>
+                    <h5 class="cat-card-title fw-bold mt-2 text-dark">{{$category->name}}</h5>
+                </div>
             </div>
+            @endforeach
         </div>
     </section>
 
-    <section class="container-fluid py-lg-5 py-3" style="border-bottom: 3px solid #febd49; border-left: 3px solid #febd49">
+    <section class="container-fluid py-lg-5 py-3 bg-dark" style="border-bottom: 3px solid #febd49; border-left: 3px solid #febd49">
         <div class="row">
-            <h3 class="text-uppercase fw-bolder text-dark text-center">ORDER KITCHEN</h3>
+            <h3 class="text-uppercase fw-bolder text-white text-center">ORDER KITCHEN</h3>
         </div>
         <div class="row mt-4 px-0" id="stylesContainer">
             @foreach ($styles as $key => $style)
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-4 style-card" style="display: {{ $key < 4 ? 'flex' : 'none' }};">
-                    <a class="btn btn-outline-warning p-1 border-0 w-100" style="border-radius: 0" href="{{ route('orderkitchenbyname', $style->slug) }}">
-                        <div class="card styles-card component-card border-0 h-100 d-flex flex-column justify-content-between">
-                            <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">{{$style->name}}</h4>
-                            <div class="card-body styles-card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end position-relative" style="box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
-                                <div class="position-relative img-container">
+                    <a class="p-0 w-100" href="{{ route('orderkitchenbyname', $style->slug) }}" style="border-radius: 20px">
+                        <div class="card styles-card component-card h-100 d-flex flex-column justify-content-between" style="border-radius: 20px; border: none;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); ">
+                            <div class="card-body styles-card-body p-0 bg-light d-flex flex-column justify-content-end position-relative" style="border-radius: 20px">
+                                <div class="position-relative img-container p-0">
                                     @if ($style->image_path)
                                         <img src="{{asset('uploads/styles/'.$style->image_path)}}" alt="{{$style->name}}">
                                     @else
@@ -303,7 +333,8 @@
                                         <h5 class="text-dark">Do you find it challenging to find the dream luxury true-handleless kitchen within your budget? No more with BKO kitchen, we are here with our true handleless style kitchens that combine elegance and style with affordability.</h5>
                                     </div> -->
                                 </div>
-                                <p class="text-center mt-3" style="text-decoration: underline;">See our range</p>
+                                <h4 class="py-4 card-title text-uppercase fw-bold text-center m-0 bg-warning" style="border-radius: 0px 0px 20px 20px">{{$style->name}}
+                                <p class="text-center mt-3" style="text-decoration: underline;">See our range</p></h4>
                             </div>
                         </div>
                     </a>
@@ -312,7 +343,7 @@
         </div>
         <div class="row mt-3">
             <div class="col-12 text-center">
-                <button id="showMoreButton" class="btn btn-warning px-4 py-2 text-dark" style="border-radius: 0;">Show More</button>
+                <button id="showMoreButton" class="btn btn-warning px-4 py-2 text-dark" style="border-radius: 20px;">Show More</button>
             </div>
         </div>
     </section>
@@ -375,30 +406,38 @@
         </div>
     </section>--}}
 
-    <section class="container-fluid bg-light py-5" style="width: 100%; border-bottom: 3px solid #febd49; border-right: 3px solid #febd49">
+    <section class="container-fluid px-lg-5 px-md-3 px-3 py-lg-5 py-3 bg-dark" style="background-color: #f0f0f0; border-bottom: 3px solid #febd49; border-right: 3px solid #febd49">
         <div class="row">
-            <h3 class="text-uppercase fw-bolder text-dark text-center">ORDER COMPONENT</h3>
-        </div>
-        <div class="row mt-4">
-            @php
-                $categories = \App\Models\Category::where('parent_category_id', null)->whereIn('slug', ['doors', 'accessories', 'internals', 'sinks', 'handles'])->get();
-            @endphp
-            @foreach($categories as $category)
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12 mb-4">
-                <a class="text-dark btn btn-outline-warning w-100" style="border-radius: 0; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);" href="{{route('ordercomponentbyname', [$category->slug])}}">
-                    <div class="card-old">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold text-center">{{$category->name}}</h5>
-                        </div>
-        
-                    </div>
-                </a>
+            <div class="col-12">
+                <h3 class="text-uppercase fw-bolder text-white text-center">ABOUT US</h3>
             </div>
-            @endforeach
+            <div class="col-4 mt-4 text-white">
+                <p>
+                    BK Online is a premier provider of complete kitchen solutions, specialising in the design and delivery of ready-made kitchens, rigid kitchen units, and components in slab, shaker, or J-pull styles. Serving London and the surrounding areas, we pride ourselves on delivering showroom-quality kitchens directly to your door.
+                </p>
+                <p>
+                    At BK Online, we are committed to crafting every kitchen with precision and care, ensuring that our customers receive only the highest quality products. Our years of experience in kitchen design and manufacturing allow us to offer a seamless and stress-free ordering process, from initial design consultation to final delivery.
+                </p>
+                <p>
+                    Operating from state-of-the-art facilities, our skilled workforce uses the latest sustainable manufacturing techniques to create kitchens that not only meet but exceed our clients' expectations. Our dedication to innovation ensures that our customers always have access to the most up-to-date designs and materials.
+                </p>
+            </div>
+            <div class="col-4 mt-4">
+                <img src="https://www.ikea.com/images/a-big-kitchen-with-black-stained-lerhyttan-fronts-and-a-wood-fe43c4fc6d2efa2e2b1cfc6b29f45df9.jpg" class="img-fluid" style="border-radius: 20px;"/>
+            </div>
+            <div class="col-4 mt-4 text-white">
+                <p>
+                    Whether you're looking for a modern slab kitchen, a timeless shaker design, or the sleek lines of a J-pull handleless kitchen, BK Online makes it easy. Our kitchens are designed to be user-friendly, with components that are straightforward to assemble, thanks to our advanced clic technology. We offer both flat-pack and pre-assembled options, with fast and reliable delivery.
+                </p>
+                <p>
+                    Born out of a passion for offering better kitchen solutions, BK Online stands as a trusted partner in creating kitchens that bring joy for years to come. We invite you to explore our range and experience the difference that quality craftsmanship can make.
+
+                </p>
+            </div>
         </div>
     </section>
 
-    <section class="container-fluid py-5" style="border-bottom: 3px solid #febd49; border-left: 3px solid #febd49">
+    <section class="container-fluid py-5 bg-dark" style="background-image: url({{asset('images/homepage.jpeg')}}); opacity: 2; border-bottom: 3px solid #febd49; border-left: 3px solid #febd49; padding: 20px">
         <div class="row">
             <h3 class="text-dark text-uppercase fw-bolder text-center mb-4">Testimonials</h3>
         </div>
@@ -410,8 +449,8 @@
                     data-autoplay="true"
                     data-autoplay-timeout="3000"
                     data-responsive='{"0":{"items": "3"}, "768":{"items": "4"}, "992":{"items": "4"}, "1200":{"items": "4"}, "1400":{"items": "4"}}'>
-                    <div class="item mx-10 px-0" style="border: 2px solid #febd49">
-                        <div class="carousel-card card border border-default" style="border-radius: 0px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
+                    <div class="item mx-10 px-0">
+                        <div class="carousel-card card border border-warning" style="border-radius: 20px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
                             <div class="card-body carousel-card-body">
                                 <div class="col-12 mb-4 d-flex justify-content-center">
                                     <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
@@ -428,8 +467,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="item mx-10 px-0" style="border: 2px solid #febd49">
-                        <div class="carousel-card card border border-default" style="border-radius: 0px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);">
+                    <div class="item mx-10 px-0">
+                        <div class="carousel-card card border border-warning" style="border-radius: 20px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);">
                             <div class="card-body carousel-card-body">
                                 <div class="col-12 mb-4 d-flex justify-content-center">
                                     <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
@@ -446,8 +485,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="item mx-10 px-0" style="border: 2px solid #febd49">
-                        <div class="carousel-card card border border-default" style="border-radius: 0px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);">
+                    <div class="item mx-10 px-0">
+                        <div class="carousel-card card border border-warning" style="border-radius: 20px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);">
                             <div class="card-body carousel-card-body">
                                 <div class="col-12 mb-4 d-flex justify-content-center">
                                     <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
@@ -464,8 +503,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="item mx-10 px-0" style="border: 2px solid #febd49">
-                        <div class="carousel-card card border border-default" style="border-radius: 0px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);">
+                    <div class="item mx-10 px-0">
+                        <div class="carousel-card card border border-warning" style="border-radius: 20px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);">
                             <div class="card-body carousel-card-body">
                                 <div class="col-12 mb-4 d-flex justify-content-center">
                                     <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
@@ -486,26 +525,26 @@
         </div>
     </section>
 
-    <section class="container-fluid py-5 p-0" style="border-bottom: 3px solid #febd49; border-right: 3px solid #febd49">
+    <section class="container-fluid py-5 px-4 bg-dark" style="border-bottom: 3px solid #febd49; border-right: 3px solid #febd49">
         <div class="row">
-            <h3 class="text-dark text-uppercase fw-bolder text-center">FAQs</h3>
+            <h3 class="text-white text-uppercase fw-bolder text-center">FAQs</h3>
         </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="row bg-dark">
+            <div class="col-lg-12 bg-dark">
+                <div class="accordion accordion-flush bg-dark" id="accordionFlushExample">
                     @if ($generalFaqs->count() > 0)
                         @foreach ($generalFaqs as $faq)
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed fw-bolder text-dark btn btn-outline-warning" type="button"
+                            <div class="accordion-item bg-dark border-0">
+                                <h2 class="accordion-header bg-dark border-0">
+                                    <button class="mb-2 accordion-button collapsed fw-bolder text-white border-bottom border-warning btn btn-outline-warning" type="button"
                                         data-bs-toggle="collapse" data-bs-target="#flush-collapse{{ $loop->index + 1 }}"
-                                        aria-expanded="false" aria-controls="flush-collapse{{ $loop->index + 1 }}">
+                                        aria-expanded="false" aria-controls="flush-collapse{{ $loop->index + 1 }}" style="border-radius: 20px">
                                         {{ $faq->question }}
                                     </button>
                                 </h2>
-                                <div id="flush-collapse{{ $loop->index + 1 }}" class="accordion-collapse collapse"
+                                <div id="flush-collapse{{ $loop->index + 1 }}" class="accordion-collapse collapse bg-dark"
                                     data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">{!! $faq->answer !!}</div>
+                                    <div class="accordion-body bg-dark text-white">{!! $faq->answer !!}</div>
                                 </div>
                             </div>
                         @endforeach
