@@ -1034,7 +1034,6 @@ use App\Models\Style;
 
         $(document).ready(function() {
             $('.select-2').select2({
-                minimumResultsForSearch: Infinity,
                 dropdownCssClass: 'custom-select-dropdown',
                 templateResult: function (data) {
                     if (!data.id) {
@@ -1136,7 +1135,6 @@ use App\Models\Style;
             $('button[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
                 // Select the dropdown in the currently active tab
                 $('.tab-pane.active .select-2').select2({
-                    minimumResultsForSearch: Infinity,
                     dropdownCssClass: 'custom-select-dropdown',
                     templateResult: function (data) {
                         if (!data.id) {
@@ -1164,7 +1162,6 @@ use App\Models\Style;
             $('.collapse-container').on('shown.bs.collapse', function () {
                 // Initialize Select2 within the visible collapse section
                 $(this).find('.select-2').select2({
-                    minimumResultsForSearch: Infinity,
                     dropdownCssClass: 'custom-select-dropdown',
                     templateResult: function (data) {
                         if (!data.id) {
