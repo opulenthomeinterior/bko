@@ -2882,7 +2882,7 @@
                             </div>
 
                             {{-- Worktops and Upstands --}}
-                            <div class="tab-pane fade active" id="nav-upstands" role="tabpanel"
+                            <div class="tab-pane fade" id="nav-upstands" role="tabpanel"
                                 aria-labelledby="nav-upstands-tab" tabindex="0">
                                 <div class="row">
                                     @if ($worktopsAndUpStands->count() > 0)
@@ -3136,7 +3136,7 @@
                             </div>
 
                             {{-- Breakfast Bars --}}
-                            <div class="tab-pane fade active" id="nav-breakfast" role="tabpanel"
+                            <div class="tab-pane fade" id="nav-breakfast" role="tabpanel"
                                 aria-labelledby="nav-breakfast-tab" tabindex="0">
                                 <div class="row">
                                     @if ($breakfastBars->count() > 0)
@@ -3390,7 +3390,7 @@
                             </div>
 
                             {{-- Edging Doors --}}
-                            <div class="tab-pane fade active" id="nav-edging" role="tabpanel"
+                            <div class="tab-pane fade" id="nav-edging" role="tabpanel"
                                 aria-labelledby="nav-edging-tab" tabindex="0">
                                 <div class="row">
                                     @if ($edgings->count() > 0)
@@ -3919,7 +3919,7 @@
                             </div>
                             
                             {{-- Taps --}}
-                            <div class="tab-pane fade active" id="nav-taps" role="tabpanel"
+                            <div class="tab-pane fade" id="nav-taps" role="tabpanel"
                                 aria-labelledby="nav-taps-tab" tabindex="0">
                                 <div class="row">
                                     @if ($taps->count() > 0)
