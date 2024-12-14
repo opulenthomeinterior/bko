@@ -273,16 +273,16 @@
         </div>
     </section>
 
-    <section class="container-fluid bg-light py-5" style="width: 100%; border-bottom: 3px solid #febd49; border-right: 3px solid #febd49">
+    <section class="container-fluid bg-dark py-5" style="width: 100%; border-bottom: 3px solid #febd49; border-right: 3px solid #febd49">
         <div class="row">
-            <h3 class="text-uppercase fw-bolder text-dark text-center">ORDER COMPONENT</h3>
+            <h3 class="text-uppercase fw-bolder text-white text-center">ORDER COMPONENT</h3>
         </div>
-        <div class="row mt-4 d-flex align-items-center justify-content-center">
+        <div class="row d-flex align-items-center justify-content-center bg-white p-4 m-4" style="border-radius: 20px;">
             @php
                 $categories = \App\Models\Category::where('parent_category_id', null)->whereIn('slug', ['doors', 'accessories', 'internals', 'sinks', 'handles'])->get();
             @endphp
             @foreach($categories as $category)
-            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-xs-12 col-12 mb-4 d-flex flex-column align-items-center justify-content-center" style="border-radius: 50%;">
+            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-xs-12 col-12 d-flex flex-column align-items-center justify-content-center" style="border-radius: 50%;">
                 <div class="text-center">
                     <a class="text-dark btn btn-outline-warning d-flex align-items-center justify-content-center" style="height: 100px; width: 100px; border-radius: 100%; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);" href="{{route('ordercomponentbyname', [$category->slug])}}">
                         <div class="card-old">
@@ -545,6 +545,7 @@
                                 <div id="flush-collapse{{ $loop->index + 1 }}" class="accordion-collapse collapse bg-dark"
                                     data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body bg-dark text-white">{!! $faq->answer !!}</div>
+                                    <hr class="border-bottom border-warning px-4 mx-4">
                                 </div>
                             </div>
                         @endforeach
