@@ -70,10 +70,10 @@
                                             <td class="align-middle">{{ $colour->finishing }}</td>
                                             <td class="align-middle">{{ $colour->trade_colour }}</td>
                                             <td>
-                                                <a href="{{ $colour->image_path ? asset('uploads/colours/uploads/' . $colour->image_path) : '#' }}"
+                                                <a href="{{ $colour->image_path ? asset('uploads/colours/' . $colour->image_path) : '#' }}"
                                                     class="{{ $colour->image_path ? 'd-inline-block' : 'd-none' }}"
                                                     target="_blank" rel="noopener noreferrer">
-                                                    <img src="{{ $colour->image_path ? asset('uploads/colours/uploads/' . $colour->image_path) : '#' }}"
+                                                    <img src="{{ $colour->image_path ? asset('uploads/colours/' . $colour->image_path) : '#' }}"
                                                         alt="Image Preview" style="height: 100px;width: 100px;"
                                                         class="img-thumbnail box-image-preview {{ $colour->image_path ? 'd-block' : 'd-none' }}" />
                                                 </a>
