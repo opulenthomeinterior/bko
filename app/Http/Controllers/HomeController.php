@@ -205,7 +205,7 @@ class HomeController extends Controller
             $sinks = Product::where('parent_category_id', 15)
                 // ->where('style_id', $style->id)
                 // ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)
+                // ->where('colour_id', $colour->id)
                 ->where('status', 'active')
                 ->get();
 
