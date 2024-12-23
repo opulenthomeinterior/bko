@@ -177,6 +177,7 @@ class ProductsImport implements ToCollection, WithChunkReading
                     $product->image_path = $row[19] ?? null;
                     $product->status = (!empty($row[22]) && ($row[22] == 'in_active' || $row[22] == 'In_Active')) ? 'in_active' : 'active';
                     $product->product_file_id = $this->productId;
+                    $product->parent_sub_category = !empty($row[23]) ? $row[23] : null;
                     $product->save();
                 } else {
                     $product->product_code = $row[0];
@@ -227,6 +228,7 @@ class ProductsImport implements ToCollection, WithChunkReading
                     $product->image_path = $row[19] ?? null;
                     $product->status = (!empty($row[22]) && ($row[22] == 'in_active' || $row[22] == 'In_Active')) ? 'in_active' : 'active';
                     $product->product_file_id = $this->productId;
+                    $product->parent_sub_category = !empty($row[23]) ? $row[23] : null;
                     $product->save();
                 }
             }

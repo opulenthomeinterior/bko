@@ -167,7 +167,7 @@
         </div>
     </section> -->
 
-    <section class="container-fluid px-lg-5 py-3 px-md-3 px-3 mt-1 bg-warning mx-0" style="border-top: 3px solid #febd49; border-right: 3px solid #febd49">
+    <section class="container-fluid px-lg-5 py-3 px-md-3 px-3 bg-warning mx-0" style="border-bottom: 1px solid #fff; border-top: 1px solid #fff; border-right: 3px solid #febd49">
         <div class="row">
             <div class="col-12 text-center">
                 <h1 class="fs-4 text-dark text-uppercase fw-bolder unique-font">
