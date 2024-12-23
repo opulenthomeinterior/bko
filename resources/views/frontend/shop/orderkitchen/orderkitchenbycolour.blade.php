@@ -202,7 +202,7 @@
 
                                     <div class="col-lg-12 col-md-12 col-sm-12 order-sm-1 order-xs-1">
                                         @php 
-                                            $parentSubCategories = \App\Models\Product::groupBy('parent_sub_category')->get();
+                                            $parentSubCategories = \App\Models\Product::where('parent_category_id', $baseCabinetData->parent_category_id)->where('style_id', $baseCabinetData->style_id)->where('colour_id', $baseCabinetData->colour_id)->where('assembly_id', $baseCabinetData->assembly_id)->groupBy('parent_sub_category')->get();
                                         @endphp
                                         @foreach ($parentSubCategories as $parentSubCategory)
                                             @if ($parentSubCategory->parent_sub_category == 'A')
@@ -211,7 +211,7 @@
                                             </a>
                                             @elseif ($parentSubCategory->parent_sub_category == 'B')
                                             <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
-                                                Baseline
+                                                Drawerline
                                             </a>
                                             @elseif ($parentSubCategory->parent_sub_category == 'C')
                                             <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
@@ -459,19 +459,19 @@
                                     @else
                                     <div class="col-12">
                                         @php 
-                                            $parentSubCategories = \App\Models\Product::groupBy('parent_sub_category')->get();
+                                            $parentSubCategories = \App\Models\Product::where('parent_category_id', $baseCabinetData->parent_category_id)->where('style_id', $baseCabinetData->style_id)->where('colour_id', $baseCabinetData->colour_id)->where('assembly_id', $baseCabinetData->assembly_id)->groupBy('parent_sub_category')->get();
                                         @endphp
                                         @foreach ($parentSubCategories as $parentSubCategory)
                                             @if ($parentSubCategory->parent_sub_category == 'A')
-                                            <a href="{{route('orderkitchenbycolour', [$style->slug, $assembly->slug, $colour->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
+                                            <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
                                                 Highline
                                             </a>
                                             @elseif ($parentSubCategory->parent_sub_category == 'B')
-                                            <a href="{{route('orderkitchenbycolour', [$style->slug, $assembly->slug, $colour->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
-                                                Baseline
+                                            <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                Drawerline
                                             </a>
                                             @elseif ($parentSubCategory->parent_sub_category == 'C')
-                                            <a href="{{route('orderkitchenbycolour', [$style->slug, $assembly->slug, $colour->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                            <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
                                                 Corner
                                             </a>
                                             @endif
@@ -853,6 +853,24 @@
                                     @endphp
 
                                     <div class="col-lg-12 col-md-12 col-sm-12 order-sm-1 order-xs-1">
+                                        @php 
+                                            $parentSubCategories = \App\Models\Product::where('parent_category_id', $wallCabinetData->parent_category_id)->where('style_id', $wallCabinetData->style_id)->where('colour_id', $wallCabinetData->colour_id)->where('assembly_id', $wallCabinetData->assembly_id)->groupBy('parent_sub_category')->get();
+                                        @endphp
+                                        @foreach ($parentSubCategories as $parentSubCategory)
+                                            @if ($parentSubCategory->parent_sub_category == 'A')
+                                            <a href="{{route('orderkitchenbycolour', [$wallCabinetData->style?->slug, $wallCabinetData->assembly?->slug, $wallCabinetData->colour?->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
+                                                Highline
+                                            </a>
+                                            @elseif ($parentSubCategory->parent_sub_category == 'B')
+                                            <a href="{{route('orderkitchenbycolour', [$wallCabinetData->style?->slug, $wallCabinetData->assembly?->slug, $wallCabinetData->colour?->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                Drawerline
+                                            </a>
+                                            @elseif ($parentSubCategory->parent_sub_category == 'C')
+                                            <a href="{{route('orderkitchenbycolour', [$wallCabinetData->style?->slug, $wallCabinetData->assembly?->slug, $wallCabinetData->colour?->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                Corner
+                                            </a>
+                                            @endif
+                                        @endforeach
                                         <label for="" class="fw-bold d-flex justify-content-between"><span>ALL WALL CABINETS</span><span><a href="{{route('viewallorderkitchenbycolour', ['style' => $wallCabinetData->style?->slug , 'assembly' => $wallCabinetData->assembly?->slug, 'colour' => $wallCabinetData->colour?->slug])}}">View All</a></span></label>
                                         <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="wall-cabinets-section">
                                             @foreach ($wallCabinets as $index => $wallCabinet)
@@ -1092,6 +1110,24 @@
                                     
                                     @else
                                     <div class="col-12">
+                                        @php 
+                                            $parentSubCategories = \App\Models\Product::where('parent_category_id', $wallCabinetData->parent_category_id)->where('style_id', $wallCabinetData->style_id)->where('colour_id', $wallCabinetData->colour_id)->where('assembly_id', $wallCabinetData->assembly_id)->groupBy('parent_sub_category')->get();
+                                        @endphp
+                                        @foreach ($parentSubCategories as $parentSubCategory)
+                                            @if ($parentSubCategory->parent_sub_category == 'A')
+                                            <a href="{{route('orderkitchenbycolour', [$wallCabinetData->style?->slug, $wallCabinetData->assembly?->slug, $wallCabinetData->colour?->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
+                                                Highline
+                                            </a>
+                                            @elseif ($parentSubCategory->parent_sub_category == 'B')
+                                            <a href="{{route('orderkitchenbycolour', [$wallCabinetData->style?->slug, $wallCabinetData->assembly?->slug, $wallCabinetData->colour?->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                Drawerline
+                                            </a>
+                                            @elseif ($parentSubCategory->parent_sub_category == 'C')
+                                            <a href="{{route('orderkitchenbycolour', [$wallCabinetData->style?->slug, $wallCabinetData->assembly?->slug, $wallCabinetData->colour?->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                Corner
+                                            </a>
+                                            @endif
+                                        @endforeach
                                         <p class="">No Wall Cabinets available</p>
                                     </div>
                                     @endif
@@ -1469,6 +1505,24 @@
                                     @endphp
 
                                     <div class="col-lg-12 col-md-12 col-sm-12 order-sm-1 order-xs-1">
+                                        @php 
+                                            $parentSubCategories = \App\Models\Product::where('parent_category_id', $tallCabinetData->parent_category_id)->where('style_id', $tallCabinetData->style_id)->where('colour_id', $tallCabinetData->colour_id)->where('assembly_id', $tallCabinetData->assembly_id)->groupBy('parent_sub_category')->get();
+                                        @endphp
+                                        @foreach ($parentSubCategories as $parentSubCategory)
+                                            @if ($parentSubCategory->parent_sub_category == 'A')
+                                            <a href="{{route('orderkitchenbycolour', [$tallCabinetData->style?->slug, $tallCabinetData->assembly?->slug, $tallCabinetData->colour?->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
+                                                Highline
+                                            </a>
+                                            @elseif ($parentSubCategory->parent_sub_category == 'B')
+                                            <a href="{{route('orderkitchenbycolour', [$tallCabinetData->style?->slug, $tallCabinetData->assembly?->slug, $tallCabinetData->colour?->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                Drawerline
+                                            </a>
+                                            @elseif ($parentSubCategory->parent_sub_category == 'C')
+                                            <a href="{{route('orderkitchenbycolour', [$tallCabinetData->style?->slug, $tallCabinetData->assembly?->slug, $tallCabinetData->colour?->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                Corner
+                                            </a>
+                                            @endif
+                                        @endforeach
                                         <label for="" class="fw-bold d-flex justify-content-between"><span>ALL TALL CABINETS</span><span><a href="{{route('viewallorderkitchenbycolour', ['style' => $tallCabinetData->style?->slug , 'assembly' => $tallCabinetData->assembly?->slug, 'colour' => $tallCabinetData->colour?->slug])}}">View All</a></span></label>
                                         <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="tall-cabinets-section">
                                             @foreach ($tallCabinets as $index => $tallCabinet)
@@ -1708,6 +1762,24 @@
                                     
                                     @else
                                     <div class="col-12">
+                                        @php 
+                                            $parentSubCategories = \App\Models\Product::where('parent_category_id', $tallCabinetData->parent_category_id)->where('style_id', $tallCabinetData->style_id)->where('colour_id', $tallCabinetData->colour_id)->where('assembly_id', $tallCabinetData->assembly_id)->groupBy('parent_sub_category')->get();
+                                        @endphp
+                                        @foreach ($parentSubCategories as $parentSubCategory)
+                                            @if ($parentSubCategory->parent_sub_category == 'A')
+                                            <a href="{{route('orderkitchenbycolour', [$tallCabinetData->style?->slug, $tallCabinetData->assembly?->slug, $tallCabinetData->colour?->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
+                                                Highline
+                                            </a>
+                                            @elseif ($parentSubCategory->parent_sub_category == 'B')
+                                            <a href="{{route('orderkitchenbycolour', [$tallCabinetData->style?->slug, $tallCabinetData->assembly?->slug, $tallCabinetData->colour?->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                Drawerline
+                                            </a>
+                                            @elseif ($parentSubCategory->parent_sub_category == 'C')
+                                            <a href="{{route('orderkitchenbycolour', [$tallCabinetData->style?->slug, $tallCabinetData->assembly?->slug, $tallCabinetData->colour?->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                Corner
+                                            </a>
+                                            @endif
+                                        @endforeach
                                         <p class="">No Tall Cabinets available</p>
                                     </div>
                                     @endif
@@ -1725,6 +1797,24 @@
                                     @endphp
 
                                     <div class="col-lg-12 col-md-12 col-sm-12 order-sm-1 order-xs-1">
+                                        @php 
+                                            $parentSubCategories = \App\Models\Product::where('parent_category_id', $accessoriesData->parent_category_id)->where('style_id', $accessoriesData->style_id)->where('colour_id', $accessoriesData->colour_id)->where('assembly_id', $accessoriesData->assembly_id)->groupBy('parent_sub_category')->get();
+                                        @endphp
+                                        @foreach ($parentSubCategories as $parentSubCategory)
+                                            @if ($parentSubCategory->parent_sub_category == 'A')
+                                            <a href="{{route('orderkitchenbycolour', [$accessoriesData->style?->slug, $accessoriesData->assembly?->slug, $accessoriesData->colour?->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
+                                                Highline
+                                            </a>
+                                            @elseif ($parentSubCategory->parent_sub_category == 'B')
+                                            <a href="{{route('orderkitchenbycolour', [$accessoriesData->style?->slug, $accessoriesData->assembly?->slug, $accessoriesData->colour?->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                Drawerline
+                                            </a>
+                                            @elseif ($parentSubCategory->parent_sub_category == 'C')
+                                            <a href="{{route('orderkitchenbycolour', [$accessoriesData->style?->slug, $accessoriesData->assembly?->slug, $accessoriesData->colour?->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                Corner
+                                            </a>
+                                            @endif
+                                        @endforeach
                                         <label for="" class="fw-bold d-flex justify-content-between"><span>ALL ACCESSORIES</span><span><a href="{{route('viewallorderkitchenbycolour', ['style' => $accessoriesData->style?->slug , 'assembly' => $accessoriesData->assembly?->slug, 'colour' => $accessoriesData->colour?->slug])}}">View All</a></span></label>
                                         <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="accessories-section">
                                             @foreach ($accessories as $index => $accessory)
@@ -1964,6 +2054,24 @@
                                     
                                     @else
                                     <div class="col-12">
+                                        @php 
+                                            $parentSubCategories = \App\Models\Product::where('parent_category_id', $accessoriesData->parent_category_id)->where('style_id', $accessoriesData->style_id)->where('colour_id', $accessoriesData->colour_id)->where('assembly_id', $accessoriesData->assembly_id)->groupBy('parent_sub_category')->get();
+                                        @endphp
+                                        @foreach ($parentSubCategories as $parentSubCategory)
+                                            @if ($parentSubCategory->parent_sub_category == 'A')
+                                            <a href="{{route('orderkitchenbycolour', [$accessoriesData->style?->slug, $accessoriesData->assembly?->slug, $accessoriesData->colour?->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
+                                                Highline
+                                            </a>
+                                            @elseif ($parentSubCategory->parent_sub_category == 'B')
+                                            <a href="{{route('orderkitchenbycolour', [$accessoriesData->style?->slug, $accessoriesData->assembly?->slug, $accessoriesData->colour?->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                Drawerline
+                                            </a>
+                                            @elseif ($parentSubCategory->parent_sub_category == 'C')
+                                            <a href="{{route('orderkitchenbycolour', [$accessoriesData->style?->slug, $accessoriesData->assembly?->slug, $accessoriesData->colour?->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                Corner
+                                            </a>
+                                            @endif
+                                        @endforeach
                                         <p class="">No Accessories Available</p>
                                     </div>
                                     @endif
@@ -2132,6 +2240,24 @@
                                 @endphp
 
                                 <div class="col-lg-12 col-md-12 col-sm-12 order-sm-1 order-xs-1">
+                                    @php 
+                                        $parentSubCategories = \App\Models\Product::where('parent_category_id', $internalsData->parent_category_id)->where('style_id', $internalsData->style_id)->where('colour_id', $internalsData->colour_id)->where('assembly_id', $internalsData->assembly_id)->groupBy('parent_sub_category')->get();
+                                    @endphp
+                                    @foreach ($parentSubCategories as $parentSubCategory)
+                                        @if ($parentSubCategory->parent_sub_category == 'A')
+                                        <a href="{{route('orderkitchenbycolour', [$internalsData->style?->slug, $internalsData->assembly?->slug, $internalsData->colour?->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
+                                            Highline
+                                        </a>
+                                        @elseif ($parentSubCategory->parent_sub_category == 'B')
+                                        <a href="{{route('orderkitchenbycolour', [$internalsData->style?->slug, $internalsData->assembly?->slug, $internalsData->colour?->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                            Drawerline
+                                        </a>
+                                        @elseif ($parentSubCategory->parent_sub_category == 'C')
+                                        <a href="{{route('orderkitchenbycolour', [$internalsData->style?->slug, $internalsData->assembly?->slug, $internalsData->colour?->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                            Corner
+                                        </a>
+                                        @endif
+                                    @endforeach
                                     <label for="" class="fw-bold d-flex justify-content-between"><span>ALL INTERNALS</span><span><a href="{{route('viewallorderkitchenbycolour', ['style' => $internalsData->style?->slug , 'assembly' => $internalsData->assembly?->slug, 'colour' => $internalsData->colour?->slug])}}">View All</a></span></label>
                                     <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="internals-section">
                                         @foreach ($internals as $index => $internal)
@@ -2370,6 +2496,24 @@
                                 </div>
                             @else
                                 <div class="col-12">
+                                    @php 
+                                        $parentSubCategories = \App\Models\Product::where('parent_category_id', $internalsData->parent_category_id)->where('style_id', $internalsData->style_id)->where('colour_id', $internalsData->colour_id)->where('assembly_id', $internalsData->assembly_id)->groupBy('parent_sub_category')->get();
+                                    @endphp
+                                    @foreach ($parentSubCategories as $parentSubCategory)
+                                        @if ($parentSubCategory->parent_sub_category == 'A')
+                                        <a href="{{route('orderkitchenbycolour', [$internalsData->style?->slug, $internalsData->assembly?->slug, $internalsData->colour?->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
+                                            Highline
+                                        </a>
+                                        @elseif ($parentSubCategory->parent_sub_category == 'B')
+                                        <a href="{{route('orderkitchenbycolour', [$internalsData->style?->slug, $internalsData->assembly?->slug, $internalsData->colour?->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                            Drawerline
+                                        </a>
+                                        @elseif ($parentSubCategory->parent_sub_category == 'C')
+                                        <a href="{{route('orderkitchenbycolour', [$internalsData->style?->slug, $internalsData->assembly?->slug, $internalsData->colour?->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                            Corner
+                                        </a>
+                                        @endif
+                                    @endforeach
                                     <p class="">No Internals available</p>
                                 </div>
                             @endif
@@ -2391,6 +2535,24 @@
                                 @endphp
 
                                 <div class="col-lg-12 col-md-12 col-sm-12 order-sm-1 order-xs-1">
+                                    @php 
+                                        $parentSubCategories = \App\Models\Product::where('parent_category_id', $handlesData->parent_category_id)->where('style_id', $handlesData->style_id)->where('colour_id', $handlesData->colour_id)->where('assembly_id', $handlesData->assembly_id)->groupBy('parent_sub_category')->get();
+                                    @endphp
+                                    @foreach ($parentSubCategories as $parentSubCategory)
+                                        @if ($parentSubCategory->parent_sub_category == 'A')
+                                        <a href="{{route('orderkitchenbycolour', [$handlesData->style?->slug, $handlesData->assembly?->slug, $handlesData->colour?->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
+                                            Highline
+                                        </a>
+                                        @elseif ($parentSubCategory->parent_sub_category == 'B')
+                                        <a href="{{route('orderkitchenbycolour', [$handlesData->style?->slug, $handlesData->assembly?->slug, $handlesData->colour?->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                            Drawerline
+                                        </a>
+                                        @elseif ($parentSubCategory->parent_sub_category == 'C')
+                                        <a href="{{route('orderkitchenbycolour', [$handlesData->style?->slug, $handlesData->assembly?->slug, $handlesData->colour?->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                            Corner
+                                        </a>
+                                        @endif
+                                    @endforeach
                                     <label for="" class="fw-bold d-flex justify-content-between"><span>ALL HANDLES</span><span><a href="{{route('viewallorderkitchenbycolour', ['style' => $handlesData->style?->slug , 'assembly' => $handlesData->assembly?->slug, 'colour' => $handlesData->colour?->slug])}}">View All</a></span></label>
                                     <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="handles-section">
                                         @foreach ($handles as $index => $handle)
@@ -2629,6 +2791,24 @@
                                 </div>
                             @else
                                 <div class="col-12">
+                                    @php 
+                                        $parentSubCategories = \App\Models\Product::where('parent_category_id', $handlesData->parent_category_id)->where('style_id', $handlesData->style_id)->where('colour_id', $handlesData->colour_id)->where('assembly_id', $handlesData->assembly_id)->groupBy('parent_sub_category')->get();
+                                    @endphp
+                                    @foreach ($parentSubCategories as $parentSubCategory)
+                                        @if ($parentSubCategory->parent_sub_category == 'A')
+                                        <a href="{{route('orderkitchenbycolour', [$handlesData->style?->slug, $handlesData->assembly?->slug, $handlesData->colour?->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
+                                            Highline
+                                        </a>
+                                        @elseif ($parentSubCategory->parent_sub_category == 'B')
+                                        <a href="{{route('orderkitchenbycolour', [$handlesData->style?->slug, $handlesData->assembly?->slug, $handlesData->colour?->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                            Drawerline
+                                        </a>
+                                        @elseif ($parentSubCategory->parent_sub_category == 'C')
+                                        <a href="{{route('orderkitchenbycolour', [$handlesData->style?->slug, $handlesData->assembly?->slug, $handlesData->colour?->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                            Corner
+                                        </a>
+                                        @endif
+                                    @endforeach
                                     <p class="">No Handles available</p>
                                 </div>
                             @endif
@@ -2673,6 +2853,24 @@
                                         @endphp
 
                                         <div class="col-lg-12 col-md-12 col-sm-12 order-sm-1 order-xs-1">
+                                            @php 
+                                                $parentSubCategories = \App\Models\Product::where('parent_category_id', $worktopsData->parent_category_id)->where('style_id', $worktopsData->style_id)->where('colour_id', $worktopsData->colour_id)->where('assembly_id', $worktopsData->assembly_id)->groupBy('parent_sub_category')->get();
+                                            @endphp
+                                            @foreach ($parentSubCategories as $parentSubCategory)
+                                                @if ($parentSubCategory->parent_sub_category == 'A')
+                                                <a href="{{route('orderkitchenbycolour', [$worktopsData->style?->slug, $worktopsData->assembly?->slug, $worktopsData->colour?->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
+                                                    Highline
+                                                </a>
+                                                @elseif ($parentSubCategory->parent_sub_category == 'B')
+                                                <a href="{{route('orderkitchenbycolour', [$worktopsData->style?->slug, $worktopsData->assembly?->slug, $worktopsData->colour?->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                    Drawerline
+                                                </a>
+                                                @elseif ($parentSubCategory->parent_sub_category == 'C')
+                                                <a href="{{route('orderkitchenbycolour', [$worktopsData->style?->slug, $worktopsData->assembly?->slug, $worktopsData->colour?->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                    Corner
+                                                </a>
+                                                @endif
+                                            @endforeach
                                             <label for="" class="fw-bold d-flex justify-content-between"><span>ALL WORKTOPS</span><span><a href="{{route('viewallorderkitchenbycolour', ['style' => $worktopsData->style?->slug , 'assembly' => $worktopsData->assembly?->slug, 'colour' => $worktopsData->colour?->slug])}}">View All</a></span></label>
                                             <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="worktops-section">
                                                 @foreach ($worktops as $index => $worktop)
@@ -2911,6 +3109,24 @@
                                         </div>
                                     @else
                                         <div class="col-12">
+                                            @php 
+                                                $parentSubCategories = \App\Models\Product::where('parent_category_id', $worktopsData->parent_category_id)->where('style_id', $worktopsData->style_id)->where('colour_id', $worktopsData->colour_id)->where('assembly_id', $worktopsData->assembly_id)->groupBy('parent_sub_category')->get();
+                                            @endphp
+                                            @foreach ($parentSubCategories as $parentSubCategory)
+                                                @if ($parentSubCategory->parent_sub_category == 'A')
+                                                <a href="{{route('orderkitchenbycolour', [$worktopsData->style?->slug, $worktopsData->assembly?->slug, $worktopsData->colour?->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
+                                                    Highline
+                                                </a>
+                                                @elseif ($parentSubCategory->parent_sub_category == 'B')
+                                                <a href="{{route('orderkitchenbycolour', [$worktopsData->style?->slug, $worktopsData->assembly?->slug, $worktopsData->colour?->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                    Drawerline
+                                                </a>
+                                                @elseif ($parentSubCategory->parent_sub_category == 'C')
+                                                <a href="{{route('orderkitchenbycolour', [$worktopsData->style?->slug, $worktopsData->assembly?->slug, $worktopsData->colour?->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                    Corner
+                                                </a>
+                                                @endif
+                                            @endforeach
                                             <p class="">No Worktops available</p>
                                         </div>
                                     @endif
@@ -2927,6 +3143,24 @@
                                         @endphp
 
                                         <div class="col-lg-12 col-md-12 col-sm-12 order-sm-1 order-xs-1">
+                                            @php 
+                                                $parentSubCategories = \App\Models\Product::where('parent_category_id', $worktopsAndUpStandData->parent_category_id)->where('style_id', $worktopsAndUpStandData->style_id)->where('colour_id', $worktopsAndUpStandData->colour_id)->where('assembly_id', $worktopsAndUpStandData->assembly_id)->groupBy('parent_sub_category')->get();
+                                            @endphp
+                                            @foreach ($parentSubCategories as $parentSubCategory)
+                                                @if ($parentSubCategory->parent_sub_category == 'A')
+                                                <a href="{{route('orderkitchenbycolour', [$worktopsAndUpStandData->style?->slug, $worktopsAndUpStandData->assembly?->slug, $worktopsAndUpStandData->colour?->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
+                                                    Highline
+                                                </a>
+                                                @elseif ($parentSubCategory->parent_sub_category == 'B')
+                                                <a href="{{route('orderkitchenbycolour', [$worktopsAndUpStandData->style?->slug, $worktopsAndUpStandData->assembly?->slug, $worktopsAndUpStandData->colour?->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                    Drawerline
+                                                </a>
+                                                @elseif ($parentSubCategory->parent_sub_category == 'C')
+                                                <a href="{{route('orderkitchenbycolour', [$worktopsAndUpStandData->style?->slug, $worktopsAndUpStandData->assembly?->slug, $worktopsAndUpStandData->colour?->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                    Corner
+                                                </a>
+                                                @endif
+                                            @endforeach
                                             <label for="" class="fw-bold d-flex justify-content-between"><span>ALL WORKTOPS</span><span><a href="{{route('viewallorderkitchenbycolour', ['style' => $worktopsAndUpStandData->style?->slug , 'assembly' => $worktopsAndUpStandData->assembly?->slug, 'colour' => $worktopsAndUpStandData->colour?->slug])}}">View All</a></span></label>
                                             <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="worktopandupstands-section">
                                                 @foreach ($worktopsAndUpStands as $index => $worktopsAndUpStand)
@@ -3165,6 +3399,24 @@
                                         </div>
                                     @else
                                         <div class="col-12">
+                                            @php 
+                                                $parentSubCategories = \App\Models\Product::where('parent_category_id', $worktopsAndUpStandData->parent_category_id)->where('style_id', $worktopsAndUpStandData->style_id)->where('colour_id', $worktopsAndUpStandData->colour_id)->where('assembly_id', $worktopsAndUpStandData->assembly_id)->groupBy('parent_sub_category')->get();
+                                            @endphp
+                                            @foreach ($parentSubCategories as $parentSubCategory)
+                                                @if ($parentSubCategory->parent_sub_category == 'A')
+                                                <a href="{{route('orderkitchenbycolour', [$worktopsAndUpStandData->style?->slug, $worktopsAndUpStandData->assembly?->slug, $worktopsAndUpStandData->colour?->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
+                                                    Highline
+                                                </a>
+                                                @elseif ($parentSubCategory->parent_sub_category == 'B')
+                                                <a href="{{route('orderkitchenbycolour', [$worktopsAndUpStandData->style?->slug, $worktopsAndUpStandData->assembly?->slug, $worktopsAndUpStandData->colour?->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                    Drawerline
+                                                </a>
+                                                @elseif ($parentSubCategory->parent_sub_category == 'C')
+                                                <a href="{{route('orderkitchenbycolour', [$worktopsAndUpStandData->style?->slug, $worktopsAndUpStandData->assembly?->slug, $worktopsAndUpStandData->colour?->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                    Corner
+                                                </a>
+                                                @endif
+                                            @endforeach
                                             <p class="">No Worktops and Upstands available</p>
                                         </div>
                                     @endif
@@ -3181,6 +3433,24 @@
                                         @endphp
 
                                         <div class="col-lg-12 col-md-12 col-sm-12 order-sm-1 order-xs-1">
+                                            @php 
+                                                $parentSubCategories = \App\Models\Product::where('parent_category_id', $breakfastBarData->parent_category_id)->where('style_id', $breakfastBarData->style_id)->where('colour_id', $breakfastBarData->colour_id)->where('assembly_id', $breakfastBarData->assembly_id)->groupBy('parent_sub_category')->get();
+                                            @endphp
+                                            @foreach ($parentSubCategories as $parentSubCategory)
+                                                @if ($parentSubCategory->parent_sub_category == 'A')
+                                                <a href="{{route('orderkitchenbycolour', [$breakfastBarData->style?->slug, $breakfastBarData->assembly?->slug, $breakfastBarData->colour?->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
+                                                    Highline
+                                                </a>
+                                                @elseif ($parentSubCategory->parent_sub_category == 'B')
+                                                <a href="{{route('orderkitchenbycolour', [$breakfastBarData->style?->slug, $breakfastBarData->assembly?->slug, $breakfastBarData->colour?->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                    Drawerline
+                                                </a>
+                                                @elseif ($parentSubCategory->parent_sub_category == 'C')
+                                                <a href="{{route('orderkitchenbycolour', [$breakfastBarData->style?->slug, $breakfastBarData->assembly?->slug, $breakfastBarData->colour?->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                    Corner
+                                                </a>
+                                                @endif
+                                            @endforeach
                                             <label for="" class="fw-bold d-flex justify-content-between"><span>ALL BREAKFAST BARS</span><span><a href="{{route('viewallorderkitchenbycolour', ['style' => $breakfastBarData->style?->slug , 'assembly' => $breakfastBarData->assembly?->slug, 'colour' => $breakfastBarData->colour?->slug])}}">View All</a></span></label>
                                             <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="breakfastbars-section">
                                                 @foreach ($breakfastBars as $index => $breakfastBar)
@@ -3419,6 +3689,24 @@
                                         </div>
                                     @else
                                         <div class="col-12">
+                                            @php 
+                                                $parentSubCategories = \App\Models\Product::where('parent_category_id', $breakfastBarData->parent_category_id)->where('style_id', $breakfastBarData->style_id)->where('colour_id', $breakfastBarData->colour_id)->where('assembly_id', $breakfastBarData->assembly_id)->groupBy('parent_sub_category')->get();
+                                            @endphp
+                                            @foreach ($parentSubCategories as $parentSubCategory)
+                                                @if ($parentSubCategory->parent_sub_category == 'A')
+                                                <a href="{{route('orderkitchenbycolour', [$breakfastBarData->style?->slug, $breakfastBarData->assembly?->slug, $breakfastBarData->colour?->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
+                                                    Highline
+                                                </a>
+                                                @elseif ($parentSubCategory->parent_sub_category == 'B')
+                                                <a href="{{route('orderkitchenbycolour', [$breakfastBarData->style?->slug, $breakfastBarData->assembly?->slug, $breakfastBarData->colour?->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                    Drawerline
+                                                </a>
+                                                @elseif ($parentSubCategory->parent_sub_category == 'C')
+                                                <a href="{{route('orderkitchenbycolour', [$breakfastBarData->style?->slug, $breakfastBarData->assembly?->slug, $breakfastBarData->colour?->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                    Corner
+                                                </a>
+                                                @endif
+                                            @endforeach
                                             <p class="">No Breakfast Bars available</p>
                                         </div>
                                     @endif
@@ -3435,6 +3723,24 @@
                                         @endphp
 
                                         <div class="col-lg-12 col-md-12 col-sm-12 order-sm-1 order-xs-1">
+                                            @php 
+                                                $parentSubCategories = \App\Models\Product::where('parent_category_id', $edgingData->parent_category_id)->where('style_id', $edgingData->style_id)->where('colour_id', $edgingData->colour_id)->where('assembly_id', $edgingData->assembly_id)->groupBy('parent_sub_category')->get();
+                                            @endphp
+                                            @foreach ($parentSubCategories as $parentSubCategory)
+                                                @if ($parentSubCategory->parent_sub_category == 'A')
+                                                <a href="{{route('orderkitchenbycolour', [$edgingData->style?->slug, $edgingData->assembly?->slug, $edgingData->colour?->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
+                                                    Highline
+                                                </a>
+                                                @elseif ($parentSubCategory->parent_sub_category == 'B')
+                                                <a href="{{route('orderkitchenbycolour', [$edgingData->style?->slug, $edgingData->assembly?->slug, $edgingData->colour?->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                    Drawerline
+                                                </a>
+                                                @elseif ($parentSubCategory->parent_sub_category == 'C')
+                                                <a href="{{route('orderkitchenbycolour', [$edgingData->style?->slug, $edgingData->assembly?->slug, $edgingData->colour?->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                    Corner
+                                                </a>
+                                                @endif
+                                            @endforeach
                                             <label for="" class="fw-bold d-flex justify-content-between"><span>ALL EDGINGS</span><span><a href="{{route('viewallorderkitchenbycolour', ['style' => $edgingData->style?->slug , 'assembly' => $edgingData->assembly?->slug, 'colour' => $edgingData->colour?->slug])}}">View All</a></span></label>
                                             <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="edgings-section">
                                                 @foreach ($$edgings as $index => $edging)
@@ -3673,6 +3979,24 @@
                                         </div>
                                     @else
                                         <div class="col-12">
+                                            @php 
+                                                $parentSubCategories = \App\Models\Product::where('parent_category_id', $edgingData->parent_category_id)->where('style_id', $edgingData->style_id)->where('colour_id', $edgingData->colour_id)->where('assembly_id', $edgingData->assembly_id)->groupBy('parent_sub_category')->get();
+                                            @endphp
+                                            @foreach ($parentSubCategories as $parentSubCategory)
+                                                @if ($parentSubCategory->parent_sub_category == 'A')
+                                                <a href="{{route('orderkitchenbycolour', [$edgingData->style?->slug, $edgingData->assembly?->slug, $edgingData->colour?->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
+                                                    Highline
+                                                </a>
+                                                @elseif ($parentSubCategory->parent_sub_category == 'B')
+                                                <a href="{{route('orderkitchenbycolour', [$edgingData->style?->slug, $edgingData->assembly?->slug, $edgingData->colour?->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                    Drawerline
+                                                </a>
+                                                @elseif ($parentSubCategory->parent_sub_category == 'C')
+                                                <a href="{{route('orderkitchenbycolour', [$edgingData->style?->slug, $edgingData->assembly?->slug, $edgingData->colour?->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                    Corner
+                                                </a>
+                                                @endif
+                                            @endforeach
                                             <p class="">No Edgings available</p>
                                         </div>
                                     @endif
@@ -3710,6 +4034,24 @@
                                         @endphp
 
                                         <div class="col-lg-12 col-md-12 col-sm-12 order-sm-1 order-xs-1">
+                                            @php 
+                                                $parentSubCategories = \App\Models\Product::where('parent_category_id', $sinkData->parent_category_id)->where('style_id', $sinkData->style_id)->where('colour_id', $sinkData->colour_id)->where('assembly_id', $sinkData->assembly_id)->groupBy('parent_sub_category')->get();
+                                            @endphp
+                                            @foreach ($parentSubCategories as $parentSubCategory)
+                                                @if ($parentSubCategory->parent_sub_category == 'A')
+                                                <a href="{{route('orderkitchenbycolour', [$sinkData->style?->slug, $sinkData->assembly?->slug, $sinkData->colour?->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
+                                                    Highline
+                                                </a>
+                                                @elseif ($parentSubCategory->parent_sub_category == 'B')
+                                                <a href="{{route('orderkitchenbycolour', [$sinkData->style?->slug, $sinkData->assembly?->slug, $sinkData->colour?->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                    Drawerline
+                                                </a>
+                                                @elseif ($parentSubCategory->parent_sub_category == 'C')
+                                                <a href="{{route('orderkitchenbycolour', [$sinkData->style?->slug, $sinkData->assembly?->slug, $sinkData->colour?->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                    Corner
+                                                </a>
+                                                @endif
+                                            @endforeach
                                             <label for="" class="fw-bold d-flex justify-content-between"><span>ALL WORKTOPS</span><span><a href="{{route('viewallorderkitchenbycolour', ['style' => $sinkData->style?->slug , 'assembly' => $sinkData->assembly?->slug, 'colour' => $sinkData->colour?->slug])}}">View All</a></span></label>
                                             <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="sinks-section">
                                                 @foreach ($sinks as $index => $sink)
@@ -3948,6 +4290,24 @@
                                         </div>
                                     @else
                                         <div class="col-12">
+                                            @php 
+                                                $parentSubCategories = \App\Models\Product::where('parent_category_id', $sinkData->parent_category_id)->where('style_id', $sinkData->style_id)->where('colour_id', $sinkData->colour_id)->where('assembly_id', $sinkData->assembly_id)->groupBy('parent_sub_category')->get();
+                                            @endphp
+                                            @foreach ($parentSubCategories as $parentSubCategory)
+                                                @if ($parentSubCategory->parent_sub_category == 'A')
+                                                <a href="{{route('orderkitchenbycolour', [$sinkData->style?->slug, $sinkData->assembly?->slug, $sinkData->colour?->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
+                                                    Highline
+                                                </a>
+                                                @elseif ($parentSubCategory->parent_sub_category == 'B')
+                                                <a href="{{route('orderkitchenbycolour', [$sinkData->style?->slug, $sinkData->assembly?->slug, $sinkData->colour?->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                    Drawerline
+                                                </a>
+                                                @elseif ($parentSubCategory->parent_sub_category == 'C')
+                                                <a href="{{route('orderkitchenbycolour', [$sinkData->style?->slug, $sinkData->assembly?->slug, $sinkData->colour?->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                    Corner
+                                                </a>
+                                                @endif
+                                            @endforeach
                                             <p class="">No Sinks available</p>
                                         </div>
                                     @endif
@@ -3964,6 +4324,24 @@
                                         @endphp
 
                                         <div class="col-lg-12 col-md-12 col-sm-12 order-sm-1 order-xs-1">
+                                            @php 
+                                                $parentSubCategories = \App\Models\Product::where('parent_category_id', $tapsData->parent_category_id)->where('style_id', $tapsData->style_id)->where('colour_id', $tapsData->colour_id)->where('assembly_id', $tapsData->assembly_id)->groupBy('parent_sub_category')->get();
+                                            @endphp
+                                            @foreach ($parentSubCategories as $parentSubCategory)
+                                                @if ($parentSubCategory->parent_sub_category == 'A')
+                                                <a href="{{route('orderkitchenbycolour', [$tapsData->style?->slug, $tapsData->assembly?->slug, $tapsData->colour?->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
+                                                    Highline
+                                                </a>
+                                                @elseif ($parentSubCategory->parent_sub_category == 'B')
+                                                <a href="{{route('orderkitchenbycolour', [$tapsData->style?->slug, $tapsData->assembly?->slug, $tapsData->colour?->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                    Drawerline
+                                                </a>
+                                                @elseif ($parentSubCategory->parent_sub_category == 'C')
+                                                <a href="{{route('orderkitchenbycolour', [$tapsData->style?->slug, $tapsData->assembly?->slug, $tapsData->colour?->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                    Corner
+                                                </a>
+                                                @endif
+                                            @endforeach
                                             <label for="" class="fw-bold d-flex justify-content-between"><span>ALL TAPS</span><span><a href="{{route('viewallorderkitchenbycolour', ['style' => $tapsData->style?->slug , 'assembly' => $tapsData->assembly?->slug, 'colour' => $tapsData->colour?->slug])}}">View All</a></span></label>
                                             <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="taps-section">
                                                 @foreach ($taps as $index => $tap)
@@ -4202,6 +4580,24 @@
                                         </div>
                                     @else
                                         <div class="col-12">
+                                            @php 
+                                                $parentSubCategories = \App\Models\Product::where('parent_category_id', $tapsData->parent_category_id)->where('style_id', $tapsData->style_id)->where('colour_id', $tapsData->colour_id)->where('assembly_id', $tapsData->assembly_id)->groupBy('parent_sub_category')->get();
+                                            @endphp
+                                            @foreach ($parentSubCategories as $parentSubCategory)
+                                                @if ($parentSubCategory->parent_sub_category == 'A')
+                                                <a href="{{route('orderkitchenbycolour', [$tapsData->style?->slug, $tapsData->assembly?->slug, $tapsData->colour?->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
+                                                    Highline
+                                                </a>
+                                                @elseif ($parentSubCategory->parent_sub_category == 'B')
+                                                <a href="{{route('orderkitchenbycolour', [$tapsData->style?->slug, $tapsData->assembly?->slug, $tapsData->colour?->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                    Drawerline
+                                                </a>
+                                                @elseif ($parentSubCategory->parent_sub_category == 'C')
+                                                <a href="{{route('orderkitchenbycolour', [$tapsData->style?->slug, $tapsData->assembly?->slug, $tapsData->colour?->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                    Corner
+                                                </a>
+                                                @endif
+                                            @endforeach
                                             <p class="">No Taps available</p>
                                         </div>
                                     @endif
@@ -4224,6 +4620,24 @@
                                 @endphp
 
                                 <div class="col-lg-12 col-md-12 col-sm-12 order-sm-1 order-xs-1">
+                                    @php 
+                                        $parentSubCategories = \App\Models\Product::where('parent_category_id', $applianceData->parent_category_id)->where('style_id', $applianceData->style_id)->where('colour_id', $applianceData->colour_id)->where('assembly_id', $applianceData->assembly_id)->groupBy('parent_sub_category')->get();
+                                    @endphp
+                                    @foreach ($parentSubCategories as $parentSubCategory)
+                                        @if ($parentSubCategory->parent_sub_category == 'A')
+                                        <a href="{{route('orderkitchenbycolour', [$applianceData->style?->slug, $applianceData->assembly?->slug, $applianceData->colour?->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
+                                            Highline
+                                        </a>
+                                        @elseif ($parentSubCategory->parent_sub_category == 'B')
+                                        <a href="{{route('orderkitchenbycolour', [$applianceData->style?->slug, $applianceData->assembly?->slug, $applianceData->colour?->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                            Drawerline
+                                        </a>
+                                        @elseif ($parentSubCategory->parent_sub_category == 'C')
+                                        <a href="{{route('orderkitchenbycolour', [$applianceData->style?->slug, $applianceData->assembly?->slug, $applianceData->colour?->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                            Corner
+                                        </a>
+                                        @endif
+                                    @endforeach
                                     <label for="" class="fw-bold d-flex justify-content-between"><span>ALL APPLIANCES</span><span><a href="{{route('viewallorderkitchenbycolour', ['style' => $applianceData->style?->slug , 'assembly' => $applianceData->assembly?->slug, 'colour' => $applianceData->colour?->slug])}}">View All</a></span></label>
                                     <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="sinks-section">
                                         @foreach ($appliances as $index => $appliance)
@@ -4462,6 +4876,24 @@
                                 </div>
                             @else
                                 <div class="col-12">
+                                    @php 
+                                        $parentSubCategories = \App\Models\Product::where('parent_category_id', $applianceData->parent_category_id)->where('style_id', $applianceData->style_id)->where('colour_id', $applianceData->colour_id)->where('assembly_id', $applianceData->assembly_id)->groupBy('parent_sub_category')->get();
+                                    @endphp
+                                    @foreach ($parentSubCategories as $parentSubCategory)
+                                        @if ($parentSubCategory->parent_sub_category == 'A')
+                                        <a href="{{route('orderkitchenbycolour', [$applianceData->style?->slug, $applianceData->assembly?->slug, $applianceData->colour?->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
+                                            Highline
+                                        </a>
+                                        @elseif ($parentSubCategory->parent_sub_category == 'B')
+                                        <a href="{{route('orderkitchenbycolour', [$applianceData->style?->slug, $applianceData->assembly?->slug, $applianceData->colour?->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                            Drawerline
+                                        </a>
+                                        @elseif ($parentSubCategory->parent_sub_category == 'C')
+                                        <a href="{{route('orderkitchenbycolour', [$applianceData->style?->slug, $applianceData->assembly?->slug, $applianceData->colour?->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                            Corner
+                                        </a>
+                                        @endif
+                                    @endforeach
                                     <p class="">No Appliances available</p>
                                 </div>
                             @endif
