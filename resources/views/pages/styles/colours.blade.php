@@ -26,10 +26,6 @@
                                 <div class="col-sm-6">
                                     <h3 class="card-title">{{$style->name}} Colours</h3>
                                 </div>
-                                <div class="col-sm-6">
-                                    <a class="btn btn-primary btn-sm float-end" href="#">Add
-                                        Colour</a>
-                                </div>
                             </div>
                         </div>
                         <div class="card-body">
