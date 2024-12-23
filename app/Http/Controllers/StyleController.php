@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Faq;
 use Illuminate\Http\Request;
 use App\Models\Style;
+use App\Models\StyleHasColour;
 use App\Models\Testimonial;
 
 class StyleController extends Controller
@@ -128,6 +129,24 @@ class StyleController extends Controller
                 }
             }
 
+            $styleColourIds = $request->colour_id;
+            
+            if (!empty($style->styleHasColours)) {
+                // Delete existing testimonials for this style
+                StyleHasColour::where('style_id', $style->id)->delete();
+                // Create new testimonials for this style
+                foreach ($styleColourIds as $key => $styleColourId) {
+                    // Check if the testimonial is not empty
+                    if (!empty($styleColourId)) {
+                        // Create new testimonial
+                        $newStyleHasColour = new StyleHasColour();
+                        $newStyleHasColour->style_id = $style->id;
+                        $newStyleHasColour->colour_id = $styleColourIds[$key];
+                        $newStyleHasColour->save();
+                    }
+                }
+            }
+
             return redirect()->route('styles')->with('success', 'Style updated successfully.');
         } catch (\Exception $e) {
             dd($e);
@@ -166,4 +185,43 @@ class StyleController extends Controller
             return response()->json(['error' => 'Error removing image'], 500);
         }
     }
+
+    public function colours(Request $request, Style $style) {
+        $styleHasColours = StyleHasColour::with('style', 'colour')->where('style_id', $style->id)->get();
+        return view('pages.styles.colours', compact('style', 'styleHasColours'));
+    }
+
+    public function styleColourImageUpload(Request $request) {
+        $styleHasColour = StyleHasColour::where('style_id', $request->style_id)->where('colour_id', $request->colour_id)->first();
+        if (isset($styleHasColour)) {
+            if ($request->hasFile('image_path')) {
+                // Delete old image if it exists
+                if (!empty($styleHasColour->image_path)) {
+                    mmadev_delete_attachment_from_directory($styleHasColour->image_path, 'styles/colours');
+                }
+
+                $file = $request->file('image_path');
+                // store image in folder and return image path
+                $styleHasColour->image_path = mmadev_store_and_get_image_path('styles/colours', $file);
+            }
+            $styleHasColour->save();
+            return redirect()->back()->with('success', 'Image uploaded successfully.');
+        }
+        return redirect()->back()->with('error', 'Something went wrong.');
+    }
+
+    public function deleteColour(Request $request, StyleHasColour $styleHasColours) {
+        try {
+            dd($styleHasColours);
+            // Delete image from directory if it exists
+            if (!empty($styleHasColours->image_path)) {
+                mmadev_delete_attachment_from_directory($styleHasColours->image_path, 'styles/colours');
+            }
+            $styleHasColours->delete();
+            return redirect()->route('style.colours')->with('success', 'Colour deleted successfully.');
+        } catch (\Exception $e) {
+            return redirect()->route('style.colours')->with('error', 'Error deleting colour: ' . $e->getMessage());
+        }
+    }
+
 }

@@ -201,7 +201,25 @@
                                     @endphp
 
                                     <div class="col-lg-12 col-md-12 col-sm-12 order-sm-1 order-xs-1">
-                                        <label for="" class="fw-bold d-flex justify-content-between"><span>ALL BASE CABINETS</span><span><a href="{{route('viewallorderkitchenbycolour', ['style' => $baseCabinet->style?->slug , 'assembly' => $baseCabinet->assembly?->slug, 'colour' => $baseCabinet->colour?->slug])}}">View All</a></span></label>
+                                        @php 
+                                            $parentSubCategories = \App\Models\Product::groupBy('parent_sub_category')->get();
+                                        @endphp
+                                        @foreach ($parentSubCategories as $parentSubCategory)
+                                            @if ($parentSubCategory->parent_sub_category == 'A')
+                                            <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
+                                                Highline
+                                            </a>
+                                            @elseif ($parentSubCategory->parent_sub_category == 'B')
+                                            <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                Baseline
+                                            </a>
+                                            @elseif ($parentSubCategory->parent_sub_category == 'C')
+                                            <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                Corner
+                                            </a>
+                                            @endif
+                                        @endforeach
+                                        <label for="" class="fw-bold d-flex justify-content-between mt-4"><span>ALL BASE CABINETS</span><span><a href="{{route('viewallorderkitchenbycolour', ['style' => $baseCabinetData->style?->slug , 'assembly' => $baseCabinetData->assembly?->slug, 'colour' => $baseCabinetData->colour?->slug])}}">View All</a></span></label>
                                         <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="base-cabinets-section">
                                             @foreach ($baseCabinets as $index => $baseCabinet)
                                             <option class="fw-bold" value="{{$baseCabinet->id }}" data-product-short-title="{{ $baseCabinet->short_title }}" data-product-fullname="{{ $baseCabinet->full_title }}" data-product-image="{{ !empty($baseCabinet->image_path) ? asset('imgs/products/'.$baseCabinet->image_path) : asset('images/no-image-available.jpg') }}" data-product-price="{{ $baseCabinet->price }}" data-product-parent-category-slug="{{ $baseCabinet->ParentCategory?->slug }}" data-product-discountedprice="{{ $baseCabinet->discounted_price }}" data-product-assembly-name="{{ $baseCabinet->assembly?->name }}" data-product-discountedpercentage="{{ $baseCabinet->discounted_percentage ?? 0 }}" data-product-code="{{ $baseCabinet->product_code }}" data-product-dimensions="{{ $baseCabinet->dimensions }}" data-product-style="{{ $baseCabinet->style?->name }}" data-product-colour="{{ $baseCabinet->colour?->trade_colour ? $baseCabinet->colour?->trade_colour : $baseCabinet->colour?->name }}" data-product-id="{{ $baseCabinet->id }}">{{ $baseCabinet->full_title }} (£{{$baseCabinet->price}})</option>
@@ -385,7 +403,7 @@
                                                                     </div>
                                                                     <div class="col-md-8 col-sm-12 p-0 text-center">
                                                                         <p class="category-value fw-semibold py-1 mb-2 text-dark">
-                                                                            <small>{{ $baseCabinetData->colour->trade_colour ? $baseCabinet->colour->trade_colour : $baseCabinet->colour->name }}</small>
+                                                                            <small>{{ $baseCabinetData->colour->trade_colour ? $baseCabinetData->colour->trade_colour : $baseCabinetData->colour->name }}</small>
                                                                         </p>
                                                                     </div>
                                                                 </div>
@@ -440,7 +458,25 @@
 
                                     @else
                                     <div class="col-12">
-                                        <p class="">No Base Cabinets available</p>
+                                        @php 
+                                            $parentSubCategories = \App\Models\Product::groupBy('parent_sub_category')->get();
+                                        @endphp
+                                        @foreach ($parentSubCategories as $parentSubCategory)
+                                            @if ($parentSubCategory->parent_sub_category == 'A')
+                                            <a href="{{route('orderkitchenbycolour', [$style->slug, $assembly->slug, $colour->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
+                                                Highline
+                                            </a>
+                                            @elseif ($parentSubCategory->parent_sub_category == 'B')
+                                            <a href="{{route('orderkitchenbycolour', [$style->slug, $assembly->slug, $colour->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                Baseline
+                                            </a>
+                                            @elseif ($parentSubCategory->parent_sub_category == 'C')
+                                            <a href="{{route('orderkitchenbycolour', [$style->slug, $assembly->slug, $colour->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
+                                                Corner
+                                            </a>
+                                            @endif
+                                        @endforeach
+                                        <p class="mt-4">No Base Cabinets available</p>
                                     </div>
                                     @endif
                                 </div>
@@ -1001,7 +1037,7 @@
                                                                     </div>
                                                                     <div class="col-md-8 col-sm-12 p-0 text-center">
                                                                         <p class="category-value fw-semibold py-1 mb-2 text-dark">
-                                                                            <small>{{ $wallCabinetData->colour->trade_colour ? $baseCabinet->colour->trade_colour : $baseCabinet->colour->name }}</small>
+                                                                            <small>{{ $wallCabinetData->colour->trade_colour ? $wallCabinetData->colour->trade_colour : $wallCabinetData->colour->name }}</small>
                                                                         </p>
                                                                     </div>
                                                                 </div>

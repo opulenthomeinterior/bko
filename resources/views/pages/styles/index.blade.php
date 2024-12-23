@@ -64,6 +64,10 @@
                                                         href="{{ route('style.edit', $style->id) }}" title="Edit style">
                                                         <i class="las la-pen fs-17 align-middle"></i>
                                                     </a>
+                                                    <a class="btn btn-soft-info btn-sm d-inline-block edit-button"
+                                                        href="{{ route('style.colours', $style->id) }}" title="View Colours">
+                                                        <i class="las la-eye fs-17 align-middle"></i>
+                                                    </a>
                                                     <form action="{{ route('style.destroy', $style->id) }}"
                                                         method="post" class="d-inline">
                                                         @csrf

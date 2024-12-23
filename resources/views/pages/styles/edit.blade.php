@@ -1,4 +1,9 @@
 <x-app-layout>
+    <style>
+        .select2-container--default .select2-selection--multiple .select2-selection__choice__display {
+            color: #000 !important;
+        }
+    </style>
     <div class="page-content">
         <div class="container-fluid">
             <!-- start page title -->
@@ -167,6 +172,62 @@
                                                                 @endif
                                                                 <div class="faq-card">
                                                                 </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <!-- Style Has Colours -->
+                                <div class="col-md-12 form-group mb-4">
+                                    <section class="container-fluid p-0">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="accordion accordion-flush" id="styleHasColoursAccordionFlush">
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header">
+                                                            <button class="accordion-button collapsed fw-bolder text-dark bg-light" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#styleHasColours-flush-collapse"
+                                                                aria-expanded="false" aria-controls="styleHasColours-flush-collapse">
+                                                                <span class="text-dark text-uppercase fw-bold text-center">Colours</span>
+                                                            </button>
+                                                        </h2>
+                                                        <div id="styleHasColours-flush-collapse" class="accordion-collapse collapse"
+                                                            data-bs-parent="#styleHasColoursAccordionFlush">
+                                                            <div class="accordion-body">
+                                                                @if (count($style->styleHasColours) > 0)
+                                                                @foreach ($style->styleHasColours as $key => $styleHasColour)
+                                                                    <div class="card border border-default py-3">
+                                                                        <label for="" class="form-label">
+                                                                            Select Colours
+                                                                        </label>
+                                                                        <select name="colour_id[]" class="form-control select2 text-dark" multiple id="">
+                                                                            <option value="" disabled>Select Colours</option>
+                                                                            @foreach (\App\Models\Colour::get() as $colour)
+                                                                                <option value="{{ $colour->id }}" 
+                                                                                    class="text-dark"
+                                                                                    {{ in_array($colour->id, $style->styleHasColours->pluck('id')->toArray()) ? 'selected' : '' }}>
+                                                                                    {{ $colour->name }}
+                                                                                </option>
+                                                                            @endforeach
+                                                                        </select>
+                                                                    </div>
+                                                                @endforeach
+                                                                @else
+                                                                    <div class="card border border-default p-3">
+                                                                        <label for="" class="form-label">
+                                                                            Select Colours
+                                                                        </label>
+                                                                        <select name="colour_id[]" class="form-control select2 text-dark" multiple id="">
+                                                                            <option value="" disabled>Select Colours</option>
+                                                                            @foreach (\App\Models\Colour::get() as $colour)
+                                                                                <option value="{{$colour->id}}" class="text-dark">{{$colour->name}}</option>
+                                                                            @endforeach
+                                                                        </select>
+                                                                    </div>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div>

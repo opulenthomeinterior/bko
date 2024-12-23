@@ -12,6 +12,7 @@ use App\Models\Faq;
 use App\Models\DownloadableGuide;
 use App\Models\Order;
 use App\Models\Printing;
+use App\Models\StyleHasColour;
 use App\Models\VideoGuide;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -95,18 +96,20 @@ class HomeController extends Controller
                 $styleData['assemblies'][$assembly->name] = $assemblyData;
             }
 
+            $styleHasColours = StyleHasColour::where('style_id', $style->id)->get();
+
             // echo '<pre>';
             // print_r($styleData);
             // echo '</pre>';
             // exit;
 
-            return view('frontend.shop.orderkitchen.orderkitchenbyname', compact('styleData', 'colours'));
+            return view('frontend.shop.orderkitchen.orderkitchenbyname', compact('styleData', 'colours', 'styleHasColours'));
         } catch (\Exception $e) {
             return redirect()->route('orderkitchen');
         }
     }
 
-    public function orderkitchenbycolour(Request $request, $style = null, $assembly = null, $colour = null)
+    public function orderkitchenbycolour(Request $request, $style = null, $assembly = null, $colour = null, $parentSubCategory = null)
     {
         try {
             $style = Style::where('slug', $style)->where('status', 1)->firstOrFail();
@@ -124,8 +127,11 @@ class HomeController extends Controller
             $baseCabinets = Product::where('parent_category_id', 2)
                 ->where('style_id', $style->id)
                 ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)->where('status', 'active')
-                ->get();
+                ->where('colour_id', $colour->id)->where('status', 'active');
+            if (!empty($parentSubCategory)) {
+                $baseCabinets = $baseCabinets->where('parent_sub_category', $parentSubCategory);
+            }
+            $baseCabinets = $baseCabinets->get();
     
             $wallCabinets = Product::where('parent_category_id', 3)
                 ->where('style_id', $style->id)

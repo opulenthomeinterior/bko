@@ -64,21 +64,21 @@
                         <!-- Colours -->
                         <div class="col-lg-12">
                             <div class="row">
-                                @foreach ($colours as $key => $colour)
+                                @foreach ($styleHasColours as $key => $styleHasColour)
                                     <div class="col-4 mb-4">
                                         <div class="card border border-warning w-100" style="border-radius: 0px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
                                             <div class="card-header border-bottom border-default">
                                                 <div class="mb-2 fw-bold">
-                                                    {{$styleData['data']['name']}} {{$colour->trade_colour}}
+                                                    {{$styleData['data']['name']}} {{$styleHasColour->colour?->trade_colour}}
                                                 </div>
                                                 <div>
-                                                    <small>Assembly Type:</small> <a href="{{route('orderkitchenbycolour', [$styleData['data']['slug'], 'rigid', $colour->slug])}}" class="btn btn-sm btn-outline-warning text-dark rounded-0">Rigid</a>
-                                                    <a href="{{route('orderkitchenbycolour', [$styleData['data']['slug'], 'flat-pack', $colour->slug])}}" class="btn btn-sm btn-outline-warning text-dark rounded-0">Flat Pack</a>
+                                                    <small>Assembly Type:</small> <a href="{{route('orderkitchenbycolour', [$styleData['data']['slug'], 'rigid', $styleHasColour->colour?->slug])}}" class="btn btn-sm btn-outline-warning text-dark rounded-0">Rigid</a>
+                                                    <a href="{{route('orderkitchenbycolour', [$styleData['data']['slug'], 'flat-pack', $styleHasColour->colour?->slug])}}" class="btn btn-sm btn-outline-warning text-dark rounded-0">Flat Pack</a>
                                                 </div>
                                             </div>
                                             <div class="card-body carousel-card-body p-0">
                                                 <div class="col-12 d-flex justify-content-center">
-                                                    <img src="@if(!empty($colour->image_path)){{asset('uploads/colours/'.$colour->image_path)}}@else{{asset('images/no-image-available.jpg')}}@endif" class="img-fluid">
+                                                    <img src="@if(!empty($styleHasColour->image_path)){{asset('uploads/styles/colours/'.$styleHasColour->image_path)}}@else{{asset('images/no-image-available.jpg')}}@endif" class="img-fluid">
                                                 </div>
                                             </div>
                                         </div>

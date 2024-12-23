@@ -101,6 +101,10 @@ Route::prefix('admin')->middleware(['auth', 'verified', 'role:super-admin'])->gr
         Route::put('update/{style}', [StyleController::class, 'update'])->name('style.update');
         Route::delete('destroy/{style}', [StyleController::class, 'destroy'])->name('style.destroy');
         Route::post('remove-image/{style}', [StyleController::class, 'remove_image'])->name('style.removeImage');
+
+        Route::get('{style}/colours', [StyleController::class, 'colours'])->name('style.colours');
+        Route::post('upload-image', [StyleController::class, 'styleColourImageUpload'])->name('style.colour.upload_image');
+        Route::delete('delete-colour/{style_has_colour}', [StyleController::class, 'deleteColour'])->name('style.colour.destroy');
     });
 
     // Colours
@@ -247,7 +251,7 @@ Route::prefix('/')->middleware([])->group(function () {
         // Order By Kitchen
         Route::get('/order-kitchen', [HomeController::class, 'orderkitchen'])->name('orderkitchen');
         Route::get('/order-kitchen/{style}', [HomeController::class, 'orderkitchenbyname'])->name('orderkitchenbyname');
-        Route::get('/order-kitchen/{style?}/{assembly?}/{colour?}', [HomeController::class, 'orderkitchenbycolour'])->name('orderkitchenbycolour');
+        Route::get('/order-kitchen/{style?}/{assembly?}/{colour?}/{parent_sub_category?}', [HomeController::class, 'orderkitchenbycolour'])->name('orderkitchenbycolour');
         Route::get('/view-all-order-kitchen/{style?}/{assembly?}/{colour?}', [HomeController::class, 'viewallorderkitchenbycolour'])->name('viewallorderkitchenbycolour');
 
         // Order By Component
