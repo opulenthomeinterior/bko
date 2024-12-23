@@ -53,7 +53,7 @@
                                                             class="img-thumbnail box-image-preview {{ $styleHasColour->image_path ? 'd-block' : 'd-none' }}" />
                                                     </a>
                                                 </td>
-                                                <td class="align-middle">{{ $styleHasColour->colour?->name }}</td>
+                                                <td class="align-middle">{{ $styleHasColour->colour?->trade_colour }}</td>
                                                 <td class="align-middle">{!! $styleHasColour->status == 1 ? '<span class="badge bg-primary">Active</span>' : '<span class="badge bg-danger">In Active</span>' !!}</td>
                                                 <td class="align-middle" align="center">
                                                     <div class="d-flex flex-row gap-2">
@@ -68,7 +68,7 @@
                                             <div class="modal fade" id="upload-image{{$styleHasColour->id}}" tabindex="-1" role="dialog" aria-labelledby="upload-image{{$styleHasColour->id}}Title" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                                     <div class="modal-content">
-                                                        <form action="{{route('style.colour.upload_image')}}" method="POST" enctype="multipart/form-data">
+                                                        <form action="{{route('style.colour.upload_image')}}" method="POST" enctype="multipart/form-data" id="colour-image-form">
                                                             @csrf
                                                             <div class="modal-header">
                                                                 <h5 class="modal-title" id="upload-image{{$styleHasColour->id}}Title">{{$styleHasColour->colour?->name}}</h5>
@@ -83,7 +83,7 @@
                                                                 <input type="hidden" name="style_id" value="{{$styleHasColour->style_id}}">
                                                                 <input type="hidden" name="colour_id" value="{{$styleHasColour->colour_id}}">
                                                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                                                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                                                <button type="submit" class="btn btn-primary" id="save-changes">Save changes</button>
                                                             </div>
                                                         </form>
                                                     </div>
@@ -109,4 +109,14 @@
             <!-- /.row -->
         </div>
     </div>
+    @push('scripts')
+    <script>
+        $(document).ready(function() {
+            $(document).on('click', '#save-changes', function () {
+                $(this).prop('disabled', true);
+                $('#colour-image-form').submit();
+            });
+        });
+    </script>
+    @endpush
 </x-app-layout>

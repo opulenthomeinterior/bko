@@ -198,23 +198,21 @@
                                                             data-bs-parent="#styleHasColoursAccordionFlush">
                                                             <div class="accordion-body">
                                                                 @if (count($style->styleHasColours) > 0)
-                                                                @foreach ($style->styleHasColours as $key => $styleHasColour)
-                                                                    <div class="card border border-default py-3">
-                                                                        <label for="" class="form-label">
-                                                                            Select Colours
-                                                                        </label>
-                                                                        <select name="colour_id[]" class="form-control select2 text-dark" multiple id="">
-                                                                            <option value="" disabled>Select Colours</option>
-                                                                            @foreach (\App\Models\Colour::get() as $colour)
-                                                                                <option value="{{ $colour->id }}" 
-                                                                                    class="text-dark"
-                                                                                    {{ in_array($colour->id, $style->styleHasColours->pluck('id')->toArray()) ? 'selected' : '' }}>
-                                                                                    {{ $colour->name }}
-                                                                                </option>
-                                                                            @endforeach
-                                                                        </select>
-                                                                    </div>
-                                                                @endforeach
+                                                                <div class="card border border-default py-3">
+                                                                    <label for="" class="form-label">
+                                                                        Select Colours
+                                                                    </label>
+                                                                    <select name="colour_id[]" class="form-control select2 text-dark" multiple id="">
+                                                                        <option value="" disabled>Select Colours</option>
+                                                                        @foreach (\App\Models\Colour::get() as $colour)
+                                                                            <option value="{{ $colour->id }}" 
+                                                                                class="text-dark"
+                                                                                {{ in_array($colour->id, $style->styleHasColours->pluck('id')->toArray()) ? 'selected' : '' }}>
+                                                                                {{ $colour->trade_colour }}
+                                                                            </option>
+                                                                        @endforeach
+                                                                    </select>
+                                                                </div>
                                                                 @else
                                                                     <div class="card border border-default p-3">
                                                                         <label for="" class="form-label">
