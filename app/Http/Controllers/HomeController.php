@@ -684,7 +684,7 @@ class HomeController extends Controller
             return redirect()->route('shop');
         }
 
-        $products = Product::where('full_title', 'like', '%' . $search . '%')->orWhere('product_code', '=', $search)->where('status', 'active')->paginate(100);
+        $products = Product::where('product_code', '=', $search)->orWhere('short_title', '=', $search)->orWhere('slug', '=', $search)->orWhere('full_title', 'like', '%' . $search . '%')->orWhere('product_description', '=', $search)->where('status', 'active')->paginate(100);
 
         return view('frontend.search', compact('products', 'search'));
     }

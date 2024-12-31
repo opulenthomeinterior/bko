@@ -105,6 +105,7 @@ Route::prefix('admin')->middleware(['auth', 'verified', 'role:super-admin'])->gr
         Route::get('{style}/colours', [StyleController::class, 'colours'])->name('style.colours');
         Route::post('upload-image', [StyleController::class, 'styleColourImageUpload'])->name('style.colour.upload_image');
         Route::delete('delete-colour/{style_has_colour}', [StyleController::class, 'deleteColour'])->name('style.colour.destroy');
+        Route::get('set-colour-status/{style_id}/{colour_id}', [StyleController::class, 'setColourStatus'])->name('style.colour.setStatus');
     });
 
     // Colours

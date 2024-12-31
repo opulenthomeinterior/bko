@@ -1038,22 +1038,30 @@ use App\Models\Style;
                 dropdownCssClass: 'custom-select-dropdown',
                 templateResult: function (data) {
                     if (!data.id) {
-                        return data.text; // Return the text of the option if there's no id
+                        return data.text; // Return the placeholder text if there's no id
                     }
 
-                    // Retrieve image URL and other data attributes
+                    // Retrieve data attributes from the option element
                     var imageUrl = $(data.element).data('product-image');
-                    var text = data.text;
+                    var text = data.text; // Full title
+                    var price = $(data.element).data('product-price'); // Product price
 
-                    // Create a custom option with image and text
+                    // Create a custom option with image, text, and price
                     var $result = $(
+                        '<div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">' +
                         '<div style="display: flex; align-items: center; gap: 10px;">' +
                         '<img src="' + imageUrl + '" style="width: 50px; height: 50px; object-fit: cover; border-radius: 0px;" />' +
                         '<span>' + text + '</span>' +
+                        '</div>' +
+                        '<span style="font-weight: bold;">(£' + price + ')</span>' +
                         '</div>'
                     );
 
                     return $result;
+                },
+                templateSelection: function (data) {
+                    // Display the selected option text in the dropdown input
+                    return data.text;
                 }
             });
 
@@ -1140,18 +1148,22 @@ use App\Models\Style;
                     dropdownCssClass: 'custom-select-dropdown',
                     templateResult: function (data) {
                         if (!data.id) {
-                            return data.text; // Return the text of the option if there's no id
+                            return data.text; // Return the placeholder text if there's no id
                         }
 
-                        // Retrieve image URL and other data attributes
+                        // Retrieve data attributes from the option element
                         var imageUrl = $(data.element).data('product-image');
-                        var text = data.text;
+                        var text = data.text; // Full title
+                        var price = $(data.element).data('product-price'); // Product price
 
-                        // Create a custom option with image and text
+                        // Create a custom option with image, text, and price
                         var $result = $(
+                            '<div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">' +
                             '<div style="display: flex; align-items: center; gap: 10px;">' +
                             '<img src="' + imageUrl + '" style="width: 50px; height: 50px; object-fit: cover; border-radius: 0px;" />' +
                             '<span>' + text + '</span>' +
+                            '</div>' +
+                            '<span style="font-weight: bold;">(£' + price + ')</span>' +
                             '</div>'
                         );
 
@@ -1168,18 +1180,22 @@ use App\Models\Style;
                     dropdownCssClass: 'custom-select-dropdown',
                     templateResult: function (data) {
                         if (!data.id) {
-                            return data.text; // Return the text of the option if there's no id
+                            return data.text; // Return the placeholder text if there's no id
                         }
 
-                        // Retrieve image URL and other data attributes
+                        // Retrieve data attributes from the option element
                         var imageUrl = $(data.element).data('product-image');
-                        var text = data.text;
+                        var text = data.text; // Full title
+                        var price = $(data.element).data('product-price'); // Product price
 
-                        // Create a custom option with image and text
+                        // Create a custom option with image, text, and price
                         var $result = $(
+                            '<div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">' +
                             '<div style="display: flex; align-items: center; gap: 10px;">' +
                             '<img src="' + imageUrl + '" style="width: 50px; height: 50px; object-fit: cover; border-radius: 0px;" />' +
                             '<span>' + text + '</span>' +
+                            '</div>' +
+                            '<span style="font-weight: bold;">(£' + price + ')</span>' +
                             '</div>'
                         );
 

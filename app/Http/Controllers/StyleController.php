@@ -133,16 +133,18 @@ class StyleController extends Controller
             
             if (!empty($style->styleHasColours)) {
                 // Delete existing testimonials for this style
-                StyleHasColour::where('style_id', $style->id)->delete();
+                // StyleHasColour::where('style_id', $style->id)->delete();
                 // Create new testimonials for this style
                 foreach ($styleColourIds as $key => $styleColourId) {
-                    // Check if the testimonial is not empty
-                    if (!empty($styleColourId)) {
-                        // Create new testimonial
-                        $newStyleHasColour = new StyleHasColour();
-                        $newStyleHasColour->style_id = $style->id;
-                        $newStyleHasColour->colour_id = $styleColourIds[$key];
-                        $newStyleHasColour->save();
+                    if (!StyleHasColour::where('style_id', $style->id)->where('colour_id', $styleColourIds[$key])->exists()) {
+                        // Check if the testimonial is not empty
+                        if (!empty($styleColourId)) {
+                            // Create new testimonial
+                            $newStyleHasColour = new StyleHasColour();
+                            $newStyleHasColour->style_id = $style->id;
+                            $newStyleHasColour->colour_id = $styleColourIds[$key];
+                            $newStyleHasColour->save();
+                        }
                     }
                 }
             }
@@ -221,6 +223,19 @@ class StyleController extends Controller
             return redirect()->route('style.colours')->with('success', 'Colour deleted successfully.');
         } catch (\Exception $e) {
             return redirect()->route('style.colours')->with('error', 'Error deleting colour: ' . $e->getMessage());
+        }
+    }
+
+    public function setColourStatus(Request $request, $styleId, $colourId) {
+        try {
+            $styleHasColour = StyleHasColour::where('style_id', $styleId)->where('colour_id', $colourId)->first();
+            if (isset($styleHasColour)) {
+                $styleHasColour->status = !$styleHasColour->status;
+                $styleHasColour->save();
+                return redirect()->back()->with('success', 'Status updated successfully.');
+            }
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Error deleting colour: ' . $e->getMessage());
         }
     }
 

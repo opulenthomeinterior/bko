@@ -61,6 +61,9 @@
                                                             href="#" title="Upload Image">
                                                             <i class="las la-pen fs-17 align-middle"></i>
                                                         </a>
+                                                        <a class="btn btn-soft-primary btn-sm d-inline-block edit-button" href="{{route('style.colour.setStatus', [$styleHasColour->style_id, $styleHasColour->colour_id])}}" title="Set Status">
+                                                            <i class="las la-lock fs-17 align-middle"></i>
+                                                        </a>
                                                     </div>
                                                 </td>
                                             </tr>
