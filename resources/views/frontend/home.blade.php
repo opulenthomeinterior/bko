@@ -541,7 +541,7 @@
                         @foreach ($generalFaqs as $faq)
                             <div class="accordion-item bg-white border-0">
                                 <h2 class="accordion-header bg-white border-0">
-                                    <button class="mb-2 accordion-button collapsed fw-bolder text-white border-bottom border-warning btn btn-outline-warning" type="button"
+                                    <button class="mb-2 accordion-button collapsed fw-bolder text-dark border-bottom border-warning btn btn-outline-warning" type="button"
                                         data-bs-toggle="collapse" data-bs-target="#flush-collapse{{ $loop->index + 1 }}"
                                         aria-expanded="false" aria-controls="flush-collapse{{ $loop->index + 1 }}" style="border-radius: 20px">
                                         {{ $faq->question }}
@@ -549,7 +549,7 @@
                                 </h2>
                                 <div id="flush-collapse{{ $loop->index + 1 }}" class="accordion-collapse collapse bg-white"
                                     data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body bg-white text-white">{!! $faq->answer !!}</div>
+                                    <div class="accordion-body bg-white text-dark">{!! $faq->answer !!}</div>
                                     <hr class="border-bottom border-warning px-4 mx-4">
                                 </div>
                             </div>
