@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\CategorySeo;
 use App\Models\Faq;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
@@ -189,6 +190,23 @@ class CategoryController extends Controller
                         $newFaq->save();
                     }
                 }
+            }
+            
+            $seo = CategorySeo::where('category_id', $category->id)->first();
+            if (isset($seo)) {
+                $seo->meta_title = $request->meta_title;
+                $seo->meta_description = $request->meta_description;
+                $seo->canonical_tag = $request->canonical_tag;
+                $seo->schema_code = $request->schema_code;
+                $seo->save();
+            } else {
+                $seo = new CategorySeo();
+                $seo->category_id = $category->id;
+                $seo->meta_title = $request->meta_title;
+                $seo->meta_description = $request->meta_description;
+                $seo->canonical_tag = $request->canonical_tag;
+                $seo->schema_code = $request->schema_code;
+                $seo->save();
             }
 
             return redirect()->route('categories')->with('success', 'Category updated successfully.');

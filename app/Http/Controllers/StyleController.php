@@ -6,6 +6,7 @@ use App\Models\Faq;
 use Illuminate\Http\Request;
 use App\Models\Style;
 use App\Models\StyleHasColour;
+use App\Models\StyleSeo;
 use App\Models\Testimonial;
 
 class StyleController extends Controller
@@ -54,7 +55,7 @@ class StyleController extends Controller
 
     public function edit(Style $style)
     {
-        $style->load(['testimonials', 'faqs']); 
+        $style->load(['testimonials', 'faqs', 'seo']); 
         return view('pages.styles.edit', compact('style'));
     }
 
@@ -147,6 +148,23 @@ class StyleController extends Controller
                         }
                     }
                 }
+            }
+            
+            $seo = StyleSeo::where('style_id', $style->id)->first();
+            if (isset($seo)) {
+                $seo->meta_title = $request->meta_title;
+                $seo->meta_description = $request->meta_description;
+                $seo->canonical_tag = $request->canonical_tag;
+                $seo->schema_code = $request->schema_code;
+                $seo->save();
+            } else {
+                $seo = new StyleSeo();
+                $seo->style_id = $style->id;
+                $seo->meta_title = $request->meta_title;
+                $seo->meta_description = $request->meta_description;
+                $seo->canonical_tag = $request->canonical_tag;
+                $seo->schema_code = $request->schema_code;
+                $seo->save();
             }
 
             return redirect()->route('styles')->with('success', 'Style updated successfully.');

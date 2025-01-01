@@ -248,14 +248,21 @@
                                                                 <span class="text-dark text-uppercase fw-bold text-center">SEO</span>
                                                             </button>
                                                         </h2>
-                                                        <div id="seos-flush-collapse" class="accordion-collapse collapse"
+                                                        <div id="seos-flush-collapse" class="accordion-collapse collapse p-0"
                                                             data-bs-parent="#seosaccordionFlush">
                                                             <div class="accordion-body">
-                                                                @if (count($style->faqs) > 0)
-                                                                    @endforeach
-                                                                @else
-                                                                @endif
-                                                                <div class="seo-card">
+                                                                <div class="card">
+                                                                    <label for="">Meta Title</label>
+                                                                    <textarea name="meta_title" class="form-control" placeholder="Enter Meta Title">{!! $style->seo?->meta_title !!}</textarea>
+                                                                    <br>
+                                                                    <label for="">Meta Description</label>
+                                                                    <textarea name="meta_description" class="form-control" placeholder="Enter Meta Description">{!! $style->seo?->meta_description !!}</textarea>
+                                                                    <br>
+                                                                    <label for="">Canonical Tag</label>
+                                                                    <textarea name="canonical_tag" class="form-control" placeholder="Enter Canonical Tag">{!! $style->seo?->canonical_tag !!}</textarea>
+                                                                    <br>
+                                                                    <label for="">Schema Code</label>
+                                                                    <textarea name="schema_code" class="form-control" placeholder="Enter Schema Code">{!! $style->seo?->schema_code !!}</textarea>
                                                                 </div>
                                                             </div>
                                                         </div>

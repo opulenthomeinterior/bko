@@ -187,6 +187,45 @@
                                     </section>
                                 </div>
 
+                                <!-- SEO -->
+                                <div class="col-md-12 form-group mb-4">
+                                    <section class="container-fluid p-0">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="accordion accordion-flush" id="seosaccordionFlush">
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header">
+                                                            <button class="accordion-button collapsed fw-bolder text-dark bg-light" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#seos-flush-collapse"
+                                                                aria-expanded="false" aria-controls="seos-flush-collapse">
+                                                                <span class="text-dark text-uppercase fw-bold text-center">SEO</span>
+                                                            </button>
+                                                        </h2>
+                                                        <div id="seos-flush-collapse" class="accordion-collapse collapse p-0"
+                                                            data-bs-parent="#seosaccordionFlush">
+                                                            <div class="accordion-body">
+                                                                <div class="card">
+                                                                    <label for="">Meta Title</label>
+                                                                    <textarea name="meta_title" class="form-control" placeholder="Enter Meta Title">{!! $category->seo?->meta_title !!}</textarea>
+                                                                    <br>
+                                                                    <label for="">Meta Description</label>
+                                                                    <textarea name="meta_description" class="form-control" placeholder="Enter Meta Description">{!! $category->seo?->meta_description !!}</textarea>
+                                                                    <br>
+                                                                    <label for="">Canonical Tag</label>
+                                                                    <textarea name="canonical_tag" class="form-control" placeholder="Enter Canonical Tag">{!! $category->seo?->canonical_tag !!}</textarea>
+                                                                    <br>
+                                                                    <label for="">Schema Code</label>
+                                                                    <textarea name="schema_code" class="form-control" placeholder="Enter Schema Code">{!! $category->seo?->schema_code !!}</textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+
                                 <div class="col-lg-6 form-group mb-2">
                                     <label for="image_path" class="form-label">Upload Image</label>
                                     <input type="file" accept="image/*" class="form-control" id="image_path"

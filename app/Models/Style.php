@@ -27,6 +27,11 @@ class Style extends Model
         return $this->hasMany(Faq::class, 'style_id', 'id');
     }
 
+    public function seo()
+    {
+        return $this->hasOne(StyleSeo::class, 'style_id', 'id');
+    }
+
     public function styleHasColours()
     {
         return $this->hasMany(StyleHasColour::class, 'style_id', 'id');
