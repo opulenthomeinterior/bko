@@ -172,7 +172,7 @@
         </div>
     </section> -->
 
-    <section class="container-fluid px-lg-5 py-3 px-md-3 px-3 bg-warning mx-0" style="border-bottom: 1px solid #fff; border-top: 1px solid #fff; border-right: 3px solid #febd49">
+    <section class="container-fluid px-lg-5 py-3 px-md-3 px-3 bg-white mx-0" style="border-bottom: 1px solid #fff; border-top: 1px solid #fff; border-right: 3px solid #febd49">
         <div class="row">
             <div class="col-12 text-center">
                 <h1 class="fs-4 text-dark text-uppercase fw-bolder unique-font">
@@ -278,11 +278,11 @@
         </div>
     </section>
 
-    <section class="container-fluid bg-dark py-5" style="width: 100%; border-bottom: 3px solid #febd49; border-right: 3px solid #febd49">
+    <section class="container-fluid bg-white py-5" style="width: 100%; border-bottom: 3px solid #febd49; border-right: 3px solid #febd49">
         <div class="row">
-            <h3 class="text-uppercase fw-bolder text-white text-center">ORDER COMPONENT</h3>
+            <h3 class="text-uppercase fw-bolder text-dark text-center">ORDER COMPONENT</h3>
         </div>
-        <div class="row d-flex align-items-center justify-content-center bg-white p-4 m-4" style="border-radius: 20px;">
+        <div class="row d-flex border border-warning align-items-center justify-content-center bg-white p-4 m-4" style="border-radius: 20px;">
             @php
                 $categories = \App\Models\Category::where('parent_category_id', null)->whereIn('slug', ['doors', 'accessories', 'internals', 'sinks', 'handles'])->get();
             @endphp
@@ -315,9 +315,9 @@
         </div>
     </section>
 
-    <section class="container-fluid py-lg-5 py-3 bg-dark" style="border-bottom: 3px solid #febd49; border-left: 3px solid #febd49">
+    <section class="container-fluid py-lg-5 py-3 bg-white" style="border-bottom: 3px solid #febd49; border-left: 3px solid #febd49">
         <div class="row">
-            <h3 class="text-uppercase fw-bolder text-white text-center">ORDER KITCHEN</h3>
+            <h3 class="text-uppercase fw-bolder text-dark text-center">ORDER KITCHEN</h3>
         </div>
         <div class="row mt-4 px-0" id="stylesContainer">
             @foreach ($styles as $key => $style)
@@ -411,12 +411,12 @@
         </div>
     </section>--}}
 
-    <section class="container-fluid px-lg-5 px-md-3 px-3 py-lg-5 py-3 bg-dark" style="background-color: #f0f0f0; border-bottom: 3px solid #febd49; border-right: 3px solid #febd49">
+    <section class="container-fluid px-lg-5 px-md-3 px-3 py-lg-5 py-3 bg-white" style="background-color: #f0f0f0; border-bottom: 3px solid #febd49; border-right: 3px solid #febd49">
         <div class="row">
             <div class="col-12">
-                <h3 class="text-uppercase fw-bolder text-white text-center">ABOUT US</h3>
+                <h3 class="text-uppercase fw-bolder text-dark text-center">ABOUT US</h3>
             </div>
-            <div class="col-4 mt-4 text-white">
+            <div class="col-4 mt-4 text-dark">
                 <p>
                     BK Online is a premier provider of complete kitchen solutions, specialising in the design and delivery of ready-made kitchens, rigid kitchen units, and components in slab, shaker, or J-pull styles. Serving London and the surrounding areas, we pride ourselves on delivering showroom-quality kitchens directly to your door.
                 </p>
@@ -430,7 +430,7 @@
             <div class="col-4 mt-4">
                 <img src="https://www.ikea.com/images/a-big-kitchen-with-black-stained-lerhyttan-fronts-and-a-wood-fe43c4fc6d2efa2e2b1cfc6b29f45df9.jpg" class="img-fluid" style="border-radius: 20px;"/>
             </div>
-            <div class="col-4 mt-4 text-white">
+            <div class="col-4 mt-4 text-dark">
                 <p>
                     Whether you're looking for a modern slab kitchen, a timeless shaker design, or the sleek lines of a J-pull handleless kitchen, BK Online makes it easy. Our kitchens are designed to be user-friendly, with components that are straightforward to assemble, thanks to our advanced clic technology. We offer both flat-pack and pre-assembled options, with fast and reliable delivery.
                 </p>
@@ -442,7 +442,7 @@
         </div>
     </section>
 
-    <section class="container-fluid py-5 bg-dark" style="background-image: url({{asset('images/homepage.jpeg')}}); opacity: 2; border-bottom: 3px solid #febd49; border-left: 3px solid #febd49; padding: 20px">
+    <section class="container-fluid py-5 bg-white" style="background-image: url({{asset('images/homepage.jpeg')}}); opacity: 2; border-bottom: 3px solid #febd49; border-left: 3px solid #febd49; padding: 20px">
         <div class="row">
             <h3 class="text-dark text-uppercase fw-bolder text-center mb-4">Testimonials</h3>
         </div>
@@ -530,32 +530,32 @@
         </div>
     </section>
 
-    <section class="container-fluid py-5 px-4 bg-dark" style="border-bottom: 3px solid #febd49; border-right: 3px solid #febd49">
+    <section class="container-fluid py-5 px-4 bg-white" style="border-bottom: 3px solid #febd49; border-right: 3px solid #febd49">
         <div class="row">
             <h3 class="text-white text-uppercase fw-bolder text-center">FAQs</h3>
         </div>
-        <div class="row bg-dark">
-            <div class="col-lg-12 bg-dark">
-                <div class="accordion accordion-flush bg-dark" id="accordionFlushExample">
+        <div class="row bg-white">
+            <div class="col-lg-12 bg-white">
+                <div class="accordion accordion-flush bg-white" id="accordionFlushExample">
                     @if ($generalFaqs->count() > 0)
                         @foreach ($generalFaqs as $faq)
-                            <div class="accordion-item bg-dark border-0">
-                                <h2 class="accordion-header bg-dark border-0">
+                            <div class="accordion-item bg-white border-0">
+                                <h2 class="accordion-header bg-white border-0">
                                     <button class="mb-2 accordion-button collapsed fw-bolder text-white border-bottom border-warning btn btn-outline-warning" type="button"
                                         data-bs-toggle="collapse" data-bs-target="#flush-collapse{{ $loop->index + 1 }}"
                                         aria-expanded="false" aria-controls="flush-collapse{{ $loop->index + 1 }}" style="border-radius: 20px">
                                         {{ $faq->question }}
                                     </button>
                                 </h2>
-                                <div id="flush-collapse{{ $loop->index + 1 }}" class="accordion-collapse collapse bg-dark"
+                                <div id="flush-collapse{{ $loop->index + 1 }}" class="accordion-collapse collapse bg-white"
                                     data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body bg-dark text-white">{!! $faq->answer !!}</div>
+                                    <div class="accordion-body bg-white text-white">{!! $faq->answer !!}</div>
                                     <hr class="border-bottom border-warning px-4 mx-4">
                                 </div>
                             </div>
                         @endforeach
                     @else
-                        <div class="alert alert-info" role="alert">
+                        <div class="alert alert-light" role="alert">
                             No FAQ's found.
                         </div>
                     @endif

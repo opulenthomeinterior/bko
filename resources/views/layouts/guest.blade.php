@@ -430,7 +430,7 @@ use App\Models\Style;
             </div>
         </div> --}}
 
-        <nav class="nav container-fluid p-0 bg-dark" style="border-bottom: 1px solid #febd49;">
+        <nav class="nav container-fluid p-0 bg-white" style="border-bottom: 1px solid #febd49;">
             <div class="nav__data ps-5">
                 <a href="{{ route('home') }}" class="nav__logo text-start flex-grow-1">
                     <img src="{{ asset('images/logoBko.png') }}" width="100px" />
@@ -439,7 +439,7 @@ use App\Models\Style;
                 <a href="#" class="d-lg-none show-small d-flex" id="searchIcon"><i
                         class="ri-search-2-line"></i></a>
                 <a href="{{ route('cart') }}"
-                    class="d-lg-none show-small d-flex align-items-center justify-content-center px-3 text-white">
+                    class="d-lg-none show-small d-flex align-items-center justify-content-center px-3 text-dark">
                     <i class="position-relative ri-shopping-cart-line">
                         <span id="calculateProductsQuantity" class="position-absolute right-0"
                             style="top: -8px;"></span>
@@ -447,7 +447,7 @@ use App\Models\Style;
                 </a>
 
                 <a href="#" id="openSidebar"
-                    class="align-items-center justify-content-center px-1 text-white text-end d-lg-none show-small d-flex">
+                    class="align-items-center justify-content-center px-1 text-dark text-end d-lg-none show-small d-flex">
                     <i class="ri-user-line"></i>
                 </a>
                 <span class="nav__toggle" id="nav-toggle">
@@ -462,7 +462,7 @@ use App\Models\Style;
                 <ul class="nav__list p-2">
                     <li class="dropdown__item">
                         <div class="nav__link dropdown__button">
-                            <a href="{{ route('orderkitchen') }}" class="text-white">EXPLORE </a>
+                            <a href="{{ route('orderkitchen') }}" class="text-dark">EXPLORE </a>
                             <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                         </div>
                         <div class="dropdown__container border-bottom border-warning border-2">
@@ -586,7 +586,7 @@ use App\Models\Style;
                             </div> -->
                     <li class="dropdown__item">
                         <div class="nav__link dropdown__button">
-                            <a href="{{ route('orderkitchen') }}" class="text-white">ORDER KITCHEN </a>
+                            <a href="{{ route('orderkitchen') }}" class="text-dark">ORDER KITCHEN </a>
                             <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                         </div>
                         <div class="dropdown__container border-bottom border-warning border-2">
@@ -688,7 +688,7 @@ use App\Models\Style;
                     </li>
                     <li class="dropdown__item">
                         <div class="nav__link dropdown__button">
-                            <a href="{{ route('ordercomponent') }}" class="text-white">ORDER COMPONENT </a>
+                            <a href="{{ route('ordercomponent') }}" class="text-dark">ORDER COMPONENT </a>
                             <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                         </div>
                         <div class="dropdown__container border-bottom border-warning border-2">
@@ -726,7 +726,7 @@ use App\Models\Style;
                     </li>
                     <li class="dropdown__item">
                         <div class="nav__link dropdown__button">
-                            <a href="{{ route('help_and_guides') }}" class="text-white">HELP & GUIDES </a>
+                            <a href="{{ route('help_and_guides') }}" class="text-dark">HELP & GUIDES </a>
                             <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                         </div>
                         <div class="dropdown__container border-bottom border-warning border-2">
@@ -734,7 +734,7 @@ use App\Models\Style;
                                 <div class="dropdown__group">
                                     <ul class="dropdown__list">
                                         <div class="container">
-                                            <h4 class="text-start bg-dark text-white p-2">HELP & GUIDES</h4>
+                                            <h4 class="text-start bg-dark text-dark p-2">HELP & GUIDES</h4>
                                             <div class="row">
                                                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
                                                     <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
@@ -763,14 +763,14 @@ use App\Models\Style;
                     </li>
                     <li class="dropdown__item">
                         <div class="nav__link dropdown__button">
-                            <a class="text-white" href="{{ route('designservice') }}">
+                            <a class="text-dark" href="{{ route('designservice') }}">
                                 DESIGN SERVICE
                             </a>
                         </div>
                     </li>
                     <li class="dropdown__item">
                         <div class="nav__link dropdown__button">
-                            <a class="text-white" href="{{ route('blog') }}">
+                            <a class="text-dark" href="{{ route('blog') }}">
                                 BLOG
                             </a>
                         </div>
