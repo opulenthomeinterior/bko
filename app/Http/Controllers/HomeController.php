@@ -8,11 +8,13 @@ use App\Models\Colour;
 use App\Models\Product;
 use App\Models\Style;
 use App\Models\Blog;
+use App\Models\CategorySeo;
 use App\Models\Faq;
 use App\Models\DownloadableGuide;
 use App\Models\Order;
 use App\Models\Printing;
 use App\Models\StyleHasColour;
+use App\Models\StyleSeo;
 use App\Models\VideoGuide;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -103,7 +105,9 @@ class HomeController extends Controller
             // echo '</pre>';
             // exit;
 
-            return view('frontend.shop.orderkitchen.orderkitchenbyname', compact('styleData', 'colours', 'styleHasColours'));
+            $seo = StyleSeo::where('style_id', $style->id)->first();
+
+            return view('frontend.shop.orderkitchen.orderkitchenbyname', compact('styleData', 'colours', 'styleHasColours', 'seo'));
         } catch (\Exception $e) {
             return redirect()->route('orderkitchen');
         }
@@ -421,7 +425,9 @@ class HomeController extends Controller
 
         // $products = Product::whereIn('category_id', $children)->paginate($limit);
 
-        return view('frontend.shop.ordercomponent.ordercomponentbyname', compact('category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights'));
+        $seo = CategorySeo::where('category_id', $category->id)->first();
+
+        return view('frontend.shop.ordercomponent.ordercomponentbyname', compact('category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo'));
     }
 
     public function order_component_by_filter(Request $request, $slug)

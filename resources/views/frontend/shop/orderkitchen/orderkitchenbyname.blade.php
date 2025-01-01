@@ -1,4 +1,10 @@
 <x-guest-layout>
+    
+    @section('meta_tags')
+        <title>{{$seo?->meta_title}}</title>
+        <meta name="description" content="{{$seo?->meta_description}}">
+        <link rel="canonical" href="{{$seo?->canonical_tag}}" />
+    @endsection
     <section class="container-fluid"
         style="background-image: url('{{ $styleData['data']['image_path'] ? asset('uploads/styles/' . $styleData['data']['image_path']) : asset('images/order-component.jpg') }}'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 50vh;">
     </section>

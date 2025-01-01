@@ -12,14 +12,12 @@ use App\Models\Style;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="XprnAzefcxw_6ShJcZrtRn21FuOT8qEGzuZRyhMp05I" />
-    <meta name="description" content="Customize your Dream Kitchen with our Bespoke Kitchen Units in London. Our Bespoke Designer Kitchens include Slab, Shaker, True handleless & J-pull Styles.">
+    @yield('meta_tags')
     <meta content="Themesbrand" name="author" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <?php $current_uri = request()->segments(); ?>
     <?php $page_slug = ucwords(str_replace(['-', '_'], ' ', last($current_uri))); ?>
-
-    <title>Affordable Kitchen & Custom Kitchen Units in London | BK Online</title>
 
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ asset('images/logoBko.png') }}">
