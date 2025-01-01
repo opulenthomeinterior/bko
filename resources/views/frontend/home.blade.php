@@ -171,7 +171,7 @@
         <div class="row">
             <div class="col-12 text-center">
                 <h1 class="fs-4 text-dark text-uppercase fw-bolder unique-font">
-                    BK Online Kitchens - Elevate Your Space, Elevate Your Lifestyle
+                    BK Online Kitchens - Elevate Your Kitchen, Elevate Your Lifestyle
                 </h1>
             </div>
         </div>

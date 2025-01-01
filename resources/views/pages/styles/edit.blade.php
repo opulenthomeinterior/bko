@@ -234,6 +234,37 @@
                                         </div>
                                     </section>
                                 </div>
+                                <!-- SEO -->
+                                <div class="col-md-12 form-group mb-4">
+                                    <section class="container-fluid p-0">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="accordion accordion-flush" id="seosaccordionFlush">
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header">
+                                                            <button class="accordion-button collapsed fw-bolder text-dark bg-light" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#seos-flush-collapse"
+                                                                aria-expanded="false" aria-controls="seos-flush-collapse">
+                                                                <span class="text-dark text-uppercase fw-bold text-center">SEO</span>
+                                                            </button>
+                                                        </h2>
+                                                        <div id="seos-flush-collapse" class="accordion-collapse collapse"
+                                                            data-bs-parent="#seosaccordionFlush">
+                                                            <div class="accordion-body">
+                                                                @if (count($style->faqs) > 0)
+                                                                    @endforeach
+                                                                @else
+                                                                @endif
+                                                                <div class="seo-card">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
                                 
                                 <div class="col-lg-6 form-group mb-2">
                                     <label for="image_path" class="form-label">Upload Image</label>
