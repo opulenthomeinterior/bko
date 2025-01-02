@@ -57,10 +57,10 @@
 
         <div class="row mb-lg-5 mb-4">
             <div class="col-12">
-                <h1 class="fs-1 fw-bolder text-dark text-uppercase">{!! $category->name !!}</h1>
+                <h1 class="fs-1 fw-bolder text-dark text-uppercase">{{ $category->name }}</h1>
             </div>
             <div class="col-12">
-                <p class="text-dark">{{ $category->description }}</p>
+                <p class="text-dark">{!! $category->description !!}</p>
             </div>
         </div>
 
