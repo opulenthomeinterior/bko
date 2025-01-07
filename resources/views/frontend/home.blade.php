@@ -416,7 +416,10 @@
             <div class="col-12">
                 <h3 class="text-uppercase fw-bolder text-dark text-center">ABOUT US</h3>
             </div>
-            <div class="col-4 mt-4 text-dark">
+            <div class="col-lg-5 col-md-5 col-sm-6 col-12 mt-4">
+                <img src="{{ asset('images/homepage.jpeg') }}" class="img-fluid" style="border-radius: 20px;"/>
+            </div>
+            <div class="col-lg-7 col-md-7 col-sm-6 col-12 mt-4 text-dark">
                 <p>
                     BK Online is a premier provider of complete kitchen solutions, specialising in the design and delivery of ready-made kitchens, rigid kitchen units, and components in slab, shaker, or J-pull styles. Serving London and the surrounding areas, we pride ourselves on delivering showroom-quality kitchens directly to your door.
                 </p>
@@ -427,17 +430,16 @@
                     Operating from state-of-the-art facilities, our skilled workforce uses the latest sustainable manufacturing techniques to create kitchens that not only meet but exceed our clients' expectations. Our dedication to innovation ensures that our customers always have access to the most up-to-date designs and materials.
                 </p>
             </div>
-            <div class="col-4 mt-4">
-                <img src="https://www.ikea.com/images/a-big-kitchen-with-black-stained-lerhyttan-fronts-and-a-wood-fe43c4fc6d2efa2e2b1cfc6b29f45df9.jpg" class="img-fluid" style="border-radius: 20px;"/>
-            </div>
-            <div class="col-4 mt-4 text-dark">
+            <div class="col-lg-7 col-md-7 col-sm-6 col-12 mt-4 text-dark">
                 <p>
                     Whether you're looking for a modern slab kitchen, a timeless shaker design, or the sleek lines of a J-pull handleless kitchen, BK Online makes it easy. Our kitchens are designed to be user-friendly, with components that are straightforward to assemble, thanks to our advanced clic technology. We offer both flat-pack and pre-assembled options, with fast and reliable delivery.
                 </p>
                 <p>
                     Born out of a passion for offering better kitchen solutions, BK Online stands as a trusted partner in creating kitchens that bring joy for years to come. We invite you to explore our range and experience the difference that quality craftsmanship can make.
-
                 </p>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-6 col-12 mt-4">
+                <img src="{{ asset('images/shaker-22.jpeg') }}" class="img-fluid" style="border-radius: 20px;"/>
             </div>
         </div>
     </section>
