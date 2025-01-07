@@ -359,9 +359,9 @@ use App\Models\Style;
             </i>
         </div>
 
-        <div class="whatsapp-icon d-lg-block d-md-block d-none" id="whatsapp-icon">
+        <div class="whatsapp-icon d-flex justify-content-center bg-white rounded-circle" id="whatsapp-icon" style="height: 50px; width: 50px">
             <a href="https://wa.me/+447847776297" target="_blank">
-                <i class="ri-whatsapp-line" style="font-size: 40px;">
+                <i class="ri-whatsapp-line" style="font-size: 35px;">
                 </i>
             </a>
         </div>
