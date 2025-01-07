@@ -430,16 +430,18 @@
                     Operating from state-of-the-art facilities, our skilled workforce uses the latest sustainable manufacturing techniques to create kitchens that not only meet but exceed our clients' expectations. Our dedication to innovation ensures that our customers always have access to the most up-to-date designs and materials.
                 </p>
             </div>
-            <div class="col-lg-7 col-md-7 col-sm-6 col-12 mt-4 text-dark">
+            <!-- Image Column -->
+            <div class="col-lg-5 col-md-5 col-sm-6 col-12 mt-4 order-sm-2 order-1">
+                <img src="{{ asset('images/shaker-22.jpeg') }}" class="img-fluid" style="border-radius: 20px;" />
+            </div>
+            <!-- Text Column -->
+            <div class="col-lg-7 col-md-7 col-sm-6 col-12 mt-4 text-dark order-sm-1 order-2">
                 <p>
                     Whether you're looking for a modern slab kitchen, a timeless shaker design, or the sleek lines of a J-pull handleless kitchen, BK Online makes it easy. Our kitchens are designed to be user-friendly, with components that are straightforward to assemble, thanks to our advanced clic technology. We offer both flat-pack and pre-assembled options, with fast and reliable delivery.
                 </p>
                 <p>
                     Born out of a passion for offering better kitchen solutions, BK Online stands as a trusted partner in creating kitchens that bring joy for years to come. We invite you to explore our range and experience the difference that quality craftsmanship can make.
                 </p>
-            </div>
-            <div class="col-lg-5 col-md-5 col-sm-6 col-12 mt-4">
-                <img src="{{ asset('images/shaker-22.jpeg') }}" class="img-fluid" style="border-radius: 20px;"/>
             </div>
         </div>
     </section>
