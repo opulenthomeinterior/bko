@@ -283,7 +283,7 @@
                         @foreach ($colours as $colour)
                             <div class="col-6 d-flex position-relative align-items-center justify-content-center">
                                 @if ($colour->colour_code)
-                                    <div class="colour-div position-absolute start-0 top-50 translate-middle-y ms-2"
+                                    <div class="colour-div position-absolute start-0 top-50 translate-middle-y ms-2 border border-dark"
                                         style="background-color: {{ $colour->colour_code }}">
                                     </div>
                                 @endif
