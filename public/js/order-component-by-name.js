@@ -98,7 +98,7 @@ $(document).ready(function () {
         productCard += `
             <div class="card-header px-0 py-0">
                 <div class="p-0 product-short-title-container w-100">
-                    <a href="{{ route('orderbyproduct', $product->slug) }}" class="product-short-title fw-bold text-decoration-underline fs-4">`;
+                    <a href="/shop/by-product/${product.slug}" class="product-short-title fw-bold text-decoration-underline fs-4">`;
         productCard += product.short_title;
         productCard += `</a>
                 </div>

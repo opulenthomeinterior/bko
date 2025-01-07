@@ -91,7 +91,7 @@
                         </div>
                         <div class="col-md-8 col-sm-12">
                             <p class="category-value fw-semibold px-3 py-1 mb-2">
-                                <small>{{ $product->category->name }}</small>
+                                <small>{{ $product->category?->name }}</small>
                             </p>
                         </div>
                     </div>
@@ -105,7 +105,7 @@
                         </div>
                         <div class="col-md-8 col-sm-12">
                             <p class="category-value fw-semibold px-3 py-1 mb-2">
-                                <small>{{ $product->style->name }}</small>
+                                <small>{{ $product->style?->name }}</small>
                             </p>
                         </div>
                     </div>
@@ -119,12 +119,12 @@
                         </div>
                         <div class="col-md-8 col-sm-12">
                             <p class="category-value fw-semibold px-3 py-1 mb-2">
-                                <small>{{ $product->colour->trade_colour ? $product->colour->trade_colour : $product->colour->name }}</small>
+                                <small>{{ $product->colour?->trade_colour ? $product->colour?->trade_colour : $product->colour?->name }}</small>
                             </p>
                         </div>
                     </div>
                 @endif
-                @if ($product->colour->finishing)
+                @if ($product->colour?->finishing)
                     <div class="row">
                         <div class="col-4 d-md-flex d-none">
                             <p class="category-text text-start text-uppercase m-0 pt-1">
@@ -133,7 +133,7 @@
                         </div>
                         <div class="col-md-8 col-sm-12">
                             <p class="category-value fw-semibold px-3 py-1 mb-2">
-                                <small>{{ $product->colour->finishing }}</small>
+                                <small>{{ $product->colour?->finishing }}</small>
                             </p>
                         </div>
                     </div>
@@ -147,7 +147,7 @@
                         </div>
                         <div class="col-md-8 col-sm-12">
                             <p class="category-value fw-semibold px-3 py-1 mb-2">
-                                <small>{{ $product->assembly->name }}</small>
+                                <small>{{ $product->assembly?->name }}</small>
                             </p>
                         </div>
                     </div>
@@ -217,14 +217,14 @@
                             <h3 class="fw-bold text-dark py-1">Overview</h3>
                             <h4 class="fw-bold text-dark py-1">Range Specification</h4>
                             <div class="product-cat-description">
-                                @if ($product->category->description)
-                                    {!! $product->category->description !!}
-                                @elseif ($product->category->parentCategory->description)
-                                    {!! $product->category->parentCategory->description !!}
+                                @if ($product->category?->description)
+                                    {!! $product->category?->description !!}
+                                @elseif ($product->category?->parentCategory->description)
+                                    {!! $product->category?->parentCategory->description !!}
                                 @endif
                             </div>
                         </div>
-                        {{-- @if ($product->category->image_path)
+                        {{-- @if ($product->category?->image_path)
                             <div class="col-lg-12 col-md-6 position-relative">
                                 <!-- Button trigger modal -->
                                 <a class="modal-icon z-3" href="#" data-bs-toggle="modal"
@@ -259,14 +259,14 @@
                                     src="{{ asset('uploads/categories/' . $product->category->image_path) }}"
                                     alt="Card image cap">
                             </div>
-                        @elseif ($product->category->parentCategory->image_path)
+                        @elseif ($product->category?->parentCategory->image_path)
                             <div class="col-lg-12 col-md-6 position-relative">
                                 <a class="position-absolute top-10 end-0 me-4 mt-2 z-3" href="#"
                                     data-bs-toggle="modal" data-bs-target="#productModal">
                                     <i class="ri-add-circle-line text-black fs-4"></i>
                                 </a>
                                 <img class="card-img-top px-0"
-                                    src="{{ asset('uploads/categories/' . $product->category->parentCategory->image_path) }}"
+                                    src="{{ asset('uploads/categories/' . $product->category?->parentCategory->image_path) }}"
                                     alt="Card image cap">
                             </div>
                         @endif --}}
