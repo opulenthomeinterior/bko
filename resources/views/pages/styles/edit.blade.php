@@ -221,7 +221,7 @@
                                                                         <select name="colour_id[]" class="form-control select2 text-dark" multiple id="">
                                                                             <option value="" disabled>Select Colours</option>
                                                                             @foreach (\App\Models\Colour::get() as $colour)
-                                                                                <option value="{{$colour->id}}" class="text-dark">{{$colour->name}}</option>
+                                                                                <option value="{{$colour->id}}" class="text-dark">{{$colour->trade_colour}}</option>
                                                                             @endforeach
                                                                         </select>
                                                                     </div>
