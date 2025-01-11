@@ -205,10 +205,8 @@
                                                                     <select name="colour_id[]" class="form-control select2 text-dark" multiple id="">
                                                                         <option value="" disabled>Select Colours</option>
                                                                         @foreach (\App\Models\Colour::get() as $colour)
-                                                                            <option value="{{ $colour->id }}" 
-                                                                                class="text-dark"
-                                                                                {{ in_array($colour->id, $style->styleHasColours->pluck('id')->toArray()) ? 'selected' : '' }}>
-                                                                                {{ $colour->trade_colour }}
+                                                                            <option value="{{ $colour->id }}" class="text-dark" {{ in_array($colour->id, $style->styleHasColours->pluck('colour_id')->toArray()) ? 'selected' : '' }}>
+                                                                                {{$colour->trade_colour}}
                                                                             </option>
                                                                         @endforeach
                                                                     </select>
