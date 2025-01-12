@@ -41,58 +41,37 @@
                                 </thead>
                                 <tbody>
                                     @if (!empty($styleHasColours))
-                                        @foreach ($styleHasColours as $styleHasColour)
-                                            <tr>
-                                                <td class="align-middle">{{ $loop->iteration }}</td>
-                                                <td>
-                                                    <a href="{{ $styleHasColour->image_path ? asset('uploads/styles/colours/' . $styleHasColour->image_path) : '#' }}"
-                                                        class="{{ $styleHasColour->image_path ? 'd-inline-block' : 'd-none' }}"
-                                                        target="_blank" rel="noopener noreferrer">
-                                                        <img src="{{ $styleHasColour->image_path ? asset('uploads/styles/colours/' . $styleHasColour->image_path) : '#' }}"
-                                                            alt="Image Preview" width="100"
-                                                            class="img-thumbnail box-image-preview {{ $styleHasColour->image_path ? 'd-block' : 'd-none' }}" />
-                                                    </a>
-                                                </td>
-                                                <td class="align-middle">{{ $styleHasColour->colour?->trade_colour }}</td>
-                                                <td class="align-middle">{!! $styleHasColour->status == 1 ? '<span class="badge bg-primary">Active</span>' : '<span class="badge bg-danger">In Active</span>' !!}</td>
-                                                <td class="align-middle" align="center">
-                                                    <div class="d-flex flex-row gap-2">
-                                                        <a class="btn btn-soft-info btn-sm d-inline-block edit-button" data-bs-target="#upload-image{{$styleHasColour->id}}" data-bs-toggle="modal"
-                                                            href="#" title="Upload Image">
-                                                            <i class="las la-pen fs-17 align-middle"></i>
-                                                        </a>
-                                                        <a class="btn btn-soft-primary btn-sm d-inline-block edit-button" href="{{route('style.colour.setStatus', [$styleHasColour->style_id, $styleHasColour->colour_id])}}" title="Set Status">
-                                                            <i class="las la-lock fs-17 align-middle"></i>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="upload-image{{$styleHasColour->id}}" tabindex="-1" role="dialog" aria-labelledby="upload-image{{$styleHasColour->id}}Title" aria-hidden="true">
-                                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                                    <div class="modal-content">
-                                                        <form action="{{route('style.colour.upload_image')}}" method="POST" enctype="multipart/form-data" id="colour-image-form">
-                                                            @csrf
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="upload-image{{$styleHasColour->id}}Title">{{$styleHasColour->colour?->name}}</h5>
-                                                                <button type="button" class="close btn btn-danger" data-bs-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <input type="file" name="image_path" class="form-control">
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <input type="hidden" name="style_id" value="{{$styleHasColour->style_id}}">
-                                                                <input type="hidden" name="colour_id" value="{{$styleHasColour->colour_id}}">
-                                                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                                                                <button type="submit" class="btn btn-primary" id="save-changes">Save changes</button>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
+                                    @foreach ($styleHasColours as $styleHasColour)
+                                    <tr>
+                                        <td class="align-middle">{{ $loop->iteration }}</td>
+                                        <td>
+                                            <a href="{{ $styleHasColour->image_path ? asset('uploads/styles/colours/' . $styleHasColour->image_path) : '#' }}"
+                                                class="{{ $styleHasColour->image_path ? 'd-inline-block' : 'd-none' }}" target="_blank" rel="noopener noreferrer">
+                                                <img src="{{ $styleHasColour->image_path ? asset('uploads/styles/colours/' . $styleHasColour->image_path) : '#' }}"
+                                                    alt="Image Preview" width="100" class="img-thumbnail box-image-preview {{ $styleHasColour->image_path ? 'd-block' : 'd-none' }}" />
+                                            </a>
+                                        </td>
+                                        <td class="align-middle">{{ $styleHasColour->colour?->trade_colour }}</td>
+                                        <td class="align-middle">
+                                            {!! $styleHasColour->status == 1
+                                                ? '<span class="badge bg-primary">Active</span>'
+                                                : '<span class="badge bg-danger">In Active</span>' !!}
+                                        </td>
+                                        <td class="align-middle" align="center">
+                                            <div class="d-flex flex-row gap-2">
+                                                <!-- Upload Image Button -->
+                                                <a class="btn btn-soft-info btn-sm d-inline-block upload-image-button" data-bs-toggle="modal" data-bs-target="#upload-image" title="Upload Image" data-id="{{ $styleHasColour->id }}" data-style-id="{{ $styleHasColour->style_id }}" data-style-name="{{ $styleHasColour->colour?->trade_colour }}" data-colour-id="{{ $styleHasColour->colour_id }}">
+                                                    <i class="las la-pen fs-17 align-middle"></i>
+                                                </a>
+                                                <!-- Set Status Button -->
+                                                <a class="btn btn-soft-primary btn-sm d-inline-block edit-button"
+                                                    href="{{ route('style.colour.setStatus', [$styleHasColour->style_id, $styleHasColour->colour_id]) }}" title="Set Status">
+                                                    <i class="las la-lock fs-17 align-middle"></i>
+                                                </a>
                                             </div>
-                                        @endforeach
+                                        </td>
+                                    </tr>
+                                    @endforeach
                                     @endif
                                 </tbody>
                                 <tfoot>
@@ -112,13 +91,57 @@
             <!-- /.row -->
         </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="upload-image" tabindex="-1" role="dialog" aria-labelledby="upload-imageTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="upload-imageTitle">
+                        <span id="modal-style-name"></span>
+                    </h5>
+                    <button type="button" class="btn-close btn btn-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="{{ route('style.colour.upload_image') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="modal-body">
+                        <input type="file" name="image_path" class="form-control">
+                        <input type="hidden" name="style_id" id="modal-style-id">
+                        <input type="hidden" name="colour_id" id="modal-colour-id">
+                        <input type="hidden" name="style_colour_id" id="modal-style-colour-id">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     @push('scripts')
     <script>
         $(document).ready(function() {
+
+            $('.upload-image-button').on('click', function () {
+                // Get the data attributes from the clicked button
+                const styleName = $(this).data('style-name');
+                const styleId = $(this).data('style-id');
+                const colourId = $(this).data('colour-id');
+                const id = $(this).data('id');
+
+                // Update modal content
+                $('#modal-style-name').text(styleName);
+                $('#modal-style-id').val(styleId);
+                $('#modal-colour-id').val(colourId);
+                $('#modal-style-colour-id').val(id);
+            });
+
             $(document).on('click', '#save-changes', function () {
                 $(this).prop('disabled', true);
                 $('#colour-image-form').submit();
             });
+
         });
     </script>
     @endpush
