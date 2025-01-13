@@ -161,6 +161,38 @@
         text-align: center;
     }
 
+    .order-component-scroller {
+        max-width: 1900px;
+        overflow-x: auto; /* Ensures horizontal scrolling is functional */
+        scrollbar-width: none; /* Hides scrollbar in Firefox by default */
+    }
+
+    .order-component-scroller::-webkit-scrollbar {
+        width: 0; /* Hides scrollbar in WebKit browsers by default */
+    }
+
+    /* Show scrollbar on hover */
+    .order-component-scroller:hover::-webkit-scrollbar {
+        width: 8px; /* Adjust the scrollbar width when hovered */
+        height: 8px; /* Horizontal scrollbar height */
+    }
+
+    .order-component-scroller:hover {
+        scrollbar-width: thin; /* Firefox: Shows a thin scrollbar when hovered */
+    }
+
+    /* Style the scrollbar thumb */
+    .order-component-scroller::-webkit-scrollbar-thumb {
+        background-color: #febd49; /* Thumb color */
+        border-radius: 0px; /* Rounded corners */
+        color: #febd49;
+    }
+
+    /* Style the scrollbar track */
+    .order-component-scroller::-webkit-scrollbar-track {
+        background: #f0f0f0; /* Track background */
+    }
+
     </style>
 
     <!-- <section class="container-fluid bg-white px-lg-5 py-3 px-md-3 px-3 mt-4" style="border-top: 3px solid #febd49; border-right: 3px solid #febd49">
@@ -282,36 +314,66 @@
         <div class="row">
             <h3 class="text-uppercase fw-bolder text-dark text-center">ORDER COMPONENT</h3>
         </div>
-        <div class="row d-flex border border-warning align-items-center justify-content-center bg-white p-4 m-4" style="border-radius: 20px;">
+        <div class="row border border-warning bg-white p-4 m-4" style="border-radius: 20px;">
             @php
-                $categories = \App\Models\Category::where('parent_category_id', null)->whereIn('slug', ['doors', 'accessories', 'internals', 'sinks', 'handles'])->get();
+                $categories = \App\Models\Category::where('parent_category_id', null)->where('status', 1)->get();
             @endphp
-            @foreach($categories as $category)
-            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-xs-12 col-12 d-flex flex-column align-items-center justify-content-center" style="border-radius: 50%;">
-                <div class="text-center">
-                    <a class="text-dark btn btn-outline-warning d-flex align-items-center justify-content-center" style="height: 100px; width: 100px; border-radius: 100%; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);" href="{{route('ordercomponentbyname', [$category->slug])}}">
-                        <div class="card-old">
-                            <div class="card-body">
-                                 @if($category->slug == 'doors')
-                                 <img height="55px" width="50px" src="https://cdn-icons-png.flaticon.com/512/2237/2237440.png" alt="">
-                                 @elseif($category->slug == 'handles')
-                                 <img height="55px" width="50px" src="https://cdn4.iconfinder.com/data/icons/thin-home-living-2/24/thin-1459_door_handle_lock-512.png" alt="">
-                                 @elseif($category->slug == 'accessories')
-                                 <img height="55px" width="50px" src="https://cdn-icons-png.flaticon.com/512/3365/3365678.png" alt="">
-                                 @elseif($category->slug == 'sinks')
-                                 <img height="55px" width="50px" src="https://cdn-icons-png.flaticon.com/512/810/810192.png" alt="">
-                                 @elseif($category->slug == 'internals')
-                                 <img height="55px" width="50px" src="https://cdn-icons-png.flaticon.com/512/4717/4717615.png" alt="">
-                                 @elseif($category->slug == 'taps')
-                                 <img height="55px" width="50px" src="https://cdn-icons-png.flaticon.com/512/2237/2237440.png" alt="">
-                                 @endif
+            <div class="d-flex order-component-scroller" style="max-width: 1900px; overflow-x: scroll">
+                @foreach($categories as $category)
+                <div class="d-flex align-items-center justify-content-center" style="border-radius: 50%; margin: 0px 10px; padding: 15px 50px">
+                    <div class="text-center">
+                        <a class="text-dark btn btn-outline-warning d-flex align-items-center justify-content-center" style="height: 100px; width: 100px; border-radius: 100%; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);" href="{{route('ordercomponentbyname', [$category->slug])}}">
+                            <div class="card-old">
+                                <div class="card-body d-flex">
+                                    @if($category->slug == 'doors')
+                                    <div>
+                                        <img height="55px" width="50px" src="https://cdn-icons-png.flaticon.com/512/2237/2237440.png" alt="">
+                                    </div>
+                                    @elseif($category->slug == 'handles')
+                                    <div>
+                                        <img height="55px" width="50px" src="https://cdn4.iconfinder.com/data/icons/thin-home-living-2/24/thin-1459_door_handle_lock-512.png" alt="">
+                                    </div>
+                                    @elseif($category->slug == 'accessories')
+                                    <div>
+                                        <img height="55px" width="50px" src="https://cdn-icons-png.flaticon.com/512/3365/3365678.png" alt="">
+                                    </div>
+                                    @elseif($category->slug == 'sinks')
+                                    <div>
+                                        <img height="55px" width="50px" src="https://cdn-icons-png.flaticon.com/512/810/810192.png" alt="">
+                                    </div>
+                                    @elseif($category->slug == 'internals')
+                                    <div>
+                                        <img height="55px" width="50px" src="https://cdn-icons-png.flaticon.com/512/4717/4717615.png" alt="">
+                                    </div>
+                                    @elseif($category->slug == 'taps')
+                                    <div>
+                                        <img height="55px" width="50px" src="https://icons.veryicon.com/png/o/object/home-icon/water-tap.png" alt="">
+                                    </div>
+                                    @elseif($category->slug == 'worktops')
+                                    <div>
+                                        <img height="55px" width="50px" src="https://static.thenounproject.com/png/2342543-200.png" alt="">
+                                    </div>
+                                    @elseif($category->slug == 'upstands')
+                                    <div>
+                                        <img height="55px" width="50px" src="https://cdn-icons-png.flaticon.com/512/6785/6785530.png" alt="">
+                                    </div>
+                                    @elseif($category->slug == 'breakfast-bars')
+                                    <div>
+                                        <img height="55px" width="50px" src="https://cdn-icons-png.flaticon.com/512/2311/2311531.png" alt="">
+                                    </div>
+                                    @elseif($category->slug == 'appliances')
+                                    <div>
+                                        <img height="55px" width="50px" src="https://static.thenounproject.com/png/1283252-200.png" alt="">
+                                    </div>
+                                    @endif
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                    <h5 class="cat-card-title fw-bold mt-2 text-dark">{{$category->name}}</h5>
+                        </a>
+                        <h5 class="cat-card-title fw-bold mt-2 text-dark">{{Str::limit($category->name, 13)}}</h5>
+                    </div>
                 </div>
+                @endforeach
             </div>
-            @endforeach
         </div>
     </section>
 
