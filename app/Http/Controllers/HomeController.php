@@ -394,7 +394,7 @@ class HomeController extends Controller
         ->orderBy('name', 'ASC')
         ->get();
         $assemblies = Assembly::where('slug', 'stock')->where('status', 1)->get();
-        $styles = Style::where('slug', '!=', 'j-pull')->where('status', 1)->get();
+        $styles = Style::where('status', 1)->get();
 
         $colours = Colour::whereIn('id', Product::whereIn('category_id', $children)->pluck('colour_id')->unique())->whereNotNull('finishing')->where('status', 1)->get();
 

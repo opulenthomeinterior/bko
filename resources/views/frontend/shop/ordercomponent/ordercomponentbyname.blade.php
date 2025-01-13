@@ -91,6 +91,7 @@
                                 aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample3">
                                 <div class="accordion-body px-0 py-0 pb-1">
                                     <div class="row g-1">
+                                        <!-- updated -->
                                         @foreach ($styles as $index => $style)
                                         <div class="col-lg-12 col-md-12 col-6">
                                             <div class="form-check form-check-inline">
@@ -543,6 +544,7 @@
                 </div>
             </div>
         </div>
+
         <div class="row">
 
             @if (count($category->testimonials) > 0)
