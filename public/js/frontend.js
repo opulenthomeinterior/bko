@@ -800,7 +800,7 @@ $(document).ready(function () {
                                                          <p class="category-text text-start text-dark text-uppercase m-0 pt-1"><small class="fw-bold">Dimensions</small></p>
                                                    </div>
                                                    <div class="col-md-8 col-sm-12 p-0 text-center">
-                                                         <p class="category-value fw-semibold py-1 mb-2 text-dark"><small>${productDetails.dimensions}</small></p>
+                                                         <p class="category-value fw-semibold py-1 mb-2 text-dark"><small>${(productDetails.dimensions != null) ? productDetails.dimensions : ''}</small></p>
                                                    </div>
                                                 </div>
                                                 ${productDetails.style ? `<div class="row">
