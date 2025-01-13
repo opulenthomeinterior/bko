@@ -21,7 +21,7 @@
                         Cabinets and Panels
                     </a>
                     <div class="collapse-container mt-3" id="cabinetspanels">
-                        <nav>
+                        <nav class="d-flex justify-content-between">
                             <div class="nav nav-tabs custom-nav" style="" id="nav-tab" role="tablist">
                                 <button class="nav-link active" id="nav-baseCabinet-tab" data-bs-toggle="tab"
                                     data-bs-target="#baseCabinet-tab" type="button" role="tab"
@@ -36,6 +36,10 @@
                                     data-bs-target="#nav-appliance" type="button" role="tab"
                                     aria-controls="nav-appliance" aria-selected="false">Panels & Appliance
                                     Doors</button>
+                            </div>
+                            <div>
+                                <a href="{{route('orderkitchenbycolour', ['style' => $style->slug , 'assembly' => $assembly->slug, 'colour' => $colour->slug])}}"
+                                    class="btn btn-outline-warning text-dark text-uppercase mb-2" style="border-radius: 0">Back</a>
                             </div>
                         </nav>
                         <div class="tab-content p-3" style="border: 1px solid black !important" id="nav-tabContent">

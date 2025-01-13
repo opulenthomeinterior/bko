@@ -98,7 +98,7 @@ class HomeController extends Controller
                 $styleData['assemblies'][$assembly->name] = $assemblyData;
             }
 
-            $styleHasColours = StyleHasColour::where('style_id', $style->id)->get();
+            $styleHasColours = StyleHasColour::where('style_id', $style->id)->where('status', 1)->get();
 
             // echo '<pre>';
             // print_r($styleData);
