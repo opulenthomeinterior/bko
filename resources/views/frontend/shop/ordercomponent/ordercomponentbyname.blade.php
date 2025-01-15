@@ -77,7 +77,7 @@
                     <input type="hidden" name="slug" id="slug" value="{{ $category->slug }}">
                     
                     @if ($styles->count() > 0)
-                    @if ($category->slug == 'doors')
+                    @if ($category->slug == 'doors' || $category->slug == 'accessories')
                     <div class="accordion accordion-flush mt-3" id="accordionFlushExample3">
                         <div class="accordion-item bg-transparent border border-dark border-1 rounded-0 px-2">
                             <h2 class="accordion-header" id="flush-headingThree">
