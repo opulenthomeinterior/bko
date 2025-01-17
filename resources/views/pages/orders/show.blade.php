@@ -54,7 +54,7 @@
                                     @foreach ($order_items as $item)
                                         <tr>
                                             <td>
-                                                <a href="{{ route('orderbyproduct', $item['slug']) }}" target="_blank"
+                                                <a href="{{ route('orderbyproduct', [$item['slug'], $item['serial_number']]) }}" target="_blank"
                                                     class="text-inherit">
                                                     <div class="d-lg-flex">
                                                         <div>

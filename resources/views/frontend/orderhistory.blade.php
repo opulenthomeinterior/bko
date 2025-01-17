@@ -85,7 +85,7 @@
                                     </div>
                                     <!-- button -->
                                     <div class="col-lg-3 col-12 text-end">
-                                        <a href="{{ route('orderbyproduct', $item['slug']) }}" target="_blank"
+                                        <a href="{{ route('orderbyproduct', [$item['slug'], $item['serial_number']]) }}" target="_blank"
                                             class="btn btn-dark rounded-0 mb-2" style="width: 200px">Shop again</a>
                                     </div>
                                 </div>

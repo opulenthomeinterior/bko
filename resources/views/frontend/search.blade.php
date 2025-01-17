@@ -26,7 +26,7 @@
             @else
                 @foreach ($products as $product)
                     <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                        <a href="{{ route('orderbyproduct', $product->slug) }}">
+                        <a href="{{ route('orderbyproduct', [$product->slug, $product->serial_number]) }}">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="row flex-column align-items-center">

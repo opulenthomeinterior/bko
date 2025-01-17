@@ -1,4 +1,11 @@
 <x-guest-layout>
+    <style>
+        .related-products-link {
+            display: inline-block;
+            text-indent: 0px; /* Adjust to align with the first line */
+            padding-left: 5px; /* Same value as text-indent but positive */
+        }
+    </style>
     <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -301,9 +308,9 @@
                     <h3 class="fw-bold text-dark pb-3">Related Products</h3>
                     <div class="row">
                         @foreach ($relatedProducts as $relatedProduct)
-                            <div class="col-6">
+                            <div class="col-6 d-flex align-items-start">
                                 <i class="ri-arrow-right-s-fill"></i>
-                                <a href="{{ route('orderbyproduct', $relatedProduct->slug) }}"
+                                <a href="{{ route('orderbyproduct', [$relatedProduct->slug, $relatedProduct->serial_number]) }}"
                                     class="text-dark text-decoration-underline related-products-link">
                                     {{ $relatedProduct->full_title }}
                                 </a>

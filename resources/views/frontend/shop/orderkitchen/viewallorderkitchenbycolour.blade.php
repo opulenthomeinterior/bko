@@ -32,10 +32,9 @@
                                 <button class="nav-link" id="nav-tallCabinet-tab" data-bs-toggle="tab"
                                     data-bs-target="#nav-tallCabinet" type="button" role="tab"
                                     aria-controls="nav-tallCabinet" aria-selected="false">Tall Cabinets</button>
-                                <button class="nav-link" id="nav-appliance-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-appliance" type="button" role="tab"
-                                    aria-controls="nav-appliance" aria-selected="false">Panels & Appliance
-                                    Doors</button>
+                                <button class="nav-link" id="nav-accessories-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-accessories" type="button" role="tab"
+                                    aria-controls="nav-accessories" aria-selected="false">Accessories</button>
                             </div>
                             <div>
                                 <a href="{{route('orderkitchenbycolour', ['style' => $style->slug , 'assembly' => $assembly->slug, 'colour' => $colour->slug])}}"
@@ -1162,179 +1161,30 @@
                                 </div>
                             </div>
 
-                            {{-- Panels & Appliance Doors --}}
-                            <div class="tab-pane fade" id="nav-appliance" role="tabpanel"
-                                aria-labelledby="nav-appliance-tab" tabindex="0">
+                            {{-- Accessories --}}
+                            <div class="tab-pane fade" id="nav-accessories" role="tabpanel"
+                                aria-labelledby="nav-accessories-tab" tabindex="0">
                                 <div class="row">
-                                    @if ($panels->count() > 0)
-                                        @foreach ($panels as $index => $panel)
-                                            {{--<div class="col-lg-4 col-6 mb-3">
-                                                <div class="card">
-                                                    <div class="card-body text-center">
-                                                        <!-- Button trigger modal -->
-                                                        <a class="modal-icon z-3" href="#"
-                                                            data-bs-toggle="modal"
-                                                            data-bs-target="#panels{{ $index }}">
-                                                            <i class="ri-add-circle-line text-black fs-4"></i>
-                                                        </a>
-                                                        <!-- Modal -->
-                                                        <div class="modal fade" id="panels{{ $index }}"
-                                                            tabindex="-1"
-                                                            aria-labelledby="panelsLabel{{ $index }}"
-                                                            aria-hidden="true">
-                                                            <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                                <div class="modal-content">
-                                                                    <div class="modal-header">
-                                                                        <button type="button" class="btn-close"
-                                                                            data-bs-dismiss="modal"
-                                                                            aria-label="Close"></button>
-                                                                    </div>
-                                                                    <div class="modal-body">
-                                                                        <div class="container-fluid">
-                                                                            <div class="row">
-                                                                                <div class="col-lg-4 col-md-5 col-12">
-                                                                                    <img src="{{ !empty($panel->image_path) ? asset('imgs/products/'.$panel->image_path) : asset('images/no-image-available.jpg') }}"
-                                                                                        class="img-fluid" />
-                                                                                </div>
-                                                                                <div
-                                                                                    class="col-lg-8 col-md-7 col-12 text-start">
-                                                                                    <h1 class="fs-5 fw-bold">
-                                                                                        {{ $panel->full_title }}
-                                                                                    </h1>
-                                                                                    <hr>
-                                                                                    <h6
-                                                                                        class="fs-6 fw-bolder text-dark">
-                                                                                        Styling</h6>
-                                                                                    <ul>
-                                                                                        <li>HEIGHT: 720mm</li>
-                                                                                        <li>WIDTH: 1000mm</li>
-                                                                                        <li>DEPTH: 570mm</li>
-                                                                                    </ul>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="modal-footer"></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="">
-                                                            <figure>
-                                                                <img class="product-image px-0"
-                                                                    src="{{ !empty($panel->image_path) ? asset('imgs/products/'.$panel->image_path) : asset('images/no-image-available.jpg') }}"
-                                                                    alt="Card image cap">
-                                                            </figure>
-                                                            <div class="">
-                                                                <a href=""
-                                                                    class="text-center text-decoration-underline fs-5 fw-bold">
-                                                                    {{ $panel->short_title }}
-                                                                </a>
-                                                                <p class="py-lg-3 py-2">
-                                                                    <small
-                                                                        class="fw-bold text-center">{{ $panel->product_code }}</small>
-                                                                </p>
-                                                                <p class="py-lg-3 py-2">
-                                                                    <small
-                                                                        class="fw-bold text-center">{{ $panel->dimensions }}</small>
-                                                                </p>
-                                                                <div class="container-fluid">
-                                                                    <div
-                                                                        class="row justify-content-center product-counter">
-                                                                        <input id="minus{{ $panel->id }}"
-                                                                            class="minus border bg-dark text-light p-0"
-                                                                            type="button" value="-"
-                                                                            onclick="decreaseQuantity('{{ $panel->id }}', '{{ $panel->product_code }}', '{{ $panel->full_title }}', {{ $panel->price }}, {{ $panel->discounted_price }}, {{ $panel->discounted_percentage ?? 0 }}, '{{ $panel->ParentCategory->slug }}')" />
-                                                                        <input id="quantity{{ $panel->id }}"
-                                                                            class="quantity border border-black text-center"
-                                                                            type="text" value="0"
-                                                                            name="quantity" disabled />
-                                                                        <input id="plus{{ $panel->id }}"
-                                                                            class="plus border bg-dark text-light p-0"
-                                                                            type="button" value="+"
-                                                                            {{$panel->price == 0 ? 'disabled' : '' }} 
-                                                                            onclick="increaseQuantity('{{ $panel->id }}', '{{ $panel->product_code }}', '{{ $panel->full_title }}', {{ $panel->price }}, {{ $panel->discounted_price }}, {{ $panel->discounted_percentage ?? 0 }}, '{{ $panel->ParentCategory->slug }}')" />
-                                                                    </div>
-                                                                </div>
-                                                                <p class="fs-5 fw-bold mt-lg-2">
-                                                                    {{ $panel->price == 0 ? 'Out of Stock' : '£' . $panel->price }}
-                                                                </p>
-                                                                <div class="container-fluid">
-                                                                    @if ($panel->style)
-                                                                        <div class="row">
-                                                                            <div class="col-4 p-0 d-md-flex d-none">
-                                                                                <p
-                                                                                    class="category-text text-start text-uppercase m-0 pt-1">
-                                                                                    <small>Style</small>
-                                                                                </p>
-                                                                            </div>
-                                                                            <div
-                                                                                class="col-md-8 col-sm-12 p-0 text-center">
-                                                                                <p
-                                                                                    class="category-value fw-semibold py-1 mb-2">
-                                                                                    <small>{{ $panel->style->name }}</small>
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    @endif
-                                                                    @if ($panel->colour)
-                                                                        <div class="row">
-                                                                            <div class="col-4 p-0 d-md-flex d-none">
-                                                                                <p
-                                                                                    class="category-text text-start text-uppercase m-0 pt-1">
-                                                                                    <small>Colour</small>
-                                                                                </p>
-                                                                            </div>
-                                                                            <div
-                                                                                class="col-md-8 col-sm-12 p-0 text-center">
-                                                                                <p
-                                                                                    class="category-value fw-semibold py-1 mb-2">
-                                                                                    <small>{{ $panel->colour->trade_colour ? $panel->colour->trade_colour : $panel->colour->name }}</small>
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    @endif
-                                                                    @if ($panel->assembly)
-                                                                        <div class="row">
-                                                                            <div class="col-4 p-0 d-md-flex d-none">
-                                                                                <p
-                                                                                    class="category-text text-start text-uppercase m-0 pt-1">
-                                                                                    <small>Assembly</small>
-                                                                                </p>
-                                                                            </div>
-                                                                            <div
-                                                                                class="col-md-8 col-sm-12 p-0 text-center">
-                                                                                <p
-                                                                                    class="category-value fw-semibold py-1 mb-2">
-                                                                                    <small>{{ $panel->assembly->name }}</small>
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    @endif
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>--}}
+                                    @if ($accessories->count() > 0)
+                                        @foreach ($accessories as $index => $accessory)
                                             <div class="col-lg-4 col-6 mb-3">
                                                 <div class="card border-1 btn btn-outline-warning bg-light p-0" style="border-radius: 0;">
                                                     <div class="bg-warning card-header px-0 py-0">
                                                         <div class="py-2 text-center product-short-title-container w-100">
                                                             <a href="#" class="product-short-title fw-bold text-decoration-underline fs-4">
-                                                                {{ $panel->short_title }}
+                                                                {{ $accessory->short_title }}
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="card-body text-center">
-                                                        <div class="modal fade" id="productModal{{ $panel->id }}" tabindex="-1"
-                                                            aria-labelledby="productModalLabel{{ $panel->id }}"
+                                                        <div class="modal fade" id="productModal{{ $accessory->id }}" tabindex="-1"
+                                                            aria-labelledby="productModalLabel{{ $accessory->id }}"
                                                             aria-hidden="true">
                                                             <div class="modal-dialog modal-lg modal-dialog-centered">
                                                                 <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
                                                                     <div class="modal-header border-bottom border-light">
                                                                         <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
-                                                                            {{ $panel->full_title }}
+                                                                            {{ $accessory->full_title }}
                                                                         </h1>
                                                                         <button type="button" class="btn-close"
                                                                             data-bs-dismiss="modal" aria-label="Close"></button>
@@ -1343,37 +1193,37 @@
                                                                         <div class="container-fluid">
                                                                             <div class="row">
                                                                                 <div class="col-lg-8 col-md-8 col-8 border-bottom border-warning bg-light">
-                                                                                    <img src="{{ !empty($panel->image_path) ? asset('imgs/products/'.$panel->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                                    <img src="{{ !empty($accessory->image_path) ? asset('imgs/products/'.$accessory->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                         class="img-fluid product-image" style="height: 300px;" />
                                                                                 </div>
                                                                                 <div class="col-lg-4 col-md-4 col-4 text-start text-dark">
                                                                                     <div>
                                                                                         <h6 class="fs-6 fw-bolder text-dark">Styling</h6>
                                                                                         <ul style="list-style: none; padding: 0">
-                                                                                            @if ($panel->style)
+                                                                                            @if ($accessory->style)
                                                                                             <li>
                                                                                                 <p class="mb-0">
                                                                                                     <small
                                                                                                         class="fw-bold text-uppercase text-dark">Style:</small>
-                                                                                                    {{ $panel->style->name }}
+                                                                                                    {{ $accessory->style->name }}
                                                                                                 </p>
                                                                                             </li>
                                                                                             @endif
-                                                                                            @if ($panel->assembly)
+                                                                                            @if ($accessory->assembly)
                                                                                             <li>
                                                                                                 <p class="mb-0">
                                                                                                     <small
                                                                                                         class="fw-bold text-uppercase text-dark">Assembly:</small>
-                                                                                                    {{ $panel->assembly->name }}
+                                                                                                    {{ $accessory->assembly->name }}
                                                                                                 </p>
                                                                                             </li>
                                                                                             @endif
-                                                                                            @if ($panel->colour)
+                                                                                            @if ($accessory->colour)
                                                                                             <li>
                                                                                                 <p class="mb-0">
                                                                                                     <small
                                                                                                         class="fw-bold text-uppercase text-dark">Colour:</small>
-                                                                                                    {{ $panel->colour->trade_colour ? $panel->colour->trade_colour : $panel->colour->name }}
+                                                                                                    {{ $accessory->colour->trade_colour ? $accessory->colour->trade_colour : $accessory->colour->name }}
                                                                                                 </p>
                                                                                             </li>
                                                                                             @endif
@@ -1387,21 +1237,21 @@
                                                                                                 <p class="mb-0">
                                                                                                     <small
                                                                                                         class="fw-bold text-uppercase text-dark">HEIGHT:</small>
-                                                                                                    {{ intval($panel->height) }}mm
+                                                                                                    {{ intval($accessory->height) }}mm
                                                                                                 </p>
                                                                                             </li>
                                                                                             <li>
                                                                                                 <p class="mb-0">
                                                                                                     <small
                                                                                                         class="fw-bold text-uppercase text-dark">WIDTH:</small>
-                                                                                                    {{ intval($panel->width) }}mm
+                                                                                                    {{ intval($accessory->width) }}mm
                                                                                                 </p>
                                                                                             </li>
                                                                                             <li>
                                                                                                 <p class="mb-0">
                                                                                                     <small
                                                                                                         class="fw-bold text-uppercase text-dark">DEPTH:</small>
-                                                                                                    {{ intval($panel->depth) }}mm
+                                                                                                    {{ intval($accessory->depth) }}mm
                                                                                                 </p>
                                                                                             </li>
                                                                                         </ul>
@@ -1412,10 +1262,10 @@
                                                                                         </h6>
                                                                                         <p class="mb-0">
                                                                                             <small>
-                                                                                                @if ($panel->category?->description)
-                                                                                                {!! $panel->category->description !!}
-                                                                                                @elseif ($panel->category?->parentCategory?->description)
-                                                                                                {!! $panel->category->parentCategory->description !!}
+                                                                                                @if ($accessory->category?->description)
+                                                                                                {!! $accessory->category->description !!}
+                                                                                                @elseif ($accessory->category?->parentCategory?->description)
+                                                                                                {!! $accessory->category->parentCategory->description !!}
                                                                                                 @endif
                                                                                             </small>
                                                                                         </p>
@@ -1435,14 +1285,14 @@
                                                                     <figure class="my-0" style="margin-bottom: 0px !important;">
                                                                         <img class="product-image px-0"
                                                                             style="margin-bottom: 0px !important;min-height:175px;max-height:175px;object-fit:contain"
-                                                                            src="{{ !empty($panel->image_path) ? asset('imgs/products/'.$panel->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                            src="{{ !empty($accessory->image_path) ? asset('imgs/products/'.$accessory->image_path) : asset('images/no-image-available.jpg') }}"
                                                                             alt="Card image cap" data-bs-toggle="modal"
-                                                                            data-bs-target="#productModal{{ $panel->id }}">
+                                                                            data-bs-target="#productModal{{ $accessory->id }}">
                                                                     </figure>
-                                                                    <p class="mt-2"><small class="fw-bold text-start text-dark">{{ $panel->product_code }}</small></p>
+                                                                    <p class="mt-2"><small class="fw-bold text-start text-dark">{{ $accessory->product_code }}</small></p>
                                                                     <p class="">
                                                                         <small
-                                                                            class="fw-bold text-start text-dark">{{ $panel->dimensions }}</small>
+                                                                            class="fw-bold text-start text-dark">{{ $accessory->dimensions }}</small>
                                                                     </p>
                                                                 </div>
                                                                 <div class="col-12">
@@ -1450,30 +1300,30 @@
                                                                         <div class="row justify-content-center">
                                                                             <div
                                                                                 class="col-6 d-flex justify-content-center product-counter">
-                                                                                <input id="minus{{ $panel->id }}"
+                                                                                <input id="minus{{ $accessory->id }}"
                                                                                     class="minus border bg-dark text-light p-0"
                                                                                     type="button" value="-"
-                                                                                    onclick="decreaseQuantity('{{ $panel->id }}', '{{ $panel->product_code }}', '{{ $panel->full_title }}', {{ $panel->price }}, {{ $panel->discounted_price }}, {{ $panel->discounted_percentage ?? 0 }}, '{{ $panel->ParentCategory->slug }}')" />
-                                                                                <input id="quantity{{ $panel->id }}"
+                                                                                    onclick="decreaseQuantity('{{ $accessory->id }}', '{{ $accessory->product_code }}', '{{ $accessory->full_title }}', {{ $accessory->price }}, {{ $accessory->discounted_price }}, {{ $accessory->discounted_percentage ?? 0 }}, '{{ $accessory->ParentCategory->slug }}')" />
+                                                                                <input id="quantity{{ $accessory->id }}"
                                                                                     class="quantity border border-black text-center"
                                                                                     type="text" value="0" name="quantity"
                                                                                     disabled />
-                                                                                <input id="plus{{ $panel->id }}"
+                                                                                <input id="plus{{ $accessory->id }}"
                                                                                     class="plus border bg-dark text-light p-0"
                                                                                     type="button" value="+" type="number"
                                                                                     max="10"
-                                                                                    {{$panel->price == 0 ? 'disabled' : '' }} 
-                                                                                    onclick="increaseQuantity('{{ $panel->id }}', '{{ $panel->product_code }}', '{{ $panel->full_title }}', {{ $panel->price }}, {{ $panel->discounted_price }}, {{ $panel->discounted_percentage ?? 0 }}, '{{ $panel->ParentCategory->slug }}')" />
+                                                                                    {{$accessory->price == 0 ? 'disabled' : '' }} 
+                                                                                    onclick="increaseQuantity('{{ $accessory->id }}', '{{ $accessory->product_code }}', '{{ $accessory->full_title }}', {{ $accessory->price }}, {{ $accessory->discounted_price }}, {{ $accessory->discounted_percentage ?? 0 }}, '{{ $accessory->ParentCategory->slug }}')" />
                                                                             </div>
                                                                             <div class="col-6">
                                                                                 <p class="fs-5 fw-bold mt-lg-2 text-dark">
-                                                                                    {{ $panel->price == 0 ? 'Out of Stock' : '£' . $panel->price }}
+                                                                                    {{ $accessory->price == 0 ? 'Out of Stock' : '£' . $accessory->price }}
                                                                                 </p>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="container-fluid">
-                                                                        @if ($panel->style)
+                                                                        @if ($accessory->style)
                                                                         <div class="row">
                                                                             <div class="col-4 p-0 d-md-flex d-none">
                                                                                 <p
@@ -1483,12 +1333,12 @@
                                                                             </div>
                                                                             <div class="col-md-8 col-sm-12 p-0 text-center">
                                                                                 <p class="category-value fw-semibold py-1 mb-2 text-dark">
-                                                                                    <small>{{ $panel->style->name }}</small>
+                                                                                    <small>{{ $accessory->style->name }}</small>
                                                                                 </p>
                                                                             </div>
                                                                         </div>
                                                                         @endif
-                                                                        @if ($panel->colour)
+                                                                        @if ($accessory->colour)
                                                                         <div class="row">
                                                                             <div class="col-4 p-0 d-md-flex d-none">
                                                                                 <p
@@ -1498,12 +1348,12 @@
                                                                             </div>
                                                                             <div class="col-md-8 col-sm-12 p-0 text-center">
                                                                                 <p class="category-value fw-semibold py-1 mb-2 text-dark">
-                                                                                    <small>{{ $panel->colour->trade_colour ? $panel->colour->trade_colour : $panel->colour->name }}</small>
+                                                                                    <small>{{ $accessory->colour->trade_colour ? $accessory->colour->trade_colour : $accessory->colour->name }}</small>
                                                                                 </p>
                                                                             </div>
                                                                         </div>
                                                                         @endif
-                                                                        @if ($panel->assembly)
+                                                                        @if ($accessory->assembly)
                                                                         <div class="row">
                                                                             <div class="col-4 p-0 d-md-flex d-none">
                                                                                 <p
@@ -1513,7 +1363,7 @@
                                                                             </div>
                                                                             <div class="col-md-8 col-sm-12 p-0 text-center">
                                                                                 <p class="category-value fw-semibold py-1 mb-2 text-dark">
-                                                                                    <small>{{ $panel->assembly->name }}</small>
+                                                                                    <small>{{ $accessory->assembly->name }}</small>
                                                                                 </p>
                                                                             </div>
                                                                         </div>
@@ -1529,7 +1379,7 @@
                                         @endforeach
                                     @else
                                         <div class="col-12">
-                                            <p class="">No Panels & Appliance Doors available</p>
+                                            <p class="">No Accessories available</p>
                                         </div>
                                     @endif
                                 </div>

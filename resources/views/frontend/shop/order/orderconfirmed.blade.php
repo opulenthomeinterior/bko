@@ -97,7 +97,7 @@
                                     <div class="flex-grow-1 align-self-center">
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <a href="{{ route('orderbyproduct', $item['slug']) }}" target="_blank" class="text-body">
+                                                <a href="{{ route('orderbyproduct', [$item['slug'], $item['serial_number']]) }}" target="_blank" class="text-body">
                                                     <h4 class="fs-4">{{ $item['full_title'] }}</h4>
                                                 </a>
                                                 <div class="text-muted mb-1 d-flex flex-wrap">
