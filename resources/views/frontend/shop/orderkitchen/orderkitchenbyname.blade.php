@@ -109,7 +109,7 @@
                         data-autoplay-timeout="3000"
                         data-responsive='{"0":{"items": "3"}, "768":{"items": "4"}, "992":{"items": "4"}, "1200":{"items": "4"}, "1400":{"items": "4"}}'>
                         @foreach ($styleData['data']->testimonials as $testimonial)
-                        <div class="item mx-10 px-0 w-100" style="border: 2px solid #febd49">
+                        <div class="item mx-10 px-0 w-100" style="border: 2px solid #ebc266">
                             <div class="carousel-card card border border-default w-100" style="border-radius: 0px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
                                 <div class="card-body carousel-card-body">
                                     <div class="col-12 mb-4 d-flex justify-content-center">

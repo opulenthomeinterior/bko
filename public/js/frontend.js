@@ -1246,7 +1246,7 @@ $(document).ready(function () {
                      aria-labelledby="productModalLabel${productId}"
                      aria-hidden="true">
                      <div class="modal-dialog modal-xl modal-dialog-centered">
-                        <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                        <div class="modal-content" style="border-radius: 0; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266">
                            <div class="modal-header border-bottom border-light">
                                  <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
                                     ${fullTitle}

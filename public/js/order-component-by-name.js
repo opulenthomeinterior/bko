@@ -48,7 +48,7 @@ $(document).ready(function () {
     function createProductModal(product, index) {
         var productModal = `<div class="modal fade" id="productModal${index}" tabindex="-1" aria-labelledby="productModalLabel${index}" aria-hidden="true">`;
         productModal += `<div class="modal-dialog modal-lg modal-dialog-centered">`;
-        productModal += `<div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">`;
+        productModal += `<div class="modal-content" style="border-radius: 0; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266">`;
         productModal += `<div class="modal-header border-bottom border-light">`;
         productModal += `<h1 class="fs-5 fw-bold text-dark border-bottom border-dark">`;
         productModal += product.title;

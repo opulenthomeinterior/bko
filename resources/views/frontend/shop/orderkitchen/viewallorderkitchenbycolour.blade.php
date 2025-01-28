@@ -211,7 +211,7 @@
                                                             aria-labelledby="productModalLabel{{ $baseCabinet->id }}"
                                                             aria-hidden="true">
                                                             <div class="modal-dialog modal-lg modal-dialog-centered">
-                                                                <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                                <div class="modal-content" style="border-radius: 0; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266">
                                                                     <div class="modal-header border-bottom border-light">
                                                                         <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
                                                                             {{ $baseCabinet->full_title }}
@@ -584,7 +584,7 @@
                                                             aria-labelledby="productModalLabel{{ $wallCabinet->id }}"
                                                             aria-hidden="true">
                                                             <div class="modal-dialog modal-lg modal-dialog-centered">
-                                                                <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                                <div class="modal-content" style="border-radius: 0; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266">
                                                                     <div class="modal-header border-bottom border-light">
                                                                         <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
                                                                             {{ $wallCabinet->full_title }}
@@ -957,7 +957,7 @@
                                                             aria-labelledby="productModalLabel{{ $tallCabinet->id }}"
                                                             aria-hidden="true">
                                                             <div class="modal-dialog modal-lg modal-dialog-centered">
-                                                                <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                                <div class="modal-content" style="border-radius: 0; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266">
                                                                     <div class="modal-header border-bottom border-light">
                                                                         <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
                                                                             {{ $tallCabinet->full_title }}
@@ -1181,7 +1181,7 @@
                                                             aria-labelledby="productModalLabel{{ $accessory->id }}"
                                                             aria-hidden="true">
                                                             <div class="modal-dialog modal-lg modal-dialog-centered">
-                                                                <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                                <div class="modal-content" style="border-radius: 0; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266">
                                                                     <div class="modal-header border-bottom border-light">
                                                                         <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
                                                                             {{ $accessory->full_title }}
@@ -1557,7 +1557,7 @@
                                                     aria-labelledby="productModalLabel{{ $accessory->id }}"
                                                     aria-hidden="true">
                                                     <div class="modal-dialog modal-lg modal-dialog-centered">
-                                                        <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                        <div class="modal-content" style="border-radius: 0; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266">
                                                             <div class="modal-header border-bottom border-light">
                                                                 <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
                                                                     {{ $accessory->full_title }}
@@ -1934,7 +1934,7 @@
                                                     aria-labelledby="productModalLabel{{ $handle->id }}"
                                                     aria-hidden="true">
                                                     <div class="modal-dialog modal-lg modal-dialog-centered">
-                                                        <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                        <div class="modal-content" style="border-radius: 0; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266">
                                                             <div class="modal-header border-bottom border-light">
                                                                 <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
                                                                     {{ $handle->full_title }}

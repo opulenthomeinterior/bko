@@ -246,7 +246,7 @@
                                                     aria-labelledby="productModalLabel{{ $baseCabinetData->id }}"
                                                     aria-hidden="true">
                                                     <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                        <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                        <div class="modal-content" style="border-radius: 0; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266">
                                                             <div class="modal-header border-bottom border-light">
                                                                 <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
                                                                     {{ $baseCabinetData->full_title }}
@@ -638,7 +638,7 @@
                                                         aria-labelledby="productModalLabel{{ $wallCabinet->id }}"
                                                         aria-hidden="true">
                                                         <div class="modal-dialog modal-lg modal-dialog-centered">
-                                                            <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                            <div class="modal-content" style="border-radius: 0; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266">
                                                                 <div class="modal-header border-bottom border-light">
                                                                     <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
                                                                         {{ $wallCabinet->full_title }}
@@ -880,7 +880,7 @@
                                                     aria-labelledby="productModalLabel{{ $wallCabinetData->id }}"
                                                     aria-hidden="true">
                                                     <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                        <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                        <div class="modal-content" style="border-radius: 0; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266">
                                                             <div class="modal-header border-bottom border-light">
                                                                 <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
                                                                     {{ $wallCabinetData->full_title }}
@@ -1272,7 +1272,7 @@
                                                         aria-labelledby="productModalLabel{{ $wallCabinet->id }}"
                                                         aria-hidden="true">
                                                         <div class="modal-dialog modal-lg modal-dialog-centered">
-                                                            <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                            <div class="modal-content" style="border-radius: 0; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266">
                                                                 <div class="modal-header border-bottom border-light">
                                                                     <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
                                                                         {{ $wallCabinet->full_title }}
@@ -1514,7 +1514,7 @@
                                                     aria-labelledby="productModalLabel{{ $tallCabinetData->id }}"
                                                     aria-hidden="true">
                                                     <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                        <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                        <div class="modal-content" style="border-radius: 0; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266">
                                                             <div class="modal-header border-bottom border-light">
                                                                 <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
                                                                     {{ $tallCabinetData->full_title }}
@@ -1788,7 +1788,7 @@
                                                     aria-labelledby="productModalLabel{{ $accessoriesData->id }}"
                                                     aria-hidden="true">
                                                     <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                        <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                        <div class="modal-content" style="border-radius: 0; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266">
                                                             <div class="modal-header border-bottom border-light">
                                                                 <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
                                                                     {{ $accessoriesData->full_title }}
@@ -2213,7 +2213,7 @@
                                                 aria-labelledby="productModalLabel{{ $internalsData->id }}"
                                                 aria-hidden="true">
                                                 <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                    <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                    <div class="modal-content" style="border-radius: 0; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266">
                                                         <div class="modal-header border-bottom border-light">
                                                             <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
                                                                 {{ $internalsData->full_title }}
@@ -2490,7 +2490,7 @@
                                                 aria-labelledby="productModalLabel{{ $handlesData->id }}"
                                                 aria-hidden="true">
                                                 <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                    <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                    <div class="modal-content" style="border-radius: 0; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266">
                                                         <div class="modal-header border-bottom border-light">
                                                             <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
                                                                 {{ $handlesData->full_title }}
@@ -2790,7 +2790,7 @@
                                                         aria-labelledby="productModalLabel{{ $worktopsData->id }}"
                                                         aria-hidden="true">
                                                         <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                            <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                            <div class="modal-content" style="border-radius: 0; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266">
                                                                 <div class="modal-header border-bottom border-light">
                                                                     <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
                                                                         {{ $worktopsData->full_title }}
@@ -3062,7 +3062,7 @@
                                                         aria-labelledby="productModalLabel{{ $worktopsAndUpStandData->id }}"
                                                         aria-hidden="true">
                                                         <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                            <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                            <div class="modal-content" style="border-radius: 0; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266">
                                                                 <div class="modal-header border-bottom border-light">
                                                                     <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
                                                                         {{ $worktopsAndUpStandData->full_title }}
@@ -3334,7 +3334,7 @@
                                                         aria-labelledby="productModalLabel{{ $breakfastBarData->id }}"
                                                         aria-hidden="true">
                                                         <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                            <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                            <div class="modal-content" style="border-radius: 0; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266">
                                                                 <div class="modal-header border-bottom border-light">
                                                                     <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
                                                                         {{ $breakfastBarData->full_title }}
@@ -3606,7 +3606,7 @@
                                                         aria-labelledby="productModalLabel{{ $edgingData->id }}"
                                                         aria-hidden="true">
                                                         <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                            <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                            <div class="modal-content" style="border-radius: 0; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266">
                                                                 <div class="modal-header border-bottom border-light">
                                                                     <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
                                                                         {{ $edgingData->full_title }}
@@ -3899,7 +3899,7 @@
                                                         aria-labelledby="productModalLabel{{ $sinkData->id }}"
                                                         aria-hidden="true">
                                                         <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                            <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                            <div class="modal-content" style="border-radius: 0; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266">
                                                                 <div class="modal-header border-bottom border-light">
                                                                     <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
                                                                         {{ $sinkData->full_title }}
@@ -4171,7 +4171,7 @@
                                                         aria-labelledby="productModalLabel{{ $tapsData->id }}"
                                                         aria-hidden="true">
                                                         <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                            <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                            <div class="modal-content" style="border-radius: 0; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266">
                                                                 <div class="modal-header border-bottom border-light">
                                                                     <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
                                                                         {{ $tapsData->full_title }}
@@ -4449,7 +4449,7 @@
                                                 aria-labelledby="productModalLabel{{ $applianceData->id }}"
                                                 aria-hidden="true">
                                                 <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                    <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                                    <div class="modal-content" style="border-radius: 0; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266">
                                                         <div class="modal-header border-bottom border-light">
                                                             <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
                                                                 {{ $applianceData->full_title }}

@@ -11,7 +11,7 @@
         }
 
         .product-card:hover {
-            border-color: #febd49;
+            border-color: #ebc266;
             /* Outline warning color on hover */
         }
 
@@ -31,7 +31,7 @@
 
         .product-card:hover,
         .card-header {
-            background-color: #febd49;
+            background-color: #ebc266;
             /* Warning color background on hover */
             color: #000;
             /* Text color on hover */
@@ -284,7 +284,7 @@
                                     aria-labelledby="productModalLabel{{ $index }}"
                                     aria-hidden="true">
                                     <div class="modal-dialog modal-lg modal-dialog-centered">
-                                        <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                        <div class="modal-content" style="border-radius: 0; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266">
                                             <div class="modal-header border-bottom border-light">
                                                 <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
                                                     {{ $product->full_title }}
@@ -561,7 +561,7 @@
                             data-autoplay-timeout="3000"
                             data-responsive='{"0":{"items": "3"}, "768":{"items": "4"}, "992":{"items": "4"}, "1200":{"items": "4"}, "1400":{"items": "4"}}'>
                             @foreach ($category->testimonials as $testimonial)
-                            <div class="item mx-10 px-0 w-100" style="border: 2px solid #febd49">
+                            <div class="item mx-10 px-0 w-100" style="border: 2px solid #ebc266">
                                 <div class="carousel-card card border border-default w-100" style="border-radius: 0px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
                                     <div class="card-body carousel-card-body">
                                         <div class="col-12 mb-4 d-flex justify-content-center">
