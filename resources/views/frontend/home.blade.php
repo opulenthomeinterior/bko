@@ -83,7 +83,7 @@
     }
 
     .unique-font {
-        font-family: 'Merienda', cursive;
+        font-family: 'Libre baskerville';
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Optional shadow for emphasis */
         letter-spacing: 0.02rem;
     }
@@ -208,7 +208,7 @@
     <section class="container-fluid px-lg-5 py-3 px-md-3 px-3 bg-white mx-0" style="border-bottom: 1px solid #fff; border-top: 1px solid #fff; border-right: 3px solid #ebc266">
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="fs-4 text-dark text-uppercase fw-bolder unique-font">
+                <h1 class="fs-3 text-dark text-uppercase fw-bolder unique-font">
                     BK Online Kitchens - Elevate Your Kitchen, Elevate Your Lifestyle
                 </h1>
             </div>
