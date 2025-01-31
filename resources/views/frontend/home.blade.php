@@ -1,7 +1,8 @@
 <x-guest-layout>
     @section('meta_tags')
         <title>Kitchen Design Services | Bespoke & Affordable Kitchens | BKO</title>
-        <meta name="description" content="Customize your Dream Kitchen with our Bespoke Kitchen Units in London. Our Bespoke Designer Kitchens include Slab, Shaker, True handleless & J-pull Styles.">
+        <meta name="description" content="Buy Kitchen Online is here with Affordable & Custom kitchen units in London, in J Pull, Shaker, Slab, MFC & True Handleless styles. Book Consultation Now.">
+        <!-- <meta name="description" content="Customize your Dream Kitchen with our Bespoke Kitchen Units in London. Our Bespoke Designer Kitchens include Slab, Shaker, True handleless & J-pull Styles."> -->
         <link rel="canonical" href="https://bkonline.uk/" />
     @endsection
     <style>
