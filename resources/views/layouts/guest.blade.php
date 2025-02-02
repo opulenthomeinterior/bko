@@ -86,7 +86,7 @@ use App\Models\Style;
         /* Container styling for Select2 */
         .select2-container--default .select2-selection--single {
             height: 60px; /* Custom height */
-            border: 1px solid #febd49; /* Yellow border for the selected item */
+            border: 1px solid #ebc266; /* Yellow border for the selected item */
             padding: 0 10px; /* Horizontal padding */
             background-color: white; /* Background color */
             color: black; /* Text color */
@@ -122,7 +122,7 @@ use App\Models\Style;
             height: 0; 
             border-left: 1px solid transparent;
             border-right: 1px solid transparent;
-            border-top: 1px solid #febd49; /* Yellow arrow */
+            border-top: 1px solid #ebc266; /* Yellow arrow */
             transform: translateY(-50%);
             transition: transform 0.2s; /* Smooth transition for rotation */
         }
@@ -142,7 +142,7 @@ use App\Models\Style;
 
         /* Hover effect for options */
         .select2-results__option--highlighted {
-            background-color: #febd49; /* Highlight color */
+            background-color: #ebc266; /* Highlight color */
             color: white; /* Text color when highlighted */
         }
 
@@ -155,7 +155,7 @@ use App\Models\Style;
 
         /* Add a custom border to the dropdown */
         .select2-container--default .select2-dropdown {
-            border: 1px solid #febd49; /* Custom border color */
+            border: 1px solid #ebc266; /* Custom border color */
             border-radius: 0; /* No rounded corners */
             outline: none; /* Remove outline */
         }
@@ -430,7 +430,7 @@ use App\Models\Style;
             </div>
         </div> --}}
 
-        <nav class="nav container-fluid p-0 bg-white" style="border-bottom: 1px solid #febd49;">
+        <nav class="nav container-fluid p-0 bg-white" style="border-bottom: 1px solid #ebc266;">
             <div class="nav__data ps-5">
                 <a href="{{ route('home') }}" class="nav__logo text-start flex-grow-1">
                     <img src="{{ asset('images/logoBko.png') }}" width="100px" />
@@ -777,7 +777,7 @@ use App\Models\Style;
                     </li>
                 </ul>
             </div>
-            <div class="nav__menu px-5" id="nav-menu" style="background-color: #febd49; clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);">
+            <div class="nav__menu px-5" id="nav-menu" style="background-color: #ebc266; clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);">
                 <ul class="nav__list p-2">
                     <li class="d-lg-flex d-none hide-small">
                         <a href="#" class="nav__link" id="searchIcon-desktop"><i class="ri-search-2-line"></i></a>

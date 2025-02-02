@@ -6,7 +6,7 @@
         }
 
         .product-card:hover {
-            border-color: #febd49;
+            border-color: #ebc266;
             /* Outline warning color on hover */
         }
 
@@ -26,7 +26,7 @@
 
         .product-card:hover,
         .card-header {
-            background-color: #febd49;
+            background-color: #ebc266;
             /* Warning color background on hover */
             color: #000;
             /* Text color on hover */
@@ -75,7 +75,7 @@
                                     aria-labelledby="productModalLabel{{ $index }}"
                                     aria-hidden="true">
                                     <div class="modal-dialog modal-lg modal-dialog-centered">
-                                        <div class="modal-content" style="border-radius: 0; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49">
+                                        <div class="modal-content" style="border-radius: 0; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266">
                                             <div class="modal-header border-bottom border-light">
                                                 <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
                                                     {{ $product->full_title }}

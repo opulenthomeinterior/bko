@@ -83,7 +83,7 @@
     }
 
     .unique-font {
-        font-family: 'Merienda', cursive;
+        font-family: 'Libre baskerville';
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Optional shadow for emphasis */
         letter-spacing: 0.02rem;
     }
@@ -184,9 +184,9 @@
 
     /* Style the scrollbar thumb */
     .order-component-scroller::-webkit-scrollbar-thumb {
-        background-color: #febd49; /* Thumb color */
+        background-color: #ebc266; /* Thumb color */
         border-radius: 0px; /* Rounded corners */
-        color: #febd49;
+        color: #ebc266;
     }
 
     /* Style the scrollbar track */
@@ -196,7 +196,7 @@
 
     </style>
 
-    <!-- <section class="container-fluid bg-white px-lg-5 py-3 px-md-3 px-3 mt-4" style="border-top: 3px solid #febd49; border-right: 3px solid #febd49">
+    <!-- <section class="container-fluid bg-white px-lg-5 py-3 px-md-3 px-3 mt-4" style="border-top: 3px solid #ebc266; border-right: 3px solid #ebc266">
         <div class="row">
             <div class="col-12 text-center">
                 <h1 id="typing-effect" class="fs-4 text-dark text-uppercase fw-bolder unique-font">
@@ -205,10 +205,10 @@
         </div>
     </section> -->
 
-    <section class="container-fluid px-lg-5 py-3 px-md-3 px-3 bg-white mx-0" style="border-bottom: 1px solid #fff; border-top: 1px solid #fff; border-right: 3px solid #febd49">
+    <section class="container-fluid px-lg-5 py-3 px-md-3 px-3 bg-white mx-0" style="border-bottom: 1px solid #fff; border-top: 1px solid #fff; border-right: 3px solid #ebc266">
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="fs-4 text-dark text-uppercase fw-bolder unique-font">
+                <h1 class="fs-3 text-dark text-uppercase fw-bolder unique-font">
                     BK Online Kitchens - Elevate Your Kitchen, Elevate Your Lifestyle
                 </h1>
             </div>
@@ -243,7 +243,7 @@
         </div>
     </section> -->
 
-    <section class="container-fluid position-relative" style="height: 100vh; overflow: hidden; border-top: 3px solid #febd49; border-bottom: 3px solid #febd49; border-left: 3px solid #febd49">
+    <section class="container-fluid position-relative" style="height: 100vh; overflow: hidden; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266; border-left: 3px solid #ebc266">
         <div class="image-container">
             <img src="{{ asset('images/homepage.jpeg') }}" alt="Image 1" class="fade-img active">
             <img src="{{ asset('images/shaker-22.jpeg') }}" alt="Image 1" class="fade-img">
@@ -259,7 +259,7 @@
             <!-- Left div content -->
             <div class="col-xl-7 col-lg-7 col-md-5 col-sm-12 col-xs-12 col-12 text-center d-flex flex-column justify-content-center align-items-center">
                 <h2 class="unique-font text-white fw-bolder text-center p-2" id="typing-effect" 
-                    style="text-shadow: 5px 5px 5px black; background-color: rgba(0, 0, 0, 0.5); width: 90%; border-radius: 50px; border: 1px solid #febd49;">
+                    style="text-shadow: 5px 5px 5px black; background-color: rgba(0, 0, 0, 0.5); width: 90%; border-radius: 50px; border: 1px solid #ebc266;">
                     
                 </h2>
                 <div class="p-2">
@@ -311,7 +311,7 @@
         </div>
     </section>
 
-    <section class="container-fluid bg-white py-5" style="width: 100%; border-bottom: 3px solid #febd49; border-right: 3px solid #febd49">
+    <section class="container-fluid bg-white py-5" style="width: 100%; border-bottom: 3px solid #ebc266; border-right: 3px solid #ebc266">
         <div class="row">
             <h3 class="text-uppercase fw-bolder text-dark text-center">ORDER COMPONENT</h3>
         </div>
@@ -378,7 +378,7 @@
         </div>
     </section>
 
-    <section class="container-fluid py-lg-5 py-3 bg-white" style="border-bottom: 3px solid #febd49; border-left: 3px solid #febd49">
+    <section class="container-fluid py-lg-5 py-3 bg-white" style="border-bottom: 3px solid #ebc266; border-left: 3px solid #ebc266">
         <div class="row">
             <h3 class="text-uppercase fw-bolder text-dark text-center">ORDER KITCHEN</h3>
         </div>
@@ -474,7 +474,7 @@
         </div>
     </section>--}}
 
-    <section class="container-fluid px-lg-5 px-md-3 px-3 py-lg-5 py-3 bg-white" style="background-color: #f0f0f0; border-bottom: 3px solid #febd49; border-right: 3px solid #febd49">
+    <section class="container-fluid px-lg-5 px-md-3 px-3 py-lg-5 py-3 bg-white" style="background-color: #f0f0f0; border-bottom: 3px solid #ebc266; border-right: 3px solid #ebc266">
         <div class="row">
             <div class="col-12">
                 <h3 class="text-uppercase fw-bolder text-dark text-center">ABOUT US</h3>
@@ -509,7 +509,7 @@
         </div>
     </section>
 
-    <section class="container-fluid py-5 bg-white" style="background-image: url({{asset('images/homepage.jpeg')}}); opacity: 2; border-bottom: 3px solid #febd49; border-left: 3px solid #febd49; padding: 20px">
+    <section class="container-fluid py-5 bg-white" style="background-image: url({{asset('images/homepage.jpeg')}}); opacity: 2; border-bottom: 3px solid #ebc266; border-left: 3px solid #ebc266; padding: 20px">
         <div class="row">
             <h3 class="text-dark text-uppercase fw-bolder text-center mb-4">Testimonials</h3>
         </div>
@@ -597,7 +597,7 @@
         </div>
     </section>
 
-    <section class="container-fluid py-5 px-4 bg-white" style="border-bottom: 3px solid #febd49; border-right: 3px solid #febd49">
+    <section class="container-fluid py-5 px-4 bg-white" style="border-bottom: 3px solid #ebc266; border-right: 3px solid #ebc266">
         <div class="row">
             <h3 class="text-white text-uppercase fw-bolder text-center">FAQs</h3>
         </div>
