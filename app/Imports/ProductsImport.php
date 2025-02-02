@@ -233,17 +233,35 @@ class ProductsImport implements ToCollection, WithChunkReading
                     $product->colour_id = isset($colour) && $colour ? $colour->id : null;
     
                     $product->assembly_id = $assembly ? $assembly->id : null;
-                    $product->height = trim(preg_replace('/[^0-9]/', '', $row[12]));
-                    $product->width = trim(preg_replace('/[^0-9]/', '', $row[13]));
-                    $product->depth = trim(preg_replace('/[^0-9]/', '', $row[14]));
-                    $product->length = trim(preg_replace('/[^0-9]/', '', $row[15]));
-                    $product->weight = trim(preg_replace('/[^0-9]/', '', $row[16]));
+
                     $product->dimensions = $row[11];
+                    
+                    // 3 heights
+                    $product->height = trim(preg_replace('/[^0-9]/', '', $row[12]));
+                    $product->second_height = trim(preg_replace('/[^0-9]/', '', $row[13]));
+                    $product->third_height = trim(preg_replace('/[^0-9]/', '', $row[14]));
+
+                    // 4 widths
+                    $product->width = trim(preg_replace('/[^0-9]/', '', $row[15]));
+                    $product->second_width = trim(preg_replace('/[^0-9]/', '', $row[16]));
+                    $product->third_width = trim(preg_replace('/[^0-9]/', '', $row[17]));
+                    $product->fourth_width = trim(preg_replace('/[^0-9]/', '', $row[18]));
+                    
+                    // 2 depths
+                    $product->depth = trim(preg_replace('/[^0-9]/', '', $row[19]));
+                    $product->depth = trim(preg_replace('/[^0-9]/', '', $row[20]));
+
+                    $product->length = trim(preg_replace('/[^0-9]/', '', $row[21]));
+                    $product->weight = trim(preg_replace('/[^0-9]/', '', $row[22]));
                     // if (!empty($row[19])) {
                         // $file = $row[19];
                         // $product->image_path = mmadev_store_and_get_image_path_from_url('products', $file);
                     // }
-                    $product->image_path = $row[19] ?? null;
+                    // 3 images
+                    $product->image_path = $row[23] ?? null;
+                    $product->second_image_path = $row[24] ?? null;
+                    $product->third_image_path = $row[25] ?? null;
+
                     $product->status = (!empty($row[26]) && ($row[26] == 'in_active' || $row[26] == 'In_Active')) ? 'in_active' : 'active';
                     $product->product_file_id = $this->productId;
                     $product->parent_sub_category = !empty($row[27]) ? $row[27] : null;
