@@ -208,7 +208,7 @@ class ProductsImport implements ToCollection, WithChunkReading
                     $product->length = trim(preg_replace('/[^0-9]/', '', $sheetLength));
                     $product->weight = trim(preg_replace('/[^0-9]/', '', $sheetWeight));
                     
-                    // 3 images
+                    // 4 images
                     $product->image_path = $sheetProductImg;
                     $product->second_image_path = $sheetProductImgTwo;
                     $product->third_image_path = $sheetProductImgThree;
