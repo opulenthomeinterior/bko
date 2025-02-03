@@ -37,14 +37,6 @@
                                 </div>
 
                                 <div class="col-lg-6 form-group mb-2">
-                                    <label for="short_title" class="form-label fw-bold">Short Title
-                                        <span class="text-danger">*</span>
-                                    </label>
-                                    <input type="text" class="form-control" id="short_title" name="short_title"
-                                        placeholder="Enter Short Title" value="{{ $product->short_title }}" required>
-                                </div>
-
-                                <div class="col-lg-6 form-group mb-2">
                                     <label for="full_title" class="form-label fw-bold">Full Title
                                         <span class="text-danger">*</span>
                                     </label>
@@ -52,7 +44,15 @@
                                         placeholder="Enter Full Title" value="{{ $product->full_title }}" required>
                                 </div>
 
-                                <div class="col-lg-6 form-group mb-2">
+                                <div class="col-lg-3 form-group mb-2">
+                                    <label for="short_title" class="form-label fw-bold">Short Title
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <input type="text" class="form-control" id="short_title" name="short_title"
+                                        placeholder="Enter Short Title" value="{{ $product->short_title }}" required>
+                                </div>
+
+                                <div class="col-lg-3 form-group mb-2">
                                     <label for="price" class="form-label fw-bold">Price
                                         <span class="text-danger">*</span>
                                     </label>
@@ -63,7 +63,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6 form-group mb-2">
+                                <div class="col-lg-3 form-group mb-2">
                                     <label for="discounted_percentage" class="form-label fw-bold">Discount %</label>
                                     <div class="input-group">
                                         <input type="number" class="form-control" id="discounted_percentage" name="discounted_percentage"
@@ -72,7 +72,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6 form-group mb-2">
+                                <div class="col-lg-3 form-group mb-2">
                                     <label for="discounted_price" class="form-label fw-bold">Discounted Price
                                     </label>
                                     <div class="input-group">
@@ -89,7 +89,7 @@
                                     <textarea name="product_description" id="product_description"><?= str_replace('&', '&', $product->product_description) ?></textarea>
                                 </div>
 
-                                <div class="col-lg-6 form-group mb-2">
+                                <div class="col-lg-3 form-group mb-2">
                                     <label for="category_id" class="form-label fw-bold">Select Category</label>
                                     <select name="category_id" id="category_id" class="form-control select2" required>
                                         <option value="">Select Category</option>
@@ -102,7 +102,7 @@
                                     </select>
                                 </div>
 
-                                <div class="col-lg-6 form-group mb-2">
+                                <div class="col-lg-3 form-group mb-2">
                                     <label for="style_id" class="form-label fw-bold">Select Style</label>
                                     <select name="style_id" id="style_id" class="form-control select2">
                                         <option value="">Select Style</option>
@@ -115,7 +115,7 @@
                                     </select>
                                 </div>
 
-                                <div class="col-lg-6 form-group mb-2">
+                                <div class="col-lg-3 form-group mb-2">
                                     <label for="colour_id" class="form-label fw-bold">Select Colour</label>
                                     <select name="colour_id" id="colour_id" class="form-control select2">
                                         <option value="">Select Colour</option>
@@ -128,7 +128,7 @@
                                     </select>
                                 </div>
 
-                                <div class="col-lg-6 form-group mb-2">
+                                <div class="col-lg-3 form-group mb-2">
                                     <label for="assembly_id" class="form-label fw-bold">Select Assembly</label>
                                     <select name="assembly_id" id="assembly_id" class="form-control select2">
                                         <option value="">Select Assembly</option>
@@ -141,7 +141,7 @@
                                     </select>
                                 </div>
 
-                                <div class="col-lg-6 form-group mb-2">
+                                <div class="col-lg-4 form-group mb-2">
                                     <label for="height" class="form-label fw-bold">Height</label>
                                     <div class="form-icon right">
                                         <input type="number" class="form-control form-control-icon" id="height"
@@ -151,7 +151,27 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6 form-group mb-2">
+                                <div class="col-lg-4 form-group mb-2">
+                                    <label for="second_height" class="form-label fw-bold">Second Height</label>
+                                    <div class="form-icon right">
+                                        <input type="number" class="form-control form-control-icon" id="second_height"
+                                            name="second_height" step="0.01" min="0" placeholder="Enter Second Height"
+                                            value="{{ $product->second_height }}">
+                                        <i>mm</i>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 form-group mb-2">
+                                    <label for="third_height" class="form-label fw-bold">Third Height</label>
+                                    <div class="form-icon right">
+                                        <input type="number" class="form-control form-control-icon" id="third_height"
+                                            name="third_height" step="0.01" min="0" placeholder="Enter Third Height"
+                                            value="{{ $product->third_height }}">
+                                        <i>mm</i>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 form-group mb-2">
                                     <label for="width" class="form-label fw-bold">Width</label>
                                     <div class="form-icon right">
                                         <input type="number" class="form-control form-control-icon" id="width"
@@ -160,7 +180,43 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6 form-group mb-2">
+                                <div class="col-lg-3 form-group mb-2">
+                                    <label for="second_width" class="form-label fw-bold">Second Width</label>
+                                    <div class="form-icon right">
+                                        <input type="number" class="form-control form-control-icon" id="second_width"
+                                            name="second_width" step="0.01" min="0" placeholder="Enter Third Width" value="{{ $product->second_width }}">
+                                        <i>mm</i>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 form-group mb-2">
+                                    <label for="third_width" class="form-label fw-bold">Third Width</label>
+                                    <div class="form-icon right">
+                                        <input type="number" class="form-control form-control-icon" id="third_width"
+                                            name="third_width" step="0.01" min="0" placeholder="Enter Third Width" value="{{ $product->third_width }}">
+                                        <i>mm</i>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 form-group mb-2">
+                                    <label for="fourth_width" class="form-label fw-bold">Fourth Width</label>
+                                    <div class="form-icon right">
+                                        <input type="number" class="form-control form-control-icon" id="fourth_width"
+                                            name="fourth_width" step="0.01" min="0" placeholder="Enter Fourth Width" value="{{ $product->fourth_width }}">
+                                        <i>mm</i>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 form-group mb-2">
+                                    <label for="fifth_width" class="form-label fw-bold">Fifth Width</label>
+                                    <div class="form-icon right">
+                                        <input type="number" class="form-control form-control-icon" id="fifth_width"
+                                            name="fifth_width" step="0.01" min="0" placeholder="Enter Width" value="{{ $product->fifth_width }}">
+                                        <i>mm</i>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 form-group mb-2">
                                     <label for="depth" class="form-label fw-bold">Depth</label>
                                     <div class="form-icon right">
                                         <input type="number" class="form-control form-control-icon" id="depth"
@@ -169,7 +225,16 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6 form-group mb-2">
+                                <div class="col-lg-3 form-group mb-2">
+                                    <label for="second_depth" class="form-label fw-bold">Second Depth</label>
+                                    <div class="form-icon right">
+                                        <input type="number" class="form-control form-control-icon" id="second_depth"
+                                            name="second_depth" step="0.01" min="0" placeholder="Enter Second Depth" value="{{ $product->second_depth }}">
+                                        <i>mm</i>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 form-group mb-2">
                                     <label for="length" class="form-label fw-bold">Length</label>
                                     <div class="form-icon right">
                                         <input type="number" class="form-control form-control-icon" id="length"
@@ -179,7 +244,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6 form-group mb-2">
+                                <div class="col-lg-3 form-group mb-2">
                                     <label for="weight" class="form-label fw-bold">Weight</label>
                                     <div class="form-icon right">
                                         <input type="number" class="form-control form-control-icon" id="weight"
@@ -189,26 +254,26 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6 form-group mb-2">
+                                <div class="col-lg-3 form-group mb-2">
                                     <label for="dimensions" class="form-label fw-bold">Dimensions</label>
                                     <input type="text" class="form-control" id="dimensions" name="dimensions"
                                         placeholder="Dimensions" value="{{ $product->dimensions }}">
                                 </div>
 
-                                <div class="col-lg-6 form-group mb-2">
-                                    <label for="image_path" class="form-label">Upload Image</label>
-                                    <input type="file" accept="image/*" class="form-control" id="image_path"
-                                        name="image_path" onchange="display_image(this)">
-                                </div>
-
-                                <div class="col-lg-6 form-group mb-2">
+                                <div class="col-lg-3 form-group mb-2">
                                     <label for="status" class="form-label">Status</label>
                                     <br>
                                     <input type="checkbox" name="status" {{ $product->status == 'active' ? 'checked' : ''}}>
                                 </div>
 
+                                <div class="col-lg-12 form-group mb-2">
+                                    <label for="image_path" class="form-label">Upload Image</label>
+                                    <input type="file" accept="image/*" class="form-control" id="image_path"
+                                        name="image_path" onchange="display_image(this)">
+                                </div>
+
                                 <div
-                                    class="col-lg-6 form-group mb-2 preview-image-wrapper {{ $product->image_path ? 'd-block' : 'd-none' }}">
+                                    class="col-lg-3 form-group mb-2 preview-image-wrapper {{ $product->image_path ? 'd-block' : 'd-none' }}">
                                     <label for="image_preview" class="form-label">Image Preview</label>
                                     <img id="image_preview"
                                         src="{{ $product->image_path ? asset('imgs/products/' . $product->image_path) : '#' }}"
