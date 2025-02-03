@@ -27,15 +27,11 @@ class ProductsImport implements ToCollection, WithChunkReading
     {
         try {
             foreach ($rows as $index => $row) {
-                if (empty($row[21])) {
+                if (empty($row[0])) {
                     continue;
                 }
 
-                if ($row[0] == 'Product Code (0)') {
-                    continue;
-                }
-    
-                if (empty($row[0])) {
+                if ($row[0] == 'Serial Number (0)') {
                     continue;
                 }
                 // $product = Product::where('product_code', $row[0])->first();
@@ -47,49 +43,77 @@ class ProductsImport implements ToCollection, WithChunkReading
                 // echo "<pre>";
                 // print_r($row[1]);
                 // echo "</pre>";
+
+                $sheetSerialNumber = $row[0];
+                $sheetProductCode = $row[1];
+                $sheetStatus = (!empty($row[2]) && ($row[2] == 'in_active' || $row[2] == 'In_Active')) ? 'in_active' : 'active';
+                $sheetFullTitle = $row[3];
+                $sheetShortTitle = trim($row[4]);
+                $sheetParentCategoryId = trim($row[5]);
+                $sheetChildCategory = $row[6];
+                $sheetPrice = $row[7];
+                $sheetDiscount = $row[8];
+                $sheetStyle = trim($row[9]);
+                $sheetColour = $row[10];
+                $sheetFinish = $row[11];
+                $sheetAssembly = trim($row[12]) == 'Flatpack' ? 'Flat Pack' : trim($row[12]);
+                $sheetDimensions = $row[13];
+                $sheetHeight = $row[14];
+                $sheetHeightTwo = $row[15];
+                $sheetHeightThree = $row[16];
+                $sheetUnitWidth = $row[17];
+                $sheetWidthTwo = $row[18];
+                $sheetWidthThree = $row[19];
+                $sheetWidthFour = $row[20];
+                $sheetWidthFive = $row[21];
+                $sheetDepth = $row[22];
+                $sheetDepthTwo = $row[23];
+                $sheetLength = $row[24];
+                $sheetWeight = $row[25];
+                $sheetChildCatDesc = $row[26];
+                $sheetProductDesc = $row[27];
+                $sheetProductImg = $row[28];
+                $sheetProductImgTwo = $row[29];
+                $sheetProductImgThree = $row[30];
+                $sheetProductImgFour = $row[31];
+                $sheetParentSubCategory = !empty($row[32]) ? $row[32] : null;
     
-                $row[1] = trim($row[1]);
-                $parent_category = Category::find($row[1]);
-                $category = Category::where('name', $row[2])->first();
-                if (!empty($parent_category) && !empty($row[1])) {
-                    if (empty($category) && !empty($row[2])) {
+                $parent_category = Category::find($sheetParentCategoryId);
+                $category = Category::where('name', $sheetChildCategory)->first();
+                if (!empty($parent_category) && !empty($sheetParentCategoryId)) {
+                    if (empty($category) && !empty($sheetChildCategory)) {
                         $category = new Category();
-                        $category->name = $row[2];
-                        $category->slug = str_replace(' ', '-', strtolower($row[2]));
-                        $category->description = $row[18];
+                        $category->name = $sheetChildCategory;
+                        $category->slug = str_replace(' ', '-', strtolower($sheetChildCategory));
+                        $category->description = $sheetProductDesc;
                         $category->parent_category_id = $parent_category->id;
-                        if (!empty($row[20])) {
-                            $file = $row[20];
-                            $category->image_path = $file;
-                            // $category->image_path = mmadev_store_and_get_image_path_from_url('categories', $file);
-                        }
                         $category->save();
                     }
                 } else {
                     // continue;
                 }
-                $row[7] = trim($row[7]);
-                $style = Style::where('name', $row[7])->first();
+
+                $style = Style::where('name', $sheetStyle)->first();
     
-                if (empty($style) && !empty($row[7])) {
+                if (empty($style) && !empty($sheetStyle)) {
                     $style = new Style();
-                    $style->name = $row[7];
-                    $style->slug = str_replace(' ', '-', strtolower($row[7]));
+                    $style->name = $sheetStyle;
+                    $style->slug = str_replace(' ', '-', strtolower($sheetStyle));
                     $style->save();
                 }
     
-                if (!empty($row[8])) {
+                if (!empty($sheetColour)) {
                     $trade_colour = null;
                     $finishing = '';
     
-                    if ($row[9] === 'Gloss') {
-                        $trade_colour = "SuperGloss $row[8]";
+                    if ($sheetFinish === 'Gloss') {
+                        $trade_colour = "SuperGloss $sheetColour";
                         $finishing = 'Gloss';
-                    } elseif ($row[9] === 'Matt') {
-                        $trade_colour = "UltraMatt $row[8]";
+                    } elseif ($sheetFinish === 'Matt') {
+                        $trade_colour = "UltraMatt $sheetColour";
                         $finishing = 'Matt';
-                    } elseif ($row[9] === 'Standard MFC') {
-                        $trade_colour = "Standard $row[8]";
+                    } elseif ($sheetFinish === 'Standard MFC') {
+                        $trade_colour = "Standard $sheetColour";
                         $finishing = 'Standard MFC';
                     }
     
@@ -99,63 +123,61 @@ class ProductsImport implements ToCollection, WithChunkReading
     
                         if (empty($colour)) {
                             $colour = new Colour();
-                            $colour->name = $row[8];
+                            $colour->name = $sheetColour;
                             $colour->finishing = $finishing;
                             $colour->trade_colour = $trade_colour;
                             $colour->save();
                         }
                     } else {
-                        $colour = Colour::where('name', $row[8])->first();
+                        $colour = Colour::where('name', $sheetColour)->first();
                         if (empty($colour)) {
                             $colour = new Colour();
-                            $colour->name = $row[8];
+                            $colour->name = $sheetColour;
                             $colour->save();
                         }
                     }
                 }
     
-                $row[10] = trim($row[10]) == 'Flatpack' ? 'Flat Pack' : trim($row[10]);
-                $assembly = Assembly::where('name', $row[10])->first();
+                $assembly = Assembly::where('name', $sheetAssembly)->first();
     
-                if (empty($assembly) && !empty($row[10])) {
+                if (empty($assembly) && !empty($sheetAssembly)) {
                     $assembly = new Assembly();
-                    $assembly->name = $row[10];
-                    $assembly->slug = str_replace(' ', '-', strtolower($row[10]));
+                    $assembly->name = $sheetAssembly;
+                    $assembly->slug = str_replace(' ', '-', strtolower($sheetAssembly));
                     $assembly->save();
                 }
     
-                $row[4] = trim($row[4]);
-                $product = Product::where('serial_number', $row[21])->where('product_code', $row[0])->first();
+                $product = Product::where('serial_number', $sheetSerialNumber)->where('product_code', $sheetProductCode)->first();
     
                 if (empty($product)) {
                     $product = new Product();
-                    $product->product_code = $row[0];
-                    $product->serial_number = $row[21];
-                    $product->slug = str_replace(' ', '-', strtolower($row[3]));
-                    $product->short_title = $row[4];
-                    $product->full_title = $row[3];
-                    $product->product_description = $row[18];
-                    if (empty(trim($row[5]))) {
+                    $product->product_code = $sheetProductCode;
+                    $product->serial_number = $sheetSerialNumber;
+                    $product->slug = str_replace(' ', '-', strtolower($sheetFullTitle));
+                    $product->short_title = $sheetShortTitle;
+                    $product->full_title = $sheetFullTitle;
+                    $product->product_description = $sheetProductDesc;
+                    if (empty(trim($sheetPrice))) {
                         $product->price = 0;
                         // skip this row
                         // continue;
                     } else {
-                        $price = $row[5];
+                        $price = $sheetPrice;
                         // Remove anything that is not a number or a decimal point
                         $sanitized_price = preg_replace('/[^0-9.]/', '', $price);
                         // Optionally, you can cast it to a float or integer
                         $sanitized_price = (float) $sanitized_price;
                         $product->price = $sanitized_price;
                     }
-                    // $product->price = $row[5];
-                    $product->discounted_percentage = empty(trim($row[6])) ? 0 : $row[6];
+                    // $product->price = $sheetParentCategoryId;
+                    $product->discounted_percentage = empty(trim($sheetDiscount)) ? 0 : $sheetDiscount;
     
-                    if ($row[6] >= 0 && $row[6] <= 100) {
-                        $discountPercentage = $row[6];
+                    if ($sheetDiscount >= 0 && $sheetDiscount <= 100) {
+                        $discountPercentage = $sheetDiscount;
                         $discountedPrice = $product->price * (1 - ($discountPercentage / 100));
                         $product->discounted_price = $discountedPrice;
                     } else {
-                        $product->discounted_price = $row[5];
+                        $product->discounted_price = $sheetParentCategoryId;
                     }
                     
                     $product->parent_category_id = $parent_category ? $parent_category->id : null;
@@ -165,66 +187,64 @@ class ProductsImport implements ToCollection, WithChunkReading
     
                     $product->assembly_id = $assembly ? $assembly->id : null;
 
-                    $product->dimensions = $row[11];
+                    $product->dimensions = $sheetDimensions;
                     
                     // 3 heights
-                    $product->height = trim(preg_replace('/[^0-9]/', '', $row[12]));
-                    $product->second_height = trim(preg_replace('/[^0-9]/', '', $row[13]));
-                    $product->third_height = trim(preg_replace('/[^0-9]/', '', $row[14]));
+                    $product->height = trim(preg_replace('/[^0-9]/', '', $sheetHeight));
+                    $product->second_height = trim(preg_replace('/[^0-9]/', '', $sheetHeightTwo));
+                    $product->third_height = trim(preg_replace('/[^0-9]/', '', $sheetHeightThree));
 
                     // 4 widths
-                    $product->width = trim(preg_replace('/[^0-9]/', '', $row[15]));
-                    $product->second_width = trim(preg_replace('/[^0-9]/', '', $row[16]));
-                    $product->third_width = trim(preg_replace('/[^0-9]/', '', $row[17]));
-                    $product->fourth_width = trim(preg_replace('/[^0-9]/', '', $row[18]));
+                    $product->width = trim(preg_replace('/[^0-9]/', '', $sheetUnitWidth));
+                    $product->second_width = trim(preg_replace('/[^0-9]/', '', $sheetWidthTwo));
+                    $product->third_width = trim(preg_replace('/[^0-9]/', '', $sheetWidthThree));
+                    $product->fourth_width = trim(preg_replace('/[^0-9]/', '', $sheetWidthFour));
+                    $product->fifth_width = trim(preg_replace('/[^0-9]/', '', $sheetWidthFive));
                     
                     // 2 depths
-                    $product->depth = trim(preg_replace('/[^0-9]/', '', $row[19]));
-                    $product->depth = trim(preg_replace('/[^0-9]/', '', $row[20]));
+                    $product->depth = trim(preg_replace('/[^0-9]/', '', $sheetDepth));
+                    $product->second_depth = trim(preg_replace('/[^0-9]/', '', $sheetDepthTwo));
 
-                    $product->length = trim(preg_replace('/[^0-9]/', '', $row[21]));
-                    $product->weight = trim(preg_replace('/[^0-9]/', '', $row[22]));
-                    // if (!empty($row[19])) {
-                        // $file = $row[19];
-                        // $product->image_path = mmadev_store_and_get_image_path_from_url('products', $file);
-                    // }
+                    $product->length = trim(preg_replace('/[^0-9]/', '', $sheetLength));
+                    $product->weight = trim(preg_replace('/[^0-9]/', '', $sheetWeight));
+                    
                     // 3 images
-                    $product->image_path = $row[23] ?? null;
-                    $product->second_image_path = $row[24] ?? null;
-                    $product->third_image_path = $row[25] ?? null;
+                    $product->image_path = $sheetProductImg;
+                    $product->second_image_path = $sheetProductImgTwo;
+                    $product->third_image_path = $sheetProductImgThree;
+                    $product->fourth_image_path = $sheetProductImgFour;
 
-                    $product->status = (!empty($row[26]) && ($row[26] == 'in_active' || $row[26] == 'In_Active')) ? 'in_active' : 'active';
+                    $product->status = $sheetStatus;
                     $product->product_file_id = $this->productId;
-                    $product->parent_sub_category = !empty($row[27]) ? $row[27] : null;
+                    $product->parent_sub_category = $sheetParentSubCategory;
                     $product->save();
                 } else {
-                    $product->product_code = $row[0];
-                    // $product->serial_number = $row[21];
-                    $product->slug = str_replace(' ', '-', strtolower($row[3]));
-                    $product->short_title = $row[4];
-                    $product->full_title = $row[3];
-                    $product->product_description = $row[18];
-                    if (empty(trim($row[5]))) {
+                    $product->product_code = $sheetProductCode;
+                    $product->slug = str_replace(' ', '-', strtolower($sheetFullTitle));
+                    $product->short_title = $sheetShortTitle;
+                    $product->full_title = $sheetFullTitle;
+                    $product->product_description = $sheetProductDesc;
+                    if (empty(trim($sheetPrice))) {
                         $product->price = 0;
                         // skip this row
                         // continue;
                     } else {
-                        $price = $row[5];
+                        $price = $sheetPrice;
                         // Remove anything that is not a number or a decimal point
                         $sanitized_price = preg_replace('/[^0-9.]/', '', $price);
                         // Optionally, you can cast it to a float or integer
                         $sanitized_price = (float) $sanitized_price;
                         $product->price = $sanitized_price;
                     }
-                    // $product->price = $row[5];
-                    $product->discounted_percentage = empty(trim($row[6])) ? 0 : $row[6];
+                    // $product->price = $sheetParentCategoryId;
+                    $product->discounted_percentage = empty(trim($sheetDiscount)) ? 0 : $sheetDiscount;
     
-                    if ($row[6] >= 0 && $row[6] <= 100) {
-                        $discountPercentage = $row[6];
+                    if ($sheetDiscount >= 0 && $sheetDiscount <= 100) {
+                        $discountPercentage = $sheetDiscount;
                         $discountedPrice = $product->price * (1 - ($discountPercentage / 100));
                         $product->discounted_price = $discountedPrice;
                     } else {
-                        $product->discounted_price = $row[5];
+                        $product->discounted_price = $sheetPrice;
                     }
                     
                     $product->parent_category_id = $parent_category ? $parent_category->id : null;
@@ -233,20 +253,36 @@ class ProductsImport implements ToCollection, WithChunkReading
                     $product->colour_id = isset($colour) && $colour ? $colour->id : null;
     
                     $product->assembly_id = $assembly ? $assembly->id : null;
-                    $product->height = trim(preg_replace('/[^0-9]/', '', $row[12]));
-                    $product->width = trim(preg_replace('/[^0-9]/', '', $row[13]));
-                    $product->depth = trim(preg_replace('/[^0-9]/', '', $row[14]));
-                    $product->length = trim(preg_replace('/[^0-9]/', '', $row[15]));
-                    $product->weight = trim(preg_replace('/[^0-9]/', '', $row[16]));
-                    $product->dimensions = $row[11];
-                    // if (!empty($row[19])) {
-                        // $file = $row[19];
-                        // $product->image_path = mmadev_store_and_get_image_path_from_url('products', $file);
-                    // }
-                    $product->image_path = $row[19] ?? null;
-                    $product->status = (!empty($row[26]) && ($row[26] == 'in_active' || $row[26] == 'In_Active')) ? 'in_active' : 'active';
+
+                    $product->dimensions = $sheetDimensions;
+                    
+                    // 3 heights
+                    $product->height = trim(preg_replace('/[^0-9]/', '', $sheetHeight));
+                    $product->second_height = trim(preg_replace('/[^0-9]/', '', $sheetHeightTwo));
+                    $product->third_height = trim(preg_replace('/[^0-9]/', '', $sheetHeightThree));
+
+                    // 5 widths
+                    $product->width = trim(preg_replace('/[^0-9]/', '', $sheetUnitWidth));
+                    $product->second_width = trim(preg_replace('/[^0-9]/', '', $sheetWidthTwo));
+                    $product->third_width = trim(preg_replace('/[^0-9]/', '', $sheetWidthThree));
+                    $product->fourth_width = trim(preg_replace('/[^0-9]/', '', $sheetWidthFour));
+                    $product->fifth_width = trim(preg_replace('/[^0-9]/', '', $sheetWidthFive));
+                    
+                    // 2 depths
+                    $product->depth = trim(preg_replace('/[^0-9]/', '', $sheetDepth));
+                    $product->second_depth = trim(preg_replace('/[^0-9]/', '', $sheetDepthTwo));
+
+                    $product->length = trim(preg_replace('/[^0-9]/', '', $sheetLength));
+                    $product->weight = trim(preg_replace('/[^0-9]/', '', $sheetWeight));
+                    
+                    // 3 images
+                    $product->image_path = $sheetProductImg;
+                    $product->second_image_path = $sheetProductImg;
+                    $product->third_image_path = $sheetProductImg;
+
+                    $product->status = $sheetStatus;
                     $product->product_file_id = $this->productId;
-                    $product->parent_sub_category = !empty($row[27]) ? $row[27] : null;
+                    $product->parent_sub_category = $sheetParentSubCategory;
                     $product->save();
                 }
             }
