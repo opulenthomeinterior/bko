@@ -252,15 +252,26 @@ class ProductController extends Controller
             $product->weight = $request->input('weight');
             $product->dimensions = $request->input('dimensions');
 
-            // Handle image upload (if a new image is provided)
+            // // Handle image upload (if a new image is provided)
+            // if ($request->hasFile('image_path')) {
+            //     // Delete old image if it exists
+            //     if (!empty($product->image_path)) {
+            //         mmadev_delete_attachment_from_directory($product->image_path, 'products');
+            //     }
+
+            //     $file = $request->file('image_path');
+            //     // store image in folder and return image path
+            //     $product->image_path = mmadev_store_and_get_image_path('products', $file);
+            // }
+            
             if ($request->hasFile('image_path')) {
-                // Delete old image if it exists
-                if (!empty($product->image_path)) {
-                    mmadev_delete_attachment_from_directory($product->image_path, 'products');
+                $imagePath = public_path('imgs/products/' . $product->image_path); // 'imgs/products/' is the path where images are stored, you can change it to your own path
+
+                if (file_exists($imagePath)) {
+                    unlink($imagePath);
                 }
 
                 $file = $request->file('image_path');
-                // store image in folder and return image path
                 $product->image_path = mmadev_store_and_get_image_path('products', $file);
             }
 
