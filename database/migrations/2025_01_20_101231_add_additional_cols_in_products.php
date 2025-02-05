@@ -33,16 +33,16 @@ return new class extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             //
-            $table->dropColumn('second_height');
-            $table->dropColumn('third_height');
-            $table->dropColumn('second_width');
-            $table->dropColumn('third_width');
-            $table->dropColumn('fourth_width');
-            $table->dropColumn('fifth_width');
-            $table->dropColumn('second_depth');
-            $table->dropColumn('second_image_path');
-            $table->dropColumn('third_image_path');
-            $table->dropColumn('fourth_image_path');
+            // $table->dropColumn('second_height');
+            // $table->dropColumn('third_height');
+            // $table->dropColumn('second_width');
+            // $table->dropColumn('third_width');
+            // $table->dropColumn('fourth_width');
+            // $table->dropColumn('fifth_width');
+            // $table->dropColumn('second_depth');
+            // $table->dropColumn('second_image_path');
+            // $table->dropColumn('third_image_path');
+            // $table->dropColumn('fourth_image_path');
         });
     }
 };
