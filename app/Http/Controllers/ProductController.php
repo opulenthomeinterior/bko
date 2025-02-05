@@ -204,7 +204,7 @@ class ProductController extends Controller
             'product_code' => 'required|string|max:255',
             'short_title' => 'required|string|max:255',
             // 'full_title' => 'required|string|max:255',
-            'full_title' => 'required|string|max:255|unique:products,full_title,' . $product->id,
+            'full_title' => 'required|string|max:255',
             'product_description' => 'nullable|string',
             'price' => 'required|numeric',
             'discounted_percentage' => 'nullable|numeric|min:0|max:100',
