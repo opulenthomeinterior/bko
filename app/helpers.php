@@ -12,7 +12,7 @@ use Akaunting\Money\Money;
 if (!function_exists('mmadev_get_uploads_directory_monthly')) {
     function mmadev_get_uploads_directory_monthly($module = '')
     {
-        $uploads_dir = public_path('/uploads/' . $module . '/');
+        $uploads_dir = public_path('/imgs/' . $module . '/');
 
         // create monthly directory if not exists
         if (!file_exists($uploads_dir)) {
