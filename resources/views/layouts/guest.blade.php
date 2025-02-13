@@ -254,6 +254,13 @@ use App\Models\Style;
 
         .cut-span2 {
             display: inline-block;
+            color: #febd49;
+            font-weight: bold;
+            clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
+        }
+
+        .cut-span2:hover {
+            display: inline-block;
             color: black;
             font-weight: bold;
             clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
@@ -447,8 +454,8 @@ use App\Models\Style;
             <!-- <a class="btn btn-outline-warning text-white border-none px-4 py-1 cut-span1" href="{{route('max_storage')}}"> 
                 Wardrobes
             </a>  -->
-            <a class="btn btn-outline-warning text-white border-none px-4 py-1 cut-span2" href="{{route('max_storage')}}"> 
-                MaxStorage
+            <a class="btn btn-outline-warning border-none px-4 py-1 cut-span2" href="{{route('max_storage')}}"> 
+                Visit Max Storage Kitchens
             </a> 
             <!-- <a class="btn btn-outline-warning text-white border-none px-4 py-1 cut-span1" href="{{route('max_storage')}}"> 
                 Bathrooms
@@ -490,7 +497,7 @@ use App\Models\Style;
                             <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                         </div>
                         <div class="dropdown__container border-bottom border-warning border-2">
-                            <div class="dropdown__content px-4" style="max-width: 100% !important; margin: 0px !important; grid-template-columns: none; column-gap: 0;">
+                            <div class="dropdown__content px-4" style="max-width: 100% !important; margin: 20px 0px !important; grid-template-columns: none; column-gap: 0;">
                                 @php
                                     $styles = Style::where('status', 1)->get();
                                 @endphp
@@ -801,7 +808,7 @@ use App\Models\Style;
                     </li>
                 </ul>
             </div>
-            <div class="nav__menu px-5" id="nav-menu" style="background-color: #febd49; clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);">
+            <div class="nav__menu px-5" id="nav-menu2" style="background-color: #febd49; clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);">
                 <ul class="nav__list p-2">
                     <li class="d-lg-flex d-none hide-small">
                         <a href="#" class="nav__link" id="searchIcon-desktop"><i class="ri-search-2-line"></i></a>
