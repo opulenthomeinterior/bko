@@ -245,6 +245,19 @@ use App\Models\Style;
             display: none;
         }
 
+        .cut-span1 {
+            display: inline-block;
+            color: black;
+            font-weight: bold;
+            clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+        }
+
+        .cut-span2 {
+            display: inline-block;
+            color: black;
+            font-weight: bold;
+            clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
+        }
     </style>
 </head>
 
@@ -429,7 +442,18 @@ use App\Models\Style;
                 </div>
             </div>
         </div> --}}
-
+        
+        <nav class="container-fluid p-0 bg-dark border-warning text-white border-bottom d-flex justify-content-center">
+            <!-- <a class="btn btn-outline-warning text-white border-none px-4 py-1 cut-span1" href="{{route('max_storage')}}"> 
+                Wardrobes
+            </a>  -->
+            <a class="btn btn-outline-warning text-white border-none px-4 py-1 cut-span2" href="{{route('max_storage')}}"> 
+                MaxStorage
+            </a> 
+            <!-- <a class="btn btn-outline-warning text-white border-none px-4 py-1 cut-span1" href="{{route('max_storage')}}"> 
+                Bathrooms
+            </a>    -->
+        </nav>
         <nav class="nav container-fluid p-0 bg-white" style="border-bottom: 1px solid #febd49;">
             <div class="nav__data ps-5">
                 <a href="{{ route('home') }}" class="nav__logo text-start flex-grow-1">
