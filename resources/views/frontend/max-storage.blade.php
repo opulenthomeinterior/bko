@@ -139,7 +139,7 @@
                 <img src="https://bkonline.uk/public/imgs/products/our-process1739481888_67ae63203533a.jpg" class="img-fluid" alt="Luxury Kitchen">
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-4">
-                <h2>Our process is straight forward</h2>
+                <h2 class="text-center">Our process is straight forward</h2>
                 <ul>
                     <li><span>You inform us about your requirements</span></li>
                     <li><span>We create a personalized design and provide clear, upfront pricing</span></li>
@@ -178,7 +178,7 @@
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-4 d-flex align-items-center">
                 <div>
-                    <h2>TALL CABINETS</h2>
+                    <h2 class="text-center">TALL CABINETS</h2>
                     <small>Our tall cabinets are made up to 800mm deep to flush the American kitchen (750mm deep). The kitchen looks seamless when all the appliances, and cabinets are perfectly aligned. </small>
                 </div>
             </div>
@@ -189,7 +189,7 @@
         <div class="row">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-4 d-flex align-items-center">
                 <div>
-                    <h2>BRIDGING UNITS</h2>
+                    <h2 class="text-center">BRIDGING UNITS</h2>
                     <small>Our bridging units are designed to seamlessly align with tall units, offering a custom fit for your space. While the market standard typically offers a depth of 300mm, we provide options with depths of up to 800mm for enhanced flexibility and storage capacity. Additionally, we ensure symmetry above your fridge for a clean, balanced aesthetic.</small>
                 </div>
             </div>
@@ -206,6 +206,7 @@
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-4 d-flex align-items-center">
                 <div>
+                    <h2 class="text-center">WE OFFER</h2>
                     <ul>
                         <li class="font-weight-bold">22 mm Thick ROBUST DOORS</li>
                         <li>
