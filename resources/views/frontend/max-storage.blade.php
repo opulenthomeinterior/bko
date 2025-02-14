@@ -44,6 +44,7 @@
             position: relative;
             z-index: 1;
             max-width: 1000px;
+            padding: 0 20px;
         }
 
         .hero h1 {
@@ -156,6 +157,73 @@
             background-color: #febd49;
             transition: background-color 0.3s ease-in-out;
         }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .content-section {
+                flex-direction: column;
+                padding: 40px 20px;
+            }
+
+            .content-section.left,
+            .content-section.right {
+                flex-direction: column;
+            }
+
+            .content-section .text,
+            .content-section .image {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .content-section img {
+                margin-top: 20px;
+            }
+
+            .styled-table {
+                font-size: 10px;
+            }
+
+            .styled-table th,
+            .styled-table td {
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .content-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-section p {
+                font-size: 0.9rem;
+            }
+
+            .styled-table {
+                font-size: 8px;
+            }
+
+            .styled-table th,
+            .styled-table td {
+                padding: 6px;
+            }
+        }
     </style>
 </head>
 
@@ -175,11 +243,11 @@
         <div class="text">
             <h2>Our process is straight forward</h2>
             <ul style="margin-left: 20px;">
-                <li><small>You inform us about your requirements</small></li>
+                <li style="text-align: start;"><small>You inform us about your requirements</small></li>
                 <br>
-                <li><small>We create a personalized design and provide clear, upfront pricing</small></li>
+                <li style="text-align: start;"><small>We create a personalized design and provide clear, upfront pricing</small></li>
                 <br>
-                <li><small>The final design will be crafted to meet your needs without the pressure of upselling/suggestive selling</small></li>
+                <li style="text-align: start;"><small>The final design will be crafted to meet your needs without the pressure of upselling/suggestive selling</small></li>
             </ul>
         </div>
     </section>
