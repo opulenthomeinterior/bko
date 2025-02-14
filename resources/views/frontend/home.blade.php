@@ -321,11 +321,6 @@
                         Order Now
                     </a>
                 </div>
-                <div class="p-2">
-                    <a href="{{ route('max_storage') }}" class="scroll-down btn btn-md btn-dark border-warning fw-bolder text-uppercase" style="border-radius: 20px;">
-                    Visit Max Storage Kitchens
-                    </a>
-                </div>
             </div>
 
             <!-- Right form content -->
