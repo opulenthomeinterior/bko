@@ -254,12 +254,12 @@
 
     <section class="content-section left">
         <div class="text">
-            <h2>Are you struggling with kitchen storage space?</h2>
-            <p>Let us introduce; Bespoke Max storage Kitchens</p>
-            <small>Standard designer kitchens are beautiful but with limited storage space. Bulk-manufactured standard space units are not the solution for your major storage problems. At BKO, we offer kitchens designed to maximize your kitchen’s storage with the deepest, tallest, and widest units in the market, and they are customized to suit your needs.
+            <h2 style="text-align: start;">Are you struggling with kitchen storage space?</h2>
+            <p style="text-align: start;">Let us introduce; Bespoke Max storage Kitchens</p>
+            <small style="text-align: start;">Standard designer kitchens are beautiful but with limited storage space. Bulk-manufactured standard space units are not the solution for your major storage problems. At BKO, we offer kitchens designed to maximize your kitchen’s storage with the deepest, tallest, and widest units in the market, and they are customized to suit your needs.
                 We have many colours available in supergloss and ultramatt finishes like white, cream, ivory, cashmere, etc. Choose from our huge range of unique designs, and we will customize them to fit your kitchen's dimensions and style.
                 <br>
-                <h3><b>Never settle for a standard-size kitchen because you don’t have to any more. </b></h3><br>
+                <h3 style="text-align: start;"><b>Never settle for a standard-size kitchen because you don’t have to any more. </b></h3><br>
                 It is your chance to enjoy luxurious designs with practicality, especially when the prices are lower than those of standard designer kitchens.
             </small>
         </div>
@@ -273,15 +273,15 @@
             <img src="https://bkonline.uk/public/imgs/products/TALL-Larder-angled-12501720361557_668aa255bad6b.jpg" alt="Modern Kitchen">
         </div>
         <div class="text">
-            <h2>TALL CABINETS</h2>
-            <small>Our tall cabinets are made up to 800mm deep to flush the American kitchen (750mm deep). The kitchen looks seamless when all the appliances, and cabinets are perfectly aligned. </small>
+            <h2 style="text-align: start;">TALL CABINETS</h2>
+            <small style="text-align: start;">Our tall cabinets are made up to 800mm deep to flush the American kitchen (750mm deep). The kitchen looks seamless when all the appliances, and cabinets are perfectly aligned. </small>
         </div>
     </section>
 
     <section class="content-section left">
         <div class="text">
-            <h2>BRIDGING UNITS</h2>
-            <small>Our bridging units are designed to seamlessly align with tall units, offering a custom fit for your space. While the market standard typically offers a depth of 300mm, we provide options with depths of up to 800mm for enhanced flexibility and storage capacity. Additionally, we ensure symmetry above your fridge for a clean, balanced aesthetic.</small>
+            <h2 style="text-align: start;">BRIDGING UNITS</h2>
+            <small style="text-align: start;">Our bridging units are designed to seamlessly align with tall units, offering a custom fit for your space. While the market standard typically offers a depth of 300mm, we provide options with depths of up to 800mm for enhanced flexibility and storage capacity. Additionally, we ensure symmetry above your fridge for a clean, balanced aesthetic.</small>
         </div>
         <div class="image">
             <img src="https://bkonline.uk/public/imgs/products/bridging-unit1739481721_67ae627909ea3.jpg" alt="Smart Kitchen">
@@ -293,15 +293,15 @@
             <img src="https://bkonline.uk/public/imgs/products/thick-doors1739481730_67ae6282e5549.jpg" alt="Smart Kitchen">
         </div>
         <div class="text">
-            <h2>Our DOORS</h2>
-            <h5>22 mm Thick ROBUST DOORS</h5>
-            <small>Our bridging units are designed to seamlessly align with tall units, offering a custom fit for your space. While the market standard typically offers a depth of 300mm, we provide options with depths of up to 800mm for enhanced flexibility and storage capacity. Additionally, we ensure symmetry above your fridge for a clean, balanced aesthetic.</small>
+            <h2 style="text-align: start;">Our DOORS</h2>
+            <h5 style="text-align: start;">22 mm Thick ROBUST DOORS</h5>
+            <small style="text-align: start;">Our bridging units are designed to seamlessly align with tall units, offering a custom fit for your space. While the market standard typically offers a depth of 300mm, we provide options with depths of up to 800mm for enhanced flexibility and storage capacity. Additionally, we ensure symmetry above your fridge for a clean, balanced aesthetic.</small>
             <br>
-            <small>18 mm+ THICK BACK AND SIDES Our units have 18mm+ back. It makes them solid, durable, and customized. They are more efficient than the standard 6-12 mm fragile unit backs available in the market.</small>
+            <small style="text-align: start;">18 mm+ THICK BACK AND SIDES Our units have 18mm+ back. It makes them solid, durable, and customized. They are more efficient than the standard 6-12 mm fragile unit backs available in the market.</small>
             <br>
-            <small>The height and depth of all the units is customized according to your preferences. </small>
+            <small style="text-align: start;">The height and depth of all the units is customized according to your preferences. </small>
             <br>
-            <small>WHY settle for an average-sized kitchen when we have eliminated the price issue for a fully customized kitchen? </small>
+            <small style="text-align: start;">WHY settle for an average-sized kitchen when we have eliminated the price issue for a fully customized kitchen? </small>
         </div>
     </section>
 
