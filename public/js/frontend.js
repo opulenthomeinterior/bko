@@ -598,7 +598,7 @@ function createProductCard(product, type, cart_product_id = null, cart_product_c
    productCard += `</div>`;
    productCard += `<div class="col-lg-6">`;
    productCard += `<div class="text-start">`;
-   productCard += `<a href="${APP_URL + '/shop/by-product/' + product.slug}" class="text-start text-decoration-underline fs-5 fw-bold">${product.short_title}</a>`;
+   productCard += `<a href="${APP_URL + '/shop/by-product/' + product.slug + '/' + product.serial_number}" class="text-start text-decoration-underline fs-5 fw-bold">${product.short_title}</a>`;
    productCard += `</div>`;
    productCard += `</div>`;
    productCard += `<div class="col-12">`;
