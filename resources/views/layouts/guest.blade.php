@@ -254,7 +254,7 @@ use App\Models\Style;
 
         .cut-span2 {
             display: inline-block;
-            color: #febd49;
+            color: #ebc266;
             font-weight: bold;
             clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
         }
@@ -461,7 +461,7 @@ use App\Models\Style;
                 Bathrooms
             </a>    -->
         </nav>
-        <nav class="nav container-fluid p-0 bg-white" style="border-bottom: 1px solid #febd49;">
+        <nav class="nav container-fluid p-0 bg-white" style="border-bottom: 1px solid #ebc266;">
             <div class="nav__data ps-5">
                 <a href="{{ route('home') }}" class="nav__logo text-start flex-grow-1">
                     <img src="{{ asset('images/logoBko.png') }}" width="100px" />

@@ -90,7 +90,7 @@
             border-collapse: collapse;
             font-family: Arial, sans-serif;
             font-size: 12px;
-            border: 2px solid #febd49;
+            border: 2px solid #ebc266;
             box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
@@ -103,7 +103,7 @@
         }
 
         .styled-table thead {
-            background-color: #febd49;
+            background-color: #ebc266;
             color: black;
             font-size: 13px;
             font-weight: bold;
@@ -118,7 +118,7 @@
         }
 
         .styled-table tbody tr:hover {
-            background-color: #febd49;
+            background-color: #ebc266;
             transition: background-color 0.3s ease-in-out;
         }
     </style>
