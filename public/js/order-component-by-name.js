@@ -98,7 +98,7 @@ $(document).ready(function () {
         productCard += `
             <div class="card-header px-0 py-0">
                 <div class="p-0 product-short-title-container w-100">
-                    <a href="/shop/by-product/${product.slug}" class="product-short-title fw-bold text-decoration-underline fs-4">`;
+                    <a href="/shop/by-product/${product.slug}/${product.serial_number}" class="product-short-title fw-bold text-decoration-underline fs-4">`;
         productCard += product.short_title;
         productCard += `</a>
                 </div>
@@ -113,7 +113,7 @@ $(document).ready(function () {
         productCard += `<div class="col-lg-12">`;
         productCard += `<figure class="my-0" style="margin-bottom: 0px !important;"><img class="product-image px-0" style="margin-bottom: 0px !important;min-height:175px;max-height:175px;object-fit:contain" src="${product.image_path ? product_BIU + '/' + product.image_path : ASSET_URL + 'images/no-image-available.jpg'}" alt="Card image cap" data-bs-toggle="modal" data-bs-target="#productModal${index}"></figure>`;
         productCard += `<div class="text-start">`;
-        productCard += `<a href="${APP_URL + '/shop/by-product/' + product.slug}" class="text-start text-decoration-underline fs-5 fw-bold">${product.short_title}</a>`;
+        productCard += `<a href="${APP_URL + '/shop/by-product/' + product.slug + '/' + product.serial_number}" class="text-start text-decoration-underline fs-5 fw-bold">${product.short_title}</a>`;
         productCard += `<p class="mt-2"><small class="fw-bold text-start text-dark">${product.product_code}</small></p>`;
         productCard += `<p class="py-lg-3 py-2"><small class="fw-bold text-start text-dark">${(product.dimensions != null) ? product.dimensions : ''}</small></p>`;
         productCard += `</div>`;
@@ -168,7 +168,7 @@ $(document).ready(function () {
         productCard += `</div>`;
         productCard += `</div>`;
         productCard += `<div class="card-footer p-0">
-                            <a href="/shop/by-product/${product.slug}" class="product-short-title text-decoration-underline">
+                            <a href="/shop/by-product/${product.slug}/${product.serial_number}" class="product-short-title text-decoration-underline">
                                 <small>View more</small>
                             </a>
                         </div>`;
