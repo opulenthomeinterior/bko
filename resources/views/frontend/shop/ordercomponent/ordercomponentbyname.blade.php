@@ -113,6 +113,7 @@
                     @endif
 
                     @if ($colours->count() > 0)
+                    @if ($category->slug == 'appliances')
                     <div class="accordion accordion-flush mt-3" id="accordionFlushExample4">
                         <div class="accordion-item bg-transparent border border-dark border-1 rounded-0 px-2" style="max-height: 700px; overflow: auto">
                             <h2 class="accordion-header" id="flush-headingFour">
@@ -154,6 +155,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                     @endif
 
                     @if ($assemblies->count() > 0)
