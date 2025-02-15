@@ -245,6 +245,26 @@ use App\Models\Style;
             display: none;
         }
 
+        .cut-span1 {
+            display: inline-block;
+            color: black;
+            font-weight: bold;
+            clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+        }
+
+        .cut-span2 {
+            display: inline-block;
+            color: #febd49;
+            font-weight: bold;
+            clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
+        }
+
+        .cut-span2:hover {
+            display: inline-block;
+            color: black;
+            font-weight: bold;
+            clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
+        }
     </style>
 </head>
 
@@ -429,8 +449,19 @@ use App\Models\Style;
                 </div>
             </div>
         </div> --}}
-
-        <nav class="nav container-fluid p-0 bg-white" style="border-bottom: 1px solid #ebc266;">
+        
+        <nav class="container-fluid p-0 bg-dark border-warning text-white border-bottom d-flex justify-content-center">
+            <!-- <a class="btn btn-outline-warning text-white border-none px-4 py-1 cut-span1" href="{{route('max_storage')}}"> 
+                Wardrobes
+            </a>  -->
+            <a class="btn btn-outline-warning border-none px-4 py-1 cut-span2" href="{{route('max_storage')}}"> 
+                Visit Max Storage Kitchens
+            </a> 
+            <!-- <a class="btn btn-outline-warning text-white border-none px-4 py-1 cut-span1" href="{{route('max_storage')}}"> 
+                Bathrooms
+            </a>    -->
+        </nav>
+        <nav class="nav container-fluid p-0 bg-white" style="border-bottom: 1px solid #febd49;">
             <div class="nav__data ps-5">
                 <a href="{{ route('home') }}" class="nav__logo text-start flex-grow-1">
                     <img src="{{ asset('images/logoBko.png') }}" width="100px" />
@@ -466,7 +497,7 @@ use App\Models\Style;
                             <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                         </div>
                         <div class="dropdown__container border-bottom border-warning border-2">
-                            <div class="dropdown__content px-4" style="max-width: 100% !important; margin: 0px !important; grid-template-columns: none; column-gap: 0;">
+                            <div class="dropdown__content px-4" style="max-width: 100% !important; margin: 20px 0px !important; grid-template-columns: none; column-gap: 0;">
                                 @php
                                     $styles = Style::where('status', 1)->get();
                                 @endphp

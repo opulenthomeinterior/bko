@@ -239,6 +239,10 @@ Route::prefix('/')->middleware([])->group(function () {
         return view('frontend.home', compact('generalFaqs', 'deliveryFaqs', 'categories', 'styles'));
     })->name('home');
 
+    Route::get('max-storage', function () {
+        return view('frontend.max-storage');
+    })->name('max_storage');
+
     Route::post('contact-us-inquiry', [InquiryController::class, 'sendInquiry'])->name('contact_us_inquiry');
     //
     Route::post('get-category-products', [ProductController::class, 'getCategoryProducts'])->name('get_category_products');
