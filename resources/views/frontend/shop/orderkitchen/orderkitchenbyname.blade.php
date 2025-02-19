@@ -71,14 +71,15 @@
                         <div class="col-lg-12">
                             <div class="row">
                                 @foreach ($styleHasColours as $key => $styleHasColour)
-                                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
+                                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6 mb-4">
                                         <div class="card border border-warning w-100" style="border-radius: 0px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
                                             <div class="card-header border-bottom border-default">
                                                 <div class="mb-2 fw-bold">
                                                     {{$styleData['data']['name']}} {{$styleHasColour->colour?->trade_colour}}
                                                 </div>
                                                 <div>
-                                                    <small>Assembly Type:</small> <a href="{{route('orderkitchenbycolour', [$styleData['data']['slug'], 'rigid', $styleHasColour->colour?->slug])}}" class="btn btn-sm btn-outline-warning text-dark rounded-0">Rigid</a>
+                                                    <small>Assembly Type:</small> <br>
+                                                    <a href="{{route('orderkitchenbycolour', [$styleData['data']['slug'], 'rigid', $styleHasColour->colour?->slug])}}" class="btn btn-sm btn-outline-warning text-dark rounded-0">Rigid</a>
                                                     <a href="{{route('orderkitchenbycolour', [$styleData['data']['slug'], 'flat-pack', $styleHasColour->colour?->slug])}}" class="btn btn-sm btn-outline-warning text-dark rounded-0">Flat Pack</a>
                                                 </div>
                                             </div>
