@@ -51,7 +51,7 @@ $(document).ready(function () {
         productModal += `<div class="modal-content" style="border-radius: 0; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266">`;
         productModal += `<div class="modal-header border-bottom border-light">`;
         productModal += `<h1 class="fs-5 fw-bold text-dark border-bottom border-dark">`;
-        productModal += product.title;
+        productModal += product.full_title;
         productModal += `</h1>`;
         productModal += `<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`;
         productModal += `</div>`;
@@ -74,6 +74,7 @@ $(document).ready(function () {
         productModal += `<h6 class="fs-6 fw-bolder text-dark">Dimensions</h6>`;
         productModal += `</div>`;
         productModal += `<ul style="list-style: none; padding: 0">`;
+        productModal += `<li><p class="mb-0"> ${product.dimensions ? product.dimensions + 'mm' : ''}</p></li>`;
         productModal += `<li><p class="mb-0"><small class="fw-bold text-uppercase text-dar">HEIGHT:</small> ${product.height ? parseInt(product.height) + 'mm' : ''}</p></li>`;
         productModal += `<li><p class="mb-0"><small class="fw-bold text-uppercase text-dark">WIDTH:</small> ${product.width ? parseInt(product.width) + 'mm' : ''}</p></li>`;
         productModal += `<li><p class="mb-0"><small class="fw-bold text-uppercase text-dark">DEPTH:</small> ${product.depth ? parseInt(product.depth) + 'mm' : ''}</p></li>`;

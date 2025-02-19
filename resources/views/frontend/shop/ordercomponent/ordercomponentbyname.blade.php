@@ -397,7 +397,7 @@
                                             <p class="mt-2"><small class="fw-bold text-start text-dark">{{ $product->product_code }}</small></p>
                                             <p class="">
                                                 <small
-                                                    class="fw-bold text-start text-dark">{{ !empty($product->dimensions) ? $product->dimentions : '' }}</small>
+                                                    class="fw-bold text-start text-dark">{{ !empty($product->dimensions) ? $product->dimensions : '' }}</small>
                                             </p>
                                         </div>
                                         <div class="col-12">
