@@ -74,7 +74,7 @@ $(document).ready(function () {
         productModal += `<h6 class="fs-6 fw-bolder text-dark">Dimensions</h6>`;
         productModal += `</div>`;
         productModal += `<ul style="list-style: none; padding: 0">`;
-        productModal += `<li><p class="mb-0"> ${product.dimensions ? product.dimensions + 'mm' : ''}</p></li>`;
+        productModal += `<li><p class="mb-0"> ${product.dimensions ? product.dimensions + 'mm' : ''}</p></li><br>`;
         productModal += `<li><p class="mb-0"><small class="fw-bold text-uppercase text-dar">HEIGHT:</small> ${product.height ? parseInt(product.height) + 'mm' : ''}</p></li>`;
         productModal += `<li><p class="mb-0"><small class="fw-bold text-uppercase text-dark">WIDTH:</small> ${product.width ? parseInt(product.width) + 'mm' : ''}</p></li>`;
         productModal += `<li><p class="mb-0"><small class="fw-bold text-uppercase text-dark">DEPTH:</small> ${product.depth ? parseInt(product.depth) + 'mm' : ''}</p></li>`;

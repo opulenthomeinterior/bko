@@ -340,6 +340,12 @@
                                                                 <ul style="list-style: none; padding: 0">
                                                                     <li>
                                                                         <p class="mb-0">
+                                                                            {{ $product->dimensions }}mm
+                                                                        </p>
+                                                                    </li>
+                                                                    <br>
+                                                                    <li>
+                                                                        <p class="mb-0">
                                                                             <small
                                                                                 class="fw-bold text-uppercase text-dark">HEIGHT:</small>
                                                                             {{ intval($product->height) }}mm
