@@ -460,7 +460,7 @@
 
     <div class="row">
         @if ($colours && count($colours) > 0)
-        <div class="col-lg-6 col-md-6 col-12 py-4">
+        {{--<div class="col-lg-6 col-md-6 col-12 py-4">
             <h3 class="fw-bold text-dark pb-3">Colour Options</h3>
             <div class="row g-1">
                 @foreach ($colours as $colour)
@@ -476,11 +476,11 @@
                 </div>
                 @endforeach
             </div>
-        </div>
+        </div>--}}
         @endif
 
         @if ($relatedProducts && count($relatedProducts) > 0)
-        <div class="col-lg-6 col-md-6 col-12 py-4">
+        {{--<div class="col-lg-6 col-md-6 col-12 py-4">
             <h3 class="fw-bold text-dark pb-3">Related Products</h3>
             <div class="row">
                 @foreach ($relatedProducts as $relatedProduct)
@@ -493,7 +493,7 @@
                 </div>
                 @endforeach
             </div>
-        </div>
+        </div>--}}
         @endif
     </div>
 
