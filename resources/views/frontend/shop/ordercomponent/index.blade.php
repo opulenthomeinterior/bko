@@ -36,7 +36,7 @@
                             <div class="card-body component-card-body">
                                 <div class="component-card-content">
                                     <h4 class="text-uppercase fs-3 fw-bold text-dark">{{ $component->name }}</h4>
-                                    <div class="text-dark">{!! $component->description !!}</div>
+                                    <!-- <div class="text-dark">{!! $component->description !!}</div> -->
                                 </div>
                             </div>
                         </div>
