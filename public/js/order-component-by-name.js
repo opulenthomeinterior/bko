@@ -75,7 +75,7 @@ $(document).ready(function () {
         productModal += `</div>`;
         productModal += `<ul style="list-style: none; padding: 0">`;
         if (product.dimensions) {
-            productModal += `<li><p class="mb-0">${product.dimensions}mm</p></li><br>`;
+            productModal += `<li><p class="mb-0">${product.dimensions}</p></li><br>`;
         }
         if (product.height) {
             productModal += `<li><p class="mb-0"><small class="fw-bold text-uppercase text-dar">HEIGHT:</small> ${parseInt(product.height) + 'mm'}</p></li>`;

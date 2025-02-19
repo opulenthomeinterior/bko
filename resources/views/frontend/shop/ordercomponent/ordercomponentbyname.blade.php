@@ -341,7 +341,7 @@
                                                                     @if (!empty($product->dimensions))
                                                                     <li>
                                                                         <p class="mb-0">
-                                                                            {{ $product->dimensions }}mm
+                                                                            {{ $product->dimensions }}
                                                                         </p>
                                                                     </li>
                                                                     <br>
