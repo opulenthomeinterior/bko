@@ -71,7 +71,7 @@
                         <div class="col-lg-12">
                             <div class="row">
                                 @foreach ($styleHasColours as $key => $styleHasColour)
-                                    <div class="col-4 mb-4">
+                                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
                                         <div class="card border border-warning w-100" style="border-radius: 0px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
                                             <div class="card-header border-bottom border-default">
                                                 <div class="mb-2 fw-bold">
