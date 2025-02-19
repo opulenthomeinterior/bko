@@ -338,12 +338,15 @@
                                                                 <h6 class="fs-6 fw-bolder text-dark">Dimensions
                                                                 </h6>
                                                                 <ul style="list-style: none; padding: 0">
+                                                                    @if (!empty($product->dimensions))
                                                                     <li>
                                                                         <p class="mb-0">
                                                                             {{ $product->dimensions }}mm
                                                                         </p>
                                                                     </li>
                                                                     <br>
+                                                                    @endif
+                                                                    @if (!empty($product->height))
                                                                     <li>
                                                                         <p class="mb-0">
                                                                             <small
@@ -351,6 +354,8 @@
                                                                             {{ intval($product->height) }}mm
                                                                         </p>
                                                                     </li>
+                                                                    @endif
+                                                                    @if (!empty($product->width))
                                                                     <li>
                                                                         <p class="mb-0">
                                                                             <small
@@ -358,6 +363,8 @@
                                                                             {{ intval($product->width) }}mm
                                                                         </p>
                                                                     </li>
+                                                                    @endif
+                                                                    @if (!empty($product->depth))
                                                                     <li>
                                                                         <p class="mb-0">
                                                                             <small
@@ -365,6 +372,7 @@
                                                                             {{ intval($product->depth) }}mm
                                                                         </p>
                                                                     </li>
+                                                                    @endif
                                                                 </ul>
                                                             </div>
                                                             <div>

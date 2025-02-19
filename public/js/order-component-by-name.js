@@ -74,10 +74,22 @@ $(document).ready(function () {
         productModal += `<h6 class="fs-6 fw-bolder text-dark">Dimensions</h6>`;
         productModal += `</div>`;
         productModal += `<ul style="list-style: none; padding: 0">`;
-        productModal += `<li><p class="mb-0"> ${product.dimensions ? product.dimensions + 'mm' : ''}</p></li><br>`;
-        productModal += `<li><p class="mb-0"><small class="fw-bold text-uppercase text-dar">HEIGHT:</small> ${product.height ? parseInt(product.height) + 'mm' : ''}</p></li>`;
-        productModal += `<li><p class="mb-0"><small class="fw-bold text-uppercase text-dark">WIDTH:</small> ${product.width ? parseInt(product.width) + 'mm' : ''}</p></li>`;
-        productModal += `<li><p class="mb-0"><small class="fw-bold text-uppercase text-dark">DEPTH:</small> ${product.depth ? parseInt(product.depth) + 'mm' : ''}</p></li>`;
+        if (product.dimensions) {
+            productModal += `<li><p class="mb-0">${product.dimensions}mm</p></li><br>`;
+        }
+        if (product.height) {
+            productModal += `<li><p class="mb-0"><small class="fw-bold text-uppercase text-dar">HEIGHT:</small> ${parseInt(product.height) + 'mm'}</p></li>`;
+        }
+        if (product.width) {
+            productModal += `<li><p class="mb-0"><small class="fw-bold text-uppercase text-dar">WIDTH:</small> ${parseInt(product.width) + 'mm'}</p></li>`;
+        }
+        if (product.depth) {
+            productModal += `<li><p class="mb-0"><small class="fw-bold text-uppercase text-dar">DEPTH:</small> ${parseInt(product.depth) + 'mm'}</p></li>`;
+        }
+        // productModal += `<li><p class="mb-0"> ${product.dimensions ? product.dimensions + 'mm' : ''}</p></li><br>`;
+        // productModal += `<li><p class="mb-0"><small class="fw-bold text-uppercase text-dar">HEIGHT:</small> ${product.height ? parseInt(product.height) + 'mm' : ''}</p></li>`;
+        // productModal += `<li><p class="mb-0"><small class="fw-bold text-uppercase text-dark">WIDTH:</small> ${product.width ? parseInt(product.width) + 'mm' : ''}</p></li>`;
+        // productModal += `<li><p class="mb-0"><small class="fw-bold text-uppercase text-dark">DEPTH:</small> ${product.depth ? parseInt(product.depth) + 'mm' : ''}</p></li>`;
         productModal += `</ul>`;
         productModal += `<h6 class="fs-6 fw-bolder text-dark">Range Specification</h6>`;
         productModal += `<p class="mb-0"><small>${product.category && product.category.description ? product.category.description : (product.category && product.category.parentCategory && product.category.parentCategory.description ? product.category.parentCategory.description : '')}</small></p>`;
