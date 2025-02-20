@@ -29,6 +29,7 @@
             text-align: center;
             color: white;
             position: relative;
+            top: 28px;
         }
 
         .hero::before {
@@ -121,10 +122,38 @@
             background-color: #ebc266;
             transition: background-color 0.3s ease-in-out;
         }
+
+        .top-navbar {
+            background-color: #000;
+            color: white;
+            padding: 2px;
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .top-navbar-text {
+            color: white;
+            text-decoration: none;
+        }
+
+        .top-navbar-text:hover {
+            color: white;
+            text-decoration: none;
+        }
     </style>
 </head>
 
 <body>
+        
+    <nav class="top-navbar">
+        <a class="top-navbar-text" href="{{route('home')}}"> 
+            Visit BK Online
+        </a> 
+    </nav>
+
     <header class="hero mb-4">
         <div class="hero-content">
             <h1>Custom Kitchen Units, Timeless Elegance</h1>
