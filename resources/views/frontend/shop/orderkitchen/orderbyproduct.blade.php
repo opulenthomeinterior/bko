@@ -61,6 +61,25 @@
     </section>
 
     <section class="container-fluid px-lg-5 px-md-3 px-3 py-2">
+        @if (count($relatedCategoryProducts) > 0)
+        <div class="row mb-4">
+            <div class="col-8 offset-4">
+                <div class="col-12">
+                    <h3 class="fw-bold text-dark py-1">Filter Related Products</h3>
+                </div>
+                <div class="col-12">
+                    <select class="form-control" id="productSelect">
+                        <option value="">Select Product</option>
+                        @foreach ($relatedCategoryProducts as $relatedCategoryProduct)
+                            <option value="{{$relatedCategoryProduct->id}}" data-url="{{ route('orderbyproduct', [$relatedCategoryProduct->slug, $relatedCategoryProduct->id]) }}">
+                                {{ $relatedCategoryProduct->full_title }} (£{{ $relatedCategoryProduct->price }})
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+        </div>
+        @endif
         <div class="row">
             <div class="col-lg-4 col-md-6">
                 <figure class="text-center position-relative">
@@ -500,4 +519,14 @@
 
     </section>
 
+    <script>
+        document.getElementById('productSelect').addEventListener('change', function() {
+            var selectedOption = this.options[this.selectedIndex];
+            var url = selectedOption.getAttribute('data-url');
+            
+            if (url) {
+                window.location.href = url; // Redirect to the product page
+            }
+        });
+    </script>
 </x-guest-layout>

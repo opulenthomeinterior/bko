@@ -265,6 +265,16 @@ use App\Models\Style;
             font-weight: bold;
             clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
         }
+
+        .second-navbar {
+            margin-top: 30px;
+        }
+
+        .top-navbar {
+            position: fixed;
+            z-index: 1000;
+            top: 0px;
+        }
     </style>
 </head>
 
@@ -450,7 +460,7 @@ use App\Models\Style;
             </div>
         </div> --}}
         
-        <nav class="container-fluid p-0 bg-dark border-warning text-white border-bottom d-flex justify-content-center">
+        <nav class="container-fluid top-navbar p-0 bg-dark border-warning text-white border-bottom d-flex justify-content-center">
             <!-- <a class="btn btn-outline-warning text-white border-none px-4 py-1 cut-span1" href="{{route('max_storage')}}"> 
                 Wardrobes
             </a>  -->
@@ -461,7 +471,7 @@ use App\Models\Style;
                 Bathrooms
             </a>    -->
         </nav>
-        <nav class="nav container-fluid p-0 bg-white" style="border-bottom: 1px solid #ebc266;">
+        <nav class="nav container-fluid p-0 bg-white second-navbar" style="border-bottom: 1px solid #ebc266">
             <div class="nav__data ps-5">
                 <a href="{{ route('home') }}" class="nav__logo text-start flex-grow-1">
                     <img src="{{ asset('images/logoBko.png') }}" width="100px" />

@@ -127,8 +127,8 @@
 <body>
     <header class="hero mb-4">
         <div class="hero-content">
-            <h1>Custom Kitchens, Timeless Elegance</h1>
-            <p>We offer premium, bespoke kitchen designs at competitive prices.</p>
+            <h1>Custom Kitchen Units, Timeless Elegance</h1>
+            <p>We offer premium, bespoke designer kitchens at competitive prices.</p>
             <div class="scroll-down">Scroll Down <i>&#x2193;</i></div>
         </div>
     </header>
@@ -156,7 +156,7 @@
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 d-flex align-items-center mb-4">
                 <div>
                     <p>Introducing <b>BESPOKE MAX STORAGE KITCHENS</b></p>
-                    <small>Standard designer kitchens are beautiful but with limited storage space. Bulk-manufactured standard space units are not the solution for your major storage problems. At BKO, we offer kitchens designed to maximize your kitchen’s storage with the deepest, tallest, and widest units in the market, and they are customized to suit your needs.
+                    <small>Standard designer kitchens are beautiful but with limited storage space. Bulk-manufactured standard space units are not the solution for your major storage problems. At BKO, we offer a bespoke kitchen unit designed to maximize your kitchen’s storage with the deepest, tallest, and widest units in the market, and they are customized to suit your needs.
                         We have many colours available in supergloss and ultramatt finishes like white, cream, ivory, cashmere, etc. Choose from our huge range of unique designs, and we will customize them to fit your kitchen's dimensions and style.
                         <br>
                         <br>
@@ -223,18 +223,20 @@
         </div>
     </section>
 
-    <section class="conatiner px-4 text-center mb-4">
+    <section class="conatiner px-4 py-4 text-center mb-4">
         <div class="px-4 text-center mb-4">
-            <h2 class=" text-center">WHY settle for an average-sized kitchen when we have eliminated the price issue for a fully customized kitchen?</h2>
+            <h2 class="text-center">WHY settle for an average-sized kitchen when we have eliminated the price issue for a fully customized kitchen?</h2>
         </div>
     </section>
 
     <section class="container mb-4">
-        <div class="row">
+        <div class="row mb-4">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-4">
+                <h6 class="fw-bold">NATIONAL RETAILER STANDARD-SIZED KITCHEN</h6>
                 <img src="https://bkonline.uk/public/images/slab.jpeg" class="img-fluid" alt="">
             </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-4" style="overflow: hidden; max-height: 424px">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-4" style="overflow: hidden; max-height: 455px">
+                <h6 class="fw-bold">BESPOKE MAX STORAGE KITCHEN</h6>
                 <img style="max-height: 500px; overflow: hidden" src="https://bkonline.uk/public/imgs/products/421878074_891869916280279_5405404846063335271_n1739538312_67af3f882943d.jpg" class="img-fluid" alt="">
             </div>
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-4 d-flex align-items-center">
