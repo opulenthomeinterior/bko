@@ -37,6 +37,17 @@
             filter: invert(1);
             /* Converts white to black */
         }
+
+        .select-container {
+            width: 100%;
+        }
+
+        select option {
+            display: flex;
+            justify-content: space-between;
+            text-align: left;
+            font-family: Arial, sans-serif;
+        }
     </style>
     <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
         <nav aria-label="breadcrumb">
@@ -65,17 +76,40 @@
         <div class="row mb-4">
             <div class="col-8 offset-4">
                 <div class="col-12">
-                    <h3 class="fw-bold text-dark py-1">Filter Related Products</h3>
+                    <h3 class="fw-bold text-dark py-1">Related Products</h3>
                 </div>
                 <div class="col-12">
-                    <select class="form-control" id="productSelect">
+                <div class="row" style="max-height: 170px; overflow-x: hidden; overflow-y: scroll">
+                    @foreach ($relatedCategoryProducts as $relatedCategoryProduct)
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2">
+                            <a href="{{ route('orderbyproduct', [$relatedCategoryProduct->slug, $relatedCategoryProduct->id]) }}" class="btn btn-outline-warning rounded-0 text-dark fw-bold" style="display: flex; align-items: center; justify-content: start">
+                            <img class="img-fluid" width="50px" height="50px" src="{{ asset('imgs/products/'.$relatedCategoryProduct->image_path) }}" alt="">
+                            &nbsp;
+                            {{ $relatedCategoryProduct->colour?->name ? '' . strtoupper($relatedCategoryProduct->colour?->name) . '' : '' }}
+                            {{ $relatedCategoryProduct->height 
+                                ? ($relatedCategoryProduct->width 
+                                    ? '(H:'.$relatedCategoryProduct->height . 'x' . 'W:'.$relatedCategoryProduct->width . ' mm)' 
+                                    : '(H:'.$relatedCategoryProduct->height . ' mm)') 
+                                : ($relatedCategoryProduct->width ? '(W:'.$relatedCategoryProduct->width . ' mm)' : '') }}
+                            {{ ' (£' . $relatedCategoryProduct->price . ')' }}
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
+                <hr>
+                    {{--<select class="form-control" id="productSelect">
                         <option value="">Select Product</option>
-                        @foreach ($relatedCategoryProducts as $relatedCategoryProduct)
-                            <option value="{{$relatedCategoryProduct->id}}" data-url="{{ route('orderbyproduct', [$relatedCategoryProduct->slug, $relatedCategoryProduct->id]) }}">
-                                {{ $relatedCategoryProduct->full_title }} (£{{ $relatedCategoryProduct->price }})
-                            </option>
-                        @endforeach
-                    </select>
+                        <select class="select-container">
+                            @foreach ($relatedCategoryProducts as $relatedCategoryProduct)
+                                <option value="{{ $relatedCategoryProduct->id }}" 
+                                        data-url="{{ route('orderbyproduct', [$relatedCategoryProduct->slug, $relatedCategoryProduct->id]) }}">
+                                    {{ $relatedCategoryProduct->colour?->name ? '(' . $relatedCategoryProduct->colour?->name . ')' : '' }}
+                                    {{ $relatedCategoryProduct->height ? '- (' . $relatedCategoryProduct->height . ')' : '' }}
+                                    {{ ' (£' . $relatedCategoryProduct->price . ')' }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </select>--}}
                 </div>
             </div>
         </div>

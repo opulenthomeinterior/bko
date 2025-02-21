@@ -419,7 +419,7 @@ class HomeController extends Controller
         // Include the current category in the list of children
         $children[] = $category->id;
 
-        $count = Product::whereIn('category_id', $children)->where('status', 'active')->count();
+        $count = Product::whereIn('category_id', $children)->where('status', 'active')->groupBy('parent_sub_category')->count();
         $currentPage = 1;
         $limit = 12;
         $offset = ($currentPage - 1) * $limit;
@@ -433,7 +433,7 @@ class HomeController extends Controller
             $currentPage = 1;
         }
 
-        $products = Product::whereIn('category_id', $children)->where('status', 'active')->offset($offset)->limit($limit)->get();
+        $products = Product::whereIn('category_id', $children)->where('status', 'active')->groupBy('parent_sub_category')->offset($offset)->limit($limit)->get();
 
         $heights = Product::whereIn('category_id', $children)
                 ->where('status', 'active')
@@ -467,7 +467,7 @@ class HomeController extends Controller
 
         $parent_category = Category::where('slug', $slug)->firstOrFail();
 
-        $productsQuery = Product::where('status', 'active');
+        $productsQuery = Product::where('status', 'active')->groupBy('parent_sub_category');
 
         if (!empty($t)) {
             $productsQuery->whereIn('category_id', $t);
@@ -563,20 +563,12 @@ class HomeController extends Controller
         $parentSubCategory = $findProduct?->parent_sub_category;
 
         $relatedCategoryProducts = Product::where('id', '!=', $product->id)
-            // ->where('assembly_id', $product->assembly_id)
-            // ->where('colour_id', $product->colour_id)
-            // ->where('style_id', $product->style_id)
             ->where('status', 'active')
             ->where(function ($q) use ($parentSubCategory, $categoryShortTitle) {
-                $q = $q->whereNotNull('parent_sub_category')->where('parent_sub_category', $parentSubCategory)
+                $q = $q->where('parent_sub_category', $parentSubCategory)
                 ->where('short_title', $categoryShortTitle);
             })
             ->get();
-
-        // echo '<pre>';
-        // print_r($product);
-        // echo '</pre>';
-        // exit;
 
         return view('frontend.shop.orderkitchen.orderbyproduct', compact('product', 'colours', 'relatedProducts', 'relatedCategoryProducts'));
     }
