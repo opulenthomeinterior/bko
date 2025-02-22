@@ -134,7 +134,7 @@ $(document).ready(function () {
         productCard += `<div class="col-12">`;
         productCard += `<div class="container-fluid">`;
         productCard += `<div class="row justify-content-center">`;
-        productCard += `<div class="col-6 d-flex justify-content-center product-counter">`;
+        productCard += `<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center product-counter">`;
         productCard += `<input id="minus${product.id}" class="minus border bg-dark text-light p-0" type="button" value="-" onclick="decreaseQuantity('${product.id}', '${product.product_code}', '${product.full_title}', ${product.price}, ${product.discounted_price}, ${product.discounted_percentage ?? 0}, '${product.parent_category.slug}')" />`;
         productCard += `<input id="quantity${product.id}" class="quantity border border-black text-center" type="text" value="0" name="quantity" disabled />`;
         productCard += `<input id="plus${product.id}" ${product.price == 0 ? 'disabled' : ''} class="plus border bg-dark text-light p-0" type="button" value="+" onclick="increaseQuantity('${product.id}', '${product.product_code}', '${product.full_title}', ${product.price}, ${product.discounted_price}, ${product.discounted_percentage ?? 0}, '${product.parent_category.slug}')" />`;
