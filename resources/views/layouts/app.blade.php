@@ -293,6 +293,15 @@
                                                                             </a>
                                                                         </li>
 
+{{-- Info Graphics --}}
+<li class="nav-item">
+    <a class="nav-link menu-link {{ request()->is('infographics', 'infographics/*') ? 'active' : '' }}"
+        href="{{ route('infographics.create') }}">
+        <i class="las la-paperclip"></i>
+        <span data-key="t-attachments">Create Info Graphics</span>
+    </a>
+</li>
+
                                                                         {{-- Categories --}}
                                                                         <li class="nav-item">
                                                                             <a href="#sidebarCategories" class="nav-link"
@@ -967,7 +976,7 @@
                 $('.testimonial-card').append(faqTemplate);
             });
 
-            // Remove an FAQ and update FAQ numbers
+            // Remove a Testimonial and update Testimonial numbers
             $(document).on('click', '.remove-current-style-testimonial', function() {
                 $(this).closest('.current-testimonial-card').remove();
             });
@@ -1007,9 +1016,53 @@
                 });
             });
 
-            // Remove an FAQ and update FAQ numbers
+            // Remove a FAQ and update FAQ numbers
             $(document).on('click', '.remove-current-style-faq', function() {
                 $(this).closest('.current-faq-card').remove();
+            });
+            
+            // Add a new Info Graphic
+            $(document).on('click', '#add-new-style-infographic', function() {
+                const faqTemplate = `
+                <input type="hidden" name="infographics[]" value="info_graphic">
+                <div class="card border border-default p-3 current-infographic-card">
+
+                    <div class="card border border-default p-3">
+                        <label for="" class="form-label">
+                            Infographic
+                        </label>
+                        <input type="text" name="title[]" class="form-control" placeholder="Enter Title">
+                        <label for="" class="form-label">
+                        </label>
+                        <textarea name="description[]" class="form-control editor" placeholder="Enter Description"></textarea>
+                        <br>
+                        <label for="" class="form-label">
+                            Main Image
+                        </label>
+                        <input type="file" name="image_path[]" class="form-control">
+                        <br>
+                        <label for="" class="form-label">
+                            Icon
+                        </label>
+                        <input type="file" name="icon[]" class="form-control">
+                        <br>
+                        <label for="" class="form-label">
+                            Status
+                        </label>
+                        <input type="checkbox" name="status[]" class="text-start">
+                        <label for="" class="form-label">
+                        </label>
+                    </div>
+                    <label for="" class="form-label">
+                    </label>
+                    <button type="button" class="btn btn-sm btn-danger w-25 mt-2 remove-current-style-infographic">Remove</button>
+                </div>`;
+                $('.infographic-card').append(faqTemplate);
+            });
+
+            // Remove a Info Graphic and update Info Graphic numbers
+            $(document).on('click', '.remove-current-style-infographic', function() {
+                $(this).closest('.current-infographic-card').remove();
             });
         });
     </script>

@@ -1,34 +1,35 @@
 <?php
 
-use App\Http\Controllers\AssemblyController;
-use App\Http\Controllers\AttachmentController;
-use App\Http\Controllers\BlogController;
-use App\Http\Controllers\FaqController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\ColourController;
-use App\Http\Controllers\DashboardConroller;
-use App\Http\Controllers\DownloadableGuideController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\StyleController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\VideoGuideController;
-use App\Http\Controllers\PrintingController;
-use App\Http\Controllers\DesignserviceController;
-use App\Http\Controllers\UserAuthController;
-use App\Http\Controllers\DiscountController;
-use App\Http\Controllers\InquiryController;
-use App\Http\Controllers\OrdersController;
+use App\Models\Faq;
+use App\Models\Style;
+use App\Models\Colour;
+use App\Models\Product;
 use App\Models\Assembly;
 use App\Models\Category;
-use App\Models\Colour;
-use App\Models\Faq;
-use App\Models\Product;
 use App\Models\ProductFile;
-use App\Models\Style;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FaqController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\StyleController;
+use App\Http\Controllers\ColourController;
+use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\InquiryController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AssemblyController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\DashboardConroller;
+use App\Http\Controllers\DiscountController;
+use App\Http\Controllers\PrintingController;
+use App\Http\Controllers\UserAuthController;
+use App\Http\Controllers\AttachmentController;
+use App\Http\Controllers\VideoGuideController;
+use App\Http\Controllers\InfoGraphicController;
+use App\Http\Controllers\DesignserviceController;
+use App\Http\Controllers\DownloadableGuideController;
 
 /*
 |--------------------------------------------------------------------------
@@ -207,6 +208,11 @@ Route::prefix('admin')->middleware(['auth', 'verified', 'role:super-admin'])->gr
         Route::get('/', [OrdersController::class, 'index'])->name('orders.index');
         Route::put('/{id}', [OrdersController::class, 'updateStatus'])->name('orders.updateStatus');
         Route::get('/{id}', [OrdersController::class, 'show'])->name('orders.show');
+    });
+
+    Route::prefix('infographics')->group(function () {
+        Route::get('create', [InfoGraphicController::class, 'create'])->name('infographics.create');
+        Route::post('update', [InfoGraphicController::class, 'update'])->name('infographics.update');
     });
 
     // Redirect route for /admin without any additional path

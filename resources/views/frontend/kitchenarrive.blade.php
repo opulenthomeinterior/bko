@@ -12,10 +12,10 @@
                 <h1 class="fs-1 text-dark text-uppercase fw-bolder">
                     HOW WILL MY KITCHEN ARRIVE?
                 </h1>
-                <h4 class="text-dark">
+                <!-- <h4 class="text-dark">
                     Having been making, packing and distributing kitchens, we have developed trusted methods
                     to get what it is you need, to where you need it.
-                </h4>
+                </h4> -->
             </div>
         </div>
     </section>
@@ -23,16 +23,22 @@
     <section class="container-fluid px-lg-5 py-4 px-md-3 px-3" style="background-color: #f0f0f0;">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-12">
-                <h2 class="text-dark fw-bold text-uppercase">TRUSTED METHODS, TRUSTED PARTNERS</h2>
-                <p>
-                    Flat-Packed kitchens will be delivered to you by our courier DX.
-                    <br><br>
-                    Goods are packaged with polystyrene and packed in cardboard. Larger orders will be packed onto a
-                    pallet. Plinths and Multi Rail will be delivered as a long bundle, again packed in cardboard.
-                    <br><br>
-                    Rigid Kitchens are delivered by TDL, the goods are packed onto a pallet(s) and wrapped in shrink
-                    wrap. Again Plinths and Multi Rail will be delivered as a long bundle.
-                </p>
+                <!-- <h2 class="text-dark fw-bold text-uppercase">TRUSTED METHODS, TRUSTED PARTNERS</h2> -->
+                At BK Online, the most important thing for us is to deliver your kitchen safely and on time. With our years of experience in delivering kitchens, we make sure that every component of your kitchen is packed securely and reaches you in primal condition. 
+                <br>
+                <br>
+<ul>
+    <li>Flat-Pack Kitchens: When you choose a flat-pack kitchen, we partner with trusted and reliable couriers like DX to deliver your kitchen in the perfect condition. Each part is packed using protective material like cardboard and polystyrene to prevent any damage during the transport. Larger items are secured onto pallets for safe delivery. The plinths and multi-rails are always delivered separately, in long bundles, also carefully wrapped. </li>
+    <br>
+    <li>
+Rigid Kitchens: For the delivery of Rigid Kitchens, we work with our reliable partners like TDL to ensure that your kitchen is packed and delivered with care. Items are securely wrapped in shrink wrap and placed on pallets to prevent damage. The plinths and multi-rails are sent separately as long bundles. 
+    </li>
+</ul>
+                <br>
+Every order is handled with the utmost care, ensuring that all components of your kitchen are in excellent condition when they arrive at your doorstep. Whether flat-packed or rigid, our dedicated delivery process is designed to give you peace of mind from the moment you order to the moment you begin installation.
+
+
+
             </div>
             <div class="col-lg-6 col-md-6 col-12">
                 <img src="{{ asset('images/order-component.jpg') }}" class="img-fluid" />

@@ -526,13 +526,13 @@
     </div>
     </div>
     </section>--}}
-
+    @if (count(\App\Models\InfoGraphic::get()) > 0)
     <section class="container-fluid px-lg-5 px-md-3 px-3 py-lg-5 py-3 bg-white" style="background-color: #f0f0f0; border-bottom: 3px solid #ebc266; border-right: 3px solid #ebc266">
         <div class="row">
             <div class="col-12">
                 <h3 class="text-uppercase fw-bolder text-dark text-center">ABOUT US</h3>
             </div>
-            <div class="col-lg-5 col-md-5 col-sm-6 col-12 mt-4">
+            <!-- <div class="col-lg-5 col-md-5 col-sm-6 col-12 mt-4">
                 <img src="{{ asset('images/homepage.jpeg') }}" class="img-fluid" style="border-radius: 20px;" />
             </div>
             <div class="col-lg-7 col-md-7 col-sm-6 col-12 mt-4 text-dark">
@@ -545,22 +545,32 @@
                 <p>
                     Operating from state-of-the-art facilities, our skilled workforce uses the latest sustainable manufacturing techniques to create kitchens that not only meet but exceed our clients' expectations. Our dedication to innovation ensures that our customers always have access to the most up-to-date designs and materials.
                 </p>
-            </div>
-            <!-- Image Column -->
-            <div class="col-lg-5 col-md-5 col-sm-6 col-12 mt-4 order-sm-2 order-1">
-                <img src="{{ asset('images/shaker-22.jpeg') }}" class="img-fluid" style="border-radius: 20px;" />
-            </div>
-            <!-- Text Column -->
-            <div class="col-lg-7 col-md-7 col-sm-6 col-12 mt-4 text-dark order-sm-1 order-2">
-                <p>
-                    Whether you're looking for a modern slab kitchen, a timeless shaker design, or the sleek lines of a J-pull handleless kitchen, BK Online makes it easy. Our kitchens are designed to be user-friendly, with components that are straightforward to assemble, thanks to our advanced clic technology. We offer both flat-pack and pre-assembled options, with fast and reliable delivery.
-                </p>
-                <p>
-                    Born out of a passion for offering better kitchen solutions, BK Online stands as a trusted partner in creating kitchens that bring joy for years to come. We invite you to explore our range and experience the difference that quality craftsmanship can make.
-                </p>
-            </div>
+            </div> -->
+            @foreach (\App\Models\InfoGraphic::get() as $index => $infoGraphic)
+                @php
+                    $isEven = $index % 2 === 0;
+                @endphp
+                @if ($isEven)
+                    <!-- Image Left - Text Right -->
+                    <div class="col-lg-5 col-md-5 col-sm-6 col-12 mt-4">
+                        <img src="{{ asset('imgs/infographics/'.$infoGraphic->image_path) }}" class="img-fluid" style="border-radius: 20px;" />
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-sm-6 col-12 mt-4 text-dark">
+                        <p>{!! $infoGraphic->description !!}</p>
+                    </div>
+                @else
+                    <!-- Text Left - Image Right -->
+                    <div class="col-lg-7 col-md-7 col-sm-6 col-12 mt-4 text-dark order-sm-1 order-2">
+                        <p>{!! $infoGraphic->description !!}</p>
+                    </div>
+                    <div class="col-lg-5 col-md-5 col-sm-6 col-12 mt-4 order-sm-2 order-1">
+                        <img src="{{ asset('imgs/infographics/'.$infoGraphic->image_path) }}" class="img-fluid" style="border-radius: 20px;" />
+                    </div>
+                @endif
+            @endforeach
         </div>
     </section>
+    @endif
 
     <section class="container-fluid py-5 bg-white" style="background-image: url({{asset('images/homepage.jpeg')}}); opacity: 2; border-bottom: 3px solid #ebc266; border-left: 3px solid #ebc266; padding: 20px">
         <div class="row">

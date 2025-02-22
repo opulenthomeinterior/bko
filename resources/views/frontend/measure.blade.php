@@ -12,10 +12,6 @@
                 <h1 class="fs-1 text-dark text-uppercase fw-bolder">
                     NEED HELP MEASURING?
                 </h1>
-                <h4 class="text-dark text-uppercase">
-                    Before ordering your kitchen, it’s important to measure correctly to ensure it fits perfectly in
-                    your home. The measurements of your kitchen will form the basis of your design.
-                </h4>
             </div>
         </div>
     </section>
@@ -24,8 +20,23 @@
         <div class="row mx-auto">
             <div class="col-lg-9 col-md-10 col-sm-12 mx-auto p-0">
                 <img src="{{ asset('images/order-component.jpg') }}" class="img-fluid" />
+                <br>
+                <br>
 
-                <p class="text-dark pt-3">Not sure where to start? Our clever, easy to use Kitchen Builder tool will
+                <h5 class="text-dark">
+                Getting the measurements right is crucial before placing your kitchen order to ensure everything fits perfectly. Accurate measurements form the foundation of your kitchen design, and we want to make the process as easy as possible for you.
+                </h5>
+                <br>
+                <h4 class="fw-bold">Start with the Kitchen Builder Tool</h4>
+                <h5 class="text-dark">
+                If you’re unsure where to begin, our intuitive Kitchen Builder tool is here to guide you. Simply input the overall dimensions of your kitchen and select your desired style. The tool will suggest kitchen layouts that best suit your space. It also accounts for any bespoke, made-to-measure units, taking the guesswork out of your measurements. From there, you can easily drag and drop units to customize the layout to your preference.
+                </h5>
+                <br>
+                <h4 class="fw-bold">Final Step: Lining Out Your Kitchen</h4>
+                <h5 class="text-dark">
+                Once your kitchen arrives, it’s important to line it out properly before fitting. We have helpful installation videos to walk you through this step, ensuring everything is aligned for a smooth installation. If you have any concerns about your measurements, our customer service team is here to assist you. Reach out to us at <b>customerservices@bkonline.uk</b> for expert advice.
+                </h5>
+                <!-- <p class="text-dark pt-3">Not sure where to start? Our clever, easy to use Kitchen Builder tool will
                     help you work out the best use of your space. Simply choose your kitchen style, input the overall
                     measurements and our tool will recommend a kitchen for you. Our Kitchen Builder tool will factor in
                     if you require bespoke, made to measure units saving you the worry of measurements being incorrect.
@@ -35,7 +46,7 @@
                     Please refer to our Installation Videos section for a tutorial on how to line out your kitchen.
 
                     Alternatively you can contact customerservices@kitchenkit.co.uk if you have any measurement
-                    concerns.</p>
+                    concerns.</p> -->
 
             </div>
         </div>
