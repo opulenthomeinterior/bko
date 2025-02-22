@@ -297,7 +297,7 @@
         </div>
     </section> -->
 
-    <section class="container-fluid position-relative" style="height: 100vh; overflow: hidden; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266; border-left: 3px solid #ebc266">
+    <section class="container-fluid position-relative" style="height: 150vh; overflow: hidden; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266; border-left: 3px solid #ebc266">
         <div class="image-container">
             <img src="{{ asset('images/homepage.jpeg') }}" alt="Image 1" class="fade-img active">
             <img src="{{ asset('images/shaker-22.jpeg') }}" alt="Image 1" class="fade-img">
