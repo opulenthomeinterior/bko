@@ -4,251 +4,8 @@
     <meta name="description" content="Buy Kitchen Online is here with Affordable & Custom kitchen units in London, in J Pull, Shaker, Slab, MFC & True Handleless styles. Book Consultation Now.">
     <!-- <meta name="description" content="Customize your Dream Kitchen with our Bespoke Kitchen Units in London. Our Bespoke Designer Kitchens include Slab, Shaker, True handleless & J-pull Styles."> -->
     <link rel="canonical" href="https://bkonline.uk/" />
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     @endsection
-    <style>
-        ol li {
-            list-style-type: unset;
-        }
-
-        ul li {
-            list-style-type: disc;
-        }
-
-        .hover-button:hover {
-            background-color: #000;
-            /* Change background color to dark */
-        }
-
-        .hover-button:hover .card-title {
-            color: #fff;
-            /* Change text color to white */
-        }
-
-        #message {
-            resize: none;
-            /* Prevents resizing */
-        }
-
-        #name::placeholder {
-            color: black;
-            opacity: 1;
-            /* Ensures the color is fully applied */
-        }
-
-        #email::placeholder {
-            color: black;
-            opacity: 1;
-            /* Ensures the color is fully applied */
-        }
-
-        #phone::placeholder {
-            color: black;
-            opacity: 1;
-            /* Ensures the color is fully applied */
-        }
-
-        #call-me-at::placeholder {
-            color: black;
-            opacity: 1;
-            /* Ensures the color is fully applied */
-        }
-
-        #message::placeholder {
-            color: black;
-            opacity: 1;
-            /* Ensures the color is fully applied */
-        }
-
-        /* Ensure the image fades out smoothly on hover */
-        .card-body:hover img {
-            /* opacity: 0.3; */
-            transition: opacity 0.4s ease-in-out;
-        }
-
-        /* Display the hover text when hovering over the card */
-        .card-body:hover .hover-text {
-            opacity: 1;
-        }
-
-        /* Ensure the hover text is initially hidden */
-        .hover-text {
-            opacity: 0;
-            transition: opacity 0.4s ease-in-out;
-            z-index: 2;
-            /* Make sure text is above the image */
-        }
-
-        /* Ensure the image has a lower z-index */
-        .img-container img {
-            z-index: 1;
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        /* Ensuring relative positioning for hover text and image */
-        .img-container {
-            position: relative;
-        }
-
-    .unique-font {
-        font-family: 'Libre baskerville';
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Optional shadow for emphasis */
-        letter-spacing: 0.02rem;
-    }
-
-        .image-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-        }
-
-        .fade-img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            opacity: 0;
-            transition: opacity 2s ease-in-out;
-        }
-
-        .fade-img.active {
-            opacity: 1;
-        }
-
-        /* #blinking-text {
-        animation: blink 3s infinite;
-    }
-
-    @keyframes blink {
-        0%, 100% {
-            opacity: 1;
-        }
-        50% {
-            opacity: 0;
-        }
-    } */
-        .styles-card {
-            height: 100%;
-            /* Ensures card stretches to fill the container */
-            min-height: 350px;
-            /* Set a minimum height for consistent sizing */
-            display: flex;
-            flex-direction: column;
-            /* Ensures vertical layout */
-            justify-content: space-between;
-            /* Distribute content evenly */
-            align-items: stretch;
-            /* Stretch content to align evenly */
-        }
-
-        .styles-card-body {
-            flex-grow: 1;
-            /* Ensures the card body stretches to fill space */
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            /* Align content at the bottom */
-        }
-
-        .img-container {
-            /* height: 200px; Fixed height for the image container */
-            background-color: #f5f5f5;
-            /* Light background for missing images */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            /* Prevents content from spilling out */
-            border-radius: 20px 20px 0px 0px;
-        }
-
-        .img-container img {
-            object-fit: cover;
-            /* Ensures the image fits without distortion */
-            width: 100%;
-            height: 100%;
-        }
-
-        .cat-card-title {
-            text-align: center;
-        }
-
-        .order-component-scroller {
-            max-width: 1900px;
-            overflow-x: auto;
-            /* Ensures horizontal scrolling is functional */
-            scrollbar-width: none;
-            /* Hides scrollbar in Firefox by default */
-        }
-
-        .order-component-scroller::-webkit-scrollbar {
-            width: 0;
-            /* Hides scrollbar in WebKit browsers by default */
-        }
-
-        /* Show scrollbar on hover */
-        .order-component-scroller:hover::-webkit-scrollbar {
-            width: 8px;
-            /* Adjust the scrollbar width when hovered */
-            height: 8px;
-            /* Horizontal scrollbar height */
-        }
-
-        .order-component-scroller:hover {
-            scrollbar-width: thin;
-            /* Firefox: Shows a thin scrollbar when hovered */
-        }
-
-    /* Style the scrollbar thumb */
-    .order-component-scroller::-webkit-scrollbar-thumb {
-        background-color: #ebc266; /* Thumb color */
-        border-radius: 0px; /* Rounded corners */
-        color: #ebc266;
-    }
-
-        /* Style the scrollbar track */
-        .order-component-scroller::-webkit-scrollbar-track {
-            background: #f0f0f0;
-            /* Track background */
-        }
-
-        .scroll-down {
-            font-size: 1.2rem;
-            font-weight: bold;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: white;
-            animation: moveUpDown 1.5s infinite ease-in-out;
-        }
-
-        .scroll-down i {
-            font-size: 2rem;
-            margin-top: 5px;
-        }
-
-        @keyframes moveUpDown {
-            0% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(10px);
-            }
-
-            100% {
-                transform: translateY(0);
-            }
-        }
-    </style>
 
     <!-- <section class="container-fluid bg-white px-lg-5 py-3 px-md-3 px-3 mt-4" style="border-top: 3px solid #ebc266; border-right: 3px solid #ebc266">
         <div class="row">
@@ -259,7 +16,7 @@
         </div>
     </section> -->
 
-    <section class="container-fluid px-lg-5 py-3 px-md-3 px-3 bg-white mx-0" style="border-bottom: 1px solid #fff; border-top: 1px solid #fff; border-right: 3px solid #ebc266">
+    <!-- <section class="container-fluid px-lg-5 py-3 px-md-3 px-3 bg-white mx-0" style="border-bottom: 1px solid #fff; border-top: 1px solid #fff; border-right: 3px solid #ebc266">
         <div class="row">
             <div class="col-12 text-center">
                 <h1 class="fs-3 text-dark text-uppercase fw-bolder unique-font">
@@ -267,7 +24,7 @@
                 </h1>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- <section class="container-fluid px-lg-5 px-md-3 px-3 py-lg-5 py-3" style="background-color: #f0f0f0;">
         <div class="row">
@@ -297,77 +54,134 @@
         </div>
     </section> -->
 
-    <section class="container-fluid position-relative" style="height: 150vh; overflow: hidden; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266; border-left: 3px solid #ebc266">
+    <section class="container-fluid position-relative hero-section d-flex align-items-center" style="min-height: 100vh; overflow: hidden; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266;">
+        
+        <!-- Background Image -->
         <div class="image-container">
             <img src="{{ asset('images/homepage.jpeg') }}" alt="Image 1" class="fade-img active">
-            <img src="{{ asset('images/shaker-22.jpeg') }}" alt="Image 1" class="fade-img">
-            <img src="{{ asset('images/True-Handleless-SuperGloss-Graphite.jpg') }}" alt="Image 2" class="fade-img">
-            <!-- <img src="{{ asset('images/Slab-Kitchen.jpg') }}" alt="Image 3" class="fade-img"> -->
+            <img src="{{ asset('images/shaker-22.jpeg') }}" alt="Image 2" class="fade-img">
+            <img src="{{ asset('images/True-Handleless-SuperGloss-Graphite.jpg') }}" alt="Image 3" class="fade-img">
             <img src="{{ asset('images/slab.jpeg') }}" alt="Image 4" class="fade-img">
         </div>
 
-        <div class="row h-100 w-100 d-flex justify-content-between align-items-center">
-            <!-- Left div content -->
-            <div class="col-xl-7 col-lg-7 col-md-5 col-sm-12 col-xs-12 col-12 text-center d-flex flex-column justify-content-center align-items-center">
-                <h2 class="unique-font text-white fw-bolder text-center p-2" id="typing-effect" 
-                    style="text-shadow: 5px 5px 5px black; background-color: rgba(0, 0, 0, 0.5); width: 90%; border-radius: 50px; border: 1px solid #ebc266;">
-                    
-                </h2>
-                <div class="p-2">
-                    <a href="{{ route('orderkitchen') }}" class="btn btn-md btn-warning text-dark fw-bolder text-uppercase" style="border-radius: 20px;">
-                        Order Now
-                    </a>
+        <!-- Content -->
+        <div class="container">
+            <div class="row main-image-content align-items-center" style="z-index: 1000;">
+                
+                <!-- Left Content -->
+                <div class="col-md-7 text-start text-white px-4" style="z-index: 100;">
+                    <div class="ps-4 animated slide-top">
+                        <h6 class="text-yellow-color fw-bold">BK ONLINE KITCHENS</h6>
+                    </div>
+                    <div class="text-green-color ps-3" style="border-left: 3px solid; margin-bottom: 10px">
+                        <h1 class="text-white animated slide-right">ELEVATE YOUR KITCHEN</h1>
+                        <h1 class="text-yellow-color fw-bold animated slide-left">ELEVATE YOUR LIFESTYLE</h1>
+                        <p class="text-white animated slide-bottom">We specialize in virtually designing and delivering your dream kitchen that complements your needs and style. Whether you want to build a new kitchen or need to replace a single component, we are always at your service.</p>
+                    </div>
+                    <div class="ps-4 text-center col-xl-8 col-lg-12 col-md-12 col-sm-12 animated slide-top" style="margin-top: 50px">
+                        <h3 class="unique-font text-white text-center px-4 py-1 rounded-gradient-border w-100" id="typing-effect"></h3>
+                    </div>
+                    <div class="ps-4 mt-4 animated slide-bottom">
+                        <a href="{{ route('orderkitchen') }}" class="btn btn-md bg-yellow-color2 text-white text-uppercase border-green-color" style="border-radius: 50px;">
+                            Order Now
+                        </a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Right form content -->
-            <div class="col-xl-5 col-lg-5 col-md-7 col-sm-12 col-xs-12 col-12 p-0 d-flex justify-content-center">
-                <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning w-75" style="background-color: rgba(0, 0, 0, 0.5); padding: 20px; border-radius: 20px;">
-                    @csrf
-                    <div>
-                        <div class="d-block">
-                            <div class="text-center text-warning fw-bold">CALL US NOW FOR FREE SURVEY AND QUOTE</div>
-                            <div class="d-flex justify-content-center">
-                                <a href="tel:02080505605" class="text-center text-white fs-4 fw-bold">
-                                    020 805 05605
-                                </a>
-                            </div>
+                <!-- Right Form -->
+                <div class="col-md-5 col-12 d-flex justify-content-center my-4 mt-md-0">
+                    <form method="POST" action="{{ route('contact_us_inquiry') }}" class="w-100 text-yellow-color2 p-4" style="border: 3px solid; border-radius: 25px; background-color: rgba(0, 0, 0, 0.6)">
+                        @csrf
+                        <h3 class="text-white text-center">For free survey, <b class="text-yellow-color2">CALL US NOW!</b></h3>
+                        <div class="text-center">
+                            <a href="tel:02080505605" class="text-white fs-4 fw-bold">020 805 05605</a>
                         </div>
-                    </div>
-                    <hr class="border border-warning">
+                        <hr class="border-warning">
 
-                    <h6 class="text-warning text-center fw-bold">OR</h6>
-                    <h4 id="blinking-text" class="bg-warning text-dark fw-bold text-center py-2" style="border-radius: 20px;">
-                        Book a free consultation now!
-                    </h4>
-                    <hr class="border border-warning">
-                    <div class="mb-3">
-                        <input type="text" style="color: black" class="border border-warning form-control text-dark" name="name" id="name" placeholder="Enter your name">
-                    </div>
-                    <div class="mb-3">
-                        <input type="email" style="color: black" class="border border-warning form-control text-dark" name="email" id="email" placeholder="Enter your email">
-                    </div>
-                    <div class="mb-3">
-                        <input type="number" style="color: black" class="border border-warning form-control text-dark" name="phone" id="phone" placeholder="Enter your phone number">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="text-dark bg-warning p-2 text-end fw-bold">Call me at</label>
-                        <input type="datetime-local" style="color: black" class="border border-warning form-control text-dark" name="call_time">
-                    </div>
-                    <div class="mb-3">
-                        <textarea name="message" id="message" name="message" rows="3" class="w-100 border border-warning form-control text-dark" placeholder="Enter your message"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-warning fw-bolder text-uppercase text-dark" style="border-radius: 0;">Submit</button>
-                </form>
+                        <h6 class="text-white text-center fw-bold">OR</h6>
+                        <h4 class="bg-green-color text-white text-center py-2 rounded-5">BOOK A FREE CONSULTATION NOW!</h4>
+                        <hr class="border-warning">
+                        
+                        <input type="text" class="form-control border-warning mb-3" name="name" placeholder="Enter your name">
+                        <input type="email" class="form-control border-warning mb-3" name="email" placeholder="Enter your email">
+                        <label for="" class="text-white bg-yellow-color2 p-2">Call me at</label>
+                        <input type="number" class="form-control border-warning mb-3" name="phone" placeholder="Enter your phone number">
+                        <input type="datetime-local" class="form-control border-warning mb-3" name="call_time">
+                        <textarea name="message" rows="3" class="form-control border-warning mb-3" placeholder="Enter your message"></textarea>
+                        
+                        <button type="submit" class="btn btn-warning bg-yellow-color2 fw-bolder text-uppercase w-100">Submit</button>
+                    </form>
+                </div>
+
             </div>
+            <div class="left-shadow"></div>
         </div>
     </section>
 
+    <!-- ORDER KITCHEN-->
+    <section class="container-fluid py-5 bg-white" style="border-bottom: 3px solid #ebc266; border-left: 3px solid #ebc266">
+        <div class="row">
+            <h3 class="text-uppercase fw-bolder text-dark text-center">ORDER KITCHEN</h3>
+        </div>
+        <div class="row mt-4" id="stylesContainer">
+            <div class="carousel main-carousel-banner owl-carousel clients mb-0 p-0"
+                data-margin="30"
+                data-loop="true"
+                data-dots="false"
+                data-autoplay="true"
+                data-autoplay-timeout="3000"
+                data-responsive='{"0":{"items": "3"}, "768":{"items": "4"}, "992":{"items": "4"}, "1200":{"items": "4"}, "1400":{"items": "4"}}'>
+                @foreach ($styles as $key => $style)
+                <div class="item">
+                        <div class="carousel-card card border border-warning" style="box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
+                            <div class="card-body carousel-card-body p-0 m-0">
+                                <div class="col-12">
+                                    <img src="{{asset('images/homepage.jpeg')}}" class="img-fluid">
+                                    <h4 class="card-title text-uppercase fw-bold text-center m-0 p-4 {{ $key % 2 == 0 ? 'bg-green-color text-yellow-color2' : 'bg-yellow-color2 text-dark' }}">
+                                        {{$style->name}}
+                                        <p class="text-center m-0" style="text-decoration: underline;">See our range</p>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                <!-- <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-4 style-card" style="display: {{ $key < 4 ? 'flex' : 'none' }};">
+                    <a class="p-0 w-100" href="{{ route('orderkitchenbyname', $style->slug) }}" style="border-radius: 20px">
+                        <div class="card styles-card component-card h-100 d-flex flex-column justify-content-between" style="border-radius: 10px; border: none;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); ">
+                            <div class="card-body styles-card-body p-0 bg-light d-flex flex-column justify-content-end position-relative" style="border-radius: 10px">
+                                <div class="position-relative img-container p-0">
+                                    @if ($style->image_path)
+                                    <img src="{{asset('uploads/styles/'.$style->image_path)}}" alt="{{$style->name}}">
+                                    @else
+                                    <div class="text-center w-100 h-100 d-flex align-items-center justify-content-center">
+                                        <span class="text-muted">No Image Available</span>
+                                    </div>
+                                    @endif
+                                </div>
+                                <h4 class="py-2 card-title text-uppercase fw-bold text-center m-0 {{ $key % 2 == 0 ? 'bg-green-color text-yellow-color2' : 'bg-yellow-color2 text-dark' }}" style="border-radius: 0px 0px 10px 10px">
+                                    {{$style->name}}
+                                    <p class="text-center mt-2" style="text-decoration: underline;">See our range</p>
+                                </h4>
+                            </div>
+                        </div>
+                    </a>
+                </div> -->
+                </div>
+                @endforeach
+            </div>
+        </div>
+        <div class="row mt-3">
+            <!-- <div class="col-12 text-center">
+                <button id="showMoreButton" class="btn btn-warning px-4 py-2 text-dark" style="border-radius: 20px;">Show More</button>
+            </div>
+        </div> -->
+    </section>
+
+    <!-- ORDER COMPONENT-->
     <section class="container-fluid bg-white py-5" style="width: 100%; border-bottom: 3px solid #ebc266; border-right: 3px solid #ebc266">
         <div class="row">
-            <h3 class="text-uppercase fw-bolder text-dark text-center">ORDER COMPONENT</h3>
+            <h3 class="text-uppercase fw-bolder text-dark text-center py-3">ORDER COMPONENTS</h3>
         </div>
-        <div class="row border border-warning bg-white p-4 m-4" style="border-radius: 20px;">
+        <div class="row bg-white">
             @php
             $categories = \App\Models\Category::where('parent_category_id', null)->where('status', 1)->get();
             @endphp
@@ -380,43 +194,43 @@
                                 <div class="card-body d-flex">
                                     @if($category->slug == 'doors')
                                     <div>
-                                        <img height="55px" width="50px" src="https://cdn-icons-png.flaticon.com/512/2237/2237440.png" alt="">
+                                        <img height="55px" width="50px" class="rounded-circular-image" src="https://cdn-icons-png.flaticon.com/512/2237/2237440.png" alt="">
                                     </div>
                                     @elseif($category->slug == 'handles')
                                     <div>
-                                        <img height="55px" width="50px" src="https://cdn4.iconfinder.com/data/icons/thin-home-living-2/24/thin-1459_door_handle_lock-512.png" alt="">
+                                        <img height="55px" width="50px" class="rounded-circular-image" src="https://cdn4.iconfinder.com/data/icons/thin-home-living-2/24/thin-1459_door_handle_lock-512.png" alt="">
                                     </div>
                                     @elseif($category->slug == 'accessories')
                                     <div>
-                                        <img height="55px" width="50px" src="https://cdn-icons-png.flaticon.com/512/3365/3365678.png" alt="">
+                                        <img height="55px" width="50px" class="rounded-circular-image" src="https://cdn-icons-png.flaticon.com/512/3365/3365678.png" alt="">
                                     </div>
                                     @elseif($category->slug == 'sinks')
                                     <div>
-                                        <img height="55px" width="50px" src="https://cdn-icons-png.flaticon.com/512/810/810192.png" alt="">
+                                        <img height="55px" width="50px" class="rounded-circular-image" src="https://cdn-icons-png.flaticon.com/512/810/810192.png" alt="">
                                     </div>
                                     @elseif($category->slug == 'internals')
                                     <div>
-                                        <img height="55px" width="50px" src="https://cdn-icons-png.flaticon.com/512/4717/4717615.png" alt="">
+                                        <img height="55px" width="50px" class="rounded-circular-image" src="https://cdn-icons-png.flaticon.com/512/4717/4717615.png" alt="">
                                     </div>
                                     @elseif($category->slug == 'taps')
                                     <div>
-                                        <img height="55px" width="50px" src="https://icons.veryicon.com/png/o/object/home-icon/water-tap.png" alt="">
+                                        <img height="55px" width="50px" class="rounded-circular-image" src="https://icons.veryicon.com/png/o/object/home-icon/water-tap.png" alt="">
                                     </div>
                                     @elseif($category->slug == 'worktops')
                                     <div>
-                                        <img height="55px" width="50px" src="https://static.thenounproject.com/png/2342543-200.png" alt="">
+                                        <img height="55px" width="50px" class="rounded-circular-image" src="https://static.thenounproject.com/png/2342543-200.png" alt="">
                                     </div>
                                     @elseif($category->slug == 'upstands')
                                     <div>
-                                        <img height="55px" width="50px" src="https://cdn-icons-png.flaticon.com/512/6785/6785530.png" alt="">
+                                        <img height="55px" width="50px" class="rounded-circular-image" src="https://cdn-icons-png.flaticon.com/512/6785/6785530.png" alt="">
                                     </div>
                                     @elseif($category->slug == 'breakfast-bars')
                                     <div>
-                                        <img height="55px" width="50px" src="https://cdn-icons-png.flaticon.com/512/2311/2311531.png" alt="">
+                                        <img height="55px" width="50px" class="rounded-circular-image" src="https://cdn-icons-png.flaticon.com/512/2311/2311531.png" alt="">
                                     </div>
                                     @elseif($category->slug == 'appliances')
                                     <div>
-                                        <img height="55px" width="50px" src="https://static.thenounproject.com/png/1283252-200.png" alt="">
+                                        <img height="55px" width="50px" class="rounded-circular-image" src="https://static.thenounproject.com/png/1283252-200.png" alt="">
                                     </div>
                                     @endif
                                 </div>
@@ -430,101 +244,155 @@
         </div>
     </section>
 
-    <section class="container-fluid py-lg-5 py-3 bg-white" style="border-bottom: 3px solid #ebc266; border-left: 3px solid #ebc266">
-        <div class="row">
-            <h3 class="text-uppercase fw-bolder text-dark text-center">ORDER KITCHEN</h3>
+    <section class="container-fluid bg-green-color py-5">
+        <div class="col-12">
+            <h3 class="text-white text-center">
+                EXPERT VIRTUAL DESIGN CONSULTATION
+            </h3>
+            <p class="text-center text-white">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda eius ducimus eaque. Laboriosam sint earum omnis voluptatem tempora ipsa blanditiis quos quae. Ipsam impedit dignissimos odit exercitationem tempore, harum deserunt!
+            </p>
         </div>
-        <div class="row mt-4 px-0" id="stylesContainer">
-            @foreach ($styles as $key => $style)
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-4 style-card" style="display: {{ $key < 4 ? 'flex' : 'none' }};">
-                <a class="p-0 w-100" href="{{ route('orderkitchenbyname', $style->slug) }}" style="border-radius: 20px">
-                    <div class="card styles-card component-card h-100 d-flex flex-column justify-content-between" style="border-radius: 20px; border: none;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); ">
-                        <div class="card-body styles-card-body p-0 bg-light d-flex flex-column justify-content-end position-relative" style="border-radius: 20px">
-                            <div class="position-relative img-container p-0">
-                                @if ($style->image_path)
-                                <img src="{{asset('uploads/styles/'.$style->image_path)}}" alt="{{$style->name}}">
-                                @else
-                                <div class="text-center w-100 h-100 d-flex align-items-center justify-content-center">
-                                    <span class="text-muted">No Image Available</span>
-                                </div>
-                                @endif
-                                <!-- Hover text -->
-                                <!-- <div class="hover-text position-absolute w-100 h-100 bg-warning text-dark d-flex justify-content-center align-items-center" style="top: 0; left: 0; transition: opacity 0.4s;">
-                                        <h5 class="text-dark">Do you find it challenging to find the dream luxury true-handleless kitchen within your budget? No more with BKO kitchen, we are here with our true handleless style kitchens that combine elegance and style with affordability.</h5>
-                                    </div> -->
-                            </div>
-                            <h4 class="py-4 card-title text-uppercase fw-bold text-center m-0 bg-warning" style="border-radius: 0px 0px 20px 20px">{{$style->name}}
-                                <p class="text-center mt-3" style="text-decoration: underline;">See our range</p>
-                            </h4>
+    </section>
+
+    <section class="container-fluid bg-white py-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 align-items-center d-flex flex-column mb-5" style="max-width: 300px;">
+                <button class="btn btn-light text-dark fw-bolder circular-button-text">
+                    01
+                </button>
+                <span style="border: 2px solid #febd49; width: 100%"></span>
+                <div class="card mt-2" style="box-shadow: 0px 5px 15px 0px rgba(1, 1, 1, 0.9);">
+                    <div class="card-body bg-green-color">
+                        <div class="d-flex justify-content-center mb-3">
+                            <img height="80px" width="80px" class="rounded-circular-image p-2" src="https://cdn4.iconfinder.com/data/icons/thin-home-living-2/24/thin-1459_door_handle_lock-512.png" alt="" style="border: 3px solid #000; border-radius: 10%; top: -40px; background-color: white !important">
                         </div>
+                        <h4 class="text-center rounded-5 p-2 border border-light text-white">
+                            APPOINTMENT BOOKING
+                        </h4>
+                        <p class="text-center text-white">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quos explicabo cumque officia ipsam, natus praesentium placeat ab harum commodi cupiditate illum? A, repellendus cupiditate. Odio iusto nam accusamus maxime.
+                        </p>
                     </div>
-                </a>
+                </div>
             </div>
-            @endforeach
-        </div>
-        <div class="row mt-3">
-            <div class="col-12 text-center">
-                <button id="showMoreButton" class="btn btn-warning px-4 py-2 text-dark" style="border-radius: 20px;">Show More</button>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 align-items-center d-flex flex-column mb-5" style="max-width: 300px;">
+                <button class="btn btn-light text-dark fw-bolder circular-button-text">
+                    02
+                </button>
+                <span style="border: 2px solid #febd49; width: 100%"></span>
+                <div class="card mt-2" style="box-shadow: 0px 5px 15px 0px rgba(1, 1, 1, 0.9);">
+                    <div class="card-body bg-yellow-color2">
+                        <div class="d-flex justify-content-center mb-3">
+                            <img height="80px" width="80px" class="rounded-circular-image p-2" src="https://cdn4.iconfinder.com/data/icons/thin-home-living-2/24/thin-1459_door_handle_lock-512.png" alt="" style="border: 3px solid #000; border-radius: 10%; top: -40px; background-color: white !important">
+                        </div>
+                        <h4 class="text-center rounded-5 p-2 border border-light text-white">
+                            APPOINTMENT BOOKING
+                        </h4>
+                        <p class="text-center text-white">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quos explicabo cumque officia ipsam, natus praesentium placeat ab harum commodi cupiditate illum? A, repellendus cupiditate. Odio iusto nam accusamus maxime.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 align-items-center d-flex flex-column mb-5" style="max-width: 300px;">
+                <button class="btn btn-light text-dark fw-bolder circular-button-text">
+                    03
+                </button>
+                <span style="border: 2px solid #febd49; width: 100%"></span>
+                <div class="card mt-2" style="box-shadow: 0px 5px 15px 0px rgba(1, 1, 1, 0.9);">
+                    <div class="card-body bg-grey-color">
+                        <div class="d-flex justify-content-center mb-3">
+                            <img height="80px" width="80px" class="rounded-circular-image p-2" src="https://cdn4.iconfinder.com/data/icons/thin-home-living-2/24/thin-1459_door_handle_lock-512.png" alt="" style="border: 3px solid #000; border-radius: 10%; top: -40px; background-color: white !important">
+                        </div>
+                        <h4 class="text-center rounded-5 p-2 border border-light text-white">
+                            APPOINTMENT BOOKING
+                        </h4>
+                        <p class="text-center text-white">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quos explicabo cumque officia ipsam, natus praesentium placeat ab harum commodi cupiditate illum? A, repellendus cupiditate. Odio iusto nam accusamus maxime.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 align-items-center d-flex flex-column mb-5" style="max-width: 300px;">
+                <button class="btn btn-light text-dark fw-bolder circular-button-text">
+                    04
+                </button>
+                <span style="border: 2px solid #febd49; width: 100%"></span>
+                <div class="card mt-2" style="box-shadow: 0px 5px 15px 0px rgba(1, 1, 1, 0.9);">
+                    <div class="card-body bg-dark">
+                        <div class="d-flex justify-content-center mb-3">
+                            <img height="80px" width="80px" class="rounded-circular-image p-2" src="https://cdn4.iconfinder.com/data/icons/thin-home-living-2/24/thin-1459_door_handle_lock-512.png" alt="" style="border: 3px solid #000; border-radius: 10%; top: -40px; background-color: white !important">
+                        </div>
+                        <h4 class="text-center rounded-5 p-2 border border-light text-white">
+                            APPOINTMENT BOOKING
+                        </h4>
+                        <p class="text-center text-white">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quos explicabo cumque officia ipsam, natus praesentium placeat ab harum commodi cupiditate illum? A, repellendus cupiditate. Odio iusto nam accusamus maxime.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
     {{--<section>
         <div>
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12 col-12 mb-4">
                 <a class="btn btn-outline-warning p-1 border-0" style="border-radius: 0;" href="{{ route('orderkitchenbyname', 'true-handleless') }}">
-    <div style="height: 200px;" class="card component-card border-0 h-100 d-flex flex-column justify-content-between">
-        <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">TRUE HANDLELESS KITCHEN</h4>
-        <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end position-relative">
-            <!-- Image container -->
-            <div class="position-relative img-container">
-                <img src="https://bkonline.uk/public/uploads/styles/15_11_2024_171644_673781fcba4e5-true-handleless.jpeg" class="img-fluid w-100 h-100">
-                <!-- Hover text -->
-                <div class="hover-text position-absolute w-100 h-100 bg-warning text-dark d-flex justify-content-center align-items-center" style="top: 0; left: 0; transition: opacity 0.4s;">
-                    <h5 class="text-dark">Do you find it challenging to find the dream luxury true-handleless kitchen within your budget? No more with BKO kitchen, we are here with our true handleless style kitchens that combine elegance and style with affordability.</h5>
-                </div>
+                    <div style="height: 200px;" class="card component-card border-0 h-100 d-flex flex-column justify-content-between">
+                        <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">TRUE HANDLELESS KITCHEN</h4>
+                        <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end position-relative">
+                            <!-- Image container -->
+                            <div class="position-relative img-container">
+                                <img src="https://bkonline.uk/public/uploads/styles/15_11_2024_171644_673781fcba4e5-true-handleless.jpeg" class="img-fluid w-100 h-100">
+                                <!-- Hover text -->
+                                <div class="hover-text position-absolute w-100 h-100 bg-warning text-dark d-flex justify-content-center align-items-center" style="top: 0; left: 0; transition: opacity 0.4s;">
+                                    <h5 class="text-dark">Do you find it challenging to find the dream luxury true-handleless kitchen within your budget? No more with BKO kitchen, we are here with our true handleless style kitchens that combine elegance and style with affordability.</h5>
+                                </div>
+                            </div>
+                            <p class="text-center mt-3" style="text-decoration: underline;">See our range</p>
+                        </div>
+                    </div>
+                </a>
             </div>
-            <p class="text-center mt-3" style="text-decoration: underline;">See our range</p>
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12 col-12 mb-4">
+                <a class="btn btn-outline-warning p-1 border-0" style="border-radius: 0;" href="{{ route('orderkitchenbyname', 'shaker') }}">
+                    <div style="height: 200px;" class="card component-card border-0 h-100 d-flex flex-column justify-content-between">
+                        <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">SHAKER KITCHEN</h4>
+                        <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end position-relative">
+                            <!-- Image container -->
+                            <div class="position-relative img-container">
+                                <img src="https://bkonline.uk/public/uploads/styles/15_11_2024_171606_673781d675f0e-shaker-22.jpeg" class="img-fluid w-100 h-100">
+                                <!-- Hover text -->
+                                <div class="hover-text position-absolute w-100 h-100 bg-warning text-dark d-flex justify-content-center align-items-center" style="top: 0; left: 0; transition: opacity 0.4s;">
+                                    <h5 class="text-dark">Are you struggling to find an online kitchen partner in the UK that installs shaker kitchens with retail quality at online prices? Consider BKO Kitchen as your trusted partner for streamlining your kitchen remodeling journey.</h5>
+                                </div>
+                            </div>
+                            <p class="text-center mt-3" style="text-decoration: underline;">See our range</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12 col-12 mb-4">
+                <a class="btn btn-outline-warning p-1 border-0" style="border-radius: 0;" href="{{ route('orderkitchenbyname', 'slab-painted') }}">
+                    <div style="height: 200px;" class="card component-card border-0 h-100 d-flex flex-column justify-content-between">
+                        <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">SLAB PAINTED KITCHEN</h4>
+                        <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end position-relative">
+                            <!-- Image container -->
+                            <div class="position-relative img-container">
+                                <img src="https://bkonline.uk/public/uploads/styles/15_11_2024_171731_6737822b56477-slab-painted.jpeg" class="img-fluid w-100 h-100">
+                                <!-- Hover text -->
+                                <div class="hover-text position-absolute w-100 h-100 bg-warning text-dark d-flex justify-content-center align-items-center" style="top: 0; left: 0; transition: opacity 0.4s;">
+                                    <h5 class="text-dark">Are you thinking of renovating your old kitchen with a blend of aesthetics and modern touches? If so, it’s time to ease your life with BKO Kitchen. choose from our Slab Kitchen designs in your preferred colour to refresh your home vibes.</h5>
+                                </div>
+                            </div>
+                            <p class="text-center mt-3" style="text-decoration: underline;">See our range</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
-    </div>
-    </a>
-    </div>
-    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12 col-12 mb-4">
-        <a class="btn btn-outline-warning p-1 border-0" style="border-radius: 0;" href="{{ route('orderkitchenbyname', 'shaker') }}">
-            <div style="height: 200px;" class="card component-card border-0 h-100 d-flex flex-column justify-content-between">
-                <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">SHAKER KITCHEN</h4>
-                <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end position-relative">
-                    <!-- Image container -->
-                    <div class="position-relative img-container">
-                        <img src="https://bkonline.uk/public/uploads/styles/15_11_2024_171606_673781d675f0e-shaker-22.jpeg" class="img-fluid w-100 h-100">
-                        <!-- Hover text -->
-                        <div class="hover-text position-absolute w-100 h-100 bg-warning text-dark d-flex justify-content-center align-items-center" style="top: 0; left: 0; transition: opacity 0.4s;">
-                            <h5 class="text-dark">Are you struggling to find an online kitchen partner in the UK that installs shaker kitchens with retail quality at online prices? Consider BKO Kitchen as your trusted partner for streamlining your kitchen remodeling journey.</h5>
-                        </div>
-                    </div>
-                    <p class="text-center mt-3" style="text-decoration: underline;">See our range</p>
-                </div>
-            </div>
-        </a>
-    </div>
-    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12 col-12 mb-4">
-        <a class="btn btn-outline-warning p-1 border-0" style="border-radius: 0;" href="{{ route('orderkitchenbyname', 'slab-painted') }}">
-            <div style="height: 200px;" class="card component-card border-0 h-100 d-flex flex-column justify-content-between">
-                <h4 class="p-4 card-title bg-warning text-uppercase fw-bold text-center">SLAB PAINTED KITCHEN</h4>
-                <div class="card-body p-0 border-warning bg-light border d-flex flex-column justify-content-end position-relative">
-                    <!-- Image container -->
-                    <div class="position-relative img-container">
-                        <img src="https://bkonline.uk/public/uploads/styles/15_11_2024_171731_6737822b56477-slab-painted.jpeg" class="img-fluid w-100 h-100">
-                        <!-- Hover text -->
-                        <div class="hover-text position-absolute w-100 h-100 bg-warning text-dark d-flex justify-content-center align-items-center" style="top: 0; left: 0; transition: opacity 0.4s;">
-                            <h5 class="text-dark">Are you thinking of renovating your old kitchen with a blend of aesthetics and modern touches? If so, it’s time to ease your life with BKO Kitchen. choose from our Slab Kitchen designs in your preferred colour to refresh your home vibes.</h5>
-                        </div>
-                    </div>
-                    <p class="text-center mt-3" style="text-decoration: underline;">See our range</p>
-                </div>
-            </div>
-        </a>
-    </div>
-    </div>
     </section>--}}
     @if (count(\App\Models\InfoGraphic::get()) > 0)
     <section class="container-fluid px-lg-5 px-md-3 px-3 py-lg-5 py-3 bg-white" style="background-color: #f0f0f0; border-bottom: 3px solid #ebc266; border-right: 3px solid #ebc266">
@@ -572,6 +440,239 @@
     </section>
     @endif
 
+    <section class="container-fluid bg-yellow-color2 py-2">
+        <div class="col-12 d-flex flex-column align-items-center">
+            <p class="text-center">Want a more hands-on approach?</p>
+            <h3 class="text-dark text-center fw-bolder">
+                ON-SITE SURVEY
+            </h3>
+            <p class="text-center text-dark w-75">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda eius ducimus eaque. Laboriosam sint earum omnis voluptatem tempora ipsa blanditiis quos quae. Ipsam impedit dignissimos odit exercitationem tempore, harum deserunt!
+            </p>
+        </div>
+    </section>
+
+    <section class="container-fluid bg-light py-5 my-4">
+        <div class="container shadow-container pb-4" style="height: auto !important;">
+            <div class="row py-2">
+                <div class="col-xl-4 col-lg 4 col-md-4 col-sm-12 col-12" style="margin-bottom: 7rem">
+                    <div class="card bg-transparent border-0">
+                        <div class="card-header bg-transparent d-flex justify-content-center text-yellow-color2 p-3" style="">
+                            <button class="btn btn-outline-warning bg-warning p-3" style="box-shadow: 0px 25px 0px 0px rgba(237,161,14, 0.9); height: 80px; width: 80px; border-radius: 50%; border: 5px solid #eda10e">
+                                <div class="d-flex justify-content-center" style="border-radius: 50%">
+                                    <img height="80px" width="80px" class="img-fluid bg-transparent" src="https://cdn4.iconfinder.com/data/icons/thin-home-living-2/24/thin-1459_door_handle_lock-512.png" alt="" style="filter: invert(1);">
+                                </div>
+                            </button>
+                        </div>
+                        <div class="card-body border-0 position-relative d-flex flex-column align-items-center" style="place-content: center; place-items: center">
+                            <i class="position-absolute" style="top: 20px; left: 48%; border-radius: 50%; height: 15px; width: 15px; border: 5px solid #eda10e"></i>
+                            <div class="text-center bg-yellow-color2 text-white p-3 m-0 rounded-2 position-absolute" style="top: 50px">
+                                <span style="font-weight: bolder !important; font-size: 18px !important">Professional Space Assesment</span>
+                                <p style="font-weight: normal !important; font-size: 10px !important">Our experts visit your home for precise measurements</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg 4 col-md-4 col-sm-12 col-12" style="margin-bottom: 7rem">
+                    <div class="card bg-transparent border-0">
+                        <div class="card-header bg-transparent d-flex justify-content-center text-yellow-color2 p-3" style="">
+                            <button class="btn btn-outline-warning bg-green-color p-3" style="box-shadow: 0px 25px 0px 0px rgba(42,97,97, 0.9); height: 80px; width: 80px; border-radius: 50%; border: 5px solid rgb(29, 71, 71)">
+                                <div class="d-flex justify-content-center" style="border-radius: 50%">
+                                    <img height="80px" width="80px" class="img-fluid bg-transparent" src="https://cdn4.iconfinder.com/data/icons/thin-home-living-2/24/thin-1459_door_handle_lock-512.png" alt="" style="filter: invert(1);">
+                                </div>
+                            </button>
+                        </div>
+                        <div class="card-body border-0 position-relative d-flex flex-column align-items-center" style="place-content: center; place-items: center">
+                            <i class="position-absolute" style="top: 20px; left: 48%; border-radius: 50%; height: 15px; width: 15px; border: 5px solid #2a6161"></i>
+                            <div class="text-center bg-green-color text-white p-3 m-0 rounded-2 position-absolute" style="top: 50px">
+                                <span style="font-weight: bolder !important; font-size: 18px !important">Professional Space Assesment</span>
+                                <p style="font-weight: normal !important; font-size: 10px !important">Our experts visit your home for precise measurements</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg 4 col-md-4 col-sm-12 col-12" style="margin-bottom: 7rem">
+                    <div class="card bg-transparent border-0">
+                        <div class="card-header bg-transparent d-flex justify-content-center text-dark p-3" style="">
+                            <button class="btn btn-outline-warning bg-light p-3" style="box-shadow: 0px 25px 0px 0px rgba(0,0,0, 0.9); height: 80px; width: 80px; border-radius: 50%; border: 5px solid rgb(81, 81, 81)">
+                                <div class="d-flex justify-content-center" style="border-radius: 50%">
+                                    <img height="80px" width="80px" class="img-fluid bg-transparent" src="https://cdn4.iconfinder.com/data/icons/thin-home-living-2/24/thin-1459_door_handle_lock-512.png" alt="" style="filter: invert(0);">
+                                </div>
+                            </button>
+                        </div>
+                        <div class="card-body border-0 position-relative d-flex flex-column align-items-center" style="place-content: center; place-items: center">
+                            <i class="position-absolute" style="top: 20px; left: 48%; border-radius: 50%; height: 15px; width: 15px; border: 5px solid #000"></i>
+                            <div class="text-center bg-dark text-white p-3 m-0 rounded-2 position-absolute" style="top: 50px">
+                                <span style="font-weight: bolder !important; font-size: 18px !important">Professional Space Assesment</span>
+                                <p style="font-weight: normal !important; font-size: 10px !important">Our experts visit your home for precise measurements</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid bg-green-color py-4 mt-4">
+        <div class="col-12 d-flex flex-column align-items-center">
+        </div>
+    </section>
+
+    <section class="container-fluid bg-yellow-color2 py-2">
+        <div class="col-12 d-flex flex-column align-items-center">
+            <p class="text-center text-white">CUSTOM KITCHENS, TIMELESS ELEGANCE</p>
+            <h3 class="text-dark text-center fw-bolder">
+                BESPOKE DESIGN, STANDARD PRICE
+            </h3>
+            <p class="text-center text-dark w-75">
+                We offer premium, bespoke designer kitchens at competitive prices. Our process is straight forward
+            </p>
+        </div>
+    </section>
+
+    <section class="container bg-white py-4">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="card border-0">
+                    <div class="card-body d-flex align-items-center">
+                        <div style="border: 20px solid #eda10e; border-radius: 50%; background-color:rgb(255, 203, 100); height: 180px; width: 180px; display:flex; align-items-center; padding: 10px">
+                            <img class="img-fluid" src="https://cdn-icons-png.flaticon.com/512/2237/2237440.png" alt="">
+                        </div>
+                        <div style="background-color: #eda10e; height: 100px; width: 60%; display: flex; align-items: center; border-radius: 0px 50px 50px 0px; justify-content: end; margin-left: -20px; padding: 10px">
+                            <h4 class="text-white text-center">You inform us about your requirements</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="card border-0">
+                    <div class="card-body d-flex align-items-center">
+                        <div style="border: 20px solid #2a6161; border-radius: 50%; background-color:rgb(63, 138, 138); height: 180px; width: 180px; display:flex; align-items-center; padding: 10px">
+                            <img class="img-fluid" src="https://cdn-icons-png.flaticon.com/512/2237/2237440.png" alt="">
+                        </div>
+                        <div style="background-color: #2a6161; height: 100px; width: 60%; display: flex; align-items: center; border-radius: 0px 50px 50px 0px; justify-content: end; margin-left: -20px; padding-right: 10px">
+                            <h4 class="text-white text-center">We create a personlized design and provide clear, upfront pricing</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="card border-0">
+                        <div class="card-body d-flex align-items-center">
+                            <div style="border: 20px solid #000; border-radius: 50%; background-color:rgb(140, 140, 140); height: 180px; width: 180px; display:flex; align-items-center; padding: 10px">
+                                <img class="img-fluid" src="https://cdn-icons-png.flaticon.com/512/2237/2237440.png" alt="">
+                            </div>
+                            <div style="background-color: #000; height: 100px; width: 60%; display: flex; align-items: center; border-radius: 0px 50px 50px 0px; justify-content: end; margin-left: -20px; padding-right: 10px">
+                                <h4 class="text-white text-center">You inform us about your requirements</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid bg-light py-4 mt-4">
+        <div class="col-12 d-flex flex-column align-items-center">
+        </div>
+    </section>
+
+    <section class="container-fluid bg-yellow-color2 py-4">
+        <div class="col-12 d-flex flex-column align-items-center">
+            <h6 class="text-white text-center fw-bold">
+                ARE YOU STRUGGLING WITH KITCHEN STORAGE SPACE?
+            </h6>
+            <h3 class="text-center text-dark w-75 fw-bolder">
+                BESPOKE MAX STORAGE KITCHENS
+            </h3>
+        </div>
+    </section>
+
+    <section class="container bg-white py-4">
+        <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
+                <div class="card border-0">
+                    <div class="" style="height: 250px; width: 100%">
+                        <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="{{ asset('images/homepage.jpeg') }}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
+                <div class="card border-0">
+                    <div class="px-2 bg-green-color d-flex flex-column align-items-center justify-content-center" style="height: 250px; width: 100%">
+                        <h4 class="text-white fw-bold text-center">TALLEST UNITS</h4>
+                        <p class="text-white text-center">Floor-to-ceiling cupboards for extra storage. Ideal for small kitchens needing vertical space.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
+                <div class="card border-0">
+                    <div class="" style="height: 250px; width: 100%">
+                        <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="{{ asset('images/homepage.jpeg') }}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
+                <div class="card border-0">
+                    <div class="px-2 bg-yellow-color2 d-flex flex-column align-items-center justify-content-center" style="height: 250px; width: 100%">
+                        <h4 class="text-white fw-bold text-center">DEEPEST UNITS</h4>
+                        <p class="text-white text-center">Deeper storage than standard cabinets. Maximizes space for pots, pans and appliances.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
+                <div class="card border-0">
+                    <div class="" style="height: 250px; width: 100%">
+                        <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="{{ asset('images/homepage.jpeg') }}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
+                <div class="card border-0">
+                    <div class="px-2 bg-dark d-flex flex-column align-items-center justify-content-center" style="height: 250px; width: 100%">
+                        <h4 class="text-white fw-bold text-center">WIDEST UNITS</h4>
+                        <p class="text-white text-center">Wide drawers for organized storage of kitchens essentials. Make use of every inch efficiently.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid bg-green-color py-4">
+        <div class="col-12 d-flex flex-column align-items-center">
+        </div>
+    </section>
+
+    <section class="container-fluid bg-white py-4">
+        <div class="container d-flex flex-column align-items-center">
+            <h3><b class="text-yellow-color2">RETAIL QUALITY</b><b class="text-dark"> AT ONLINE PRICES</b></h3>
+            <p>
+                We Believe In Offering High-Quality Products That Rival Retail Standards, But Without The Retail Prices.
+                Our Products Are Always Top-Notch, Ensuring Your Bespoke Designer Kitchen Is Built To Last.
+            </p>
+        </div>
+    </section>
+    
+    <section class="container-fluid bg-white py-4">
+        <div class="container d-flex flex-column align-items-center">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="bg-yellow-color2 p-5 h-100">
+                        <h4 class="text-dark fw-bolder">PREMIUM WARDROBES</h4>
+                        <p class="text-dark">BK online also takes responsibility for adding luxury to your rooms. The wardrobes are built to meet unique storage needs with meticulous attention to detail. They are not only functional but they change the aesthetic of your room.</p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="bg-green-color p-5 h-100">
+                        <h4 class="text-white fw-bolder">DOOR REPLACEMENT</h4>
+                        <p class="text-white">We have a quick and affordable way of giving your kitchen a new look. BK Online offers door replacements for your old kitchen doors. The doors are made from premium quality and great craftsmanship. Choose from a range of colors and finishes to suit your kitchen’s style.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="container-fluid py-5 bg-white" style="background-image: url({{asset('images/homepage.jpeg')}}); opacity: 2; border-bottom: 3px solid #ebc266; border-left: 3px solid #ebc266; padding: 20px">
         <div class="row">
             <h3 class="text-dark text-uppercase fw-bolder text-center mb-4">Testimonials</h3>
@@ -588,7 +689,7 @@
                     <div class="carousel-card card border border-warning" style="border-radius: 20px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
                         <div class="card-body carousel-card-body">
                             <div class="col-12 mb-4 d-flex justify-content-center">
-                                <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
+                                <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" class="img-fluid rounded-circle" style="height: 100px; width: 100px">
                             </div>
                             <div class="fw-bold text-center">
                                 Smith
@@ -599,60 +700,6 @@
                         </div>
                         <div class="card-footer carousel-card-footer">
                             <small class="text-dark text-start" style="font-size: 12px">I discovered BKO Kitchen's online services through a recommendation from a colleague. Reaching out to them via WhatsApp was incredibly convenient, and they quickly arranged a free consultation call. From the initial planning to the seamless installation of my shaker kitchen, the entire experience was outstanding. I wouldn’t hesitate to recommend their design and installation services to others!</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="item mx-10 px-0">
-                    <div class="carousel-card card border border-warning" style="border-radius: 20px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);">
-                        <div class="card-body carousel-card-body">
-                            <div class="col-12 mb-4 d-flex justify-content-center">
-                                <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
-                            </div>
-                            <div class="fw-bold text-center">
-                                Daisy
-                            </div>
-                            <div class="text-center">
-                                <small class="text-center">2024-04-03</small>
-                            </div>
-                        </div>
-                        <div class="card-footer carousel-card-footer">
-                            <small class="text-dark text-start" style="font-size: 12px">After much planning to upgrade my kitchen utilities, I decided to order from BKO Kitchen. I purchased their grey sink, tap, and a tall L-shaped blind corner unit. Everything was delivered on time, and the quality exceeded my expectations. On top of that, their prices were very reasonable. I highly recommend BKO Kitchen for anyone looking for a perfect blend of quality and affordability.</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="item mx-10 px-0">
-                    <div class="carousel-card card border border-warning" style="border-radius: 20px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);">
-                        <div class="card-body carousel-card-body">
-                            <div class="col-12 mb-4 d-flex justify-content-center">
-                                <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
-                            </div>
-                            <div class="fw-bold text-center">
-                                Katherine Kate
-                            </div>
-                            <div class="text-center">
-                                <small class="text-center">2024-07-14</small>
-                            </div>
-                        </div>
-                        <div class="card-footer carousel-card-footer">
-                            <small class="text-dark text-start" style="font-size: 12px">I reached out to BKO Kitchen through WhatsApp for their bespoke kitchen design and installation services in London, and the experience was seamless. They conducted a detailed kitchen survey and crafted a bespoke kitchen for my small space, with results that were nothing short of magical. Everything was perfectly executed, and my kitchen now feels more spacious and functional. I’m beyond satisfied with BKO Kitchen and highly recommend their services!</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="item mx-10 px-0">
-                    <div class="carousel-card card border border-warning" style="border-radius: 20px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);">
-                        <div class="card-body carousel-card-body">
-                            <div class="col-12 mb-4 d-flex justify-content-center">
-                                <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
-                            </div>
-                            <div class="fw-bold text-center">
-                                Amelia Turner
-                            </div>
-                            <div class="text-center">
-                                <small class="text-center">2023-08-08</small>
-                            </div>
-                        </div>
-                        <div class="card-footer carousel-card-footer">
-                            <small class="text-dark text-start" style="font-size: 12px">It’s ideal for my contemporary London home, and the team ensured a flawless installation. Highly recommend their services! My True Handleless kitchen from BKO Kitchen is everything I dreamed of—minimalistic, chic, and functional.</small>
                         </div>
                     </div>
                 </div>
