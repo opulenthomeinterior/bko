@@ -974,10 +974,11 @@ a {
         transform: rotate(180deg);
     }
     .dropdown__item:hover > .dropdown__container {
-        top: 6.5rem;
+        top: 4.5rem;
         opacity: 1;
         pointer-events: initial;
         cursor: initial;
+        z-index: 1000;
     }
 }
 @media screen and (min-width: 1152px) {

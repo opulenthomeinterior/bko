@@ -756,7 +756,7 @@
                                                                 <div class="container-fluid">
                                                                     <div class="row justify-content-center">
                                                                         <div
-                                                                            class="col-6 d-flex justify-content-center product-counter">
+                                                                            class="col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center product-counter">
                                                                             <input id="minus{{ $wallCabinet->id }}"
                                                                                 class="minus border bg-dark text-light p-0"
                                                                                 type="button" value="-"
@@ -1390,7 +1390,7 @@
                                                                 <div class="container-fluid">
                                                                     <div class="row justify-content-center">
                                                                         <div
-                                                                            class="col-6 d-flex justify-content-center product-counter">
+                                                                            class="col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center product-counter">
                                                                             <input id="minus{{ $wallCabinet->id }}"
                                                                                 class="minus border bg-dark text-light p-0"
                                                                                 type="button" value="-"

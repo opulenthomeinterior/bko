@@ -1,0 +1,505 @@
+
+ol li {
+    list-style-type: unset;
+}
+
+ul li {
+    list-style-type: disc;
+}
+
+.hover-button:hover {
+    background-color: #000;
+    /* Change background color to dark */
+}
+
+.hover-button:hover .card-title {
+    color: #fff;
+    /* Change text color to white */
+}
+
+#message {
+    resize: none;
+    /* Prevents resizing */
+}
+
+#name::placeholder {
+    color: black;
+    opacity: 1;
+    /* Ensures the color is fully applied */
+}
+
+#email::placeholder {
+    color: black;
+    opacity: 1;
+    /* Ensures the color is fully applied */
+}
+
+#phone::placeholder {
+    color: black;
+    opacity: 1;
+    /* Ensures the color is fully applied */
+}
+
+#call-me-at::placeholder {
+    color: black;
+    opacity: 1;
+    /* Ensures the color is fully applied */
+}
+
+#message::placeholder {
+    color: black;
+    opacity: 1;
+    /* Ensures the color is fully applied */
+}
+
+/* Ensure the image fades out smoothly on hover */
+.card-body:hover img {
+    /* opacity: 0.3; */
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Display the hover text when hovering over the card */
+.card-body:hover .hover-text {
+    opacity: 1;
+}
+
+/* Ensure the hover text is initially hidden */
+.hover-text {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    z-index: 2;
+    /* Make sure text is above the image */
+}
+
+/* Ensure the image has a lower z-index */
+.img-container img {
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Ensuring relative positioning for hover text and image */
+.img-container {
+    position: relative;
+}
+
+.unique-font {
+    font-family: 'Libre baskerville';
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Optional shadow for emphasis */
+    letter-spacing: 0.02rem;
+}
+
+.image-container {
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; */
+}
+
+.hero-section {
+    /* padding-top: calc(160px + 150px); Adjust dynamically based on navbar heights */
+}
+
+.fade-img {
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transition: opacity 2s ease-in-out; */
+}
+
+.fade-img.active {
+    opacity: 1;
+}
+
+/* #blinking-text {
+    animation: blink 3s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+} */
+
+/* Hero Section */
+.hero-section {
+    padding-top: 70px; /* Prevents navbar overlap */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Background Image Handling */
+.image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.image-container img.active {
+    opacity: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .main-image-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-section {
+        padding-top: 80px; /* Adjust for smaller screens */
+    }
+    .col-md-6 {
+        text-align: center;
+    }
+
+    .unique-font {
+        font-size: 22px !important;
+    }
+}
+
+.styles-card {
+    height: 100%;
+    /* Ensures card stretches to fill the container */
+    min-height: 350px;
+    /* Set a minimum height for consistent sizing */
+    display: flex;
+    flex-direction: column;
+    /* Ensures vertical layout */
+    justify-content: space-between;
+    /* Distribute content evenly */
+    align-items: stretch;
+    /* Stretch content to align evenly */
+}
+
+.styles-card-body {
+    flex-grow: 1;
+    /* Ensures the card body stretches to fill space */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* Align content at the bottom */
+}
+
+.img-container {
+    /* height: 200px; Fixed height for the image container */
+    background-color: #f5f5f5;
+    /* Light background for missing images */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Prevents content from spilling out */
+    border-radius: 20px 20px 0px 0px;
+}
+
+.img-container img {
+    object-fit: cover;
+    /* Ensures the image fits without distortion */
+    width: 100%;
+    height: 100%;
+}
+
+.cat-card-title {
+    text-align: center;
+}
+
+.order-component-scroller {
+    max-width: 1900px;
+    overflow-x: auto;
+    /* Ensures horizontal scrolling is functional */
+    scrollbar-width: none;
+    /* Hides scrollbar in Firefox by default */
+}
+
+.order-component-scroller::-webkit-scrollbar {
+    width: 0;
+    /* Hides scrollbar in WebKit browsers by default */
+}
+
+/* Show scrollbar on hover */
+.order-component-scroller:hover::-webkit-scrollbar {
+    width: 8px;
+    /* Adjust the scrollbar width when hovered */
+    height: 8px;
+    /* Horizontal scrollbar height */
+}
+
+.order-component-scroller:hover {
+    scrollbar-width: thin;
+    /* Firefox: Shows a thin scrollbar when hovered */
+}
+
+/* Style the scrollbar thumb */
+.order-component-scroller::-webkit-scrollbar-thumb {
+    background-color: #ebc266; /* Thumb color */
+    border-radius: 0px; /* Rounded corners */
+    color: #ebc266;
+}
+
+/* Style the scrollbar track */
+.order-component-scroller::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    /* Track background */
+}
+
+.scroll-down {
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    animation: moveUpDown 1.5s infinite ease-in-out;
+}
+
+.scroll-down i {
+    font-size: 2rem;
+    margin-top: 5px;
+}
+
+.bg-green-color {
+    background-color: #2a6161 !important;
+}
+
+.text-green-color {
+    color: #2a6161 !important;
+}
+
+.border-green-color {
+    border-color: #2a6161 !important;
+}
+
+.text-yellow-color {
+    color: #ffe000 !important;
+}
+
+.text-yellow-color2 {
+    color: #febd49 !important;
+}
+
+.bg-yellow-color2 {
+    background-color: #febd49 !important;
+}
+
+.bg-yellow-color {
+    background-color: #ffe000 !important;
+}
+
+.text-grey-color {
+    color: #91968a !important;
+}
+
+.bg-grey-color {
+    background-color: #91968a !important;
+}
+
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.left-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%; /* Adjust width as needed */
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent);
+    pointer-events: none; /* Ensure it doesn't interfere with clicks */
+}
+
+.rounded-gradient-border {
+    text-shadow: 5px 5px 5px black;
+    background-color: transparent; /* Ensures the inside remains transparent */
+    width: 60%;
+    padding: 20px;
+    border-radius: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.rounded-gradient-border::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 50px;
+    background: linear-gradient(to right, #ebc266, #2a6161);
+    z-index: -1;
+    padding: 3px; /* Creates the actual border thickness */
+    
+    /* Masking trick to remove the inner part and keep only the border */
+    -webkit-mask: linear-gradient(white 0 0) content-box, 
+                  linear-gradient(white 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-200%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(200%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInTop {
+    from {
+        transform: translateY(-200%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInBottom {
+    from {
+        transform: translateY(200%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animated {
+    opacity: 0; /* Initially hidden */
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+/* Assign animations */
+.slide-left {
+    animation-name: slideInLeft;
+}
+
+.slide-right {
+    animation-name: slideInRight;
+}
+
+.slide-top {
+    animation-name: slideInTop;
+}
+
+.slide-bottom {
+    animation-name: slideInBottom;
+}
+
+.rounded-circular-image {
+    /* filter: invert(1); */
+}
+
+.circular-button-text {
+    position: relative;
+    border-radius: 50% !important; 
+    height: 70px; 
+    width: 70px;
+    margin-bottom: 20px;
+    place-content: center !important;
+    place-items: center !important;
+    display: flex !important;
+}
+
+.circular-button-text:nth-child(1) { 
+    border: 15px solid #2a6161 !important;
+}
+.circular-button-text:nth-child(2) { 
+    border: 15px solid #febd49 !important;
+}
+.circular-button-text:nth-child(3) { 
+    border: 15px solid #91968a !important;
+}
+.circular-button-text:nth-child(4) { 
+    border: 15px solid #000 !important;
+}
+
+.circular-button-text::before {
+    content: '';
+    position: absolute;
+    top: 135%; /* Positioning right below the button */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px; /* Tail thickness */
+    height: 10px; /* Tail length */
+    background-color: #000; /* Tail color */
+}
+
+.circular-button-text::after {
+    content: '';
+    position: absolute;
+    top: calc(135% + 10px); /* Position arrow below the tail */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* Downward arrow using borders */
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #000; /* Arrow color */
+}
+
+.shadow-container {
+    width: 100%;
+    background: #f5f1ee; /* Adjust this to match the actual background */
+    box-shadow: inset 40px 0px 40px -20px rgba(0, 0, 0, 0.2), /* Left shadow */
+                inset -40px 0px 40px -20px rgba(0, 0, 0, 0.2); /* Right shadow */
+}
+
+.custom-bolder {
+    font-weight: 900 !important;
+}
