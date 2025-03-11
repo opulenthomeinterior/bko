@@ -629,18 +629,18 @@ use App\Models\Style;
         {{ $slot }}
     </div>
 
-    <footer class="text-center mt-4 bg-light border-top border-warning">
+    <footer class="text-center mt-4 border-top border-warning" style="background-color: #383838;">
         <div class="container py-lg-5 py-4">
             <section class="">
                 <div class="row">
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-start">
                         <img src="{{ asset('images/logoBko.png') }}" width="100px" />
-                        <h6 class="my-3">Customer Service Hours</h6>
+                        <h6 class="my-3 text-white">Customer Service Hours</h6>
 
                         <ul class="footer-ul list-unstyled mb-0">
-                            <li class="mb-2 list-unstyled"><i class="ri-phone-line"></i>020 805 05605</li>
-                            <li class="list-unstyled">
-                                <i class="ri-arrow-right-s-fill"></i>
+                            <li class="mb-2 list-unstyled text-white"><i class="ri-phone-line text-warning"></i> 020 805 05605</li>
+                            <li class="list-unstyled text-white">
+                                <i class="ri-arrow-right-s-fill text-warning"></i>
                                 Mon-Sat: 9am to 5pm
                             </li>
                             <!-- <li class="list-unstyled">
@@ -648,89 +648,89 @@ use App\Models\Style;
                                 Fri: 8am to 2:30pm
                             </li> -->
                             <li class="mt-2 list-unstyled">
-                                <a data-mdb-ripple-init class="text-dark btn btn-outline-warning btn-floating rounded-circle" href="#!"
-                                    role="button"><i class="ri-facebook-fill pl-0"></i></a>
-                                <a data-mdb-ripple-init class="text-dark btn btn-outline-warning btn-floating rounded-circle" href="#!"
-                                    role="button"><i class="ri-twitter-fill"></i></a>
-                                <a data-mdb-ripple-init class="text-dark btn btn-outline-warning btn-floating rounded-circle" href="#!"
-                                    role="button"><i class="ri-youtube-fill"></i></a>
-                                <a data-mdb-ripple-init class="text-dark btn btn-outline-warning btn-floating rounded-circle" href="#!"
-                                    role="button"><i class="ri-linkedin-fill"></i></a>
+                                <a data-mdb-ripple-init class="text-white btn btn-outline-warning btn-floating rounded-circle" href="#!"
+                                    role="button"><i class="ri-facebook-fill text-warning pl-0"></i></a>
+                                <a data-mdb-ripple-init class="text-white btn btn-outline-warning btn-floating rounded-circle" href="#!"
+                                    role="button"><i class="ri-twitter-fill text-warning"></i></a>
+                                <a data-mdb-ripple-init class="text-white btn btn-outline-warning btn-floating rounded-circle" href="#!"
+                                    role="button"><i class="ri-youtube-fill text-warning"></i></a>
+                                <a data-mdb-ripple-init class="text-white btn btn-outline-warning btn-floating rounded-circle" href="#!"
+                                    role="button"><i class="ri-linkedin-fill text-warning"></i></a>
                             </li>
 
-                            <li class="mt-2 list-unstyled"><i class="ri-mail-line mt-1"></i>customerservices@bkonline.uk</li>
+                            <li class="mt-2 list-unstyled text-white"><i class="ri-mail-line mt-1 text-warning"></i> customerservices@bkonline.uk</li>
                         </ul>
                     </div>
 
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0 ms-lg-3 ms-0 text-start">
-                        <h5 class="fw-bolder">Support</h5>
+                        <h5 class="fw-bolder text-white">Support</h5>
 
                         <ul class="footer-ul list-unstyled mb-0">
                             {{-- <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links" href="{{ route('blog') }}"><i
-                                class="ri-arrow-right-s-fill"></i>Blog</a>
+                                <a class="text-body text-decoration-none footer-links text-white" style="color: white !important;" href="{{ route('blog') }}"><i
+                                class="ri-arrow-right-s-fill text-warning"></i>Blog</a>
                             </li> --}}
                             <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links"
+                                <a class="text-body text-decoration-none footer-links text-white" style="color: white !important;"
                                     href="{{ route('downloadable') }}"><i
-                                        class="ri-arrow-right-s-fill"></i>Downloadable Resources</a>
+                                        class="ri-arrow-right-s-fill text-warning"></i> Downloadable Resources</a>
                             </li>
                             <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links"
+                                <a class="text-body text-decoration-none footer-links text-white" style="color: white !important;"
                                     href="{{ route('installationvideos') }}"><i
-                                        class="ri-arrow-right-s-fill"></i>Installation Videos</a>
+                                        class="ri-arrow-right-s-fill text-warning"></i> Installation Videos</a>
                             </li>
                             {{-- <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links" href="{{ route('faq') }}"><i
-                                class="ri-arrow-right-s-fill"></i>FAQs</a>
+                                <a class="text-body text-decoration-none footer-links text-white" style="color: white !important;" href="{{ route('faq') }}"><i
+                                class="ri-arrow-right-s-fill text-warning"></i> FAQs</a>
                             </li> --}}
                             <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links"
+                                <a class="text-body text-decoration-none footer-links text-white" style="color: white !important;"
                                     href="{{ route('deliveries') }}"><i
-                                        class="ri-arrow-right-s-fill"></i>Deliveries</a>
+                                        class="ri-arrow-right-s-fill text-warning"></i> Deliveries</a>
                             </li>
                             <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links"
-                                    href="{{ route('printresources') }}"><i class="ri-arrow-right-s-fill"></i>Print
+                                <a class="text-body text-decoration-none footer-links text-white" style="color: white !important;"
+                                    href="{{ route('printresources') }}"><i class="ri-arrow-right-s-fill text-warning"></i> Print
                                     Resources</a>
                             </li>
                         </ul>
                     </div>
 
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-start">
-                        <h5 class="fw-bolder">Legal Pages</h5>
+                        <h5 class="fw-bolder text-white">Legal Pages</h5>
 
                         <ul class="footer-ul list-unstyled mb-0">
                             <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links"
-                                    href="{{ route('cookies') }}"><i class="ri-arrow-right-s-fill"></i>Cookies
+                                <a class="text-body text-decoration-none footer-links" style="color: white !important;"
+                                    href="{{ route('cookies') }}"><i class="ri-arrow-right-s-fill text-warning"></i> Cookies
                                     Policy</a>
                             </li>
                             <!-- <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links"
-                                    href="{{ route('privacy') }}"><i class="ri-arrow-right-s-fill"></i>Privacy
+                                <a class="text-body text-decoration-none footer-links" style="color: white !important;"
+                                    href="{{ route('privacy') }}"><i class="ri-arrow-right-s-fill text-warning"></i>Privacy
                                     Policy</a>
                             </li>
                             <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links"
-                                    href="{{ route('termandcondition') }}"><i class="ri-arrow-right-s-fill"></i>Terms
+                                <a class="text-body text-decoration-none footer-links" style="color: white !important;"
+                                    href="{{ route('termandcondition') }}"><i class="ri-arrow-right-s-fill text-warning"></i>Terms
                                     and Conditions</a>
                             </li> -->
                             <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links"
-                                    href="{{ route('pricepromise') }}"><i class="ri-arrow-right-s-fill"></i>Price
+                                <a class="text-body text-decoration-none footer-links" style="color: white !important;"
+                                    href="{{ route('pricepromise') }}"><i class="ri-arrow-right-s-fill text-warning"></i> Price
                                     Promise Guarantee: Terms &
                                     Conditions</a>
                             </li>
                             <!-- <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links"
-                                    href="{{ route('pricebeat') }}"><i class="ri-arrow-right-s-fill"></i>Terms and
+                                <a class="text-body text-decoration-none footer-links" style="color: white !important;"
+                                    href="{{ route('pricebeat') }}"><i class="ri-arrow-right-s-fill text-warning"></i>Terms and
                                     Conditions – We Can’t Be Beaten on
                                     Price</a>
                             </li> -->
                             {{-- <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links"
-                                    href="{{ route('site_maps') }}"><i class="ri-arrow-right-s-fill"></i>Sitemap</a>
+                                <a class="text-body text-decoration-none footer-links" style="color: white !important;"
+                                    href="{{ route('site_maps') }}"><i class="ri-arrow-right-s-fill text-warning"></i> Sitemap</a>
                             </li> --}}
                         </ul>
                     </div>
@@ -885,46 +885,6 @@ use App\Models\Style;
                     // Display the selected option text in the dropdown input
                     return data.text;
                 }
-            });
-
-            const $carousel = $('.owl-carousel');
-
-            // Initialize OwlCarousel
-            $carousel.owlCarousel({
-                loop: true,
-                margin: 30,
-                stagePadding: 15, // Add padding to avoid clipping
-                rtl: false,
-                autoplay: true,
-                autoplayTimeout: 3000,
-                autoplayHoverPause: true,
-                responsive: {
-                    0: {
-                        items: 1,
-                        nav: true
-                    },
-                    768: {
-                        items: 2,
-                        nav: true
-                    },
-                    992: {
-                        items: 3,
-                        nav: true
-                    },
-                    1200: {
-                        items: 4,
-                        nav: true
-                    },
-                    1400: {
-                        items: 4,
-                        nav: true
-                    }
-                }
-            });
-
-            // Customize the autoplay behavior to reverse the direction
-            $carousel.on('translated.owl.carousel', function() {
-                $carousel.find('.owl-item.active').css('animation', 'move-right 0.3s ease-in-out');
             });
             
             $(document).on('click', '.style-item', function () {

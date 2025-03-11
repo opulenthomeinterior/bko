@@ -79,7 +79,7 @@
                         <p class="text-white animated slide-bottom">We specialize in virtually designing and delivering your dream kitchen that complements your needs and style. Whether you want to build a new kitchen or need to replace a single component, we are always at your service.</p>
                     </div>
                     <div class="ps-4 text-center col-xl-8 col-lg-12 col-md-12 col-sm-12 animated slide-top" style="margin-top: 50px">
-                        <h3 class="unique-font text-white text-center px-4 py-1 rounded-gradient-border w-100" id="typing-effect"></h3>
+                        <h4 class="unique-font text-white text-center px-4 py-1 rounded-gradient-border w-100" id="typing-effect"></h4>
                     </div>
                     <div class="ps-4 mt-4 animated slide-bottom">
                         <a href="{{ route('orderkitchen') }}" class="btn btn-md bg-yellow-color2 text-white text-uppercase border-green-color" style="border-radius: 50px;">
@@ -124,7 +124,7 @@
             <h3 class="text-uppercase fw-bolder text-dark text-center">ORDER KITCHEN</h3>
         </div>
         <div class="row mt-4" id="stylesContainer">
-            <div class="carousel main-carousel-banner owl-carousel clients mb-0 p-0"
+            <div class="carousel main-carousel-banner-01 owl-carousel clients mb-0 p-0"
                 data-margin="30"
                 data-loop="true"
                 data-dots="false"
@@ -137,9 +137,10 @@
                             <div class="card-body carousel-card-body p-0 m-0">
                                 <div class="col-12">
                                     <img src="{{asset('images/homepage.jpeg')}}" class="img-fluid">
-                                    <h4 class="card-title text-uppercase fw-bold text-center m-0 p-4 {{ $key % 2 == 0 ? 'bg-green-color text-yellow-color2' : 'bg-yellow-color2 text-dark' }}">
+                                    <h4 class="card-title text-uppercase fw-bold text-center m-0 p-2 {{ $key % 2 == 0 ? 'bg-green-color text-yellow-color2' : 'bg-yellow-color2 text-dark' }}">
                                         {{$style->name}}
-                                        <p class="text-center m-0" style="text-decoration: underline;">See our range</p>
+                                        <br>
+                                        <a href="{{ route('orderkitchenbyname', $style->slug) }}" class="text-center text-white m-0 text-decoration-underline" style="font-size: 10px">See our range ></a>
                                     </h4>
                                 </div>
                             </div>
@@ -244,13 +245,14 @@
         </div>
     </section>
 
+    <!-- EXPERT VIRTUAL DESIGN CONSULTATION-->
     <section class="container-fluid bg-green-color py-5">
         <div class="col-12">
-            <h3 class="text-white text-center">
+            <h3 class="fw-bold text-white text-center" style="text-decoration: underline; text-decoration-color: #eda10e">
                 EXPERT VIRTUAL DESIGN CONSULTATION
             </h3>
-            <p class="text-center text-white">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda eius ducimus eaque. Laboriosam sint earum omnis voluptatem tempora ipsa blanditiis quos quae. Ipsam impedit dignissimos odit exercitationem tempore, harum deserunt!
+            <p class="container text-center text-white">
+             At BK Online, we offer the ideal virtual kitchen design services and consultation, where our designers collaborate with you to create a kitchen tailored to your available space and preferences. Whether you are at home or on the go, our team is here to help you design your custom kitchen unit.
             </p>
         </div>
     </section>
@@ -258,77 +260,77 @@
     <section class="container-fluid bg-white py-5">
         <div class="row d-flex justify-content-center">
             <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 align-items-center d-flex flex-column mb-5" style="max-width: 300px;">
-                <button class="btn btn-light text-dark fw-bolder circular-button-text">
+                <button class="btn btn-light text-dark fw-bold circular-button-text-01">
                     01
                 </button>
                 <span style="border: 2px solid #febd49; width: 100%"></span>
-                <div class="card mt-2" style="box-shadow: 0px 5px 15px 0px rgba(1, 1, 1, 0.9);">
+                <div class="card mt-2" style="height: 300px; box-shadow: 0px 5px 15px 0px rgba(1, 1, 1, 0.9);">
                     <div class="card-body bg-green-color">
                         <div class="d-flex justify-content-center mb-3">
-                            <img height="80px" width="80px" class="rounded-circular-image p-2" src="https://cdn4.iconfinder.com/data/icons/thin-home-living-2/24/thin-1459_door_handle_lock-512.png" alt="" style="border: 3px solid #000; border-radius: 10%; top: -40px; background-color: white !important">
+                            <img height="80px" width="80px" class="rounded-circular-image p-0" src="{{ asset('images/icons/1.png') }}" alt="" style="border-radius: 10%; top: -40px; background-color: white !important">
                         </div>
                         <h4 class="text-center rounded-5 p-2 border border-light text-white">
                             APPOINTMENT BOOKING
                         </h4>
-                        <p class="text-center text-white">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quos explicabo cumque officia ipsam, natus praesentium placeat ab harum commodi cupiditate illum? A, repellendus cupiditate. Odio iusto nam accusamus maxime.
+                        <p class="text-center text-white" style="display: flex; flex-direction: column; justify-content: center">
+                            Clients book a free consultation via website or call. Flexible scheduling to fit their availability.
                         </p>
                     </div>
                 </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 align-items-center d-flex flex-column mb-5" style="max-width: 300px;">
-                <button class="btn btn-light text-dark fw-bolder circular-button-text">
+                <button class="btn btn-light text-dark fw-bolder circular-button-text-02">
                     02
                 </button>
-                <span style="border: 2px solid #febd49; width: 100%"></span>
-                <div class="card mt-2" style="box-shadow: 0px 5px 15px 0px rgba(1, 1, 1, 0.9);">
-                    <div class="card-body bg-yellow-color2">
+                <span style="border: 2px solid #eea61a; width: 100%"></span>
+                <div class="card mt-2" style="height: 300px; box-shadow: 0px 5px 15px 0px rgba(1, 1, 1, 0.9);">
+                    <div class="card-body" style="background-color: #eea61a;">
                         <div class="d-flex justify-content-center mb-3">
-                            <img height="80px" width="80px" class="rounded-circular-image p-2" src="https://cdn4.iconfinder.com/data/icons/thin-home-living-2/24/thin-1459_door_handle_lock-512.png" alt="" style="border: 3px solid #000; border-radius: 10%; top: -40px; background-color: white !important">
+                            <img height="80px" width="80px" class="rounded-circular-image p-0" src="{{ asset('images/icons/2.png') }}" alt="" style="border-radius: 10%; top: -40px; background-color: white !important">
                         </div>
                         <h4 class="text-center rounded-5 p-2 border border-light text-white">
-                            APPOINTMENT BOOKING
+                            SHARING PREFERENCES
                         </h4>
-                        <p class="text-center text-white">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quos explicabo cumque officia ipsam, natus praesentium placeat ab harum commodi cupiditate illum? A, repellendus cupiditate. Odio iusto nam accusamus maxime.
+                        <p class="text-center text-white" style="display: flex; flex-direction: column; justify-content: center">
+                            Showcasing the client providing space details, style preferences, and budget.
                         </p>
                     </div>
                 </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 align-items-center d-flex flex-column mb-5" style="max-width: 300px;">
-                <button class="btn btn-light text-dark fw-bolder circular-button-text">
+                <button class="btn btn-light text-dark fw-bolder circular-button-text-03">
                     03
                 </button>
                 <span style="border: 2px solid #febd49; width: 100%"></span>
-                <div class="card mt-2" style="box-shadow: 0px 5px 15px 0px rgba(1, 1, 1, 0.9);">
+                <div class="card mt-2" style="height: 300px; box-shadow: 0px 5px 15px 0px rgba(1, 1, 1, 0.9);">
                     <div class="card-body bg-grey-color">
                         <div class="d-flex justify-content-center mb-3">
-                            <img height="80px" width="80px" class="rounded-circular-image p-2" src="https://cdn4.iconfinder.com/data/icons/thin-home-living-2/24/thin-1459_door_handle_lock-512.png" alt="" style="border: 3px solid #000; border-radius: 10%; top: -40px; background-color: white !important">
+                            <img height="80px" width="80px" class="rounded-circular-image p-0" src="{{ asset('images/icons/3.png') }}" alt="" style="border-radius: 10%; top: -40px; background-color: white !important">
                         </div>
                         <h4 class="text-center rounded-5 p-2 border border-light text-white">
-                            APPOINTMENT BOOKING
+                            DESIGN CREATION
                         </h4>
-                        <p class="text-center text-white">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quos explicabo cumque officia ipsam, natus praesentium placeat ab harum commodi cupiditate illum? A, repellendus cupiditate. Odio iusto nam accusamus maxime.
+                        <p class="text-center text-white" style="display: flex; flex-direction: column; justify-content: center">
+                        BK Online designers craft a customized kitchen layout. Clients receive a 3D visual of their new kitchen.
                         </p>
                     </div>
                 </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 align-items-center d-flex flex-column mb-5" style="max-width: 300px;">
-                <button class="btn btn-light text-dark fw-bolder circular-button-text">
+                <button class="btn btn-light text-dark fw-bolder circular-button-text-04">
                     04
                 </button>
                 <span style="border: 2px solid #febd49; width: 100%"></span>
-                <div class="card mt-2" style="box-shadow: 0px 5px 15px 0px rgba(1, 1, 1, 0.9);">
+                <div class="card mt-2" style="height: 300px; box-shadow: 0px 5px 15px 0px rgba(1, 1, 1, 0.9);">
                     <div class="card-body bg-dark">
                         <div class="d-flex justify-content-center mb-3">
-                            <img height="80px" width="80px" class="rounded-circular-image p-2" src="https://cdn4.iconfinder.com/data/icons/thin-home-living-2/24/thin-1459_door_handle_lock-512.png" alt="" style="border: 3px solid #000; border-radius: 10%; top: -40px; background-color: white !important">
+                            <img height="80px" width="80px" class="rounded-circular-image p-0" src="{{ asset('images/icons/4.png') }}" alt="" style="border-radius: 10%; top: -40px; background-color: white !important">
                         </div>
                         <h4 class="text-center rounded-5 p-2 border border-light text-white">
-                            APPOINTMENT BOOKING
+                        APPROVAL & MODIFICATIONS
                         </h4>
-                        <p class="text-center text-white">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quos explicabo cumque officia ipsam, natus praesentium placeat ab harum commodi cupiditate illum? A, repellendus cupiditate. Odio iusto nam accusamus maxime.
+                        <p class="text-center text-white" style="display: flex; flex-direction: column; justify-content: center">
+                        Customers review the design and request changes if needed. The finalized design is ready for order placement.
                         </p>
                     </div>
                 </div>
@@ -443,7 +445,7 @@
     <section class="container-fluid bg-yellow-color2 py-2">
         <div class="col-12 d-flex flex-column align-items-center">
             <p class="text-center">Want a more hands-on approach?</p>
-            <h3 class="text-dark text-center fw-bolder">
+            <h3 class="text-dark text-center fw-bold" style="text-decoration: underline; text-decoration-color: #2a6161">
                 ON-SITE SURVEY
             </h3>
             <p class="text-center text-dark w-75">
@@ -460,7 +462,7 @@
                         <div class="card-header bg-transparent d-flex justify-content-center text-yellow-color2 p-3" style="">
                             <button class="btn btn-outline-warning bg-warning p-3" style="box-shadow: 0px 25px 0px 0px rgba(237,161,14, 0.9); height: 80px; width: 80px; border-radius: 50%; border: 5px solid #eda10e">
                                 <div class="d-flex justify-content-center" style="border-radius: 50%">
-                                    <img height="80px" width="80px" class="img-fluid bg-transparent" src="https://cdn4.iconfinder.com/data/icons/thin-home-living-2/24/thin-1459_door_handle_lock-512.png" alt="" style="filter: invert(1);">
+                                    <img height="100px" width="100px" class="img-fluid" src="{{ asset('images/icons/5.png') }}" alt="" style="filter: invert(1); mix-blend-mode: color-burn; object-fit: cover">
                                 </div>
                             </button>
                         </div>
@@ -486,7 +488,7 @@
                             <i class="position-absolute" style="top: 20px; left: 48%; border-radius: 50%; height: 15px; width: 15px; border: 5px solid #2a6161"></i>
                             <div class="text-center bg-green-color text-white p-3 m-0 rounded-2 position-absolute" style="top: 50px">
                                 <span style="font-weight: bolder !important; font-size: 18px !important">Professional Space Assesment</span>
-                                <p style="font-weight: normal !important; font-size: 10px !important">Our experts visit your home for precise measurements</p>
+                                <p style="font-weight: normal !important; font-size: 10px !important">Our expert designers provide tailored solutions</p>
                             </div>
                         </div>
                     </div>
@@ -504,7 +506,7 @@
                             <i class="position-absolute" style="top: 20px; left: 48%; border-radius: 50%; height: 15px; width: 15px; border: 5px solid #000"></i>
                             <div class="text-center bg-dark text-white p-3 m-0 rounded-2 position-absolute" style="top: 50px">
                                 <span style="font-weight: bolder !important; font-size: 18px !important">Professional Space Assesment</span>
-                                <p style="font-weight: normal !important; font-size: 10px !important">Our experts visit your home for precise measurements</p>
+                                <p style="font-weight: normal !important; font-size: 10px !important">The amount paid for survey is deducted from the final bill</p>
                             </div>
                         </div>
                     </div>
@@ -513,70 +515,8 @@
         </div>
     </section>
 
-    <section class="container-fluid bg-green-color py-4 mt-4">
-        <div class="col-12 d-flex flex-column align-items-center">
-        </div>
-    </section>
-
-    <section class="container-fluid bg-yellow-color2 py-2">
-        <div class="col-12 d-flex flex-column align-items-center">
-            <p class="text-center text-white">CUSTOM KITCHENS, TIMELESS ELEGANCE</p>
-            <h3 class="text-dark text-center fw-bolder">
-                BESPOKE DESIGN, STANDARD PRICE
-            </h3>
-            <p class="text-center text-dark w-75">
-                We offer premium, bespoke designer kitchens at competitive prices. Our process is straight forward
-            </p>
-        </div>
-    </section>
-
-    <section class="container bg-white py-4">
-        <div class="row">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                <div class="card border-0">
-                    <div class="card-body d-flex align-items-center">
-                        <div style="border: 20px solid #eda10e; border-radius: 50%; background-color:rgb(255, 203, 100); height: 180px; width: 180px; display:flex; align-items-center; padding: 10px">
-                            <img class="img-fluid" src="https://cdn-icons-png.flaticon.com/512/2237/2237440.png" alt="">
-                        </div>
-                        <div style="background-color: #eda10e; height: 100px; width: 60%; display: flex; align-items: center; border-radius: 0px 50px 50px 0px; justify-content: end; margin-left: -20px; padding: 10px">
-                            <h4 class="text-white text-center">You inform us about your requirements</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                <div class="card border-0">
-                    <div class="card-body d-flex align-items-center">
-                        <div style="border: 20px solid #2a6161; border-radius: 50%; background-color:rgb(63, 138, 138); height: 180px; width: 180px; display:flex; align-items-center; padding: 10px">
-                            <img class="img-fluid" src="https://cdn-icons-png.flaticon.com/512/2237/2237440.png" alt="">
-                        </div>
-                        <div style="background-color: #2a6161; height: 100px; width: 60%; display: flex; align-items: center; border-radius: 0px 50px 50px 0px; justify-content: end; margin-left: -20px; padding-right: 10px">
-                            <h4 class="text-white text-center">We create a personlized design and provide clear, upfront pricing</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 d-flex justify-content-center">
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="card border-0">
-                        <div class="card-body d-flex align-items-center">
-                            <div style="border: 20px solid #000; border-radius: 50%; background-color:rgb(140, 140, 140); height: 180px; width: 180px; display:flex; align-items-center; padding: 10px">
-                                <img class="img-fluid" src="https://cdn-icons-png.flaticon.com/512/2237/2237440.png" alt="">
-                            </div>
-                            <div style="background-color: #000; height: 100px; width: 60%; display: flex; align-items: center; border-radius: 0px 50px 50px 0px; justify-content: end; margin-left: -20px; padding-right: 10px">
-                                <h4 class="text-white text-center">You inform us about your requirements</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="container-fluid bg-light py-4 mt-4">
-        <div class="col-12 d-flex flex-column align-items-center">
-        </div>
-    </section>
+    <!-- Key designs -->
+    @include('frontend.key_designs')
 
     <section class="container-fluid bg-yellow-color2 py-4">
         <div class="col-12 d-flex flex-column align-items-center">
@@ -647,7 +587,7 @@
     <section class="container-fluid bg-white py-4">
         <div class="container d-flex flex-column align-items-center">
             <h3><b class="text-yellow-color2">RETAIL QUALITY</b><b class="text-dark"> AT ONLINE PRICES</b></h3>
-            <p>
+            <p class="text-center">
                 We Believe In Offering High-Quality Products That Rival Retail Standards, But Without The Retail Prices.
                 Our Products Are Always Top-Notch, Ensuring Your Bespoke Designer Kitchen Is Built To Last.
             </p>
@@ -673,103 +613,129 @@
         </div>
     </section>
 
-    <section class="container-fluid py-5 bg-white" style="background-image: url({{asset('images/homepage.jpeg')}}); opacity: 2; border-bottom: 3px solid #ebc266; border-left: 3px solid #ebc266; padding: 20px">
-        <div class="row">
-            <h3 class="text-dark text-uppercase fw-bolder text-center mb-4">Testimonials</h3>
-        </div>
-        <div class="row">
-            <div class="carousel main-carousel-banner owl-carousel clients mb-0"
-                data-margin="30"
-                data-loop="true"
-                data-dots="false"
-                data-autoplay="true"
-                data-autoplay-timeout="3000"
-                data-responsive='{"0":{"items": "3"}, "768":{"items": "4"}, "992":{"items": "4"}, "1200":{"items": "4"}, "1400":{"items": "4"}}'>
-                <div class="item mx-10 px-0">
-                    <div class="carousel-card card border border-warning" style="border-radius: 20px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
-                        <div class="card-body carousel-card-body">
-                            <div class="col-12 mb-4 d-flex justify-content-center">
-                                <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" class="img-fluid rounded-circle" style="height: 100px; width: 100px">
-                            </div>
-                            <div class="fw-bold text-center">
-                                Smith
-                            </div>
-                            <div class="text-center">
-                                <small class="text-center">2023-11-19</small>
-                            </div>
-                        </div>
-                        <div class="card-footer carousel-card-footer">
-                            <small class="text-dark text-start" style="font-size: 12px">I discovered BKO Kitchen's online services through a recommendation from a colleague. Reaching out to them via WhatsApp was incredibly convenient, and they quickly arranged a free consultation call. From the initial planning to the seamless installation of my shaker kitchen, the entire experience was outstanding. I wouldn’t hesitate to recommend their design and installation services to others!</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="container-fluid bg-grey-color py-4">
+        <div class="col-12 d-flex flex-column align-items-center">
         </div>
     </section>
 
-    <section class="container-fluid py-5 px-4 bg-white" style="border-bottom: 3px solid #ebc266; border-right: 3px solid #ebc266">
-        <div class="row">
-            <h3 class="text-white text-uppercase fw-bolder text-center">FAQs</h3>
-        </div>
-        <div class="row bg-white">
-            <div class="col-lg-12 bg-white">
-                <div class="accordion accordion-flush bg-white" id="accordionFlushExample">
-                    @if ($generalFaqs->count() > 0)
-                    @foreach ($generalFaqs as $faq)
-                    <div class="accordion-item bg-white border-0">
-                        <h2 class="accordion-header bg-white border-0">
-                            <button class="mb-2 accordion-button collapsed fw-bolder text-dark border-bottom border-warning btn btn-outline-warning" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#flush-collapse{{ $loop->index + 1 }}"
-                                aria-expanded="false" aria-controls="flush-collapse{{ $loop->index + 1 }}" style="border-radius: 20px">
-                                {{ $faq->question }}
-                            </button>
-                        </h2>
-                        <div id="flush-collapse{{ $loop->index + 1 }}" class="accordion-collapse collapse bg-white"
-                            data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body bg-white text-dark">{!! $faq->answer !!}</div>
-                            <hr class="border-bottom border-warning px-4 mx-4">
-                        </div>
-                    </div>
-                    @endforeach
-                    @else
-                    <div class="alert alert-light" role="alert">
-                        No FAQ's found.
-                    </div>
-                    @endif
-                </div>
-            </div>
-        </div>
+    <!-- Why choose BKONLINE -->
+     @include('frontend.why_choose_bkonline')
 
-        <!-- <div class="row pt-3">
-            <div class="col-lg-12">
-                <h3 class="text-dark text-uppercase fw-bolder">Deliveries FAQs</h3>
-                <div class="accordion accordion-flush" id="accordionFlushExample2">
-                    @if ($deliveryFaqs->count() > 0)
-                        @foreach ($deliveryFaqs as $faq)
-                            <div class="accordion-item">
-                                <h2 class="accordion-header text-decoration-underline">
-                                    <button class="accordion-button collapsed fw-bolder" type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#flush-collapsedelivery{{ $loop->index + 1 }}"
-                                        aria-expanded="false"
-                                        aria-controls="flush-collapsedelivery{{ $loop->index + 1 }}">
-                                        {{ $faq->question }}
-                                    </button>
-                                </h2>
-                                <div id="flush-collapsedelivery{{ $loop->index + 1 }}"
-                                    class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample2">
-                                    <div class="accordion-body">{!! $faq->answer !!}</div>
-                                </div>
-                            </div>
-                        @endforeach
-                    @else
-                        <div class="alert alert-info" role="alert">
-                            No FAQ's found.
-                        </div>
-                    @endif
-                </div>
-            </div>
-        </div> -->
+    <!-- Start your journey -->
+    @include('frontend.start_your_journey')
+
+    <section class="container-fluid bg-white" style="border-bottom: 40px solid #2a6161;">
     </section>
 
+    <!-- Testimonials -->
+    @include('frontend.testimonials_component')
+
+    <!-- FAQs -->
+    @include('frontend.faqs_component', ['faqsData' => $generalFaqs])
+
+@push('scripts')
+    <script>
+        $(document).ready(function () {
+            const $carousel01 = $('.main-carousel-banner-01');
+            // Initialize OwlCarousel
+            $carousel01.owlCarousel({
+                loop: true,
+                margin: 50,
+                stagePadding: 15, // Add padding to avoid clipping
+                rtl: false,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: true
+                    },
+                    768: {
+                        items: 2,
+                        nav: true
+                    },
+                    992: {
+                        items: 3,
+                        loop: true,
+                        margin: 10,
+                        nav: true,
+                        dots: true,
+                        center: true,
+                    },
+                    1200: {
+                        items: 4,
+                        loop: true,
+                        margin: 50,
+                        nav: true,
+                        dots: true,
+                        center: true,
+                    },
+                    1400: {
+                        items: 4,
+                        loop: true,
+                        margin: 50,
+                        nav: true,
+                        dots: true,
+                        center: true,
+                    }
+                }
+            });
+            // Customize the autoplay behavior to reverse the direction
+            $carousel01.on('translated.owl.carousel', function() {
+                $carousel01.find('.owl-item.active').css('animation', 'move-right 0.3s ease-in-out');
+            });
+            
+            const $carousel02 = $('.main-carousel-banner-02');
+            // Initialize OwlCarousel
+            $carousel02.owlCarousel({
+                loop: true,
+                margin: 30,
+                stagePadding: 15, // Add padding to avoid clipping
+                rtl: false,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: true
+                    },
+                    768: {
+                        items: 2,
+                        nav: true
+                    },
+                    992: {
+                        items: 3,
+                        loop: true,
+                        margin: 10,
+                        nav: true,
+                        dots: true,
+                        center: true,
+                    },
+                    1200: {
+                        items: 4,
+                        loop: true,
+                        margin: 20,
+                        nav: true,
+                        dots: true,
+                        center: true,
+                    },
+                    1400: {
+                        items: 4,
+                        loop: true,
+                        margin: 20,
+                        nav: true,
+                        dots: true,
+                        center: true,
+                    }
+                }
+            });
+            // Customize the autoplay behavior to reverse the direction
+            $carousel02.on('translated.owl.carousel', function() {
+                $carousel02.find('.owl-item.active').css('animation', 'move-left 0.3s ease-in-out');
+            });
+        });
+    </script>
+@endpush
 </x-guest-layout>

@@ -78,14 +78,14 @@ $(document).ready(function () {
 
    $(document).on('click', '#flatpacked_btn', function (e) {
       e.preventDefault();
-      const row = $(e.target).closest('.row');
+      const row = $(e.target).closest('.row-class');
       row.find(`#flatpacked`).removeClass('d-none').addClass('d-block');
       row.find('#rigid').addClass('d-none');
       e.preventDefault();
    })
 
    $(document).on('click', '#rigid_btn', function (e) {
-      const row = $(e.target).closest('.row');
+      const row = $(e.target).closest('.row-class');
       row.find('#rigid').removeClass('d-none').addClass('d-block');
       row.find('#flatpacked').addClass('d-none');
       e.preventDefault();
@@ -577,7 +577,7 @@ function updateCartPage() {
       cartTableHtml += `<i class='ri-btn ri-add-line' ${product.price == 0 ? 'disabled' : ''} onclick="increaseQuantityInCartPage('${product.id}', '${product.productCode}', '${product.full_title}', ${product.price}, ${product.discount_price}, ${product.discount_percentage}, '${product.p_category}')"></i>`;
       cartTableHtml += `<i class='ri-btn ri-delete-bin-line' onclick="removeFromCart(${product.id}, '${product.productCode}')"></i>`;
       cartTableHtml += `</td>`;
-      cartTableHtml += `<td>${product.full_title}&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" data-productId="${product.id}" class="openCompareModel text-decoration-underline text-danger" style="font-size: 12px;" data-toggle="modal" data-target="#myModal">Compare</a>&nbsp;&nbsp;<a href="javascript:void(0)" data-productId="${product.id}" class="openChangeStyleModal text-decoration-underline text-primary" style="font-size: 12px;" data-bs-toggle="modal" data-bs-target="#cart-items-modal" data-product-id="${product.id}">Change Style</a></td>`;
+      cartTableHtml += `<td><figure><img class="product-image px-0 mx-2 img-fluid" src="https://bkonline.uk/public/imgs/products/Highline-Base1727814394_66fc5afa31d81.jpg" alt="Product Image" style="height: 50px; width: 50px; object-fit: cover;"></figure>${product.full_title}&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" data-productId="${product.id}" class="openCompareModel text-decoration-underline text-danger" style="font-size: 12px;" data-toggle="modal" data-target="#myModal">Compare</a>&nbsp;&nbsp;<a href="javascript:void(0)" data-productId="${product.id}" class="openChangeStyleModal text-decoration-underline text-primary" style="font-size: 12px;" data-bs-toggle="modal" data-bs-target="#cart-items-modal" data-product-id="${product.id}">Change Style</a></td>`;
       cartTableHtml += `<td>£${(product.price).toFixed(2)}</td>`;
       cartTableHtml += `<td>${product.quantity}</td>`;
       cartTableHtml += `<td class='text-end'>£${(product.quantity * product.price).toFixed(2)}</td>`;
