@@ -317,7 +317,7 @@
                 loop: true,
                 margin: 30,
                 stagePadding: 15, // Add padding to avoid clipping
-                rtl: true,
+                rtl: false,
                 autoplay: true,
                 autoplayTimeout: 3000,
                 autoplayHoverPause: true,
