@@ -623,6 +623,16 @@ a {
     color: var(--title-color);
 }
 
+.drop-down-link { color: white !important; }
+.drop-down-link::before { color: black !important; }
+.drop-down-link::after { color: black !important; }
+
+@media (max-width: 768px) { 
+    .drop-down-link { color: black !important; }
+    .ri-arrow-down-s-line::before { color: black !important; }
+    .ri-arrow-down-s-line::after { color: black !important; }
+}
+
 /* .container {
     max-width: 1120px;
     margin-inline: 1.5rem;

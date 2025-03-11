@@ -228,6 +228,7 @@
         top: auto; 
         bottom: 0; /* Move it to the bottom if needed */
     }
+    .nav__link { color: black !important; }
 }
 
 

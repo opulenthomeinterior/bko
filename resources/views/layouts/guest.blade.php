@@ -275,8 +275,8 @@ use App\Models\Style;
                     </a>
                     <span class="nav__toggle" id="nav-toggle">
 
-                        <i class="ri-menu-line nav__toggle-menu"></i>
-                        <i class="ri-close-line nav__toggle-close"></i>
+                        <i class="ri-menu-line nav__toggle-menu text-white"></i>
+                        <i class="ri-close-line nav__toggle-close text-white"></i>
                     </span>
 
 
@@ -285,7 +285,7 @@ use App\Models\Style;
                     <ul class="nav__list p-2">
                         <li class="dropdown__item">
                             <div class="nav__link dropdown__button">
-                                <a href="{{ route('orderkitchen') }}" class="text-white">EXPLORE </a>
+                                <a href="{{ route('orderkitchen') }}" class="drop-down-link">EXPLORE </a>
                                 <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                             </div>
                             <div class="dropdown__container border-bottom border-warning border-2">
@@ -301,7 +301,7 @@ use App\Models\Style;
                                                 <div class="row">
                                                     @foreach ($styles as $index => $style)
                                                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
-                                                        <li style="width: 100%; border-radius: 0px" class="border-bottom border-default text-white">
+                                                        <li style="width: 100%; border-radius: 0px" class="border-bottom border-default drop-down-link">
                                                             <a style="width: 100%;" href="{{ route('orderkitchenbyname', [$style->slug]) }}" class="dropdown__link">
                                                                 <i class="ri-arrow-right-s-fill"></i> {{$style->name}} KITCHEN</a>
                                                         </li>
@@ -409,7 +409,7 @@ use App\Models\Style;
                                 </div> -->
                         <li class="dropdown__item">
                             <div class="nav__link dropdown__button">
-                                <a href="{{ route('orderkitchen') }}" class="text-white">ORDER KITCHEN </a>
+                                <a href="{{ route('orderkitchen') }}" class="drop-down-link">ORDER KITCHEN </a>
                                 <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                             </div>
                             <div class="dropdown__container border-bottom border-warning border-2">
@@ -511,7 +511,7 @@ use App\Models\Style;
                         </li>
                         <li class="dropdown__item">
                             <div class="nav__link dropdown__button">
-                                <a href="{{ route('ordercomponent') }}" class="text-white">ORDER COMPONENT </a>
+                                <a href="{{ route('ordercomponent') }}" class="drop-down-link">ORDER COMPONENT </a>
                                 <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                             </div>
                             <div class="dropdown__container border-bottom border-warning border-2">
@@ -549,7 +549,7 @@ use App\Models\Style;
                         </li>
                         <li class="dropdown__item">
                             <div class="nav__link dropdown__button">
-                                <a href="{{ route('help_and_guides') }}" class="text-white">HELP & GUIDES </a>
+                                <a href="{{ route('help_and_guides') }}" class="drop-down-link">HELP & GUIDES </a>
                                 <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                             </div>
                             <div class="dropdown__container border-bottom border-warning border-2">
@@ -586,14 +586,14 @@ use App\Models\Style;
                         </li>
                         <li class="dropdown__item">
                             <div class="nav__link dropdown__button">
-                                <a class="text-white" href="{{ route('designservice') }}">
+                                <a class="drop-down-link" href="{{ route('designservice') }}">
                                     DESIGN SERVICE
                                 </a>
                             </div>
                         </li>
                         <li class="dropdown__item">
                             <div class="nav__link dropdown__button">
-                                <a class="text-white" href="{{ route('blog') }}">
+                                <a class="drop-down-link" href="{{ route('blog') }}">
                                     BLOG
                                 </a>
                             </div>
