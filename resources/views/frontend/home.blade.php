@@ -449,7 +449,7 @@
                 ON-SITE SURVEY
             </h3>
             <p class="text-center text-dark w-75">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda eius ducimus eaque. Laboriosam sint earum omnis voluptatem tempora ipsa blanditiis quos quae. Ipsam impedit dignissimos odit exercitationem tempore, harum deserunt!
+            For your peace of mind, we offer an on-site survey. Our team will visit your space, take measurements, and assess your needs. After that, the design for the custom kitchen unit will be finalized online. The advance payment for this survey will be deducted from your final bill, ensuring that you're only paying for your kitchen.
             </p>
         </div>
     </section>
@@ -457,7 +457,7 @@
     <section class="container-fluid bg-light py-5 my-4">
         <div class="container shadow-container pb-4" style="height: auto !important;">
             <div class="row py-2">
-                <div class="col-xl-4 col-lg 4 col-md-4 col-sm-12 col-12" style="margin-bottom: 7rem">
+                <div class="col-xl-4 col-lg 4 col-md-4 col-sm-12 col-12" style="margin-bottom: 12rem">
                     <div class="card bg-transparent border-0">
                         <div class="card-header bg-transparent d-flex justify-content-center text-yellow-color2 p-3" style="">
                             <button class="btn btn-outline-warning bg-warning p-3" style="box-shadow: 0px 25px 0px 0px rgba(237,161,14, 0.9); height: 80px; width: 80px; border-radius: 50%; border: 5px solid #eda10e">
@@ -475,37 +475,37 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg 4 col-md-4 col-sm-12 col-12" style="margin-bottom: 7rem">
+                <div class="col-xl-4 col-lg 4 col-md-4 col-sm-12 col-12" style="margin-bottom: 12rem">
                     <div class="card bg-transparent border-0">
                         <div class="card-header bg-transparent d-flex justify-content-center text-yellow-color2 p-3" style="">
                             <button class="btn btn-outline-warning bg-green-color p-3" style="box-shadow: 0px 25px 0px 0px rgba(42,97,97, 0.9); height: 80px; width: 80px; border-radius: 50%; border: 5px solid rgb(29, 71, 71)">
                                 <div class="d-flex justify-content-center" style="border-radius: 50%">
-                                    <img height="80px" width="80px" class="img-fluid bg-transparent" src="https://cdn4.iconfinder.com/data/icons/thin-home-living-2/24/thin-1459_door_handle_lock-512.png" alt="" style="filter: invert(1);">
+                                    <img height="80px" width="80px" class="img-fluid bg-transparent" src="{{ asset('images/icons/6.png') }}" alt="" style="filter: invert(1);">
                                 </div>
                             </button>
                         </div>
                         <div class="card-body border-0 position-relative d-flex flex-column align-items-center" style="place-content: center; place-items: center">
                             <i class="position-absolute" style="top: 20px; left: 48%; border-radius: 50%; height: 15px; width: 15px; border: 5px solid #2a6161"></i>
                             <div class="text-center bg-green-color text-white p-3 m-0 rounded-2 position-absolute" style="top: 50px">
-                                <span style="font-weight: bolder !important; font-size: 18px !important">Professional Space Assesment</span>
+                                <span style="font-weight: bolder !important; font-size: 18px !important">Custom Kitchen Design</span>
                                 <p style="font-weight: normal !important; font-size: 10px !important">Our expert designers provide tailored solutions</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg 4 col-md-4 col-sm-12 col-12" style="margin-bottom: 7rem">
+                <div class="col-xl-4 col-lg 4 col-md-4 col-sm-12 col-12" style="margin-bottom: 12rem">
                     <div class="card bg-transparent border-0">
                         <div class="card-header bg-transparent d-flex justify-content-center text-dark p-3" style="">
                             <button class="btn btn-outline-warning bg-light p-3" style="box-shadow: 0px 25px 0px 0px rgba(0,0,0, 0.9); height: 80px; width: 80px; border-radius: 50%; border: 5px solid rgb(81, 81, 81)">
                                 <div class="d-flex justify-content-center" style="border-radius: 50%">
-                                    <img height="80px" width="80px" class="img-fluid bg-transparent" src="https://cdn4.iconfinder.com/data/icons/thin-home-living-2/24/thin-1459_door_handle_lock-512.png" alt="" style="filter: invert(0);">
+                                    <img height="80px" width="80px" class="img-fluid bg-transparent" src="{{ asset('images/icons/7.png') }}" alt="" style="filter: invert(1);">
                                 </div>
                             </button>
                         </div>
                         <div class="card-body border-0 position-relative d-flex flex-column align-items-center" style="place-content: center; place-items: center">
                             <i class="position-absolute" style="top: 20px; left: 48%; border-radius: 50%; height: 15px; width: 15px; border: 5px solid #000"></i>
                             <div class="text-center bg-dark text-white p-3 m-0 rounded-2 position-absolute" style="top: 50px">
-                                <span style="font-weight: bolder !important; font-size: 18px !important">Professional Space Assesment</span>
+                                <span style="font-weight: bolder !important; font-size: 18px !important">Transparent Pricing</span>
                                 <p style="font-weight: normal !important; font-size: 10px !important">The amount paid for survey is deducted from the final bill</p>
                             </div>
                         </div>
