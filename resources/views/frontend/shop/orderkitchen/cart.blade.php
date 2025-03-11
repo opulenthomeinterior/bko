@@ -8,60 +8,54 @@
             </ol>
         </nav>
 
-        <div class="row">
-            <div class="col-12 d-flex justify-content-between align-items-center">
-                <h1 class="fs-1 text-dark text-uppercase fw-bolder">
-                    Cart
+        <div class="row bg-light py-5">
+            <div class="col-12">
+                <h1 class="fs-1 text-dark text-uppercase fw-bolder text-center">
+                    Your Cart
                 </h1>
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+                <button class="btn btn-warning">
+                    Shop more
+                </button>
             </div>
         </div>
     </section>
 
     <section class="container-fluid px-lg-5 px-md-3 px-3 py-3">
         <div class="row">
-            <div class="col-lg-12 border rounded p-4">
-                <h4 class="fw-bold text-dark ">Cart Summary</h4>
-                <table class="table table-card">
-                    <thead>
-                        <th>&nbsp;</th>
-                        <th>Item</th>
-                        <th>Price</th>
-                        <th>Qty</th>
-                        <th class="text-end">Sub</th>
-                    </thead>
-                    <tbody id="productCartTableBody">
-                        <td colspan="5" class="text-center py-5">No items in cart</td>
-                    </tbody>
-                </table>
+            <div class="col-lg-8">
+                <div class="card border-primary p-0">
+                    <div class="card-body p-0">
+                        <!-- <h4 class="fw-bold text-dark ">Cart Summary</h4> -->
+                         <div class="table-responsive">
+                            <table class="table table-card">
+                                <thead class="bg-warning text-dark">
+                                    <th class="bg-warning text-dark">&nbsp;</th>
+                                    <th class="bg-warning text-dark">Product</th>
+                                    <th class="bg-warning text-dark">Price</th>
+                                    <th class="bg-warning text-dark">Qty</th>
+                                    <th class="text-end bg-warning text-dark">SubTotal</th>
+                                </thead>
+                                <tbody id="productCartTableBody">
+                                    <td colspan="5" class="text-center py-5">No items in cart</td>
+                                </tbody>
+                            </table>
+                         </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="col-lg-12 mt-4 border rounded p-4 mb-3 pb-3">
-                <h4 class="fw-bold text-dark ">Pricing</h4>
+            <div class="col-lg-4 mt-4 p-4 mb-3 pb-3 border border-primary rounded">
+                <h4 class="fw-bold text-dark ">Order Summary</h4>
+                <hr class="mx-n4">
                 <div class="bg-white py-2">
-                    <div class="row py-2">
+                    <div class="row py-2 ">
                         <div class="col-6">
-                            <h6 class="fw-bold">Cart Total</h6>
+                            <span class="">Cart Total</span>
                         </div>
                         <div class="col-6">
                             <h6 class="text-end" id="cartTotalAmount">£0</h6>
-                        </div>
-                    </div>
-                    <div class="row py-2">
-                        <div class="col-sm-6 text-sm-start text-center">
-                            <h6 class="fw-bold">Add Coupon</h6>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="row g-3 mb-3">
-                                <div class="col-12">
-                                    <div class="d-flex justify-content-sm-end justify-content-center">
-                                        <input type="text" class="form-control" id="promoCode"
-                                            placeholder="Enter Promo Code" aria-label="Enter Promo Code"
-                                            style="width: 200px">
-                                        <button type="button" class="btn btn-dark rounded-0" style="width: 100px"
-                                            id="addPromoCode">Apply</button>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div id="add_discount_details">
@@ -76,15 +70,60 @@
                             <h6 class="text-end" id="cartTotalAmountWithVAT">£0</h6>
                         </div>
                     </div>
+                    <hr class="mx-n4">
+                    <div class="row py-4">
+                        <div class="col-lg-12 text-lg-center text-md-center text-center">
+                            <a href="{{ route('checkout') }}" class="btn btn-md btn-primary rounded-5">Proceed to Checkout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                
+                <div class="row py-2">
+                    <div class="col-sm-4">
+                        < Back
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="row g-3 mb-3">
+                            <div class="col-12">
+                                <div class="d-flex justify-content-sm-end justify-content-center" style="position: relative;">
+                                    <input type="text" class="form-control" id="promoCode"
+                                        placeholder="Enter Promo Code" aria-label="Enter Promo Code"
+                                        style="width: 200px; border-radius: 50px">
+                                    <button type="button" class="btn btn-warning" style="width: 100px; border-radius: 50px"
+                                        id="addPromoCode">Apply</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 text-end">
+                        Clear Shopping Cart
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row py-3">
-            <div class="col-lg-12 text-lg-end text-md-end text-center">
-                <a href="{{ route('checkout') }}" class="btn btn-md btn-dark fw-bold rounded-0">Checkout</a>
+    </section>
+
+
+    <section class="container-fluid px-lg-5 px-md-3 px-3 py-lg-5 py-3">
+        <div class="row">
+            <div class="col-12">
+                <div class="payment-logos d-inline-block position-relative px-4 py-3" style="border: 1px solid black">
+                    <small class="fw-bold text-uppercase position-absolute bg-white" style="top:-7px;left:15px">Transactions Secured By</small>
+                    <img width="100" height="72" class="logo lazyloaded" alt="Payments verified through Opayo" src="https://bkonline.uk/public/images/payments/opayo.png">
+                    <img width="100" height="72" class="logo lazyloaded" alt="Visa Payments Accepted" src="https://bkonline.uk/public/images/payments/visa.png">
+                    <img width="100" height="72" class="logo lazyloaded" alt="Mastercard Payments Accepted" src="https://bkonline.uk/public/images/payments/mastercard.png">
+                    <img width="100" height="72" class="logo lazyloaded" alt="Maestro Payments Accepted" src="https://bkonline.uk/public/images/payments/maestro.png">
+                    <img width="100" height="72" class="logo lazyloaded" alt="Payments accepted through PayPal" src="https://bkonline.uk/public/images/payments/paypal.png">
+                    <img width="100" height="72" class="logo lazyloaded" alt="Payments accepted through Klarna" src="https://bkonline.uk/public/images/payments/klarna.png">
+                </div>
+
             </div>
         </div>
     </section>
+
 
     <style>
         .modal {

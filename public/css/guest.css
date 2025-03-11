@@ -230,12 +230,36 @@
     }
 }
 
+
+/*--------------OWL CAROUSEL-------------*/
+.owl-stage-outer, .owl-carousel {
+    overflow: visible !important;
+    margin: 0px 0px !important;
+}
+
+.main-carousel-banner-01 {
+    position: relative !important;
+}
+
 .owl-nav {
-    display: flex;
-    justify-content: center;
-    column-gap: 1rem;
+    position: absolute !important;
+    width: 100%;
+    display: flex !important;
+    justify-content: space-between !important;
+    top: 32% !important;
+    padding: 0 20px !important;
 }
 
 button.owl-next, button.owl-prev {
+    height: 70px;
+    width: 70px;
+    background: rgba(150, 150, 150, 0.5) !important;
     font-size: 40px !important;
+    color: #2a6161 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: center !important;
 }
+

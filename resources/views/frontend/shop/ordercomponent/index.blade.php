@@ -2,7 +2,7 @@
     <section class="container-fluid"
         style="background-image: url('{{ asset('images/order-component.jpg') }}'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 80vh;">
     </section>
-    <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
+    <section class="container-fluid px-lg-5 py-4 px-md-3 px-3 border-bottom border-warning">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase">Home</a></li>
@@ -14,9 +14,20 @@
 
         <div class="row">
             <div class="col-12">
-                <h1 class="fs-1 text-dark text-uppercase fw-bolder">
+                <h1 class="fs-1 text-dark text-uppercase fw-bolder text-center">
                     Order Component
                 </h1>
+                <h4 class="text-warning text-uppercase fw-bolder text-center">
+                    SEAMLESS REPAIRS | BEAUTIFUL RESULTS
+                </h4>
+                <p class="text-primary text-center">
+                    A broken component should not break your kitchen's workflow and asthetic.
+                </p>
+                <div class="container">
+                <p class="text-dark text-center">
+                    Many small components make up your entire kitchen. One faulty or old component can affect its beauty and functionality. Whether it’s a broken sink, a worn-out hinge, or a rusty handle, let us help you get your kitchen back on track. You can also change your kitchen aesthetic by replacing the old cabinet doors. We have everything you need, from traditional replacements to modern upgrades, to keep your kitchen functioning flawlessly.
+                </p>
+                </div>
             </div>
         </div>
     </section>
@@ -26,17 +37,37 @@
             @if ($components->count() > 0)
                 @foreach ($components as $index => $component)
                 @if ($component->slug != 'base-cabinets' && $component->slug != 'wall-cabinets' && $component->slug != 'tall-cabinets')
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
-                        <div class="card component-card btn btn-outline-warning">
+                    <div class="col-lg-3 col-md-4 col-12 mb-4">
+                        <div class="card component-card btn {{ $index % 2 == 0 ? 'btn-outline-warning' : 'btn-outline-primary'}}">
                             <a href="{{ route('ordercomponentbyname', $component->slug) }}"
                                 class="position-absolute top-0 bottom-0 start-0 end-0"></a>
                             <div class="card-header p-0"
-                                style="background-image: url('{{ $component->image_path ? asset('uploads/categories/' . $component->image_path) : asset('images/no-image-available.jpg') }}'); min-height: 300px;background-size: cover;background-position: center center;background-repeat: no-repeat;">
+                                style="background-image: url('{{ $component->image_path ? asset('uploads/categories/' . $component->image_path) : asset('images/no-image-available.jpg') }}'); min-height: 300px; background-size: cover;background-position: center center;background-repeat: no-repeat;">
                             </div>
                             <div class="card-body component-card-body">
                                 <div class="component-card-content">
                                     <h4 class="text-uppercase fs-3 fw-bold text-dark">{{ $component->name }}</h4>
-                                    <!-- <div class="text-dark">{!! $component->description !!}</div> -->
+                                    @if ($component->slug == 'doors')
+                                        <small class="text-dark text-start">The doors are the first impression of your kitchen. You can transform your kitchen by selecting from our various colors and finishes. Our doors are the essence of style and durability, creating an elegant look.</small>
+                                    @elseif ($component->slug == 'handles')
+                                    <small class="text-dark text-start">The doors are the first impression of your kitchen. You can transform your kitchen by selecting from our various colors and finishes. Our doors are the essence of style and durability, creating an elegant look.</small>
+                                    @elseif ($component->slug == 'accessories')
+                                    <small class="text-dark text-start">Enhance the style and functionality of your kitchen with our premium accessories. From smart storage solutions to innovative accessories, everything is designed to combine modern convenience with timeless elegance.</small>
+                                    @elseif ($component->slug == 'appliances')
+                                    <small class="text-dark text-start">Make your life hassle-free with our efficient and reliable appliances. Selected for their design, quality, and performance. You can pick from the highest-quality ovens, microwaves, dishwashers, or washing machines.</small>
+                                    @elseif ($component->slug == 'worktops')
+                                    <small class="text-dark text-start">Keep your kitchen’s form exquisite by selecting the perfect worktop. The worktops are designed to withstand daily use while enhancing the beauty of your kitchen. Choose from a range of worktops featuring Brazilian Greige, Maia®, and many others.</small>
+                                    @elseif ($component->slug == 'upstands')
+                                    <small class="text-dark text-start">Explore our range of upstands for a refined, contemporary finishing look. They provide a polished, clean finish and protect your walls from splashes and spills. Choose an upstand that will complement your worktop perfectly.</small>
+                                    @elseif ($component->slug == 'breakfast-bars')
+                                    <small class="text-dark text-start">Our customizable breakfast bars will be the perfect space for family breakfasts and social gatherings. They offer worktop space and additional storage while increasing the flow of your kitchen.</small>
+                                    @elseif ($component->slug == 'taps')
+                                    <small class="text-dark text-start">Add luxury to your kitchen with our stylish and functional taps. Whether you prefer a classic traditional or a modern design, our top-notch quality taps are built to add convenience and flair to your kitchen.</small>
+                                    @elseif ($component->slug == 'sinks')
+                                    <small class="text-dark text-start">The sink is not just the focal point of your kitchen but also the most used part. You can select one from our vast collection of durable stainless steel sinks, according to your preference. They are available in different styles and heights.</small>
+                                    @elseif ($component->slug == 'internals')
+                                    <small class="text-dark text-start">Use your kitchen space efficiently with our innovative internal storage solutions. Keep your kitchen clutter-free and organized by selecting from our smart storage options like wire carousel sets, pull-out storage baskets, swing-out corner storage, and many more.</small>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -53,217 +84,114 @@
         </div>
     </section>
 
-    <section class="container-fluid py-5">
-        <div class="row">
-            <h3 class="text-dark text-uppercase fw-bolder text-center mb-4">Testimonials</h3>
-        </div>
-        <div class="row">
-            <div class="carousel main-carousel-banner owl-carousel clients mb-0"
-                    data-margin="30"
-                    data-loop="true"
-                    data-dots="false"
-                    data-autoplay="true"
-                    data-autoplay-timeout="3000"
-                    data-responsive='{"0":{"items": "3"}, "768":{"items": "4"}, "992":{"items": "4"}, "1200":{"items": "4"}, "1400":{"items": "4"}}'>
-                <div class="item mx-10 px-0 w-100" style="border: 2px solid #ebc266">
-                    <div class="carousel-card card border border-default w-100" style="border-radius: 0px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
-                        <div class="card-body carousel-card-body">
-                            <div class="col-12 mb-4 d-flex justify-content-center">
-                                <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
-                            </div>
-                            <div class="fw-bold text-center"> <!-- Name -->
-                                
-                            </div>
-                            <div class="text-center">
-                                <small class="text-center"> <!-- Date -->
-                                    
-                                </small>
-                            </div>
-                        </div>
-                        <div class="card-footer carousel-card-footer">
-                            <small class="text-dark text-start" style="font-size: 12px"> <!-- Testimonial -->
-                            The doors I ordered from BKO Kitchen completely elevated the look of my kitchen. The quality and finish are outstanding, and they fit perfectly into my existing cabinets. BKO Kitchen made the entire process so easy.
-                            </small>
-                        </div>
-                    </div>
-                </div>
-                <div class="item mx-10 px-0 w-100" style="border: 2px solid #ebc266">
-                    <div class="carousel-card card border border-default w-100" style="border-radius: 0px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
-                        <div class="card-body carousel-card-body">
-                            <div class="col-12 mb-4 d-flex justify-content-center">
-                                <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
-                            </div>
-                            <div class="fw-bold text-center"> <!-- Name -->
-                                
-                            </div>
-                            <div class="text-center">
-                                <small class="text-center"> <!-- Date -->
-                                    
-                                </small>
-                            </div>
-                        </div>
-                        <div class="card-footer carousel-card-footer">
-                            <small class="text-dark text-start" style="font-size: 12px"> <!-- Testimonial -->
-                            It’s amazing how such a small detail can transform the entire look of a kitchen! The handles from BKO Kitchen are the perfect finishing touch for my cabinets. They’re stylish, durable, and easy to install. 
-                            </small>
-                        </div>
-                    </div>
-                </div>
-                <div class="item mx-10 px-0 w-100" style="border: 2px solid #ebc266">
-                    <div class="carousel-card card border border-default w-100" style="border-radius: 0px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
-                        <div class="card-body carousel-card-body">
-                            <div class="col-12 mb-4 d-flex justify-content-center">
-                                <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
-                            </div>
-                            <div class="fw-bold text-center"> <!-- Name -->
-                                
-                            </div>
-                            <div class="text-center">
-                                <small class="text-center"> <!-- Date -->
-                                    
-                                </small>
-                            </div>
-                        </div>
-                        <div class="card-footer carousel-card-footer">
-                            <small class="text-dark text-start" style="font-size: 12px"> <!-- Testimonial -->
-                            From soft-close mechanisms to clever storage solutions, BKO Kitchen’s accessories are a game-changer for my kitchen’s functionality. Everything was designed to make my kitchen more efficient. I highly recommend their products!
-                            </small>
-                        </div>
-                    </div>
-                </div>
-                <div class="item mx-10 px-0 w-100" style="border: 2px solid #ebc266">
-                    <div class="carousel-card card border border-default w-100" style="border-radius: 0px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
-                        <div class="card-body carousel-card-body">
-                            <div class="col-12 mb-4 d-flex justify-content-center">
-                                <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
-                            </div>
-                            <div class="fw-bold text-center"> <!-- Name -->
-                                
-                            </div>
-                            <div class="text-center">
-                                <small class="text-center"> <!-- Date -->
-                                    
-                                </small>
-                            </div>
-                        </div>
-                        <div class="card-footer carousel-card-footer">
-                            <small class="text-dark text-start" style="font-size: 12px"> <!-- Testimonial -->
-                            I recently upgraded to a new sink from BKO Kitchen, and it’s both beautiful and functional. The modern design fits seamlessly with my kitchen, and the material quality is top-notch. Their team made the whole experience stress-free! 
-                            </small>
-                        </div>
-                    </div>
-                </div>
-                <div class="item mx-10 px-0 w-100" style="border: 2px solid #ebc266">
-                    <div class="carousel-card card border border-default w-100" style="border-radius: 0px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
-                        <div class="card-body carousel-card-body">
-                            <div class="col-12 mb-4 d-flex justify-content-center">
-                                <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
-                            </div>
-                            <div class="fw-bold text-center"> <!-- Name -->
-                                
-                            </div>
-                            <div class="text-center">
-                                <small class="text-center"> <!-- Date -->
-                                    
-                                </small>
-                            </div>
-                        </div>
-                        <div class="card-footer carousel-card-footer">
-                            <small class="text-dark text-start" style="font-size: 12px"> <!-- Testimonial -->
-                            The internal solutions I got from BKO Kitchen have completely changed how I use my kitchen. The clever storage options and sturdy mechanisms maximise every inch of space. It’s practical and looks great too!
-                            </small>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
+    <section class="container-fluid bg-light py-4">
+        <div class="col-12 d-flex flex-column align-items-center">
         </div>
     </section>
 
-    <section class="container-fluid py-5 p-0">
+    <!-- Why choose BKONLINE -->
+    @include('frontend.why_choose_bkonline')
+
+    <!-- Testimonials -->
+    @include('frontend.testimonials_component')
+
+    <!-- FAQs -->
+    <section class="container-fluid py-5 px-4 bg-white" style="border-bottom: 3px solid #ebc266; border-right: 3px solid #ebc266">
         <div class="row">
             <h3 class="text-dark text-uppercase fw-bolder text-center">FAQs</h3>
         </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="accordion accordion-flush" id="accordionFlushExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed fw-bolder text-dark btn btn-outline-warning" type="button"
+        <div class="row bg-white">
+            <div class="col-lg-12 bg-white">
+                <div class="accordion accordion-flush bg-white" id="accordionFlushExample">
+                    <div class="accordion-item bg-white border-0">
+                        <h2 class="accordion-header bg-white border-0">
+                            <button class="mb-2 accordion-button collapsed fw-bolder text-dark border-bottom border-warning btn btn-outline-warning" type="button"
                                 data-bs-toggle="collapse" data-bs-target="#flush-collapse1"
-                                aria-expanded="false" aria-controls="flush-collapse1">
+                                aria-expanded="false" aria-controls="flush-collapse1" style="border-radius: 20px">
                                 Do We provide consultations to help choose the right kitchen style?
                             </button>
                         </h2>
-                        <div id="flush-collapse1" class="accordion-collapse collapse"
+                        <div id="flush-collapse1" class="accordion-collapse collapse bg-white"
                             data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">
-                            Yes, we offer free consultation calls to help you understand which kitchen is your go-to kitchen by considering various factors.
-                            </div>
+                            <div class="accordion-body bg-white text-dark">
+                            Yes, we offer free consultation calls to help you understand which kitchen is your go-to kitchen by considering various factors.</div>
+                            <hr class="border-bottom border-warning px-4 mx-4">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-12">
-                <div class="accordion accordion-flush" id="accordionFlushExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed fw-bolder text-dark btn btn-outline-warning" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#flush-collapse2"
-                                aria-expanded="false" aria-controls="flush-collapse2">Is it worth replacing the old doors?
+            <div class="col-lg-12 bg-white">
+                <div class="accordion accordion-flush bg-white" id="accordionFlushExample">
+                    <div class="accordion-item bg-white border-0">
+                        <h2 class="accordion-header bg-white border-0">
+                            <button class="mb-2 accordion-button collapsed fw-bolder text-dark border-bottom border-warning btn btn-outline-warning" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#flush-collapse1"
+                                aria-expanded="false" aria-controls="flush-collapse1" style="border-radius: 20px">
+                                Is it worth replacing the old doors?
                             </button>
                         </h2>
-                        <div id="flush-collapse2" class="accordion-collapse collapse"
+                        <div id="flush-collapse1" class="accordion-collapse collapse bg-white"
                             data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">Yes, replacing doors is the cost-effective option to refresh & upgrade your kitchen without undergoing complete kitchen renovation.</div>
+                            <div class="accordion-body bg-white text-dark">
+                            Yes, replacing doors is the cost-effective option to refresh & upgrade your kitchen without undergoing complete kitchen renovation.</div>
+                            <hr class="border-bottom border-warning px-4 mx-4">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-12">
-                <div class="accordion accordion-flush" id="accordionFlushExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed fw-bolder text-dark btn btn-outline-warning" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#flush-collapse3"
-                                aria-expanded="false" aria-controls="flush-collapse3">What are the most popular cabinet handles in London?
+            <div class="col-lg-12 bg-white">
+                <div class="accordion accordion-flush bg-white" id="accordionFlushExample">
+                    <div class="accordion-item bg-white border-0">
+                        <h2 class="accordion-header bg-white border-0">
+                            <button class="mb-2 accordion-button collapsed fw-bolder text-dark border-bottom border-warning btn btn-outline-warning" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#flush-collapse1"
+                                aria-expanded="false" aria-controls="flush-collapse1" style="border-radius: 20px">
+                                What are the most popular cabinet handles in London?
                             </button>
                         </h2>
-                        <div id="flush-collapse3" class="accordion-collapse collapse"
+                        <div id="flush-collapse1" class="accordion-collapse collapse bg-white"
                             data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">Some people prefer true handleless as it gives a sleek, modern and aesthetic look while other factors such as kitchen colour, material and finish are also considered when choosing handles.</div>
+                            <div class="accordion-body bg-white text-dark">
+                            Some people prefer true handleless as it gives a sleek, modern and aesthetic look while other factors such as kitchen colour, material and finish are also considered when choosing handles.</div>
+                            <hr class="border-bottom border-warning px-4 mx-4">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-12">
-                <div class="accordion accordion-flush" id="accordionFlushExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed fw-bolder text-dark btn btn-outline-warning" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#flush-collapse4"
-                                aria-expanded="false" aria-controls="flush-collapse4">Are your cabinet doors available in different finishes?
+            <div class="col-lg-12 bg-white">
+                <div class="accordion accordion-flush bg-white" id="accordionFlushExample">
+                    <div class="accordion-item bg-white border-0">
+                        <h2 class="accordion-header bg-white border-0">
+                            <button class="mb-2 accordion-button collapsed fw-bolder text-dark border-bottom border-warning btn btn-outline-warning" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#flush-collapse1"
+                                aria-expanded="false" aria-controls="flush-collapse1" style="border-radius: 20px">
+                                Are your cabinet doors available in different finishes?
                             </button>
                         </h2>
-                        <div id="flush-collapse4" class="accordion-collapse collapse"
+                        <div id="flush-collapse1" class="accordion-collapse collapse bg-white"
                             data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">Yes, we offer a broad spectrum of colours in various finishes including matt, gloss and painted.</div>
+                            <div class="accordion-body bg-white text-dark">
+                            Yes, we offer a broad spectrum of colours in various finishes including matt, gloss and painted.</div>
+                            <hr class="border-bottom border-warning px-4 mx-4">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-12">
-                <div class="accordion accordion-flush" id="accordionFlushExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed fw-bolder text-dark btn btn-outline-warning" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#flush-collapse5"
-                                aria-expanded="false" aria-controls="flush-collapse5">What types of sinks do you offer?
+            <div class="col-lg-12 bg-white">
+                <div class="accordion accordion-flush bg-white" id="accordionFlushExample">
+                    <div class="accordion-item bg-white border-0">
+                        <h2 class="accordion-header bg-white border-0">
+                            <button class="mb-2 accordion-button collapsed fw-bolder text-dark border-bottom border-warning btn btn-outline-warning" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#flush-collapse1"
+                                aria-expanded="false" aria-controls="flush-collapse1" style="border-radius: 20px">
+                                What types of sinks do you offer?
                             </button>
                         </h2>
-                        <div id="flush-collapse5" class="accordion-collapse collapse"
+                        <div id="flush-collapse1" class="accordion-collapse collapse bg-white"
                             data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">We offer stainless steel, single & double-bowl sinks, half-bowl sinks and ceramic.</div>
+                            <div class="accordion-body bg-white text-dark">
+                            We offer stainless steel, single & double-bowl sinks, half-bowl sinks and ceramic.</div>
+                            <hr class="border-bottom border-warning px-4 mx-4">
                         </div>
                     </div>
                 </div>
@@ -271,4 +199,59 @@
         </div>
     </section>
 
+    @push('scripts')
+    <script>
+        $(document).ready(function () {            
+            const $carousel02 = $('.main-carousel-banner-02');
+            // Initialize OwlCarousel
+            $carousel02.owlCarousel({
+                loop: true,
+                margin: 30,
+                stagePadding: 15, // Add padding to avoid clipping
+                rtl: false,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: true
+                    },
+                    768: {
+                        items: 2,
+                        nav: true
+                    },
+                    992: {
+                        items: 3,
+                        loop: true,
+                        margin: 10,
+                        nav: true,
+                        dots: true,
+                        center: true,
+                    },
+                    1200: {
+                        items: 4,
+                        loop: true,
+                        margin: 20,
+                        nav: true,
+                        dots: true,
+                        center: true,
+                    },
+                    1400: {
+                        items: 4,
+                        loop: true,
+                        margin: 20,
+                        nav: true,
+                        dots: true,
+                        center: true,
+                    }
+                }
+            });
+            // Customize the autoplay behavior to reverse the direction
+            $carousel02.on('translated.owl.carousel', function() {
+                $carousel02.find('.owl-item.active').css('animation', 'move-left 0.3s ease-in-out');
+            });
+        });
+    </script>
+@endpush
 </x-guest-layout>

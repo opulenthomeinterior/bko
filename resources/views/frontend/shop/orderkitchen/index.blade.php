@@ -1,5 +1,29 @@
 <x-guest-layout>
-    <div class="container-fluid px-lg-5 py-4 px-md-3 px-3">
+    <style>
+        .arrow-ul {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 1rem;
+            justify-content: center;
+            padding-left: 0;
+            list-style: none; /* Remove default bullets */
+        }
+
+        .arrow-ul .arrow-li {
+            white-space: nowrap;
+            position: relative;
+            padding-left: 20px; /* Space for custom bullet */
+        }
+
+        .arrow-ul .arrow-li::before {
+            content: "▶"; /* Custom bullet (arrow) */
+            position: absolute;
+            left: 0;
+            color: #004d40; /* Bullet color */
+        }
+    </style>
+    
+    <div class="container-fluid px-lg-5 py-4 px-md-3 px-3 bg-light border-bottom border-warning">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase">Home</a></li>
@@ -7,29 +31,56 @@
             </ol>
         </nav>
 
-        <div class="row mb-lg-5 mb-4">
-            <div class="col-12">
-                <h1 class="fs-1 fw-bolder text-dark text-uppercase">Order Kitchen</h1>
+        <div class="row">
+            <div class="col-8 container">
+                <h1 class="fs-1 fw-bolder text-center text-dark text-uppercase">Order Your New Kitchen</h1>
+                <p class="text-center">
+                    Choosing the proper kitchen can affect the aesthetic and functionality of your entire house. The most crucial factor is that your kitchen should reflect your personality while meeting your needs. It’s not just a place to cook; it is where life happens.
+                </p>
+                <p class="text-center text-warning fw-bold fs-5">
+                    THINGS TO CONSIDER BEFORE SELECTING YOUR KITCHEN
+                </p>
             </div>
         </div>
 
+        <div class="row py-2">
+            <div class="col-12 text-center"> <!-- Full width for better responsiveness -->
+                <ul class="arrow-ul">
+                    <li class="arrow-li">Functionality</li>
+                    <li class="arrow-li">Space constraints</li>
+                    <li class="arrow-li">Style preferences</li>
+                    <li class="arrow-li">Future trends</li>
+                    <li class="arrow-li">Storage needs</li>
+                    <li class="arrow-li">Materials</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container px-lg-5 py-4 px-md-3 px-3">
         {{-- Loop through each style --}}
-        @foreach ($data as $styleName => $styleData)
-        @php
-        if ($loop->iteration % 2 == 0) {
-        $imageOrderClass = 'order-md-1';
-        } else {
-        $imageOrderClass = 'order-md-0';
-        }
-        @endphp
         <div class="row mb-md-5 mb-4">
-            <div class="col-lg-6 col-md-6 col-12 pr-4 {{ $imageOrderClass }}">
+        @foreach ($data as $styleName => $styleData)
+            @php
+            if ($loop->iteration % 2 == 0) {
+                $boxShadow = '20px -20px 0px rgba(254, 189, 73, 0.8)';
+            } else {
+            $boxShadow = '-20px -20px 0px rgba(42, 97, 97, 0.8)';
+            }
+            @endphp
+            <!-- <div class="col-lg-6 col-md-6 col-12 pr-4">
                 <img src="{{ $styleData['data']->image_path ? asset('uploads/styles/' . $styleData['data']->image_path) : asset('images/order-component.jpg') }}"
                     class="img-fluid" />
-            </div>
+            </div> -->
 
-            <div class="col-lg-6 col-md-6 col-12 px-4 mt-md-0 my-3">
-                <div class="d-flex justify-content-between align-items-center border-bottom border-warning mb-3">
+            <div class="row-class col-xl-6 col-lg-6 col-md-6 col-12 my-5">
+                <div class="col-12 px-3 mb-3">
+                    <!-- <img src="{{ $styleData['data']->image_path ? asset('uploads/styles/' . $styleData['data']->image_path) : asset('images/order-component.jpg') }}"
+                    class="img-fluid" /> -->
+                    <img src="https://bkonline.uk/public/images/slab.jpeg"
+                    class="img-fluid" style="box-shadow: {{$boxShadow}}; height: 500px; object-fit: cover;" />
+                </div>
+                <div class="d-flex justify-content-between align-items-center border-bottom border-warning mb-3 mx-3">
                     <h1 class="fs-3 fw-bolder text-dark text-uppercase">{{ $styleData['data']->name }}</h1>
                     <a class="btn btn-sm btn-outline-warning text-dark" href="{{route('orderkitchenbyname', [$styleData['data']->slug])}}" style="border-radius: 0;">Explore</a>
                 </div>
@@ -39,16 +90,16 @@
                         standard finishes.
                     </p> -->
 
-                <h2 class="fs-5 text-dark fw-bold text-uppercase">Despatch</h2>
-                <p>First select your choice of assembly:</p>
+                <h2 class="fs-5 px-3 text-dark fw-bold text-uppercase">Despatch</h2>
+                <p class="px-3">First select your choice of assembly:</p>
 
                 @foreach ($styleData['assemblies'] as $assemblyName => $assemblyData)
                 <button type="button" id="{{ $assemblyName == 'Rigid' ? 'rigid_btn' : 'flatpacked_btn' }}"
-                    class="btn btn-sm btn-outline-warning text-dark rounded-0">{{ $assemblyName }}</button>
+                    class="btn btn-sm btn-outline-warning text-dark rounded-0 mx-3">{{ $assemblyName }}</button>
                 @endforeach
 
                 @foreach ($styleData['assemblies'] as $assemblyName => $assemblyData)
-                <div class="py-2 mt-3 d-none" id="{{ $assemblyData['data']->slug == 'rigid' ? 'rigid' : 'flatpacked' }}">
+                <div class="py-2 mt-3 d-none px-3" id="{{ $assemblyData['data']->slug == 'rigid' ? 'rigid' : 'flatpacked' }}">
                     <h2 class="fs-6 text-dark fw-bold">MDF COLOURS ({{ $assemblyName }})</h2>
                     <p>Choose a colour:</p>
                     <div class="row g-1">
@@ -73,226 +124,181 @@
                 </div>
                 @endforeach
             </div>
-        </div>
         @endforeach
-
-        <section class="container-fluid py-5">
-            <div class="row">
-                <h3 class="text-dark text-uppercase fw-bolder text-center mb-4">Testimonials</h3>
-            </div>
-            <div class="row">
-                <div class="carousel main-carousel-banner owl-carousel clients mb-0"
-                        data-margin="30"
-                        data-loop="true"
-                        data-dots="false"
-                        data-autoplay="true"
-                        data-autoplay-timeout="3000"
-                        data-responsive='{"0":{"items": "3"}, "768":{"items": "4"}, "992":{"items": "4"}, "1200":{"items": "4"}, "1400":{"items": "4"}}'>
-                    <div class="item mx-10 px-0 w-100" style="border: 2px solid #ebc266">
-                        <div class="carousel-card card border border-default w-100" style="border-radius: 0px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
-                            <div class="card-body carousel-card-body">
-                                <div class="col-12 mb-4 d-flex justify-content-center">
-                                    <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
-                                </div>
-                                <div class="fw-bold text-center"> <!-- Name -->
-                                    
-                                </div>
-                                <div class="text-center">
-                                    <small class="text-center"> <!-- Date -->
-                                        
-                                    </small>
-                                </div>
-                            </div>
-                            <div class="card-footer carousel-card-footer">
-                                <small class="text-dark text-start" style="font-size: 12px"> <!-- Testimonial -->
-                                I’m thrilled with my new J Pull kitchen from BKO Kitchen. The sleek design blends perfectly with my modern London apartment, and the craftsmanship is superb. The installation team was punctual and professional, making the entire process stress-free!
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item mx-10 px-0 w-100" style="border: 2px solid #ebc266">
-                        <div class="carousel-card card border border-default w-100" style="border-radius: 0px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
-                            <div class="card-body carousel-card-body">
-                                <div class="col-12 mb-4 d-flex justify-content-center">
-                                    <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
-                                </div>
-                                <div class="fw-bold text-center"> <!-- Name -->
-                                    
-                                </div>
-                                <div class="text-center">
-                                    <small class="text-center"> <!-- Date -->
-                                        
-                                    </small>
-                                </div>
-                            </div>
-                            <div class="card-footer carousel-card-footer">
-                                <small class="text-dark text-start" style="font-size: 12px"> <!-- Testimonial -->
-                                I couldn’t be happier with the result! The timeless elegance of my new Shaker kitchen has completely transformed my London home. BKO Kitchen exceeded my expectations with their attention to detail and high-quality finishes.
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item mx-10 px-0 w-100" style="border: 2px solid #ebc266">
-                        <div class="carousel-card card border border-default w-100" style="border-radius: 0px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
-                            <div class="card-body carousel-card-body">
-                                <div class="col-12 mb-4 d-flex justify-content-center">
-                                    <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
-                                </div>
-                                <div class="fw-bold text-center"> <!-- Name -->
-                                    
-                                </div>
-                                <div class="text-center">
-                                    <small class="text-center"> <!-- Date -->
-                                        
-                                    </small>
-                                </div>
-                            </div>
-                            <div class="card-footer carousel-card-footer">
-                                <small class="text-dark text-start" style="font-size: 12px"> <!-- Testimonial -->
-                                The whole experience, from consultation to installation, was top-notch! The slab laminated kitchen I purchased from BKO Kitchen is a game-changer. It’s stylish, durable, and easy to maintain—perfect for the busy city living in London. 
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item mx-10 px-0 w-100" style="border: 2px solid #ebc266">
-                        <div class="carousel-card card border border-default w-100" style="border-radius: 0px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
-                            <div class="card-body carousel-card-body">
-                                <div class="col-12 mb-4 d-flex justify-content-center">
-                                    <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
-                                </div>
-                                <div class="fw-bold text-center"> <!-- Name -->
-                                    
-                                </div>
-                                <div class="text-center">
-                                    <small class="text-center"> <!-- Date -->
-                                        
-                                    </small>
-                                </div>
-                            </div>
-                            <div class="card-footer carousel-card-footer">
-                                <small class="text-dark text-start" style="font-size: 12px"> <!-- Testimonial -->
-                                It’s ideal for my contemporary London home, and the team ensured a flawless installation. Highly recommend their services! My True Handleless kitchen from BKO Kitchen is everything I dreamed of—minimalistic, chic, and functional. 
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item mx-10 px-0 w-100" style="border: 2px solid #ebc266">
-                        <div class="carousel-card card border border-default w-100" style="border-radius: 0px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
-                            <div class="card-body carousel-card-body">
-                                <div class="col-12 mb-4 d-flex justify-content-center">
-                                    <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
-                                </div>
-                                <div class="fw-bold text-center"> <!-- Name -->
-                                    
-                                </div>
-                                <div class="text-center">
-                                    <small class="text-center"> <!-- Date -->
-                                        
-                                    </small>
-                                </div>
-                            </div>
-                            <div class="card-footer carousel-card-footer">
-                                <small class="text-dark text-start" style="font-size: 12px"> <!-- Testimonial -->
-                                The MFC kitchen from BKO Kitchen was the perfect choice for my /London flat. It combines affordability with quality, and the finish is stunning. The team was incredibly professional and delivered everything on time. I’m so happy with my new kitchen!
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </section>
-
-        <section class="container-fluid py-5 p-0">
-            <div class="row">
-                <h3 class="text-dark text-uppercase fw-bolder text-center">FAQs</h3>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed fw-bolder text-dark btn btn-outline-warning" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#flush-collapse1"
-                                    aria-expanded="false" aria-controls="flush-collapse1">
-                                    Do we offer customised colours in Matt or Gloss?
-                                </button>
-                            </h2>
-                            <div id="flush-collapse1" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">
-                                Yes, we offer a customised range of colours in matt, gloss and painted finish for every kitchen style.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed fw-bolder text-dark btn btn-outline-warning" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#flush-collapse2"
-                                    aria-expanded="false" aria-controls="flush-collapse2">What is the difference between J Pull and J Pull 22?
-                                </button>
-                            </h2>
-                            <div id="flush-collapse2" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">J Pull 22 is a premium, refined version of the classic J Pull design, The "22" signifies an upgraded version with an enhanced, contemporary edge compared to the traditional, softer J Pull.</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed fw-bolder text-dark btn btn-outline-warning" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#flush-collapse3"
-                                    aria-expanded="false" aria-controls="flush-collapse3">What Is the Most Trending Kitchen Style in the UK?
-                                </button>
-                            </h2>
-                            <div id="flush-collapse3" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">The most trending kitchen styles for 2024 include sleek, modern designs with minimalistic aesthetics.</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed fw-bolder text-dark btn btn-outline-warning" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#flush-collapse4"
-                                    aria-expanded="false" aria-controls="flush-collapse4">What Is the Quality Difference Between a Slab Laminated and a Slab Painted?
-                                </button>
-                            </h2>
-                            <div id="flush-collapse4" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">Laminated slabs are highly durable, scratch-resistant, and budget-friendly, while painted slabs provide a luxurious, smooth finish with vibrant colour depth, perfect for creating a premium look.</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed fw-bolder text-dark btn btn-outline-warning" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#flush-collapse5"
-                                    aria-expanded="false" aria-controls="flush-collapse5">What Things Should You Know Before Ordering Any Kitchen?
-                                </button>
-                            </h2>
-                            <div id="flush-collapse5" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">Having a clear understanding of your kitchen space, budget, and personal preferences for colour and design is essential before ordering any kitchen </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
     </div>
 
+    <section class="container-fluid bg-light py-4">
+        <div class="col-12 d-flex flex-column align-items-center">
+        </div>
+    </section>
+
+    <!-- Why choose BKONLINE -->
+    @include('frontend.why_choose_bkonline')
+    
+    <section class="container-fluid bg-white" style="border-bottom: 40px solid #2a6161;">
+    </section>
+
+    <!-- Testimonials -->
+    @include('frontend.testimonials_component')
+
+    <!-- FAQs -->
+    <section class="container-fluid py-5 px-4 bg-white" style="border-bottom: 3px solid #ebc266; border-right: 3px solid #ebc266">
+        <div class="row">
+            <h3 class="text-dark text-uppercase fw-bolder text-center">FAQs</h3>
+        </div>
+        <div class="row bg-white">
+            <div class="col-lg-12 bg-white">
+                <div class="accordion accordion-flush bg-white" id="accordionFlushExample">
+                    <div class="accordion-item bg-white border-0">
+                        <h2 class="accordion-header bg-white border-0">
+                            <button class="mb-2 accordion-button collapsed fw-bolder text-dark border-bottom border-warning btn btn-outline-warning" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#flush-collapse1"
+                                aria-expanded="false" aria-controls="flush-collapse1" style="border-radius: 20px">
+                                Do we offer customised colours in Matt or Gloss?
+                            </button>
+                        </h2>
+                        <div id="flush-collapse1" class="accordion-collapse collapse bg-white"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body bg-white text-dark">
+                            Yes, we offer a customised range of colours in matt, gloss and painted finish for every kitchen style.</div>
+                            <hr class="border-bottom border-warning px-4 mx-4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 bg-white">
+                <div class="accordion accordion-flush bg-white" id="accordionFlushExample">
+                    <div class="accordion-item bg-white border-0">
+                        <h2 class="accordion-header bg-white border-0">
+                            <button class="mb-2 accordion-button collapsed fw-bolder text-dark border-bottom border-warning btn btn-outline-warning" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#flush-collapse1"
+                                aria-expanded="false" aria-controls="flush-collapse1" style="border-radius: 20px">
+                                What is the difference between J Pull and J Pull 22?
+                            </button>
+                        </h2>
+                        <div id="flush-collapse1" class="accordion-collapse collapse bg-white"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body bg-white text-dark">
+                            J Pull 22 is a premium, refined version of the classic J Pull design, The "22" signifies an upgraded version with an enhanced, contemporary edge compared to the traditional, softer J Pull.</div>
+                            <hr class="border-bottom border-warning px-4 mx-4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 bg-white">
+                <div class="accordion accordion-flush bg-white" id="accordionFlushExample">
+                    <div class="accordion-item bg-white border-0">
+                        <h2 class="accordion-header bg-white border-0">
+                            <button class="mb-2 accordion-button collapsed fw-bolder text-dark border-bottom border-warning btn btn-outline-warning" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#flush-collapse1"
+                                aria-expanded="false" aria-controls="flush-collapse1" style="border-radius: 20px">
+                                What Is the Most Trending Kitchen Style in the UK?
+                            </button>
+                        </h2>
+                        <div id="flush-collapse1" class="accordion-collapse collapse bg-white"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body bg-white text-dark">
+                            The most trending kitchen styles for 2024 include sleek, modern designs with minimalistic aesthetics.</div>
+                            <hr class="border-bottom border-warning px-4 mx-4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 bg-white">
+                <div class="accordion accordion-flush bg-white" id="accordionFlushExample">
+                    <div class="accordion-item bg-white border-0">
+                        <h2 class="accordion-header bg-white border-0">
+                            <button class="mb-2 accordion-button collapsed fw-bolder text-dark border-bottom border-warning btn btn-outline-warning" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#flush-collapse1"
+                                aria-expanded="false" aria-controls="flush-collapse1" style="border-radius: 20px">
+                                What Is the Quality Difference Between a Slab Laminated and a Slab Painted?
+                            </button>
+                        </h2>
+                        <div id="flush-collapse1" class="accordion-collapse collapse bg-white"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body bg-white text-dark">
+                            Laminated slabs are highly durable, scratch-resistant, and budget-friendly, while painted slabs provide a luxurious, smooth finish with vibrant colour depth, perfect for creating a premium look.</div>
+                            <hr class="border-bottom border-warning px-4 mx-4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 bg-white">
+                <div class="accordion accordion-flush bg-white" id="accordionFlushExample">
+                    <div class="accordion-item bg-white border-0">
+                        <h2 class="accordion-header bg-white border-0">
+                            <button class="mb-2 accordion-button collapsed fw-bolder text-dark border-bottom border-warning btn btn-outline-warning" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#flush-collapse1"
+                                aria-expanded="false" aria-controls="flush-collapse1" style="border-radius: 20px">
+                                What Things Should You Know Before Ordering Any Kitchen?
+                            </button>
+                        </h2>
+                        <div id="flush-collapse1" class="accordion-collapse collapse bg-white"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body bg-white text-dark">
+                            Having a clear understanding of your kitchen space, budget, and personal preferences for colour and design is essential before ordering any kitchen.</div>
+                            <hr class="border-bottom border-warning px-4 mx-4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+@push('scripts')
+    <script>
+        $(document).ready(function () {            
+            const $carousel02 = $('.main-carousel-banner-02');
+            // Initialize OwlCarousel
+            $carousel02.owlCarousel({
+                loop: true,
+                margin: 30,
+                stagePadding: 15, // Add padding to avoid clipping
+                rtl: false,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: true
+                    },
+                    768: {
+                        items: 2,
+                        nav: true
+                    },
+                    992: {
+                        items: 3,
+                        loop: true,
+                        margin: 10,
+                        nav: true,
+                        dots: true,
+                        center: true,
+                    },
+                    1200: {
+                        items: 4,
+                        loop: true,
+                        margin: 20,
+                        nav: true,
+                        dots: true,
+                        center: true,
+                    },
+                    1400: {
+                        items: 4,
+                        loop: true,
+                        margin: 20,
+                        nav: true,
+                        dots: true,
+                        center: true,
+                    }
+                }
+            });
+            // Customize the autoplay behavior to reverse the direction
+            $carousel02.on('translated.owl.carousel', function() {
+                $carousel02.find('.owl-item.active').css('animation', 'move-left 0.3s ease-in-out');
+            });
+        });
+    </script>
+@endpush
 </x-guest-layout>

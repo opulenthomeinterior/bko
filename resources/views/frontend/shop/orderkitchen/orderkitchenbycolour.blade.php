@@ -1,4 +1,13 @@
 <x-guest-layout>
+    <style>
+        .bg-green-color {
+            background-color: #2a6161 !important;
+        }
+        
+        .text-green-color {
+            color: #2a6161 !important;
+        }
+    </style>
     <div class="container-fluid px-lg-5 pt-4 px-md-3 px-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -15,14 +24,14 @@
         </section>
     </div>
     <div class="container-fluid px-lg-5 py-4 px-md-3 px-3">
-        <h1 class="fs-4 fw-bolder text-dark">{{$title}}</h1>
+        <h1 class="fw-bolder text-dark text-center py-2">{{$title}}</h1>
         <div class="row" style="background-color: #e0e0e0;">
             <div class="col-lg-9">
                 <div class="collapse-wrapper my-4">
                     <a class="fw-semibold text-dark text-uppercase collapse-heading" data-bs-toggle="collapse"
                         href="#cabinetspanels" role="button" aria-expanded="false" aria-controls="cabinetspanels">
                         <span
-                            class="bg-dark text-white fw-semibold py-2 px-2 text-center me-2 collapse-heading-number">1</span>
+                            class="text-white bg-dark fw-semibold py-2 px-2 text-center me-2 collapse-heading-number">1</span>
                         Cabinets and Panels
                     </a>
                     <div class="collapse-container mt-3" id="cabinetspanels">
@@ -4679,7 +4688,7 @@
                             <div class="row border-bottom text-white">
                                 <h5 class="fw-bold text-white">Order Overview</h5>
                             </div>
-                            <div class="row text-white pt-2">
+                            <div class="row text-white pt-2 bg-dark">
                                 <h6 class="text-white fw-bold">Style: <span
                                         class="fw-normal">{{ $style->name }}</span></h6>
                                 <h6 class="text-white fw-bold">Assembly: <span
@@ -4695,8 +4704,8 @@
                             <div class="row border-bottom text-white">
                                 <h5 class="fw-bold text-white">Items</h5>
                             </div>
-                            <div class="row text-white pt-1" id="orderKitchenCartItemsList">
-
+                            <div class="row text-dark pt-1 bg-dark" id="orderKitchenCartItemsList">
+                                
                             </div>
                         </div>
                     </div>
@@ -4705,7 +4714,7 @@
                             <div class="row border-bottom text-white">
                                 <h5 class="fw-bold text-white">Kitchen Price</h5>
                             </div>
-                            <div class="row text-white ">
+                            <div class="row text-dark bg-dark">
                                 <h2 class="text-white fw-bold py-2 m-0" id="cartTotalAmount_side">
 
                                 </h2>

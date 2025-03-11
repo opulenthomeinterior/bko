@@ -445,7 +445,7 @@ ul li {
     /* filter: invert(1); */
 }
 
-.circular-button-text {
+.circular-button-text-01, .circular-button-text-02, .circular-button-text-03, .circular-button-text-04 {
     position: relative;
     border-radius: 50% !important; 
     height: 70px; 
@@ -456,20 +456,20 @@ ul li {
     display: flex !important;
 }
 
-.circular-button-text:nth-child(1) { 
+.circular-button-text-01 { 
     border: 15px solid #2a6161 !important;
 }
-.circular-button-text:nth-child(2) { 
+.circular-button-text-02 { 
     border: 15px solid #febd49 !important;
 }
-.circular-button-text:nth-child(3) { 
+.circular-button-text-03 { 
     border: 15px solid #91968a !important;
 }
-.circular-button-text:nth-child(4) { 
+.circular-button-text-04 { 
     border: 15px solid #000 !important;
 }
 
-.circular-button-text::before {
+.circular-button-text-01::before, .circular-button-text-02::before, .circular-button-text-03::before, .circular-button-text-04::before {
     content: '';
     position: absolute;
     top: 135%; /* Positioning right below the button */
@@ -480,7 +480,7 @@ ul li {
     background-color: #000; /* Tail color */
 }
 
-.circular-button-text::after {
+.circular-button-text-01::after, .circular-button-text-02::after, .circular-button-text-03::after, .circular-button-text-04::after {
     content: '';
     position: absolute;
     top: calc(135% + 10px); /* Position arrow below the tail */
@@ -502,4 +502,22 @@ ul li {
 
 .custom-bolder {
     font-weight: 900 !important;
+}
+
+.cut-side-section {
+    position: relative;
+    background: white;
+    padding: 4rem;
+    height: 100px; /* Adjust height */
+    border-top: 50px solid #febd49;
+}
+.cut-side-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 100%;
+    background: #febd49;
+    clip-path: polygon(0 0, 100% 0, 10% 100%, 0% 100%);
 }
