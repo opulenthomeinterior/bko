@@ -577,64 +577,33 @@
                             data-autoplay-timeout="3000"
                             data-responsive='{"0":{"items": "3"}, "768":{"items": "4"}, "992":{"items": "4"}, "1200":{"items": "4"}, "1400":{"items": "4"}}'>
                             @foreach ($category->testimonials as $testimonial)
-                            <div class="item mx-10 px-0 w-100" style="border: 2px solid #ebc266">
-                                <div class="carousel-card card border border-default w-100" style="border-radius: 0px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
-                                    <div class="card-body carousel-card-body">
-                                        <div class="col-12 mb-4 d-flex justify-content-center">
-                                            <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" height="50px" width="50px" class="img-fluid rounded-circle">
-                                        </div>
-                                        <div class="fw-bold text-center">
+                                <div class="item mx-10 px-0">
+                                    <div class="carousel-card card border border-warning" style="border-radius: 20px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
+                                        <div class="card-body carousel-card-body">
+                                            <div class="col-12 mb-4 d-flex justify-content-center">
+                                                <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" class="img-fluid rounded-circle" style="height: 100px; width: 100px">
+                                            </div>
+                                            <div class="fw-bold text-center">
                                             {{$testimonial->user_name}}
+                                            </div>
+                                            <div class="text-center">
+                                                <small class="text-center">{{$testimonial->date}}</small>
+                                            </div>
                                         </div>
-                                        <div class="text-center">
-                                            <small class="text-center">{{$testimonial->date}}</small>
+                                        <div class="card-footer carousel-card-footer" style="border-radius: 20px;">
+                                            <small class="text-dark text-start" style="font-size: 12px">{{$testimonial->testimonial}}</small>
                                         </div>
-                                    </div>
-                                    <div class="card-footer carousel-card-footer">
-                                        <small class="text-dark text-start" style="font-size: 12px">{{$testimonial->testimonial}}</small>
                                     </div>
                                 </div>
-                            </div>
                             @endforeach
                     </div>
                 </div>
             </section>
             @endif
-
-            @if (count($category->faqs) > 0)
-            <section class="container-fluid py-5 p-0">
-                <div class="row">
-                    <h3 class="text-dark text-uppercase fw-bolder text-center">FAQs</h3>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="accordion accordion-flush" id="accordionFlushExample">
-                            @if (count($category->faqs) > 0)
-                                @foreach ($category->faqs as $faq)
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed fw-bolder text-dark btn btn-outline-warning" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#flush-collapse{{ $loop->index + 1 }}"
-                                                aria-expanded="false" aria-controls="flush-collapse{{ $loop->index + 1 }}">
-                                                {{ $faq->question }}
-                                            </button>
-                                        </h2>
-                                        <div id="flush-collapse{{ $loop->index + 1 }}" class="accordion-collapse collapse"
-                                            data-bs-parent="#accordionFlushExample">
-                                            <div class="accordion-body">{!! $faq->answer !!}</div>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            @else
-                                <div class="alert alert-info" role="alert">
-                                    No FAQ's found.
-                                </div>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-            </section>
-            @endif
+            
+            <!-- FAQs -->
+            @include('frontend.faqs_component', ['faqsData' => $category->faqs])
+            
         </div>
     </section>
 
