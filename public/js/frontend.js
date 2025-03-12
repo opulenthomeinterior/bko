@@ -594,7 +594,7 @@ function createProductCard(product, type, cart_product_id = null, cart_product_c
    productCard += `<div class="container-fluid">`;
    productCard += `<div class="row">`;
    productCard += `<div class="col-lg-6">`;
-   productCard += `<figure><img class="product-image px-0" src="${product.image_path ? product_BIU + '/' + product.image_path : product_BIU + '/images/no-image-available.jpg'}" alt="${product.full_title}" style="height: 133px;object-fit: cover;"></figure>`;
+   productCard += `<figure><img class="product-image px-0" style="height: 300px !important"  src="${product.image_path ? product_BIU + '/' + product.image_path : product_BIU + '/images/no-image-available.jpg'}" alt="${product.full_title}" style="height: 133px;object-fit: cover;"></figure>`;
    productCard += `</div>`;
    productCard += `<div class="col-lg-6">`;
    productCard += `<div class="text-start">`;
@@ -780,7 +780,7 @@ $(document).ready(function () {
                                     <div class="row">
                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p-0">
                                              <figure class="my-0" style="margin-bottom: 0px !important;">
-                                                <img class="product-image px-0" style="margin-bottom: 0px !important; object-fit:contain" 
+                                                <img class="product-image px-0" style="height: 300px !important"  style="margin-bottom: 0px !important; object-fit:contain" 
                                                    src="${productDetails.image_path ? `${_baseURL}imgs/products/${productDetails.image_path}` : `${_baseURL}images/no-image-available.jpg`}"
                                                    alt="Card image cap">
                                              </figure>
@@ -1313,7 +1313,7 @@ $(document).ready(function () {
                      <div class="row">
                         <div class="col-lg-6 p-0">
                            <figure class="my-0" style="margin-bottom: 0px !important;">
-                                 <img class="product-image px-0"
+                                 <img class="product-image px-0" style="height: 300px !important" 
                                     style="margin-bottom: 0px !important;object-fit:contain"
                                     src="${productImage}"
                                     alt="Card image cap" data-bs-toggle="modal"
