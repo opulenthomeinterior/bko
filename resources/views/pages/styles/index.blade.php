@@ -48,10 +48,10 @@
                                         <tr>
                                             <td class="align-middle">{{ $loop->iteration }}</td>
                                             <td>
-                                                <a href="{{ $style->image_path ? asset('uploads/styles/' . $style->image_path) : '#' }}"
+                                                <a href="{{ $style->image_path ? asset('imgs/styles/' . $style->image_path) : '#' }}"
                                                     class="{{ $style->image_path ? 'd-inline-block' : 'd-none' }}"
                                                     target="_blank" rel="noopener noreferrer">
-                                                    <img src="{{ $style->image_path ? asset('uploads/styles/' . $style->image_path) : '#' }}"
+                                                    <img src="{{ $style->image_path ? asset('imgs/styles/' . $style->image_path) : '#' }}"
                                                         alt="Image Preview" width="100"
                                                         class="img-thumbnail box-image-preview {{ $style->image_path ? 'd-block' : 'd-none' }}" />
                                                 </a>

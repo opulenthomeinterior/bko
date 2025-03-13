@@ -45,9 +45,9 @@
                                     <tr>
                                         <td class="align-middle">{{ $loop->iteration }}</td>
                                         <td>
-                                            <a href="{{ $styleHasColour->image_path ? asset('uploads/styles/colours/' . $styleHasColour->image_path) : '#' }}"
+                                            <a href="{{ $styleHasColour->image_path ? asset('imgs/styles/colours/' . $styleHasColour->image_path) : '#' }}"
                                                 class="{{ $styleHasColour->image_path ? 'd-inline-block' : 'd-none' }}" target="_blank" rel="noopener noreferrer">
-                                                <img src="{{ $styleHasColour->image_path ? asset('uploads/styles/colours/' . $styleHasColour->image_path) : '#' }}"
+                                                <img src="{{ $styleHasColour->image_path ? asset('imgs/styles/colours/' . $styleHasColour->image_path) : '#' }}"
                                                     alt="Image Preview" width="100" class="img-thumbnail box-image-preview {{ $styleHasColour->image_path ? 'd-block' : 'd-none' }}" />
                                             </a>
                                         </td>

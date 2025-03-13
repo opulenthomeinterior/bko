@@ -77,7 +77,7 @@
                 <div class="col-12 px-3 mb-3">
                     <!-- <img src="{{ $styleData['data']->image_path ? asset('uploads/styles/' . $styleData['data']->image_path) : asset('images/order-component.jpg') }}"
                     class="img-fluid" /> -->
-                    <img src="https://bkonline.uk/public/images/slab.jpeg"
+                    <img src="{{asset('imgs/styles/'.$styleData['data']->image_path)}}"
                     class="img-fluid" style="box-shadow: {{$boxShadow}}; height: 500px; object-fit: cover;" />
                 </div>
                 <div class="d-flex justify-content-between align-items-center border-bottom border-warning mb-3 mx-3">

@@ -24,7 +24,7 @@
         <link rel="canonical" href="{{$seo?->canonical_tag}}" />
     @endsection
     <section class="container-fluid"
-        style="background-image: url('{{ $styleData['data']['image_path'] ? asset('uploads/styles/' . $styleData['data']['image_path']) : asset('images/order-component.jpg') }}'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 50vh;">
+        style="background-image: url('{{ $styleData['data']['image_path'] ? asset('imgs/styles/' . $styleData['data']['image_path']) : asset('images/order-component.jpg') }}'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 50vh;">
     </section>
     <section class="container-fluid px-lg-5 py-lg-5 py-4 px-md-3 px-3" style="background-color: #f0f0f0;">
         <nav aria-label="breadcrumb">
@@ -243,7 +243,7 @@
                                             </div>
                                             <div class="card-body carousel-card-body p-0">
                                                 <div class="col-12 d-flex justify-content-center">
-                                                    <img src="@if(!empty($styleHasColour->image_path)){{asset('uploads/styles/colours/'.$styleHasColour->image_path)}}@else{{asset('images/no-image-available.jpg')}}@endif" class="img-fluid">
+                                                    <img src="@if(!empty($styleHasColour->image_path)){{asset('imgs/styles/colours/'.$styleHasColour->image_path)}}@else{{asset('images/no-image-available.jpg')}}@endif" class="img-fluid">
                                                 </div>
                                             </div>
                                         </div>

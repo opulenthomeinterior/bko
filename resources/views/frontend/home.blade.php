@@ -136,7 +136,7 @@
                         <div class="carousel-card card border border-warning" style="box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
                             <div class="card-body carousel-card-body p-0 m-0">
                                 <div class="col-12">
-                                    <img src="{{asset('images/homepage.jpeg')}}" class="img-fluid">
+                                    <img src="{{asset('imgs/styles/'.$style->image_path)}}" class="img-fluid">
                                     <h4 class="card-title text-uppercase fw-bold text-center m-0 p-2 {{ $key % 2 == 0 ? 'bg-green-color text-yellow-color2' : 'bg-yellow-color2 text-dark' }}">
                                         {{$style->name}}
                                         <br>
@@ -145,27 +145,6 @@
                                 </div>
                             </div>
                         </div>
-                <!-- <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-4 style-card" style="display: {{ $key < 4 ? 'flex' : 'none' }};">
-                    <a class="p-0 w-100" href="{{ route('orderkitchenbyname', $style->slug) }}" style="border-radius: 20px">
-                        <div class="card styles-card component-card h-100 d-flex flex-column justify-content-between" style="border-radius: 10px; border: none;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); ">
-                            <div class="card-body styles-card-body p-0 bg-light d-flex flex-column justify-content-end position-relative" style="border-radius: 10px">
-                                <div class="position-relative img-container p-0">
-                                    @if ($style->image_path)
-                                    <img src="{{asset('uploads/styles/'.$style->image_path)}}" alt="{{$style->name}}">
-                                    @else
-                                    <div class="text-center w-100 h-100 d-flex align-items-center justify-content-center">
-                                        <span class="text-muted">No Image Available</span>
-                                    </div>
-                                    @endif
-                                </div>
-                                <h4 class="py-2 card-title text-uppercase fw-bold text-center m-0 {{ $key % 2 == 0 ? 'bg-green-color text-yellow-color2' : 'bg-yellow-color2 text-dark' }}" style="border-radius: 0px 0px 10px 10px">
-                                    {{$style->name}}
-                                    <p class="text-center mt-2" style="text-decoration: underline;">See our range</p>
-                                </h4>
-                            </div>
-                        </div>
-                    </a>
-                </div> -->
                 </div>
                 @endforeach
             </div>

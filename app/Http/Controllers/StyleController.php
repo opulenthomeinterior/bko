@@ -67,7 +67,6 @@ class StyleController extends Controller
                 'style_title' => 'nullable|string|max:255',
                 'style_description' => 'nullable|string',
             ]);
-
             $style->name = $request->input('name');
             $style->slug = str_replace(' ', '-', strtolower($request->input('name')));
             $style->style_title = $request->input('style_title');
@@ -78,7 +77,7 @@ class StyleController extends Controller
             if ($request->hasFile('image_path')) {
                 // Delete old image if it exists
                 if (!empty($style->image_path)) {
-                    mmadev_delete_attachment_from_directory($style->image_path, 'styles');
+                    mmadev_delete_style_image_attachment_from_directory($style->image_path, 'styles');
                 }
 
                 $file = $request->file('image_path');

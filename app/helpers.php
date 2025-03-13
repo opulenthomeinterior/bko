@@ -44,6 +44,24 @@ if (!function_exists('mmadev_store_and_get_image_path')) {
     }
 }
 
+if (!function_exists('mmadev_store_and_get_style_image_path')) {
+    function mmadev_store_and_get_style_image_path($module, $file)
+    {
+        $image_path = str_replace(' ', '', $file->getClientOriginalName());
+
+        $unique_id  = uniqid();
+        $image_path = $unique_id . '-' . $image_path;
+        $timestamp  = now()->format('d_m_Y_His');
+        $image_path = "{$timestamp}_{$image_path}";
+
+        $uploads_directory = mmadev_get_uploads_directory_monthly($module);
+
+        $file->move($uploads_directory, $image_path);
+
+        return $image_path;
+    }
+}
+
 /**
  *  Get Image Path Attachments
  */
@@ -72,6 +90,19 @@ if (!function_exists('mmadev_delete_attachment_from_directory')) {
     function mmadev_delete_attachment_from_directory($file, $module)
     {
         $upload_dir = 'uploads/' . $module . '/';
+
+        // delete from directory
+        if (File::exists($upload_dir . $file)) {
+            // Delete from the directory
+            File::delete($upload_dir . $file);
+        }
+    }
+}
+
+if (!function_exists('mmadev_delete_style_image_attachment_from_directory')) {
+    function mmadev_delete_style_image_attachment_from_directory($file, $module)
+    {
+        $upload_dir = 'imgs/' . $module . '/';
 
         // delete from directory
         if (File::exists($upload_dir . $file)) {

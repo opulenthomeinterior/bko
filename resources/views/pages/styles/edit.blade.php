@@ -284,7 +284,7 @@
                                 <div class="col-lg-6 form-group mb-2 preview-image-wrapper {{ $style->image_path ? 'd-block' : 'd-none' }}">
                                     <label for="image_preview" class="form-label">Image Preview</label>
                                     <img id="image_preview"
-                                        src="{{ $style->image_path ? asset('uploads/styles/' . $style->image_path) : '#' }}"
+                                        src="{{ $style->image_path ? asset('imgs/styles/' . $style->image_path) : '#' }}"
                                         alt="Image Preview"
                                         class="img-thumbnail box-image-preview {{ $style->image_path ? 'd-block' : 'd-none' }}" />
                                     <button type="button" id="remove_image"
