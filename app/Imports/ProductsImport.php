@@ -96,7 +96,12 @@ class ProductsImport implements ToCollection, WithChunkReading
                         $category->save();
                     }
                 } else {
-                    // continue;
+                    $category = new Category();
+                    $category->name = $sheetChildCategory;
+                    $category->slug = str_replace(' ', '-', strtolower($sheetChildCategory));
+                    $category->description = $sheetProductDesc;
+                    $category->parent_category_id = $parent_category->id ?? null;
+                    $category->save();
                 }
                 $style = Style::where('name', $sheetStyle)->first();
     
