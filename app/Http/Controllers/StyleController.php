@@ -130,18 +130,22 @@ class StyleController extends Controller
             }
 
             $styleColourIds = $request->colour_id;
-            
-            if (!empty($style->styleHasColours)) {
-                StyleHasColour::where('style_id', $style->id)->delete();
-            }
-            foreach ($styleColourIds as $key => $styleColourId) {
-                // Check if the testimonial is not empty
+
+            foreach ($styleColourIds as $styleColourId) {
+                // Check if the colour is not empty
                 if (!empty($styleColourId)) {
-                    // Create new testimonial
-                    $newStyleHasColour = new StyleHasColour();
-                    $newStyleHasColour->style_id = $style->id;
-                    $newStyleHasColour->colour_id = $styleColourIds[$key];
-                    $newStyleHasColour->save();
+                    // Check if the record already exists
+                    $existingRecord = StyleHasColour::where('style_id', $style->id)
+                        ->where('colour_id', $styleColourId)
+                        ->exists();
+
+                    if (!$existingRecord) {
+                        // Add new colour if not already exists
+                        $newStyleHasColour = new StyleHasColour();
+                        $newStyleHasColour->style_id = $style->id;
+                        $newStyleHasColour->colour_id = $styleColourId;
+                        $newStyleHasColour->save();
+                    }
                 }
             }
             
