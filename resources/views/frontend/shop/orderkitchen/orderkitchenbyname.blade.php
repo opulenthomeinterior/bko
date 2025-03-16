@@ -284,15 +284,17 @@
                                     <div class="col-12 mb-4 d-flex justify-content-center">
                                         <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" class="img-fluid rounded-circle" style="height: 100px; width: 100px">
                                     </div>
-                                    <div class="fw-bold text-center">
+                                    <!-- <div class="fw-bold text-center">
                                         Smith
                                     </div>
                                     <div class="text-center">
                                         <small class="text-center">2023-11-19</small>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="card-footer carousel-card-footer" style="border-radius: 20px;">
-                                    <small class="text-dark text-center" style="font-size: 12px">I discovered BKO Kitchen's online services through a recommendation from a colleague. Reaching out to them via WhatsApp was incredibly convenient, and they quickly arranged a free consultation call. From the initial planning to the seamless installation of my shaker kitchen, the entire experience was outstanding. I wouldn’t hesitate to recommend their design and installation services to others!</small>
+                                    <small class="text-dark text-center" style="font-size: 12px">
+                                        {{$testimonial->testimonial}}
+                                    </small>
                                 </div>
                             </div>
                         </div>
