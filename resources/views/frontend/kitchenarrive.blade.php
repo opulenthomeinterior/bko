@@ -1,4 +1,85 @@
 <x-guest-layout>
+
+<head>
+    <style>
+               /* .image-container {
+            position: relative;
+            display: inline-block;
+        }
+        .image-container img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .image-overlay,.image-overlay-rigid {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 100%;
+            height: 100%;
+            background-color: #FEBD49;
+            
+            z-index: -1;
+        } */
+        /* .image-overlay-rigid
+        {
+            background-color:#2A6161;
+        } */
+        .image-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .image-container img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 5px;
+        }
+        .image-overlay,.image-overlay-rigid {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 100%;
+            height: 100%;
+            background-color: #FEBD49;
+            
+            z-index: -1;
+        } 
+        .image-overlay-rigid
+        {
+            background-color:#2a6161;
+        }
+        /* .image-overlay {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 90%;
+            height: 90%;
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            z-index: -1;
+        } */
+        @media (max-width: 768px) {
+            .image-container img {
+                max-width: 100%;
+            }
+            .image-overlay {
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 10;
+            }
+            
+        }
+        .last-section
+        {
+            /* background-color:red; */
+            width:50%;
+        }
+
+    </style>
+</head>
+    {{--
     <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -45,6 +126,89 @@ Every order is handled with the utmost care, ensuring that all components of you
             </div>
         </div>
     </section>
+--}}
+
+
+<section class="container-fluid px-lg-5 py-4 px-md-3 px-3 bg-light">
+        <div class="row justify-content-center">
+            <div class="col-7 text-center">
+                <h1 class="fs-1 text-dark text-uppercase fw-bolder pt-5">
+                HOW WILL MY KITCHEN ARRIVE?
+                </h1>
+                
+                <h4 class="text-dark pt-1">
+                At BK Online, the most important thing for us is to deliver your kitchen safely and on time. With our years of experience in delivering kitchens, we make sure that every component of your kitchen is packed securely and reaches you in primal condition. 
+                    </h5>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container py-5">
+        <div class="row align-items-center mb-5 flex-column-reverse flex-md-row">
+            <div class="col-md-6 text-center text-md-start">
+                <h3 class="text fw-bold mt-4">FLAT-PACK KITCHENS</h3>
+                <p>When you choose a flat-pack kitchen, we partner with trusted and reliable couriers like DX to deliver your kitchen in the perfect condition. Each part is packed using protective material like cardboard and polystyrene to prevent any damage during the transport. Larger items are secured onto pallets for safe delivery. The plinths and multi-rails are always delivered separately, in long bundles, also carefully wrapped.</p>
+            </div>
+            <div class="col-md-6 d-flex justify-content-center">
+                <div class="image-container">
+                    <img src="{{ asset('/images/flat-pack-kitchen.png') }}" alt="Flat-Pack Kitchen" class="img-fluid">
+                    <div class="image-overlay"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row align-items-center flex-column-reverse flex-md-row-reverse">
+            <div class="col-md-6 text-center text-md-start">
+                <h3 class="text-primary fw-bold mt-4">RIGID KITCHENS</h3>
+                <p>For the delivery of Rigid Kitchens, we work with our reliable partners like TDL to ensure that your kitchen is packed and delivered with care. Items are securely wrapped in shrink wrap and placed on pallets to prevent damage. The plinths and multi-rails are sent separately as long bundles.</p>
+            </div>
+            <div class="col-md-6 d-flex justify-content-center">
+                <div class="image-container">
+                    <img src="{{ asset('/images/rigid-kitchen.png') }}" alt="Rigid Kitchen" class="img-fluid">
+                    <div class="image-overlay-rigid "></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center mt-5 last-section">
+        <p>Every order is handled with the utmost care, ensuring that all components of your kitchen are in excellent condition when they arrive at your doorstep. Whether flat-packed or rigid, our dedicated delivery process is designed to give you peace of mind from the moment you order to the moment you begin installation.</p>
+    </div>
+
+
+    {{-- <div class="container py-5">
+        <div class="row align-items-center mb-5">
+            <div class="col-md-6">
+                <h3 class="fw-bold" style="color:#2A6161">FLAT-PACK KITCHENS</h3>
+                <p>When you choose a flat-pack kitchen, we partner with trusted and reliable couriers like DX to deliver your kitchen in the perfect condition. Each part is packed using protective material like cardboard and polystyrene to prevent any damage during the transport. Larger items are secured onto pallets for safe delivery. The plinths and multi-rails are always delivered separately, in long bundles, also carefully wrapped.</p>
+            </div>
+            <div class="col-md-6">
+                <div class="image-container">
+                    <img src=" {{ asset('/images/flat-pack-kitchen.png') }}" alt="Flat-Pack Kitchen" class="img-fluid">
+                    <div class="image-overlay"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row align-items-center flex-md-row-reverse">
+            <div class="col-md-6">
+                <h3 class="text-primary fw-bold">RIGID KITCHENS</h3>
+                <p>For the delivery of Rigid Kitchens, we work with our reliable partners like TDL to ensure that your kitchen is packed and delivered with care. Items are securely wrapped in shrink wrap and placed on pallets to prevent damage. The plinths and multi-rails are sent separately as long bundles.</p>
+            </div>
+            <div class="col-md-6">
+                <div class="image-container">
+                    <img src=" {{ asset('/images/rigid-kitchen.png') }}" alt="Rigid Kitchen" class="img-fluid">
+                    <div class="image-overlay-rigid"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center mt-5">
+        <p>Every order is handled with the utmost care, ensuring that all components of your kitchen are in excellent condition when they arrive at your doorstep. Whether flat-packed or rigid, our dedicated delivery process is designed to give you peace of mind from the moment you order to the moment you begin installation.</p>
+    </div> --}}
+
 
     {{ view('frontend.help-and-guides') }}
 

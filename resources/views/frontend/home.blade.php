@@ -1,4 +1,153 @@
 <x-guest-layout>
+
+    <style>
+         :root {
+      --primary: #1e3a8a;
+      --secondary: #f59e0b;
+      --light: #f8fafc;
+      --dark: #0f172a;
+      --accent: #818cf8;
+      --success: #10b981;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f1f5f9;
+      color: var(--dark);
+    }
+    .section-title {
+      font-weight: 800;
+      margin-bottom: 3rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background-color: var(--secondary);
+      border-radius: 4px;
+    }
+    
+    .process-container {
+      position: relative;
+      padding: 2rem 0;
+    }
+    
+    .process-line {
+      position: absolute;
+      top: 150px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      z-index: 0;
+    }
+    
+    .process-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+      height: 100%;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .process-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card-header {
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .card-header::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .step-number {
+      font-size: 4rem;
+      font-weight: 900;
+      opacity: 0.1;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      line-height: 1;
+    }
+    
+    .card-body {
+      padding: 1.5rem;
+      background-color: white;
+    }
+    
+    .card-icon {
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 16px;
+      background-color: var(--light);
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .btn-custom {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      color: white;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 20px rgba(30, 58, 138, 0.15);
+    }
+    
+    .btn-custom:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(30, 58, 138, 0.2);
+      color: white;
+    }
+    
+    .primary-card { border-top: 5px solid var(--primary); }
+    .secondary-card { border-top: 5px solid var(--secondary); }
+    .success-card { border-top: 5px solid var(--success); }
+    .accent-card { border-top: 5px solid var(--accent); }
+    
+    .bg-primary-gradient { background: linear-gradient(135deg, var(--primary), #2563eb); }
+    .bg-secondary-gradient { background: linear-gradient(135deg, var(--secondary), #fbbf24); }
+    .bg-success-gradient { background: linear-gradient(135deg, var(--success), #34d399); }
+    .bg-accent-gradient { background: linear-gradient(135deg, var(--accent), #a5b4fc); }
+    
+    @media (max-width: 768px) {
+      .process-line {
+        display: none;
+      }
+      
+      .process-card {
+        margin-bottom: 2rem;
+      }
+    }
+    </style>
+
     @section('meta_tags')
     <title>Kitchen Design Services | Bespoke & Affordable Kitchens | BKO</title>
     <meta name="description" content="Buy Kitchen Online is here with Affordable & Custom kitchen units in London, in J Pull, Shaker, Slab, MFC & True Handleless styles. Book Consultation Now.">
@@ -225,16 +374,17 @@
     </section>
 
     <!-- EXPERT VIRTUAL DESIGN CONSULTATION-->
-    <section class="container-fluid bg-green-color py-5">
+     <section class="container-fluid bg-green-color py-5">
         <div class="col-12">
             <h3 class="fw-bold text-white text-center" style="text-decoration: underline; text-decoration-color: #eda10e">
                 EXPERT VIRTUAL DESIGN CONSULTATION
             </h3>
             <p class="container text-center text-white">
              At BK Online, we offer the ideal virtual kitchen design services and consultation, where our designers collaborate with you to create a kitchen tailored to your available space and preferences. Whether you are at home or on the go, our team is here to help you design your custom kitchen unit.
+           
             </p>
         </div>
-    </section>
+    </section> 
 
     <section class="container-fluid bg-white py-5">
         <div class="row d-flex justify-content-center">
@@ -315,7 +465,97 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> 
+
+    <!-- Process Section -->
+{{-- <section class="container my-6 py-5">
+    <div class="row mb-2">
+      <div class="col-lg-6 mx-auto text-center">
+        <h2 class="section-title display-6 text-center mb-2"> EXPERT VIRTUAL DESIGN CONSULTATION</h2>
+        <p class="text-muted">  At BK Online, we offer the ideal virtual kitchen design services and consultation, where our designers collaborate with you to create a kitchen tailored to your available space and preferences. Whether you are at home or on the go, our team is here to help you design your custom kitchen unit.
+        </p>
+      </div>
+    </div>
+    
+    <div class="process-container">
+      <div class="process-line d-none d-lg-block"></div>
+      <div class="row gy-4">
+        <!-- Step 1 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="process-card primary-card h-100">
+            <div class="card-header bg-primary-gradient text-white">
+              <span class="step-number">01</span>
+              <h3 class="h5 mb-0 text-white"> APPOINTMENT BOOKING</h3>
+            </div>
+            <div class="card-body">
+              <div class="card-icon">
+                <i class="bi bi-calendar-check text-primary fs-3"></i>
+              </div>
+              {{-- <h4 class="h5 fw-bold mb-3">Book Your Session</h4> --}}
+              {{-- <p class="text-muted">
+                Clients book a free consultation via website or call. Flexible scheduling to fit their availability.</p>
+            </div>
+          </div>
+        </div>
+         --}}
+        <!-- Step 2 -->
+        {{-- <div class="col-md-6 col-lg-3">
+          <div class="process-card secondary-card h-100">
+            <div class="card-header bg-secondary-gradient text-white">
+              <span class="step-number">02</span>
+              <h3 class="h5 mb-0"> SHARING PREFERENCES</h3>
+            </div>
+            <div class="card-body">
+              <div class="card-icon">
+                <i class="bi bi-chat-square-heart text-warning fs-3"></i>
+              </div>
+              <h4 class="h5 fw-bold mb-3">Share Your Vision</h4> --}}
+              {{-- <p class="text-muted">
+                Showcasing the client providing space details, style preferences, and budget.
+              </p>
+            </div>
+          </div>
+        </div>
+         --}}
+        <!-- Step 3 -->
+        {{-- <div class="col-md-6 col-lg-3">
+          <div class="process-card success-card h-100">
+            <div class="card-header bg-success-gradient text-white">
+              <span class="step-number">03</span>
+              <h3 class="h5 mb-0">DESIGN CREATION</h3>
+            </div>
+            <div class="card-body">
+              <div class="card-icon">
+                <i class="bi bi-building-gear text-success fs-3"></i>
+              </div>
+              <h4 class="h5 fw-bold mb-3">See It Come to Life</h4>
+              <p class="text-muted">BK Online designers craft a customized kitchen layout. Clients receive a 3D visual of their new kitchen.
+            </p>
+            </div>
+          </div>
+        </div>
+         --}}
+        <!-- Step 4 -->
+        {{-- <div class="col-md-6 col-lg-3">
+          <div class="process-card accent-card h-100">
+            <div class="card-header bg-accent-gradient text-white">
+              <span class="step-number">04</span>
+              <h3 class="h5 mb-0"> APPROVAL & MODIFICATIONS</h3>
+            </div>
+            <div class="card-body">
+              <div class="card-icon">
+                <i class="bi bi-check2-circle text-primary fs-3"></i>
+              </div>
+              <h4 class="h5 fw-bold mb-3">Perfect Your Design</h4> --}}
+              {{-- <p class="text-muted">  Customers review the design and request changes if needed. The finalized design is ready for order placement.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     --}}
+   
+  {{-- </section>  --}}
 
     {{--<section>
         <div>
@@ -601,6 +841,7 @@
      @include('frontend.why_choose_bkonline')
 
     <!-- Start your journey -->
+     
     @include('frontend.start_your_journey')
 
     <section class="container-fluid bg-white" style="border-bottom: 40px solid #2a6161;">
@@ -612,7 +853,8 @@
     <!-- FAQs -->
     @include('frontend.faqs_component', ['faqsData' => $generalFaqs])
 
-@push('scripts')
+
+    @push('scripts')
     <script>
         $(document).ready(function () {
             const $carousel01 = $('.main-carousel-banner-01');
@@ -666,5 +908,6 @@
             });
         });
     </script>
+
 @endpush
 </x-guest-layout>

@@ -1117,3 +1117,18 @@ footer {
 .component-card {
     border-radius: 0;
 }
+
+.about-card-content
+{
+    background-color: #2a6161;
+}
+
+.yellow-bg
+{
+    background-color: #febd49;
+    
+}
+.color-yellow
+{
+    color:  #febd49;
+}
