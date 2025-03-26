@@ -113,6 +113,22 @@ class HomeController extends Controller
         }
     }
 
+    public function orderkitchenbycolourname(Request $request, $styleSlug, $colourSlug)
+    {
+        try {
+            $style = Style::with('testimonials')->where('slug', $styleSlug)->where('status', 1)->firstOrFail();
+            $colour = Colour::where('slug', $colourSlug)->whereNotNull('finishing')->first();
+
+            $styleHasColour = StyleHasColour::where('style_id', $style->id)->where('colour_id', $colour->id)->where('status', 1)->first();
+
+            $seo = StyleSeo::where('style_id', $style->id)->first();
+
+            return view('frontend.shop.orderkitchen.orderkitchenbycolourname', compact('style', 'styleHasColour', 'seo'));
+        } catch (\Exception $e) {
+            return redirect()->route('orderkitchen');
+        }
+    }
+
     public function orderkitchenbycolour(Request $request, $style = null, $assembly = null, $colour = null, $parentSubCategory = null)
     {
         try {
