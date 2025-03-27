@@ -20,4 +20,9 @@ class StyleHasColour extends Model
     {
         return $this->belongsTo(Colour::class, 'colour_id', 'id');
     }
+
+    public function colourPageContent()
+    {
+        return $this->hasMany(ColourPageContent::class, 'style_has_colour_id', 'id');
+    }
 }

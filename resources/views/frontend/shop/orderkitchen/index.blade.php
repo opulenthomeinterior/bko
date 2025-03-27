@@ -90,7 +90,7 @@
                         standard finishes.
                     </p> -->
 
-                <h2 class="fs-5 px-3 text-dark fw-bold text-uppercase">Despatch</h2>
+                <h2 class="fs-5 px-3 text-dark fw-bold text-uppercase">Dispatch</h2>
                 <p class="px-3">First select your choice of assembly:</p>
 
                 @foreach ($styleData['assemblies'] as $assemblyName => $assemblyData)

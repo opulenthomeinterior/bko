@@ -68,6 +68,11 @@
                                                     href="{{ route('style.colour.setStatus', [$styleHasColour->style_id, $styleHasColour->colour_id]) }}" title="Set Status">
                                                     <i class="las la-lock fs-17 align-middle"></i>
                                                 </a>
+                                                <!-- Page Content Button -->
+                                                <a class="btn btn-soft-primary btn-sm d-inline-block add-page-content-button"
+                                                    href="{{ route('style.colour.page_content', [$styleHasColour->id]) }}" title="Add Page Content">
+                                                    <i class="las la-lock fs-17 align-middle"></i>
+                                                </a>
                                             </div>
                                         </td>
                                     </tr>

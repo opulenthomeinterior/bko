@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\ColourPageContent;
 use App\Models\Faq;
 use Illuminate\Http\Request;
 use App\Models\Style;
@@ -253,6 +255,54 @@ class StyleController extends Controller
             }
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Error deleting colour: ' . $e->getMessage());
+        }
+    }
+
+    public function colourPageContent(Request $request, $styleHasColourId) {
+        try {
+            $colourPageContent = ColourPageContent::where('style_has_colour_id', $styleHasColourId)->get();
+            $colourPageCont = StyleHasColour::where('style_id', $styleHasColourId)->first();
+            $catIds = null;
+            if (isset($colourPageCont)) {
+                $catIds = json_decode($colourPageCont->suitable_components, true);
+            }
+            $categories = Category::where('parent_category_id', null)->where('status', 1)->get();
+            return view('pages.styles.colour_page_content', compact('colourPageContent', 'styleHasColourId', 'categories', 'colourPageCont', 'catIds'));
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Error deleting colour: ' . $e->getMessage());
+        }
+    }
+
+    public function updateColourPageContent(Request $request, $styleHasColourId) {
+        try {
+            $section_main_headings = $request->section_main_heading;
+            $suitableComponents = json_encode($request->suitable_components);
+            StyleHasColour::where('id', $styleHasColourId)->update([
+                'suitable_components' => $suitableComponents
+            ]);
+            foreach ($section_main_headings as $key => $section_main_heading) {
+                $colourPageContent = ColourPageContent::where('id', $request->colour_page_content_id[$key] ?? 0)->first();
+                if (isset($colourPageContent)) {
+                    if (!empty($request->section_main_heading[$key]) && !empty($request->section_content[$key])) {
+                        $colourPageContent->section_main_heading = $request->section_main_heading[$key];
+                        $colourPageContent->section_content = $request->section_content[$key];
+                        $colourPageContent->style_has_colour_id = $styleHasColourId;
+                        $colourPageContent->save();
+                    }
+                } else {
+                    if (!empty($request->section_main_heading[$key]) && !empty($request->section_content[$key])) {
+                        $colourPageContent = new ColourPageContent();
+                        $colourPageContent->section_main_heading = $request->section_main_heading[$key];
+                        $colourPageContent->section_content = $request->section_content[$key];
+                        $colourPageContent->style_has_colour_id = $styleHasColourId;
+                        $colourPageContent->save();
+                    }
+                }
+            }
+            return redirect()->back()->with('success', 'Updated successfully');
+        } catch (\Exception $e) {
+            dd($e);
+            return redirect()->back()->with('error', 'Something went wrong: ' . $e->getMessage());
         }
     }
 

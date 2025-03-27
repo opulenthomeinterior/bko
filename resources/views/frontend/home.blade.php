@@ -35,7 +35,7 @@
             <div class="col-lg-6">
                 <ul>
                     <li class="fw-bold py-1"><i class="ri-check-line"></i>
-                        Kitchen despatched in 48 hours
+                        Kitchen dispatched in 48 hours
                     </li>
                     <li class="fw-bold py-1"><i class="ri-check-line"></i>
                         Over 30 years manufacturing in the UK

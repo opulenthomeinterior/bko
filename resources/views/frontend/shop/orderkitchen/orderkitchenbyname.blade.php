@@ -218,7 +218,7 @@
                     <div class="row">
                         <!-- Assemblies -->
                         <div class="col-lg-12 mb-3">
-                            <h1 class="text-dark text-uppercase fw-bold text-center">Despatch</h1>
+                            <h1 class="text-dark text-uppercase fw-bold text-center">Dispatch</h1>
                             <!-- <p>First select your choice of assembly:</p> -->
                             @foreach ($styleData['assemblies'] as $assemblyName => $assemblyData)
                                 <!-- <button type="button" id="{{ $assemblyName == 'Rigid' ? 'rigid_btn' : 'flatpacked_btn' }}"
@@ -236,15 +236,19 @@
                                                     <div class="fw-bold">
                                                         {{$styleData['data']['name']}} {{$styleHasColour->colour?->trade_colour}}
                                                     </div>
+                                                    @if ($styleHasColour->page_status == 1)
                                                     <div>
                                                         <a href="{{ route('orderkitchenbycolourname', [$styleData['data']['slug'], $styleHasColour->colour?->slug]) }}" class="btn btn-outline-warning rounded-0 text-dark p-2">Explore</a>
                                                     </div>
+                                                    @endif
                                                 </div>
+                                                @if ($styleHasColour->page_status == 0)
                                                 <div>
                                                     <small>Assembly Type:</small> <br>
                                                     <a href="{{route('orderkitchenbycolour', [$styleData['data']['slug'], 'rigid', $styleHasColour->colour?->slug])}}" class="btn btn-sm btn-outline-warning text-dark rounded-0">Rigid</a>
                                                     <a href="{{route('orderkitchenbycolour', [$styleData['data']['slug'], 'flat-pack', $styleHasColour->colour?->slug])}}" class="btn btn-sm btn-outline-warning text-dark rounded-0">Flat Pack</a>
                                                 </div>
+                                                @endif
                                             </div>
                                             <div class="card-body carousel-card-body p-0">
                                                 <div class="col-12 d-flex justify-content-center">
