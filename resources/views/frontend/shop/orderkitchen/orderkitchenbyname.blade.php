@@ -232,8 +232,13 @@
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 mb-4">
                                         <div class="card w-100" style="border-radius: 0px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
                                             <div class="card-header border-bottom border-default">
-                                                <div class="mb-2 fw-bold">
-                                                    {{$styleData['data']['name']}} {{$styleHasColour->colour?->trade_colour}}
+                                                <div class="mb-2 d-flex justify-content-between">
+                                                    <div class="fw-bold">
+                                                        {{$styleData['data']['name']}} {{$styleHasColour->colour?->trade_colour}}
+                                                    </div>
+                                                    <div>
+                                                        <a href="{{ route('orderkitchenbycolourname', [$styleData['data']['slug'], $styleHasColour->colour?->slug]) }}" class="btn btn-outline-warning rounded-0 text-dark p-2">Explore</a>
+                                                    </div>
                                                 </div>
                                                 <div>
                                                     <small>Assembly Type:</small> <br>
