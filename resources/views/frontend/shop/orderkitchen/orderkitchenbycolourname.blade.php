@@ -51,7 +51,7 @@
         </nav>
 
         <!-- Product Title -->
-        <h1 class="product-title text-center my-4">{{ $styleHasColour->colour->trade_colour }}</h1>
+        <h1 class="product-title text-center my-4">{{ $styleHasColour->colour?->trade_colour }}</h1>
 
         <!-- Product Description -->
         <div class="row mb-5">
@@ -91,7 +91,7 @@
         </div>
 
         <!-- Key Features -->
-        @if (count($styleHasColour->colourPageContent) > 0)
+        @if (!empty($styleHasColour->colourPageContent) && (count($styleHasColour->colourPageContent) > 0))
             @php $firstContent = $styleHasColour->colourPageContent->first(); @endphp
             @if (isset($firstContent))
                 <h2 class="text-center mb-4">{{ $firstContent->section_main_heading }}</h2>

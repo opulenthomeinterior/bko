@@ -261,10 +261,12 @@ class StyleController extends Controller
     public function colourPageContent(Request $request, $styleHasColourId) {
         try {
             $colourPageContent = ColourPageContent::where('style_has_colour_id', $styleHasColourId)->get();
-            $colourPageCont = StyleHasColour::where('style_id', $styleHasColourId)->first();
-            $catIds = null;
+            $colourPageCont = StyleHasColour::where('id', $styleHasColourId)->first();
             if (isset($colourPageCont)) {
                 $catIds = json_decode($colourPageCont->suitable_components, true);
+            }
+            if (is_null($catIds)) {
+                $catIds = [];
             }
             $categories = Category::where('parent_category_id', null)->where('status', 1)->get();
             return view('pages.styles.colour_page_content', compact('colourPageContent', 'styleHasColourId', 'categories', 'colourPageCont', 'catIds'));
