@@ -88,11 +88,16 @@ class ProductsImport implements ToCollection, WithChunkReading
                         $category->description = $sheetProductDesc;
                         $category->parent_category_id = $parent_category->id;
                         $category->save();
+                    } else {
+                        $category->name = $sheetChildCategory;
+                        $category->slug = str_replace(' ', '-', strtolower($sheetChildCategory));
+                        $category->description = $sheetProductDesc;
+                        $category->parent_category_id = $parent_category->id;
+                        $category->save();
                     }
                 } else {
                     // continue;
                 }
-
                 $style = Style::where('name', $sheetStyle)->first();
     
                 if (empty($style) && !empty($sheetStyle)) {

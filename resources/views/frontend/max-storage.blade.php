@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
+<x-guest-layout>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Max Storage Kitchen Designs</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
-        * {
+        /* * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -18,7 +15,7 @@
         body {
             background-color: #f8f8f8;
             color: #333;
-        }
+        } */
 
         .hero {
             background: url('https://bkonline.uk/public/imgs/products/464785299_8512016742222733_5169156552107455268_n1739534754_67af31a285b0e.jpg') center/cover no-repeat;
@@ -121,42 +118,125 @@
             background-color: #ebc266;
             transition: background-color 0.3s ease-in-out;
         }
+
+        .top-navbar {
+            background-color: #000;
+            color: white;
+            padding: 2px;
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .top-navbar-text {
+            color: white;
+            text-decoration: none;
+        }
+
+        .top-navbar-text:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+        .bg-yellow-color2 {
+            background-color: #febd49;
+        }
     </style>
 </head>
 
-<body>
-    <header class="hero mb-4">
+    <!-- <nav class="top-navbar">
+        <a class="top-navbar-text" href="{{route('home')}}"> 
+            Visit BK Online
+        </a> 
+    </nav> -->
+
+    <header class="hero">
         <div class="hero-content">
-            <h1>Custom Kitchens, Timeless Elegance</h1>
-            <p>We offer premium, bespoke kitchen designs at competitive prices.</p>
+            <h1 class="text-white fw-bold">Custom Kitchen Units</h1>
+            <h1 class="text-warning fw-bold">Timeless Elegance</h1>
+            <p>We offer premium, bespoke designer kitchens at competitive prices.</p>
             <div class="scroll-down">Scroll Down <i>&#x2193;</i></div>
         </div>
     </header>
 
-    <section class="container mb-4">
-        <div class="row mb-4">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-4">
-                <img src="https://bkonline.uk/public/imgs/products/our-process1739481888_67ae63203533a.jpg" class="img-fluid" alt="Luxury Kitchen">
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-4">
-                <h2 class="text-center">Our process is straight forward</h2>
-                <ul>
-                    <li><span>You inform us about your requirements</span></li>
-                    <li><span>We create a personalized design and provide clear, upfront pricing</span></li>
-                    <li><span>The final design will be crafted to meet your needs without the pressure of upselling/suggestive selling</span></li>
-                </ul>
-            </div>
+    <!-- Key designs -->
+    <section class="container-fluid bg-green-color py-4 mt-4">
+        <div class="col-12 d-flex flex-column align-items-center">
         </div>
     </section>
 
-    <h1 class="col-12 text-center mb-4">Are you struggling with kitchen storage space?</h1>
+    <section class="container-fluid bg-yellow-color2 py-2">
+        <div class="col-12 d-flex flex-column align-items-center">
+            <p class="text-center text-white">CUSTOM KITCHENS, TIMELESS ELEGANCE</p>
+            <h3 class="text-dark text-center fw-bolder">
+                BESPOKE DESIGN, STANDARD PRICE
+            </h3>
+            <p class="text-center text-dark w-75">
+                We offer premium, bespoke designer kitchens at competitive prices. Our process is straight forward
+            </p>
+        </div>
+    </section>
+
+    <section class="container bg-white py-4">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                <div class="card border-0">
+                    <div class="card-body d-flex justify-content-center align-items-center">
+                        <div style="border: 20px solid #eda10e; border-radius: 50%; background-color:rgb(255, 203, 100); height: 180px; width: 180px; display:flex; align-items-center; padding: 10px">
+                            <img class="img-fluid" src="https://cdn-icons-png.flaticon.com/512/2237/2237440.png" alt="">
+                        </div>
+                        <div style="background-color: #eda10e; height: 100px; width: 60%; display: flex; align-items: center; border-radius: 0px 50px 50px 0px; justify-content: end; margin-left: -20px; padding: 10px">
+                            <h6 class="text-white text-center">You inform us about your requirements</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                <div class="card border-0">
+                    <div class="card-body d-flex justify-content-center align-items-center">
+                        <div style="border: 20px solid #2a6161; border-radius: 50%; background-color:rgb(63, 138, 138); height: 180px; width: 180px; display:flex; align-items-center; padding: 10px">
+                            <img class="img-fluid" src="https://cdn-icons-png.flaticon.com/512/2237/2237440.png" alt="">
+                        </div>
+                        <div style="background-color: #2a6161; height: 100px; width: 60%; display: flex; align-items: center; border-radius: 0px 50px 50px 0px; justify-content: end; margin-left: -20px; padding-right: 10px">
+                            <h6 class="text-white text-center">We create a personlized design and provide clear, upfront pricing</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                <div class="card border-0">
+                    <div class="card-body d-flex justify-content-center align-items-center">
+                        <div style="border: 20px solid #000; border-radius: 50%; background-color:rgb(140, 140, 140); height: 180px; width: 180px; display:flex; align-items-center; padding: 10px">
+                            <img class="img-fluid" src="https://cdn-icons-png.flaticon.com/512/2237/2237440.png" alt="">
+                        </div>
+                        <div style="background-color: #000; height: 100px; width: 60%; display: flex; align-items: center; border-radius: 0px 50px 50px 0px; justify-content: end; margin-left: -20px; padding-right: 10px">
+                            <h6 class="text-white text-center">The final design will be crafted to meet your needs without the pressure of upselling</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </section>
+
+    <section class="container-fluid bg-light py-4 mt-4 border-top border-warning">
+        <div class="col-12 d-flex flex-column align-items-center">
+        </div>
+    </section>
+
+    <h1 class="col-12 text-center mb-4 fw-bold text-danger">Are you struggling with kitchen storage space?</h1>
 
     <section class="container mb-4">
         <div class="row">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 d-flex align-items-center mb-4">
                 <div>
-                    <p>Introducing <b>BESPOKE MAX STORAGE KITCHENS</b></p>
-                    <small>Standard designer kitchens are beautiful but with limited storage space. Bulk-manufactured standard space units are not the solution for your major storage problems. At BKO, we offer kitchens designed to maximize your kitchen’s storage with the deepest, tallest, and widest units in the market, and they are customized to suit your needs.
+                    <h5 style="color: #2a6161">We are introducing <br><b style="color: #000">BESPOKE MAX STORAGE KITCHENS</b></h5>
+                    <small>Standard designer kitchens are beautiful but with limited storage space. Bulk-manufactured standard space units are not the solution for your major storage problems. At BKO, we offer a bespoke kitchen unit designed to maximize your kitchen’s storage with the deepest, tallest, and widest units in the market, and they are customized to suit your needs.
                         We have many colours available in supergloss and ultramatt finishes like white, cream, ivory, cashmere, etc. Choose from our huge range of unique designs, and we will customize them to fit your kitchen's dimensions and style.
                         <br>
                         <br>
@@ -170,6 +250,22 @@
             </div>
         </div>
     </section>
+
+    <!-- <section class="container mb-4" style="margin-top: 4rem;">
+        <div class="row mb-4">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-4">
+                <img src="https://bkonline.uk/public/imgs/products/our-process1739481888_67ae63203533a.jpg" class="img-fluid" alt="Luxury Kitchen">
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-4">
+                <h2 class="text-center">Our process is straight forward</h2>
+                <ul>
+                    <li><span>You inform us about your requirements</span></li>
+                    <li><span>We create a personalized design and provide clear, upfront pricing</span></li>
+                    <li><span>The final design will be crafted to meet your needs without the pressure of upselling/suggestive selling</span></li>
+                </ul>
+            </div>
+        </div>
+    </section> -->
 
     <section class="container mb-4">
         <div class="row">
@@ -223,18 +319,20 @@
         </div>
     </section>
 
-    <section class="conatiner px-4 text-center mb-4">
+    <section class="conatiner px-4 py-4 text-center mb-4">
         <div class="px-4 text-center mb-4">
-            <h2 class=" text-center">WHY settle for an average-sized kitchen when we have eliminated the price issue for a fully customized kitchen?</h2>
+            <h2 class="text-center">WHY settle for an average-sized kitchen when we have eliminated the price issue for a fully customized kitchen?</h2>
         </div>
     </section>
 
     <section class="container mb-4">
-        <div class="row">
+        <div class="row mb-4">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-4">
+                <h6 class="fw-bold">NATIONAL RETAILER STANDARD-SIZED KITCHEN</h6>
                 <img src="https://bkonline.uk/public/images/slab.jpeg" class="img-fluid" alt="">
             </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-4" style="overflow: hidden; max-height: 424px">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-4" style="overflow: hidden; max-height: 455px">
+                <h6 class="fw-bold">BESPOKE MAX STORAGE KITCHEN</h6>
                 <img style="max-height: 500px; overflow: hidden" src="https://bkonline.uk/public/imgs/products/421878074_891869916280279_5405404846063335271_n1739538312_67af3f882943d.jpg" class="img-fluid" alt="">
             </div>
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-4 d-flex align-items-center">
@@ -350,6 +448,5 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!--JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-</body>
 
-</html>
+</x-guest-layout>

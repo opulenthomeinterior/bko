@@ -1,24 +1,20 @@
 <x-app-layout>
-    <style>
-        .select2-container--default .select2-selection--multiple .select2-selection__choice__display {
-            color: #000 !important;
-        }
-    </style>
     <div class="page-content">
         <div class="container-fluid">
             <!-- start page title -->
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0">Edit Style</h4>
+                        <h4 class="mb-sm-0">Edit Category</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
-                                <li class="breadcrumb-item"><a href="{{ route('styles') }}">Styles</a></li>
-                                <li class="breadcrumb-item active">Edit Style</li>
+                                <li class="breadcrumb-item"><a href="{{ route('categories') }}">Categories</a></li>
+                                <li class="breadcrumb-item active">Edit Category</li>
                             </ol>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -27,7 +23,7 @@
             <div class="row gutters">
                 <div class="col-12">
                     <div class="card p-lg-5 p-4">
-                        <form action="{{ route('style.update', $style->id) }}" method="post" class="auth-input" enctype="multipart/form-data">
+                        <form action="{{ route('category.update', $category->id) }}" method="post" class="auth-input" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="row">
@@ -36,18 +32,27 @@
                                         <span class="text-danger">*</span>
                                     </label>
                                     <input type="text" class="form-control" id="name" name="name"
-                                        placeholder="Enter Style Name" value="{{ $style->name }}">
+                                        placeholder="Enter Category Name" value="{{ $category->name }}">
                                 </div>
                                 <div class="col-lg-6 form-group mb-2">
-                                    <label for="style_title" class="form-label">Style Title</label>
-                                    <input type="text" class="form-control" id="style_title" name="style_title"
-                                        placeholder="Enter Style Title" value="{{ $style->style_title }}">
-                                </div>
-                                <div class="col-md-12 form-group mb-4">
-                                    <label for="editor" class="form-label">
-                                        Style Description
+                                    <label for="parent_category_id" class="form-label">
+                                        Select Parent Category
                                     </label>
-                                    <textarea name="style_description" class="editor"><?= str_replace('&', '&', $style->style_description) ?></textarea>
+                                    <select name="parent_category_id" id="parent_category_id"
+                                        class="form-control select2">
+                                        <option value="">Select Parent Category</option>
+                                        @foreach ($parentCategories as $key => $pcategory)
+                                            <option value="{{ $pcategory->id }}"
+                                                {{ $pcategory->id == $category->parent_category_id ? 'selected' : '' }}>
+                                                {{ $pcategory->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-md-12 form-group mb-2">
+                                    <label for="editor" class="form-label">
+                                        Category Description
+                                    </label>
+                                    <textarea name="description" class="editor"><?= str_replace('&', '&', $category->description) ?></textarea>
                                 </div>
 
                                 <!-- Tetimonials -->
@@ -67,8 +72,8 @@
                                                         <div id="flush-collapse" class="accordion-collapse collapse"
                                                             data-bs-parent="#accordionFlushExample">
                                                             <div class="accordion-body">
-                                                                @if (count($style->testimonials) > 0)
-                                                                    @foreach ($style->testimonials as $key => $testimonial)
+                                                                @if (count($category->testimonials) > 0)
+                                                                    @foreach ($category->testimonials as $key => $testimonial)
                                                                         <div class="card border border-default p-3 current-testimonial-card">
                                                                             <label for="" class="form-label">
                                                                                 Testimonial
@@ -120,6 +125,7 @@
                                         </div>
                                     </section>
                                 </div>
+
                                 <!-- FAQs -->
                                 <div class="col-md-12 form-group mb-4">
                                     <section class="container-fluid p-0">
@@ -137,8 +143,8 @@
                                                         <div id="faqs-flush-collapse" class="accordion-collapse collapse"
                                                             data-bs-parent="#faqsaccordionFlush">
                                                             <div class="accordion-body">
-                                                                @if (count($style->faqs) > 0)
-                                                                    @foreach ($style->faqs as $key => $faq)
+                                                                @if (count($category->faqs) > 0)
+                                                                    @foreach ($category->faqs as $key => $faq)
                                                                         <div class="card border border-default p-3 current-faq-card">
                                                                             <label for="" class="form-label">
                                                                                 FAQ
@@ -180,58 +186,7 @@
                                         </div>
                                     </section>
                                 </div>
-                                <!-- Style Has Colours -->
-                                <div class="col-md-12 form-group mb-4">
-                                    <section class="container-fluid p-0">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="accordion accordion-flush" id="styleHasColoursAccordionFlush">
-                                                    <div class="accordion-item">
-                                                        <h2 class="accordion-header">
-                                                            <button class="accordion-button collapsed fw-bolder text-dark bg-light" type="button"
-                                                                data-bs-toggle="collapse" data-bs-target="#styleHasColours-flush-collapse"
-                                                                aria-expanded="false" aria-controls="styleHasColours-flush-collapse">
-                                                                <span class="text-dark text-uppercase fw-bold text-center">Colours</span>
-                                                            </button>
-                                                        </h2>
-                                                        <div id="styleHasColours-flush-collapse" class="accordion-collapse collapse"
-                                                            data-bs-parent="#styleHasColoursAccordionFlush">
-                                                            <div class="accordion-body">
-                                                                @if (count($style->styleHasColours) > 0)
-                                                                <div class="card border border-default py-3">
-                                                                    <label for="" class="form-label">
-                                                                        Select Colours
-                                                                    </label>
-                                                                    <select name="colour_id[]" class="form-control select2 text-dark" multiple id="">
-                                                                        <option value="" disabled>Select Colours</option>
-                                                                        @foreach (\App\Models\Colour::get() as $colour)
-                                                                            <option value="{{ $colour->id }}" class="text-dark" {{ in_array($colour->id, $style->styleHasColours->pluck('colour_id')->toArray()) ? 'selected' : '' }}>
-                                                                                {{$colour->trade_colour}}
-                                                                            </option>
-                                                                        @endforeach
-                                                                    </select>
-                                                                </div>
-                                                                @else
-                                                                    <div class="card border border-default p-3">
-                                                                        <label for="" class="form-label">
-                                                                            Select Colours
-                                                                        </label>
-                                                                        <select name="colour_id[]" class="form-control select2 text-dark" multiple id="">
-                                                                            <option value="" disabled>Select Colours</option>
-                                                                            @foreach (\App\Models\Colour::get() as $colour)
-                                                                                <option value="{{$colour->id}}" class="text-dark">{{$colour->trade_colour}}</option>
-                                                                            @endforeach
-                                                                        </select>
-                                                                    </div>
-                                                                @endif
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </section>
-                                </div>
+
                                 <!-- SEO -->
                                 <div class="col-md-12 form-group mb-4">
                                     <section class="container-fluid p-0">
@@ -251,16 +206,16 @@
                                                             <div class="accordion-body">
                                                                 <div class="card">
                                                                     <label for="">Meta Title</label>
-                                                                    <textarea name="meta_title" class="form-control" placeholder="Enter Meta Title">{!! $style->seo?->meta_title !!}</textarea>
+                                                                    <textarea name="meta_title" class="form-control" placeholder="Enter Meta Title">{!! $category->seo?->meta_title !!}</textarea>
                                                                     <br>
                                                                     <label for="">Meta Description</label>
-                                                                    <textarea name="meta_description" class="form-control" placeholder="Enter Meta Description">{!! $style->seo?->meta_description !!}</textarea>
+                                                                    <textarea name="meta_description" class="form-control" placeholder="Enter Meta Description">{!! $category->seo?->meta_description !!}</textarea>
                                                                     <br>
                                                                     <label for="">Canonical Tag</label>
-                                                                    <textarea name="canonical_tag" class="form-control" placeholder="Enter Canonical Tag">{!! $style->seo?->canonical_tag !!}</textarea>
+                                                                    <textarea name="canonical_tag" class="form-control" placeholder="Enter Canonical Tag">{!! $category->seo?->canonical_tag !!}</textarea>
                                                                     <br>
                                                                     <label for="">Schema Code</label>
-                                                                    <textarea name="schema_code" class="form-control" placeholder="Enter Schema Code">{!! $style->seo?->schema_code !!}</textarea>
+                                                                    <textarea name="schema_code" class="form-control" placeholder="Enter Schema Code">{!! $category->seo?->schema_code !!}</textarea>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -270,30 +225,30 @@
                                         </div>
                                     </section>
                                 </div>
-                                
+
                                 <div class="col-lg-6 form-group mb-2">
                                     <label for="image_path" class="form-label">Upload Image</label>
                                     <input type="file" accept="image/*" class="form-control" id="image_path"
                                         name="image_path" onchange="display_image(this)">
                                 </div>
                                 <div class="col-lg-6">
-                                    <label for="style_status" class="form-label">Status</label>
+                                    <label for="category_status" class="form-label">Status</label>
                                     <br>
-                                    <input type="checkbox" id="style_status" name="status" {{$style->status == 1 ? 'checked' : ''}}>
+                                    <input type="checkbox" id="category_status" name="status" {{$category->status == 1 ? 'checked' : ''}}>
                                 </div>
-                                <div class="col-lg-6 form-group mb-2 preview-image-wrapper {{ $style->image_path ? 'd-block' : 'd-none' }}">
+                                <div class="col-lg-6 form-group mb-2 preview-image-wrapper {{ $category->image_path ? 'd-block' : 'd-none' }}">
                                     <label for="image_preview" class="form-label">Image Preview</label>
                                     <img id="image_preview"
-                                        src="{{ $style->image_path ? asset('imgs/styles/' . $style->image_path) : '#' }}"
+                                        src="{{ $category->image_path ? asset('uploads/categories/uploads/' . $category->image_path) : '#' }}"
                                         alt="Image Preview"
-                                        class="img-thumbnail box-image-preview {{ $style->image_path ? 'd-block' : 'd-none' }}" />
+                                        class="img-thumbnail box-image-preview {{ $category->image_path ? 'd-block' : 'd-none' }}" />
                                     <button type="button" id="remove_image"
-                                        class="btn btn-danger mt-2 {{ $style->image_path ? 'd-block' : 'd-none' }}"
-                                        onclick="removeImage(this, {{ $style->id }}, '{{ $style->image_path }}')">Remove</button>
+                                        class="btn btn-danger mt-2 {{ $category->image_path ? 'd-block' : 'd-none' }}"
+                                        onclick="removeImage(this, {{ $category->id }}, '{{ $category->image_path }}')">Remove</button>
                                 </div>
                                 <div class="col-lg-12 form-group mt-2">
                                     <button class="btn btn-primary" type="submit">
-                                        Update Style
+                                        Update Category
                                     </button>
                                 </div>
                             </div>
@@ -305,7 +260,7 @@
         </div>
     </div>
     <script>
-        var removeImageUrl = "{{ route('style.removeImage', $style->id) }}";
+        var removeImageUrl = "{{ route('category.removeImage', $category->id) }}";
     </script>
     <script>
         document.querySelectorAll('.editor').forEach((editorElement) => {

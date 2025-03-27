@@ -51,10 +51,10 @@
                                         <tr>
                                             <td class="align-middle">{{ $loop->iteration }}</td>
                                             <td class="align-middle">
-                                                <a href="{{ $category->image_path ? asset('uploads/categories/' . $category->image_path) : '#' }}"
+                                                <a href="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : '#' }}"
                                                     class="{{ $category->image_path ? 'd-inline-block' : 'd-none' }}"
                                                     target="_blank" rel="noopener noreferrer">
-                                                    <img src="{{ $category->image_path ? asset('uploads/categories/' . $category->image_path) : '#' }}"
+                                                    <img src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : '#' }}"
                                                         alt="Image Preview" width="100"
                                                         class="img-thumbnail box-image-preview {{ $category->image_path ? 'd-block' : 'd-none' }}" />
                                                 </a>

@@ -51,7 +51,7 @@ $(document).ready(function () {
         productModal += `<div class="modal-content" style="border-radius: 0; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266">`;
         productModal += `<div class="modal-header border-bottom border-light">`;
         productModal += `<h1 class="fs-5 fw-bold text-dark border-bottom border-dark">`;
-        productModal += product.title;
+        productModal += product.full_title;
         productModal += `</h1>`;
         productModal += `<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`;
         productModal += `</div>`;
@@ -74,9 +74,22 @@ $(document).ready(function () {
         productModal += `<h6 class="fs-6 fw-bolder text-dark">Dimensions</h6>`;
         productModal += `</div>`;
         productModal += `<ul style="list-style: none; padding: 0">`;
-        productModal += `<li><p class="mb-0"><small class="fw-bold text-uppercase text-dar">HEIGHT:</small> ${product.height ? parseInt(product.height) + 'mm' : ''}</p></li>`;
-        productModal += `<li><p class="mb-0"><small class="fw-bold text-uppercase text-dark">WIDTH:</small> ${product.width ? parseInt(product.width) + 'mm' : ''}</p></li>`;
-        productModal += `<li><p class="mb-0"><small class="fw-bold text-uppercase text-dark">DEPTH:</small> ${product.depth ? parseInt(product.depth) + 'mm' : ''}</p></li>`;
+        if (product.dimensions) {
+            productModal += `<li><p class="mb-0">${product.dimensions}</p></li><br>`;
+        }
+        if (product.height) {
+            productModal += `<li><p class="mb-0"><small class="fw-bold text-uppercase text-dar">HEIGHT:</small> ${parseInt(product.height) + 'mm'}</p></li>`;
+        }
+        if (product.width) {
+            productModal += `<li><p class="mb-0"><small class="fw-bold text-uppercase text-dar">WIDTH:</small> ${parseInt(product.width) + 'mm'}</p></li>`;
+        }
+        if (product.depth) {
+            productModal += `<li><p class="mb-0"><small class="fw-bold text-uppercase text-dar">DEPTH:</small> ${parseInt(product.depth) + 'mm'}</p></li>`;
+        }
+        // productModal += `<li><p class="mb-0"> ${product.dimensions ? product.dimensions + 'mm' : ''}</p></li><br>`;
+        // productModal += `<li><p class="mb-0"><small class="fw-bold text-uppercase text-dar">HEIGHT:</small> ${product.height ? parseInt(product.height) + 'mm' : ''}</p></li>`;
+        // productModal += `<li><p class="mb-0"><small class="fw-bold text-uppercase text-dark">WIDTH:</small> ${product.width ? parseInt(product.width) + 'mm' : ''}</p></li>`;
+        // productModal += `<li><p class="mb-0"><small class="fw-bold text-uppercase text-dark">DEPTH:</small> ${product.depth ? parseInt(product.depth) + 'mm' : ''}</p></li>`;
         productModal += `</ul>`;
         productModal += `<h6 class="fs-6 fw-bolder text-dark">Range Specification</h6>`;
         productModal += `<p class="mb-0"><small>${product.category && product.category.description ? product.category.description : (product.category && product.category.parentCategory && product.category.parentCategory.description ? product.category.parentCategory.description : '')}</small></p>`;
@@ -121,7 +134,7 @@ $(document).ready(function () {
         productCard += `<div class="col-12">`;
         productCard += `<div class="container-fluid">`;
         productCard += `<div class="row justify-content-center">`;
-        productCard += `<div class="col-6 d-flex justify-content-center product-counter">`;
+        productCard += `<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center product-counter">`;
         productCard += `<input id="minus${product.id}" class="minus border bg-dark text-light p-0" type="button" value="-" onclick="decreaseQuantity('${product.id}', '${product.product_code}', '${product.full_title}', ${product.price}, ${product.discounted_price}, ${product.discounted_percentage ?? 0}, '${product.parent_category.slug}')" />`;
         productCard += `<input id="quantity${product.id}" class="quantity border border-black text-center" type="text" value="0" name="quantity" disabled />`;
         productCard += `<input id="plus${product.id}" ${product.price == 0 ? 'disabled' : ''} class="plus border bg-dark text-light p-0" type="button" value="+" onclick="increaseQuantity('${product.id}', '${product.product_code}', '${product.full_title}', ${product.price}, ${product.discounted_price}, ${product.discounted_percentage ?? 0}, '${product.parent_category.slug}')" />`;

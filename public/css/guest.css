@@ -1,0 +1,266 @@
+#whatsapp-icon {
+    position: fixed;
+    /* Fix it in place relative to the viewport */
+    bottom: 20px;
+    /* Adjust the vertical position */
+    left: 20px;
+    /* Move it to the left side */
+    z-index: 1000;
+    /* Ensure it stays on top of other elements */
+}
+
+#whatsapp-icon i {
+    font-size: 24px;
+    /* Adjust the icon size as needed */
+    color: #000;
+    /* Customize icon color */
+}
+
+.hover-button:hover {
+    background-color: #000;
+    /* Change background color to dark */
+}
+
+.hover-button:hover .card-title {
+    color: #fff;
+    /* Change text color to white */
+}
+
+/* Container styling for Select2 */
+.select2-container--default .select2-selection--single {
+    height: 60px; /* Custom height */
+    border: 1px solid #ebc266; /* Yellow border for the selected item */
+    padding: 0 10px; /* Horizontal padding */
+    background-color: white; /* Background color */
+    color: black; /* Text color */
+    border-radius: 0; /* No rounded corners */
+    display: flex; /* Flexbox for centering */
+    align-items: center; /* Center text vertically */
+    box-sizing: border-box; /* Prevents padding from increasing total height */
+    position: relative; /* To position arrow */
+}
+
+/* Make the selected item bold */
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    font-weight: bold; /* Make the text bold */
+}
+
+/* Styling the arrow */
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    display: none; /* Hide the default arrow */
+}
+
+/* Custom arrow with background */
+.select2-container--default .select2-selection--single {
+    position: relative; /* To position custom arrow */
+}
+
+/* Custom arrow triangle */
+.select2-container--default .select2-selection--single:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Adjust position */
+    width: 0; 
+    height: 0; 
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-top: 1px solid #ebc266; /* Yellow arrow */
+    transform: translateY(-50%);
+    transition: transform 0.2s; /* Smooth transition for rotation */
+}
+
+/* Change arrow direction when dropdown is open */
+.select2-container--default .select2-selection--single.select2-selection--expanded:after {
+    transform: translateY(-50%) rotate(180deg); /* Rotate arrow when expanded */
+}
+
+/* Adding border and padding to options */
+.select2-results__option {
+    padding: 10px; /* Padding for options */
+    border-bottom: 1px solid #ccc; /* Bottom border for each option */
+    font-weight: bold; /* Make the option text bold */
+    max-height: 400px;
+}
+
+/* Hover effect for options */
+.select2-results__option--highlighted {
+    background-color: #ebc266; /* Highlight color */
+    color: white; /* Text color when highlighted */
+}
+
+/* Remove default border and apply custom styles */
+.select2-container--default .select2-results {
+    border: none; /* Remove default border */
+    border-radius: 0; /* No rounded corners */
+    box-shadow: none; /* Remove any default shadow for a cleaner look */
+}
+
+/* Add a custom border to the dropdown */
+.select2-container--default .select2-dropdown {
+    border: 1px solid #ebc266; /* Custom border color */
+    border-radius: 0; /* No rounded corners */
+    outline: none; /* Remove outline */
+}
+
+/* Customize the maximum height of the Select2 dropdown */
+.select2-results__options {
+    max-height: 280px !important; /* Adjust this value as needed */
+    overflow-y: auto; /* Enable scrolling if items exceed the height */
+}
+
+/* Hide the native radio button */
+.radio-btn {
+    appearance: none; /* Removes default style */
+    width: 15px;
+    height: 15px;
+    border: 2px solid #ffc107; /* Warning border color */
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Create inner dot when selected */
+.radio-btn:checked::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px;
+    height: 6px;
+    background-color: #ffc107; /* Warning color for checked state */
+    border-radius: 50%;
+}
+
+/* Focus style */
+.radio-btn:focus {
+    outline: none;
+}
+
+.owl-carousel .owl-item img {
+    /* height: 100px !important;
+    width: 100px !important; */
+}
+
+.carousel {
+    margin: 0 auto; /* Center the carousel */
+    padding: 0; /* Remove extra padding */
+    overflow: hidden; /* Hide any overflowing content */
+}
+
+.owl-carousel, .owl-carousel .item {
+    box-sizing: border-box;
+}
+
+.owl-stage-outer {
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.carousel-card {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: flex-start; /* Align content at the top */
+    box-sizing: border-box; /* Include padding in the height calculation */
+}
+
+.carousel-card-body {
+    flex-grow: 1; /* Allow card body to take available space */
+}
+
+.carousel-card-footer::-webkit-scrollbar {
+    display: none;
+}
+
+.cut-span2 {
+    /* display: inline-block; */
+    /* color: #ebc266; */
+    /* clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%); */
+}
+
+.cut-span2:hover {
+    /* display: inline-block;
+    color: black;
+    clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%); */
+}
+
+.navbar-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.top-navbar1 {
+    width: 100%;
+    z-index: 1000;
+}
+
+.second-navbar {
+    position: relative; /* Keeps it in the flow */
+    z-index: 999;
+}
+
+.bg-green-color {
+    background-color: #2a6161;
+}
+
+.text-green-color {
+    color: #2a6161;
+}
+
+.border-green-color {
+    border: 1px solid #2a6161;
+}
+
+.dropdown__arrow {
+    color: white !important;
+}
+@media (max-width: 768px) {
+    .second-navbar {
+        top: auto; 
+        bottom: 0; /* Move it to the bottom if needed */
+    }
+    .nav__link { color: black !important; }
+}
+
+
+/*--------------OWL CAROUSEL-------------*/
+.owl-stage-outer, .owl-carousel {
+    overflow: visible !important;
+    margin: 0px 0px !important;
+}
+
+.main-carousel-banner-01 {
+    position: relative !important;
+}
+
+.owl-nav {
+    position: absolute !important;
+    width: 100%;
+    display: flex !important;
+    justify-content: space-between !important;
+    top: 32% !important;
+    padding: 0 20px !important;
+}
+
+button.owl-next, button.owl-prev {
+    height: 70px;
+    width: 70px;
+    background: rgba(150, 150, 150, 0.5) !important;
+    font-size: 40px !important;
+    color: #2a6161 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: center !important;
+}
+

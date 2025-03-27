@@ -1,4 +1,13 @@
 <x-guest-layout>
+    <style>
+        .bg-green-color {
+            background-color: #2a6161 !important;
+        }
+        
+        .text-green-color {
+            color: #2a6161 !important;
+        }
+    </style>
     <div class="container-fluid px-lg-5 pt-4 px-md-3 px-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -15,14 +24,14 @@
         </section>
     </div>
     <div class="container-fluid px-lg-5 py-4 px-md-3 px-3">
-        <h1 class="fs-4 fw-bolder text-dark">{{$title}}</h1>
+        <h1 class="fw-bolder text-dark text-center py-2">{{$title}}</h1>
         <div class="row" style="background-color: #e0e0e0;">
             <div class="col-lg-9">
                 <div class="collapse-wrapper my-4">
                     <a class="fw-semibold text-dark text-uppercase collapse-heading" data-bs-toggle="collapse"
                         href="#cabinetspanels" role="button" aria-expanded="false" aria-controls="cabinetspanels">
                         <span
-                            class="bg-dark text-white fw-semibold py-2 px-2 text-center me-2 collapse-heading-number">1</span>
+                            class="text-white bg-dark fw-semibold py-2 px-2 text-center me-2 collapse-heading-number">1</span>
                         Cabinets and Panels
                     </a>
                     <div class="collapse-container mt-3" id="cabinetspanels">
@@ -102,7 +111,7 @@
 
                                                 <div class="">
                                                     <figure>
-                                                        <img class="product-image px-0"
+                                                        <img class="product-image px-0" style="height: 300px !important" 
                                                             src="{{ !empty($baseCabinet->image_path) ? asset('imgs/products/'.$baseCabinet->image_path) : asset('images/no-image-available.jpg') }}"
                                                             alt="Card image cap">
                                                     </figure>
@@ -348,7 +357,7 @@
                                                     <div class="row">
                                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p-0">
                                                             <figure class="my-0" style="margin-bottom: 0px !important;">
-                                                                <img class="product-image px-0"
+                                                                <img class="product-image px-0" style="height: 300px !important" 
                                                                     style="margin-bottom: 0px !important;object-fit:contain"
                                                                     src="{{ !empty($baseCabinetData->image_path) ? asset('imgs/products/'.$baseCabinetData->image_path) : asset('images/no-image-available.jpg') }}"
                                                                     alt="Card image cap" data-bs-toggle="modal"
@@ -528,7 +537,7 @@
 
                                                     <div class="">
                                                         <figure>
-                                                            <img class="product-image px-0"
+                                                            <img class="product-image px-0" style="height: 300px !important" 
                                                                 src="{{ !empty($wallCabinet->image_path) ? asset('imgs/products/'.$wallCabinet->image_path) : asset('images/no-image-available.jpg') }}"
                                                                 alt="Card image cap">
                                                         </figure>
@@ -740,7 +749,7 @@
                                                         <div class="row">
                                                             <div class="col-lg-12">
                                                                 <figure class="my-0" style="margin-bottom: 0px !important;">
-                                                                    <img class="product-image px-0"
+                                                                    <img class="product-image px-0" style="height: 300px !important" 
                                                                         style="margin-bottom: 0px !important;min-height:175px;max-height:175px;object-fit:contain"
                                                                         src="{{ !empty($wallCabinet->image_path) ? asset('imgs/products/'.$wallCabinet->image_path) : asset('images/no-image-available.jpg') }}"
                                                                         alt="Card image cap" data-bs-toggle="modal"
@@ -756,7 +765,7 @@
                                                                 <div class="container-fluid">
                                                                     <div class="row justify-content-center">
                                                                         <div
-                                                                            class="col-6 d-flex justify-content-center product-counter">
+                                                                            class="col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center product-counter">
                                                                             <input id="minus{{ $wallCabinet->id }}"
                                                                                 class="minus border bg-dark text-light p-0"
                                                                                 type="button" value="-"
@@ -982,7 +991,7 @@
                                                     <div class="row">
                                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p-0">
                                                             <figure class="my-0" style="margin-bottom: 0px !important;">
-                                                                <img class="product-image px-0"
+                                                                <img class="product-image px-0" style="height: 300px !important" 
                                                                     style="margin-bottom: 0px !important;object-fit:contain"
                                                                     src="{{ !empty($wallCabinetData->image_path) ? asset('imgs/products/'.$wallCabinetData->image_path) : asset('images/no-image-available.jpg') }}"
                                                                     alt="Card image cap" data-bs-toggle="modal"
@@ -1162,7 +1171,7 @@
 
                                                     <div class="">
                                                         <figure>
-                                                            <img class="product-image px-0"
+                                                            <img class="product-image px-0" style="height: 300px !important" 
                                                                 src="{{ !empty($tallCabinet->image_path) ? asset('imgs/products/'.$tallCabinet->image_path) : asset('images/no-image-available.jpg') }}"
                                                                 alt="Card image cap">
                                                         </figure>
@@ -1374,7 +1383,7 @@
                                                         <div class="row">
                                                             <div class="col-lg-12">
                                                                 <figure class="my-0" style="margin-bottom: 0px !important;">
-                                                                    <img class="product-image px-0"
+                                                                    <img class="product-image px-0" style="height: 300px !important" 
                                                                         style="margin-bottom: 0px !important;min-height:175px;max-height:175px;object-fit:contain"
                                                                         src="{{ !empty($wallCabinet->image_path) ? asset('imgs/products/'.$wallCabinet->image_path) : asset('images/no-image-available.jpg') }}"
                                                                         alt="Card image cap" data-bs-toggle="modal"
@@ -1390,7 +1399,7 @@
                                                                 <div class="container-fluid">
                                                                     <div class="row justify-content-center">
                                                                         <div
-                                                                            class="col-6 d-flex justify-content-center product-counter">
+                                                                            class="col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center product-counter">
                                                                             <input id="minus{{ $wallCabinet->id }}"
                                                                                 class="minus border bg-dark text-light p-0"
                                                                                 type="button" value="-"
@@ -1616,7 +1625,7 @@
                                                     <div class="row">
                                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p-0">
                                                             <figure class="my-0" style="margin-bottom: 0px !important;">
-                                                                <img class="product-image px-0"
+                                                                <img class="product-image px-0" style="height: 300px !important" 
                                                                     style="margin-bottom: 0px !important;object-fit:contain"
                                                                     src="{{ !empty($tallCabinetData->image_path) ? asset('imgs/products/'.$tallCabinetData->image_path) : asset('images/no-image-available.jpg') }}"
                                                                     alt="Card image cap" data-bs-toggle="modal"
@@ -1890,7 +1899,7 @@
                                                     <div class="row">
                                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p-0">
                                                             <figure class="my-0" style="margin-bottom: 0px !important;">
-                                                                <img class="product-image px-0"
+                                                                <img class="product-image px-0" style="height: 300px !important" 
                                                                     style="margin-bottom: 0px !important;object-fit:contain"
                                                                     src="{{ !empty($accessoriesData->image_path) ? asset('imgs/products/'.$accessoriesData->image_path) : asset('images/no-image-available.jpg') }}"
                                                                     alt="Card image cap" data-bs-toggle="modal"
@@ -2075,7 +2084,7 @@
 
                                                 <div class="">
                                                     <figure>
-                                                        <img class="product-image px-0"
+                                                        <img class="product-image px-0" style="height: 300px !important" 
                                                             src="{{ !empty($accessory->image_path) ? asset('imgs/products/'.$accessory->image_path) : asset('images/no-image-available.jpg') }}"
                                                             alt="Card image cap">
                                                     </figure>
@@ -2315,7 +2324,7 @@
                                                 <div class="row">
                                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p-0">
                                                         <figure class="my-0" style="margin-bottom: 0px !important;">
-                                                            <img class="product-image px-0"
+                                                            <img class="product-image px-0" style="height: 300px !important" 
                                                                 style="margin-bottom: 0px !important;object-fit:contain"
                                                                 src="{{ !empty($internalsData->image_path) ? asset('imgs/products/'.$internalsData->image_path) : asset('images/no-image-available.jpg') }}"
                                                                 alt="Card image cap" data-bs-toggle="modal"
@@ -2592,7 +2601,7 @@
                                                 <div class="row">
                                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p-0">
                                                         <figure class="my-0" style="margin-bottom: 0px !important;">
-                                                            <img class="product-image px-0"
+                                                            <img class="product-image px-0" style="height: 300px !important" 
                                                                 style="margin-bottom: 0px !important;object-fit:contain"
                                                                 src="{{ !empty($handlesData->image_path) ? asset('imgs/products/'.$handlesData->image_path) : asset('images/no-image-available.jpg') }}"
                                                                 alt="Card image cap" data-bs-toggle="modal"
@@ -2892,7 +2901,7 @@
                                                         <div class="row">
                                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p-0">
                                                                 <figure class="my-0" style="margin-bottom: 0px !important;">
-                                                                    <img class="product-image px-0"
+                                                                    <img class="product-image px-0" style="height: 300px !important" 
                                                                         style="margin-bottom: 0px !important;object-fit:contain"
                                                                         src="{{ !empty($worktopsData->image_path) ? asset('imgs/products/'.$worktopsData->image_path) : asset('images/no-image-available.jpg') }}"
                                                                         alt="Card image cap" data-bs-toggle="modal"
@@ -3164,7 +3173,7 @@
                                                         <div class="row">
                                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p-0">
                                                                 <figure class="my-0" style="margin-bottom: 0px !important;">
-                                                                    <img class="product-image px-0"
+                                                                    <img class="product-image px-0" style="height: 300px !important" 
                                                                         style="margin-bottom: 0px !important;object-fit:contain"
                                                                         src="{{ !empty($worktopsAndUpStandData->image_path) ? asset('imgs/products/'.$worktopsAndUpStandData->image_path) : asset('images/no-image-available.jpg') }}"
                                                                         alt="Card image cap" data-bs-toggle="modal"
@@ -3436,7 +3445,7 @@
                                                         <div class="row">
                                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p-0">
                                                                 <figure class="my-0" style="margin-bottom: 0px !important;">
-                                                                    <img class="product-image px-0"
+                                                                    <img class="product-image px-0" style="height: 300px !important" 
                                                                         style="margin-bottom: 0px !important;object-fit:contain"
                                                                         src="{{ !empty($breakfastBarData->image_path) ? asset('imgs/products/'.$breakfastBarData->image_path) : asset('images/no-image-available.jpg') }}"
                                                                         alt="Card image cap" data-bs-toggle="modal"
@@ -3708,7 +3717,7 @@
                                                         <div class="row">
                                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p-0">
                                                                 <figure class="my-0" style="margin-bottom: 0px !important;">
-                                                                    <img class="product-image px-0"
+                                                                    <img class="product-image px-0" style="height: 300px !important" 
                                                                         style="margin-bottom: 0px !important;object-fit:contain"
                                                                         src="{{ !empty($edgingData->image_path) ? asset('imgs/products/'.$edgingData->image_path) : asset('images/no-image-available.jpg') }}"
                                                                         alt="Card image cap" data-bs-toggle="modal"
@@ -4001,7 +4010,7 @@
                                                         <div class="row">
                                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p-0">
                                                                 <figure class="my-0" style="margin-bottom: 0px !important;">
-                                                                    <img class="product-image px-0"
+                                                                    <img class="product-image px-0" style="height: 300px !important" 
                                                                         style="margin-bottom: 0px !important;object-fit:contain"
                                                                         src="{{ !empty($sinkData->image_path) ? asset('imgs/products/'.$sinkData->image_path) : asset('images/no-image-available.jpg') }}"
                                                                         alt="Card image cap" data-bs-toggle="modal"
@@ -4273,7 +4282,7 @@
                                                         <div class="row">
                                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p-0">
                                                                 <figure class="my-0" style="margin-bottom: 0px !important;">
-                                                                    <img class="product-image px-0"
+                                                                    <img class="product-image px-0" style="height: 300px !important" 
                                                                         style="margin-bottom: 0px !important;object-fit:contain"
                                                                         src="{{ !empty($tapsData->image_path) ? asset('imgs/products/'.$tapsData->image_path) : asset('images/no-image-available.jpg') }}"
                                                                         alt="Card image cap" data-bs-toggle="modal"
@@ -4551,7 +4560,7 @@
                                                 <div class="row">
                                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p-0">
                                                         <figure class="my-0" style="margin-bottom: 0px !important;">
-                                                            <img class="product-image px-0"
+                                                            <img class="product-image px-0" style="height: 300px !important" 
                                                                 style="margin-bottom: 0px !important;object-fit:contain"
                                                                 src="{{ !empty($applianceData->image_path) ? asset('imgs/products/'.$applianceData->image_path) : asset('images/no-image-available.jpg') }}"
                                                                 alt="Card image cap" data-bs-toggle="modal"
@@ -4679,7 +4688,7 @@
                             <div class="row border-bottom text-white">
                                 <h5 class="fw-bold text-white">Order Overview</h5>
                             </div>
-                            <div class="row text-white pt-2">
+                            <div class="row text-white pt-2 bg-dark">
                                 <h6 class="text-white fw-bold">Style: <span
                                         class="fw-normal">{{ $style->name }}</span></h6>
                                 <h6 class="text-white fw-bold">Assembly: <span
@@ -4695,8 +4704,8 @@
                             <div class="row border-bottom text-white">
                                 <h5 class="fw-bold text-white">Items</h5>
                             </div>
-                            <div class="row text-white pt-1" id="orderKitchenCartItemsList">
-
+                            <div class="row text-dark pt-1 bg-dark" id="orderKitchenCartItemsList">
+                                
                             </div>
                         </div>
                     </div>
@@ -4705,7 +4714,7 @@
                             <div class="row border-bottom text-white">
                                 <h5 class="fw-bold text-white">Kitchen Price</h5>
                             </div>
-                            <div class="row text-white ">
+                            <div class="row text-dark bg-dark">
                                 <h2 class="text-white fw-bold py-2 m-0" id="cartTotalAmount_side">
 
                                 </h2>

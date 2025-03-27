@@ -8,7 +8,11 @@
                         Kitchen</a></li>
             </ol>
         </nav>
-        <h1 class="fs-1 fw-bolder text-dark mb-lg-5 mb-5"></h1>
+        <h1 class="fs-1 fw-bolder text-dark d-flex justify-content-end">
+            <div>
+                <a href="{{route('orderkitchenbycolour', ['style' => $style->slug , 'assembly' => $assembly->slug, 'colour' => $colour->slug])}}" class="btn btn-outline-warning text-dark text-uppercase mb-2" style="border-radius: 0">Back</a>
+            </div>
+        </h1>
         <h1 class="fs-4 fw-bolder text-dark">{{$title}}</h1>
 
         <div class="row" style="background-color: #e0e0e0;">
@@ -35,10 +39,6 @@
                                 <button class="nav-link" id="nav-accessories-tab" data-bs-toggle="tab"
                                     data-bs-target="#nav-accessories" type="button" role="tab"
                                     aria-controls="nav-accessories" aria-selected="false">Accessories</button>
-                            </div>
-                            <div>
-                                <a href="{{route('orderkitchenbycolour', ['style' => $style->slug , 'assembly' => $assembly->slug, 'colour' => $colour->slug])}}"
-                                    class="btn btn-outline-warning text-dark text-uppercase mb-2" style="border-radius: 0">Back</a>
                             </div>
                         </nav>
                         <div class="tab-content p-3" style="border: 1px solid black !important" id="nav-tabContent">
@@ -329,7 +329,7 @@
                                                                     <div class="container-fluid">
                                                                         <div class="row justify-content-center">
                                                                             <div
-                                                                                class="col-6 d-flex justify-content-center product-counter">
+                                                                                class="col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center product-counter">
                                                                                 <input id="minus{{ $baseCabinet->id }}"
                                                                                     class="minus border bg-dark text-light p-0"
                                                                                     type="button" value="-"
@@ -702,7 +702,7 @@
                                                                     <div class="container-fluid">
                                                                         <div class="row justify-content-center">
                                                                             <div
-                                                                                class="col-6 d-flex justify-content-center product-counter">
+                                                                                class="col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center product-counter">
                                                                                 <input id="minus{{ $wallCabinet->id }}"
                                                                                     class="minus border bg-dark text-light p-0"
                                                                                     type="button" value="-"
@@ -1075,7 +1075,7 @@
                                                                     <div class="container-fluid">
                                                                         <div class="row justify-content-center">
                                                                             <div
-                                                                                class="col-6 d-flex justify-content-center product-counter">
+                                                                                class="col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center product-counter">
                                                                                 <input id="minus{{ $tallCabinet->id }}"
                                                                                     class="minus border bg-dark text-light p-0"
                                                                                     type="button" value="-"
@@ -1299,7 +1299,7 @@
                                                                     <div class="container-fluid">
                                                                         <div class="row justify-content-center">
                                                                             <div
-                                                                                class="col-6 d-flex justify-content-center product-counter">
+                                                                                class="col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center product-counter">
                                                                                 <input id="minus{{ $accessory->id }}"
                                                                                     class="minus border bg-dark text-light p-0"
                                                                                     type="button" value="-"
@@ -1675,7 +1675,7 @@
                                                             <div class="container-fluid">
                                                                 <div class="row justify-content-center">
                                                                     <div
-                                                                        class="col-6 d-flex justify-content-center product-counter">
+                                                                        class="col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center product-counter">
                                                                         <input id="minus{{ $accessory->id }}"
                                                                             class="minus border bg-dark text-light p-0"
                                                                             type="button" value="-"
@@ -2052,7 +2052,7 @@
                                                             <div class="container-fluid">
                                                                 <div class="row justify-content-center">
                                                                     <div
-                                                                        class="col-6 d-flex justify-content-center product-counter">
+                                                                        class="col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center product-counter">
                                                                         <input id="minus{{ $handle->id }}"
                                                                             class="minus border bg-dark text-light p-0"
                                                                             type="button" value="-"

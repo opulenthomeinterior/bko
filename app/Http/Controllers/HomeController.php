@@ -418,8 +418,11 @@ class HomeController extends Controller
 
         // Include the current category in the list of children
         $children[] = $category->id;
-
-        $count = Product::whereIn('category_id', $children)->where('status', 'active')->count();
+        if ($slug == 'handles' || $slug == 'sinks') {
+            $count = Product::whereIn('category_id', $children)->where('status', 'active')->groupBy('parent_sub_category')->count();
+        } else {
+            $count = Product::whereIn('category_id', $children)->where('status', 'active')->count();
+        }
         $currentPage = 1;
         $limit = 12;
         $offset = ($currentPage - 1) * $limit;
@@ -432,8 +435,11 @@ class HomeController extends Controller
         if ($currentPage < 1) {
             $currentPage = 1;
         }
-
-        $products = Product::whereIn('category_id', $children)->where('status', 'active')->offset($offset)->limit($limit)->get();
+        if ($slug == 'handles' || $slug == 'sinks') {
+            $products = Product::whereIn('category_id', $children)->where('status', 'active')->groupBy('parent_sub_category')->offset($offset)->limit($limit)->get();
+        } else {
+            $products = Product::whereIn('category_id', $children)->where('status', 'active')->offset($offset)->limit($limit)->get();
+        }
 
         $heights = Product::whereIn('category_id', $children)
                 ->where('status', 'active')
@@ -466,8 +472,11 @@ class HomeController extends Controller
         }
 
         $parent_category = Category::where('slug', $slug)->firstOrFail();
-
-        $productsQuery = Product::where('status', 'active');
+        if ($slug == 'handles' || $slug == 'sinks') {
+            $productsQuery = Product::where('status', 'active')->groupBy('parent_sub_category');
+        } else {
+            $productsQuery = Product::where('status', 'active');
+        }
 
         if (!empty($t)) {
             $productsQuery->whereIn('category_id', $t);
@@ -552,13 +561,25 @@ class HomeController extends Controller
             ->where('colour_id', $product->colour_id)
             ->where('id', '!=', $product->id)->where('status', 'active')
             ->get();
+        
+        $findProduct = Product::where('style_id', $product->style_id)
+                        ->where('assembly_id', $product->assembly_id)
+                        ->where('colour_id', $product->colour_id)
+                        ->where('id', $product->id)->where('status', 'active')
+                        ->first();
 
-        // echo '<pre>';
-        // print_r($product);
-        // echo '</pre>';
-        // exit;
+        $categoryShortTitle = $findProduct?->short_title;
+        $parentSubCategory = $findProduct?->parent_sub_category;
 
-        return view('frontend.shop.orderkitchen.orderbyproduct', compact('product', 'colours', 'relatedProducts'));
+        $relatedCategoryProducts = Product::where('id', '!=', $product->id)
+            ->where('status', 'active')
+            ->where(function ($q) use ($parentSubCategory, $categoryShortTitle) {
+                $q = $q->where('parent_sub_category', $parentSubCategory)
+                ->where('short_title', $categoryShortTitle);
+            })
+            ->get();
+
+        return view('frontend.shop.orderkitchen.orderbyproduct', compact('product', 'colours', 'relatedProducts', 'relatedCategoryProducts'));
     }
 
     public function faq()

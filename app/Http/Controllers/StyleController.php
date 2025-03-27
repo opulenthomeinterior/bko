@@ -67,7 +67,6 @@ class StyleController extends Controller
                 'style_title' => 'nullable|string|max:255',
                 'style_description' => 'nullable|string',
             ]);
-
             $style->name = $request->input('name');
             $style->slug = str_replace(' ', '-', strtolower($request->input('name')));
             $style->style_title = $request->input('style_title');
@@ -78,7 +77,7 @@ class StyleController extends Controller
             if ($request->hasFile('image_path')) {
                 // Delete old image if it exists
                 if (!empty($style->image_path)) {
-                    mmadev_delete_attachment_from_directory($style->image_path, 'styles');
+                    mmadev_delete_style_image_attachment_from_directory($style->image_path, 'styles');
                 }
 
                 $file = $request->file('image_path');
@@ -131,18 +130,22 @@ class StyleController extends Controller
             }
 
             $styleColourIds = $request->colour_id;
-            
-            if (!empty($style->styleHasColours)) {
-                StyleHasColour::where('style_id', $style->id)->delete();
-            }
-            foreach ($styleColourIds as $key => $styleColourId) {
-                // Check if the testimonial is not empty
+
+            foreach ($styleColourIds as $styleColourId) {
+                // Check if the colour is not empty
                 if (!empty($styleColourId)) {
-                    // Create new testimonial
-                    $newStyleHasColour = new StyleHasColour();
-                    $newStyleHasColour->style_id = $style->id;
-                    $newStyleHasColour->colour_id = $styleColourIds[$key];
-                    $newStyleHasColour->save();
+                    // Check if the record already exists
+                    $existingRecord = StyleHasColour::where('style_id', $style->id)
+                        ->where('colour_id', $styleColourId)
+                        ->exists();
+
+                    if (!$existingRecord) {
+                        // Add new colour if not already exists
+                        $newStyleHasColour = new StyleHasColour();
+                        $newStyleHasColour->style_id = $style->id;
+                        $newStyleHasColour->colour_id = $styleColourId;
+                        $newStyleHasColour->save();
+                    }
                 }
             }
             

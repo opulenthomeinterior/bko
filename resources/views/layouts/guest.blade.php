@@ -41,7 +41,7 @@ use App\Models\Style;
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <!-- owl carousel theme.css link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"> 
-
+    <link rel="stylesheet" href="{{ asset('css/guest.css') }}">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YN6B53VG71"></script>
@@ -51,221 +51,7 @@ use App\Models\Style;
         gtag('js', new Date());
 
         gtag('config', 'G-YN6B53VG71');
-        </script>
-
-
-    <style>
-        #whatsapp-icon {
-            position: fixed;
-            /* Fix it in place relative to the viewport */
-            bottom: 20px;
-            /* Adjust the vertical position */
-            left: 20px;
-            /* Move it to the left side */
-            z-index: 1000;
-            /* Ensure it stays on top of other elements */
-        }
-
-        #whatsapp-icon i {
-            font-size: 24px;
-            /* Adjust the icon size as needed */
-            color: #000;
-            /* Customize icon color */
-        }
-
-        .hover-button:hover {
-            background-color: #000;
-            /* Change background color to dark */
-        }
-
-        .hover-button:hover .card-title {
-            color: #fff;
-            /* Change text color to white */
-        }
-
-        /* Container styling for Select2 */
-        .select2-container--default .select2-selection--single {
-            height: 60px; /* Custom height */
-            border: 1px solid #ebc266; /* Yellow border for the selected item */
-            padding: 0 10px; /* Horizontal padding */
-            background-color: white; /* Background color */
-            color: black; /* Text color */
-            border-radius: 0; /* No rounded corners */
-            display: flex; /* Flexbox for centering */
-            align-items: center; /* Center text vertically */
-            box-sizing: border-box; /* Prevents padding from increasing total height */
-            position: relative; /* To position arrow */
-        }
-
-        /* Make the selected item bold */
-        .select2-container--default .select2-selection--single .select2-selection__rendered {
-            font-weight: bold; /* Make the text bold */
-        }
-
-        /* Styling the arrow */
-        .select2-container--default .select2-selection--single .select2-selection__arrow {
-            display: none; /* Hide the default arrow */
-        }
-
-        /* Custom arrow with background */
-        .select2-container--default .select2-selection--single {
-            position: relative; /* To position custom arrow */
-        }
-
-        /* Custom arrow triangle */
-        .select2-container--default .select2-selection--single:after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            right: 10px; /* Adjust position */
-            width: 0; 
-            height: 0; 
-            border-left: 1px solid transparent;
-            border-right: 1px solid transparent;
-            border-top: 1px solid #ebc266; /* Yellow arrow */
-            transform: translateY(-50%);
-            transition: transform 0.2s; /* Smooth transition for rotation */
-        }
-
-        /* Change arrow direction when dropdown is open */
-        .select2-container--default .select2-selection--single.select2-selection--expanded:after {
-            transform: translateY(-50%) rotate(180deg); /* Rotate arrow when expanded */
-        }
-
-        /* Adding border and padding to options */
-        .select2-results__option {
-            padding: 10px; /* Padding for options */
-            border-bottom: 1px solid #ccc; /* Bottom border for each option */
-            font-weight: bold; /* Make the option text bold */
-            max-height: 400px;
-        }
-
-        /* Hover effect for options */
-        .select2-results__option--highlighted {
-            background-color: #ebc266; /* Highlight color */
-            color: white; /* Text color when highlighted */
-        }
-
-        /* Remove default border and apply custom styles */
-        .select2-container--default .select2-results {
-            border: none; /* Remove default border */
-            border-radius: 0; /* No rounded corners */
-            box-shadow: none; /* Remove any default shadow for a cleaner look */
-        }
-
-        /* Add a custom border to the dropdown */
-        .select2-container--default .select2-dropdown {
-            border: 1px solid #ebc266; /* Custom border color */
-            border-radius: 0; /* No rounded corners */
-            outline: none; /* Remove outline */
-        }
-        
-        /* Customize the maximum height of the Select2 dropdown */
-        .select2-results__options {
-            max-height: 280px !important; /* Adjust this value as needed */
-            overflow-y: auto; /* Enable scrolling if items exceed the height */
-        }
-        
-        /* Hide the native radio button */
-        .radio-btn {
-            appearance: none; /* Removes default style */
-            width: 15px;
-            height: 15px;
-            border: 2px solid #ffc107; /* Warning border color */
-            border-radius: 50%;
-            position: relative;
-            cursor: pointer;
-        }
-
-        /* Create inner dot when selected */
-        .radio-btn:checked::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 6px;
-            height: 6px;
-            background-color: #ffc107; /* Warning color for checked state */
-            border-radius: 50%;
-        }
-
-        /* Focus style */
-        .radio-btn:focus {
-            outline: none;
-        }
-
-        .owl-carousel .owl-item img {
-            height: 100px !important;
-            width: 100px !important;
-        }
-
-        .carousel {
-            margin: 0 auto; /* Center the carousel */
-            padding: 0; /* Remove extra padding */
-            overflow: hidden; /* Hide any overflowing content */
-        }
-
-        .owl-carousel, .owl-carousel .item {
-            box-sizing: border-box;
-        }
-
-        .owl-stage-outer {
-            padding: 20px 0px;
-        }
-
-        .item {
-            display: flex;
-            justify-content: center;
-            align-items: stretch;
-        }
-
-        .carousel-card {
-            display: flex;
-            flex-direction: column; /* Stack content vertically */
-            justify-content: flex-start; /* Align content at the top */
-            height: 400px; /* Set fixed height for all cards */
-            padding: 20px; /* Add consistent padding for inner spacing */
-            box-sizing: border-box; /* Include padding in the height calculation */
-        }
-
-        .carousel-card-body {
-            flex-grow: 1; /* Allow card body to take available space */
-        }
-
-        .carousel-card-footer {
-            margin-top: auto; /* Push footer to the bottom */
-            padding: 15px 15px;
-            overflow-y: auto; /* Enable scroll if content overflows */
-            scrollbar-width: none; /* For Firefox, hide the scrollbar */
-            -ms-overflow-style: none; /* For Internet Explorer and Edge, hide the scrollbar */
-        }
-
-        .carousel-card-footer::-webkit-scrollbar {
-            display: none;
-        }
-
-        .cut-span1 {
-            display: inline-block;
-            color: black;
-            font-weight: bold;
-            clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
-        }
-
-        .cut-span2 {
-            display: inline-block;
-            color: #ebc266;
-            font-weight: bold;
-            clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
-        }
-
-        .cut-span2:hover {
-            display: inline-block;
-            color: black;
-            font-weight: bold;
-            clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
-        }
-    </style>
+    </script>
 </head>
 
 <body>
@@ -450,404 +236,411 @@ use App\Models\Style;
             </div>
         </div> --}}
         
-        <nav class="container-fluid p-0 bg-dark border-warning text-white border-bottom d-flex justify-content-center">
-            <!-- <a class="btn btn-outline-warning text-white border-none px-4 py-1 cut-span1" href="{{route('max_storage')}}"> 
-                Wardrobes
-            </a>  -->
-            <a class="btn btn-outline-warning border-none px-4 py-1 cut-span2" href="{{route('max_storage')}}"> 
-                Visit Max Storage Kitchens
-            </a> 
-            <!-- <a class="btn btn-outline-warning text-white border-none px-4 py-1 cut-span1" href="{{route('max_storage')}}"> 
-                Bathrooms
-            </a>    -->
-        </nav>
-        <nav class="nav container-fluid p-0 bg-white" style="border-bottom: 1px solid #ebc266;">
-            <div class="nav__data ps-5">
-                <a href="{{ route('home') }}" class="nav__logo text-start flex-grow-1">
-                    <img src="{{ asset('images/logoBko.png') }}" width="100px" />
-                </a>
+        <div class="navbar-wrapper">
+            <nav class="container-fluid top-navbar1 p-0 text-white">
+                <div class="text-center bg-danger py-2">
+                    <span class="fw-bold text-white px-4"> 
+                        LIMITED TIME OFFER
+                    </span> 
+                    <div class="text-center">
+                        <small class="text-center">For a limited time, We are offering free on-site surveys and consultations to help you get started on your kitchen project at no initial cost</small>
+                    </div>
+                </div>
+                <div class="text-center bg-green-color py-2">
+                    <a class="btn btn-outline-default border-none text-white px-4 py-2" href="{{route('max_storage')}}"> 
+                        VISIT MAX STORAGE KITCHEN
+                    </a>
+                </div>
+            </nav>
+            <!-- <nav class="nav container-fluid p-0 bg-dark second-navbar" style="border-bottom: 1px solid #ebc266"> -->
+            <nav class="nav container-fluid p-0 bg-dark second-navbar">
+                <div class="nav__data ps-5">
+                    <a href="{{ route('home') }}" class="nav__logo text-start flex-grow-1">
+                        <img src="{{ asset('images/logoBko.png') }}" width="100px" />
+                    </a>
 
-                <a href="#" class="d-lg-none show-small d-flex" id="searchIcon"><i
-                        class="ri-search-2-line"></i></a>
-                <a href="{{ route('cart') }}"
-                    class="d-lg-none show-small d-flex align-items-center justify-content-center px-3 text-dark">
-                    <i class="position-relative ri-shopping-cart-line">
-                        <span id="calculateProductsQuantity" class="position-absolute right-0"
-                            style="top: -8px;"></span>
-                    </i>
-                </a>
+                    <a href="#" class="d-lg-none show-small d-flex" id="searchIcon"><i
+                            class="ri-search-2-line"></i></a>
+                    <a href="{{ route('cart') }}"
+                        class="d-lg-none show-small d-flex align-items-center justify-content-center px-3 text-white">
+                        <i class="position-relative ri-shopping-cart-line">
+                            <span id="calculateProductsQuantity" class="position-absolute right-0"
+                                style="top: -8px;"></span>
+                        </i>
+                    </a>
 
-                <a href="#" id="openSidebar"
-                    class="align-items-center justify-content-center px-1 text-dark text-end d-lg-none show-small d-flex">
-                    <i class="ri-user-line"></i>
-                </a>
-                <span class="nav__toggle" id="nav-toggle">
+                    <a href="#" id="openSidebar"
+                        class="align-items-center justify-content-center px-1 text-white text-end d-lg-none show-small d-flex">
+                        <i class="ri-user-line"></i>
+                    </a>
+                    <span class="nav__toggle" id="nav-toggle">
 
-                    <i class="ri-menu-line nav__toggle-menu"></i>
-                    <i class="ri-close-line nav__toggle-close"></i>
-                </span>
+                        <i class="ri-menu-line nav__toggle-menu text-white"></i>
+                        <i class="ri-close-line nav__toggle-close text-white"></i>
+                    </span>
 
 
-            </div>
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list p-2">
-                    <li class="dropdown__item">
-                        <div class="nav__link dropdown__button">
-                            <a href="{{ route('orderkitchen') }}" class="text-dark">EXPLORE </a>
-                            <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                        </div>
-                        <div class="dropdown__container border-bottom border-warning border-2">
-                            <div class="dropdown__content px-4" style="max-width: 100% !important; margin: 20px 0px !important; grid-template-columns: none; column-gap: 0;">
-                                @php
-                                    $styles = Style::where('status', 1)->get();
-                                @endphp
-                                @if (!empty($styles))
-                                <div class="dropdown__group">
-                                    <ul class="dropdown__list">
-                                        <div class="container">
-                                            <h4 class="text-start bg-dark text-white p-2">Choose Style:</h4>
-                                            <div class="row">
-                                                @foreach ($styles as $index => $style)
-                                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
-                                                    <li style="width: 100%; border-radius: 0px" class="border-bottom border-default text-white">
-                                                        <a style="width: 100%;" href="{{ route('orderkitchenbyname', [$style->slug]) }}" class="dropdown__link">
-                                                            <i class="ri-arrow-right-s-fill"></i> {{$style->name}} KITCHEN</a>
-                                                    </li>
-                                                </div>
-                                                @endforeach
-                                            </div>
-                                        </div>
-                                    </ul>
-                                </div>
-                                @else
-                                <div class="dropdown__group">
-                                    <ul class="dropdown__list">
-                                        <h4 class="text-start bg-dark text-white p-2">Choose Style:</h4>
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
-                                                    <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
-                                                        <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['j-pull']) }}" class="dropdown__link">
-                                                            <i class="ri-arrow-right-s-fill"></i> J-PULL KITCHEN</a>
-                                                    </li>
-                                                </div>
-                                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
-                                                    <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
-                                                        <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['true-handleless']) }}" class="dropdown__link">
-                                                            <i class="ri-arrow-right-s-fill"></i> TRUE HANDLELESS KITCHEN</a>
-                                                    </li>
-                                                </div>
-                                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
-                                                    <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
-                                                        <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['shaker']) }}" class="dropdown__link">
-                                                            <i class="ri-arrow-right-s-fill"></i> SHAKER KITCHEN</a>
-                                                    </li>
-                                                </div>
-                                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
-                                                    <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
-                                                        <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['slab-painted']) }}" class="dropdown__link">
-                                                            <i class="ri-arrow-right-s-fill"></i> SLAB PAINTED KITCHEN</a>
-                                                    </li>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </ul>
-                                </div>
-                                @endif
+                </div>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list p-2">
+                        <li class="dropdown__item">
+                            <div class="nav__link dropdown__button">
+                                <a href="{{ route('orderkitchen') }}" class="drop-down-link">EXPLORE </a>
+                                <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                             </div>
-                        </div>
-                    </li>
-                    <!-- <div class="dropdown__content">
-                                @php
-                                    $styles = Style::all();
-                                @endphp
-                                @if (!empty($styles))
-                                @foreach ($styles as $index => $style)
-                                    @if ($index % 2 == 0)
-                                        <div class="dropdown__group">
-                                            <ul class="dropdown__list">
+                            <div class="dropdown__container border-bottom border-warning border-2">
+                                <div class="dropdown__content px-4" style="max-width: 100% !important; margin: 20px 0px !important; grid-template-columns: none; column-gap: 0;">
+                                    @php
+                                        $styles = Style::where('status', 1)->get();
+                                    @endphp
+                                    @if (!empty($styles))
+                                    <div class="dropdown__group">
+                                        <ul class="dropdown__list">
+                                            <div class="container">
+                                                <h4 class="text-start bg-dark text-white p-2">Choose Style:</h4>
+                                                <div class="row">
+                                                    @foreach ($styles as $index => $style)
+                                                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
+                                                        <li style="width: 100%; border-radius: 0px" class="border-bottom border-default drop-down-link">
+                                                            <a style="width: 100%;" href="{{ route('orderkitchenbyname', [$style->slug]) }}" class="dropdown__link">
+                                                                <i class="ri-arrow-right-s-fill"></i> {{$style->name}} KITCHEN</a>
+                                                        </li>
+                                                    </div>
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                    @else
+                                    <div class="dropdown__group">
+                                        <ul class="dropdown__list">
+                                            <h4 class="text-start bg-dark text-white p-2">Choose Style:</h4>
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
+                                                        <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
+                                                            <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['j-pull']) }}" class="dropdown__link">
+                                                                <i class="ri-arrow-right-s-fill"></i> J-PULL KITCHEN</a>
+                                                        </li>
+                                                    </div>
+                                                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
+                                                        <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
+                                                            <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['true-handleless']) }}" class="dropdown__link">
+                                                                <i class="ri-arrow-right-s-fill"></i> TRUE HANDLELESS KITCHEN</a>
+                                                        </li>
+                                                    </div>
+                                                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
+                                                        <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
+                                                            <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['shaker']) }}" class="dropdown__link">
+                                                                <i class="ri-arrow-right-s-fill"></i> SHAKER KITCHEN</a>
+                                                        </li>
+                                                    </div>
+                                                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
+                                                        <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
+                                                            <a style="width: 100%;" href="{{ route('orderkitchenbyname', ['slab-painted']) }}" class="dropdown__link">
+                                                                <i class="ri-arrow-right-s-fill"></i> SLAB PAINTED KITCHEN</a>
+                                                        </li>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </ul>
+                                    </div>
                                     @endif
+                                </div>
+                            </div>
+                        </li>
+                        <!-- <div class="dropdown__content">
+                                    @php
+                                        $styles = Style::all();
+                                    @endphp
+                                    @if (!empty($styles))
+                                    @foreach ($styles as $index => $style)
+                                        @if ($index % 2 == 0)
+                                            <div class="dropdown__group">
+                                                <ul class="dropdown__list">
+                                        @endif
+                                                <li>
+                                                    <a href="{{ route('orderkitchenbyname', $style->slug) }}" class="dropdown__link">
+                                                        <i class="ri-arrow-right-s-fill"></i>{{ $style->name }} Kitchen</a>
+                                                </li>
+                                                    @if (($index + 1) % 2 == 0 || $loop->last)
+                                                </ul>
+                                            </div>
+                                        @endif
+                                    @endforeach
+                                    @else
+                                    <div class="dropdown__group">
+                                        <ul class="dropdown__list">
                                             <li>
-                                                <a href="{{ route('orderkitchenbyname', $style->slug) }}" class="dropdown__link">
-                                                    <i class="ri-arrow-right-s-fill"></i>{{ $style->name }} Kitchen</a>
+                                                <a href="{{ route('orderkitchenbyname', 'slab') }}"
+                                                    class="dropdown__link">
+                                                    <i class="ri-arrow-right-s-fill"></i>
+                                                    SLAB KITCHENS
+                                                </a>
                                             </li>
-                                                @if (($index + 1) % 2 == 0 || $loop->last)
+                                            <li>
+                                                <a href="{{ route('orderkitchenbyname', 'j-pull') }}"
+                                                    class="dropdown__link">
+                                                    <i class="ri-arrow-right-s-fill"></i>
+                                                    j-PULL KITCHENS
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown__group">
+                                        <ul class="dropdown__list">
+                                            <li>
+                                                <a href="{{ route('orderkitchenbyname', 'shaker') }}"
+                                                    class="dropdown__link">
+                                                    <i class="ri-arrow-right-s-fill"></i>
+                                                    SHAKER KITCHENS
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ route('orderkitchenbyname', 'true-handleless') }}"
+                                                    class="dropdown__link">
+                                                    <i class="ri-arrow-right-s-fill"></i>
+                                                    TRUE HANDLESS KITCHENS
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    @endif
+                                </div> -->
+                        <li class="dropdown__item">
+                            <div class="nav__link dropdown__button">
+                                <a href="{{ route('orderkitchen') }}" class="drop-down-link">ORDER KITCHEN </a>
+                                <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                            </div>
+                            <div class="dropdown__container border-bottom border-warning border-2">
+                                <div class="container my-3">
+                                    <div class="row">
+                                        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 text-start">
+                                            <h4 class="text-start bg-dark text-white p-2">Choose Style:</h4>
+                                            <ul class="dropdown__list" id="styles-list">
+                                                @php
+                                                    $styles = Style::where('status', 1)->get();
+                                                @endphp
+                                                @if (!empty($styles))
+                                                    @foreach ($styles as $index => $style)
+                                                        <li>
+                                                            <input data-style-id="{{$style->id}}" type="radio" value="{{$style->slug}}" name="style_name" class="radio-btn style-item"> &nbsp; {{$style->name}} KITCHEN
+                                                        </li>
+                                                    @endforeach
+                                                @endif
                                             </ul>
                                         </div>
-                                    @endif
-                                @endforeach
-                                @else
-                                <div class="dropdown__group">
-                                    <ul class="dropdown__list">
-                                        <li>
-                                            <a href="{{ route('orderkitchenbyname', 'slab') }}"
-                                                class="dropdown__link">
-                                                <i class="ri-arrow-right-s-fill"></i>
-                                                SLAB KITCHENS
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('orderkitchenbyname', 'j-pull') }}"
-                                                class="dropdown__link">
-                                                <i class="ri-arrow-right-s-fill"></i>
-                                                j-PULL KITCHENS
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="dropdown__group">
-                                    <ul class="dropdown__list">
-                                        <li>
-                                            <a href="{{ route('orderkitchenbyname', 'shaker') }}"
-                                                class="dropdown__link">
-                                                <i class="ri-arrow-right-s-fill"></i>
-                                                SHAKER KITCHENS
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('orderkitchenbyname', 'true-handleless') }}"
-                                                class="dropdown__link">
-                                                <i class="ri-arrow-right-s-fill"></i>
-                                                TRUE HANDLESS KITCHENS
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                @endif
-                            </div> -->
-                    <li class="dropdown__item">
-                        <div class="nav__link dropdown__button">
-                            <a href="{{ route('orderkitchen') }}" class="text-dark">ORDER KITCHEN </a>
-                            <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                        </div>
-                        <div class="dropdown__container border-bottom border-warning border-2">
-                            <div class="container my-3">
-                                <div class="row">
-                                    <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 text-start">
-                                        <h4 class="text-start bg-dark text-white p-2">Choose Style:</h4>
-                                        <ul class="dropdown__list" id="styles-list">
-                                            @php
-                                                $styles = Style::where('status', 1)->get();
-                                            @endphp
-                                            @if (!empty($styles))
-                                                @foreach ($styles as $index => $style)
-                                                    <li>
-                                                        <input data-style-id="{{$style->id}}" type="radio" value="{{$style->slug}}" name="style_name" class="radio-btn style-item"> &nbsp; {{$style->name}} KITCHEN
+                                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 text-start">
+                                            <h4 class="text-start bg-dark text-white p-2">Choose Colour:</h4>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <ul class="dropdown__list">
+                                                        @php 
+                                                            $colours = \App\Models\Colour::distinct()->whereNotNull('finishing')->get();
+                                                        @endphp
+                                                        <div class="row" id="colours-list">
+                                                            @foreach ($colours as $index => $colour)
+                                                                <div class="col-6 mb-2">
+                                                                    <li>
+                                                                        <input data-colour-id="{{$colour->id}}" type="radio" name="colour_name" class="colour_type radio-btn colour-item colour{{$colour->id}}" disabled="disabled" id="superGlossWhite" value="{{$colour->slug}}">
+                                                                        &nbsp; <span class="textcolour">{{$colour->trade_colour}}</span>
+                                                                    </li>
+                                                                </div>
+                                                            @endforeach
+                                                        </div>
+                                                        <!-- <li>
+                                                            <input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossWhite" value="superglosswhite">
+                                                            &nbsp; SuperGloss White
+                                                        </li>
+                                                        <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossCashmere" value="superglosscashmere"> &nbsp; SuperGloss Cashmere</li>
+                                                        <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattIndigo" value="ultramattindigo"> &nbsp; UltraMatt Indigo</li>
+                                                        <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattWhite" value="ultramattwhite"> &nbsp; UltraMatt White</li>
+                                                        <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattCashmere" value="ultramattcashmere"> &nbsp; UltraMatt Cashmere</li>
+                                                        <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossCream" value="superglosscream"> &nbsp; SuperGloss Cream</li>
+                                                        <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattCream" value="ultramattcream"> &nbsp; UltraMatt Cream</li>
+                                                        <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossLightGrey" value="superglosslight-grey"> &nbsp; SuperGloss Light Grey</li>
+                                                        <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattLightGrey" value="ultramattlight-grey"> &nbsp; UltraMatt Light Grey</li>
+                                                        <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossDarkGrey" value="superglossdark-grey"> &nbsp; SuperGloss Dark Grey</li>
+                                                        <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattDarkGrey" value="ultramattdark-grey"> &nbsp; UltraMatt Dark Grey</li>
+                                                        <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossAnthracite" value="superglossanthracite"> &nbsp; SuperGloss Anthracite</li> -->
+                                                    </ul>
+                                                </div>
+                                                <!-- <div class="col-6">
+                                                    <ul class="dropdown__list">
+                                                        <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattAnthracite" value="ultramattanthracite"> &nbsp; UltraMatt Anthracite</li>
+                                                        <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossPaintToOrder" value="superglosspaint-to-order"> &nbsp; SuperGloss Paint to Order</li>
+                                                        <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattPaintToOrder" value="ultramattpaint-to-order"> &nbsp; UltraMatt Paint to Order</li>
+                                                        <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattFirGreen" value="ultramattfir-green"> &nbsp; UltraMatt Fir Green</li>
+                                                        <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossIvory" value="superglossivory"> &nbsp; SuperGloss Ivory</li>
+                                                        <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattSageGreen" value="ultramattsage-green"> &nbsp; UltraMatt Sage Green</li>
+                                                        <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattIvory" value="ultramattivory"> &nbsp; UltraMatt Ivory</li>
+                                                        <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattBlackPowderCoated" value="ultramattblack-powder-coated"> &nbsp; UltraMatt Black Powder Coated</li>
+                                                        <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossDustGrey" value="superglossdust-grey"> &nbsp; SuperGloss Dust Grey</li>
+                                                        <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattDustGrey" value="ultramattdust-grey"> &nbsp; UltraMatt Dust Grey</li>
+                                                        <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossIndigo" value="superglossindigo"> &nbsp; SuperGloss Indigo</li>
+                                                        <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossLightGray" value="superglosslight-gray"> &nbsp; SuperGloss Light Gray</li>
+                                                    </ul>
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 text-start">
+                                            <h4 class="text-start bg-dark text-white p-2">Choose Assembly:</h4>
+                                            <ul class="dropdown__list" id="assemblies-list">
+                                                @php 
+                                                    $assemblies = \App\Models\Assembly::whereNot('slug', 'stock')->get();
+                                                @endphp
+                                                @foreach ($assemblies as $index => $assembly)
+                                                    <li class="assembly-item">
+                                                        <input data-assembly-id="{{$assembly->id}}" type="radio" value="{{$assembly->slug}}" name="assembly_name" class="assembly_type assembly-item radio-btn"> &nbsp; {{$assembly->name}}
                                                     </li>
                                                 @endforeach
-                                            @endif
-                                        </ul>
+                                                <!-- <li>
+                                                    <input type="radio" value="flat-pack" name="assembly_name" class="assembly_type radio-btn"> &nbsp; Flat Pack
+                                                </li> -->
+                                            </ul>
+                                        </div>
                                     </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 text-start">
-                                        <h4 class="text-start bg-dark text-white p-2">Choose Colour:</h4>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <ul class="dropdown__list">
-                                                    @php 
-                                                        $colours = \App\Models\Colour::distinct()->whereNotNull('finishing')->get();
-                                                    @endphp
-                                                    <div class="row" id="colours-list">
-                                                        @foreach ($colours as $index => $colour)
-                                                            <div class="col-6 mb-2">
-                                                                <li>
-                                                                    <input data-colour-id="{{$colour->id}}" type="radio" name="colour_name" class="colour_type radio-btn colour-item colour{{$colour->id}}" disabled="disabled" id="superGlossWhite" value="{{$colour->slug}}">
-                                                                    &nbsp; <span class="textcolour">{{$colour->trade_colour}}</span>
-                                                                </li>
-                                                            </div>
-                                                        @endforeach
+                                </div>
+                                <hr>
+                                <div class="d-flex justify-content-center my-4">
+                                    <button class="btn btn-sm btn-dark rounded-0 w-50 disabled" id="order-now">
+                                        ORDER NOW
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="dropdown__item">
+                            <div class="nav__link dropdown__button">
+                                <a href="{{ route('ordercomponent') }}" class="drop-down-link">ORDER COMPONENT </a>
+                                <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                            </div>
+                            <div class="dropdown__container border-bottom border-warning border-2">
+                                <div class="dropdown__content px-4" style="max-width: 100% !important; margin: 0px !important; grid-template-columns: none; column-gap: 0;">
+                                    @php
+                                        $categories = Category::where('parent_category_id', null)->where('status', 1)->get();
+                                    @endphp
+                                    @if (!empty($categories))
+                                    <div class="dropdown__group">
+                                        <ul class="dropdown__list">
+                                            <div class="container">
+                                                <h4 class="text-start bg-dark text-white p-2">Choose Unit:</h4>
+                                                <div class="row">
+                                                    @foreach ($categories as $index => $category)
+                                                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
+                                                        <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
+                                                            <a style="width: 100%;" href="{{ route('ordercomponentbyname', [$category->slug]) }}" class="dropdown__link">
+                                                                <i class="ri-arrow-right-s-fill"></i> {{$category->name}} </a>
+                                                        </li>
                                                     </div>
-                                                    <!-- <li>
-                                                        <input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossWhite" value="superglosswhite">
-                                                        &nbsp; SuperGloss White
-                                                    </li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossCashmere" value="superglosscashmere"> &nbsp; SuperGloss Cashmere</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattIndigo" value="ultramattindigo"> &nbsp; UltraMatt Indigo</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattWhite" value="ultramattwhite"> &nbsp; UltraMatt White</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattCashmere" value="ultramattcashmere"> &nbsp; UltraMatt Cashmere</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossCream" value="superglosscream"> &nbsp; SuperGloss Cream</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattCream" value="ultramattcream"> &nbsp; UltraMatt Cream</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossLightGrey" value="superglosslight-grey"> &nbsp; SuperGloss Light Grey</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattLightGrey" value="ultramattlight-grey"> &nbsp; UltraMatt Light Grey</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossDarkGrey" value="superglossdark-grey"> &nbsp; SuperGloss Dark Grey</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattDarkGrey" value="ultramattdark-grey"> &nbsp; UltraMatt Dark Grey</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossAnthracite" value="superglossanthracite"> &nbsp; SuperGloss Anthracite</li> -->
-                                                </ul>
+                                                    @endforeach
+                                                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
+                                                        <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
+                                                            <a style="width: 100%;" href="{{ route('wardrobes') }}" class="dropdown__link">
+                                                                <i class="ri-arrow-right-s-fill"></i> Wardrobes </a>
+                                                        </li>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <!-- <div class="col-6">
-                                                <ul class="dropdown__list">
-                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattAnthracite" value="ultramattanthracite"> &nbsp; UltraMatt Anthracite</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossPaintToOrder" value="superglosspaint-to-order"> &nbsp; SuperGloss Paint to Order</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattPaintToOrder" value="ultramattpaint-to-order"> &nbsp; UltraMatt Paint to Order</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattFirGreen" value="ultramattfir-green"> &nbsp; UltraMatt Fir Green</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossIvory" value="superglossivory"> &nbsp; SuperGloss Ivory</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattSageGreen" value="ultramattsage-green"> &nbsp; UltraMatt Sage Green</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattIvory" value="ultramattivory"> &nbsp; UltraMatt Ivory</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattBlackPowderCoated" value="ultramattblack-powder-coated"> &nbsp; UltraMatt Black Powder Coated</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossDustGrey" value="superglossdust-grey"> &nbsp; SuperGloss Dust Grey</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="ultraMattDustGrey" value="ultramattdust-grey"> &nbsp; UltraMatt Dust Grey</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossIndigo" value="superglossindigo"> &nbsp; SuperGloss Indigo</li>
-                                                    <li><input type="radio" name="colour_name" class="colour_type radio-btn" id="superGlossLightGray" value="superglosslight-gray"> &nbsp; SuperGloss Light Gray</li>
-                                                </ul>
-                                            </div> -->
-                                        </div>
+                                        </ul>
                                     </div>
-                                    <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 text-start">
-                                        <h4 class="text-start bg-dark text-white p-2">Choose Assembly:</h4>
-                                        <ul class="dropdown__list" id="assemblies-list">
-                                            @php 
-                                                $assemblies = \App\Models\Assembly::whereNot('slug', 'stock')->get();
-                                            @endphp
-                                            @foreach ($assemblies as $index => $assembly)
-                                                <li class="assembly-item">
-                                                    <input data-assembly-id="{{$assembly->id}}" type="radio" value="{{$assembly->slug}}" name="assembly_name" class="assembly_type assembly-item radio-btn"> &nbsp; {{$assembly->name}}
-                                                </li>
-                                            @endforeach
-                                            <!-- <li>
-                                                <input type="radio" value="flat-pack" name="assembly_name" class="assembly_type radio-btn"> &nbsp; Flat Pack
-                                            </li> -->
+                                    @endif
+                                </div>
+                            </div>
+                        </li>
+                        <li class="dropdown__item">
+                            <div class="nav__link dropdown__button">
+                                <a href="{{ route('help_and_guides') }}" class="drop-down-link">HELP & GUIDES </a>
+                                <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                            </div>
+                            <div class="dropdown__container border-bottom border-warning border-2">
+                                <div class="dropdown__content px-4" style="max-width: 100% !important; margin: 0px !important; grid-template-columns: none; column-gap: 0;">
+                                    <div class="dropdown__group">
+                                        <ul class="dropdown__list">
+                                            <div class="container">
+                                                <h4 class="text-start bg-dark text-white p-2">HELP & GUIDES</h4>
+                                                <div class="row">
+                                                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
+                                                        <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
+                                                            <a href="{{ route('needhelp') }}" class="dropdown__link">
+                                                                <i class="ri-arrow-right-s-fill"></i> Need Help Measuring?</a>
+                                                        </li>
+                                                    </div>
+                                                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
+                                                        <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
+                                                            <a href="{{ route('kitchenarrive') }}" class="dropdown__link">
+                                                                <i class="ri-arrow-right-s-fill"></i> How Will My Kitchen Arrive?</a>
+                                                        </li>
+                                                    </div>
+                                                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
+                                                        <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
+                                                            <a href="{{ route('about') }}" class="dropdown__link">
+                                                                <i class="ri-arrow-right-s-fill"></i> About Us</a>
+                                                        </li>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <hr>
-                            <div class="d-flex justify-content-center my-4">
-                                <button class="btn btn-sm btn-dark rounded-0 w-50 disabled" id="order-now">
-                                    ORDER NOW
-                                </button>
+                        </li>
+                        <li class="dropdown__item">
+                            <div class="nav__link dropdown__button">
+                                <a class="drop-down-link" href="{{ route('designservice') }}">
+                                    DESIGN SERVICE
+                                </a>
                             </div>
-                        </div>
-                    </li>
-                    <li class="dropdown__item">
-                        <div class="nav__link dropdown__button">
-                            <a href="{{ route('ordercomponent') }}" class="text-dark">ORDER COMPONENT </a>
-                            <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                        </div>
-                        <div class="dropdown__container border-bottom border-warning border-2">
-                            <div class="dropdown__content px-4" style="max-width: 100% !important; margin: 0px !important; grid-template-columns: none; column-gap: 0;">
-                                @php
-                                    $categories = Category::where('parent_category_id', null)->where('status', 1)->get();
-                                @endphp
-                                @if (!empty($categories))
-                                <div class="dropdown__group">
-                                    <ul class="dropdown__list">
-                                        <div class="container">
-                                            <h4 class="text-start bg-dark text-white p-2">Choose Unit:</h4>
-                                            <div class="row">
-                                                @foreach ($categories as $index => $category)
-                                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
-                                                    <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
-                                                        <a style="width: 100%;" href="{{ route('ordercomponentbyname', [$category->slug]) }}" class="dropdown__link">
-                                                            <i class="ri-arrow-right-s-fill"></i> {{$category->name}} </a>
-                                                    </li>
-                                                </div>
-                                                @endforeach
-                                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
-                                                    <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
-                                                        <a style="width: 100%;" href="{{ route('wardrobes') }}" class="dropdown__link">
-                                                            <i class="ri-arrow-right-s-fill"></i> Wardrobes </a>
-                                                    </li>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </ul>
-                                </div>
-                                @endif
+                        </li>
+                        <li class="dropdown__item">
+                            <div class="nav__link dropdown__button">
+                                <a class="drop-down-link" href="{{ route('blog') }}">
+                                    BLOG
+                                </a>
                             </div>
-                        </div>
-                    </li>
-                    <li class="dropdown__item">
-                        <div class="nav__link dropdown__button">
-                            <a href="{{ route('help_and_guides') }}" class="text-dark">HELP & GUIDES </a>
-                            <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                        </div>
-                        <div class="dropdown__container border-bottom border-warning border-2">
-                            <div class="dropdown__content px-4" style="max-width: 100% !important; margin: 0px !important; grid-template-columns: none; column-gap: 0;">
-                                <div class="dropdown__group">
-                                    <ul class="dropdown__list">
-                                        <div class="container">
-                                            <h4 class="text-start bg-dark text-dark p-2">HELP & GUIDES</h4>
-                                            <div class="row">
-                                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
-                                                    <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
-                                                        <a href="{{ route('needhelp') }}" class="dropdown__link">
-                                                            <i class="ri-arrow-right-s-fill"></i> Need Help Measuring?</a>
-                                                    </li>
-                                                </div>
-                                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
-                                                    <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
-                                                        <a href="{{ route('kitchenarrive') }}" class="dropdown__link">
-                                                            <i class="ri-arrow-right-s-fill"></i> How Will My Kitchen Arrive?</a>
-                                                    </li>
-                                                </div>
-                                                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
-                                                    <li style="width: 100%; border-radius: 0px" class="border-bottom border-default">
-                                                        <a href="{{ route('about') }}" class="dropdown__link">
-                                                            <i class="ri-arrow-right-s-fill"></i> About Us</a>
-                                                    </li>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="dropdown__item">
-                        <div class="nav__link dropdown__button">
-                            <a class="text-dark" href="{{ route('designservice') }}">
-                                DESIGN SERVICE
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav__menu px-5" id="nav-menu" style="background-color: #ebc266; clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);">
+                    <ul class="nav__list p-2">
+                        <li class="d-lg-flex d-none hide-small">
+                            <a href="#" class="nav__link" id="searchIcon-desktop"><i class="ri-search-2-line"></i></a>
+                        </li>
+                        <li class="d-lg-flex d-none hide-small">
+                            <a href="{{ route('cart') }}"
+                                class="d-flex align-items-center justify-content-center px-3 text-dark">
+                                <i class="position-relative ri-shopping-cart-line">
+                                    <span id="calculateProductsQuantity2" class="position-absolute right-0"
+                                        style="top: -8px;"></span>
+                                </i>
                             </a>
-                        </div>
-                    </li>
-                    <li class="dropdown__item">
-                        <div class="nav__link dropdown__button">
-                            <a class="text-dark" href="{{ route('blog') }}">
-                                BLOG
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="nav__menu px-5" id="nav-menu" style="background-color: #ebc266; clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);">
-                <ul class="nav__list p-2">
-                    <li class="d-lg-flex d-none hide-small">
-                        <a href="#" class="nav__link" id="searchIcon-desktop"><i class="ri-search-2-line"></i></a>
-                    </li>
-                    <li class="d-lg-flex d-none hide-small">
-                        <a href="{{ route('cart') }}"
-                            class="d-flex align-items-center justify-content-center px-3 text-dark">
-                            <i class="position-relative ri-shopping-cart-line">
-                                <span id="calculateProductsQuantity2" class="position-absolute right-0"
-                                    style="top: -8px;"></span>
-                            </i>
-                        </a>
-                    </li>
-                    <li class="d-lg-flex d-none hide-small">
-                        <a href="#" id="openSidebar-desktop"
-                            class="d-flex align-items-center justify-content-center px-1 text-dark"><i
-                                class="ri-user-line"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+                        </li>
+                        <li class="d-lg-flex d-none hide-small">
+                            <a href="#" id="openSidebar-desktop"
+                                class="d-flex align-items-center justify-content-center px-1 text-dark"><i
+                                    class="ri-user-line"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
 
     </header>
     <div class="account-pages">
         {{ $slot }}
     </div>
 
-    <footer class="text-center mt-4 bg-light border-top border-warning">
+    <footer class="text-center mt-4 border-top border-warning" style="background-color: #383838;">
         <div class="container py-lg-5 py-4">
             <section class="">
                 <div class="row">
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-start">
                         <img src="{{ asset('images/logoBko.png') }}" width="100px" />
-                        <h6 class="my-3">Customer Service Hours</h6>
+                        <h6 class="my-3 text-white">Customer Service Hours</h6>
 
                         <ul class="footer-ul list-unstyled mb-0">
-                            <li class="mb-2 list-unstyled"><i class="ri-phone-line"></i>020 805 05605</li>
-                            <li class="list-unstyled">
-                                <i class="ri-arrow-right-s-fill"></i>
+                            <li class="mb-2 list-unstyled text-white"><i class="ri-phone-line text-warning"></i> 020 805 05605</li>
+                            <li class="list-unstyled text-white">
+                                <i class="ri-arrow-right-s-fill text-warning"></i>
                                 Mon-Sat: 9am to 5pm
                             </li>
                             <!-- <li class="list-unstyled">
@@ -855,89 +648,89 @@ use App\Models\Style;
                                 Fri: 8am to 2:30pm
                             </li> -->
                             <li class="mt-2 list-unstyled">
-                                <a data-mdb-ripple-init class="text-dark btn btn-outline-warning btn-floating rounded-circle" href="#!"
-                                    role="button"><i class="ri-facebook-fill pl-0"></i></a>
-                                <a data-mdb-ripple-init class="text-dark btn btn-outline-warning btn-floating rounded-circle" href="#!"
-                                    role="button"><i class="ri-twitter-fill"></i></a>
-                                <a data-mdb-ripple-init class="text-dark btn btn-outline-warning btn-floating rounded-circle" href="#!"
-                                    role="button"><i class="ri-youtube-fill"></i></a>
-                                <a data-mdb-ripple-init class="text-dark btn btn-outline-warning btn-floating rounded-circle" href="#!"
-                                    role="button"><i class="ri-linkedin-fill"></i></a>
+                                <a data-mdb-ripple-init class="text-white btn btn-outline-warning btn-floating rounded-circle" href="#!"
+                                    role="button"><i class="ri-facebook-fill text-warning pl-0"></i></a>
+                                <a data-mdb-ripple-init class="text-white btn btn-outline-warning btn-floating rounded-circle" href="#!"
+                                    role="button"><i class="ri-twitter-fill text-warning"></i></a>
+                                <a data-mdb-ripple-init class="text-white btn btn-outline-warning btn-floating rounded-circle" href="#!"
+                                    role="button"><i class="ri-youtube-fill text-warning"></i></a>
+                                <a data-mdb-ripple-init class="text-white btn btn-outline-warning btn-floating rounded-circle" href="#!"
+                                    role="button"><i class="ri-linkedin-fill text-warning"></i></a>
                             </li>
 
-                            <li class="mt-2 list-unstyled"><i class="ri-mail-line mt-1"></i>customerservices@bkonline.uk</li>
+                            <li class="mt-2 list-unstyled text-white"><i class="ri-mail-line mt-1 text-warning"></i> customerservices@bkonline.uk</li>
                         </ul>
                     </div>
 
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0 ms-lg-3 ms-0 text-start">
-                        <h5 class="fw-bolder">Support</h5>
+                        <h5 class="fw-bolder text-white">Support</h5>
 
                         <ul class="footer-ul list-unstyled mb-0">
                             {{-- <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links" href="{{ route('blog') }}"><i
-                                class="ri-arrow-right-s-fill"></i>Blog</a>
+                                <a class="text-body text-decoration-none footer-links text-white" style="color: white !important;" href="{{ route('blog') }}"><i
+                                class="ri-arrow-right-s-fill text-warning"></i>Blog</a>
                             </li> --}}
                             <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links"
+                                <a class="text-body text-decoration-none footer-links text-white" style="color: white !important;"
                                     href="{{ route('downloadable') }}"><i
-                                        class="ri-arrow-right-s-fill"></i>Downloadable Resources</a>
+                                        class="ri-arrow-right-s-fill text-warning"></i> Downloadable Resources</a>
                             </li>
                             <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links"
+                                <a class="text-body text-decoration-none footer-links text-white" style="color: white !important;"
                                     href="{{ route('installationvideos') }}"><i
-                                        class="ri-arrow-right-s-fill"></i>Installation Videos</a>
+                                        class="ri-arrow-right-s-fill text-warning"></i> Installation Videos</a>
                             </li>
                             {{-- <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links" href="{{ route('faq') }}"><i
-                                class="ri-arrow-right-s-fill"></i>FAQs</a>
+                                <a class="text-body text-decoration-none footer-links text-white" style="color: white !important;" href="{{ route('faq') }}"><i
+                                class="ri-arrow-right-s-fill text-warning"></i> FAQs</a>
                             </li> --}}
                             <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links"
+                                <a class="text-body text-decoration-none footer-links text-white" style="color: white !important;"
                                     href="{{ route('deliveries') }}"><i
-                                        class="ri-arrow-right-s-fill"></i>Deliveries</a>
+                                        class="ri-arrow-right-s-fill text-warning"></i> Deliveries</a>
                             </li>
                             <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links"
-                                    href="{{ route('printresources') }}"><i class="ri-arrow-right-s-fill"></i>Print
+                                <a class="text-body text-decoration-none footer-links text-white" style="color: white !important;"
+                                    href="{{ route('printresources') }}"><i class="ri-arrow-right-s-fill text-warning"></i> Print
                                     Resources</a>
                             </li>
                         </ul>
                     </div>
 
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-start">
-                        <h5 class="fw-bolder">Legal Pages</h5>
+                        <h5 class="fw-bolder text-white">Legal Pages</h5>
 
                         <ul class="footer-ul list-unstyled mb-0">
                             <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links"
-                                    href="{{ route('cookies') }}"><i class="ri-arrow-right-s-fill"></i>Cookies
+                                <a class="text-body text-decoration-none footer-links" style="color: white !important;"
+                                    href="{{ route('cookies') }}"><i class="ri-arrow-right-s-fill text-warning"></i> Cookies
                                     Policy</a>
                             </li>
                             <!-- <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links"
-                                    href="{{ route('privacy') }}"><i class="ri-arrow-right-s-fill"></i>Privacy
+                                <a class="text-body text-decoration-none footer-links" style="color: white !important;"
+                                    href="{{ route('privacy') }}"><i class="ri-arrow-right-s-fill text-warning"></i>Privacy
                                     Policy</a>
                             </li>
                             <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links"
-                                    href="{{ route('termandcondition') }}"><i class="ri-arrow-right-s-fill"></i>Terms
+                                <a class="text-body text-decoration-none footer-links" style="color: white !important;"
+                                    href="{{ route('termandcondition') }}"><i class="ri-arrow-right-s-fill text-warning"></i>Terms
                                     and Conditions</a>
                             </li> -->
                             <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links"
-                                    href="{{ route('pricepromise') }}"><i class="ri-arrow-right-s-fill"></i>Price
+                                <a class="text-body text-decoration-none footer-links" style="color: white !important;"
+                                    href="{{ route('pricepromise') }}"><i class="ri-arrow-right-s-fill text-warning"></i> Price
                                     Promise Guarantee: Terms &
                                     Conditions</a>
                             </li>
                             <!-- <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links"
-                                    href="{{ route('pricebeat') }}"><i class="ri-arrow-right-s-fill"></i>Terms and
+                                <a class="text-body text-decoration-none footer-links" style="color: white !important;"
+                                    href="{{ route('pricebeat') }}"><i class="ri-arrow-right-s-fill text-warning"></i>Terms and
                                     Conditions – We Can’t Be Beaten on
                                     Price</a>
                             </li> -->
                             {{-- <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links"
-                                    href="{{ route('site_maps') }}"><i class="ri-arrow-right-s-fill"></i>Sitemap</a>
+                                <a class="text-body text-decoration-none footer-links" style="color: white !important;"
+                                    href="{{ route('site_maps') }}"><i class="ri-arrow-right-s-fill text-warning"></i> Sitemap</a>
                             </li> --}}
                         </ul>
                     </div>
@@ -1092,41 +885,6 @@ use App\Models\Style;
                     // Display the selected option text in the dropdown input
                     return data.text;
                 }
-            });
-
-            const $carousel = $('.owl-carousel');
-
-            // Initialize OwlCarousel
-            $carousel.owlCarousel({
-                loop: true,
-                margin: 30,
-                stagePadding: 15, // Add padding to avoid clipping
-                rtl: false,
-                autoplay: true,
-                autoplayTimeout: 3000,
-                autoplayHoverPause: true,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    768: {
-                        items: 4
-                    },
-                    992: {
-                        items: 4
-                    },
-                    1200: {
-                        items: 4
-                    },
-                    1400: {
-                        items: 4
-                    }
-                }
-            });
-
-            // Customize the autoplay behavior to reverse the direction
-            $carousel.on('translated.owl.carousel', function() {
-                $carousel.find('.owl-item.active').css('animation', 'move-right 0.3s ease-in-out');
             });
             
             $(document).on('click', '.style-item', function () {
