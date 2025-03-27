@@ -221,7 +221,7 @@
 }
 
 .dropdown__arrow {
-    color: white !important;
+    color: black !important;
 }
 @media (max-width: 768px) {
     .second-navbar {
