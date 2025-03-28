@@ -62,16 +62,19 @@ use App\Models\Style;
         .footer-link:hover {
             color: #ffd700;
         }
+       
         .social-icon {
-            width: 35px;
-            height: 35px;
+            width: 27px;
+            height: 27px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.1);
+            /* background: rgba(255, 255, 255, 0.1); */
+            background-color:#febd49;
             border-radius: 50%;
             margin-right: 10px;
             transition: background 0.3s;
+            color:black
         }
         .social-icon:hover {
             background: rgba(255, 255, 255, 0.2);
@@ -80,6 +83,15 @@ use App\Models\Style;
         {
             list-style-type:none;
         }
+        /* .social-link-text
+        {
+            color:white;
+            transition: color 0.3s;
+        }
+        .social-link-text:hover
+        {
+            color: #ffd700;
+        } */
     </style>
 </head>
 
@@ -658,13 +670,30 @@ use App\Models\Style;
         {{ $slot }}
     </div>
 
-    <footer class="bg-dark text-white py-5">
+    <footer class=" text-white py-5" style="background-color:#373737">
         <div class="container">
-            <div class="row g-4">
-                <!-- Company Info -->
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-4">BK Online</h5>
+            <div class ="row align-items-center border-bottom mb-4">
+                <div class="col-lg-6">
+                    {{-- <h5 class="mb-4">BK Online</h5> --}}
+                    <img class="" src="{{ asset('images/bko-white-logo.png') }}" style="width80px; height:80px" / >
                     <p class="mb-4">Opulent home interiors operating as BK Online.</p>
+                </div>
+
+                <div class="col-lg-6 align-self-end">
+                    <div class="mb-4">
+                        <p class="mb-2">Stay Updated:</p>
+                        <div class="input-group">
+                            <input type="email" class="form-control " placeholder="Your Email">
+                            <button class="btn" style="background-color:#febd49;" type="button">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4">
+                
+               
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4 text-white">Custome Service Hours</h5>
                     <div class="d-flex align-items-center mb-3">
                         <i class="bi bi-telephone me-2"></i>
                         <span>020 805 05605</span>
@@ -679,34 +708,34 @@ use App\Models\Style;
                     </div>
                 </div>
 
-                <!-- Support -->
+               
                 <div class="col-lg-3 col-md-6">
                     <h5 class="mb-4 text-white">Support</h5>
                     <ul class="list-unstyled">
                         <li class="mb-3">
                             <a href="#" class="footer-link">
-                                {{-- <i class="bi bi-download me-2"></i> --}}
+                               
                                 <i class="bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
                                 Downloadable Resources
                             </a>
                         </li>
                         <li class="mb-3">
                             <a href="#" class="footer-link">
-                                {{-- <i class="bi bi-camera-video me-2"></i> --}}
+                              
                                 <i class="bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
                                 Installation Videos
                             </a>
                         </li>
                         <li class="mb-3">
                             <a href="#" class="footer-link">
-                                {{-- <i class="bi bi-printer me-2"></i> --}}
+                                
                                 <i class="bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
                                 Print Resources
                             </a>
                         </li>
                         <li>
                             <a href="#" class="footer-link">
-                                {{-- <i class="bi bi-truck me-2"></i> --}}
+                                =
                                 <i class="bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
                                 Deliveries
                             </a>
@@ -733,7 +762,7 @@ use App\Models\Style;
                         </li>
                         <li>
                             <a href="#" class="footer-link">
-                                {{-- <i class="bi bi-file-text me-2"></i> --}}
+                                
                                 <i class="bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
                                 Terms & Conditions
                             </a>
@@ -741,38 +770,66 @@ use App\Models\Style;
                     </ul>
                 </div>
 
-                <!-- Connect -->
                 <div class="col-lg-3 col-md-6">
                     <h5 class="mb-4 text-white">Connect</h5>
-                    <div class="mb-4">
-                        <p class="mb-2">Stay Updated:</p>
-                        <div class="input-group">
-                            <input type="email" class="form-control" placeholder="Your Email">
-                            <button class="btn btn-warning" type="button">Subscribe</button>
-                        </div>
-                    </div>
+                   
                     <div class="d-flex gap-2 flex-column">
                     
-                        <a href="#" class="social-icon d-flex footer-link">
-                            {{-- Facebook --}}
-                            <i class="bi bi-facebook"></i>
+                        <div class = "d-flex">
+                                <a href="#" class="social-icon d-flex footer-link">
                            
-                        </a>
+                                    <i class="bi bi-facebook" ></i>
+                           
+                           
+                                </a>
+                                <a href="#" class="text-white align-self-center social-link-text"> Facebook</a>
+                       </div>
                     
-                        <a href="#" class="social-icon footer-link">
+
+                       <div class = "d-flex">
+                        <a href="#" class="social-icon d-flex footer-link">
+                   
                             <i class="bi bi-instagram"></i>
+                   
+                   
                         </a>
-                        <a href="#" class="social-icon footer-link">
-                            <i class="bi bi-pinterest"></i>
-                        </a>
-                        <a href="#" class="social-icon footer-link">
-                            <i class="bi bi-youtube"></i>
-                        </a>
+                        <a href="#" class="text-white align-self-center social-link-text"> Instagram</a>
+               </div>
+               <div class = "d-flex">
+                <a href="#" class="social-icon d-flex footer-link">
+           
+                    <i class="bi bi-pinterest"></i>
+           
+           
+                </a>
+                <a href="#" class="text-white align-self-center social-link-text"> Pinterest</a>
+       </div>
+
+       <div class = "d-flex">
+        <a href="#" class="social-icon d-flex footer-link ">
+  
+            <i class="bi bi-youtube"></i>
+   
+   
+        </a>
+        <a href="#" class="text-white align-self-center social-link-text"> YouTube</a>
+</div>
+
+                      
                     </div>
                 </div>
             </div>
+            
         </div>
+      
     </footer>
+    <div class="container-fluid">
+        <div class="row py-2 justify-content-center align-items-center" style="background-color:#a8acb1">
+            <div class="col-12">
+            <h5 class="text-center">BK ONLINE.UK | ALL RIGHTS RESERVED.</h5>
+            </div>
+        </div>
+    </div>
 
 
     <!-- JAVASCRIPT -->

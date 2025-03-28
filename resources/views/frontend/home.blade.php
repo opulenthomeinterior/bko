@@ -323,35 +323,65 @@
     </section>
 
     <!-- ORDER KITCHEN-->
-    <section class="container-fluid py-5 bg-white" style="border-bottom: 3px solid #ebc266; border-left: 3px solid #ebc266; width: 100% !important; overflow: hidden">
-        <div class="row">
-            <h3 class="text-uppercase fw-bolder text-dark text-center">ORDER KITCHEN</h3>
-        </div>
+    <section class="container py-5 bg-white" style=" width: 100% !important; overflow: hidden">
+        
         <div class="row mt-4" id="stylesContainer">
+           <div class="col-lg-7 align-self-center overflow-hidden">
+            <div class="row">
+                <h3 class="text-uppercase fw-bolder text-dark mb-4">ORDER KITCHEN</h3>
+            </div>
             <div class="carousel main-carousel-banner-01 owl-carousel clients mb-0 p-0"
-                data-margin="30"
-                data-loop="true"
-                data-dots="false"
-                data-autoplay="true"
-                data-autoplay-timeout="3000"
-                data-responsive='{"0":{"items": "3"}, "768":{"items": "4"}, "992":{"items": "4"}, "1200":{"items": "4"}, "1400":{"items": "4"}}'>
-                @foreach ($styles as $key => $style)
-                <div class="item">
-                        <div class="carousel-card card border border-warning" style="box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
-                            <div class="card-body carousel-card-body p-0 m-0">
-                                <div class="col-12">
-                                    <img src="{{asset('imgs/styles/'.$style->image_path)}}" class="img-fluid">
-                                    <h4 class="card-title text-uppercase fw-bold text-center m-0 p-2 {{ $key % 2 == 0 ? 'bg-green-color text-yellow-color2' : 'bg-yellow-color2 text-dark' }}">
-                                        {{$style->name}}
-                                        <br>
-                                        <a href="{{ route('orderkitchenbyname', $style->slug) }}" class="text-center text-white m-0 text-decoration-underline" style="font-size: 10px">See our range ></a>
-                                    </h4>
-                                </div>
+            data-margin="30"
+            data-loop="true"
+            data-dots="false"
+            data-autoplay="true"
+            data-autoplay-timeout="3000"
+            data-responsive='{"0":{"items": "3"}, "768":{"items": "4"}, "992":{"items": "4"}, "1200":{"items": "4"}, "1400":{"items": "4"}}'>
+            @foreach ($styles as $key => $style)
+            <div class="item">
+                    <div class="carousel-card card border border-warning" style="box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
+                        <div class="card-body carousel-card-body p-0 m-0">
+                            <div class="col-12">
+                                <img src="{{asset('imgs/styles/'.$style->image_path)}}" class="img-fluid">
+                                <h4 class="card-title text-uppercase fw-bold text-center m-0 p-2 {{ $key % 2 == 0 ? 'bg-green-color text-yellow-color2' : 'bg-yellow-color2 text-dark' }}">
+                                    {{$style->name}}
+                                    <br>
+                                    <a href="{{ route('orderkitchenbyname', $style->slug) }}" class="text-center text-white m-0 text-decoration-underline" style="font-size: 10px">See our range ></a>
+                                </h4>
                             </div>
                         </div>
-                </div>
-                @endforeach
+                    </div>
             </div>
+            @endforeach
+        </div>
+           </div>
+           <div class = "col-md-5 col-12 ">
+                            <!-- Right Form -->
+                            <div class="d-flex justify-content-center my-4 mt-md-0">
+                                <form method="POST" action="{{ route('contact_us_inquiry') }}" class="w-100 text-yellow-color2 p-4" style="border: 3px solid; border-radius: 25px; background-color: rgba(0, 0, 0, 0.6)">
+                                    @csrf
+                                    <h3 class="text-white text-center">For free survey, <b class="text-yellow-color2">CALL US NOW!</b></h3>
+                                    <div class="text-center">
+                                        <a href="tel:02080505605" class="text-white fs-4 fw-bold">020 805 05605</a>
+                                    </div>
+                                    <hr class="border-warning">
+            
+                                    <h6 class="text-white text-center fw-bold">OR</h6>
+                                    <h4 class="bg-green-color text-white text-center py-2 rounded-5">BOOK A FREE CONSULTATION NOW!</h4>
+                                    <hr class="border-warning">
+                                    
+                                    <input type="text" class="form-control border-warning mb-3" name="name" placeholder="Enter your name">
+                                    <input type="email" class="form-control border-warning mb-3" name="email" placeholder="Enter your email">
+                                    <label for="" class="text-white bg-yellow-color2 p-2">Call me at</label>
+                                    <input type="number" class="form-control border-warning mb-3" name="phone" placeholder="Enter your phone number">
+                                    <input type="datetime-local" class="form-control border-warning mb-3" name="call_time">
+                                    <textarea name="message" rows="3" class="form-control border-warning mb-3" placeholder="Enter your message"></textarea>
+                                    
+                                    <button type="submit" class="btn btn-warning bg-yellow-color2 fw-bolder text-uppercase w-100">Submit</button>
+                                </form>
+                            </div>
+            
+           </div>
         </div>
         <div class="row mt-3">
             <!-- <div class="col-12 text-center">
@@ -361,19 +391,21 @@
     </section>
 
     <!-- ORDER COMPONENT-->
-    <section class="container-fluid bg-white py-5" style="width: 100%; border-bottom: 3px solid #ebc266; border-right: 3px solid #ebc266">
+    <section class="container bg-white py-5" style="width: 100%; ">
         <div class="row">
             <h3 class="text-uppercase fw-bolder text-dark text-center py-3">ORDER COMPONENTS</h3>
         </div>
-        <div class="row bg-white">
+        <div class="row justify-content-center bg-white">
             @php
             $categories = \App\Models\Category::where('parent_category_id', null)->where('status', 1)->get();
             @endphp
-            <div class="d-flex order-component-scroller" style="max-width: 1900px; overflow-x: scroll">
+           
+            <div class="order-component-slider  d-flex order-component-scroller" style="max-width: 1900px; overflow-x: scroll">
                 @foreach($categories as $category)
-                <div class="d-flex align-items-center justify-content-center" style="border-radius: 50%; margin: 0px 10px; padding: 15px 50px">
+                <div class="d-flex col-lg-3 card border-warning align-items-center justify-content-center" style="border-radius: 8px; margin: 0px 10px; padding: 15px 50px">
                     <div class="text-center">
-                        <a class="text-dark btn btn-outline-warning d-flex align-items-center justify-content-center" style="height: 100px; width: 100px; border-radius: 100%; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);" href="{{route('ordercomponentbyname', [$category->slug])}}">
+                        <a class="text-dark btn d-flex align-items-center justify-content-center" style=" ;" href="{{route('ordercomponentbyname', [$category->slug])}}">
+                        {{-- <a class="text-dark btn btn-outline-warning d-flex align-items-center justify-content-center" style="height: 100px; width: 100px; border-radius: 100%; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);" href="{{route('ordercomponentbyname', [$category->slug])}}"> --}}
                             <div class="card-old">
                                 <div class="card-body d-flex">
                                     @if($category->slug == 'doors')
@@ -794,23 +826,24 @@
         
         <div class="row justify-content-center">
             
-            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12" ">  
+            <div class="col-12 col-lg-4 col-sm-6  mb-sm-3  " >  
                 <div class="card border-0" style="height: 300px; width:300px;">
                     <div class="card-body text-center p-4">
-                        <div class="card-icon">
-                            <i class="bi bi-card-list" style=" color: #ffa500;
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: 1rem;"></i>
-                        </div>
+                          <div class="card-icon">
+                             <i class="bi bi-card-list" style=" color: #ffa500;
+                                  font-size: 3rem;
+                                    text-align: center;
+                                    margin-bottom: 1rem;">
+                             </i>
+                           </div>
                         <h5 class="card-title mb-3 text-dark">01.</h5>
                         <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Design Requirements</h5>
                         <p class="card-text text-muted">You inform us about your requirements.</p>
                     </div>
+                </div>
             </div>
-        </div>
            
-            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+            <div class=" col-lg-4 col-sm-6   col-12">
                 <div class="card border-0" style="height: 300px; width:300px;">
                     <div class="card-body text-center p-4">
                         <div class="card-icon">
@@ -825,7 +858,7 @@
                     </div>
             </div>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+            <div class="col-lg-4 col-sm-6 col-12">
                 <div class="card border-0" style="height: 300px; width:300px;">
                     <div class="card-body text-center p-4">
                         <div class="card-icon">
@@ -1051,6 +1084,34 @@
 
 
     <section class="catalogue-bg py-5">
+    <div class="container">
+        <div class="row align-items-center mb-5">
+            <!-- Left Content -->
+            <div class="col-md-12 col-lg-6 text-center text-lg-start">
+                <div class="card rounded border-0 shadow-sm p-4">
+                    <h5 class="text-primary">Our Catalogue</h5>
+                    <h4 class="mb-3">EXPLORE OUR EXCLUSIVE CATALOGUE</h4>
+                    <p class="mb-3">Get access to our full catalogue for free, featuring custom kitchen designs, premium materials, and smart storage solutions. Whether you're seeking style, function, or both, we've got everything you need to bring your vision to life.</p>
+                    <p class="text-primary">Register now to receive our free catalogue in your inbox.</p>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Enter Your Email" aria-label="Email">
+                        <button class="btn btn-warning text-white" type="button">REGISTER NOW!</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Image -->
+            <div class="col-md-12 col-lg-6 text-center mt-4 mt-lg-0">
+                <img src="{{ asset('images/catalogue.png') }}" alt="Kitchen Design" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+    {{-- <section class="catalogue-bg py-5">
         <div class="container">
             <div class="row align-items-center mb-5">
                 <div class="col-lg-6 pt-5 pb-3 px-5 mb-4 mb-lg-0 card rounded border-0 shadow-sm">
@@ -1070,7 +1131,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
 
     <!-- Start your journey -->
@@ -1147,7 +1208,39 @@
 @push('scripts')
     <script>
         $(document).ready(function () {
+    $(".order-component-slider").owlCarousel({
+        loop: true, /* Infinite scroll */
+        margin: 10, /* Spacing between items */
+        nav: true, /* Show navigation arrows */
+        dots: true, /* Show dots */
+        autoplay: true, /* Auto slide */
+        autoplayTimeout: 2000, /* 3-second delay */
+        autoplayHoverPause: true, /* Pause on hover */
+        responsive: {
+            0: {
+                items: 1 /* Small screens: 1 item */
+            },
+            576: {
+                items: 2 /* Medium screens: 2 items */
+            },
+            992: {
+                items: 3 /* Large screens: 3 items */
+            },
+            1200: {
+                items: 4 /* Extra large screens: 4 items */
+            }
+        }
+    });
+});
+
+        $(document).ready(function () {
             const $carousel01 = $('.main-carousel-banner-01');
+            #orderComponentSlider.owlCarousel({
+                loop:true,
+                margin:50,
+                stagePadding:15,
+                autoplay:true
+            });
             // Initialize OwlCarousel
             $carousel01.owlCarousel({
                 loop: true,
@@ -1167,7 +1260,7 @@
                         nav: true
                     },
                     992: {
-                        items: 3,
+                        items: 2,
                         loop: true,
                         margin: 10,
                         nav: true,
@@ -1175,7 +1268,7 @@
                         center: true,
                     },
                     1200: {
-                        items: 4,
+                        items: 3,
                         loop: true,
                         margin: 50,
                         nav: true,
@@ -1183,7 +1276,7 @@
                         center: true,
                     },
                     1400: {
-                        items: 4,
+                        items: 3,
                         loop: true,
                         margin: 50,
                         nav: true,
