@@ -12,39 +12,14 @@
         {
             background-color:#f2f4f5;
         }
-        #lines
-{
-    display: flex;
-}
- /* #line1
- {
-    height: 4px;
-    width: 200px;
-    background-color: #2A6161;
-    display: inline-block;
- } */
-  #line1
-  {
-    background-color: #2A6161;
-  }
+      
 
-  #line2
- {
-    background-color: #EDA10E;
-    /* display: inline-block; */
- }
- #line3
- {
-    background-color: #222222;
- }
-
- /* Responsive Line Styling */
-#line1,#line2,#line3 {
+        #line1,#line2,#line3 {
     /* Base styles */
     height: 4px;
     width: 100%;
     max-width: 200px;
-    
+    background-color: #2A6161;
 
     /* Responsive sizing */
     /* margin: 0 auto; Center the line */
@@ -63,8 +38,9 @@
 /* Small devices (phones) */
 @media screen and (max-width: 576px) {
     #line1,#line2,#line3 {
-        width: clamp(80px, 80%, 150px);
-        height: 3px;
+        display:none;
+        /* width: clamp(80px, 80%, 150px);
+        height: 3px; */
     }
 }
 
@@ -85,11 +61,38 @@
 /* High-resolution displays */
 @media screen and (-webkit-min-device-pixel-ratio: 2), 
        screen and (min-resolution: 192dpi) {
-    #line1,#line2,#line3 {
+    #line1 {
         /* Crisp rendering on high-DPI screens */
         transform: scale(1);
     }
+
+
+   #lines
+{
+    display: flex;
 }
+ #line1
+ {
+    height: 4px;
+    width: 200px;
+    background-color: #2A6161;
+    /* display: inline-block; */
+ }
+ #line2
+ {
+    height: 4px;
+    width: 200px;
+    background-color: #EDA10E;
+    /* display: inline-block; */
+ }
+ #line3
+ {
+    height: 4px;
+    width: 200px;
+    background-color: #222222;
+ }
+
+
 
 
 
@@ -290,12 +293,12 @@
             <img src="{{ asset('images/slab.jpeg') }}" alt="Image 4" class="fade-img">
         </div>
 
-        <!-- Content -->
+        /* <!-- Content --> */
         <div class="container">
             <div class="row justify-content-center main-image-content align-items-center" style="z-index: 1000;">
                 
                 <!-- Left Content -->
-                <div class="col-md-7 text-start text-white px-4" style="z-index: 100;">
+                <div class="col-md-8 text-start text-white px-4" style="z-index: 100;">
                     <div class="ps-4 animated slide-top">
                         <h6 class="text-yellow-color fw-bold text-center" style="letter-spacing:8px;">BUY KITCHEN ONLINE</h6>
                     </div>
@@ -305,19 +308,27 @@
                         <h1 class="text-yellow-color fw-bold animated slide-left text-center">ELEVATE YOUR LIFESTYLE</h1>
                         <p class="text-white animated slide-bottom text-center">We specialize in virtually designing and delivering your dream kitchen that complements your needs and style. Whether you want to build a new kitchen or need to replace a single component, we are always at your service.</p>
                     </div>
-                    <div class="ps-4 text-center col-xl-8 col-lg-12 col-md-12 col-sm-12 animated slide-top" style="margin-top: 50px">
-                        <h4 class="unique-font text-white text-center px-4 py-1 rounded-gradient-border w-100" id="typing-effect"></h4>
-                        
-                    </div>
-                    <div class="ps-4 mt-4 animated slide-bottom">
-                        <a href="{{ route('orderkitchen') }}" class="btn btn-md bg-yellow-color2 text-white text-uppercase border-green-color" style="border-radius: 50px;">
-                            Order Now
-                        </a>
-                    </div>
+
+                    
+
+                    <div class="container d-flex flex-column align-items-center text-center">
+    <div class="col-xl-8 col-lg-10 col-md-10 col-sm-12 animated slide-top mx-auto" style="margin-top: 50px;">
+        <h4 class="unique-font text-white px-3 py-1 rounded-gradient-border w-100" id="typing-effect"></h4>
+    </div>
+    <div class="col-xl-8 col-lg-10 col-md-10 col-sm-12 animated slide-bottom mt-4 mx-auto">
+        <a href="{{ route('orderkitchen') }}" class="btn w-100 btn-md bg-yellow-color2 text-white text-uppercase border-green-color" style="border-radius: 50px;">
+            Order Now
+        </a>
+    </div>
+</div>
+
+
                 </div>
 
 
             </div>
+            
+            
             <div class="left-shadow"></div>
         </div>
     </section>
@@ -781,7 +792,7 @@
                     <h4 class="mb-4" style="color:#2a6161">
                         Concerned about not getting the right measurements? Let our professionals handle it for you.
                     </h4>
-                    <a href="#" class="btn btn-lg px-5 rounded-0" style="background-color:#FFC107">BOOK AN ON-SITE SURVEY NOW!</a>
+                    <a href="#" class=" btn btn-lg px-5 rounded-0" style="background-color: #ffc107;">BOOK AN ON-SITE SURVEY NOW!</a>
                 </div>
             </div>
         </div>
@@ -802,7 +813,7 @@
     </section> --}}
 
 
-    
+{{--     
     <section class="container-fluid  pt-5 pb-3" style="background-color:#f2f4f5">
         <div>
         <div class="col-12 d-flex flex-column align-items-center">
@@ -819,9 +830,9 @@
         <p class="text-center text-dark w-75">
             We offer premium, bespoke designer kitchens at competitive prices. Our process is straight forward
         </p>
-    </section>
+    </section> --}}
 
-    <div class ="container-fluid py-3" style="background-color:#f2f4f5">
+    {{-- <div class ="container-fluid py-3" style="background-color:#f2f4f5">
     <section class="container  pb-4">
         
         <div class="row justify-content-center">
@@ -884,7 +895,8 @@
         <button  class="btn rounded-0 btn-warning px-5 mx-n4 text-uppercase text-black" style="background-color:#FFC107">BOOK An on-site survey NOW!</button>
         </div>
    </div>
-</div>
+</div> --}}
+
 
 
 
@@ -953,6 +965,80 @@
     <!-- Key designs -->
     {{-- @include('frontend.key_designs') --}}
     
+
+    <section class="container-fluid  pt-5 pb-3" style="background-color:#f2f4f5">
+        <div>
+        <div class="col-12 d-flex flex-column align-items-center">
+            <p class="text-center fw-bold">CUSTOM KITCHENS, TIMELESS ELEGANCE.</p>
+            <h3 class="text-dark text-center fw-bolder">
+                BESPOKE DESIGN, STANDARD PRICE
+            </h3>
+            <div id="lines" class="mb-3">
+                <div id="line1"></div>
+                <div id="line2"></div>
+                <div id="line3"></div>
+            
+        </div>
+        <p class="text-center text-dark w-75">
+            We offer premium, bespoke designer kitchens at competitive prices. Our process is straight forward
+        </p>
+    </section>
+
+
+<div class="container-fluid py-3" style="background-color:#f2f4f5">
+    <section class="container pb-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="card border-0 h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="card-icon">
+                            <i class="bi bi-card-list text-warning" style="font-size: 3rem; margin-bottom: 1rem; color: #ffc107"></i>
+                        </div>
+                        <h5 class="card-title mb-3 text-dark">01.</h5>
+                        <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Design Requirements</h5>
+                        <p class="card-text text-muted">You inform us about your requirements.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="card border-0 h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="card-icon">
+                            <i class="bi bi-cash-stack" style="font-size: 3rem; margin-bottom: 1rem; color: #ffc107"></i>
+                        </div>
+                        <h5 class="card-title mb-3 text-dark">02.</h5>
+                        <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Upfront Pricing</h5>
+                        <p class="card-text text-muted">We create a personalized design and provide clear, upfront pricing.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="card border-0 h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="card-icon">
+                            <i class="bi  bi-clipboard-check" style="font-size: 3rem; margin-bottom: 1rem; color: #ffc107;"></i>
+                        </div>
+                        <h5 class="card-title mb-3 text-dark">03.</h5>
+                        <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Custom Design Delivered</h5>
+                        <p class="card-text text-muted">The final design will be crafted to meet your needs without the pressure of upselling.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="row justify-content-center text-center">
+        <div class="col-lg-6 col-md-8 col-sm-10 col-12 mb-5 mt-3">
+            <p class="fw-bold">Build a kitchen that reflects your needs & style.</p>
+            <button class="btn btn-warning px-5 text-uppercase rounded-0 text-black" style="background-color: #ffc107;">Book An On-Site Survey Now!</button>
+        </div>
+    </div>
+</div>
+
+
+
 
     <section class="container-fluid py-4">
         <div class="col-12 d-flex flex-column align-items-center">
