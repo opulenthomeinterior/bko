@@ -25,7 +25,7 @@
             transform: scale(1.1);
         }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
             color: #333;
             background-color: var(--light-bg);
         }

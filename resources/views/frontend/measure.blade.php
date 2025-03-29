@@ -15,7 +15,7 @@
             </div>
         </div> -->
     </section>
-    <section class="container-fluid px-lg-5 py-4 px-md-3 px-3 bg-light">
+    <section class="container-fluid mb-2 px-lg-5 py-5 px-md-3 px-3 bg-light">
 
     <div class="d-flex flex-row justify-content-center">
         <div class="row w-75">
@@ -34,7 +34,7 @@
 
     <div class="position-relative">
         
-    <div class="z-n2 yellow-bg position-absolute" style="width:100%; top:40%; height:200px;"></div>
+    <div class="z-n2 bg-warning position-absolute" style="width:100%; top:40%; height:200px;"></div>
                 <img src="{{ asset('images/order-component.jpg') }}" class="img-fluid" style="width:50%; transform:translateX(50%);" />
                 
                 </div>

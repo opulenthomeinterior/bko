@@ -128,16 +128,16 @@
         </div>
     </div>
 
-    <section class="container-fluid bg-light py-4">
+    {{-- <section class="container-fluid bg-light py-4">
         <div class="col-12 d-flex flex-column align-items-center">
         </div>
-    </section>
+    </section> --}}
 
     <!-- Why choose BKONLINE -->
     @include('frontend.why_choose_bkonline')
     
-    <section class="container-fluid bg-white" style="border-bottom: 40px solid #2a6161;">
-    </section>
+    {{-- <section class="container-fluid bg-white" style="border-bottom: 40px solid #2a6161;">
+    </section> --}}
 
     <!-- Testimonials -->
     @include('frontend.testimonials_component')

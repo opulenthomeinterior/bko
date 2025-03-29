@@ -97,7 +97,7 @@ use App\Models\Style;
         .ticker-wrapper {
             overflow: hidden;
             white-space: nowrap;
-            background-color: #ff0000;
+            /* background-color: #ff0000; */
             color: #fff;
             padding: 10px 0;
             position: relative;
@@ -307,7 +307,7 @@ use App\Models\Style;
                 <div class="text-center bg-danger py-2">
 
                     <div class="ticker-wrapper">
-                        <div class="ticker-text">Limited time offer! For a Limited Time, We are offering Free on-site surveys and consultations.</div>
+                        <div class="ticker-text fs-5"><strong class="fw-bolder">Limited time offer!</strong> For a Limited Time, We are offering Free on-site surveys and consultations.</div>
                     </div>
                    
                     {{-- <span class="fw-bold text-white "> 
@@ -317,8 +317,8 @@ use App\Models\Style;
                         <small class="">For a limited time, we are offering free on-site surveys and consultations.</small>
                      --}}
                 </div>
-                <div class="text-center bg-green-color py-2">
-                    <a class="btn btn-outline-default border-none text-white px-4 py-2" href="{{route('max_storage')}}"> 
+                <div class="text-center py-2" style="background-color:#222222;">
+                    <a class="btn text-warning btn-outline-default border-none px-4 py-2" href="{{route('max_storage')}}" style="letter-spacing: 6px;"> 
                         VISIT MAX STORAGE KITCHEN
                     </a>
                 </div>
