@@ -1,4 +1,66 @@
 <x-guest-layout>
+    <style>
+        
+        
+        .hero-section {
+            padding: 70px 0;
+            text-align: center;
+            background-color: #fafafa;
+        }
+        
+        .hero-subtitle {
+            color: #ff9800;
+            font-weight: 500;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        
+        .hero-description {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #666;
+        }
+        
+        .component-card {
+            border: none;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+            margin-bottom: 30px;
+        }
+        
+        .component-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .component-img {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card-title {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .card-text {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .components-section {
+            padding: 50px 0;
+        }
+    </style>
     <section class="container-fluid"
         style="background-image: url('{{ asset('images/order-component.jpg') }}'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 80vh;">
     </section>
@@ -12,7 +74,7 @@
             </ol>
         </nav>
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-12">
                 <h1 class="fs-1 text-dark text-uppercase fw-bolder text-center">
                     Order Component
@@ -29,10 +91,65 @@
                 </p>
                 </div>
             </div>
+        </div> -->
+    </section>
+
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="fw-bold mb-3">ORDER COMPONENT</h1>
+            <h5 class="hero-subtitle">SEAMLESS REPAIRS • BEAUTIFUL RESULTS</h5>
+            <p class="hero-description">
+                Many small components make up your entire kitchen. One faulty or old component can affect its beauty and functionality. Whether it's a broken hinge, a worn-out faucet, or a rusty handle, let us help you get your kitchen back on track. You can also change your kitchen aesthetics by replacing the old cabinet doors, the floor everything you need: from traditional replacements to modern upgrades, to keep your kitchen functioning flawlessly.
+            </p>
+        </div>
+    </section>
+    
+    <!-- Components Section -->
+    <section class="components-section">
+        <div class="container">
+            <div class="row g-4">
+                @if ($components->count() > 0)
+                    @foreach ($components as $index => $component)
+                    @if ($component->slug != 'base-cabinets' && $component->slug != 'wall-cabinets' && $component->slug != 'tall-cabinets')
+                    <!-- Doors Card -->
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card component-card shadow-sm">
+                            <img src="/api/placeholder/400/300" alt="{{$component->name}}" class="component-img">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $component->name }}</h5>
+                                
+                                @if ($component->slug == 'doors')
+                                        <p class="card-text">The doors are the first impression of your kitchen. You can transform your kitchen by selecting from our various colors and finishes. Our doors are the essence of style and durability, creating an elegant look.</p>
+                                        @elseif ($component->slug == 'handles')
+                                        <p class="card-text">The doors are the first impression of your kitchen. You can transform your kitchen by selecting from our various colors and finishes. Our doors are the essence of style and durability, creating an elegant look.</p>
+                                        @elseif ($component->slug == 'accessories')
+                                        <p class="card-text">Enhance the style and functionality of your kitchen with our premium accessories. From smart storage solutions to innovative accessories, everything is designed to combine modern convenience with timeless elegance.</p>
+                                        @elseif ($component->slug == 'appliances')
+                                        <p class="card-text">Make your life hassle-free with our efficient and reliable appliances. Selected for their design, quality, and performance. You can pick from the highest-quality ovens, microwaves, dishwashers, or washing machines.</p>
+                                        @elseif ($component->slug == 'worktops')
+                                        <p class="card-text">Keep your kitchen’s form exquisite by selecting the perfect worktop. The worktops are designed to withstand daily use while enhancing the beauty of your kitchen. Choose from a range of worktops featuring Brazilian Greige, Maia®, and many others.</p>
+                                        @elseif ($component->slug == 'upstands')
+                                        <p class="card-text">Explore our range of upstands for a refined, contemporary finishing look. They provide a polished, clean finish and protect your walls from splashes and spills. Choose an upstand that will complement your worktop perfectly.</p>
+                                        @elseif ($component->slug == 'breakfast-bars')
+                                        <p class="card-text">Our customizable breakfast bars will be the perfect space for family breakfasts and social gatherings. They offer worktop space and additional storage while increasing the flow of your kitchen.</p>
+                                        @elseif ($component->slug == 'taps')
+                                        <p class="card-text">Add luxury to your kitchen with our stylish and functional taps. Whether you prefer a classic traditional or a modern design, our top-notch quality taps are built to add convenience and flair to your kitchen.</p>
+                                        @elseif ($component->slug == 'sinks')
+                                        <p class="card-text">The sink is not just the focal point of your kitchen but also the most used part. You can select one from our vast collection of durable stainless steel sinks, according to your preference. They are available in different styles and heights.</p>
+                                        @elseif ($component->slug == 'internals')
+                                        <p class="card-text">Use your kitchen space efficiently with our innovative internal storage solutions. Keep your kitchen clutter-free and organized by selecting from our smart storage options like wire carousel sets, pull-out storage baskets, swing-out corner storage, and many more.</p>
+                                        @endif
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+                    @endforeach
+                    @endif
+            </div>
         </div>
     </section>
 
-    <section class="container-fluid px-lg-5 px-md-3 px-3 py-2" style="background-color: #f0f0f0;">
+    {{--<section class="container-fluid px-lg-5 px-md-3 px-3 py-2" style="background-color: #f0f0f0;">
         <div class="row py-4">
             @if ($components->count() > 0)
                 @foreach ($components as $index => $component)
@@ -82,7 +199,7 @@
                 </div>
             @endif
         </div>
-    </section>
+    </section>--}}
 
     <section class="container-fluid bg-light py-4">
         <div class="col-12 d-flex flex-column align-items-center">
