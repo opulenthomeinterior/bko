@@ -1077,9 +1077,9 @@
     <section class="container-fluid bg-white" style="border-bottom: 40px solid #2a6161;">
     </section>
     <!-- Why choose BKONLINE -->
-     {{-- @include('frontend.why_choose_bkonline') --}}
+     @include('frontend.why_choose_bkonline')
 
-     <div class="mt-5 container container-features">
+     {{-- <div class="mt-5 container container-features">
         <div class="row justify-content-center">
             <div class="col-lg-6 col-sm-12">
                 <h3 class="text-center mb-2">WHY CHOOSE BKONLINE</h3>
@@ -1132,7 +1132,7 @@
         <div class="text-center mt-5">
             <a class="btn explore-btn px-5 mb-5" style="background-color:#febd49;">EXPLORE MORE</a>
         </div>
-    </div>
+    </div> --}}
 
 
 

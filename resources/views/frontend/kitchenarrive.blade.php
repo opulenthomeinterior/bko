@@ -26,13 +26,13 @@
         } */
         .image-container {
             position: relative;
-            display: flex;
+            /* display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: center; */
         }
         .image-container img {
             width: 100%;
-            max-width: 400px;
+            /* max-width: 400px; */
             border-radius: 5px;
         }
         .image-overlay,.image-overlay-rigid {
@@ -152,22 +152,27 @@ Every order is handled with the utmost care, ensuring that all components of you
             </div>
             <div class="col-md-6 d-flex justify-content-center">
                 <div class="image-container">
-                    <img src="{{ asset('/images/flat-pack-kitchen.png') }}" alt="Flat-Pack Kitchen" class="img-fluid">
-                    <div class="image-overlay"></div>
+                    {{-- <img src="{{ asset('/images/flat-pack-kitchen.png') }}" alt="Flat-Pack Kitchen" class="img-fluid"> --}}
+                    <img class="" src="{{ asset('images/flat-pack-kitchen.png') }}" style="box-shadow: 17px 16px 0px 0px rgba(254,189,73,0.75);" />
+                   
+                    {{-- <div class="image-overlay"></div> --}}
                 </div>
             </div>
         </div>
 
-        <div class="row align-items-center flex-column-reverse flex-md-row-reverse">
+        {{-- <div class="row align-items-center flex-column-reverse flex-md-row-reverse"> --}}
+        <div class="row align-items-center flex-column flex-lg-row">
+            
+            <div class="col-md-6">
+                <div class="image-container">
+                    {{-- <img src="{{ asset('/images/rigid-kitchen.png') }}" alt="Rigid Kitchen" class="img-fluid"> --}}
+                    <img class="" src="{{ asset('images/rigid-kitchen.png') }}" style="width:500px; height:500px; object-fit:cover; box-shadow: -35px 16px 0px 0px rgba(42, 97, 97,0.75);" />
+                       
+                </div>
+            </div>
             <div class="col-md-6 text-center text-md-start">
                 <h3 class="text-primary fw-bold mt-4">RIGID KITCHENS</h3>
                 <p>For the delivery of Rigid Kitchens, we work with our reliable partners like TDL to ensure that your kitchen is packed and delivered with care. Items are securely wrapped in shrink wrap and placed on pallets to prevent damage. The plinths and multi-rails are sent separately as long bundles.</p>
-            </div>
-            <div class="col-md-6 d-flex justify-content-center">
-                <div class="image-container">
-                    <img src="{{ asset('/images/rigid-kitchen.png') }}" alt="Rigid Kitchen" class="img-fluid">
-                    <div class="image-overlay-rigid "></div>
-                </div>
             </div>
         </div>
     </div>

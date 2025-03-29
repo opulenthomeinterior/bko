@@ -40,6 +40,85 @@
             font-size: 2rem;
         }
     }
+    #line1,#line2,#line3 {
+            /* Base styles */
+            height: 4px;
+            width: 100%;
+            max-width: 200px;
+            background-color: #2A6161;
+
+            /* Responsive sizing */
+            /* margin: 0 auto; Center the line */
+            
+            /* Fluid sizing using viewport units and clamp */
+            width: clamp(100px, 50vw, 200px);
+
+            /* Responsive considerations */
+            /* display: block; */
+            
+            /* Ensure smooth scaling */
+            box-sizing: border-box;
+        }
+
+        /* Mobile-first media queries */
+        /* Small devices (phones) */
+        @media screen and (max-width: 576px) {
+            #line1,#line2,#line3 {
+                display:none;
+                /* width: clamp(80px, 80%, 150px);
+                height: 3px; */
+            }
+        }
+
+        /* Medium devices (tablets) */
+        @media screen and (min-width: 577px) and (max-width: 992px) {
+            #line1,#line2,#line3 {
+                width: clamp(120px, 60%, 180px);
+            }
+        }
+
+        /* Large devices (desktops) */
+        @media screen and (min-width: 993px) {
+            #line1,#line2,#line3 {
+                width: clamp(150px, 40%, 200px);
+            }
+        }
+
+        /* High-resolution displays */
+        @media screen and (-webkit-min-device-pixel-ratio: 2), 
+            screen and (min-resolution: 192dpi) {
+            #line1 {
+                /* Crisp rendering on high-DPI screens */
+                transform: scale(1);
+            }
+        }
+
+        #lines
+        {
+            display: flex;
+        }
+        #line1
+        {
+            height: 4px;
+            width: 200px;
+            background-color: #2A6161;
+            /* display: inline-block; */
+        }
+        #line2
+        {
+            height: 4px;
+            width: 200px;
+            background-color: #EDA10E;
+            /* display: inline-block; */
+        }
+        #line3
+        {
+            height: 4px;
+            width: 200px;
+            background-color: #222222;
+        }
+
+    
         </style>
 
 </head>
