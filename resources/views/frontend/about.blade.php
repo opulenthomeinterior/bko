@@ -235,6 +235,52 @@
 }
 
                
+    @media (max-width: 991.98px) {
+      .story-card {
+        margin-bottom: 2rem;
+      }
+    }
+    .our-story-section {
+      padding: 2rem 0;
+      /* background-color: #f8f9fa; */
+      overflow: hidden;
+    }
+    
+    .story-card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      padding: 2.5rem;
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .story-title {
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+    }
+    
+    .highlight-text {
+      color: #2e8b57;
+      font-weight: 600;
+    }
+    
+    /* .image-container {
+      position: relative;
+    } */
+    
+    .story-image {
+      border-radius: 10px;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
 
             </style>
         </head>
@@ -253,7 +299,7 @@
             </div>
         </header>
 
-        <div class="contaienr-fluid">
+        <div class="contaienr-fluid bg-light">
             <div class="container">
                 <div class="row mb-0 mb-lg-5 flex-lg-row flex-sm-column position-relative" style="top:-50px"">
                     <div class=" col-lg-6 col-sm-12 bg-yellow rounded-3 p-5">
@@ -268,10 +314,38 @@
 
                 </div>
             </div>
+            
+            <section class="our-story-section">
+                <div class="container">
+                  <div class="row align-items-center">
+                    <div class="col-12 col-lg-6 mb-4 mb-lg-0 p-0">
+                      <div class="story-card" style="width:107%; padding:5rem 7rem 5rem 3rem;">
+                        <h2 class="story-title">OUR STORY</h2>
+                        <p class="mb-0">
+                          BKO was founded with the concept of providing <span class="highlight-text"> high-quality products 
+                          without a high price tag</span>. 
+                          It does not matter if you want to build an entire kitchen, replace an existing component, 
+                          or want premium wardrobes; BKO is here to cater to all your needs. 
+                          You can bring your kitchens to life through our cutting-edge virtual design 
+                          consultations and personalized service.
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div class="col-12 col-lg-6 p-0">
+                      {{-- <div class="image-container"> --}}
+                        <img class="" src="{{ asset('images/story.png') }}" style="box-shadow: 17px 16px 0px 0px rgba(254,189,73,0.75);" />
+                   
+                      {{-- </div> --}}
+                    </div>
+                  </div>
+                </div>
+              </section>
+              
 
-            <div class="row position-relative our-story" style="min-height:650px;">
-                <div class="col-12 col-lg-4 mt-lg-5 our-story-content bg-white py-5 px-5 rounded-3 shadow-lg"
-                    style="text-align: justify;line-height: 1.6;">
+            {{-- <div class="row position-relative our-story" style="min-height:650px;"> --}}
+            {{-- <div class="row my-3 position-relative our-story" style="">
+                <div class="col-12 my-3 col-lg-4 mt-lg-5 p-3 bg-dark">
                     <h2 class="text-black fw-bolder">Our Story</h3>
                         <p class="fs-6">BKO was founded with the concept of providing high-quality products without a high
                             price tag. It does not matter if you want to build an entire kitchen, replace an existing
@@ -279,17 +353,18 @@
                             kitchens to life through our cutting-edge virtual design consultations and personalized
                             service. </p>
                 </div>
-                <div class="col-lg-6 our-story-image mt-0">
-                    <img class=shadow" src="{{ asset('/images/story.png') }}" />
-                    <div class="our-story-image-shadow bg-yellow">
+                <div class="col-lg-6 our-story-image">
+                    <img class=shadow" src="{{ asset('/images/story.png') }}" style="box-shadow: 17px 16px 0px 0px rgba(254,189,73,0.75);" />
+                   
+                    {{-- <div class="our-story-image-shadow bg-yellow">
 
-                    </div>
-                </div>
+                    </div> --}}
+                {{-- </div> --}}
                 <!-- /.row our-story -->
 
 
-            </div>
-            <div class="container core-values-container">
+            {{-- </div>  --}}
+            <div class="container core-values-container mt-2">
                 <div class="row mb-3">
                     <div class="col-lg-12">
 
@@ -354,7 +429,11 @@
 
             </div>
             <div class="container mt-5 py-5" style="min-height: 500px;">
-                {{-- <div class="row position-relative" style="min-height:500px;">
+
+
+
+
+                 {{-- <div class="row position-relative" style="min-height:500px;">
 
                     <div class="col-lg-6 our-team-image">
                         <img class=shadow" src="{{ asset('images/our-team.png') }}"" />
@@ -375,8 +454,34 @@
                             you with the highest standard of service.
                              </p>
                     </div>
-                </div>
-                our team --}}
+                </div>  --}}
+                
+
+
+                <section class="our-story-section">
+                    <div class="container">
+                      <div class="row align-items-center">
+                        <div class="col-12 col-lg-5 ps-3">
+                          
+                            <img class="" src="{{ asset('images/our-team.png') }}" style="width:500px; height:500px; object-fit:cover; box-shadow: -35px 16px 0px 0px rgba(254,189,73,0.75);" />
+                       
+                          
+                        </div>
+                        <div class="col-12 col-lg-7 mb-4 mb-lg-0 p-0">
+                          <div class="story-card mt-5 mt-lg-0 position-relative" style="left:-32px; padding:5rem 7rem 5rem 3rem;">
+                            <h2 class="story-title">Our Team</h2>
+                            <p class="mb-0">
+                                Behind every beautifully completed kitchen, there is a dedicated team working meticulously to bring your vision to life. Our team consists of experienced project managers, skilled designers, and expert fitters, all committed to delivering exceptional results. With years of industry experience, each member brings a wealth of knowledge and expertise to every project, ensuring that we provide you with the highest standard of service.  
+                            </p>
+                          </div>
+                        </div>
+                        
+                       
+                      </div>
+                    </div>
+                  </section>
+              
+
 
                 <div class="row my-lg-5 py-5 online-experience">
                     <div class="col-lg-12">

@@ -1,4 +1,117 @@
-<section class="container-fluid bg-white py-4">
+<head>
+    <style>
+.feature-icon {
+        font-size: 3rem;
+        color: #ffc107;
+        margin-bottom: 1rem;
+    }
+    .feature-card {
+        text-align: center;
+        padding: 2rem;
+        border: none;
+        background-color: #f8f9fa;
+    }
+    .explore-btn {
+        background-color: #ffc107;
+        color: black;
+        padding: 10px 20px;
+        border: none;
+        transition: all 0.3s ease;
+    }
+
+     /* Responsive adjustments */
+     @media (max-width: 768px) {
+        .feature-card {
+            margin-bottom: 1rem;
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .container-features {
+            padding: 1rem 0.5rem;
+        }
+        .feature-card {
+            padding: 1rem;
+        }
+        .feature-icon {
+            font-size: 2rem;
+        }
+    }
+        </style>
+
+</head>
+<div class="mt-5 container container-features">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-sm-12">
+            <h3 class="text-center mb-2">WHY CHOOSE BKONLINE</h3>
+            <div id="lines" class="mb-3">
+                <div id="line1"></div>
+                <div id="line2"></div>
+                <div id="line3"></div>
+        
+            </div>
+        </div>
+   </div>
+    <div class="row g-4">
+        <div class="col-12 col-lg-3 col-sm-6 ">
+            <div class="feature-card h-100 d-flex flex-column">
+                <div class="text-center">
+                    <div class="feature-icon"><img src="{{ asset('images/24-7.png') }}"/></div>
+                    <h5 class="card-title mb-3">24/7 Availability</h5>
+                    <p class="card-text">Customer support & Consultation anytime, anywhere</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-3 col-sm-6">
+            <div class="feature-card h-100 d-flex flex-column">
+                <div class="text-center">
+                    <div class="feature-icon">
+                        {{-- 🏆 --}}
+                        <img src="{{ asset('images/quality-service.png') }}"/>
+                    </div>
+                    <h5 class="card-title mb-3">Quality Service</h5>
+                    <p class="card-text">Trusted by thousand of customers for premium kitchen designs</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-3 col-sm-6">
+            <div class="feature-card h-100 d-flex flex-column">
+                <div class="text-center">
+                    <div class="feature-icon">
+                        {{-- 🛠️ --}}
+                        <img src="{{ asset('images/expert-installation.png') }}"/>
+                    </div>
+                    <h5 class="card-title mb-3">Expert Installation</h5>
+                    <p class="card-text">Skilled professionals ensure seamless kitchen fitting & installation</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-3 col-sm-6">
+            <div class="feature-card h-100 d-flex flex-column">
+                <div class="text-center">
+                    <div class="feature-icon">
+                        {{-- 👥 --}}
+                        <img src="{{ asset('images/online-support.png') }}"/>
+
+                    </div>
+                    <h5 class="card-title mb-3">Free Consultation</h5>
+                    <p class="card-text">Personalized guidance without any upfront cost</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-5">
+        <a class="btn explore-btn px-5 mb-5" style="background-color:#febd49;">EXPLORE MORE</a>
+    </div>
+</div>
+
+
+
+
+{{-- <section class="container-fluid bg-white py-4">
     <div class="container d-flex flex-column align-items-center">
         <h3 class="border border-warning border-4 p-3"><b class="text-yellow-color2">WHY CHOOSE</b><b class="text-dark"> BK ONLINE</b></h3>
     </div>
@@ -67,4 +180,4 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}

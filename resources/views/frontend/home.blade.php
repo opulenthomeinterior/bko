@@ -403,7 +403,8 @@
     </section>
 
     <!-- ORDER COMPONENT-->
-    <section class="container bg-white py-5" style="width: 100%; ">
+    <div class="container-fluid " style="background-color:#F2F4F5;">
+    <section class="container py-5" style="width: 100%; ">
         <div class="row">
             <h3 class="text-uppercase fw-bolder text-dark text-center py-3">ORDER COMPONENTS</h3>
         </div>
@@ -411,14 +412,14 @@
             @php
             $categories = \App\Models\Category::where('parent_category_id', null)->where('status', 1)->get();
             @endphp
-           
-            <div class="order-component-slider  d-flex order-component-scroller" style="max-width: 1900px; overflow-x: scroll">
+          
+            <div style="background-color:#F2F4F5;" class="order-component-slider d-flex order-component-scroller" style="max-width: 1900px; overflow-x: scroll">
                 @foreach($categories as $category)
                 <div class="d-flex col-lg-3 card border-warning align-items-center justify-content-center" style="border-radius: 8px; margin: 0px 10px; padding: 15px 50px">
                     <div class="text-center">
                         <a class="text-dark btn d-flex align-items-center justify-content-center" href="{{route('ordercomponentbyname', [$category->slug])}}">
                         {{-- <a class="text-dark btn btn-outline-warning d-flex align-items-center justify-content-center" style="height: 100px; width: 100px; border-radius: 100%; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);" href="{{route('ordercomponentbyname', [$category->slug])}}"> --}}
-                            <div class="card-old">
+                            <div class="card-old "> 
                                 <div class="card-body d-flex">
                                     @if($category->slug == 'doors')
                                     <div>
@@ -471,7 +472,7 @@
             </div>
         </div>
     </section>
-
+    </div>
     <div class ="container-fluid " style="background-color:#F2F4F5;">
         <section class="consultation-section">
             <div class="container">
