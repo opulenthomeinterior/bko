@@ -326,7 +326,8 @@ html {
 }
 
 body {
-    font-family: Axiforma, helvetica, sans-serif !important;
+    /* font-family: Axiforma, helvetica, sans-serif !important; */
+    font-family: 'Inter', sans-serif !important;
 }
 
 .card-body > a > i {

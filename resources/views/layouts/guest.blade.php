@@ -54,6 +54,7 @@ use App\Models\Style;
     </script>
 
     <style>
+        
         .footer-link {
             color: #ffffff;
             text-decoration: none;
@@ -92,6 +93,30 @@ use App\Models\Style;
         {
             color: #ffd700;
         } */
+
+        .ticker-wrapper {
+            overflow: hidden;
+            white-space: nowrap;
+            background-color: #ff0000;
+            color: #fff;
+            padding: 10px 0;
+            position: relative;
+        }
+        .ticker-text {
+            display: inline-block;
+            padding-left: 100%;
+            animation: ticker-scroll 30s linear infinite;
+            /* font-size: 20px;
+            font-weight: bold; */
+        }
+        @keyframes ticker-scroll {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
     </style>
 </head>
 
@@ -280,12 +305,17 @@ use App\Models\Style;
         <div class="navbar-wrapper">
             <nav class="container-fluid top-navbar1 p-0 text-white">
                 <div class="text-center bg-danger py-2">
-                    <span class="fw-bold text-white px-4"> 
-                        LIMITED TIME OFFER
-                    </span> 
-                    <div class="text-center">
-                        <small class="text-center">For a limited time, We are offering free on-site surveys and consultations to help you get started on your kitchen project at no initial cost</small>
+
+                    <div class="ticker-wrapper">
+                        <div class="ticker-text">Limited time offer! For a Limited Time, We are offering Free on-site surveys and consultations.</div>
                     </div>
+                   
+                    {{-- <span class="fw-bold text-white "> 
+                        LIMITED TIME OFFER!
+                    </span> 
+                    
+                        <small class="">For a limited time, we are offering free on-site surveys and consultations.</small>
+                     --}}
                 </div>
                 <div class="text-center bg-green-color py-2">
                     <a class="btn btn-outline-default border-none text-white px-4 py-2" href="{{route('max_storage')}}"> 
@@ -295,9 +325,9 @@ use App\Models\Style;
             </nav>
             <!-- <nav class="nav container-fluid p-0 bg-dark second-navbar" style="border-bottom: 1px solid #ebc266"> -->
             <nav class="nav container-fluid p-0 text-black second-navbar">
-                <div class="nav__data ps-5">
+                <div class="nav__data ps-0 ps-md-5">
                     <a href="{{ route('home') }}" class="nav__logo text-start flex-grow-1">
-                        <img class="pt-3" src="{{ asset('images/bko-black-logo.png') }}" width="100px" />
+                        <img class="pt-3" src="{{ asset('images/bko-black-logo.png') }}" width="120px" />
                     </a>
 
                     <a href="#" class="d-lg-none show-small d-flex" id="searchIcon"><i

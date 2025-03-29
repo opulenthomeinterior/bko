@@ -8,6 +8,8 @@
     <link rel="canonical" href="https://bkonline.uk/" />
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <style>
+
+
         .grid-box-gray-color
         {
             background-color:#f2f4f5;
@@ -1029,7 +1031,7 @@
                     <p class="text-primary">Register now to receive our free catalogue in your inbox.</p>
                     <div class="input-group">
                         <input type="email" class="form-control" placeholder="Enter Your Email" aria-label="Email">
-                        <button class="btn btn-warning text-white" type="button">REGISTER NOW!</button>
+                        <button class="btn" type="button" style="background-color:#febd49">REGISTER NOW!</button>
                     </div>
                 </div>
             </div>
