@@ -297,13 +297,13 @@ use App\Models\Style;
             <nav class="nav container-fluid p-0 text-black second-navbar">
                 <div class="nav__data ps-5">
                     <a href="{{ route('home') }}" class="nav__logo text-start flex-grow-1">
-                        <img src="{{ asset('images/logoBko.png') }}" width="100px" />
+                        <img class="pt-3" src="{{ asset('images/bko-black-logo.png') }}" width="100px" />
                     </a>
 
                     <a href="#" class="d-lg-none show-small d-flex" id="searchIcon"><i
                             class="ri-search-2-line"></i></a>
                     <a href="{{ route('cart') }}"
-                        class="d-lg-none show-small d-flex align-items-center justify-content-center px-3 text-white">
+                        class="d-lg-none show-small d-flex align-items-center justify-content-center px-3 ">
                         <i class="position-relative ri-shopping-cart-line">
                             <span id="calculateProductsQuantity" class="position-absolute right-0"
                                 style="top: -8px;"></span>
@@ -311,13 +311,13 @@ use App\Models\Style;
                     </a>
 
                     <a href="#" id="openSidebar"
-                        class="align-items-center justify-content-center px-1 text-white text-end d-lg-none show-small d-flex">
+                        class="align-items-center justify-content-center px-1  text-end d-lg-none show-small d-flex">
                         <i class="ri-user-line"></i>
                     </a>
                     <span class="nav__toggle" id="nav-toggle">
 
-                        <i class="ri-menu-line nav__toggle-menu text-white"></i>
-                        <i class="ri-close-line nav__toggle-close text-white"></i>
+                        <i class="ri-menu-line nav__toggle-menu "></i>
+                        <i class="ri-close-line nav__toggle-close"></i>
                     </span>
 
 
@@ -675,7 +675,7 @@ use App\Models\Style;
             <div class ="row align-items-center border-bottom mb-4">
                 <div class="col-lg-6">
                     {{-- <h5 class="mb-4">BK Online</h5> --}}
-                    <img class="" src="{{ asset('images/bko-white-logo.png') }}" style="width80px; height:80px" / >
+                    <img class="" src="{{ asset('images/bko-white-logo.png') }}" style="width80px; height:150px" / >
                     <p class="mb-4">Opulent home interiors operating as BK Online.</p>
                 </div>
 
@@ -735,7 +735,7 @@ use App\Models\Style;
                         </li>
                         <li>
                             <a href="#" class="footer-link">
-                                =
+                                
                                 <i class="bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
                                 Deliveries
                             </a>
