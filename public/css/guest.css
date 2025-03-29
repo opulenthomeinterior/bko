@@ -221,7 +221,7 @@
 }
 
 .dropdown__arrow {
-    color: white !important;
+    color: black !important;
 }
 @media (max-width: 768px) {
     .second-navbar {
@@ -232,7 +232,7 @@
 }
 
 
-/*--------------OWL CAROUSEL-------------*/
+/--------------OWL CAROUSEL-------------/
 .owl-stage-outer, .owl-carousel {
     overflow: visible !important;
     margin: 0px 0px !important;
@@ -263,4 +263,3 @@ button.owl-next, button.owl-prev {
     align-items: center;
     justify-content: center !important;
 }
-

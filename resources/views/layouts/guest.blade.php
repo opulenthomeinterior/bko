@@ -52,6 +52,47 @@ use App\Models\Style;
 
         gtag('config', 'G-YN6B53VG71');
     </script>
+
+    <style>
+        .footer-link {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-link:hover {
+            color: #ffd700;
+        }
+       
+        .social-icon {
+            width: 27px;
+            height: 27px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            /* background: rgba(255, 255, 255, 0.1); */
+            background-color:#febd49;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: background 0.3s;
+            color:black
+        }
+        .social-icon:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        ul li
+        {
+            list-style-type:none;
+        }
+        /* .social-link-text
+        {
+            color:white;
+            transition: color 0.3s;
+        }
+        .social-link-text:hover
+        {
+            color: #ffd700;
+        } */
+    </style>
 </head>
 
 <body>
@@ -253,7 +294,7 @@ use App\Models\Style;
                 </div>
             </nav>
             <!-- <nav class="nav container-fluid p-0 bg-dark second-navbar" style="border-bottom: 1px solid #ebc266"> -->
-            <nav class="nav container-fluid p-0 bg-dark second-navbar">
+            <nav class="nav container-fluid p-0 text-black second-navbar">
                 <div class="nav__data ps-5">
                     <a href="{{ route('home') }}" class="nav__logo text-start flex-grow-1">
                         <img src="{{ asset('images/logoBko.png') }}" width="100px" />
@@ -629,120 +670,167 @@ use App\Models\Style;
         {{ $slot }}
     </div>
 
-    <footer class="text-center mt-4 border-top border-warning" style="background-color: #383838;">
-        <div class="container py-lg-5 py-4">
-            <section class="">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-start">
-                        <img src="{{ asset('images/logoBko.png') }}" width="100px" />
-                        <h6 class="my-3 text-white">Customer Service Hours</h6>
+    <footer class=" text-white py-5" style="background-color:#373737">
+        <div class="container">
+            <div class ="row align-items-center border-bottom mb-4">
+                <div class="col-lg-6">
+                    {{-- <h5 class="mb-4">BK Online</h5> --}}
+                    <img class="" src="{{ asset('images/bko-white-logo.png') }}" style="width80px; height:80px" / >
+                    <p class="mb-4">Opulent home interiors operating as BK Online.</p>
+                </div>
 
-                        <ul class="footer-ul list-unstyled mb-0">
-                            <li class="mb-2 list-unstyled text-white"><i class="ri-phone-line text-warning"></i> 020 805 05605</li>
-                            <li class="list-unstyled text-white">
-                                <i class="ri-arrow-right-s-fill text-warning"></i>
-                                Mon-Sat: 9am to 5pm
-                            </li>
-                            <!-- <li class="list-unstyled">
-                                <i class="ri-arrow-right-s-fill"></i>
-                                Fri: 8am to 2:30pm
-                            </li> -->
-                            <li class="mt-2 list-unstyled">
-                                <a data-mdb-ripple-init class="text-white btn btn-outline-warning btn-floating rounded-circle" href="#!"
-                                    role="button"><i class="ri-facebook-fill text-warning pl-0"></i></a>
-                                <a data-mdb-ripple-init class="text-white btn btn-outline-warning btn-floating rounded-circle" href="#!"
-                                    role="button"><i class="ri-twitter-fill text-warning"></i></a>
-                                <a data-mdb-ripple-init class="text-white btn btn-outline-warning btn-floating rounded-circle" href="#!"
-                                    role="button"><i class="ri-youtube-fill text-warning"></i></a>
-                                <a data-mdb-ripple-init class="text-white btn btn-outline-warning btn-floating rounded-circle" href="#!"
-                                    role="button"><i class="ri-linkedin-fill text-warning"></i></a>
-                            </li>
-
-                            <li class="mt-2 list-unstyled text-white"><i class="ri-mail-line mt-1 text-warning"></i> customerservices@bkonline.uk</li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0 ms-lg-3 ms-0 text-start">
-                        <h5 class="fw-bolder text-white">Support</h5>
-
-                        <ul class="footer-ul list-unstyled mb-0">
-                            {{-- <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links text-white" style="color: white !important;" href="{{ route('blog') }}"><i
-                                class="ri-arrow-right-s-fill text-warning"></i>Blog</a>
-                            </li> --}}
-                            <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links text-white" style="color: white !important;"
-                                    href="{{ route('downloadable') }}"><i
-                                        class="ri-arrow-right-s-fill text-warning"></i> Downloadable Resources</a>
-                            </li>
-                            <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links text-white" style="color: white !important;"
-                                    href="{{ route('installationvideos') }}"><i
-                                        class="ri-arrow-right-s-fill text-warning"></i> Installation Videos</a>
-                            </li>
-                            {{-- <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links text-white" style="color: white !important;" href="{{ route('faq') }}"><i
-                                class="ri-arrow-right-s-fill text-warning"></i> FAQs</a>
-                            </li> --}}
-                            <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links text-white" style="color: white !important;"
-                                    href="{{ route('deliveries') }}"><i
-                                        class="ri-arrow-right-s-fill text-warning"></i> Deliveries</a>
-                            </li>
-                            <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links text-white" style="color: white !important;"
-                                    href="{{ route('printresources') }}"><i class="ri-arrow-right-s-fill text-warning"></i> Print
-                                    Resources</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-start">
-                        <h5 class="fw-bolder text-white">Legal Pages</h5>
-
-                        <ul class="footer-ul list-unstyled mb-0">
-                            <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links" style="color: white !important;"
-                                    href="{{ route('cookies') }}"><i class="ri-arrow-right-s-fill text-warning"></i> Cookies
-                                    Policy</a>
-                            </li>
-                            <!-- <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links" style="color: white !important;"
-                                    href="{{ route('privacy') }}"><i class="ri-arrow-right-s-fill text-warning"></i>Privacy
-                                    Policy</a>
-                            </li>
-                            <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links" style="color: white !important;"
-                                    href="{{ route('termandcondition') }}"><i class="ri-arrow-right-s-fill text-warning"></i>Terms
-                                    and Conditions</a>
-                            </li> -->
-                            <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links" style="color: white !important;"
-                                    href="{{ route('pricepromise') }}"><i class="ri-arrow-right-s-fill text-warning"></i> Price
-                                    Promise Guarantee: Terms &
-                                    Conditions</a>
-                            </li>
-                            <!-- <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links" style="color: white !important;"
-                                    href="{{ route('pricebeat') }}"><i class="ri-arrow-right-s-fill text-warning"></i>Terms and
-                                    Conditions – We Can’t Be Beaten on
-                                    Price</a>
-                            </li> -->
-                            {{-- <li class="my-1 footer-li">
-                                <a class="text-body text-decoration-none footer-links" style="color: white !important;"
-                                    href="{{ route('site_maps') }}"><i class="ri-arrow-right-s-fill text-warning"></i> Sitemap</a>
-                            </li> --}}
-                        </ul>
+                <div class="col-lg-6 align-self-end">
+                    <div class="mb-4">
+                        <p class="mb-2">Stay Updated:</p>
+                        <div class="input-group">
+                            <input type="email" class="form-control " placeholder="Your Email">
+                            <button class="btn" style="background-color:#febd49;" type="button">Subscribe</button>
+                        </div>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+            <div class="row g-4">
+                
+               
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4 text-white">Custome Service Hours</h5>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-telephone me-2"></i>
+                        <span>020 805 05605</span>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-clock me-2"></i>
+                        <span>Mon-Sat | 9am-5pm</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-geo-alt me-2"></i>
+                        <span>44 Ollender St, Aberfield Village, London E14 6RP United Kingdom</span>
+                    </div>
+                </div>
 
-        <!-- <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-           © 2020 Copyright:
-           <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-        </div> -->
+               
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4 text-white">Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <a href="#" class="footer-link">
+                               
+                                <i class="bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
+                                Downloadable Resources
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="#" class="footer-link">
+                              
+                                <i class="bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
+                                Installation Videos
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="#" class="footer-link">
+                                
+                                <i class="bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
+                                Print Resources
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-link">
+                                =
+                                <i class="bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
+                                Deliveries
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Legal -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4 text-white">Legal</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <a href="#" class="footer-link">
+                                <i class="bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
+                                Cookies Policy
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="#" class="footer-link">
+                                {{-- <i class="bi bi-shield-check me-2"></i> --}}
+                                <i class="bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
+                                Price Promise Guarantee
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-link">
+                                
+                                <i class="bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
+                                Terms & Conditions
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4 text-white">Connect</h5>
+                   
+                    <div class="d-flex gap-2 flex-column">
+                    
+                        <div class = "d-flex">
+                                <a href="#" class="social-icon d-flex footer-link">
+                           
+                                    <i class="bi bi-facebook" ></i>
+                           
+                           
+                                </a>
+                                <a href="#" class="text-white align-self-center social-link-text"> Facebook</a>
+                       </div>
+                    
+
+                       <div class = "d-flex">
+                        <a href="#" class="social-icon d-flex footer-link">
+                   
+                            <i class="bi bi-instagram"></i>
+                   
+                   
+                        </a>
+                        <a href="#" class="text-white align-self-center social-link-text"> Instagram</a>
+               </div>
+               <div class = "d-flex">
+                <a href="#" class="social-icon d-flex footer-link">
+           
+                    <i class="bi bi-pinterest"></i>
+           
+           
+                </a>
+                <a href="#" class="text-white align-self-center social-link-text"> Pinterest</a>
+       </div>
+
+       <div class = "d-flex">
+        <a href="#" class="social-icon d-flex footer-link ">
+  
+            <i class="bi bi-youtube"></i>
+   
+   
+        </a>
+        <a href="#" class="text-white align-self-center social-link-text"> YouTube</a>
+</div>
+
+                      
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+      
     </footer>
+    <div class="container-fluid">
+        <div class="row py-2 justify-content-center align-items-center" style="background-color:#a8acb1">
+            <div class="col-12">
+            <h5 class="text-center">BK ONLINE.UK | ALL RIGHTS RESERVED.</h5>
+            </div>
+        </div>
+    </div>
+
 
     <!-- JAVASCRIPT -->
     <script src="{{ asset('libs/jquery/jquery.min.js') }}"></script>

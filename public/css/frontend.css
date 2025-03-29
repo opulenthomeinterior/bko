@@ -623,7 +623,7 @@ a {
     color: var(--title-color);
 }
 
-.drop-down-link { color: white !important; }
+.drop-down-link { color: black !important; }
 .drop-down-link::before { color: black !important; }
 .drop-down-link::after { color: black !important; }
 
@@ -1116,19 +1116,4 @@ footer {
 
 .component-card {
     border-radius: 0;
-}
-
-.about-card-content
-{
-    background-color: #2a6161;
-}
-
-.yellow-bg
-{
-    background-color: #febd49;
-    
-}
-.color-yellow
-{
-    color:  #febd49;
 }
