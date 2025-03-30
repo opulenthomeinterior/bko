@@ -12,7 +12,7 @@
 
         .grid-box-gray-color
         {
-            background-color:#f2f4f5;
+            background-color:#fff;
         }
       
 
@@ -473,9 +473,9 @@
         </div>
     </section>
     </div>
-    <div class ="container-fluid " style="background-color:#F2F4F5;">
-        <section class="consultation-section">
-            <div class="container">
+    <div class ="container-fluid bg-white">
+        <section class="consultation-section bg-white">
+            <div class="container bg-white">
                 <h2 class="mb-2 text-black">EXPERT VIRTUAL DESIGN CONSULTATION</h2>
                 <div class = "row mb-1 justify-content-center">
                     <div class="col-6">
@@ -493,8 +493,8 @@
                 
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="consultation-step">
-                            <div class="icon-circle">
+                        <div class="consultation-step rounded bg-light">
+                            <div class="icon-circle bg-white">
                                 <i class="bi bi-card-list"></i>
                             </div>
                             <h3>01. Appointment Booking</h3>
@@ -502,8 +502,8 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="consultation-step">
-                            <div class="icon-circle">
+                        <div class="consultation-step rounded bg-light">
+                            <div class="icon-circle bg-white">
                                 <i class="bi bi-clipboard-check"></i>
                             </div>
                             <h3>02. Sharing Preferences</h3>
@@ -511,8 +511,8 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="consultation-step">
-                            <div class="icon-circle">
+                        <div class="consultation-step rounded bg-light">
+                            <div class="icon-circle bg-white">
                                 <i class="bi bi-check-lg"></i>
                             </div>
                             <h3>03. Design Creation & Approval</h3>
@@ -576,80 +576,79 @@
     @endif
 
 
-    <div class="container-fluid bg-white">
-    <section class="survey-section">
-        <div class="container">
-            <div class="row text-center mb-4">
-                <div class="col-12">
-                    <h4 class="mb-3" style="color:#2a6161;">WANT A MORE HANDS-ON APPROACH?</h4>
-                    <p class="">For your peace of mind, we are offering!</p>
-                    <h3 class="mb-1 text-black">ON-SITE SURVEY</h3>
-                    <div class="row justify-content-center">
-                        <div class = "col-3">
-                            <div id="lines" class="mb-3">
-                                <div id="line1"></div>
-                                <div id="line2"></div>
-                                <div id="line3"></div>
+    <div class="container-fluid bg-light">
+        <section class="survey-section">
+            <div class="container">
+                <div class="row text-center mb-4">
+                    <div class="col-12">
+                        <h4 class="mb-3" style="color:#2a6161;">WANT A MORE HANDS-ON APPROACH?</h4>
+                        <p class="">For your peace of mind, we are offering!</p>
+                        <h3 class="mb-1 text-black">ON-SITE SURVEY</h3>
+                        <div class="row justify-content-center">
+                            <div class = "col-3">
+                                <div id="lines" class="mb-3">
+                                    <div id="line1"></div>
+                                    <div id="line2"></div>
+                                    <div id="line3"></div>
+                                
+                            </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                        <p class="col-7 text-black">Our team will visit your space, take measurements, and assess your needs. After that, the design for the custom kitchen unit will be finalized online.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row text-center mb-4">
+                    <div class="col-12">
+                        <h4 class="mb-4 text-black">BENEFITS</h4>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="p-4 bg-white rounded">
+                            <div class="benefit-icon">
+                                <i class="bi bi-calculator"></i>
+                            </div>
+                            <h4 class=""><b>01.</b> Extensive study of your space by a professional.</h4>
                             
                         </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="p-4 bg-white rounded">
+                            <div class="benefit-icon">
+                                {{-- <i class="bi bi-coin"></i> --}}
+                                <img src="{{ asset('images/no-hidden.png') }}"/>
+                            </div>
+                            <h4><b>02.</b> Transparent pricing, No </br>hidden charges</h4>
+                            {{-- <p class="text-muted">No hidden charges</p> --}}
                         </div>
                     </div>
-                    <div class="row justify-content-center">
-                    <p class="col-7 text-black">Our team will visit your space, take measurements, and assess your needs. After that, the design for the custom kitchen unit will be finalized online.</p>
+                    <div class="col-md-4 mb-3">
+                        <div class="p-4 bg-white rounded">
+                            <div class="benefit-icon">
+                                <i class="bi bi-currency-dollar"></i>
+                            </div>
+                            <h4><b>03.</b> Survey payment is deducted from your final bill</h4>
+                            
+                            {{-- <p class="text-muted"></p> --}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p class=" mb-3 text-black">
+                        <span class="text-danger"> *</span>The advance payment for this survey will be deducted from your final bill, ensuring that you're only paying for your kitchen.
+                        </p>
+                        <h4 class="mb-4" style="color:#2a6161">
+                            Concerned about not getting the right measurements? Let our professionals handle it for you.
+                        </h4>
+                        <a href="#" class=" btn btn-lg px-5 rounded-0" style="background-color: #ffc107;">BOOK AN ON-SITE SURVEY NOW!</a>
                     </div>
                 </div>
             </div>
-
-            <div class="row text-center mb-4">
-                <div class="col-12">
-                    <h4 class="mb-4 text-black">BENEFITS</h4>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="p-4 grid-box-gray-color rounded">
-                        <div class="benefit-icon">
-                            <i class="bi bi-calculator"></i>
-                        </div>
-                        <h4 class=""><b>01.</b> Extensive study of your space by a professional.</h4>
-                        
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="p-4 grid-box-gray-color rounded">
-                        <div class="benefit-icon">
-                            {{-- <i class="bi bi-coin"></i> --}}
-                            <img src="{{ asset('images/no-hidden.png') }}"/>
-                        </div>
-                        <h4><b>02.</b> Transparent pricing, No </br>hidden charges</h4>
-                        {{-- <p class="text-muted">No hidden charges</p> --}}
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="p-4 grid-box-gray-color rounded">
-                        <div class="benefit-icon">
-                            <i class="bi bi-currency-dollar"></i>
-                        </div>
-                        <h4><b>03.</b> Survey payment is deducted from your final bill</h4>
-                        
-                        {{-- <p class="text-muted"></p> --}}
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 text-center">
-                    <p class=" mb-3 text-black">
-                       <span class="text-danger"> *</span>The advance payment for this survey will be deducted from your final bill, ensuring that you're only paying for your kitchen.
-                    </p>
-                    <h4 class="mb-4" style="color:#2a6161">
-                        Concerned about not getting the right measurements? Let our professionals handle it for you.
-                    </h4>
-                    <a href="#" class=" btn btn-lg px-5 rounded-0" style="background-color: #ffc107;">BOOK AN ON-SITE SURVEY NOW!</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-</div>
+        </section>
+    </div>
 
     {{-- <section class="container-fluid bg-yellow-color2 py-2">
         <div class="col-12 d-flex flex-column align-items-center">
@@ -817,8 +816,7 @@
     {{-- @include('frontend.key_designs') --}}
     
 
-    <section class="container-fluid  pt-5 pb-3" style="background-color:#f2f4f5">
-        <div>
+    <section class="container-fluid bg-white pt-5 pb-3">
         <div class="col-12 d-flex flex-column align-items-center">
             <p class="text-center fw-bold">CUSTOM KITCHENS, TIMELESS ELEGANCE.</p>
             <h3 class="text-dark text-center fw-bolder">
@@ -828,19 +826,19 @@
                 <div id="line1"></div>
                 <div id="line2"></div>
                 <div id="line3"></div>
-            
+            </div>
+            <p class="text-center text-dark w-75">
+                We offer premium, bespoke designer kitchens at competitive prices. Our process is straight forward
+            </p>
         </div>
-        <p class="text-center text-dark w-75">
-            We offer premium, bespoke designer kitchens at competitive prices. Our process is straight forward
-        </p>
     </section>
 
 
-<div class="container-fluid py-3" style="background-color:#f2f4f5">
+<div class="container-fluid py-3" style="background-color:#fff">
     <section class="container pb-4">
         <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="card border-0 h-100">
+                <div class="card border-0 h-100 bg-light">
                     <div class="card-body text-center p-4">
                         <div class="card-icon">
                             <i class="bi bi-card-list text-warning" style="font-size: 3rem; margin-bottom: 1rem; color: #ffc107"></i>
@@ -853,7 +851,7 @@
             </div>
 
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="card border-0 h-100">
+                <div class="card border-0 h-100 bg-light">
                     <div class="card-body text-center p-4">
                         <div class="card-icon">
                             <i class="bi bi-cash-stack" style="font-size: 3rem; margin-bottom: 1rem; color: #ffc107"></i>
@@ -866,7 +864,7 @@
             </div>
 
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="card border-0 h-100">
+                <div class="card border-0 h-100 bg-light">
                     <div class="card-body text-center p-4">
                         <div class="card-icon">
                             <i class="bi  bi-clipboard-check" style="font-size: 3rem; margin-bottom: 1rem; color: #ffc107;"></i>
@@ -891,13 +889,13 @@
 
 
 
-    <section class="container-fluid py-4">
+    <section class="container-fluid py-4 bg-light">
         <div class="col-12 d-flex flex-column align-items-center">
             <h6 class=" text-center fw-bold">
                 ARE YOU STRUGGLING WITH KITCHEN STORAGE SPACE?
             </h6>
             <h3 class="text-center text-dark w-75 fw-bolder">
-                Explore BESPOKE MAX STORAGE KITCHENS
+                EXPLORE BESPOKE MAX STORAGE KITCHENS
             </h3>
             <div id="lines" class="mb-3">
                 <div id="line1"></div>
@@ -908,34 +906,35 @@
         </div>
     </section>
 
-    <section class="container bg-white py-4">
-        <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
-                <div class="card border-0">
+    <section class="container-fluid bg-light py-4">
+        <div class="container">
+        <div class="row bg-light">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0 bg-light">
+                <div class="card border-0 bg-light">
                     <div class="" style="height: 250px; width: 100%">
                         <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="{{ asset('images/homepage.jpeg') }}" alt="">
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
-                <div class="card border-0">
-                    <div class="px-5 grid-box-gray-color d-flex flex-column align-items-center justify-content-center" style="height: 250px; width: 100%">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0 bg-light">
+                <div class="card border-0 bg-light">
+                    <div class="px-5 bg-white d-flex flex-column align-items-center justify-content-center" style="height: 250px; width: 100%">
                         <h4 class=" fw-bold text-center">02.</h4>
                         <h4 class=" fw-bold text-center">TALLEST UNITS</h4>
                         <p class=" text-center">Floor-to-ceiling cupboards for extra storage. Ideal for small kitchens needing vertical space.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
-                <div class="card border-0">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0 bg-light">
+                <div class="card border-0 bg-light">
                     <div class="" style="height: 250px; width: 100%">
                         <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="{{ asset('images/homepage.jpeg') }}" alt="">
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
-                <div class="card border-0">
-                    <div class="px-5 grid-box-gray-color d-flex flex-column align-items-center justify-content-center" style="height: 250px; width: 100%">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0 bg-light">
+                <div class="card border-0 bg-light">
+                    <div class="px-5 bg-white d-flex flex-column align-items-center justify-content-center" style="height: 250px; width: 100%">
                         
                         <h4 class=" fw-bold text-center">01.</h4>
                         
@@ -944,16 +943,16 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
-                <div class="card border-0">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0 bg-light">
+                <div class="card border-0 bg-light">
                     <div class="" style="height: 250px; width: 100%">
                         <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="{{ asset('images/homepage.jpeg') }}" alt="">
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
-                <div class="card border-0">
-                    <div class="px-5 grid-box-gray-color d-flex flex-column align-items-center justify-content-center" style="height: 250px; width: 100%">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0 bg-light">
+                <div class="card border-0 bg-light">
+                    <div class="px-5 bg-white d-flex flex-column align-items-center justify-content-center" style="height: 250px; width: 100%">
                         <h4 class=" fw-bold text-center">03.</h4>
                         <h4 class=" fw-bold text-center">WIDEST UNITS</h4>
                         <p class="text-center">Wide drawers for organized storage of kitchens essentials. Make use of every inch efficiently.</p>
@@ -961,16 +960,17 @@
                 </div>
             </div>
         </div>
-        <div class="mt-5 row justify-content-center">
-          <div class="col-lg-5 col-12">
+        <div class="mt-5 row justify-content-center bg-light">
+          <div class="col-lg-5 col-12 bg-light">
             <h4 style="color:#2a6161" class="text-center">Say Goodbye to clutter with bespoke max storage kitchens. </h4>
           </div>
 
         </div>
-        <div class = "row justify-content-center">
-            <div class ="col-lg-3 col-12">
+        <div class="row justify-content-center bg-light">
+            <div class ="col-lg-3 col-12 bg-light">
                 <a class="btn px-5 rounded-0" style="background-color:#febd49">Maximize your space now!</a>
             </div>
+        </div>
         </div>
     </section>
 
