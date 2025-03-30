@@ -68,15 +68,15 @@
                 <h5>Assembly Options:</h5>
                 <p>Please choose one</p>
                 <div class="d-flex">
-                    <div class="option-box">Flat Pack</div>
-                    <div class="option-box">Rigid</div>
+                    <a href="{{ route('orderkitchenbycolour', [$styleHasColour->style?->slug, 'flat-pack', $styleHasColour->colour?->slug]) }}" data-assembly-slug="flat-pack" class="option-box">Flat Pack</a>
+                    <a href="{{ route('orderkitchenbycolour', [$styleHasColour->style?->slug, 'rigid', $styleHasColour->colour?->slug]) }}" data-assembly-slug="rigid" class="option-box">Rigid</a>
                 </div>
                 <div class="mt-4">
                     <h5>Other available Colours</h5>
-                    <select class="form-select color-dropdown">
+                    <select class="form-select color-dropdown" id="colour-dropdown">
                         <option selected disabled>Select colour options</option>
                         @foreach (\App\Models\StyleHasColour::where('style_id', $styleHasColour->style_id)->where('status', 1)->get() as $colourOption)
-                            <option value="{{ $colourOption->colour_id }}" {{ $styleHasColour->colour_id == $colourOption->colour_id ? 'selected' : '' }}>{{ $colourOption->colour?->trade_colour }}</option>
+                            <option value="{{ $colourOption->colour?->slug }}" {{ $styleHasColour->colour_id == $colourOption->colour_id ? 'selected' : '' }}>{{ $colourOption->colour?->trade_colour }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -214,5 +214,17 @@
 
 
     </div>
+    @push('scripts')
+        <script>
+            $(document).ready(function() {
+                $(document).on('change', '#colour-dropdown', function() {
+                    var colourSlug = $(this).val();
+                    var url = "{{route('orderkitchenbycolourname', [':styleSlug', ':colourSlug'])}}";
+                    url = url.replace(':styleSlug', '{{ $styleHasColour->style?->slug }}').replace(':colourSlug', colourSlug);
+                    window.location.href = url;
+                });
+            });
+        </script>
+    @endpush
     
 </x-guest-layout>
