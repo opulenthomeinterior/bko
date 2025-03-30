@@ -114,7 +114,7 @@
                     <!-- Doors Card -->
                     <div class="col-12 col-sm-6 col-lg-4">
                         <div class="card component-card shadow-sm">
-                            <img src="{{$component->image_path}}" alt="{{$component->name}}" class="component-img">
+                            <img src="{{ $component->image_path ? asset('imgs/categories/' . $component->image_path) : asset('images/no-image-available.jpg') }}" alt="{{$component->name}}" class="component-img">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $component->name }}</h5>
                                 
