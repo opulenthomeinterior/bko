@@ -1,31 +1,4 @@
 <x-guest-layout>
-    <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-         .product-img {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-        }
-        .quantity-control {
-            width: 120px;
-        }
-        .breadcrumb-item a {
-            color: #ffc107;
-            text-decoration: none;
-        }
-        .remove-item {
-            cursor: pointer;
-            color: #6c757d;
-        }
-        .remove-item:hover {
-            color: #dc3545;
-        }
-        .cart-heading {
-            font-weight: 600;
-        }
-    </style>
-    </head>
     <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -36,14 +9,7 @@
         </nav>
 
         <div class="row bg-light py-5">
-            <h1 class="text-center mb-4">YOUR CART</h1>
-        
-            <div class="d-flex justify-content-center mb-4">
-                <a href="#" class="btn btn-warning px-4 text-black">
-                    SHOP MORE <i class="fas fa-shopping-cart ms-2 text-black"></i>
-                </a>
-            </div>
-            {{-- <div class="col-12">
+            <div class="col-12">
                 <h1 class="fs-1 text-dark text-uppercase fw-bolder text-center">
                     Your Cart
                 </h1>
@@ -52,142 +18,13 @@
                 <button class="btn btn-warning">
                     Shop more
                 </button>
-            </div> --}}
+            </div>
         </div>
     </section>
 
-    <section class="container px-lg-5 px-md-3 px-3 py-3">
+    <section class="container-fluid px-lg-5 px-md-3 px-3 py-3">
         <div class="row">
-
-            <div class="col-lg-8 mb-4">
-                <div class="card">
-                    <div class="card-header bg-warning">
-                        <div class="row cart-heading">
-                            <div class="col-md-5">Product</div>
-                            <div class="col-md-2 text-center">Price</div>
-                            <div class="col-md-2 text-center">Quantity</div>
-                            <div class="col-md-3 text-end">Subtotal</div>
-                        </div>
-                    </div>
-                    <div class="card-body p-0">
-                        <!-- Product 1 -->
-                        <div class="row border-bottom p-3 align-items-center">
-                            <div class="col-md-5">
-                                <div class="d-flex align-items-center">
-                                    <span class="remove-item me-3"><i class="fas fa-times"></i></span>
-                                    <img src="https://via.placeholder.com/80" alt="Kitchen" class="product-img me-3">
-                                    <div>
-                                        <h6 class="mb-0">J-Pull Kitchen</h6>
-                                        <small class="text-muted">Color: Grey | Assembly: Rigid</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-2 text-center">£4000.00</div>
-                            <div class="col-md-2">
-                                <div class="input-group quantity-control mx-auto">
-                                    <button class="btn btn-outline-secondary" type="button">-</button>
-                                    <input type="text" class="form-control text-center" value="1">
-                                    <button class="btn btn-outline-secondary" type="button">+</button>
-                                </div>
-                            </div>
-                            <div class="col-md-3 text-end">£4000.00</div>
-                        </div>
-                        
-                        <!-- Product 2 -->
-                        <div class="row border-bottom p-3 align-items-center">
-                            <div class="col-md-5">
-                                <div class="d-flex align-items-center">
-                                    <span class="remove-item me-3"><i class="fas fa-times"></i></span>
-                                    <img src="https://via.placeholder.com/80" alt="Sink" class="product-img me-3">
-                                    <div>
-                                        <h6 class="mb-0">Sink</h6>
-                                        <small class="text-muted">Color: Stainless White</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-2 text-center">£280.00</div>
-                            <div class="col-md-2">
-                                <div class="input-group quantity-control mx-auto">
-                                    <button class="btn btn-outline-secondary" type="button">-</button>
-                                    <input type="text" class="form-control text-center" value="1">
-                                    <button class="btn btn-outline-secondary" type="button">+</button>
-                                </div>
-                            </div>
-                            <div class="col-md-3 text-end">£280.00</div>
-                        </div>
-                        
-                        <!-- Product 3 -->
-                        <div class="row border-bottom p-3 align-items-center">
-                            <div class="col-md-5">
-                                <div class="d-flex align-items-center">
-                                    <span class="remove-item me-3"><i class="fas fa-times"></i></span>
-                                    <img src="https://via.placeholder.com/80" alt="Cabinet" class="product-img me-3">
-                                    <div>
-                                        <h6 class="mb-0">Ladder Cabinet</h6>
-                                        <small class="text-muted">Color: Grey | 1670mm high</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-2 text-center">£400.00</div>
-                            <div class="col-md-2">
-                                <div class="input-group quantity-control mx-auto">
-                                    <button class="btn btn-outline-secondary" type="button">-</button>
-                                    <input type="text" class="form-control text-center" value="2">
-                                    <button class="btn btn-outline-secondary" type="button">+</button>
-                                </div>
-                            </div>
-                            <div class="col-md-3 text-end">£800.00</div>
-                        </div>
-                        
-                        <!-- Product 4 -->
-                        <div class="row border-bottom p-3 align-items-center">
-                            <div class="col-md-5">
-                                <div class="d-flex align-items-center">
-                                    <span class="remove-item me-3"><i class="fas fa-times"></i></span>
-                                    <img src="https://via.placeholder.com/80" alt="Door" class="product-img me-3">
-                                    <div>
-                                        <h6 class="mb-0">UltraMatt Door</h6>
-                                        <small class="text-muted">Color: Black | Assembly: Stock</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-2 text-center">£120.00</div>
-                            <div class="col-md-2">
-                                <div class="input-group quantity-control mx-auto">
-                                    <button class="btn btn-outline-secondary" type="button">-</button>
-                                    <input type="text" class="form-control text-center" value="1">
-                                    <button class="btn btn-outline-secondary" type="button">+</button>
-                                </div>
-                            </div>
-                            <div class="col-md-3 text-end">£120.00</div>
-                        </div>
-                        
-                        <!-- Product 5 -->
-                        <div class="row p-3 align-items-center">
-                            <div class="col-md-5">
-                                <div class="d-flex align-items-center">
-                                    <span class="remove-item me-3"><i class="fas fa-times"></i></span>
-                                    <img src="https://via.placeholder.com/80" alt="Microwave" class="product-img me-3">
-                                    <div>
-                                        <h6 class="mb-0">Microwave Oven</h6>
-                                        <small class="text-muted">Color: Silver</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-2 text-center">£500.00</div>
-                            <div class="col-md-2">
-                                <div class="input-group quantity-control mx-auto">
-                                    <button class="btn btn-outline-secondary" type="button">-</button>
-                                    <input type="text" class="form-control text-center" value="1">
-                                    <button class="btn btn-outline-secondary" type="button">+</button>
-                                </div>
-                            </div>
-                            <div class="col-md-3 text-end">£500.00</div>
-                        </div>
-                    </div>
-                </div>
-
-            {{-- <div class="col-lg-8">
+            <div class="col-lg-8">
                 <div class="card border-primary p-0">
                     <div class="card-body p-0">
                         <!-- <h4 class="fw-bold text-dark ">Cart Summary</h4> -->
@@ -207,21 +44,9 @@
                          </div>
                     </div>
                 </div>
-            </div> --}}
+            </div>
 
-                      <!-- Back button and Coupon -->
-                      <div class="d-flex justify-content-between align-items-center mt-3">
-                        <a href="#" class="btn  bg-warning">
-                            <i class="fas fa-arrow-left me-2"></i> Back
-                        </a>
-                        
-                        <div class="d-flex">
-                            <input type="text" class="form-control me-2" placeholder="Coupon code">
-                            <button class="btn btn-warning">APPLY COUPON</button>
-                        </div>
-                    </div>
-                </div>
-            {{-- <div class="col-lg-4 mt-4 p-4 mb-3 pb-3 border border-primary rounded">
+            <div class="col-lg-4 mt-4 p-4 mb-3 pb-3 border border-primary rounded">
                 <h4 class="fw-bold text-dark ">Order Summary</h4>
                 <hr class="mx-n4">
                 <div class="bg-white py-2">
@@ -252,47 +77,9 @@
                         </div>
                     </div>
                 </div>
-            </div> --}}
-             <!-- Order Summary -->
-             <div class="col-lg-4">
-                <div class="card mb-3">
-                    <div class="card-header bg-white">
-                        <h5 class="mb-0">ORDER SUMMARY</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>Items</span>
-                            <span>6</span>
-                        </div>
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>Sub Total</span>
-                            <span>£5700.00</span>
-                        </div>
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>Shipping</span>
-                            <span>£00.00</span>
-                        </div>
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>Taxes</span>
-                            <span>£00.00</span>
-                        </div>
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>Coupon Discount</span>
-                            <span>-£00.00</span>
-                        </div>
-                        <hr>
-                        <div class="d-flex justify-content-between fw-bold">
-                            <span>Total</span>
-                            <span>£5700.00</span>
-                        </div>
-                    </div>
-                </div>
-                <button class="btn w-100 py-3 text-white" style="background-color:#198754">PROCEED TO CHECKOUT</button>
-                
-                <div class="d-flex justify-content-end mt-3">
-                    <a href="#" class="text-decoration-none text-secondary text-black">Clear shopping cart</a>
-                </div>
-            {{-- <div class="col-lg-8">
+            </div>
+
+            <div class="col-lg-8">
                 
                 <div class="row py-2">
                     <div class="col-sm-4">
@@ -315,12 +102,12 @@
                         Clear Shopping Cart
                     </div>
                 </div>
-            </div> --}}
+            </div>
         </div>
     </section>
 
 
-    <section class="container px-lg-5 px-md-3 px-3 py-lg-5 py-3">
+    <section class="container-fluid px-lg-5 px-md-3 px-3 py-lg-5 py-3">
         <div class="row">
             <div class="col-12">
                 <div class="payment-logos d-inline-block position-relative px-4 py-3" style="border: 1px solid black">
