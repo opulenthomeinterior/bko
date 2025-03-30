@@ -111,7 +111,7 @@
                                                                 @else
                                                                     <div class="card border border-default p-3">
                                                                         <label for="" class="form-label">
-                                                                            FAQ
+                                                                            Heading
                                                                         </label>
                                                                         <input type="text" name="section_main_heading[]" class="form-control" placeholder="Enter Heading">
                                                                         <label for="" class="form-label">
