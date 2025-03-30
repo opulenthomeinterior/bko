@@ -41,7 +41,7 @@
 </head>
 <body>
     <a href="https://bkonline.uk" class="header">
-        <img src="https://bkonline.uk/public/images/logoBko.png" height="50px" width="100px" alt="">
+        <img src="https://bkonline.uk/public/images/bko-black-logo.png" height="50px" width="100px" alt="">
     </a>
     <div class="thank-you">Thank You!</div>
     <div class="thank-you-timer">Redirecting in 5 seconds...</div>
