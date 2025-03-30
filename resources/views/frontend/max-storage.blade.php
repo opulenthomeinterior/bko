@@ -257,7 +257,7 @@
                         <div class="d-block">
                             <div class="text-center text-dark fw-bold">FOR FREE SURVEY AND QUOTE <span class="text-warning"> CALL US NOW!</span></div>
                             <div class="d-flex justify-content-center">
-                                <a href="tel:02080505605" class="text-center text-dark fs-4 fw-bold">
+                                <i class="bi bi-phone text-dark"></i> <a href="tel:02080505605" class="text-decoration-underline text-center text-dark fs-4 fw-bold">
                                     020 805 05605
                                 </a>
                             </div>

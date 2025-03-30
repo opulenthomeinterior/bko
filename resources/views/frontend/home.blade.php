@@ -968,7 +968,7 @@
         </div>
         <div class="row justify-content-center bg-light">
             <div class ="col-lg-3 col-12 bg-light">
-                <a class="btn px-5 rounded-0" style="background-color:#febd49">Maximize your space now!</a>
+                <a href="{{ route('max_storage') }}" class="btn px-5 rounded-0" style="background-color:#febd49">Maximize your space now!</a>
             </div>
         </div>
         </div>
