@@ -374,7 +374,7 @@
                                     @csrf
                                     <h3 class="text-white text-center">For free survey, <b class="text-yellow-color2">CALL US NOW!</b></h3>
                                     <div class="text-center">
-                                        <a href="tel:02080505605" class="text-white fs-4 fw-bold">020 805 05605</a>
+                                        <i class="bi bi-phone text-white"></i> <a href="tel:02080505605" class="text-decoration-underline text-white fs-4 fw-bold">020 805 05605</a>
                                     </div>
                                     <hr class="border-warning">
             
