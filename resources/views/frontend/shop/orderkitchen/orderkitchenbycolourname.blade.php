@@ -51,7 +51,7 @@
         </nav>
 
         <!-- Product Title -->
-        <h1 class="product-title text-center my-4">{{ $styleHasColour->colour?->trade_colour }}</h1>
+        <h1 class="product-title text-center my-4">{{ $styleHasColour->colour->trade_colour ?? '' }}</h1>
 
         <!-- Product Description -->
         <div class="row mb-5">
@@ -68,25 +68,25 @@
                 <h5>Assembly Options:</h5>
                 <p>Please choose one</p>
                 <div class="d-flex">
-                    <a href="{{ route('orderkitchenbycolour', [$styleHasColour->style?->slug, 'flat-pack', $styleHasColour->colour?->slug]) }}" data-assembly-slug="flat-pack" class="option-box">Flat Pack</a>
-                    <a href="{{ route('orderkitchenbycolour', [$styleHasColour->style?->slug, 'rigid', $styleHasColour->colour?->slug]) }}" data-assembly-slug="rigid" class="option-box">Rigid</a>
+                    <a href="{{ route('orderkitchenbycolour', [$styleHasColour->style->slug ?? '', 'flat-pack', $styleHasColour->colour->slug ?? '']) }}" data-assembly-slug="flat-pack" class="option-box">Flat Pack</a>
+                    <a href="{{ route('orderkitchenbycolour', [$styleHasColour->style->slug ?? '', 'rigid', $styleHasColour->colour->slug ?? '']) }}" data-assembly-slug="rigid" class="option-box">Rigid</a>
                 </div>
                 <div class="mt-4">
                     <h5>Other available Colours</h5>
                     <select class="form-select color-dropdown" id="colour-dropdown">
                         <option selected disabled>Select colour options</option>
-                        @foreach (\App\Models\StyleHasColour::where('style_id', $styleHasColour->style_id)->where('status', 1)->get() as $colourOption)
-                            <option value="{{ $colourOption->colour?->slug }}" {{ $styleHasColour->colour_id == $colourOption->colour_id ? 'selected' : '' }}>{{ $colourOption->colour?->trade_colour }}</option>
+                        @foreach (\App\Models\StyleHasColour::where('style_id', $styleHasColour->style_id ?? '')->where('status', 1)->get() as $colourOption)
+                            <option value="{{ $colourOption->colour->slug ?? '' }}" {{ $styleHasColour->colour_id == $colourOption->colour_id ? 'selected' : '' }}>{{ $colourOption->colour->trade_colour ?? '' }}</option>
                         @endforeach
                     </select>
                 </div>
             </div>
             <div class="col-md-6">
                 <h5>Finish:</h5>
-                <div class="option-box active">{{ $styleHasColour->colour->finishing }}</div>
+                <div class="option-box active">{{ $styleHasColour->colour->finishing ?? '' }}</div>
                 <p class="mt-2">This finish makes your kitchen reflective and smooth, making it easy to keep your surfaces clean.</p>
                 <h5>Main Colour:</h5>
-                <div class="option-box active mb-4">{{ $styleHasColour->colour->name }}</div>
+                <div class="option-box active mb-4">{{ $styleHasColour->colour->name ?? '' }}</div>
             </div>
         </div>
 
@@ -150,7 +150,7 @@
             </div>
             <div class="row bg-white">
                 @php
-                    $catIds = json_decode($styleHasColour->suitable_components);
+                    $catIds = json_decode($styleHasColour->suitable_components ?? json_encode([]));
                     $categories = \App\Models\Category::whereIn('id', $catIds)->get();
                 @endphp
                 <div class="d-flex order-component-scroller" style="max-width: 1900px; overflow-x: scroll">
@@ -220,7 +220,7 @@
                 $(document).on('change', '#colour-dropdown', function() {
                     var colourSlug = $(this).val();
                     var url = "{{route('orderkitchenbycolourname', [':styleSlug', ':colourSlug'])}}";
-                    url = url.replace(':styleSlug', '{{ $styleHasColour->style?->slug }}').replace(':colourSlug', colourSlug);
+                    url = url.replace(':styleSlug', '{{ $styleHasColour->style->slug ?? '' }}').replace(':colourSlug', colourSlug);
                     window.location.href = url;
                 });
             });

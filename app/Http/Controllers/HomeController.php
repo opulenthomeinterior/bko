@@ -123,6 +123,10 @@ class HomeController extends Controller
             
             $seo = StyleSeo::where('style_id', $style->id)->first();
 
+            if (!isset($style) || !isset($colour) || !isset($styleHasColour) || !isset($seo)) {
+                return redirect()->route('orderkitchen');
+            }
+
             return view('frontend.shop.orderkitchen.orderkitchenbycolourname', compact('style', 'styleHasColour', 'seo'));
         } catch (\Exception $e) {
             return redirect()->route('orderkitchen');
