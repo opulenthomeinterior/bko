@@ -394,6 +394,7 @@ function cart_total_amount() {
       totalAmount += product.quantity * product.price;
    });
 
+   $('#itemsCount').html(`${products.length}`);
    $('#cartTotalAmount_side').html(`£${(totalAmount).toFixed(2)}`);
    $('#cartTotalAmount').html(`£${(totalAmount).toFixed(2)}`);
    $('#cartTotalAmountWithVAT').html(`£${(totalAmount).toFixed(2)}`);
@@ -557,6 +558,55 @@ function orderKitchenCartItemsList() {
       $cartItemsList.append(`<div class="col-12"><p class="text-white fw-bold m-0"><i class="ri-btn ri-delete-bin-line" onclick="removeFromCart(${product.id}, '${product.productCode}')" ></i>&nbsp; <small class="fw-normal">${product.quantity} x ${product.full_title}</small></p></div>`);
    });
 }
+function clearShoppingCart()
+{
+   localStorage.removeItem('bko_cart');
+   const $cartContainer = $('#cartContainer');
+   $cartContainer.empty();
+
+   const $emptyCart = $('#emptyCart');
+   $emptyCart.html(`You have no items in your cart, so you cannot checkout.`);
+   // const $cartTableBody = $('#productCartTableBody');
+   // $cartTableBody.empty();
+   // $cartTableBody.html(`
+   //     <td colspan="5" class="text-center py-5">No items in cart</td>
+   //    `);
+
+
+   // const $orderSummaryCard = $('#orderSummaryCard');
+   // $orderSummaryCard.empty();
+   
+   // $orderSummaryCard.html(`
+      
+   //    <div class="card-header bg-white">
+   //                      <h5 class="mb-0 fw-bold text-primary">ORDER SUMMARY</h5>
+   //                  </div>
+   //                  <div class="card-body">
+   //                      <div class="d-flex justify-content-between mb-2">
+   //                          <span>Items</span>
+   //                          <span id="itemsCount">0</span>
+   //                      </div>
+   //                      <div class="d-flex justify-content-between mb-2">
+   //                          <span>Sub Total</span>
+   //                          <span id="cartTotalAmount">£0</span>
+   //                      </div>
+                        
+   //                      <hr>
+   //                      <div class="d-flex justify-content-between fw-bold">
+   //                          <span>Total</span>
+   //                          <span id="cartTotalAmountWithVAT">£0</span>
+   //                      </div>
+   //                  </div>
+   //    `);
+  
+}
+
+$(document).ready(function() {
+   // Button par click hone par function call karen
+   $('#clearShoppingCart').click(function() {
+     clearShoppingCart();
+   });
+ });
 
 function updateCartPage() {
    let products = localStorage.getItem('bko_cart');
@@ -571,20 +621,94 @@ function updateCartPage() {
 
    var cartTableHtml = ``;
    products.forEach(product => {
-      cartTableHtml += `<tr>`;
-      cartTableHtml += `<td>`;
-      cartTableHtml += `<i class='ri-btn ri-subtract-line' onclick="decreaseQuantityInCartPage('${product.id}', '${product.productCode}', '${product.full_title}', ${product.price}, ${product.discount_price}, ${product.discount_percentage}, '${product.p_category}')"></i>`;
-      cartTableHtml += `<i class='ri-btn ri-add-line' ${product.price == 0 ? 'disabled' : ''} onclick="increaseQuantityInCartPage('${product.id}', '${product.productCode}', '${product.full_title}', ${product.price}, ${product.discount_price}, ${product.discount_percentage}, '${product.p_category}')"></i>`;
-      cartTableHtml += `<i class='ri-btn ri-delete-bin-line' onclick="removeFromCart(${product.id}, '${product.productCode}')"></i>`;
-      cartTableHtml += `</td>`;
-      cartTableHtml += `<td><figure><img class="product-image px-0 mx-2 img-fluid" src="https://bkonline.uk/public/imgs/products/Highline-Base1727814394_66fc5afa31d81.jpg" alt="Product Image" style="height: 50px; width: 50px; object-fit: cover;"></figure>${product.full_title}&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" data-productId="${product.id}" class="openCompareModel text-decoration-underline text-danger" style="font-size: 12px;" data-toggle="modal" data-target="#myModal">Compare</a>&nbsp;&nbsp;<a href="javascript:void(0)" data-productId="${product.id}" class="openChangeStyleModal text-decoration-underline text-primary" style="font-size: 12px;" data-bs-toggle="modal" data-bs-target="#cart-items-modal" data-product-id="${product.id}">Change Style</a></td>`;
-      cartTableHtml += `<td>£${(product.price).toFixed(2)}</td>`;
-      cartTableHtml += `<td>${product.quantity}</td>`;
-      cartTableHtml += `<td class='text-end'>£${(product.quantity * product.price).toFixed(2)}</td>`;
-      cartTableHtml += `</tr>`;
+      cartTableHtml +=`
+                            <tr class="border-bottom" >
+                            <td class="py-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="me-3">
+                                        <span class="remove-btn" onClick="removeFromCart('${product.id}', '${product.productCode}')">&times;</span>
+                                    </div>
+                                    <div class="me-3">
+                                        <img src="https://bkonline.uk/public/imgs/products/Highline-Base1727814394_66fc5afa31d81.jpg" alt="Kitchen" class="product-image img-fluid border border-primary" 
+style="max-width: 100px; height: auto; object-fit: cover;"
+ >
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-1 fw-bold">${product.full_title}</h5>
+                                       
+                                        <p class="text-muted mb-0">Color: gray | Assembly: Rigid</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="py-3 px-3 text-center align-middle">£${(product.price).toFixed(2)}</td>
+                            <td class="py-3 px-3 text-center align-middle">
+                             <div class="d-flex flex-lg-row flex-column align-items-center border border-dark justify-content-center " style="max-width: 200px; width: 100%;">
+    <button class="border-0 btn btn-quantity" onClick="decreaseQuantityInCartPage('${product.id}', '${product.productCode}')">-</button>
+    <input disabled type="text" class="border-0 form-control text-center mx-2 flex-grow-1" value="${product.quantity}">
+    <button class="border-0 btn btn-quantity" onClick="increaseQuantityInCartPage('${product.id}', '${product.productCode}')">+</button>
+</div>
+
+                            </td>
+                            <td class="py-3 text-end pe-4 align-middle">£${(product.quantity * product.price).toFixed(2)}</td>
+     </tr>
+      `;
+      // cartTableHtml += `<tr>`;
+      // cartTableHtml += `<td>`;
+      // cartTableHtml += `<i class='fas fa-times' onclick="decreaseQuantityInCartPage('${product.id}', '${product.productCode}', '${product.full_title}', ${product.price}, ${product.discount_price}, ${product.discount_percentage}, '${product.p_category}')"></i>`;
+      // cartTableHtml += `<i class='ri-btn ri-add-line' ${product.price == 0 ? 'disabled' : ''} onclick="increaseQuantityInCartPage('${product.id}', '${product.productCode}', '${product.full_title}', ${product.price}, ${product.discount_price}, ${product.discount_percentage}, '${product.p_category}')"></i>`;
+      // cartTableHtml += `<i class='ri-btn ri-delete-bin-line' onclick="removeFromCart(${product.id}, '${product.productCode}')"></i>`;
+      // cartTableHtml += `</td>`;
+      // cartTableHtml += `<td><figure><img class="product-image px-0 mx-2 img-fluid" src="https://bkonline.uk/public/imgs/products/Highline-Base1727814394_66fc5afa31d81.jpg" alt="Product Image" style="height: 50px; width: 50px; object-fit: cover;"></figure>${product.full_title}&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" data-productId="${product.id}" class="openCompareModel text-decoration-underline text-danger" style="font-size: 12px;" data-toggle="modal" data-target="#myModal">Compare</a>&nbsp;&nbsp;<a href="javascript:void(0)" data-productId="${product.id}" class="openChangeStyleModal text-decoration-underline text-primary" style="font-size: 12px;" data-bs-toggle="modal" data-bs-target="#cart-items-modal" data-product-id="${product.id}">Change Style</a></td>`;
+      // cartTableHtml += `<td>£${(product.price).toFixed(2)}</td>`;
+      // cartTableHtml += `<td>${product.quantity}</td>`;
+      // cartTableHtml += `<td class='text-end'>£${(product.quantity * product.price).toFixed(2)}</td>`;
+      // cartTableHtml += `</tr>`;
 
       $cartTableBody.html(cartTableHtml);
    });
+
+   // products.forEach(product => {
+   //    cartTableHtml += `<tr>`;
+   //    // Remove/X button column
+   //    cartTableHtml += `<td class="align-middle text-center" style="width: 40px;">`;
+   //    cartTableHtml += `<span class="text-secondary fw-bold cursor-pointer" style="font-size: 18px; cursor: pointer;" onclick="removeFromCart(${product.id}, '${product.productCode}')">×</span>`;
+   //    cartTableHtml += `</td>`;
+      
+   //    // Product column with image and details
+   //    cartTableHtml += `<td class="align-middle">`;
+   //    cartTableHtml += `<div class="d-flex bg-danger justify-content-start align-items-center">`;
+   //    cartTableHtml += `<div class="product-image me-3" style="width: 80px; min-width: 80px;">`;
+   //    cartTableHtml += `<img src="https://bkonline.uk/public/imgs/products/Highline-Base1727814394_66fc5afa31d81.jpg" alt="Product Image" style="width: 100%; height: auto; object-fit: contain;">`;
+   //    cartTableHtml += `</div>`;
+   //    cartTableHtml += `<div>`;
+   //    cartTableHtml += `<p class="mb-1 fw-medium">${product.full_title}</p>`;
+   //    cartTableHtml += `<p class="text-muted mb-1 small">Color not specified</p>`;
+   //    cartTableHtml += `<div class="mt-1">`;
+   //    cartTableHtml += `<a href="javascript:void(0)" data-productId="${product.id}" class="compare-link text-danger me-2" style="font-size: 12px;">Compare</a>`;
+   //    cartTableHtml += `<a href="javascript:void(0)" data-productId="${product.id}" class="change-style-link text-primary" style="font-size: 12px;">Change Style</a>`;
+   //    cartTableHtml += `</div>`;
+   //    cartTableHtml += `</div>`;
+   //    cartTableHtml += `</div>`;
+   //    cartTableHtml += `</td>`;
+      
+   //    // Price column
+   //    cartTableHtml += `<td class="align-middle text-start" style="width: 100px;">£${(product.price).toFixed(2)}</td>`;
+      
+   //    // Quantity column with +/- buttons
+   //    cartTableHtml += `<td class="align-middle" style="width: 120px;">`;
+   //    cartTableHtml += `<div class="d-flex border rounded">`;
+   //    cartTableHtml += `<button class="btn btn-sm border-0 px-2" style="background: none;" onclick="decreaseQuantityInCartPage('${product.id}', '${product.productCode}', '${product.full_title}', ${product.price}, ${product.discount_price}, ${product.discount_percentage}, '${product.p_category}')">-</button>`;
+   //    cartTableHtml += `<input type="text" class="form-control border-0 text-center p-0" value="${product.quantity}" style="width: 40px; min-width: 40px;">`;
+   //    cartTableHtml += `<button class="btn btn-sm border-0 px-2" style="background: none;" onclick="increaseQuantityInCartPage('${product.id}', '${product.productCode}', '${product.full_title}', ${product.price}, ${product.discount_price}, ${product.discount_percentage}, '${product.p_category}')">+</button>`;
+   //    cartTableHtml += `</div>`;
+   //    cartTableHtml += `</td>`;
+      
+   //    // Subtotal column
+   //    cartTableHtml += `<td class='align-middle text-end' style="width: 100px;">£${(product.quantity * product.price).toFixed(2)}</td>`;
+   //    cartTableHtml += `</tr>`;
+   // });
+   
+   $cartTableBody.html(cartTableHtml);
 }
 
 function createProductCard(product, type, cart_product_id = null, cart_product_code = null) {
@@ -594,7 +718,7 @@ function createProductCard(product, type, cart_product_id = null, cart_product_c
    productCard += `<div class="container-fluid">`;
    productCard += `<div class="row">`;
    productCard += `<div class="col-lg-6">`;
-   productCard += `<figure><img class="product-image px-0" style="height: 300px !important"  src="${product.image_path ? product_BIU + '/' + product.image_path : product_BIU + '/images/no-image-available.jpg'}" alt="${product.full_title}" style="height: 133px;object-fit: cover;"></figure>`;
+   productCard += `<figure><img class="product-image px-0" style="height: 150px !important"  src="${product.image_path ? product_BIU + '/' + product.image_path : product_BIU + '/images/no-image-available.jpg'}" alt="${product.full_title}" style="height: 120px;object-fit: cover;"></figure>`;
    productCard += `</div>`;
    productCard += `<div class="col-lg-6">`;
    productCard += `<div class="text-start">`;

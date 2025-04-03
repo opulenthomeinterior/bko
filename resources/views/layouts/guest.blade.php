@@ -304,10 +304,10 @@ use App\Models\Style;
         
         <div class="navbar-wrapper">
             <nav class="container-fluid top-navbar1 p-0 text-white">
-                <div class="text-center bg-danger py-2">
+                <div class="text-center bg-danger">
 
                     <div class="ticker-wrapper">
-                        <div class="ticker-text fs-5"><strong class="fw-bolder">Limited time offer!</strong> For a Limited Time, We are offering Free on-site surveys and consultations.</div>
+                        <div class="ticker-text"><strong class="fw-bold">Limited time offer!</strong> For a Limited Time, We are offering Free on-site surveys and consultations.</div>
                     </div>
                    
                     {{-- <span class="fw-bold text-white "> 
@@ -317,8 +317,8 @@ use App\Models\Style;
                         <small class="">For a limited time, we are offering free on-site surveys and consultations.</small>
                      --}}
                 </div>
-                <div class="text-center py-2" style="background-color:#222222;">
-                    <a class="btn text-warning btn-outline-default border-none px-4 py-2" href="{{route('max_storage')}}" style="letter-spacing: 6px;"> 
+                <div class="text-center" style="background-color:#222222;">
+                    <a class="btn text-warning btn-outline-default border-none px-4 " href="{{route('max_storage')}}" style="letter-spacing: 6px;"> 
                         VISIT MAX STORAGE KITCHEN
                     </a>
                 </div>
@@ -327,7 +327,7 @@ use App\Models\Style;
             <nav class="nav container-fluid p-0 text-black second-navbar">
                 <div class="nav__data ps-0 ps-md-5">
                     <a href="{{ route('home') }}" class="nav__logo text-start flex-grow-1">
-                        <img class="pt-3" src="{{ asset('images/bko-black-logo.png') }}" width="120px" />
+                        <img class="pt-3" src="{{ asset('images/bko-black-logo.png') }}" width="150px" />
                     </a>
 
                     <a href="#" class="d-lg-none show-small d-flex" id="searchIcon"><i
