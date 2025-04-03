@@ -51,6 +51,10 @@ Route::post('/truncate-all-data', function () {
     return redirect()->back();
 })->name('truncate_all_data');
 
+Route::get('thankyou', function () {
+    return view('frontend.thankyou');
+});
+
 Route::prefix('admin')->middleware(['auth', 'verified', 'role:super-admin'])->group(function () {
     // Dashboard
     Route::get('dashboard', [DashboardConroller::class, 'dashboard'])->name('dashboard')->middleware(['auth', 'verified']);
