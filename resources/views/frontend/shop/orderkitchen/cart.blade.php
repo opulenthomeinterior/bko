@@ -1,4 +1,35 @@
 <x-guest-layout>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
+         <style>
+        .header-row {
+            background-color: #ffbb33;
+            color: #000;
+            font-weight: bold;
+        }
+        /* .product-image {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+        } */
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+        }
+        .remove-btn {
+            color: #aaa;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .btn-quantity {
+            background-color: #f8f9fa;
+            border: 1px solid #ced4da;
+            width: 40px;
+        }
+    
+    </style>
+    </head>
     <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -7,9 +38,21 @@
                 <li class="breadcrumb-item"><a class="text-uppercase">Cart</a></li>
             </ol>
         </nav>
-
+    </section>
+    <div class = "container-fluid">
         <div class="row bg-light py-5">
             <div class="col-12">
+                <h1 class="text-center mb-4">YOUR CART</h1>
+                <h3 class="text-center mb-4 text-danger" id="emptyCart"></h3>
+                
+        
+                <div class="d-flex justify-content-center mb-4">
+                    <a href="https://bkonline.uk/shop" class="btn btn-warning px-4 text-black">
+                    SHOP MORE <i class="fas fa-shopping-cart ms-2 text-black"></i>
+                    </a>
+                </div>
+            </div>
+            {{-- <div class="col-12">
                 <h1 class="fs-1 text-dark text-uppercase fw-bolder text-center">
                     Your Cart
                 </h1>
@@ -18,24 +61,26 @@
                 <button class="btn btn-warning">
                     Shop more
                 </button>
-            </div>
+            </div> --}}
         </div>
-    </section>
+    
 
-    <section class="container-fluid px-lg-5 px-md-3 px-3 py-3">
+    <section class="container px-lg-5 px-md-3 px-3 py-3" id="cartContainer">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-12 col-lg-8 p-0">
                 <div class="card border-primary p-0">
                     <div class="card-body p-0">
-                        <!-- <h4 class="fw-bold text-dark ">Cart Summary</h4> -->
+                        <!-- <h4 class="fw-bold text-dark ">Cart Summary</h4> -->   
                          <div class="table-responsive">
                             <table class="table table-card">
                                 <thead class="bg-warning text-dark">
-                                    <th class="bg-warning text-dark">&nbsp;</th>
-                                    <th class="bg-warning text-dark">Product</th>
-                                    <th class="bg-warning text-dark">Price</th>
-                                    <th class="bg-warning text-dark">Qty</th>
+                                    <tr class="header-row">
+                                    {{-- <th class="bg-warning text-dark">&nbsp;</th> --}}
+                                    <th class="bg-warning text-dark ps-5">Product</th>
+                                    <th class="bg-warning text-dark text-center">Price</th>
+                                    <th class="bg-warning text-dark text-center">Qty</th>
                                     <th class="text-end bg-warning text-dark">SubTotal</th>
+                                    </tr>
                                 </thead>
                                 <tbody id="productCartTableBody">
                                     <td colspan="5" class="text-center py-5">No items in cart</td>
@@ -46,7 +91,8 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 mt-4 p-4 mb-3 pb-3 border border-primary rounded">
+
+            {{-- <div class="col-lg-4 mt-4 p-4 mb-3 pb-3 border border-primary rounded">
                 <h4 class="fw-bold text-dark ">Order Summary</h4>
                 <hr class="mx-n4">
                 <div class="bg-white py-2">
@@ -77,9 +123,41 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
-            <div class="col-lg-8">
+             <!-- Order Summary -->
+             <div class="col-lg-4">
+                <div class="card mb-3" id="orderSummaryCard">
+                    <div class="card-header bg-white">
+                        <h5 class="mb-0 fw-bold text-primary">ORDER SUMMARY</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Items</span>
+                            <span id="itemsCount">0</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Sub Total</span>
+                            <span id="cartTotalAmount">£0</span>
+                        </div>
+                        
+                        <hr>
+                        <div class="d-flex justify-content-between fw-bold">
+                            <span>Total</span>
+                            <span id="cartTotalAmountWithVAT">£0</span>
+                        </div>
+                    </div>
+                </div>
+           
+                <button class="btn btn-primary w-100 py-3">PROCEED TO CHECKOUT</button>
+                
+                <div class="d-flex justify-content-end mt-3">
+                    {{-- <a style"hover: cursor:pointer"  id="clearShoppingCart" class="text-decoration-none text-danger" onClick="clearShoppingCart">Clear shopping cart</a> --}}
+                    <button  id="clearShoppingCart" class="border-0 text-danger bg-white">Clear Shopping Cart</button>
+                </div>
+
+
+            {{-- <div class="col-lg-8">
                 
                 <div class="row py-2">
                     <div class="col-sm-4">
@@ -102,12 +180,30 @@
                         Clear Shopping Cart
                     </div>
                 </div>
+            </div> --}}
+
+            
+
+        </div>
+        <div class="row">
+            <div class="col-lg-8 p-0">
+                    <!-- Back button and Coupon -->
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <a href="#" class="btn btn-outline-primary text-dark" >
+                            <i class="fas fa-arrow-left me-2"></i> Back
+                        </a>
+                        
+                        <div class="d-flex">
+                            <input type="text" class="form-control border-primary me-2" placeholder="Coupon code">
+                            <button class="btn btn-warning text-dark">APPLY COUPON</button>
+                        </div>
+                    </div>
             </div>
         </div>
     </section>
 
 
-    <section class="container-fluid px-lg-5 px-md-3 px-3 py-lg-5 py-3">
+    <section class="container px-lg-5 px-md-3 px-3 py-lg-5 py-3">
         <div class="row">
             <div class="col-12">
                 <div class="payment-logos d-inline-block position-relative px-4 py-3" style="border: 1px solid black">
