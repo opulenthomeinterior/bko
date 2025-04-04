@@ -862,4 +862,8 @@ class HomeController extends Controller
         });
         return view('frontend.shop.wardrobes.index', compact('products'));
     }
+
+    public function doorsReplacement() {
+        return view('frontend.shop.orderkitchen.doors_replacement');
+    }
 }

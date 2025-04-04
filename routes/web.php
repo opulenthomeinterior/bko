@@ -265,6 +265,9 @@ Route::prefix('/')->middleware([])->group(function () {
     Route::prefix('/shop')->group(function () {
         Route::get('/', [HomeController::class, 'shop'])->name('shop');
 
+        // Doors replacement
+        Route::get('/doors-replacement', [HomeController::class, 'doorsReplacement'])->name('doors_replacement');
+
         // Order By Kitchen
         Route::get('/order-kitchen', [HomeController::class, 'orderkitchen'])->name('orderkitchen');
         Route::get('/order-kitchen/{style}', [HomeController::class, 'orderkitchenbyname'])->name('orderkitchenbyname');
