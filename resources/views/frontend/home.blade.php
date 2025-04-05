@@ -1030,10 +1030,14 @@
                     <h4 class="mb-3">EXPLORE OUR EXCLUSIVE CATALOGUE</h4>
                     <p class="mb-3">Get access to our full catalogue for free, featuring custom kitchen designs, premium materials, and smart storage solutions. Whether you're seeking style, function, or both, we've got everything you need to bring your vision to life.</p>
                     <p class="text-primary">Register now to receive our free catalogue in your inbox.</p>
-                    <div class="input-group">
-                        <input type="email" class="form-control" placeholder="Enter Your Email" aria-label="Email">
-                        <button class="btn" type="button" style="background-color:#febd49">REGISTER NOW!</button>
-                    </div>
+                    <form method="POST" action="{{ route('contact_us_inquiry') }}">
+                        @csrf
+                        <div class="input-group">
+                            <input type="email" name="email" class="form-control" placeholder="Enter Your Email" aria-label="Email">
+                            <input type="hidden" name="catalogue_register_now" value="catalogue_register_now">
+                            <button class="btn" type="submit" style="background-color:#febd49">REGISTER NOW!</button>
+                        </div>
+                    </form>
                 </div>
             </div>
 

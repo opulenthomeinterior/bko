@@ -19,22 +19,24 @@ class InquiryController extends Controller
 
     public function sendInquiry(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255',
-            'phone' => 'required|string|max:255',
-            'call_time' => 'required|string|max:255',
-            'message' => 'required|string|max:1000',
-        ]);
+        if (empty($request->catalogue_register_now)) {
+            $request->validate([
+                'name' => 'required|string|max:255',
+                'email' => 'required|string|email|max:255',
+                'phone' => 'required|string|max:255',
+                'call_time' => 'required|string|max:255',
+                'message' => 'required|string|max:1000',
+            ]);
+        }
 
         try {
 
             $data = [
-                'name' => $request->name,
-                'email' => $request->email,
-                'phone' => $request->phone,
-                'call_time' => $request->call_time,
-                'message' => $request->message,
+                'name' => $request->name ?? '',
+                'email' => $request->email ?? '',
+                'phone' => $request->phone ?? '',
+                'call_time' => $request->call_time ?? '',
+                'message' => $request->message ?? '',
             ];
     
             Mail::to('admin@bkonline.uk')->cc('bkonline570@gmail.com')->send(new InquiryEmail($data));

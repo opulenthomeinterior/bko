@@ -183,7 +183,7 @@
         </div>
     </div>
     <div class="text-center mt-5">
-        <a class="btn explore-btn px-5 mb-5" style="background-color:#febd49;">EXPLORE MORE</a>
+        <a href="{{ route('max_storage') }}" class="btn explore-btn px-5 mb-5" style="background-color:#febd49;">EXPLORE MORE</a>
     </div>
 </div>
 
