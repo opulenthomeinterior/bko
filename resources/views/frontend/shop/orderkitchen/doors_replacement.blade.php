@@ -307,7 +307,7 @@
             <div class="col-sm-5">
             <h4 class="text-center">Benefit from our limited time offer and get a Free Quote for Door Replacement</h4>
             </div>
-            <div class="col-sm-3">
+            <div class="col-9 col-sm-3">
                 <button class="btn bg-orange px-4 text-uppercase rounded-0">book your FREE CONSULTATION NOW!</button>
             </div>
         </div>

@@ -2,6 +2,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Max Storage Kitchen Designs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
@@ -231,23 +233,44 @@
 
     <header class="hero">
         <div class="hero-content">
-            <h1 class="text-white fw-bold">Custom Kitchen Units</h1>
-            <h1 class="text-warning fw-bold">Timeless Elegance</h1>
-            <p>We offer premium, bespoke designer kitchens at competitive prices.</p>
-            <div class="scroll-down">Scroll Down <i>&#x2193;</i></div>
+            <h1 class="fs-md-0 fs-1 text-white fw-bold text-uppercase">Bespoke designer <span class="text-warning">kitchens</span></h1>
+            {{-- <h1 class="text-warning fw-bold">Timeless Elegance</h1> --}}
+            <p class="mt-md-5"><span class="fs-sm-3">Are You Settling for a Kitchen That Doesn't Fit Your Life?</span> <br>We offer premium, bespoke designer kitchens at competitive prices.</p>
+            {{-- <div class="scroll-down">Scroll Down <i>&#x2193;</i></div> --}}
         </div>
     </header>
 
     <section class="container my-5">
         <div class="row">
             {{-- <div class="col-xl-3 col-lg-3 col-md-2 col-sm-12 col-3"></div> --}}
-            <div class="col-xl-6 col-lg-6 col-md-8 col-sm-12 col-12 align-self-center px-5">
-                <div style="width:70%; ">
-                    <h1>Start Your Journey with <span class="text-warning">BK Online</span>
-                    </h1>
-                    <p class=" fs-5">
+            <div class=" col-lg-6 col-md-8 col-sm-12 col-12 align-self-center px-5">
+                <div style="">
+                    <h2 class="text-uppercase">
+                        Standard kitchens 
+                        <br>
+                        often mean compromises
+
+                        {{-- Start Your Journey with <span class="text-warning">BK Online</span> --}}
+                    </h2>
+                   
+                    <h6>
+                        Limited layouts, generic styles, and materials that don't quite match your vision.
+                    </h6>
+                    {{-- <p class=" fs-5">
                         Book your <span class="text-danger"> Free </span>consultation today and take the first step toward your dream kitchen. Whether virtually or with an on-site survey, we are here to guide you every step of the way.
-                    </p>
+                    </p> --}}
+
+                    <h6 class="mt-5 fw-bold">
+                        Do you find yourself wishing for specific features, or a more personalized aesthetic that off-the-shelf options simply can't provide?
+                        <br>
+                        Stop Compromising!
+                    </h6>
+
+                    <h6 class="mt-5">
+                        <span class="text-danger fw-bold">FOR A LIMITED TIME, WE ARE OFFERING FREE CONSULTATION.</span>
+                        <br>
+                        Because we believe your kitchen should be more than just a place to cook – it should be a reflection of your personality and a hub for your lifestyle
+                    </h6>
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-8 col-sm-12 col-12">
@@ -256,8 +279,9 @@
                     <div>
                         <div class="d-block">
                             <div class="text-center text-dark fw-bold">FOR FREE SURVEY AND QUOTE <span class="text-warning"> CALL US NOW!</span></div>
-                            <div class="d-flex justify-content-center">
-                                <i class="bi bi-phone text-dark"></i> <a href="tel:02080505605" class="text-decoration-underline text-center text-dark fs-4 fw-bold">
+                            <div class="my-2 d-flex justify-content-center">
+                                <a href="tel:02080505605" class="btn btn-warning text-decoration-underline text-center text-dark fs-4 fw-bold">
+                                <i class="bi pt-2 me-2 bi-phone text-dark"></i> 
                                     020 805 05605
                                 </a>
                             </div>
@@ -387,42 +411,49 @@
 
 <div class="container-fluid py-3" style="background-color:#f2f4f5">
     <section class="container pb-4">
-        <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="card border-0 h-100">
+        <div class="row gap-5 justify-content-center">
+            <div class="col-lg-3 col-md-6 col-9 mb-4">
+                <div class="card rounded-0 border-0 h-100" style="  box-shadow: 20px -20px 0px -1px rgb(242 244 245), 20px -20px 0px 0 rgb(42, 97, 97); ">
                     <div class="card-body text-center p-4">
                         <div class="card-icon">
                             <i class="bi bi-card-list text-warning" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                            
                         </div>
                         <h5 class="card-title mb-3 text-dark">01.</h5>
                         <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Design Requirements</h5>
-                        <p class="card-text text-muted">You inform us about your requirements.</p>
+                        <div class="px-5">
+                            <p class="card-text text-muted">You inform us about your requirements.</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="card border-0 h-100">
+            <div class="col-lg-3 col-md-6 col-9 mb-4">
+                <div class="card rounded-0 border-0 h-100" style="  box-shadow: 20px -20px 0px -1px rgb(242 244 245), 20px -20px 0px 0 rgb(42, 97, 97); ">
                     <div class="card-body text-center p-4">
                         <div class="card-icon">
                             <i class="bi bi-cash-stack text-warning" style="font-size: 3rem; margin-bottom: 1rem;"></i>
                         </div>
                         <h5 class="card-title mb-3 text-dark">02.</h5>
                         <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Upfront Pricing</h5>
+                        <div class="px-5">
                         <p class="card-text text-muted">We create a personalized design and provide clear, upfront pricing.</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="card border-0 h-100">
+            <div class="col-lg-3 col-md-6 col-9 mb-4">
+                <div class="card rounded-0 border-0 h-100" style="  box-shadow: 20px -20px 0px -1px rgb(242 244 245), 20px -20px 0px 0 rgb(42, 97, 97); ">
                     <div class="card-body text-center p-4">
                         <div class="card-icon">
                             <i class="bi bi-clipboard-check text-warning" style="font-size: 3rem; margin-bottom: 1rem;"></i>
                         </div>
                         <h5 class="card-title mb-3 text-dark">03.</h5>
                         <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Custom Design Delivered</h5>
+                        <div class="px-5">
                         <p class="card-text text-muted">The final design will be crafted to meet your needs without the pressure of upselling.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -431,7 +462,7 @@
 
     <div class="row justify-content-center text-center">
         <div class="col-lg-6 col-md-8 col-sm-10 col-12 mb-5 mt-3">
-            <p class="fw-bold">Build a kitchen that reflects your needs & style.</p>
+            <p class="fw-bold text-success">Build a kitchen that reflects your needs & style.</p>
             <button class="btn btn-warning px-5 text-uppercase rounded-0">Book An On-Site Survey Now!</button>
         </div>
     </div>
@@ -490,18 +521,23 @@
     </section> --}}
 
     
-    <section class="container pt-5 pb-2">
+    <section class="container pt-5 pb-2 mb-5">
         <div class="row">
-            <h2 class="col-12 text-center mb-4 fw-bold text-danger text-uppercase">Are you struggling with kitchen storage space?</h2>
+            <h3 class="col-md-12 col-11 text-center mb-4 fw-bold text-danger text-uppercase">ARE YOU STRUGGLING WITH STORAGE SPACE?</h3>
 
         </div>
         <div class="row">
-            <div class="col-12 d-flex align-items-center">
+            <div class="col-12 px-5 p-md-0 d-flex align-items-center">
                 <div>
-                    <h5 style="color: #2a6161">We are introducing <br><b style="color: #000">BESPOKE MAX STORAGE KITCHENS</b></h5>
-                    <small>Standard designer kitchens are beautiful but with limited storage space. Bulk-manufactured standard space units are not the solution for your major storage problems. At BKO, we offer a bespoke kitchen unit designed to maximize your kitchen’s storage with the deepest, tallest, and widest units in the market, and they are customized to suit your needs.
-                        We have many colours available in supergloss and ultramatt finishes like white, cream, ivory, cashmere, etc. Choose from our huge range of unique designs, and we will customize them to fit your kitchen's dimensions and style.
+                    <h5 class="text-uppercase" style="color: #2a6161">We are introducing <br><b style="color: #000">BESPOKE MAX STORAGE KITCHENS</b></h5>
+                    <small>
+                        Standard designer kitchens are beautiful but with limited storage space. Bulk-manufactured standard space units are not the solution for your major storage problems. 
                         <br>
+                        <span>
+                            <span class="text-black fw-bold">
+                            Are overflowing </span> <span class="text-warning fw-bold"> cabinets and cluttered countertops </span> <span class="text-black fw-bold">causing you daily stress?</span><br>
+                            At BKO, we offer a bespoke kitchen unit designed to maximize your kitchen’s storage with the deepest, tallest, and widest units in the market, and they are customized to suit your needs. 
+                        </span>
                         <br>
                     </small>
                         {{-- <h5><b>Never settle for a standard-size kitchen because you don’t have to any more. </b></h5>
@@ -528,7 +564,7 @@
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
                 <div class="card border-0">
                     <div class="p-5 bg-green-color d-flex flex-column align-items-center justify-content-center" style="height: 250px; width: 100%">
-                        <h4 class="text-white fw-bold text-center">TALLEST UNITS</h4>
+                        <h3 class="text-white fw-bold text-center">TALLEST UNITS</h3>
                         <p class="text-white text-center">Floor-to-ceiling cupboards for extra storage. Ideal for small kitchens needing vertical space.</p>
                     </div>
                 </div>
@@ -564,6 +600,22 @@
                 </div>
             </div>
         </div>
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-8">
+            <h4 class=" text-center text-md-start text-black">Never settle for a standard-size kitchen because you don’t have to any more.</h4>
+            
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div calss="col-3">
+                <p class="text-center">It is your chance to enjoy luxurious designs with practicality, especially when the prices are lower than those of standard designer kitchens.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 col-8">
+                <button class="btn btn-warning px-2 px-lg-5 text-uppercase rounded-0">Book your free consultation now!</button>
+            </div>
+        </div>
     </section>
 
 
@@ -585,7 +637,26 @@
 
     <div class="container-fluid py-5" style="background-color:#f2f4f5;">
     <section class="container mb-4">
-        <div class="row">
+        <div class="row justify-content-center gap-md-2 gap-lg-5">
+        <div class="col-9 col-md-5 col-lg-3">
+            <img src="{{ asset('images/tall-cabinets.png') }}" 
+            class="img-fluid" 
+            alt="Modern Kitchen" 
+            style=" box-shadow: 20px 22px 0px 0px rgba(254,202,109,1); object-fit: cover;">
+            <div class="content mt-5">
+            <h3 class="text-uppercase text-center">TALL CABINETS</h3>
+            <p class="text-center"> Our tall cabinets are made up to 800mm deep to flush the American kitchen (750mm deep). The kitchen looks seamless when all the appliances, and cabinets are perfectly aligned.</p>
+            </div>
+        </div>
+        <div class="col-9 col-md-5 col-lg-3">
+            <img src="{{ asset('images/bridging-units.png') }}" class="img-fluid" alt="Smart Kitchen" style=" object-fit: cover; box-shadow: 20px 22px 0px 0px rgba(42, 97, 97,1);">
+            <div class="content mt-5">
+                <h3 class="text-uppercase text-center">Bridging Units</h3>
+                <p class="text-center"> Our bridging units are designed to seamlessly align with tall units, offering a custom fit for you. While the market standard typically offers a depth of 300mm, we provide options with depths of up to 800mm. </p>
+                </div>
+        </div>
+    </div>
+        {{-- <div class="row">
             
             <div class="col-xl-7 p-0 col-lg-7 col-sm-12 col-12 mb-4 d-flex align-items-center">
                 <div class="card bg-white border-0 shadow-sm" style="padding:80px 170px 80px 50px;">
@@ -599,13 +670,13 @@
      alt="Modern Kitchen" 
      style="width: 520px; height: 540px; box-shadow: 20px 22px 0px 0px rgba(254,202,109,1); object-fit: cover;">
 
-                {{-- <img src="https://bkonline.uk/public/imgs/products/TALL-Larder-angled-12501720361557_668aa255bad6b.jpg" class="img-fluid" alt="Modern Kitchen" style="width:520px; height:540px; box-shadow: 20px 22px 0px 0px rgba(254,202,109,1);"> --}}
+               
             </div>
             
-        </div>
+        </div> --}}
     </section>
 </div>
-<div class="container-fluid py-5" style="background-color:#f2f4f5;">
+{{-- <div class="container-fluid py-5" style="background-color:#f2f4f5;">
     <section class="container mb-4">
         <div class="row">
             <div class="col-xl-5 col-lg-5 col-md-4 col-sm-12 col-12 mb-4">
@@ -621,8 +692,8 @@
         </div>
     </section>
 
-</div>
-<div class="container-fluid py-5" style="background-color:#f2f4f5;">
+</div> --}}
+{{-- <div class="container-fluid py-5" style="background-color:#f2f4f5;">
     <section class="container mb-4">
         <div class="row">
            
@@ -640,14 +711,7 @@
                         </li class="">
                         <li class="font-weight-bold" style="list-style-type:disc">The height and depth of all the units is customized according to your preferences</li>
                     </ul> 
-                    
-                    {{-- <ul class="list-group">
-                        <li class="list-group-item">22 mm Thick ROBUST DOORS</li>
-                        <li class="list-group-item">18 mm+ THICK BACK AND SIDES</li>
-                        <li class="list-group-item"> Our units have 18mm+ back. It makes them solid, durable, and customized. They are more efficient than the standard 6-12 mm fragile unit backs available in the market.</li>
-                        <li class="list-group-item">The height and depth of all the units is customized according to your preferences</li>
-                        
-                      </ul> --}}
+                  
                 </div>
             </div>
             <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12 mb-4">
@@ -655,84 +719,174 @@
             </div>
         </div>
     </section>
-</div>
+</div> --}}
 
     <section class="conatiner px-4 py-4 text-center mb-4">
-        <div class="px-4 text-center mb-4">
-            <h4 class="text-center text-danger">WHY settle for an average-sized kitchen </h4>
-            <h4 class="text-center" style="color:#2a6161">WHEN WE HAVE ELIMINATED THE PRICE ISSUE FOR A FULLY CUSTOMIZED KITCHEN? </h4>
+        <div class="px-4 text-center">
+            <h4 class="text-center text-danger">WHY settle for an average-sized kitchen  </h4>
+            <h5 class="text-center" style="color:#2a6161">WHEN WE HAVE ELIMINATED THE PRICE ISSUE FOR A FULLY CUSTOMIZED KITCHEN? </h5>
         </div>
     </section>
 
     <section class="container mb-4">
-        <div class="row mb-4">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-4">
-                <h6 class="fw-bold mb-4">NATIONAL RETAILER STANDARD-SIZED KITCHEN</h6>
-                <img src="https://bkonline.uk/public/images/slab.jpeg" class="img-fluid" alt="" style="width:540px; height:560px; box-shadow: -22px -13px 0px 0px rgba(42, 97, 97,1);">
+        <div class="row gap-lg-5 gap-md-2 justify-content-center mb-4">
+            <div class="col-lg-3 col-md-5  col-9 mb-4">
+                <h6 class="fw-bold text-center mb-4">NATIONAL RETAILER<br> STANDARD-SIZED KITCHEN</h6>
+                <img src="{{ asset('images/standard-sized-kitche.png') }}" class="img-fluid" alt="" style=" box-shadow: -22px -13px 0px 0px rgba(42, 97, 97,1);">
             </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-4" style="overflow: hidden;">
-                <h6 class="fw-bold mb-4">BESPOKE MAX STORAGE KITCHEN</h6>
+            <div class="col-lg-3 col-md-5  col-9 mb-4" style="overflow: hidden;">
+                <h6 class="fw-bold text-center mb-4">BESPOKE MAX <br> STORAGE KITCHEN</h6>
                 {{-- <img style="max-height: 500px; overflow: hidden" src="https://bkonline.uk/public/imgs/products/421878074_891869916280279_5405404846063335271_n1739538312_67af3f882943d.jpg" class="img-fluid" alt="" > --}}
-                <img style="width:540px; height:560px; box-shadow: 18px -13px 0px 0px rgba(254,202,109,1);" src="https://bkonline.uk/public/imgs/products/421878074_891869916280279_5405404846063335271_n1739538312_67af3f882943d.jpg" class="img-fluid" alt="" >
+                <img style=" box-shadow: 18px -13px 0px 0px rgba(254,202,109,1);" src="{{ asset('images/max-storage-kitchen.png') }}" class="img-fluid" alt="" >
             
             </div>
+           
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-4 d-flex align-items-center">
                 <table class="table table-bordered">
                     <thead class="bg-warning text-white">
                         <tr>
-                            <th>FEATURES</th>
-                            <th>NATIONAL RETAILER STANDARD-SIZED KITCHEN</th>
-                            <th>BESPOKE MAX STORAGE KITCHEN</th>
+                            <th class="align-middle">FEATURES</th>
+                            <th class="align-middle">NATIONAL RETAILER STANDARD-SIZED KITCHEN</th>
+                            <th class="align-middle">BESPOKE MAX STORAGE KITCHEN</th>
+                            <th class="align-middle">BENEFITS</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Design flexibility</td>
-                            <td>NO</td>
-                            <td>YES</td>
+                            <td>Layout & Flow</td>
+                            <td>Often limited to pre-determined configurations.</td>
+                            <td>Designed specifically for your space and how you use it.</td>
+                            <td>Designed specifically for your space and how you use it.</td>
                         </tr>
                         <tr>
-                            <td>Cost</td>
-                            <td>£££</td>
-                            <td>£££</td>
+                            <td>Storage Capacity</td>
+                            <td>Standard-sized cabinets with basic shelving.</td>
+                            <td>Maximized storage through deep drawers, pull-outs, and organizers.</td>
+                            <td>Solves the problem of overflowing cabinets and cluttered countertops.</td>
                         </tr>
                         <tr>
-                            <td>Installation time</td>
-                            <td>Reasonable Time Required</td>
-                            <td>Reasonable Time Required</td>
+                            <td>Corner Cabinet Use</td>
+                            <td>Often awkward and underutilized.</td>
+                            <td>Clever solutions like lazy susans, pull-outs, and magic corners.</td>
+                            <td>Eliminates wasted space in hard-to-reach areas. </td>
                         </tr>
                         <tr>
-                            <td>Aesthetic appeal</td>
-                            <td>Cannot be Customized, Repetitive Designs</td>
-                            <td>Fully Customized, Unique Designs.</td>
+                            <td>Internal Organization</td>
+                            <td>Basic shelves; limited options for customization.</td>
+                            <td>Tailored drawer dividers, spice racks, utensil holders, etc.</td>
+                            <td>Ends the frustration of rummaging through disorganized drawers.</td>
                         </tr>
                         <tr>
-                            <td>Storage solutions</td>
-                            <td>Less Storage Solutions.</td>
-                            <td>More Storage Solutions.</td>
+                            <td>Accessibility</td>
+                            <td>Can be difficult to reach items in high or low areas.</td>
+                            <td>Designed with accessibility in mind, including pull-down shelves</td>
+                            <td>Reduces physical strain from bending and reaching. </td>
                         </tr>
                         <tr>
-                            <td>Durability</td>
-                            <td>Standard/Fragile Quality Material is Used</td>
-                            <td>Premium/Durable Quality Material is Used</td>
+                            <td>Material & Finish Choices</td>
+                            
+                            <td>Limited selection of standard options.</td>
+                            <td>Wide range of high-quality, unique, and durable materials.</td>
+                            <td>Allows for personalization and a higher-quality, longer-lasting kitchen.</td>
+
                         </tr>
                         <tr>
-                            <td>Professional expertise</td>
-                            <td>Not Needed Because Kitchens Are Predesigned</td>
-                            <td>A Whole Team Of Professionals Is Required</td>
+                            <td>Appliance Integration</td>
+                            <td>Can sometimes look like an afterthought.</td>
+                            <td>Seamless integration for a cohesive and streamlined appearance.</td>
+                            <td>Creates a more visually appealing and functional space.</td>
                         </tr>
                         <tr>
-                            <td>Value for money</td>
-                            <td>Functional And Affordable</td>
-                            <td>Fully Customized, Functional, Practical and Affordable</td>
+                            <td>Personalization</td>
+                            <td>Limited ability to customize to individual needs.</td>
+                            <td>Fully customizable to your specific requirements and preferences.</td>
+                            <td>Ensures the kitchen perfectly suits your lifestyle, cooking habits, and aesthetic tastes.</td>
+                        </tr>
+                        <tr>
+                            <td>Countertop Space</td>
+                            <td>Can be limited due to lack of efficient storage.</td>
+                            <td>Optimized storage frees up valuable workspace.</td>
+                            <td>Provides more room for food preparation and other kitchen tasks. </td>
+                            
+                        </tr>
+                        <tr>
+                            <td>Overall Functionality</td>
+                            <td>Can be inefficient and frustrating to use.</td>
+                            <td>Designed for optimal workflow and ease of use.</td>
+                            <td>Makes cooking, cleaning, and organizing more enjoyable and less time-consuming.</td>
+                            
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-    </section>
+    </div>
+    {{-- <div class="container">
+        <div class="row justify-content-center">
+           <div class="col-8">
+                 <h2 class="text-center">Smart storage solutions</h2>
+                 <h4 class="text-success text-center"> Wish you could find that one spice without emptying the entire        cupboard?</h4>
+                 <h3 class="text-center">We Can Help!</h3>
+           </div>
+       </div>
+       <div class="row">
+            <div class="storage-solution-carousel owl-carousel">
+                <div class="item">
+                <div class="card border">
+                    <img>
+                    <div class="card-body">
+                        <h3>Carousel Set, Chrome Wire</h3>
+                    </div>
+                </div>
+            </div>
+            </div>
+       </div>
+    </div> --}}
 
 
+    <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                  <h2 class="text-center fw-bold">Smart storage solutions</h2>
+                  <h5 class="text-success text-center mt-4"> Wish you could find that one spice without emptying the entire        cupboard?</h5>
+                  <h5 class="text-center fw-bold">We Can Help!</h5>
+            </div>
+        </div>
+
+        <div class="row mt-5 mb-3 justify-content-center">
+            <div class="col-10 ">
+                
+            <div class="owl-carousel owl-theme overflow-hidden">
+         
+          <div class="item">
+            <div class="card">
+              <img src="{{ asset('images/chrome-wire.png') }}" class="card-img-top" alt="">
+              <div class="card-body">
+                <h6 class="card-title">Carousel Set, Chrome Wire</h6>
+               
+              </div>
+            </div>
+          </div>
+          
+          
+            </div>
+        </div>
+        <div class="row mt-5 justify-content-center">
+           <div class="col-lg-4 col-8">
+            <button class="btn btn-warning px-3 text-uppercase rounded-0"> Explore Our Max Storage Designs</button>
+           </div>
+        </div>
+         
+        </div>
+      </div>
+      
+
+      @include('frontend.why_choose_bkonline')
     {{-- <section class="bg-dark text-white m-0 p-0">
         <footer class="text-center bg-dark text-white m-0 py-2">
             &copy; 2025 Max Storage Kitchen Designs. All rights reserved
@@ -744,5 +898,55 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!--JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-
+    <!-- Owl Carousel JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+      $(document).ready(function(){
+    $(".owl-carousel").owlCarousel({
+        loop: true,
+                margin: 90,
+                stagePadding: 20, // Add padding to avoid clipping
+                // rtl: false,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: true
+                    },
+                    768: {
+                        items: 2,
+                        nav: true
+                    },
+                    992: {
+                        items: 3,
+                        loop: true,
+                        margin: 10,
+                        nav: true,
+                        dots: true,
+                        center: true,
+                    },
+                    1200: {
+                        items: 4,
+                        loop: true,
+                        margin: 50,
+                        nav: true,
+                        dots: true,
+                        center: true,
+                    },
+                    1400: {
+                        items: 5,
+                        loop: true,
+                        margin: 50,
+                        nav: true,
+                        dots: true,
+                        center: true,
+                    }
+                }
+    });
+  });
+</script>
 </x-guest-layout>

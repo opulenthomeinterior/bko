@@ -48,7 +48,7 @@
             background-color: #2A6161;
 
             /* Responsive sizing */
-            /* margin: 0 auto; Center the line */
+            margin: 0;
             
             /* Fluid sizing using viewport units and clamp */
             width: clamp(100px, 50vw, 200px);
