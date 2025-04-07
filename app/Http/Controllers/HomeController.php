@@ -864,6 +864,7 @@ class HomeController extends Controller
     }
 
     public function doorsReplacement() {
-        return view('frontend.shop.orderkitchen.doors_replacement');
+        $styles = Style::with('styleHasColours.style')->get();
+        return view('frontend.shop.orderkitchen.doors_replacement', compact('styles'));
     }
 }

@@ -400,28 +400,32 @@
 
         </div>
         <div class="row justify-content-center">
-            <div class="col-sm-6 col-lg-4">
+            @foreach ($styles as $style)
+            <div class="col-sm-6 col-lg-4 my-3">
                 <div class="card">
-                    <img src="white.jpg" class="card-img-top" id="main-image" alt="Kitchen Cabinet">
+                    <img src="{{ $style->image_path ? asset('imgs/styles/' . $style->image_path) : '#' }}" class="card-img-top" id="main-image" alt="Kitchen Cabinet">
                     <div class="card-body text-center">
                         <div class="d-flex justify-content-between align-items-center mb-4">
-                            <h3 class="mb-0">J PULL</h3>
+                            <h3 class="mb-0">{{$style->name}}</h3>
                             <h5 class="mb-0 text-decoration-underline">Available Colors:</h5>
                         </div>
                         
                         <div class="color-grid">
-                            <div class="color-thumbnail active" style="background-color: #FFFFFF;" data-color="white"></div>
-                            <div class="color-thumbnail" style="background-color: #E8E4DC;" data-color="light-gray"></div>
+                            @foreach ($style->styleHasColours as $styleColour)
+                            <a href="{{ route('orderkitchenbycolourname', [$style->slug, $styleColour->colour?->slug]) }}">
+                                <div class="color-thumbnail active" style="background-color: {{$styleColour->colour->colour_code}};" data-color="white"></div>
+                            </a>
+                            @endforeach
+                            <!-- <div class="color-thumbnail" style="background-color: #E8E4DC;" data-color="light-gray"></div>
                             <div class="color-thumbnail" style="background-color: #E9E2D5;" data-color="cream"></div>
                             <div class="color-thumbnail" style="background-color: #4A4A4A;" data-color="dark-gray"></div>
                             <div class="color-thumbnail" style="background-color: #F5EFE2;" data-color="off-white"></div>
-                            <div class="color-thumbnail" style="background-color: #F0E9D6;" data-color="beige"></div>
-                       
+                            <div class="color-thumbnail" style="background-color: #F0E9D6;" data-color="beige"></div> -->
                         </div>
                     </div>
                 </div>
             </div>
-
+            @endforeach
             
         </div>
     </div>
