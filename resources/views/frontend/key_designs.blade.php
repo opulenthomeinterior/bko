@@ -5,7 +5,7 @@
 
 <section class="container-fluid bg-yellow-color2 py-2">
     <div class="col-12 d-flex flex-column align-items-center">
-        <p class="text-center text-white">CUSTOM KITCHENS, TIMELESS ELEGANCE</p>
+        <p class="text-center text-white">Are you tired of just dreaming about a better kitchen?</p>
         <h3 class="text-dark text-center fw-bolder">
             BESPOKE DESIGN, STANDARD PRICE
         </h3>

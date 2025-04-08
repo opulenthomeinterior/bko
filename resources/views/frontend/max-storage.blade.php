@@ -328,7 +328,7 @@
     <section class="container-fluid  pt-5 pb-3" style="background-color:#f2f4f5">
         <div>
         <div class="col-12 d-flex flex-column align-items-center">
-            <p class="text-center fw-bold">CUSTOM KITCHENS, TIMELESS ELEGANCE.</p>
+            <p class="text-center fw-bold">Are you tired of just dreaming about a better kitchen?</p>
             <h3 class="text-dark text-center fw-bolder">
                 BESPOKE DESIGN, STANDARD PRICE
             </h3>
@@ -401,8 +401,8 @@
     </section>
     <div class = "row justify-content-center">
         <div class="col-3 mb-5 mt-3">
-        <p>Build a kitchen that reflects your needs & style.</p>
-        <button  class="btn rounded-0 btn-warning px-5 mx-n4 text-uppercase">BOOK An on-site survey NOW!</button>
+        <p>Stop dreaming and build a kitchen that reflects your needs and style</p>
+        <button  class="btn rounded-0 btn-warning px-5 mx-n4 text-uppercase">Start designing your Ideal Kitchen</button>
         </div>
    </div>
 </div> --}}
@@ -462,8 +462,8 @@
 
     <div class="row justify-content-center text-center">
         <div class="col-lg-6 col-md-8 col-sm-10 col-12 mb-5 mt-3">
-            <p class="fw-bold text-success">Build a kitchen that reflects your needs & style.</p>
-            <button class="btn btn-warning px-5 text-uppercase rounded-0">Book An On-Site Survey Now!</button>
+            <p class="fw-bold text-success">Stop dreaming and build a kitchen that reflects your needs and style</p>
+            <button class="btn btn-warning px-5 text-uppercase rounded-0">Start designing your Ideal Kitchen</button>
         </div>
     </div>
 </div>

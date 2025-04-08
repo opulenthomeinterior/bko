@@ -492,7 +492,7 @@
                     </div>
                     </div>
                 </div>
-                <p class="lead mb-5">Too busy for in-person meeting? We handle everything virtually, so you can stay on schedule. At 1K Online, we offer the ideal virtual kitchen design services and consultation, where our designers collaborate with you to create a kitchen tailored to your available space and preferences.</p>
+                <p class="lead mb-5">Too busy for in-person meeting? We handle everything virtually, so you can stay on schedule. At BK Online, we offer the ideal virtual kitchen design services and consultation, where our designers collaborate with you to create a kitchen tailored to your available space and preferences.</p>
                 
                 <h4 class="mb-4">HOW IT WORKS</h4>
                 
@@ -648,7 +648,7 @@
                         <h4 class="mb-4" style="color:#2a6161">
                             Concerned about not getting the right measurements? Let our professionals handle it for you.
                         </h4>
-                        <a href="#" class=" btn btn-lg px-5 rounded-0" style="background-color: #ffc107;">BOOK AN ON-SITE SURVEY NOW!</a>
+                        <a href="#" class=" btn btn-lg px-5 rounded-0" style="background-color: #ffc107;">Start designing your Ideal Kitchen</a>
                     </div>
                 </div>
             </div>
@@ -672,7 +672,7 @@
     <section class="container-fluid  pt-5 pb-3" style="background-color:#f2f4f5">
         <div>
         <div class="col-12 d-flex flex-column align-items-center">
-            <p class="text-center fw-bold">CUSTOM KITCHENS, TIMELESS ELEGANCE.</p>
+            <p class="text-center fw-bold">Are you tired of just dreaming about a better kitchen?</p>
             <h3 class="text-dark text-center fw-bolder">
                 BESPOKE DESIGN, STANDARD PRICE
             </h3>
@@ -746,8 +746,8 @@
     </section>
     <div class = "row justify-content-center">
         <div class="col-3 mb-5 mt-3">
-        <p>Build a kitchen that reflects your needs & style.</p>
-        <button  class="btn rounded-0 btn-warning px-5 mx-n4 text-uppercase text-black" style="background-color:#FFC107">BOOK An on-site survey NOW!</button>
+        <p>Stop dreaming and build a kitchen that reflects your needs and style</p>
+        <button  class="btn rounded-0 btn-warning px-5 mx-n4 text-uppercase text-black" style="background-color:#FFC107">Start designing your Ideal Kitchen</button>
         </div>
    </div>
 </div> --}}
@@ -823,7 +823,7 @@
 
     <section class="container-fluid bg-white pt-5 pb-3">
         <div class="col-12 d-flex flex-column align-items-center">
-            <p class="text-center fw-bold">CUSTOM KITCHENS, TIMELESS ELEGANCE.</p>
+            <p class="text-center fw-bold">Are you tired of just dreaming about a better kitchen?</p>
             <h3 class="text-dark text-center fw-bolder">
                 BESPOKE DESIGN, STANDARD PRICE
             </h3>
@@ -885,8 +885,8 @@
 
     <div class="row justify-content-center text-center">
         <div class="col-lg-6 col-md-8 col-sm-10 col-12 mb-5 mt-3">
-            <p class="fw-bold">Build a kitchen that reflects your needs & style.</p>
-            <button class="btn btn-warning px-5 text-uppercase rounded-0 text-black" style="background-color: #ffc107;">Book An On-Site Survey Now!</button>
+            <p class="fw-bold">Stop dreaming and build a kitchen that reflects your needs and style</p>
+            <button class="btn btn-warning px-5 text-uppercase rounded-0 text-black" style="background-color: #ffc107;">Start designing your Ideal Kitchen</button>
         </div>
     </div>
 </div>
