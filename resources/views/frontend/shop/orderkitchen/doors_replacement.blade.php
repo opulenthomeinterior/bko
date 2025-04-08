@@ -412,7 +412,7 @@
                         
                         <div class="color-grid">
                             @foreach ($style->styleHasColours as $styleColour)
-                            <a href="{{ route('orderkitchenbycolourname', [$style->slug, $styleColour->colour?->slug]) }}">
+                            <a href="{{ route('ordercomponentbyname', ['doors']) }}">
                                 <div class="color-thumbnail active" style="background-color: {{$styleColour->colour->colour_code}};" data-color="white"></div>
                             </a>
                             @endforeach
