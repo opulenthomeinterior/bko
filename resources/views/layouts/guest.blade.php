@@ -839,43 +839,43 @@ use App\Models\Style;
                     <div class="d-flex gap-2 flex-column">
                     
                         <div class = "d-flex">
-                                <a href="#" class="social-icon d-flex footer-link">
+                                <a href="https://www.facebook.com/opulenthomeinteriorsltd" class="social-icon d-flex footer-link">
                            
                                     <i class="bi bi-facebook" ></i>
                            
                            
                                 </a>
-                                <a href="#" class="text-white align-self-center social-link-text"> Facebook</a>
+                                <a href="https://www.facebook.com/opulenthomeinteriorsltd" class="text-white align-self-center social-link-text"> Facebook</a>
                        </div>
                     
 
                        <div class = "d-flex">
-                        <a href="#" class="social-icon d-flex footer-link">
+                        <a href="https://www.instagram.com/bkonline__kitchen" class="social-icon d-flex footer-link">
                    
                             <i class="bi bi-instagram"></i>
                    
                    
                         </a>
-                        <a href="#" class="text-white align-self-center social-link-text"> Instagram</a>
+                        <a href="https://www.instagram.com/bkonline__kitchen" class="text-white align-self-center social-link-text"> Instagram</a>
                </div>
                <div class = "d-flex">
-                <a href="#" class="social-icon d-flex footer-link">
+                <a href="https://uk.pinterest.com/bkonline570/?actingBusinessId=1095219340539871510" class="social-icon d-flex footer-link">
            
                     <i class="bi bi-pinterest"></i>
            
            
                 </a>
-                <a href="#" class="text-white align-self-center social-link-text"> Pinterest</a>
+                <a href="https://uk.pinterest.com/bkonline570/" class="text-white align-self-center social-link-text"> Pinterest</a>
        </div>
 
        <div class = "d-flex">
-        <a href="#" class="social-icon d-flex footer-link ">
+        <a href="https://www.youtube.com/@opulenthomeinteriors5595" class="social-icon d-flex footer-link ">
   
             <i class="bi bi-youtube"></i>
    
    
         </a>
-        <a href="#" class="text-white align-self-center social-link-text"> YouTube</a>
+        <a href="https://www.youtube.com/@opulenthomeinteriors5595" class="text-white align-self-center social-link-text"> YouTube</a>
 </div>
 
                       
