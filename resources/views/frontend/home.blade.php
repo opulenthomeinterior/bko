@@ -421,47 +421,52 @@
                         {{-- <a class="text-dark btn btn-outline-warning d-flex align-items-center justify-content-center" style="height: 100px; width: 100px; border-radius: 100%; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);" href="{{route('ordercomponentbyname', [$category->slug])}}"> --}}
                             <div class="card-old "> 
                                 <div class="card-body d-flex">
+                                    <div>
+                                        <img height="55px" width="50px" class="rounded-circular-image" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt="">
+                                    </div>
+                                    {{--
                                     @if($category->slug == 'doors')
                                     <div>
-                                        <img height="55px" width="50px" class="rounded-circular-image" src="https://cdn-icons-png.flaticon.com/512/2237/2237440.png" alt="">
+                                        <img height="55px" width="50px" class="rounded-circular-image" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt="">
                                     </div>
                                     @elseif($category->slug == 'handles')
                                     <div>
-                                        <img height="55px" width="50px" class="rounded-circular-image" src="https://cdn4.iconfinder.com/data/icons/thin-home-living-2/24/thin-1459_door_handle_lock-512.png" alt="">
+                                        <img height="55px" width="50px" class="rounded-circular-image" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt="">
                                     </div>
                                     @elseif($category->slug == 'accessories')
                                     <div>
-                                        <img height="55px" width="50px" class="rounded-circular-image" src="https://cdn-icons-png.flaticon.com/512/3365/3365678.png" alt="">
+                                        <img height="55px" width="50px" class="rounded-circular-image" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt="">
                                     </div>
                                     @elseif($category->slug == 'sinks')
                                     <div>
-                                        <img height="55px" width="50px" class="rounded-circular-image" src="https://cdn-icons-png.flaticon.com/512/810/810192.png" alt="">
+                                        <img height="55px" width="50px" class="rounded-circular-image" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt="">
                                     </div>
                                     @elseif($category->slug == 'internals')
                                     <div>
-                                        <img height="55px" width="50px" class="rounded-circular-image" src="https://cdn-icons-png.flaticon.com/512/4717/4717615.png" alt="">
+                                        <img height="55px" width="50px" class="rounded-circular-image" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt="">
                                     </div>
                                     @elseif($category->slug == 'taps')
                                     <div>
-                                        <img height="55px" width="50px" class="rounded-circular-image" src="https://icons.veryicon.com/png/o/object/home-icon/water-tap.png" alt="">
+                                        <img height="55px" width="50px" class="rounded-circular-image" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt="">
                                     </div>
                                     @elseif($category->slug == 'worktops')
                                     <div>
-                                        <img height="55px" width="50px" class="rounded-circular-image" src="https://static.thenounproject.com/png/2342543-200.png" alt="">
+                                        <img height="55px" width="50px" class="rounded-circular-image" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt="">
                                     </div>
                                     @elseif($category->slug == 'upstands')
                                     <div>
-                                        <img height="55px" width="50px" class="rounded-circular-image" src="https://cdn-icons-png.flaticon.com/512/6785/6785530.png" alt="">
+                                        <img height="55px" width="50px" class="rounded-circular-image" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt="">
                                     </div>
                                     @elseif($category->slug == 'breakfast-bars')
                                     <div>
-                                        <img height="55px" width="50px" class="rounded-circular-image" src="https://cdn-icons-png.flaticon.com/512/2311/2311531.png" alt="">
+                                        <img height="55px" width="50px" class="rounded-circular-image" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt="">
                                     </div>
                                     @elseif($category->slug == 'appliances')
                                     <div>
-                                        <img height="55px" width="50px" class="rounded-circular-image" src="https://static.thenounproject.com/png/1283252-200.png" alt="">
+                                        <img height="55px" width="50px" class="rounded-circular-image" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt="">
                                     </div>
                                     @endif
+                                    --}}
                                 </div>
                             </div>
                         </a>
