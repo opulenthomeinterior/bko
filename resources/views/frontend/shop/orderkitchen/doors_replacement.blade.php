@@ -415,7 +415,7 @@
                         
                         <div class="color-grid">
                             @foreach ($style->styleHasColours as $styleColour)
-                            <a href="{{ route('ordercomponentbyname', ['doors']) }}">
+                            <a href="{{ route('ordercomponentbyname', ['doors']) }}?style={{$style->id}}&colour={{$styleColour->colour?->id}}">
                                 <div class="color-thumbnail active" style="background-color: {{$styleColour->colour->colour_code}};" data-color="white"></div>
                             </a>
                             @endforeach
