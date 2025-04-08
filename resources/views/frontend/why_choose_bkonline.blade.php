@@ -140,7 +140,7 @@
                 <div class="text-center">
                     <div class="feature-icon"><img src="{{ asset('images/24-7.png') }}"/></div>
                     <h5 class="card-title mb-3">24/7 Availability</h5>
-                    <p class="card-text">Customer support & Consultation anytime, anywhere</p>
+                    <p class="card-text">Customer support & free consultation anytime, anywhere</p>
                 </div>
             </div>
         </div>
@@ -176,8 +176,8 @@
                         <img src="{{ asset('images/online-support.png') }}"/>
 
                     </div>
-                    <h5 class="card-title mb-3">Free Consultation</h5>
-                    <p class="card-text">Personalized guidance without any upfront cost</p>
+                    <h5 class="card-title mb-3">Premium Quality</h5>
+                    <p class="card-text">Quality that stands the test of time</p>
                 </div>
             </div>
         </div>

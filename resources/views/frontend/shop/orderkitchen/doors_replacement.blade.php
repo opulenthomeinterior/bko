@@ -233,7 +233,7 @@
         <div class="hero-content">
             <h5 class="text-center text-white">BUY KITCHEN  ONLINE</h5>
             <h1 class="text-white fw-bold">DOOR REPLACEMENT <span style="color:#ffe000"> SERVICE</span></h1>
-            <h3 class="text-white mb-4">Transform YOUR KITCHEN without a full renovation</h3>
+            <h3 class="text-white mb-4">Tired of looking at worn-out, chipped, or peeling kitchen cabinet doors?<br>Transform YOUR KITCHEN without a full renovation</h3>
             
 
             <span class="text-center">Refresh your kitchen's look and feel with our high-quality, made-to-measure door replacement service.</span><br>
@@ -251,7 +251,9 @@
                 <div class="row">
                     
                     <div class="position-relative col-12 col-xl-8 bg-white rounded-lg border-0 shadow-sm" style="left:20px;padding:40px 110px   40px 30px;">
-                        <h2 class="fw-bolder"><span class="orange">Order a Sample</span> <span class=""text-black fw-bolder"> of Your Favorite Door Style & Color</span></h2>
+                        
+                        <h4 class="fw-bold text-black">Does the thought of updating your kitchen feel overwhelming and expensive?</h4>
+                        <h2 class="fw-bolder"><span class="orange">Order a Sample</span> <span class=""text-black fw-bolder"> of Your Favorite Door</span></h2>
                         <p class="">Choosing the right kitchen doors is an important decision. Our sample service allows you to experience the finish, material, and color of our doors in your own home before committing to a full order. </p>
                         <button class="btn bg-orange px-4 text-uppercase rounded-0"> Order a Sample of your choice NOW!</button>
                     </div>
@@ -395,6 +397,7 @@
 
     <div class="container py-5">
         <div class="mb-3 row justify-content-center">
+            <h4 class="text-black fw-bold text-center">Do you crave a kitchen that feels fresh, modern, and inviting?</h4>
             <h1 class="my-3 text-center text-black"> Discover the Perfect Doors for Your Kitchen</h1>
             <p class="text-center fs-6 w-75">Browse our extensive collection of kitchen door styles, available in a wide array of colors and finishes. Find the ideal match for your existing cabinets and create the kitchen of your dreams.</p>
 
@@ -433,6 +436,7 @@
     <div class ="container-fluid bg-white">
         <section class="consultation-section bg-white">
             <div class="container bg-white">
+                <h4 class="text-black fw-bold text-center">Wish you could instantly modernize your kitchen without a disruptive renovation?</h4>
                 <h2 class="mb-2 text-black"> Our Simple 3-Step Door Replacement Process</h2>
                 <div class = "row mb-1 justify-content-center">
                     <div class="col-6">
