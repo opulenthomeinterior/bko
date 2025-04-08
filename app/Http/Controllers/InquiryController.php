@@ -36,7 +36,7 @@ class InquiryController extends Controller
                 'email' => $request->email ?? '',
                 'phone' => $request->phone ?? '',
                 'call_time' => $request->call_time ?? '',
-                'message' => $request->message ?? '',
+                'message' => $request->message ?? $request->catalogue_register_now,
             ];
     
             Mail::to('admin@bkonline.uk')->cc('bkonline570@gmail.com')->send(new InquiryEmail($data));

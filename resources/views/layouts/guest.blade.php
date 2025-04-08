@@ -723,17 +723,25 @@ use App\Models\Style;
             <div class ="row align-items-center border-bottom mb-4">
                 <div class="col-lg-6">
                     {{-- <h5 class="mb-4">BK Online</h5> --}}
-                    <img class="" src="{{ asset('images/bko-white-logo.png') }}" style="width80px; height:150px" / >
+                    <img class="" src="{{ asset('images/bko-white-logo.png') }}" style="width: 180px; height:180px" />
                     <p class="mb-4">Opulent home interiors operating as BK Online.</p>
                 </div>
 
                 <div class="col-lg-6 align-self-end">
                     <div class="mb-4">
                         <p class="mb-2">Stay Updated:</p>
-                        <div class="input-group">
+                        <!-- <div class="input-group">
                             <input type="email" class="form-control " placeholder="Your Email">
                             <button class="btn" style="background-color:#febd49;" type="button">Subscribe</button>
-                        </div>
+                        </div> -->
+                        <form method="POST" action="{{ route('contact_us_inquiry') }}">
+                            @csrf
+                            <div class="input-group">
+                                <input type="email" name="email" class="form-control" placeholder="Enter Your Email" aria-label="Email">
+                                <input type="hidden" name="catalogue_register_now" value="subscribed with email">
+                                <button class="btn" type="submit" style="background-color:#febd49">Subscribe!</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -744,7 +752,7 @@ use App\Models\Style;
                     <h5 class="mb-4 text-white">Custome Service Hours</h5>
                     <div class="d-flex align-items-center mb-3">
                         <i class="bi bi-telephone me-2"></i>
-                        <span>020 805 05605</span>
+                        <a href="tel:02080505605" class="text-white">020 805 05605</a>
                     </div>
                     <div class="d-flex align-items-center mb-3">
                         <i class="bi bi-clock me-2"></i>
