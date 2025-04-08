@@ -62,6 +62,13 @@ use App\Models\Style;
     </script>
 
     <style>
+        @media (max-width:576px)
+        {
+            #header-logo
+            {
+                width:130px;
+            }
+        }
         
         .footer-link {
             color: #ffffff;
@@ -336,10 +343,10 @@ use App\Models\Style;
                 </div>
             </nav>
             <!-- <nav class="nav container-fluid p-0 bg-dark second-navbar" style="border-bottom: 1px solid #ebc266"> -->
-            <nav class="nav container-fluid p-0 text-black second-navbar">
+            <nav class="nav container-fluid p-sm-0 py-5 text-black second-navbar">
                 <div class="nav__data ps-0 ps-md-5">
                     <a href="{{ route('home') }}" class="nav__logo text-start flex-grow-1">
-                        <img class="pt-3" src="{{ asset('images/bko-black-logo.png') }}" width="150px" />
+                        <img id="header-logo" class="pt-3" src="{{ asset('images/bko-black-logo.png') }}" width="150px" />
                     </a>
 
                     <a href="#" class="d-lg-none show-small d-flex" id="searchIcon"><i
@@ -765,7 +772,7 @@ use App\Models\Style;
                 </div>
 
                
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6 text-start">
                     <h5 class="mb-4 text-white">Support</h5>
                     <ul class="list-unstyled">
                         <li class="mb-3">
@@ -800,7 +807,7 @@ use App\Models\Style;
                 </div>
 
                 <!-- Legal -->
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6 text-start">
                     <h5 class="mb-4 text-white">Legal</h5>
                     <ul class="list-unstyled">
                         <li class="mb-3">
@@ -826,7 +833,7 @@ use App\Models\Style;
                     </ul>
                 </div>
 
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6 text-start">
                     <h5 class="mb-4 text-white">Connect</h5>
                    
                     <div class="d-flex gap-2 flex-column">

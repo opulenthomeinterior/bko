@@ -248,13 +248,13 @@
                     <h2 class="text-uppercase">
                         Standard kitchens 
                         <br>
-                        often mean compromises
+                        frequently require compromises
 
                         {{-- Start Your Journey with <span class="text-warning">BK Online</span> --}}
                     </h2>
                    
                     <h6>
-                        Limited layouts, generic styles, and materials that don't quite match your vision.
+                        Limited layout, generic styles, and materials that do not suit your needs
                     </h6>
                     {{-- <p class=" fs-5">
                         Book your <span class="text-danger"> Free </span>consultation today and take the first step toward your dream kitchen. Whether virtually or with an on-site survey, we are here to guide you every step of the way.
@@ -267,7 +267,7 @@
                     </h6>
 
                     <h6 class="mt-5">
-                        <span class="text-danger fw-bold">FOR A LIMITED TIME, WE ARE OFFERING FREE CONSULTATION.</span>
+                        <span class="text-danger fw-bold text-uppercase">FOR A LIMITED TIME, WE ARE OFFERING FREE CONSULTATION and on-site survey.</span>
                         <br>
                         Because we believe your kitchen should be more than just a place to cook – it should be a reflection of your personality and a hub for your lifestyle
                     </h6>
@@ -420,9 +420,9 @@
                             
                         </div>
                         <h5 class="card-title mb-3 text-dark">01.</h5>
-                        <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Design Requirements</h5>
+                        <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Dream & Discuss</h5>
                         <div class="px-5">
-                            <p class="card-text text-muted">You inform us about your requirements.</p>
+                            <p class="card-text text-muted">Share your vision! We'll listen to your ideas, needs, and lifestyle to understand your dream kitchen.</p>
                         </div>
                     </div>
                 </div>
@@ -435,9 +435,9 @@
                             <i class="bi bi-cash-stack text-warning" style="font-size: 3rem; margin-bottom: 1rem;"></i>
                         </div>
                         <h5 class="card-title mb-3 text-dark">02.</h5>
-                        <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Upfront Pricing</h5>
+                        <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Design & Refine</h5>
                         <div class="px-5">
-                        <p class="card-text text-muted">We create a personalized design and provide clear, upfront pricing.</p>
+                        <p class="card-text text-muted">Our experts create a personalized design, including layouts, 3D renderings, and material selections. You'll have opportunities to refine every detail.</p>
                         </div>
                     </div>
                 </div>
@@ -450,9 +450,9 @@
                             <i class="bi bi-clipboard-check text-warning" style="font-size: 3rem; margin-bottom: 1rem;"></i>
                         </div>
                         <h5 class="card-title mb-3 text-dark">03.</h5>
-                        <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Custom Design Delivered</h5>
+                        <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Craft & Create</h5>
                         <div class="px-5">
-                        <p class="card-text text-muted">The final design will be crafted to meet your needs without the pressure of upselling.</p>
+                        <p class="card-text text-muted">Our skilled craftsmen meticulously build and install your bespoke kitchen, ensuring a perfect fit and lasting beauty.</p>
                         </div>
                     </div>
                 </div>
@@ -523,19 +523,21 @@
     
     <section class="container pt-5 pb-2 mb-5">
         <div class="row">
-            <h3 class="col-md-12 col-11 text-center mb-4 fw-bold text-danger text-uppercase">ARE YOU STRUGGLING WITH STORAGE SPACE?</h3>
+            <h3 class="col-md-12 col-11 text-center mb-4 fw-bold text-danger text-uppercase">WHAT ARE BESPOKE MAX STORAGE KITCHENS?<br>ARE YOU STRUGGLING WITH STORAGE SPACE?</h3>
 
         </div>
         <div class="row">
             <div class="col-12 px-5 p-md-0 d-flex align-items-center">
                 <div>
-                    <h5 class="text-uppercase" style="color: #2a6161">We are introducing <br><b style="color: #000">BESPOKE MAX STORAGE KITCHENS</b></h5>
+                    <h5 class="text-uppercase" style="color: #2a6161">SOLUTION
+                        BESPOKE MAX STORAGE KITCHENS
+                         <br><b style="color: #000">BESPOKE MAX STORAGE KITCHENS</b></h5>
                     <small>
                         Standard designer kitchens are beautiful but with limited storage space. Bulk-manufactured standard space units are not the solution for your major storage problems. 
                         <br>
                         <span>
                             <span class="text-black fw-bold">
-                            Are overflowing </span> <span class="text-warning fw-bold"> cabinets and cluttered countertops </span> <span class="text-black fw-bold">causing you daily stress?</span><br>
+                                Are overcrowded </span> <span class="text-warning fw-bold"> cabinets and cluttered countertops </span> <span class="text-black fw-bold">causing you daily stress?</span><br>
                             At BKO, we offer a bespoke kitchen unit designed to maximize your kitchen’s storage with the deepest, tallest, and widest units in the market, and they are customized to suit your needs. 
                         </span>
                         <br>
@@ -608,12 +610,12 @@
         </div>
         <div class="row justify-content-center">
             <div calss="col-3">
-                <p class="text-center">It is your chance to enjoy luxurious designs with practicality, especially when the prices are lower than those of standard designer kitchens.</p>
+                <p class="text-center">It is your chance to enjoy luxurious designs with practicality, especially when we have eliminated the price issue</p>
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 col-8">
-                <button class="btn btn-warning px-2 px-lg-5 text-uppercase rounded-0">Book your free consultation now!</button>
+                <button class="btn btn-warning px-2 px-lg-5 text-uppercase rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Book your free consultation now!</button>
             </div>
         </div>
     </section>
@@ -645,14 +647,14 @@
             style=" box-shadow: 20px 22px 0px 0px rgba(254,202,109,1); object-fit: cover;">
             <div class="content mt-5">
             <h3 class="text-uppercase text-center">TALL CABINETS</h3>
-            <p class="text-center"> Our tall cabinets are made up to 800mm deep to flush the American kitchen (750mm deep). The kitchen looks seamless when all the appliances, and cabinets are perfectly aligned.</p>
+            <p class="text-center"> Our tall cabinets are made up to 850mm deep and more to flush the American fridge and freezer (750mm deep). The kitchen looks seamless when all the appliances, and cabinets are perfectly aligned.</p>
             </div>
         </div>
         <div class="col-9 col-md-5 col-lg-3">
             <img src="{{ asset('images/bridging-units.png') }}" class="img-fluid" alt="Smart Kitchen" style=" object-fit: cover; box-shadow: 20px 22px 0px 0px rgba(42, 97, 97,1);">
             <div class="content mt-5">
                 <h3 class="text-uppercase text-center">Bridging Units</h3>
-                <p class="text-center"> Our bridging units are designed to seamlessly align with tall units, offering a custom fit for you. While the market standard typically offers a depth of 300mm, we provide options with depths of up to 800mm. </p>
+                <p class="text-center"> Our bridging units are designed to seamlessly align with tall units, offering a custom fit for you. While the market standard typically offers a depth of 300mm, we provide options with depths of up to 850mm or more. </p>
                 </div>
         </div>
     </div>
@@ -759,67 +761,67 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Layout & Flow</td>
+                            <th>Layout & Flow</th>
                             <td>Often limited to pre-determined configurations.</td>
                             <td>Designed specifically for your space and how you use it.</td>
-                            <td>Designed specifically for your space and how you use it.</td>
+                            <th>Designed specifically for your space and how you use it.</th>
                         </tr>
                         <tr>
-                            <td>Storage Capacity</td>
+                            <th>Storage Capacity</th>
                             <td>Standard-sized cabinets with basic shelving.</td>
                             <td>Maximized storage through deep drawers, pull-outs, and organizers.</td>
-                            <td>Solves the problem of overflowing cabinets and cluttered countertops.</td>
+                            <th>Solves the problem of overflowing cabinets and cluttered countertops.</th>
                         </tr>
                         <tr>
-                            <td>Corner Cabinet Use</td>
+                            <th>Corner Cabinet Use</th>
                             <td>Often awkward and underutilized.</td>
                             <td>Clever solutions like lazy susans, pull-outs, and magic corners.</td>
-                            <td>Eliminates wasted space in hard-to-reach areas. </td>
+                            <th>Eliminates wasted space in hard-to-reach areas. </th>
                         </tr>
                         <tr>
-                            <td>Internal Organization</td>
+                            <th>Internal Organization</th>
                             <td>Basic shelves; limited options for customization.</td>
                             <td>Tailored drawer dividers, spice racks, utensil holders, etc.</td>
-                            <td>Ends the frustration of rummaging through disorganized drawers.</td>
+                            <th>Ends the frustration of rummaging through disorganized drawers.</th>
                         </tr>
                         <tr>
-                            <td>Accessibility</td>
+                            <th>Accessibility</th>
                             <td>Can be difficult to reach items in high or low areas.</td>
                             <td>Designed with accessibility in mind, including pull-down shelves</td>
-                            <td>Reduces physical strain from bending and reaching. </td>
+                            <th>Reduces physical strain from bending and reaching. </th>
                         </tr>
                         <tr>
-                            <td>Material & Finish Choices</td>
+                            <th>Material & Finish Choices</th>
                             
                             <td>Limited selection of standard options.</td>
                             <td>Wide range of high-quality, unique, and durable materials.</td>
-                            <td>Allows for personalization and a higher-quality, longer-lasting kitchen.</td>
+                            <th>Allows for personalization and a higher-quality, longer-lasting kitchen.</th>
 
                         </tr>
                         <tr>
-                            <td>Appliance Integration</td>
+                            <th>Appliance Integration</th>
                             <td>Can sometimes look like an afterthought.</td>
                             <td>Seamless integration for a cohesive and streamlined appearance.</td>
-                            <td>Creates a more visually appealing and functional space.</td>
+                            <th>Creates a more visually appealing and functional space.</th>
                         </tr>
                         <tr>
-                            <td>Personalization</td>
+                            <th>Personalization</th>
                             <td>Limited ability to customize to individual needs.</td>
                             <td>Fully customizable to your specific requirements and preferences.</td>
-                            <td>Ensures the kitchen perfectly suits your lifestyle, cooking habits, and aesthetic tastes.</td>
+                            <th>Ensures the kitchen perfectly suits your lifestyle, cooking habits, and aesthetic tastes.</th>
                         </tr>
                         <tr>
-                            <td>Countertop Space</td>
+                            <th>Countertop Space</th>
                             <td>Can be limited due to lack of efficient storage.</td>
                             <td>Optimized storage frees up valuable workspace.</td>
-                            <td>Provides more room for food preparation and other kitchen tasks. </td>
+                            <th>Provides more room for food preparation and other kitchen tasks. </th>
                             
                         </tr>
                         <tr>
-                            <td>Overall Functionality</td>
+                            <th>Overall Functionality</th>
                             <td>Can be inefficient and frustrating to use.</td>
                             <td>Designed for optimal workflow and ease of use.</td>
-                            <td>Makes cooking, cleaning, and organizing more enjoyable and less time-consuming.</td>
+                            <th>Makes cooking, cleaning, and organizing more enjoyable and less time-consuming.</th>
                             
                         </tr>
                     </tbody>
@@ -880,7 +882,7 @@
         </div>
         <div class="row mt-5 justify-content-center">
            <div class="col-lg-4 col-8">
-            <button class="btn btn-warning px-3 text-uppercase rounded-0"> Explore Our Max Storage Designs</button>
+            <a href="{{ route('max_storage') }}" class="btn btn-warning px-3 text-uppercase rounded-0"> Explore Our Max Storage Designs</a>
            </div>
         </div>
          
@@ -896,12 +898,74 @@
     </section> --}}
 
 
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          {{-- <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1> --}}
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class=" col-12">
+                <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning p-4">
+                    @csrf
+                    <div>
+                        <div class="d-block">
+                            <div class="text-center text-dark fw-bold">FOR FREE SURVEY AND QUOTE <span class="text-warning"> CALL US NOW!</span></div>
+                            <div class="my-2 d-flex justify-content-center">
+                                <a href="tel:02080505605" class="btn btn-warning text-decoration-underline text-center text-dark fs-4 fw-bold">
+                                <i class="bi pt-2 me-2 bi-phone text-dark"></i> 
+                                    020 805 05605
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <h6 class="text-dark text-center fw-bold">OR</h6>
+                    <hr class="border border-dark">
+
+                    
+                    <h4 id="blinking-text" class="bg-warning  fw-bold text-center py-2 rounded-pill">
+                        Book a free consultation now!
+                    </h4>
+                    <hr class="border border-dark">
+                    <div class="mb-3">
+                        <input type="text" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="name" id="name" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="email" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-3">
+                        <input type="number" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="phone" id="phone" placeholder="Enter your phone number">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="text-white py-2 px-3  text-end fw-bold" style="background-color:#2a6161;" >Call US AT</label>
+                        <input type="datetime-local" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="call_time">
+                    </div>
+                    <div class="mb-3">
+                        <textarea name="message" id="message" name="message" rows="3" class="w-100 rounded-0 border border-dark form-control text-dark" placeholder="Enter your message"></textarea>
+                    </div>
+                    <button type="submit" class=" btn py-2 px-4 rounded-0 fw-bolder text-uppercase text-white" style="background-color:#2a6161;">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
     <!--CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!--JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <!-- Owl Carousel JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>

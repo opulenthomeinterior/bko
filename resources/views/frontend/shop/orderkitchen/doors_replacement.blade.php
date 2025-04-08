@@ -55,8 +55,8 @@
 
 
             .color-thumbnail {
-                width: 50px;
-                height: 40px;
+                width: 40px;
+                height: 30px;
                 margin: 5px;
                 cursor: pointer;
                 border: 2px solid transparent;
@@ -539,7 +539,7 @@
                 
                 <div class="">
                     <h2 class="mb-2 text-black">Ready to Transform Your Kitchen?</h2>
-                    <a href="#" class="btn btn-lg cta-button rounded-0" style="background-color:#ffc107;">Get a Free Quote for Door Replacement NOW!</a>
+                    <a href="#" class="btn btn-lg cta-button rounded-0" style="background-color:#ffc107;" data-bs-toggle="modal" data-bs-target="#exampleModal">Get a Free Quote for Door Replacement NOW!</a>
                 </div>
             </div>
         </section>
@@ -549,6 +549,66 @@
      @include('frontend.testimonials_component')
       <!-- FAQs -->
     {{-- @include('frontend.faqs_component', ['faqsData' => $generalFaqs]) --}}
+
+        <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          {{-- <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1> --}}
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class=" col-12">
+                <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning p-4">
+                    @csrf
+                    <div>
+                        <div class="d-block">
+                            <div class="text-center text-dark fw-bold">FOR FREE SURVEY AND QUOTE <span class="text-warning"> CALL US NOW!</span></div>
+                            <div class="my-2 d-flex justify-content-center">
+                                <a href="tel:02080505605" class="btn btn-warning text-decoration-underline text-center text-dark fs-4 fw-bold">
+                                <i class="bi pt-2 me-2 bi-phone text-dark"></i> 
+                                    020 805 05605
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <h6 class="text-dark text-center fw-bold">OR</h6>
+                    <hr class="border border-dark">
+
+                    
+                    <h4 id="blinking-text" class="bg-warning  fw-bold text-center py-2 rounded-pill">
+                        Book a free consultation now!
+                    </h4>
+                    <hr class="border border-dark">
+                    <div class="mb-3">
+                        <input type="text" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="name" id="name" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="email" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-3">
+                        <input type="number" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="phone" id="phone" placeholder="Enter your phone number">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="text-white py-2 px-3  text-end fw-bold" style="background-color:#2a6161;" >Call US AT</label>
+                        <input type="datetime-local" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="call_time">
+                    </div>
+                    <div class="mb-3">
+                        <textarea name="message" id="message" name="message" rows="3" class="w-100 rounded-0 border border-dark form-control text-dark" placeholder="Enter your message"></textarea>
+                    </div>
+                    <button type="submit" class=" btn py-2 px-4 rounded-0 fw-bolder text-uppercase text-white" style="background-color:#2a6161;">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
     
 @push('scripts')
