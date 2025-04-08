@@ -471,8 +471,10 @@ class HomeController extends Controller
         $heights = Product::whereIn('category_id', $children)
                 ->where('status', 'active')
                 ->select('height', DB::raw('COUNT(*) as count'))
+                ->where('height', '!=', '')
                 ->groupBy('height')
                 ->get();
+                // dd($heights);
 
         // $products = Product::whereIn('category_id', $children)->paginate($limit);
 
