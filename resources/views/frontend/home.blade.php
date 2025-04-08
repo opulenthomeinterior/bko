@@ -234,6 +234,13 @@
             background-color: #f8f9fa;
             padding: 4rem 0;
         }
+        .order-component-section
+        {
+            background-image: url('{{ asset('/images/order-component-bg.png') }}');
+            background-size: cover;
+            background-repeat:no-repeat;
+            background-position:center;
+        }
     </style>
     @endsection
     </head>
@@ -403,19 +410,21 @@
     </section>
 
     <!-- ORDER COMPONENT-->
-    <div class="container-fluid " style="background-color:#F2F4F5;">
-    <section class="container py-5" style="width: 100%; ">
+    <div class="container-fluid position-relative px-0 py-5  order-component-section" style="background-color:#F2F4F5;">
+        {{-- <img class="img-fluid position-absolute" src="{{ asset('/images/order-component-bg.png') }}"/> --}}
+        <section class="container py-5" style="width: 100%; ">
         <div class="row">
-            <h3 class="text-uppercase fw-bolder text-dark text-center py-3">ORDER COMPONENTS</h3>
+            <h3 class="text-uppercase fw-bolder text-white text-center py-3">ORDER COMPONENTS</h3>
         </div>
-        <div class="row justify-content-center bg-white">
+        <div class="row  justify-content-center">
             @php
             $categories = \App\Models\Category::where('parent_category_id', null)->where('status', 1)->get();
             @endphp
           
-            <div style="background-color:#F2F4F5;" class="order-component-slider d-flex order-component-scroller" style="max-width: 1900px; overflow-x: scroll">
+            {{-- <div style="" class="order-component-slider position-absolute  d-flex order-component-scroller" style="max-width: 1900px; overflow-x: scroll"> --}}
+            <div style="" class="order-component-slider position-absolute w-75  d-flex order-component-scroller" style="max-width: 1900px; overflow-x: scroll">
                 @foreach($categories as $category)
-                <div class="d-flex col-lg-3 card border-warning align-items-center justify-content-center" style="border-radius: 8px; margin: 0px 10px; padding: 15px 50px">
+                <div class="d-flex col-lg-2 card border-warning align-items-center justify-content-center" style="border-radius: 8px; margin: 0px 20px; padding: 15px 50px">
                     <div class="text-center">
                         <a class="text-dark btn d-flex align-items-center justify-content-center" href="{{route('ordercomponentbyname', [$category->slug])}}">
                         {{-- <a class="text-dark btn btn-outline-warning d-flex align-items-center justify-content-center" style="height: 100px; width: 100px; border-radius: 100%; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);" href="{{route('ordercomponentbyname', [$category->slug])}}"> --}}
@@ -473,7 +482,7 @@
         </div>
     </section>
     </div>
-    <div class ="container-fluid bg-white">
+    <div class ="container-fluid bg-white mt-5">
         <section class="consultation-section bg-white">
             <div class="container bg-white">
                 <h2 class="mb-2 text-black">EXPERT VIRTUAL DESIGN CONSULTATION</h2>
@@ -523,7 +532,7 @@
                 
                 <div class="">
                     <p class="mb-2">Don't let time hold you back.</p>
-                    <a href="#" class="btn btn-lg cta-button rounded-0" style="background-color:#ffc107;">SCHEDULE YOUR FREE CONSULTATION NOW!</a>
+                    <button href="#" class="btn btn-lg cta-button rounded-0" style="background-color:#ffc107;" data-bs-toggle="modal" data-bs-target="#exampleModal">SCHEDULE YOUR FREE CONSULTATION NOW!</button>
                 </div>
             </div>
         </section>
@@ -643,7 +652,7 @@
                         <h4 class="mb-4" style="color:#2a6161">
                             Concerned about not getting the right measurements? Let our professionals handle it for you.
                         </h4>
-                        <a href="#" class=" btn btn-lg px-5 rounded-0" style="background-color: #ffc107;">BOOK AN ON-SITE SURVEY NOW!</a>
+                        <button href="#" class=" btn btn-lg px-5 rounded-0" style="background-color: #ffc107;" data-bs-toggle="modal" data-bs-target="#exampleModal" >BOOK AN ON-SITE SURVEY NOW!</button>
                     </div>
                 </div>
             </div>
@@ -816,7 +825,7 @@
     {{-- @include('frontend.key_designs') --}}
     
 
-    <section class="container-fluid bg-white pt-5 pb-3">
+    {{-- <section class="container-fluid bg-white pt-5 pb-3">
         <div class="col-12 d-flex flex-column align-items-center">
             <p class="text-center fw-bold">CUSTOM KITCHENS, TIMELESS ELEGANCE.</p>
             <h3 class="text-dark text-center fw-bolder">
@@ -831,10 +840,87 @@
                 We offer premium, bespoke designer kitchens at competitive prices. Our process is straight forward
             </p>
         </div>
+    </section> --}}
+
+
+    <section class="container-fluid  pt-5 pb-3" style="background-color:#f2f4f5">
+        <div>
+        <div class="col-12 d-flex flex-column align-items-center">
+            <p class="text-center fw-bold">CUSTOM KITCHENS, TIMELESS ELEGANCE.</p>
+            <h3 class="text-dark text-center fw-bolder">
+                BESPOKE DESIGN, STANDARD PRICE
+            </h3>
+            <div id="lines" class="mb-3">
+                <div id="line1"></div>
+                <div id="line2"></div>
+                <div id="line3"></div>
+            
+        </div>
+        <p class="text-center text-dark w-75">
+            We offer premium, bespoke designer kitchens at competitive prices. Our process is straight forward
+        </p>
     </section>
 
+    <div class="container-fluid py-3" style="background-color:#f2f4f5">
+        <section class="container pb-4">
+            <div class="row gap-5 justify-content-center">
+                <div class="col-lg-3 col-md-6 col-9 mb-4">
+                    <div class="card rounded-0 border-0 h-100" style="  box-shadow: 20px -20px 0px -1px rgb(242 244 245), 20px -20px 0px 0 rgb(42, 97, 97); ">
+                        <div class="card-body text-center p-4">
+                            <div class="card-icon">
+                                <i class="bi bi-card-list text-warning" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                                
+                            </div>
+                            <h5 class="card-title mb-3 text-dark">01.</h5>
+                            <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Design Requirements</h5>
+                            <div class="px-5">
+                                <p class="card-text text-muted">You inform us about your requirements.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-3 col-md-6 col-9 mb-4">
+                    <div class="card rounded-0 border-0 h-100" style="  box-shadow: 20px -20px 0px -1px rgb(242 244 245), 20px -20px 0px 0 rgb(42, 97, 97); ">
+                        <div class="card-body text-center p-4">
+                            <div class="card-icon">
+                                <i class="bi bi-cash-stack text-warning" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                            </div>
+                            <h5 class="card-title mb-3 text-dark">02.</h5>
+                            <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Upfront Pricing</h5>
+                            <div class="px-5">
+                            <p class="card-text text-muted">We create a personalized design and provide clear, upfront pricing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-3 col-md-6 col-9 mb-4">
+                    <div class="card rounded-0 border-0 h-100" style="  box-shadow: 20px -20px 0px -1px rgb(242 244 245), 20px -20px 0px 0 rgb(42, 97, 97); ">
+                        <div class="card-body text-center p-4">
+                            <div class="card-icon">
+                                <i class="bi bi-clipboard-check text-warning" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                            </div>
+                            <h5 class="card-title mb-3 text-dark">03.</h5>
+                            <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Custom Design Delivered</h5>
+                            <div class="px-5">
+                            <p class="card-text text-muted">The final design will be crafted to meet your needs without the pressure of upselling.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-6 col-md-8 col-sm-10 col-12 mb-5 mt-3">
+                <p class="fw-bold text-primary">Build a kitchen that reflects your needs & style.</p>
+                <button class="btn btn-warning px-5 text-uppercase rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Book An On-Site Survey Now!</button>
+            </div>
+        </div>
+    </div>
 
-<div class="container-fluid py-3" style="background-color:#fff">
+{{-- <div class="container-fluid py-3" style="background-color:#fff">
     <section class="container pb-4">
         <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
@@ -884,7 +970,7 @@
             <button class="btn btn-warning px-5 text-uppercase rounded-0 text-black" style="background-color: #ffc107;">Book An On-Site Survey Now!</button>
         </div>
     </div>
-</div>
+</div> --}}
 
 
 
@@ -1145,6 +1231,66 @@
 
     <!-- FAQs -->
     @include('frontend.faqs_component', ['faqsData' => $generalFaqs])
+        <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          {{-- <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1> --}}
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class=" col-12">
+                <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning p-4">
+                    @csrf
+                    <div>
+                        <div class="d-block">
+                            <div class="text-center text-dark fw-bold">FOR FREE SURVEY AND QUOTE <span class="text-warning"> CALL US NOW!</span></div>
+                            <div class="my-2 d-flex justify-content-center">
+                                <a href="tel:02080505605" class="btn btn-warning text-decoration-underline text-center text-dark fs-4 fw-bold">
+                                <i class="bi pt-2 me-2 bi-phone text-dark"></i> 
+                                    020 805 05605
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <h6 class="text-dark text-center fw-bold">OR</h6>
+                    <hr class="border border-dark">
+
+                    
+                    <h4 id="blinking-text" class="bg-warning  fw-bold text-center py-2 rounded-pill">
+                        Book a free consultation now!
+                    </h4>
+                    <hr class="border border-dark">
+                    <div class="mb-3">
+                        <input type="text" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="name" id="name" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="email" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-3">
+                        <input type="number" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="phone" id="phone" placeholder="Enter your phone number">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="text-white py-2 px-3  text-end fw-bold" style="background-color:#2a6161;" >Call US AT</label>
+                        <input type="datetime-local" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="call_time">
+                    </div>
+                    <div class="mb-3">
+                        <textarea name="message" id="message" name="message" rows="3" class="w-100 rounded-0 border border-dark form-control text-dark" placeholder="Enter your message"></textarea>
+                    </div>
+                    <button type="submit" class=" btn py-2 px-4 rounded-0 fw-bolder text-uppercase text-white" style="background-color:#2a6161;">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 
 @push('scripts')
     <script>

@@ -463,7 +463,7 @@
     <div class="row justify-content-center text-center">
         <div class="col-lg-6 col-md-8 col-sm-10 col-12 mb-5 mt-3">
             <p class="fw-bold text-success">Build a kitchen that reflects your needs & style.</p>
-            <button class="btn btn-warning px-5 text-uppercase rounded-0">Book An On-Site Survey Now!</button>
+            <button class="btn btn-warning px-5 text-uppercase rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Book An On-Site Survey Now!</button>
         </div>
     </div>
 </div>
@@ -613,7 +613,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 col-8">
-                <button class="btn btn-warning px-2 px-lg-5 text-uppercase rounded-0">Book your free consultation now!</button>
+                <button class="btn btn-warning px-2 px-lg-5 text-uppercase rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Book your free consultation now!</button>
             </div>
         </div>
     </section>
@@ -880,7 +880,7 @@
         </div>
         <div class="row mt-5 justify-content-center">
            <div class="col-lg-4 col-8">
-            <button class="btn btn-warning px-3 text-uppercase rounded-0"> Explore Our Max Storage Designs</button>
+            <a href="{{ route('max_storage') }}" class="btn btn-warning px-3 text-uppercase rounded-0"> Explore Our Max Storage Designs</a>
            </div>
         </div>
          
@@ -896,12 +896,74 @@
     </section> --}}
 
 
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          {{-- <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1> --}}
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class=" col-12">
+                <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning p-4">
+                    @csrf
+                    <div>
+                        <div class="d-block">
+                            <div class="text-center text-dark fw-bold">FOR FREE SURVEY AND QUOTE <span class="text-warning"> CALL US NOW!</span></div>
+                            <div class="my-2 d-flex justify-content-center">
+                                <a href="tel:02080505605" class="btn btn-warning text-decoration-underline text-center text-dark fs-4 fw-bold">
+                                <i class="bi pt-2 me-2 bi-phone text-dark"></i> 
+                                    020 805 05605
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <h6 class="text-dark text-center fw-bold">OR</h6>
+                    <hr class="border border-dark">
+
+                    
+                    <h4 id="blinking-text" class="bg-warning  fw-bold text-center py-2 rounded-pill">
+                        Book a free consultation now!
+                    </h4>
+                    <hr class="border border-dark">
+                    <div class="mb-3">
+                        <input type="text" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="name" id="name" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="email" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-3">
+                        <input type="number" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="phone" id="phone" placeholder="Enter your phone number">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="text-white py-2 px-3  text-end fw-bold" style="background-color:#2a6161;" >Call US AT</label>
+                        <input type="datetime-local" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="call_time">
+                    </div>
+                    <div class="mb-3">
+                        <textarea name="message" id="message" name="message" rows="3" class="w-100 rounded-0 border border-dark form-control text-dark" placeholder="Enter your message"></textarea>
+                    </div>
+                    <button type="submit" class=" btn py-2 px-4 rounded-0 fw-bolder text-uppercase text-white" style="background-color:#2a6161;">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
     <!--CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!--JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <!-- Owl Carousel JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
