@@ -422,7 +422,8 @@ class HomeController extends Controller
         $children = Category::where('parent_category_id', $category->id)->pluck('id')->toArray();
 
         $types = Category::whereIn('id', $children)
-        ->select('id', 'name')
+        ->select('id', 'name', 'status')
+        ->where('status', 1)
         ->whereIn('id', function($query) use ($children) {
             $query->select(DB::raw('MIN(id)'))
                 ->from('categories')
@@ -439,7 +440,13 @@ class HomeController extends Controller
         // Include the current category in the list of children
         $children[] = $category->id;
         if ($slug == 'handles' || $slug == 'sinks') {
-            $count = Product::whereIn('category_id', $children)->where('status', 'active')->groupBy('parent_sub_category')->count();
+            // $count = Product::whereIn('category_id', $children)->where('status', 'active')->groupBy('parent_sub_category')->get();
+            $groups = Product::whereIn('category_id', $children)
+                ->where('status', 'active')
+                ->groupBy('parent_sub_category')
+                ->select('parent_sub_category')
+                ->get();
+            $count = $groups->count();
         } else {
             $count = Product::whereIn('category_id', $children)->where('status', 'active')->count();
         }
@@ -492,11 +499,11 @@ class HomeController extends Controller
         }
 
         $parent_category = Category::where('slug', $slug)->firstOrFail();
-        if ($slug == 'handles' || $slug == 'sinks') {
-            $productsQuery = Product::where('status', 'active')->groupBy('parent_sub_category');
-        } else {
-            $productsQuery = Product::where('status', 'active');
-        }
+        // if ($slug == 'handles' || $slug == 'sinks') {
+        //     $productsQuery = Product::where('status', 'active')->groupBy('parent_sub_category');
+        // } else {
+        $productsQuery = Product::where('status', 'active');
+        // }
 
         if (!empty($t)) {
             $productsQuery->whereIn('category_id', $t);
@@ -523,7 +530,12 @@ class HomeController extends Controller
         }
 
         ///////////////////////////////
-        $count = $productsQuery->where('parent_category_id', $parent_category->id)->count();
+        if ($slug == 'handles' || $slug == 'sinks') {
+            $groupedProducts = Product::where('parent_category_id', $parent_category->id)->groupBy('parent_sub_category')->select('parent_sub_category')->get();
+            $count = $groupedProducts->count();
+        } else {
+            $count = $productsQuery->where('parent_category_id', $parent_category->id)->count();
+        }
         // $currentPage = 1;
         $limit = 12;
         $offset = ($currentPage - 1) * $limit;
