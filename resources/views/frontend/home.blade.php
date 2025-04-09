@@ -241,6 +241,19 @@
             background-repeat:no-repeat;
             background-position:center;
         }
+        #dots {
+            position: relative; /* stay fixed even if you scroll */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0; /* send to back */
+            pointer-events: none; /* so it doesn't block clicks */
+        }
+        #stylesContainer {
+            position: absolute;
+            z-index: 1; /* bring content above canvas */
+        }
     </style>
     @endsection
     </head>
@@ -304,106 +317,95 @@
         <!-- Content -->
         <div class="container">
             <div class="row justify-content-center main-image-content align-items-center" style="z-index: 1000;">
-                
                 <!-- Left Content -->
                 <div class="col-md-8 text-start text-white px-4" style="z-index: 100;">
                     <div class="ps-4 animated slide-top">
                         <h6 class="text-yellow-color fw-bold text-center" style="letter-spacing:8px;">BUY KITCHEN ONLINE</h6>
                     </div>
                     {{-- <div class="text-green-color ps-3" style="border-left: 3px solid; margin-bottom: 10px"> --}}
-                    <div class="text-green-color ps-3">
-                        <h1 class="text-white animated slide-right text-center">ELEVATE YOUR KITCHEN</h1>
-                        <h1 class="text-yellow-color fw-bold animated slide-left text-center">ELEVATE YOUR LIFESTYLE</h1>
-                        <p class="text-white animated slide-bottom text-center">We specialize in virtually designing and delivering your dream kitchen that complements your needs and style. Whether you want to build a new kitchen or need to replace a single component, we are always at your service.</p>
-                    </div>
-
-                    
-
-                    <div class="container d-flex flex-column align-items-center text-center">
-    <div class="col-xl-8 col-lg-10 col-md-10 col-sm-12 animated slide-top mx-auto" style="margin-top: 50px;">
-        <h4 class="unique-font text-white px-3 py-1 rounded-gradient-border w-100" id="typing-effect"></h4>
-    </div>
-    <div class="col-xl-8 col-lg-10 col-md-10 col-sm-12 animated slide-bottom mt-4 mx-auto">
-        <a href="{{ route('orderkitchen') }}" class="btn w-100 btn-md bg-yellow-color2 text-white text-uppercase border-green-color" style="border-radius: 50px;">
-            Order Now
-        </a>
-    </div>
-</div>
-
-
+                            <div class="text-green-color ps-3">
+                                <h1 class="text-white animated slide-right text-center">ELEVATE YOUR KITCHEN</h1>
+                                <h1 class="text-yellow-color fw-bold animated slide-left text-center">ELEVATE YOUR LIFESTYLE</h1>
+                                <p class="text-white animated slide-bottom text-center">We specialize in virtually designing and delivering your dream kitchen that complements your needs and style. Whether you want to build a new kitchen or need to replace a single component, we are always at your service.</p>
+                            </div>
+                            <div class="container d-flex flex-column align-items-center text-center">
+                                <div class="col-xl-8 col-lg-10 col-md-10 col-sm-12 animated slide-top mx-auto" style="margin-top: 50px;">
+                                    <h4 class="unique-font text-white px-3 py-1 rounded-gradient-border w-100" id="typing-effect"></h4>
+                                </div>
+                                <div class="col-xl-8 col-lg-10 col-md-10 col-sm-12 animated slide-bottom mt-4 mx-auto">
+                                    <a href="{{ route('orderkitchen') }}" class="btn w-100 btn-md bg-yellow-color2 text-white text-uppercase border-green-color" style="border-radius: 50px;">
+                                        Order Now
+                                    </a>
+                                </div>
+                            </div>
+                    {{-- </div> --}}
                 </div>
-
-
+                <div class="left-shadow"></div>
             </div>
-            
-            
-            <div class="left-shadow"></div>
         </div>
     </section>
 
     <!-- ORDER KITCHEN-->
-    <section class="container py-5 bg-white" style=" width: 100% !important; overflow: hidden">
-        
-        <div class="row mt-4" id="stylesContainer">
-           <div class="col-lg-7 align-self-center overflow-hidden">
-            <div class="row">
-                <h3 class="text-uppercase fw-bolder text-dark mb-4">ORDER KITCHEN</h3>
-            </div>
-            <div class="carousel main-carousel-banner-01 owl-carousel clients mb-0 p-0"
-            data-margin="30"
-            data-loop="true"
-            data-dots="false"
-            data-autoplay="true"
-            data-autoplay-timeout="3000"
-            data-responsive='{"0":{"items": "3"}, "768":{"items": "4"}, "992":{"items": "4"}, "1200":{"items": "4"}, "1400":{"items": "4"}}'>
-            @foreach ($styles as $key => $style)
-            <div class="item">
-                    <div class="carousel-card card border border-warning" style="box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
-                        <div class="card-body carousel-card-body p-0 m-0">
-                            <div class="col-12">
-                                <img src="{{asset('imgs/styles/'.$style->image_path)}}" class="img-fluid">
-                                <h4 class="card-title text-uppercase fw-bold text-center m-0 p-2 {{ $key % 2 == 0 ? 'bg-green-color text-yellow-color2' : 'bg-yellow-color2 text-dark' }}">
-                                    {{$style->name}}
-                                    <br>
-                                    <a href="{{ route('orderkitchenbyname', $style->slug) }}" class="text-center text-white m-0 text-decoration-underline" style="font-size: 10px">See our range ></a>
-                                </h4>
+    <section class="container py-5 bg-white dots-background-section" style="position: relative; width: 100% !important; overflow: hidden">
+        <canvas id="dots" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></canvas>
+        <div class="row mt-4" id="stylesContainer" style="position: relative; z-index: 2">
+            <div class="col-lg-7 align-self-center overflow-hidden">
+                <div class="row">
+                    <h3 class="text-uppercase fw-bolder text-dark mb-4">ORDER KITCHEN</h3>
+                </div>
+                <div class="carousel main-carousel-banner-01 owl-carousel clients mb-0 p-0"
+                    data-margin="30"
+                    data-loop="true"
+                    data-dots="false"
+                    data-autoplay="true"
+                    data-autoplay-timeout="3000"
+                    data-responsive='{"0":{"items": "3"}, "768":{"items": "4"}, "992":{"items": "4"}, "1200":{"items": "4"}, "1400":{"items": "4"}}'>
+                    @foreach ($styles as $key => $style)
+                        <div class="item">
+                            <div class="carousel-card card border border-warning" style="box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
+                                <div class="card-body carousel-card-body p-0 m-0">
+                                    <div class="col-12">
+                                        <img src="{{asset('imgs/styles/'.$style->image_path)}}" class="img-fluid">
+                                        <h4 class="card-title text-uppercase fw-bold text-center m-0 p-2 {{ $key % 2 == 0 ? 'bg-green-color text-yellow-color2' : 'bg-yellow-color2 text-dark' }}">
+                                            {{$style->name}}
+                                            <br>
+                                            <a href="{{ route('orderkitchenbyname', $style->slug) }}" class="text-center text-white m-0 text-decoration-underline" style="font-size: 10px">See our range >
+
+                                            </a>
+                                        </h4>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
+                </div>
             </div>
-            @endforeach
+            <div class = "col-md-5 col-12 ">
+                <!-- Right Form -->
+                <div class="d-flex justify-content-center my-4 mt-md-0">
+                    <form method="POST" action="{{ route('contact_us_inquiry') }}" class="w-100 text-yellow-color2 p-4" style="border: 3px solid; border-radius: 25px; background-color: rgba(0, 0, 0, 0.6)">
+                        @csrf
+                        <h3 class="text-white text-center">For free survey, <b class="text-yellow-color2">CALL US NOW!</b></h3>
+                        <div class="text-center">
+                            <i class="bi bi-phone text-white"></i> <a href="tel:02080505605" class="text-decoration-underline text-white fs-4 fw-bold">020 805 05605</a>
+                        </div>
+                        <hr class="border-warning">
+                        <h6 class="text-white text-center fw-bold">OR</h6>
+                        <h4 class="bg-green-color text-white text-center py-2 rounded-5">BOOK A FREE CONSULTATION NOW!</h4>
+                        <hr class="border-warning">
+                        <input type="text" class="form-control border-warning mb-3" name="name" placeholder="Enter your name">
+                        <input type="email" class="form-control border-warning mb-3" name="email" placeholder="Enter your email">
+                        <label for="" class="text-white bg-yellow-color2 p-2">Call me at</label>
+                        <input type="number" class="form-control border-warning mb-3" name="phone" placeholder="Enter your phone number">
+                        <input type="datetime-local" class="form-control border-warning mb-3" name="call_time">
+                        <textarea name="message" rows="3" class="form-control border-warning mb-3" placeholder="Enter your message"></textarea>
+                        <button type="submit" class="btn btn-warning bg-yellow-color2 fw-bolder text-uppercase w-100">Submit</button>
+                    </form>
+                </div>
+            </div>
         </div>
-           </div>
-           <div class = "col-md-5 col-12 ">
-                            <!-- Right Form -->
-                            <div class="d-flex justify-content-center my-4 mt-md-0">
-                                <form method="POST" action="{{ route('contact_us_inquiry') }}" class="w-100 text-yellow-color2 p-4" style="border: 3px solid; border-radius: 25px; background-color: rgba(0, 0, 0, 0.6)">
-                                    @csrf
-                                    <h3 class="text-white text-center">For free survey, <b class="text-yellow-color2">CALL US NOW!</b></h3>
-                                    <div class="text-center">
-                                        <i class="bi bi-phone text-white"></i> <a href="tel:02080505605" class="text-decoration-underline text-white fs-4 fw-bold">020 805 05605</a>
-                                    </div>
-                                    <hr class="border-warning">
-            
-                                    <h6 class="text-white text-center fw-bold">OR</h6>
-                                    <h4 class="bg-green-color text-white text-center py-2 rounded-5">BOOK A FREE CONSULTATION NOW!</h4>
-                                    <hr class="border-warning">
-                                    
-                                    <input type="text" class="form-control border-warning mb-3" name="name" placeholder="Enter your name">
-                                    <input type="email" class="form-control border-warning mb-3" name="email" placeholder="Enter your email">
-                                    <label for="" class="text-white bg-yellow-color2 p-2">Call me at</label>
-                                    <input type="number" class="form-control border-warning mb-3" name="phone" placeholder="Enter your phone number">
-                                    <input type="datetime-local" class="form-control border-warning mb-3" name="call_time">
-                                    <textarea name="message" rows="3" class="form-control border-warning mb-3" placeholder="Enter your message"></textarea>
-                                    
-                                    <button type="submit" class="btn btn-warning bg-yellow-color2 fw-bolder text-uppercase w-100">Submit</button>
-                                </form>
-                            </div>
-            
-           </div>
-        </div>
-        <div class="row mt-3">
-            <!-- <div class="col-12 text-center">
+        <!-- <div class="row mt-3">
+            <div class="col-12 text-center">
                 <button id="showMoreButton" class="btn btn-warning px-4 py-2 text-dark" style="border-radius: 20px;">Show More</button>
             </div>
         </div> -->
@@ -761,10 +763,6 @@
    </div>
 </div> --}}
 
-
-
-
-
     {{-- <section class="container-fluid bg-light py-5 my-4">
         <div class="container shadow-container pb-4" style="height: auto !important;">
             <div class="row py-2">
@@ -925,7 +923,7 @@
         </div>
     </div>
 
-{{-- <div class="container-fluid py-3" style="background-color:#fff">
+    {{-- <div class="container-fluid py-3" style="background-color:#fff">
     <section class="container pb-4">
         <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
@@ -975,11 +973,7 @@
             <button class="btn btn-warning px-5 text-uppercase rounded-0 text-black" style="background-color: #ffc107;">Start designing your Ideal Kitchen</button>
         </div>
     </div>
-</div> --}}
-
-
-
-
+        </div> --}}
     <section class="container-fluid py-4 bg-light">
         <div class="col-12 d-flex flex-column align-items-center">
             <h6 class=" text-center fw-bold">
@@ -1103,45 +1097,39 @@
         </div>
     </section>
 
-
-
     {{-- <section class="container-fluid bg-grey-color py-4">
         <div class="col-12 d-flex flex-column align-items-center">
         </div>
     </section> --}}
 
-
     <section class="catalogue-bg py-5">
-    <div class="container">
-        <div class="row align-items-center mb-5">
-            <!-- Left Content -->
-            <div class="col-md-12 col-lg-6 text-center text-lg-start">
-                <div class="card rounded border-0 shadow-sm p-4">
-                    <h5 class="text-primary">Our Catalogue</h5>
-                    <h4 class="mb-3">EXPLORE OUR EXCLUSIVE CATALOGUE</h4>
-                    <p class="mb-3">Get access to our full catalogue for free, featuring custom kitchen designs, premium materials, and smart storage solutions. Whether you're seeking style, function, or both, we've got everything you need to bring your vision to life.</p>
-                    <p class="text-primary">Register now to receive our free catalogue in your inbox.</p>
-                    <form method="POST" action="{{ route('contact_us_inquiry') }}">
-                        @csrf
-                        <div class="input-group">
-                            <input type="email" name="email" class="form-control" placeholder="Enter Your Email" aria-label="Email">
-                            <input type="hidden" name="catalogue_register_now" value="catalogue_register_now">
-                            <button class="btn" type="submit" style="background-color:#febd49">REGISTER NOW!</button>
-                        </div>
-                    </form>
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <!-- Left Content -->
+                <div class="col-md-12 col-lg-6 text-center text-lg-start">
+                    <div class="card rounded border-0 shadow-sm p-4">
+                        <h5 class="text-primary">Our Catalogue</h5>
+                        <h4 class="mb-3">EXPLORE OUR EXCLUSIVE CATALOGUE</h4>
+                        <p class="mb-3">Get access to our full catalogue for free, featuring custom kitchen designs, premium materials, and smart storage solutions. Whether you're seeking style, function, or both, we've got everything you need to bring your vision to life.</p>
+                        <p class="text-primary">Register now to receive our free catalogue in your inbox.</p>
+                        <form method="POST" action="{{ route('contact_us_inquiry') }}">
+                            @csrf
+                            <div class="input-group">
+                                <input type="email" name="email" class="form-control" placeholder="Enter Your Email" aria-label="Email">
+                                <input type="hidden" name="catalogue_register_now" value="catalogue_register_now">
+                                <button class="btn" type="submit" style="background-color:#febd49">REGISTER NOW!</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Right Image -->
+                <div class="col-md-12 col-lg-6 text-center mt-4 mt-lg-0">
+                    <img src="{{ asset('images/catalogue.png') }}" alt="Kitchen Design" class="img-fluid rounded shadow">
                 </div>
             </div>
-
-            <!-- Right Image -->
-            <div class="col-md-12 col-lg-6 text-center mt-4 mt-lg-0">
-                <img src="{{ asset('images/catalogue.png') }}" alt="Kitchen Design" class="img-fluid rounded shadow">
-            </div>
         </div>
-    </div>
-</section>
-
-
-
+    </section>
 
     {{-- <section class="catalogue-bg py-5">
         <div class="container">
@@ -1229,135 +1217,168 @@
         </div>
     </div> --}}
 
-
-
     <!-- Testimonials -->
     @include('frontend.testimonials_component')
 
     <!-- FAQs -->
     @include('frontend.faqs_component', ['faqsData' => $generalFaqs])
-        <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          {{-- <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1> --}}
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <div class=" col-12">
-                <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning p-4">
-                    @csrf
-                    <div>
-                        <div class="d-block">
-                            <div class="text-center text-dark fw-bold">FOR FREE SURVEY AND QUOTE <span class="text-warning"> CALL US NOW!</span></div>
-                            <div class="my-2 d-flex justify-content-center">
-                                <a href="tel:02080505605" class="btn btn-warning text-decoration-underline text-center text-dark fs-4 fw-bold">
-                                <i class="bi pt-2 me-2 bi-phone text-dark"></i> 
-                                    020 805 05605
-                                </a>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            {{-- <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1> --}}
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class=" col-12">
+                    <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning p-4">
+                        @csrf
+                        <div>
+                            <div class="d-block">
+                                <div class="text-center text-dark fw-bold">FOR FREE SURVEY AND QUOTE <span class="text-warning"> CALL US NOW!</span></div>
+                                <div class="my-2 d-flex justify-content-center">
+                                    <a href="tel:02080505605" class="btn btn-warning text-decoration-underline text-center text-dark fs-4 fw-bold">
+                                    <i class="bi pt-2 me-2 bi-phone text-dark"></i> 
+                                        020 805 05605
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <h6 class="text-dark text-center fw-bold">OR</h6>
-                    <hr class="border border-dark">
+                        <h6 class="text-dark text-center fw-bold">OR</h6>
+                        <hr class="border border-dark">
 
-                    
-                    <h4 id="blinking-text" class="bg-warning  fw-bold text-center py-2 rounded-pill">
-                        Book a free consultation now!
-                    </h4>
-                    <hr class="border border-dark">
-                    <div class="mb-3">
-                        <input type="text" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="name" id="name" placeholder="Enter your name">
-                    </div>
-                    <div class="mb-3">
-                        <input type="email" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="email" id="email" placeholder="Enter your email">
-                    </div>
-                    <div class="mb-3">
-                        <input type="number" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="phone" id="phone" placeholder="Enter your phone number">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="text-white py-2 px-3  text-end fw-bold" style="background-color:#2a6161;" >Call US AT</label>
-                        <input type="datetime-local" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="call_time">
-                    </div>
-                    <div class="mb-3">
-                        <textarea name="message" id="message" name="message" rows="3" class="w-100 rounded-0 border border-dark form-control text-dark" placeholder="Enter your message"></textarea>
-                    </div>
-                    <button type="submit" class=" btn py-2 px-4 rounded-0 fw-bolder text-uppercase text-white" style="background-color:#2a6161;">Submit</button>
-                </form>
+                        
+                        <h4 id="blinking-text" class="bg-warning  fw-bold text-center py-2 rounded-pill">
+                            Book a free consultation now!
+                        </h4>
+                        <hr class="border border-dark">
+                        <div class="mb-3">
+                            <input type="text" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="name" id="name" placeholder="Enter your name">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="email" id="email" placeholder="Enter your email">
+                        </div>
+                        <div class="mb-3">
+                            <input type="number" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="phone" id="phone" placeholder="Enter your phone number">
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="text-white py-2 px-3  text-end fw-bold" style="background-color:#2a6161;" >Call US AT</label>
+                            <input type="datetime-local" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="call_time">
+                        </div>
+                        <div class="mb-3">
+                            <textarea name="message" id="message" name="message" rows="3" class="w-100 rounded-0 border border-dark form-control text-dark" placeholder="Enter your message"></textarea>
+                        </div>
+                        <button type="submit" class=" btn py-2 px-4 rounded-0 fw-bolder text-uppercase text-white" style="background-color:#2a6161;">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
             </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
         </div>
-      </div>
     </div>
-  </div>
 
-
-
-@push('scripts')
-    <script>
-      
-
-        $(document).ready(function () {
-            const $carousel01 = $('.main-carousel-banner-01');
-            /* #orderComponentSlider.owlCarousel({
-                loop:true,
-                margin:50,
-                stagePadding:15,
-                autoplay:true
-            }); */
-            // Initialize OwlCarousel
-            $carousel01.owlCarousel({
-                loop: true,
-                margin: 50,
-                stagePadding: 15, // Add padding to avoid clipping
-                rtl: false,
-                autoplay: true,
-                autoplayTimeout: 3000,
-                autoplayHoverPause: true,
-                responsive: {
-                    0: {
-                        items: 1,
-                        nav: true
-                    },
-                    768: {
-                        items: 2,
-                        nav: true
-                    },
-                    992: {
-                        items: 2,
-                        loop: true,
-                        margin: 10,
-                        nav: true,
-                        dots: true,
-                        center: true,
-                    },
-                    1200: {
-                        items: 3,
-                        loop: true,
-                        margin: 50,
-                        nav: true,
-                        dots: true,
-                        center: true,
-                    },
-                    1400: {
-                        items: 3,
-                        loop: true,
-                        margin: 50,
-                        nav: true,
-                        dots: true,
-                        center: true,
+    @push('scripts')
+        <script>
+            $(document).ready(function () {
+                const $carousel01 = $('.main-carousel-banner-01');
+                // Initialize OwlCarousel
+                $carousel01.owlCarousel({
+                    loop: true,
+                    margin: 50,
+                    stagePadding: 15, // Add padding to avoid clipping
+                    rtl: false,
+                    autoplay: true,
+                    autoplayTimeout: 3000,
+                    autoplayHoverPause: true,
+                    responsive: {
+                        0: {
+                            items: 1,
+                            nav: true
+                        },
+                        768: {
+                            items: 2,
+                            nav: true
+                        },
+                        992: {
+                            items: 2,
+                            loop: true,
+                            margin: 10,
+                            nav: true,
+                            dots: true,
+                            center: true,
+                        },
+                        1200: {
+                            items: 3,
+                            loop: true,
+                            margin: 50,
+                            nav: true,
+                            dots: true,
+                            center: true,
+                        },
+                        1400: {
+                            items: 3,
+                            loop: true,
+                            margin: 50,
+                            nav: true,
+                            dots: true,
+                            center: true,
+                        }
                     }
+                });
+                // Customize the autoplay behavior to reverse the direction
+                $carousel01.on('translated.owl.carousel', function() {
+                    $carousel01.find('.owl-item.active').css('animation', 'move-right 0.3s ease-in-out');
+                });
+
+                const canvas = document.getElementById('dots');
+                const ctx = canvas.getContext('2d');
+
+                let dots = [];
+
+                function resizeCanvas() {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
                 }
+
+                resizeCanvas();
+                window.addEventListener('resize', resizeCanvas);
+
+                for (let i = 0; i < 50; i++) {
+                    dots.push({
+                        x: Math.random() * canvas.width,
+                        y: Math.random() * canvas.height,
+                        radius: Math.random() * 2 + 1,
+                        dx: (Math.random() - 0.5) * 0.5,
+                        dy: (Math.random() - 0.5) * 0.5
+                    });
+                }
+
+                function animate() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                    for (let dot of dots) {
+                        ctx.beginPath();
+                        ctx.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2);
+                        ctx.fillStyle = 'orange';
+                        ctx.fill();
+
+                        dot.x += dot.dx;
+                        dot.y += dot.dy;
+
+                        if (dot.x < 0 || dot.x > canvas.width) dot.dx *= -1;
+                        if (dot.y < 0 || dot.y > canvas.height) dot.dy *= -1;
+                    }
+
+                    requestAnimationFrame(animate);
+                }
+
+                animate();
+
             });
-            // Customize the autoplay behavior to reverse the direction
-            $carousel01.on('translated.owl.carousel', function() {
-                $carousel01.find('.owl-item.active').css('animation', 'move-right 0.3s ease-in-out');
-            });
-        });
-    </script>
-@endpush
+        </script>
+    @endpush
 </x-guest-layout>
