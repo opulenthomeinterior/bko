@@ -1019,7 +1019,7 @@
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0 bg-light">
                 <div class="card border-0 bg-light">
                     <div class="" style="height: 250px; width: 100%">
-                        <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="{{ asset('images/homepage.jpeg') }}" alt="">
+                        <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="{{ asset('images/order-component.jpg') }}" alt="">
                     </div>
                 </div>
             </div>
@@ -1037,7 +1037,7 @@
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0 bg-light">
                 <div class="card border-0 bg-light">
                     <div class="" style="height: 250px; width: 100%">
-                        <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="{{ asset('images/homepage.jpeg') }}" alt="">
+                        <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="{{ asset('images/j-pull-22.jpeg') }}" alt="">
                     </div>
                 </div>
             </div>
