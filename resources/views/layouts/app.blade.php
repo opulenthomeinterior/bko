@@ -233,6 +233,7 @@
                                                                         <li class="menu-title">
                                                                             <span data-key="t-menu">Menu</span>
                                                                         </li>
+
                                                                         <li class="nav-item">
                                                                             <a class="nav-link menu-link {{ request()->is('admin/') ? 'active' : '' }}"
                                                                                 href="{{ route('dashboard') }}">
@@ -240,6 +241,7 @@
                                                                                     data-key="t-dashboard">Dashboard</span>
                                                                             </a>
                                                                         </li>
+                                                                        
                                                                         <li class="nav-item">
                                                                             <a class="nav-link menu-link {{ request()->is('admin/users', 'admin/users/*') ? 'active' : '' }}"
                                                                                 href="#sidebarUsermanagement"
@@ -267,9 +269,11 @@
                                                                                 </ul>
                                                                             </div>
                                                                         </li>
+                                                                        
                                                                         <li class="menu-title">
                                                                             <span data-key="t-menu">Products</span>
                                                                         </li>
+                                                                        
                                                                         {{-- <li class="nav-item">
                                                                             <a class="nav-link menu-link {{ request()->is('admin/groups', 'admin/groups/*') ? 'active' : '' }}"
                                                                                 href="#sidebarGroup"
@@ -306,14 +310,14 @@
                                                                             </a>
                                                                         </li>
 
-{{-- Info Graphics --}}
-<li class="nav-item">
-    <a class="nav-link menu-link {{ request()->is('infographics', 'infographics/*') ? 'active' : '' }}"
-        href="{{ route('infographics.create') }}">
-        <i class="las la-paperclip"></i>
-        <span data-key="t-attachments">Create Info Graphics</span>
-    </a>
-</li>
+                                                                        {{-- Info Graphics --}}
+                                                                        <li class="nav-item">
+                                                                            <a class="nav-link menu-link {{ request()->is('infographics', 'infographics/*') ? 'active' : '' }}"
+                                                                                href="{{ route('infographics.create') }}">
+                                                                                <i class="las la-paperclip"></i>
+                                                                                <span data-key="t-attachments">Create Info Graphics</span>
+                                                                            </a>
+                                                                        </li>
 
                                                                         {{-- Categories --}}
                                                                         <li class="nav-item">
@@ -465,6 +469,7 @@
                                                                                 </ul>
                                                                             </div>
                                                                         </li>
+
                                                                         {{-- Coupon --}}
                                                                         <li class="nav-item">
                                                                             <a href="#sidebarCoupon" class="nav-link"
@@ -495,6 +500,7 @@
                                                                                 </ul>
                                                                             </div>
                                                                         </li>
+                                                                        
                                                                         {{-- Orders --}}
                                                                         <li class="nav-item">
                                                                             <a href="#sidebarOrders" class="nav-link"
@@ -640,6 +646,7 @@
                                                                                 </ul>
                                                                             </div>
                                                                         </li>
+                                                                        
                                                                         {{-- Forums --}}
                                                                         <li class="nav-item">
                                                                             <a href="#sidebarforums" class="nav-link"
@@ -668,6 +675,15 @@
                                                                                     </li>
                                                                                 </ul>
                                                                             </div>
+                                                                        </li>
+                                                                        
+                                                                        {{-- Settings --}}
+                                                                        <li class="nav-item">
+                                                                            <a class="nav-link menu-link {{ request()->is('admin/attachments', 'admin/settings/*') ? 'active' : '' }}"
+                                                                                href="{{ route('settings') }}">
+                                                                                <i class="las la-cog"></i>
+                                                                                <span data-key="t-settings">Settings</span>
+                                                                            </a>
                                                                         </li>
                                                                     @endrole
                                                                 </div>

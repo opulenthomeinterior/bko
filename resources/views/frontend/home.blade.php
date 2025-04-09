@@ -349,11 +349,29 @@
     <section class="container py-5 bg-white dots-background-section" style="position: relative; width: 100% !important; overflow: hidden">
         <canvas id="dots" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></canvas>
         <div class="row mt-4" id="stylesContainer" style="position: relative; z-index: 2">
-            <div class="col-lg-7 align-self-center overflow-hidden">
+            <div class="col-lg-7 align-self-center overflow-hidden bg-light py-4">
                 <div class="row">
                     <h3 class="text-uppercase fw-bolder text-dark mb-4">ORDER KITCHEN</h3>
                 </div>
-                <div class="carousel main-carousel-banner-01 owl-carousel clients mb-0 p-0"
+                <div class="row">
+                    @foreach ($styles as $key => $style)
+                        <div class="col-md-4 card border-0 my-4 bg-light">
+                            <div class="card-body" style="box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
+                                <div class="col-12">
+                                    <img src="{{asset('imgs/styles/'.$style->image_path)}}" class="img-fluid">
+                                    <h4 class="card-title text-uppercase fw-bold text-center p-2 {{ $key % 2 == 0 ? 'bg-green-color text-yellow-color2' : 'bg-yellow-color2 text-dark' }}">
+                                        {{$style->name}}
+                                        <br>
+                                        <a href="{{ route('orderkitchenbyname', $style->slug) }}" class="text-center text-white m-0 text-decoration-underline" style="font-size: 10px">See our range >
+
+                                        </a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+                <!-- <div class="carousel main-carousel-banner-01 owl-carousel clients mb-0 p-0"
                     data-margin="30"
                     data-loop="true"
                     data-dots="false"
@@ -378,7 +396,7 @@
                             </div>
                         </div>
                     @endforeach
-                </div>
+                </div> -->
             </div>
             <div class = "col-md-5 col-12 ">
                 <!-- Right Form -->

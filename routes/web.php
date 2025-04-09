@@ -30,6 +30,7 @@ use App\Http\Controllers\VideoGuideController;
 use App\Http\Controllers\InfoGraphicController;
 use App\Http\Controllers\DesignserviceController;
 use App\Http\Controllers\DownloadableGuideController;
+use App\Http\Controllers\SettingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,6 +64,8 @@ Route::prefix('admin')->middleware(['auth', 'verified', 'role:super-admin'])->gr
     Route::resource('attachments', AttachmentController::class);
     Route::post('attachments/bulk-delete', [AttachmentController::class, 'bulkDelete'])->name('attachments.bulkDelete');
     Route::get('attachments/get-images-data', [AttachmentController::class, 'getImagesData'])->name('attachments.getData');
+
+    Route::get('settings', [SettingController::class, 'index'])->name('settings');
 
     Route::prefix('users')->group(function () {
         // Users
