@@ -416,8 +416,8 @@
                         <div class="color-grid">
                             @foreach ($style['colours'] as $styleColour)
                             @php ($colour = \App\Models\Colour::where('id', $styleColour)->first()) @endphp
-                            <a href="{{ route('ordercomponentbyname', ['doors']) }}?style_id={{$style->id}}&colour_id={{$styleColour}}">
-                                <div class="color-thumbnail active" style="background-color: {{$colour->colour_code}};" data-color="white"></div>
+                            <a href="{{ route('ordercomponentbyname', ['doors']) }}?style_id={{$style->id}}&colour_id={{$styleColour}}" title="{{ $colour->trade_colour }}">
+                                <div class="color-thumbnail active" style="background-color: {{$colour->colour_code}};" data-color="white" title="{{ $colour->trade_colour }}"></div>
                             </a>
                             @endforeach
                             <!-- <div class="color-thumbnail" style="background-color: #E8E4DC;" data-color="light-gray"></div>
