@@ -95,9 +95,7 @@
                                         @foreach ($styles as $index => $style)
                                         <div class="col-lg-12 col-md-12 col-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" name="styles[]"
-                                                    id="style{{ $index }}"
-                                                    value="{{ $style->id }}">
+                                                <input class="form-check-input" {{ (!empty($urlStyleId) && ($urlStyleId == $style->id)) ? 'checked' : '' }} type="checkbox" name="styles[]" id="style{{ $index }}" value="{{ $style->id }}">
                                                 <label class="form-check-label"
                                                     for="style{{ $index }}">{{ $style->name }}
                                                 </label>
@@ -130,7 +128,7 @@
                                         @foreach ($colours as $index => $colour)
                                         <div class="col-lg-12 col-md-12 col-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox"
+                                                <input class="form-check-input" type="checkbox" {{ (!empty($urlColourId) && ($urlColourId == $colour->id)) ? 'checked' : '' }}
                                                     name="colours[]" id="colour{{ $index }}"
                                                     value="{{ $colour->id }}">
                                                     @if (!empty($colour->colour_code))

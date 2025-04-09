@@ -494,7 +494,10 @@ class HomeController extends Controller
 
         $seo = CategorySeo::where('category_id', $category->id)->first();
 
-        return view('frontend.shop.ordercomponent.ordercomponentbyname', compact('category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo'));
+        $urlStyleId = $request->style_id ?? '';
+        $urlColourId = $request->colour_id ?? '';
+
+        return view('frontend.shop.ordercomponent.ordercomponentbyname', compact('urlStyleId', 'urlColourId', 'category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo'));
     }
 
     public function order_component_by_filter(Request $request, $slug)
