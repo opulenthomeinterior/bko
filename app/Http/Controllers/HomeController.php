@@ -422,16 +422,16 @@ class HomeController extends Controller
         $children = Category::where('parent_category_id', $category->id)->pluck('id')->toArray();
 
         $types = Category::whereIn('id', $children)
-        ->select('id', 'name', 'status')
-        ->where('status', 1)
-        ->whereIn('id', function($query) use ($children) {
-            $query->select(DB::raw('MIN(id)'))
-                ->from('categories')
-                ->whereIn('id', $children)
-                ->groupBy('name');
-        })
-        ->orderBy('name', 'ASC')
-        ->get();
+                ->select('id', 'name', 'status')
+                ->where('status', 1)
+                ->whereIn('id', function($query) use ($children) {
+                    $query->select(DB::raw('MIN(id)'))
+                        ->from('categories')
+                        ->whereIn('id', $children)
+                        ->groupBy('name');
+                })
+                ->orderBy('name', 'ASC')
+                ->get();
         $assemblies = Assembly::where('slug', 'stock')->where('status', 1)->get();
         $styles = Style::where('status', 1)->get();
 
@@ -444,11 +444,20 @@ class HomeController extends Controller
             $groups = Product::whereIn('category_id', $children)
                 ->where('status', 'active')
                 ->groupBy('parent_sub_category')
-                ->select('parent_sub_category')
-                ->get();
+                ->select('parent_sub_category');
+            $groups = $groups->get();
             $count = $groups->count();
         } else {
-            $count = Product::whereIn('category_id', $children)->where('status', 'active')->count();
+            $count = Product::whereIn('category_id', $children)->where('status', 'active');
+            if (!empty($request->style_id)) {
+                $count = Product::whereIn('category_id', $children)->where('style_id', $request->style_id)->where('status', 'active');
+            }
+            if (!empty($request->colour_id)) {
+                $count = Product::whereIn('category_id', $children)->where('colour_id', $request->colour_id)->where('status', 'active');
+            }
+            $count = $count->count();
+        }
+        if ($slug == 'doors') {
         }
         $currentPage = 1;
         $limit = 12;
@@ -463,9 +472,17 @@ class HomeController extends Controller
             $currentPage = 1;
         }
         if ($slug == 'handles' || $slug == 'sinks') {
-            $products = Product::whereIn('category_id', $children)->where('status', 'active')->groupBy('parent_sub_category')->offset($offset)->limit($limit)->get();
+            $products = Product::whereIn('category_id', $children)->where('status', 'active')->groupBy('parent_sub_category')->offset($offset)->limit($limit);
+            $products = $products->get();
         } else {
-            $products = Product::whereIn('category_id', $children)->where('status', 'active')->offset($offset)->limit($limit)->get();
+            $products = Product::whereIn('category_id', $children)->where('status', 'active')->offset($offset)->limit($limit);
+            if (!empty($request->style_id)) {
+                $products = $products->where('style_id', $request->style_id);
+            }
+            if (!empty($request->colour_id)) {
+                $products = $products->where('colour_id', $request->colour_id);
+            }
+            $products = $products->get();
         }
 
         $heights = Product::whereIn('category_id', $children)
@@ -474,9 +491,6 @@ class HomeController extends Controller
                 ->where('height', '!=', '')
                 ->groupBy('height')
                 ->get();
-                // dd($heights);
-
-        // $products = Product::whereIn('category_id', $children)->paginate($limit);
 
         $seo = CategorySeo::where('category_id', $category->id)->first();
 
@@ -878,7 +892,25 @@ class HomeController extends Controller
     }
 
     public function doorsReplacement() {
-        $styles = Style::with('styleHasColours.style')->get();
+        $styles = Style::get();
+        // foreach ($styles as $style) {
+        //     $colourIds = Product::where('parent_category_id', 1)->where('style_id', $style->id)->where('status', 'active')->groupBy('colour_id')->pluck('colour_id');
+        //     $style['colours'] = $colourIds;
+        // }
+        // First, fetch all products that match parent_category_id and status
+        $products = Product::where('parent_category_id', 1)
+                    ->where('status', 'active')
+                    ->get(['style_id', 'colour_id']);
+
+        // Group products by style_id
+        $groupedProducts = $products->groupBy('style_id');
+
+        $styles = $styles->map(function ($style) use ($groupedProducts) {
+            $colours = $groupedProducts->get($style->id)?->pluck('colour_id')->unique()->values() ?? collect();
+            $style['colours'] = $colours;
+            return $style;
+        });
+
         return view('frontend.shop.orderkitchen.doors_replacement', compact('styles'));
     }
 }
