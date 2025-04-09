@@ -398,7 +398,7 @@
                     @endforeach
                 </div> -->
             </div>
-            <div class = "col-md-5 col-12 ">
+            <div class = "col-md-5 col-12 align-self-center">
                 <!-- Right Form -->
                 <div class="d-flex justify-content-center my-4 mt-md-0">
                     <form method="POST" action="{{ route('contact_us_inquiry') }}" class="w-100 text-yellow-color2 p-4" style="border: 3px solid; border-radius: 25px; background-color: rgba(0, 0, 0, 0.6)">
