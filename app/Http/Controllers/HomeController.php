@@ -550,8 +550,8 @@ class HomeController extends Controller
 
         ///////////////////////////////
         if ($slug == 'handles' || $slug == 'sinks') {
-            $groupedProducts = Product::where('parent_category_id', $parent_category->id)->groupBy('parent_sub_category')->select('parent_sub_category')->get();
-            $count = $groupedProducts->count();
+            $groupedProducts = $productsQuery->where('parent_category_id', $parent_category->id)->groupBy('parent_sub_category');
+            $count = $groupedProducts->get()->count();
         } else {
             $count = $productsQuery->where('parent_category_id', $parent_category->id)->count();
         }
