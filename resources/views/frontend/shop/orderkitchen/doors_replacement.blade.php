@@ -270,8 +270,14 @@
                     <div>
                         <div class="d-block">
                             <div class="text-center text-dark fw-bold">FOR FREE SURVEY AND QUOTE <span class="text-warning"> CALL US NOW!</span></div>
-                            <div class="d-flex justify-content-center">
+                            {{-- <div class="d-flex justify-content-center">
                                 <i class="bi bi-phone text-dark"></i> <a href="tel:02080505605" class="text-decoration-underline text-center text-dark fs-4 fw-bold">
+                                    020 805 05605
+                                </a>
+                            </div> --}}
+                            <div class="my-2 d-flex justify-content-center">
+                                <a href="tel:02080505605" class="btn btn-warning text-decoration-underline text-center text-dark fs-4 fw-bold">
+                                <i class="bi pt-2 me-2 bi-phone text-dark"></i> 
                                     020 805 05605
                                 </a>
                             </div>
@@ -570,12 +576,13 @@
                     <div>
                         <div class="d-block">
                             <div class="text-center text-dark fw-bold">FOR FREE SURVEY AND QUOTE <span class="text-warning"> CALL US NOW!</span></div>
-                            <div class="my-2 d-flex justify-content-center">
+                             <div class="my-2 d-flex justify-content-center">
                                 <a href="tel:02080505605" class="btn btn-warning text-decoration-underline text-center text-dark fs-4 fw-bold">
                                 <i class="bi pt-2 me-2 bi-phone text-dark"></i> 
                                     020 805 05605
                                 </a>
-                            </div>
+                            </div> 
+                            
                         </div>
                     </div>
                     <h6 class="text-dark text-center fw-bold">OR</h6>

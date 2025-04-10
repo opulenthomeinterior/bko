@@ -236,7 +236,7 @@
         <div class="hero-content">
             <h1 class="fs-md-0 fs-1 text-white fw-bold text-uppercase">Bespoke designer <span class="text-warning">kitchens</span></h1>
             {{-- <h1 class="text-warning fw-bold">Timeless Elegance</h1> --}}
-            <p class="mt-md-5"><span class="fs-sm-3">Are You Settling for a Kitchen That Doesn't Fit Your Life?</span> <br>We offer premium, Bespoke Kitchen Units at competitor prices</p>
+            <p class=""><span class="fs-sm-3">Are You Settling for a Kitchen That Doesn't Fit Your Life?</span> <br>We offer premium, Bespoke Kitchen Units at competitor prices</p>
             {{-- <div class="scroll-down">Scroll Down <i>&#x2193;</i></div> --}}
         </div>
     </header>
@@ -741,7 +741,7 @@
             <div class="col-lg-3 col-md-5  col-9 mb-4" style="overflow: hidden;">
                 <h6 class="fw-bold text-center mb-4">BESPOKE MAX <br> STORAGE KITCHEN</h6>
                 {{-- <img style="max-height: 500px; overflow: hidden" src="https://bkonline.uk/public/imgs/products/421878074_891869916280279_5405404846063335271_n1739538312_67af3f882943d.jpg" class="img-fluid" alt="" > --}}
-                <img style=" box-shadow: 18px -13px 0px 0px rgba(254,202,109,1);" src="{{ asset('images/storage-kitchen-new.png') }}" class="img-fluid" alt="" >
+                <img style=" box-shadow: 18px -13px 0px 0px rgba(254,202,109,1);" src="{{ asset('images/max-storage-kitchen-image.png') }}" class="img-fluid" alt="" >
             
             </div>
            

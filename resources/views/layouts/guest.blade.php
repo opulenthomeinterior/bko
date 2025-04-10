@@ -342,7 +342,7 @@ use App\Models\Style;
                          MAX STORAGE KITCHEN
                     </a>
                     {{-- <a class="btn btn-dark rounded text-warning btn-outline-default border-none px-4 " href="{{route('max_storage')}}" style="letter-spacing: 6px;">  --}}
-                    <a class="btn btn-dark rounded text-warning btn-outline-default border-none px-4 " href="{{route('max_storage')}}" style=""> 
+                    <a class="btn btn-dark rounded text-warning btn-outline-default border-none px-4 " href="{{route('doors_replacement')}}" style=""> 
                         DOOR REPLACEMENT SERVICE
                    </a>
                 </div>

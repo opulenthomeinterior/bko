@@ -399,7 +399,7 @@
                 </div> -->
             </div>
             {{-- <div class = "col-md-5 col-12 "> --}}
-            <div class = "col-xl-5 col-lg-5 col-md-8 col-sm-12 col-12 ">
+            <div class = "align-self-center col-xl-5 col-lg-5 col-md-8 col-sm-12 col-12 ">
 
 
                 <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning p-4 my-4 mt-md-0">
