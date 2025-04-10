@@ -419,8 +419,8 @@
                         <textarea name="message" rows="3" class="form-control border-warning mb-3" placeholder="Enter your message"></textarea>
                         <button type="submit" class="btn btn-warning bg-yellow-color2 fw-bolder text-uppercase w-100">Submit</button>
                     </form>
-                </div> --}}
-            </div>
+                </div>
+            </div> --}}
         </div>
         <!-- <div class="row mt-3">
             <div class="col-12 text-center">
