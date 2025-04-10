@@ -381,7 +381,7 @@
                 </div>
             </div>
             {{-- <div class = "col-md-5 col-12 "> --}}
-            <div class = "col-xl-5 col-lg-5 col-md-8 col-sm-12 col-12 ">
+            {{-- <div class = "col-xl-5 col-lg-5 col-md-8 col-sm-12 col-12 ">
 
 
                 <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning p-4 my-4 mt-md-0">
@@ -424,8 +424,8 @@
                     <button type="submit" class=" btn py-2 px-4 rounded-0 fw-bolder text-uppercase text-white" style="background-color:#2a6161;">Submit</button>
                 </form>
 
-                <!-- Right Form -->
-                {{-- <div class="d-flex justify-content-center my-4 mt-md-0">
+                 Right Form 
+                <div class="d-flex justify-content-center my-4 mt-md-0">
                     <form method="POST" action="{{ route('contact_us_inquiry') }}" class="w-100 text-yellow-color2 p-4" style="border: 3px solid; border-radius: 25px; background-color: rgba(0, 0, 0, 0.6)">
                         @csrf
                         <h3 class="text-white text-center">For free survey, <b class="text-yellow-color2">CALL US NOW!</b></h3>
@@ -444,8 +444,8 @@
                         <textarea name="message" rows="3" class="form-control border-warning mb-3" placeholder="Enter your message"></textarea>
                         <button type="submit" class="btn btn-warning bg-yellow-color2 fw-bolder text-uppercase w-100">Submit</button>
                     </form>
-                </div> --}}
-            </div>
+                </div>
+            </div> --}}
         </div>
         <!-- <div class="row mt-3">
             <div class="col-12 text-center">
