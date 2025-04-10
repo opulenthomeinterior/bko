@@ -398,9 +398,52 @@
                     @endforeach
                 </div> -->
             </div>
-            <div class = "col-md-5 col-12 align-self-center">
-                <!-- Right Form -->
-                {{-- <div class="d-flex justify-content-center my-4 mt-md-0">
+            {{-- <div class = "col-md-5 col-12 "> --}}
+            <div class = "col-xl-5 col-lg-5 col-md-8 col-sm-12 col-12 ">
+
+
+                <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning p-4 my-4 mt-md-0">
+                    @csrf
+                    <div>
+                        <div class="d-block">
+                            <div class="text-center text-dark fw-bold">FOR FREE SURVEY AND QUOTE <span class="text-warning"> CALL US NOW!</span></div>
+                            <div class="my-2 d-flex justify-content-center">
+                                <a href="tel:02080505605" class="btn btn-warning text-decoration-underline text-center text-dark fs-4 fw-bold">
+                                <i class="bi pt-2 me-2 bi-phone text-dark"></i> 
+                                    020 805 05605
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <h6 class="text-dark text-center fw-bold">OR</h6>
+                    <hr class="border border-dark">
+
+                    
+                    <h4 id="blinking-text" class="bg-warning text-black  fw-bold text-center py-2 rounded-pill">
+                        Book a free consultation now!
+                    </h4>
+                    <hr class="border border-dark">
+                    <div class="mb-3">
+                        <input type="text" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="name" id="name" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="email" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-3">
+                        <input type="number" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="phone" id="phone" placeholder="Enter your phone number">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="text-white py-2 px-3  text-end fw-bold" style="background-color:#2a6161;" >Call US AT</label>
+                        <input type="datetime-local" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="call_time">
+                    </div>
+                    <div class="mb-3">
+                        <textarea name="message" id="message" name="message" rows="3" class="w-100 rounded-0 border border-dark form-control text-dark" placeholder="Enter your message"></textarea>
+                    </div>
+                    <button type="submit" class=" btn py-2 px-4 rounded-0 fw-bolder text-uppercase text-white" style="background-color:#2a6161;">Submit</button>
+                </form>
+
+                 {{-- Right Form 
+                <div class="d-flex justify-content-center my-4 mt-md-0">
                     <form method="POST" action="{{ route('contact_us_inquiry') }}" class="w-100 text-yellow-color2 p-4" style="border: 3px solid; border-radius: 25px; background-color: rgba(0, 0, 0, 0.6)">
                         @csrf
                         <h3 class="text-white text-center">For free survey, <b class="text-yellow-color2">CALL US NOW!</b></h3>
@@ -419,8 +462,8 @@
                         <textarea name="message" rows="3" class="form-control border-warning mb-3" placeholder="Enter your message"></textarea>
                         <button type="submit" class="btn btn-warning bg-yellow-color2 fw-bolder text-uppercase w-100">Submit</button>
                     </form>
-                </div>
-            </div> --}}
+                </div> --}}
+            </div>
         </div>
         <!-- <div class="row mt-3">
             <div class="col-12 text-center">
