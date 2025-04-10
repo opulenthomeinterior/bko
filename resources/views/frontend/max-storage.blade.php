@@ -73,7 +73,8 @@
         } */
 
         .hero {
-            background: url('https://bkonline.uk/public/imgs/products/464785299_8512016742222733_5169156552107455268_n1739534754_67af31a285b0e.jpg') center/cover no-repeat;
+            /* background: url('https://bkonline.uk/public/imgs/products/464785299_8512016742222733_5169156552107455268_n1739534754_67af31a285b0e.jpg') center/cover no-repeat; */
+            background: url('{{ asset('images/hero-image.jpeg') }}') center/cover no-repeat;
             height: 100vh;
             display: flex;
             align-items: center;
