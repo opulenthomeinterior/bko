@@ -235,7 +235,7 @@
         <div class="hero-content">
             <h1 class="fs-md-0 fs-1 text-white fw-bold text-uppercase">Bespoke designer <span class="text-warning">kitchens</span></h1>
             {{-- <h1 class="text-warning fw-bold">Timeless Elegance</h1> --}}
-            <p class="mt-md-5"><span class="fs-sm-3">Are You Settling for a Kitchen That Doesn't Fit Your Life?</span> <br>We offer premium, bespoke designer kitchens at competitive prices.</p>
+            <p class="mt-md-5"><span class="fs-sm-3">Are You Settling for a Kitchen That Doesn't Fit Your Life?</span> <br>We offer premium, Bespoke Kitchen Units at competitor prices</p>
             {{-- <div class="scroll-down">Scroll Down <i>&#x2193;</i></div> --}}
         </div>
     </header>
@@ -245,10 +245,10 @@
             {{-- <div class="col-xl-3 col-lg-3 col-md-2 col-sm-12 col-3"></div> --}}
             <div class=" col-lg-6 col-md-8 col-sm-12 col-12 align-self-center px-5">
                 <div style="">
-                    <h2 class="text-uppercase">
-                        Standard kitchens 
+                    <h2 class="">
+                        <span class="text-warning">Standard Kitchens </span>
                         <br>
-                        frequently require compromises
+                        frequently require <span class="text-warning">compromises</span>
 
                         {{-- Start Your Journey with <span class="text-warning">BK Online</span> --}}
                     </h2>
@@ -437,7 +437,7 @@
                         <h5 class="card-title mb-3 text-dark">02.</h5>
                         <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Design & Refine</h5>
                         <div class="px-5">
-                        <p class="card-text text-muted">Our experts create a personalized design, including layouts, 3D renderings, and material selections. You'll have opportunities to refine every detail.</p>
+                        <p class="card-text text-muted">Our experts create a personalized design, including layouts, material selections. You'll have opportunities to refine every detail.</p>
                         </div>
                     </div>
                 </div>
@@ -452,7 +452,7 @@
                         <h5 class="card-title mb-3 text-dark">03.</h5>
                         <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Craft & Create</h5>
                         <div class="px-5">
-                        <p class="card-text text-muted">Our skilled craftsmen meticulously build and install your bespoke kitchen, ensuring a perfect fit and lasting beauty.</p>
+                        <p class="card-text text-muted">Our skilled craftsmen meticulously build and install your custom kitchen, ensuring a perfect fit and lasting beauty.</p>
                         </div>
                     </div>
                 </div>
@@ -463,7 +463,7 @@
     <div class="row justify-content-center text-center">
         <div class="col-lg-6 col-md-8 col-sm-10 col-12 mb-5 mt-3">
             <p class="fw-bold text-success">Stop dreaming and build a kitchen that reflects your needs and style</p>
-            <button class="btn btn-warning px-5 text-uppercase rounded-0">Start designing your Ideal Kitchen</button>
+            <button class="btn btn-warning px-5 text-uppercase rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Start designing your Ideal Kitchen</button>
         </div>
     </div>
 </div>
@@ -523,14 +523,15 @@
     
     <section class="container pt-5 pb-2 mb-5">
         <div class="row">
-            <h3 class="col-md-12 col-11 text-center mb-4 fw-bold text-danger text-uppercase">WHAT ARE BESPOKE MAX STORAGE KITCHENS?<br>ARE YOU STRUGGLING WITH STORAGE SPACE?</h3>
+            <h3 class="col-md-12 col-11 text-center mb-4 fw-bold text-black text-uppercase">WHAT ARE BESPOKE MAX STORAGE KITCHENS?</h3>
+            <h4 class="col-md-12 p-0 col-11 text-start  fw-bold text-danger text-uppercase">ARE YOU STRUGGLING WITH STORAGE SPACE?</h4>
 
         </div>
         <div class="row">
             <div class="col-12 px-5 p-md-0 d-flex align-items-center">
                 <div>
                     <h5 class="text-uppercase" style="color: #2a6161">SOLUTION
-                        BESPOKE MAX STORAGE KITCHENS
+                        
                          <br><b style="color: #000">BESPOKE MAX STORAGE KITCHENS</b></h5>
                     <small>
                         Standard designer kitchens are beautiful but with limited storage space. Bulk-manufactured standard space units are not the solution for your major storage problems. 
@@ -538,7 +539,7 @@
                         <span>
                             <span class="text-black fw-bold">
                                 Are overcrowded </span> <span class="text-warning fw-bold"> cabinets and cluttered countertops </span> <span class="text-black fw-bold">causing you daily stress?</span><br>
-                            At BKO, we offer a bespoke kitchen unit designed to maximize your kitchen’s storage with the deepest, tallest, and widest units in the market, and they are customized to suit your needs. 
+                            At BKO, we offer made to measure kitchens units to maximize your kitchen with the deepest, tallest, and widest units in the market, and they are customized to suit your needs. 
                         </span>
                         <br>
                     </small>
@@ -559,7 +560,7 @@
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
                 <div class="card border-0">
                     <div class="" style="height: 250px; width: 100%">
-                        <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="{{ asset('images/homepage.jpeg') }}" alt="">
+                        <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="{{ asset('images/deepest.jpg') }}" alt="">
                     </div>
                 </div>
             </div>
@@ -567,14 +568,14 @@
                 <div class="card border-0">
                     <div class="p-5 bg-green-color d-flex flex-column align-items-center justify-content-center" style="height: 250px; width: 100%">
                         <h3 class="text-white fw-bold text-center">TALLEST UNITS</h3>
-                        <p class="text-white text-center">Floor-to-ceiling cupboards for extra storage. Ideal for small kitchens needing vertical space.</p>
+                        <p class="text-white text-center">Floor-to-ceiling cabinets for extra storage. Ideal for small kitchens needing vertical space.</p>
                     </div>
                 </div>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
                 <div class="card border-0">
                     <div class="" style="height: 250px; width: 100%">
-                        <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="{{ asset('images/homepage.jpeg') }}" alt="">
+                        <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="{{ asset('images/widest.jpg') }}" alt="">
                     </div>
                 </div>
             </div>
@@ -589,7 +590,7 @@
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
                 <div class="card border-0">
                     <div class="" style="height: 250px; width: 100%">
-                        <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="{{ asset('images/homepage.jpeg') }}" alt="">
+                        <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="{{ asset('images/tallest.jpg') }}" alt="">
                     </div>
                 </div>
             </div>
@@ -597,7 +598,7 @@
                 <div class="card border-0">
                     <div class="p-5 bg-dark d-flex flex-column align-items-center justify-content-center" style="height: 250px; width: 100%">
                         <h4 class="text-white fw-bold text-center">WIDEST UNITS</h4>
-                        <p class="text-white text-center">Wide drawers for organized storage of kitchens essentials. Make use of every inch efficiently.</p>
+                        <p class="text-white text-center">Wide cabinets for organized storage of kitchens essentials. Make use of every inch efficiently.</p>
                     </div>
                 </div>
             </div>
@@ -651,7 +652,7 @@
             </div>
         </div>
         <div class="col-9 col-md-5 col-lg-3">
-            <img src="{{ asset('images/bridging-units.png') }}" class="img-fluid" alt="Smart Kitchen" style=" object-fit: cover; box-shadow: 20px 22px 0px 0px rgba(42, 97, 97,1);">
+            <img src="{{ asset('images/bridging.png') }}" class="img-fluid border border-warning" alt="Smart Kitchen" style=" object-fit: cover; box-shadow: 20px 22px 0px 0px rgba(42, 97, 97,1);">
             <div class="content mt-5">
                 <h3 class="text-uppercase text-center">Bridging Units</h3>
                 <p class="text-center"> Our bridging units are designed to seamlessly align with tall units, offering a custom fit for you. While the market standard typically offers a depth of 300mm, we provide options with depths of up to 850mm or more. </p>
@@ -739,7 +740,7 @@
             <div class="col-lg-3 col-md-5  col-9 mb-4" style="overflow: hidden;">
                 <h6 class="fw-bold text-center mb-4">BESPOKE MAX <br> STORAGE KITCHEN</h6>
                 {{-- <img style="max-height: 500px; overflow: hidden" src="https://bkonline.uk/public/imgs/products/421878074_891869916280279_5405404846063335271_n1739538312_67af3f882943d.jpg" class="img-fluid" alt="" > --}}
-                <img style=" box-shadow: 18px -13px 0px 0px rgba(254,202,109,1);" src="{{ asset('images/max-storage-kitchen.png') }}" class="img-fluid" alt="" >
+                <img style=" box-shadow: 18px -13px 0px 0px rgba(254,202,109,1);" src="{{ asset('images/storage-kitchen-new.png') }}" class="img-fluid" alt="" >
             
             </div>
            
@@ -764,7 +765,7 @@
                             <th>Layout & Flow</th>
                             <td>Often limited to pre-determined configurations.</td>
                             <td>Designed specifically for your space and how you use it.</td>
-                            <th>Designed specifically for your space and how you use it.</th>
+                            <th>Eliminates cramped spaces and inefficient workflows.</th>
                         </tr>
                         <tr>
                             <th>Storage Capacity</th>
@@ -869,20 +870,67 @@
          
           <div class="item">
             <div class="card">
-              <img src="{{ asset('images/chrome-wire.png') }}" class="card-img-top" alt="">
+              <img src="{{ asset('images/pull-out-shelving-unit.png') }}" class="card-img-top" alt="">
               <div class="card-body">
-                <h6 class="card-title">Carousel Set, Chrome Wire</h6>
+                <h6 class="card-title">Pull-out Shelving Unit</h6>
                
               </div>
             </div>
           </div>
           
+          <div class="item">
+            <div class="card">
+              <img src="{{ asset('images/pull-out-larder-unit.png') }}" class="card-img-top" alt="">
+              <div class="card-body">
+                <h6 class="card-title">Pull-out Larder Unit</h6>
+               
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="card">
+              <img src="{{ asset('images/pull-out-storage-basket.png') }}" class="card-img-top" alt="">
+              <div class="card-body">
+                <h6 class="card-title">Pull-out Stroage Basket</h6>
+               
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="card">
+              <img src="{{ asset('images/pull-out-corner-unit.png') }}" class="card-img-top" alt="">
+              <div class="card-body">
+                <h6 class="card-title">Pull-out Corner Unit</h6>
+               
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="card">
+              <img src="{{ asset('images/Pull-out-storage.png') }}" class="card-img-top" alt="">
+              <div class="card-body">
+                <h6 class="card-title">Pull-out Storage</h6>
+               
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="card">
+              <img src="{{ asset('images/swing-out-larder-unit.png') }}" class="card-img-top" alt="">
+              <div class="card-body">
+                <h6 class="card-title">Swing-out Larder Unit</h6>
+               
+              </div>
+            </div>
+          </div>
+          
+         
           
             </div>
         </div>
         <div class="row mt-5 justify-content-center">
            <div class="col-lg-4 col-8">
-            <a href="{{ route('max_storage') }}" class="btn btn-warning px-3 text-uppercase rounded-0"> Explore Our Max Storage Designs</a>
+            <a href="{{ route('max_storage') }}" class="btn btn-warning px-3 text-uppercase rounded-0"> Explore Unique Storage Solutions</a>
            </div>
         </div>
          

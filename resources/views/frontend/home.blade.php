@@ -376,7 +376,7 @@
                     data-loop="true"
                     data-dots="false"
                     data-autoplay="true"
-                    data-autoplay-timeout="3000"
+                    data-autoplay-timeout="3000" 
                     data-responsive='{"0":{"items": "3"}, "768":{"items": "4"}, "992":{"items": "4"}, "1200":{"items": "4"}, "1400":{"items": "4"}}'>
                     @foreach ($styles as $key => $style)
                         <div class="item">
@@ -400,7 +400,7 @@
             </div>
             <div class = "col-md-5 col-12 align-self-center">
                 <!-- Right Form -->
-                <div class="d-flex justify-content-center my-4 mt-md-0">
+                {{-- <div class="d-flex justify-content-center my-4 mt-md-0">
                     <form method="POST" action="{{ route('contact_us_inquiry') }}" class="w-100 text-yellow-color2 p-4" style="border: 3px solid; border-radius: 25px; background-color: rgba(0, 0, 0, 0.6)">
                         @csrf
                         <h3 class="text-white text-center">For free survey, <b class="text-yellow-color2">CALL US NOW!</b></h3>
@@ -419,7 +419,7 @@
                         <textarea name="message" rows="3" class="form-control border-warning mb-3" placeholder="Enter your message"></textarea>
                         <button type="submit" class="btn btn-warning bg-yellow-color2 fw-bolder text-uppercase w-100">Submit</button>
                     </form>
-                </div>
+                </div> --}}
             </div>
         </div>
         <!-- <div class="row mt-3">
@@ -883,7 +883,64 @@
     </section>
 
     <div class="container-fluid py-3" style="background-color:#f2f4f5">
+
         <section class="container pb-4">
+            <div class="row gap-5 justify-content-center">
+                <div class="col-lg-3 col-md-6 col-9 mb-4">
+                    <div class="card rounded-0 border-0 h-100" style="  box-shadow: 20px -20px 0px -1px rgb(242 244 245), 20px -20px 0px 0 rgb(42, 97, 97); ">
+                        <div class="card-body text-center p-4">
+                            <div class="card-icon">
+                                <i class="bi bi-card-list text-warning" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                                
+                            </div>
+                            <h5 class="card-title mb-3 text-dark">01.</h5>
+                            <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Dream & Discuss</h5>
+                            <div class="px-5">
+                                <p class="card-text text-muted">Share your vision! We'll listen to your ideas, needs, and lifestyle to understand your dream kitchen.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-3 col-md-6 col-9 mb-4">
+                    <div class="card rounded-0 border-0 h-100" style="  box-shadow: 20px -20px 0px -1px rgb(242 244 245), 20px -20px 0px 0 rgb(42, 97, 97); ">
+                        <div class="card-body text-center p-4">
+                            <div class="card-icon">
+                                <i class="bi bi-cash-stack text-warning" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                            </div>
+                            <h5 class="card-title mb-3 text-dark">02.</h5>
+                            <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Design & Refine</h5>
+                            <div class="px-5">
+                            <p class="card-text text-muted">Our experts create a personalized design, including layouts, material selections. You'll have opportunities to refine every detail.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-3 col-md-6 col-9 mb-4">
+                    <div class="card rounded-0 border-0 h-100" style="  box-shadow: 20px -20px 0px -1px rgb(242 244 245), 20px -20px 0px 0 rgb(42, 97, 97); ">
+                        <div class="card-body text-center p-4">
+                            <div class="card-icon">
+                                <i class="bi bi-clipboard-check text-warning" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                            </div>
+                            <h5 class="card-title mb-3 text-dark">03.</h5>
+                            <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Craft & Create</h5>
+                            <div class="px-5">
+                            <p class="card-text text-muted">Our skilled craftsmen meticulously build and install your custom kitchen, ensuring a perfect fit and lasting beauty.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-6 col-md-8 col-sm-10 col-12 mb-5 mt-3">
+                <p class="fw-bold text-primary">Stop dreaming and build a kitchen that reflects your needs and style</p>
+                <button class="btn btn-warning px-5 text-uppercase rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Start designing your Ideal Kitchen</button>
+            </div>
+        </div>
+        {{-- <section class="container pb-4">
             <div class="row gap-5 justify-content-center">
                 <div class="col-lg-3 col-md-6 col-9 mb-4">
                     <div class="card rounded-0 border-0 h-100" style="  box-shadow: 20px -20px 0px -1px rgb(242 244 245), 20px -20px 0px 0 rgb(42, 97, 97); ">
@@ -938,7 +995,7 @@
                 <p class="fw-bold text-primary">Build a kitchen that reflects your needs & style.</p>
                 <button class="btn btn-warning px-5 text-uppercase rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Book An On-Site Survey Now!</button>
             </div>
-        </div>
+        </div> --}}
     </div>
 
     {{-- <div class="container-fluid py-3" style="background-color:#fff">
@@ -1015,7 +1072,7 @@
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0 bg-light">
                 <div class="card border-0 bg-light">
                     <div class="" style="height: 250px; width: 100%">
-                        <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="{{ asset('images/homepage.jpeg') }}" alt="">
+                        <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="{{ asset('images/deepest.jpg') }}" alt="">
                     </div>
                 </div>
             </div>
@@ -1031,7 +1088,7 @@
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0 bg-light">
                 <div class="card border-0 bg-light">
                     <div class="" style="height: 250px; width: 100%">
-                        <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="{{ asset('images/order-component.jpg') }}" alt="">
+                        <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="{{ asset('images/widest.jpg') }}" alt="">
                     </div>
                 </div>
             </div>
@@ -1049,7 +1106,7 @@
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0 bg-light">
                 <div class="card border-0 bg-light">
                     <div class="" style="height: 250px; width: 100%">
-                        <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="{{ asset('images/j-pull-22.jpeg') }}" alt="">
+                        <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="{{ asset('images/tallest.jpg') }}" alt="">
                     </div>
                 </div>
             </div>
