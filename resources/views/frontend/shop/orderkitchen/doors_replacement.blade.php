@@ -307,10 +307,10 @@
         </div>
         <div class="row flex-column my-5 align-items-center justify-content-center">
             <div class="col-sm-5">
-            <h4 class="text-center">Benefit from our limited time offer and get a Free Quote for Door Replacement</h4>
+            <h4 class="text-center">Benefit from our limited time offer and get a FREE QUOTE for Kitchen Door Replacement</h4>
             </div>
             <div class="col-9 col-sm-3">
-                <button class="btn bg-orange px-4 text-uppercase rounded-0">book your FREE CONSULTATION NOW!</button>
+                <button class="btn bg-orange px-4 text-uppercase rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal">book your FREE CONSULTATION NOW!</button>
             </div>
         </div>
     </section>
@@ -398,8 +398,8 @@
     <div class="container py-5">
         <div class="mb-3 row justify-content-center">
             <h4 class="text-black fw-bold text-center">Do you crave a kitchen that feels fresh, modern, and inviting?</h4>
-            <h1 class="my-3 text-center text-black"> Discover the Perfect Doors for Your Kitchen</h1>
-            <p class="text-center fs-6 w-75">Browse our extensive collection of kitchen door styles, available in a wide array of colors and finishes. Find the ideal match for your existing cabinets and create the kitchen of your dreams.</p>
+            <h1 class="mb-1 text-center text-black"> Discover the Perfect Doors for Your Kitchen</h1>
+            <p class="text-center fs-6 w-75">Browse our extensive collection of kitchen door styles, available in a wide array of colors and finishes. Find the ideal match for your existing cabinets and buy kitchen doors to create the kitchen of your dreams</p>
 
         </div>
         <div class="row justify-content-center">

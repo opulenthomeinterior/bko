@@ -336,10 +336,15 @@ use App\Models\Style;
                         <small class="">For a limited time, we are offering free on-site surveys and consultations.</small>
                      --}}
                 </div>
-                <div class="text-center" style="background-color:#222222;">
-                    <a class="btn text-warning btn-outline-default border-none px-4 " href="{{route('max_storage')}}" style="letter-spacing: 6px;"> 
-                        VISIT MAX STORAGE KITCHEN
+                <div class="py-2 px-5 d-flex flex-column flex-md-row justify-content-between" style="background-color:#222222;">
+                    {{-- <a class="btn btn-dark rounded text-warning btn-outline-default border-none px-4 " href="{{route('max_storage')}}" style="letter-spacing: 6px;">  --}}
+                    <a class="btn btn-dark mb-2 mb-sm-0 rounded text-warning btn-outline-default border-none px-4 " href="{{route('max_storage')}}" style=""> 
+                         MAX STORAGE KITCHEN
                     </a>
+                    {{-- <a class="btn btn-dark rounded text-warning btn-outline-default border-none px-4 " href="{{route('max_storage')}}" style="letter-spacing: 6px;">  --}}
+                    <a class="btn btn-dark rounded text-warning btn-outline-default border-none px-4 " href="{{route('max_storage')}}" style=""> 
+                        DOOR REPLACEMENT SERVICE
+                   </a>
                 </div>
             </nav>
             <!-- <nav class="nav container-fluid p-0 bg-dark second-navbar" style="border-bottom: 1px solid #ebc266"> -->
