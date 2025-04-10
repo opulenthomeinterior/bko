@@ -337,8 +337,8 @@ class ProductController extends Controller
 
             $rowCount = $rowCount - 1;
 
-            if (ProductFile::where('name', $filename)->where('records', $rowCount)->exists()) {
-                $productFile = ProductFile::where('name', $filename)->where('records', $rowCount)->first();
+            if (ProductFile::where('name', $filename)->exists()) {
+                $productFile = ProductFile::where('name', $filename)->first();
                 $productFile->name = $filename;
                 $productFile->records = $rowCount;
                 $productFile->updated_at = Carbon::now();
