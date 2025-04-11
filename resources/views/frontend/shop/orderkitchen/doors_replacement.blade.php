@@ -255,7 +255,7 @@
                         <h4 class="fw-bold text-black">Does the thought of updating your kitchen feel overwhelming and expensive?</h4>
                         <h2 class="fw-bolder"><span class="orange">Order a Sample</span> <span class=""text-black fw-bolder"> of Your Favorite Door</span></h2>
                         <p class="">Choosing the right kitchen doors is an important decision. Our sample service allows you to experience the finish, material, and color of our doors in your own home before committing to a full order. </p>
-                        <button class="btn bg-orange px-4 text-uppercase rounded-0"> Order a Sample of your choice NOW!</button>
+                        <a href="{{ route('ordercomponentbyname', 'doors') }}" class="btn bg-orange px-4 text-uppercase rounded-0"> Order a Sample of your choice NOW!</a>
                     </div>
                     <div class="col-12 col-xl-4">
                     <img class="w-100 object-fit-cover rounded border border-warning" src="https://bkonline.uk/public/imgs/products/TALL-Larder-angled-12501720361557_668aa255bad6b.jpg"  class="img-fluid"  alt="Modern Kitchen" 
