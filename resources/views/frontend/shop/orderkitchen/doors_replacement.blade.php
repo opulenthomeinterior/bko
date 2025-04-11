@@ -413,23 +413,23 @@
             <div class="col-sm-6 col-lg-4 my-3">
                 <div class="card">
                     @if ($style->id == 1)
-                    <img src="https://bkonline.uk/public/imgs/products/J-pull-Dove-Grey1744357344_67f8c7e02f610.png" class="card-img-top" style="max-height: 400px" id="main-image" alt="Kitchen Cabinet">
+                    <img src="https://bkonline.uk/public/imgs/products/J-pull-Dove-Grey1744357344_67f8c7e02f610.png" class="card-img-top" style="max-height: 300px; width: 170px" id="main-image" alt="Kitchen Cabinet">
                     @elseif($style->id == 2)
-                    <img src="https://bkonline.uk/public/imgs/products/Belsay-Cashmere1744359926_67f8d1f695086.jpg" class="card-img-top" style="max-height: 400px" id="main-image" alt="Kitchen Cabinet">
+                    <img src="https://bkonline.uk/public/imgs/products/Belsay-Cashmere1744359926_67f8d1f695086.jpg" class="card-img-top" style="max-height: 300px; width: 170px" id="main-image" alt="Kitchen Cabinet">
                     @elseif($style->id == 3)
-                    <img src="https://bkonline.uk/public/imgs/products/Vivo-Gloss-Dust-Grey-Door-Flat_CMYK_PRINT1720430622_668bb01e6686d.jpg" class="card-img-top" style="max-height: 400px" id="main-image" alt="Kitchen Cabinet">
+                    <img src="https://bkonline.uk/public/imgs/products/Vivo-Gloss-Dust-Grey-Door-Flat_CMYK_PRINT1720430622_668bb01e6686d.jpg" class="card-img-top" style="max-height: 300px; width: 170px" id="main-image" alt="Kitchen Cabinet">
                     @elseif($style->id == 4)
-                    <img src="https://bkonline.uk/public/imgs/products/vivo_vero_matt_anthracite1744270130_67f773321d81e.png" class="card-img-top" style="max-height: 400px" id="main-image" alt="Kitchen Cabinet">
+                    <img src="https://bkonline.uk/public/imgs/products/vivo_vero_matt_anthracite1744270130_67f773321d81e.png" class="card-img-top" style="max-height: 300px; width: 170px" id="main-image" alt="Kitchen Cabinet">
                     @elseif($style->id == 5)
-                    <img src="https://bkonline.uk/public/imgs/products/Lucente-Gloss-Dust-Grey-Door-Perspective_CMYK_PRINT1720441467_668bda7b578b1.jpg" class="card-img-top" style="max-height: 400px" id="main-image" alt="Kitchen Cabinet">
+                    <img src="https://bkonline.uk/public/imgs/products/Lucente-Gloss-Dust-Grey-Door-Perspective_CMYK_PRINT1720441467_668bda7b578b1.jpg" class="card-img-top" style="max-height: 300px; width: 170px" id="main-image" alt="Kitchen Cabinet">
                     @elseif($style->id == 6)
-                    <img src="https://bkonline.uk/public/imgs/products/Cartmel-Anthracite-Flat-Door-Cutout_RGB_Web1720451119_668c002f56976.jpg" class="card-img-top" style="max-height: 400px" id="main-image" alt="Kitchen Cabinet">
+                    <img src="https://bkonline.uk/public/imgs/products/Cartmel-Anthracite-Flat-Door-Cutout_RGB_Web1720451119_668c002f56976.jpg" class="card-img-top" style="max-height: 300px; width: 170px" id="main-image" alt="Kitchen Cabinet">
                     @elseif($style->id == 7)
-                    <img src="https://bkonline.uk/public/imgs/products/Vivo-Matt_Cashmere_Door-Flat_With-Handle1720432485_668bb765d85c3.jpg" class="card-img-top" style="max-height: 400px" id="main-image" alt="Kitchen Cabinet">
+                    <img src="https://bkonline.uk/public/imgs/products/Vivo-Matt_Cashmere_Door-Flat_With-Handle1720432485_668bb765d85c3.jpg" class="card-img-top" style="max-height: 300px; width: 170px" id="main-image" alt="Kitchen Cabinet">
                     @elseif($style->id == 8)
-                    <img src="https://bkonline.uk/public/imgs/products/vivo_vero_matt_light_grey1744270102_67f77316cd6eb.png" class="card-img-top" style="max-height: 400px" id="main-image" alt="Kitchen Cabinet">
+                    <img src="https://bkonline.uk/public/imgs/products/vivo_vero_matt_light_grey1744270102_67f77316cd6eb.png" class="card-img-top" style="max-height: 300px; width: 170px" id="main-image" alt="Kitchen Cabinet">
                     @elseif($style->id == 10)
-                    <img src="https://bkonline.uk/public/imgs/products/Matt-Light-Grey-Door-with-Handle1730581810_67269532decf5.jpg" class="card-img-top" style="max-height: 400px" id="main-image" alt="Kitchen Cabinet">
+                    <img src="https://bkonline.uk/public/imgs/products/Matt-Light-Grey-Door-with-Handle1730581810_67269532decf5.jpg" class="card-img-top" style="max-height: 300px; width: 170px" id="main-image" alt="Kitchen Cabinet">
                     @endif
                     <div class="card-body text-center">
                         <div class="d-flex justify-content-between align-items-center mb-4">
