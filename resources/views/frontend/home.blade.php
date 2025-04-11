@@ -1339,7 +1339,7 @@
     @include('frontend.testimonials_component')
 
     <!-- FAQs -->
-    @include('frontend.faqs_component', ['faqsData' => $generalFaqs])
+    @include('frontend.faqs_component', ['faqsData' => $generalFaqs, 'home' => 'home'])
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
