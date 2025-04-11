@@ -258,8 +258,8 @@
                         <a href="{{ route('ordercomponentbyname', 'doors') }}" class="btn bg-orange px-4 text-uppercase rounded-0"> Order a Sample of your choice NOW!</a>
                     </div>
                     <div class="col-12 col-xl-4">
-                    <img class="w-100 object-fit-cover rounded border border-warning" src="https://bkonline.uk/public/imgs/products/TALL-Larder-angled-12501720361557_668aa255bad6b.jpg"  class="img-fluid"  alt="Modern Kitchen" 
-                        style="width: 300px; height: 300px; object-fit: cover;">
+                    <img class="w-100 object-fit-cover rounded border border-warning" src="https://bkonline.uk/public/imgs/products/Cartmel-Cashmere-Flat-Door-A1720452961_668c0761d6f16.jpg"  class="img-fluid"  alt="Modern Kitchen" 
+                        style="width: 300px; height: 400px; object-fit: cover;">
                     </div>
                 </div>
 
