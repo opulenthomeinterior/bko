@@ -895,7 +895,7 @@ class HomeController extends Controller
     }
 
     public function doorsReplacement() {
-        $styles = Style::get();
+        $styles = Style::where('status', 'active')->get();
         // foreach ($styles as $style) {
         //     $colourIds = Product::where('parent_category_id', 1)->where('style_id', $style->id)->where('status', 'active')->groupBy('colour_id')->pluck('colour_id');
         //     $style['colours'] = $colourIds;
