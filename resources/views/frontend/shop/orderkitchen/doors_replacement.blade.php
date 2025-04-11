@@ -411,32 +411,33 @@
         <div class="row justify-content-center">
             @foreach ($styles as $style)
             <div class="col-sm-6 col-lg-4 my-3">
-                <div class="card">
+                <div class="card" style="min-height: 515px !important">
                     @if ($style->id == 1)
-                    <div class="d-flex justify-content-center"><img src="https://bkonline.uk/public/imgs/products/J-pull-Dove-Grey1744357344_67f8c7e02f610.png" class="card-img-top" style="max-height: 300px; width: 170px" id="main-image" alt="Kitchen Cabinet"></div>
+                    <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/J-pull-Dove-Grey1744357344_67f8c7e02f610.png" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div>
                     @elseif($style->id == 2)
-                    <div class="d-flex justify-content-center"><img src="https://bkonline.uk/public/imgs/products/Belsay-Cashmere1744359926_67f8d1f695086.jpg" class="card-img-top" style="max-height: 300px; width: 170px" id="main-image" alt="Kitchen Cabinet"></div>
+                    <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/Belsay-Cashmere1744359926_67f8d1f695086.jpg" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div>
                     @elseif($style->id == 3)
-                    <div class="d-flex justify-content-center"><img src="https://bkonline.uk/public/imgs/products/Vivo-Gloss-Dust-Grey-Door-Flat_CMYK_PRINT1720430622_668bb01e6686d.jpg" class="card-img-top" style="max-height: 300px; width: 170px" id="main-image" alt="Kitchen Cabinet"></div>
+                    <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/Vivo-Gloss-Dust-Grey-Door-Flat_CMYK_PRINT1720430622_668bb01e6686d.jpg" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div>
                     @elseif($style->id == 4)
-                    <div class="d-flex justify-content-center"><img src="https://bkonline.uk/public/imgs/products/vivo_vero_matt_anthracite1744270130_67f773321d81e.png" class="card-img-top" style="max-height: 300px; width: 170px" id="main-image" alt="Kitchen Cabinet"></div>
+                    <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/vivo_vero_matt_anthracite1744270130_67f773321d81e.png" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div>
                     @elseif($style->id == 5)
-                    <div class="d-flex justify-content-center"><img src="https://bkonline.uk/public/imgs/products/Lucente-Gloss-Dust-Grey-Door-Perspective_CMYK_PRINT1720441467_668bda7b578b1.jpg" class="card-img-top" style="max-height: 300px; width: 170px" id="main-image" alt="Kitchen Cabinet"></div>
+                    <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/Lucente-Gloss-Dust-Grey-Door-Perspective_CMYK_PRINT1720441467_668bda7b578b1.jpg" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div>
                     @elseif($style->id == 6)
-                    <div class="d-flex justify-content-center"><img src="https://bkonline.uk/public/imgs/products/Cartmel-Anthracite-Flat-Door-Cutout_RGB_Web1720451119_668c002f56976.jpg" class="card-img-top" style="max-height: 300px; width: 170px" id="main-image" alt="Kitchen Cabinet"></div>
+                    <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/Cartmel-Anthracite-Flat-Door-Cutout_RGB_Web1720451119_668c002f56976.jpg" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div>
                     @elseif($style->id == 7)
-                    <div class="d-flex justify-content-center"><img src="https://bkonline.uk/public/imgs/products/Vivo-Matt_Cashmere_Door-Flat_With-Handle1720432485_668bb765d85c3.jpg" class="card-img-top" style="max-height: 300px; width: 170px" id="main-image" alt="Kitchen Cabinet"></div>
+                    <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/Vivo-Matt_Cashmere_Door-Flat_With-Handle1720432485_668bb765d85c3.jpg" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div>
                     @elseif($style->id == 8)
-                    <div class="d-flex justify-content-center"><img src="https://bkonline.uk/public/imgs/products/vivo_vero_matt_light_grey1744270102_67f77316cd6eb.png" class="card-img-top" style="max-height: 300px; width: 170px" id="main-image" alt="Kitchen Cabinet"></div>
+                    <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/vivo_vero_matt_light_grey1744270102_67f77316cd6eb.png" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div>
                     @elseif($style->id == 10)
-                    <div class="d-flex justify-content-center"><img src="https://bkonline.uk/public/imgs/products/Matt-Light-Grey-Door-with-Handle1730581810_67269532decf5.jpg" class="card-img-top" style="max-height: 300px; width: 170px" id="main-image" alt="Kitchen Cabinet"></div>
+                    <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/Matt-Light-Grey-Door-with-Handle1730581810_67269532decf5.jpg" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div>
                     @endif
                     <div class="card-body text-center">
-                        <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div class="d-flex justify-content-center align-items-center mb-4">
                             <h3 class="mb-0">{{$style->name}}</h3>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center mb-4">
                             <h5 class="mb-0 text-decoration-underline">Available Colors:</h5>
                         </div>
-                        
                         <div class="color-grid">
                             @foreach ($style['colours'] as $styleColour)
                             @php ($colour = \App\Models\Colour::where('id', $styleColour)->first()) @endphp
