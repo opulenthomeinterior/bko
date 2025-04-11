@@ -425,7 +425,7 @@
                     @elseif($style->id == 6)
                     <div class="d-flex justify-content-center"><img src="https://bkonline.uk/public/imgs/products/Cartmel-Anthracite-Flat-Door-Cutout_RGB_Web1720451119_668c002f56976.jpg" class="card-img-top" style="max-height: 300px; width: 170px" id="main-image" alt="Kitchen Cabinet"></div>
                     @elseif($style->id == 7)
-                    <div class="d-flex justify-content-center"></div><img src="https://bkonline.uk/public/imgs/products/Vivo-Matt_Cashmere_Door-Flat_With-Handle1720432485_668bb765d85c3.jpg" class="card-img-top" style="max-height: 300px; width: 170px" id="main-image" alt="Kitchen Cabinet">
+                    <div class="d-flex justify-content-center"><img src="https://bkonline.uk/public/imgs/products/Vivo-Matt_Cashmere_Door-Flat_With-Handle1720432485_668bb765d85c3.jpg" class="card-img-top" style="max-height: 300px; width: 170px" id="main-image" alt="Kitchen Cabinet"></div>
                     @elseif($style->id == 8)
                     <div class="d-flex justify-content-center"><img src="https://bkonline.uk/public/imgs/products/vivo_vero_matt_light_grey1744270102_67f77316cd6eb.png" class="card-img-top" style="max-height: 300px; width: 170px" id="main-image" alt="Kitchen Cabinet"></div>
                     @elseif($style->id == 10)
