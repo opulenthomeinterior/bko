@@ -868,14 +868,14 @@
                 <div class="owl-carousel owl-theme overflow-hidden">
                     @foreach (\App\Models\Product::where('parent_category_id', 17)->groupBy('short_title')->limit(10)->get() as $intenalProduct)
                     <div class="item">
-                        <div class="card">
-                            <a href="{{ route('orderbyproduct', [$intenalProduct->slug, $intenalProduct->serial_number]) }}" class="text-dark text-decoration-none">
+                        <a href="{{ route('orderbyproduct', [$intenalProduct->slug, $intenalProduct->serial_number]) }}" class="text-dark text-decoration-none">
+                            <div class="card">
                                 <img src="{{ asset('imgs/products/'.$intenalProduct->image_path) }}" class="card-img-top" alt="">
                                 <div class="card-body">
                                     <h6 class="card-title">{{ $intenalProduct->short_title }}</h6>
                                 </div>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
                     </div>
                     @endforeach
                 </div>
