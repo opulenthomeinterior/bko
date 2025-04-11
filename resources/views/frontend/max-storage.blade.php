@@ -863,78 +863,28 @@
                   <h5 class="text-center fw-bold">We Can Help!</h5>
             </div>
         </div>
-
         <div class="row mt-5 mb-3 justify-content-center">
             <div class="col-10 ">
-                
-            <div class="owl-carousel owl-theme overflow-hidden">
-         
-          <div class="item">
-            <div class="card">
-              <img src="{{ asset('images/pull-out-shelving-unit.png') }}" class="card-img-top" alt="">
-              <div class="card-body">
-                <h6 class="card-title">Pull-out Shelving Unit</h6>
-               
-              </div>
+                <div class="owl-carousel owl-theme overflow-hidden">
+                    @foreach (\App\Models\Product::where('parent_category_id', 17)->groupBy('short_title')->limit(10)->get() as $intenalProduct)
+                    <div class="item">
+                        <div class="card">
+                            <a href="{{ route('orderbyproduct', [$intenalProduct->slug, $intenalProduct->serial_number]) }}" class="text-dark text-decoration-none">
+                                <img src="{{ asset('imgs/products/'.$intenalProduct->image_path) }}" class="card-img-top" alt="">
+                                <div class="card-body">
+                                    <h6 class="card-title">{{ $intenalProduct->short_title }}</h6>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
             </div>
-          </div>
-          
-          <div class="item">
-            <div class="card">
-              <img src="{{ asset('images/pull-out-larder-unit.png') }}" class="card-img-top" alt="">
-              <div class="card-body">
-                <h6 class="card-title">Pull-out Larder Unit</h6>
-               
-              </div>
+            <div class="row mt-5 justify-content-center">
+                <div class="col-lg-4 col-8">
+                    <a href="{{ route('ordercomponentbyname', ['slug' => 'internals']) }}" class="btn btn-warning px-3 text-uppercase rounded-0"> Explore Unique Storage Solutions</a>
+                </div>
             </div>
-          </div>
-          <div class="item">
-            <div class="card">
-              <img src="{{ asset('images/pull-out-storage-basket.png') }}" class="card-img-top" alt="">
-              <div class="card-body">
-                <h6 class="card-title">Pull-out Stroage Basket</h6>
-               
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="card">
-              <img src="{{ asset('images/pull-out-corner-unit.png') }}" class="card-img-top" alt="">
-              <div class="card-body">
-                <h6 class="card-title">Pull-out Corner Unit</h6>
-               
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="card">
-              <img src="{{ asset('images/Pull-out-storage.png') }}" class="card-img-top" alt="">
-              <div class="card-body">
-                <h6 class="card-title">Pull-out Storage</h6>
-               
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="card">
-              <img src="{{ asset('images/swing-out-larder-unit.png') }}" class="card-img-top" alt="">
-              <div class="card-body">
-                <h6 class="card-title">Swing-out Larder Unit</h6>
-               
-              </div>
-            </div>
-          </div>
-          
-         
-          
-            </div>
-        </div>
-        <div class="row mt-5 justify-content-center">
-           <div class="col-lg-4 col-8">
-            <a href="{{ route('ordercomponentbyname', ['slug' => 'internals']) }}" class="btn btn-warning px-3 text-uppercase rounded-0"> Explore Unique Storage Solutions</a>
-           </div>
-        </div>
-         
         </div>
       </div>
       
