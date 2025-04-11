@@ -412,7 +412,7 @@
             @foreach ($styles as $style)
             <div class="col-sm-6 col-lg-4 my-3">
                 <div class="card">
-                    <img src="{{ $style->image_path ? asset('imgs/styles/' . $style->image_path) : '#' }}" class="card-img-top" id="main-image" alt="Kitchen Cabinet">
+                    <img src="{{ $style->image_path ? asset('imgs/products/' . \App\Models\Product::where('style_id', $style->id)->first()->image_path) : '#' }}" class="card-img-top" id="main-image" alt="Kitchen Cabinet">
                     <div class="card-body text-center">
                         <div class="d-flex justify-content-between align-items-center mb-4">
                             <h3 class="mb-0">{{$style->name}}</h3>
