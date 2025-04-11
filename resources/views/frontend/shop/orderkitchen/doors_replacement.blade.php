@@ -428,7 +428,7 @@
                     <img src="https://bkonline.uk/public/imgs/products/Vivo-Matt_Cashmere_Door-Flat_With-Handle1720432485_668bb765d85c3.jpg" class="card-img-top" style="max-height: 400px" id="main-image" alt="Kitchen Cabinet">
                     @elseif($style->id == 8)
                     <img src="https://bkonline.uk/public/imgs/products/vivo_vero_matt_light_grey1744270102_67f77316cd6eb.png" class="card-img-top" style="max-height: 400px" id="main-image" alt="Kitchen Cabinet">
-                    @elseif($style->id == 9)
+                    @elseif($style->id == 10)
                     <img src="https://bkonline.uk/public/imgs/products/Matt-Light-Grey-Door-with-Handle1730581810_67269532decf5.jpg" class="card-img-top" style="max-height: 400px" id="main-image" alt="Kitchen Cabinet">
                     @endif
                     <div class="card-body text-center">
