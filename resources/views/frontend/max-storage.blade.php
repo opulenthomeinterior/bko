@@ -931,7 +931,7 @@
         </div>
         <div class="row mt-5 justify-content-center">
            <div class="col-lg-4 col-8">
-            <a href="{{ route('max_storage') }}" class="btn btn-warning px-3 text-uppercase rounded-0"> Explore Unique Storage Solutions</a>
+            <a href="{{ route('ordercomponentbyname', ['slug' => 'internals']) }}" class="btn btn-warning px-3 text-uppercase rounded-0"> Explore Unique Storage Solutions</a>
            </div>
         </div>
          
