@@ -133,7 +133,7 @@
             </div>
 
             <div class="input-group text-area-container">
-                <textarea class="form-control inquiry-form-control" rows="3" placeholder="Enter your message" required></textarea>
+                <textarea class="form-control inquiry-form-control" rows="3" name="message" placeholder="Enter your message" required></textarea>
             </div>
 
              @include('frontend.button', ['type' =>'submit', 'text'=>'Submit'])
