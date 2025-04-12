@@ -469,7 +469,7 @@
                     <div class="col-md-4">
                         <div class="consultation-step rounded bg-light">
                             <div class="icon-circle bg-white">
-                                <img src="{{ asset('images/leaf.png') }}"/>
+                                <img src="{{ asset('https://bkonline.uk/public/imgs/products/Leaf1744481544_67faad084b91d.png') }}"/>
                             </div>
                             <h4>06. <span class="text-primary">Eco-Friendly Option</span></h4>
                             <p>Reusing existing cabinets is a more sustainable choice.</p>
