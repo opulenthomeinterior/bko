@@ -100,21 +100,21 @@
                 <span class="input-group-text">
                     <i class="fas fa-user"></i>
                 </span>
-                <input type="text" class="form-control inquiry-form-control" placeholder="Enter your name" name="name" id="name">
+                <input type="text" class="form-control inquiry-form-control" placeholder="Enter your name" name="name" id="name" required >
             </div>
 
             <div class="input-group">
                 <span class="input-group-text">
                     <i class="fas fa-envelope"></i>
                 </span>
-                <input type="email" class="form-control inquiry-form-control" placeholder="Enter your email" name="email" id="email">
+                <input type="email" class="form-control inquiry-form-control" placeholder="Enter your email" name="email" id="email" required>
             </div>
 
             <div class="input-group">
                 <span class="input-group-text">
                     <i class="fas fa-phone"></i>
                 </span>
-                <input type="tel" class="form-control inquiry-form-control" placeholder="Enter your phone number" name="phone" id="phone">
+                <input type="number" class="form-control inquiry-form-control" placeholder="Enter your phone number" name="phone" id="phone" required>
             </div>
 
             <!-- <div class="call-us">
@@ -128,11 +128,11 @@
                     <i class="fas fa-calendar-alt me-3"></i>
                     Call US AT
                 </span>
-                <input type="datetime-local" class="form-control inquiry-form-control" placeholder="Call US AT" name="call_time">
+                <input type="datetime-local" class="form-control inquiry-form-control" placeholder="Call US AT" name="call_time" required>
             </div>
 
             <div class="input-group text-area-container">
-                <textarea class="form-control inquiry-form-control" rows="3" placeholder="Enter your message"></textarea>
+                <textarea class="form-control inquiry-form-control" rows="3" placeholder="Enter your message" required></textarea>
             </div>
 
              @include('frontend.button', ['type' =>'submit', 'text'=>'Submit'])
