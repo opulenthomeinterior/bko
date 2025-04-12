@@ -76,10 +76,18 @@
                 border-radius: 12px;
                 box-shadow: 0 4px 16px rgba(0,0,0,0.08);
                 overflow:hidden;
-                width:390px;
+                /* width:390px; */
+                width:100%;
                 padding: 32px;
                 min-height:600px;
             }
+            /* @media (max-width:576px)
+            {
+                .product-card
+                {
+                    width:360px;
+                }
+            } */
             .product-image-container
             {
                 width:100%;
@@ -491,7 +499,7 @@
         </div>
         <div class="row justify-content-center">
             @foreach ($styles as $style)
-            <div class="col-sm-6 col-lg-4 my-3">
+            <div class="col-12 col-lg-4 my-3">
                 {{-- <div class="card" style="min-height: 515px !important"> --}}
                 <div class="product-card">
                     @if ($style->id == 1)
