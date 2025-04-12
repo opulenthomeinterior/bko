@@ -96,6 +96,7 @@
         <h3 class="fomr-title mb-3 text-center">Book a free consultation now!</h3>
         
         <form method="POST" action="{{ route('contact_us_inquiry') }}">
+            @csrf
             <div class="input-group">
                 <span class="input-group-text">
                     <i class="fas fa-user"></i>
