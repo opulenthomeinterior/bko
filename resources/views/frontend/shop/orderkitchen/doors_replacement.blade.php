@@ -70,11 +70,77 @@
             .color-thumbnail.active {
                 border: 2px solid #333;
             }
+            .product-card
+            {
+                background-color:white;
+                border-radius: 12px;
+                box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+                overflow:hidden;
+                width:390px;
+                padding: 32px;
+                min-height:600px;
+            }
+            .product-image-container
+            {
+                width:100%;
+                height:300px;
+                /* min-height:250px; */
+                /* max-height:200px; */
+                /* height:auto; */
+                /* object-fit:fill;
+                object-position:center; */
+                border-radius:8px;
+                margin-bottom: 24px;
+                
+            }
+            .product-image-container img
+            {
+                width:100%;
+                height:100%;
+                object-fit:contain;
+                /* box-shadow: 0 2px 8px rgba(0,0,0,0.05); */
+            }
+
+            .product-title
+            {
+                font-size:28px;
+                font-weight:700;
+                color:#1a202c;
+                margin-bottom:20px;
+                text-align: center;
+            }
             
             .color-grid {
                 display: flex;
+                gap:12px;
                 flex-wrap: wrap;
                 justify-content: center;
+            }
+            .color-option
+            {
+                width:36px;
+                height:36px;
+                border-radius:50%;
+                cursor:pointer;
+                position:relative;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                transition: all 0.2s ease;
+            }
+            .color-option:hover
+            {
+                transform:scale(1.1);
+            }
+            .color-options
+            {
+                margin-bottom:16px;
+            }
+            .option-title
+            {
+                font-size:16px;
+                font-weight:600px;
+                margin-bottom:12px;
+                color:#2d3748;
+                text-align:center;
             }
             
             .card-body h3 {
@@ -222,6 +288,22 @@
             font-size: 1.1rem;
             font-weight: bold;
         }
+        .order-sample
+        {
+            left:20px;
+            padding:40px 110px   40px 30px;
+        }
+        @media (max-width:576px)
+        {
+            .order-sample
+            {
+                position: relative;
+                left:0px;
+                padding:40px 30px;
+                margin-bottom: 10px;
+                
+            }
+        }
 
         </style>
     </head>
@@ -245,36 +327,34 @@
     
 
     <section class="container-fluid my-5 bg-light py-4">
+        <div class="container">
         <div class="row">
             {{-- <div class="col-xl-3 col-lg-3 col-md-2 col-sm-12 col-3"></div> --}}
-            <div class=" col-xl-8 col-12 align-self-center px-5 d-flex flex-column flex-md-row p-0">
+            <div class=" col-xl-7 col-12 align-self-center px-5 d-flex flex-column flex-md-row p-0">
                 <div class="row">
                     
-                    <div class="position-relative col-12 col-xl-8 bg-white rounded-lg border-0 shadow-sm" style="left:20px;padding:40px 110px   40px 30px;">
+                    <div class="align-self-center rounded shadow-lg order-sample position-relative col-12 col-xl-8 bg-white rounded-lg border-0 shadow-sm" style="">
                         
                         <h4 class="fw-bold text-black">Does the thought of updating your kitchen feel overwhelming and expensive?</h4>
                         <h2 class="fw-bolder"><span class="orange">Order a Sample</span> <span class=""text-black fw-bolder"> of Your Favorite Door</span></h2>
                         <p class="">Choosing the right kitchen doors is an important decision. Our sample service allows you to experience the finish, material, and color of our doors in your own home before committing to a full order. </p>
                         <a href="{{ route('ordercomponentbyname', 'doors') }}" class="btn bg-orange px-4 text-uppercase rounded-0"> Order a Sample of your choice NOW!</a>
                     </div>
-                    <div class="col-12 col-xl-4">
+                    <div class="p-0 mb-3 mb-xl-0 col-12 col-xl-4">
                     <img class="w-100 object-fit-cover rounded border border-warning" src="https://bkonline.uk/public/imgs/products/Cartmel-Cashmere-Flat-Door-A1720452961_668c0761d6f16.jpg"  class="img-fluid"  alt="Modern Kitchen" 
                         style="width: 300px; height: 400px; object-fit: cover;">
                     </div>
                 </div>
 
             </div>
-            <div class="col-xl-4 col-12">
-                <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning p-4">
+            <div class="col-xl-5 col-12">
+                @include('frontend.inquiry_form')
+                {{-- <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning p-4">
                     @csrf
                     <div>
                         <div class="d-block">
                             <div class="text-center text-dark fw-bold">FOR FREE SURVEY AND QUOTE <span class="text-warning"> CALL US NOW!</span></div>
-                            {{-- <div class="d-flex justify-content-center">
-                                <i class="bi bi-phone text-dark"></i> <a href="tel:02080505605" class="text-decoration-underline text-center text-dark fs-4 fw-bold">
-                                    020 805 05605
-                                </a>
-                            </div> --}}
+                            
                             <div class="my-2 d-flex justify-content-center">
                                 <a href="tel:02080505605" class="btn btn-warning text-decoration-underline text-center text-dark fs-4 fw-bold">
                                 <i class="bi pt-2 me-2 bi-phone text-dark"></i> 
@@ -308,7 +388,7 @@
                         <textarea name="message" id="message" name="message" rows="3" class="w-100 rounded-0 border border-dark form-control text-dark" placeholder="Enter your message"></textarea>
                     </div>
                     <button type="submit" class=" btn py-2 px-4 rounded-0 fw-bolder text-uppercase text-white" style="background-color:#2a6161;">Submit</button>
-                </form>
+                </form> --}}
             </div>
         </div>
         <div class="row flex-column my-5 align-items-center justify-content-center">
@@ -319,6 +399,7 @@
                 <button class="btn bg-orange px-4 text-uppercase rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal">book your FREE CONSULTATION NOW!</button>
             </div>
         </div>
+    </div>
     </section>
 
     <div class ="container-fluid bg-white">
@@ -400,7 +481,7 @@
         </section>
     </div>
 
-
+<div class="container-fluid" >
     <div class="container py-5">
         <div class="mb-3 row justify-content-center">
             <h4 class="text-black fw-bold text-center">Do you crave a kitchen that feels fresh, modern, and inviting?</h4>
@@ -411,38 +492,67 @@
         <div class="row justify-content-center">
             @foreach ($styles as $style)
             <div class="col-sm-6 col-lg-4 my-3">
-                <div class="card" style="min-height: 515px !important">
+                {{-- <div class="card" style="min-height: 515px !important"> --}}
+                <div class="product-card">
                     @if ($style->id == 1)
-                    <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/J-pull-Dove-Grey1744357344_67f8c7e02f610.png" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div>
+                    {{-- <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/J-pull-Dove-Grey1744357344_67f8c7e02f610.png" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div> --}}
+                   <div class="product-image-container">
+                    <img src="https://bkonline.uk/public/imgs/products/J-pull-Dove-Grey1744357344_67f8c7e02f610.png" class="product-image" id="main-image" alt="Kitchen Cabinet">
+                   </div>
                     @elseif($style->id == 2)
-                    <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/Belsay-Cashmere1744359926_67f8d1f695086.jpg" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div>
+                    <div class="product-image-container">
+                    <img src="https://bkonline.uk/public/imgs/products/Belsay-Cashmere1744359926_67f8d1f695086.jpg" class="product-image"  id="main-image" alt="Kitchen Cabinet">
+                    </div>
                     @elseif($style->id == 3)
-                    <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/Vivo-Gloss-Dust-Grey-Door-Flat_CMYK_PRINT1720430622_668bb01e6686d.jpg" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div>
+                    {{-- <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/Vivo-Gloss-Dust-Grey-Door-Flat_CMYK_PRINT1720430622_668bb01e6686d.jpg" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div> --}}
+                   <div class="product-image-container">
+                    <img src="https://bkonline.uk/public/imgs/products/Vivo-Gloss-Dust-Grey-Door-Flat_CMYK_PRINT1720430622_668bb01e6686d.jpg" class="product-image"  id="main-image" alt="Kitchen Cabinet">
+                   </div>
                     @elseif($style->id == 4)
-                    <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/vivo_vero_matt_anthracite1744270130_67f773321d81e.png" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div>
+                    
+                    {{-- <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/vivo_vero_matt_anthracite1744270130_67f773321d81e.png" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div> --}}
+                    <div class="product-image-container">
+                    <img src="https://bkonline.uk/public/imgs/products/vivo_vero_matt_anthracite1744270130_67f773321d81e.png" class="" id="main-image" alt="Kitchen Cabinet">
+                    </div>
                     @elseif($style->id == 5)
-                    <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/Lucente-Gloss-Dust-Grey-Door-Perspective_CMYK_PRINT1720441467_668bda7b578b1.jpg" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div>
+                    {{-- <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/Lucente-Gloss-Dust-Grey-Door-Perspective_CMYK_PRINT1720441467_668bda7b578b1.jpg" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div> --}}
+                    <img src="https://bkonline.uk/public/imgs/products/Lucente-Gloss-Dust-Grey-Door-Perspective_CMYK_PRINT1720441467_668bda7b578b1.jpg" class=""  id="main-image" alt="Kitchen Cabinet">
                     @elseif($style->id == 6)
-                    <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/Cartmel-Anthracite-Flat-Door-Cutout_RGB_Web1720451119_668c002f56976.jpg" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div>
+                    {{-- <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/Cartmel-Anthracite-Flat-Door-Cutout_RGB_Web1720451119_668c002f56976.jpg" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div> --}}
+                    <div class="product-image-container">
+                    <img src="https://bkonline.uk/public/imgs/products/Cartmel-Anthracite-Flat-Door-Cutout_RGB_Web1720451119_668c002f56976.jpg" class=""  id="main-image" alt="Kitchen Cabinet">
+                    </div>
                     @elseif($style->id == 7)
-                    <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/Vivo-Matt_Cashmere_Door-Flat_With-Handle1720432485_668bb765d85c3.jpg" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div>
+                    {{-- <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/Vivo-Matt_Cashmere_Door-Flat_With-Handle1720432485_668bb765d85c3.jpg" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div> --}}
+                    <div class="product-image-container">
+                    <img src="https://bkonline.uk/public/imgs/products/Vivo-Matt_Cashmere_Door-Flat_With-Handle1720432485_668bb765d85c3.jpg" class=""  id="main-image" alt="Kitchen Cabinet">
+                    </div>
                     @elseif($style->id == 8)
-                    <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/vivo_vero_matt_light_grey1744270102_67f77316cd6eb.png" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div>
+                    <div class="product-image-container">
+                    <img src="https://bkonline.uk/public/imgs/products/vivo_vero_matt_light_grey1744270102_67f77316cd6eb.png" class=""  id="main-image" alt="Kitchen Cabinet">
+                    </div>
                     @elseif($style->id == 10)
-                    <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/Matt-Light-Grey-Door-with-Handle1730581810_67269532decf5.jpg" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div>
+                    {{-- <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/Matt-Light-Grey-Door-with-Handle1730581810_67269532decf5.jpg" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div> --}}
+                    <div class="product-image-container">
+                    <img src="https://bkonline.uk/public/imgs/products/Matt-Light-Grey-Door-with-Handle1730581810_67269532decf5.jpg" class=""  id="main-image" alt="Kitchen Cabinet">
+                    </div>
                     @endif
-                    <div class="card-body text-center">
-                        <div class="d-flex justify-content-center align-items-center mb-4">
-                            <h3 class="mb-0">{{$style->name}}</h3>
-                        </div>
-                        <div class="d-flex justify-content-center align-items-center mb-4">
+                    {{-- <div class="card-body text-center"> --}}
+                        {{-- <div class="d-flex justify-content-center align-items-center mb-4"> --}}
+                            <h1 class="product-title">{{$style->name}}</h1>
+                        {{-- </div> --}}
+                        {{-- <div class="d-flex justify-content-center align-items-center mb-4">
                             <h5 class="mb-0 text-decoration-underline">Available Colors:</h5>
-                        </div>
+                        </div> --}}
+                        <div class="color-options">
+                            <div class="option-title">Available Colors</div>
                         <div class="color-grid">
                             @foreach ($style['colours'] as $styleColour)
                             @php ($colour = \App\Models\Colour::where('id', $styleColour)->first()) @endphp
                             <a href="{{ route('ordercomponentbyname', ['doors']) }}?style_id={{$style->id}}&colour_id={{$styleColour}}" title="{{ $colour->trade_colour }}">
-                                <div class="color-thumbnail active" style="background-color: {{$colour->colour_code}};" data-color="white" title="{{ $colour->trade_colour }}"></div>
+                                {{-- <div class="color-thumbnail active" style="background-color: {{$colour->colour_code}};" data-color="white" title="{{ $colour->trade_colour }}"></div> --}}
+                                <div class="color-option active" style="background-color: {{$colour->colour_code}};" data-color="white" title="{{ $colour->trade_colour }}"></div>
+                            
                             </a>
                             @endforeach
                             <!-- <div class="color-thumbnail" style="background-color: #E8E4DC;" data-color="light-gray"></div>
@@ -451,6 +561,7 @@
                             <div class="color-thumbnail" style="background-color: #F5EFE2;" data-color="off-white"></div>
                             <div class="color-thumbnail" style="background-color: #F0E9D6;" data-color="beige"></div> -->
                         </div>
+                    {{-- </div> --}}
                     </div>
                 </div>
             </div>
@@ -458,7 +569,7 @@
             
         </div>
     </div>
-
+</div>
     <div class ="container-fluid bg-white">
         <section class="consultation-section bg-white">
             <div class="container bg-white">

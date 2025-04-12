@@ -241,6 +241,7 @@
         </div>
     </header>
 
+    <div class="container-fluid py-3" style="background: linear-gradient(135deg,#f5f7fa 0%, #e0e4e9 100%)">
     <section class="container my-5">
         <div class="row">
             {{-- <div class="col-xl-3 col-lg-3 col-md-2 col-sm-12 col-3"></div> --}}
@@ -275,7 +276,11 @@
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-8 col-sm-12 col-12">
-                <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning p-4">
+
+
+                @include('frontend.inquiry_form')
+
+                {{-- <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning p-4">
                     @csrf
                     <div>
                         <div class="d-block">
@@ -313,12 +318,12 @@
                         <textarea name="message" id="message" name="message" rows="3" class="w-100 rounded-0 border border-dark form-control text-dark" placeholder="Enter your message"></textarea>
                     </div>
                     <button type="submit" class=" btn py-2 px-4 rounded-0 fw-bolder text-uppercase text-white" style="background-color:#2a6161;">Submit</button>
-                </form>
+                </form> --}}
             </div>
             <div class="col-xl-3 col-lg-3 col-md-2 col-sm-12 col-3"></div>
         </div>
     </section>
-
+</div>
 
     <!-- Key designs -->
     {{-- <section class="container-fluid bg-green-color py-4 mt-4">
@@ -525,12 +530,13 @@
     <section class="container pt-5 pb-2 mb-5">
         <div class="row">
             <h3 class="col-md-12 col-11 text-center mb-4 fw-bold text-black text-uppercase">WHAT ARE BESPOKE MAX STORAGE KITCHENS?</h3>
-            <h4 class="col-md-12 p-0 col-11 text-start  fw-bold text-danger text-uppercase">ARE YOU STRUGGLING WITH STORAGE SPACE?</h4>
+            {{-- <h4 class="col-md-12 p-0 col-11 text-start  fw-bold text-danger text-uppercase">ARE YOU STRUGGLING WITH STORAGE SPACE?</h4> --}}
 
         </div>
         <div class="row">
             <div class="col-12 px-5 p-md-0 d-flex align-items-center">
                 <div>
+                    <h4 class="text-uppercase text-danger">ARE YOU STRUGGLING WITH STORAGE SPACE?</h4>
                     <h5 class="text-uppercase" style="color: #2a6161">SOLUTION
                         
                          <br><b style="color: #000">BESPOKE MAX STORAGE KITCHENS</b></h5>

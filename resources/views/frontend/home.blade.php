@@ -345,8 +345,9 @@
         </div>
     </section>
 
+    <div class="container-fluid py-3" style="background: linear-gradient(135deg,#f5f7fa 0%, #e0e4e9 100%)">
     <!-- ORDER KITCHEN-->
-    <section class="container py-5 bg-white dots-background-section" style="position: relative; width: 100% !important; overflow: hidden">
+    <section class="container py-5 dots-background-section" style="position: relative; width: 100% !important; overflow: hidden">
         <canvas id="dots" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></canvas>
         <div class="row mt-4" id="stylesContainer" style="position: relative; z-index: 2">
             <div class="col-lg-7 align-self-center overflow-hidden bg-light py-4">
@@ -401,8 +402,9 @@
             {{-- <div class = "col-md-5 col-12 "> --}}
             <div class = "align-self-center col-xl-5 col-lg-5 col-md-8 col-sm-12 col-12 ">
 
+                @include('frontend.inquiry_form')
 
-                <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning p-4 my-4 mt-md-0">
+                {{-- <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning p-4 my-4 mt-md-0">
                     @csrf
                     <div>
                         <div class="d-block">
@@ -440,7 +442,7 @@
                         <textarea name="message" id="message" name="message" rows="3" class="w-100 rounded-0 border border-dark form-control text-dark" placeholder="Enter your message"></textarea>
                     </div>
                     <button type="submit" class=" btn py-2 px-4 rounded-0 fw-bolder text-uppercase text-white" style="background-color:#2a6161;">Submit</button>
-                </form>
+                </form> --}}
 
                  {{-- Right Form 
                 <div class="d-flex justify-content-center my-4 mt-md-0">
@@ -471,7 +473,7 @@
             </div>
         </div> -->
     </section>
-
+    </div>
     <!-- ORDER COMPONENT-->
     <div class="container-fluid position-relative px-0 py-5  order-component-section" style="background-color:#F2F4F5;">
         {{-- <img class="img-fluid position-absolute" src="{{ asset('/images/order-component-bg.png') }}"/> --}}
