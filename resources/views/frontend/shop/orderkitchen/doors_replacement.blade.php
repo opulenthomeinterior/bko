@@ -703,7 +703,8 @@
         </div>
         <div class="modal-body">
             <div class=" col-12">
-                <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning p-4">
+                @include('frontend.inquiry_form')
+                {{-- <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning p-4">
                     @csrf
                     <div>
                         <div class="d-block">
@@ -742,11 +743,11 @@
                         <textarea name="message" id="message" name="message" rows="3" class="w-100 rounded-0 border border-dark form-control text-dark" placeholder="Enter your message"></textarea>
                     </div>
                     <button type="submit" class=" btn py-2 px-4 rounded-0 fw-bolder text-uppercase text-white" style="background-color:#2a6161;">Submit</button>
-                </form>
+                </form> --}}
             </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
           {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
         </div>
       </div>

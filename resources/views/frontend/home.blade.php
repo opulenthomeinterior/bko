@@ -722,7 +722,7 @@
                         <h4 class="mb-4" style="color:#2a6161">
                             Concerned about not getting the right measurements? Let our professionals handle it for you.
                         </h4>
-                        <a href="#" class=" btn btn-lg px-5 rounded-0" style="background-color: #ffc107;">Start designing your Ideal Kitchen</a>
+                        <button href="#" class=" btn btn-lg px-5 rounded-0 " data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #ffc107;">Start designing your Ideal Kitchen</button>
                     </div>
                 </div>
             </div>
@@ -1348,11 +1348,12 @@
         <div class="modal-content">
             <div class="modal-header">
             {{-- <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1> --}}
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class=" col-12">
-                    <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning p-4">
+                    @include('frontend.inquiry_form')
+                    {{-- <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning p-4">
                         @csrf
                         <div>
                             <div class="d-block">
@@ -1390,11 +1391,11 @@
                             <textarea name="message" id="message" name="message" rows="3" class="w-100 rounded-0 border border-dark form-control text-dark" placeholder="Enter your message"></textarea>
                         </div>
                         <button type="submit" class=" btn py-2 px-4 rounded-0 fw-bolder text-uppercase text-white" style="background-color:#2a6161;">Submit</button>
-                    </form>
+                    </form> --}}
                 </div>
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
             {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
             </div>
         </div>
