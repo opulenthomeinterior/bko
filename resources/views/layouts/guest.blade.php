@@ -136,12 +136,20 @@ use App\Models\Style;
         {
             position:absolute;
             width:4px;
-            height:100%;
-            top:0;
+            height:115%;
+            top:-5px;
             left:47%;
             background-color:#ffc107;
             transform: rotate(15deg);
+            z-index:0;
         }
+        /* @media (max-width:576px)
+        {
+            .divider
+            {
+                display:none;
+            }
+        } */
     </style>
 </head>
 
@@ -346,13 +354,13 @@ use App\Models\Style;
                         <small class="">For a limited time, we are offering free on-site surveys and consultations.</small>
                      --}}
                 </div>
-                <div class="py-2 px-5 position-relative d-flex flex-column flex-md-row justify-content-center" style="background-color:#222222;">
-                    <a class=" me-5 text-warning btn-outline-default border-none " href="{{route('max_storage')}}" style="letter-spacing: 6px;"> 
+                <div class="py-2 px-5 position-relative d-flex flex-column flex-md-row justify-content-center" style="background-color:#222222; z-index:-100">
+                    <a class=" me-md-5 text-center text-warning btn-outline-default border-none " href="{{route('max_storage')}}" style="letter-spacing: 6px;"> 
                     {{-- <a class="btn btn-dark mb-2 mb-sm-0 rounded text-warning btn-outline-default border-none px-4 " href="{{route('max_storage')}}" style="">  --}}
                          MAX STORAGE KITCHEN
                     </a>
-                    <div class="divider"></div>
-                    <a class="ms-4 text-warning  border-none  " href="{{route('doors_replacement')}}" style="letter-spacing: 6px;"> 
+                    <div class="divider d-none d-md-block"></div>
+                    <a class="ms-md-4 text-center text-warning  border-none  " href="{{route('doors_replacement')}}" style="letter-spacing: 6px;"> 
                     {{-- <a class="btn btn-dark rounded text-warning btn-outline-default border-none px-4 " href="{{route('doors_replacement')}}" style="">  --}}
                         DOOR REPLACEMENT SERVICE
                    </a>
