@@ -780,7 +780,7 @@ use App\Models\Style;
                 
                
                 <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-4 text-white">Custome Service Hours</h5>
+                    <h5 class="mb-4 text-white">Customer Service Hours</h5>
                     <div class="d-flex align-items-center mb-3">
                         <i class="bi bi-telephone me-2"></i>
                         <a href="tel:02080505605" class="text-white">020 805 05605</a>
@@ -789,9 +789,14 @@ use App\Models\Style;
                         <i class="bi bi-clock me-2"></i>
                         <span>Mon-Sat | 9am-5pm</span>
                     </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-envelope me-2"></i>
+                        <span>customerservices@bkonline.uk</span>
+                    </div>
+                    
                     <div class="d-flex align-items-center">
                         <i class="bi bi-geo-alt me-2"></i>
-                        <span>44 Ollender St, Aberfield Village, London E14 6RP United Kingdom</span>
+                        <span>44 Gillender St, Aberfeldy Village, London E14 6RP, United Kingdom</span>
                     </div>
                 </div>
 
@@ -800,28 +805,28 @@ use App\Models\Style;
                     <h5 class="mb-4 text-white">Support</h5>
                     <ul class="list-unstyled">
                         <li class="mb-3">
-                            <a href="#" class="footer-link">
+                            <a href="{{ route('downloadable') }}" class="footer-link">
                                
                                 <i class="bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
                                 Downloadable Resources
                             </a>
                         </li>
                         <li class="mb-3">
-                            <a href="#" class="footer-link">
+                            <a href="{{ route('installationvideos') }}" class="footer-link">
                               
                                 <i class="bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
                                 Installation Videos
                             </a>
                         </li>
                         <li class="mb-3">
-                            <a href="#" class="footer-link">
+                            <a href="{{ route('printresources') }}" class="footer-link">
                                 
                                 <i class="bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
                                 Print Resources
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="footer-link">
+                            <a href="{{ route('deliveries') }}" class="footer-link">
                                 
                                 <i class="bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
                                 Deliveries
@@ -835,20 +840,20 @@ use App\Models\Style;
                     <h5 class="mb-4 text-white">Legal</h5>
                     <ul class="list-unstyled">
                         <li class="mb-3">
-                            <a href="#" class="footer-link">
+                            <a href="{{ route('cookies') }}" class="footer-link">
                                 <i class="bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
                                 Cookies Policy
                             </a>
                         </li>
                         <li class="mb-3">
-                            <a href="#" class="footer-link">
+                            <a href="{{ route('pricepromise') }}" class="footer-link">
                                 {{-- <i class="bi bi-shield-check me-2"></i> --}}
                                 <i class="bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
                                 Price Promise Guarantee
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="footer-link">
+                            <a href="{{ route('termandcondition') }}" class="footer-link">
                                 
                                 <i class="bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
                                 Terms & Conditions
