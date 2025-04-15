@@ -444,64 +444,6 @@ use App\Models\Style;
                                 </div>
                             </div>
                         </li>
-                        <!-- <div class="dropdown__content">
-                                    @php
-                                        $styles = Style::all();
-                                    @endphp
-                                    @if (!empty($styles))
-                                    @foreach ($styles as $index => $style)
-                                        @if ($index % 2 == 0)
-                                            <div class="dropdown__group">
-                                                <ul class="dropdown__list">
-                                        @endif
-                                                <li>
-                                                    <a href="{{ route('orderkitchenbyname', $style->slug) }}" class="dropdown__link">
-                                                        <i class="ri-arrow-right-s-fill"></i>{{ $style->name }} Kitchen</a>
-                                                </li>
-                                                    @if (($index + 1) % 2 == 0 || $loop->last)
-                                                </ul>
-                                            </div>
-                                        @endif
-                                    @endforeach
-                                    @else
-                                    <div class="dropdown__group">
-                                        <ul class="dropdown__list">
-                                            <li>
-                                                <a href="{{ route('orderkitchenbyname', 'slab') }}"
-                                                    class="dropdown__link">
-                                                    <i class="ri-arrow-right-s-fill"></i>
-                                                    SLAB KITCHENS
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ route('orderkitchenbyname', 'j-pull') }}"
-                                                    class="dropdown__link">
-                                                    <i class="ri-arrow-right-s-fill"></i>
-                                                    j-PULL KITCHENS
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="dropdown__group">
-                                        <ul class="dropdown__list">
-                                            <li>
-                                                <a href="{{ route('orderkitchenbyname', 'shaker') }}"
-                                                    class="dropdown__link">
-                                                    <i class="ri-arrow-right-s-fill"></i>
-                                                    SHAKER KITCHENS
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ route('orderkitchenbyname', 'true-handleless') }}"
-                                                    class="dropdown__link">
-                                                    <i class="ri-arrow-right-s-fill"></i>
-                                                    TRUE HANDLESS KITCHENS
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    @endif
-                                </div> -->
                         <li class="dropdown__item">
                             <div class="nav__link dropdown__button">
                                 <a href="{{ route('orderkitchen') }}" class="drop-down-link">ORDER KITCHEN </a>
@@ -612,7 +554,7 @@ use App\Models\Style;
                             <div class="dropdown__container border-bottom border-warning border-2">
                                 <div class="dropdown__content px-4" style="max-width: 100% !important; margin: 0px !important; grid-template-columns: none; column-gap: 0;">
                                     @php
-                                        $categories = Category::where('parent_category_id', null)->where('status', 1)->get();
+                                        $categories = Category::where('parent_category_id', null)->where('header_item', 1)->where('status', 1)->get();
                                     @endphp
                                     @if (!empty($categories))
                                     <div class="dropdown__group">

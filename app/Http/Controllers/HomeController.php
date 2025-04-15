@@ -547,7 +547,6 @@ class HomeController extends Controller
         if (!empty($w)) {
             $productsQuery->whereIn('width', $w);
         }
-
         ///////////////////////////////
         if ($slug == 'handles' || $slug == 'sinks') {
             $groupedProducts = $productsQuery->where('parent_category_id', $parent_category->id)->groupBy('parent_sub_category');
@@ -573,6 +572,8 @@ class HomeController extends Controller
             ->with('ParentCategory', 'category', 'colour', 'style', 'assembly')
             ->offset($offset)->limit($limit)->get();
 
+        // dd($products);
+
         $children = Category::where('parent_category_id', $parent_category->id)->pluck('id')->toArray();
         // Include the current category in the list of children
         $children[] = $parent_category->id;
@@ -581,7 +582,7 @@ class HomeController extends Controller
         $assemblies = Assembly::where('status', 1)->get();
         $styles = Style::where('status', 1)->get();
         $colours = Colour::whereIn('id', Product::whereIn('category_id', $children)->where('status', 'active')->pluck('colour_id')->unique())->where('status', 1)->whereNotNull('finishing')->get();
-
+        
         return response()->json([
             'category' => $parent_category,
             'products' => $products,

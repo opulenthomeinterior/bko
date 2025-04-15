@@ -246,6 +246,11 @@
                                         class="btn btn-danger mt-2 {{ $category->image_path ? 'd-block' : 'd-none' }}"
                                         onclick="removeImage(this, {{ $category->id }}, '{{ $category->image_path }}')">Remove</button>
                                 </div>
+                                <div class="col-lg-6">
+                                    <label for="header_item" class="form-label">Header Item</label>
+                                    <br>
+                                    <input type="checkbox" id="header_item" name="header_item" {{$category->header_item == 1 ? 'checked' : ''}}>
+                                </div>
                                 <div class="col-lg-12 form-group mt-2">
                                     <button class="btn btn-primary" type="submit">
                                         Update Category
