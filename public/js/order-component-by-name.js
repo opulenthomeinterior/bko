@@ -320,7 +320,7 @@ $(document).ready(function () {
         var selectedAssemblies = getSelectedAssemblies();
         var selectedStyles = getSelectedStyles();
         var selectedColors = getSelectedColors();
-        var selectedHeights = getSelectedColors();
+        var selectedHeights = getSelectedHeights();
         var slug = $("#slug").val();
 
         // Get the CSRF token from the meta tag
