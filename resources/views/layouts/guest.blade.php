@@ -623,7 +623,7 @@ use App\Models\Style;
                             <div class="dropdown__container border-bottom border-warning border-2">
                                 <div class="dropdown__content px-4" style="max-width: 100% !important; margin: 0px !important; grid-template-columns: none; column-gap: 0;">
                                     @php
-                                        $categories = Category::where('parent_category_id', null)->where('status', 1)->get();
+                                        $categories = Category::where('parent_category_id', null)->where('status', 1)->where('header_item', 1)->get();
                                     @endphp
                                     @if (!empty($categories))
                                     <div class="dropdown__group">
