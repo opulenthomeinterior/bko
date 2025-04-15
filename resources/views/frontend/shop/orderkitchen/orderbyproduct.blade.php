@@ -453,11 +453,16 @@
                             <h3 class="fw-bold text-dark py-1">Overview</h3>
                             <h4 class="fw-bold text-dark py-1">Range Specification</h4>
                             <div class="product-cat-description">
-                                @if ($product->category?->description)
+                            {!! $product->product_description !!}
+                            {{--    
+                            @if ($product->category?->description)
                                 {!! $product->category?->description !!}
                                 @elseif ($product->category?->parentCategory->description)
-                                {!! $product->category?->parentCategory->description !!}
+                                    @if ($product->style?->slug != 'upstands')
+                                        {!! $product->category?->parentCategory->description !!}
+                                    @endif
                                 @endif
+                            --}}
                             </div>
                         </div>
                         {{-- @if ($product->category?->image_path)
