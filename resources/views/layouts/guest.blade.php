@@ -413,14 +413,41 @@ use App\Models\Style;
                                             <div class="container">
                                                 <h4 class="text-start bg-dark text-white p-2">Choose Style:</h4>
                                                 <div class="row">
-                                                    @foreach ($styles as $index => $style)
+                                                {{-- Standard Kitchens --}}
+                                                <h4 class="text-dark text-decoration-underline fw-bold">Standard Kitchens</h4>
+                                                @foreach ($styles->slice(0, 4) as $style)
                                                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
                                                         <li style="width: 100%; border-radius: 0px" class="border-bottom border-default drop-down-link">
                                                             <a style="width: 100%;" href="{{ route('orderkitchenbyname', [$style->slug]) }}" class="dropdown__link">
-                                                                <i class="ri-arrow-right-s-fill"></i> {{$style->name}} KITCHEN</a>
+                                                                <i class="ri-arrow-right-s-fill"></i> {{ $style->name }} KITCHEN
+                                                            </a>
                                                         </li>
                                                     </div>
-                                                    @endforeach
+                                                @endforeach
+                                                <hr class="px-4">
+                                                {{-- Premium Kitchens --}}
+                                                <h4 class="text-dark text-decoration-underline fw-bold">Premium Kitchens</h4>
+                                                @foreach ($styles->slice(4, 4) as $style)
+                                                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
+                                                        <li style="width: 100%; border-radius: 0px" class="border-bottom border-default drop-down-link">
+                                                            <a style="width: 100%;" href="{{ route('orderkitchenbyname', [$style->slug]) }}" class="dropdown__link">
+                                                                <i class="ri-arrow-right-s-fill"></i> {{ $style->name }} KITCHEN
+                                                            </a>
+                                                        </li>
+                                                    </div>
+                                                @endforeach
+                                                <hr class="px-4">
+                                                {{-- Budget Kitchens --}}
+                                                <h4 class="text-dark text-decoration-underline fw-bold">Budget Kitchens</h4>
+                                                @foreach ($styles->slice(8, 4) as $style)
+                                                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
+                                                        <li style="width: 100%; border-radius: 0px" class="border-bottom border-default drop-down-link">
+                                                            <a style="width: 100%;" href="{{ route('orderkitchenbyname', [$style->slug]) }}" class="dropdown__link">
+                                                                <i class="ri-arrow-right-s-fill"></i> {{ $style->name }} KITCHEN
+                                                            </a>
+                                                        </li>
+                                                    </div>
+                                                @endforeach
                                                 </div>
                                             </div>
                                         </ul>
