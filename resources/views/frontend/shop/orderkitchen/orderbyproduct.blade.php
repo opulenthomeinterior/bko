@@ -1,4 +1,9 @@
 <x-guest-layout>
+    @section('meta_tags')
+        <title>Product Details</title>
+        <meta name="description" content="">
+        <link rel="canonical" href="" />
+    @endsection
     <style>
         .related-products-link {
             display: inline-block;

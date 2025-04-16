@@ -1,4 +1,9 @@
 <x-guest-layout>
+    @section('meta_tags')
+        <title>Order Kitchen</title>
+        <meta name="description" content="">
+        <link rel="canonical" href="" />
+    @endsection
     <style>
         .bg-green-color {
             background-color: #2a6161 !important;

@@ -54,12 +54,12 @@ class HomeController extends Controller
             $styleData['assemblies'] = [];
 
             foreach ($uniqueAssemblies as $assembly) {
-                $products = Product::where('style_id', $style->id)->where('assembly_id', $assembly->id)->where('status', 'active')->get();
-
+                $products = Product::where('style_id', $style->id)->where('assembly_id', $assembly->id)->where('status', 'active');
+                // dd($products->pluck('colour_id')->unique());
                 // Extract color records from products
                 $assemblyData['data'] = $assembly;
                 $assemblyData['colours'] = Colour::whereIn('id', $products->pluck('colour_id')->unique())->whereNotNull('finishing')->where('status', 1)->get();
-
+                
                 $styleData['assemblies'][$assembly->name] = $assemblyData;
             }
 
@@ -625,6 +625,7 @@ class HomeController extends Controller
 
         $relatedCategoryProducts = Product::where('id', '!=', $product->id)
             ->where('status', 'active')
+            ->whereIn('parent_category_id', [6, 15])
             ->where(function ($q) use ($parentSubCategory, $categoryShortTitle) {
                 $q = $q->where('parent_sub_category', $parentSubCategory)
                 ->where('short_title', $categoryShortTitle);

@@ -79,16 +79,16 @@
                     @if ($styles->count() > 0)
                     @if ($category->slug == 'doors' || $category->slug == 'accessories')
                     <div class="accordion accordion-flush mt-3" id="accordionFlushExample3">
-                        <div class="accordion-item bg-transparent border border-dark border-1 rounded-0 px-2">
-                            <h2 class="accordion-header" id="flush-headingThree">
+                        <div class="accordion-item bg-transparent border border-dark border-1 rounded-0">
+                            <h2 class="accordion-header bg-white" id="flush-headingThree">
                                 <button class="accordion-button legend collapsed text-uppercase" type="button"
                                     data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
                                     aria-expanded="true" aria-controls="flush-collapseThree">
                                     Style
                                 </button>
                             </h2>
-                            <div id="flush-collapseThree" class="accordion-collapse collapse"
-                                aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample3">
+                            <div id="flush-collapseThree" class="accordion-collapse collapse my-2"
+                                aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample3" style="max-height: 700px; overflow-y: scroll">
                                 <div class="accordion-body px-0 py-0 pb-1">
                                     <div class="row g-1">
                                         <!-- updated -->
@@ -113,16 +113,16 @@
                     @if ($colours->count() > 0)
                     @if ($category->slug != 'appliances')
                     <div class="accordion accordion-flush mt-3" id="accordionFlushExample4">
-                        <div class="accordion-item bg-transparent border border-dark border-1 rounded-0 px-2" style="max-height: 700px; overflow: auto">
-                            <h2 class="accordion-header" id="flush-headingFour">
+                        <div class="accordion-item bg-transparent border border-dark border-1 rounded-0">
+                            <h2 class="accordion-header bg-white" id="flush-headingFour">
                                 <button class="accordion-button legend collapsed text-uppercase" type="button"
                                     data-bs-toggle="collapse" data-bs-target="#flush-collapseFour"
                                     aria-expanded="true" aria-controls="flush-collapseFour">
                                     Colour
                                 </button>
                             </h2>
-                            <div id="flush-collapseFour" class="accordion-collapse collapse"
-                                aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample4">
+                            <div id="flush-collapseFour" class="accordion-collapse collapse my-2"
+                                aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample4" style="max-height: 700px; overflow-y: auto">
                                 <div class="accordion-body px-0 py-0 pb-1">
                                     <div class="row g-1">
                                         @foreach ($colours as $index => $colour)
@@ -166,7 +166,7 @@
                                     ASSEMBLY
                                 </button>
                             </h2>
-                            <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse my-2"
                                 aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample2">
                                 <div class="accordion-body px-0 py-0 pb-1">
                                     <div class="row g-1">
@@ -195,16 +195,16 @@
 
                     @if ($types->count() > 0)
                     <div class="accordion accordion-flush mt-3" id="accordionFlushExample1">
-                        <div class="accordion-item bg-transparent border border-dark border-1 rounded-0 px-2" style="max-height: 700px; overflow: auto">
-                            <h2 class="accordion-header" id="flush-headingOne">
+                        <div class="accordion-item bg-transparent border border-dark border-1 rounded-0">
+                            <h2 class="accordion-header bg-white" id="flush-headingOne">
                                 <button class="accordion-button legend collapsed text-uppercase" type="button"
                                     data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
                                     aria-expanded="true" aria-controls="flush-collapseOne">
                                     @if (strtolower($category->name) != 'handles' && strtolower($category->name) != 'taps' && strtolower($category->name) != 'worktops' && strtolower($category->name) != 'appliances' && strtolower($category->name) != 'upstands' && strtolower($category->name) != 'breakfast bars' && strtolower($category->name) != 'sinks' && strtolower($category->name) != 'internals') SIZES @else TYPES @endif
                                 </button>
                             </h2>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse"
-                                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample1">
+                            <div id="flush-collapseOne" class="accordion-collapse collapse my-2"
+                                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample1" style="max-height: 700px; overflow-y: auto">
                                 <div class="accordion-body px-0 py-0 pb-1">
                                     <div class="ps-2">
                                         <div class="row g-1">
@@ -230,16 +230,16 @@
 
                     @if ($heights->count() > 0)
                     <div class="accordion accordion-flush mt-3" id="accordionFlushExample5">
-                        <div class="accordion-item bg-transparent border border-dark border-1 rounded-0 px-2" style="max-height: 700px; overflow: auto">
-                            <h2 class="accordion-header" id="flush-headingFive">
+                        <div class="accordion-item bg-transparent border border-dark border-1 rounded-0">
+                            <h2 class="accordion-header bg-white" id="flush-headingFive">
                                 <button class="accordion-button legend collapsed text-uppercase" type="button"
                                     data-bs-toggle="collapse" data-bs-target="#flush-collapseFive"
                                     aria-expanded="true" aria-controls="flush-collapseFive">
                                     Heights
                                 </button>
                             </h2>
-                            <div id="flush-collapseFive" class="accordion-collapse collapse"
-                                aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample5">
+                            <div id="flush-collapseFive" class="accordion-collapse collapse my-2"
+                                aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample5" style="max-height: 700px; overflow-y: auto">
                                 <div class="accordion-body px-0 py-0 pb-1">
                                     <div class="ps-2">
                                         <div class="row g-1">

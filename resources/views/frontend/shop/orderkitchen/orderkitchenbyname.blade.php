@@ -69,7 +69,7 @@
             <div class="col-12">
                 <div class="card border-0">
                     <div class="card-body">
-                        <div class="row">
+                        <div class="row d-flex justify-content-center">
                             <div class="d-flex justify-content-center col-xl-2 col-lg-2 col-md-3 col-sm-6 col-12 my-4">
                                 <div style="width: 150px; text-align: center; font-family: Arial, sans-serif; position: relative;">
                                     <!-- Top Semi-Circle -->
@@ -111,7 +111,7 @@
                                     <div style="width: 100%; height: 30px; background-color: #febd49; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;"></div>
                                 </div>
                             </div>
-                            <div class="d-flex justify-content-center col-xl-2 col-lg-2 col-md-3 col-sm-6 col-12 my-4">
+                            {{--<div class="d-flex justify-content-center col-xl-2 col-lg-2 col-md-3 col-sm-6 col-12 my-4">
                                 <div style="width: 150px; text-align: center; font-family: Arial, sans-serif; position: relative;">
                                     <!-- Top Semi-Circle -->
                                     <div style="width: 100%; height: 150px; background-color: #000; border-radius: 50%; position: absolute; top: -20px; background: linear-gradient(to bottom, #000 50%, transparent 50%);"></div>
@@ -131,7 +131,7 @@
                                     <!-- Bottom Plain Bar -->
                                     <div style="width: 100%; height: 30px; background-color: #000; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;"></div>
                                 </div>
-                            </div>
+                            </div>--}}
                             <div class="d-flex justify-content-center col-xl-2 col-lg-2 col-md-3 col-sm-6 col-12 my-4">
                                 <div style="width: 150px; text-align: center; font-family: Arial, sans-serif; position: relative;">
                                     <!-- Top Semi-Circle -->
@@ -139,7 +139,7 @@
                                     
                                     <!-- Circular Number -->
                                     <div style="width: 85px; height: 85px; background-color: white; border-radius: 50%; color: #97c346; font-size: 24px; font-weight: bolder; display: flex; align-items: center; justify-content: center; position: absolute; top: 15px; left: 50%; transform: translateX(-50%); box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
-                                        <h1 class="fw-bold" style="margin-top: 10px; color:#97c346">4</h1>
+                                        <h1 class="fw-bold" style="margin-top: 10px; color:#97c346">3</h1>
                                     </div>
                                     
                                     <!-- Card Content -->
@@ -160,7 +160,7 @@
                                     
                                     <!-- Circular Number -->
                                     <div style="width: 85px; height: 85px; background-color: white; border-radius: 50%; color: #6c756c; font-size: 24px; font-weight: bolder; display: flex; align-items: center; justify-content: center; position: absolute; top: 15px; left: 50%; transform: translateX(-50%); box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
-                                        <h1 class="fw-bold" style="margin-top: 10px; color: #91968a">5</h1>
+                                        <h1 class="fw-bold" style="margin-top: 10px; color: #91968a">4</h1>
                                     </div>
                                     
                                     <!-- Card Content -->
@@ -180,7 +180,7 @@
                                     
                                     <!-- Circular Number -->
                                     <div style="width: 85px; height: 85px; background-color: white; border-radius: 50%; color: #9b6700; font-size: 24px; font-weight: bolder; display: flex; align-items: center; justify-content: center; position: absolute; top: 15px; left: 50%; transform: translateX(-50%); box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
-                                        <h1 class="fw-bold" style="margin-top: 10px; color:#9b6700">6</h1>
+                                        <h1 class="fw-bold" style="margin-top: 10px; color:#9b6700">5</h1>
                                     </div>
                                     
                                     <!-- Card Content -->
