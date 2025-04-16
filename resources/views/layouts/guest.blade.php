@@ -150,6 +150,283 @@ use App\Models\Style;
                 display:none;
             }
         } */
+
+
+
+        :root {
+            --primary-color: #fbbf24;
+            --primary-light: #fcd34d;
+            --primary-dark: #f59e0b;
+            --accent-color: #fb923c;
+            --dark-bg: #292524;
+            --light-bg: #fef9c3;
+            --card-bg: #ffffff;
+            --text-dark: #292524;
+            --text-light: #fef9c3;
+            --border-radius: 16px;
+        }
+        
+        /* body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        } */
+        
+        .modal-content {
+            border-radius: var(--border-radius);
+            border: none;
+            box-shadow: 0 25px 50px -12px rgba(245, 158, 11, 0.3);
+            overflow: hidden;
+        }
+        
+        .newsletter-container, .discount-container {
+            background: var(--card-bg);
+            position: relative;
+        }
+        
+        .decorative-blob {
+            position: absolute;
+            top: -70px;
+            right: -70px;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+            border-radius: 50%;
+            filter: blur(30px);
+            opacity: 0.6;
+            z-index: 0;
+        }
+        
+        .decorative-circle {
+            position: absolute;
+            bottom: -40px;
+            left: -40px;
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+            border-radius: 50%;
+            filter: blur(25px);
+            opacity: 0.5;
+            z-index: 0;
+        }
+        
+        .newsletter-content, .discount-content {
+            padding: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .icon-container {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            width: 70px;
+            height: 70px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.3);
+        }
+        
+        .content-title {
+            font-weight: 800;
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            background: linear-gradient(120deg, var(--text-dark) 60%, var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .content-subtitle {
+            color: #78716c;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 90%;
+        }
+        
+        .news-form-container {
+            background-color: #fef3c7;
+            border-radius: var(--border-radius);
+            padding: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .news-form-container .form-control {
+            border: 1px solid #fde68a;
+            background-color: var(--card-bg);
+            color: var(--text-dark);
+            padding: 0.875rem 1.25rem;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 2px rgba(245, 158, 11, 0.1);
+        }
+        
+        .news-form-container .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.3);
+        }
+        
+        .news-form-container .form-control::placeholder {
+            color: #a8a29e;
+        }
+        
+        .btn-action {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: var(--text-dark);
+            font-weight: 600;
+            border: none;
+            padding: 0.875rem 1.5rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.3);
+        }
+        
+        .btn-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.4);
+        }
+        
+        .btn-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: var(--text-dark);
+            opacity: 0.7;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-close:hover {
+            opacity: 1;
+            transform: rotate(90deg);
+            transition: all 0.2s ease;
+        }
+        
+        .privacy-note {
+            font-size: 0.8rem;
+            color: #a8a29e;
+            margin-top: 1rem;
+            text-align: center;
+        }
+        
+        /* Discount code specific styles */
+        .discount-code-container {
+            /* background-color: #fef3c7; */
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            text-align: center;
+            margin: 1.5rem 0;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .discount-code {
+            font-family: monospace;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: 2px;
+            background: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            border: 2px dashed var(--primary-dark);
+            display: inline-block;
+            margin: 0.5rem 0 1rem;
+            position: relative;
+        }
+        
+        .copy-btn {
+            background-color: var(--primary-light);
+            color: var(--text-dark);
+            border: none;
+            border-radius: 6px;
+            padding: 0.5rem 1rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .copy-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .copy-success {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #059669;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .copy-success.active {
+            opacity: 1;
+        }
+        
+        .discount-details {
+            font-size: 0.9rem;
+            color: #78716c;
+            margin-top: 1rem;
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: var(--primary-color);
+            opacity: 0.8;
+            border-radius: 50%;
+        }
+        
+        @media (min-width: 768px) {
+            .news-form-container {
+                flex-direction: row;
+            }
+            
+            .news-form-container .form-control {
+                flex: 1;
+            }
+        }
+        
+        @media (max-width: 767.98px) {
+            .newsletter-content, .discount-content {
+                padding: 2rem 1.5rem;
+            }
+            
+            .content-title {
+                font-size: 1.75rem;
+            }
+            
+            .icon-container {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .discount-code {
+                font-size: 1.25rem;
+                padding: 0.5rem 1rem;
+            }
+        }
+
+
     </style>
 </head>
 
@@ -950,6 +1227,69 @@ use App\Models\Style;
         </div>
     </div>
 
+    <div class="modal fade" id="newsletterModal" tabindex="-1" aria-labelledby="newsletterModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+            <div class="modal-content">
+                <div class="newsletter-container">
+                    <!-- Decorative elements -->
+                    <div class="decorative-blob"></div>
+                    <div class="decorative-circle"></div>
+                    
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    
+                    <div class="newsletter-content">
+                      
+                        
+                        <h2 class="content-title">Sign up to get 15% discount on your first order</h2>
+                        <p class="content-subtitle">Take advantage of limited time offer and get <strong class="text-black">free</strong> on site survey, consultation. <br>(Terms and Conditions applied)</p>
+                        
+                        <div class="news-form-container">
+                            <input type="email" class="form-control" id="emailInput" placeholder="example@domain.com" aria-label="Email address">
+                            <button class="btn btn-action" id="subscribeBtn" type="button">Subscribe</button>
+                        </div>
+                        
+                        <p class="privacy-note">We respect your privacy. Unsubscribe at any time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+  
+    <div class="modal fade" id="discountModal" tabindex="-1" aria-labelledby="discountModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+            <div class="modal-content">
+                <div class="discount-container">
+                
+                    <div class="decorative-blob"></div>
+                    <div class="decorative-circle"></div>
+                    
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    
+                    <div class="discount-content">
+                        <div class="icon-container">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21.41 11.58L12.41 2.58C12.05 2.22 11.55 2 11 2H4C2.9 2 2 2.9 2 4V11C2 11.55 2.22 12.05 2.59 12.42L11.59 21.42C11.95 21.78 12.45 22 13 22C13.55 22 14.05 21.78 14.41 21.41L21.41 14.41C21.78 14.05 22 13.55 22 13C22 12.45 21.77 11.94 21.41 11.58ZM5.5 7C4.67 7 4 6.33 4 5.5C4 4.67 4.67 4 5.5 4C6.33 4 7 4.67 7 5.5C7 6.33 6.33 7 5.5 7Z" fill="white"/>
+                            </svg>
+                        </div>
+                        
+                        <h2 class="content-title">Thank you for subscribing!</h2>
+                        <p class="content-subtitle">Here's your special discount code to use on your first purchase.</p>
+                        
+                        <div class="discount-code-container border border-warning">
+                            <div id="discountCode" class="discount-code">APR15</div>
+                            <button id="copyBtn" class="copy-btn">Copy Code</button>
+                            <span id="copySuccess" class="copy-success">Copied!</span>
+                        </div>
+                        
+                        <p class="discount-details">Use this code at checkout to receive <strong>15% off</strong> your first purchase. Valid for 30 days.</p>
+                        
+                        <button class="btn btn-action w-100" data-bs-dismiss="modal" type="button">Continue Shopping</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- JAVASCRIPT -->
     <script src="{{ asset('libs/jquery/jquery.min.js') }}"></script>
@@ -1009,6 +1349,103 @@ use App\Models\Style;
     <script>
 
         document.addEventListener('DOMContentLoaded', function () {
+
+            setTimeout(function() {
+                var newsletterModal = new bootstrap.Modal(document.getElementById('newsletterModal'));
+                newsletterModal.show();
+            }, 500);
+            
+            // Handle subscribe button click
+            document.getElementById('subscribeBtn').addEventListener('click', function() {
+                const emailInput = document.getElementById('emailInput');
+                const email = emailInput.value.trim();
+                
+                // Basic email validation
+                if (email && email.includes('@') && email.includes('.')) {
+                    // Hide newsletter modal
+                    var newsletterModal = bootstrap.Modal.getInstance(document.getElementById('newsletterModal'));
+                    newsletterModal.hide();
+                    
+                    // Show discount modal after a short delay
+                    setTimeout(function() {
+                        var discountModal = new bootstrap.Modal(document.getElementById('discountModal'));
+                        discountModal.show();
+                        createConfetti();
+                    }, 500);
+                } else {
+                    // Simple error visual
+                    emailInput.style.borderColor = '#ef4444';
+                    setTimeout(() => {
+                        emailInput.style.borderColor = '#fde68a';
+                    }, 2000);
+                }
+            });
+            
+            // Copy discount code functionality
+            document.getElementById('copyBtn').addEventListener('click', function() {
+                const codeText = document.getElementById('discountCode').innerText;
+                navigator.clipboard.writeText(codeText).then(function() {
+                    const successMsg = document.getElementById('copySuccess');
+                    successMsg.classList.add('active');
+                    setTimeout(() => {
+                        successMsg.classList.remove('active');
+                    }, 2000);
+                });
+            });
+            
+            // Create confetti animation
+            function createConfetti() {
+                const container = document.querySelector('.discount-container');
+                const colors = ['#fbbf24', '#fb923c', '#f59e0b', '#fcd34d', '#fef3c7'];
+                
+                for (let i = 0; i < 50; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    
+                    const size = Math.random() * 8 + 4;
+                    const posX = Math.random() * 100;
+                    const posY = Math.random() * 30 - 10;
+                    const rotation = Math.random() * 360;
+                    const delay = Math.random() * 0.5;
+                    const duration = Math.random() * 3 + 2;
+                    
+                    confetti.style.width = `${size}px`;
+                    confetti.style.height = `${size}px`;
+                    confetti.style.left = `${posX}%`;
+                    confetti.style.top = `${posY}%`;
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.transform = `rotate(${rotation}deg)`;
+                    confetti.style.opacity = '0';
+                    confetti.style.animation = `confetti ${duration}s ease-in ${delay}s forwards`;
+                    
+                    container.appendChild(confetti);
+                    
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, (duration + delay) * 1000);
+                }
+            }
+            
+            // Add confetti animation
+            document.head.insertAdjacentHTML('beforeend', `
+                <style>
+                    @keyframes confetti {
+                        0% {
+                            transform: translateY(0) rotate(0deg);
+                            opacity: 0;
+                        }
+                        10% {
+                            opacity: 1;
+                        }
+                        100% {
+                            transform: translateY(300px) rotate(720deg);
+                            opacity: 0;
+                        }
+                    }
+                </style>
+            `);
+            
+
             const images = document.querySelectorAll('.fade-img');
             let currentIndex = 0;
 
