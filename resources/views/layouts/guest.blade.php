@@ -1242,11 +1242,12 @@ use App\Models\Style;
                         
                         <h2 class="content-title">Sign up to get 15% discount on your first order</h2>
                         <p class="content-subtitle">Take advantage of limited time offer and get <strong class="text-black">free</strong> on site survey, consultation. <br>(Terms and Conditions applied)</p>
-                        
-                        <div class="news-form-container">
-                            <input type="email" class="form-control" id="emailInput" placeholder="example@domain.com" aria-label="Email address">
-                            <button class="btn btn-action" id="subscribeBtn" type="button">Subscribe</button>
-                        </div>
+                        <form method="post">
+                            <div class="news-form-container">
+                                <input type="email" class="form-control" id="emailInput" name="email" placeholder="example@domain.com" aria-label="Email address">
+                                <button class="btn btn-action" id="subscribeBtn" type="button">Subscribe</button>
+                            </div>
+                        </form>
                         
                         <p class="privacy-note">We respect your privacy. Unsubscribe at any time.</p>
                     </div>
@@ -1355,6 +1356,34 @@ use App\Models\Style;
                 newsletterModal.show();
             }, 500);
             
+            var discountModal = new bootstrap.Modal(document.getElementById('discountModal'));
+            
+            function sendEmail() {
+                var email = $('#emailInput').val();
+                var button = $(this);
+                var btnText = button.find('.btn-text');
+                var btnLoading = button.find('.btn-loading');
+
+                // Show loading
+                btnText.hide();
+                btnLoading.show();
+
+                $.ajax({
+                    url: "{{ route('contact_us_inquiry') }}", // Change to your actual route
+                    method: 'POST',
+                    data: {
+                        email: email,
+                        catalogue_register_now: 'catalogue_register_now',
+                        first_order_discount: 'first_order_discount',
+                        message: 'You have successfully subscribed for 15% discount',
+                        _token: '{{ csrf_token() }}' // if you're using Laravel
+                    },
+                    success: function (response) {
+                        discountModal.show();
+                    }
+                });
+            }
+
             // Handle subscribe button click
             document.getElementById('subscribeBtn').addEventListener('click', function() {
                 const emailInput = document.getElementById('emailInput');
@@ -1368,8 +1397,8 @@ use App\Models\Style;
                     
                     // Show discount modal after a short delay
                     setTimeout(function() {
-                        var discountModal = new bootstrap.Modal(document.getElementById('discountModal'));
-                        discountModal.show();
+                        // discountModal.show();
+                        sendEmail();
                         createConfetti();
                     }, 500);
                 } else {
@@ -1499,6 +1528,7 @@ use App\Models\Style;
         });
 
         $(document).ready(function() {
+
             $('.select-2').select2({
                 placeholder: "Search",
                 dropdownCssClass: 'custom-select-dropdown',
