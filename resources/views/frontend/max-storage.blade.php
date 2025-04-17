@@ -223,6 +223,31 @@
     width: 200px;
     background-color: #222222;
  }
+
+ .max-description
+            {
+                font-size:16px;
+            }
+        @media(max-width:760px)
+        {
+            .consultation-step p,
+            .suggestion,
+            .survey-section-p,
+            .custom-card-description,
+            .suggestion{
+                font-size:20px;
+            }
+            .max-description
+            {
+                font-size:18px;
+            }
+            
+           .custom-card
+           {
+            padding-right:10px;
+           }
+        }
+
     </style>
 </head>
 
@@ -236,7 +261,7 @@
         <div class="hero-content">
             <h1 class="fs-md-0 fs-1 text-white fw-bold text-uppercase">Bespoke designer <span class="text-warning">kitchens</span></h1>
             {{-- <h1 class="text-warning fw-bold">Timeless Elegance</h1> --}}
-            <p class=""><span class="fs-sm-3">Are You Settling for a Kitchen That Doesn't Fit Your Life?</span> <br>We offer premium, Bespoke Kitchen Units at competitor prices</p>
+            <p class=" suggestion"><span class="suggestion">Are You Settling for a Kitchen That Doesn't Fit Your Life?</span> <br><span class="suggestion max-description">We offer premium, Bespoke Kitchen Units at competitor prices</span></p>
             {{-- <div class="scroll-down">Scroll Down <i>&#x2193;</i></div> --}}
         </div>
     </header>
@@ -245,34 +270,34 @@
     <section class="container my-5">
         <div class="row">
             {{-- <div class="col-xl-3 col-lg-3 col-md-2 col-sm-12 col-3"></div> --}}
-            <div class=" col-lg-6 col-md-8 col-sm-12 col-12 align-self-center px-5">
+            <div class=" col-lg-6 col-md-8 col-sm-12 col-12 align-self-center mb-4 mb-sm-0 px-lg-5">
                 <div style="">
-                    <h2 class="">
+                    <h1>
                         <span class="text-warning">Standard Kitchens </span>
                         <br>
                         frequently require <span class="text-warning">compromises</span>
 
                         {{-- Start Your Journey with <span class="text-warning">BK Online</span> --}}
-                    </h2>
+                    </h1>
                    
-                    <h6>
+                    <h2>
                         Limited layout, generic styles, and materials that do not suit your needs
-                    </h6>
+                    </h2>
                     {{-- <p class=" fs-5">
                         Book your <span class="text-danger"> Free </span>consultation today and take the first step toward your dream kitchen. Whether virtually or with an on-site survey, we are here to guide you every step of the way.
                     </p> --}}
 
-                    <h6 class="mt-5 fw-bold">
+                    <h3 class="mt-5 fw-bold">
                         Do you find yourself wishing for specific features, or a more personalized aesthetic that off-the-shelf options simply can't provide?
                         <br>
                         Stop Compromising!
-                    </h6>
+                    </h3>
 
-                    <h6 class="mt-5">
-                        <span class="text-danger fw-bold text-uppercase">FOR A LIMITED TIME, WE ARE OFFERING FREE CONSULTATION and on-site survey.</span>
+                    <h4 class="mt-5">
+                        <span class="text-danger fw-bold text-uppercase mb-2 mb-sm-0">FOR A LIMITED TIME, WE ARE OFFERING FREE CONSULTATION and on-site survey.</span>
                         <br>
                         Because we believe your kitchen should be more than just a place to cook – it should be a reflection of your personality and a hub for your lifestyle
-                    </h6>
+                    </h4>
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-8 col-sm-12 col-12">
@@ -334,17 +359,17 @@
     <section class="container-fluid  pt-5 pb-3" style="background-color:#f2f4f5">
         <div>
         <div class="col-12 d-flex flex-column align-items-center">
-            <p class="text-center fw-bold">Are you tired of just dreaming about a better kitchen?</p>
-            <h3 class="text-dark text-center fw-bolder">
+            <p class="max-description suggestion text-center fw-bold">Are you tired of just dreaming about a better kitchen?</p>
+            <h2 class="text-dark text-center fw-bolder">
                 BESPOKE DESIGN, STANDARD PRICE
-            </h3>
+            </h2>
             <div id="lines" class="mb-3">
                 <div id="line1"></div>
                 <div id="line2"></div>
                 <div id="line3"></div>
             
         </div>
-        <p class="text-center text-dark w-75">
+        <p class="text-center text-dark w-md-75 w-100 max-description suggestion">
             We offer premium, bespoke designer kitchens at competitive prices. Our process is straight forward
         </p>
     </section>
@@ -414,8 +439,21 @@
 </div> --}}
 
 
-
 <div class="container-fluid py-3" style="background-color:#f2f4f5">
+    <div class="container">
+        <div class="row">
+        <div class="col-lg-4 col-12 mb-3 mb-sm-0">
+             @include('frontend.card', ['icon_class'=>'fa-solid fa-comments','number'=>'01', 'title'=>'Dream & Discuss','description'=>"Share your vision! We'll listen to your ideas, needs, and lifestyle to understand your dream kitchen."])
+        </div>
+        <div class="col-lg-4 col-12 mb-3 mb-sm-0">
+            @include('frontend.card', ['icon_class'=>'fa-solid fa-pen-nib','number'=>'02', 'title'=>'Design & Refine','description'=>"Our experts create a personalized design, including layouts, material selections. You'll have opportunities to refine every detail."])
+       </div>
+       <div class="col-lg-4 col-12 mb-3 mb-sm-0">
+        @include('frontend.card', ['icon_class'=>'fa-solid fa-hammer','number'=>'03', 'title'=>'Craft & Create','description'=>"Our skilled craftsmen meticulously build and install your custom kitchen, ensuring a perfect fit and lasting beauty."])
+   </div>
+    </div>
+
+{{-- <div class="container-fluid py-3" style="background-color:#f2f4f5">
     <section class="container pb-4">
         <div class="row gap-5 justify-content-center">
             <div class="col-lg-3 col-md-6 col-9 mb-4">
@@ -472,7 +510,7 @@
             <button class="btn btn-warning px-5 text-uppercase rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Start designing your Ideal Kitchen</button>
         </div>
     </div>
-</div>
+</div> --}}
 
 
 
@@ -529,18 +567,18 @@
     
     <section class="container pt-5 pb-2 mb-5">
         <div class="row">
-            <h3 class="col-md-12 col-11 text-center mb-4 fw-bold text-black text-uppercase">WHAT ARE BESPOKE MAX STORAGE KITCHENS?</h3>
+            <h2 class="col-md-12 col-11 text-center mb-4 fw-bold text-black text-uppercase">WHAT ARE BESPOKE MAX STORAGE KITCHENS?</h2>
             {{-- <h4 class="col-md-12 p-0 col-11 text-start  fw-bold text-danger text-uppercase">ARE YOU STRUGGLING WITH STORAGE SPACE?</h4> --}}
 
         </div>
         <div class="row">
-            <div class="col-12 px-5 p-md-0 d-flex align-items-center">
+            <div class="col-12  d-flex align-items-center">
                 <div>
-                    <h4 class="text-uppercase text-danger">ARE YOU STRUGGLING WITH STORAGE SPACE?</h4>
-                    <h5 class="text-uppercase" style="color: #2a6161">SOLUTION
+                    <h3 class="text-uppercase text-danger">ARE YOU STRUGGLING WITH STORAGE SPACE?</h3>
+                    <h3 class="text-uppercase" style="color: #2a6161">SOLUTION
                         
-                         <br><b style="color: #000">BESPOKE MAX STORAGE KITCHENS</b></h5>
-                    <small>
+                         <br><b style="color: #000">BESPOKE MAX STORAGE KITCHENS</b></h3>
+                    <small class=suggestion>
                         Standard designer kitchens are beautiful but with limited storage space. Bulk-manufactured standard space units are not the solution for your major storage problems. 
                         <br>
                         <span>
@@ -574,8 +612,8 @@
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
                 <div class="card border-0">
                     <div class="p-5 bg-green-color d-flex flex-column align-items-center justify-content-center" style="height: 250px; width: 100%">
-                        <h3 class="text-white fw-bold text-center">TALLEST UNITS</h3>
-                        <p class="text-white text-center">Floor-to-ceiling cabinets for extra storage. Ideal for small kitchens needing vertical space.</p>
+                        <h2 class="text-white fw-bold text-center">TALLEST UNITS</h2>
+                        <p class="max-description suggestion text-white text-center">Floor-to-ceiling cabinets for extra storage. Ideal for small kitchens needing vertical space.</p>
                     </div>
                 </div>
             </div>
@@ -589,8 +627,8 @@
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
                 <div class="card border-0">
                     <div class="p-5 bg-yellow-color2 d-flex flex-column align-items-center justify-content-center" style="height: 250px; width: 100%">
-                        <h4 class="text-white fw-bold text-center">DEEPEST UNITS</h4>
-                        <p class="text-white text-center">Deeper storage than standard cabinets. Maximizes space for pots, pans and appliances.</p>
+                        <h2 class="text-white fw-bold text-center">DEEPEST UNITS</h2>
+                        <p class="max-description suggestion text-white text-center">Deeper storage than standard cabinets. Maximizes space for pots, pans and appliances.</p>
                     </div>
                 </div>
             </div>
@@ -604,25 +642,25 @@
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
                 <div class="card border-0">
                     <div class="p-5 bg-dark d-flex flex-column align-items-center justify-content-center" style="height: 250px; width: 100%">
-                        <h4 class="text-white fw-bold text-center">WIDEST UNITS</h4>
-                        <p class="text-white text-center">Wide cabinets for organized storage of kitchens essentials. Make use of every inch efficiently.</p>
+                        <h2 class="text-white fw-bold text-center">WIDEST UNITS</h2>
+                        <p class="suggestion max-description text-white text-center">Wide cabinets for organized storage of kitchens essentials. Make use of every inch efficiently.</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row justify-content-center mt-5">
             <div class="col-lg-8">
-            <h4 class=" text-center text-md-start text-black">Never settle for a standard-size kitchen because you don’t have to any more.</h4>
+            <h3 class=" text-center text-md-start text-black">Never settle for a standard-size kitchen because you don’t have to any more.</h3>
             
             </div>
         </div>
         <div class="row justify-content-center">
             <div calss="col-3">
-                <p class="text-center">It is your chance to enjoy luxurious designs with practicality, especially when we have eliminated the price issue</p>
+                <p class="text-center max-description suggestion">It is your chance to enjoy luxurious designs with practicality, especially when we have eliminated the price issue</p>
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-6 col-8">
+            <div class="col-lg-4 col-md-6 col-12">
                 <button class="btn btn-warning px-2 px-lg-5 text-uppercase rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Book your free consultation now!</button>
             </div>
         </div>
@@ -648,21 +686,21 @@
     <div class="container-fluid py-5" style="background-color:#f2f4f5;">
     <section class="container mb-4">
         <div class="row justify-content-center gap-md-2 gap-lg-5">
-        <div class="col-9 col-md-5 col-lg-3">
+        <div class="col-12 col-md-5 col-lg-3">
             <img src="{{ asset('images/tall-cabinets.png') }}" 
             class="img-fluid" 
             alt="Modern Kitchen" 
             style=" box-shadow: 20px 22px 0px 0px rgba(254,202,109,1); object-fit: cover;">
             <div class="content mt-5">
-            <h3 class="text-uppercase text-center">TALL CABINETS</h3>
-            <p class="text-center"> Our tall cabinets are made up to 850mm deep and more to flush the American fridge and freezer (750mm deep). The kitchen looks seamless when all the appliances, and cabinets are perfectly aligned.</p>
+            <h3 class="text-uppercase fw-bold text-center">TALL CABINETS</h3>
+            <p class="text-center suggestion max-description"> Our tall cabinets are made up to 850mm deep and more to flush the American fridge and freezer (750mm deep). The kitchen looks seamless when all the appliances, and cabinets are perfectly aligned.</p>
             </div>
         </div>
-        <div class="col-9 col-md-5 col-lg-3">
+        <div class="col-12 col-md-5 col-lg-3">
             <img src="{{ asset('images/bridging.png') }}" class="img-fluid border border-warning" alt="Smart Kitchen" style=" object-fit: cover; box-shadow: 20px 22px 0px 0px rgba(42, 97, 97,1);">
             <div class="content mt-5">
-                <h3 class="text-uppercase text-center">Bridging Units</h3>
-                <p class="text-center"> Our bridging units are designed to seamlessly align with tall units, offering a custom fit for you. While the market standard typically offers a depth of 300mm, we provide options with depths of up to 850mm or more. </p>
+                <h3 class="text-uppercase fw-bold text-center">Bridging Units</h3>
+                <p class="text-center suggestion max-description"> Our bridging units are designed to seamlessly align with tall units, offering a custom fit for you. While the market standard typically offers a depth of 300mm, we provide options with depths of up to 850mm or more. </p>
                 </div>
         </div>
     </div>

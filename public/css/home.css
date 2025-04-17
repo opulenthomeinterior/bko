@@ -439,8 +439,14 @@ ul li {
 
 .slide-bottom {
     animation-name: slideInBottom;
+   
 }
-
+@media (max-width:760px)
+{
+    .slide-bottom{
+        font-size: 20px;
+    }
+}
 .rounded-circular-image {
     /* filter: invert(1); */
 }
