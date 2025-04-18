@@ -7,6 +7,53 @@
     <!-- <meta name="description" content="Customize your Dream Kitchen with our Bespoke Kitchen Units in London. Our Bespoke Designer Kitchens include Slab, Shaker, True handleless & J-pull Styles."> -->
     <link rel="canonical" href="https://bkonline.uk/" />
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "BKOnline",
+        "url": "https://bkonline.uk/",
+        "logo": "https://bkonline.uk/public/images/bko-black-logo.png",
+        "description": "BKOnline specializes in customized kitchen units, offering J Pull, Shaker, Slab Laminated,True Handleless kitchens, J pull 22, Slab Painted, True Handleless Painted, Budget Kitchens along with Bespoke Kichens in London which includes North London, North East London, Central London & EAST London.",
+        "image": "https://bkonline.uk/public/images/homepage.jpeg",
+        "brand": {
+            "@type": "Brand",
+            "name": "BKOnline"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://bkonline.uk/"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Unit 7, 44 Gillender street",
+            "addressLocality": "London",
+            "postalCode": "E14 6RP",
+            "addressCountry": "UK"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "020 805 05605",
+            "contactType": "Customer Service",
+            "areaServed": "Overall London but in london specifically North London, North East London, Central London & EAST London.",
+            "availableLanguage": "English UK"
+        },
+        "email": "customerservices@bkonline.co.uk",
+        "openingHours": [
+            "Mo-Th 08:00-17:00",
+            "Fr 08:00-14:30"
+        ],
+        "sameAs": [
+            "https://www.facebook.com/opulenthomeinteriorsltd",
+            "https://www.instagram.com/bkonline__kitchen/?igsh=YWZqaDg4b2ppZ3Zw#",
+            "https://www.youtube.com/@BKOnline570"
+        ]
+    }
+    </script>
+
+    
     <style>
 
 
@@ -515,7 +562,7 @@
         </div>
         <div class="row  justify-content-center">
             @php
-            $categories = \App\Models\Category::where('parent_category_id', null)->where('status', 1)->get();
+                $categories = \App\Models\Category::where('parent_category_id', null)->where('status', 1)->whereNotIn('id', [2, 3, 4, 5, 7, 13, 16])->get();
             @endphp
           
             {{-- <div style="" class="order-component-slider position-absolute  d-flex order-component-scroller" style="max-width: 1900px; overflow-x: scroll"> --}}
