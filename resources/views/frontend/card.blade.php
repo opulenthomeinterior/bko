@@ -7,23 +7,23 @@
     <style>
         :root
         {
-            --primary-color: #ffc107;
-            --primary-light: #ffc107da;
-            --primary-dark: #4f46e5;
-            --text-dark: #1e293b;
-            --text-light: #64748b;
+            --main-color: #ffc107;
+            --main-light: #ffc107da;
+            --main-dark: #4f46e5;
+            --t-dark: #1e293b;
+            --t-light: #64748b;
             --bs-gradient: linear-gradient(135deg,#f8fafc 0%, #f1f5f9 100%);
-            --card-bg: rgba(255,255,255,0.8);
-            --card-shadow:0 10px 30px rgba (0,0,0,0.4);
-            --hover-shadow: 0 20px 40px rgba(255, 193, 7,0.2);
+            --c-card-bg: rgba(255,255,255,0.8);
+            --c-card-shadow:0 10px 30px rgba (0,0,0,0.4);
+            --c-hover-shadow: 0 20px 40px rgba(255, 193, 7,0.2);
 
         }
         .custom-card
         {
-            background:var(--card-bg);
+            background:var(--c-card-bg);
             backdrop-filter: blur(10px);
             border-radius: 16px;
-            box-shadow: var(--card-shadow);
+            box-shadow: var(--c-card-shadow);
             padding: 40px 35px;
             height: 100%;
             position: relative;
@@ -37,7 +37,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg,var(--primary-color) 0%, var(--primary-dark 100%));
+            background: linear-gradient(135deg,var(--main-color) 0%, var(--main-dark 100%));
             z-index: -1;
             opacity: 0;
             transition: opacity 0.5s cubic-bezier(0.23,1,0.32,1);
@@ -58,8 +58,8 @@
         .custom-card:hover
         {
             transform: translateY(-15px) scale(1.02);
-            box-shadow: var(--hover-shadow);
-            border-color: var(--primary-light);
+            box-shadow: var(--c-hover-shadow);
+            border-color: var(--main-light);
             
         }
         .custom-card:hover::before
@@ -70,6 +70,10 @@
         {
             opacity: 0.3;
             transform: scale(1.5);
+        }
+        .custom-card-description
+        {
+            font-size:14px;
         }
         /* .custom-card:hover .custom-icon, 
         .custom-card:hover, .number, 
@@ -105,7 +109,7 @@
             background: rgba(99, 102, 241, 0.1);
             border-radius: 28px;
             font-size: 28px;
-            color: var(--primary-color);
+            color: var(--main-color);
             transition: all 0.5s cubic-bezier(0.23,1,0.32,1);
         }
         .number
@@ -115,7 +119,7 @@
             right: -10px;
             font-size: 16px;
             font-weight: 700;
-            color: var(--primary-color);
+            color: var(--main-color);
             background-color: white;
             width: 30px;
             height: 30px;
@@ -137,7 +141,7 @@
             </div>
             <div class="number">{{$number}}</div>
         </div>
-        <h3 class="custom-card-title">{{ $title }}</h3>
+        <h1 class="custom-card-title text-black">{{ $title }}</h1>
         <p class="custom-card-description">{{$description}}</p>
         
         

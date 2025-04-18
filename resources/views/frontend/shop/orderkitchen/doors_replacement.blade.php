@@ -265,6 +265,7 @@
             text-align: center;
         }
         .consultation-step {
+            min-height:320px;
             margin-bottom: 2rem;
             padding: 1.5rem;
             /* background-color: white; */
@@ -313,6 +314,30 @@
                 margin-bottom: 10px;
                 
             }
+        }
+
+        .max-description
+            {
+                font-size:16px;
+            }
+        @media(max-width:760px)
+        {
+            .consultation-step p,
+            .suggestion,
+            .survey-section-p,
+            .custom-card-description,
+            .suggestion{
+                font-size:20px;
+            }
+            .max-description
+            {
+                font-size:18px;
+            }
+            
+           .custom-card
+           {
+            padding-right:10px;
+           }
         }
 
         </style>
@@ -405,91 +430,14 @@
             <div class="col-sm-5">
             <h4 class="text-center">Benefit from our limited time offer and get a FREE QUOTE for Kitchen Door Replacement</h4>
             </div>
-            <div class="col-9 col-sm-3">
-                <button class="btn bg-orange px-4 text-uppercase rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal">book your FREE CONSULTATION NOW!</button>
+            <div class="col-12 col-sm-3">
+                <button class="w-100 btn bg-orange px-4 text-uppercase rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal">book your FREE CONSULTATION NOW!</button>
             </div>
         </div>
     </div>
     </section>
 
-    <div class ="container-fluid bg-white">
-        <section class="consultation-section bg-white">
-            <div class="container bg-white">
-                <h2 class="mb-2 text-black">Why Choose Our Kitchen Door Replacement Service?</h2>
-                <div class = "row mb-1 justify-content-center">
-                    <div class="col-6">
-                        <div id="lines" class="mb-3">
-                            <div id="line1"></div>
-                            <div id="line2"></div>
-                            <div id="line3"></div>
-                        
-                    </div>
-                    </div>
-                </div>
-                
-                
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="consultation-step rounded bg-light">
-                            <div class="icon-circle bg-white">
-                                <img src="{{ asset('images/pound.png') }}"/>
-                            </div>
-                            <h4>01. <span class="text-primary">Cost-Effective Upgrade</span></h4>
-                            <p>Save money compared to a full kitchen remodel.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="consultation-step rounded bg-light">
-                            <div class="icon-circle bg-white">
-                                <img src="{{ asset('images/clock.png') }}"/>
-                            </div>
-                            <h4>02. <span class="text-primary">Quick Transformation</span></h4>
-                            <p>Achieve a new look in a fraction of the time.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="consultation-step rounded bg-light">
-                            <div class="icon-circle bg-white">
-                                <img src="{{ asset('images/minimal-disruption.png') }}"/>
-                            </div>
-                            <h4>03. <span class="text-primary">Minimal Disruption</span></h4>
-                            <p>Less mess and inconvenience than a full renovation</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="consultation-step rounded bg-light">
-                            <div class="icon-circle bg-white">
-                                <i class="bi bi-card-list"></i>
-                            </div>
-                            <h4>04. <span class="text-primary">Enhance Your Style</span></h4>
-                            <p>Update your kitchen to reflect your current taste.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="consultation-step rounded bg-light">
-                            <div class="icon-circle bg-white">
-                                <img src="{{ asset('images/palette.png') }}"/>
-                            </div>
-                            <h4>05. <span class="text-primary">Increase Home Value</span></h4>
-                            <p>A refreshed kitchen can boost your property's appeal.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="consultation-step rounded bg-light">
-                            <div class="icon-circle bg-white">
-                                <img src="{{ asset('https://bkonline.uk/public/imgs/products/Leaf1744481544_67faad084b91d.png') }}"/>
-                            </div>
-                            <h4>06. <span class="text-primary">Eco-Friendly Option</span></h4>
-                            <p>Reusing existing cabinets is a more sustainable choice.</p>
-                        </div>
-                    </div>
-                </div>
-               
-            </div>
-        </section>
-    </div>
+    
 
 <div class="container-fluid" >
     <div class="container py-5">
@@ -583,6 +531,85 @@
         </div>
     </div>
 </div>
+
+<div class ="container-fluid bg-white">
+    <section class="consultation-section bg-white">
+        <div class="container bg-white">
+            <h2 class="mb-2 text-black">Why Choose Our Kitchen Door Replacement Service?</h2>
+            <div class = "row mb-1 justify-content-center">
+                <div class="col-6">
+                    <div id="lines" class="mb-3">
+                        <div id="line1"></div>
+                        <div id="line2"></div>
+                        <div id="line3"></div>
+                    
+                </div>
+                </div>
+            </div>
+            
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="consultation-step rounded bg-light">
+                        <div class="icon-circle bg-white">
+                            <img src="{{ asset('images/pound.png') }}"/>
+                        </div>
+                        <h3>01. <span class="text-primary">Cost-Effective Upgrade</span></h3>
+                        <p class="max-description suggestion">Save money compared to a full kitchen remodel.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="consultation-step rounded bg-light">
+                        <div class="icon-circle bg-white">
+                            <img src="{{ asset('images/clock.png') }}"/>
+                        </div>
+                        <h3>02. <span class="text-primary">Quick Transformation</span></h3>
+                        <p class="max-description suggestion">Achieve a new look in a fraction of the time.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="consultation-step rounded bg-light">
+                        <div class="icon-circle bg-white">
+                            <img src="{{ asset('images/minimal-disruption.png') }}"/>
+                        </div>
+                        <h3>03. <span class="text-primary">Minimal Disruption</span></h3>
+                        <p class="max-description suggestion">Less mess and inconvenience than a full renovation</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="consultation-step rounded bg-light">
+                        <div class="icon-circle bg-white">
+                            <i class="bi bi-card-list"></i>
+                        </div>
+                        <h3>04. <span class="text-primary">Enhance Your Style</span></h3>
+                        <p class="max-description suggestion">Update your kitchen to reflect your current taste.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="consultation-step rounded bg-light">
+                        <div class="icon-circle bg-white">
+                            <img src="{{ asset('images/palette.png') }}"/>
+                        </div>
+                        <h3>05. <span class="text-primary">Increase Home Value</span></h3>
+                        <p class="max-description suggestion">A refreshed kitchen can boost your property's appeal.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="consultation-step rounded bg-light">
+                        <div class="icon-circle bg-white">
+                            <img src="{{ asset('https://bkonline.uk/public/imgs/products/Leaf1744481544_67faad084b91d.png') }}"/>
+                        </div>
+                        <h3>06. <span class="text-primary">Eco-Friendly Option</span></h3>
+                        <p class="max-description suggestion">Reusing existing cabinets is a more sustainable choice.</p>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </section>
+</div>
     <div class ="container-fluid bg-white">
         <section class="consultation-section bg-white">
             <div class="container bg-white">
@@ -607,8 +634,8 @@
                             <div class="icon-circle bg-white">
                                 <img src="{{ asset('images/browse.png') }}"/>
                             </div>
-                            <h4 class="">01. <span class="text-primary">Browse & Enquire</span></h4>
-                            <p>Explore our door styles and colors online. Contact us for a free quote (for a limited time) or to discuss your project.</p>
+                            <h3 class="">01. <span class="text-primary">Browse & Enquire</span></h3>
+                            <p class="max-description suggestion">Explore our door styles and colors online. Contact us for a free quote (for a limited time) or to discuss your project.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -616,8 +643,8 @@
                             <div class="icon-circle bg-white">
                                 <img src="{{ asset('images/choose.png') }}"/>
                             </div>
-                            <h4>02. <span class="text-primary">Measure & Choose</span></h4>
-                            <p>We'll guide you through measuring your existing doors or offer an optional on-site survey (limited time offer) for precise measurements. Select your desired style and color.</p>
+                            <h3>02. <span class="text-primary">Measure & Choose</span></h3>
+                            <p class="max-description suggestion">We'll guide you through measuring your existing doors or offer an optional on-site survey (limited time offer) for precise measurements. Select your desired style and color.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -625,8 +652,8 @@
                             <div class="icon-circle bg-white">
                                 <img src="{{ asset('images/kitchen-room.png') }}"/>
                             </div>
-                            <h4>03. <span class="text-primary">Expert Installation</span></h4>
-                            <p> Our professional team will carefully install your new doors, ensuring a perfect fit and finish. </p>
+                            <h3>03. <span class="text-primary">Expert Installation</span></h3>
+                            <p class="max-description suggestion"> Our professional team will carefully install your new doors, ensuring a perfect fit and finish. </p>
                         </div>
                     </div>
                 </div>

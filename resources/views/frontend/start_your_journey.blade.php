@@ -1,3 +1,4 @@
+
 <section class="container-fluid bg-white h-100 p-4 cut-side-section">
     <div class="container">
         <div class="row">
@@ -5,7 +6,7 @@
                 <h3 class="text-start text-dark fw-bold" style="text-decoration: underline;">
                     START YOUR JOURNEY WITH BK ONLINE
                 </h3>
-                <p>
+                <p class="max-description suggestion">
                     Book your free consultation today and take the first step toward your dream kitchen. Whether virtually or with an on-site survey, we are here to guide you every step of the way.
                 </p>
             </div>

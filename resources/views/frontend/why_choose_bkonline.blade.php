@@ -118,7 +118,25 @@
             background-color: #222222;
         }
 
-    
+        @media(max-width:760px)
+        {
+            .consultation-step p,
+            .suggestion,
+            .survey-section-p,
+            .custom-card-description,
+            .suggestion{
+                font-size:20px;
+            }
+            .max-description
+            {
+                font-size:18px;
+            }
+            
+           .custom-card
+           {
+            padding-right:10px;
+           }
+        }
         </style>
 
 </head>
@@ -139,8 +157,8 @@
             <div class="feature-card h-100 d-flex flex-column">
                 <div class="text-center">
                     <div class="feature-icon"><img src="{{ asset('images/24-7.png') }}"/></div>
-                    <h5 class="card-title mb-3">24/7 Availability</h5>
-                    <p class="card-text">Customer support & free consultation anytime, anywhere</p>
+                    <h3 class="card-title mb-3">24/7 Availability</h3>
+                    <p class="card-text max-description suggestion">Customer support & free consultation anytime, anywhere</p>
                 </div>
             </div>
         </div>
@@ -151,8 +169,8 @@
                         {{-- 🏆 --}}
                         <img src="{{ asset('images/quality-service.png') }}"/>
                     </div>
-                    <h5 class="card-title mb-3">Quality Service</h5>
-                    <p class="card-text">Trusted by thousand of customers for premium kitchen designs</p>
+                    <h3 class="card-title mb-3">Quality Service</h3>
+                    <p class="card-text max-description suggestion">Trusted by thousand of customers for premium kitchen designs</p>
                 </div>
             </div>
         </div>
@@ -163,8 +181,8 @@
                         {{-- 🛠️ --}}
                         <img src="{{ asset('images/expert-installation.png') }}"/>
                     </div>
-                    <h5 class="card-title mb-3">Expert Installation</h5>
-                    <p class="card-text">Skilled professionals ensure seamless kitchen fitting & installation</p>
+                    <h3 class="card-title mb-3">Expert Installation</h3>
+                    <p class="card-text max-description suggestion">Skilled professionals ensure seamless kitchen fitting & installation</p>
                 </div>
             </div>
         </div>
@@ -176,15 +194,17 @@
                         <img src="{{ asset('images/online-support.png') }}"/>
 
                     </div>
-                    <h5 class="card-title mb-3">Premium Quality</h5>
-                    <p class="card-text">Quality that stands the test of time</p>
+                    <h3 class="card-title mb-3">Premium Quality</h3>
+                    <p class="card-text ">Quality that stands the test of time</p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="text-center mt-5">
-        <a href="{{ route('max_storage') }}" class="btn explore-btn px-5 mb-5" style="background-color:#febd49;">EXPLORE MORE</a>
+    <div class="row justify-content-center">
+    <div class="col-12 col-lg-3 text-center mt-5">
+        <a href="{{ route('max_storage') }}" class="w-100 btn explore-btn px-5 mb-5" style="background-color:#febd49;">EXPLORE MORE</a>
     </div>
+</div>
 </div>
 
 

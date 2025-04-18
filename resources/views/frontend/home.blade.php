@@ -180,10 +180,38 @@
         .consultation-step {
             margin-bottom: 2rem;
             padding: 1.5rem;
+            min-height:300px;
             /* background-color: white; */
             /* border-radius: 10px; */
             /* box-shadow: 0 4px 6px rgba(0,0,0,0.1); */
             /* transition: transform 0.3s ease; */
+        }
+        .max-description
+            {
+                font-size:16px;
+            }
+        @media(max-width:760px)
+        {
+            .consultation-step p,
+            .suggestion,
+            .survey-section-p,
+            .custom-card-description,
+            .suggestion{
+                font-size:20px;
+            }
+            .max-description
+            {
+                font-size:18px;
+            }
+            
+           .custom-card
+           {
+            padding-right:10px;
+           }
+        }
+        .survey-section-p
+        {
+            font-size:18px;
         }
         /* .consultation-step:hover {
             transform: translateY(-10px);
@@ -254,6 +282,10 @@
             position: absolute;
             z-index: 1; /* bring content above canvas */
         }
+
+        
+    }
+    
     </style>
     @endsection
     </head>
@@ -326,7 +358,7 @@
                             <div class="text-green-color ps-3">
                                 <h1 class="text-white animated slide-right text-center">ELEVATE YOUR KITCHEN</h1>
                                 <h1 class="text-yellow-color fw-bold animated slide-left text-center">ELEVATE YOUR LIFESTYLE</h1>
-                                <p class="text-white animated slide-bottom text-center">We specialize in virtually designing and delivering your dream kitchen that complements your needs and style. Whether you want to build a new kitchen or need to replace a single component, we are always at your service.</p>
+                                <p  class="fs-20 text-white animated slide-bottom text-center">We specialize in virtually designing and delivering your dream kitchen that complements your needs and style. Whether you want to build a new kitchen or need to replace a single component, we are always at your service.</p>
                             </div>
                             <div class="container d-flex flex-column align-items-center text-center">
                                 <div class="col-xl-8 col-lg-10 col-md-10 col-sm-12 animated slide-top mx-auto" style="margin-top: 50px;">
@@ -555,7 +587,7 @@
     <div class ="container-fluid bg-white mt-5">
         <section class="consultation-section bg-white">
             <div class="container bg-white">
-                <h2 class="mb-2 text-black">EXPERT VIRTUAL DESIGN CONSULTATION</h2>
+                <h2 class="mb-2 text-black mt-">EXPERT VIRTUAL DESIGN CONSULTATION</h2>
                 <div class = "row mb-1 justify-content-center">
                     <div class="col-6">
                         <div id="lines" class="mb-3">
@@ -576,7 +608,7 @@
                             <div class="icon-circle bg-white">
                                 <i class="bi bi-card-list"></i>
                             </div>
-                            <h3>01. Appointment Booking</h3>
+                            <h3 class="text-black">01. Appointment Booking</h3>
                             <p>Start by booking an appointment with our design experts.</p>
                         </div>
                     </div>
@@ -585,7 +617,7 @@
                             <div class="icon-circle bg-white">
                                 <i class="bi bi-clipboard-check"></i>
                             </div>
-                            <h3>02. Sharing Preferences</h3>
+                            <h3 class="text-black">02. Sharing Preferences</h3>
                             <p>You share your space details, style preferences, and budget.</p>
                         </div>
                     </div>
@@ -594,13 +626,13 @@
                             <div class="icon-circle bg-white">
                                 <i class="bi bi-check-lg"></i>
                             </div>
-                            <h3>03. Design Creation & Approval</h3>
+                            <h3 class="text-black">03. Design Creation & Approval</h3>
                             <p>We craft a design for your kitchen specific to your needs in record time.</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="">
+                <div class="suggestion">
                     <p class="mb-2">Don't let time hold you back.</p>
                     <button href="#" class="btn btn-lg cta-button rounded-0" style="background-color:#ffc107;" data-bs-toggle="modal" data-bs-target="#exampleModal">SCHEDULE YOUR FREE CONSULTATION NOW!</button>
                 </div>
@@ -660,8 +692,8 @@
             <div class="container">
                 <div class="row text-center mb-4">
                     <div class="col-12">
-                        <h4 class="mb-3" style="color:#2a6161;">WANT A MORE HANDS-ON APPROACH?</h4>
-                        <p class="">For your peace of mind, we are offering!</p>
+                        <h2 class="mb-3" style="color:#2a6161;">WANT A MORE HANDS-ON APPROACH?</h2>
+                        <p class="survey-section-p">For your peace of mind, we are offering!</p>
                         <h3 class="mb-1 text-black">ON-SITE SURVEY</h3>
                         <div class="row justify-content-center">
                             <div class = "col-3">
@@ -674,21 +706,21 @@
                             </div>
                         </div>
                         <div class="row justify-content-center">
-                        <p class="col-7 text-black">Our team will visit your space, take measurements, and assess your needs. After that, the design for the custom kitchen unit will be finalized online.</p>
+                        <p class="col-sm-7 text-black survey-section-p">Our team will visit your space, take measurements, and assess your needs. After that, the design for the custom kitchen unit will be finalized online.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="row text-center mb-4">
                     <div class="col-12">
-                        <h4 class="mb-4 text-black">BENEFITS</h4>
+                        <h2 class="mb-4 text-black">BENEFITS</h2>
                     </div>
                     <div class="col-md-4 mb-3">
                         <div class="p-4 bg-white rounded">
                             <div class="benefit-icon">
                                 <i class="bi bi-calculator"></i>
                             </div>
-                            <h4 class=""><b>01.</b> Extensive study of your space by a professional.</h4>
+                            <h3 class=""><b>01.</b> Extensive study of your space by a professional.</h3>
                             
                         </div>
                     </div>
@@ -698,7 +730,7 @@
                                 {{-- <i class="bi bi-coin"></i> --}}
                                 <img src="{{ asset('images/no-hidden.png') }}"/>
                             </div>
-                            <h4><b>02.</b> Transparent pricing, No </br>hidden charges</h4>
+                            <h3><b>02.</b> Transparent pricing, No </br>hidden charges</h3>
                             {{-- <p class="text-muted">No hidden charges</p> --}}
                         </div>
                     </div>
@@ -707,7 +739,7 @@
                             <div class="benefit-icon">
                                 <i class="bi bi-currency-dollar"></i>
                             </div>
-                            <h4><b>03.</b> Survey payment is deducted from your final bill</h4>
+                            <h3><b>03.</b> Survey payment is deducted from your final bill</h3>
                             
                             {{-- <p class="text-muted"></p> --}}
                         </div>
@@ -716,13 +748,14 @@
 
                 <div class="row">
                     <div class="col-12 text-center">
-                        <p class=" mb-3 text-black">
+                        <h3 class=" mb-3 text-black">
                         <span class="text-danger"> *</span>The advance payment for this survey will be deducted from your final bill, ensuring that you're only paying for your kitchen.
-                        </p>
-                        <h4 class="mb-4" style="color:#2a6161">
+                        </h3>
+                        <h3 class="mb-4" style="color:#2a6161">
                             Concerned about not getting the right measurements? Let our professionals handle it for you.
-                        </h4>
-                        <button href="#" class=" btn btn-lg px-5 rounded-0 " data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #ffc107;">Start designing your Ideal Kitchen</button>
+                        </h3>
+                        <button href="#" class=" btn btn-lg px-5 rounded-0 " data-bs-toggle="modal" data-bs-target="#exampleModal" style="
+    background-color: #ffc107 ;">Start designing your Ideal Kitchen</button>
                     </div>
                 </div>
             </div>
@@ -912,24 +945,35 @@
     <section class="container-fluid  pt-5 pb-3" style="background-color:#f2f4f5">
         <div>
         <div class="col-12 d-flex flex-column align-items-center">
-            <p class="text-center fw-bold">CUSTOM KITCHENS, TIMELESS ELEGANCE.</p>
-            <h3 class="text-dark text-center fw-bolder">
+            <h3 class="text-center text-black fw-bold">CUSTOM KITCHENS, TIMELESS ELEGANCE.</h3>
+            <h2 class="text-dark text-center fw-bolder">
                 BESPOKE DESIGN, STANDARD PRICE
-            </h3>
+            </h2>
             <div id="lines" class="mb-3">
                 <div id="line1"></div>
                 <div id="line2"></div>
                 <div id="line3"></div>
             
         </div>
-        <p class="text-center text-dark w-75">
+        <h3 class="text-center mb-4 w-100 text-dark">
             We offer premium, bespoke designer kitchens at competitive prices. Our process is straight forward
-        </p>
+        </h3>
     </section>
 
     <div class="container-fluid py-3" style="background-color:#f2f4f5">
-
-        <section class="container pb-4">
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-4 col-12 mb-3 mb-sm-0">
+                 @include('frontend.card', ['icon_class'=>'fa-solid fa-comments','number'=>'01', 'title'=>'Dream & Discuss','description'=>"Share your vision! We'll listen to your ideas, needs, and lifestyle to understand your dream kitchen."])
+            </div>
+            <div class="col-lg-4 col-12 mb-3 mb-sm-0">
+                @include('frontend.card', ['icon_class'=>'fa-solid fa-pen-nib','number'=>'02', 'title'=>'Design & Refine','description'=>"Our experts create a personalized design, including layouts, material selections. You'll have opportunities to refine every detail."])
+           </div>
+           <div class="col-lg-4 col-12 mb-3 mb-sm-0">
+            @include('frontend.card', ['icon_class'=>'fa-solid fa-hammer','number'=>'03', 'title'=>'Craft & Create','description'=>"Our skilled craftsmen meticulously build and install your custom kitchen, ensuring a perfect fit and lasting beauty."])
+       </div>
+        </div>
+        {{-- <section class="container pb-4">
             <div class="row gap-5 justify-content-center">
                 <div class="col-lg-3 col-md-6 col-9 mb-4">
                     <div class="card rounded-0 border-0 h-100" style="  box-shadow: 20px -20px 0px -1px rgb(242 244 245), 20px -20px 0px 0 rgb(42, 97, 97); ">
@@ -978,69 +1022,14 @@
                 </div>
             </div>
         </section>
-    
+     --}}
         <div class="row justify-content-center text-center">
-            <div class="col-lg-6 col-md-8 col-sm-10 col-12 mb-5 mt-3">
-                <p class="fw-bold text-primary">Stop dreaming and build a kitchen that reflects your needs and style</p>
+            <div class="col-lg-9 col-md-8 col-sm-10 col-12 mb-5 mt-3">
+                <h4 class="fw-bold text-primary suggestion">Stop dreaming and build a kitchen that reflects your needs and style</h4>
                 <button class="btn btn-warning px-5 text-uppercase rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Start designing your Ideal Kitchen</button>
             </div>
         </div>
-        {{-- <section class="container pb-4">
-            <div class="row gap-5 justify-content-center">
-                <div class="col-lg-3 col-md-6 col-9 mb-4">
-                    <div class="card rounded-0 border-0 h-100" style="  box-shadow: 20px -20px 0px -1px rgb(242 244 245), 20px -20px 0px 0 rgb(42, 97, 97); ">
-                        <div class="card-body text-center p-4">
-                            <div class="card-icon">
-                                <i class="bi bi-card-list text-warning" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                                
-                            </div>
-                            <h5 class="card-title mb-3 text-dark">01.</h5>
-                            <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Design Requirements</h5>
-                            <div class="px-5">
-                                <p class="card-text text-muted">You inform us about your requirements.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="col-lg-3 col-md-6 col-9 mb-4">
-                    <div class="card rounded-0 border-0 h-100" style="  box-shadow: 20px -20px 0px -1px rgb(242 244 245), 20px -20px 0px 0 rgb(42, 97, 97); ">
-                        <div class="card-body text-center p-4">
-                            <div class="card-icon">
-                                <i class="bi bi-cash-stack text-warning" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                            </div>
-                            <h5 class="card-title mb-3 text-dark">02.</h5>
-                            <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Upfront Pricing</h5>
-                            <div class="px-5">
-                            <p class="card-text text-muted">We create a personalized design and provide clear, upfront pricing.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="col-lg-3 col-md-6 col-9 mb-4">
-                    <div class="card rounded-0 border-0 h-100" style="  box-shadow: 20px -20px 0px -1px rgb(242 244 245), 20px -20px 0px 0 rgb(42, 97, 97); ">
-                        <div class="card-body text-center p-4">
-                            <div class="card-icon">
-                                <i class="bi bi-clipboard-check text-warning" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                            </div>
-                            <h5 class="card-title mb-3 text-dark">03.</h5>
-                            <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Custom Design Delivered</h5>
-                            <div class="px-5">
-                            <p class="card-text text-muted">The final design will be crafted to meet your needs without the pressure of upselling.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    
-        <div class="row justify-content-center text-center">
-            <div class="col-lg-6 col-md-8 col-sm-10 col-12 mb-5 mt-3">
-                <p class="fw-bold text-primary">Build a kitchen that reflects your needs & style.</p>
-                <button class="btn btn-warning px-5 text-uppercase rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Book An On-Site Survey Now!</button>
-            </div>
-        </div> --}}
+       
     </div>
 
     {{-- <div class="container-fluid py-3" style="background-color:#fff">
@@ -1096,9 +1085,9 @@
         </div> --}}
     <section class="container-fluid py-4 bg-light">
         <div class="col-12 d-flex flex-column align-items-center">
-            <h6 class=" text-center fw-bold">
+            <h4 class="text-black  text-center fw-bold">
                 ARE YOU STRUGGLING WITH KITCHEN STORAGE SPACE?
-            </h6>
+            </h4>
             <h3 class="text-center text-dark w-75 fw-bolder">
                 EXPLORE BESPOKE MAX STORAGE KITCHENS
             </h3>
@@ -1124,9 +1113,9 @@
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0 bg-light">
                 <div class="card border-0 bg-light">
                     <div class="px-5 bg-white d-flex flex-column align-items-center justify-content-center" style="height: 250px; width: 100%">
-                        <h4 class=" fw-bold text-center">02.</h4>
-                        <h4 class=" fw-bold text-center">TALLEST UNITS</h4>
-                        <p class=" text-center">Floor-to-ceiling cupboards for extra storage. Ideal for small kitchens needing vertical space.</p>
+                        <h2 class=" fw-bold text-center text-black">02.</h2>
+                        <h2 class=" fw-bold text-center text-black">TALLEST UNITS</h2>
+                        <p class=" text-center max-description">Floor-to-ceiling cupboards for extra storage. Ideal for small kitchens needing vertical space.</p>
                     </div>
                 </div>
             </div>
@@ -1141,10 +1130,10 @@
                 <div class="card border-0 bg-light">
                     <div class="px-5 bg-white d-flex flex-column align-items-center justify-content-center" style="height: 250px; width: 100%">
                         
-                        <h4 class=" fw-bold text-center">01.</h4>
+                        <h2 class=" fw-bold text-center text-black">01.</h2>
                         
-                        <h4 class=" fw-bold text-center">DEEPEST UNITS</h4>
-                        <p class=" text-center">Deeper storage than standard cabinets. Maximizes space for pots, pans and appliances.</p>
+                        <h2 class=" fw-bold text-center text-black">DEEPEST UNITS</h2>
+                        <p class=" text-center max-description">Deeper storage than standard cabinets. Maximizes space for pots, pans and appliances.</p>
                     </div>
                 </div>
             </div>
@@ -1158,22 +1147,22 @@
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0 bg-light">
                 <div class="card border-0 bg-light">
                     <div class="px-5 bg-white d-flex flex-column align-items-center justify-content-center" style="height: 250px; width: 100%">
-                        <h4 class=" fw-bold text-center">03.</h4>
-                        <h4 class=" fw-bold text-center">WIDEST UNITS</h4>
-                        <p class="text-center">Wide drawers for organized storage of kitchens essentials. Make use of every inch efficiently.</p>
+                        <h2 class=" fw-bold text-center text-black">03.</h2>
+                        <h2 class=" fw-bold text-center text-black">WIDEST UNITS</h2>
+                        <p class="text-center max-description">Wide drawers for organized storage of kitchens essentials. Make use of every inch efficiently.</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="mt-5 row justify-content-center bg-light">
           <div class="col-lg-5 col-12 bg-light">
-            <h4 style="color:#2a6161" class="text-center">Say Goodbye to clutter with bespoke max storage kitchens. </h4>
+            <h4 style="color:#2a6161" class="text-center suggestion">Say Goodbye to clutter with bespoke max storage kitchens. </h4>
           </div>
 
         </div>
         <div class="row justify-content-center bg-light">
-            <div class="col-lg-3 col-5 bg-light">
-                <a href="{{ route('max_storage') }}" class="btn px-3 px-lg-5 rounded-0" style="background-color:#febd49">Maximize your space now!</a>
+            <div class="col-lg-3 col-12 text-center bg-light">
+                <a href="{{ route('max_storage') }}" class="btn w-100 px-3 px-lg-5 rounded-0" style="background-color:#febd49">Maximize your space now!</a>
             </div>
         </div>
         </div>
@@ -1187,9 +1176,9 @@
     <section class="container-fluid mt-5 grid-box-gray-color py-4 " >
         <div class="container d-flex flex-column align-items-center">
             <div class="row pt-3 justify-content-center">
-                <div class ="col-6">
-                    <h3 class="text-center "><b>RETAIL QUALITY AT ONLINE PRICES</b></h3>
-            <p class="text-center">
+                <div class ="col-sm-8 col-12">
+                    <h2 class="text-center text-black"><b>RETAIL QUALITY AT ONLINE PRICES</b></h2>
+            <p class="text-center suggestion">
                 We Believe In Offering High-Quality Products That Rival Retail Standards, But Without The Retail Prices.
                 Our Products Are Always Top-Notch, Ensuring Your Bespoke Designer Kitchen Is Built To Last.
             </p>
@@ -1203,14 +1192,14 @@
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                     <div class="bg-yellow-color2 p-5 h-100">
-                        <h4 class="text-dark fw-bolder">PREMIUM WARDROBES</h4>
-                        <p class="text-dark">BK online also takes responsibility for adding luxury to your rooms. The wardrobes are built to meet unique storage needs with meticulous attention to detail. They are not only functional but they change the aesthetic of your room.</p>
+                        <h2 class="text-dark text-black fw-bolder">PREMIUM WARDROBES</h2>
+                        <p class="text-dark suggestion">BK online also takes responsibility for adding luxury to your rooms. The wardrobes are built to meet unique storage needs with meticulous attention to detail. They are not only functional but they change the aesthetic of your room.</p>
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                     <div class="bg-green-color p-5 h-100">
-                        <h4 class="text-white fw-bolder">DOOR REPLACEMENT</h4>
-                        <p class="text-white">We have a quick and affordable way of giving your kitchen a new look. BK Online offers door replacements for your old kitchen doors. The doors are made from premium quality and great craftsmanship. Choose from a range of colors and finishes to suit your kitchen’s style.</p>
+                        <h2 class="text-white fw-bolder">DOOR REPLACEMENT</h2>
+                        <p class="text-white suggestion">We have a quick and affordable way of giving your kitchen a new look. BK Online offers door replacements for your old kitchen doors. The doors are made from premium quality and great craftsmanship. Choose from a range of colors and finishes to suit your kitchen’s style.</p>
                     </div>
                 </div>
             </div>
@@ -1228,10 +1217,10 @@
                 <!-- Left Content -->
                 <div class="col-md-12 col-lg-6 text-center text-lg-start">
                     <div class="card rounded border-0 shadow-sm p-4">
-                        <h5 class="text-primary">Our Catalogue</h5>
-                        <h4 class="mb-3">EXPLORE OUR EXCLUSIVE CATALOGUE</h4>
-                        <p class="mb-3">Get access to our full catalogue for free, featuring custom kitchen designs, premium materials, and smart storage solutions. Whether you're seeking style, function, or both, we've got everything you need to bring your vision to life.</p>
-                        <p class="text-primary">Register now to receive our free catalogue in your inbox.</p>
+                        <h3 class="text-primary">Our Catalogue</h3>
+                        <h2 class="mb-3 text-black">EXPLORE OUR EXCLUSIVE CATALOGUE</h2>
+                        <p class="mb-3 max-description suggestion">Get access to our full catalogue for free, featuring custom kitchen designs, premium materials, and smart storage solutions. Whether you're seeking style, function, or both, we've got everything you need to bring your vision to life.</p>
+                        <p class="text-primary max-description suggestion">Register now to receive our free catalogue in your inbox.</p>
                         <form method="POST" action="{{ route('contact_us_inquiry') }}">
                             @csrf
                             <div class="input-group">
