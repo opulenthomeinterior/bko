@@ -1349,7 +1349,7 @@ use App\Models\Style;
     <script>
 
         document.addEventListener('DOMContentLoaded', function () {
-            if (localStorage.getItem('subscribed') == 'false') {
+            if (localStorage.getItem('subscribed') == 'false' || localStorage.getItem('subscribed') == undefined || localStorage.getItem('subscribed') == '') {
                 setTimeout(function() {
                     var newsletterModal = new bootstrap.Modal(document.getElementById('newsletterModal'));
                     newsletterModal.show();
