@@ -1235,7 +1235,7 @@ use App\Models\Style;
                     <div class="decorative-blob"></div>
                     <div class="decorative-circle"></div>
                     
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+                    <button type="button" class="btn-close subscribed-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
                     
                     <div class="newsletter-content">
                       
@@ -1255,7 +1255,6 @@ use App\Models\Style;
             </div>
         </div>
     </div>
-    
   
     <div class="modal fade" id="discountModal" tabindex="-1" aria-labelledby="discountModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-md">
@@ -1350,77 +1349,79 @@ use App\Models\Style;
     <script>
 
         document.addEventListener('DOMContentLoaded', function () {
-
-            setTimeout(function() {
-                var newsletterModal = new bootstrap.Modal(document.getElementById('newsletterModal'));
-                newsletterModal.show();
-            }, 500);
+            if (localStorage.getItem('subscribed') == 'false') {
+                setTimeout(function() {
+                    var newsletterModal = new bootstrap.Modal(document.getElementById('newsletterModal'));
+                    newsletterModal.show();
+                }, 500);
             
-            var discountModal = new bootstrap.Modal(document.getElementById('discountModal'));
+                var discountModal = new bootstrap.Modal(document.getElementById('discountModal'));
             
-            function sendEmail() {
-                var email = $('#emailInput').val();
-                var button = $(this);
-                var btnText = button.find('.btn-text');
-                var btnLoading = button.find('.btn-loading');
+                function sendEmail() {
+                    var email = $('#emailInput').val();
+                    var button = $(this);
+                    var btnText = button.find('.btn-text');
+                    var btnLoading = button.find('.btn-loading');
 
-                // Show loading
-                btnText.hide();
-                btnLoading.show();
+                    // Show loading
+                    btnText.hide();
+                    btnLoading.show();
 
-                $.ajax({
-                    url: "{{ route('contact_us_inquiry') }}", // Change to your actual route
-                    method: 'POST',
-                    data: {
-                        email: email,
-                        catalogue_register_now: 'catalogue_register_now',
-                        first_order_discount: 'first_order_discount',
-                        message: 'You have successfully subscribed for 15% discount',
-                        _token: '{{ csrf_token() }}' // if you're using Laravel
-                    },
-                    success: function (response) {
-                        discountModal.show();
+                    $.ajax({
+                        url: "{{ route('contact_us_inquiry') }}", // Change to your actual route
+                        method: 'POST',
+                        data: {
+                            email: email,
+                            catalogue_register_now: 'catalogue_register_now',
+                            first_order_discount: 'first_order_discount',
+                            message: 'You have successfully subscribed for 15% discount',
+                            _token: '{{ csrf_token() }}' // if you're using Laravel
+                        },
+                        success: function (response) {
+                            discountModal.show();
+                        }
+                    });
+                }
+                // Handle subscribe button click
+                document.getElementById('subscribeBtn').addEventListener('click', function() {
+                    const emailInput = document.getElementById('emailInput');
+                    const email = emailInput.value.trim();
+                    
+                    // Basic email validation
+                    if (email && email.includes('@') && email.includes('.')) {
+                        // Hide newsletter modal
+                        var newsletterModal = bootstrap.Modal.getInstance(document.getElementById('newsletterModal'));
+                        newsletterModal.hide();
+                        
+                        // Show discount modal after a short delay
+                        setTimeout(function() {
+                            // discountModal.show();
+                            sendEmail();
+                            createConfetti();
+                        }, 500);
+                    } else {
+                        // Simple error visual
+                        emailInput.style.borderColor = '#ef4444';
+                        setTimeout(() => {
+                            emailInput.style.borderColor = '#fde68a';
+                        }, 2000);
                     }
+                    
+                    localStorage.setItem('subscribed', true);
+                });
+                
+                // Copy discount code functionality
+                document.getElementById('copyBtn').addEventListener('click', function() {
+                    const codeText = document.getElementById('discountCode').innerText;
+                    navigator.clipboard.writeText(codeText).then(function() {
+                        const successMsg = document.getElementById('copySuccess');
+                        successMsg.classList.add('active');
+                        setTimeout(() => {
+                            successMsg.classList.remove('active');
+                        }, 2000);
+                    });
                 });
             }
-
-            // Handle subscribe button click
-            document.getElementById('subscribeBtn').addEventListener('click', function() {
-                const emailInput = document.getElementById('emailInput');
-                const email = emailInput.value.trim();
-                
-                // Basic email validation
-                if (email && email.includes('@') && email.includes('.')) {
-                    // Hide newsletter modal
-                    var newsletterModal = bootstrap.Modal.getInstance(document.getElementById('newsletterModal'));
-                    newsletterModal.hide();
-                    
-                    // Show discount modal after a short delay
-                    setTimeout(function() {
-                        // discountModal.show();
-                        sendEmail();
-                        createConfetti();
-                    }, 500);
-                } else {
-                    // Simple error visual
-                    emailInput.style.borderColor = '#ef4444';
-                    setTimeout(() => {
-                        emailInput.style.borderColor = '#fde68a';
-                    }, 2000);
-                }
-            });
-            
-            // Copy discount code functionality
-            document.getElementById('copyBtn').addEventListener('click', function() {
-                const codeText = document.getElementById('discountCode').innerText;
-                navigator.clipboard.writeText(codeText).then(function() {
-                    const successMsg = document.getElementById('copySuccess');
-                    successMsg.classList.add('active');
-                    setTimeout(() => {
-                        successMsg.classList.remove('active');
-                    }, 2000);
-                });
-            });
             
             // Create confetti animation
             function createConfetti() {
@@ -1528,6 +1529,10 @@ use App\Models\Style;
         });
 
         $(document).ready(function() {
+
+            $(document).on('click', '.subscribed-close', function() {
+                localStorage.setItem('subscribed', true);
+            });
 
             $('.select-2').select2({
                 placeholder: "Search",
