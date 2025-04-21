@@ -1,4 +1,12 @@
 <x-guest-layout>
+    @section('meta_tags')
+        <title>{{$seo?->meta_title}}</title>
+        <meta name="description" content="{{$seo?->meta_description}}">
+        <link rel="canonical" href="{{$seo?->canonical_tag}}" />
+        <script type="application/ld+json">
+            {!! $seo?->schema_code !!}
+        </script>
+    @endsection
     <style>
         .cut-side-section {
             position: relative;
@@ -18,11 +26,6 @@
             clip-path: polygon(0 0, 100% 0, 10% 100%, 0% 100%);
         }
     </style>
-    @section('meta_tags')
-        <title>{{$seo?->meta_title}}</title>
-        <meta name="description" content="{{$seo?->meta_description}}">
-        <link rel="canonical" href="{{$seo?->canonical_tag}}" />
-    @endsection
     <section class="container-fluid"
         style="background-image: url('{{ $styleData['data']['image_path'] ? asset('imgs/styles/' . $styleData['data']['image_path']) : asset('images/order-component.jpg') }}'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 50vh;">
     </section>

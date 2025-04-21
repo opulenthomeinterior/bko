@@ -1,8 +1,11 @@
 <x-guest-layout>
     @section('meta_tags')
-        <title>Order Kitchen</title>
-        <meta name="description" content="">
-        <link rel="canonical" href="" />
+        <title>{{$seo?->meta_title}}</title>
+        <meta name="description" content="{{$seo?->meta_description}}">
+        <link rel="canonical" href="{{$seo?->canonical_tag}}" />
+        <script type="application/ld+json">
+            {!! $seo?->schema_code !!}
+        </script>
     @endsection
     <!-- Custom CSS -->
     <style>
@@ -39,11 +42,6 @@
             background-color: #ffc107;
         }
     </style>
-    @section('meta_tags')
-        <title>{{$seo?->meta_title}}</title>
-        <meta name="description" content="{{$seo?->meta_description}}">
-        <link rel="canonical" href="{{$seo?->canonical_tag}}" />
-    @endsection
     
     <div class="container py-4">
         <!-- Breadcrumb -->
