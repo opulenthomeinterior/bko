@@ -248,6 +248,249 @@
            }
         }
 
+
+
+        .modal-dialog {
+            width: 900px;
+            margin: 1.75rem auto;
+        }
+
+        .modal-content {
+            border-radius: 8px;
+            border: none;
+            overflow: hidden;
+            box-shadow: 0 5px 30px rgba(255, 192, 31, 0.5); /* Changed shadow color to #ffc01f with transparency */
+        }
+
+        .modal-body {
+            padding: 0;
+        }
+
+        .newsletter-container {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .popup-image {
+            flex: 1;
+            background-image: url('/api/placeholder/600/900');
+            background-size: cover;
+            background-position: center;
+            min-height: 500px;
+        }
+
+        .newsletter-content {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .content-title {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .discount-text {
+            color: #F2A900;
+        }
+
+        .offer-text {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .free-text {
+            color: #FF0000;
+            font-weight: bold;
+        }
+
+        .terms-text {
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .subscribe-container {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .news-letter-input {
+            border-radius: 0 !important;
+            border: 1px solid #ced4da !important;
+            padding: 12px 15px !important;
+            height: auto !important;
+        }
+
+        .subscribe-btn {
+            background-color: #1D6363;
+            color: white;
+            border: none;
+            border-radius: 0;
+            padding: 12px 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .privacy-text {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #FF3547;
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            border: none;
+            z-index: 1050;
+            box-shadow: 0 2px 5px #ffc01f; /* Changed close button shadow to #ffc01f */
+        }
+
+        @media (max-width: 767px) {
+            .newsletter-container {
+                flex-direction: column;
+            }
+            
+            .popup-image {
+                min-height: 200px;
+            }
+            
+            .newsletter-content {
+                padding: 25px;
+            }
+            
+            .content-title {
+                font-size: 32px;
+            }
+            
+            .offer-text {
+                font-size: 18px;
+            }
+        }
+
+        .demo-button {
+      margin: 100px auto;
+      display: block;
+    }
+    
+    .modal-dialog {
+      max-width: 800px;
+    }
+    
+    /* .modal-content {
+      border-radius: 1rem;
+      border: none;
+      padding: 1rem;
+    }
+     */
+    .modal-header {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    
+    .butn-close {
+      background-color: #dc3545;
+      opacity: 1;
+      padding: 0.5rem;
+      border-radius: 50%;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      color: white;
+      font-weight: bold;
+    }
+    
+    .butn-close:focus {
+      box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+    }
+    
+    .thank-you {
+      color: #dc3545;
+      font-weight: bold;
+      font-size: 2.5rem;
+    }
+    
+    .for-subscribing {
+      color: #212529;
+      font-size: 2.5rem;
+    }
+    
+    .youve-won {
+      color: #ffa500;
+      font-weight: bold;
+    }
+    
+    .free-text {
+      color: #dc3545;
+      font-weight: bold;
+    }
+    
+    .consultation {
+      color: #212529;
+      font-weight: bold;
+    }
+    
+    .thankyou-input {
+      border: 1px solid #6c757d;
+      border-radius: 5px;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    
+    .submit-btn {
+      background-color: #ffc107;
+      color: #212529;
+      font-weight: bold;
+      border: none;
+      padding: 1rem;
+      width: 100%;
+      text-transform: uppercase;
+    }
+    
+    .benefits-box {
+      border: 1px solid #6c757d;
+      border-radius: 5px;
+      padding: 1.5rem;
+      height: 100%;
+    }
+    
+    .benefits-title {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    
+    .benefit-item {
+      margin-bottom: 0.75rem;
+    }
+    
+    .highlight-text {
+      color: #dc3545;
+      font-weight: bold;
+    }
+    
+    .convenience-text {
+      color: #dc3545;
+      font-weight: bold;
+    }
+    
+    @media (max-width: 768px) {
+      .thank-you, .for-subscribing {
+        font-size: 2rem;
+      }
+    }
+
+
+
     </style>
 </head>
 
@@ -261,31 +504,40 @@
         <div class="hero-content">
             <h1 class="fs-md-0 fs-1 text-white fw-bold text-uppercase">Bespoke designer <span class="text-warning">kitchens</span></h1>
             {{-- <h1 class="text-warning fw-bold">Timeless Elegance</h1> --}}
-            <p class=" suggestion"><span class="suggestion">Are You Settling for a Kitchen That Doesn't Fit Your Life?</span> <br><span class="suggestion max-description">We offer premium, Bespoke Kitchen Units at competitor prices</span></p>
+            <p class=" suggestion"><span class="suggestion">Are You Settling for a Kitchen That Doesn't Fit Your Life?</span> <br><span class="suggestion max-description">We offer premium, Bespoke Kitchen Units at the price of standard kitchens</span></p>
             {{-- <div class="scroll-down">Scroll Down <i>&#x2193;</i></div> --}}
         </div>
     </header>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <a class="btn" data-bs-toggle="modal" data-bs-target="#newsletterModal">
+                <img class="w-100 rounded img-fluid d-none d-md-block" src="{{ asset('images/max-banner.png') }}"/>
+                
+                <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/max-banner-mob.png') }}"/>
+                </a>
+            </div>
+        </div>
+    </div>
     <div class="container-fluid py-3" style="background: linear-gradient(135deg,#f5f7fa 0%, #e0e4e9 100%)">
     <section class="container my-5">
         <div class="row">
             {{-- <div class="col-xl-3 col-lg-3 col-md-2 col-sm-12 col-3"></div> --}}
             <div class=" col-lg-6 col-md-8 col-sm-12 col-12 align-self-center mb-4 mb-sm-0 px-lg-5">
-                <div style="">
+                {{-- <div style="">
                     <h1>
                         <span class="text-warning">Standard Kitchens </span>
                         <br>
                         frequently require <span class="text-warning">compromises</span>
 
-                        {{-- Start Your Journey with <span class="text-warning">BK Online</span> --}}
+                   
                     </h1>
                    
                     <h2>
                         Limited layout, generic styles, and materials that do not suit your needs
                     </h2>
-                    {{-- <p class=" fs-5">
-                        Book your <span class="text-danger"> Free </span>consultation today and take the first step toward your dream kitchen. Whether virtually or with an on-site survey, we are here to guide you every step of the way.
-                    </p> --}}
+                 
 
                     <h3 class="mt-5 fw-bold">
                         Do you find yourself wishing for specific features, or a more personalized aesthetic that off-the-shelf options simply can't provide?
@@ -298,7 +550,11 @@
                         <br>
                         Because we believe your kitchen should be more than just a place to cook – it should be a reflection of your personality and a hub for your lifestyle
                     </h4>
-                </div>
+                </div> --}}
+              
+                    <img class="w-100  rounded img-fluid d-none d-md-block" src="{{ asset('images/max-form-left-banner.png') }}"/>
+                    <img class="w-100  rounded img-fluid d-md-none" src="{{ asset('images/max-form-left-banner-mob.png') }}"/>
+                    
             </div>
             <div class="col-xl-6 col-lg-6 col-md-8 col-sm-12 col-12">
 
@@ -602,7 +858,10 @@
     
     <section class="container bg-white mb-5">
         <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
+            <div class="col-12">
+                <img class="img-fluid w-100" src="{{ asset('images/max-cabinets.jpeg') }}"/>
+            </div>
+            {{-- <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
                 <div class="card border-0">
                     <div class="" style="height: 250px; width: 100%">
                         <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="{{ asset('images/deepest.jpg') }}" alt="">
@@ -646,7 +905,7 @@
                         <p class="suggestion max-description text-white text-center">Wide cabinets for organized storage of kitchens essentials. Make use of every inch efficiently.</p>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
         <div class="row justify-content-center mt-5">
             <div class="col-lg-8">
@@ -1001,6 +1260,92 @@
     </div>
   </div>
 
+
+  <div class="modal fade" id="newsletterModal" tabindex="-1" aria-labelledby="newsletterModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+            <div class="newsletter-container">
+                <button type="button" class="close-btn subscribed-close" data-bs-dismiss="modal" aria-label="Close">
+                    &times;
+                </button>
+                 
+                <div class="popup-image">
+                    <img src="{{asset('images/main-popup-image.png')}}" class="img-fluid w-100" alt="">
+                </div>
+                <div class="newsletter-content">
+                    <h2 class="content-title">Sign Up To <span class="discount-text">Get 21% Discount</span> On Your First Order</h2>
+                    <p class="offer-text">Take Advantage of our Limited Time Offer and Get <span class="free-text">FREE</span> Consultation & On-Site Survey.</p>
+                    <p class="terms-text">Terms & Conditions Applied.</p>
+                    <div class="subscribe-container">
+                        <input type="email" id="emailInput" class="form-control news-letter-input" placeholder="Enter Your Email">
+                        <button class="subscribe-btn" id="subscribeBtn">Subscribe</button>
+                    </div>
+                    <p class="privacy-text">We respect your Privacy. Unsubscribe at any time.</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+  <!-- Thank You Modal -->
+<div class="modal fade" id="thankyouModal" tabindex="-1" aria-labelledby="thankyouModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="butn-close close-btn" data-bs-dismiss="modal" aria-label="Close">X</button>
+    </div>
+    <div class="modal-body p-3">
+      <div class="row mb-4">
+        <div class="col-12">
+          <h1><span class="thank-you">Thank You</span> <span class="for-subscribing">For Subscribing!</span></h1>
+        </div>
+      </div>
+      
+      <div class="row mb-3">
+        <div class="col-12">
+          <p class="fs-5 mb-0">We've sent the <strong>Discount Code</strong> to your <strong>email address</strong>.</p>
+        </div>
+      </div>
+      
+      <div class="row mb-4">
+        <div class="col-12">
+          <p class="fs-4">Additionally, <span class="youve-won">YOU'VE WON</span> <span class="free-text">FREE</span> <span class="consultation">CONSULTATION!</span></p>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-7 mb-4">
+          <p class="fs-5 mb-3">If you want to avail this offer, Please provide:</p>
+          
+          <form>
+            <input type="text" class="form-control thankyou-input" placeholder="Your Name:">
+            <input type="tel" class="form-control thankyou-input" placeholder="Phone Number:" pattern="[0-9]+" inputmode="numeric">
+            <input type="datetime-local" class="form-control thankyou-input" placeholder="Preferred Date & Time:">
+            <textarea class="form-control thankyou-input" rows="3" placeholder="Add a Note:"></textarea>
+            
+            <button type="submit" class="submit-btn mt-3">Submit</button>
+          </form>
+        </div>
+        
+        <div class="col-md-5">
+          <div class="benefits-box">
+            <p class="benefits-title mb-4">BENEFITS OF <span style="color: #ffa500;">FREE CONSULTATION</span>:</p>
+            
+            <ul class="list-unstyled">
+              <li class="benefit-item">• <span class="highlight-text">FREE</span> Virtual Consultation</li>
+              <li class="benefit-item">• <span class="highlight-text">FREE</span> Design Advice</li>
+              <li class="benefit-item">• <span class="highlight-text">FREE</span> Efficient Planning</li>
+              <li class="benefit-item">• Schedule at your <span class="convenience-text">CONVENIENCE</span></li>
+              <li class="benefit-item">• <span class="highlight-text">NO OBLIGATION</span> to Purchase</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 
 
     <!--CSS-->

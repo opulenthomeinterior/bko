@@ -718,8 +718,9 @@
             <div class="col-12">
                 <a class="btn" data-bs-toggle="modal" data-bs-target="#newsletterModal">
                 <img class="w-100 img-fluid d-none d-md-block" src="{{ asset('images/21offdesktop.png') }}"/>
-                </a>
+                
                 <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/21offmobile.png') }}"/>
+            </a>
             </div>
         </div>
         <div class="row my-5">
