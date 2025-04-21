@@ -288,7 +288,7 @@
                                     <td>
                                         <figure class="my-0" style="margin-bottom: 0px !important;">
                                             <img class="product-image px-0"
-                                                style="margin-bottom: 0px !important;min-height:175px;max-height:175px;object-fit:contain"
+                                                style="margin-bottom: 0px !important;min-height:175px;max-height:175px;max-width:225px;object-fit:contain"
                                                 src="{{ !empty($product->image_path) ? asset('imgs/products/'.$product->image_path) : asset('images/no-image-available.jpg') }}"
                                                 alt="Card image cap" data-bs-toggle="modal"
                                                 data-bs-target="#productModal{{ $index }}">
