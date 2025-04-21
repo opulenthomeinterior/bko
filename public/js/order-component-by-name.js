@@ -112,7 +112,7 @@ $(document).ready(function () {
             <td>
                 <figure class="my-0" style="margin-bottom: 0px !important;">
                     <img class="product-image px-0"
-                        style="margin-bottom: 0px !important;min-height:175px;max-height:175px;object-fit:contain"
+                        style="margin-bottom: 0px !important;min-height:175px;max-width:225px;max-height:175px;object-fit:contain"
                         src="${product.image_path ? product_BIU + '/' + product.image_path : ASSET_URL + 'images/no-image-available.jpg'}"
                         alt="Card image cap" data-bs-toggle="modal"
                         data-bs-target="#productModal${index}">
