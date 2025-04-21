@@ -151,280 +151,244 @@ use App\Models\Style;
             }
         } */
 
-
-
-        :root {
-            --primary-color: #fbbf24;
-            --primary-light: #fcd34d;
-            --primary-dark: #f59e0b;
-            --accent-color: #fb923c;
-            --dark-bg: #292524;
-            --light-bg: #fef9c3;
-            --card-bg: #ffffff;
-            --text-dark: #292524;
-            --text-light: #fef9c3;
-            --border-radius: 16px;
+        .modal-dialog {
+            max-width: 900px;
+            margin: 1.75rem auto;
         }
-        
-        /* body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        } */
-        
+
         .modal-content {
-            border-radius: var(--border-radius);
+            border-radius: 8px;
             border: none;
-            box-shadow: 0 25px 50px -12px rgba(245, 158, 11, 0.3);
             overflow: hidden;
+            box-shadow: 0 5px 30px rgba(255, 192, 31, 0.5); /* Changed shadow color to #ffc01f with transparency */
         }
-        
-        .newsletter-container, .discount-container {
-            background: var(--card-bg);
-            position: relative;
+
+        .modal-body {
+            padding: 0;
         }
-        
-        .decorative-blob {
-            position: absolute;
-            top: -70px;
-            right: -70px;
-            width: 200px;
-            height: 200px;
-            background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
-            border-radius: 50%;
-            filter: blur(30px);
-            opacity: 0.6;
-            z-index: 0;
-        }
-        
-        .decorative-circle {
-            position: absolute;
-            bottom: -40px;
-            left: -40px;
-            width: 150px;
-            height: 150px;
-            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
-            border-radius: 50%;
-            filter: blur(25px);
-            opacity: 0.5;
-            z-index: 0;
-        }
-        
-        .newsletter-content, .discount-content {
-            padding: 3rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .icon-container {
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-            width: 70px;
-            height: 70px;
-            border-radius: 20px;
+
+        .newsletter-container {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.3);
+            flex-direction: row;
         }
-        
+
+        .popup-image {
+            flex: 1;
+            background-image: url('/api/placeholder/600/900');
+            background-size: cover;
+            background-position: center;
+            min-height: 500px;
+        }
+
+        .newsletter-content {
+            flex: 1;
+            padding: 40px;
+        }
+
         .content-title {
-            font-weight: 800;
-            font-size: 2.25rem;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-            background: linear-gradient(120deg, var(--text-dark) 60%, var(--primary-dark));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
         }
-        
-        .content-subtitle {
-            color: #78716c;
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            max-width: 90%;
+
+        .discount-text {
+            color: #F2A900;
         }
-        
-        .news-form-container {
-            background-color: #fef3c7;
-            border-radius: var(--border-radius);
-            padding: 0.75rem;
+
+        .offer-text {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .free-text {
+            color: #FF0000;
+            font-weight: bold;
+        }
+
+        .terms-text {
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .subscribe-container {
             display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
+            margin-bottom: 15px;
         }
-        
-        .news-form-container .form-control {
-            border: 1px solid #fde68a;
-            background-color: var(--card-bg);
-            color: var(--text-dark);
-            padding: 0.875rem 1.25rem;
-            border-radius: 12px;
-            font-size: 1rem;
-            transition: all 0.2s ease;
-            box-shadow: 0 1px 2px rgba(245, 158, 11, 0.1);
+
+        .news-letter-input {
+            border-radius: 0 !important;
+            border: 1px solid #ced4da !important;
+            padding: 12px 15px !important;
+            height: auto !important;
         }
-        
-        .news-form-container .form-control:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.3);
-        }
-        
-        .news-form-container .form-control::placeholder {
-            color: #a8a29e;
-        }
-        
-        .btn-action {
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-            color: var(--text-dark);
-            font-weight: 600;
+
+        .subscribe-btn {
+            background-color: #1D6363;
+            color: white;
             border: none;
-            padding: 0.875rem 1.5rem;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.3);
+            border-radius: 0;
+            padding: 12px 30px;
+            font-weight: 600;
+            text-transform: uppercase;
         }
-        
-        .btn-action:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.4);
+
+        .privacy-text {
+            font-size: 14px;
+            color: #888;
         }
-        
-        .btn-close {
+
+        .close-btn {
             position: absolute;
             top: 15px;
             right: 15px;
-            color: var(--text-dark);
-            opacity: 0.7;
-            z-index: 10;
-            background: rgba(255, 255, 255, 0.8);
+            background-color: #FF3547;
+            color: white;
             border-radius: 50%;
-            width: 32px;
-            height: 32px;
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-        
-        .btn-close:hover {
-            opacity: 1;
-            transform: rotate(90deg);
-            transition: all 0.2s ease;
-        }
-        
-        .privacy-note {
-            font-size: 0.8rem;
-            color: #a8a29e;
-            margin-top: 1rem;
-            text-align: center;
-        }
-        
-        /* Discount code specific styles */
-        .discount-code-container {
-            /* background-color: #fef3c7; */
-            border-radius: var(--border-radius);
-            padding: 1.5rem;
-            text-align: center;
-            margin: 1.5rem 0;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .discount-code {
-            font-family: monospace;
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            letter-spacing: 2px;
-            background: #fff;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            border: 2px dashed var(--primary-dark);
-            display: inline-block;
-            margin: 0.5rem 0 1rem;
-            position: relative;
-        }
-        
-        .copy-btn {
-            background-color: var(--primary-light);
-            color: var(--text-dark);
-            border: none;
-            border-radius: 6px;
-            padding: 0.5rem 1rem;
-            font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 20px;
             cursor: pointer;
-            transition: all 0.2s ease;
+            border: none;
+            z-index: 1050;
+            box-shadow: 0 2px 5px #ffc01f; /* Changed close button shadow to #ffc01f */
         }
-        
-        .copy-btn:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-        
-        .copy-success {
-            position: absolute;
-            bottom: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #059669;
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .copy-success.active {
-            opacity: 1;
-        }
-        
-        .discount-details {
-            font-size: 0.9rem;
-            color: #78716c;
-            margin-top: 1rem;
-        }
-        
-        .confetti {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: var(--primary-color);
-            opacity: 0.8;
-            border-radius: 50%;
-        }
-        
-        @media (min-width: 768px) {
-            .news-form-container {
-                flex-direction: row;
+
+        @media (max-width: 767px) {
+            .newsletter-container {
+                flex-direction: column;
             }
             
-            .news-form-container .form-control {
-                flex: 1;
+            .popup-image {
+                min-height: 200px;
             }
-        }
-        
-        @media (max-width: 767.98px) {
-            .newsletter-content, .discount-content {
-                padding: 2rem 1.5rem;
+            
+            .newsletter-content {
+                padding: 25px;
             }
             
             .content-title {
-                font-size: 1.75rem;
+                font-size: 32px;
             }
             
-            .icon-container {
-                width: 60px;
-                height: 60px;
-            }
-            
-            .discount-code {
-                font-size: 1.25rem;
-                padding: 0.5rem 1rem;
+            .offer-text {
+                font-size: 18px;
             }
         }
+
+        .demo-button {
+      margin: 100px auto;
+      display: block;
+    }
+    
+    .modal-dialog {
+      max-width: 800px;
+    }
+    
+    /* .modal-content {
+      border-radius: 1rem;
+      border: none;
+      padding: 1rem;
+    }
+     */
+    .modal-header {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    
+    .butn-close {
+      background-color: #dc3545;
+      opacity: 1;
+      padding: 0.5rem;
+      border-radius: 50%;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      color: white;
+      font-weight: bold;
+    }
+    
+    .butn-close:focus {
+      box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+    }
+    
+    .thank-you {
+      color: #dc3545;
+      font-weight: bold;
+      font-size: 2.5rem;
+    }
+    
+    .for-subscribing {
+      color: #212529;
+      font-size: 2.5rem;
+    }
+    
+    .youve-won {
+      color: #ffa500;
+      font-weight: bold;
+    }
+    
+    .free-text {
+      color: #dc3545;
+      font-weight: bold;
+    }
+    
+    .consultation {
+      color: #212529;
+      font-weight: bold;
+    }
+    
+    .thankyou-input {
+      border: 1px solid #6c757d;
+      border-radius: 5px;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    
+    .submit-btn {
+      background-color: #ffc107;
+      color: #212529;
+      font-weight: bold;
+      border: none;
+      padding: 1rem;
+      width: 100%;
+      text-transform: uppercase;
+    }
+    
+    .benefits-box {
+      border: 1px solid #6c757d;
+      border-radius: 5px;
+      padding: 1.5rem;
+      height: 100%;
+    }
+    
+    .benefits-title {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    
+    .benefit-item {
+      margin-bottom: 0.75rem;
+    }
+    
+    .highlight-text {
+      color: #dc3545;
+      font-weight: bold;
+    }
+    
+    .convenience-text {
+      color: #dc3545;
+      font-weight: bold;
+    }
+    
+    @media (max-width: 768px) {
+      .thank-you, .for-subscribing {
+        font-size: 2rem;
+      }
+    }
 
 
     </style>
@@ -1231,32 +1195,90 @@ use App\Models\Style;
         <div class="modal-dialog modal-dialog-centered modal-md">
             <div class="modal-content">
                 <div class="newsletter-container">
-                    <!-- Decorative elements -->
-                    <div class="decorative-blob"></div>
-                    <div class="decorative-circle"></div>
-                    
-                    <button type="button" class="btn-close subscribed-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-                    
-                    <div class="newsletter-content">
-                      
-                        
-                        <h2 class="content-title">Sign up to get 15% discount on your first order</h2>
-                        <p class="content-subtitle">Take advantage of limited time offer and get <strong class="text-black">free</strong> on site survey, consultation. <br>(Terms and Conditions applied)</p>
-                        <form method="post">
-                            <div class="news-form-container">
-                                <input type="email" class="form-control" id="emailInput" name="email" placeholder="example@domain.com" aria-label="Email address">
-                                <button class="btn btn-action" id="subscribeBtn" type="button">Subscribe</button>
-                            </div>
-                        </form>
-                        
-                        <p class="privacy-note">We respect your privacy. Unsubscribe at any time.</p>
+                    <button type="button" class="close-btn subscribed-close" data-bs-dismiss="modal" aria-label="Close">
+                        &times;
+                    </button>
+                     
+                    <div class="popup-image">
+                        <img src="{{asset('images/main-popup-image.png')}}" class="img-fluid w-100" alt="">
                     </div>
+                    <div class="newsletter-content">
+                        <h2 class="content-title">Sign Up To <span class="discount-text">Get 21% Discount</span> On Your First Order</h2>
+                        <p class="offer-text">Take Advantage of our Limited Time Offer and Get <span class="free-text">FREE</span> Consultation & On-Site Survey.</p>
+                        <p class="terms-text">Terms & Conditions Applied.</p>
+                        <div class="subscribe-container">
+                            <input type="email" id="emailInput" class="form-control news-letter-input" placeholder="Enter Your Email">
+                            <button class="subscribe-btn" id="subscribeBtn">Subscribe</button>
+                        </div>
+                        <p class="privacy-text">We respect your Privacy. Unsubscribe at any time.</p>
+                    </div>
+                    
                 </div>
             </div>
         </div>
     </div>
+
+      <!-- Thank You Modal -->
+  <div class="modal fade" id="thankyouModal" tabindex="-1" aria-labelledby="thankyouModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="butn-close close-btn" data-bs-dismiss="modal" aria-label="Close">X</button>
+        </div>
+        <div class="modal-body p-3">
+          <div class="row mb-4">
+            <div class="col-12">
+              <h1><span class="thank-you">Thank You</span> <span class="for-subscribing">For Subscribing!</span></h1>
+            </div>
+          </div>
+          
+          <div class="row mb-3">
+            <div class="col-12">
+              <p class="fs-5 mb-0">We've sent the <strong>Discount Code</strong> to your <strong>email address</strong>.</p>
+            </div>
+          </div>
+          
+          <div class="row mb-4">
+            <div class="col-12">
+              <p class="fs-4">Additionally, <span class="youve-won">YOU'VE WON</span> <span class="free-text">FREE</span> <span class="consultation">CONSULTATION!</span></p>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-7 mb-4">
+              <p class="fs-5 mb-3">If you want to avail this offer, Please provide:</p>
+              
+              <form>
+                <input type="text" class="form-control thankyou-input" placeholder="Your Name:">
+                <input type="tel" class="form-control thankyou-input" placeholder="Phone Number:" pattern="[0-9]+" inputmode="numeric">
+                <input type="datetime-local" class="form-control thankyou-input" placeholder="Preferred Date & Time:">
+                <textarea class="form-control thankyou-input" rows="3" placeholder="Add a Note:"></textarea>
+                
+                <button type="submit" class="submit-btn mt-3">Submit</button>
+              </form>
+            </div>
+            
+            <div class="col-md-5">
+              <div class="benefits-box">
+                <p class="benefits-title mb-4">BENEFITS OF <span style="color: #ffa500;">FREE CONSULTATION</span>:</p>
+                
+                <ul class="list-unstyled">
+                  <li class="benefit-item">• <span class="highlight-text">FREE</span> Virtual Consultation</li>
+                  <li class="benefit-item">• <span class="highlight-text">FREE</span> Design Advice</li>
+                  <li class="benefit-item">• <span class="highlight-text">FREE</span> Efficient Planning</li>
+                  <li class="benefit-item">• Schedule at your <span class="convenience-text">CONVENIENCE</span></li>
+                  <li class="benefit-item">• <span class="highlight-text">NO OBLIGATION</span> to Purchase</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   
-    <div class="modal fade" id="discountModal" tabindex="-1" aria-labelledby="discountModalLabel" aria-hidden="true">
+    {{-- <div class="modal fade" id="discountModal" tabindex="-1" aria-labelledby="discountModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-md">
             <div class="modal-content">
                 <div class="discount-container">
@@ -1264,7 +1286,7 @@ use App\Models\Style;
                     <div class="decorative-blob"></div>
                     <div class="decorative-circle"></div>
                     
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="butn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     
                     <div class="discount-content">
                         <div class="icon-container">
@@ -1289,7 +1311,9 @@ use App\Models\Style;
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
+
+
 
     <!-- JAVASCRIPT -->
     <script src="{{ asset('libs/jquery/jquery.min.js') }}"></script>
@@ -1356,6 +1380,7 @@ use App\Models\Style;
                 }, 500);
             
                 var discountModal = new bootstrap.Modal(document.getElementById('discountModal'));
+                
             
                 function sendEmail() {
                     var email = $('#emailInput').val();
@@ -1378,7 +1403,7 @@ use App\Models\Style;
                             _token: '{{ csrf_token() }}' // if you're using Laravel
                         },
                         success: function (response) {
-                            discountModal.show();
+                            // discountModal.show();
                         }
                     });
                 }
@@ -1386,6 +1411,7 @@ use App\Models\Style;
                 document.getElementById('subscribeBtn').addEventListener('click', function() {
                     const emailInput = document.getElementById('emailInput');
                     const email = emailInput.value.trim();
+
                     
                     // Basic email validation
                     if (email && email.includes('@') && email.includes('.')) {
@@ -1395,9 +1421,13 @@ use App\Models\Style;
                         
                         // Show discount modal after a short delay
                         setTimeout(function() {
+                            var thankyouModal = new bootstrap.Modal(document.getElementById('thankyouModal'));
                             // discountModal.show();
                             sendEmail();
-                            createConfetti();
+                           
+                            thankyouModal.show();
+                           
+                            
                         }, 500);
                     } else {
                         // Simple error visual
@@ -1410,70 +1440,12 @@ use App\Models\Style;
                     localStorage.setItem('subscribed', true);
                 });
                 
-                // Copy discount code functionality
-                document.getElementById('copyBtn').addEventListener('click', function() {
-                    const codeText = document.getElementById('discountCode').innerText;
-                    navigator.clipboard.writeText(codeText).then(function() {
-                        const successMsg = document.getElementById('copySuccess');
-                        successMsg.classList.add('active');
-                        setTimeout(() => {
-                            successMsg.classList.remove('active');
-                        }, 2000);
-                    });
-                });
+               
             }
             
-            // Create confetti animation
-            function createConfetti() {
-                const container = document.querySelector('.discount-container');
-                const colors = ['#fbbf24', '#fb923c', '#f59e0b', '#fcd34d', '#fef3c7'];
-                
-                for (let i = 0; i < 50; i++) {
-                    const confetti = document.createElement('div');
-                    confetti.className = 'confetti';
-                    
-                    const size = Math.random() * 8 + 4;
-                    const posX = Math.random() * 100;
-                    const posY = Math.random() * 30 - 10;
-                    const rotation = Math.random() * 360;
-                    const delay = Math.random() * 0.5;
-                    const duration = Math.random() * 3 + 2;
-                    
-                    confetti.style.width = `${size}px`;
-                    confetti.style.height = `${size}px`;
-                    confetti.style.left = `${posX}%`;
-                    confetti.style.top = `${posY}%`;
-                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                    confetti.style.transform = `rotate(${rotation}deg)`;
-                    confetti.style.opacity = '0';
-                    confetti.style.animation = `confetti ${duration}s ease-in ${delay}s forwards`;
-                    
-                    container.appendChild(confetti);
-                    
-                    setTimeout(() => {
-                        confetti.remove();
-                    }, (duration + delay) * 1000);
-                }
-            }
             
-            // Add confetti animation
-            document.head.insertAdjacentHTML('beforeend', `
-                <style>
-                    @keyframes confetti {
-                        0% {
-                            transform: translateY(0) rotate(0deg);
-                            opacity: 0;
-                        }
-                        10% {
-                            opacity: 1;
-                        }
-                        100% {
-                            transform: translateY(300px) rotate(720deg);
-                            opacity: 0;
-                        }
-                    }
-                </style>
-            `);
+            
+          
             
 
             const images = document.querySelectorAll('.fade-img');

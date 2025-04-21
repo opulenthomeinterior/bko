@@ -13,7 +13,8 @@
             
         .hero {
             /* background: url('https://bkonline.uk/public/imgs/products/464785299_8512016742222733_5169156552107455268_n1739534754_67af31a285b0e.jpg') center/cover no-repeat; */
-            background: url('{{ asset('images/door-replacement-hero-image.jpeg') }}') center/cover no-repeat;
+            
+            background: url('{{ asset('images/door-hero-image.png') }}') center/cover no-repeat;
            
             height: 100vh;
             display: flex;
@@ -340,6 +341,343 @@
            }
         }
 
+
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .highlight {
+            color: #F8B93B;
+            font-weight: 700;
+        }
+        
+        .title-underline {
+            height: 4px;
+            width: 70%;
+            margin: 0 auto;
+            margin-top: 0.5rem;
+            background: linear-gradient(to right, #2B5A5E 33%, #F8B93B 33%, #F8B93B 66%, #2B5A5E 66%);
+        }
+        
+        .how-it-works {
+            text-align: center;
+            margin-top:1rem;
+            margin-bottom: 3rem;
+            font-weight: 600;
+        }
+        
+        .step-icon {
+            background-color: #f9f9f9;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        
+        .step-number {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 1rem 0;
+        }
+        
+        .step-title {
+            color: #2B5A5E;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .step-description {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #444;
+            margin: 0 auto;
+        }
+        
+        .arrow-line {
+            height: 2px;
+            width: 100%;
+            background-color: #2B5A5E;
+            position: relative;
+        }
+        
+        .arrow-line:after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: -5px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid #2B5A5E;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+        }
+        
+        .benefit-text {
+            text-align: center;
+            color: #2B5A5E;
+            font-weight: 500;
+            margin: 2rem 0;
+        }
+        
+        .btn-consultation {
+            background-color: #F8B93B;
+            color: #333;
+            text-transform: uppercase;
+            font-weight: 600;
+            border: none;
+        }
+        
+        .btn-consultation:hover {
+            background-color: #e9a82b;
+            color: #333;
+        }
+
+
+        .modal-dialog {
+            max-width: 900px;
+            margin: 1.75rem auto;
+        }
+
+        .modal-content {
+            border-radius: 8px;
+            border: none;
+            overflow: hidden;
+            box-shadow: 0 5px 30px rgba(255, 192, 31, 0.5); /* Changed shadow color to #ffc01f with transparency */
+        }
+
+        .modal-body {
+            padding: 0;
+        }
+
+        .newsletter-container {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .popup-image {
+            flex: 1;
+            background-image: url('/api/placeholder/600/900');
+            background-size: cover;
+            background-position: center;
+            min-height: 500px;
+        }
+
+        .newsletter-content {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .content-title {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .discount-text {
+            color: #F2A900;
+        }
+
+        .offer-text {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .free-text {
+            color: #FF0000;
+            font-weight: bold;
+        }
+
+        .terms-text {
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .subscribe-container {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+
+        .subscribe-btn {
+            background-color: #1D6363;
+            color: white;
+            border: none;
+            border-radius: 0;
+            padding: 12px 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .privacy-text {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #FF3547;
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            border: none;
+            z-index: 1050;
+            box-shadow: 0 2px 5px #ffc01f; /* Changed close button shadow to #ffc01f */
+        }
+
+        @media (max-width: 767px) {
+            .newsletter-container {
+                flex-direction: column;
+            }
+            
+            .popup-image {
+                min-height: 200px;
+            }
+            
+            .newsletter-content {
+                padding: 25px;
+            }
+            
+            .content-title {
+                font-size: 32px;
+            }
+            
+            .offer-text {
+                font-size: 18px;
+            }
+        }
+
+        .demo-button {
+      margin: 100px auto;
+      display: block;
+    }
+    
+    .modal-dialog {
+      max-width: 800px;
+    }
+    
+    .modal-content {
+      border-radius: 1rem;
+      border: none;
+      padding: 1rem;
+    }
+    
+    .modal-header {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    
+    .btn-close {
+      background-color: #dc3545;
+      opacity: 1;
+      padding: 0.5rem;
+      border-radius: 50%;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      color: white;
+      font-weight: bold;
+    }
+    
+    .btn-close:focus {
+      box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+    }
+    
+    .thank-you {
+      color: #dc3545;
+      font-weight: bold;
+      font-size: 2.5rem;
+    }
+    
+    .for-subscribing {
+      color: #212529;
+      font-size: 2.5rem;
+    }
+    
+    .youve-won {
+      color: #ffa500;
+      font-weight: bold;
+    }
+    
+    .free-text {
+      color: #dc3545;
+      font-weight: bold;
+    }
+    
+    .consultation {
+      color: #212529;
+      font-weight: bold;
+    }
+    
+    /* .form-control {
+      border: 1px solid #6c757d;
+      border-radius: 5px;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+    } */
+    
+    .submit-btn {
+      background-color: #ffc107;
+      color: #212529;
+      font-weight: bold;
+      border: none;
+      padding: 1rem;
+      width: 100%;
+      text-transform: uppercase;
+    }
+    
+    .benefits-box {
+      border: 1px solid #6c757d;
+      border-radius: 5px;
+      padding: 1.5rem;
+      height: 100%;
+    }
+    
+    .benefits-title {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    
+    .benefit-item {
+      margin-bottom: 0.75rem;
+    }
+    
+    .highlight-text {
+      color: #dc3545;
+      font-weight: bold;
+    }
+    
+    .convenience-text {
+      color: #dc3545;
+      font-weight: bold;
+    }
+    
+    @media (max-width: 768px) {
+      .thank-you, .for-subscribing {
+        font-size: 2rem;
+      }
+    }
+    .news-letter-input {
+            border-radius: 0 !important;
+            border: 1px solid #ced4da !important;
+            padding: 12px 15px !important;
+            height: auto !important;
+        }
         </style>
     </head>
 <body>
@@ -348,18 +686,63 @@
     <header class="hero d-flex justify-content-center">
         
         <div class="hero-content">
-            <h5 class="text-center text-white">BUY KITCHEN  ONLINE</h5>
+            <h5 class="text-center text-white " style="font-size:14px; letter-spacing:5px;font-weight:bold">BUY KITCHEN  ONLINE</h5>
             <h1 class="text-white fw-bold">DOOR REPLACEMENT <span style="color:#ffe000"> SERVICE</span></h1>
-            <h3 class="text-white mb-4">Tired of looking at worn-out, chipped, or peeling kitchen cabinet doors?<br>Transform YOUR KITCHEN without a full renovation</h3>
+            <h2 class="text-white mb-4 yell">2-3 Months of full kitchen remodel nightmare or <br> <span style="font-size:32px;color:#ffe000;font-weight:700">
+                New CABINET Doors IN JUST 2-3 Days?</span></h2>
             
-
-            <span class="text-center">Refresh your kitchen's look and feel with our high-quality, made-to-measure door replacement service.</span><br>
-            <span>Choose from a wide range of styles and colors to perfectly match your taste.</span>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-3">
+                        <img src="{{ asset('images/premium-doors.png') }}" class="img-fluid w-100 "/>
+                    </div>
+                   
+                    <div class="col-3">
+                        <img src="{{ asset('images/trust-pilot.png') }}" class="img-fluid w-100"/>
+                    </div>
+                   
+                    <div class="col-3">
+                        <img src="{{ asset('images/google.png') }}" class="img-fluid w-100"/>
+                    </div>
+                   
+                </div>
+            </div>
+            
             
         </div>
     </header>
 
     
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <a class="btn" data-bs-toggle="modal" data-bs-target="#newsletterModal">
+                <img class="w-100 img-fluid d-none d-md-block" src="{{ asset('images/21offdesktop.png') }}"/>
+                </a>
+                <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/21offmobile.png') }}"/>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col-12">
+                <h2 style="font-size:40px; font-weight:700" class="text-black text-center text-uppercase">Your kitchen looks <span class="text-danger">outdated</span> </h2>
+                <h3 style="font-size:40px; font-weight:700" class="text-black text-center text-uppercase"> <span class="font-weight:600"> because of those doors,</span>  <span style="font-weight:500">not the cabinets </span> </h3>
+            
+            </div>
+            <div class="col-7"></div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <img class="img-fluid d-none d-sm-block" src="{{ asset('images/dream-to-reality.png') }}"/>
+                <img class="img-fluid d-sm-none" src="{{ asset('images/dream-to-reality-mobile.png') }}"/>
+            </div>
+            
+            
+            <div class="col-12 col-md-6">
+                <img class="img-fluid" src="{{ asset('images/google-reviews.png') }}"/>
+            </div>
+            
+        </div>
+    </div>
 
     <section class="container-fluid my-5 bg-light py-4">
         <div class="container">
@@ -369,15 +752,22 @@
                 <div class="row">
                     
                     <div class="align-self-center rounded shadow-lg order-sample position-relative col-12 col-xl-8 bg-white rounded-lg border-0 shadow-sm" style="">
-                        
-                        <h4 class="fw-bold text-black">Does the thought of updating your kitchen feel overwhelming and expensive?</h4>
+                        <h4 style="font-size:30px; font-weight:600;"><span class="text-danger">Try</span> <span class="text-black">Before You Buy<span>
+                           <br> <span class="text-danger"> FREE</span> Door Samples!</h4>
+                           <h4 class="text-primary my-4" style="font-size:24px;">£6 Delivery Charge Only.</h4>
+                        {{-- <h4 class="fw-bold text-black">Does the thought of updating your kitchen feel overwhelming and expensive?</h4>
                         <h2 class="fw-bolder"><span class="orange">Order a Sample</span> <span class=""text-black fw-bolder"> of Your Favorite Door</span></h2>
                         <p class="">Choosing the right kitchen doors is an important decision. Our sample service allows you to experience the finish, material, and color of our doors in your own home before committing to a full order. </p>
-                        <a href="{{ route('ordercomponentbyname', 'doors') }}" class="btn bg-orange px-4 text-uppercase rounded-0"> Order a Sample of your choice NOW!</a>
+                        --}}
+                        <a href="{{ route('ordercomponentbyname', 'doors') }}" class="btn bg-orange px-1 fw-bold text-uppercase rounded-0 " style="font-size:14px;">  Order a Sample of your choice NOW!</a>
                     </div>
                     <div class="p-0 mb-3 mb-xl-0 col-12 col-xl-4">
-                    <img class="w-100 object-fit-cover rounded border border-warning" src="https://bkonline.uk/public/imgs/products/Cartmel-Cashmere-Flat-Door-A1720452961_668c0761d6f16.jpg"  class="img-fluid"  alt="Modern Kitchen" 
+                    {{-- <img class="w-100 object-fit-cover rounded border border-warning" src="https://bkonline.uk/public/imgs/products/Cartmel-Cashmere-Flat-Door-A1720452961_668c0761d6f16.jpg"  class="img-fluid"  alt="Modern Kitchen" 
                         style="width: 300px; height: 400px; object-fit: cover;">
+                    --}}
+                    <img class="w-100 object-fit-cover rounded border border-warning" src="{{ asset('images/door-cabinets.png') }}"  class="img-fluid"  alt="Modern Kitchen" 
+                        style="width: 300px; height: 400px; object-fit: cover;">
+                   
                     </div>
                 </div>
 
@@ -426,23 +816,90 @@
                 </form> --}}
             </div>
         </div>
-        <div class="row flex-column my-5 align-items-center justify-content-center">
+        {{-- <div class="row flex-column my-5 align-items-center justify-content-center">
             <div class="col-sm-5">
             <h4 class="text-center">Benefit from our limited time offer and get a FREE QUOTE for Kitchen Door Replacement</h4>
             </div>
             <div class="col-12 col-sm-3">
                 <button class="w-100 btn bg-orange px-4 text-uppercase rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal">book your FREE CONSULTATION NOW!</button>
             </div>
-        </div>
+        </div> --}}
     </div>
     </section>
 
-    
+    <div class="container-fluid py-3" style="background-color:#f2f4f5">
+        <div class="container py-5">
+            <h2 class="section-title text-black">OUR <span class="highlight">SIMPLE 3-STEP</span> DOOR REPLACEMENT PROCESS</h2>
+            <div class="title-underline"></div>
+            
+            <h3 class="how-it-works text-black">HOW IT WORKS</h3>
+            
+            <div class="row justify-content-center align-items-center">
+                <!-- Step 1 -->
+                <div class="col-md-4 col-lg-3 text-center mb-4 mb-lg-0">
+                    <div class="step-icon">
+                        <i class="text-warning fs-1 fa-solid fa-phone"></i>
+                    </div>
+                    <div class="step-number">Step 01</div>
+                    <h4 class="step-title">GET IN TOUCH</h4>
+                    <p class="step-description px-3">Provide your contact information so we can schedule a convenient time to chat with you.</p>
+                </div>
+                
+                <!-- Arrow 1 - Hidden on screens smaller than large -->
+                <div class="col-lg-1 d-none d-lg-flex justify-content-center align-items-center">
+                    <div class="arrow-line w-100"></div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="col-md-4 col-lg-3 text-center mb-4 mb-lg-0">
+                    <div class="step-icon">
+                        <i class="text-warning fs-1 fa-solid fa-kitchen-set"></i>
+                    </div>
+                    <div class="step-number">Step 02</div>
+                    <h4 class="step-title">WE PLAN YOUR PROJECT</h4>
+                    <p class="step-description px-3">Our agent will contact you within 24 hours to discuss your budget, preferred styles, and colors, for your kitchen doors.</p>
+                </div>
+                
+                <!-- Arrow 2 - Hidden on screens smaller than large -->
+                <div class="col-lg-1 d-none d-lg-flex justify-content-center align-items-center">
+                    <div class="arrow-line w-100"></div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="col-md-4 col-lg-3 text-center">
+                    <div class="step-icon">
+                        <i class="text-warning fs-1 fa-solid fa-wrench"></i>
+                    </div>
+                    <div class="step-number">Step 03</div>
+                    <h4 class="step-title">ENJOY THE UPGRADE</h4>
+                    <p class="step-description px-3">For your peace of mind, our experienced team will handle the entire installation process for you, if required.</p>
+                </div>
+            </div>
+            
+            <p class="benefit-text">Benefit from our limited time offer and get a Free Quote for Door Replacement</p>
+            
+            <div class="text-center">
+                <a href="#" class="btn btn-consultation py-3 px-4 my-3 w-100" style="max-width: 500px;" data-bs-toggle="modal" data-bs-target="#exampleModal">BOOK YOUR FREE CONSULTATION NOW!</a>
+            </div>
+        </div>
+        </div>
+
+        {{-- <div class="row mt-3">
+            <div class="col-12">
+            <h2 class="text-primary text-center" style="font-size:16px">Benefit from our limited time offer and get a Free Quote for Door Replacement</h2>
+            </div>
+        </div> --}}
+        {{-- <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 col-12">
+                <button class="btn  px-2 px-lg-5 text-uppercase rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color:#febd49;">Book your free consultation now!</button>
+            </div>
+        </div> --}}
+    </div>
 
 <div class="container-fluid" >
     <div class="container py-5">
         <div class="mb-3 row justify-content-center">
-            <h4 class="text-black fw-bold text-center">Do you crave a kitchen that feels fresh, modern, and inviting?</h4>
+            <h4 class="text-black  text-center mb-2" style="font-size:26px; font-weight:500">Those <span class="text-danger">Awful OLD LOOKING KITCHEN CABINET DOORS </span> Are <br>Driving You Nuts, Aren’t they?</h4>
             <h1 class="mb-1 text-center text-black"> Discover the Perfect Doors for Your Kitchen</h1>
             <p class="text-center fs-6 w-75">Browse our extensive collection of kitchen door styles, available in a wide array of colors and finishes. Find the ideal match for your existing cabinets and buy kitchen doors to create the kitchen of your dreams</p>
 
@@ -532,7 +989,36 @@
     </div>
 </div>
 
-<div class ="container-fluid bg-white">
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+        <h3 style="font-style:28px;font-weight:600" class="text-black text-center mb-2">DOOR REPLACEMENT SERVICE</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 mb-2 mb-md-0 col-md-6">
+            <img class="img-fluid w-100" src="{{ asset('images/door-1.png') }}"/>
+        </div>
+        <div class="col-12 mb-2 mb-md-0 col-md-6">
+            <img class="img-fluid w-100" src="{{ asset('images/door-2.png') }}"/>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-12 mb-2 mb-md-0">
+            <img  class="img-fluid w-100" src="{{ asset('images/door-3.png') }}"/>
+        </div>
+      
+    </div>
+    <div class="row mt-2">
+        <div class="col-12 mb-2 mb-md-0 col-md-6">
+            <img class="img-fluid w-100" src="{{ asset('images/door-4.png') }}"/>
+        </div>
+        <div class="col-12 mb-2 mb-md-0 col-md-6">
+            <img class="img-fluid w-100" src="{{ asset('images/door-5.png') }}"/>
+        </div>
+    </div>
+</div>
+{{-- <div class ="container-fluid bg-white">
     <section class="consultation-section bg-white">
         <div class="container bg-white">
             <h2 class="mb-2 text-black">Why Choose Our Kitchen Door Replacement Service?</h2>
@@ -661,7 +1147,7 @@
                 
             </div>
         </section>
-    </div>
+    </div> --}}
 
     <div class ="container-fluid bg-white">
         <section class="consultation-section bg-white">
@@ -792,10 +1278,164 @@
     </div>
   </div>
 
+
+
+
+  <div class="modal fade" id="newsletterModal" tabindex="-1" aria-labelledby="newsletterModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+            <div class="newsletter-container">
+                <button type="button" class="close-btn subscribed-close" data-bs-dismiss="modal" aria-label="Close">
+                    &times;
+                </button>
+                 
+                <div class="popup-image">
+                    <img src="{{asset('images/main-popup-image.png')}}" class="img-fluid w-100" alt="">
+                </div>
+                <div class="newsletter-content">
+                    <h2 class="content-title">Sign Up To <span class="discount-text">Get 21% Discount</span> On Your First Order</h2>
+                    <p class="offer-text">Take Advantage of our Limited Time Offer and Get <span class="free-text">FREE</span> Consultation & On-Site Survey.</p>
+                    <p class="terms-text">Terms & Conditions Applied.</p>
+                    <div class="subscribe-container">
+                        <input type="email" id="emailInput" class="form-control news-letter-input" placeholder="Enter Your Email">
+                        <button class="subscribe-btn" id="subscribeBtn">Subscribe</button>
+                    </div>
+                    <p class="privacy-text">We respect your Privacy. Unsubscribe at any time.</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+  <!-- Thank You Modal -->
+<div class="modal fade" id="thankyouModal" tabindex="-1" aria-labelledby="thankyouModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="butn-close close-btn" data-bs-dismiss="modal" aria-label="Close">X</button>
+    </div>
+    <div class="modal-body p-3">
+      <div class="row mb-4">
+        <div class="col-12">
+          <h1><span class="thank-you">Thank You</span> <span class="for-subscribing">For Subscribing!</span></h1>
+        </div>
+      </div>
+      
+      <div class="row mb-3">
+        <div class="col-12">
+          <p class="fs-5 mb-0">We've sent the <strong>Discount Code</strong> to your <strong>email address</strong>.</p>
+        </div>
+      </div>
+      
+      <div class="row mb-4">
+        <div class="col-12">
+          <p class="fs-4">Additionally, <span class="youve-won">YOU'VE WON</span> <span class="free-text">FREE</span> <span class="consultation">CONSULTATION!</span></p>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-7 mb-4">
+          <p class="fs-5 mb-3">If you want to avail this offer, Please provide:</p>
+          
+          <form>
+            <input type="text" class="form-control thankyou-input" placeholder="Your Name:">
+            <input type="tel" class="form-control thankyou-input" placeholder="Phone Number:" pattern="[0-9]+" inputmode="numeric">
+            <input type="datetime-local" class="form-control thankyou-input" placeholder="Preferred Date & Time:">
+            <textarea class="form-control thankyou-input" rows="3" placeholder="Add a Note:"></textarea>
+            
+            <button type="submit" class="submit-btn mt-3">Submit</button>
+          </form>
+        </div>
+        
+        <div class="col-md-5">
+          <div class="benefits-box">
+            <p class="benefits-title mb-4">BENEFITS OF <span style="color: #ffa500;">FREE CONSULTATION</span>:</p>
+            
+            <ul class="list-unstyled">
+              <li class="benefit-item">• <span class="highlight-text">FREE</span> Virtual Consultation</li>
+              <li class="benefit-item">• <span class="highlight-text">FREE</span> Design Advice</li>
+              <li class="benefit-item">• <span class="highlight-text">FREE</span> Efficient Planning</li>
+              <li class="benefit-item">• Schedule at your <span class="convenience-text">CONVENIENCE</span></li>
+              <li class="benefit-item">• <span class="highlight-text">NO OBLIGATION</span> to Purchase</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
 </body>
     
 @push('scripts')
     <script>
+
+ // Handle subscribe button click
+ document.getElementById('subscribeBtn').addEventListener('click', function() {
+
+    function sendEmail() {
+            var email = $('#emailInput').val();
+            var button = $(this);
+            var btnText = button.find('.btn-text');
+            var btnLoading = button.find('.btn-loading');
+    
+            // Show loading
+            btnText.hide();
+            btnLoading.show();
+    
+            $.ajax({
+                url: "{{ route('contact_us_inquiry') }}", // Change to your actual route
+                method: 'POST',
+                data: {
+                    email: email,
+                    catalogue_register_now: 'catalogue_register_now',
+                    first_order_discount: 'first_order_discount',
+                    message: 'You have successfully subscribed for 15% discount',
+                    _token: '{{ csrf_token() }}' // if you're using Laravel
+                },
+                success: function (response) {
+                    // discountModal.show();
+                }
+            });
+        }
+                    const emailInput = document.getElementById('emailInput');
+                    const email = emailInput.value.trim();
+
+                    
+                    // Basic email validation
+                    if (email && email.includes('@') && email.includes('.')) {
+                        // Hide newsletter modal
+                        var newsletterModal = bootstrap.Modal.getInstance(document.getElementById('newsletterModal'));
+                        newsletterModal.hide();
+                        
+                        // Show discount modal after a short delay
+                        setTimeout(function() {
+                            var thankyouModal = new bootstrap.Modal(document.getElementById('thankyouModal'));
+                            // discountModal.show();
+                            sendEmail();
+                           
+                            thankyouModal.show();
+                           
+                            
+                        }, 500);
+                    } else {
+                        // Simple error visual
+                        emailInput.style.borderColor = '#ef4444';
+                        setTimeout(() => {
+                            emailInput.style.borderColor = '#fde68a';
+                        }, 2000);
+                    }
+                    
+                    localStorage.setItem('subscribed', true);
+                });
+
+        
+
+       
         $(document).ready(function () {
             const $carousel01 = $('.main-carousel-banner-01');
             /* #orderComponentSlider.owlCarousel({
