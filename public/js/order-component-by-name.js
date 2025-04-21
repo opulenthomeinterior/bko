@@ -106,89 +106,158 @@ $(document).ready(function () {
 
 
     function createProductCard(product, index) {
-        var productCard = `<div class="col-lg-4 col-6 mb-3">`;
-        productCard += `<div class="card btn btn-outline-warning border-1 bg-light p-0" style="border-radius: 0;">`;
-        productCard += `
-            <div class="card-header px-0 py-0">
-                <div class="p-0 product-short-title-container w-100">
-                    <a href="/shop/by-product/${product.slug}/${product.serial_number}" class="product-short-title fw-bold text-decoration-underline fs-4">`;
-        productCard += product.short_title;
-        productCard += `</a>
+        var productCard = `
+        <tr>
+            <td><a class="text-decoration-underline" href="/shop/by-product/${product.slug}/${product.serial_number}">${product.short_title}</a></td>
+            <td>
+                <figure class="my-0" style="margin-bottom: 0px !important;">
+                    <img class="product-image px-0"
+                        style="margin-bottom: 0px !important;min-height:175px;max-height:175px;object-fit:contain"
+                        src="${product.image_path ? product_BIU + '/' + product.image_path : ASSET_URL + 'images/no-image-available.jpg'}"
+                        alt="Card image cap" data-bs-toggle="modal"
+                        data-bs-target="#productModal${index}">
+                </figure>
+            </td>
+            <td>${product.product_code}</td>
+            <td>${product.dimensions}</td>
+            <td>
+                <div class="row justify-content-center">
+                    <div
+                        class="col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center product-counter">
+                        <input id="minus${product.id}"
+                            class="minus border bg-dark text-light p-0"
+                            type="button" value="-"
+                            onclick="decreaseQuantity('${product.id}', '${product.product_code}', '${product.full_title}', ${product.price}, ${product.discounted_price}, ${product.discounted_percentage ?? 0}, '${product.parent_category.slug}')" />
+                        <input id="quantity${product.id}"
+                            class="quantity border border-black text-center"
+                            type="text" value="0" name="quantity"
+                            disabled />
+                        <input id="plus${product.id}"
+                            class="plus border bg-dark text-light p-0"
+                            type="button" value="+" type="number"
+                            max="10"
+                            ${product.price == 0 ? 'disabled' : ''} 
+                            onclick="increaseQuantity('${product.id }', '${product.product_code}', '${product.full_title}', ${product.price}, ${product.discounted_price}, ${product.discounted_percentage ?? 0}, '${product.parent_category.slug}')" />
+                    </div>
+                    <div class="col-6">
+                        <p class="fs-5 fw-bold mt-lg-2 text-dark">
+                        ${product.price == 0 ? 'Out of Stock' : '£' + product.price}
+                        </p>
+                    </div>
                 </div>
-            </div>
+            </td>
+            <td>${product.price == 0 ? 'Out of Stock' : '£' + product.price}</td>
+            <td>
+                <div class="container-fluid">`;
+                    if (product.style){
+                        productCard += `<small>${product.style.name}</small>`;
+                    }
+            productCard += `</div>
+            </td>
+            <td>`;
+                if (product.colour){
+                    productCard += `<small>
+                        ${product.colour.trade_colour ? product.colour.trade_colour : product.colour.name}
+                    </small>`;
+                }
+            productCard += `</td>
+            <td>`;
+                if (product.category.name != 'DOORS'){
+                    if (product.assembly){
+                        productCard += `<small>${product.assembly.name}</small>`;
+                    }
+                }
+            productCard += `</td>
+        </tr>
         `;
-        productCard += `<div class="card-body text-center">`;
-        // productCard += `<a class="modal-icon z-3" href="#" data-bs-toggle="modal" data-bs-target="#productModal${index}">`;
-        // productCard += `<i class="ri-add-circle-line text-black fs-4"></i></a>`;
-        productCard += createProductModal(product, index);
-        productCard += `<div class="container-fluid">`;
-        productCard += `<div class="row">`;
-        productCard += `<div class="col-lg-12">`;
-        productCard += `<figure class="my-0" style="margin-bottom: 0px !important;"><img class="product-image px-0" style="margin-bottom: 0px !important;min-height:175px;max-height:175px;object-fit:contain" src="${product.image_path ? product_BIU + '/' + product.image_path : ASSET_URL + 'images/no-image-available.jpg'}" alt="Card image cap" data-bs-toggle="modal" data-bs-target="#productModal${index}"></figure>`;
-        productCard += `<div class="text-start">`;
-        productCard += `<a href="${APP_URL + '/shop/by-product/' + product.slug + '/' + product.serial_number}" class="text-start text-decoration-underline fs-5 fw-bold">${product.short_title}</a>`;
-        productCard += `<p class="mt-2"><small class="fw-bold text-start text-dark">${product.product_code}</small></p>`;
-        productCard += `<p class="py-lg-3 py-2"><small class="fw-bold text-start text-dark">${(product.dimensions != null) ? product.dimensions : ''}</small></p>`;
-        productCard += `</div>`;
-        productCard += `</div>`;
-        productCard += `<div class="col-12">`;
-        productCard += `<div class="container-fluid">`;
-        productCard += `<div class="row justify-content-center">`;
-        productCard += `<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center product-counter">`;
-        productCard += `<input id="minus${product.id}" class="minus border bg-dark text-light p-0" type="button" value="-" onclick="decreaseQuantity('${product.id}', '${product.product_code}', '${product.full_title}', ${product.price}, ${product.discounted_price}, ${product.discounted_percentage ?? 0}, '${product.parent_category.slug}')" />`;
-        productCard += `<input id="quantity${product.id}" class="quantity border border-black text-center" type="text" value="0" name="quantity" disabled />`;
-        productCard += `<input id="plus${product.id}" ${product.price == 0 ? 'disabled' : ''} class="plus border bg-dark text-light p-0" type="button" value="+" onclick="increaseQuantity('${product.id}', '${product.product_code}', '${product.full_title}', ${product.price}, ${product.discounted_price}, ${product.discounted_percentage ?? 0}, '${product.parent_category.slug}')" />`;
-        productCard += `</div>`;
-        productCard += `<div class="col-6">`;
-        productCard += `<p class="fs-5 fw-bold mt-lg-2 text-dark">${product.price == 0 ? 'Out of Stock' : '£' + product.price}</p>`;
-        productCard += `</div>`;
-        productCard += `</div>`;
-        productCard += `</div>`;
-        productCard += `<div class="container-fluid">`;
-        if (product.style) {
-            productCard += `<div class="row">`;
-            productCard += `<div class="col-4 p-0 d-md-flex d-none">`;
-            productCard += `<p class="category-text text-start text-uppercase m-0 pt-1 text-dark"><small>Style</small></p>`;
-            productCard += `</div>`;
-            productCard += `<div class="col-md-8 col-sm-12 p-0 text-center text-dark">`;
-            productCard += `<p class="category-value fw-semibold py-1 mb-2 text-dark"><small>${product.style.name}</small></p>`;
-            productCard += `</div>`;
-            productCard += `</div>`;
-        }
-        if (product.colour) {
-            productCard += `<div class="row">`;
-            productCard += `<div class="col-4 p-0 d-md-flex d-none">`;
-            productCard += `<p class="category-text text-start text-uppercase m-0 pt-1 text-dark"><small>Colour</small></p>`;
-            productCard += `</div>`;
-            productCard += `<div class="col-md-8 col-sm-12 p-0 text-center text-dark">`;
-            productCard += `<p class="category-value fw-semibold py-1 mb-2 text-dark"><small>${product.colour.trade_colour ? product.colour.trade_colour : product.colour.name}</small></p>`;
-            productCard += `</div>`;
-            productCard += `</div>`;
-        }
-        if (product.assembly) {
-            productCard += `<div class="row">`;
-            productCard += `<div class="col-4 p-0 d-md-flex d-none">`;
-            productCard += `<p class="category-text text-start text-uppercase m-0 pt-1 text-dark"><small>Assembly</small></p>`;
-            productCard += `</div>`;
-            productCard += `<div class="col-md-8 col-sm-12 p-0 text-center text-dark">`;
-            productCard += `<p class="category-value fw-semibold py-1 mb-2 text-dark"><small>${product.assembly.name}</small></p>`;
-            productCard += `</div>`;
-            productCard += `</div>`;
-        }
-        productCard += `</div>`;
-        productCard += `</div>`;
-        productCard += `</div>`;
-        productCard += `</div>`;
-        productCard += `</div>`;
-        productCard += `<div class="card-footer p-0">
-                            <a href="/shop/by-product/${product.slug}/${product.serial_number}" class="product-short-title text-decoration-underline">
-                                <small>View more</small>
-                            </a>
-                        </div>`;
-        productCard += `</div>`;
-        productCard += `</div>`;
         return productCard;
     }
+
+
+    // function createProductCard(product, index) {
+    //     var productCard = `<div class="col-lg-4 col-6 mb-3">`;
+    //     productCard += `<div class="card btn btn-outline-warning border-1 bg-light p-0" style="border-radius: 0;">`;
+    //     productCard += `
+    //         <div class="card-header px-0 py-0">
+    //             <div class="p-0 product-short-title-container w-100">
+    //                 <a href="/shop/by-product/${product.slug}/${product.serial_number}" class="product-short-title fw-bold text-decoration-underline fs-4">`;
+    //     productCard += product.short_title;
+    //     productCard += `</a>
+    //             </div>
+    //         </div>
+    //     `;
+    //     productCard += `<div class="card-body text-center">`;
+    //     // productCard += `<a class="modal-icon z-3" href="#" data-bs-toggle="modal" data-bs-target="#productModal${index}">`;
+    //     // productCard += `<i class="ri-add-circle-line text-black fs-4"></i></a>`;
+    //     productCard += createProductModal(product, index);
+    //     productCard += `<div class="container-fluid">`;
+    //     productCard += `<div class="row">`;
+    //     productCard += `<div class="col-lg-12">`;
+    //     productCard += `<figure class="my-0" style="margin-bottom: 0px !important;"><img class="product-image px-0" style="margin-bottom: 0px !important;min-height:175px;max-height:175px;object-fit:contain" src="${product.image_path ? product_BIU + '/' + product.image_path : ASSET_URL + 'images/no-image-available.jpg'}" alt="Card image cap" data-bs-toggle="modal" data-bs-target="#productModal${index}"></figure>`;
+    //     productCard += `<div class="text-start">`;
+    //     productCard += `<a href="${APP_URL + '/shop/by-product/' + product.slug + '/' + product.serial_number}" class="text-start text-decoration-underline fs-5 fw-bold">${product.short_title}</a>`;
+    //     productCard += `<p class="mt-2"><small class="fw-bold text-start text-dark">${product.product_code}</small></p>`;
+    //     productCard += `<p class="py-lg-3 py-2"><small class="fw-bold text-start text-dark">${(product.dimensions != null) ? product.dimensions : ''}</small></p>`;
+    //     productCard += `</div>`;
+    //     productCard += `</div>`;
+    //     productCard += `<div class="col-12">`;
+    //     productCard += `<div class="container-fluid">`;
+    //     productCard += `<div class="row justify-content-center">`;
+    //     productCard += `<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center product-counter">`;
+    //     productCard += `<input id="minus${product.id}" class="minus border bg-dark text-light p-0" type="button" value="-" onclick="decreaseQuantity('${product.id}', '${product.product_code}', '${product.full_title}', ${product.price}, ${product.discounted_price}, ${product.discounted_percentage ?? 0}, '${product.parent_category.slug}')" />`;
+    //     productCard += `<input id="quantity${product.id}" class="quantity border border-black text-center" type="text" value="0" name="quantity" disabled />`;
+    //     productCard += `<input id="plus${product.id}" ${product.price == 0 ? 'disabled' : ''} class="plus border bg-dark text-light p-0" type="button" value="+" onclick="increaseQuantity('${product.id}', '${product.product_code}', '${product.full_title}', ${product.price}, ${product.discounted_price}, ${product.discounted_percentage ?? 0}, '${product.parent_category.slug}')" />`;
+    //     productCard += `</div>`;
+    //     productCard += `<div class="col-6">`;
+    //     productCard += `<p class="fs-5 fw-bold mt-lg-2 text-dark">${product.price == 0 ? 'Out of Stock' : '£' + product.price}</p>`;
+    //     productCard += `</div>`;
+    //     productCard += `</div>`;
+    //     productCard += `</div>`;
+    //     productCard += `<div class="container-fluid">`;
+    //     if (product.style) {
+    //         productCard += `<div class="row">`;
+    //         productCard += `<div class="col-4 p-0 d-md-flex d-none">`;
+    //         productCard += `<p class="category-text text-start text-uppercase m-0 pt-1 text-dark"><small>Style</small></p>`;
+    //         productCard += `</div>`;
+    //         productCard += `<div class="col-md-8 col-sm-12 p-0 text-center text-dark">`;
+    //         productCard += `<p class="category-value fw-semibold py-1 mb-2 text-dark"><small>${product.style.name}</small></p>`;
+    //         productCard += `</div>`;
+    //         productCard += `</div>`;
+    //     }
+    //     if (product.colour) {
+    //         productCard += `<div class="row">`;
+    //         productCard += `<div class="col-4 p-0 d-md-flex d-none">`;
+    //         productCard += `<p class="category-text text-start text-uppercase m-0 pt-1 text-dark"><small>Colour</small></p>`;
+    //         productCard += `</div>`;
+    //         productCard += `<div class="col-md-8 col-sm-12 p-0 text-center text-dark">`;
+    //         productCard += `<p class="category-value fw-semibold py-1 mb-2 text-dark"><small>${product.colour.trade_colour ? product.colour.trade_colour : product.colour.name}</small></p>`;
+    //         productCard += `</div>`;
+    //         productCard += `</div>`;
+    //     }
+    //     if (product.assembly) {
+    //         productCard += `<div class="row">`;
+    //         productCard += `<div class="col-4 p-0 d-md-flex d-none">`;
+    //         productCard += `<p class="category-text text-start text-uppercase m-0 pt-1 text-dark"><small>Assembly</small></p>`;
+    //         productCard += `</div>`;
+    //         productCard += `<div class="col-md-8 col-sm-12 p-0 text-center text-dark">`;
+    //         productCard += `<p class="category-value fw-semibold py-1 mb-2 text-dark"><small>${product.assembly.name}</small></p>`;
+    //         productCard += `</div>`;
+    //         productCard += `</div>`;
+    //     }
+    //     productCard += `</div>`;
+    //     productCard += `</div>`;
+    //     productCard += `</div>`;
+    //     productCard += `</div>`;
+    //     productCard += `</div>`;
+    //     productCard += `<div class="card-footer p-0">
+    //                         <a href="/shop/by-product/${product.slug}/${product.serial_number}" class="product-short-title text-decoration-underline">
+    //                             <small>View more</small>
+    //                         </a>
+    //                     </div>`;
+    //     productCard += `</div>`;
+    //     productCard += `</div>`;
+    //     return productCard;
+    // }
 
 
     // Function to handle input change and log selected IDs

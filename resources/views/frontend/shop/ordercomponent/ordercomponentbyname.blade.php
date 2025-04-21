@@ -65,212 +65,291 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-3 col-md-4 bg-light p-0 pb-4">
-                <div class="bg-warning border border-dark border-1 px-2 py-2 m-0">
+            <div class="col-lg-12 col-md-12 bg-light p-0 pb-4">
+                <div class="m-0">
                     <h4 class="text-dark text-decoration-underline" style="font-weight: 600; font-size: 1.3rem">Filters</h4>
                     <!-- <h3 style="font-weight: 600; font-size: 1.3rem" class="text-dark">CURRENT ITEMS:<span id="number-of-products">{{ $count }}</span></h3> -->
                 </div>
                 <!-- <div class="bg-light border border-dark border-1 px-2 py-2 mt-2">
                     <h3 style="font-weight: 600; font-size: 1.3rem" class="text-dark">CURRENT ITEMS:<span id="number-of-products">{{ $count }}</span></h3>
                 </div> -->
-                <form action="" class="mt-2">
+                <form action="" class="">
                     <input type="hidden" name="slug" id="slug" value="{{ $category->slug }}">
-                    
-                    @if ($styles->count() > 0)
-                    @if ($category->slug == 'doors' || $category->slug == 'accessories')
-                    <div class="accordion accordion-flush mt-3" id="accordionFlushExample3">
-                        <div class="accordion-item bg-transparent border border-dark border-1 rounded-0">
-                            <h2 class="accordion-header bg-white" id="flush-headingThree">
-                                <button class="accordion-button legend collapsed text-uppercase" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
-                                    aria-expanded="true" aria-controls="flush-collapseThree">
-                                    Style
-                                </button>
-                            </h2>
-                            <div id="flush-collapseThree" class="accordion-collapse collapse my-2"
-                                aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample3" style="max-height: 700px; overflow-y: scroll">
-                                <div class="accordion-body px-0 py-0 pb-1">
-                                    <div class="row g-1">
-                                        <!-- updated -->
-                                        @foreach ($styles as $index => $style)
-                                        <div class="col-lg-12 col-md-12 col-6">
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" {{ (!empty($urlStyleId) && ($urlStyleId == $style->id)) ? 'checked' : '' }} type="checkbox" name="styles[]" id="style{{ $index }}" value="{{ $style->id }}">
-                                                <label class="form-check-label"
-                                                    for="style{{ $index }}">{{ $style->name }}
-                                                </label>
-                                            </div>
-                                        </div>
-                                        @endforeach
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endif
-                    @endif
-
-                    @if ($colours->count() > 0)
-                    @if ($category->slug != 'appliances')
-                    <div class="accordion accordion-flush mt-3" id="accordionFlushExample4">
-                        <div class="accordion-item bg-transparent border border-dark border-1 rounded-0">
-                            <h2 class="accordion-header bg-white" id="flush-headingFour">
-                                <button class="accordion-button legend collapsed text-uppercase" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseFour"
-                                    aria-expanded="true" aria-controls="flush-collapseFour">
-                                    Colour
-                                </button>
-                            </h2>
-                            <div id="flush-collapseFour" class="accordion-collapse collapse my-2"
-                                aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample4" style="max-height: 700px; overflow-y: auto">
-                                <div class="accordion-body px-0 py-0 pb-1">
-                                    <div class="row g-1">
-                                        @foreach ($colours as $index => $colour)
-                                        <div class="col-lg-12 col-md-12 col-6">
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" {{ (!empty($urlColourId) && ($urlColourId == $colour->id)) ? 'checked' : '' }}
-                                                    name="colours[]" id="colour{{ $index }}"
-                                                    value="{{ $colour->id }}">
-                                                    @if (!empty($colour->colour_code))
-                                                    <label class="form-check-label d-flex gap-1" for="colour{{ $index }}">
-                                                        <div class="d-inline border border-dark"
-                                                            style="width: 20px;height:20px; background-color:{{ $colour->colour_code }};">
+                    <div class="row">
+                        @if ($styles->count() > 0)
+                            @if ($category->slug == 'doors' || $category->slug == 'accessories')
+                                <div class="col-3 accordion accordion-flush mt-3" id="accordionFlushExample3">
+                                    <div class="accordion-item bg-transparent border border-dark border-1 rounded-0">
+                                        <h2 class="accordion-header bg-warning" id="flush-headingThree">
+                                            <button class="accordion-button legend collapsed text-uppercase" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+                                                aria-expanded="true" aria-controls="flush-collapseThree">
+                                                Style
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseThree" class="accordion-collapse my-2"
+                                            aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample3" style="max-height: 150px; overflow-y: scroll">
+                                            <div class="accordion-body px-0 py-0 pb-1">
+                                                <div class="row g-1">
+                                                    <!-- updated -->
+                                                    @foreach ($styles as $index => $style)
+                                                    <div class="col-lg-12 col-md-12 col-6">
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" {{ (!empty($urlStyleId) && ($urlStyleId == $style->id)) ? 'checked' : '' }} type="checkbox" name="styles[]" id="style{{ $index }}" value="{{ $style->id }}">
+                                                            <label class="form-check-label"
+                                                                for="style{{ $index }}">{{ $style->name }}
+                                                            </label>
                                                         </div>
-                                                        {{ $colour->trade_colour ? $colour->trade_colour : $colour->name }}
-                                                    </label>
-                                                    @else
-                                                    <label class="form-check-label d-flex gap-1" for="colour{{ $index }}">
-                                                        <div class="border border-dark" style="width: 20px;height:20px; background: linear-gradient(to right, red, yellow, green);">
-                                                        </div>
-                                                        {{ $colour->trade_colour ? $colour->trade_colour : $colour->name }}
-                                                    </label>
-                                                    @endif
-                                            </div>
-                                        </div>
-                                        @endforeach
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endif
-                    @endif
-
-                    @if ($assemblies->count() > 0)
-                    {{--<div class="accordion accordion-flush mt-3" id="accordionFlushExample2">
-                        <div class="accordion-item bg-transparent border border-dark border-1 rounded-0 px-2">
-                            <h2 class="accordion-header" id="flush-headingTwo">
-                                <button class="accordion-button legend collapsed text-uppercase" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
-                                    aria-expanded="true" aria-controls="flush-collapseTwo">
-                                    ASSEMBLY
-                                </button>
-                            </h2>
-                            <div id="flush-collapseTwo" class="accordion-collapse collapse my-2"
-                                aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample2">
-                                <div class="accordion-body px-0 py-0 pb-1">
-                                    <div class="row g-1">
-                                        @foreach ($assemblies as $index => $assembly)
-                                            @if ($assembly->slug == 'stock' && ($category->slug == 'doors' || $category->slug == 'accessories' || $category->slug == 'handles' || $category->slug == 'sinks' || $category->slug == 'internals'))
-                                                <div class="col-lg-12 col-md-12 col-6">
-                                                    <div class="form-check form-check-inline">
-                                                        <input class="form-check-input" type="checkbox"
-                                                            name="assemblies[]" id="assembly{{ $index }}"
-                                                            value="{{ $assembly->id }}">
-                                                        <label class="form-check-label"
-                                                            for="assembly{{ $index }}">{{ $assembly->name }}
-                                                        </label>
                                                     </div>
-                                                </div>
-                                            @else
-                                                
-                                            @endif
-                                        @endforeach
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>--}}
-                    @endif
-
-                    @if ($types->count() > 0)
-                    <div class="accordion accordion-flush mt-3" id="accordionFlushExample1">
-                        <div class="accordion-item bg-transparent border border-dark border-1 rounded-0">
-                            <h2 class="accordion-header bg-white" id="flush-headingOne">
-                                <button class="accordion-button legend collapsed text-uppercase" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
-                                    aria-expanded="true" aria-controls="flush-collapseOne">
-                                    @if (strtolower($category->name) != 'handles' && strtolower($category->name) != 'taps' && strtolower($category->name) != 'worktops' && strtolower($category->name) != 'appliances' && strtolower($category->name) != 'upstands' && strtolower($category->name) != 'breakfast bars' && strtolower($category->name) != 'sinks' && strtolower($category->name) != 'internals') SIZES @else TYPES @endif
-                                </button>
-                            </h2>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse my-2"
-                                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample1" style="max-height: 700px; overflow-y: auto">
-                                <div class="accordion-body px-0 py-0 pb-1">
-                                    <div class="ps-2">
-                                        <div class="row g-1">
-                                            @foreach ($types as $index => $type)
-                                            <div class="col-12">
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox"
-                                                        name="types[]" id="type{{ $index }}"
-                                                        value="{{ $type->id }}">
-                                                    <label class="form-check-label"
-                                                        for="type{{ $index }}">{{ $type->name }}
-                                                    </label>
+                                                    @endforeach
                                                 </div>
                                             </div>
-                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                        @endif
+
+                        @if ($colours->count() > 0)
+                            @if ($category->slug != 'appliances')
+                                <div class="col-3 accordion accordion-flush mt-3" id="accordionFlushExample4">
+                                    <div class="accordion-item bg-transparent border border-dark border-1 rounded-0">
+                                        <h2 class="accordion-header bg-warning" id="flush-headingFour">
+                                            <button class="accordion-button legend collapsed text-uppercase" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseFour"
+                                                aria-expanded="true" aria-controls="flush-collapseFour">
+                                                Colour
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseFour" class="accordion-collapse my-2"
+                                            aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample4" style="max-height: 150px; overflow-y: auto">
+                                            <div class="accordion-body px-0 py-0 pb-1">
+                                                <div class="row g-1">
+                                                    @foreach ($colours as $index => $colour)
+                                                    <div class="col-lg-12 col-md-12 col-6">
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="checkbox" {{ (!empty($urlColourId) && ($urlColourId == $colour->id)) ? 'checked' : '' }}
+                                                                name="colours[]" id="colour{{ $index }}"
+                                                                value="{{ $colour->id }}">
+                                                                @if (!empty($colour->colour_code))
+                                                                <label class="form-check-label d-flex gap-1" for="colour{{ $index }}">
+                                                                    <div class="d-inline border border-dark"
+                                                                        style="border-radius: 50px; width: 20px;height:20px; background-color:{{ $colour->colour_code }};">
+                                                                    </div>
+                                                                    {{ $colour->trade_colour ? $colour->trade_colour : $colour->name }}
+                                                                </label>
+                                                                @else
+                                                                <label class="form-check-label d-flex gap-1" for="colour{{ $index }}">
+                                                                    <div class="border border-dark" style="border-radius: 50px; width: 20px;height:20px; background: linear-gradient(to right, red, yellow, green);">
+                                                                    </div>
+                                                                    {{ $colour->trade_colour ? $colour->trade_colour : $colour->name }}
+                                                                </label>
+                                                                @endif
+                                                        </div>
+                                                    </div>
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                        @endif
+
+                        @if ($assemblies->count() > 0)
+                            {{--<div class="col-3 accordion accordion-flush mt-3" id="accordionFlushExample2">
+                                <div class="accordion-item bg-transparent border border-dark border-1 rounded-0 px-2">
+                                    <h2 class="accordion-header bg-warning" id="flush-headingTwo">
+                                        <button class="accordion-button legend collapsed text-uppercase" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+                                            aria-expanded="true" aria-controls="flush-collapseTwo">
+                                            ASSEMBLY
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseTwo" class="accordion-collapse my-2"
+                                        aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample2">
+                                        <div class="accordion-body px-0 py-0 pb-1">
+                                            <div class="row g-1">
+                                                @foreach ($assemblies as $index => $assembly)
+                                                    @if ($assembly->slug == 'stock' && ($category->slug == 'doors' || $category->slug == 'accessories' || $category->slug == 'handles' || $category->slug == 'sinks' || $category->slug == 'internals'))
+                                                        <div class="col-lg-12 col-md-12 col-6">
+                                                            <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    name="assemblies[]" id="assembly{{ $index }}"
+                                                                    value="{{ $assembly->id }}">
+                                                                <label class="form-check-label"
+                                                                    for="assembly{{ $index }}">{{ $assembly->name }}
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    @else
+                                                        
+                                                    @endif
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>--}}
+                        @endif
+
+                        @if ($types->count() > 0)
+                            <div class="col-3 accordion accordion-flush mt-3" id="accordionFlushExample1">
+                                <div class="accordion-item bg-transparent border border-dark border-1 rounded-0">
+                                    <h2 class="accordion-header bg-warning" id="flush-headingOne">
+                                        <button class="accordion-button legend collapsed text-uppercase" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                            aria-expanded="true" aria-controls="flush-collapseOne">
+                                            @if (strtolower($category->name) != 'handles' && strtolower($category->name) != 'taps' && strtolower($category->name) != 'worktops' && strtolower($category->name) != 'appliances' && strtolower($category->name) != 'upstands' && strtolower($category->name) != 'breakfast bars' && strtolower($category->name) != 'sinks' && strtolower($category->name) != 'internals') SIZES @else TYPES @endif
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseOne" class="accordion-collapse my-2"
+                                        aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample1" style="max-height: 150px; overflow-y: auto">
+                                        <div class="accordion-body px-0 py-0 pb-1">
+                                            <div class="ps-2">
+                                                <div class="row g-1">
+                                                    @foreach ($types as $index => $type)
+                                                    <div class="col-12">
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                name="types[]" id="type{{ $index }}"
+                                                                value="{{ $type->id }}">
+                                                            <label class="form-check-label"
+                                                                for="type{{ $index }}">{{ $type->name }}
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    @endforeach
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    @endif
+                        @endif
 
-                    @if ($heights->count() > 0)
-                    <div class="accordion accordion-flush mt-3" id="accordionFlushExample5">
-                        <div class="accordion-item bg-transparent border border-dark border-1 rounded-0">
-                            <h2 class="accordion-header bg-white" id="flush-headingFive">
-                                <button class="accordion-button legend collapsed text-uppercase" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseFive"
-                                    aria-expanded="true" aria-controls="flush-collapseFive">
-                                    Heights
-                                </button>
-                            </h2>
-                            <div id="flush-collapseFive" class="accordion-collapse collapse my-2"
-                                aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample5" style="max-height: 700px; overflow-y: auto">
-                                <div class="accordion-body px-0 py-0 pb-1">
-                                    <div class="ps-2">
-                                        <div class="row g-1">
-                                            @foreach ($heights as $index => $height)
-                                            <div class="col-12">
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox"
-                                                        name="heights[]" id="height{{ $index }}"
-                                                        value="{{ $height->height }}">
-                                                    <label class="form-check-label"
-                                                        for="height{{ $index }}">
-                                                        {{ $height->height }} ({{$height->count}})
-                                                    </label>
+                        @if ($heights->count() > 0)
+                            <div class="col-3 accordion accordion-flush mt-3" id="accordionFlushExample5">
+                                <div class="accordion-item bg-transparent border border-dark border-1 rounded-0">
+                                    <h2 class="accordion-header bg-warning" id="flush-headingFive">
+                                        <button class="accordion-button legend collapsed text-uppercase" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseFive"
+                                            aria-expanded="true" aria-controls="flush-collapseFive">
+                                            Heights
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseFive" class="accordion-collapse my-2"
+                                        aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample5" style="max-height: 150px; overflow-y: auto">
+                                        <div class="accordion-body px-0 py-0 pb-1">
+                                            <div class="ps-2">
+                                                <div class="row g-1">
+                                                    @foreach ($heights as $index => $height)
+                                                    <div class="col-12">
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                name="heights[]" id="height{{ $index }}"
+                                                                value="{{ $height->height }}">
+                                                            <label class="form-check-label"
+                                                                for="height{{ $index }}">
+                                                                {{ $height->height }} ({{$height->count}})
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    @endforeach
                                                 </div>
                                             </div>
-                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        @endif
                     </div>
-                    @endif
                 </form>
             </div>
 
-            <div class="col-lg-9 col-md-8 col-sm-12 bg-light">
-                <div class="row text-sm-center" id="products_container">
+            <div class="col-lg-12 col-md-12 col-sm-12 bg-light">
+                    <table class="table table-bordered">
+                        <thead>
+                            <th>Short Title</th>
+                            <th>Image</th>
+                            <th>Product Code</th>
+                            <th>Dimensions</th>
+                            <th>Qty</th>
+                            <th>Price</th>
+                            <th>Style</th>
+                            <th>Colour</th>
+                            <th>Assembly</th>
+                        </thead>
+                        <tbody id="products_container">
                     @if ($products->count() > 0)
+                            @foreach ($products as $index => $product)
+                                <tr>
+                                    <td><a class="text-decoration-underline" href="{{ route('orderbyproduct', [$product->slug, $product->serial_number]) }}">{{ $product->short_title }}</a></td>
+                                    <td>
+                                        <figure class="my-0" style="margin-bottom: 0px !important;">
+                                            <img class="product-image px-0"
+                                                style="margin-bottom: 0px !important;min-height:175px;max-height:175px;object-fit:contain"
+                                                src="{{ !empty($product->image_path) ? asset('imgs/products/'.$product->image_path) : asset('images/no-image-available.jpg') }}"
+                                                alt="Card image cap" data-bs-toggle="modal"
+                                                data-bs-target="#productModal{{ $index }}">
+                                        </figure>
+                                    </td>
+                                    <td>{{ $product->product_code }}</td>
+                                    <td>{{ $product->dimensions }}</td>
+                                    <td>
+                                    <div class="row justify-content-center">
+                                                    <div
+                                                        class="col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center product-counter">
+                                                        <input id="minus{{ $product->id }}"
+                                                            class="minus border bg-dark text-light p-0"
+                                                            type="button" value="-"
+                                                            onclick="decreaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}')" />
+                                                        <input id="quantity{{ $product->id }}"
+                                                            class="quantity border border-black text-center"
+                                                            type="text" value="0" name="quantity"
+                                                            disabled />
+                                                        <input id="plus{{ $product->id }}"
+                                                            class="plus border bg-dark text-light p-0"
+                                                            type="button" value="+" type="number"
+                                                            max="10"
+                                                            {{$product->price == 0 ? 'disabled' : '' }} 
+                                                            onclick="increaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}')" />
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <p class="fs-5 fw-bold mt-lg-2 text-dark">
+                                                            {{ $product->price == 0 ? 'Out of Stock' : '£' . $product->price }}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                    </td>
+                                    <td>{{ $product->price == 0 ? 'Out of Stock' : '£' . $product->price }}</td>
+                                    <td>
+                                            <div class="container-fluid">
+                                                @if ($product->style)
+                                                    <small>{{ $product->style->name }}</small>
+                                                @endif
+                                            </div>
+                                        </td>
+                                    <td>
+                                        @if ($product->colour)
+                                            <small>
+                                                {{ $product->colour->trade_colour ? $product->colour->trade_colour : $product->colour->name }}
+                                            </small>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if ($category->name != 'DOORS')
+                                        @if ($product->assembly)
+                                            <small>{{ $product->assembly->name }}</small>
+                                        @endif
+                                        @endif
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                     @foreach ($products as $index => $product)
-                    <div class="col-lg-4 col-6 mb-3">
+                    {{--<div class="col-lg-3 col-6 mb-3">
                         <div class="card btn btn-outline-warning text-dark border-1 bg-light p-0" style="border-radius: 0;">
                             <div class="card-header px-0 py-0">
                                 <div class="p-0 product-short-title-container w-100">
@@ -498,7 +577,7 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </div>--}}
                     @endforeach
                     @else
                     <div class="col-12">
@@ -557,7 +636,6 @@
 
                 </div>
             </div>
-        </div>
 
         <div class="row">
 
