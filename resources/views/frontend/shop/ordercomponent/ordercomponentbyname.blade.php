@@ -3,9 +3,7 @@
         <title>{{$seo?->meta_title}}</title>
         <meta name="description" content="{{$seo?->meta_description}}">
         <link rel="canonical" href="{{$seo?->canonical_tag}}" />
-        <script type="application/ld+json">
-            {!! $seo?->schema_code !!}
-        </script>
+        {!! $seo?->schema_code !!}
     @endsection
     <style>
         .product-card {
