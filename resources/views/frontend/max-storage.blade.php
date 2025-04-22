@@ -250,11 +250,15 @@
 
 
 
-        .modal-dialog {
-            width: 900px;
+    
+        /* .modal-dialog {
+            max-width: 900px;
             margin: 1.75rem auto;
+        } */
+        .modal.show .modal-dialog
+        {
+            max-width:900px;
         }
-
         .modal-content {
             border-radius: 8px;
             border: none;
@@ -315,12 +319,6 @@
             margin-bottom: 15px;
         }
 
-        .news-letter-input {
-            border-radius: 0 !important;
-            border: 1px solid #ced4da !important;
-            padding: 12px 15px !important;
-            height: auto !important;
-        }
 
         .subscribe-btn {
             background-color: #1D6363;
@@ -383,22 +381,20 @@
       display: block;
     }
     
-    .modal-dialog {
-      max-width: 800px;
-    }
     
-    /* .modal-content {
+    
+    .modal-content {
       border-radius: 1rem;
       border: none;
       padding: 1rem;
     }
-     */
+    
     .modal-header {
       border-bottom: none;
       padding-bottom: 0;
     }
     
-    .butn-close {
+    .btn-close {
       background-color: #dc3545;
       opacity: 1;
       padding: 0.5rem;
@@ -410,7 +406,7 @@
       font-weight: bold;
     }
     
-    .butn-close:focus {
+    .btn-close:focus {
       box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
     }
     
@@ -440,12 +436,12 @@
       font-weight: bold;
     }
     
-    .thankyou-input {
+    /* .form-control {
       border: 1px solid #6c757d;
       border-radius: 5px;
       padding: 0.75rem;
       margin-bottom: 1rem;
-    }
+    } */
     
     .submit-btn {
       background-color: #ffc107;
@@ -488,7 +484,12 @@
         font-size: 2rem;
       }
     }
-
+    .news-letter-input {
+            border-radius: 0 !important;
+            border: 1px solid #ced4da !important;
+            padding: 12px 15px !important;
+            height: auto !important;
+        }
 
 
     </style>
@@ -512,7 +513,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <a class="btn" data-bs-toggle="modal" data-bs-target="#newsletterModal">
+                <a class="btn" data-bs-toggle="modal" data-bs-target="#newsletterModalMax">
                 <img class="w-100 rounded img-fluid d-none d-md-block" src="{{ asset('images/max-banner.png') }}"/>
                 
                 <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/max-banner-mob.png') }}"/>
@@ -858,10 +859,10 @@
     
     <section class="container bg-white mb-5">
         <div class="row">
-            <div class="col-12">
+            {{-- <div class="col-12">
                 <img class="img-fluid w-100" src="{{ asset('images/max-cabinets.jpeg') }}"/>
-            </div>
-            {{-- <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
+            </div> --}}
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
                 <div class="card border-0">
                     <div class="" style="height: 250px; width: 100%">
                         <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="{{ asset('images/deepest.jpg') }}" alt="">
@@ -905,7 +906,7 @@
                         <p class="suggestion max-description text-white text-center">Wide cabinets for organized storage of kitchens essentials. Make use of every inch efficiently.</p>
                     </div>
                 </div>
-            </div> --}}
+            </div>
         </div>
         <div class="row justify-content-center mt-5">
             <div class="col-lg-8">
@@ -1261,7 +1262,7 @@
   </div>
 
 
-  <div class="modal fade" id="newsletterModal" tabindex="-1" aria-labelledby="newsletterModalLabel" aria-hidden="true">
+  <div class="modal fade" id="newsletterModalMax" tabindex="-1" aria-labelledby="newsletterModalMaxLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-md">
         <div class="modal-content">
             <div class="newsletter-container">
@@ -1289,7 +1290,7 @@
 </div>
 
   <!-- Thank You Modal -->
-<div class="modal fade" id="thankyouModal" tabindex="-1" aria-labelledby="thankyouModalLabel" aria-hidden="true">
+<div class="modal fade" id="thankyouModalMax" tabindex="-1" aria-labelledby="thankyouModalMaxLabel" aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered">
   <div class="modal-content">
     <div class="modal-header">
@@ -1358,6 +1359,68 @@
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
+
+
+
+function sendEmail() {
+            var email = $('#emailInput').val();
+            var button = $(this);
+            var btnText = button.find('.btn-text');
+            var btnLoading = button.find('.btn-loading');
+    
+            // Show loading
+            btnText.hide();
+            btnLoading.show();
+    
+            $.ajax({
+                url: "{{ route('contact_us_inquiry') }}", // Change to your actual route
+                method: 'POST',
+                data: {
+                    email: email,
+                    catalogue_register_now: 'catalogue_register_now',
+                    first_order_discount: 'first_order_discount',
+                    message: 'You have successfully subscribed for 15% discount',
+                    _token: '{{ csrf_token() }}' // if you're using Laravel
+                },
+                success: function (response) {
+                    // discountModal.show();
+                }
+            });
+        }
+ // Handle subscribe button click
+
+    
+
+            document.getElementById('subscribeBtn').addEventListener('click',function(){
+
+                const emailInput = document.getElementById('emailInput');
+                const email = emailInput.value.trim();
+                
+                    // Basic email validation
+                    if (email && email.includes('@') && email.includes('.')) {
+                        // Hide newsletter modal
+                        var newsletterModalMax = bootstrap.Modal.getInstance(document.getElementById('newsletterModalMax'));
+                        newsletterModalMax.hide();
+                        
+                        // Show discount modal after a short delay
+                        setTimeout(function() {
+                            var thankyouModalMax = new bootstrap.Modal(document.getElementById('thankyouModalMax'));
+                            // discountModal.show();
+                            sendEmail();
+                            thankyouModalMax.show();
+                            
+                        }, 500);
+                    } else {
+                        // Simple error visual
+                        emailInput.style.borderColor = '#ef4444';
+                        setTimeout(() => {
+                            emailInput.style.borderColor = '#fde68a';
+                        }, 2000);
+                    }
+                    
+                    localStorage.setItem('subscribed', true);
+                });
+
       $(document).ready(function(){
     $(".owl-carousel").owlCarousel({
         loop: true,
