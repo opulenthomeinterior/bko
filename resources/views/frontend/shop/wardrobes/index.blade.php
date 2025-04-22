@@ -1,4 +1,56 @@
 <x-guest-layout>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Kitchen Wardrobes",
+  "url": "https://bkonline.uk/wardrobes",
+  "logo": "https://bkonline.uk/public/images/bko-black-logo.png",
+  "description": "BK Online offers bespoke, high-quality wardrobes in London (North London, North East London, Central London & EAST London). Custom designs, smart storage solutions & expert fitting. Free quote & fast installation.",
+  "image": "https://bkonline.uk/public/imgs/products/Wardrobe-11745065753_68039719b478f.jpg",
+  "brand": {
+    "@type": "Brand",
+    "name": "BK Online"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://bkonline.uk/wardrobes",
+    "priceCurrency": "GBP",
+    "itemCondition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://bkonline.uk/wardrobes"
+  },
+  "manufacturer": {
+    "@type": "Organization",
+    "name": "BKOnline",
+    "logo": "https://bkonline.uk/public/images/bko-black-logo.png",
+    "url": "https://bkonline.uk/"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Unit 7, 44 Gillender street",
+    "addressLocality": "London",
+    "postalCode": "E14 6RP",
+    "addressCountry": "UK"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "020 805 05605",
+    "contactType": "Customer Service",
+    "areaServed": "London specifically in North London, North East London, Central London & EAST London.",
+    "availableLanguage": "English UK"
+  },
+  "sameAs": [
+    "https://www.facebook.com/opulenthomeinteriorsltd",
+    "https://www.instagram.com/bkonline__kitchen/?igsh=YWZqaDg4b2ppZ3Zw",
+    "https://www.youtube.com/@BKOnline570"
+  ]
+}
+</script>
+
     <style>
         .product-card {
             border: 1px solid transparent;
