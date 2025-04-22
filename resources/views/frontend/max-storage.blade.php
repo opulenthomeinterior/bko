@@ -553,7 +553,7 @@
                     </h4>
                 </div> --}}
               
-                    <img class="w-100  rounded img-fluid d-none d-md-block" src="{{ asset('images/max-form-left-banner.png') }}"/>
+                    <img class="w-100  rounded img-fluid d-none d-md-block" src="{{ asset('images/max-form-left-banner-desktop.png') }}"/>
                     <img class="w-100  rounded img-fluid d-md-none" src="{{ asset('images/max-form-left-banner-mob.png') }}"/>
                     
             </div>
@@ -909,7 +909,17 @@
             </div>
         </div>
         <div class="row justify-content-center mt-5">
-            <div class="col-lg-8">
+
+            <div class="col-12 ">
+                <a class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <img class="img-fluid w-100 d-none d-md-block" src="{{ asset('images/never-settle.png') }}"/>
+                
+                <img class="img-fluid w-100 ol-12  d-md-none" src="{{ asset('images/never-settle-mobile.png') }}"/>
+                </a>
+            </div>
+            <div class="c">
+            </div>
+            {{-- <div class="col-lg-8">
             <h3 class=" text-center text-md-start text-black">Never settle for a standard-size kitchen because you don’t have to any more.</h3>
             
             </div>
@@ -922,7 +932,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 col-12">
                 <button class="btn btn-warning px-2 px-lg-5 text-uppercase rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Book your free consultation now!</button>
-            </div>
+            </div> --}}
         </div>
     </section>
 
