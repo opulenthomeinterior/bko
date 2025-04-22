@@ -718,8 +718,9 @@
             <div class="col-12">
                 <a class="btn" data-bs-toggle="modal" data-bs-target="#newsletterModal">
                 <img class="w-100 img-fluid d-none d-md-block" src="{{ asset('images/21offdesktop.png') }}"/>
-                </a>
+                
                 <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/21offmobile.png') }}"/>
+            </a>
             </div>
         </div>
         <div class="row my-5">
@@ -1374,10 +1375,8 @@
 @push('scripts')
     <script>
 
- // Handle subscribe button click
- document.getElementById('subscribeBtn').addEventListener('click', function() {
 
-    function sendEmail() {
+function sendEmail() {
             var email = $('#emailInput').val();
             var button = $(this);
             var btnText = button.find('.btn-text');
@@ -1402,10 +1401,15 @@
                 }
             });
         }
-                    const emailInput = document.getElementById('emailInput');
-                    const email = emailInput.value.trim();
+ // Handle subscribe button click
 
-                    
+    
+
+            document.getElementById('subscribeBtn').addEventListener('click',function(){
+
+                const emailInput = document.getElementById('emailInput');
+                const email = emailInput.value.trim();
+                
                     // Basic email validation
                     if (email && email.includes('@') && email.includes('.')) {
                         // Hide newsletter modal
@@ -1417,9 +1421,7 @@
                             var thankyouModal = new bootstrap.Modal(document.getElementById('thankyouModal'));
                             // discountModal.show();
                             sendEmail();
-                           
                             thankyouModal.show();
-                           
                             
                         }, 500);
                     } else {
@@ -1432,8 +1434,7 @@
                     
                     localStorage.setItem('subscribed', true);
                 });
-
-        
+                   
 
        
         $(document).ready(function () {
