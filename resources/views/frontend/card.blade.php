@@ -141,7 +141,7 @@
             </div>
             <div class="number">{{$number}}</div>
         </div>
-        <h1 class="custom-card-title text-black">{{ $title }}</h1>
+        <h2 class="custom-card-title text-black">{{ $title }}</h2>
         <p class="custom-card-description">{{$description}}</p>
         
         

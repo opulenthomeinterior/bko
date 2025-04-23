@@ -84,7 +84,7 @@
 </head>
 <body>
     <div class="form-container">
-        <h3 class="form-title text-center text-uppercase">for free survey and qoute <span style="color:#ffc107 ;">call us now!</span></h3>
+        <h5 class="form-title text-center text-uppercase">for free survey and qoute <span style="color:#ffc107 ;">call us now!</span></h5>
         <!-- <p class="form-subtitle text-center">020 805 05605</p> -->
         <a href="tel:02080505605" class="btn btn-yellow" style="font-weight: 600;">
         
@@ -93,7 +93,7 @@
         </a>
         <h6 class="form-title text-center my-2">OR</h6>
         <hr class="border border-dark">
-        <h3 class="fomr-title mb-3 text-center">Book a free consultation now!</h3>
+        <h5 class="fomr-title mb-3 text-center">Book a free consultation now!</h5>
         
         <form method="POST" action="{{ route('contact_us_inquiry') }}">
             @csrf
@@ -133,7 +133,7 @@
             </div>
 
             <div class="input-group text-area-container">
-                <textarea class="form-control inquiry-form-control" rows="3" name="message" placeholder="Enter your message" required></textarea>
+                <textarea class="form-control inquiry-form-control" rows="1" name="message" placeholder="Enter your message" required></textarea>
             </div>
 
              @include('frontend.button', ['type' =>'submit', 'text'=>'Submit'])

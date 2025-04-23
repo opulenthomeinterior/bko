@@ -716,7 +716,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <a class="btn" data-bs-toggle="modal" data-bs-target="#newsletterModal">
+                <a class="btn p-0 w-100" data-bs-toggle="modal" data-bs-target="#newsletterModal">
                 <img class="w-100 img-fluid d-none d-md-block" src="{{ asset('images/21offdesktop.png') }}"/>
                 
                 <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/21offmobile.png') }}"/>
@@ -749,7 +749,7 @@
         <div class="container">
         <div class="row">
             {{-- <div class="col-xl-3 col-lg-3 col-md-2 col-sm-12 col-3"></div> --}}
-            <div class=" col-xl-7 col-12 align-self-center px-5 d-flex flex-column flex-md-row p-0">
+            <div class=" col-xl-8 col-12 align-self-center px-5 d-flex flex-column flex-md-row p-0">
                 <div class="row">
                     
                     <div class="align-self-center rounded shadow-lg order-sample position-relative col-12 col-xl-8 bg-white rounded-lg border-0 shadow-sm" style="">
@@ -773,7 +773,7 @@
                 </div>
 
             </div>
-            <div class="col-xl-5 col-12">
+            <div class="col-xl-4 p-0 col-12">
                 @include('frontend.inquiry_form')
                 {{-- <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning p-4">
                     @csrf
@@ -833,7 +833,7 @@
             <h2 class="section-title text-black">OUR <span class="highlight">SIMPLE 3-STEP</span> DOOR REPLACEMENT PROCESS</h2>
             <div class="title-underline"></div>
             
-            <h3 class="how-it-works text-black">HOW IT WORKS</h3>
+            <h3 class="how-it-works text-black my-5">HOW IT WORKS</h3>
             
             <div class="row justify-content-center align-items-center">
                 <!-- Step 1 -->
@@ -877,7 +877,7 @@
                 </div>
             </div>
             
-            <p class="benefit-text">Benefit from our limited time offer and get a Free Quote for Door Replacement</p>
+            <p class="benefit-text fs-4">Benefit from our limited time offer and get a Free Quote for Door Replacement</p>
             
             <div class="text-center">
                 <a href="#" class="btn btn-consultation py-3 px-4 my-3 w-100" style="max-width: 500px;" data-bs-toggle="modal" data-bs-target="#exampleModal">BOOK YOUR FREE CONSULTATION NOW!</a>
@@ -900,7 +900,7 @@
 <div class="container-fluid" >
     <div class="container py-5">
         <div class="mb-3 row justify-content-center">
-            <h4 class="text-black  text-center mb-2" style="font-size:26px; font-weight:500">Those <span class="text-danger">Awful OLD LOOKING KITCHEN CABINET DOORS </span> Are <br>Driving You Nuts, Aren’t they?</h4>
+            <h4 class="text-black  mb-4 text-center mb-2" style="font-size:26px; font-weight:500">Those <span class="text-danger">Awful OLD LOOKING KITCHEN CABINET DOORS </span> Are <br>Driving You Nuts, Aren’t they?</h4>
             <h1 class="mb-1 text-center text-black"> Discover the Perfect Doors for Your Kitchen</h1>
             <p class="text-center fs-6 w-75">Browse our extensive collection of kitchen door styles, available in a wide array of colors and finishes. Find the ideal match for your existing cabinets and buy kitchen doors to create the kitchen of your dreams</p>
 
@@ -993,7 +993,8 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-        <h3 style="font-style:28px;font-weight:600" class="text-black text-center mb-2">DOOR REPLACEMENT SERVICE</h3>
+            <h1 class="mb-1 text-center text-black mb-5"> DOOR REPLACEMENT SERVICE</h1>
+        <!-- <h3 style="font-style:28px;font-weight:600" class="text-black text-center mb-2"></h3> -->
         </div>
     </div>
     <div class="row">

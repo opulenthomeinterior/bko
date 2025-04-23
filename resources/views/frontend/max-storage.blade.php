@@ -503,18 +503,37 @@
 
     <header class="hero">
         <div class="hero-content">
-            <h1 class="fs-md-0 fs-1 text-white fw-bold text-uppercase">Bespoke designer <span class="text-warning">kitchens</span></h1>
+            <h1 class="fs-md-0  text-white fw-bold text-uppercase" style="font-size:48px;">Bespoke designer <span class="text-warning">kitchens</span></h1>
             {{-- <h1 class="text-warning fw-bold">Timeless Elegance</h1> --}}
-            <p class=" suggestion"><span class="suggestion">Are You Settling for a Kitchen That Doesn't Fit Your Life?</span> <br><span class="suggestion max-description">We offer premium, Bespoke Kitchen Units at the price of standard kitchens</span></p>
+            <p style="" class="mt-5 suggestion"><span class="suggestion">Are You Settling for a Kitchen That Doesn't Fit Your Life?</span> <br><span class="suggestion max-description">We offer premium, Bespoke Kitchen Units at the price of standard kitchens</span></p>
             {{-- <div class="scroll-down">Scroll Down <i>&#x2193;</i></div> --}}
+      
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-3">
+                        <img src="{{ asset('images/max-storage-badge.png') }}" class="img-fluid w-100 "/>
+                    </div>
+                   
+                    <div class="col-3">
+                        <img src="{{ asset('images/trust-pilot.png') }}" class="img-fluid w-100"/>
+                    </div>
+                   
+                    <div class="col-3">
+                        <img src="{{ asset('images/google.png') }}" class="img-fluid w-100"/>
+                    </div>
+                   
+                </div>
+            </div>
         </div>
     </header>
 
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <a class="btn" data-bs-toggle="modal" data-bs-target="#newsletterModalMax">
-                <img class="w-100 rounded img-fluid d-none d-md-block" src="{{ asset('images/max-banner.png') }}"/>
+
+
+            <div class="col-12 my-5 p-0">
+                <a class="w-100 p-0 btn" data-bs-toggle="modal" data-bs-target="#newsletterModalMax">
+                <img class=" p-0 w-100 rounded img-fluid d-none d-md-block" src="{{ asset('images/max-banner.png') }}"/>
                 
                 <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/max-banner-mob.png') }}"/>
                 </a>
@@ -525,7 +544,7 @@
     <section class="container my-5">
         <div class="row">
             {{-- <div class="col-xl-3 col-lg-3 col-md-2 col-sm-12 col-3"></div> --}}
-            <div class=" col-lg-6 col-md-8 col-sm-12 col-12 align-self-center mb-4 mb-sm-0 px-lg-5">
+            <div class=" col-md-8 col-12 align-self-center mb-4 mb-sm-0 px-lg-4">
                 {{-- <div style="">
                     <h1>
                         <span class="text-warning">Standard Kitchens </span>
@@ -553,11 +572,11 @@
                     </h4>
                 </div> --}}
               
-                    <img class="w-100  rounded img-fluid d-none d-md-block" src="{{ asset('images/max-form-left-banner-desktop.png') }}"/>
-                    <img class="w-100  rounded img-fluid d-md-none" src="{{ asset('images/max-form-left-banner-mob.png') }}"/>
+                    <img class="w-100 rounded  rounded img-fluid d-none d-md-block" src="{{ asset('images/max-form-left-banner-desktop.png') }}"/>
+                    <img class="w-100 rounded rounded img-fluid d-md-none" src="{{ asset('images/max-form-left-banner-mob.png') }}"/>
                     
             </div>
-            <div class="col-xl-6 col-lg-6 col-md-8 col-sm-12 col-12">
+            <div class="p-0 col-md-4 col-12">
 
 
                 @include('frontend.inquiry_form')
@@ -616,7 +635,7 @@
     <section class="container-fluid  pt-5 pb-3" style="background-color:#f2f4f5">
         <div>
         <div class="col-12 d-flex flex-column align-items-center">
-            <p class="max-description suggestion text-center fw-bold">Are you tired of just dreaming about a better kitchen?</p>
+            <h3 class="max-description suggestion text-center text-danger fw-bold">Are you tired of just dreaming about a better kitchen?</h3>
             <h2 class="text-dark text-center fw-bolder">
                 BESPOKE DESIGN, STANDARD PRICE
             </h2>
@@ -627,7 +646,7 @@
             
         </div>
         <p class="text-center text-dark w-md-75 w-100 max-description suggestion">
-            We offer premium, bespoke designer kitchens at competitive prices. Our process is straight forward
+            We offer premium, bespoke designer kitchens at the price of standard kitchens. Our process is straightforward.
         </p>
     </section>
 
@@ -700,13 +719,13 @@
     <div class="container">
         <div class="row">
         <div class="col-lg-4 col-12 mb-3 mb-sm-0">
-             @include('frontend.card', ['icon_class'=>'fa-solid fa-comments','number'=>'01', 'title'=>'Dream & Discuss','description'=>"Share your vision! We'll listen to your ideas, needs, and lifestyle to understand your dream kitchen."])
+             @include('frontend.card', ['icon_class'=>'fa-solid fa-phone','number'=>'01', 'title'=>'You Contact Us','description'=>"Share your vision, we’ll listen to your ideas, needs, and lifestyle to understand your dream kitchen"])
         </div>
         <div class="col-lg-4 col-12 mb-3 mb-sm-0">
-            @include('frontend.card', ['icon_class'=>'fa-solid fa-pen-nib','number'=>'02', 'title'=>'Design & Refine','description'=>"Our experts create a personalized design, including layouts, material selections. You'll have opportunities to refine every detail."])
+            @include('frontend.card', ['icon_class'=>'fa-solid fa-handshake','number'=>'02', 'title'=>'We handle everything for you','description'=>"Our experts create a personalized design for you, including layouts, materials, and colors etc."])
        </div>
        <div class="col-lg-4 col-12 mb-3 mb-sm-0">
-        @include('frontend.card', ['icon_class'=>'fa-solid fa-hammer','number'=>'03', 'title'=>'Craft & Create','description'=>"Our skilled craftsmen meticulously build and install your custom kitchen, ensuring a perfect fit and lasting beauty."])
+        @include('frontend.card', ['icon_class'=>'fa-solid fa-kitchen-set','number'=>'03', 'title'=>'You enjoy your perfect kitchen','description'=>"Our skilled craftsmen build and install your custom kitchen. Ensuring a perfect fit and lasting beauty."])
    </div>
     </div>
 
@@ -831,7 +850,7 @@
         <div class="row">
             <div class="col-12  d-flex align-items-center">
                 <div>
-                    <h3 class="text-uppercase text-danger">ARE YOU STRUGGLING WITH STORAGE SPACE?</h3>
+                    <h3 class="mb-3 text-uppercase text-danger">ARE YOU STRUGGLING WITH STORAGE SPACE?</h3>
                     <h3 class="text-uppercase" style="color: #2a6161">SOLUTION
                         
                          <br><b style="color: #000">BESPOKE MAX STORAGE KITCHENS</b></h3>
@@ -857,7 +876,7 @@
     </section>
 
     
-    <section class="container bg-white mb-5">
+    <section class="container mb-5">
         <div class="row">
             {{-- <div class="col-12">
                 <img class="img-fluid w-100" src="{{ asset('images/max-cabinets.jpeg') }}"/>
@@ -910,13 +929,7 @@
         </div>
         <div class="row justify-content-center mt-5">
 
-            <div class="col-12 ">
-                <a class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <img class="img-fluid w-100 d-none d-md-block" src="{{ asset('images/never-settle.png') }}"/>
-                
-                <img class="img-fluid w-100 ol-12  d-md-none" src="{{ asset('images/never-settle-mobile.png') }}"/>
-                </a>
-            </div>
+            
             <div class="c">
             </div>
             {{-- <div class="col-lg-8">
@@ -1039,11 +1052,20 @@
     </section>
 </div> --}}
 
-    <section class="conatiner px-4 py-4 text-center mb-4">
-        <div class="px-4 text-center">
+    <section class="conatiner py-2 text-center mb-4">
+        <div class="row">
+        <div class="col-12 p-0">
+            <a class="w-100 btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <img class="rounded img-fluid w-100 d-none d-md-block" src="{{ asset('images/never-settle.png') }}"/>
+            
+            <img class="rounded shadow-lg img-fluid w-100 ol-12  d-md-none" src="{{ asset('images/never-settle-mobile.png') }}"/>
+            </a>
+        </div>
+    </div>
+        {{-- <div class="px-4 text-center">
             <h4 class="text-center text-danger">WHY settle for an average-sized kitchen  </h4>
             <h5 class="text-center" style="color:#2a6161">WHEN WE HAVE ELIMINATED THE PRICE ISSUE FOR A FULLY CUSTOMIZED KITCHEN? </h5>
-        </div>
+        </div> --}}
     </section>
 
     <section class="container mb-4">
