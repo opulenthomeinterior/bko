@@ -1168,10 +1168,10 @@
         <div class="row">
         <div class="col-12 ">
             <a class="w-100 btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            {{-- <img class="rounded img-fluid w-100 d-none d-md-block" src="{{ asset('images/never-settle.png') }}"/> --}}
-            <img class="rounded img-fluid w-100" src="{{ asset('images/never-settle.png') }}"/>
+            <img class="rounded img-fluid w-100 d-none d-md-block" src="{{ asset('images/never-settle.png') }}"/>
+            {{-- <img class="rounded img-fluid w-100" src="{{ asset('images/never-settle.png') }}"/> --}}
             
-            {{-- <img class="rounded shadow-lg img-fluid w-100 ol-12  d-md-none" src="{{ asset('images/never-settle-mobile.png') }}"/> --}}
+            <img class="rounded shadow-lg img-fluid w-100 ol-12  d-md-none" src="{{ asset('images/never-settle-mobile.png') }}"/>
             </a>
         </div>
     </div>
