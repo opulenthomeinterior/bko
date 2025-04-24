@@ -84,7 +84,7 @@
 </head>
 <body>
     <div class="form-container">
-        <h5 class="form-title text-center text-uppercase">for free survey and qoute <span style="color:#ffc107 ;">call us now!</span></h5>
+        <h5 class="form-title text-center text-uppercase">for free survey and quote <span style="color:#ffc107 ;">call us now!</span></h5>
         <!-- <p class="form-subtitle text-center">020 805 05605</p> -->
         <a href="tel:02080505605" class="btn btn-yellow" style="font-weight: 600;">
         
