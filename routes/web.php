@@ -337,7 +337,7 @@ Route::prefix('/')->middleware([])->group(function () {
     Route::get('/search', [HomeController::class, 'search'])->name('search');
     Route::post('/compare', [HomeController::class, 'compare_product'])->name('compare_product');
 
-    
+    Route::post('order-component-filter', [HomeController::class, 'orderComponentFilter'])->name('ordercomponent_filter');
     
     // Fallback route for any other route under /admin
     Route::fallback(function () {

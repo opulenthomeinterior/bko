@@ -487,7 +487,7 @@ class HomeController extends Controller
 
         $heights = Product::whereIn('category_id', $children)
                 ->where('status', 'active')
-                ->select('height', DB::raw('COUNT(*) as count'))
+                ->select('height', DB::raw('COUNT(*) as count'), 'id')
                 ->where('height', '!=', '')
                 ->groupBy('height')
                 ->get();
@@ -917,5 +917,9 @@ class HomeController extends Controller
         });
 
         return view('frontend.shop.orderkitchen.doors_replacement', compact('styles'));
+    }
+
+    public function orderComponentFilter(Request $request) {
+        dd($request->all());
     }
 }
