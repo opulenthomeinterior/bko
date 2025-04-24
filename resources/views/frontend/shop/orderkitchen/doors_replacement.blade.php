@@ -385,7 +385,22 @@
             font-weight: 600;
             margin: 1rem 0;
         }
-        
+        @media(max-width:576px)
+        {
+            .step-number,.step-icon
+            {
+                font-size: 26px;
+            }
+            .step-title
+            {
+                font-size:30px;
+            }
+            .step-description
+            {
+                font-size: 14px !important;
+            }
+            
+        }
         .step-title {
             color: #2B5A5E;
             font-weight: 600;
@@ -687,7 +702,7 @@
         
         <div class="hero-content">
             <h5 class="text-center text-white " style="font-size:14px; letter-spacing:5px;font-weight:bold">BUY KITCHEN  ONLINE</h5>
-            <h1 class="text-white fw-bold">DOOR REPLACEMENT <span style="color:#ffe000"> SERVICE</span></h1>
+            <h1 class="text-white fw-bold mb-5">DOOR REPLACEMENT <span style="color:#ffe000"> SERVICE</span></h1>
             <h2 class="text-white mb-4 yell">2-3 Months of full kitchen remodel nightmare or <br> <span style="font-size:32px;color:#ffe000;font-weight:700">
                 New CABINET Doors IN JUST 2-3 Days?</span></h2>
             
@@ -763,11 +778,11 @@
                         <a href="{{ route('ordercomponentbyname', 'doors') }}" class="btn bg-orange px-1 fw-bold text-uppercase rounded-0 " style="font-size:14px;">  Order a Sample of your choice NOW!</a>
                     </div>
                     <div class="p-0 mb-3 mb-xl-0 col-12 col-xl-4">
-                    {{-- <img class="w-100 object-fit-cover rounded border border-warning" src="https://bkonline.uk/public/imgs/products/Cartmel-Cashmere-Flat-Door-A1720452961_668c0761d6f16.jpg"  class="img-fluid"  alt="Modern Kitchen" 
+                     <img class="w-100 object-fit-cover rounded border border-warning" src="https://bkonline.uk/public/imgs/products/Cartmel-Cashmere-Flat-Door-A1720452961_668c0761d6f16.jpg"  class="img-fluid"  alt="Modern Kitchen" 
                         style="width: 300px; height: 400px; object-fit: cover;">
-                    --}}
-                    <img class="w-100 object-fit-cover rounded border border-warning" src="{{ asset('images/door-cabinets.png') }}"  class="img-fluid"  alt="Modern Kitchen" 
-                        style="width: 300px; height: 400px; object-fit: cover;">
+                    
+                    <!-- <img class="w-100 object-fit-cover rounded border border-warning" src="{{ asset('images/door-cabinets.png') }}"  class="img-fluid"  alt="Modern Kitchen" 
+                        style="width: 300px; height: 400px; object-fit: cover;"> -->
                    
                     </div>
                 </div>
@@ -819,7 +834,7 @@
         </div>
         {{-- <div class="row flex-column my-5 align-items-center justify-content-center">
             <div class="col-sm-5">
-            <h4 class="text-center">Benefit from our limited time offer and get a FREE QUOTE for Kitchen Door Replacement</h4>
+            <h4 class="text-center mt-5">Benefit from our limited time offer and get a FREE QUOTE for Kitchen Door Replacement</h4>
             </div>
             <div class="col-12 col-sm-3">
                 <button class="w-100 btn bg-orange px-4 text-uppercase rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal">book your FREE CONSULTATION NOW!</button>
@@ -844,6 +859,7 @@
                     <div class="step-number">Step 01</div>
                     <h4 class="step-title">GET IN TOUCH</h4>
                     <p class="step-description px-3">Provide your contact information so we can schedule a convenient time to chat with you.</p>
+               
                 </div>
                 
                 <!-- Arrow 1 - Hidden on screens smaller than large -->
@@ -877,10 +893,10 @@
                 </div>
             </div>
             
-            <p class="benefit-text fs-4">Benefit from our limited time offer and get a Free Quote for Door Replacement</p>
+            <p class="benefit-text mb-2 mt-5 fs-4">Benefit from our limited time offer and get a Free Quote for Door Replacement</p>
             
             <div class="text-center">
-                <a href="#" class="btn btn-consultation py-3 px-4 my-3 w-100" style="max-width: 500px;" data-bs-toggle="modal" data-bs-target="#exampleModal">BOOK YOUR FREE CONSULTATION NOW!</a>
+                <a href="#" class="btn btn-consultation py-3 px-4 w-100" style="max-width: 500px;" data-bs-toggle="modal" data-bs-target="#exampleModal">BOOK YOUR FREE CONSULTATION NOW!</a>
             </div>
         </div>
         </div>
