@@ -7,6 +7,73 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
+
+.step-icon {
+            background-color: #f9f9f9;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        
+        .step-number {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 1rem 0;
+        }
+        
+        .step-title {
+            color: #2B5A5E;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .step-description {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #444;
+            margin: 0 auto;
+        }
+        @media(max-width:576px)
+        {
+            .step-number,.step-icon
+            {
+                font-size: 26px;
+            }
+            .step-title
+            {
+                font-size:30px;
+            }
+            .step-description
+            {
+                font-size: 14px !important;
+            }
+            
+        }
+        .arrow-line {
+            height: 2px;
+            width: 100%;
+            background-color: #2B5A5E;
+            position: relative;
+        }
+        
+        .arrow-line:after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: -5px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid #2B5A5E;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+        }
+       
+
         /* Responsive Line Styling */
 #line1,#line2,#line3 {
     /* Base styles */
@@ -533,7 +600,8 @@
 
             <div class="col-12 my-5 p-0">
                 <a class="w-100 p-0 btn" data-bs-toggle="modal" data-bs-target="#newsletterModalMax">
-                <img class=" p-0 w-100 rounded img-fluid d-none d-md-block" src="{{ asset('images/max-banner.png') }}"/>
+                {{-- <img class=" p-0 w-100 rounded img-fluid d-none d-md-block" src="{{ asset('images/max-banner.png') }}"/> --}}
+                <img class=" p-0 w-100 rounded img-fluid d-none d-md-block" src="{{ asset('images/max-storage-after-hero.png') }}"/>
                 
                 <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/max-banner-mob.png') }}"/>
                 </a>
@@ -718,7 +786,51 @@
 <div class="container-fluid py-3" style="background-color:#f2f4f5">
     <div class="container">
         <div class="row">
-        <div class="col-lg-4 col-12 mb-3 mb-sm-0">
+
+             <!-- Step 1 -->
+             <div class="col-md-4 col-lg-3 text-center mb-4 mb-lg-0">
+                <div class="step-icon">
+                    <i class="text-warning fs-1 fa-solid fa-phone"></i>
+                </div>
+                <div class="step-number">Step 01</div>
+                <h4 class="step-title">You Contact Us</h4>
+                <p class="step-description px-3">Share your vision, we’ll listen to your ideas, needs, and lifestyle to understand your dream kitchen</p>
+           
+            </div>
+            
+            <!-- Arrow 1 - Hidden on screens smaller than large -->
+            <div class="col-lg-1 d-none d-lg-flex justify-content-center align-items-center">
+                <div class="arrow-line w-100"></div>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="col-md-4 col-lg-3 text-center mb-4 mb-lg-0">
+                <div class="step-icon">
+                    <i class="text-warning fs-1 fa-solid fa-handshake"></i>
+                </div>
+                <div class="step-number">Step 02</div>
+                <h4 class="step-title">We handle everything for you</h4>
+                <p class="step-description px-3">Our experts create a personalized design for you, including layouts, materials, and colors etc.</p>
+            </div>
+            
+            <!-- Arrow 2 - Hidden on screens smaller than large -->
+            <div class="col-lg-1 d-none d-lg-flex justify-content-center align-items-center">
+                <div class="arrow-line w-100"></div>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="col-md-4 col-lg-3 text-center">
+                <div class="step-icon">
+                    <i class="text-warning fa-solid fa-kitchen-set"></i>
+                </div>
+                <div class="step-number">Step 03</div>
+                <h4 class="step-title">You enjoy your perfect kitchen</h4>
+                <p class="step-description px-3">Our skilled craftsmen build and install your custom kitchen. Ensuring a perfect fit and lasting beauty.</p>
+            </div>
+        </div>
+        
+
+        {{-- <div class="col-lg-4 col-12 mb-3 mb-sm-0">
              @include('frontend.card', ['icon_class'=>'fa-solid fa-phone','number'=>'01', 'title'=>'You Contact Us','description'=>"Share your vision, we’ll listen to your ideas, needs, and lifestyle to understand your dream kitchen"])
         </div>
         <div class="col-lg-4 col-12 mb-3 mb-sm-0">
@@ -726,7 +838,7 @@
        </div>
        <div class="col-lg-4 col-12 mb-3 mb-sm-0">
         @include('frontend.card', ['icon_class'=>'fa-solid fa-kitchen-set','number'=>'03', 'title'=>'You enjoy your perfect kitchen','description'=>"Our skilled craftsmen build and install your custom kitchen. Ensuring a perfect fit and lasting beauty."])
-   </div>
+      </div> --}}
     </div>
 
 {{-- <div class="container-fluid py-3" style="background-color:#f2f4f5">
@@ -1054,9 +1166,10 @@
 
     <section class="conatiner py-2 text-center mb-4">
         <div class="row">
-        <div class="col-12 p-0">
+        <div class="col-12 ">
             <a class="w-100 btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
             <img class="rounded img-fluid w-100 d-none d-md-block" src="{{ asset('images/never-settle.png') }}"/>
+            {{-- <img class="rounded img-fluid w-100" src="{{ asset('images/never-settle.png') }}"/> --}}
             
             <img class="rounded shadow-lg img-fluid w-100 ol-12  d-md-none" src="{{ asset('images/never-settle-mobile.png') }}"/>
             </a>
