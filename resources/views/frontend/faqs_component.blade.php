@@ -49,7 +49,7 @@
                         <div id="flush-collapse3" class="accordion-collapse collapse bg-white"
                             data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body bg-white text-dark">
-                            Affordable kitchen units can be a lifesaver when you need to renovate your kitchen on a budget. At BK Online, even our budget-friendly kitchen units have high-quality materials and craftsmanship.
+                            Affordable kitchen units can be a lifesaver when you need to renovate your kitchen on a budget. At Buy Kitchen Online, even our budget-friendly kitchen units have high-quality materials and craftsmanship.
                             </div>
                             <hr class="border-bottom border-warning px-4 mx-4">
                         </div>
@@ -65,7 +65,7 @@
                         <div id="flush-collapse4" class="accordion-collapse collapse bg-white"
                             data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body bg-white text-dark">
-                            In order to design a custom kitchen unit with BK Online, we conduct an in-depth consultation. We discuss your style and functionality, measure your space, and then create a unique design for your home.
+                            In order to design a custom kitchen unit with Buy Kitchen Online, we conduct an in-depth consultation. We discuss your style and functionality, measure your space, and then create a unique design for your home.
                             </div>
                             <hr class="border-bottom border-warning px-4 mx-4">
                         </div>
@@ -81,7 +81,7 @@
                         <div id="flush-collapse5" class="accordion-collapse collapse bg-white"
                             data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body bg-white text-dark">
-                            Yes, a designer kitchen can significantly increase the value of your property. A luxury kitchen from BK Online adds both aesthetic appeal and functionality, making it a desirable feature for potential buyers.
+                            Yes, a designer kitchen can significantly increase the value of your property. A luxury kitchen from Buy Kitchen Online adds both aesthetic appeal and functionality, making it a desirable feature for potential buyers.
                             </div>
                             <hr class="border-bottom border-warning px-4 mx-4">
                         </div>
@@ -97,7 +97,7 @@
                         <div id="flush-collapse6" class="accordion-collapse collapse bg-white"
                             data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body bg-white text-dark">
-                            Yes, BK Online allows you to customize a budget-friendly kitchen unit to some extent. You get a personalized kitchen at an affordable price.
+                            Yes, Buy Kitchen Online allows you to customize a budget-friendly kitchen unit to some extent. You get a personalized kitchen at an affordable price.
                             </div>
                             <hr class="border-bottom border-warning px-4 mx-4">
                         </div>
@@ -113,7 +113,7 @@
                         <div id="flush-collapse7" class="accordion-collapse collapse bg-white"
                             data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body bg-white text-dark">
-                            The entire cost of a designer kitchen depends on many different factors like; materials, size, and design complexity. However, BK Online offers premium quality at affordable prices for various budgets.
+                            The entire cost of a designer kitchen depends on many different factors like; materials, size, and design complexity. However, Buy Kitchen Online offers premium quality at affordable prices for various budgets.
                             </div>
                             <hr class="border-bottom border-warning px-4 mx-4">
                         </div>
@@ -123,13 +123,13 @@
                             <button class="mb-2 accordion-button collapsed fw-bolder text-dark border-bottom border-warning btn btn-outline-warning" type="button"
                                 data-bs-toggle="collapse" data-bs-target="#flush-collapse8"
                                 aria-expanded="false" aria-controls="flush-collapse8" style="border-radius: 20px">
-                                Can BK Online design a custom kitchen unit to fit my small physical space?
+                                Can Buy Kitchen Online design a custom kitchen unit to fit my small physical space?
                             </button>
                         </h2>
                         <div id="flush-collapse8" class="accordion-collapse collapse bg-white"
                             data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body bg-white text-dark">
-                            Absolutely! The experts at BK Online specialize in building kitchen units according to your available space and lifestyle.
+                            Absolutely! The experts at Buy Kitchen Online specialize in building kitchen units according to your available space and lifestyle.
                             </div>
                             <hr class="border-bottom border-warning px-4 mx-4">
                         </div>
@@ -139,13 +139,13 @@
                             <button class="mb-2 accordion-button collapsed fw-bolder text-dark border-bottom border-warning btn btn-outline-warning" type="button"
                                 data-bs-toggle="collapse" data-bs-target="#flush-collapse9"
                                 aria-expanded="false" aria-controls="flush-collapse9" style="border-radius: 20px">
-                                Does BK Online offer any flexible financing options for kitchen units?
+                                Does Buy Kitchen Online offer any flexible financing options for kitchen units?
                             </button>
                         </h2>
                         <div id="flush-collapse9" class="accordion-collapse collapse bg-white"
                             data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body bg-white text-dark">
-                            Yes, BK Online aims to make your dream kitchen a reality by offering different financing options. Please get in touch with us for any further details.
+                            Yes, Buy Kitchen Online aims to make your dream kitchen a reality by offering different financing options. Please get in touch with us for any further details.
                             </div>
                             <hr class="border-bottom border-warning px-4 mx-4">
                         </div>
@@ -161,7 +161,7 @@
                         <div id="flush-collapse10" class="accordion-collapse collapse bg-white"
                             data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body bg-white text-dark">
-                            The most popular materials include stainless steel, quarts, and wood (such as oak, maple, and cherry). BK Online helps you in choosing the perfect material according to your preference.
+                            The most popular materials include stainless steel, quarts, and wood (such as oak, maple, and cherry). Buy Kitchen Online helps you in choosing the perfect material according to your preference.
                             </div>
                             <hr class="border-bottom border-warning px-4 mx-4">
                         </div>
@@ -187,13 +187,13 @@
                             <button class="mb-2 accordion-button collapsed fw-bolder text-dark border-bottom border-warning btn btn-outline-warning" type="button"
                                 data-bs-toggle="collapse" data-bs-target="#flush-collapse12"
                                 aria-expanded="false" aria-controls="flush-collapse12" style="border-radius: 20px">
-                                What kitchen styles are available at BK Online?
+                                What kitchen styles are available at Buy Kitchen Online?
                             </button>
                         </h2>
                         <div id="flush-collapse12" class="accordion-collapse collapse bg-white"
                             data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body bg-white text-dark">
-                            The kitchen styles offered by BK Online are J Pull, Shaker, True handleless, Slab-edged. If you want a luxurious kitchen with a contemporary look then you can choose from J Pull 22, Shaker 22, True handleless painted and Slab-Edged Painted. We also have budget-friendly kitchen option like MFC.
+                            The kitchen styles offered by Buy Kitchen Online are J Pull, Shaker, True handleless, Slab-edged. If you want a luxurious kitchen with a contemporary look then you can choose from J Pull 22, Shaker 22, True handleless painted and Slab-Edged Painted. We also have budget-friendly kitchen option like MFC.
                             </div>
                             <hr class="border-bottom border-warning px-4 mx-4">
                         </div>

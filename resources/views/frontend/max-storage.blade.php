@@ -1,14 +1,70 @@
 <x-guest-layout>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Max Storage Kitchen Designs</title>
+    <title>Bespoke Kitchens in London | Custom Kitchens Units </title>
+
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Bespoke Kitchens",
+        "url": "https://bkonline.uk/max-storage",
+        "logo": "https://bkonline.uk/public/images/bko-black-logo.png",
+        "description": "Buy Kitchen Online offers premium, bespoke designer kitchens at competitive prices in London (North London, North East London, Central London & East London).",
+        "image": "https://bkonline.uk/public/images/widest.jpgg",
+        "brand": {
+            "@type": "Brand",
+            "name": "Buy Kitchen Online"
+        },
+        "offers": {
+            "@type": "Offer",
+            "url": "https://bkonline.uk/max-storage",
+            "priceCurrency": "GBP",
+            "price": "0.00",
+            "priceValidUntil": "2025-12-31",
+            "itemCondition": "https://schema.org/NewCondition",
+            "availability": "https://schema.org/InStock"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://bkonline.uk/max-storage"
+        },
+        "manufacturer": {
+            "@type": "Organization",
+            "name": "Buy Kitchen Online",
+            "logo": "https://bkonline.uk/public/images/bko-black-logo.png",
+            "url": "https://bkonline.uk/"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Unit 7, 44 Gillender Street",
+            "addressLocality": "London",
+            "postalCode": "E14 6RP",
+            "addressCountry": "UK"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "020 805 05605",
+            "contactType": "Customer Service",
+            "areaServed": "London specifically in North London, North East London, Central London & East London.",
+            "availableLanguage": "English UK"
+        },
+        "sameAs": [
+            "https://www.facebook.com/opulenthomeinteriorsltd",
+            "https://www.instagram.com/bkonline__kitchen/?igsh=YWZqaDg4b2ppZ3Zw",
+            "https://www.youtube.com/@BKOnline570"
+        ]
+        }
+    </script>
+    <link rel="canonical" href="https://bkonline.uk/max-storage" />
+    <meta name="description" content="Buy Kitchen Online offers Premium Made to Meausre Kitchen Units with Retail Quality at Trade Prices. Maximize your Kitchen Space with Expert Installation.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
 
-.step-icon {
+        .step-icon {
             background-color: #f9f9f9;
             border-radius: 50%;
             width: 80px;
@@ -564,7 +620,7 @@
 
     <!-- <nav class="top-navbar">
         <a class="top-navbar-text" href="{{route('home')}}"> 
-            Visit BK Online
+            Visit Buy Kitchen Online
         </a> 
     </nav> -->
 

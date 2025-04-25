@@ -58,7 +58,7 @@
     </a>
     <div class="thank-you">Thank You!</div>
     <div class="thank-you-timer">Redirecting in 5 seconds...</div>
-    <a href="https://bkonline.uk" class="footer">BK Online</a>
+    <a href="https://bkonline.uk" class="footer">Buy Kitchen Online</a>
     <script>
         // countdown function
         var countdown = 5; // Change this value to your desired countdown time in seconds.

@@ -212,7 +212,7 @@
 
 {{-- <section class="container-fluid bg-white py-4">
     <div class="container d-flex flex-column align-items-center">
-        <h3 class="border border-warning border-4 p-3"><b class="text-yellow-color2">WHY CHOOSE</b><b class="text-dark"> BK ONLINE</b></h3>
+        <h3 class="border border-warning border-4 p-3"><b class="text-yellow-color2">WHY CHOOSE</b><b class="text-dark"> Buy Kitchen Online</b></h3>
     </div>
 </section>
 

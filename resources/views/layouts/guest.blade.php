@@ -1021,9 +1021,9 @@ use App\Models\Style;
         <div class="container">
             <div class ="row align-items-center border-bottom mb-4">
                 <div class="col-lg-6">
-                    {{-- <h5 class="mb-4">BK Online</h5> --}}
+                    {{-- <h5 class="mb-4">Buy Kitchen Online</h5> --}}
                     <img class="" src="{{ asset('images/bko-white-logo.png') }}" style="width: 180px; height:180px" />
-                    <p class="mb-4">Opulent home interiors operating as BK Online.</p>
+                    <p class="mb-4">Opulent home interiors operating as Buy Kitchen Online.</p>
                 </div>
 
                 <div class="col-lg-6 align-self-end">
@@ -1186,7 +1186,7 @@ use App\Models\Style;
     <div class="container-fluid">
         <div class="row py-2 justify-content-center align-items-center" style="background-color:#a8acb1">
             <div class="col-12">
-            <h5 class="text-center">BK ONLINE.UK | ALL RIGHTS RESERVED.</h5>
+            <h5 class="text-center">Buy Kitchen Online.UK | ALL RIGHTS RESERVED.</h5>
             </div>
         </div>
     </div>

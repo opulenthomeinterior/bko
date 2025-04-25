@@ -105,7 +105,7 @@
         <div class="row">
             <div class="col-lg-6 col-md-6 col-12">
                 <!-- <h2 class="text-dark fw-bold text-uppercase">TRUSTED METHODS, TRUSTED PARTNERS</h2> -->
-                At BK Online, the most important thing for us is to deliver your kitchen safely and on time. With our years of experience in delivering kitchens, we make sure that every component of your kitchen is packed securely and reaches you in primal condition. 
+                At Buy Kitchen Online, the most important thing for us is to deliver your kitchen safely and on time. With our years of experience in delivering kitchens, we make sure that every component of your kitchen is packed securely and reaches you in primal condition. 
                 <br>
                 <br>
 <ul>
@@ -137,7 +137,7 @@ Every order is handled with the utmost care, ensuring that all components of you
                 </h1>
                 
                 <h4 class="text-dark pt-1">
-                At BK Online, the most important thing for us is to deliver your kitchen safely and on time. With our years of experience in delivering kitchens, we make sure that every component of your kitchen is packed securely and reaches you in primal condition. 
+                At Buy Kitchen Online, the most important thing for us is to deliver your kitchen safely and on time. With our years of experience in delivering kitchens, we make sure that every component of your kitchen is packed securely and reaches you in primal condition. 
                     </h5>
             </div>
         </div>
@@ -266,7 +266,7 @@ Every order is handled with the utmost care, ensuring that all components of you
                         </div>
 
                         <div class="card-body h-100">
-                            <h3 class="fw-bold text-dark text-uppercase">BK Online faqs</h3>
+                            <h3 class="fw-bold text-dark text-uppercase">Buy Kitchen Online faqs</h3>
                             <p>Having been making, packing and distributing kitchens, we have developed
                                 trusted
                                 methods to get what it is you need, to where you need it.</p>

@@ -485,7 +485,7 @@
 
                 <div class="row my-lg-5 py-5 online-experience">
                     <div class="col-lg-12">
-                        <h3 class="text-uppercase text-center">the bk online experience</h3>
+                        <h3 class="text-uppercase text-center">the Buy Kitchen Online experience</h3>
                     </div>
                     <div class="row">
                         <div class="col-lg-4 bg-yellow p-5 d-flex flex-column">
@@ -549,7 +549,7 @@
                             <h4 class="text-white text-center">Customization</h3>
                                 <p class="text-center text-white">
                                      With standard-sized kitchens, we also provide Bespoke Kitchens. Premium Quality at best
-                                    market prices. The experts at BK Online specialize in creating kitchen solutions that
+                                    market prices. The experts at Buy Kitchen Online specialize in creating kitchen solutions that
                                     reflect your style and cater to your specific requirements. 
                                 </p>
                         </div>

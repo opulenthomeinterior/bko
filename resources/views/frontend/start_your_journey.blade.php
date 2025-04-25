@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12 mt-5" style="z-index: 10;">
                 <h3 class="text-start text-dark fw-bold" style="text-decoration: underline;">
-                    START YOUR JOURNEY WITH BK ONLINE
+                    START YOUR JOURNEY WITH Buy Kitchen Online
                 </h3>
                 <p class="max-description suggestion">
                     Book your free consultation today and take the first step toward your dream kitchen. Whether virtually or with an on-site survey, we are here to guide you every step of the way.

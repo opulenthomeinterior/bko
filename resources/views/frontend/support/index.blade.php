@@ -32,7 +32,7 @@
                         <div class="card-body about-card-body">
                             <div class="about-card-content">
                                 <h3 class="fw-bold text-dark text-uppercase">Downloadable Resources</h3>
-                                <p>Product Information Guides and Instructions for BK Online Installation</p>
+                                <p>Product Information Guides and Instructions for Buy Kitchen Online Installation</p>
                             </div>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                         <div class="card-body about-card-body">
                             <div class="about-card-content">
                                 <h3 class="fw-bold text-dark text-uppercase">Installation Videos</h3>
-                                <p>New to BK Online? Learn how to install and enhance the BK Online range by
+                                <p>New to Buy Kitchen Online? Learn how to install and enhance the Buy Kitchen Online range by
                                     following
                                     these instructional videos.</p>
                             </div>
@@ -85,7 +85,7 @@
                         <div class="card-body about-card-body">
                             <div class="about-card-content">
                                 <h3 class="fw-bold text-dark text-uppercase">Deliveries</h3>
-                                <p>Information about delivery times, processes and fees for BK Online.</p>
+                                <p>Information about delivery times, processes and fees for Buy Kitchen Online.</p>
                             </div>
                         </div>
                     </div>
@@ -101,7 +101,7 @@
                         <div class="card-body about-card-body">
                             <div class="about-card-content">
                                 <h3 class="fw-bold text-dark text-uppercase">Print Resources</h3>
-                                <p>Complete this form to receive printable versions of BK Online brochures and
+                                <p>Complete this form to receive printable versions of Buy Kitchen Online brochures and
                                     instructions.</p>
                             </div>
                         </div>

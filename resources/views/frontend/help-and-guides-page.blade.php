@@ -262,7 +262,7 @@
                 </h1>
                 <h3 class="text-uppercase py-2 color-yellow">FIND OUT EVERYTHING YOU NEED TO KNOW </h3>
                 <h4 class="text-dark pt-1">
-                    At BK Online we want to make ordering a trade kitchen as easy as possible. From offering a <span class="color-yellow">FREE</span>
+                    At Buy Kitchen Online we want to make ordering a trade kitchen as easy as possible. From offering a <span class="color-yellow">FREE</span>
                     Virtual Design Kitchen Service to providing ‘How To Videos’ we are constantly looking at ways to
                     support you.
                     </h5>
@@ -284,7 +284,7 @@
             <h1>HELP & GUIDES</h1>
             <p class="accent-text mb-2 mb-md-3">FIND OUT EVERYTHING YOU NEED TO KNOW!</p>
             <p class="header-description">
-                At BK Online we want to make ordering a trade kitchen as easy as possible. From offering a 
+                At Buy Kitchen Online we want to make ordering a trade kitchen as easy as possible. From offering a 
                 <span class="free-tag">FREE</span> Virtual Design Kitchen Service to providing 'How To Videos' we are constantly looking at ways to support you.
             </p>
         </div>
@@ -332,7 +332,7 @@
                 <div class="card guide-card">
                     <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" alt="Kitchen design" class="card-img-top">
                     <div class="card-body">
-                        <h5 class="card-title">BK ONLINE FAQS</h5>
+                        <h5 class="card-title">Buy Kitchen Online FAQS</h5>
                         <p class="card-text">Having been making, packing and distributing kitchens, we have developed trusted methods to get what it is you need to where you need it.</p>
                         <a href="#" class="btn read-more-btn">Read More</a>
                     </div>
@@ -572,7 +572,7 @@
                     </div>
                     <div class="card-body about-card-body">
                         <div class="about-card-content">
-                            <h4 class="text-uppercase fs-3 fw-bold text-dark">BK Online Faqs</h4>
+                            <h4 class="text-uppercase fs-3 fw-bold text-dark">Buy Kitchen Online Faqs</h4>
                             <div class="text-dark">Having been making, packing and distributing kitchens, we
                                 have developed
                                 trusted
