@@ -920,6 +920,18 @@ class HomeController extends Controller
     }
 
     public function orderComponentFilter(Request $request) {
-        dd($request->all());
+        $products = Product::query();
+        if (!empty($request->style_ids)) {
+            $products->whereIn('style_id', $request->style_ids);
+        } else if (!empty($request->colour_ids)) {
+            $products->whereIn('colour_id', $request->colour_ids);
+        } else if (!empty($request->height_ids)) {
+            $heights = Product::where('status', 'active')
+                    ->select('height', DB::raw('COUNT(*) as count'), 'id')
+                    ->where('height', '!=', '')
+                    ->groupBy('height')->get();
+            $products->whereIn('height_id', $request->height_ids);
+        }
+        dd($products->pluck('style_id'));
     }
 }

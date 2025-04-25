@@ -96,7 +96,7 @@
                                                     @foreach ($styles as $index => $style)
                                                     <div class="col-lg-12 col-md-12 col-6">
                                                         <div class="form-check form-check-inline">
-                                                            <input data-style-id="{{$style->id}}" id="style-filter" class="form-check-input" {{ (!empty($urlStyleId) && ($urlStyleId == $style->id)) ? 'checked' : '' }} type="checkbox" name="styles[]" id="style{{ $index }}" value="{{ $style->id }}">
+                                                            <input data-style-id="{{$style->id}}" class="form-check-input style-filter" {{ (!empty($urlStyleId) && ($urlStyleId == $style->id)) ? 'checked' : '' }} type="checkbox" name="styles[]" id="style{{ $index }}" value="{{ $style->id }}">
                                                             <label class="form-check-label"
                                                                 for="style{{ $index }}">{{ $style->name }}
                                                             </label>
@@ -507,15 +507,19 @@
                 $carousel02.find('.owl-item.active').css('animation', 'move-left 0.3s ease-in-out');
             });
 
-            $(document).on('click', '#style-filter', function() {
-                let _this = $(this);
-                var styleId = _this.attr('data-style-id');
+            $(document).on('click', '.style-filter', function() {
+                var styleIds = [];
+                $('.style-filter').each(function() {
+                    if ($(this).is(':checked')) {
+                        styleIds.push($(this).attr('data-style-id'));
+                    }
+                });
                 $.ajax({
                     url: "{{ route('ordercomponent_filter') }}",
                     method: "POST",
                     data: {
                         _token: "{{ csrf_token() }}",
-                        style_id: styleId
+                        style_ids: styleIds
                     },
                     success:function(response) {
 
@@ -532,7 +536,7 @@
                     method: "POST",
                     data: {
                         _token: "{{ csrf_token() }}",
-                        colour_id: colourId
+                        colour_ids: colourId
                     },
                     success:function(response) {
                         
@@ -548,7 +552,7 @@
                     method: "POST",
                     data: {
                         _token: "{{ csrf_token() }}",
-                        height_id: heightId
+                        height_ids: heightId
                     },
                     success:function(response) {
                         
@@ -564,7 +568,7 @@
                     method: "POST",
                     data: {
                         _token: "{{ csrf_token() }}",
-                        type_id: widthId
+                        type_ids: widthId
                     },
                     success:function(response) {
                         
