@@ -778,17 +778,22 @@
             
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-3">
-                        <img src="{{ asset('images/premium-doors.png') }}" class="img-fluid w-100 "/>
+
+                    <div class="col-6">
+                        <img src="{{ asset('images/door-badges.png') }}" class="img-fluid w-100 "/>
+                    </div>
+
+                    <!-- <div class="col-2">
+                        <img src="{{ asset('images/premium-doors-badge.png') }}" class="img-fluid w-100 "/>
                     </div>
                    
-                    <div class="col-3">
-                        <img src="{{ asset('images/trust-pilot.png') }}" class="img-fluid w-100"/>
+                    <div class="col-2">
+                        <img src="{{ asset('images/trust-pilot-badge.png') }}" class="img-fluid w-100"/>
                     </div>
                    
-                    <div class="col-3">
-                        <img src="{{ asset('images/google.png') }}" class="img-fluid w-100"/>
-                    </div>
+                    <div class="col-2">
+                        <img src="{{ asset('images/google-reviews-badge.png') }}" class="img-fluid w-100"/>
+                    </div> -->
                    
                 </div>
             </div>
@@ -823,8 +828,12 @@
             </div>
             
             
-            <div class="col-12 col-md-6">
-                <img class="img-fluid" src="{{ asset('images/google-reviews.png') }}"/>
+            <div class="col-12 col-md-6 rounded">
+                <!-- <img class="img-fluid" src="{{ asset('images/google-reviews.png') }}"/> -->
+                <!-- <video src="Downloads/door-replacement-video.mp4"></video> -->
+                <video  controls class="w-100 h-100">
+                    <source src="{{ asset('videos/door-replacement-video.mp4') }}" type="video/mp4">
+                    </video>
             </div>
             
         </div>

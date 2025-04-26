@@ -397,13 +397,16 @@
                 <!-- Left Content -->
                 <div class="col-md-8 text-start text-white px-4" style="z-index: 100;">
                     <div class="ps-4 animated slide-top">
-                        <h6 class="text-yellow-color fw-bold text-center" style="letter-spacing:8px;">BUY KITCHEN ONLINE</h6>
+                        {{-- <h6 class="text-yellow-color fw-bold text-center" style="letter-spacing:8px;">BUY KITCHEN ONLINE</h6> --}}
+                        <h6 class="text-white fw-bold text-center" style="letter-spacing:8px;">BUY KITCHEN ONLINE</h6>
                     </div>
                     {{-- <div class="text-green-color ps-3" style="border-left: 3px solid; margin-bottom: 10px"> --}}
                             <div class="text-green-color ps-3">
-                                <h1 class="text-white animated slide-right text-center">ELEVATE YOUR KITCHEN</h1>
-                                <h1 class="text-yellow-color fw-bold animated slide-left text-center">ELEVATE YOUR LIFESTYLE</h1>
-                                <p  class="fs-20 text-white animated slide-bottom text-center">We specialize in virtually designing and delivering your dream kitchen that complements your needs and style. Whether you want to build a new kitchen or need to replace a single component, we are always at your service.</p>
+                                {{-- <h1 class="text-white animated slide-right text-center">ELEVATE YOUR KITCHEN</h1> --}}
+                                {{-- <h1 class="text-yellow-color fw-bold animated slide-left text-center">ELEVATE YOUR LIFESTYLE</h1> --}}
+                                <h1 class="text-yellow-color fw-bold animated slide-left text-uppercase text-center">Best of both worldS</h1>
+                                <h2 class="text-white fw-bold animated slide-left text-uppercase text-center"> Retail QuAlity | Online Prices | Zero Regrets</h2>
+                                {{-- <p  class=" text-white animated slide-bottom text-center" style="font-size:20px">We specialize in virtually designing and delivering your dream kitchen that complements your needs and style. Whether you want to build a new kitchen or need to replace a single component, we are always at your service.</p> --}}
                             </div>
                             <div class="container d-flex flex-column align-items-center text-center">
                                 <div class="col-xl-8 col-lg-10 col-md-10 col-sm-12 animated slide-top mx-auto" style="margin-top: 50px;">
