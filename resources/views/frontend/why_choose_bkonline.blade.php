@@ -156,7 +156,9 @@
         <div class="col-12 col-lg-3 col-sm-6 ">
             <div class="feature-card h-100 d-flex flex-column">
                 <div class="text-center">
-                    <div class="feature-icon"><img src="{{ asset('images/24-7.png') }}"/></div>
+                    {{-- <div class="feature-icon"><img src="{{ asset('images/24-7.png') }}"/></div> --}}
+                    <div class="feature-icon"><i class="fa-solid fa-clock"></i></div>
+                    
                     <h3 class="card-title mb-3">24/7 Availability</h3>
                     <p class="card-text max-description suggestion">Customer support & free consultation anytime, anywhere</p>
                 </div>
@@ -167,7 +169,8 @@
                 <div class="text-center">
                     <div class="feature-icon">
                         {{-- 🏆 --}}
-                        <img src="{{ asset('images/quality-service.png') }}"/>
+                        <!-- <img src="{{ asset('images/quality-service.png') }}"/> -->
+                        <i class="fa-solid fa-medal"></i>
                     </div>
                     <h3 class="card-title mb-3">Quality Service</h3>
                     <p class="card-text max-description suggestion">Trusted by thousand of customers for premium kitchen designs</p>
@@ -179,7 +182,8 @@
                 <div class="text-center">
                     <div class="feature-icon">
                         {{-- 🛠️ --}}
-                        <img src="{{ asset('images/expert-installation.png') }}"/>
+                        <!-- <img src="{{ asset('images/expert-installation.png') }}"/> -->
+                        <i class="fa-solid fa-wrench"></i>
                     </div>
                     <h3 class="card-title mb-3">Expert Installation</h3>
                     <p class="card-text max-description suggestion">Skilled professionals ensure seamless kitchen fitting & installation</p>
@@ -191,8 +195,8 @@
                 <div class="text-center">
                     <div class="feature-icon">
                         {{-- 👥 --}}
-                        <img src="{{ asset('images/online-support.png') }}"/>
-
+                        <!-- <img src="{{ asset('images/online-support.png') }}"/> -->
+                        <i class="fa-solid fa-headset"></i>
                     </div>
                     <h3 class="card-title mb-3">Premium Quality</h3>
                     <p class="card-text ">Quality that stands the test of time</p>
