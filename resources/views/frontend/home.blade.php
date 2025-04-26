@@ -397,7 +397,7 @@
         <div class="container">
             <div class="row justify-content-center main-image-content align-items-center" style="z-index: 1000;">
                 <!-- Left Content -->
-                <div class="col-md-8 text-start text-white px-4" style="z-index: 100;">
+                <div class="col-md-9 text-start text-white px-4" style="z-index: 100;">
                     <div class="ps-4 animated slide-top">
                         {{-- <h6 class="text-yellow-color fw-bold text-center" style="letter-spacing:8px;">BUY KITCHEN ONLINE</h6> --}}
                         <h6 class="text-white fw-bold text-center" style="letter-spacing:8px;">BUY KITCHEN ONLINE</h6>
@@ -409,6 +409,8 @@
                                 <h1 class="text-yellow-color fw-bold animated slide-left text-uppercase text-center">Best of both worldS</h1>
                                 <h2 class="text-white fw-bold animated slide-left text-uppercase text-center"> Retail QuAlity | Online Prices | Zero Regrets</h2>
                                 {{-- <p  class=" text-white animated slide-bottom text-center" style="font-size:20px">We specialize in virtually designing and delivering your dream kitchen that complements your needs and style. Whether you want to build a new kitchen or need to replace a single component, we are always at your service.</p> --}}
+                                <p  class=" mt-5 text-white animated slide-bottom text-center" style="font-size:20px"><span class="text-yellow-color">FINALLY, You say!</span> A place where you get Premium Quality kitchens in Affordable Prices, with many additional perks.</p>
+                            
                             </div>
                             <div class="container d-flex flex-column align-items-center text-center">
                                 <div class="col-xl-8 col-lg-10 col-md-10 col-sm-12 animated slide-top mx-auto" style="margin-top: 50px;">
