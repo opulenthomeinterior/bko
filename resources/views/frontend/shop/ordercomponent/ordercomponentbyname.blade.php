@@ -125,7 +125,7 @@
                                         <div id="flush-collapseFour" class="accordion-collapse my-2"
                                             aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample4" style="max-height: 150px; overflow-y: auto">
                                             <div class="accordion-body px-0 py-0 pb-1">
-                                                <div class="row g-1">
+                                                <div class="row g-1" id="colours-filter">
                                                     @foreach ($colours as $index => $colour)
                                                     <div class="col-lg-12 col-md-12 col-6">
                                                         <div class="form-check form-check-inline">
@@ -457,58 +457,59 @@
     @push('scripts')
     <script>
         $(document).ready(function () {            
-            const $carousel02 = $('.main-carousel-banner-02');
-            // Initialize OwlCarousel
-            $carousel02.owlCarousel({
-                loop: true,
-                margin: 30,
-                stagePadding: 15, // Add padding to avoid clipping
-                rtl: false,
-                autoplay: true,
-                autoplayTimeout: 3000,
-                autoplayHoverPause: true,
-                responsive: {
-                    0: {
-                        items: 1,
-                        nav: true
-                    },
-                    768: {
-                        items: 2,
-                        nav: true
-                    },
-                    992: {
-                        items: 3,
-                        loop: true,
-                        margin: 10,
-                        nav: true,
-                        dots: true,
-                        center: true,
-                    },
-                    1200: {
-                        items: 4,
-                        loop: true,
-                        margin: 20,
-                        nav: true,
-                        dots: true,
-                        center: true,
-                    },
-                    1400: {
-                        items: 4,
-                        loop: true,
-                        margin: 20,
-                        nav: true,
-                        dots: true,
-                        center: true,
-                    }
-                }
-            });
-            // Customize the autoplay behavior to reverse the direction
-            $carousel02.on('translated.owl.carousel', function() {
-                $carousel02.find('.owl-item.active').css('animation', 'move-left 0.3s ease-in-out');
-            });
+            // const $carousel02 = $('.main-carousel-banner-02');
+            // // Initialize OwlCarousel
+            // $carousel02.owlCarousel({
+            //     loop: true,
+            //     margin: 30,
+            //     stagePadding: 15, // Add padding to avoid clipping
+            //     rtl: false,
+            //     autoplay: true,
+            //     autoplayTimeout: 3000,
+            //     autoplayHoverPause: true,
+            //     responsive: {
+            //         0: {
+            //             items: 1,
+            //             nav: true
+            //         },
+            //         768: {
+            //             items: 2,
+            //             nav: true
+            //         },
+            //         992: {
+            //             items: 3,
+            //             loop: true,
+            //             margin: 10,
+            //             nav: true,
+            //             dots: true,
+            //             center: true,
+            //         },
+            //         1200: {
+            //             items: 4,
+            //             loop: true,
+            //             margin: 20,
+            //             nav: true,
+            //             dots: true,
+            //             center: true,
+            //         },
+            //         1400: {
+            //             items: 4,
+            //             loop: true,
+            //             margin: 20,
+            //             nav: true,
+            //             dots: true,
+            //             center: true,
+            //         }
+            //     }
+            // });
+            // // Customize the autoplay behavior to reverse the direction
+            // $carousel02.on('translated.owl.carousel', function() {
+            //     $carousel02.find('.owl-item.active').css('animation', 'move-left 0.3s ease-in-out');
+            // });
 
             $(document).on('click', '.style-filter', function() {
                 var styleIds = [];
+                var slug = $('#slug').val();
                 $('.style-filter').each(function() {
                     if ($(this).is(':checked')) {
                         styleIds.push($(this).attr('data-style-id'));
@@ -519,16 +520,46 @@
                     method: "POST",
                     data: {
                         _token: "{{ csrf_token() }}",
-                        style_ids: styleIds
+                        style_ids: styleIds,
+                        slug: slug
                     },
                     success:function(response) {
-
+                        if (response.status == true) {
+                            var _html = '';
+                            response.colours.forEach((colr, index) => {
+                                _html += `
+                                    <div class="col-lg-12 col-md-12 col-6">
+                                        <div class="form-check form-check-inline">
+                                            <input data-colour-id="${colr.id}" id="colour-filter" class="form-check-input" type="checkbox"
+                                                name="colours[]" id="colour${index}"
+                                                value="${colr.id}">`;
+                                                if (colr.colour_code != '' || colr.colour_code != undefined) {
+                                                    _html += `<label class="form-check-label d-flex gap-1" for="colour${index}">
+                                                        <div class="d-inline border border-dark"
+                                                            style="border-radius: 50px; width: 20px;height:20px; background-color:${colr.colour_code};">
+                                                        </div>
+                                                        ${ colr.trade_colour ? colr.trade_colour : colr.name }
+                                                    </label>`;
+                                                } else {
+                                                    _html += `<label class="form-check-label d-flex gap-1" for="colour${index}">
+                                                        <div class="border border-dark" style="border-radius: 50px; width: 20px;height:20px; background: linear-gradient(to right, red, yellow, green);">
+                                                        </div>
+                                                        ${ colr.trade_colour ? colr.trade_colour : colr.name }
+                                                    </label>`;
+                                                }
+                                        _html += `</div>
+                                    </div>
+                                `;
+                            });
+                            $('#colours-filter').html(_html);
+                        }
                     }
                 });
             });
 
             $(document).on('click', '#colour-filter', function() {
                 let _this = $(this);
+                _this.prop('checked');
                 var colourId = _this.attr('data-colour-id');
                 var styleId = $('input[name="style"]:checked').attr('style-id');
                 $.ajax({

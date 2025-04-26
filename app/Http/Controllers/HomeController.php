@@ -920,18 +920,53 @@ class HomeController extends Controller
     }
 
     public function orderComponentFilter(Request $request) {
-        $products = Product::query();
-        if (!empty($request->style_ids)) {
-            $products->whereIn('style_id', $request->style_ids);
-        } else if (!empty($request->colour_ids)) {
-            $products->whereIn('colour_id', $request->colour_ids);
-        } else if (!empty($request->height_ids)) {
-            $heights = Product::where('status', 'active')
-                    ->select('height', DB::raw('COUNT(*) as count'), 'id')
-                    ->where('height', '!=', '')
-                    ->groupBy('height')->get();
-            $products->whereIn('height_id', $request->height_ids);
+        try {
+            $category = Category::with('testimonials', 'faqs')->where('slug', $request->slug)->firstOrFail();
+            $children = Category::where('parent_category_id', $category->id)->pluck('id')->toArray();
+    
+            $types = Category::whereIn('id', $children)
+                    ->select('id', 'name', 'status')
+                    ->where('status', 1)
+                    ->whereIn('id', function($query) use ($children) {
+                        $query->select(DB::raw('MIN(id)'))
+                            ->from('categories')
+                            ->whereIn('id', $children)
+                            ->groupBy('name');
+                    })
+                    ->orderBy('name', 'ASC')
+                    ->get();
+
+            $products = Product::query();
+            $colours = Colour::where('status', 1);
+            if (!empty($request->style_ids)) {
+                $products->whereIn('style_id', $request->style_ids);
+                $colours->whereIn('id', Product::whereIn('category_id', $children)->whereIn('style_id', $request->style_ids)->pluck('colour_id')->unique());
+            } else if (!empty($request->colour_ids)) {
+                $heights = Product::where('status', 'active')
+                        ->select('height', DB::raw('COUNT(*) as count'), 'id')
+                        ->where('height', '!=', '')
+                        ->whereIn('style_id', $request->style_ids)
+                        ->whereIn('colour_id', $request->colour_ids)
+                        ->groupBy('height')
+                        ->get();
+            } else if (!empty($request->height_ids)) {
+            }
+            if (empty($request->style_ids)) {
+                $colours->whereIn('id', Product::whereIn('category_id', $children)->pluck('colour_id')->unique());
+            }
+            return response()->json([
+                'status' => true,
+                'colours' => $colours->get(),
+                'heights' => [],
+                'sizes' => []
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => false,
+                'colours' => [],
+                'heights' => [],
+                'sizes' => []
+            ]);
         }
-        dd($products->pluck('style_id'));
     }
 }
