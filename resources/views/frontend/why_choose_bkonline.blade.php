@@ -183,7 +183,8 @@
                     <div class="feature-icon">
                         {{-- 🛠️ --}}
                         <!-- <img src="{{ asset('images/expert-installation.png') }}"/> -->
-                        <i class="fa-solid fa-wrench"></i>
+                        <!-- <i class="fa-solid fa-wrench"></i> -->
+                        <i class="fa-solid fa-kitchen-set"></i>
                     </div>
                     <h3 class="card-title mb-3">Expert Installation</h3>
                     <p class="card-text max-description suggestion">Skilled professionals ensure seamless kitchen fitting & installation</p>

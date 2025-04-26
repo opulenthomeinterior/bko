@@ -577,7 +577,11 @@
       
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-2">
+                    
+                     <div class="col-6">
+                        <img src="{{ asset('images/max-badges.png') }}" class="img-fluid w-100 "/>
+                    </div>
+                    {{-- <div class="col-2">
                         <img src="{{ asset('images/max-storage-badge.png') }}" class="img-fluid w-100 "/>
                     </div>
                     
@@ -587,7 +591,7 @@
                     </div>
                     <div class="col-2">
                         <img src="{{ asset('images/google-reviews-badge.png') }}" class="img-fluid w-100"/>
-                    </div>
+                    </div> --}}
                    
                 </div>
             </div>
