@@ -577,16 +577,16 @@
       
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-3">
+                    <div class="col-2">
                         <img src="{{ asset('images/max-storage-badge.png') }}" class="img-fluid w-100 "/>
                     </div>
+                    
                    
-                    <div class="col-3">
-                        <img src="{{ asset('images/trust-pilot.png') }}" class="img-fluid w-100"/>
+                    <div class="col-2">
+                        <img  src="{{ asset('images/trust-pilot-badge.png') }}" class="img-fluid w-100"/>
                     </div>
-                   
-                    <div class="col-3">
-                        <img src="{{ asset('images/google.png') }}" class="img-fluid w-100"/>
+                    <div class="col-2">
+                        <img src="{{ asset('images/google-reviews-badge.png') }}" class="img-fluid w-100"/>
                     </div>
                    
                 </div>
@@ -821,7 +821,7 @@
             <!-- Step 3 -->
             <div class="col-md-4 col-lg-3 text-center">
                 <div class="step-icon">
-                    <i class="text-warning fa-solid fa-kitchen-set"></i>
+                    <i class="fs-1 text-warning fa-solid fa-kitchen-set"></i>
                 </div>
                 <div class="step-number">Step 03</div>
                 <h4 class="step-title">You enjoy your perfect kitchen</h4>
