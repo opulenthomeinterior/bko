@@ -129,7 +129,7 @@
                                                     @foreach ($colours as $index => $colour)
                                                     <div class="col-lg-12 col-md-12 col-6">
                                                         <div class="form-check form-check-inline">
-                                                            <input data-colour-id="{{$colour->id}}" id="colour-filter" class="form-check-input" type="checkbox" {{ (!empty($urlColourId) && ($urlColourId == $colour->id)) ? 'checked' : '' }}
+                                                            <input data-colour-id="{{$colour->id}}" class="form-check-input colour-filter" type="checkbox" {{ (!empty($urlColourId) && ($urlColourId == $colour->id)) ? 'checked' : '' }}
                                                                 name="colours[]" id="colour{{ $index }}"
                                                                 value="{{ $colour->id }}">
                                                                 @if (!empty($colour->colour_code))
@@ -530,7 +530,7 @@
                                 _html += `
                                     <div class="col-lg-12 col-md-12 col-6">
                                         <div class="form-check form-check-inline">
-                                            <input data-colour-id="${colr.id}" id="colour-filter" class="form-check-input" type="checkbox"
+                                            <input data-colour-id="${colr.id}"  class="form-check-input colour-filter" type="checkbox"
                                                 name="colours[]" id="colour${index}"
                                                 value="${colr.id}">`;
                                                 if (colr.colour_code != '' || colr.colour_code != undefined) {
@@ -557,23 +557,23 @@
                 });
             });
 
-            $(document).on('click', '#colour-filter', function() {
-                let _this = $(this);
-                _this.prop('checked');
-                var colourId = _this.attr('data-colour-id');
-                var styleId = $('input[name="style"]:checked').attr('style-id');
-                $.ajax({
-                    url: "{{ route('ordercomponent_filter') }}",
-                    method: "POST",
-                    data: {
-                        _token: "{{ csrf_token() }}",
-                        colour_ids: colourId
-                    },
-                    success:function(response) {
+            // $(document).on('click', '.colour-filter', function() {
+            //     let _this = $(this);
+            //     _this.prop('checked');
+            //     var colourId = _this.attr('data-colour-id');
+            //     var styleId = $('input[name="style"]:checked').attr('style-id');
+            //     $.ajax({
+            //         url: "{{ route('ordercomponent_filter') }}",
+            //         method: "POST",
+            //         data: {
+            //             _token: "{{ csrf_token() }}",
+            //             colour_ids: colourId
+            //         },
+            //         success:function(response) {
                         
-                    }
-                });
-            });
+            //         }
+            //     });
+            // });
 
             $(document).on('click', '#height-filter', function() {
                 let _this = $(this);
