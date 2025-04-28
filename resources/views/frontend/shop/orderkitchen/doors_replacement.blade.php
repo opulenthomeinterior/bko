@@ -1,11 +1,81 @@
 <x-guest-layout>
     <head>
         @section('meta_tags')
-        <title>Kitchen Design Services | Bespoke & Affordable Kitchens | BKO</title>
-        <!-- testing -->
+        <title>Kitchen Door Replacement | Kitchen Cupboards & Cabinet Doors </title>
         <meta name="description" content="Buy Kitchen Online is here with Affordable & Custom kitchen units in London, in J Pull, Shaker, Slab, MFC & True Handleless styles. Book Consultation Now.">
-        <!-- <meta name="description" content="Customize your Dream Kitchen with our Bespoke Kitchen Units in London. Our Bespoke Designer Kitchens include Slab, Shaker, True handleless & J-pull Styles."> -->
-        <link rel="canonical" href="https://bkonline.uk/" />
+        <script type="application/ld+json">
+            {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "Kitchens Door Replacement",
+            "url": "https://bkonline.uk/shop/doors-replacement",
+            "logo": "https://bkonline.uk/public/images/bko-black-logo.png",
+            "description": "Buy Kitchen Online is here to upgrade your space with kitchen cupboard doors & cabinet doors replacement by changing your kitchen unit doors in London (North London, North East London, Central London & East London).",
+            "image": "https://bkonline.uk/public/images/21offdesktop.png",
+            "brand": {
+                "@type": "Brand",
+                "name": "Buy Kitchen Online"
+            },
+            "offers": {
+                "@type": "Offer",
+                "url": "https://bkonline.uk/shop/doors-replacement",
+                "priceCurrency": "GBP",
+                "price": "0.00",
+                "priceValidUntil": "2025-12-31",
+                "itemCondition": "https://schema.org/NewCondition",
+                "availability": "https://schema.org/InStock"
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "reviewCount": "26"
+            },
+            "review": {
+                "@type": "Review",
+                "author": {
+                "@type": "Person",
+                "name": "Samantha Greer"
+                },
+                "datePublished": "2025-03-15",
+                "reviewBody": "We replaced all our kitchen cabinet doors through Buy Kitchen Online. The result looks like a brand new kitchen—very happy with the service and quality!",
+                "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+                }
+            },
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://bkonline.uk/shop/doors-replacement"
+            },
+            "manufacturer": {
+                "@type": "Organization",
+                "name": "Buy Kitchen Online",
+                "logo": "https://bkonline.uk/public/images/bko-black-logo.png",
+                "url": "https://bkonline.uk/"
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Unit 7, 44 Gillender street",
+                "addressLocality": "London",
+                "postalCode": "E14 6RP",
+                "addressCountry": "UK"
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "020 805 05605",
+                "contactType": "Customer Service",
+                "areaServed": "London specifically in North London, North East London, Central London & East London.",
+                "availableLanguage": "English UK"
+            },
+            "sameAs": [
+                "https://www.facebook.com/opulenthomeinteriorsltd",
+                "https://www.instagram.com/bkonline__kitchen/?igsh=YWZqaDg4b2ppZ3Zw",
+                "https://www.youtube.com/@BKOnline570"
+            ]
+            }
+        </script>
+        <link rel="canonical" href="https://bkonline.uk/shop/doors-replacement" />
         <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 
         <style>
@@ -385,7 +455,22 @@
             font-weight: 600;
             margin: 1rem 0;
         }
-        
+        @media(max-width:576px)
+        {
+            .step-number,.step-icon
+            {
+                font-size: 26px;
+            }
+            .step-title
+            {
+                font-size:30px;
+            }
+            .step-description
+            {
+                font-size: 14px !important;
+            }
+            
+        }
         .step-title {
             color: #2B5A5E;
             font-weight: 600;
@@ -687,23 +772,28 @@
         
         <div class="hero-content">
             <h5 class="text-center text-white " style="font-size:14px; letter-spacing:5px;font-weight:bold">BUY KITCHEN  ONLINE</h5>
-            <h1 class="text-white fw-bold">DOOR REPLACEMENT <span style="color:#ffe000"> SERVICE</span></h1>
+            <h1 class="text-white fw-bold mb-5">DOOR REPLACEMENT <span style="color:#ffe000"> SERVICE</span></h1>
             <h2 class="text-white mb-4 yell">2-3 Months of full kitchen remodel nightmare or <br> <span style="font-size:32px;color:#ffe000;font-weight:700">
                 New CABINET Doors IN JUST 2-3 Days?</span></h2>
             
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-3">
-                        <img src="{{ asset('images/premium-doors.png') }}" class="img-fluid w-100 "/>
+
+                    <div class="col-6">
+                        <img src="{{ asset('images/door-badges.png') }}" class="img-fluid w-100 "/>
+                    </div>
+
+                    <!-- <div class="col-2">
+                        <img src="{{ asset('images/premium-doors-badge.png') }}" class="img-fluid w-100 "/>
                     </div>
                    
-                    <div class="col-3">
-                        <img src="{{ asset('images/trust-pilot.png') }}" class="img-fluid w-100"/>
+                    <div class="col-2">
+                        <img src="{{ asset('images/trust-pilot-badge.png') }}" class="img-fluid w-100"/>
                     </div>
                    
-                    <div class="col-3">
-                        <img src="{{ asset('images/google.png') }}" class="img-fluid w-100"/>
-                    </div>
+                    <div class="col-2">
+                        <img src="{{ asset('images/google-reviews-badge.png') }}" class="img-fluid w-100"/>
+                    </div> -->
                    
                 </div>
             </div>
@@ -738,8 +828,12 @@
             </div>
             
             
-            <div class="col-12 col-md-6">
-                <img class="img-fluid" src="{{ asset('images/google-reviews.png') }}"/>
+            <div class="col-12 col-md-6 rounded">
+                <!-- <img class="img-fluid" src="{{ asset('images/google-reviews.png') }}"/> -->
+                <!-- <video src="Downloads/door-replacement-video.mp4"></video> -->
+                <video  controls class="w-100 h-100">
+                    <source src="{{ asset('videos/door-replacement-video.mp4') }}" type="video/mp4">
+                    </video>
             </div>
             
         </div>
@@ -763,11 +857,11 @@
                         <a href="{{ route('ordercomponentbyname', 'doors') }}" class="btn bg-orange px-1 fw-bold text-uppercase rounded-0 " style="font-size:14px;">  Order a Sample of your choice NOW!</a>
                     </div>
                     <div class="p-0 mb-3 mb-xl-0 col-12 col-xl-4">
-                    {{-- <img class="w-100 object-fit-cover rounded border border-warning" src="https://bkonline.uk/public/imgs/products/Cartmel-Cashmere-Flat-Door-A1720452961_668c0761d6f16.jpg"  class="img-fluid"  alt="Modern Kitchen" 
+                     <img class="w-100 object-fit-cover rounded border border-warning" src="https://bkonline.uk/public/imgs/products/Cartmel-Cashmere-Flat-Door-A1720452961_668c0761d6f16.jpg"  class="img-fluid"  alt="Modern Kitchen" 
                         style="width: 300px; height: 400px; object-fit: cover;">
-                    --}}
-                    <img class="w-100 object-fit-cover rounded border border-warning" src="{{ asset('images/door-cabinets.png') }}"  class="img-fluid"  alt="Modern Kitchen" 
-                        style="width: 300px; height: 400px; object-fit: cover;">
+                    
+                    <!-- <img class="w-100 object-fit-cover rounded border border-warning" src="{{ asset('images/door-cabinets.png') }}"  class="img-fluid"  alt="Modern Kitchen" 
+                        style="width: 300px; height: 400px; object-fit: cover;"> -->
                    
                     </div>
                 </div>
@@ -819,7 +913,7 @@
         </div>
         {{-- <div class="row flex-column my-5 align-items-center justify-content-center">
             <div class="col-sm-5">
-            <h4 class="text-center">Benefit from our limited time offer and get a FREE QUOTE for Kitchen Door Replacement</h4>
+            <h4 class="text-center mt-5">Benefit from our limited time offer and get a FREE QUOTE for Kitchen Door Replacement</h4>
             </div>
             <div class="col-12 col-sm-3">
                 <button class="w-100 btn bg-orange px-4 text-uppercase rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal">book your FREE CONSULTATION NOW!</button>
@@ -844,6 +938,7 @@
                     <div class="step-number">Step 01</div>
                     <h4 class="step-title">GET IN TOUCH</h4>
                     <p class="step-description px-3">Provide your contact information so we can schedule a convenient time to chat with you.</p>
+               
                 </div>
                 
                 <!-- Arrow 1 - Hidden on screens smaller than large -->
@@ -877,10 +972,10 @@
                 </div>
             </div>
             
-            <p class="benefit-text fs-4">Benefit from our limited time offer and get a Free Quote for Door Replacement</p>
+            <p class="benefit-text mb-2 mt-5 fs-4">Benefit from our limited time offer and get a Free Quote for Door Replacement</p>
             
             <div class="text-center">
-                <a href="#" class="btn btn-consultation py-3 px-4 my-3 w-100" style="max-width: 500px;" data-bs-toggle="modal" data-bs-target="#exampleModal">BOOK YOUR FREE CONSULTATION NOW!</a>
+                <a href="#" class="btn btn-consultation py-3 px-4 w-100" style="max-width: 500px;" data-bs-toggle="modal" data-bs-target="#exampleModal">BOOK YOUR FREE CONSULTATION NOW!</a>
             </div>
         </div>
         </div>
@@ -1171,7 +1266,8 @@
                     <div class="col-md-3">
                         <div class="consultation-step rounded bg-light px-5">
                             <div class="icon-circle bg-white">
-                                <img src="{{ asset('images/high-quality-materials.png') }}"/>
+                                <!-- <img src="{{ asset('images/high-quality-materials.png') }}"/> -->
+                                <i class="fa-solid fa-medal"></i>
                             </div>
                             <h4 class="fw-bold text-primary fs-5">High-Quality Materials</h4>
                             <p>We use durable and stylish materials for long-lasting beauty.</p>
@@ -1180,7 +1276,8 @@
                     <div class="col-md-3">
                         <div class="consultation-step rounded bg-light px-5">
                             <div class="icon-circle bg-white">
-                                <img src="{{ asset('images/wide-range-of-styles.png') }}"/>
+                                <!-- <img src="{{ asset('images/wide-range-of-styles.png') }}"/> -->
+                                <i class="fa-solid fa-palette"></i>
                             </div>
                             <h4 class="fw-bold text-primary fs-5">Wide Range of Styles & Colors</h4>
                             <p>Find the perfect match for your taste</p>
@@ -1188,7 +1285,8 @@
                     </div> <div class="col-md-3">
                         <div class="consultation-step rounded bg-light px-5">
                             <div class="icon-circle bg-white">
-                                <img src="{{ asset('images/experienced-installation.png') }}"/>
+                                <!-- <img src="{{ asset('images/experienced-installation.png') }}"/> -->
+                                <i class="fa-solid fa-people-group"></i>
                             </div>
                             <h4 class="fw-bold text-primary fs-5">Experienced Installation Team</h4>
                             <p>Professional and reliable fitting services.</p>
@@ -1198,7 +1296,8 @@
                     <div class="col-md-3">
                         <div class="consultation-step rounded bg-light px-5">
                             <div class="icon-circle">
-                               <img src="{{ asset('images/excellence-customer-support.png') }}"/>
+                               <!-- <img src="{{ asset('images/excellence-customer-support.png') }}"/> -->
+                               <i class="fa-solid fa-headset"></i>
                             </div>
                             <h4 class="fw-bold text-primary fs-5">Excellent Customer Service</h4>
                             <p>We're here to help you every step of the way.</p>

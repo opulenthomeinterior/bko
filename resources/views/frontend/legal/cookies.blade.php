@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col-12">
                 <p>
-                    At BK Online (“us” or “we”), our goal is to ensure that your experience on our website (the “Website”) is smooth, reliable, and as beneficial to you as possible. With your consent where required by applicable law, we use cookies and similar technologies (“cookies”) to enhance the functionality and usability of the BK Online Website and to gain a better understanding of how visitors interact with our Website and the tools and services we provide.
+                    At Buy Kitchen Online (“us” or “we”), our goal is to ensure that your experience on our website (the “Website”) is smooth, reliable, and as beneficial to you as possible. With your consent where required by applicable law, we use cookies and similar technologies (“cookies”) to enhance the functionality and usability of the Buy Kitchen Online Website and to gain a better understanding of how visitors interact with our Website and the tools and services we provide.
                 </p>
 
                 <h2 class="text-dark fw-bolder text-uppercase py-1">What are cookies?</h2>
@@ -30,7 +30,7 @@
                 </p>
 
                 <p class="py-1">
-                Most web browsers automatically accept cookies, but you can usually modify your browser settings to decline cookies if you prefer. Cookies help us provide you with a better Website experience by allowing us to monitor what works well and what needs improvement through site traffic analysis. We use 5 cookie categories on the BK Online website:
+                Most web browsers automatically accept cookies, but you can usually modify your browser settings to decline cookies if you prefer. Cookies help us provide you with a better Website experience by allowing us to monitor what works well and what needs improvement through site traffic analysis. We use 5 cookie categories on the Buy Kitchen Online website:
                 </p>
             </div>
 
@@ -62,7 +62,7 @@
                         </tr>
                         <tr>
                             <td>Adverts on other websites </td>
-                            <td>When we advertise on other websites, cookies from advertising networks help tailor those ads to you, showcasing BK Online products that we believe you will find relevant and interesting.
+                            <td>When we advertise on other websites, cookies from advertising networks help tailor those ads to you, showcasing Buy Kitchen Online products that we believe you will find relevant and interesting.
                             </td>
                         </tr>
                     </tbody>
@@ -73,7 +73,7 @@
                 <h3 class="fw-bolder text-uppercase text-dark py-1">ADVERTS ON OTHER WEBSITES
                 </h3>
                 <p class="py-1">
-                When we advertise on other websites, cookies from advertising networks tailor those ads to you, showcasing BK Online products that we believe you will find relevant and interesting.
+                When we advertise on other websites, cookies from advertising networks tailor those ads to you, showcasing Buy Kitchen Online products that we believe you will find relevant and interesting.
                 </p>
 
                 <h2 class="fw-bolder text-uppercase text-dark py-1">HOW TO MANAGE AND DISABLE COOKIES

@@ -20,7 +20,7 @@
                 </h1>
 
                 <h4>
-                    At BK Online we want to make ordering a trade kitchen as easy as possible. From offering a FREE
+                    At Buy Kitchen Online we want to make ordering a trade kitchen as easy as possible. From offering a FREE
                     Virtual Design Kitchen Service to providing 'How To' Videos we are constantly looking at ways to
                     support you.
                 </h4>
@@ -39,7 +39,7 @@
                     </h1>
                    
                     <h4 class="text-dark px-5 pt-1">
-                        At BK Online we want to make ordering a trade kitchen as easy as possible. From offering a <span class="text-danger"> FREE</span> Virtual Design Kitchen Service to providing 'How To' Videos we are constantly looking at ways to support you.       
+                        At Buy Kitchen Online we want to make ordering a trade kitchen as easy as possible. From offering a <span class="text-danger"> FREE</span> Virtual Design Kitchen Service to providing 'How To' Videos we are constantly looking at ways to support you.       
                 </h5>
                 </div>
             </div>
@@ -136,7 +136,7 @@
             <div class="col-lg-8">
                 <h1 class="fs-1 text-dark text-uppercase fw-bolder">VIRTUAL DESIGN SERVICE</h1>
                 <h4 class="text-dark pt-1">
-                    At BK Online we want to make ordering a trade kitchen as easy as possible. From offering a 
+                    At Buy Kitchen Online we want to make ordering a trade kitchen as easy as possible. From offering a 
                     <span class="text-danger">FREE</span> Virtual Design Kitchen Service to providing 'How To' Videos, we are constantly looking at ways to support you.
                 </h4>
             </div>

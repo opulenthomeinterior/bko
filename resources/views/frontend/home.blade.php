@@ -1,26 +1,24 @@
 <x-guest-layout>
     <head>
     @section('meta_tags')
-    <title>Kitchen Design Services | Bespoke & Affordable Kitchens | BKO</title>
+    <title>Kitchen Design Services in London | Buy Kitchen Online </title>
     <!-- testing -->
-    <meta name="description" content="Buy Kitchen Online is here with Affordable & Custom kitchen units in London, in J Pull, Shaker, Slab, MFC & True Handleless styles. Book Consultation Now.">
+    <meta name="description" content="Buy Kitchen Online is here with Affordable & Custom kitchen units in London with all Kitchen Styles & Kitchen Components. Book Consultation Now.">
     <!-- <meta name="description" content="Customize your Dream Kitchen with our Bespoke Kitchen Units in London. Our Bespoke Designer Kitchens include Slab, Shaker, True handleless & J-pull Styles."> -->
     <link rel="canonical" href="https://bkonline.uk/" />
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
-
-
     <script type="application/ld+json">
-    {
+        {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
-        "name": "BKOnline",
+        "name": "Buy Kitchen Online",
         "url": "https://bkonline.uk/",
         "logo": "https://bkonline.uk/public/images/bko-black-logo.png",
-        "description": "BKOnline specializes in customized kitchen units, offering J Pull, Shaker, Slab Laminated,True Handleless kitchens, J pull 22, Slab Painted, True Handleless Painted, Budget Kitchens along with Bespoke Kichens in London which includes North London, North East London, Central London & EAST London.",
+        "description": "Buy Kitchen Online specializes in customized kitchen units, offering J Pull, Shaker, Slab Laminated,True Handleless kitchens, J pull 22, Slab Painted, True Handleless Painted, Budget Kitchens along with Bespoke Kichens in London which includes North London, North East London, Central London & EAST London.",
         "image": "https://bkonline.uk/public/images/homepage.jpeg",
         "brand": {
             "@type": "Brand",
-            "name": "BKOnline"
+            "name": "Buy Kitchen Online"
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
@@ -50,7 +48,7 @@
             "https://www.instagram.com/bkonline__kitchen/?igsh=YWZqaDg4b2ppZ3Zw#",
             "https://www.youtube.com/@BKOnline570"
         ]
-    }
+        }
     </script>
 
     
@@ -349,7 +347,7 @@
         <div class="row">
             <div class="col-12 text-center">
                 <h1 class="fs-3 text-dark text-uppercase fw-bolder unique-font">
-                    BK Online Kitchens - Elevate Your Kitchen, Elevate Your Lifestyle
+                    Buy Kitchen Online Kitchens - Elevate Your Kitchen, Elevate Your Lifestyle
                 </h1>
             </div>
         </div>
@@ -397,15 +395,20 @@
         <div class="container">
             <div class="row justify-content-center main-image-content align-items-center" style="z-index: 1000;">
                 <!-- Left Content -->
-                <div class="col-md-8 text-start text-white px-4" style="z-index: 100;">
+                <div class="col-md-9 text-start text-white px-4" style="z-index: 100;">
                     <div class="ps-4 animated slide-top">
-                        <h6 class="text-yellow-color fw-bold text-center" style="letter-spacing:8px;">BUY KITCHEN ONLINE</h6>
+                        {{-- <h6 class="text-yellow-color fw-bold text-center" style="letter-spacing:8px;">BUY KITCHEN ONLINE</h6> --}}
+                        <h6 class="text-white fw-bold text-center" style="letter-spacing:8px;">BUY KITCHEN ONLINE</h6>
                     </div>
                     {{-- <div class="text-green-color ps-3" style="border-left: 3px solid; margin-bottom: 10px"> --}}
                             <div class="text-green-color ps-3">
-                                <h1 class="text-white animated slide-right text-center">ELEVATE YOUR KITCHEN</h1>
-                                <h1 class="text-yellow-color fw-bold animated slide-left text-center">ELEVATE YOUR LIFESTYLE</h1>
-                                <p  class="fs-20 text-white animated slide-bottom text-center">We specialize in virtually designing and delivering your dream kitchen that complements your needs and style. Whether you want to build a new kitchen or need to replace a single component, we are always at your service.</p>
+                                {{-- <h1 class="text-white animated slide-right text-center">ELEVATE YOUR KITCHEN</h1> --}}
+                                {{-- <h1 class="text-yellow-color fw-bold animated slide-left text-center">ELEVATE YOUR LIFESTYLE</h1> --}}
+                                <h1 class="text-yellow-color fw-bold animated slide-left text-uppercase text-center">Best of both worldS</h1>
+                                <h2 class="text-white fw-bold animated slide-left text-uppercase text-center"> Retail QuAlity | Online Prices | Zero Regrets</h2>
+                                {{-- <p  class=" text-white animated slide-bottom text-center" style="font-size:20px">We specialize in virtually designing and delivering your dream kitchen that complements your needs and style. Whether you want to build a new kitchen or need to replace a single component, we are always at your service.</p> --}}
+                                <p  class=" mt-5 text-white animated slide-bottom text-center" style="font-size:20px"><span class="text-yellow-color">FINALLY, You say!</span> A place where you get Premium Quality kitchens in Affordable Prices, with many additional perks.</p>
+                            
                             </div>
                             <div class="container d-flex flex-column align-items-center text-center">
                                 <div class="col-xl-8 col-lg-10 col-md-10 col-sm-12 animated slide-top mx-auto" style="margin-top: 50px;">
@@ -645,7 +648,7 @@
                     </div>
                     </div>
                 </div>
-                <p class="lead mb-5">Too busy for in-person meeting? We handle everything virtually, so you can stay on schedule. At BK Online, we offer the ideal virtual kitchen design services and consultation, where our designers collaborate with you to create a kitchen tailored to your available space and preferences.</p>
+                <p class="lead mb-5">Too busy for in-person meeting? We handle everything virtually, so you can stay on schedule. At Buy Kitchen Online, we offer the ideal virtual kitchen design services and consultation, where our designers collaborate with you to create a kitchen tailored to your available space and preferences.</p>
                 
                 <h4 class="mb-4">HOW IT WORKS</h4>
                 
@@ -698,10 +701,10 @@
             </div>
             <div class="col-lg-7 col-md-7 col-sm-6 col-12 mt-4 text-dark">
                 <p>
-                    BK Online is a premier provider of complete kitchen solutions, specialising in the design and delivery of ready-made kitchens, rigid kitchen units, and components in slab, shaker, or J-pull styles. Serving London and the surrounding areas, we pride ourselves on delivering showroom-quality kitchens directly to your door.
+                    Buy Kitchen Online is a premier provider of complete kitchen solutions, specialising in the design and delivery of ready-made kitchens, rigid kitchen units, and components in slab, shaker, or J-pull styles. Serving London and the surrounding areas, we pride ourselves on delivering showroom-quality kitchens directly to your door.
                 </p>
                 <p>
-                    At BK Online, we are committed to crafting every kitchen with precision and care, ensuring that our customers receive only the highest quality products. Our years of experience in kitchen design and manufacturing allow us to offer a seamless and stress-free ordering process, from initial design consultation to final delivery.
+                    At Buy Kitchen Online, we are committed to crafting every kitchen with precision and care, ensuring that our customers receive only the highest quality products. Our years of experience in kitchen design and manufacturing allow us to offer a seamless and stress-free ordering process, from initial design consultation to final delivery.
                 </p>
                 <p>
                     Operating from state-of-the-art facilities, our skilled workforce uses the latest sustainable manufacturing techniques to create kitchens that not only meet but exceed our clients' expectations. Our dedication to innovation ensures that our customers always have access to the most up-to-date designs and materials.
@@ -1240,13 +1243,13 @@
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                     <div class="bg-yellow-color2 p-5 h-100">
                         <h2 class="text-dark text-black fw-bolder">PREMIUM WARDROBES</h2>
-                        <p class="text-dark suggestion">BK online also takes responsibility for adding luxury to your rooms. The wardrobes are built to meet unique storage needs with meticulous attention to detail. They are not only functional but they change the aesthetic of your room.</p>
+                        <p class="text-dark suggestion">Buy Kitchen Online also takes responsibility for adding luxury to your rooms. The wardrobes are built to meet unique storage needs with meticulous attention to detail. They are not only functional but they change the aesthetic of your room.</p>
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                     <div class="bg-green-color p-5 h-100">
                         <h2 class="text-white fw-bolder">DOOR REPLACEMENT</h2>
-                        <p class="text-white suggestion">We have a quick and affordable way of giving your kitchen a new look. BK Online offers door replacements for your old kitchen doors. The doors are made from premium quality and great craftsmanship. Choose from a range of colors and finishes to suit your kitchen’s style.</p>
+                        <p class="text-white suggestion">We have a quick and affordable way of giving your kitchen a new look. Buy Kitchen Online offers door replacements for your old kitchen doors. The doors are made from premium quality and great craftsmanship. Choose from a range of colors and finishes to suit your kitchen’s style.</p>
                     </div>
                 </div>
             </div>
