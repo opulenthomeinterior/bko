@@ -208,7 +208,7 @@
                                         aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample5" style="max-height: 150px; overflow-y: auto">
                                         <div class="accordion-body px-0 py-0 pb-1">
                                             <div class="ps-2">
-                                                <div class="row g-1">
+                                                <div class="row g-1" id="heights-filter">
                                                     @foreach ($heights as $index => $height)
                                                     <div class="col-12">
                                                         <div class="form-check form-check-inline">
@@ -506,10 +506,10 @@
             // $carousel02.on('translated.owl.carousel', function() {
             //     $carousel02.find('.owl-item.active').css('animation', 'move-left 0.3s ease-in-out');
             // });
+            var slug = $('#slug').val();
 
             $(document).on('click', '.style-filter', function() {
                 var styleIds = [];
-                var slug = $('#slug').val();
                 $('.style-filter').each(function() {
                     if ($(this).is(':checked')) {
                         styleIds.push($(this).attr('data-style-id'));
@@ -557,40 +557,6 @@
                 });
             });
 
-            // $(document).on('click', '.colour-filter', function() {
-            //     let _this = $(this);
-            //     _this.prop('checked');
-            //     var colourId = _this.attr('data-colour-id');
-            //     var styleId = $('input[name="style"]:checked').attr('style-id');
-            //     $.ajax({
-            //         url: "{{ route('ordercomponent_filter') }}",
-            //         method: "POST",
-            //         data: {
-            //             _token: "{{ csrf_token() }}",
-            //             colour_ids: colourId
-            //         },
-            //         success:function(response) {
-                        
-            //         }
-            //     });
-            // });
-
-            $(document).on('click', '#height-filter', function() {
-                let _this = $(this);
-                var heightId = _this.attr('data-heights-id');
-                $.ajax({
-                    url: "{{ route('ordercomponent_filter') }}",
-                    method: "POST",
-                    data: {
-                        _token: "{{ csrf_token() }}",
-                        height_ids: heightId
-                    },
-                    success:function(response) {
-                        
-                    }
-                });
-            });
-
             $(document).on('click', '#type-filter', function() {
                 let _this = $(this);
                 var widthId = _this.attr('data-type-id');
@@ -608,6 +574,7 @@
             }); 
         });
         var order_component_filter = '{{ route('order_component_filter', $category->slug) }}';
+        var orderComponent_filter = '{{ route('ordercomponent_filter') }}';
         let selectedHeights = [];
 
         function toggleHeightSelection(button) {

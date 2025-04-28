@@ -174,6 +174,14 @@ $(document).ready(function () {
     }
 
 
+    $(document).on('click', '.colour-filter', function() {
+        handleInputChange();
+    });
+
+    $(document).on('click', '#height-filter', function() {
+        handleInputChange();
+    });
+
     // function createProductCard(product, index) {
     //     var productCard = `<div class="col-lg-4 col-6 mb-3">`;
     //     productCard += `<div class="card btn btn-outline-warning border-1 bg-light p-0" style="border-radius: 0;">`;
@@ -277,7 +285,7 @@ $(document).ready(function () {
 
         // Get the CSRF token from the meta tag
         var csrfToken = $('meta[name="csrf-token"]').attr('content');
-
+        
         // Add the CSRF token to the AJAX request data
         $.ajax({
             url: order_component_filter,
@@ -325,6 +333,78 @@ $(document).ready(function () {
                 console.error("AJAX error:", error);
             }
         });
+
+        if (selectedColors.length > 0) {
+            $.ajax({
+                url: orderComponent_filter,
+                method: "POST",
+                headers: {
+                    'X-CSRF-TOKEN': csrfToken
+                },
+                data: {
+                    colour_ids: selectedColors,
+                    slug: slug
+                },
+                success:function(response) {
+                    if (response.status == true) {
+                        var _html = '';
+                        if (selectedHeights.length == 0) {
+                            response.heights.forEach((hght, index) => {
+                                _html += `
+                                    <div class="col-12">
+                                        <div class="form-check form-check-inline">
+                                            <input data-heights-id="${hght.id}" id="height-filter" class="form-check-input" type="checkbox"
+                                                name="heights[]" id="height${index}"
+                                                value="${hght.height}">
+                                            <label class="form-check-label"
+                                                for="height${index}">
+                                                ${hght.height} (${hght.count})
+                                            </label>
+                                        </div>
+                                    </div>
+                                `;
+                            });
+                            $('#heights-filter').html(_html);
+                        }
+                    }
+                }
+            });
+        }
+
+        if (selectedHeights.length > 0) {
+            $.ajax({
+                url: orderComponent_filter,
+                method: "POST",
+                headers: {
+                    'X-CSRF-TOKEN': csrfToken
+                },
+                data: {
+                    height_ids: selectedHeights,
+                    slug: slug
+                },
+                success:function(response) {
+                    if (response.status == true) {
+                        var _html = '';
+                        response.heights.forEach((hght, index) => {
+                            _html += `
+                                <div class="col-12">
+                                    <div class="form-check form-check-inline">
+                                        <input data-heights-id="${hght.id}" id="height-filter" class="form-check-input" type="checkbox"
+                                            name="heights[]" id="height${index}"
+                                            value="${hght.height}">
+                                        <label class="form-check-label"
+                                            for="height${index}">
+                                            ${hght.height} (${hght.count})
+                                        </label>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                        $('#heights-filter').html(_html);
+                    }
+                }
+            });
+        }
     }
 
     // Bind change event to all input checkboxes
