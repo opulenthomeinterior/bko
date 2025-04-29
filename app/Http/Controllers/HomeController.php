@@ -940,7 +940,7 @@ class HomeController extends Controller
                     })
                     ->orderBy('name', 'ASC');
             if (!empty($request->style_ids)) {
-                $colours->whereIn('id', Product::whereIn('style_id', $request->style_ids)->pluck('colour_id')->unique());
+                $colours->whereIn('id', Product::whereIn('style_id', $request->style_ids)->where('status', 'active')->pluck('colour_id')->unique());
             } else if (!empty($request->colour_ids)) {
                     $heights->whereIn('colour_id', $request->colour_ids);
             } else if (!empty($request->height_ids)) {
