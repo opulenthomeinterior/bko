@@ -330,7 +330,620 @@
 
         
     }
+
+    .highlight-line {
+            height: 4px;
+            background: linear-gradient(to right, #3a7a6f 33%, #f4b41a 33%, #f4b41a 66%, #3a7a6f 66%);
+            max-width: 750px;
+            margin: 0 auto 2rem;
+        }
+        
+        .feature-icon {
+            color: #f4b41a;
+            font-size: 2rem;
+            margin-right: 15px;
+        }
+        
+        .feature-box {
+            background-color: #f2f2f2;
+            padding: 20px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            border-radius: 4px;
+        }
+        
+        .red-text {
+            color: #e52321;
+        }
+
+        .how-we-work {
+            background-image: url('{{asset('images/how-we-work.png')}}');
+            background-size: cover;
+            background-repeat:no-repeat;
+            background-position:center;
+            padding: 80px 0;
+            color: white;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        
+        .section-title span {
+            color: #FDB813;
+        }
+        
+        /* .section-title:after {
+            content: "";
+            height: 3px;
+            width: 80px;
+            background: #FDB813;
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        } */
+        
+        .step-card {
+            background: white;
+            /* Only apply border radius to top-right and bottom-left */
+            border-radius: 0;
+            border-top-right-radius: 30px;
+            border-bottom-left-radius: 30px;
+            padding: 40px 20px;
+            color: #333;
+            text-align: center;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background: #f5f5f5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            border: 2px solid #FDB813;
+        }
+        
+        .step-icon img {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .step-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .step-title {
+            color: #2F6B6A;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        
+        .step-desc {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .corner-accent {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 20px;
+            height: 20px;
+            border-right: 2px solid #FDB813;
+            border-bottom: 2px solid #FDB813;
+        }
+        
+        .cta-button {
+            background: #FDB813;
+            color: #333;
+            font-weight: bold;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 0;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            margin-top: 40px;
+        }
+        
+        .cta-button:hover {
+            background: #e0a107;
+            color: #333;
+        }
+
+        .carousel-item {
+            padding: 20px 0;
+        }
+        
+        .service-item {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-item img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+        
+        /* .service-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            text-align: center;
+        } */
+        
+        .service-caption h3 {
+            text-align: center;
+            color: #2d6a6a;
+            font-weight: bold;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        
+        .carousel-indicators {
+            bottom: -20px !important;
+            /* top: 10px; */
+            color: black !important;
+        }
+        .swiper-pagination
+        {
+            margin-top: 10px !important;
+        }
+        .swiper-pagination-bullet
+        {
+            margin-top: 10px !important;
+            bottom: -20px !important;
+            /* top: 10px; */
+            color: black !important; 
+        }
+        .swiper-pagination-bullet-active
+        {
+            background-color: green !important;
+        }
+        .carousel-indicators button {
+            background-color: #999 !important;
+            /* background-color: red; */
+            height: 4px;
+            width: 30px;
+        }
+        
+        .carousel-indicators .active {
+            /* background-color: #666; */
+            background-color: green !important;
+        }
+        
+       
+       
+       
+        .swiper-button-prev,
+        .swiper-button-next
+        {
+            width: 5%;
+        }
+       /* .carousel-control-prev
+       {
+        left: -50px;
+       } */
+        
+        .carousel-control-prev-icon
+        {
+            /* left:-5px !important; */
+            /* margin-left: -90px ; */
+            color: green;
+        }
+        .carousel-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 30px 40px;
+            position: relative;
+            overflow: visible;
+        }
+        
+        @media (max-width: 768px) {
+            .service-item {
+                margin-bottom: 20px;
+            }
+            .service-item img {
+                height: 250px;
+            }
+
+            .carousel-inner .row {
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+  }
+        }
+
+        .section-heading {
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    .section-subheading {
+      color: #1a7570;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .card-wrapper-bespoke {
+      position: relative;
+      display: inline-block;
+      height: 100%;
+    }
+
+    .border-box-bespoke {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #1a7570;
+      z-index: 0;
+      border-radius: 0; /* No rounded corners */
+    }
+
+    .custom-card-bespoke {
+      background-color: #fff;
+      padding: 60px 60px; /* more vertical space */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      width: 100%;
+      z-index: 1;
+      position: relative;
+      text-align: center;
+      min-height: 280px;
+      max-height:280px;
+      max-width:290px;
+    }
+
+    .custom-card-bespoke h3 {
+      color: #f5a623;
+      margin-bottom: 20px;
+    }
+
+    .custom-card-bespoke p {
+      color: #333;
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    .cta-text-bespoke {
+      color: #d93025;
+      font-weight: 700;
+      font-size: 1.75rem;
+      margin-top: 60px;
+      margin-bottom: 20px;
+    }
+
+    .cta-button-bespoke {
+      background-color: #f5a623;
+      color: black;
+      font-weight: 600;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 767px) {
+      .custom-card-bespoke {
+        margin-bottom: 40px;
+      }
+    }
+
+    .services-section {
+            padding: 50px 0;
+            overflow: visible !important;
+        }
+        
+        .service-card {
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            height: 450px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        
+        .service-image-container {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .service-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.8);
+            transition: transform 0.5s ease;
+        }
+        
+        .service-card:hover .service-image {
+            transform: scale(1.1);
+        }
+        
+        .service-title {
+            position: absolute;
+            bottom: 60px;
+            left: 20px;
+            color: white;
+            font-weight: 800;
+            font-size: 1.7rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+            z-index: 2;
+        }
+        
+        /* Arrow button styling */
+        .arrow-btn {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            background-color: #ffc107;
+            color: #000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: float 2s ease-in-out infinite;
+        }
+        
+        .arrow-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px #fff inset;
+            z-index: -1;
+        }
+        
+        .arrow-btn i {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .arrow-btn:hover i {
+            transform: translateX(3px);
+        }
+        
+        /* Floating animation */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        .carousel-indicators {
+            bottom: -50px;
+        }
+        
+        .carousel-indicators button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin: 0 5px;
+        }
+        
+        .carousel-indicators .active {
+            background-color: #ffc107;
+        }
+        
+        /* Modern carousel controls */
+        .carousel-control-prev, .carousel-control-next {
+            width: 50px;
+            height: 50px;
+            background-color: #ffc107;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 1;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        
+        .carousel-control-prev {
+            left: -25px;
+        }
+        
+        .carousel-control-next {
+            right: -25px;
+        }
+        
+        .carousel-control-prev:hover, .carousel-control-next:hover {
+            background-color: #e5a800;
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            width: 24px;
+            height: 24px;
+            background-image: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .carousel-control-prev-icon:after {
+            content: "‹";
+            font-size: 30px;
+            font-weight: bold;
+            color: #000;
+            line-height: 24px;
+        }
+        
+        .carousel-control-next-icon:after {
+            content: "›";
+            font-size: 30px;
+            font-weight: bold;
+            color: #000;
+            line-height: 24px;
+        }
+        
+        @media (max-width: 768px) {
+            .carousel-control-prev, .carousel-control-next {
+                display: none;
+            }
+            .service-card {
+                height: 250px;
+            }
+        }
+
+        .swiper {
+    width: 100%;
+    padding: 20px 0;
+  }
+
+  .swiper-button-prev,
+    .swiper-button-next {
+      width: 50px !important;
+      height: 50px !important;
+      border-radius: 50% !important;
+      background-color: white !important;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2) !important;
+    }
+    .swiper-button-prev:hover,
+    .swiper-button-next:hover
+    {
+        background-color: #ffc107 !important;
+    }
+    .swiper-button-prev:after,
+    .swiper-button-next:after {
+      font-size: 18px !important;
+      /* color: #FFD700;  */
+      color: black;
+      font-weight: bold !important;
+    }
     
+  /* .swiper-slide {
+    background: #eee;
+    text-align: center;
+    font-size: 18px;
+    padding: 40px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  } */
+    
+  .orderKitchenSwiper
+  {
+    /* width: 100%; */
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px 0;
+      /* overflow: hidden !important; */
+  }
+  .swiper-wrapper-order-kitchen
+  {
+    display: flex;
+      gap: 20px;
+  }
+  .swiper-slide-order-kitchen
+  {
+    background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      /* width: 200px !important; */
+  }
+  .swiper-order-kitchen-img {
+      width: 100%;
+      /* height: 120px; */
+      object-fit: cover;
+    }
+
+    
+    .swiper-order-kitchen-title {
+      margin: 10px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .swiper-order-kitchen-btn {
+      margin: 0 10px 10px;
+      padding: 6px 12px;
+      /* background-color: #333; */
+      background-color: #ffc107;
+      color: black;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* .swiper-order-kitchen-btn:hover {
+      background-color: #555;
+    } */
+
+    /* Custom Prev/Next Buttons */
+    .swiper-button-next-order-kitchen,
+    .swiper-button-prev-order-kitchen {
+      background-color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    }
+
+    .swiper-button-next-order-kitchen::after,
+    .swiper-button-prev-order-kitchen::after {
+      color: black;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .swiper-button-next-order-kitchen:hover,
+    .swiper-button-prev-order-kitchenv:hover {
+      background-color: yellow;
+    }
+
+    .swiper-pagination {
+      display: none !important;
+    }
+
     </style>
     @endsection
     </head>
@@ -405,17 +1018,19 @@
                                 {{-- <h1 class="text-white animated slide-right text-center">ELEVATE YOUR KITCHEN</h1> --}}
                                 {{-- <h1 class="text-yellow-color fw-bold animated slide-left text-center">ELEVATE YOUR LIFESTYLE</h1> --}}
                                 <h1 class="text-yellow-color fw-bold animated slide-left text-uppercase text-center">Best of both worldS</h1>
-                                <h2 class="text-white fw-bold animated slide-left text-uppercase text-center"> Retail QuAlity | Online Prices | Zero Regrets</h2>
+                                <h2 class="text-white fw-bold animated slide-left text-uppercase text-center"> Retail QuAlity | Online Prices | 1 OF A KIND</h2>
                                 {{-- <p  class=" text-white animated slide-bottom text-center" style="font-size:20px">We specialize in virtually designing and delivering your dream kitchen that complements your needs and style. Whether you want to build a new kitchen or need to replace a single component, we are always at your service.</p> --}}
-                                <p  class=" mt-5 text-white animated slide-bottom text-center" style="font-size:20px"><span class="text-yellow-color">FINALLY, You say!</span> A place where you get Premium Quality kitchens in Affordable Prices, with many additional perks.</p>
+                                <p  class=" mt-5 text-white animated slide-bottom text-center" style="font-size:26px">FINALLY, You say! <span class="text-yellow-color">THE ONLY COMPANY</span> where you get Premium Quality kitchens in Affordable Prices, with many additional perks.</p>
                             
                             </div>
                             <div class="container d-flex flex-column align-items-center text-center">
-                                <div class="col-xl-8 col-lg-10 col-md-10 col-sm-12 animated slide-top mx-auto" style="margin-top: 50px;">
-                                    <h4 class="unique-font text-white px-3 py-1 rounded-gradient-border w-100" id="typing-effect"></h4>
+                                <div class="col-xl-8 col-lg-10 col-md-10 col-sm-12 animated slide-top mx-auto" style="margin-top: 5px;">
+                                    <!-- <h4 class="unique-font text-white px-3 py-1 rounded-gradient-border w-100" id="typing-effect"></h4> -->
+                                     <img class="w-100" src="{{ asset('images/homepage-badges.png') }}" alt="">
                                 </div>
                                 <div class="col-xl-8 col-lg-10 col-md-10 col-sm-12 animated slide-bottom mt-4 mx-auto">
-                                    <a href="{{ route('orderkitchen') }}" class="btn w-100 btn-md bg-yellow-color2 text-white text-uppercase border-green-color" style="border-radius: 50px;">
+                                    <!-- <a href="{{ route('orderkitchen') }}" class="btn w-100 btn-md bg-yellow-color2 text-white text-uppercase border-green-color" style="border-radius: 50px;"> -->
+                                    <a href="{{ route('orderkitchen') }}" class="btn px-5 btn-md bg-yellow-color2 text-white text-uppercase">
                                         Order Now
                                     </a>
                                 </div>
@@ -432,11 +1047,65 @@
     <section class="container py-5 dots-background-section" style="position: relative; width: 100% !important; overflow: hidden">
         <canvas id="dots" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></canvas>
         <div class="row mt-4" id="stylesContainer" style="position: relative; z-index: 2">
-            <div class="col-lg-7 align-self-center overflow-hidden bg-light py-4">
+            <div class="col-lg-7  overflow-hidden  py-4">
                 <div class="row">
                     <h3 class="text-uppercase fw-bolder text-dark mb-4">ORDER KITCHEN</h3>
                 </div>
                 <div class="row">
+                    <div class="swiper orderKitchenSwiper">
+                        <div class="swiper-wrapper swiper-wrapper-order-kitchen">
+                            @foreach ($styles as $key => $style)
+                            <a  href="{{ route('orderkitchenbyname', $style->slug) }}">
+                            <div class="swiper-slide swiper-slide-order-kitchen">
+                                <!-- <img src="{{asset('imgs/styles/'.$style->image_path)}}" class="img-fluid" /> -->
+                                <!-- <img  src="{{asset('images/j-pull-22.jpeg')}}" class="img-fluid swiper-order-kitchen-img" /> -->
+                                <img  src="{{asset('imgs/styles/'.$style->image_path)}}" class="img-fluid swiper-order-kitchen-img" />
+                                <h3 class="swiper-order-kitchen-title">{{$style->name}}</h3>
+                                <a type="button" href="{{ route('orderkitchenbyname', $style->slug) }}" class="swiper-order-kitchen-btn">See Our Range</a>
+                              </div>
+                            </a>
+                            @endforeach
+                            </div>
+                            
+    <!-- Navigation buttons -->
+    <div class="swiper-button-next swiper-button-next-order-kitchen"></div>
+    <div class="swiper-button-prev swiper-button-prev-order-kitchen"></div>
+                    </div>
+                </div>
+                <div class="row mt-5 mb-2">
+                    <h3 class="text-uppercase fw-bolder text-dark mb-4">ORDER Components</h3>
+                
+                </div>
+                <div class="row">
+                    @php
+                    $categories = \App\Models\Category::where('parent_category_id', null)->where('status', 1)->whereNotIn('id', [2, 3, 4, 5, 7, 13, 16])->get();
+                @endphp
+                <div class="swiper orderKitchenSwiper">
+                    <div class="swiper-wrapper swiper-wrapper-order-kitchen">
+                        
+                        @foreach($categories as $category)
+                        
+                        <div class="swiper-slide swiper-slide-order-kitchen">
+                            <!-- <img src="{{asset('imgs/styles/'.$style->image_path)}}" class="img-fluid" /> -->
+                           <a href="{{route('ordercomponentbyname', [$category->slug])}}">
+                            <!-- <img  src="{{asset('images/j-pull-22.jpeg')}}" class="img-fluid swiper-order-kitchen-img" /> -->
+                            
+                            <img  class="img-fluid" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt="">
+                                  
+                            <h3 class="swiper-order-kitchen-title text-center py-2">{{Str::limit($category->name, 13)}}</h3>
+                            <!-- <button class="swiper-order-kitchen-btn">See Our Range</button> -->
+                        </a>
+                        </div>
+                        
+                        @endforeach
+                        </div>
+                        
+<!-- Navigation buttons -->
+<div class="swiper-button-next swiper-button-next-order-kitchen"></div>
+<div class="swiper-button-prev swiper-button-prev-order-kitchen"></div>
+                </div>
+                </div>
+                <!-- <div class="row">
                     @foreach ($styles as $key => $style)
                         <div class="col-md-4 card border-0 my-4 bg-light">
                             <div class="card-body" style="box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
@@ -453,7 +1122,7 @@
                             </div>
                         </div>
                     @endforeach
-                </div>
+                </div> -->
                 <!-- <div class="carousel main-carousel-banner-01 owl-carousel clients mb-0 p-0"
                     data-margin="30"
                     data-loop="true"
@@ -557,7 +1226,7 @@
     </section>
     </div>
     <!-- ORDER COMPONENT-->
-    <div class="container-fluid position-relative px-0 py-5  order-component-section" style="background-color:#F2F4F5;">
+    <!-- <div class="container-fluid position-relative px-0 py-5  order-component-section" style="background-color:#F2F4F5;">
         {{-- <img class="img-fluid position-absolute" src="{{ asset('/images/order-component-bg.png') }}"/> --}}
         <section class="container py-5" style="width: 100%; ">
         <div class="row">
@@ -568,7 +1237,7 @@
                 $categories = \App\Models\Category::where('parent_category_id', null)->where('status', 1)->whereNotIn('id', [2, 3, 4, 5, 7, 13, 16])->get();
             @endphp
           
-            {{-- <div style="" class="order-component-slider position-absolute  d-flex order-component-scroller" style="max-width: 1900px; overflow-x: scroll"> --}}
+             <div style="" class="order-component-slider position-absolute  d-flex order-component-scroller" style="max-width: 1900px; overflow-x: scroll"> --}}
             <div style="" class="order-component-slider position-absolute w-75  d-flex order-component-scroller" style="max-width: 1900px; overflow-x: scroll">
                 @foreach($categories as $category)
                 <div class="d-flex col-lg-2 card border-warning align-items-center justify-content-center" style="border-radius: 8px; margin: 0px 20px; padding: 15px 50px">
@@ -579,6 +1248,7 @@
                                 <div class="card-body d-flex">
                                     <div>
                                         <img height="55px" width="50px" class="rounded-circular-image" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt="">
+                                  
                                     </div>
                                     {{--
                                     @if($category->slug == 'doors')
@@ -633,8 +1303,497 @@
             </div>
         </div>
     </section>
+    </div> -->
+
+
+    <div class="container" style="margin-top: 120px;">
+        <div class="row">
+        <div class="col-12">
+            <img class="d-md-none w-100" src="{{ asset('images/affordable-mobile.png') }}" alt="">
+            <img class="d-none d-md-block w-100" src="{{ asset('images/affordable.png') }}" alt="">
+        </div>
+        <div class="row">
+            <div class="text-center">
+                <!-- <a href="#" class="btn cta-button">BOOK YOUR FREE CONSULTATION NOW!</a> -->
+                <button  class="btn btn-lg cta-button rounded-0" style="background-color:#ffc107;" data-bs-toggle="modal" data-bs-target="#exampleModal">book your FREE CONSULTATION NOW!</button>
+               
+            </div>
+        </div>
     </div>
-    <div class ="container-fluid bg-white mt-5">
+    </div>
+    <div class="container mb-4">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="text-uppercase text-center mt-5 mb-4 text-black fw-bold">Ordering elsewhere <span class="text-danger">vs.</span> Letting us handle it</h2>
+            
+            <img class="d-md-none w-100" src="{{ asset('images/letting-us-mobile.png') }}" alt="">
+            <img class="d-none d-md-block w-100" src="{{ asset('images/letting-us-handle.png') }}" alt="">
+        </div>
+    </div>
+    </div>
+    <div class="container mt-4">
+        <div class="row">
+            <h2 class="text-uppercase text-center mt-5 mb-4 text-black fw-bold">There are <span style="color: #FDB71A;">three types </span>of Kitchen buyers. <br> <span class="text-danger">Which one are you?</span></h2>
+            
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-12">
+                
+                <img class="w-100 img-fluid d-none d-md-block" src="{{ asset('images/the-online-gambler.png') }}"/>
+                    
+                <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/the-online-gambler-mobile.png') }}"/>
+            </div>
+        <div class="col-md-6 col-12">
+            
+            <img class="w-100 img-fluid d-none d-md-block" src="{{ asset('images/the-luxury-lover.png') }}"/>
+                
+            <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/the-luxury-lover-mobile.png') }}"/>
+        </div>
+    </div>
+    </div>
+
+
+    <div class="container mt-4">
+        <div class="row">
+        <div class="col-12">
+            
+            <img class="w-100 img-fluid d-none d-md-block" src="{{ asset('images/the-smart-cookie.png') }}"/>
+                
+            <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/the-smart-cookie-mobile.png') }}"/>
+        </div>
+    </div>
+    </div>
+
+    <div class="container py-5">
+        <div class="row text-center mb-4">
+            <div class="col-12">
+                <h1 class=" text-black fw-bold mb-2">JOIN THE SMART LEAGUE!</h1>
+                <!-- <div class="highlight-line"></div> -->
+                <div class = "row mb-1 justify-content-center">
+                    <div class="col-6">
+                        <div id="lines" class="mb-3">
+                            <div id="line1"></div>
+                            <div id="line2"></div>
+                            <div id="line3"></div>
+                        
+                    </div>
+                    </div>
+                </div>
+                <h2 class="fs-1 mt-4">
+                    <span>WE MAKE </span>
+                    <span class="red-text">OTHER KITCHEN PROVIDERS LOOK LIKE SCAM</span>
+                </h2>
+            </div>
+        </div>
+        
+        <div class="row g-4 mt-3">
+            <!-- Row 1 -->
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <!-- <i class="fas fa-clipboard-list"></i> -->
+                         <!-- <img src="{{ asset('images/survey.png') }}" alt=""> -->
+                         <img width="50" src="{{ asset('images/survey.svg') }}" alt="">
+                    </div>
+                    <div class="feature-text">
+                        <h3 class="fs-5 mb-0">Free on-site survey</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <!-- <i class="fas fa-comments"></i> -->
+                         
+                        <img width="50" src="{{ asset('images/virtual-consultation.svg') }}" alt="">
+                    </div>
+                    <div class="feature-text">
+                        <h3 class="fs-5 mb-0">Free virtual consultation</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <!-- <i class="fas fa-shopping-cart"></i> -->
+                        <img width="50" src="{{ asset('images/cart.svg') }}" alt="">
+                    </div>
+                    <div class="feature-text">
+                        <h3 class="fs-5 mb-0">No obligation to buy</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Row 2 -->
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <!-- <i class="fas fa-tag"></i> -->
+                        <img width="50" src="{{ asset('images/price-tag.svg') }}" alt="">
+                    </div>
+                    <div class="feature-text">
+                        <h3 class="fs-5 mb-0">Transparent online displayed prices</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <!-- <i class="fas fa-heart"></i> -->
+                         <img width="50" src="{{ asset('images/peace-of-mind.svg') }}" alt="">
+                    </div>
+                    <div class="feature-text">
+                        <h3 class="fs-5 mb-0">Peace of mind</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3 class="fs-5 mb-0">Premium quality guaranteed</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-5">
+                <button  class="btn btn-lg cta-button rounded-0 px-5" style="background-color:#ffc107;" data-bs-toggle="modal" data-bs-target="#exampleModal">SCHEDULE YOUR FREE CONSULTATION NOW!</button>
+               
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-5 text-center">
+        <h2 class="section-heading">BESPOKE DESIGNER KITCHENS</h2>
+        <h3 class="section-subheading mb-5">WHERE DREAMS MEET PRECISION</h3>
+    
+        <div class="row justify-content-center gy-4">
+          <div class="col-md-3 col-sm-6">
+            <div class="card-wrapper-bespoke">
+              <div class="border-box-bespoke"></div>
+              <div class="custom-card-bespoke">
+                <h3>100% Custom Designs</h3>
+                <p>Tailored to your space, style, and lifestyle.</p>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-md-3 col-sm-6">
+            <div class="card-wrapper-bespoke">
+              <div class="border-box-bespoke"></div>
+              <div class="custom-card-bespoke">
+                <h3>Premium Materials</h3>
+                <p>Durable materials and hand picked finishes.</p>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-md-3 col-sm-6">
+            <div class="card-wrapper-bespoke">
+              <div class="border-box-bespoke"></div>
+              <div class="custom-card-bespoke">
+                <h3>Smart & <br> Stylish</h3>
+                <p>Seamless storage, Trendy and at the market retail price.</p>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-md-3 col-sm-6">
+            <div class="card-wrapper-bespoke">
+              <div class="border-box-bespoke"></div>
+              <div class="custom-card-bespoke">
+                <h3>End-to-End Service</h3>
+                <p>From concept to installation, all under one roof.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="cta-text-bespoke">TIRED OF WASTED SPACE?</div>
+        <!-- <button class="cta-button-bespoke">CHECK OUR MAX STORAGE KITCHENS</button> -->
+        <button  class="m-0 btn btn-lg cta-button rounded-0" style="background-color:#ffc107;">CHECK OUR MAX STORAGE KITCHENS</button>
+               
+      </div>
+    
+
+
+    <!-- how we work -->
+
+    <section class="how-we-work">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="text-white">HOW <span>WE WORK</span></h2>
+                <div class = "row mb-1 justify-content-center">
+                    <div class="col-6">
+                        <div id="lines" class="mb-3">
+                            <div id="line1"></div>
+                            <div id="line2"></div>
+                            <div id="line3"></div>
+                        
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="row g-4">
+                <!-- Step 01 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#FDB813" viewBox="0 0 16 16">
+                                <path d="M9.5 0a.5.5 0 0 1 .5.5.5.5 0 0 0 .5.5.5.5 0 0 1 .5.5V2a.5.5 0 0 1-.5.5h-5A.5.5 0 0 1 5 2v-.5a.5.5 0 0 1 .5-.5.5.5 0 0 0 .5-.5.5.5 0 0 1 .5-.5z"/>
+                                <path d="M3 2.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 0 0-1h-.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1H12a.5.5 0 0 0 0 1h.5a.5.5 0 0 1 .5.5v12a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-12z"/>
+                                <path d="M10.854 7.854a.5.5 0 0 0-.708-.708L7.5 9.793 6.354 8.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+                            </svg>
+                        </div>
+                        <div class="step-number">Step 01</div>
+                        <h3 class="step-title">BOOK AN APPOINTMENT</h3>
+                        <p class="step-desc">You just have to book an appointment with our design consultants.</p>
+                        <!-- <div class="corner-accent"></div> -->
+                    </div>
+                </div>
+                
+                <!-- Step 02 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <img width="50" src="{{ asset('images/team.svg') }}" alt="">
+                        </div>
+                        <div class="step-number">Step 02</div>
+                        <h3 class="step-title">WE DO EVERYTHING FOR YOU</h3>
+                        <p class="step-desc">You share your space details, style preferences, and budget. Our team will do all the work and design the perfect kitchen for you.</p>
+                        <!-- <div class="corner-accent"></div> -->
+                        
+                            <!-- <img class="bg-black" style="position: absolute; right: 0px; bottom: 0;" src="{{ asset('images/down-arrow.png') }}" alt="" ></div> -->
+                         
+                    </div>
+                </div>
+                
+                <!-- Step 03 -->
+                <div class="col-lg-4 col-md-6 mx-auto">
+                    <div class="step-card position-relative">
+                        <div class="step-icon">
+                            <img width="50" src="{{ asset('images/kitchen.svg') }}" alt="">
+                        </div>
+                        <div class="step-number">Step 03</div>
+                        <h3 class="step-title">ENJOY YOUR NEW KITCHEN</h3>
+                        <p class="step-desc">Your dream kitchen is now a reality – a space you'll love for years to come.</p>
+                        <!-- <div class="corner-accent"></div> -->
+                        <!-- <div class="bg-black" style="position: absolute; right: 0px; bottom: 0;">
+                            <img class="" src="{{ asset('images/down-arrow.png') }}" alt="" ></div>
+                         </div> -->
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <!-- <a href="#" class="btn cta-button">BOOK YOUR FREE CONSULTATION NOW!</a> -->
+                <button  class="btn btn-lg cta-button rounded-0" style="background-color:#ffc107;" data-bs-toggle="modal" data-bs-target="#exampleModal">SCHEDULE YOUR FREE CONSULTATION NOW!</button>
+               
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Our services -->
+
+    <section class="services-section">
+        <div class="container">
+            <h2 class="text-black text-center mb-3">OUR SERVICES</h2>
+            <!-- Slider Container -->
+<div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        
+            <a href="{{ route('max_storage') }}">
+            <div class="service-card">
+                <div class="service-image-container">
+                    
+            <img class="service-image" src="{{asset('images/max-storage.png')}}" alt="">
+                </div>
+                <div class="service-title">MAX STORAGE</div>
+                <div class="arrow-btn">
+                    <i class="bi bi-arrow-right"></i>
+                </div>
+            </div>
+        </a>
+      </div>
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <a href="{{ route('doors_replacement') }}">
+        <div class="service-card">
+            <div class="service-image-container">
+                
+        <img src="{{asset('images/door-replacement.png')}}" alt="" class="service-image">
+            </div>
+            <div class="service-title">DOOR REPLACEMENT</div>
+            <div class="arrow-btn">
+                <i class="bi bi-arrow-right"></i>
+            </div>
+        </div>
+        </a>
+      </div>
+      <!-- Slide 3 -->
+      <div class="swiper-slide">
+        <a href="{{ route('ordercomponent') }}">
+        <div class="service-card">
+            <div class="service-image-container">
+                
+        <img class="service-image" src="{{asset('images/order-component.png')}}" alt="">
+            </div>
+            <div class="service-title">ORDER COMPONENT</div>
+            <div class="arrow-btn">
+                <i class="bi bi-arrow-right"></i>
+            </div>
+        </div>
+        </a>
+      </div>
+      <!-- Slide 4 -->
+      <div class="swiper-slide">
+        <div class="service-card">
+            <div class="service-image-container">
+                
+        <img class="service-image" src="{{asset('images/on-site-survey.png')}}" alt="">
+            </div>
+
+            <div class="service-title">ON-SITE SURVEY</div>
+            <div class="arrow-btn">
+                <i class="bi bi-arrow-right"></i>
+            </div>
+        </div>
+      </div>
+      <!-- Slide 5 -->
+      <div class="swiper-slide">
+        <a href="{{ route('designservice') }}">
+        <div class="service-card">
+            <div class="service-image-container">
+                
+        <img class="service-image" src="{{asset('images/virtual-consultation.png')}}" alt="">
+            </div>
+            <div class="service-title">Virtual Consultation</div>
+            <div class="arrow-btn">
+                <i class="bi bi-arrow-right"></i>
+            </div>
+        </div>
+        </a>
+      </div>
+      <!-- Add more slides as needed -->
+    </div>
+  
+    <!-- Optional: Pagination -->
+    <div class="swiper-pagination"></div>
+  
+    <!-- Optional: Navigation -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+
+            <!-- <div id="hvacServicesCarousel" class="carousel slide" data-bs-ride="carousel" style="overflow: visible;">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="service-card">
+                                    <div class="service-image-container">
+                                        
+                                <img class="service-image" src="{{asset('images/max-storage.png')}}" alt="">
+                                    </div>
+                                    <div class="service-title">MAX STORAGE</div>
+                                    <div class="arrow-btn">
+                                        <i class="bi bi-arrow-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="service-card">
+                                    <div class="service-image-container">
+                                        
+                                <img src="{{asset('images/door-replacement.png')}}" alt="" class="service-image">
+                                    </div>
+                                    <div class="service-title">DOOR REPLACEMENT</div>
+                                    <div class="arrow-btn">
+                                        <i class="bi bi-arrow-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="service-card">
+                                    <div class="service-image-container">
+                                        
+                                <img class="service-image" src="{{asset('images/order-component.png')}}" alt="">
+                                    </div>
+                                    <div class="service-title">ORDER COMPONENT</div>
+                                    <div class="arrow-btn">
+                                        <i class="bi bi-arrow-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="service-card">
+                                    <div class="service-image-container">
+                                        
+                                <img class="service-image" src="{{asset('images/on-site-survey.png')}}" alt="">
+                                    </div>
+
+                                    <div class="service-title">ON-SITE SURVEY</div>
+                                    <div class="arrow-btn">
+                                        <i class="bi bi-arrow-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="service-card">
+                                    <div class="service-image-container">
+                                        
+                                <img class="service-image" src="{{asset('images/virtual-consultation.png')}}" alt="">
+                                    </div>
+                                    <div class="service-title">Virtual Consultation</div>
+                                    <div class="arrow-btn">
+                                        <i class="bi bi-arrow-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#hvacServicesCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#hvacServicesCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    </div>
+                </div>
+                
+                <button class="carousel-control-prev" type="button" data-bs-target="#hvacServicesCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#hvacServicesCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div> -->
+        </div>
+    </section>
+
+    
+
+    <!-- <div class ="container-fluid bg-white mt-5">
         <section class="consultation-section bg-white">
             <div class="container bg-white">
                 <h2 class="mb-2 text-black mt-">EXPERT VIRTUAL DESIGN CONSULTATION</h2>
@@ -685,10 +1844,11 @@
                 <div class="suggestion">
                     <p class="mb-2">Don't let time hold you back.</p>
                     <button href="#" class="btn btn-lg cta-button rounded-0" style="background-color:#ffc107;" data-bs-toggle="modal" data-bs-target="#exampleModal">SCHEDULE YOUR FREE CONSULTATION NOW!</button>
+               
                 </div>
             </div>
         </section>
-    </div>
+    </div> -->
 
     @if (count(\App\Models\InfoGraphic::get()) > 0)
     <section class="container-fluid px-lg-5 px-md-3 px-3 py-lg-5 py-3 bg-white" style="background-color: #f0f0f0; border-bottom: 3px solid #ebc266; border-right: 3px solid #ebc266">
@@ -736,7 +1896,7 @@
     </section>
     @endif
 
-
+<!-- 
     <div class="container-fluid bg-light">
         <section class="survey-section">
             <div class="container">
@@ -810,7 +1970,7 @@
                 </div>
             </div>
         </section>
-    </div>
+    </div> -->
 
     {{-- <section class="container-fluid bg-yellow-color2 py-2">
         <div class="col-12 d-flex flex-column align-items-center">
@@ -995,9 +2155,10 @@
     <section class="container-fluid  pt-5 pb-3" style="background-color:#f2f4f5">
         <div>
         <div class="col-12 d-flex flex-column align-items-center">
-            <h3 class="text-center text-black fw-bold">CUSTOM KITCHENS, TIMELESS ELEGANCE.</h3>
-            <h2 class="text-dark text-center fw-bolder">
-                BESPOKE DESIGN, STANDARD PRICE
+            <!-- <h3 class="text-center text-black fw-bold">CUSTOM KITCHENS, TIMELESS ELEGANCE.</h3> -->
+            <h2 class="text-dark text-uppercase text-center fw-bolder">
+                <!-- BESPOKE DESIGN, STANDARD PRICE -->
+                Why choose BUY KITCHEN ONLINE?
             </h2>
             <div id="lines" class="mb-3">
                 <div id="line1"></div>
@@ -1005,23 +2166,36 @@
                 <div id="line3"></div>
             
         </div>
-        <h3 class="text-center mb-4 w-100 text-dark">
+        <!-- <h3 class="text-center mb-4 w-100 text-dark">
             We offer premium, bespoke designer kitchens at competitive prices. Our process is straight forward
-        </h3>
+        </h3> -->
     </section>
 
     <div class="container-fluid py-3" style="background-color:#f2f4f5">
         <div class="container">
             <div class="row">
             <div class="col-lg-4 col-12 mb-3 mb-sm-0">
-                 @include('frontend.card', ['icon_class'=>'fa-solid fa-comments','number'=>'01', 'title'=>'Dream & Discuss','description'=>"Share your vision! We'll listen to your ideas, needs, and lifestyle to understand your dream kitchen."])
+                 <!-- @include('frontend.card', ['icon_class'=>'fa-solid fa-comments','number'=>'01', 'title'=>'Dream & Discuss','description'=>"Share your vision! We'll listen to your ideas, needs, and lifestyle to understand your dream kitchen."]) -->
+                 @include('frontend.card', ['icon_class'=>'fa-solid fa-comments', 'title'=>'Best Prices','description'=>" Our discounts are so good, even our accountant cries."])
             </div>
             <div class="col-lg-4 col-12 mb-3 mb-sm-0">
-                @include('frontend.card', ['icon_class'=>'fa-solid fa-pen-nib','number'=>'02', 'title'=>'Design & Refine','description'=>"Our experts create a personalized design, including layouts, material selections. You'll have opportunities to refine every detail."])
+                @include('frontend.card', ['icon_class'=>'fa-solid fa-pen-nib', 'title'=>'Post-Installation Support','description'=>"We won’t ghost you after delivery - unlike your last contractor."])
            </div>
            <div class="col-lg-4 col-12 mb-3 mb-sm-0">
-            @include('frontend.card', ['icon_class'=>'fa-solid fa-hammer','number'=>'03', 'title'=>'Craft & Create','description'=>"Our skilled craftsmen meticulously build and install your custom kitchen, ensuring a perfect fit and lasting beauty."])
-       </div>
+            @include('frontend.card', ['icon_class'=>'fa-solid fa-hammer','title'=>'Free Consultation and On-site Survey','description'=>"(Limited Time Offer)"])
+             </div>
+
+             
+        </div>
+        <div class="row mt-3">
+            <div class="col-lg-4 col-12 mb-3 mb-sm-0">
+                @include('frontend.card', ['icon_class'=>'fa-solid fa-hammer', 'title'=>'Expert Installation','description'=>" We won’t leave you crying over an ‘easy DIY’ manual."])
+                 </div>
+
+             <div class="col-lg-4 col-12 mb-3 mb-sm-0">
+                @include('frontend.card', ['icon_class'=>'fa-solid fa-hammer', 'title'=>'Rated 5-Stars','description'=>"Our reviews are real (unlike that ‘antique’ cabinet you bought)."])
+                 </div>
+
         </div>
         {{-- <section class="container pb-4">
             <div class="row gap-5 justify-content-center">
@@ -1075,8 +2249,10 @@
      --}}
         <div class="row justify-content-center text-center">
             <div class="col-lg-9 col-md-8 col-sm-10 col-12 mb-5 mt-3">
-                <h4 class="fw-bold text-primary suggestion">Stop dreaming and build a kitchen that reflects your needs and style</h4>
-                <button class="btn btn-warning px-5 text-uppercase rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Start designing your Ideal Kitchen</button>
+                <!-- <h4 class="fw-bold text-primary suggestion">Stop dreaming and build a kitchen that reflects your needs and style</h4> -->
+                <!-- <button class="btn btn-warning px-5 text-uppercase rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Start designing your Ideal Kitchen</button> -->
+                <button  class="btn btn-lg cta-button px-4 rounded-0 text-uppercase" style="background-color:#ffc107;">explore more</button>
+               
             </div>
         </div>
        
@@ -1133,7 +2309,7 @@
         </div>
     </div>
         </div> --}}
-    <section class="container-fluid py-4 bg-light">
+    <!-- <section class="container-fluid py-4 bg-light">
         <div class="col-12 d-flex flex-column align-items-center">
             <h4 class="text-black  text-center fw-bold">
                 ARE YOU STRUGGLING WITH KITCHEN STORAGE SPACE?
@@ -1148,9 +2324,9 @@
             
         </div>
         </div>
-    </section>
+    </section> -->
 
-    <section class="container-fluid bg-light py-4">
+    <!-- <section class="container-fluid bg-light py-4">
         <div class="container">
         <div class="row bg-light">
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0 bg-light">
@@ -1216,14 +2392,14 @@
             </div>
         </div>
         </div>
-    </section>
+    </section> -->
 
     {{-- <section class="container-fluid bg-green-color py-4">
         <div class="col-12 d-flex flex-column align-items-center">
         </div>
     </section> --}}
 
-    <section class="container-fluid mt-5 grid-box-gray-color py-4 " >
+    <!-- <section class="container-fluid mt-5 grid-box-gray-color py-4 " >
         <div class="container d-flex flex-column align-items-center">
             <div class="row pt-3 justify-content-center">
                 <div class ="col-sm-8 col-12">
@@ -1235,9 +2411,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     
-    <section class="container-fluid grid-box-gray-color py-4">
+    <!-- <section class="container-fluid grid-box-gray-color py-4">
         <div class="container d-flex flex-column align-items-center">
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
@@ -1254,12 +2430,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    {{-- <section class="container-fluid bg-grey-color py-4">
-        <div class="col-12 d-flex flex-column align-items-center">
-        </div>
-    </section> --}}
+   
 
     <section class="catalogue-bg py-5">
         <div class="container">
@@ -1290,91 +2463,8 @@
         </div>
     </section>
 
-    {{-- <section class="catalogue-bg py-5">
-        <div class="container">
-            <div class="row align-items-center mb-5">
-                <div class="col-lg-6 pt-5 pb-3 px-5 mb-4 mb-lg-0 card rounded border-0 shadow-sm">
-                    <h5 style="color:#136d68">Our Catalogue</h5>
-                    <h4 class="mb-4">EXPLORE OUR EXCLUSIVE CATALOGUE</h4>
-                    <p class="mb-4">Get access to our full catalogue for free, featuring custom kitchen designs, premium materials, and smart storage solutions. Whether you're seeking style, function, or both, we've got everything you need to bring your vision to life.</p>
-                    <p style="color:#136d68">Register now to receive our free catalogue in your inbox.</p>
-                    <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Enter Your Email" aria-label="Email" aria-describedby="register-button">
-                        <button class="btn register-btn" type="button" id="register-button" style="background-color:#ffc107; border-color: #ffc107;">REGISTER NOW!</button>
-                    </div>
-                </div>
-                <div class="col-lg-6 position-relative">
-                    <div class="position-relative">
-                        <img src="{{ asset('images/catalogue.png') }}" alt="Kitchen Design" class="catalogue-image rounded shadow">
-                     
-                    </div>
-                </div>
-            </div>
-        </div> --}}
 
-
-    <!-- Start your journey -->
-    @include('frontend.start_your_journey')
     
-    <section class="container-fluid bg-white" style="border-bottom: 40px solid #2a6161;">
-    </section>
-    <!-- Why choose BKONLINE -->
-     @include('frontend.why_choose_bkonline')
-
-     {{-- <div class="mt-5 container container-features">
-        <div class="row justify-content-center">
-            <div class="col-lg-6 col-sm-12">
-                <h3 class="text-center mb-2">WHY CHOOSE BKONLINE</h3>
-                <div id="lines" class="mb-3">
-                    <div id="line1"></div>
-                    <div id="line2"></div>
-                    <div id="line3"></div>
-            
-                </div>
-            </div>
-       </div>
-        <div class="row g-4">
-            <div class="col-12 col-lg-3 col-sm-6 ">
-                <div class="feature-card h-100 d-flex flex-column">
-                    <div class="text-center">
-                        <div class="feature-icon">🕒</div>
-                        <h5 class="card-title mb-3">24/7 Availability</h5>
-                        <p class="card-text">Customer support & Consultation anytime, anywhere</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-3 col-sm-6">
-                <div class="feature-card h-100 d-flex flex-column">
-                    <div class="text-center">
-                        <div class="feature-icon">🏆</div>
-                        <h5 class="card-title mb-3">Quality Service</h5>
-                        <p class="card-text">Trusted by thousand of customers for premium kitchen designs</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-3 col-sm-6">
-                <div class="feature-card h-100 d-flex flex-column">
-                    <div class="text-center">
-                        <div class="feature-icon">🛠️</div>
-                        <h5 class="card-title mb-3">Expert Installation</h5>
-                        <p class="card-text">Skilled professionals ensure seamless kitchen fitting & installation</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-3 col-sm-6">
-                <div class="feature-card h-100 d-flex flex-column">
-                    <div class="text-center">
-                        <div class="feature-icon">👥</div>
-                        <h5 class="card-title mb-3">Free Consultation</h5>
-                        <p class="card-text">Personalized guidance without any upfront cost</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="text-center mt-5">
-            <a class="btn explore-btn px-5 mb-5" style="background-color:#febd49;">EXPLORE MORE</a>
-        </div>
-    </div> --}}
 
     <!-- Testimonials -->
     @include('frontend.testimonials_component')
@@ -1443,6 +2533,57 @@
 
     @push('scripts')
         <script>
+
+const swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true,
+    autoplay:true,
+    
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      640: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+  });
+
+  const orderKitchen = new Swiper(".orderKitchenSwiper", {
+      slidesPerView: '3',  /* Auto adjusts the number of slides per row */
+      spaceBetween: 10,
+      loop: true,
+      autoplay:true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: false,
+      },
+      breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      640: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+    });
+
             $(document).ready(function () {
                 const $carousel01 = $('.main-carousel-banner-01');
                 // Initialize OwlCarousel

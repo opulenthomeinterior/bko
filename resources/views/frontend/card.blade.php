@@ -139,7 +139,12 @@
             <div class="custom-icon">
                 <i class= "{{ $icon_class }}"></i>
             </div>
-            <div class="number">{{$number}}</div>
+
+            @if(!empty($number))
+    <div class="number">{{ $number }}</div>
+@endif
+
+            {{-- <div class="number">{{$number}}</div> --}}
         </div>
         <h2 class="custom-card-title text-black">{{ $title }}</h2>
         <p class="custom-card-description">{{$description}}</p>
