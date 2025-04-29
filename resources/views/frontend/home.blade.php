@@ -1380,8 +1380,8 @@
                     </div>
                 </div>
                 <h2 class="fs-1 mt-4">
-                    <span>WE MAKE </span>
-                    <span class="red-text">OTHER KITCHEN PROVIDERS LOOK LIKE SCAM</span>
+                    <span class="text-black">WE MAKE </span>
+                    <span class="text-danger"> OTHER KITCHEN PROVIDERS LOOK LIKE</span> <span class="text-danger fw-bolder">SCAM</span>
                 </h2>
             </div>
         </div>
