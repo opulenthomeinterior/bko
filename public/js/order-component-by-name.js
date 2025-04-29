@@ -334,42 +334,40 @@ $(document).ready(function () {
             }
         });
 
-        if (selectedColors.length > 0) {
-            $.ajax({
-                url: orderComponent_filter,
-                method: "POST",
-                headers: {
-                    'X-CSRF-TOKEN': csrfToken
-                },
-                data: {
-                    colour_ids: selectedColors,
-                    slug: slug
-                },
-                success:function(response) {
-                    if (response.status == true) {
-                        var _html = '';
-                        if (selectedHeights.length == 0) {
-                            response.heights.forEach((hght, index) => {
-                                _html += `
-                                    <div class="col-12">
-                                        <div class="form-check form-check-inline">
-                                            <input data-heights-id="${hght.id}" id="height-filter" class="form-check-input" type="checkbox"
-                                                name="heights[]" id="height${index}"
-                                                value="${hght.height}">
-                                            <label class="form-check-label"
-                                                for="height${index}">
-                                                ${hght.height} (${hght.count})
-                                            </label>
-                                        </div>
+        $.ajax({
+            url: orderComponent_filter,
+            method: "POST",
+            headers: {
+                'X-CSRF-TOKEN': csrfToken
+            },
+            data: {
+                colour_ids: selectedColors,
+                slug: slug
+            },
+            success:function(response) {
+                if (response.status == true) {
+                    var _html = '';
+                    if (selectedHeights.length == 0) {
+                        response.heights.forEach((hght, index) => {
+                            _html += `
+                                <div class="col-12">
+                                    <div class="form-check form-check-inline">
+                                        <input data-heights-id="${hght.id}" id="height-filter" class="form-check-input" type="checkbox"
+                                            name="heights[]" id="height${index}"
+                                            value="${hght.height}">
+                                        <label class="form-check-label"
+                                            for="height${index}">
+                                            ${hght.height} (${hght.count})
+                                        </label>
                                     </div>
-                                `;
-                            });
-                            $('#heights-filter').html(_html);
-                        }
+                                </div>
+                            `;
+                        });
+                        $('#heights-filter').html(_html);
                     }
                 }
-            });
-        }
+            }
+        });
 
         if (selectedHeights.length > 0) {
             $.ajax({
