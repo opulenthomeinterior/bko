@@ -217,7 +217,7 @@
                                                                 value="{{ $height->height }}">
                                                             <label class="form-check-label"
                                                                 for="height{{ $index }}">
-                                                                {{ $height->height }} ({{$height->count}})
+                                                                {{ $height->height }}
                                                             </label>
                                                         </div>
                                                     </div>

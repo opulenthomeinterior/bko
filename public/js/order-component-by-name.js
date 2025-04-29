@@ -357,7 +357,7 @@ $(document).ready(function () {
                                             value="${hght.height}">
                                         <label class="form-check-label"
                                             for="height${index}">
-                                            ${hght.height} (${hght.count})
+                                            ${hght.height}
                                         </label>
                                     </div>
                                 </div>
