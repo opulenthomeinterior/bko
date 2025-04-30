@@ -194,40 +194,42 @@
                             </div>--}}
                         @endif
 
-                        @if ($heights->count() > 0)
-                            <div class="col-3 accordion accordion-flush mt-3" id="accordionFlushExample5">
-                                <div class="accordion-item bg-transparent border border-dark border-1 rounded-0">
-                                    <h2 class="accordion-header bg-warning" id="flush-headingFive">
-                                        <button class="accordion-button legend collapsed text-uppercase" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseFive"
-                                            aria-expanded="true" aria-controls="flush-collapseFive">
-                                            Heights
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseFive" class="accordion-collapse my-2"
-                                        aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample5" style="max-height: 150px; overflow-y: auto">
-                                        <div class="accordion-body px-0 py-0 pb-1">
-                                            <div class="ps-2">
-                                                <div class="row g-1" id="heights-filter">
-                                                    @foreach ($heights as $index => $height)
-                                                    <div class="col-12">
-                                                        <div class="form-check form-check-inline">
-                                                            <input data-heights-id="{{$height->id}}" id="height-filter" class="form-check-input" type="checkbox"
-                                                                name="heights[]" id="height{{ $index }}"
-                                                                value="{{ $height->height }}">
-                                                            <label class="form-check-label"
-                                                                for="height{{ $index }}">
-                                                                {{ $height->height }}
-                                                            </label>
+                        @if (strtolower($category->name) != 'handles')
+                            @if ($heights->count() > 0)
+                                <div class="col-3 accordion accordion-flush mt-3" id="accordionFlushExample5">
+                                    <div class="accordion-item bg-transparent border border-dark border-1 rounded-0">
+                                        <h2 class="accordion-header bg-warning" id="flush-headingFive">
+                                            <button class="accordion-button legend collapsed text-uppercase" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseFive"
+                                                aria-expanded="true" aria-controls="flush-collapseFive">
+                                                Heights
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseFive" class="accordion-collapse my-2"
+                                            aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample5" style="max-height: 150px; overflow-y: auto">
+                                            <div class="accordion-body px-0 py-0 pb-1">
+                                                <div class="ps-2">
+                                                    <div class="row g-1" id="heights-filter">
+                                                        @foreach ($heights as $index => $height)
+                                                        <div class="col-12">
+                                                            <div class="form-check form-check-inline">
+                                                                <input data-heights-id="{{$height->id}}" id="height-filter" class="form-check-input" type="checkbox"
+                                                                    name="heights[]" id="height{{ $index }}"
+                                                                    value="{{ $height->height }}">
+                                                                <label class="form-check-label"
+                                                                    for="height{{ $index }}">
+                                                                    {{ $height->height }}
+                                                                </label>
+                                                            </div>
                                                         </div>
+                                                        @endforeach
                                                     </div>
-                                                    @endforeach
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endif
                         @endif
 
                         @if ($types->count() > 0)
@@ -287,13 +289,15 @@
                                 <tr>
                                     <td><a class="text-decoration-underline" href="{{ route('orderbyproduct', [$product->slug, $product->serial_number]) }}">{{ $product->short_title }}</a></td>
                                     <td>
-                                        <figure class="my-0" style="margin-bottom: 0px !important;">
-                                            <img class="product-image px-0"
-                                                style="margin-bottom: 0px !important;min-height:175px;max-height:175px;max-width:225px;object-fit:contain"
-                                                src="{{ !empty($product->image_path) ? asset('imgs/products/'.$product->image_path) : asset('images/no-image-available.jpg') }}"
-                                                alt="Card image cap" data-bs-toggle="modal"
-                                                data-bs-target="#productModal{{ $index }}">
-                                        </figure>
+                                        <a href="{{ route('orderbyproduct', [$product->slug, $product->serial_number]) }}">
+                                            <figure class="my-0" style="margin-bottom: 0px !important;">
+                                                <img class="product-image px-0"
+                                                    style="margin-bottom: 0px !important;min-height:175px;max-height:175px;max-width:225px;object-fit:contain"
+                                                    src="{{ !empty($product->image_path) ? asset('imgs/products/'.$product->image_path) : asset('images/no-image-available.jpg') }}"
+                                                    alt="Card image cap" data-bs-toggle="modal"
+                                                    data-bs-target="#productModal{{ $index }}">
+                                            </figure>
+                                        </a>
                                     </td>
                                     <td>{{ $product->product_code }}</td>
                                     <td>{{ $product->dimensions }}</td>

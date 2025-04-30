@@ -113,12 +113,13 @@
                     @if ($component->slug != 'base-cabinets' && $component->slug != 'wall-cabinets' && $component->slug != 'tall-cabinets')
                     <!-- Doors Card -->
                     <div class="col-12 col-sm-6 col-lg-4">
-                        <div class="card component-card shadow-sm">
-                            <img src="{{ $component->image_path ? asset('imgs/categories/' . $component->image_path) : asset('images/no-image-available.jpg') }}" alt="{{$component->name}}" class="component-img">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $component->name }}</h5>
-                                
-                                @if ($component->slug == 'doors')
+                        <a href="{{ route('ordercomponentbyname', [$component->slug]) }}">
+                            <div class="card component-card shadow-sm">
+                                <img src="{{ $component->image_path ? asset('imgs/categories/' . $component->image_path) : asset('images/no-image-available.jpg') }}" alt="{{$component->name}}" class="component-img">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $component->name }}</h5>
+                                    
+                                    @if ($component->slug == 'doors')
                                         <p class="card-text">The doors are the first impression of your kitchen. You can transform your kitchen by selecting from our various colors and finishes. Our doors are the essence of style and durability, creating an elegant look.</p>
                                         @elseif ($component->slug == 'handles')
                                         <p class="card-text">The doors are the first impression of your kitchen. You can transform your kitchen by selecting from our various colors and finishes. Our doors are the essence of style and durability, creating an elegant look.</p>
@@ -138,9 +139,10 @@
                                         <p class="card-text">The sink is not just the focal point of your kitchen but also the most used part. You can select one from our vast collection of durable stainless steel sinks, according to your preference. They are available in different styles and heights.</p>
                                         @elseif ($component->slug == 'internals')
                                         <p class="card-text">Use your kitchen space efficiently with our innovative internal storage solutions. Keep your kitchen clutter-free and organized by selecting from our smart storage options like wire carousel sets, pull-out storage baskets, swing-out corner storage, and many more.</p>
-                                        @endif
+                                    @endif
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     @endif
                     @endforeach

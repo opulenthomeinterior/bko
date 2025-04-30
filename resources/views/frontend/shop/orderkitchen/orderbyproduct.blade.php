@@ -1,6 +1,6 @@
 <x-guest-layout>
     @section('meta_tags')
-        <title>Product Details</title>
+        <title>{{ $product->short_title }}</title>
         <meta name="description" content="">
         <link rel="canonical" href="" />
     @endsection
@@ -452,6 +452,7 @@
             </div>
 
             <div class="col-lg-4">
+                @if (!empty($product->product_description))
                 <section class="container-fluid px-3 pb-4 pt-3" style="background-color: #f0f0f0;">
                     <div class="row">
                         <div class="col-lg-12 col-md-6">
@@ -518,6 +519,7 @@
         @endif --}}
         </div>
     </section>
+    @endif
     </div>
     </div>
 
