@@ -453,8 +453,140 @@
     </div>
 
     <div class="faq-list">
-        @if (count($faqsData) > 0)
-        @foreach ($faqsData as $faq)
+        @if (!empty($home))
+             <!-- FAQ Item 1 -->
+             <div class="faq-item" data-category="general">
+                <div class="faq-question">
+                    <div>
+                        
+                        What is the difference between an affordable kitchen unit and a custom kitchen unit?
+                    </div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+               <p>An affordable kitchen unit offers budget-friendly solutions without compromising the quality. In comparison, custom kitchen units are tailor-made to your style, space, and preferences. They are available at a higher cost as compared to affordable kitchen units.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="faq-item" data-category="account">
+                <div class="faq-question">
+                    <div>
+                        How is a bespoke designer kitchen different from a standard kitchen?
+                    </div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                   <p>Standard kitchens usually come in pre-set sizes and designs. In contrast, a bespoke designer kitchen is custom-made for you. You can choose details like layout, materials, and the aesthetic.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="faq-item" data-category="billing">
+                <div class="faq-question">
+                    <div>Can I use affordable kitchen units for a kitchen renovation?</div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Affordable kitchen units can be a lifesaver when you need to renovate your kitchen on a budget. At BK Online, even our budget-friendly kitchen units have high-quality materials and craftsmanship.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="faq-item" data-category="technical">
+                <div class="faq-question">
+                    <div>What is the process of designing custom kitchen units?</div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>In order to design a custom kitchen unit with BK Online, we conduct an in-depth consultation. We discuss your style and functionality, measure your space, and then create a unique design for your home.</p>
+                   
+                </div>
+            </div>
+            <div class="faq-item" data-category="technical">
+                <div class="faq-question">
+                    <div>Can a designer kitchen increase the value of my property?</div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, a designer kitchen can significantly increase the value of your property. A luxury kitchen from Buy Kitchen Online adds both aesthetic appeal and functionality, making it a desirable feature for potential buyers.</p>
+                   
+                </div>
+            </div>
+            <div class="faq-item" data-category="technical">
+                <div class="faq-question">
+                    <div>Are there any affordable kitchen units available that offer customization?</div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, Buy Kitchen Online allows you to customize a budget-friendly kitchen unit to some extent. You get a personalized kitchen at an affordable price.</p>
+                   
+                </div>
+            </div>
+            <div class="faq-item" data-category="technical">
+                <div class="faq-question">
+                    <div>How much does a designer kitchen unit cost?</div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p> The entire cost of a designer kitchen depends on many different factors like; materials, size, and design complexity. However, Buy Kitchen Online offers premium quality at affordable prices for various budgets.</p>
+                   
+                </div>
+            </div>
+            <div class="faq-item" data-category="technical">
+                <div class="faq-question">
+                    <div> Can Buy Kitchen Online design a custom kitchen unit to fit my small physical space?</div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p> Absolutely! The experts at Buy Kitchen Online specialize in building kitchen units according to your available space and lifestyle.</p>
+                   
+                </div>
+            </div>
+            <div class="faq-item" data-category="technical">
+                <div class="faq-question">
+                    <div>Does Buy Kitchen Online offer any flexible financing options for kitchen units?</div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, Buy Kitchen Online aims to make your dream kitchen a reality by offering different financing options. Please get in touch with us for any further details.</p>
+                   
+                </div>
+            </div>
+            <div class="faq-item" data-category="technical">
+                <div class="faq-question">
+                    <div>Which materials are used to make a kitchen unit?</div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>The most popular materials include stainless steel, quarts, and wood (such as oak, maple, and cherry). Buy Kitchen Online helps you in choosing the perfect material according to your preference.</p>
+                   
+                </div>
+            </div>
+            <div class="faq-item" data-category="technical">
+                <div class="faq-question">
+                    <div>Is a bespoke designer kitchen worth it?</div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Bespoke kitchens are worth it if you prefer customized, high-quality, long-lasting kitchens. The price may be higher than a standard kitchen, but the advantages of having a kitchen custom-made for your space and style are worth the investment.</p>
+                   
+                </div>
+            </div>
+            <div class="faq-item" data-category="technical">
+                <div class="faq-question">
+                    <div>What kitchen styles are available at Buy Kitchen Online?</div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p> The kitchen styles offered by Buy Kitchen Online are J Pull, Shaker, True handleless, Slab-edged. If you want a luxurious kitchen with a contemporary look then you can choose from J Pull 22, Shaker 22, True handleless painted and Slab-Edged Painted. We also have budget-friendly kitchen option like MFC.</p>
+                   
+                </div>
+            </div>
+
+        @else
+            @if (count($faqsData) > 0)
+                @foreach ($faqsData as $faq)
         <!-- FAQ Item 1 -->
         <div class="faq-item" data-category="general">
             <div class="faq-question">
@@ -470,14 +602,14 @@
            {!! $faq['answer'] !!}
         </div>
         </div>
-        @endforeach
-        @endif
-        {{-- @else
+            @endforeach
+       
+        @else
         <div class="alert alert-light" role="alert">
             No FAQ's found.
         </div>
-    --}}
-       
+        @endif
+    @endif
     </div>
 </div>
 </div>

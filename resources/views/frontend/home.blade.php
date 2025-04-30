@@ -889,7 +889,8 @@
       /* width: 200px !important; */
   }
   .swiper-order-kitchen-img {
-      width: 100%;
+      /* width: 100%; */
+      width: 250px;
       /* height: 120px; */
       object-fit: cover;
     }
@@ -1058,7 +1059,7 @@
                             <a  href="{{ route('orderkitchenbyname', $style->slug) }}">
                             <div class="swiper-slide swiper-slide-order-kitchen">
                                 <!-- <img src="{{asset('imgs/styles/'.$style->image_path)}}" class="img-fluid" /> -->
-                                <!-- <img  src="{{asset('images/j-pull-22.jpeg')}}" class="img-fluid swiper-order-kitchen-img" /> -->
+                                <!-- <img width="100" height="100" src="{{asset('images/j-pull-22.jpeg')}}" class="img-fluid swiper-order-kitchen-img" /> -->
                                 <img  src="{{asset('imgs/styles/'.$style->image_path)}}" class="img-fluid swiper-order-kitchen-img" />
                                 <h3 class="swiper-order-kitchen-title">{{$style->name}}</h3>
                                 <a type="button" href="{{ route('orderkitchenbyname', $style->slug) }}" class="swiper-order-kitchen-btn">See Our Range</a>
