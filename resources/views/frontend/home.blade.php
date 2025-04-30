@@ -889,9 +889,9 @@
       /* width: 200px !important; */
   }
   .swiper-order-kitchen-img {
-      /* width: 100%; */
-      width: 250px;
-      /* height: 120px; */
+      width: 100%;
+      
+      height: 120px;
       object-fit: cover;
     }
 
@@ -944,6 +944,41 @@
     .swiper-pagination {
       display: none !important;
     }
+
+
+    @media(max-width:576px)
+        {
+            .bespoke-title
+            {
+                font-size: 26px;
+            }
+            
+            .bespoke-description
+            {
+                font-size: 18px !important;
+
+
+            }
+        .bespoke-title
+        {
+            font-size: 28px;
+        }
+            /* .step-number,.step-icon
+            {
+                font-size: 26px;
+            }
+            .step-title
+            {
+                font-size:30px;
+            }
+            .step-description
+            {
+                font-size: 14px !important;
+            } */
+            
+        
+            
+        }
 
     </style>
     @endsection
@@ -1455,7 +1490,8 @@
             <div class="col-md-4">
                 <div class="feature-box">
                     <div class="feature-icon">
-                        <i class="fas fa-award"></i>
+                        <i class="fas fa-award ms-3" width="50" style="font-size:35px;"></i>
+                        
                     </div>
                     <div class="feature-text">
                         <h3 class="fs-5 mb-0">Premium quality guaranteed</h3>
@@ -1464,7 +1500,7 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-5">
+            <div class="col-md-5">
                 <button  class="btn btn-lg cta-button rounded-0 px-5" style="background-color:#ffc107;" data-bs-toggle="modal" data-bs-target="#exampleModal">SCHEDULE YOUR FREE CONSULTATION NOW!</button>
                
             </div>
@@ -1480,8 +1516,8 @@
             <div class="card-wrapper-bespoke">
               <div class="border-box-bespoke"></div>
               <div class="custom-card-bespoke">
-                <h3>100% Custom Designs</h3>
-                <p>Tailored to your space, style, and lifestyle.</p>
+                <h3 class="bespoke-title">100% Custom Designs</h3>
+                <p class="bespoke-description">Tailored to your space, style, and lifestyle.</p>
               </div>
             </div>
           </div>
@@ -1490,8 +1526,8 @@
             <div class="card-wrapper-bespoke">
               <div class="border-box-bespoke"></div>
               <div class="custom-card-bespoke">
-                <h3>Premium Materials</h3>
-                <p>Durable materials and hand picked finishes.</p>
+                <h3 class="bespoke-title">Premium Materials</h3>
+                <p class="bespoke-description">Durable materials and hand picked finishes.</p>
               </div>
             </div>
           </div>
@@ -1500,8 +1536,8 @@
             <div class="card-wrapper-bespoke">
               <div class="border-box-bespoke"></div>
               <div class="custom-card-bespoke">
-                <h3>Smart & <br> Stylish</h3>
-                <p>Seamless storage, Trendy and at the market retail price.</p>
+                <h3 class="bespoke-title">Smart & <br> Stylish</h3>
+                <p class="bespoke-description">Seamless storage, Trendy and at the market retail price.</p>
               </div>
             </div>
           </div>
@@ -1510,8 +1546,8 @@
             <div class="card-wrapper-bespoke">
               <div class="border-box-bespoke"></div>
               <div class="custom-card-bespoke">
-                <h3>End-to-End Service</h3>
-                <p>From concept to installation, all under one roof.</p>
+                <h3 class="bespoke-title">End-to-End Service</h3>
+                <p class="bespoke-description">From concept to installation, all under one roof.</p>
               </div>
             </div>
           </div>
@@ -2177,14 +2213,56 @@
             <div class="row">
             <div class="col-lg-4 col-12 mb-3 mb-sm-0">
                  <!-- @include('frontend.card', ['icon_class'=>'fa-solid fa-comments','number'=>'01', 'title'=>'Dream & Discuss','description'=>"Share your vision! We'll listen to your ideas, needs, and lifestyle to understand your dream kitchen."]) -->
-                 @include('frontend.card', ['icon_class'=>'fa-solid fa-comments', 'title'=>'Best Prices','description'=>" Our discounts are so good, even our accountant cries."])
-            </div>
+                 <!-- @include('frontend.card', ['icon_class'=>'fa-solid fa-comments', 'title'=>'Best Prices','description'=>" Our discounts are so good, even our accountant cries."]) -->
+                
+                 <div class="custom-card">
+                    <div class="icon-wrapper">
+                        <div class="custom-icon">
+                            <img width="50" src="{{ asset('images/price-tag.svg') }}" alt="">
+                        </div>
+        
+        
+                    </div>
+                    <h2 class="custom-card-title text-black">Best Prices</h2>
+                    <p class="custom-card-description">Our discounts are so good, even our accountant cries.</p>
+                    
+                    
+                </div>
+            
+                </div>
             <div class="col-lg-4 col-12 mb-3 mb-sm-0">
-                @include('frontend.card', ['icon_class'=>'fa-solid fa-pen-nib', 'title'=>'Post-Installation Support','description'=>"We won’t ghost you after delivery - unlike your last contractor."])
-           </div>
+                <!-- @include('frontend.card', ['icon_class'=>'fa-solid fa-pen-nib', 'title'=>'Post-Installation Support','description'=>"We won’t ghost you after delivery - unlike your last contractor."]) -->
+                
+                <div class="custom-card">
+                    <div class="icon-wrapper">
+                        <div class="custom-icon">
+                             <i class="fa-solid fa-hammer"></i>
+                        </div>
+        
+        
+                    </div>
+                    <h2 class="custom-card-title text-black">Post-Installation Support</h2>
+                    <p class="custom-card-description">We won’t ghost you after delivery - unlike your last contractor.</p>
+                    
+                    
+                </div>
+            </div>
            <div class="col-lg-4 col-12 mb-3 mb-sm-0">
-            @include('frontend.card', ['icon_class'=>'fa-solid fa-hammer','title'=>'Free Consultation and On-site Survey','description'=>"(Limited Time Offer)"])
-             </div>
+            <!-- @include('frontend.card', ['icon_class'=>'fa-solid fa-hammer','title'=>'Free Consultation and On-site Survey','description'=>"(Limited Time Offer)"]) -->
+            <div class="custom-card">
+                <div class="icon-wrapper">
+                    <div class="custom-icon">
+                        <img width="50" src="{{ asset('images/survey.svg') }}" alt="">
+                    </div>
+    
+    
+                </div>
+                <h2 class="custom-card-title text-black">Free Consultation and On-site Survey</h2>
+                <p class="custom-card-description">Limited Time Offer</p>
+                
+                
+            </div>
+        </div>
 
              
         </div>
@@ -2194,8 +2272,9 @@
                  </div>
 
              <div class="col-lg-4 col-12 mb-3 mb-sm-0">
-                @include('frontend.card', ['icon_class'=>'fa-solid fa-hammer', 'title'=>'Rated 5-Stars','description'=>"Our reviews are real (unlike that ‘antique’ cabinet you bought)."])
-                 </div>
+                @include('frontend.card', ['icon_class'=>'fa-solid fa-star', 'title'=>'Rated 5-Stars','description'=>"Our reviews are real (unlike that ‘antique’ cabinet you bought)."])
+               
+            </div>
 
         </div>
         {{-- <section class="container pb-4">

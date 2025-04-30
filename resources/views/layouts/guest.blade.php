@@ -117,7 +117,7 @@ use App\Models\Style;
             white-space: nowrap;
             /* background-color: #ff0000; */
             color: #fff;
-            padding: 10px 0;
+            padding: 0;
             position: relative;
         }
         .ticker-text {
@@ -261,12 +261,17 @@ use App\Models\Style;
         }
 
         @media (max-width: 767px) {
+            .global-popup
+            {
+                display: none;
+            }
             .newsletter-container {
                 flex-direction: column;
             }
             
             .popup-image {
                 min-height: 200px;
+
             }
             
             .newsletter-content {
@@ -370,7 +375,7 @@ use App\Models\Style;
     
     .benefits-title {
       font-weight: bold;
-      font-size: 1.5rem;
+      font-size: 1rem;
     }
     
     .benefit-item {
@@ -552,12 +557,12 @@ use App\Models\Style;
                 </div>
                 <div class="" style="flex-basis: content">
                     <button type="submit" class="bg-transparent border-0">
-                        <i class="ri-search-2-line"></i>
+                        <i class="ri-search-2-line fs-3"></i>
                     </button>
                 </div>
                 <div class="" style="flex-basis: content" id="close-search">
                     <a href="#">
-                        <i class="ri-close-circle-line"></i>
+                        <i class="ri-close-circle-line fs-3"></i>
                     </a>
                 </div>
             </form>
@@ -588,7 +593,7 @@ use App\Models\Style;
                 <div class="text-center bg-danger">
 
                     <div class="ticker-wrapper">
-                        <div class="ticker-text"><strong class="fw-bold">Limited time offer!</strong> For a Limited Time, We are offering Free on-site surveys and consultations.</div>
+                        <div class="ticker-text"><strong class="fw-bold">Limited time offer!</strong>, We are offering Free on-site surveys and consultations.</div>
                     </div>
                    
                     {{-- <span class="fw-bold text-white "> 
@@ -618,23 +623,23 @@ use App\Models\Style;
                     </a>
 
                     <a href="#" class="d-lg-none show-small d-flex" id="searchIcon"><i
-                            class="ri-search-2-line"></i></a>
+                            class="ri-search-2-line fs-3"></i></a>
                     <a href="{{ route('cart') }}"
                         class="d-lg-none show-small d-flex align-items-center justify-content-center px-3 ">
-                        <i class="position-relative ri-shopping-cart-line">
-                            <span id="calculateProductsQuantity" class="position-absolute right-0"
+                        <i class="position-relative ri-shopping-cart-line fs-3">
+                            <span id="calculateProductsQuantity" class="fs-3 position-absolute right-0"
                                 style="top: -8px;"></span>
                         </i>
                     </a>
 
                     <a href="#" id="openSidebar"
                         class="align-items-center justify-content-center px-1  text-end d-lg-none show-small d-flex">
-                        <i class="ri-user-line"></i>
+                        <i class="fs-3 ri-user-line"></i>
                     </a>
                     <span class="nav__toggle" id="nav-toggle">
 
-                        <i class="ri-menu-line nav__toggle-menu "></i>
-                        <i class="ri-close-line nav__toggle-close"></i>
+                        <i class="ri-menu-line nav__toggle-menu fs-3"></i>
+                        <i class="ri-close-line nav__toggle-close fs-3"></i>
                     </span>
 
 
@@ -1241,13 +1246,14 @@ use App\Models\Style;
                         &times;
                     </button>
                     <!-- <h2>Test</h2> -->
-                    <div class="popup-image">
+                    <div class="popup-image global-popup">
                         <img src="{{asset('images/main-popup-image.png')}}" class="img-fluid w-100" alt="">
                     </div>
                     <div class="newsletter-content">
-                        <h2 class="content-title">Sign Up To <span class="discount-text">Get 21% Discount</span> On Your First Order</h2>
-                        <p class="offer-text">Take Advantage of our Limited Time Offer and Get <span class="free-text">FREE</span> Consultation & On-Site Survey.</p>
-                        <p class="terms-text">Terms & Conditions Applied.</p>
+                        <h2 class="content-title mt-5 text-black" style="font-size: 40px;">Subscribe To Get <span class="free-text">FREE On-Site Survey</span></h2>
+                        <p class="offer-text"><span class="discount-text">For your Peace of Mind, </span> expert installation is also provided<br> <span class="" style="color: green;">(Qoute Available)</span></p>
+                        
+                        <p class="terms-text mt-2">Terms & Conditions Applied.</p>
                         <div class="subscribe-container">
                             <input type="email" id="emailInputGuest" class="form-control news-letter-input" placeholder="Enter Your Email">
                             <button class="subscribe-btn" id="subscribeBtnGuest">Subscribe</button>
@@ -1303,8 +1309,8 @@ use App\Models\Style;
             </div>
             
             <div class="col-md-5">
+                <p class="benefits-title mb-1">BENEFITS OF <span style="color: #ffa500;">FREE CONSULTATION</span>:</p>
               <div class="benefits-box">
-                <p class="benefits-title mb-4">BENEFITS OF <span style="color: #ffa500;">FREE CONSULTATION</span>:</p>
                 
                 <ul class="list-unstyled">
                   <li class="benefit-item">• <span class="highlight-text">FREE</span> Virtual Consultation</li>
