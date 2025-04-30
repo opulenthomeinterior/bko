@@ -15,6 +15,7 @@
                     <div class="card-body carousel-card-body">
                         <div class="col-12 mb-4 d-flex justify-content-center">
                             <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" class="img-fluid rounded-circle" style="height: 100px; width: 100px">
+                       
                         </div>
                         <div class="fw-bold text-center">
                             
@@ -141,3 +142,302 @@
         });
     </script>
 @endpush
+
+{{-- 
+<head>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .testimonial-section {
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .heading {
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+        }
+
+       
+        .testimonial-card {
+            background-color: white;
+            border-radius: 50%;
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-content {
+            max-width: 80%;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .quote-icon {
+            color: #FFBD3D;
+            /* font-size: 5rem; */
+            /* position: absolute; */
+            /* right: 80px; */
+            /* top: 150px; */
+
+            position:absolute; right:20px; top:10px; font-size:170px;
+        }
+        
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial-img
+        {
+            height: 150px; width: 150px; position:absolute; top:0; left:20px
+        }
+        @media(max-width:760px)
+        {
+            .testimonial-card
+            {
+                width:300px;
+                height:300px;
+            }
+            .testimonial-img
+            {
+                width:80px;
+                height:80px;
+                left:0;
+                top:-15px;
+                z-index:100;
+            }
+
+            .floating-profile
+            {
+                display:none;
+            }
+            .quote-icon
+            {
+                font-size:80px;
+            }
+        }
+        
+        
+        .carousel-control-prev, .carousel-control-next {
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 1;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .carousel-control-prev {
+            left: -20px;
+        }
+        
+        .carousel-control-next {
+            right: -20px;
+        }
+        
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            background-image: none;
+            color: #333;
+            width: auto;
+            height: auto;
+        }
+        
+        .stars {
+            color: #FFBD3D;
+            margin: 10px 0;
+        }
+        
+        .floating-profile {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+        }
+        
+        .profile-1 {
+            top: 10%;
+            left: 5%;
+            background-image: url('{{ asset('images/testimonial-image.png') }}');
+            background-size: cover;
+        }
+        
+        .profile-2 {
+            top: 50%;
+            left: 10%;
+            background-image: url('{{ asset('images/testimonial-image.png') }}');
+            background-size: cover;
+        }
+        
+        .profile-3 {
+            bottom: 20%;
+            left: 25%;
+            background-image: url('{{ asset('images/testimonial-image.png') }}');
+            background-size: cover;
+        }
+        
+        .profile-4 {
+            top: 15%;
+            right: 10%;
+            background-image: url('{{ asset('images/testimonial-image.png') }}');
+            background-size: cover;
+        }
+        
+        .profile-5 {
+            top: 45%;
+            right: 5%;
+            background-image: url('{{ asset('images/testimonial-image.png') }}');
+            background-size: cover;
+        }
+        
+        .profile-6 {
+            bottom: 15%;
+            right: 15%;
+            background-image: url('{{ asset('images/testimonial-image.png') }}');
+            background-size: cover;
+        }
+        
+        .dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            position: absolute;
+        }
+        
+        .dot-yellow {
+            background-color: #FFBD3D;
+            left: 2%;
+            top: 25%;
+        }
+        
+        .dot-green {
+            background-color: #2C6D68;
+            right: 15%;
+            top: 20%;
+        }
+        
+        .dot-light {
+            border: 2px solid #FFBD3D;
+            background-color: transparent;
+            right: 20%;
+            bottom: 30%;
+        }
+        
+        .testimonial-author {
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        
+        .testimonial-time {
+            font-size: 0.85rem;
+            color: #777;
+        }
+        
+        .carousel-indicators {
+            bottom: -60px;
+        }
+        
+        .carousel-indicators button {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin: 0 5px;
+        }
+        
+        .carousel-indicators .active {
+            background-color: #555;
+        }
+
+        .testimonial-content p
+        {
+            font-size:0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="testimonial-section" style="overflow:visible">
+            <h2 class="heading text-black">FACT, EVERYONE LOVES US</h2>
+            
+            
+            <img class="floating-profile profile-1 src="{{ asset('images/testimonial-image.png') }}">
+            <img class="floating-profile profile-2 src="{{ asset('images/testimonial-image.png') }}" >
+            <img class="floating-profile profile-3 src="{{ asset('images/testimonial-image.png') }}" >
+            <img class="floating-profile profile-4 src="{{ asset('images/testimonial-image.png') }}" >
+            <img class="floating-profile profile-5 src="{{ asset('images/testimonial-image.png') }}" >
+            <img class="floating-profile profile-6 src="{{ asset('images/testimonial-image.png') }}" >
+                             
+
+
+            <div class="dot dot-yellow"></div>
+            <div class="dot dot-green"></div>
+            <div class="dot dot-light"></div>
+            
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" style="overflow:visible">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                
+                                <img src="{{ asset('images/testimonial-image.png') }}" class="img-fluid rounded-circle testimonial-img" >
+                                
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p>I discovered BKO Kitchen's online services through a recommendation from a colleague. Reaching out to them via WhatsApp was incredibly convenient, and they quickly arranged a free consultation call. From the initial planning to the seamless installation of my shaker kitchen, the entire experience was outstanding. I wouldn’t hesitate to recommend their design and installation services to others!</p>
+                                <div class="testimonial-author">— Jamie (Matt Dust Grey Handleless)</div>
+                                <div class="testimonial-time">8 Months Ago</div>
+                                <div class="quote-icon" >❞</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span aria-hidden="true"><i class="fas fa-chevron-left text-warning"></i></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span aria-hidden="true"><i class="fas fa-chevron-right text-warning"></i></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body> --}}
