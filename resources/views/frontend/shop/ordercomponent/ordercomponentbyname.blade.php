@@ -96,7 +96,7 @@
                                                     @foreach ($styles as $index => $style)
                                                     <div class="col-lg-12 col-md-12 col-6">
                                                         <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" {{ (!empty($urlStyleId) && ($urlStyleId == $style->id)) ? 'checked' : '' }} type="checkbox" name="styles[]" id="style{{ $index }}" value="{{ $style->id }}">
+                                                            <input data-style-id="{{$style->id}}" class="form-check-input style-filter" {{ (!empty($urlStyleId) && ($urlStyleId == $style->id)) ? 'checked' : '' }} type="checkbox" name="styles[]" id="style{{ $index }}" value="{{ $style->id }}">
                                                             <label class="form-check-label"
                                                                 for="style{{ $index }}">{{ $style->name }}
                                                             </label>
@@ -125,11 +125,11 @@
                                         <div id="flush-collapseFour" class="accordion-collapse my-2"
                                             aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample4" style="max-height: 150px; overflow-y: auto">
                                             <div class="accordion-body px-0 py-0 pb-1">
-                                                <div class="row g-1">
+                                                <div class="row g-1" id="colours-filter">
                                                     @foreach ($colours as $index => $colour)
                                                     <div class="col-lg-12 col-md-12 col-6">
                                                         <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="checkbox" {{ (!empty($urlColourId) && ($urlColourId == $colour->id)) ? 'checked' : '' }}
+                                                            <input data-colour-id="{{$colour->id}}" class="form-check-input colour-filter" type="checkbox" {{ (!empty($urlColourId) && ($urlColourId == $colour->id)) ? 'checked' : '' }}
                                                                 name="colours[]" id="colour{{ $index }}"
                                                                 value="{{ $colour->id }}">
                                                                 @if (!empty($colour->colour_code))
@@ -194,6 +194,44 @@
                             </div>--}}
                         @endif
 
+                        @if (strtolower($category->name) != 'handles')
+                            @if ($heights->count() > 0)
+                                <div class="col-3 accordion accordion-flush mt-3" id="accordionFlushExample5">
+                                    <div class="accordion-item bg-transparent border border-dark border-1 rounded-0">
+                                        <h2 class="accordion-header bg-warning" id="flush-headingFive">
+                                            <button class="accordion-button legend collapsed text-uppercase" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseFive"
+                                                aria-expanded="true" aria-controls="flush-collapseFive">
+                                                Heights
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseFive" class="accordion-collapse my-2"
+                                            aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample5" style="max-height: 150px; overflow-y: auto">
+                                            <div class="accordion-body px-0 py-0 pb-1">
+                                                <div class="ps-2">
+                                                    <div class="row g-1" id="heights-filter">
+                                                        @foreach ($heights as $index => $height)
+                                                        <div class="col-12">
+                                                            <div class="form-check form-check-inline">
+                                                                <input data-heights-id="{{$height->id}}" id="height-filter" class="form-check-input" type="checkbox"
+                                                                    name="heights[]" id="height{{ $index }}"
+                                                                    value="{{ $height->height }}">
+                                                                <label class="form-check-label"
+                                                                    for="height{{ $index }}">
+                                                                    {{ $height->height }}
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        @endforeach
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                        @endif
+
                         @if ($types->count() > 0)
                             <div class="col-3 accordion accordion-flush mt-3" id="accordionFlushExample1">
                                 <div class="accordion-item bg-transparent border border-dark border-1 rounded-0">
@@ -212,47 +250,11 @@
                                                     @foreach ($types as $index => $type)
                                                     <div class="col-12">
                                                         <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="checkbox"
+                                                            <input data-type-id="{{$type->id}}" id="type-filter" class="form-check-input" type="checkbox"
                                                                 name="types[]" id="type{{ $index }}"
                                                                 value="{{ $type->id }}">
                                                             <label class="form-check-label"
                                                                 for="type{{ $index }}">{{ $type->name }}
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    @endforeach
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        @endif
-
-                        @if ($heights->count() > 0)
-                            <div class="col-3 accordion accordion-flush mt-3" id="accordionFlushExample5">
-                                <div class="accordion-item bg-transparent border border-dark border-1 rounded-0">
-                                    <h2 class="accordion-header bg-warning" id="flush-headingFive">
-                                        <button class="accordion-button legend collapsed text-uppercase" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseFive"
-                                            aria-expanded="true" aria-controls="flush-collapseFive">
-                                            Heights
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseFive" class="accordion-collapse my-2"
-                                        aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample5" style="max-height: 150px; overflow-y: auto">
-                                        <div class="accordion-body px-0 py-0 pb-1">
-                                            <div class="ps-2">
-                                                <div class="row g-1">
-                                                    @foreach ($heights as $index => $height)
-                                                    <div class="col-12">
-                                                        <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                name="heights[]" id="height{{ $index }}"
-                                                                value="{{ $height->height }}">
-                                                            <label class="form-check-label"
-                                                                for="height{{ $index }}">
-                                                                {{ $height->height }} ({{$height->count}})
                                                             </label>
                                                         </div>
                                                     </div>
@@ -287,13 +289,15 @@
                                 <tr>
                                     <td><a class="text-decoration-underline" href="{{ route('orderbyproduct', [$product->slug, $product->serial_number]) }}">{{ $product->short_title }}</a></td>
                                     <td>
-                                        <figure class="my-0" style="margin-bottom: 0px !important;">
-                                            <img class="product-image px-0"
-                                                style="margin-bottom: 0px !important;min-height:175px;max-height:175px;max-width:225px;object-fit:contain"
-                                                src="{{ !empty($product->image_path) ? asset('imgs/products/'.$product->image_path) : asset('images/no-image-available.jpg') }}"
-                                                alt="Card image cap" data-bs-toggle="modal"
-                                                data-bs-target="#productModal{{ $index }}">
-                                        </figure>
+                                        <a href="{{ route('orderbyproduct', [$product->slug, $product->serial_number]) }}">
+                                            <figure class="my-0" style="margin-bottom: 0px !important;">
+                                                <img class="product-image px-0"
+                                                    style="margin-bottom: 0px !important;min-height:175px;max-height:175px;max-width:225px;object-fit:contain"
+                                                    src="{{ !empty($product->image_path) ? asset('imgs/products/'.$product->image_path) : asset('images/no-image-available.jpg') }}"
+                                                    alt="Card image cap" data-bs-toggle="modal"
+                                                    data-bs-target="#productModal{{ $index }}">
+                                            </figure>
+                                        </a>
                                     </td>
                                     <td>{{ $product->product_code }}</td>
                                     <td>{{ $product->dimensions }}</td>
@@ -457,57 +461,124 @@
     @push('scripts')
     <script>
         $(document).ready(function () {            
-            const $carousel02 = $('.main-carousel-banner-02');
-            // Initialize OwlCarousel
-            $carousel02.owlCarousel({
-                loop: true,
-                margin: 30,
-                stagePadding: 15, // Add padding to avoid clipping
-                rtl: false,
-                autoplay: true,
-                autoplayTimeout: 3000,
-                autoplayHoverPause: true,
-                responsive: {
-                    0: {
-                        items: 1,
-                        nav: true
-                    },
-                    768: {
-                        items: 2,
-                        nav: true
-                    },
-                    992: {
-                        items: 3,
-                        loop: true,
-                        margin: 10,
-                        nav: true,
-                        dots: true,
-                        center: true,
-                    },
-                    1200: {
-                        items: 4,
-                        loop: true,
-                        margin: 20,
-                        nav: true,
-                        dots: true,
-                        center: true,
-                    },
-                    1400: {
-                        items: 4,
-                        loop: true,
-                        margin: 20,
-                        nav: true,
-                        dots: true,
-                        center: true,
+            // const $carousel02 = $('.main-carousel-banner-02');
+            // // Initialize OwlCarousel
+            // $carousel02.owlCarousel({
+            //     loop: true,
+            //     margin: 30,
+            //     stagePadding: 15, // Add padding to avoid clipping
+            //     rtl: false,
+            //     autoplay: true,
+            //     autoplayTimeout: 3000,
+            //     autoplayHoverPause: true,
+            //     responsive: {
+            //         0: {
+            //             items: 1,
+            //             nav: true
+            //         },
+            //         768: {
+            //             items: 2,
+            //             nav: true
+            //         },
+            //         992: {
+            //             items: 3,
+            //             loop: true,
+            //             margin: 10,
+            //             nav: true,
+            //             dots: true,
+            //             center: true,
+            //         },
+            //         1200: {
+            //             items: 4,
+            //             loop: true,
+            //             margin: 20,
+            //             nav: true,
+            //             dots: true,
+            //             center: true,
+            //         },
+            //         1400: {
+            //             items: 4,
+            //             loop: true,
+            //             margin: 20,
+            //             nav: true,
+            //             dots: true,
+            //             center: true,
+            //         }
+            //     }
+            // });
+            // // Customize the autoplay behavior to reverse the direction
+            // $carousel02.on('translated.owl.carousel', function() {
+            //     $carousel02.find('.owl-item.active').css('animation', 'move-left 0.3s ease-in-out');
+            // });
+            var slug = $('#slug').val();
+
+            $(document).on('click', '.style-filter', function() {
+                var styleIds = [];
+                $('.style-filter').each(function() {
+                    if ($(this).is(':checked')) {
+                        styleIds.push($(this).attr('data-style-id'));
                     }
-                }
+                });
+                $.ajax({
+                    url: "{{ route('ordercomponent_filter') }}",
+                    method: "POST",
+                    data: {
+                        _token: "{{ csrf_token() }}",
+                        style_ids: styleIds,
+                        slug: slug
+                    },
+                    success:function(response) {
+                        if (response.status == true) {
+                            var _html = '';
+                            response.colours.forEach((colr, index) => {
+                                _html += `
+                                    <div class="col-lg-12 col-md-12 col-6">
+                                        <div class="form-check form-check-inline">
+                                            <input data-colour-id="${colr.id}"  class="form-check-input colour-filter" type="checkbox"
+                                                name="colours[]" id="colour${index}"
+                                                value="${colr.id}">`;
+                                                if (colr.colour_code != '' || colr.colour_code != undefined) {
+                                                    _html += `<label class="form-check-label d-flex gap-1" for="colour${index}">
+                                                        <div class="d-inline border border-dark"
+                                                            style="border-radius: 50px; width: 20px;height:20px; background-color:${colr.colour_code};">
+                                                        </div>
+                                                        ${ colr.trade_colour ? colr.trade_colour : colr.name }
+                                                    </label>`;
+                                                } else {
+                                                    _html += `<label class="form-check-label d-flex gap-1" for="colour${index}">
+                                                        <div class="border border-dark" style="border-radius: 50px; width: 20px;height:20px; background: linear-gradient(to right, red, yellow, green);">
+                                                        </div>
+                                                        ${ colr.trade_colour ? colr.trade_colour : colr.name }
+                                                    </label>`;
+                                                }
+                                        _html += `</div>
+                                    </div>
+                                `;
+                            });
+                            $('#colours-filter').html(_html);
+                        }
+                    }
+                });
             });
-            // Customize the autoplay behavior to reverse the direction
-            $carousel02.on('translated.owl.carousel', function() {
-                $carousel02.find('.owl-item.active').css('animation', 'move-left 0.3s ease-in-out');
-            });
+
+            $(document).on('click', '#type-filter', function() {
+                let _this = $(this);
+                var widthId = _this.attr('data-type-id');
+                $.ajax({
+                    url: "{{ route('ordercomponent_filter') }}",
+                    method: "POST",
+                    data: {
+                        _token: "{{ csrf_token() }}",
+                        type_ids: widthId
+                    },
+                    success:function(response) {
+                        
+                    }
+                });
+            }); 
         });
         var order_component_filter = '{{ route('order_component_filter', $category->slug) }}';
+        var orderComponent_filter = '{{ route('ordercomponent_filter') }}';
         let selectedHeights = [];
 
         function toggleHeightSelection(button) {
