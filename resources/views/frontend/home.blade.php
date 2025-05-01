@@ -604,7 +604,12 @@
       z-index: 0;
       border-radius: 0; /* No rounded corners */
     }
-
+@media(max-width:576px)
+{
+    .border-box-bespoke{
+        height: 90%;
+    }
+}
     .custom-card-bespoke {
       background-color: #fff;
       padding: 60px 60px; /* more vertical space */
@@ -657,7 +662,8 @@
             overflow: visible !important;
         }
         
-        .service-card {
+        .service-card,
+        .left-slider-card {
             border-radius: 15px;
             overflow: hidden;
             position: relative;
@@ -665,12 +671,28 @@
             margin-bottom: 20px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             cursor: pointer;
+            
+        }
+        .left-slider-card
+        {
+            height: 220px;
         }
         
         .service-image-container {
             width: 100%;
             height: 100%;
             overflow: hidden;
+        }
+        .left-slider-image-container
+        {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+        }
+        .left-slider-image{
+            width: 100%;
+            filter: brightness(0.8);
+            transition: transform 0.5s ease;
         }
         
         .service-image {
@@ -681,7 +703,8 @@
             transition: transform 0.5s ease;
         }
         
-        .service-card:hover .service-image {
+        .service-card:hover .service-image,
+        .left-slider-card:hover .left-slider-image {
             transform: scale(1.1);
         }
         
@@ -696,6 +719,15 @@
             z-index: 2;
         }
         
+        .left-slider-title
+        {
+            position: absolute;
+            bottom: 15px;
+            left: 20px;
+            color: white;
+            font-weight: 800;
+            font-size: 1.3rem;  
+        }
         /* Arrow button styling */
         .arrow-btn {
             position: absolute;
@@ -827,11 +859,13 @@
             .service-card {
                 height: 250px;
             }
+            
         }
 
         .swiper {
     width: 100%;
     padding: 20px 0;
+    /* overflow: hidden; */
   }
 
   .swiper-button-prev,
@@ -866,7 +900,7 @@
     
   .orderKitchenSwiper
   {
-    /* width: 100%; */
+    width: 100%;
       max-width: 1000px;
       margin: auto;
       padding: 30px 0;
@@ -875,10 +909,11 @@
   .swiper-wrapper-order-kitchen
   {
     display: flex;
-      gap: 20px;
+      gap: 10px;
   }
   .swiper-slide-order-kitchen
   {
+    /* width: 200px !important; */
     background: #fff;
       border-radius: 10px;
       overflow: hidden;
@@ -891,7 +926,7 @@
   .swiper-order-kitchen-img {
       width: 100%;
       
-      height: 120px;
+      height: 200px !important;
       object-fit: cover;
     }
 
@@ -948,6 +983,27 @@
 
     @media(max-width:576px)
         {
+            .left-slider-title
+            {
+                font-size: 2.1rem;
+                text-align: center;
+            }
+
+
+            .swiper-button-prev,
+    .swiper-button-next {
+      width: 30px !important;
+      height: 30px !important;
+      
+    }
+    
+    .swiper-button-prev:after,
+    .swiper-button-next:after {
+      font-size: 14px !important;
+      
+    }
+
+
             .bespoke-title
             {
                 font-size: 26px;
@@ -1056,7 +1112,9 @@
                                 <h1 class="text-yellow-color fw-bold animated slide-left text-uppercase text-center">Best of both worldS</h1>
                                 <h2 class="text-white fw-bold animated slide-left text-uppercase text-center"> Retail QuAlity | Online Prices | 1 OF A KIND</h2>
                                 {{-- <p  class=" text-white animated slide-bottom text-center" style="font-size:20px">We specialize in virtually designing and delivering your dream kitchen that complements your needs and style. Whether you want to build a new kitchen or need to replace a single component, we are always at your service.</p> --}}
-                                <p  class=" mt-5 text-white animated slide-bottom text-center" style="font-size:26px">FINALLY, You say! <span class="text-yellow-color">THE ONLY COMPANY</span> where you get Premium Quality kitchens in Affordable Prices, with many additional perks.</p>
+                                <p  class=" mt-5 text-white animated slide-bottom text-center" style="font-size:26px"><span class="text-yellow-color">The ONLY COMPANY</span> With Premium Quality Kitchens at Affordable Prices
+                                    From design to installation—we handle everything so you can relax!
+                                    </p>
                             
                             </div>
                             <div class="container d-flex flex-column align-items-center text-center">
@@ -1088,24 +1146,48 @@
                     <h3 class="text-uppercase fw-bolder text-dark mb-4">ORDER KITCHEN</h3>
                 </div>
                 <div class="row">
-                    <div class="swiper orderKitchenSwiper">
-                        <div class="swiper-wrapper swiper-wrapper-order-kitchen">
+                    <!-- <div class="swiper orderKitchenSwiper"> -->
+                    <div class="swiper mySwiper">
+                        <!-- <div class="swiper-wrapper swiper-wrapper-order-kitchen"> -->
+                        <div class="swiper-wrapper ">
+
+
                             @foreach ($styles as $key => $style)
-                            <a  href="{{ route('orderkitchenbyname', $style->slug) }}">
-                            <div class="swiper-slide swiper-slide-order-kitchen">
+                            <!-- <div class="swiper-slide swiper-slide-order-kitchen"> -->
+                                <div class="swiper-slide">
+                                <a  href="{{ route('orderkitchenbyname', $style->slug) }}">
+
+                                    <div class="left-slider-card">
+                                        <div class="left-slider-image-container">
+                                            
+                                            <img  src="{{asset('imgs/styles/'.$style->image_path)}}" class="left-slider-image" />
+                                        <!-- <img  src="{{asset('images/shaker-22-500.png')}}" class="left-slider-image" /> -->
+                                  
+                                    </div>
+                                    
+                                    
+                                    <div class="left-slider-title">{{$style->name}}</div>
+                                
+                                    <!-- <div class="arrow-btn">
+                                        <i class="bi bi-arrow-right"></i>
+                                    </div> -->
+                                </div>
+
                                 <!-- <img src="{{asset('imgs/styles/'.$style->image_path)}}" class="img-fluid" /> -->
                                 <!-- <img width="100" height="100" src="{{asset('images/j-pull-22.jpeg')}}" class="img-fluid swiper-order-kitchen-img" /> -->
-                                <img  src="{{asset('imgs/styles/'.$style->image_path)}}" class="img-fluid swiper-order-kitchen-img" />
-                                <h3 class="swiper-order-kitchen-title">{{$style->name}}</h3>
-                                <a type="button" href="{{ route('orderkitchenbyname', $style->slug) }}" class="swiper-order-kitchen-btn">See Our Range</a>
-                              </div>
+                                <!-- <img  src="{{asset('images/shaker-22-250.png')}}" class="img-fluid swiper-order-kitchen-img" /> -->
+                                <!-- <h3 class="swiper-order-kitchen-title">{{$style->name}}</h3> -->
+                                <!-- <a type="button" href="{{ route('orderkitchenbyname', $style->slug) }}" class="swiper-order-kitchen-btn">See Our Range</a> -->
                             </a>
+                              </div>
                             @endforeach
                             </div>
                             
     <!-- Navigation buttons -->
-    <div class="swiper-button-next swiper-button-next-order-kitchen"></div>
-    <div class="swiper-button-prev swiper-button-prev-order-kitchen"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <!-- <div class="swiper-button-next swiper-button-next-order-kitchen"></div>
+    <div class="swiper-button-prev swiper-button-prev-order-kitchen"></div> -->
                     </div>
                 </div>
                 <div class="row mt-5 mb-2">
@@ -1116,21 +1198,28 @@
                     @php
                     $categories = \App\Models\Category::where('parent_category_id', null)->where('status', 1)->whereNotIn('id', [2, 3, 4, 5, 7, 13, 16])->get();
                 @endphp
-                <div class="swiper orderKitchenSwiper">
-                    <div class="swiper-wrapper swiper-wrapper-order-kitchen">
+                <!-- <div class="swiper orderKitchenSwiper"> -->
+                <div class="swiper mySwiper">
+                    <!-- <div class="swiper-wrapper swiper-wrapper-order-kitchen"> -->
+                    <div class="swiper-wrapper">
                         
                         @foreach($categories as $category)
                         
-                        <div class="swiper-slide swiper-slide-order-kitchen">
+                        <!-- <div class="swiper-slide swiper-slide-order-kitchen"> -->
+                        <div class="swiper-slide ">
                             <!-- <img src="{{asset('imgs/styles/'.$style->image_path)}}" class="img-fluid" /> -->
                            <a href="{{route('ordercomponentbyname', [$category->slug])}}">
-                            <!-- <img  src="{{asset('images/j-pull-22.jpeg')}}" class="img-fluid swiper-order-kitchen-img" /> -->
-                            
-                            <img  class="img-fluid" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt="">
+                            <div class="left-slider-card">
+                                <div class="left-slider-image-container">
+                            <!-- <img  src="{{asset('images/shaker-22-slide.png')}}" class="left-slider-image" /> -->
+                            <img  class="left-slider-image" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt="">
+                            </div> 
                                   
-                            <h3 class="swiper-order-kitchen-title text-center py-2">{{Str::limit($category->name, 13)}}</h3>
+                            <!-- <h3 class="swiper-order-kitchen-title text-center py-2">{{Str::limit($category->name, 13)}}</h3> -->
+                            <div class="left-slider-title">{{Str::limit($category->name, 13)}}</div>
                             <!-- <button class="swiper-order-kitchen-btn">See Our Range</button> -->
                         </a>
+                    </div>
                         </div>
                         
                         @endforeach
@@ -1696,6 +1785,7 @@
       </div>
       <!-- Slide 4 -->
       <div class="swiper-slide">
+        <a type="button" data-bs-toggle="modal" data-bs-target="#newsletterModalGuest">
         <div class="service-card">
             <div class="service-image-container">
                 
@@ -1707,6 +1797,7 @@
                 <i class="bi bi-arrow-right"></i>
             </div>
         </div>
+    </a>
       </div>
       <!-- Slide 5 -->
       <div class="swiper-slide">
@@ -2639,8 +2730,8 @@ const swiper = new Swiper(".mySwiper", {
   });
 
   const orderKitchen = new Swiper(".orderKitchenSwiper", {
-      slidesPerView: '3',  /* Auto adjusts the number of slides per row */
-      spaceBetween: 10,
+      slidesPerView: 3,  /* Auto adjusts the number of slides per row */
+      spaceBetween: 30,
       loop: true,
       autoplay:true,
       navigation: {
@@ -2654,6 +2745,7 @@ const swiper = new Swiper(".mySwiper", {
       breakpoints: {
       0: {
         slidesPerView: 1,
+        spaceBetween:0
       },
       640: {
         slidesPerView: 2,

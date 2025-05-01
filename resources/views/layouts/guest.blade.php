@@ -593,7 +593,7 @@ use App\Models\Style;
                 <div class="text-center bg-danger">
 
                     <div class="ticker-wrapper">
-                        <div class="ticker-text"><strong class="fw-bold">Limited time offer!</strong>, We are offering Free on-site surveys and consultations.</div>
+                        <div class="ticker-text"><strong class="fw-bold">LIMITED TIME OFFER:</strong>, For your Peace Of Mind, we are offering FREE Consultation and On-site Survey. Book your slot now!</div>
                     </div>
                    
                     {{-- <span class="fw-bold text-white "> 
@@ -1220,7 +1220,7 @@ use App\Models\Style;
                         </div>
                         
                         <h2 class="content-title">Thank you for subscribing!</h2>
-                        <p class="content-subtitle">Here's your special discount code to use on your first purchase.</p>
+                        <p class="content-subtitle">Here's your special code to use on your first purchase.</p>
                         
                         <div class="discount-code-container border border-warning">
                             <div id="discountCode" class="discount-code">APR15</div>
@@ -1284,7 +1284,7 @@ use App\Models\Style;
           
           <div class="row mb-3">
             <div class="col-12">
-              <p class="fs-5 mb-0">We've sent the <strong>Discount Code</strong> to your <strong>email address</strong>.</p>
+              <p class="fs-5 mb-0">We've sent the <strong>Code</strong> to your <strong>email address</strong>.</p>
             </div>
           </div>
           

@@ -1015,14 +1015,14 @@
     
     <section class="container pt-5 pb-2 mb-5">
         <div class="row">
-            <h2 class="col-md-12 col-11 text-center mb-4 fw-bold text-black text-uppercase">WHAT ARE BESPOKE MAX STORAGE KITCHENS?</h2>
+            <h2 class="col-md-12 col-11 text-center mb-4 fw-bold text-black text-uppercase">WHAT IS A MAX STORAGE KITCHEN?</h2>
             {{-- <h4 class="col-md-12 p-0 col-11 text-start  fw-bold text-danger text-uppercase">ARE YOU STRUGGLING WITH STORAGE SPACE?</h4> --}}
 
         </div>
         <div class="row">
             <div class="col-12  d-flex align-items-center">
                 <div>
-                    <h3 class="mb-3 text-uppercase text-danger">ARE YOU STRUGGLING WITH STORAGE SPACE?</h3>
+                    <h3 class="mb-3 text-uppercase text-danger">Are you STRUGGLING with STORAGE SPACE?</h3>
                     <h3 class="text-uppercase" style="color: #2a6161">SOLUTION
                         
                          <br><b style="color: #000">BESPOKE MAX STORAGE KITCHENS</b></h3>
@@ -1102,7 +1102,8 @@
         <div class="row justify-content-center mt-5">
 
             
-            <div class="c">
+            <div class="text-center">
+            <h3> Bespoke Storage Solutions That Fit <span class="fw-bolder"> Every Pot, Pan & Gadget—Guaranteed!</span></h3>
             </div>
             {{-- <div class="col-lg-8">
             <h3 class=" text-center text-md-start text-black">Never settle for a standard-size kitchen because you don’t have to any more.</h3>
