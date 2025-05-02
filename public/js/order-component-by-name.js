@@ -402,7 +402,7 @@ $(document).ready(function () {
                     }
                 }
             });
-        }
+        }     
     }
 
     // Bind change event to all input checkboxes
