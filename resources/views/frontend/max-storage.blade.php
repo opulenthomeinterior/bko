@@ -865,7 +865,7 @@
 
 <div class="container-fluid py-3" style="background-color:#f2f4f5">
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
 
              <!-- Step 1 -->
              <div class="col-md-4 col-lg-3 text-center mb-4 mb-lg-0">
@@ -906,6 +906,11 @@
                 <div class="step-number">Step 03</div>
                 <h4 class="step-title">You enjoy your perfect kitchen</h4>
                 <p class="step-description px-3">Our skilled craftsmen build and install your custom kitchen. Ensuring a perfect fit and lasting beauty.</p>
+            </div>
+            <div class="text-center mt-5">
+                <!-- <a href="#" class="btn cta-button">BOOK YOUR FREE CONSULTATION NOW!</a> -->
+                <button  class="btn btn-lg cta-button rounded-0" style="background-color:#ffc107;" data-bs-toggle="modal" data-bs-target="#exampleModal">SCHEDULE YOUR FREE CONSULTATION NOW!</button>
+               
             </div>
         </div>
         

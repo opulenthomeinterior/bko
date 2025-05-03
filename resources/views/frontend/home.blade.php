@@ -1909,7 +1909,7 @@
     
         <div class="cta-text-bespoke">ARE YOU <span class="text-danger"> TIRED OF WASTED SPACE?</span></div>
         <!-- <button class="cta-button-bespoke">CHECK OUR MAX STORAGE KITCHENS</button> -->
-        <button  class="m-0 btn btn-lg cta-button rounded-0" style="background-color:#ffc107;">CHECK OUR MAX STORAGE KITCHENS</button>
+         <a href="{{ route('max_storage') }}" class="m-0 btn btn-lg cta-button rounded-0" style="background-color:#ffc107;">CHECK OUR MAX STORAGE KITCHENS</a>
                
       </div>
     
