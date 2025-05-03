@@ -84,7 +84,8 @@
         .hero {
             /* background: url('https://bkonline.uk/public/imgs/products/464785299_8512016742222733_5169156552107455268_n1739534754_67af31a285b0e.jpg') center/cover no-repeat; */
             
-            background: url('{{ asset('images/door-hero-image.png') }}') center/cover no-repeat;
+            /* background: url('{{ asset('images/door-hero-image.png') }}') center/cover no-repeat; */
+            background: url('{{ asset('images/kitchen-cupboard-hero.png') }}') center/cover no-repeat;
            
             height: 100vh;
             display: flex;
@@ -763,6 +764,285 @@
             padding: 12px 15px !important;
             height: auto !important;
         }
+
+
+        :root {
+            --primary-color: #ffc01f;
+            --primary-light: #ffd45e;
+            --primary-dark: #e6a600;
+            --dark-color: #333333;
+            --light-color: #f8fafc;
+            --text-on-primary: #333333;
+        }
+
+        /* body {
+            background-color: #fffaf0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        } */
+
+        .faq-container {
+            
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .faq-header h1 {
+            color: var(--dark-color);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .faq-header h1:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            background-color: var(--primary-color);
+            bottom: -10px;
+            left: 25%;
+            border-radius: 2px;
+        }
+
+        .faq-header p {
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .faq-question {
+            cursor: pointer;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--dark-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question.active {
+            background-color: var(--primary-color);
+            color: var(--text-on-primary);
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+            color: var(--primary-color);
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+            color: var(--text-on-primary);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 1.5rem;
+            color: #475569;
+            line-height: 1.6;
+            transition: all 0.5s ease;
+            background-color: #fffdf7;
+        }
+
+        .faq-answer.show {
+            max-height: 1000px;
+            padding: 1rem 1.5rem 1.5rem;
+            border-top: 1px solid #fff5e0;
+        }
+        
+        /* Card styles for FAQ answers */
+        .faq-card-container {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .faq-card {
+            flex: 1;
+            min-width: 250px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.25rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-left: 3px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .faq-card-title {
+            color: var(--dark-color);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .faq-card-title i {
+            color: var(--primary-color);
+            margin-right: 0.5rem;
+        }
+        
+        .faq-card-desc {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Custom badge styles */
+        .faq-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+        }
+
+        .faq-badge-popular {
+            background-color: var(--primary-light);
+            color: var(--text-on-primary);
+        }
+
+        .faq-badge-new {
+            background-color: #ffe8a3;
+            color: #b38000;
+        }
+
+        /* Search box styles */
+        .faq-search {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .faq-search input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            padding-left: 3rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-search input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(255, 192, 31, 0.3);
+        }
+
+        .faq-search i {
+            position: absolute;
+            left: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-color);
+        }
+
+        /* Category filters */
+        .faq-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+
+        .faq-category {
+            padding: 0.5rem 1rem;
+            background-color: white;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #64748b;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .faq-category:hover, .faq-category.active {
+            background-color: var(--primary-color);
+            color: var(--text-on-primary);
+            border-color: var(--primary-color);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .faq-categories {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                padding-bottom: 0.5rem;
+                justify-content: flex-start;
+                scrollbar-width: none;
+            }
+
+            .faq-categories::-webkit-scrollbar {
+                display: none;
+            }
+
+            .faq-category {
+                white-space: nowrap;
+            }
+
+            .faq-question {
+                font-size: 1rem;
+                padding: 1rem 1.25rem;
+            }
+        }
+
+        .column-badges
+        {
+            position: absolute;
+            top: -120px;
+            right: -740px;
+        }
+        /* .column-bdages a 
+        {
+            position: relative !important;
+        }
+        .column-badges a img 
+        {
+            position: absolute !important;
+        } */
+            @media (max-width:1024px) {
+                .column-badges
+                {
+                    position: static;
+                    /* top:auto;
+                    right: auto; */
+                }
+            }
         </style>
     </head>
 <body>
@@ -772,14 +1052,14 @@
         
         <div class="hero-content">
             <h5 class="text-center text-white " style="font-size:14px; letter-spacing:5px;font-weight:bold">BUY KITCHEN  ONLINE</h5>
-            <h1 class="text-white fw-bold mb-5">DOOR REPLACEMENT <span style="color:#ffe000"> SERVICE</span></h1>
-            <h2 class="text-white mb-4 yell">2-3 Months of full kitchen remodel nightmare or <br> <span style="font-size:32px;color:#ffe000;font-weight:700">
-                New CABINET Doors IN JUST 2-3 Days?</span></h2>
+            <h1 class="text-white fw-bold mb-5">KITCHEN CUPBOARD <span style="color:#ffe000"> DOOR REPLACEMENT</span></h1>
+            <h2 class="text-white mb-4 yell">The Smart, Budget-Friendly <br> <span style="font-size:32px;color:#ffe000;font-weight:700">
+                Kitchen makeover in just a few days!</span></h2>
             
             <div class="container">
                 <div class="row justify-content-center">
 
-                    <div class="col-6">
+                    <div class="col-md-6">
                         <img src="{{ asset('images/door-badges.png') }}" class="img-fluid w-100 "/>
                     </div>
 
@@ -803,42 +1083,6 @@
     </header>
 
     
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <a class="btn p-0 w-100" data-bs-toggle="modal" data-bs-target="#newsletterModal">
-                <img class="w-100 img-fluid d-none d-md-block" src="{{ asset('images/21offdesktop.png') }}"/>
-                
-                <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/21offmobile.png') }}"/>
-            </a>
-            </div>
-        </div>
-        <div class="row my-5">
-            <div class="col-12">
-                <h2 style="font-size:40px; font-weight:700" class="text-black text-center text-uppercase">Your kitchen looks <span class="text-danger">outdated</span> </h2>
-                <h3 style="font-size:40px; font-weight:700" class="text-black text-center text-uppercase"> <span class="font-weight:600"> because of those doors,</span>  <span style="font-weight:500">not the cabinets </span> </h3>
-            
-            </div>
-            <div class="col-7"></div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <img class="img-fluid d-none d-sm-block" src="{{ asset('images/dream-to-reality.png') }}"/>
-                <img class="img-fluid d-sm-none" src="{{ asset('images/dream-to-reality-mobile.png') }}"/>
-            </div>
-            
-            
-            <div class="col-12 col-md-6 rounded">
-                <!-- <img class="img-fluid" src="{{ asset('images/google-reviews.png') }}"/> -->
-                <!-- <video src="Downloads/door-replacement-video.mp4"></video> -->
-                <video  controls class="w-100 h-100">
-                    <source src="{{ asset('videos/door-replacement-video.mp4') }}" type="video/mp4">
-                    </video>
-            </div>
-            
-        </div>
-    </div>
-
     <section class="container-fluid my-5 bg-light py-4">
         <div class="container">
         <div class="row">
@@ -922,9 +1166,139 @@
     </div>
     </section>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <a class="btn p-0 w-100" data-bs-toggle="modal" data-bs-target="#newsletterModal">
+                <img class="w-100 img-fluid d-none d-md-block" src="{{ asset('images/free-on-siste-dark.png') }}"/>
+                
+                <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/free-on-site-dark-mobile.png') }}"/>
+            </a>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col-12">
+                <h2 style="font-size:40px; font-weight:700" class="text-black text-center text-uppercase">Your kitchen looks <span class="text-danger">outdated</span> </h2>
+                <h3 style="font-size:40px; font-weight:700" class="text-black text-center text-uppercase"> <span class="font-weight:600"> because of those doors,</span>  <span style="font-weight:500">not the cupboards </span> </h3>
+            
+            </div>
+            <div class="col-7"></div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <img class="img-fluid d-none d-sm-block" src="{{ asset('images/from-dream-to-reality.png') }}"/>
+                <img class="img-fluid d-sm-none" src="{{ asset('images/from-dream-to-reality-mobile.png') }}"/>
+            </div>
+            
+            
+            <div class="col-12 col-md-6 rounded">
+                 <img class="img-fluid d-none d-sm-block" src="{{ asset('images/tired-of-outdated-kitchen.png') }}"/>
+                 <img class="img-fluid d-sm-none" src="{{ asset('images/tired-of-outdated-cupboards-mobile.png') }}"/>
+                
+            </div>
+            
+        </div>
+    </div>
+    <div class="container-fluid mt-5 pt-4 pb-2" style="background-color: #d9d9d9">
+        <h4 class="text-black  mb-4 text-center mb-2" style="font-size:26px; font-weight:500">Those <span class="text-danger">Awful OLD LOOKING KITCHEN CUPBOARD DOORS </span> Are <br>Driving You Nuts, Aren’t they?</h4>
+        </div>
+
+    <div class="container-fluid" >
+        <div class="container py-5">
+            <div class="mb-3 row justify-content-center">
+                
+                <h1 class="mb-1 text-center text-black"> Discover the Perfect Doors for Your Kitchen</h1>
+                <p class="text-center fs-6 w-75">Browse our extensive collection of kitchen door styles, available in a wide array of colors and finishes. Find the ideal match for your existing cabinets and buy kitchen doors to create the kitchen of your dreams</p>
+    
+            </div>
+            <div class="row justify-content-center">
+                @foreach ($styles as $style)
+                <div class="col-12 col-lg-4 my-3">
+                    {{-- <div class="card" style="min-height: 515px !important"> --}}
+                    <div class="product-card">
+                        @if ($style->id == 1)
+                        {{-- <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/J-pull-Dove-Grey1744357344_67f8c7e02f610.png" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div> --}}
+    
+                       <div class="product-image-container">
+                        <a href="{{ route('ordercomponentbyname', ['doors']) }}?style_id={{$style->id}}"><img src="https://bkonline.uk/public/imgs/products/J-pull-Dove-Grey1744357344_67f8c7e02f610.png" class="product-image" id="main-image" alt="Kitchen Cabinet"></a>
+                       </div>
+                        @elseif($style->id == 2)
+                        <div class="product-image-container">
+                        <a href="{{ route('ordercomponentbyname', ['doors']) }}?style_id={{$style->id}}"><img src="https://bkonline.uk/public/imgs/products/Belsay-Cashmere1744359926_67f8d1f695086.jpg" class="product-image"  id="main-image" alt="Kitchen Cabinet"></a>
+                        </div>
+                        @elseif($style->id == 3)
+                        {{-- <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/Vivo-Gloss-Dust-Grey-Door-Flat_CMYK_PRINT1720430622_668bb01e6686d.jpg" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div> --}}
+                       <div class="product-image-container">
+                       <a href="{{ route('ordercomponentbyname', ['doors']) }}?style_id={{$style->id}}"><img src="https://bkonline.uk/public/imgs/products/Vivo-Gloss-Dust-Grey-Door-Flat_CMYK_PRINT1720430622_668bb01e6686d.jpg" class="product-image"  id="main-image" alt="Kitchen Cabinet"></a>
+                       </div>
+                        @elseif($style->id == 4)
+                        
+                        {{-- <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/vivo_vero_matt_anthracite1744270130_67f773321d81e.png" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div> --}}
+                        <div class="product-image-container">
+                        <a href="{{ route('ordercomponentbyname', ['doors']) }}?style_id={{$style->id}}"><img src="https://bkonline.uk/public/imgs/products/vivo_vero_matt_anthracite1744270130_67f773321d81e.png" class="" id="main-image" alt="Kitchen Cabinet"></a>
+                        </div>
+                        @elseif($style->id == 5)
+                        {{-- <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/Lucente-Gloss-Dust-Grey-Door-Perspective_CMYK_PRINT1720441467_668bda7b578b1.jpg" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div> --}}
+                        <div class="product-image-container">
+                        <a href="{{ route('ordercomponentbyname', ['doors']) }}?style_id={{$style->id}}"><img src="https://bkonline.uk/public/imgs/products/Lucente-Gloss-Dust-Grey-Door-Perspective_CMYK_PRINT1720441467_668bda7b578b1.jpg" class=""  id="main-image" alt="Kitchen Cabinet"></a>
+                        </div>
+                        @elseif($style->id == 6)
+                        {{-- <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/Cartmel-Anthracite-Flat-Door-Cutout_RGB_Web1720451119_668c002f56976.jpg" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div> --}}
+                        <div class="product-image-container">
+                        <a href="{{ route('ordercomponentbyname', ['doors']) }}?style_id={{$style->id}}"><img src="https://bkonline.uk/public/imgs/products/Cartmel-Anthracite-Flat-Door-Cutout_RGB_Web1720451119_668c002f56976.jpg" class=""  id="main-image" alt="Kitchen Cabinet"></a>
+                        </div>
+                        @elseif($style->id == 7)
+                        {{-- <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/Vivo-Matt_Cashmere_Door-Flat_With-Handle1720432485_668bb765d85c3.jpg" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div> --}}
+                        <div class="product-image-container">
+                        <a href="{{ route('ordercomponentbyname', ['doors']) }}?style_id={{$style->id}}"><img src="https://bkonline.uk/public/imgs/products/Vivo-Matt_Cashmere_Door-Flat_With-Handle1720432485_668bb765d85c3.jpg" class=""  id="main-image" alt="Kitchen Cabinet"></a>
+                        </div>
+                        @elseif($style->id == 8)
+                        <div class="product-image-container">
+                        <a href="{{ route('ordercomponentbyname', ['doors']) }}?style_id={{$style->id}}"><img src="https://bkonline.uk/public/imgs/products/vivo_vero_matt_light_grey1744270102_67f77316cd6eb.png" class=""  id="main-image" alt="Kitchen Cabinet"></a>
+                        </div>
+                        @elseif($style->id == 10)
+                        {{-- <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/Matt-Light-Grey-Door-with-Handle1730581810_67269532decf5.jpg" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div> --}}
+                        <div class="product-image-container">
+                        <a href="{{ route('ordercomponentbyname', ['doors']) }}?style_id={{$style->id}}"><img src="https://bkonline.uk/public/imgs/products/Matt-Light-Grey-Door-with-Handle1730581810_67269532decf5.jpg" class=""  id="main-image" alt="Kitchen Cabinet"></a>
+                        </div>
+                        @endif
+                        {{-- <div class="card-body text-center"> --}}
+                            {{-- <div class="d-flex justify-content-center align-items-center mb-4"> --}}
+                                <h1 class="product-title">{{$style->name}}</h1>
+                            {{-- </div> --}}
+                            {{-- <div class="d-flex justify-content-center align-items-center mb-4">
+                                <h5 class="mb-0 text-decoration-underline">Available Colors:</h5>
+                            </div> --}}
+                            <div class="color-options">
+                                <div class="option-title">Available Colors</div>
+                            <div class="color-grid">
+                                @foreach ($style['colours'] as $styleColour)
+                                @php ($colour = \App\Models\Colour::where('id', $styleColour)->first()) @endphp
+                                <a href="{{ route('ordercomponentbyname', ['doors']) }}?style_id={{$style->id}}&colour_id={{$styleColour}}" title="{{ $colour->trade_colour }}">
+                                    {{-- <div class="color-thumbnail active" style="background-color: {{$colour->colour_code}};" data-color="white" title="{{ $colour->trade_colour }}"></div> --}}
+                                    <div class="color-option active" style="background-color: {{$colour->colour_code}};" data-color="white" title="{{ $colour->trade_colour }}"></div>
+                                
+                                </a>
+                                @endforeach
+                                <!-- <div class="color-thumbnail" style="background-color: #E8E4DC;" data-color="light-gray"></div>
+                                <div class="color-thumbnail" style="background-color: #E9E2D5;" data-color="cream"></div>
+                                <div class="color-thumbnail" style="background-color: #4A4A4A;" data-color="dark-gray"></div>
+                                <div class="color-thumbnail" style="background-color: #F5EFE2;" data-color="off-white"></div>
+                                <div class="color-thumbnail" style="background-color: #F0E9D6;" data-color="beige"></div> -->
+                            </div>
+                        {{-- </div> --}}
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+                
+            </div>
+        </div>
+    </div>
+
     <div class="container-fluid py-3" style="background-color:#f2f4f5">
         <div class="container py-5">
-            <h2 class="section-title text-black">OUR <span class="highlight">SIMPLE 3-STEP</span> DOOR REPLACEMENT PROCESS</h2>
+            <h2 class="section-title text-black">OUR <span class="highlight">SIMPLE 3-STEP</span> CUPBOARD DOOR REPLACEMENT PROCESS</h2>
             <div class="title-underline"></div>
             
             <h3 class="how-it-works text-black my-5">HOW IT WORKS</h3>
@@ -972,7 +1346,7 @@
                 </div>
             </div>
             
-            <p class="benefit-text mb-2 mt-5 fs-4">Benefit from our limited time offer and get a Free Quote for Door Replacement</p>
+            <p class="benefit-text mb-2 mt-5 fs-4">Benefit from our limited time offer and <br><span class="text-black">Get a Free Quote for Cupboard Door Replacement</span></p>
             
             <div class="text-center">
                 <a href="#" class="btn btn-consultation py-3 px-4 w-100" style="max-width: 500px;" data-bs-toggle="modal" data-bs-target="#exampleModal">BOOK YOUR FREE CONSULTATION NOW!</a>
@@ -992,117 +1366,34 @@
         </div> --}}
     </div>
 
-<div class="container-fluid" >
-    <div class="container py-5">
-        <div class="mb-3 row justify-content-center">
-            <h4 class="text-black  mb-4 text-center mb-2" style="font-size:26px; font-weight:500">Those <span class="text-danger">Awful OLD LOOKING KITCHEN CABINET DOORS </span> Are <br>Driving You Nuts, Aren’t they?</h4>
-            <h1 class="mb-1 text-center text-black"> Discover the Perfect Doors for Your Kitchen</h1>
-            <p class="text-center fs-6 w-75">Browse our extensive collection of kitchen door styles, available in a wide array of colors and finishes. Find the ideal match for your existing cabinets and buy kitchen doors to create the kitchen of your dreams</p>
 
-        </div>
-        <div class="row justify-content-center">
-            @foreach ($styles as $style)
-            <div class="col-12 col-lg-4 my-3">
-                {{-- <div class="card" style="min-height: 515px !important"> --}}
-                <div class="product-card">
-                    @if ($style->id == 1)
-                    {{-- <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/J-pull-Dove-Grey1744357344_67f8c7e02f610.png" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div> --}}
 
-                   <div class="product-image-container">
-                    <a href="{{ route('ordercomponentbyname', ['doors']) }}?style_id={{$style->id}}"><img src="https://bkonline.uk/public/imgs/products/J-pull-Dove-Grey1744357344_67f8c7e02f610.png" class="product-image" id="main-image" alt="Kitchen Cabinet"></a>
-                   </div>
-                    @elseif($style->id == 2)
-                    <div class="product-image-container">
-                    <a href="{{ route('ordercomponentbyname', ['doors']) }}?style_id={{$style->id}}"><img src="https://bkonline.uk/public/imgs/products/Belsay-Cashmere1744359926_67f8d1f695086.jpg" class="product-image"  id="main-image" alt="Kitchen Cabinet"></a>
-                    </div>
-                    @elseif($style->id == 3)
-                    {{-- <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/Vivo-Gloss-Dust-Grey-Door-Flat_CMYK_PRINT1720430622_668bb01e6686d.jpg" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div> --}}
-                   <div class="product-image-container">
-                   <a href="{{ route('ordercomponentbyname', ['doors']) }}?style_id={{$style->id}}"><img src="https://bkonline.uk/public/imgs/products/Vivo-Gloss-Dust-Grey-Door-Flat_CMYK_PRINT1720430622_668bb01e6686d.jpg" class="product-image"  id="main-image" alt="Kitchen Cabinet"></a>
-                   </div>
-                    @elseif($style->id == 4)
-                    
-                    {{-- <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/vivo_vero_matt_anthracite1744270130_67f773321d81e.png" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div> --}}
-                    <div class="product-image-container">
-                    <a href="{{ route('ordercomponentbyname', ['doors']) }}?style_id={{$style->id}}"><img src="https://bkonline.uk/public/imgs/products/vivo_vero_matt_anthracite1744270130_67f773321d81e.png" class="" id="main-image" alt="Kitchen Cabinet"></a>
-                    </div>
-                    @elseif($style->id == 5)
-                    {{-- <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/Lucente-Gloss-Dust-Grey-Door-Perspective_CMYK_PRINT1720441467_668bda7b578b1.jpg" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div> --}}
-                    <div class="product-image-container">
-                    <a href="{{ route('ordercomponentbyname', ['doors']) }}?style_id={{$style->id}}"><img src="https://bkonline.uk/public/imgs/products/Lucente-Gloss-Dust-Grey-Door-Perspective_CMYK_PRINT1720441467_668bda7b578b1.jpg" class=""  id="main-image" alt="Kitchen Cabinet"></a>
-                    </div>
-                    @elseif($style->id == 6)
-                    {{-- <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/Cartmel-Anthracite-Flat-Door-Cutout_RGB_Web1720451119_668c002f56976.jpg" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div> --}}
-                    <div class="product-image-container">
-                    <a href="{{ route('ordercomponentbyname', ['doors']) }}?style_id={{$style->id}}"><img src="https://bkonline.uk/public/imgs/products/Cartmel-Anthracite-Flat-Door-Cutout_RGB_Web1720451119_668c002f56976.jpg" class=""  id="main-image" alt="Kitchen Cabinet"></a>
-                    </div>
-                    @elseif($style->id == 7)
-                    {{-- <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/Vivo-Matt_Cashmere_Door-Flat_With-Handle1720432485_668bb765d85c3.jpg" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div> --}}
-                    <div class="product-image-container">
-                    <a href="{{ route('ordercomponentbyname', ['doors']) }}?style_id={{$style->id}}"><img src="https://bkonline.uk/public/imgs/products/Vivo-Matt_Cashmere_Door-Flat_With-Handle1720432485_668bb765d85c3.jpg" class=""  id="main-image" alt="Kitchen Cabinet"></a>
-                    </div>
-                    @elseif($style->id == 8)
-                    <div class="product-image-container">
-                    <a href="{{ route('ordercomponentbyname', ['doors']) }}?style_id={{$style->id}}"><img src="https://bkonline.uk/public/imgs/products/vivo_vero_matt_light_grey1744270102_67f77316cd6eb.png" class=""  id="main-image" alt="Kitchen Cabinet"></a>
-                    </div>
-                    @elseif($style->id == 10)
-                    {{-- <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/Matt-Light-Grey-Door-with-Handle1730581810_67269532decf5.jpg" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div> --}}
-                    <div class="product-image-container">
-                    <a href="{{ route('ordercomponentbyname', ['doors']) }}?style_id={{$style->id}}"><img src="https://bkonline.uk/public/imgs/products/Matt-Light-Grey-Door-with-Handle1730581810_67269532decf5.jpg" class=""  id="main-image" alt="Kitchen Cabinet"></a>
-                    </div>
-                    @endif
-                    {{-- <div class="card-body text-center"> --}}
-                        {{-- <div class="d-flex justify-content-center align-items-center mb-4"> --}}
-                            <h1 class="product-title">{{$style->name}}</h1>
-                        {{-- </div> --}}
-                        {{-- <div class="d-flex justify-content-center align-items-center mb-4">
-                            <h5 class="mb-0 text-decoration-underline">Available Colors:</h5>
-                        </div> --}}
-                        <div class="color-options">
-                            <div class="option-title">Available Colors</div>
-                        <div class="color-grid">
-                            @foreach ($style['colours'] as $styleColour)
-                            @php ($colour = \App\Models\Colour::where('id', $styleColour)->first()) @endphp
-                            <a href="{{ route('ordercomponentbyname', ['doors']) }}?style_id={{$style->id}}&colour_id={{$styleColour}}" title="{{ $colour->trade_colour }}">
-                                {{-- <div class="color-thumbnail active" style="background-color: {{$colour->colour_code}};" data-color="white" title="{{ $colour->trade_colour }}"></div> --}}
-                                <div class="color-option active" style="background-color: {{$colour->colour_code}};" data-color="white" title="{{ $colour->trade_colour }}"></div>
-                            
-                            </a>
-                            @endforeach
-                            <!-- <div class="color-thumbnail" style="background-color: #E8E4DC;" data-color="light-gray"></div>
-                            <div class="color-thumbnail" style="background-color: #E9E2D5;" data-color="cream"></div>
-                            <div class="color-thumbnail" style="background-color: #4A4A4A;" data-color="dark-gray"></div>
-                            <div class="color-thumbnail" style="background-color: #F5EFE2;" data-color="off-white"></div>
-                            <div class="color-thumbnail" style="background-color: #F0E9D6;" data-color="beige"></div> -->
-                        </div>
-                    {{-- </div> --}}
-                    </div>
-                </div>
-            </div>
-            @endforeach
-            
-        </div>
-    </div>
-</div>
-
-<div class="container">
+<div class="container mt-5">
     <div class="row">
         <div class="col-12">
-            <h1 class="mb-1 text-center text-black mb-5"> DOOR REPLACEMENT SERVICE</h1>
+            <h1 class="mb-1 text-center text-black mb-2 text-uppercase"> kitchen Cupboard DOOR REPLACEMENT</h1>
+            <div class="d-flex justify-content-center">
+                <div id="lines" class="mb-3">
+                    <div id="line1"></div>
+                    <div id="line2"></div>
+                    <div id="line3"></div>
+                
+                </div>
+            </div>
         <!-- <h3 style="font-style:28px;font-weight:600" class="text-black text-center mb-2"></h3> -->
         </div>
     </div>
-    <div class="row">
+    {{-- <div class="row">
         <div class="col-12 mb-2 mb-md-0 col-md-6">
             <img class="img-fluid w-100" src="{{ asset('images/door-1.png') }}"/>
         </div>
         <div class="col-12 mb-2 mb-md-0 col-md-6">
             <img class="img-fluid w-100" src="{{ asset('images/door-2.png') }}"/>
         </div>
-    </div>
+    </div> --}}
     <div class="row mt-3">
         <div class="col-12 mb-2 mb-md-0">
-            <img  class="img-fluid w-100" src="{{ asset('images/door-3.png') }}"/>
+            <img  class="img-fluid w-100" src="{{ asset('images/cupboard-1.png') }}"/>
         </div>
       
     </div>
@@ -1249,7 +1540,7 @@
     <div class ="container-fluid bg-white">
         <section class="consultation-section bg-white">
             <div class="container bg-white">
-                <h2 class="mb-2 text-black">Why Choose Buy Kitchen Online for Door Replacement?</h2>
+                <h2 class="mb-2 text-black text-uppercase">Why Choose Buy Kitchen Online for <br> Cupboard Door Replacement?</h2>
                 <div class = "row mb-1 justify-content-center">
                     <div class="col-6">
                         <div id="lines" class="mb-3">
@@ -1257,7 +1548,7 @@
                             <div id="line2"></div>
                             <div id="line3"></div>
                         
-                    </div>
+                        </div>
                     </div>
                 </div>
                 
@@ -1315,6 +1606,156 @@
 
      <!-- Testimonials -->
      @include('frontend.testimonials_component')
+
+     <div class="container-fluid faq-body">
+        <div class="container faq-container">
+            <div class="faq-header">
+                <h1>FAQS</h1>
+            </div>
+        
+            <div class="faq-list">
+                {{-- @if (!empty($home)) --}}
+                     <!-- FAQ Item 1 -->
+                     <div class="faq-item" data-category="general">
+                        <div class="faq-question">
+                            <div>
+                                
+                                What is meant by kitchen cupboard door replacement?
+                            </div>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                       <p>Kitchen cupboard door replacement gives your kitchen a new look by replacing the cupboard doors without a complete renovation.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item" data-category="general">
+                        <div class="faq-question">
+                            <div>
+                                
+                                Why is it better to replace just the cupboard doors instead of a whole kitchen remodel?
+                            </div>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                       <p>Replacing kitchen cupboard doors is affordable, faster, and causes less disruption than a full kitchen remodel.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item" data-category="general">
+                        <div class="faq-question">
+                            <div>
+                                
+                                Will my existing kitchen layout get disturbed by the new cupboard doors?
+                            </div>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                       <p>Not at all, as the new kitchen cupboard doors will be customized to your kitchen style and measured according to your current kitchen layout.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item" data-category="general">
+                        <div class="faq-question">
+                            <div>
+                                How long does the process of door replacement take?
+                            </div>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                       <p>Typically, installation takes 2-3 days after the cupboard doors are manufactured and ready.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item" data-category="general">
+                        <div class="faq-question">
+                            <div>
+                                What if I go for a change of style or colour of my cupboard doors?
+                            </div>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                       <p>You can select the style and colour of your choice from our wide variety of modern and traditional styles.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item" data-category="general">
+                        <div class="faq-question">
+                            <div>
+                                Can you replace the old wooden doors or laminate cupboard doors?
+                            </div>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                       <p>Yes, we can replace any old, outdated kitchen cupboard doors with new ones, enhancing the outlook of your kitchen.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item" data-category="general">
+                        <div class="faq-question">
+                            <div>
+                                Will the new doors fit my existing cupboards?
+                            </div>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                       <p>Yes, the new door's dimensions will match your existing cupboards.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item" data-category="general">
+                        <div class="faq-question">
+                            <div>
+                                Can I go for a completely traditional look?
+                            </div>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                       <p>
+
+                        Yes, we offer Shaker kitchen cupboards, giving your kitchen a classic-traditional look.
+                        </p>
+                        </div>
+                    </div>
+                     <div class="faq-item" data-category="general">
+                        <div class="faq-question">
+                            <div>
+                                Can the handles and hinges be replaced?
+                            </div>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                       <p>
+                        Absolutely, we can change the knobs, handles and hinges if you'd like to update them along with the kitchen cupboard doors.
+                        </p>
+                        </div>
+                    </div>
+        
+                
+        
+                {{-- @else
+                    @if (count($faqsData) > 0)
+                        @foreach ($faqsData as $faq) --}}
+                <!-- FAQ Item 1 -->
+                {{-- <div class="faq-item" data-category="general">
+                    <div class="faq-question">
+                        <div> --}}
+                            {{-- <span class="faq-badge faq-badge-popular">Popular</span> --}}
+                            {{-- What is the difference between an affordable kitchen unit and a custom kitchen unit? --}}
+                            {{-- {{ $faq['question'] }}
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer"> --}}
+                   {{-- <p>An affordable kitchen unit offers budget-friendly solutions without compromising the quality. In comparison, custom kitchen units are tailor-made to your style, space, and preferences. They are available at a higher cost as compared to affordable kitchen units.</p> --}}
+                   {{-- {!! $faq['answer'] !!}
+                </div>
+                </div> --}}
+                    {{-- @endforeach --}}
+               
+                {{-- @else --}}
+                {{-- <div class="alert alert-light" role="alert">
+                    No FAQ's found.
+                </div> --}}
+                {{-- @endif --}}
+            {{-- @endif --}}
+            </div>
+        </div>
+        </div>
+
       <!-- FAQs -->
     {{-- @include('frontend.faqs_component', ['faqsData' => $generalFaqs]) --}}
 
@@ -1476,7 +1917,47 @@
     <script>
 
 
-function sendEmail() {
+const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    
+                    this.classList.toggle('active');
+                    
+                    const answer = this.nextElementSibling;
+                    answer.classList.toggle('show');
+                    
+                    faqQuestions.forEach(q => {
+                        if (q !== question) {
+                            q.classList.remove('active');
+                            q.nextElementSibling.classList.remove('show');
+                        }
+                    });
+                });
+            });
+
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            faqItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = `all 0.5s ease ${index * 0.1}s`;
+                observer.observe(item);
+            });
+
+
+        function sendEmail() {
             var email = $('#emailInput').val();
             var button = $(this);
             var btnText = button.find('.btn-text');
