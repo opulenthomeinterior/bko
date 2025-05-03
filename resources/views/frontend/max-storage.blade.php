@@ -1022,7 +1022,7 @@
         <div class="row">
             <div class="col-12  d-flex align-items-center">
                 <div>
-                    <h3 class="mb-3 text-uppercase text-danger">Are you STRUGGLING with STORAGE SPACE?</h3>
+                    <h3 class="mb-3 text-uppercase ">Are you <span class="text-danger"> STRUGGLING with STORAGE SPACE?</span></h3>
                     <h3 class="text-uppercase" style="color: #2a6161">SOLUTION
                         
                          <br><b style="color: #000">BESPOKE MAX STORAGE KITCHENS</b></h3>

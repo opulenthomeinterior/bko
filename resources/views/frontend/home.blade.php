@@ -699,7 +699,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(0.8);
+            /* filter: brightness(0.8); */
             transition: transform 0.5s ease;
         }
         
@@ -1036,6 +1036,61 @@
             
         }
 
+        .column-badges
+        {
+            position: absolute;
+            top: -120px;
+            right: -740px;
+        }
+        /* .column-bdages a 
+        {
+            position: relative !important;
+        }
+        .column-badges a img 
+        {
+            position: absolute !important;
+        } */
+            @media (max-width:1024px) {
+                .column-badges
+                {
+                    position: static;
+                    /* top:auto;
+                    right: auto; */
+                }
+            }
+            .modern-card {
+            border: none !important;
+            border-radius: 15px !important;
+            overflow: hidden !important;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+            transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+        }
+        
+        .modern-card:hover {
+            transform: translateY(-5px) !important;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12) !important;
+        }
+        
+        .card-img-top {
+            height: 220px !important;
+            object-fit: cover !important;
+        }
+        
+        .card-body {
+            padding: 25px !important;
+        }
+        
+        .card-title {
+            font-weight: 700 !important; 
+            margin-bottom: 12px !important;
+            color: #212529 !important;
+        }
+        
+        .card-text {
+            color: #6c757d !important;
+            line-height: 1.6 !important;
+        }
+        
     </style>
     @endsection
     </head>
@@ -1098,9 +1153,9 @@
 
         <!-- Content -->
         <div class="container">
-            <div class="row justify-content-center main-image-content align-items-center" style="z-index: 1000;">
+            <div class="row justify-content-center main-image-content align-items-center " style="z-index: 1000;">
                 <!-- Left Content -->
-                <div class="col-md-9 text-start text-white px-4" style="z-index: 100;">
+                <div class="col-md-9 text-start text-white px-4 p-0" style="z-index: 100;">
                     <div class="ps-4 animated slide-top">
                         {{-- <h6 class="text-yellow-color fw-bold text-center" style="letter-spacing:8px;">BUY KITCHEN ONLINE</h6> --}}
                         <h6 class="text-white fw-bold text-center" style="letter-spacing:8px;">BUY KITCHEN ONLINE</h6>
@@ -1110,17 +1165,30 @@
                                 {{-- <h1 class="text-white animated slide-right text-center">ELEVATE YOUR KITCHEN</h1> --}}
                                 {{-- <h1 class="text-yellow-color fw-bold animated slide-left text-center">ELEVATE YOUR LIFESTYLE</h1> --}}
                                 <h1 class="text-yellow-color fw-bold animated slide-left text-uppercase text-center">Best of both worldS</h1>
-                                <h2 class="text-white fw-bold animated slide-left text-uppercase text-center"> Retail QuAlity | Online Prices | 1 OF A KIND</h2>
+                                <h2 class="text-white fw-bold animated slide-left text-uppercase text-center"> Retail QuAlity | Online Prices | Peace of Mind</h2>
                                 {{-- <p  class=" text-white animated slide-bottom text-center" style="font-size:20px">We specialize in virtually designing and delivering your dream kitchen that complements your needs and style. Whether you want to build a new kitchen or need to replace a single component, we are always at your service.</p> --}}
-                                <p  class=" mt-5 text-white animated slide-bottom text-center" style="font-size:26px"><span class="text-yellow-color">The ONLY COMPANY</span> With Premium Quality Kitchens at Affordable Prices
+                                <p  class=" mt-5 text-white animated slide-bottom text-center" style="font-size:26px"><span class="text-yellow-color">The ONLY COMPANY</span> With Premium Quality Kitchens at Affordable Prices. <br>
                                     From design to installation—we handle everything so you can relax!
                                     </p>
                             
                             </div>
-                            <div class="container d-flex flex-column align-items-center text-center">
+                            <div class="container d-flex flex-column align-items-center text-center position-relative">
                                 <div class="col-xl-8 col-lg-10 col-md-10 col-sm-12 animated slide-top mx-auto" style="margin-top: 5px;">
                                     <!-- <h4 class="unique-font text-white px-3 py-1 rounded-gradient-border w-100" id="typing-effect"></h4> -->
-                                     <img class="w-100" src="{{ asset('images/homepage-badges.png') }}" alt="">
+                                     <!-- <img class="w-100" src="{{ asset('images/homepage-badges.png') }}" alt=""> -->
+                                    <div class="row justify-content-center flex-lg-column column-badges" >
+                                        <img class="w-25" src="{{ asset('images/premium-badge.png') }}" alt="">
+                                        <!-- <a href="https://www.trustpilot.com/review/opulenthomeinteriors.com">
+                                         </a>    -->
+                                         <!-- <a class="btn" href="https://www.trustpilot.com/review/opulenthomeinteriors.com"> -->
+                                            <img style="cursor: pointer;" class="w-25" src="{{ asset('images/trust-pilot-badge.png') }}" 
+                                            onclick="window.location.href ='https://www.trustpilot.com/review/opulenthomeinteriors.com'">
+                                        
+
+                                         
+                                            <img style="cursor: pointer;" class="w-25" src="{{ asset('images/google-reviews-badge.png') }}" alt="" onclick="window.location.href ='https://www.google.com/maps/place/Buy+Kitchen+Online/@51.5192167,-0.0093268,17z/data=!4m8!3m7!1s0x48761d591fe166d7:0x456fed0ffc8a8222!8m2!3d51.5192167!4d-0.0093268!9m1!1b1!16s%2Fg%2F11vbf0zdzm?entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D'">
+                                       
+                                    </div>
                                 </div>
                                 <div class="col-xl-8 col-lg-10 col-md-10 col-sm-12 animated slide-bottom mt-4 mx-auto">
                                     <!-- <a href="{{ route('orderkitchen') }}" class="btn w-100 btn-md bg-yellow-color2 text-white text-uppercase border-green-color" style="border-radius: 50px;"> -->
@@ -1451,11 +1519,207 @@
         <div class="col-12">
             <h2 class="text-uppercase text-center mt-5 mb-4 text-black fw-bold">Ordering elsewhere <span class="text-danger">vs.</span> Letting us handle it</h2>
             
-            <img class="d-md-none w-100" src="{{ asset('images/letting-us-mobile.png') }}" alt="">
-            <img class="d-none d-md-block w-100" src="{{ asset('images/letting-us-handle.png') }}" alt="">
+            <img class="d-md-none w-100 border boder-success" src="{{ asset('images/letting-us-mobile.png') }}" alt="">
+            <img class="d-none d-md-block w-100 border boder-primary" src="{{ asset('images/letting-us-handle.png') }}" alt="">
         </div>
     </div>
     </div>
+
+<div class="container-fluid" style="background-color: #fffaf0;">
+
+    <!-- <div class="container faq-container"> -->
+    <div class="container faq-container">
+        <div class="faq-header">
+            <h2 class="text-black fw-bolder mb-1">PEACE OF MIND</h2>
+            <h4 class="text-black fw-bolder">Buy Kitchen Online <span class="text-danger"> VS</span> Other Online Stores</h4>
+        </div>
+
+        
+        
+
+        <div class="faq-list">
+            <!-- FAQ Item 1 -->
+            <div class="faq-item" data-category="general">
+                <div class="faq-question">
+                    <div>
+                        <span class="faq-badge faq-badge-popular">1</span>
+                        Site Survey & Measurements
+                    </div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                  
+                    <div class="faq-card-container">
+                        <div class="faq-card">
+                            <div class="faq-card-title text-black">
+                                <!-- <i class="fas fa-box-open"></i> -->
+                                Other Online Stores
+                            </div>
+                            <div class="faq-card-desc">
+                               <h4 class="text-black">You measure. You guess. You hope it fits.</h4>
+                               <p>– DIY site survey (risk of errors).</p>
+                            </div>
+                        </div>
+                        <div class="faq-card">
+                            <div class="faq-card-title">
+                                <!-- <i class="fas fa-cloud-download-alt"></i> -->
+                                Buy Kitchen Online
+                            </div>
+                            <div class="faq-card-desc">
+                                <h4 class="text-black"> We measure. We plan. We guarantee it fits. </h4>
+                                <p>-Free professional site survey.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item" data-category="general">
+                <div class="faq-question">
+                    <div>
+                        <span class="faq-badge faq-badge-popular">2</span>
+                        Kitchen Design
+                    </div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                  
+                    <div class="faq-card-container">
+                        <div class="faq-card">
+                            <div class="faq-card-title text-black">
+                                <!-- <i class="fas fa-box-open"></i> -->
+                                Other Online Stores
+                            </div>
+                            <div class="faq-card-desc">
+                               <h4 class="text-black">You design alone (with generic software).</h4>
+                               <p>– No personalized advice.</p>
+                            </div>
+                        </div>
+                        <div class="faq-card">
+                            <div class="faq-card-title">
+                                <!-- <i class="fas fa-cloud-download-alt"></i> -->
+                                Buy Kitchen Online
+                            </div>
+                            <div class="faq-card-desc">
+                                <h4 class="text-black">We design with you (for your actual space).</h4>
+                                <p>– Expert designers tailor layouts to suit your needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item" data-category="general">
+                <div class="faq-question">
+                    <div>
+                        <span class="faq-badge faq-badge-popular">3</span>
+                        Ordering Process
+                    </div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                  
+                    <div class="faq-card-container">
+                        <div class="faq-card">
+                            <div class="faq-card-title text-black">
+                                <!-- <i class="fas fa-box-open"></i> -->
+                                Other Online Stores
+                            </div>
+                            <div class="faq-card-desc">
+                               <h4 class="text-black">You play project manager.</h4>
+                               <p>– Manually add items to cart (risk of mistakes or reordering).</p>
+                            </div>
+                        </div>
+                        <div class="faq-card">
+                            <div class="faq-card-title">
+                                <!-- <i class="fas fa-cloud-download-alt"></i> -->
+                                Buy Kitchen Online
+                            </div>
+                            <div class="faq-card-desc">
+                                <h4 class="text-black">We handle everything for you.</h4>
+                                <p>– We place your order (accurate products, every time).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item" data-category="general">
+                <div class="faq-question">
+                    <div>
+                        <span class="faq-badge faq-badge-popular">4</span>
+                        Delivery & Quality Check
+                    </div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                  
+                    <div class="faq-card-container">
+                        <div class="faq-card">
+                            <div class="faq-card-title text-black">
+                                <!-- <i class="fas fa-box-open"></i> -->
+                                Other Online Stores
+                            </div>
+                            <div class="faq-card-desc">
+                               <h4 class="text-black">You inspect. You stress. You’re on your own.</h4>
+                               <p>– Faulty items? Return deadlines apply.</p>
+                            </div>
+                        </div>
+                        <div class="faq-card">
+                            <div class="faq-card-title">
+                                <!-- <i class="fas fa-cloud-download-alt"></i> -->
+                                Buy Kitchen Online
+                            </div>
+                            <div class="faq-card-desc">
+                                <h4 class="text-black">We inspect. You relax.</h4>
+                                <p>– Our team verifies all items before installation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item" data-category="general">
+                <div class="faq-question">
+                    <div>
+                        <span class="faq-badge faq-badge-popular">5</span>
+                        Installation
+                    </div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                  
+                    <div class="faq-card-container">
+                        <div class="faq-card">
+                            <div class="faq-card-title text-black">
+                                <!-- <i class="fas fa-box-open"></i> -->
+                                Other Online Stores
+                            </div>
+                            <div class="faq-card-desc">
+                               <h4 class="text-black">You hire a fitter. You cross your fingers.</h4>
+                               <p>– Third-party installers charge extra for fixes. <br>
+                                – Mistakes = reorder & repay shipping (You pay the price for the mistake of others)
+                                </p>
+                            </div>
+                        </div>
+                        <div class="faq-card">
+                            <div class="faq-card-title">
+                                <!-- <i class="fas fa-cloud-download-alt"></i> -->
+                                Buy Kitchen Online
+                            </div>
+                            <div class="faq-card-desc">
+                                <h4 class="text-black">We install. We guarantee. We prioritize your peace of mind.</h4>
+                                <p>– Expert fitters (no strangers in your home). <br>
+                                    – Full project management accountability—if something’s wrong, we handle it.
+                                    </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+        <h4 class="text-black fw-bold text-center">With Buy Kitchen Online, you get the best of both worlds—online prices with retail-store quality and service—all under one roof.</h4>
+    </div>
+</div>
+
     <div class="container mt-4">
         <div class="row">
             <h2 class="text-uppercase text-center mt-5 mb-4 text-black fw-bold">There are <span style="color: #FDB71A;">three types </span>of Kitchen buyers. <br> <span class="text-danger">Which one are you?</span></h2>
@@ -1464,16 +1728,16 @@
         <div class="row">
             <div class="col-md-6 col-12">
                 
+                <img class="w-100 img-fluid d-none d-md-block" src="{{ asset('images/the-luxury-lover.png') }}"/>
+                    
+                <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/the-luxury-lover-mobile.png') }}"/>
+            </div>
+            <div class="col-md-6 col-12">
+                
                 <img class="w-100 img-fluid d-none d-md-block" src="{{ asset('images/the-online-gambler.png') }}"/>
                     
                 <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/the-online-gambler-mobile.png') }}"/>
             </div>
-        <div class="col-md-6 col-12">
-            
-            <img class="w-100 img-fluid d-none d-md-block" src="{{ asset('images/the-luxury-lover.png') }}"/>
-                
-            <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/the-luxury-lover-mobile.png') }}"/>
-        </div>
     </div>
     </div>
 
@@ -1506,7 +1770,7 @@
                 </div>
                 <h2 class="fs-1 mt-4">
                     <span class="text-black">WE MAKE </span>
-                    <span class="text-danger"> OTHER KITCHEN PROVIDERS LOOK LIKE</span> <span class="text-danger fw-bolder">SCAM</span>
+                    <span class="text-danger fw-bolder"> OTHER KITCHEN PROVIDERS </span> <span class="text-black">LOOK LIKE</span> <span class="text-danger fw-bolder">SCAM</span>
                 </h2>
             </div>
         </div>
@@ -1604,7 +1868,7 @@
           <div class="col-md-3 col-sm-6">
             <div class="card-wrapper-bespoke">
               <div class="border-box-bespoke"></div>
-              <div class="custom-card-bespoke">
+              <div class="custom-card-bespoke shadow-lg">
                 <h3 class="bespoke-title">100% Custom Designs</h3>
                 <p class="bespoke-description">Tailored to your space, style, and lifestyle.</p>
               </div>
@@ -1614,7 +1878,7 @@
           <div class="col-md-3 col-sm-6">
             <div class="card-wrapper-bespoke">
               <div class="border-box-bespoke"></div>
-              <div class="custom-card-bespoke">
+              <div class="custom-card-bespoke shadow-lg">
                 <h3 class="bespoke-title">Premium Materials</h3>
                 <p class="bespoke-description">Durable materials and hand picked finishes.</p>
               </div>
@@ -1624,7 +1888,7 @@
           <div class="col-md-3 col-sm-6">
             <div class="card-wrapper-bespoke">
               <div class="border-box-bespoke"></div>
-              <div class="custom-card-bespoke">
+              <div class="custom-card-bespoke shadow-lg">
                 <h3 class="bespoke-title">Smart & <br> Stylish</h3>
                 <p class="bespoke-description">Seamless storage, Trendy and at the market retail price.</p>
               </div>
@@ -1634,7 +1898,7 @@
           <div class="col-md-3 col-sm-6">
             <div class="card-wrapper-bespoke">
               <div class="border-box-bespoke"></div>
-              <div class="custom-card-bespoke">
+              <div class="custom-card-bespoke shadow-lg">
                 <h3 class="bespoke-title">End-to-End Service</h3>
                 <p class="bespoke-description">From concept to installation, all under one roof.</p>
               </div>
@@ -1642,7 +1906,7 @@
           </div>
         </div>
     
-        <div class="cta-text-bespoke">TIRED OF WASTED SPACE?</div>
+        <div class="cta-text-bespoke">ARE YOU <span class="text-danger"> TIRED OF WASTED SPACE?</span></div>
         <!-- <button class="cta-button-bespoke">CHECK OUR MAX STORAGE KITCHENS</button> -->
         <button  class="m-0 btn btn-lg cta-button rounded-0" style="background-color:#ffc107;">CHECK OUR MAX STORAGE KITCHENS</button>
                
@@ -1920,6 +2184,116 @@
     </section>
 
     
+
+    <section class="services-section">
+        <div class="container">
+            <h2 class="text-black text-center mb-3">Why choose BUY KITCHEN ONLINE?</h2>
+            <!-- Slider Container -->
+<div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        
+            <a href="{{ route('max_storage') }}">
+                <div class="card modern-card h-100">
+                    <img src="{{asset('images/shaker-22-250.png')}}" class="card-img-top" alt="Card image">
+                        <div class="card-body">
+                            <h5 class="card-title">Best Prices</h5>
+                            <p class="card-text">Our discounts are so good, even our accountant cries.</p>
+                            <!-- <a href="#" class="btn btn-primary mt-3">Learn More</a> -->
+                        </div>
+                </div>
+        </a>
+      </div>
+      
+      <div class="swiper-slide">
+        
+            <a href="{{ route('max_storage') }}">
+                <div class="card modern-card h-100">
+                    <img src="{{asset('images/shaker-22-250.png')}}" class="card-img-top" alt="Card image">
+                        <div class="card-body">
+                            <h5 class="card-title">Best Prices</h5>
+                            <p class="card-text">Our discounts are so good, even our accountant cries.</p>
+                            <!-- <a href="#" class="btn btn-primary mt-3">Learn More</a> -->
+                        </div>
+                </div>
+        </a>
+      </div>
+      
+      <div class="swiper-slide">
+        
+            <a href="{{ route('max_storage') }}">
+                <div class="card modern-card h-100">
+                    <img src="{{asset('images/shaker-22-250.png')}}" class="card-img-top" alt="Card image">
+                        <div class="card-body">
+                            <h5 class="card-title">Best Prices</h5>
+                            <p class="card-text">Our discounts are so good, even our accountant cries.</p>
+                            <!-- <a href="#" class="btn btn-primary mt-3">Learn More</a> -->
+                        </div>
+                </div>
+        </a>
+      </div>
+      
+      <div class="swiper-slide">
+        
+            <a href="{{ route('max_storage') }}">
+                <div class="card modern-card h-100">
+                    <img src="{{asset('images/shaker-22-250.png')}}" class="card-img-top" alt="Card image">
+                        <div class="card-body">
+                            <h5 class="card-title">Best Prices</h5>
+                            <p class="card-text">Our discounts are so good, even our accountant cries.</p>
+                            <!-- <a href="#" class="btn btn-primary mt-3">Learn More</a> -->
+                        </div>
+                </div>
+        </a>
+      </div>
+      
+      <div class="swiper-slide">
+        
+            <a href="{{ route('max_storage') }}">
+                <div class="card modern-card h-100">
+                    <img src="{{asset('images/shaker-22-500.png')}}" class="card-img-top" alt="Card image">
+                        <div class="card-body">
+                            <h5 class="card-title">Best Prices</h5>
+                            <p class="card-text">Our discounts are so good, even our accountant cries.</p>
+                            <!-- <a href="#" class="btn btn-primary mt-3">Learn More</a> -->
+                        </div>
+                </div>
+        </a>
+      </div>
+      
+      <div class="swiper-slide">
+        
+            <a href="{{ route('max_storage') }}">
+                <div class="card modern-card h-100">
+                    <img src="{{asset('images/shaker-22-250.png')}}" class="card-img-top" alt="Card image">
+                        <div class="card-body">
+                            <h5 class="card-title">Best Prices</h5>
+                            <p class="card-text">Our discounts are so good, even our accountant cries.</p>
+                            <!-- <a href="#" class="btn btn-primary mt-3">Learn More</a> -->
+                        </div>
+                </div>
+        </a>
+      </div>
+      
+    </div>
+  
+    <!-- Optional: Pagination -->
+    <!-- <div class="swiper-pagination"></div> -->
+  
+    <!-- Optional: Navigation -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+
+            
+        </div>
+    </section>
+
+
+    <!-- <div class="container"> -->
+     
 
     <!-- <div class ="container-fluid bg-white mt-5">
         <section class="consultation-section bg-white">
