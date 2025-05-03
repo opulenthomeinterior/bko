@@ -593,7 +593,7 @@ use App\Models\Style;
                 <div class="text-center bg-danger">
 
                     <div class="ticker-wrapper">
-                        <div class="ticker-text"><strong class="fw-bold">LIMITED TIME OFFER:</strong>, For your Peace Of Mind, we are offering FREE Consultation and On-site Survey. Book your slot now!</div>
+                        <div class="ticker-text"><strong class="fw-bold">LIMITED TIME OFFER:</strong> For your Peace Of Mind, we are offering FREE Consultation and On-site Survey. Book your slot now!</div>
                     </div>
                    
                     {{-- <span class="fw-bold text-white "> 

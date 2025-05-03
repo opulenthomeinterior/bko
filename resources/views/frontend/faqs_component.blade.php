@@ -1,7 +1,7 @@
 <head>
 
     <style>
-         :root {
+        :root {
             --primary-color: #ffc01f;
             --primary-light: #ffd45e;
             --primary-dark: #e6a600;
@@ -10,12 +10,13 @@
             --text-on-primary: #333333;
         }
 
-        /* .faq-body {
-            width:100%;
+        /* body {
             background-color: #fffaf0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         } */
 
         .faq-container {
+            
             max-width: 800px;
             margin: 0 auto;
             padding: 2rem 1rem;
@@ -34,7 +35,7 @@
             display: inline-block;
         }
 
-        /* .faq-header h1:after {
+        .faq-header h1:after {
             content: '';
             position: absolute;
             width: 50%;
@@ -43,7 +44,7 @@
             bottom: -10px;
             left: 25%;
             border-radius: 2px;
-        } */
+        }
 
         .faq-header p {
             color: #64748b;
@@ -105,9 +106,53 @@
         }
 
         .faq-answer.show {
-            max-height: 500px;
+            max-height: 1000px;
             padding: 1rem 1.5rem 1.5rem;
             border-top: 1px solid #fff5e0;
+        }
+        
+        /* Card styles for FAQ answers */
+        .faq-card-container {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .faq-card {
+            flex: 1;
+            min-width: 250px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.25rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-left: 3px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .faq-card-title {
+            color: var(--dark-color);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .faq-card-title i {
+            color: var(--primary-color);
+            margin-right: 0.5rem;
+        }
+        
+        .faq-card-desc {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
 
         /* Custom badge styles */
