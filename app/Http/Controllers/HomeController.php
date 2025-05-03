@@ -917,6 +917,53 @@ class HomeController extends Controller
 
         return view('frontend.shop.orderkitchen.doors_replacement', compact('styles'));
     }
+
+    public function kitchenCupboardDoorsReplacement() {
+        $styles = Style::where('status', '1')->get();
+        // foreach ($styles as $style) {
+        //     $colourIds = Product::where('parent_category_id', 1)->where('style_id', $style->id)->where('status', 'active')->groupBy('colour_id')->pluck('colour_id');
+        //     $style['colours'] = $colourIds;
+        // }
+        // First, fetch all products that match parent_category_id and status
+        $products = Product::where('parent_category_id', 1)
+                    ->where('status', 'active')
+                    ->get(['style_id', 'colour_id']);
+
+        // Group products by style_id
+        $groupedProducts = $products->groupBy('style_id');
+
+        $styles = $styles->map(function ($style) use ($groupedProducts) {
+            $colours = $groupedProducts->get($style->id)?->pluck('colour_id')->unique()->values() ?? collect();
+            $style['colours'] = $colours;
+            return $style;
+        });
+
+        return view('frontend.shop.orderkitchen.kitchen_cupboard_doors_replacement', compact('styles'));
+    }
+
+    public function kitchenCabinetDoorsReplacement() {
+        $styles = Style::where('status', '1')->get();
+        // foreach ($styles as $style) {
+        //     $colourIds = Product::where('parent_category_id', 1)->where('style_id', $style->id)->where('status', 'active')->groupBy('colour_id')->pluck('colour_id');
+        //     $style['colours'] = $colourIds;
+        // }
+        // First, fetch all products that match parent_category_id and status
+        $products = Product::where('parent_category_id', 1)
+                    ->where('status', 'active')
+                    ->get(['style_id', 'colour_id']);
+
+        // Group products by style_id
+        $groupedProducts = $products->groupBy('style_id');
+
+        $styles = $styles->map(function ($style) use ($groupedProducts) {
+            $colours = $groupedProducts->get($style->id)?->pluck('colour_id')->unique()->values() ?? collect();
+            $style['colours'] = $colours;
+            return $style;
+        });
+
+        return view('frontend.shop.orderkitchen.kitchen_cabinet_doors_replacement', compact('styles'));
+    }
+
     public function orderComponentFilter(Request $request) {
         try {
             $category = Category::with('testimonials', 'faqs')->where('slug', $request->slug)->firstOrFail();
