@@ -270,8 +270,8 @@ Route::prefix('/')->middleware([])->group(function () {
 
         // Doors replacement
         Route::get('/doors-replacement', [HomeController::class, 'doorsReplacement'])->name('doors_replacement');
-        Route::get('/kitchen-cupboard-doors-replacement', [HomeController::class, 'kitchenCupboardDoorsReplacement'])->name('kitchen_cupboard_doors_replacement');
-        Route::get('/kitchen-cabinet-doors-replacement', [HomeController::class, 'kitchenCabinetDoorsReplacement'])->name('kitchen_cabinet_doors_replacement');
+        Route::get('/cupboard-doors-replacement', [HomeController::class, 'kitchenCupboardDoorsReplacement'])->name('kitchen_cupboard_doors_replacement');
+        Route::get('/cabinet-doors-replacement', [HomeController::class, 'kitchenCabinetDoorsReplacement'])->name('kitchen_cabinet_doors_replacement');
 
         // Order By Kitchen
         Route::get('/order-kitchen', [HomeController::class, 'orderkitchen'])->name('orderkitchen');
