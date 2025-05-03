@@ -1059,7 +1059,7 @@
             <div class="container">
                 <div class="row justify-content-center">
 
-                    <div class="col-6">
+                    <div class="col-md-6">
                         <img src="{{ asset('images/door-badges.png') }}" class="img-fluid w-100 "/>
                     </div>
 

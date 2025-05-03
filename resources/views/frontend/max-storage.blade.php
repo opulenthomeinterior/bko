@@ -634,7 +634,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     
-                     <div class="col-6">
+                     <div class="col-md-6">
                         <img src="{{ asset('images/max-badges.png') }}" class="img-fluid w-100 "/>
                     </div>
                     {{-- <div class="col-2">
@@ -763,14 +763,14 @@
 
     <div class = "container my-5">
         <div class="row justify-content-center">
-            <div class="col-8">
+            <div class="col-md-8">
                 <h2 class="text-dark text-center fw-bolder mb-3">
                     Bespoke Storage Solutions That Fit Every Pot, Pan & Gadget—Guaranteed!
                 </h2>
             </div>
         </div>
         <div class ="row justify-content-center">
-         <div class="col-8 rounded">
+         <div class="col-md-8 rounded">
             
             <video  controls class="w-100 h-100" autoplay loop>
             <source src="{{ asset('videos/max-storage-video.mp4') }}" type="video/mp4">
