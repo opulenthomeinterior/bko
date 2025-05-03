@@ -831,7 +831,7 @@
             <div class="col-12 col-md-6 rounded">
                 <!-- <img class="img-fluid" src="{{ asset('images/google-reviews.png') }}"/> -->
                 <!-- <video src="Downloads/door-replacement-video.mp4"></video> -->
-                <video  controls class="w-100 h-100">
+                <video  controls class="w-100 h-100" autoplay>
                     <source src="{{ asset('videos/door-replacement-video.mp4') }}" type="video/mp4">
                     </video>
             </div>

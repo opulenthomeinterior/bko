@@ -760,6 +760,26 @@
         </div>
     </section> --}}
 
+
+    <div class = "container my-5">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <h2 class="text-dark text-center fw-bolder mb-3">
+                    Bespoke Storage Solutions That Fit Every Pot, Pan & Gadget—Guaranteed!
+                </h2>
+            </div>
+        </div>
+        <div class ="row justify-content-center">
+         <div class="col-8 rounded">
+            
+            <video  controls class="w-100 h-100" autoplay loop>
+            <source src="{{ asset('videos/max-storage-video.mp4') }}" type="video/mp4">
+            </video>
+         </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+    </div>
     <section class="container-fluid  pt-5 pb-3" style="background-color:#f2f4f5">
         <div>
         <div class="col-12 d-flex flex-column align-items-center">
