@@ -1124,12 +1124,12 @@
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center mt-5">
+        {{-- <div class="row justify-content-center mt-5">
 
             
             <div class="text-center">
             <h3> Bespoke Storage Solutions That Fit <span class="fw-bolder"> Every Pot, Pan & Gadget—Guaranteed!</span></h3>
-            </div>
+            </div> --}}
             {{-- <div class="col-lg-8">
             <h3 class=" text-center text-md-start text-black">Never settle for a standard-size kitchen because you don’t have to any more.</h3>
             
@@ -1144,8 +1144,8 @@
             <div class="col-lg-4 col-md-6 col-12">
                 <button class="btn btn-warning px-2 px-lg-5 text-uppercase rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Book your free consultation now!</button>
             </div> --}}
-        </div>
-    </section>
+        {{-- </div>
+    </section> --}}
 
 
     <!-- <section class="container mb-4" style="margin-top: 4rem;">
