@@ -79,7 +79,7 @@
                     <div class="row">
                         @if ($styles->count() > 0)
                             @if ($category->slug == 'doors' || $category->slug == 'accessories')
-                                <div class="col-3 accordion accordion-flush mt-3" id="accordionFlushExample3">
+                                <div class="col-md-3 accordion accordion-flush mt-3" id="accordionFlushExample3">
                                     <div class="accordion-item bg-transparent border border-dark border-1 rounded-0">
                                         <h2 class="accordion-header bg-warning" id="flush-headingThree">
                                             <button class="accordion-button legend collapsed text-uppercase" type="button"
@@ -113,7 +113,7 @@
 
                         @if ($colours->count() > 0)
                             @if ($category->slug != 'appliances')
-                                <div class="col-3 accordion accordion-flush mt-3" id="accordionFlushExample4">
+                                <div class="col-md-3 accordion accordion-flush mt-3" id="accordionFlushExample4">
                                     <div class="accordion-item bg-transparent border border-dark border-1 rounded-0">
                                         <h2 class="accordion-header bg-warning" id="flush-headingFour">
                                             <button class="accordion-button legend collapsed text-uppercase" type="button"
@@ -196,7 +196,7 @@
 
                         @if (strtolower($category->name) != 'handles')
                             @if ($heights->count() > 0)
-                                <div class="col-3 accordion accordion-flush mt-3" id="accordionFlushExample5">
+                                <div class="col-md-3 accordion accordion-flush mt-3" id="accordionFlushExample5">
                                     <div class="accordion-item bg-transparent border border-dark border-1 rounded-0">
                                         <h2 class="accordion-header bg-warning" id="flush-headingFive">
                                             <button class="accordion-button legend collapsed text-uppercase" type="button"
@@ -233,7 +233,7 @@
                         @endif
 
                         @if ($types->count() > 0)
-                            <div class="col-3 accordion accordion-flush mt-3" id="accordionFlushExample1">
+                            <div class="col-md-3 accordion accordion-flush mt-3" id="accordionFlushExample1">
                                 <div class="accordion-item bg-transparent border border-dark border-1 rounded-0">
                                     <h2 class="accordion-header bg-warning" id="flush-headingOne">
                                         <button class="accordion-button legend collapsed text-uppercase" type="button"
@@ -271,6 +271,7 @@
             </div>
 
             <div class="col-lg-12 col-md-12 col-sm-12 bg-light">
+                <div class="table-responsive">
                 <table class="table table-bordered">
                     <thead>
                         <th>Short Title</th>
@@ -360,6 +361,7 @@
                         @endif
                     </tbody>
                 </table>
+            </div>
             </div>
 
             <div id="custom-pagination-container">
