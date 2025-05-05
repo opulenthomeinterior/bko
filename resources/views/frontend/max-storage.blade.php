@@ -712,10 +712,27 @@
                         Because we believe your kitchen should be more than just a place to cook – it should be a reflection of your personality and a hub for your lifestyle
                     </h4>
                 </div> --}}
-              
-                    <img class="w-100 rounded  rounded img-fluid d-none d-md-block" src="{{ asset('images/max-form-left-banner-desktop.png') }}"/>
-                    <img class="w-100 rounded rounded img-fluid d-md-none" src="{{ asset('images/max-form-left-banner-mob.png') }}"/>
+                    <div class="row">
+                        <div class="col-12">
+                        <img class="pb-3 w-100 rounded img-fluid d-none d-md-block" src="{{ asset('images/standard-kitchen-disadvantages.png') }}" alt="">
+                        <img class="pb-3 w-100 rounded img-fluid d-none d-md-block" src="{{ asset('images/max-storage-kitchen-advantages.png') }}" alt="">     
+                        
+                            
+                    </div>
+                    </div>
                     
+                    <div class="row">
+                        <div class="col-12">
+                            <img class="w-100 mb-3 rounded img-fluid d-md-none" src="{{ asset('images/standard-kitchen-disadvantages-mobile.png') }}" alt="">
+                       
+                        <img class="w-100 rounded img-fluid d-md-none" src="{{ asset('images/max-storage-kitchen-advantages-mobile.png') }}" alt="">
+                        
+                        </div>
+                    </div>
+                    
+                    {{-- <img class="w-100 rounded  rounded img-fluid d-none d-md-block" src="{{ asset('images/max-form-left-banner-desktop.png') }}"/>
+                    <img class="w-100 rounded rounded img-fluid d-md-none" src="{{ asset('images/max-form-left-banner-mob.png') }}"/>
+                     --}}
             </div>
             <div class="p-0 col-md-4 col-12">
 
@@ -1419,19 +1436,118 @@
         </div>
         <div class="row mt-5 mb-3 justify-content-center">
             <div class="col-10 ">
+                
                 <div class="owl-carousel owl-theme overflow-hidden">
-                    @foreach (\App\Models\Product::where('parent_category_id', 17)->groupBy('short_title')->limit(10)->get() as $intenalProduct)
+                    <!-- @foreach (\App\Models\Product::where('parent_category_id', 17)->groupBy('short_title')->limit(10)->get() as $intenalProduct) -->
                     <div class="item">
-                        <a href="{{ route('orderbyproduct', [$intenalProduct->slug, $intenalProduct->serial_number]) }}" class="text-dark text-decoration-none">
-                            <div class="card">
-                                <img src="{{ asset('imgs/products/'.$intenalProduct->image_path) }}" class="card-img-top" alt="">
+                        <a href="https://bkonline.uk/shop/by-product/corner-pull-out-shelving-unit,-for-base-cabinets,-pole-free,-vauth-sagel-vs-cor-wheel-pro/14666" class="text-dark text-decoration-none">
+                            <div class="card" style="height: 250px;">
+                                <img src="{{ asset('images/pull-out-shelving-unit.jpeg') }}" class="card-img-top" alt="">
+                                <!-- <img src="{{ asset('imgs/products/'.$intenalProduct->image_path) }}" class="card-img-top" alt=""> -->
                                 <div class="card-body">
-                                    <h6 class="card-title">{{ $intenalProduct->short_title }}</h6>
+                                    <h6 class="card-title">Corner pull out shelving Unit</h6>
+                                    <!-- <h6 class="card-title">{{ $intenalProduct->short_title }}</h6> -->
                                 </div>
                             </div>
                         </a>
                     </div>
-                    @endforeach
+                    <div class="item">
+                        <a href="https://bkonline.uk/shop/by-product/swing-out-larder--unit,-for-cabinet-width-500-600-mm,-with-planero-lava-grey-storage-baskets,-vauth-sagel-vs-tal-gate-n/14447" class="text-dark text-decoration-none">
+                            <div class="card" style="height: 250px;">
+                                <img src="{{ asset('images/swing-out-larder-unit.jpeg') }}" class="card-img-top" alt="">
+                                <!-- <img src="{{ asset('imgs/products/'.$intenalProduct->image_path) }}" class="card-img-top" alt=""> -->
+                                <div class="card-body">
+                                    <h6 class="card-title">Swing Out Larder Unit</h6>
+                                    <!-- <h6 class="card-title">{{ $intenalProduct->short_title }}</h6> -->
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://bkonline.uk/shop/by-product/wicker-basket-set,-two-baskets-with-runners,-for-cabinet-widths-500-600-mm/14672" class="text-dark text-decoration-none">
+                            <div class="card" style="height: 250px;">
+                                <img src="{{ asset('images/wicker-basket-set-with-runners.jpeg') }}" class="card-img-top" alt="">
+                                <!-- <img src="{{ asset('imgs/products/'.$intenalProduct->image_path) }}" class="card-img-top" alt=""> -->
+                                <div class="card-body">
+                                    <h6 class="card-title">Wicker basket set  with runners</h6>
+                                    <!-- <h6 class="card-title">{{ $intenalProduct->short_title }}</h6> -->
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://bkonline.uk/shop/by-product/swing-out-corner-storage,-artline-glass-sided-chrome-wire-baskets,-vauth-sagel-vs-cor-fold-%28left%29/14383" class="text-dark text-decoration-none">
+                            <div class="card" style="height: 250px;">
+                                <img src="{{ asset('images/swing-out-corner-storage.jpeg') }}" class="card-img-top" alt="">
+                                <!-- <img src="{{ asset('imgs/products/'.$intenalProduct->image_path) }}" class="card-img-top" alt=""> -->
+                                <div class="card-body">
+                                    <h6 class="card-title">Swing out corner storage</h6>
+                                    <!-- <h6 class="card-title">{{ $intenalProduct->short_title }}</h6> -->
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://bkonline.uk/shop/by-product/swing-out-larder--unit,-for-cabinet-width-500-600-mm,-artline-glass-side-baskets,-vs-tal-gate/14522" class="text-dark text-decoration-none">
+                            <div class="card" style="height: 250px;">
+                                <img src="{{ asset('images/swing-out-larder-unit-artline-glass-side-baskets.jpeg') }}" class="card-img-top" alt="">
+                                <!-- <img src="{{ asset('imgs/products/'.$intenalProduct->image_path) }}" class="card-img-top" alt=""> -->
+                                <div class="card-body">
+                                    <h6 class="card-title">Swing out larder unit artline glass side baskets</h6>
+                                    <!-- <h6 class="card-title">{{ $intenalProduct->short_title }}</h6> -->
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://bkonline.uk/shop/by-product/double-basket,-pull-out,-for-300/400-mm-cabinet-width/14653" class="text-dark text-decoration-none">
+                            <div class="card" style="height: 250px;">
+                                <img src="{{ asset('images/double-basket-pull-out.jpeg') }}" class="card-img-top" alt="">
+                                <!-- <img src="{{ asset('imgs/products/'.$intenalProduct->image_path) }}" class="card-img-top" alt=""> -->
+                                <div class="card-body">
+                                    <h6 class="card-title">Double basket pull out</h6>
+                                    <!-- <h6 class="card-title">{{ $intenalProduct->short_title }}</h6> -->
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://bkonline.uk/shop/by-product/extension-pole,-for-vauth-sagel-cornerstone%C2%AE-maxx/14316" class="text-dark text-decoration-none">
+                            <div class="card" style="height: 250px;">
+                                <img src="{{ asset('images/extension-pole.jpeg') }}" class="card-img-top" alt="">
+                                <!-- <img src="{{ asset('imgs/products/'.$intenalProduct->image_path) }}" class="card-img-top" alt=""> -->
+                                <div class="card-body">
+                                    <h6 class="card-title">Extension pole</h6>
+                                    <!-- <h6 class="card-title">{{ $intenalProduct->short_title }}</h6> -->
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://bkonline.uk/shop/by-product/base-inserts,-set,-white-plastic/14366" class="text-dark text-decoration-none">
+                            <div class="card" style="height: 250px;">
+                                <img src="{{ asset('images/base-insert-set-white-plastic.jpeg') }}" class="card-img-top" alt="">
+                                <!-- <img src="{{ asset('imgs/products/'.$intenalProduct->image_path) }}" class="card-img-top" alt=""> -->
+                                <div class="card-body">
+                                    <h6 class="card-title">Base insert set white plastic</h6>
+                                    <!-- <h6 class="card-title">{{ $intenalProduct->short_title }}</h6> -->
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://bkonline.uk/shop/by-product/base-inserts,-for-pull-out-storage--unit/14746" class="text-dark text-decoration-none">
+                            <div class="card" style="height: 250px;">
+                                <img src="{{ asset('images/base-inserts-for-pull-out-storage.jpeg') }}" class="card-img-top" alt="">
+                                <!-- <img src="{{ asset('imgs/products/'.$intenalProduct->image_path) }}" class="card-img-top" alt=""> -->
+                                <div class="card-body">
+                                    <h6 class="card-title">Base inserts for pull out storage</h6>
+                                    <!-- <h6 class="card-title">{{ $intenalProduct->short_title }}</h6> -->
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- @endforeach -->
                 </div>
             </div>
             <div class="row mt-5 justify-content-center">
@@ -1683,18 +1799,20 @@ function sendEmail() {
                 responsive: {
                     0: {
                         items: 1,
-                        nav: true
+                        nav: true,
+                        dots:false
                     },
                     768: {
                         items: 2,
-                        nav: true
+                        nav: true,
+                        dots:false
                     },
                     992: {
                         items: 3,
                         loop: true,
                         margin: 10,
                         nav: true,
-                        dots: true,
+                        dots: false,
                         center: true,
                     },
                     1200: {
@@ -1702,7 +1820,7 @@ function sendEmail() {
                         loop: true,
                         margin: 50,
                         nav: true,
-                        dots: true,
+                        dots: false,
                         center: true,
                     },
                     1400: {
@@ -1710,7 +1828,7 @@ function sendEmail() {
                         loop: true,
                         margin: 50,
                         nav: true,
-                        dots: true,
+                        dots: false,
                         center: true,
                     }
                 }
