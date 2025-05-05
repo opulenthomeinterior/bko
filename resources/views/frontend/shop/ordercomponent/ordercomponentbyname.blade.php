@@ -231,40 +231,41 @@
                                 </div>
                             @endif
                         @endif
-
-                        @if ($types->count() > 0)
-                            <div class="col-md-3 accordion accordion-flush mt-3" id="accordionFlushExample1">
-                                <div class="accordion-item bg-transparent border border-dark border-1 rounded-0">
-                                    <h2 class="accordion-header bg-warning" id="flush-headingOne">
-                                        <button class="accordion-button legend collapsed text-uppercase" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
-                                            aria-expanded="true" aria-controls="flush-collapseOne">
-                                            @if (strtolower($category->name) != 'handles' && strtolower($category->name) != 'taps' && strtolower($category->name) != 'worktops' && strtolower($category->name) != 'appliances' && strtolower($category->name) != 'upstands' && strtolower($category->name) != 'breakfast bars' && strtolower($category->name) != 'sinks' && strtolower($category->name) != 'internals') SIZES @else TYPES @endif
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseOne" class="accordion-collapse my-2"
-                                        aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample1" style="max-height: 150px; overflow-y: auto">
-                                        <div class="accordion-body px-0 py-0 pb-1">
-                                            <div class="ps-2">
-                                                <div class="row g-1">
-                                                    @foreach ($types as $index => $type)
-                                                    <div class="col-12">
-                                                        <div class="form-check form-check-inline">
-                                                            <input data-type-id="{{$type->id}}" id="type-filter" class="form-check-input" type="checkbox"
-                                                                name="types[]" id="type{{ $index }}"
-                                                                value="{{ $type->id }}">
-                                                            <label class="form-check-label"
-                                                                for="type{{ $index }}">{{ $type->name }}
-                                                            </label>
+                        @if (strtolower($category->name) != 'doors' && strtolower($category->name) != 'handles' && strtolower($category->name) != 'taps' && strtolower($category->name) != 'worktops' && strtolower($category->name) != 'appliances' && strtolower($category->name) != 'upstands' && strtolower($category->name) != 'breakfast bars' && strtolower($category->name) != 'sinks' && strtolower($category->name) != 'internals') 
+                            @if ($types->count() > 0)
+                                <div class="col-md-3 accordion accordion-flush mt-3" id="accordionFlushExample1">
+                                    <div class="accordion-item bg-transparent border border-dark border-1 rounded-0">
+                                        <h2 class="accordion-header bg-warning" id="flush-headingOne">
+                                            <button class="accordion-button legend collapsed text-uppercase" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                                aria-expanded="true" aria-controls="flush-collapseOne">
+                                                @if (strtolower($category->name) != 'handles' && strtolower($category->name) != 'taps' && strtolower($category->name) != 'worktops' && strtolower($category->name) != 'appliances' && strtolower($category->name) != 'upstands' && strtolower($category->name) != 'breakfast bars' && strtolower($category->name) != 'sinks' && strtolower($category->name) != 'internals') SIZES @else TYPES @endif
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseOne" class="accordion-collapse my-2"
+                                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample1" style="max-height: 150px; overflow-y: auto">
+                                            <div class="accordion-body px-0 py-0 pb-1">
+                                                <div class="ps-2">
+                                                    <div class="row g-1">
+                                                        @foreach ($types as $index => $type)
+                                                        <div class="col-12">
+                                                            <div class="form-check form-check-inline">
+                                                                <input data-type-id="{{$type->id}}" id="type-filter" class="form-check-input" type="checkbox"
+                                                                    name="types[]" id="type{{ $index }}"
+                                                                    value="{{ $type->id }}">
+                                                                <label class="form-check-label"
+                                                                    for="type{{ $index }}">{{ $type->name }}
+                                                                </label>
+                                                            </div>
                                                         </div>
+                                                        @endforeach
                                                     </div>
-                                                    @endforeach
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endif
                         @endif
                     </div>
                 </form>

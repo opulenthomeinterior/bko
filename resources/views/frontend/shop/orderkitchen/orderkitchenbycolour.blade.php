@@ -2746,10 +2746,10 @@
                                 <button class="nav-link" id="nav-breakfast-tab" data-bs-toggle="tab"
                                     data-bs-target="#nav-breakfast" type="button" role="tab"
                                     aria-controls="nav-breakfast" aria-selected="false">Breakfast Bars</button>
-                                <button class="nav-link" id="nav-edging-tab" data-bs-toggle="tab"
+                                <!-- <button class="nav-link" id="nav-edging-tab" data-bs-toggle="tab"
                                     data-bs-target="#nav-edging" type="button" role="tab"
                                     aria-controls="nav-edging-tab" aria-selected="false">Edging
-                                    Doors</button>
+                                    Doors</button> -->
                             </div>
                         </nav>
                         <div class="tab-content p-3" style="border: 1px solid black !important" id="nav-tabContent">
@@ -3571,7 +3571,7 @@
                             </div>
 
                             {{-- Edging Doors --}}
-                            <div class="tab-pane fade" id="nav-edging" role="tabpanel"
+                            {{--<div class="tab-pane fade" id="nav-edging" role="tabpanel"
                                 aria-labelledby="nav-edging-tab" tabindex="0">
                                 <div class="row">
                                     @if ($edgings->count() > 0)
@@ -3840,7 +3840,7 @@
                                         </div>
                                     @endif
                                 </div>
-                            </div>
+                            </div>--}}
                         </div>
                     </div>
                 </div>
