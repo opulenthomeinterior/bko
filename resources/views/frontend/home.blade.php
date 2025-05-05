@@ -1166,11 +1166,12 @@
                                 {{-- <h1 class="text-white animated slide-right text-center">ELEVATE YOUR KITCHEN</h1> --}}
                                 {{-- <h1 class="text-yellow-color fw-bold animated slide-left text-center">ELEVATE YOUR LIFESTYLE</h1> --}}
                                 <h1 class="text-yellow-color fw-bold animated slide-left text-uppercase text-center">Best of both worldS</h1>
-                                <h2 class="text-white fw-bold animated slide-left text-uppercase text-center"> Retail QuAlity | Online Prices | Peace of Mind</h2>
+                                <!-- <h2 class="text-white fw-bold animated slide-left text-uppercase text-center"> Retail QuAlity | Online Prices | Peace of Mind</h2> -->
                                 {{-- <p  class=" text-white animated slide-bottom text-center" style="font-size:20px">We specialize in virtually designing and delivering your dream kitchen that complements your needs and style. Whether you want to build a new kitchen or need to replace a single component, we are always at your service.</p> --}}
-                                <p  class=" mt-5 text-white animated slide-bottom text-center" style="font-size:26px"><span class="text-yellow-color">FINALLY!</span> Escape online risk & Ditch high-street costs. <br>
-                                    The <span class="text-yellow-color">ONLY Online Platform </span> with <span> Online value </span> and professional <span class="text-yellow-color">survey</span> with <span class="text-yellow-color">installation</span>.
+                                <p  class=" mt-4 text-white animated slide-bottom text-center text-uppercase fw-bold" style="font-size:30px"><span class="text-yellow-color">FINALLY!</span> Escape online risk & Ditch <br> high-street costs. <br>
+                                    <!-- The <span class="text-yellow-color">ONLY Online Platform </span> with <span> Online value </span> and professional <span class="text-yellow-color">survey</span> with <span class="text-yellow-color">installation</span>. -->
                                     </p>
+                                    <p class="text-white animated slide-bottom text-center" style="font-size:30px"> The <span class="text-yellow-color fw-bold">ONLY Online Platform </span> with <span> Online value </span> and professional <span class="text-yellow-color fw-bold">Survey</span> with <span class="text-yellow-color fw-bold">Installation</span>.</p>
                             
                             </div>
                             <div class="container d-flex flex-column align-items-center text-center position-relative">
