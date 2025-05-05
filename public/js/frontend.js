@@ -440,21 +440,25 @@ function increaseQuantityInCartPage(id, productCode, full_title, price, discount
 
 function inputQty(qty,id, productCode, full_title, price, discount_price, discount_percentage, p_category)
 {
-   console.log('input QTY');
-   console.log(`input qty: ${qty}`);
-   console.log(`product code: ${productCode}, full_title: ${full_title}, price: ${price}, discount_price: ${discount_price}, discountP:${discount_percentage}, p_category: ${p_category}`);
-   let products = localStorage.getItem('bko_cart')
-   if (!products) {
-      products = [];
-   } else {
-      products = JSON.parse(products)
-   }
+   // console.log('input QTY');
+   // console.log(`input qty: ${qty}`);
+   // console.log(`product code: ${productCode}, full_title: ${full_title}, price: ${price}, discount_price: ${discount_price}, discountP:${discount_percentage}, p_category: ${p_category}`);
+   // let products = localStorage.getItem('bko_cart')
+   // if (!products) {
+   //    products = [];
+   // } else {
+   //    products = JSON.parse(products)
+   // }
 
-   const foundProduct = products.find(product => product.id == id);
+   // const foundProduct = products.find(product => product.id == id);
 
-   let value = foundProduct.quantity ? foundProduct.quantity : 0;
-   value = qty;
-   console.log(`value: ${value}`);
+   // let value = foundProduct.quantity ? foundProduct.quantity : 0;
+   // value = qty;
+   // console.log(`value: ${value}`);
+
+   addToCart(id, productCode, full_title, price, discount_price, discount_percentage, p_category, qty);
+   cartTotalAmountCalculation();
+
 }
 function decreaseQuantity(id, productCode, full_title, price, discount_price, discount_percentage, p_category) {
    var $qtde = $('#quantity' + id);
