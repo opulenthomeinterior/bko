@@ -425,12 +425,12 @@ function increaseQuantityInCartPage(id, productCode, full_title, price, discount
    const foundProduct = products.find(product => product.id == id);
 
    let value = foundProduct.quantity ? foundProduct.quantity : 0;
-   if (value >= 10) {
-      value = 10;
-      $qtde.val(value);
-   } else {
+   // if (value >= 10) {
+   //    value = 10;
+   //    $qtde.val(value);
+   // } else {
       value++;
-   }
+   // }
 
    addToCart(id, productCode, full_title, price, discount_price, discount_percentage, p_category, value);
    cartTotalAmountCalculation();
@@ -644,7 +644,7 @@ style="max-width: 100px; height: auto; object-fit: cover;"
                             <td class="py-3 px-3 text-center align-middle">
                              <div class="d-flex flex-lg-row flex-column align-items-center border border-dark justify-content-center " style="max-width: 200px; width: 100%;">
     <button class="border-0 btn btn-quantity" onClick="decreaseQuantityInCartPage('${product.id}', '${product.productCode}')">-</button>
-    <input disabled type="text" class="border-0 form-control text-center mx-2 flex-grow-1" value="${product.quantity}">
+    <input type="text" class="border-0 form-control text-center mx-2 flex-grow-1" value="${product.quantity}">
     <button class="border-0 btn btn-quantity" onClick="increaseQuantityInCartPage('${product.id}', '${product.productCode}')">+</button>
 </div>
 
