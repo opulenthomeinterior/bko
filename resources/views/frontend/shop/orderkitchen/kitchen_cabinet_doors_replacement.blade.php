@@ -1021,12 +1021,12 @@
             }
         }
 
-        .column-badges
+        /* .column-badges
         {
             position: absolute;
             top: -120px;
             right: -740px;
-        }
+        } */
         /* .column-bdages a 
         {
             position: relative !important;
@@ -1035,14 +1035,14 @@
         {
             position: absolute !important;
         } */
-            @media (max-width:1024px) {
+            /* @media (max-width:1024px) {
                 .column-badges
                 {
                     position: static;
-                    /* top:auto;
-                    right: auto; */
+                    top:auto;
+                    right: auto;
                 }
-            }
+            } */
         </style>
     </head>
 <body>
@@ -1060,7 +1060,22 @@
                 <div class="row justify-content-center">
 
                     <div class="col-md-6">
-                        <img src="{{ asset('images/door-badges.png') }}" class="img-fluid w-100 "/>
+                        {{-- <img src="{{ asset('images/door-badges.png') }}" class="img-fluid w-100 "/>
+                         --}}
+
+                         <div class="row justify-content-center column-badges" >
+                            <img class="w-25" src="{{ asset('images/premium-badge.png') }}" alt="">
+                            <!-- <a href="https://www.trustpilot.com/review/opulenthomeinteriors.com">
+                             </a>    -->
+                             <!-- <a class="btn" href="https://www.trustpilot.com/review/opulenthomeinteriors.com"> -->
+                                <img style="cursor: pointer;" class="w-25" src="{{ asset('images/trust-pilot-badge.png') }}" 
+                                onclick="window.location.href ='https://www.trustpilot.com/review/opulenthomeinteriors.com'">
+                            
+
+                             
+                                <img style="cursor: pointer;" class="w-25" src="{{ asset('images/google-reviews-badge.png') }}" alt="" onclick="window.location.href ='https://www.google.com/maps/place/Buy+Kitchen+Online/@51.5192167,-0.0093268,17z/data=!4m8!3m7!1s0x48761d591fe166d7:0x456fed0ffc8a8222!8m2!3d51.5192167!4d-0.0093268!9m1!1b1!16s%2Fg%2F11vbf0zdzm?entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D'">
+                           
+                        </div>
                     </div>
 
                     <!-- <div class="col-2">

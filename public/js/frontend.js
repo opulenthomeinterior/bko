@@ -415,6 +415,8 @@ function increaseQuantity(id, productCode, full_title, price, discount_price, di
 }
 
 function increaseQuantityInCartPage(id, productCode, full_title, price, discount_price, discount_percentage, p_category) {
+   console.log('increase Qty in cart page')
+   console.log(`product code: ${productCode}, full_title: ${full_title}, price: ${price}, discount_price: ${discount_price}, discountP:${discount_percentage}, p_category: ${p_category}`);
    let products = localStorage.getItem('bko_cart')
    if (!products) {
       products = [];
@@ -436,6 +438,10 @@ function increaseQuantityInCartPage(id, productCode, full_title, price, discount
    cartTotalAmountCalculation();
 }
 
+function inputQty(qty,id, productCode, full_title, price, discount_price, discount_percentage, p_category)
+{
+   console.log(`input qty: ${qty}`);
+}
 function decreaseQuantity(id, productCode, full_title, price, discount_price, discount_percentage, p_category) {
    var $qtde = $('#quantity' + id);
    var value = parseInt($qtde.val()) || 0;
@@ -474,6 +480,8 @@ function decreaseQuantityInCartPage(id, productCode, full_title, price, discount
 }
 
 function addToCart(id, productCode, full_title, price, discount_price, discount_percentage, p_category, value) {
+   console.log('add to cart');
+   console.log(`product code: ${productCode}, full_title: ${full_title}, price: ${price}, discount_price: ${discount_price}, discountP:${discount_percentage}, p_category: ${p_category}, value: ${value}`);
    let products = localStorage.getItem('bko_cart')
    if (!products) {
       products = [];
@@ -644,7 +652,7 @@ style="max-width: 100px; height: auto; object-fit: cover;"
                             <td class="py-3 px-3 text-center align-middle">
                              <div class="d-flex flex-lg-row flex-column align-items-center border border-dark justify-content-center " style="max-width: 200px; width: 100%;">
     <button class="border-0 btn btn-quantity" onClick="decreaseQuantityInCartPage('${product.id}', '${product.productCode}')">-</button>
-    <input type="text" class="border-0 form-control text-center mx-2 flex-grow-1" value="${product.quantity}">
+    <input type="text" class="border-0 form-control text-center mx-2 flex-grow-1" value="${product.quantity}" onkeyup="inputQty(this.value, '${product.id}', '${product.productCode}')">
     <button class="border-0 btn btn-quantity" onClick="increaseQuantityInCartPage('${product.id}', '${product.productCode}')">+</button>
 </div>
 

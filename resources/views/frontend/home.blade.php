@@ -1036,12 +1036,12 @@
             
         }
 
-        .column-badges
+        /* .column-badges
         {
             position: absolute;
             top: -120px;
             right: -740px;
-        }
+        } */
         /* .column-bdages a 
         {
             position: relative !important;
@@ -1050,14 +1050,14 @@
         {
             position: absolute !important;
         } */
-            @media (max-width:1024px) {
+            /* @media (max-width:1024px) {
                 .column-badges
                 {
                     position: static;
-                    /* top:auto;
-                    right: auto; */
+                    top:auto;
+                    right: auto;
                 }
-            }
+            } */
             .modern-card {
             border: none !important;
             border-radius: 15px !important;
@@ -1177,7 +1177,7 @@
                                 <div class="col-xl-8 col-lg-10 col-md-10 col-sm-12 animated slide-top mx-auto" style="margin-top: 5px;">
                                     <!-- <h4 class="unique-font text-white px-3 py-1 rounded-gradient-border w-100" id="typing-effect"></h4> -->
                                      <!-- <img class="w-100" src="{{ asset('images/homepage-badges.png') }}" alt=""> -->
-                                    <div class="row justify-content-center flex-lg-column column-badges" >
+                                    <div class="row justify-content-center column-badges" >
                                         <img class="w-25" src="{{ asset('images/premium-badge.png') }}" alt="">
                                         <!-- <a href="https://www.trustpilot.com/review/opulenthomeinteriors.com">
                                          </a>    -->
