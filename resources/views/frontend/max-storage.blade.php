@@ -769,12 +769,18 @@
                 </h2>
             </div>
         </div>
-        <div class ="row justify-content-center">
-         <div class="col-md-8 rounded">
+        <div class ="row justify-content-center" style="min-height:70vh">
+         <div class="col-md-10 rounded position-relative" style="">
             
-            <video  controls class="w-100 h-100" autoplay loop>
+            <iframe src="https://www.youtube.com/embed/265cHcVBaJ8" 
+                style="width: 100%; height: 100%;" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
+            {{-- <video  controls class="w-100 h-100" autoplay loop>
             <source src="{{ asset('videos/max-storage-video.mp4') }}" type="video/mp4">
-            </video>
+            </video> --}}
          </div>
         </div>
     </div>
