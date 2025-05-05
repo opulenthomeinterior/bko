@@ -662,8 +662,8 @@
             overflow: visible !important;
         }
         
-        .service-card,
-        .left-slider-card {
+        .left-slider-card,
+        .service-card {
             border-radius: 15px;
             overflow: hidden;
             position: relative;
@@ -678,11 +678,6 @@
             height: 220px;
         }
         
-        .service-image-container {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
         .left-slider-image-container
         {
             width: 100%;
@@ -695,6 +690,11 @@
             transition: transform 0.5s ease;
         }
         
+        .service-image-container {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
         .service-image {
             width: 100%;
             height: 100%;
@@ -1168,8 +1168,8 @@
                                 <h1 class="text-yellow-color fw-bold animated slide-left text-uppercase text-center">Best of both worldS</h1>
                                 <h2 class="text-white fw-bold animated slide-left text-uppercase text-center"> Retail QuAlity | Online Prices | Peace of Mind</h2>
                                 {{-- <p  class=" text-white animated slide-bottom text-center" style="font-size:20px">We specialize in virtually designing and delivering your dream kitchen that complements your needs and style. Whether you want to build a new kitchen or need to replace a single component, we are always at your service.</p> --}}
-                                <p  class=" mt-5 text-white animated slide-bottom text-center" style="font-size:26px"><span class="text-yellow-color">The ONLY COMPANY</span> With Premium Quality Kitchens at Affordable Prices. <br>
-                                    From design to installation—we handle everything so you can relax!
+                                <p  class=" mt-5 text-white animated slide-bottom text-center" style="font-size:26px"><span class="text-yellow-color">FINALLY!</span> Escape online risk & Ditch high-street costs. <br>
+                                    The <span class="text-yellow-color">ONLY Online Platform </span> with <span> Online value </span> and professional <span class="text-yellow-color">survey</span> with <span class="text-yellow-color">installation</span>.
                                     </p>
                             
                             </div>
@@ -1252,12 +1252,12 @@
                             @endforeach
                             </div>
                             
-    <!-- Navigation buttons -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <!-- <div class="swiper-button-next swiper-button-next-order-kitchen"></div>
-    <div class="swiper-button-prev swiper-button-prev-order-kitchen"></div> -->
-                    </div>
+                            <!-- Navigation buttons -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <!-- <div class="swiper-button-next swiper-button-next-order-kitchen"></div>
+                            <div class="swiper-button-prev swiper-button-prev-order-kitchen"></div> -->
+                     </div>
                 </div>
                 <div class="row mt-5 mb-2">
                     <h3 class="text-uppercase fw-bolder text-dark mb-4">ORDER Components</h3>
