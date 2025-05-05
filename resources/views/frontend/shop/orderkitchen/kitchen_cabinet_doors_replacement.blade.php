@@ -1052,7 +1052,7 @@
         
         <div class="hero-content">
             <h5 class="text-center text-white " style="font-size:14px; letter-spacing:5px;font-weight:bold">BUY KITCHEN  ONLINE</h5>
-            <h1 class="text-white fw-bold mb-5">KITCHEN Cabinet <span style="color:#ffe000"> DOOR REPLACEMENT</span></h1>
+            <h1 class="text-white fw-bold mb-5">KITCHEN CABINET <span style="color:#ffe000"> DOOR REPLACEMENT</span></h1>
             <h2 class="text-white mb-4 yell">The Smart, Budget-Friendly <br> <span style="font-size:32px;color:#ffe000;font-weight:700">
                 Kitchen makeover in just a few days!</span></h2>
             
@@ -1215,7 +1215,7 @@
         </div>
     </div>
     <div class="container-fluid mt-5 pt-4 pb-2" style="background-color: #d9d9d9">
-        <h4 class="text-black  mb-4 text-center mb-2" style="font-size:26px; font-weight:500">Those <span class="text-danger">Awful OLD LOOKING KITCHEN Cabinet DOORS </span> Are <br>Driving You Nuts, Aren’t they?</h4>
+        <h4 class="text-black  mb-4 text-center mb-2" style="font-size:26px; font-weight:500">Those <span class="text-danger">Awful OLD LOOKING KITCHEN CABINET DOORS </span> Are <br>Driving You Nuts, Aren’t they?</h4>
         </div>
 
     <div class="container-fluid" >
@@ -1313,7 +1313,7 @@
 
     <div class="container-fluid py-3" style="background-color:#f2f4f5">
         <div class="container py-5">
-            <h2 class="section-title text-black">OUR <span class="highlight">SIMPLE 3-STEP</span> Cabinet DOOR REPLACEMENT PROCESS</h2>
+            <h2 class="section-title text-black">OUR <span class="highlight">SIMPLE 3-STEP</span> CABINET DOOR REPLACEMENT PROCESS</h2>
             <div class="title-underline"></div>
             
             <h3 class="how-it-works text-black my-5">HOW IT WORKS</h3>
