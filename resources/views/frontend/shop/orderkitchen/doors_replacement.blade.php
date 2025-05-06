@@ -1014,7 +1014,7 @@
             }
         }
 
-        .yt-video
+        .yt-video iframe
         {
             
             width: 100%; 
