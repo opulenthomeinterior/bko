@@ -828,9 +828,11 @@
         </div>
         <div class="row my-5">
             <div class="col-12">
-                <h2 style="font-size:40px; font-weight:700" class="text-black text-center text-uppercase">Your kitchen looks <span class="text-danger">outdated</span> </h2>
+                <img class="img-fluid w-100 d-none d-md-block rounded shadow-lg" src="{{ asset('images/tired-of.png') }}" alt="">
+                <img class="img-fluid w-100 d-md-none rounded shadow-lg" src="{{ asset('images/tired-of-mobile.png') }}" alt="">
+                <!-- <h2 style="font-size:40px; font-weight:700" class="text-black text-center text-uppercase">Your kitchen looks <span class="text-danger">outdated</span> </h2>
                 <h3 style="font-size:40px; font-weight:700" class="text-black text-center text-uppercase"> <span class="font-weight:600"> because of those doors,</span>  <span style="font-weight:500">not the cabinets </span> </h3>
-            
+             -->
             </div>
             <div class="col-7"></div>
         </div>
@@ -935,63 +937,7 @@
     </div>
     </section>
 
-    <div class="container-fluid py-3" style="background-color:#f2f4f5">
-        <div class="container py-5">
-            <h2 class="section-title text-black">OUR <span class="highlight">SIMPLE 3-STEP</span> DOOR REPLACEMENT PROCESS</h2>
-            <div class="title-underline"></div>
-            
-            <h3 class="how-it-works text-black my-5">HOW IT WORKS</h3>
-            
-            <div class="row justify-content-center align-items-center">
-                <!-- Step 1 -->
-                <div class="col-md-4 col-lg-3 text-center mb-4 mb-lg-0">
-                    <div class="step-icon">
-                        <i class="text-warning fs-1 fa-solid fa-phone"></i>
-                    </div>
-                    <div class="step-number">Step 01</div>
-                    <h4 class="step-title">GET IN TOUCH</h4>
-                    <p class="step-description px-3">Provide your contact information so we can schedule a convenient time to chat with you.</p>
-               
-                </div>
-                
-                <!-- Arrow 1 - Hidden on screens smaller than large -->
-                <div class="col-lg-1 d-none d-lg-flex justify-content-center align-items-center">
-                    <div class="arrow-line w-100"></div>
-                </div>
-                
-                <!-- Step 2 -->
-                <div class="col-md-4 col-lg-3 text-center mb-4 mb-lg-0">
-                    <div class="step-icon">
-                        <i class="text-warning fs-1 fa-solid fa-kitchen-set"></i>
-                    </div>
-                    <div class="step-number">Step 02</div>
-                    <h4 class="step-title">WE PLAN YOUR PROJECT</h4>
-                    <p class="step-description px-3">Our agent will contact you within 24 hours to discuss your budget, preferred styles, and colors, for your kitchen doors.</p>
-                </div>
-                
-                <!-- Arrow 2 - Hidden on screens smaller than large -->
-                <div class="col-lg-1 d-none d-lg-flex justify-content-center align-items-center">
-                    <div class="arrow-line w-100"></div>
-                </div>
-                
-                <!-- Step 3 -->
-                <div class="col-md-4 col-lg-3 text-center">
-                    <div class="step-icon">
-                        <i class="text-warning fs-1 fa-solid fa-wrench"></i>
-                    </div>
-                    <div class="step-number">Step 03</div>
-                    <h4 class="step-title">ENJOY THE UPGRADE</h4>
-                    <p class="step-description px-3">For your peace of mind, our experienced team will handle the entire installation process for you, if required.</p>
-                </div>
-            </div>
-            
-            <p class="benefit-text mb-2 mt-5 fs-4">Benefit from our limited time offer and get a Free Quote for Door Replacement</p>
-            
-            <div class="text-center">
-                <a href="#" class="btn btn-consultation py-3 px-4 w-100" style="max-width: 500px;" data-bs-toggle="modal" data-bs-target="#exampleModal">BOOK YOUR FREE CONSULTATION NOW!</a>
-            </div>
-        </div>
-        </div>
+    
 
         {{-- <div class="row mt-3">
             <div class="col-12">
@@ -1097,6 +1043,78 @@
         </div>
     </div>
 </div>
+
+<div class="container mb-md-5 mb-3">
+    <div class="col-12">
+        <img class="img-fluid w-100 rounded shadow-lg d-none d-md-block" src="{{ asset('images/why-diy.png') }}" alt="">
+        <img class="img-fluid w-100 rounded shadow-lg d-md-none" src="{{ asset('images/why-diy-mobile.png') }}" alt="">
+    </div>
+</div>
+
+<div class="container-fluid py-3" style="background-color:#f2f4f5">
+    <div class="container py-5">
+        <h2 class="section-title text-black">OUR <span class="highlight">SIMPLE 3-STEP</span> DOOR REPLACEMENT PROCESS</h2>
+        <div class="title-underline"></div>
+        
+        <h3 class="how-it-works text-black my-5">HOW IT WORKS</h3>
+        
+        <div class="row justify-content-center align-items-center">
+            <!-- Step 1 -->
+            <div class="col-md-4 col-lg-3 text-center mb-4 mb-lg-0">
+                <div class="step-icon">
+                    <i class="text-warning fs-1 fa-solid fa-phone"></i>
+                </div>
+                <div class="step-number">Step 01</div>
+                <h4 class="step-title">GET IN TOUCH</h4>
+                <p class="step-description px-3">Provide your contact information so we can schedule a convenient time to chat with you.</p>
+           
+            </div>
+            
+            <!-- Arrow 1 - Hidden on screens smaller than large -->
+            <div class="col-lg-1 d-none d-lg-flex justify-content-center align-items-center">
+                <div class="arrow-line w-100"></div>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="col-md-4 col-lg-3 text-center mb-4 mb-lg-0">
+                <div class="step-icon">
+                    <i class="text-warning fs-1 fa-solid fa-kitchen-set"></i>
+                </div>
+                <div class="step-number">Step 02</div>
+                <h4 class="step-title">WE PLAN YOUR PROJECT</h4>
+                <p class="step-description px-3">Our agent will contact you within 24 hours to discuss your budget, preferred styles, and colors, for your kitchen doors.</p>
+            </div>
+            
+            <!-- Arrow 2 - Hidden on screens smaller than large -->
+            <div class="col-lg-1 d-none d-lg-flex justify-content-center align-items-center">
+                <div class="arrow-line w-100"></div>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="col-md-4 col-lg-3 text-center">
+                <div class="step-icon">
+                    <i class="text-warning fs-1 fa-solid fa-wrench"></i>
+                </div>
+                <div class="step-number">Step 03</div>
+                <h4 class="step-title">ENJOY THE UPGRADE</h4>
+                <p class="step-description px-3">For your peace of mind, our experienced team will handle the entire installation process for you, if required.</p>
+            </div>
+        </div>
+        
+        <p class="benefit-text mb-2 mt-5 fs-4">Benefit from our limited time offer and get a Free Quote for Door Replacement</p>
+        
+        <div class="text-center">
+            <a href="#" class="btn btn-consultation py-3 px-4 w-100" style="max-width: 500px;" data-bs-toggle="modal" data-bs-target="#exampleModal">BOOK YOUR FREE CONSULTATION NOW!</a>
+        </div>
+    </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="col-12">
+            <img class="img-fluid w-100 d-none d-md-block rounded shadow-lg" src="{{ asset('images/we-dont.png') }}" alt="">
+            <img class="img-fluid w-100 d-md-none rounded shadow-lg" src="{{ asset('images/we-dont-mobile.png') }}" alt="">
+        </div>
+    </div>
 
 <div class="container">
     <div class="row">
