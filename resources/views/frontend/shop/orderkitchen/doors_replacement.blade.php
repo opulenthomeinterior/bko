@@ -1014,6 +1014,22 @@
             }
         }
 
+        .yt-video iframe
+        {
+            
+            width: 100%; 
+            height: 100%; 
+            object-fit:cover;
+        }
+
+        @media (max-width: 576px)
+        {
+            .yt-video iframe
+            {
+                margin-top:10px;
+                height:400px;
+            }
+        }
 
         </style>
     </head>
@@ -1095,7 +1111,7 @@
             </div>
             
             
-            <div class="col-12 col-md-6 rounded">
+            <div class="col-12 col-md-6 rounded yt-video">
                 <!-- <img class="img-fluid" src="{{ asset('images/google-reviews.png') }}"/> -->
                 <!-- <video src="Downloads/door-replacement-video.mp4"></video> -->
                 {{-- <video  controls class="w-100 h-100" autoplay>
@@ -1104,7 +1120,6 @@
 
                     <iframe src="https://www.youtube.com/embed/P0th7FUu-zU" 
           
-                    style="width: 100%; height: 100%;" 
                     frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen>
