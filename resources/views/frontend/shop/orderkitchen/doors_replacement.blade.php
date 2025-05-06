@@ -1098,9 +1098,18 @@
             <div class="col-12 col-md-6 rounded">
                 <!-- <img class="img-fluid" src="{{ asset('images/google-reviews.png') }}"/> -->
                 <!-- <video src="Downloads/door-replacement-video.mp4"></video> -->
-                <video  controls class="w-100 h-100" autoplay>
+                {{-- <video  controls class="w-100 h-100" autoplay>
                     <source src="{{ asset('videos/door-replacement-video.mp4') }}" type="video/mp4">
-                    </video>
+                    </video> --}}
+
+                    <iframe src="https://www.youtube.com/embed/P0th7FUu-zU" 
+          
+                    style="width: 100%; height: 100%;" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+
             </div>
             
         </div>
