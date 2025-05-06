@@ -1391,15 +1391,15 @@
 
                 <div class="collapse-wrapper my-4">
                     <a class="fw-semibold text-dark text-uppercase collapse-heading" data-bs-toggle="collapse"
-                        href="#accessories" role="button" aria-expanded="false" aria-controls="accessories">
+                        href="#internals" role="button" aria-expanded="false" aria-controls="internals">
                         <span
                             class="bg-dark text-white fw-semibold py-2 px-2 text-center me-2 collapse-heading-number">2</span>
-                        Accessories
+                        Internals
                     </a>
-                    <div class="collapse-container collapse mt-3" id="accessories">
+                    <div class="collapse-container collapse mt-3" id="internals">
                         <div class="row">
-                            @if ($accessories->count() > 0)
-                                @foreach ($accessories as $index => $accessory)
+                            @if ($internals->count() > 0)
+                                @foreach ($internals as $index => $internal)
                                     {{--<div class="col-lg-4 col-6 mb-3">
                                         <div class="card">
                                             <div class="card-body text-center">
@@ -1424,13 +1424,13 @@
                                                                 <div class="container-fluid">
                                                                     <div class="row">
                                                                         <div class="col-lg-4 col-md-5 col-12">
-                                                                            <img src="{{ !empty($accessory->image_path) ? asset('imgs/products/'.$accessory->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                            <img src="{{ !empty($internal->image_path) ? asset('imgs/products/'.$internal->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                 class="img-fluid" />
                                                                         </div>
                                                                         <div
                                                                             class="col-lg-8 col-md-7 col-12 text-start">
                                                                             <h1 class="fs-5 fw-bold">
-                                                                                {{ $accessory->full_title }}
+                                                                                {{ $internal->full_title }}
                                                                             </h1>
                                                                             <hr>
                                                                             <h6 class="fs-6 fw-bolder text-dark">
@@ -1452,44 +1452,44 @@
                                                 <div class="">
                                                     <figure>
                                                         <img class="product-image px-0"
-                                                            src="{{ !empty($accessory->image_path) ? asset('imgs/products/'.$accessory->image_path) : asset('images/no-image-available.jpg') }}"
+                                                            src="{{ !empty($internal->image_path) ? asset('imgs/products/'.$internal->image_path) : asset('images/no-image-available.jpg') }}"
                                                             alt="Card image cap">
                                                     </figure>
                                                     <div class="">
                                                         <a href=""
                                                             class="text-center text-decoration-underline fs-5 fw-bold">
-                                                            {{ $accessory->short_title }}
+                                                            {{ $internal->short_title }}
                                                         </a>
                                                         <p class="py-lg-3 py-2">
                                                             <small
-                                                                class="fw-bold text-center">{{ $accessory->product_code }}</small>
+                                                                class="fw-bold text-center">{{ $internal->product_code }}</small>
                                                         </p>
                                                         <p class="py-lg-3 py-2">
                                                             <small
-                                                                class="fw-bold text-center">{{ $accessory->dimensions }}</small>
+                                                                class="fw-bold text-center">{{ $internal->dimensions }}</small>
                                                         </p>
                                                         <div class="container-fluid">
                                                             <div class="row justify-content-center product-counter">
-                                                                <input id="minus{{ $accessory->id }}"
+                                                                <input id="minus{{ $internal->id }}"
                                                                     class="minus border bg-dark text-light p-0"
                                                                     type="button" value="-"
-                                                                    onclick="decreaseQuantity('{{ $accessory->id }}', '{{ $accessory->product_code }}', '{{ $accessory->full_title }}', {{ $accessory->price }}, {{ $accessory->discounted_price }}, {{ $accessory->discounted_percentage ?? 0 }}, '{{ $accessory->ParentCategory->slug }}')" />
-                                                                <input id="quantity{{ $accessory->id }}"
+                                                                    onclick="decreaseQuantity('{{ $internal->id }}', '{{ $internal->product_code }}', '{{ $internal->full_title }}', {{ $internal->price }}, {{ $internal->discounted_price }}, {{ $internal->discounted_percentage ?? 0 }}, '{{ $internal->ParentCategory->slug }}')" />
+                                                                <input id="quantity{{ $internal->id }}"
                                                                     class="quantity border border-black text-center"
                                                                     type="text" value="0" name="quantity"
                                                                     disabled />
-                                                                <input id="plus{{ $accessory->id }}"
+                                                                <input id="plus{{ $internal->id }}"
                                                                     class="plus border bg-dark text-light p-0"
                                                                     type="button" value="+"
-                                                                    {{$accessory->price == 0 ? 'disabled' : '' }} 
-                                                                    onclick="increaseQuantity('{{ $accessory->id }}', '{{ $accessory->product_code }}', '{{ $accessory->full_title }}', {{ $accessory->price }}, {{ $accessory->discounted_price }}, {{ $accessory->discounted_percentage ?? 0 }}, '{{ $accessory->ParentCategory->slug }}')" />
+                                                                    {{$internal->price == 0 ? 'disabled' : '' }} 
+                                                                    onclick="increaseQuantity('{{ $internal->id }}', '{{ $internal->product_code }}', '{{ $internal->full_title }}', {{ $internal->price }}, {{ $internal->discounted_price }}, {{ $internal->discounted_percentage ?? 0 }}, '{{ $internal->ParentCategory->slug }}')" />
                                                             </div>
                                                         </div>
                                                         <p class="fs-5 fw-bold mt-lg-2">
-                                                            {{ $accessory->price == 0 ? 'Out of Stock' : '£' . $accessory->price }}
+                                                            {{ $internal->price == 0 ? 'Out of Stock' : '£' . $internal->price }}
                                                         </p>
                                                         <div class="container-fluid">
-                                                            @if ($accessory->style)
+                                                            @if ($internal->style)
                                                                 <div class="row">
                                                                     <div class="col-4 p-0 d-md-flex d-none">
                                                                         <p
@@ -1500,12 +1500,12 @@
                                                                     <div class="col-md-8 col-sm-12 p-0 text-center">
                                                                         <p
                                                                             class="category-value fw-semibold py-1 mb-2">
-                                                                            <small>{{ $accessory->style->name }}</small>
+                                                                            <small>{{ $internal->style->name }}</small>
                                                                         </p>
                                                                     </div>
                                                                 </div>
                                                             @endif
-                                                            @if ($accessory->colour)
+                                                            @if ($internal->colour)
                                                                 <div class="row">
                                                                     <div class="col-4 p-0 d-md-flex d-none">
                                                                         <p
@@ -1516,12 +1516,12 @@
                                                                     <div class="col-md-8 col-sm-12 p-0 text-center">
                                                                         <p
                                                                             class="category-value fw-semibold py-1 mb-2">
-                                                                            <small>{{ $accessory->colour->trade_colour ? $accessory->colour->trade_colour : $accessory->colour->name }}</small>
+                                                                            <small>{{ $internal->colour->trade_colour ? $internal->colour->trade_colour : $internal->colour->name }}</small>
                                                                         </p>
                                                                     </div>
                                                                 </div>
                                                             @endif
-                                                            @if ($accessory->assembly)
+                                                            @if ($internal->assembly)
                                                                 <div class="row">
                                                                     <div class="col-4 p-0 d-md-flex d-none">
                                                                         <p
@@ -1532,7 +1532,7 @@
                                                                     <div class="col-md-8 col-sm-12 p-0 text-center">
                                                                         <p
                                                                             class="category-value fw-semibold py-1 mb-2">
-                                                                            <small>{{ $accessory->assembly->name }}</small>
+                                                                            <small>{{ $internal->assembly->name }}</small>
                                                                         </p>
                                                                     </div>
                                                                 </div>
@@ -1548,19 +1548,19 @@
                                             <div class="bg-warning card-header px-0 py-0">
                                                 <div class="py-2 text-center product-short-title-container w-100">
                                                     <a href="#" class="product-short-title fw-bold text-decoration-underline fs-4">
-                                                        {{ $accessory->short_title }}
+                                                        {{ $internal->short_title }}
                                                     </a>
                                                 </div>
                                             </div>
                                             <div class="card-body text-center">
-                                                <div class="modal fade" id="productModal{{ $accessory->id }}" tabindex="-1"
-                                                    aria-labelledby="productModalLabel{{ $accessory->id }}"
+                                                <div class="modal fade" id="productModal{{ $internal->id }}" tabindex="-1"
+                                                    aria-labelledby="productModalLabel{{ $internal->id }}"
                                                     aria-hidden="true">
                                                     <div class="modal-dialog modal-lg modal-dialog-centered">
                                                         <div class="modal-content" style="border-radius: 0; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266">
                                                             <div class="modal-header border-bottom border-light">
                                                                 <h1 class="fs-5 fw-bold text-dark border-bottom border-dark">
-                                                                    {{ $accessory->full_title }}
+                                                                    {{ $internal->full_title }}
                                                                 </h1>
                                                                 <button type="button" class="btn-close"
                                                                     data-bs-dismiss="modal" aria-label="Close"></button>
@@ -1569,37 +1569,37 @@
                                                                 <div class="container-fluid">
                                                                     <div class="row">
                                                                         <div class="col-lg-8 col-md-8 col-8 border-bottom border-warning bg-light">
-                                                                            <img src="{{ !empty($accessory->image_path) ? asset('imgs/products/'.$accessory->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                            <img src="{{ !empty($internal->image_path) ? asset('imgs/products/'.$internal->image_path) : asset('images/no-image-available.jpg') }}"
                                                                                 class="img-fluid product-image" style="height: 300px;" />
                                                                         </div>
                                                                         <div class="col-lg-4 col-md-4 col-4 text-start text-dark">
                                                                             <div>
                                                                                 <h6 class="fs-6 fw-bolder text-dark">Styling</h6>
                                                                                 <ul style="list-style: none; padding: 0">
-                                                                                    @if ($accessory->style)
+                                                                                    @if ($internal->style)
                                                                                     <li>
                                                                                         <p class="mb-0">
                                                                                             <small
                                                                                                 class="fw-bold text-uppercase text-dark">Style:</small>
-                                                                                            {{ $accessory->style->name }}
+                                                                                            {{ $internal->style->name }}
                                                                                         </p>
                                                                                     </li>
                                                                                     @endif
-                                                                                    @if ($accessory->assembly)
+                                                                                    @if ($internal->assembly)
                                                                                     <li>
                                                                                         <p class="mb-0">
                                                                                             <small
                                                                                                 class="fw-bold text-uppercase text-dark">Assembly:</small>
-                                                                                            {{ $accessory->assembly->name }}
+                                                                                            {{ $internal->assembly->name }}
                                                                                         </p>
                                                                                     </li>
                                                                                     @endif
-                                                                                    @if ($accessory->colour)
+                                                                                    @if ($internal->colour)
                                                                                     <li>
                                                                                         <p class="mb-0">
                                                                                             <small
                                                                                                 class="fw-bold text-uppercase text-dark">Colour:</small>
-                                                                                            {{ $accessory->colour->trade_colour ? $accessory->colour->trade_colour : $accessory->colour->name }}
+                                                                                            {{ $internal->colour->trade_colour ? $internal->colour->trade_colour : $internal->colour->name }}
                                                                                         </p>
                                                                                     </li>
                                                                                     @endif
@@ -1613,21 +1613,21 @@
                                                                                         <p class="mb-0">
                                                                                             <small
                                                                                                 class="fw-bold text-uppercase text-dark">HEIGHT:</small>
-                                                                                            {{ intval($accessory->height) }}mm
+                                                                                            {{ intval($internal->height) }}mm
                                                                                         </p>
                                                                                     </li>
                                                                                     <li>
                                                                                         <p class="mb-0">
                                                                                             <small
                                                                                                 class="fw-bold text-uppercase text-dark">WIDTH:</small>
-                                                                                            {{ intval($accessory->width) }}mm
+                                                                                            {{ intval($internal->width) }}mm
                                                                                         </p>
                                                                                     </li>
                                                                                     <li>
                                                                                         <p class="mb-0">
                                                                                             <small
                                                                                                 class="fw-bold text-uppercase text-dark">DEPTH:</small>
-                                                                                            {{ intval($accessory->depth) }}mm
+                                                                                            {{ intval($internal->depth) }}mm
                                                                                         </p>
                                                                                     </li>
                                                                                 </ul>
@@ -1638,10 +1638,10 @@
                                                                                 </h6>
                                                                                 <p class="mb-0">
                                                                                     <small>
-                                                                                        @if ($accessory->category?->description)
-                                                                                        {!! $accessory->category->description !!}
-                                                                                        @elseif ($accessory->category?->parentCategory?->description)
-                                                                                        {!! $accessory->category->parentCategory->description !!}
+                                                                                        @if ($internal->category?->description)
+                                                                                        {!! $internal->category->description !!}
+                                                                                        @elseif ($internal->category?->parentCategory?->description)
+                                                                                        {!! $internal->category->parentCategory->description !!}
                                                                                         @endif
                                                                                     </small>
                                                                                 </p>
@@ -1661,14 +1661,14 @@
                                                             <figure class="my-0" style="margin-bottom: 0px !important;">
                                                                 <img class="product-image px-0"
                                                                     style="margin-bottom: 0px !important;min-height:175px;max-height:175px;object-fit:contain"
-                                                                    src="{{ !empty($accessory->image_path) ? asset('imgs/products/'.$accessory->image_path) : asset('images/no-image-available.jpg') }}"
+                                                                    src="{{ !empty($internal->image_path) ? asset('imgs/products/'.$internal->image_path) : asset('images/no-image-available.jpg') }}"
                                                                     alt="Card image cap" data-bs-toggle="modal"
-                                                                    data-bs-target="#productModal{{ $accessory->id }}">
+                                                                    data-bs-target="#productModal{{ $internal->id }}">
                                                             </figure>
-                                                            <p class="mt-2"><small class="fw-bold text-start text-dark">{{ $accessory->product_code }}</small></p>
+                                                            <p class="mt-2"><small class="fw-bold text-start text-dark">{{ $internal->product_code }}</small></p>
                                                             <p class="">
                                                                 <small
-                                                                    class="fw-bold text-start text-dark">{{ $accessory->dimensions }}</small>
+                                                                    class="fw-bold text-start text-dark">{{ $internal->dimensions }}</small>
                                                             </p>
                                                         </div>
                                                         <div class="col-12">
@@ -1676,30 +1676,30 @@
                                                                 <div class="row justify-content-center">
                                                                     <div
                                                                         class="col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center product-counter">
-                                                                        <input id="minus{{ $accessory->id }}"
+                                                                        <input id="minus{{ $internal->id }}"
                                                                             class="minus border bg-dark text-light p-0"
                                                                             type="button" value="-"
-                                                                            onclick="decreaseQuantity('{{ $accessory->id }}', '{{ $accessory->product_code }}', '{{ $accessory->full_title }}', {{ $accessory->price }}, {{ $accessory->discounted_price }}, {{ $accessory->discounted_percentage ?? 0 }}, '{{ $accessory->ParentCategory->slug }}')" />
-                                                                        <input id="quantity{{ $accessory->id }}"
+                                                                            onclick="decreaseQuantity('{{ $internal->id }}', '{{ $internal->product_code }}', '{{ $internal->full_title }}', {{ $internal->price }}, {{ $internal->discounted_price }}, {{ $internal->discounted_percentage ?? 0 }}, '{{ $internal->ParentCategory->slug }}')" />
+                                                                        <input id="quantity{{ $internal->id }}"
                                                                             class="quantity border border-black text-center"
                                                                             type="text" value="0" name="quantity"
                                                                             disabled />
-                                                                        <input id="plus{{ $accessory->id }}"
+                                                                        <input id="plus{{ $internal->id }}"
                                                                             class="plus border bg-dark text-light p-0"
                                                                             type="button" value="+" type="number"
                                                                             max="10"
-                                                                            {{$accessory->price == 0 ? 'disabled' : '' }} 
-                                                                            onclick="increaseQuantity('{{ $accessory->id }}', '{{ $accessory->product_code }}', '{{ $accessory->full_title }}', {{ $accessory->price }}, {{ $accessory->discounted_price }}, {{ $accessory->discounted_percentage ?? 0 }}, '{{ $accessory->ParentCategory->slug }}')" />
+                                                                            {{$internal->price == 0 ? 'disabled' : '' }} 
+                                                                            onclick="increaseQuantity('{{ $internal->id }}', '{{ $internal->product_code }}', '{{ $internal->full_title }}', {{ $internal->price }}, {{ $internal->discounted_price }}, {{ $internal->discounted_percentage ?? 0 }}, '{{ $internal->ParentCategory->slug }}')" />
                                                                     </div>
                                                                     <div class="col-6">
                                                                         <p class="fs-5 fw-bold mt-lg-2 text-dark">
-                                                                            {{ $accessory->price == 0 ? 'Out of Stock' : '£' . $accessory->price }}
+                                                                            {{ $internal->price == 0 ? 'Out of Stock' : '£' . $internal->price }}
                                                                         </p>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="container-fluid">
-                                                                @if ($accessory->style)
+                                                                @if ($internal->style)
                                                                 <div class="row">
                                                                     <div class="col-4 p-0 d-md-flex d-none">
                                                                         <p
@@ -1709,12 +1709,12 @@
                                                                     </div>
                                                                     <div class="col-md-8 col-sm-12 p-0 text-center">
                                                                         <p class="category-value fw-semibold py-1 mb-2 text-dark">
-                                                                            <small>{{ $accessory->style->name }}</small>
+                                                                            <small>{{ $internal->style->name }}</small>
                                                                         </p>
                                                                     </div>
                                                                 </div>
                                                                 @endif
-                                                                @if ($accessory->colour)
+                                                                @if ($internal->colour)
                                                                 <div class="row">
                                                                     <div class="col-4 p-0 d-md-flex d-none">
                                                                         <p
@@ -1724,12 +1724,12 @@
                                                                     </div>
                                                                     <div class="col-md-8 col-sm-12 p-0 text-center">
                                                                         <p class="category-value fw-semibold py-1 mb-2 text-dark">
-                                                                            <small>{{ $accessory->colour->trade_colour ? $accessory->colour->trade_colour : $accessory->colour->name }}</small>
+                                                                            <small>{{ $internal->colour->trade_colour ? $internal->colour->trade_colour : $internal->colour->name }}</small>
                                                                         </p>
                                                                     </div>
                                                                 </div>
                                                                 @endif
-                                                                @if ($accessory->assembly)
+                                                                @if ($internal->assembly)
                                                                 <div class="row">
                                                                     <div class="col-4 p-0 d-md-flex d-none">
                                                                         <p
@@ -1739,7 +1739,7 @@
                                                                     </div>
                                                                     <div class="col-md-8 col-sm-12 p-0 text-center">
                                                                         <p class="category-value fw-semibold py-1 mb-2 text-dark">
-                                                                            <small>{{ $accessory->assembly->name }}</small>
+                                                                            <small>{{ $internal->assembly->name }}</small>
                                                                         </p>
                                                                     </div>
                                                                 </div>
@@ -1759,7 +1759,7 @@
                                 @endforeach
                             @else
                                 <div class="col-12">
-                                    <p class="">No accessories available</p>
+                                    <p class="">No internal available</p>
                                 </div>
                             @endif
                         </div>
@@ -2148,9 +2148,7 @@
                     <a class="fw-semibold text-dark text-uppercase collapse-heading" data-bs-toggle="collapse"
                         href="#worktops" role="button" aria-expanded="false" aria-controls="worktops">
                         <span
-                            class="bg-dark text-white fw-semibold py-2 px-2 text-center me-2 collapse-heading-number">4</span>WORKTOPS,
-                        UPSTANDS AND
-                        EDGING
+                            class="bg-dark text-white fw-semibold py-2 px-2 text-center me-2 collapse-heading-number">4</span>WORKTOPS AND UPSTANDS
                     </a>
                     <div class="collapse-container collapse mt-3" id="worktops">
                         <nav>
@@ -2164,10 +2162,10 @@
                                 <button class="nav-link" id="nav-breakfast-tab" data-bs-toggle="tab"
                                     data-bs-target="#nav-breakfast" type="button" role="tab"
                                     aria-controls="nav-breakfast" aria-selected="false">Breakfast Bars</button>
-                                <button class="nav-link" id="nav-edging-tab" data-bs-toggle="tab"
+                                <!-- <button class="nav-link" id="nav-edging-tab" data-bs-toggle="tab"
                                     data-bs-target="#nav-edging" type="button" role="tab"
                                     aria-controls="nav-edging-tab" aria-selected="false">Edging
-                                    Doors</button>
+                                    Doors</button> -->
                             </div>
                         </nav>
                         <div class="tab-content p-3" style="border: 1px solid black !important" id="nav-tabContent">

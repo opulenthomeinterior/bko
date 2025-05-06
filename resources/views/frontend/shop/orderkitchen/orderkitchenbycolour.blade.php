@@ -2730,9 +2730,7 @@
                     <a class="fw-semibold text-dark text-uppercase collapse-heading" data-bs-toggle="collapse"
                         href="#worktops" role="button" aria-expanded="false" aria-controls="worktops">
                         <span
-                            class="bg-dark text-white fw-semibold py-2 px-2 text-center me-2 collapse-heading-number">4</span>WORKTOPS,
-                        UPSTANDS AND
-                        EDGING
+                            class="bg-dark text-white fw-semibold py-2 px-2 text-center me-2 collapse-heading-number">4</span>WORKTOPS AND UPSTANDS
                     </a>
                     <div class="collapse-container collapse mt-3" id="worktops">
                         <nav>
