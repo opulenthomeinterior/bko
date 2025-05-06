@@ -1097,6 +1097,14 @@
         </div>
     </header>
 
+
+    <div class="container my-5">
+        <div class="col-12">
+            <img class="img-fluid w-100 d-none d-md-block rounded shadow-lg" src="{{ asset('images/tired-of.png') }}" alt="">
+            <img class="img-fluid w-100 d-md-none rounded shadow-lg" src="{{ asset('images/tired-of-mobile.png') }}" alt="">
+        </div>
+    </div>
+
     
     <section class="container-fluid my-5 bg-light py-4">
         <div class="container">
@@ -1191,14 +1199,14 @@
             </a>
             </div>
         </div>
-        <div class="row my-5">
+        <!-- <div class="row my-5">
             <div class="col-12">
                 <h2 style="font-size:40px; font-weight:700" class="text-black text-center text-uppercase">Your kitchen looks <span class="text-danger">outdated</span> </h2>
                 <h3 style="font-size:40px; font-weight:700" class="text-black text-center text-uppercase"> <span class="font-weight:600"> because of those doors,</span>  <span style="font-weight:500">not the Cabinets </span> </h3>
             
             </div>
             <div class="col-7"></div>
-        </div>
+        </div> -->
         <div class="row">
             <div class="col-12 col-md-6">
                 <img class="img-fluid d-none d-sm-block" src="{{ asset('images/from-dream-to-reality.png') }}"/>
@@ -1311,6 +1319,13 @@
         </div>
     </div>
 
+    <div class="container mb-md-5 mb-3">
+        <div class="col-12">
+            <img class="img-fluid w-100 rounded shadow-lg d-none d-md-block" src="{{ asset('images/why-diy.png') }}" alt="">
+            <img class="img-fluid w-100 rounded shadow-lg d-md-none" src="{{ asset('images/why-diy-mobile.png') }}" alt="">
+        </div>
+    </div>
+
     <div class="container-fluid py-3" style="background-color:#f2f4f5">
         <div class="container py-5">
             <h2 class="section-title text-black">OUR <span class="highlight">SIMPLE 3-STEP</span> CABINET DOOR REPLACEMENT PROCESS</h2>
@@ -1381,7 +1396,12 @@
         </div> --}}
     </div>
 
-
+    <div class="container my-5">
+        <div class="col-12">
+            <img class="img-fluid w-100 d-none d-md-block rounded shadow-lg" src="{{ asset('images/we-dont.png') }}" alt="">
+            <img class="img-fluid w-100 d-md-none rounded shadow-lg" src="{{ asset('images/we-dont-mobile.png') }}" alt="">
+        </div>
+    </div>
 
 <div class="container mt-5">
     <div class="row">
