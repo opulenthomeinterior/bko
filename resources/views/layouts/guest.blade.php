@@ -593,7 +593,10 @@ use App\Models\Style;
                 <div class="text-center bg-danger">
 
                     <div class="ticker-wrapper">
+                        <!-- <div class="ticker-text"><strong class="fw-bold">LIMITED TIME OFFER:</strong> For your Peace Of Mind, we are offering FREE Consultation and On-site Survey. Book your slot now!</div> -->
+                         <a href="" class="text-white p-0 w-100 btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <div class="ticker-text"><strong class="fw-bold">LIMITED TIME OFFER:</strong> For your Peace Of Mind, we are offering FREE Consultation and On-site Survey. Book your slot now!</div>
+                    </a>
                     </div>
                    
                     {{-- <span class="fw-bold text-white "> 
