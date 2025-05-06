@@ -763,6 +763,258 @@
             padding: 12px 15px !important;
             height: auto !important;
         }
+
+
+        :root {
+            --primary-color: #ffc01f;
+            --primary-light: #ffd45e;
+            --primary-dark: #e6a600;
+            --dark-color: #333333;
+            --light-color: #f8fafc;
+            --text-on-primary: #333333;
+        }
+        .faq-container {
+            
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .faq-header h1 {
+            color: var(--dark-color);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .faq-header h1:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            background-color: var(--primary-color);
+            bottom: -10px;
+            left: 25%;
+            border-radius: 2px;
+        }
+
+        .faq-header p {
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .faq-question {
+            cursor: pointer;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--dark-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question.active {
+            background-color: var(--primary-color);
+            color: var(--text-on-primary);
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+            color: var(--primary-color);
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+            color: var(--text-on-primary);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 1.5rem;
+            color: #475569;
+            line-height: 1.6;
+            transition: all 0.5s ease;
+            background-color: #fffdf7;
+        }
+
+        .faq-answer.show {
+            max-height: 1000px;
+            padding: 1rem 1.5rem 1.5rem;
+            border-top: 1px solid #fff5e0;
+        }
+        
+        /* Card styles for FAQ answers */
+        .faq-card-container {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .faq-card {
+            flex: 1;
+            min-width: 250px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.25rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-left: 3px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .faq-card-title {
+            color: var(--dark-color);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .faq-card-title i {
+            color: var(--primary-color);
+            margin-right: 0.5rem;
+        }
+        
+        .faq-card-desc {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Custom badge styles */
+        .faq-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+        }
+
+        .faq-badge-popular {
+            background-color: var(--primary-light);
+            color: var(--text-on-primary);
+        }
+
+        .faq-badge-new {
+            background-color: #ffe8a3;
+            color: #b38000;
+        }
+
+        /* Search box styles */
+        .faq-search {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .faq-search input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            padding-left: 3rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-search input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(255, 192, 31, 0.3);
+        }
+
+        .faq-search i {
+            position: absolute;
+            left: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-color);
+        }
+
+        /* Category filters */
+        .faq-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+
+        .faq-category {
+            padding: 0.5rem 1rem;
+            background-color: white;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #64748b;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .faq-category:hover, .faq-category.active {
+            background-color: var(--primary-color);
+            color: var(--text-on-primary);
+            border-color: var(--primary-color);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .faq-categories {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                padding-bottom: 0.5rem;
+                justify-content: flex-start;
+                scrollbar-width: none;
+            }
+
+            .faq-categories::-webkit-scrollbar {
+                display: none;
+            }
+
+            .faq-category {
+                white-space: nowrap;
+            }
+
+            .faq-question {
+                font-size: 1rem;
+                padding: 1rem 1.25rem;
+            }
+        }
+
+
         </style>
     </head>
 <body>
@@ -828,9 +1080,11 @@
         </div>
         <div class="row my-5">
             <div class="col-12">
-                <h2 style="font-size:40px; font-weight:700" class="text-black text-center text-uppercase">Your kitchen looks <span class="text-danger">outdated</span> </h2>
+                <img class="img-fluid w-100 d-none d-md-block rounded shadow-lg" src="{{ asset('images/tired-of.png') }}" alt="">
+                <img class="img-fluid w-100 d-md-none rounded shadow-lg" src="{{ asset('images/tired-of-mobile.png') }}" alt="">
+                <!-- <h2 style="font-size:40px; font-weight:700" class="text-black text-center text-uppercase">Your kitchen looks <span class="text-danger">outdated</span> </h2>
                 <h3 style="font-size:40px; font-weight:700" class="text-black text-center text-uppercase"> <span class="font-weight:600"> because of those doors,</span>  <span style="font-weight:500">not the cabinets </span> </h3>
-            
+             -->
             </div>
             <div class="col-7"></div>
         </div>
@@ -935,63 +1189,7 @@
     </div>
     </section>
 
-    <div class="container-fluid py-3" style="background-color:#f2f4f5">
-        <div class="container py-5">
-            <h2 class="section-title text-black">OUR <span class="highlight">SIMPLE 3-STEP</span> DOOR REPLACEMENT PROCESS</h2>
-            <div class="title-underline"></div>
-            
-            <h3 class="how-it-works text-black my-5">HOW IT WORKS</h3>
-            
-            <div class="row justify-content-center align-items-center">
-                <!-- Step 1 -->
-                <div class="col-md-4 col-lg-3 text-center mb-4 mb-lg-0">
-                    <div class="step-icon">
-                        <i class="text-warning fs-1 fa-solid fa-phone"></i>
-                    </div>
-                    <div class="step-number">Step 01</div>
-                    <h4 class="step-title">GET IN TOUCH</h4>
-                    <p class="step-description px-3">Provide your contact information so we can schedule a convenient time to chat with you.</p>
-               
-                </div>
-                
-                <!-- Arrow 1 - Hidden on screens smaller than large -->
-                <div class="col-lg-1 d-none d-lg-flex justify-content-center align-items-center">
-                    <div class="arrow-line w-100"></div>
-                </div>
-                
-                <!-- Step 2 -->
-                <div class="col-md-4 col-lg-3 text-center mb-4 mb-lg-0">
-                    <div class="step-icon">
-                        <i class="text-warning fs-1 fa-solid fa-kitchen-set"></i>
-                    </div>
-                    <div class="step-number">Step 02</div>
-                    <h4 class="step-title">WE PLAN YOUR PROJECT</h4>
-                    <p class="step-description px-3">Our agent will contact you within 24 hours to discuss your budget, preferred styles, and colors, for your kitchen doors.</p>
-                </div>
-                
-                <!-- Arrow 2 - Hidden on screens smaller than large -->
-                <div class="col-lg-1 d-none d-lg-flex justify-content-center align-items-center">
-                    <div class="arrow-line w-100"></div>
-                </div>
-                
-                <!-- Step 3 -->
-                <div class="col-md-4 col-lg-3 text-center">
-                    <div class="step-icon">
-                        <i class="text-warning fs-1 fa-solid fa-wrench"></i>
-                    </div>
-                    <div class="step-number">Step 03</div>
-                    <h4 class="step-title">ENJOY THE UPGRADE</h4>
-                    <p class="step-description px-3">For your peace of mind, our experienced team will handle the entire installation process for you, if required.</p>
-                </div>
-            </div>
-            
-            <p class="benefit-text mb-2 mt-5 fs-4">Benefit from our limited time offer and get a Free Quote for Door Replacement</p>
-            
-            <div class="text-center">
-                <a href="#" class="btn btn-consultation py-3 px-4 w-100" style="max-width: 500px;" data-bs-toggle="modal" data-bs-target="#exampleModal">BOOK YOUR FREE CONSULTATION NOW!</a>
-            </div>
-        </div>
-        </div>
+    
 
         {{-- <div class="row mt-3">
             <div class="col-12">
@@ -1097,6 +1295,78 @@
         </div>
     </div>
 </div>
+
+<div class="container mb-md-5 mb-3">
+    <div class="col-12">
+        <img class="img-fluid w-100 rounded shadow-lg d-none d-md-block" src="{{ asset('images/why-diy.png') }}" alt="">
+        <img class="img-fluid w-100 rounded shadow-lg d-md-none" src="{{ asset('images/why-diy-mobile.png') }}" alt="">
+    </div>
+</div>
+
+<div class="container-fluid py-3" style="background-color:#f2f4f5">
+    <div class="container py-5">
+        <h2 class="section-title text-black">OUR <span class="highlight">SIMPLE 3-STEP</span> DOOR REPLACEMENT PROCESS</h2>
+        <div class="title-underline"></div>
+        
+        <h3 class="how-it-works text-black my-5">HOW IT WORKS</h3>
+        
+        <div class="row justify-content-center align-items-center">
+            <!-- Step 1 -->
+            <div class="col-md-4 col-lg-3 text-center mb-4 mb-lg-0">
+                <div class="step-icon">
+                    <i class="text-warning fs-1 fa-solid fa-phone"></i>
+                </div>
+                <div class="step-number">Step 01</div>
+                <h4 class="step-title">GET IN TOUCH</h4>
+                <p class="step-description px-3">Provide your contact information so we can schedule a convenient time to chat with you.</p>
+           
+            </div>
+            
+            <!-- Arrow 1 - Hidden on screens smaller than large -->
+            <div class="col-lg-1 d-none d-lg-flex justify-content-center align-items-center">
+                <div class="arrow-line w-100"></div>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="col-md-4 col-lg-3 text-center mb-4 mb-lg-0">
+                <div class="step-icon">
+                    <i class="text-warning fs-1 fa-solid fa-kitchen-set"></i>
+                </div>
+                <div class="step-number">Step 02</div>
+                <h4 class="step-title">WE PLAN YOUR PROJECT</h4>
+                <p class="step-description px-3">Our agent will contact you within 24 hours to discuss your budget, preferred styles, and colors, for your kitchen doors.</p>
+            </div>
+            
+            <!-- Arrow 2 - Hidden on screens smaller than large -->
+            <div class="col-lg-1 d-none d-lg-flex justify-content-center align-items-center">
+                <div class="arrow-line w-100"></div>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="col-md-4 col-lg-3 text-center">
+                <div class="step-icon">
+                    <i class="text-warning fs-1 fa-solid fa-wrench"></i>
+                </div>
+                <div class="step-number">Step 03</div>
+                <h4 class="step-title">ENJOY THE UPGRADE</h4>
+                <p class="step-description px-3">For your peace of mind, our experienced team will handle the entire installation process for you, if required.</p>
+            </div>
+        </div>
+        
+        <p class="benefit-text mb-2 mt-5 fs-4">Benefit from our limited time offer and get a Free Quote for Door Replacement</p>
+        
+        <div class="text-center">
+            <a href="#" class="btn btn-consultation py-3 px-4 w-100" style="max-width: 500px;" data-bs-toggle="modal" data-bs-target="#exampleModal">BOOK YOUR FREE CONSULTATION NOW!</a>
+        </div>
+    </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="col-12">
+            <img class="img-fluid w-100 d-none d-md-block rounded shadow-lg" src="{{ asset('images/we-dont.png') }}" alt="">
+            <img class="img-fluid w-100 d-md-none rounded shadow-lg" src="{{ asset('images/we-dont-mobile.png') }}" alt="">
+        </div>
+    </div>
 
 <div class="container">
     <div class="row">
@@ -1328,6 +1598,124 @@
 
      <!-- Testimonials -->
      @include('frontend.testimonials_component')
+
+
+
+     <div class="container-fluid faq-body">
+        <div class="container faq-container">
+            <div class="faq-header">
+                <h1>FAQS</h1>
+            </div>
+        
+            <div class="faq-list">
+                {{-- @if (!empty($home)) --}}
+                     <!-- FAQ Item 1 -->
+                     <div class="faq-item" data-category="general">
+                        <div class="faq-question">
+                            <div>
+                                
+                                Is it cheaper to replace the cabinets or just the doors?
+                            </div>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                       <p>Yes, the door replacement is cheaper as your carcasses (cabinets) and units remain the same. Replacing only the doors lowers both cost and labour.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item" data-category="general">
+                        <div class="faq-question">
+                            <div>
+                                
+                                How do I measure the new kitchen doors?
+                            </div>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                       <p>Don’t worry about the measurements. Our experienced team will handle them for you, minimizing your hassle and ensuring a stress-free process.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item" data-category="general">
+                        <div class="faq-question">
+                            <div>
+                                
+                                How long does the process of door replacement take?
+                            </div>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                       <p>Usually, it takes 2-3 days for installation after the cupboard doors are manufactured and ready.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item" data-category="general">
+                        <div class="faq-question">
+                            <div>
+                                Is door replacement more cost-efficient than a complete kitchen remodel?
+                            </div>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                       <p>Yes, a full kitchen remodel cost includes charges for everything, whereas kitchen cupboard door replacement will only include the cost of doors.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item" data-category="general">
+                        <div class="faq-question">
+                            <div>
+                                Can the handles and hinges be replaced?
+                            </div>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                       <p>Absolutely, we can change the knobs, handles and hinges if you’d like to update them along with the kitchen doors.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item" data-category="general">
+                        <div class="faq-question">
+                            <div>
+                                Will the new doors work with my current appliance setup?
+                            </div>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                       <p>Yes, the new doors will work perfectly with your current appliance setup. Replacing cupboard doors doesn’t affect plumbing, gas, electrical, or appliance layout, so you can be confident in their compatibility.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item" data-category="general">
+                        <div class="faq-question">
+                            <div>
+                                What if I want to change my kitchen's style (e.g., from modern to traditional)?
+                            </div>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                       <p>Yes, you can select your preferred style and colour from our wide range of options on the website. </p>
+                        </div>
+                    </div>
+                     <div class="faq-item" data-category="general">
+                        <div class="faq-question">
+                            <div>
+                                Can you guide me if I am confused about my style preference?
+                            </div>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                       <p>
+                        Yes, it is okay to feel confused and overwhelmed. We offer basic style guidance to help simplify your decision.
+                        </p>
+                        </div>
+                    </div>
+                    
+        
+                
+        
+            </div>
+        </div>
+        </div>
+     
+
+
+
+
+
       <!-- FAQs -->
     {{-- @include('frontend.faqs_component', ['faqsData' => $generalFaqs]) --}}
 
@@ -1487,6 +1875,46 @@
     
 @push('scripts')
     <script>
+
+const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    
+                    this.classList.toggle('active');
+                    
+                    const answer = this.nextElementSibling;
+                    answer.classList.toggle('show');
+                    
+                    faqQuestions.forEach(q => {
+                        if (q !== question) {
+                            q.classList.remove('active');
+                            q.nextElementSibling.classList.remove('show');
+                        }
+                    });
+                });
+            });
+
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            faqItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = `all 0.5s ease ${index * 0.1}s`;
+                observer.observe(item);
+            });
+
 
 
 function sendEmail() {
