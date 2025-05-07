@@ -1813,7 +1813,53 @@
       </div>
       
 
+
+
+      <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <h1 class=" text-center text-black mb-2"> MAX STORAGE KITCHENS</h1>
+                <div id="lines" class="mb-5">
+                    <div id="line1"></div>
+                    <div id="line2"></div>
+                    <div id="line3"></div>
+                
+            </div>
+            <!-- <h3 style="font-style:28px;font-weight:600" class="text-black text-center mb-2"></h3> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 mb-2 mb-md-0 ">
+                <img class="img-fluid w-100" src="{{ asset('images/max-gallery-1.png') }}"/>
+            </div>
+            
+        </div>
+        <div class="row mt-3">
+            <div class="col-12 col-md-6 mb-2 mb-md-0">
+                <img  class="img-fluid w-100" src="{{ asset('images/max-gallery-2.png') }}"/>
+            </div>
+            <div class="col-12 col-md-6 mb-2 mb-md-0">
+                <img  class="img-fluid w-100" src="{{ asset('images/max-gallery-3.png') }}"/>
+            </div>
+          
+        </div>
+        <div class="row mt-2">
+            <div class="col-12 mb-2 mb-md-0">
+                <img class="img-fluid w-100" src="{{ asset('images/max-gallery-4.png') }}"/>
+            </div>
+            
+        </div>
+    </div>
+
+
+
+
+
+
+
       @include('frontend.why_choose_bkonline')
+
+
 
 
 
