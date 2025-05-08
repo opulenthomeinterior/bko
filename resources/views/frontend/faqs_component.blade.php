@@ -27,7 +27,7 @@
             margin-bottom: 3rem;
         }
 
-        .faq-header h1 {
+        .faq-header h3 {
             color: var(--dark-color);
             font-weight: 700;
             margin-bottom: 1rem;
@@ -35,7 +35,7 @@
             display: inline-block;
         }
 
-        .faq-header h1:after {
+        .faq-header h3:after {
             content: '';
             position: absolute;
             width: 50%;

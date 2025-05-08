@@ -483,7 +483,8 @@
             }
             
             .popup-image {
-                min-height: 200px;
+                /* min-height: 200px; */
+                display: none;
             }
             
             .newsletter-content {
@@ -2082,7 +2083,7 @@
                     <p class="terms-text">Terms & Conditions Applied.</p>
                     <div class="subscribe-container">
                         <input type="email" id="emailInput" class="form-control news-letter-input" placeholder="Enter Your Email">
-                        <button class="subscribe-btn" id="subscribeBtn">Subscribe</button>
+                        <button class="subscribe-btn" id="subscribeBtnMax" onclick="newsletterMaxfn()">Subscribe</button>
                     </div>
                     <p class="privacy-text">We respect your Privacy. Unsubscribe at any time.</p>
                 </div>
@@ -2232,8 +2233,8 @@ function sendEmail() {
  // Handle subscribe button click
 
     
-
-            document.getElementById('subscribeBtn').addEventListener('click',function(){
+function newsletterMaxfn(){
+            document.getElementById('subscribeBtnMax').addEventListener('click',function(){
 
                 const emailInput = document.getElementById('emailInput');
                 const email = emailInput.value.trim();
@@ -2262,7 +2263,7 @@ function sendEmail() {
                     
                     localStorage.setItem('subscribed', true);
                 });
-
+            }
       $(document).ready(function(){
     $(".owl-carousel").owlCarousel({
         loop: true,

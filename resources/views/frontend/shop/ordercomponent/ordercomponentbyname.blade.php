@@ -42,9 +42,292 @@
             transform: scale(1.1);
             transition: 0.5s ease;
         }
+
+
+
+        /* handles */
+
+        .handles-section {
+            position: relative;
+            width: 100%;
+            height: 65vh; /* Responsive height */
+            min-height: 300px; /* Minimum height */
+            background-image: url('{{ asset('images/handles-hero-image.png') }}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .handles-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.1); /* Optional overlay */
+        }
+
+        .handles-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .handles-heading {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+        }
+
+        .badges-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: clamp(15px, 3vw, 40px);
+            max-width: 100%;
+        }
+
+        .badge-link {
+            display: block;
+            transition: transform 0.3s ease;
+            width: clamp(70px, 15vw, 100px);
+            height: clamp(70px, 15vw, 100px);
+        }
+
+        .badge-link:hover {
+            transform: scale(1.05);
+        }
+
+        .badge {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .badge img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .premium-badge {
+            border: 2px solid #e74c3c;
+        }
+
+        .promo-box {
+            position: absolute;
+            right: 0;
+            bottom: 50px;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-top-left-radius: 5px;
+            width: clamp(100px, 20vw, 150px);
+            box-shadow: -2px -2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 3;
+        }
+
+        .promo-text {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: clamp(0.7rem, 1.5vw, 1rem);
+            text-align: center;
+            padding: clamp(5px, 1vw, 10px);
+            width: 100%;
+        }
+
+        .promo-cta {
+            background-color: #ffd700;
+            color: #333;
+            font-weight: bold;
+            font-size: clamp(0.7rem, 1.5vw, 1rem);
+            text-align: center;
+            padding: clamp(5px, 1vw, 10px);
+            width: 100%;
+        }
+
+        /* Media queries for enhanced responsiveness */
+        @media (max-width: 767px) {
+            .handles-section {
+                height: 40vh;
+            }
+            
+            .badges-container {
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .handles-section {
+                height: auto;
+                padding: 60px 10px;
+            }
+            
+            .badges-container {
+                gap: 10px;
+            }
+            
+            .badge-link {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .promo-box {
+                position: relative;
+                width: 100%;
+                margin-top: 20px;
+                flex-direction: row;
+                justify-content: space-between;
+                border-radius: 0;
+            }
+            
+            .promo-text, .promo-cta {
+                width: 50%;
+                padding: 8px 5px;
+            }
+        }
+
+
+        .bg-orange
+        {
+            background-color:#febd49;
+        }
+
     </style>
+
+
+
+
+<section class="handles-section">
+    <div class="handles-overlay"></div>
+    <div class="handles-content">
+        <h2 class="handles-heading text-black">HANDLES</h2>
+        <div class="badges-container">
+            <a href="" class="badge-link">
+                <div class="badge premium-badge">
+                    <img src="{{ asset('images/premium-badge.png') }}" alt="">
+                </div>
+            </a>
+            <a href="https://www.trustpilot.com/review/opulenthomeinteriors.com'" class="badge-link">
+                <div class="badge trustpilot-badge">
+                    
+                    <img class="" src="{{ asset('images/trust-pilot-badge.png') }}" alt="">
+                </div>
+            </a>
+            <a href="https://www.google.com/maps/place/Buy+Kitchen+Online/@51.5192167,-0.0093268,17z/data=!4m8!3m7!1s0x48761d591fe166d7:0x456fed0ffc8a8222!8m2!3d51.5192167!4d-0.0093268!9m1!1b1!16s%2Fg%2F11vbf0zdzm?entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D" class="badge-link">
+                <div class="badge google-badge">
+                    <img src="{{ asset('images/google-reviews-badge.png') }}" alt="">
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="promo-box">
+        <div class="promo-text">For a Limited<br>Time Only!</div>
+        <div class="promo-cta">Get <span class="text-danger">FREE </span><br>On-Site<br>Survey!</div>
+    </div>
+</section>
+
+
+
+
+
+<section class="container-fluid my-5 bg-light py-4">
+    <div class="container">
+    <div class="row">
+        {{-- <div class=" col-xl-8 col-12 align-self-center px-5 d-flex flex-column flex-md-row p-0">
+            <div class="row">
+                
+                <div class="align-self-center rounded shadow-lg order-sample position-relative col-12 col-xl-8 bg-white rounded-lg border-0 shadow-sm" style="">
+                    <h4 style="font-size:30px; font-weight:600;"><span class="text-danger">Try</span> <span class="text-black">Before You Buy<span>
+                       <br> <span class="text-danger"> FREE</span> Door Samples!</h4>
+                       <h4 class="text-primary my-4" style="font-size:24px;">£6 Delivery Charge Only.</h4>
+                    
+                    <a href="{{ route('ordercomponentbyname', 'doors') }}" class=" px-2 btn bg-orange px-1 fw-bold text-uppercase rounded-0 " style="font-size:14px;">  Order a Sample of your choice NOW!</a>
+                </div>
+                <div class="p-0 mb-3 mb-xl-0 col-12 col-xl-4">
+                 <img class="w-100 object-fit-cover rounded border border-warning" src="https://bkonline.uk/public/imgs/products/Cartmel-Cashmere-Flat-Door-A1720452961_668c0761d6f16.jpg"  class="img-fluid"  alt="Modern Kitchen" 
+                    style="width: 300px; height: 400px; object-fit: cover;">
+                
+               
+                </div>
+            </div>
+
+        </div> --}}
+
+        <div class="col-xl-6">
+            <h1 class="text-black fw-bold">Handles</h1>
+            <p class="fs-5">A wide variety of handles for kitchen units are available at Buy Kitchen Online. The handles are suitable for drawers, cabinets and doors. You can choose a handle according to your style preference and kitchen aesthetic. To minimize space, you can go for a simple bar handle or select one of our drop handles if you want a statement piece. </p>
+            <p class="fs-5">
+                We offer a diverse range of handles for kitchen doors, cabinets, cupboards, and drawers to suit every style and preference. Choose from bar handles, pull handles, D pull handles, bow handles, and more for a sleek modern look. For a classic touch, explore options like drop pendant handles, knob handles, and drop ring handles. Profile handles, vertical side profiles, and Scilm Gola handles provide innovative designs for contemporary kitchens. With additional accessories like connectors, trim caps, and end profiles, you can customize your kitchen to perfection.
+            </p>
+        </div>
+        <div class="col-xl-2"></div>
+        <div class="col-xl-4 p-0 col-12">
+            @include('frontend.inquiry_form')
+
+        </div>
+    </div>
+   
+</div>
+</section>
+
+
+<div class="container">
+    <div class="col-12">
+        <img class="img-fluid w-100" src="{{ asset('images/bulky-handles.png') }}" alt="">
+    </div>
+</div>
+
+
+<div class="container my-5">
+    <div class="row">
+       
+          <div class="col-lg-6" >
+                
+                <div class=" p-5 rounded shadow-lg order-sample  bg-white rounded-lg border-0 shadow-sm pe-5">
+                    <h4 style="font-size:30px; font-weight:600; color:#FDB71A"><span class="">Order a Sample</span> <span class="text-black text-uppercase">of Your Favorite HANDLE<span>
+                       <br></h4>
+                      <p  style="font-size: 16px;" class="mt-4">
+                        Choosing the right handle is an important decision. Our sample service allows you to experience the material, Color and Quality of our Handles in your own kitchen before committing to a full order.
+                      </p>
+                   
+                    <a href="{{ route('ordercomponentbyname', 'doors') }}" class="btn bg-orange px-1 fw-bold text-uppercase rounded-0 " style="font-size:14px;">  Order a Sample of your choice NOW!</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img class="w-100 object-fit-cover rounded border border-warning" src="{{ asset('images/handles-right-section.png') }}"  class="img-fluid"  alt="Modern Kitchen" 
+                style="height: 80%;"
+                >
+            </div>
+            
+
+      
+    </div>
+</div>
+
+
+
+
+
     <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
-        <nav aria-label="breadcrumb">
+        <!-- <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase">Home</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('shop') }}" class="text-uppercase">Shop</a></li>
@@ -54,16 +337,16 @@
                     </a>
                 </li>
             </ol>
-        </nav>
+        </nav> -->
 
-        <div class="row mb-lg-5 mb-4">
+        <!-- <div class="row mb-lg-5 mb-4">
             <div class="col-12">
                 <h1 class="fs-1 fw-bolder text-dark text-uppercase">{{ $category->name }}</h1>
             </div>
             <div class="col-12">
                 <p class="text-dark">{!! $category->description !!}</p>
             </div>
-        </div>
+        </div> -->
 
         <div class="row">
             <div class="col-lg-12 col-md-12 bg-light p-0 pb-4">
@@ -314,7 +597,10 @@
                                                 <input id="quantity{{ $product->id }}"
                                                     class="quantity border border-black text-center"
                                                     type="text" value="0" name="quantity"
-                                                    disabled />
+                                                    oninput="inputQty(this.value, '{{$product->id}}', 
+                                                    '{{$product->product_code}}',
+                                                    '{{ $product->full_title }}', '{{ $product->price }}', '{{ $product->discounted_price }}', 
+                                                    '{{ $product->discounted_percentage }}')" />
                                                 <input id="plus{{ $product->id }}"
                                                     class="plus border bg-dark text-light p-0"
                                                     type="button" value="+" type="number"

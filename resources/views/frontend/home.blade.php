@@ -1532,8 +1532,8 @@
     <!-- <div class="container faq-container"> -->
     <div class="container faq-container">
         <div class="faq-header">
-            <h1 class="text-black fw-bolder mb-1">PEACE OF MIND</h1>
-            <h4 class="mt-4 text-black fw-bolder">Buy Kitchen Online <span class="text-danger"> VS</span> Other Online Stores</h4>
+            <h3 class="text-black fw-bolder mb-1">WHY Buy Kitchen Online Beats Every Other Online Store?</h3>
+            <!-- <h4 class="mt-4 text-black fw-bolder">Buy Kitchen Online <span class="text-danger"> VS</span> Other Online Stores</h4> -->
         </div>
 
         
