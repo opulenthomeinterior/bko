@@ -631,7 +631,8 @@
             }
             
             .popup-image {
-                min-height: 200px;
+                /* min-height: 200px; */
+                display: none;
             }
             
             .newsletter-content {
@@ -1087,7 +1088,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <a class="btn p-0 w-100" data-bs-toggle="modal" data-bs-target="#newsletterModal">
+                <a class="btn p-0 w-100" data-bs-toggle="modal" data-bs-target="#newsletterModalDoor">
                 <img class="w-100 img-fluid d-none d-md-block" src="{{ asset('images/21offdesktop.png') }}"/>
                 
                 <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/21offmobile.png') }}"/>
@@ -1806,8 +1807,9 @@
 
 
 
+ 
 
-  <div class="modal fade" id="newsletterModal" tabindex="-1" aria-labelledby="newsletterModalLabel" aria-hidden="true">
+  <div class="modal fade" id="newsletterModalDoor" tabindex="-1" aria-labelledby="newsletterModalDoorLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-md">
         <div class="modal-content">
             <div class="newsletter-container">
@@ -1819,12 +1821,14 @@
                     <img src="{{asset('images/main-popup-image.png')}}" class="img-fluid w-100" alt="">
                 </div>
                 <div class="newsletter-content">
-                    <h2 class="content-title">Sign Up To <span class="discount-text">Get 21% Discount</span> On Your First Order</h2>
-                    <p class="offer-text">Take Advantage of our Limited Time Offer and Get <span class="free-text">FREE</span> Consultation & On-Site Survey.</p>
+                    <h2 class="content-title mt-5 text-black" style="font-size: 40px;">Subscribe To Get <span class="free-text">FREE On-Site Survey</span></h2>
+                        
+                    <p class="offer-text"><span class="discount-text">For your Peace of Mind, </span> expert installation is also provided<br> <span class="" style="color: green;">(Qoute Available)</span></p>
+                        
                     <p class="terms-text">Terms & Conditions Applied.</p>
                     <div class="subscribe-container">
                         <input type="email" id="emailInput" class="form-control news-letter-input" placeholder="Enter Your Email">
-                        <button class="subscribe-btn" id="subscribeBtn">Subscribe</button>
+                        <button class="subscribe-btn" id="subscribeBtnDoor" onclick="newsletterModalDoorFn()">Subscribe</button>
                     </div>
                     <p class="privacy-text">We respect your Privacy. Unsubscribe at any time.</p>
                 </div>
@@ -1968,18 +1972,21 @@ function sendEmail() {
         }
  // Handle subscribe button click
 
+           
+
+function newsletterModalDoorFn(){
     
-
-            document.getElementById('subscribeBtn').addEventListener('click',function(){
-
-                const emailInput = document.getElementById('emailInput');
-                const email = emailInput.value.trim();
-                
+     document.getElementById('subscribeBtnDoor').addEventListener('click',function(){
+                    console.log("btn clicked")
+                    const emailInput = document.getElementById('emailInput');
+                    const email = emailInput.value.trim();
+                    console.log(email);
+                    
                     // Basic email validation
                     if (email && email.includes('@') && email.includes('.')) {
                         // Hide newsletter modal
-                        var newsletterModal = bootstrap.Modal.getInstance(document.getElementById('newsletterModal'));
-                        newsletterModal.hide();
+                        var newsletterModalDoor = bootstrap.Modal.getInstance(document.getElementById('newsletterModalDoor'));
+                        newsletterModalDoor.hide();
                         
                         // Show discount modal after a short delay
                         setTimeout(function() {
@@ -2002,7 +2009,11 @@ function sendEmail() {
                    
 
        
-        $(document).ready(function () {
+
+}
+           
+        
+                $(document).ready(function () {
             const $carousel01 = $('.main-carousel-banner-01');
             /* #orderComponentSlider.owlCarousel({
                 loop:true,
