@@ -403,12 +403,12 @@ function cart_total_amount() {
 function increaseQuantity(id, productCode, full_title, price, discount_price, discount_percentage, p_category) {
    var $qtde = $('#quantity' + id);
    var value = parseInt($qtde.val()) || 0;
-   if (value >= 10) {
-      value = 10;
-      $qtde.val(value);
-   } else {
+   // if (value >= 10) {
+   //    value = 10;
+   //    $qtde.val(value);
+   // } else {
       value++;
-   }
+   // }
    $qtde.val(value);
    $('#minus' + id).prop("disabled", false);
    addToCart(id, productCode, full_title, price, discount_price, discount_percentage, p_category, value);

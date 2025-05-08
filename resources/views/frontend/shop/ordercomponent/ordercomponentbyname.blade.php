@@ -597,7 +597,10 @@
                                                 <input id="quantity{{ $product->id }}"
                                                     class="quantity border border-black text-center"
                                                     type="text" value="0" name="quantity"
-                                                    disabled />
+                                                    oninput="inputQty(this.value, '{{$product->id}}', 
+                                                    '{{$product->product_code}}',
+                                                    '{{ $product->full_title }}', '{{ $product->price }}', '{{ $product->discounted_price }}', 
+                                                    '{{ $product->discounted_percentage }}')" />
                                                 <input id="plus{{ $product->id }}"
                                                     class="plus border bg-dark text-light p-0"
                                                     type="button" value="+" type="number"
