@@ -218,7 +218,7 @@
 <section class="handles-section">
     <div class="handles-overlay"></div>
     <div class="handles-content">
-        <h2 class="handles-heading text-black">HANDLES</h2>
+        <h2 class="handles-heading text-black">{{strtoupper($slug)}}</h2>
         <div class="badges-container">
             <a href="" class="badge-link">
                 <div class="badge premium-badge">
@@ -248,6 +248,7 @@
 
 
 
+@if($slug == 'handles')
 <section class="container-fluid my-5 bg-light py-4">
     <div class="container">
     <div class="row">
@@ -270,7 +271,6 @@
             </div>
 
         </div> --}}
-
         <div class="col-xl-6">
             <h1 class="text-black fw-bold">Handles</h1>
             <p class="fs-5">A wide variety of handles for kitchen units are available at Buy Kitchen Online. The handles are suitable for drawers, cabinets and doors. You can choose a handle according to your style preference and kitchen aesthetic. To minimize space, you can go for a simple bar handle or select one of our drop handles if you want a statement piece. </p>
@@ -281,14 +281,14 @@
         <div class="col-xl-2"></div>
         <div class="col-xl-4 p-0 col-12">
             @include('frontend.inquiry_form')
-
         </div>
     </div>
    
 </div>
 </section>
 
-
+@endif
+@if($slug == 'handles')
 <div class="container">
     <div class="col-12">
         <img class="img-fluid w-100" src="{{ asset('images/bulky-handles.png') }}" alt="">
@@ -321,7 +321,7 @@
       
     </div>
 </div>
-
+@endif
 
 
 

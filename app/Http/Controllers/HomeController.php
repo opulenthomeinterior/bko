@@ -504,7 +504,7 @@ class HomeController extends Controller
         $urlStyleId = $request->style_id ?? '';
         $urlColourId = $request->colour_id ?? '';
 
-        return view('frontend.shop.ordercomponent.ordercomponentbyname', compact('urlStyleId', 'urlColourId', 'category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo'));
+        return view('frontend.shop.ordercomponent.ordercomponentbyname', compact('urlStyleId', 'urlColourId', 'category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo', 'slug'));
     }
 
     public function order_component_by_filter(Request $request, $slug)
