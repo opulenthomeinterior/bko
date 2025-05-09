@@ -75,7 +75,7 @@
             ]
             }
         </script>
-        <link rel="canonical" href="https://bkonline.uk/shop/doors-replacement" />
+        <link rel="canonical" href="https://bkonline.uk/shop/cabinet-doors-replacement"/>
         <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 
         <style>
