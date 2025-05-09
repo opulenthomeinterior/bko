@@ -115,8 +115,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #fff;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            /* background-color: #fff; */
+            /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); */
             overflow: hidden;
         }
 
@@ -192,13 +192,14 @@
             .promo-box {
                 position: relative;
                 width: 100%;
-                margin-top: 20px;
+                margin-top: 50px;
                 flex-direction: row;
                 justify-content: space-between;
                 border-radius: 0;
             }
             
             .promo-text, .promo-cta {
+                font-size: 18px;
                 width: 50%;
                 padding: 8px 5px;
             }
@@ -221,7 +222,7 @@
         <h2 class="handles-heading text-black">{{strtoupper($slug)}}</h2>
         <div class="badges-container">
             <a href="" class="badge-link">
-                <div class="badge premium-badge">
+                <div class="badge">
                     <img src="{{ asset('images/premium-badge.png') }}" alt="">
                 </div>
             </a>
@@ -291,15 +292,17 @@
 @if($slug == 'handles')
 <div class="container">
     <div class="col-12">
-        <img class="img-fluid w-100" src="{{ asset('images/bulky-handles.png') }}" alt="">
+        <img class="img-fluid w-100 rounded shadow-lg d-none d-md-block" src="{{ asset('images/handles.png') }}" alt="">
+        <img class="img-fluid w-100 rounded shadow-lg  d-md-none" src="{{ asset('images/handles-mobile.png') }}" alt="">
+        
     </div>
 </div>
 
 
-<div class="container my-5">
+<div class="container mt-5">
     <div class="row">
        
-          <div class="col-lg-6" >
+          <div class="col-lg-6 align-self-center" >
                 
                 <div class=" p-5 rounded shadow-lg order-sample  bg-white rounded-lg border-0 shadow-sm pe-5">
                     <h4 style="font-size:30px; font-weight:600; color:#FDB71A"><span class="">Order a Sample</span> <span class="text-black text-uppercase">of Your Favorite HANDLE<span>
@@ -312,9 +315,11 @@
                 </div>
             </div>
             <div class="col-lg-6">
+                <div style="height:400px">
                 <img class="w-100 object-fit-cover rounded border border-warning" src="{{ asset('images/handles-right-section.png') }}"  class="img-fluid"  alt="Modern Kitchen" 
-                style="height: 80%;"
+                style="height: 100%;"
                 >
+                </div>
             </div>
             
 
@@ -326,7 +331,7 @@
 
 
 
-    <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
+    <section class="container px-lg-5 py-4 px-md-3 px-3">
         <!-- <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase">Home</a></li>
@@ -349,9 +354,10 @@
         </div> -->
 
         <div class="row">
-            <div class="col-lg-12 col-md-12 bg-light p-0 pb-4">
+            <div class="col-lg-12 col-md-12  p-0 pb-4">
                 <div class="m-0">
-                    <h4 class="text-dark text-decoration-underline" style="font-weight: 600; font-size: 1.3rem">Filters</h4>
+                    <!-- <h4 class="text-dark" style="font-weight: 600; font-size: 1.3rem">Filters</h4> -->
+                    <h2 class="text-dark text-center" style="font-weight: 600;">Filters</h2>
                     <!-- <h3 style="font-weight: 600; font-size: 1.3rem" class="text-dark">CURRENT ITEMS:<span id="number-of-products">{{ $count }}</span></h3> -->
                 </div>
                 <!-- <div class="bg-light border border-dark border-1 px-2 py-2 mt-2">
@@ -363,8 +369,8 @@
                         @if ($styles->count() > 0)
                             @if ($category->slug == 'doors' || $category->slug == 'accessories')
                                 <div class="col-md-3 accordion accordion-flush mt-3" id="accordionFlushExample3">
-                                    <div class="accordion-item bg-transparent border border-dark border-1 rounded-0">
-                                        <h2 class="accordion-header bg-warning" id="flush-headingThree">
+                                    <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
+                                        <h2 class="accordion-header" id="flush-headingThree">
                                             <button class="accordion-button legend collapsed text-uppercase" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
                                                 aria-expanded="true" aria-controls="flush-collapseThree">
@@ -377,7 +383,7 @@
                                                 <div class="row g-1">
                                                     <!-- updated -->
                                                     @foreach ($styles as $index => $style)
-                                                    <div class="col-lg-12 col-md-12 col-6">
+                                                    <div class="col-12">
                                                         <div class="form-check form-check-inline">
                                                             <input data-style-id="{{$style->id}}" class="form-check-input style-filter" {{ (!empty($urlStyleId) && ($urlStyleId == $style->id)) ? 'checked' : '' }} type="checkbox" name="styles[]" id="style{{ $index }}" value="{{ $style->id }}">
                                                             <label class="form-check-label"
@@ -391,14 +397,20 @@
                                         </div>
                                     </div>
                                 </div>
+                              
                             @endif
                         @endif
 
                         @if ($colours->count() > 0)
                             @if ($category->slug != 'appliances')
+                            @if ($category->slug =='handles')
+                            <div class="col-md-6 mt-3">
+                                                     <h2 class="text-black">Flawless Finishes. Reliable Function.</h2>
+                                                </div>
+                             @endif                   
                                 <div class="col-md-3 accordion accordion-flush mt-3" id="accordionFlushExample4">
-                                    <div class="accordion-item bg-transparent border border-dark border-1 rounded-0">
-                                        <h2 class="accordion-header bg-warning" id="flush-headingFour">
+                                    <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
+                                        <h2 class="accordion-header" id="flush-headingFour">
                                             <button class="accordion-button legend collapsed text-uppercase" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#flush-collapseFour"
                                                 aria-expanded="true" aria-controls="flush-collapseFour">
@@ -407,10 +419,10 @@
                                         </h2>
                                         <div id="flush-collapseFour" class="accordion-collapse my-2"
                                             aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample4" style="max-height: 150px; overflow-y: auto">
-                                            <div class="accordion-body px-0 py-0 pb-1">
+                                            <div class="accordion-body bg-light px-0 py-0 pb-1">
                                                 <div class="row g-1" id="colours-filter">
                                                     @foreach ($colours as $index => $colour)
-                                                    <div class="col-lg-12 col-md-12 col-6">
+                                                    <div class="col-12">
                                                         <div class="form-check form-check-inline">
                                                             <input data-colour-id="{{$colour->id}}" class="form-check-input colour-filter" type="checkbox" {{ (!empty($urlColourId) && ($urlColourId == $colour->id)) ? 'checked' : '' }}
                                                                 name="colours[]" id="colour{{ $index }}"
@@ -433,17 +445,19 @@
                                                     </div>
                                                     @endforeach
                                                 </div>
+                                
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                                
                             @endif
                         @endif
 
                         @if ($assemblies->count() > 0)
                             {{--<div class="col-3 accordion accordion-flush mt-3" id="accordionFlushExample2">
-                                <div class="accordion-item bg-transparent border border-dark border-1 rounded-0 px-2">
-                                    <h2 class="accordion-header bg-warning" id="flush-headingTwo">
+                                <div class="accordion-item bg-transparent border border-warning border-1 rounded-0 px-2">
+                                    <h2 class="accordion-header" id="flush-headingTwo">
                                         <button class="accordion-button legend collapsed text-uppercase" type="button"
                                             data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
                                             aria-expanded="true" aria-controls="flush-collapseTwo">
@@ -480,8 +494,8 @@
                         @if (strtolower($category->name) != 'handles')
                             @if ($heights->count() > 0)
                                 <div class="col-md-3 accordion accordion-flush mt-3" id="accordionFlushExample5">
-                                    <div class="accordion-item bg-transparent border border-dark border-1 rounded-0">
-                                        <h2 class="accordion-header bg-warning" id="flush-headingFive">
+                                    <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
+                                        <h2 class="accordion-header" id="flush-headingFive">
                                             <button class="accordion-button legend collapsed text-uppercase" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#flush-collapseFive"
                                                 aria-expanded="true" aria-controls="flush-collapseFive">
@@ -517,8 +531,8 @@
                         @if (strtolower($category->name) != 'doors' && strtolower($category->name) != 'handles' && strtolower($category->name) != 'taps' && strtolower($category->name) != 'worktops' && strtolower($category->name) != 'appliances' && strtolower($category->name) != 'upstands' && strtolower($category->name) != 'breakfast bars' && strtolower($category->name) != 'sinks' && strtolower($category->name) != 'internals') 
                             @if ($types->count() > 0)
                                 <div class="col-md-3 accordion accordion-flush mt-3" id="accordionFlushExample1">
-                                    <div class="accordion-item bg-transparent border border-dark border-1 rounded-0">
-                                        <h2 class="accordion-header bg-warning" id="flush-headingOne">
+                                    <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
+                                        <h2 class="accordion-header" id="flush-headingOne">
                                             <button class="accordion-button legend collapsed text-uppercase" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
                                                 aria-expanded="true" aria-controls="flush-collapseOne">
@@ -552,9 +566,10 @@
                         @endif
                     </div>
                 </form>
+               
             </div>
 
-            <div class="col-lg-12 col-md-12 col-sm-12 bg-light">
+            <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="table-responsive">
                 <table class="table table-bordered">
                     <thead>
