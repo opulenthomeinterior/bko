@@ -52,7 +52,9 @@
             width: 100%;
             height: 65vh; /* Responsive height */
             min-height: 300px; /* Minimum height */
+            @if($slug == 'handles')
             background-image: url('{{ asset('images/handles-hero-image.png') }}');
+            @endif
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -211,6 +213,26 @@
             background-color:#febd49;
         }
 
+
+        .custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #2A6161; /* Bootstrap warning color */
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Firefox support */
+.custom-scrollbar {
+  scrollbar-color: #2A6161 transparent;
+  scrollbar-width: thin;
+}
+
     </style>
 
 
@@ -275,6 +297,7 @@
         <div class="col-xl-6">
             <h1 class="text-black fw-bold">Handles</h1>
             <p class="fs-5">A wide variety of handles for kitchen units are available at Buy Kitchen Online. The handles are suitable for drawers, cabinets and doors. You can choose a handle according to your style preference and kitchen aesthetic. To minimize space, you can go for a simple bar handle or select one of our drop handles if you want a statement piece. </p>
+            <!-- <p class="fs-5">{!! $category->description !!} </p> -->
             <p class="fs-5">
                 We offer a diverse range of handles for kitchen doors, cabinets, cupboards, and drawers to suit every style and preference. Choose from bar handles, pull handles, D pull handles, bow handles, and more for a sleek modern look. For a classic touch, explore options like drop pendant handles, knob handles, and drop ring handles. Profile handles, vertical side profiles, and Scilm Gola handles provide innovative designs for contemporary kitchens. With additional accessories like connectors, trim caps, and end profiles, you can customize your kitchen to perfection.
             </p>
@@ -331,7 +354,7 @@
 
 
 
-    <section class="container px-lg-5 py-4 px-md-3 px-3">
+    <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
         <!-- <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase">Home</a></li>
@@ -354,21 +377,27 @@
         </div> -->
 
         <div class="row">
-            <div class="col-lg-12 col-md-12  p-0 pb-4">
-                <div class="m-0">
+            <!-- <div class="col-lg-12 col-md-12  p-0 pb-4"> -->
+                <!-- <div class="m-0"> -->
                     <!-- <h4 class="text-dark" style="font-weight: 600; font-size: 1.3rem">Filters</h4> -->
-                    <h2 class="text-dark text-center" style="font-weight: 600;">Filters</h2>
+                    <!-- <h2 class="text-dark text-center" style="font-weight: 600;">Filters</h2> -->
                     <!-- <h3 style="font-weight: 600; font-size: 1.3rem" class="text-dark">CURRENT ITEMS:<span id="number-of-products">{{ $count }}</span></h3> -->
-                </div>
+                <!-- </div> -->
                 <!-- <div class="bg-light border border-dark border-1 px-2 py-2 mt-2">
                     <h3 style="font-weight: 600; font-size: 1.3rem" class="text-dark">CURRENT ITEMS:<span id="number-of-products">{{ $count }}</span></h3>
                 </div> -->
-                <form action="" class="">
+
+
+               
+               
+            <!-- </div> -->
+            <div class="col-lg-3">
+                 <form action="" class="">
                     <input type="hidden" name="slug" id="slug" value="{{ $category->slug }}">
                     <div class="row">
                         @if ($styles->count() > 0)
                             @if ($category->slug == 'doors' || $category->slug == 'accessories')
-                                <div class="col-md-3 accordion accordion-flush mt-3" id="accordionFlushExample3">
+                                <div class="col-12 accordion accordion-flush mt-3 " id="accordionFlushExample3">
                                     <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
                                         <h2 class="accordion-header" id="flush-headingThree">
                                             <button class="accordion-button legend collapsed text-uppercase" type="button"
@@ -377,7 +406,7 @@
                                                 Style
                                             </button>
                                         </h2>
-                                        <div id="flush-collapseThree" class="accordion-collapse my-2"
+                                        <div id="flush-collapseThree" class="accordion-collapse my-2 custom-scrollbar "
                                             aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample3" style="max-height: 150px; overflow-y: scroll">
                                             <div class="accordion-body px-0 py-0 pb-1">
                                                 <div class="row g-1">
@@ -403,12 +432,12 @@
 
                         @if ($colours->count() > 0)
                             @if ($category->slug != 'appliances')
-                            @if ($category->slug =='handles')
-                            <div class="col-md-6 mt-3">
+                            <!-- @if ($category->slug =='handles') -->
+                            <!-- <div class="col-md-6 mt-3">
                                                      <h2 class="text-black">Flawless Finishes. Reliable Function.</h2>
-                                                </div>
-                             @endif                   
-                                <div class="col-md-3 accordion accordion-flush mt-3" id="accordionFlushExample4">
+                                                </div> -->
+                             <!-- @endif                    -->
+                                <div class="col-12 accordion accordion-flush mt-3" id="accordionFlushExample4">
                                     <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
                                         <h2 class="accordion-header" id="flush-headingFour">
                                             <button class="accordion-button legend collapsed text-uppercase" type="button"
@@ -417,7 +446,7 @@
                                                 Colour
                                             </button>
                                         </h2>
-                                        <div id="flush-collapseFour" class="accordion-collapse my-2"
+                                        <div id="flush-collapseFour" class="accordion-collapse my-2 custom-scrollbar"
                                             aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample4" style="max-height: 150px; overflow-y: auto">
                                             <div class="accordion-body bg-light px-0 py-0 pb-1">
                                                 <div class="row g-1" id="colours-filter">
@@ -464,7 +493,7 @@
                                             ASSEMBLY
                                         </button>
                                     </h2>
-                                    <div id="flush-collapseTwo" class="accordion-collapse my-2"
+                                    <div id="flush-collapseTwo" class="accordion-collapse my-2 custom-scrollbar"
                                         aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample2">
                                         <div class="accordion-body px-0 py-0 pb-1">
                                             <div class="row g-1">
@@ -493,7 +522,7 @@
 
                         @if (strtolower($category->name) != 'handles')
                             @if ($heights->count() > 0)
-                                <div class="col-md-3 accordion accordion-flush mt-3" id="accordionFlushExample5">
+                                <div class="col-12 accordion accordion-flush mt-3" id="accordionFlushExample5">
                                     <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
                                         <h2 class="accordion-header" id="flush-headingFive">
                                             <button class="accordion-button legend collapsed text-uppercase" type="button"
@@ -502,7 +531,7 @@
                                                 Heights
                                             </button>
                                         </h2>
-                                        <div id="flush-collapseFive" class="accordion-collapse my-2"
+                                        <div id="flush-collapseFive" class="accordion-collapse my-2 custom-scrollbar"
                                             aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample5" style="max-height: 150px; overflow-y: auto">
                                             <div class="accordion-body px-0 py-0 pb-1">
                                                 <div class="ps-2">
@@ -530,7 +559,7 @@
                         @endif
                         @if (strtolower($category->name) != 'doors' && strtolower($category->name) != 'handles' && strtolower($category->name) != 'taps' && strtolower($category->name) != 'worktops' && strtolower($category->name) != 'appliances' && strtolower($category->name) != 'upstands' && strtolower($category->name) != 'breakfast bars' && strtolower($category->name) != 'sinks' && strtolower($category->name) != 'internals') 
                             @if ($types->count() > 0)
-                                <div class="col-md-3 accordion accordion-flush mt-3" id="accordionFlushExample1">
+                                <div class="col-12 accordion accordion-flush mt-3" id="accordionFlushExample1">
                                     <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
                                         <h2 class="accordion-header" id="flush-headingOne">
                                             <button class="accordion-button legend collapsed text-uppercase" type="button"
@@ -539,7 +568,7 @@
                                                 @if (strtolower($category->name) != 'handles' && strtolower($category->name) != 'taps' && strtolower($category->name) != 'worktops' && strtolower($category->name) != 'appliances' && strtolower($category->name) != 'upstands' && strtolower($category->name) != 'breakfast bars' && strtolower($category->name) != 'sinks' && strtolower($category->name) != 'internals') SIZES @else TYPES @endif
                                             </button>
                                         </h2>
-                                        <div id="flush-collapseOne" class="accordion-collapse my-2"
+                                        <div id="flush-collapseOne" class="accordion-collapse my-2 custom-scrollbar"
                                             aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample1" style="max-height: 150px; overflow-y: auto">
                                             <div class="accordion-body px-0 py-0 pb-1">
                                                 <div class="ps-2">
@@ -566,10 +595,9 @@
                         @endif
                     </div>
                 </form>
-               
             </div>
 
-            <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class=" col-lg-9 col-12 mt-md-3">
                 <div class="table-responsive">
                 <table class="table table-bordered">
                     <thead>
@@ -579,9 +607,13 @@
                         <th>Dimensions</th>
                         <th>Qty</th>
                         <th>Price</th>
+                        @if($slug != 'handles')
                         <th>Style</th>
+                         @endif
                         <th>Colour</th>
+                         @if($slug != 'handles')
                         <th>Assembly</th>
+                         @endif
                     </thead>
                     <tbody id="products_container">
                         @if ($products->count() > 0)
@@ -608,20 +640,18 @@
                                                 <input id="minus{{ $product->id }}"
                                                     class="minus border bg-dark text-light p-0"
                                                     type="button" value="-"
-                                                    onclick="decreaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}')" />
+                                                    onclick="decreaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}')" />
                                                 <input id="quantity{{ $product->id }}"
                                                     class="quantity border border-black text-center"
                                                     type="text" value="0" name="quantity"
-                                                    oninput="inputQty(this.value, '{{$product->id}}', 
-                                                    '{{$product->product_code}}',
-                                                    '{{ $product->full_title }}', '{{ $product->price }}', '{{ $product->discounted_price }}', 
-                                                    '{{ $product->discounted_percentage }}')" />
+                                                    onkeyup="inputQty(this.value, '{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}'
+                                                    )" />
                                                 <input id="plus{{ $product->id }}"
                                                     class="plus border bg-dark text-light p-0"
                                                     type="button" value="+" type="number"
                                                     max="10"
                                                     {{$product->price == 0 ? 'disabled' : '' }} 
-                                                    onclick="increaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}')" />
+                                                    onclick="increaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}')"  />
                                             </div>
                                             <div class="col-6">
                                                 <p class="fs-5 fw-bold mt-lg-2 text-dark">
@@ -631,6 +661,7 @@
                                         </div>
                                     </td>
                                     <td>{{ $product->price == 0 ? 'Out of Stock' : '£' . $product->price }}</td>
+                                   @if($slug != 'handles')
                                     <td>
                                         <div class="container-fluid">
                                             @if ($product->style)
@@ -638,6 +669,7 @@
                                             @endif
                                         </div>
                                     </td>
+                                    @endif
                                     <td>
                                         @if ($product->colour)
                                             <small>
@@ -645,6 +677,7 @@
                                             </small>
                                         @endif
                                     </td>
+                                     @if($slug != 'handles')
                                     <td>
                                         @if ($category->name != 'DOORS')
                                         @if ($product->assembly)
@@ -652,6 +685,7 @@
                                         @endif
                                         @endif
                                     </td>
+                                    @endif
                                 </tr>
                             @endforeach
                         @else
@@ -665,7 +699,8 @@
                 </table>
             </div>
             </div>
-
+            <div class="row justify-content-center">
+                <div class="col-lg-3">
             <div id="custom-pagination-container">
                 {{-- {{ $products->links() }} --}}
                 {{-- <nav aria-label="...">
@@ -712,6 +747,8 @@
                     </ul>
                 </nav>
 
+            </div>
+            </div>
             </div>
         </div>
 
