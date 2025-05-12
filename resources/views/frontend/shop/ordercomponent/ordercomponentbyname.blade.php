@@ -598,7 +598,7 @@
             </div>
 
             <div class=" col-lg-9 col-12 mt-md-3">
-                <div class="table-responsive">
+                <div class="table-responsive custom-scrollbar">
                 <table class="table table-bordered">
                     <thead>
                         <th>Short Title</th>
