@@ -499,12 +499,21 @@ class HomeController extends Controller
                 ->groupBy('height')
                 ->get();
 
+        $widths = Product::whereIn('category_id', $children)
+                ->where('status', 'active')
+                ->select('width', DB::raw('COUNT(*) as count'), 'id')
+                ->where('width', '!=', '')
+                ->groupBy('width')
+                ->get();
+
         $seo = CategorySeo::where('category_id', $category->id)->first();
 
         $urlStyleId = $request->style_id ?? '';
         $urlColourId = $request->colour_id ?? '';
-
-        return view('frontend.shop.ordercomponent.ordercomponentbyname', compact('urlStyleId', 'urlColourId', 'category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo', 'slug'));
+        if ($slug == 'doors') {
+            return view('frontend.shop.ordercomponent.doors', compact('urlStyleId', 'urlColourId', 'category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo', 'slug', 'widths'));
+        }
+        return view('frontend.shop.ordercomponent.ordercomponentbyname', compact('urlStyleId', 'urlColourId', 'category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo', 'slug', 'widths'));
     }
 
     public function order_component_by_filter(Request $request, $slug)
@@ -987,10 +996,9 @@ class HomeController extends Controller
             if (!empty($request->style_ids)) {
                 $colours = $colours->whereIn('id', Product::whereIn('style_id', $request->style_ids)->where('status', 'active')->pluck('colour_id')->unique());
             } else if (!empty($request->colour_ids)) {
-                $heights = $heights->whereIn('colour_id', $request->colour_ids);
+                $heights = $heights->whereIn('style_id', $request->colour_style_ids)->whereIn('colour_id', $request->colour_ids);
             } else if (!empty($request->height_ids)) {
-                // $heights = $heights->whereIn('colour_id', $request->colour_ids);
-                $widths = $widths->whereIn('height', $request->height_ids);
+                $widths = $widths->whereIn('style_id', $request->height_style_ids)->whereIn('colour_id', $request->height_colour_ids)->whereIn('height', $request->height_ids);
             }
             if (empty($request->style_ids)) {
                 $colours = $colours->whereIn('id', Product::whereIn('category_id', $children)->where('status', 'active')->pluck('colour_id')->unique());

@@ -1490,97 +1490,75 @@ use App\Models\Style;
     ?>
     <script>
 
-function sendEmail() {
-                    var email = $('#emailInputGuest').val();
-                    var button = $(this);
-                    var btnText = button.find('.btn-text');
-                    var btnLoading = button.find('.btn-loading');
+    function sendEmail() {
+        var email = $('#emailInputGuest').val();
+        var button = $(this);
+        var btnText = button.find('.btn-text');
+        var btnLoading = button.find('.btn-loading');
 
-                    // Show loading
-                    btnText.hide();
-                    btnLoading.show();
+        // Show loading
+        btnText.hide();
+        btnLoading.show();
 
-                    $.ajax({
-                        url: "{{ route('contact_us_inquiry') }}", // Change to your actual route
-                        method: 'POST',
-                        data: {
-                            email: email,
-                            catalogue_register_now: 'catalogue_register_now',
-                            first_order_discount: 'first_order_discount',
-                            message: 'You have successfully subscribed for 15% discount',
-                            _token: '{{ csrf_token() }}' // if you're using Laravel
-                        },
-                        success: function (response) {
-                            // discountModal.show();
-                        }
-                    });
-                }
+        $.ajax({
+            url: "{{ route('contact_us_inquiry') }}", // Change to your actual route
+            method: 'POST',
+            data: {
+                email: email,
+                catalogue_register_now: 'catalogue_register_now',
+                first_order_discount: 'first_order_discount',
+                message: 'You have successfully subscribed for 15% discount',
+                _token: '{{ csrf_token() }}' // if you're using Laravel
+            },
+            success: function (response) {
+                // discountModal.show();
+            }
+        });
+    }
         document.addEventListener('DOMContentLoaded', function () {
             if (localStorage.getItem('subscribed') == 'false' || localStorage.getItem('subscribed') == undefined || localStorage.getItem('subscribed') == '') {
                 setTimeout(function() {
                     var newsletterModalGuest = new bootstrap.Modal(document.getElementById('newsletterModalGuest'));
-                    
                     newsletterModalGuest.show();
-                   
-
-                         // Handle subscribe button click
-                document.getElementById('subscribeBtnGuest').addEventListener('click', function() {
-                   
+                    // Handle subscribe button click
+                    document.getElementById('subscribeBtnGuest').addEventListener('click', function() {
                     
-                    const emailInputGuest = document.getElementById('emailInputGuest');
-                    const email = emailInputGuest.value.trim();
-                    console.log(email);
-                    
-                    // Basic email validation
-                    if (email && email.includes('@') && email.includes('.')) {
-                        // Hide newsletter modal
-                        console.log('valid');
-                        var newsletterModalGuest = bootstrap.Modal.getInstance(document.getElementById('newsletterModalGuest'));
-                        newsletterModalGuest.hide();
                         
-                        // Show discount modal after a short delay
-                        setTimeout(function() {
-                            var thankyouModalGuest = new bootstrap.Modal(document.getElementById('thankyouModalGuest'));
-                            // discountModal.show();
-                            sendEmail();
-                            localStorage.setItem('subscribed', true);
-                            thankyouModalGuest.show();
-                           
+                        const emailInputGuest = document.getElementById('emailInputGuest');
+                        const email = emailInputGuest.value.trim();
+                        console.log(email);
+                        
+                        // Basic email validation
+                        if (email && email.includes('@') && email.includes('.')) {
+                            // Hide newsletter modal
+                            console.log('valid');
+                            var newsletterModalGuest = bootstrap.Modal.getInstance(document.getElementById('newsletterModalGuest'));
+                            newsletterModalGuest.hide();
                             
-                        }, 500);
-                    } else {
-                        // Simple error visual
-                        emailInputGuest.style.borderColor = '#ef4444';
-                        setTimeout(() => {
-                            emailInputGuest.style.borderColor = '#fde68a';
-                        }, 2000);
-                    }
-                    
-                    
-                });
-               
-                    
-            },500);
-        }
-            // }
-                // var discountModal = new bootstrap.Modal(document.getElementById('discountModal'));
-            
-        
-        
-           
-                
-                
-               
-            
-            
-            
-            
-          
-            
-
+                            // Show discount modal after a short delay
+                            setTimeout(function() {
+                                var thankyouModalGuest = new bootstrap.Modal(document.getElementById('thankyouModalGuest'));
+                                // discountModal.show();
+                                sendEmail();
+                                localStorage.setItem('subscribed', true);
+                                thankyouModalGuest.show();
+                            
+                                
+                            }, 500);
+                        } else {
+                            // Simple error visual
+                            emailInputGuest.style.borderColor = '#ef4444';
+                            setTimeout(() => {
+                                emailInputGuest.style.borderColor = '#fde68a';
+                            }, 2000);
+                        }
+                        
+                        
+                    });
+                },500);
+            }
             const images = document.querySelectorAll('.fade-img');
             let currentIndex = 0;
-
             setInterval(() => {
                 images[currentIndex].classList.remove('active');
                 currentIndex = (currentIndex + 1) % images.length;
@@ -1830,31 +1808,7 @@ function sendEmail() {
             });
         });
     </script>
-
-    <script>
-        // document.getElementById('call-me-at').addEventListener('input', function(e) {
-        //     let value = e.target.value.replace(/\D/g, ''); // Remove non-numeric characters
-
-        //     if (value.length >= 2) {
-        //         let hours = value.slice(0, 2);
-        //         let minutes = value.slice(2, 4);
-
-        //         // Restrict hours between 00 and 23
-        //         if (parseInt(hours, 10) > 23) {
-        //             hours = '23';
-        //         }
-
-        //         // Restrict minutes between 00 and 59
-        //         if (parseInt(minutes, 10) > 59) {
-        //             minutes = '59';
-        //         }
-
-        //         value = hours + (minutes ? ':' + minutes : ''); // Add colon between hours and minutes
-        //     }
-
-        //     e.target.value = value;
-        // });
-    </script>
+    
     <script>
         var Toast = Swal.mixin({
             toast: true,

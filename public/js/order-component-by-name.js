@@ -45,6 +45,15 @@ $(document).ready(function () {
         return heights;
     }
 
+    // Function to get the selected color IDs
+    function getSelectedWidths() {
+        var widths = [];
+        $("input[name='widths[]']:checked").each(function () {
+            widths.push($(this).val());
+        });
+        return widths;
+    }
+
     function createProductModal(product, index) {
         var productModal = `<div class="modal fade" id="productModal${index}" tabindex="-1" aria-labelledby="productModalLabel${index}" aria-hidden="true">`;
         productModal += `<div class="modal-dialog modal-lg modal-dialog-centered">`;
@@ -173,12 +182,19 @@ $(document).ready(function () {
         return productCard;
     }
 
+    $(document).on('click', '.style-filter', function() {
+        handleInputChange();
+    });
 
     $(document).on('click', '.colour-filter', function() {
         handleInputChange();
     });
 
-    $(document).on('click', '#height-filter', function() {
+    $(document).on('click', '.height-filter', function() {
+        handleInputChange();
+    });
+
+    $(document).on('click', '.width-filter', function() {
         handleInputChange();
     });
 
@@ -267,7 +283,6 @@ $(document).ready(function () {
     //     return productCard;
     // }
 
-
     // Function to handle input change and log selected IDs
     function handleInputChange() {
         var selectedTypes = getSelectedTypes();
@@ -275,7 +290,7 @@ $(document).ready(function () {
         var selectedStyles = getSelectedStyles();
         var selectedColors = getSelectedColors();
         var selectedHeights = getSelectedHeights();
-        var slug = $("#slug").val();
+        var selectedWidths = getSelectedWidths();
         // Do something with the selected IDs
         // console.log("Selected Types:", selectedTypes);
         // console.log("Selected Assemblies:", selectedAssemblies);
@@ -299,6 +314,7 @@ $(document).ready(function () {
                 styles: selectedStyles,
                 colors: selectedColors,
                 heights: selectedHeights,
+                widths: selectedWidths,
             },
             success: function (response) {
                 // Handle success response
@@ -327,6 +343,7 @@ $(document).ready(function () {
                 // update count
                 $('#number-of-products').text(response.count);
                 initializeQuantitiesFromLocalStorage();
+                // updateColoursFilter(selectedStyles);
             },
             error: function (xhr, status, error) {
                 // Handle error response
@@ -334,75 +351,41 @@ $(document).ready(function () {
             }
         });
 
-        $.ajax({
-            url: orderComponent_filter,
-            method: "POST",
-            headers: {
-                'X-CSRF-TOKEN': csrfToken
-            },
-            data: {
-                colour_ids: selectedColors,
-                slug: slug
-            },
-            success:function(response) {
-                if (response.status == true) {
-                    var _html = '';
-                    if (selectedHeights.length == 0) {
-                        response.heights.forEach((hght, index) => {
-                            _html += `
-                                <div class="col-12">
-                                    <div class="form-check form-check-inline">
-                                        <input data-heights-id="${hght.id}" id="height-filter" class="form-check-input" type="checkbox"
-                                            name="heights[]" id="height${index}"
-                                            value="${hght.height}">
-                                        <label class="form-check-label"
-                                            for="height${index}">
-                                            ${hght.height}
-                                        </label>
-                                    </div>
-                                </div>
-                            `;
-                        });
-                        $('#heights-filter').html(_html);
-                    }
-                }
-            }
-        });
 
-        if (selectedHeights.length > 0) {
-            $.ajax({
-                url: orderComponent_filter,
-                method: "POST",
-                headers: {
-                    'X-CSRF-TOKEN': csrfToken
-                },
-                data: {
-                    height_ids: selectedHeights,
-                    slug: slug
-                },
-                success:function(response) {
-                    if (response.status == true) {
-                        var _html = '';
-                        response.heights.forEach((hght, index) => {
-                            _html += `
-                                <div class="col-12">
-                                    <div class="form-check form-check-inline">
-                                        <input data-heights-id="${hght.id}" id="height-filter" class="form-check-input" type="checkbox"
-                                            name="heights[]" id="height${index}"
-                                            value="${hght.height}">
-                                        <label class="form-check-label"
-                                            for="height${index}">
-                                            ${hght.height} (${hght.count})
-                                        </label>
-                                    </div>
-                                </div>
-                            `;
-                        });
-                        $('#heights-filter').html(_html);
-                    }
-                }
-            });
-        }     
+        // if (selectedHeights.length > 0) {
+        //     $.ajax({
+        //         url: orderComponent_filter,
+        //         method: "POST",
+        //         headers: {
+        //             'X-CSRF-TOKEN': csrfToken
+        //         },
+        //         data: {
+        //             height_ids: selectedHeights,
+        //             slug: slug
+        //         },
+        //         success:function(response) {
+        //             if (response.status == true) {
+        //                 var _html = '';
+        //                 response.heights.forEach((hght, index) => {
+        //                     _html += `
+        //                         <div class="col-12">
+        //                             <div class="form-check form-check-inline">
+        //                                 <input data-heights-id="${hght.id}" id="height-filter" class="form-check-input" type="checkbox"
+        //                                     name="heights[]" id="height${index}"
+        //                                     value="${hght.height}">
+        //                                 <label class="form-check-label"
+        //                                     for="height${index}">
+        //                                     ${hght.height} (${hght.count})
+        //                                 </label>
+        //                             </div>
+        //                         </div>
+        //                     `;
+        //                 });
+        //                 $('#heights-filter').html(_html);
+        //             }
+        //         }
+        //     });
+        // }     
     }
 
     // Bind change event to all input checkboxes
