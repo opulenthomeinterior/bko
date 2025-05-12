@@ -233,6 +233,10 @@
   scrollbar-width: thin;
 }
 
+td
+{
+    vertical-align: middle;
+}
     </style>
 
 
@@ -243,12 +247,12 @@
     <div class="handles-content">
         <h2 class="handles-heading text-black">{{strtoupper($slug)}}</h2>
         <div class="badges-container">
-            <a href="" class="badge-link">
+            <a href="#" class="badge-link">
                 <div class="badge">
                     <img src="{{ asset('images/premium-badge.png') }}" alt="">
                 </div>
             </a>
-            <a href="https://www.trustpilot.com/review/opulenthomeinteriors.com'" class="badge-link">
+            <a href="https://www.trustpilot.com/review/opulenthomeinteriors.com" class="badge-link">
                 <div class="badge trustpilot-badge">
                     
                     <img class="" src="{{ asset('images/trust-pilot-badge.png') }}" alt="">
@@ -263,7 +267,8 @@
     </div>
     <div class="promo-box">
         <div class="promo-text">For a Limited<br>Time Only!</div>
-        <div class="promo-cta">Get <span class="text-danger">FREE </span><br>On-Site<br>Survey!</div>
+
+        <div class="promo-cta btn" data-bs-toggle="modal" data-bs-target="#newsletterModalOrder">Get <span class="text-danger">FREE </span><br>On-Site<br>Survey!</div>
     </div>
 </section>
 
@@ -294,12 +299,12 @@
             </div>
 
         </div> --}}
-        <div class="col-xl-6">
+        <div class="col-xl-6 mt-lg-5">
             <h1 class="text-black fw-bold">Handles</h1>
-            <p class="fs-5">A wide variety of handles for kitchen units are available at Buy Kitchen Online. The handles are suitable for drawers, cabinets and doors. You can choose a handle according to your style preference and kitchen aesthetic. To minimize space, you can go for a simple bar handle or select one of our drop handles if you want a statement piece. </p>
+            <p class="fs-5">A wide variety of handles for kitchen units are available at <span class="fw-bold"> Buy Kitchen Online.</span> The handles are suitable for drawers, cabinets and doors. You can <span class="fw-bold"> choose a handle according to your style preference and kitchen aesthetic. </span>To minimize space, you can go for a simple bar handle or select one of our drop handles if you want a statement piece. </p>
             <!-- <p class="fs-5">{!! $category->description !!} </p> -->
             <p class="fs-5">
-                We offer a diverse range of handles for kitchen doors, cabinets, cupboards, and drawers to suit every style and preference. Choose from bar handles, pull handles, D pull handles, bow handles, and more for a sleek modern look. For a classic touch, explore options like drop pendant handles, knob handles, and drop ring handles. Profile handles, vertical side profiles, and Scilm Gola handles provide innovative designs for contemporary kitchens. With additional accessories like connectors, trim caps, and end profiles, you can customize your kitchen to perfection.
+                We offer a diverse range of <span class="fw-bold">handles for kitchen doors, cabinets, cupboards, and drawers</span>  to suit every style and preference. Choose from <span class="fw-bold">bar handles, pull handles, D pull handles, bow handles,</span> and more for a sleek modern look. For a classic touch, explore options like drop pendant handles, knob handles, and drop ring handles. Profile handles, vertical side profiles, and Scilm Gola handles provide innovative designs for contemporary kitchens. With additional accessories like connectors, trim caps, and end profiles, <span class="fw-bold">you can customize your kitchen</span> to perfection.
             </p>
         </div>
         <div class="col-xl-2"></div>
@@ -596,6 +601,7 @@
                     </div>
                 </form>
             </div>
+            
 
             <div class=" col-lg-9 col-12 mt-md-3">
                 <div class="table-responsive custom-scrollbar">
@@ -624,7 +630,7 @@
                                         <a href="{{ route('orderbyproduct', [$product->slug, $product->serial_number]) }}">
                                             <figure class="my-0" style="margin-bottom: 0px !important;">
                                                 <img class="product-image px-0"
-                                                    style="margin-bottom: 0px !important;min-height:175px;max-height:175px;max-width:225px;object-fit:contain"
+                                                    style="margin-bottom: 0px !important;min-height:100px;max-height:100px;max-width:100px;object-fit:contain"
                                                     src="{{ !empty($product->image_path) ? asset('imgs/products/'.$product->image_path) : asset('images/no-image-available.jpg') }}"
                                                     alt="Card image cap" data-bs-toggle="modal"
                                                     data-bs-target="#productModal{{ $index }}">
@@ -653,11 +659,11 @@
                                                     {{$product->price == 0 ? 'disabled' : '' }} 
                                                     onclick="increaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}')"  />
                                             </div>
-                                            <div class="col-6">
+                                            <!-- <div class="col-6">
                                                 <p class="fs-5 fw-bold mt-lg-2 text-dark">
                                                     {{ $product->price == 0 ? 'Out of Stock' : '£' . $product->price }}
                                                 </p>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </td>
                                     <td>{{ $product->price == 0 ? 'Out of Stock' : '£' . $product->price }}</td>
@@ -799,8 +805,148 @@
             
         </div>
     </section>
+
+
+
+
+
+      <div class="modal fade" id="newsletterModalOrder" tabindex="-1" aria-labelledby="newsletterModalOrderLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+            <div class="newsletter-container">
+                <button type="button" class="close-btn subscribed-close" data-bs-dismiss="modal" aria-label="Close">
+                    &times;
+                </button>
+                 
+                <div class="popup-image">
+                    <img src="{{asset('images/main-popup-image.png')}}" class="img-fluid w-100" alt="">
+                </div>
+                <div class="newsletter-content">
+                    <h2 class="content-title mt-5 text-black" style="font-size: 40px;">Subscribe To Get <span class="free-text">FREE On-Site Survey</span></h2>
+                        
+                    <p class="offer-text"><span class="discount-text">For your Peace of Mind, </span> expert installation is also provided<br> <span class="" style="color: green;">(Qoute Available)</span></p>
+                        
+                    <p class="terms-text">Terms & Conditions Applied.</p>
+                    <div class="subscribe-container">
+                        <input type="email" id="emailInput" class="form-control news-letter-input" placeholder="Enter Your Email">
+                        <button class="subscribe-btn" id="subscribeBtnOrder" onclick="newsletterModalOrderFn()">Subscribe</button>
+                    </div>
+                    <p class="privacy-text">We respect your Privacy. Unsubscribe at any time.</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+  <!-- Thank You Modal -->
+<div class="modal fade" id="thankyouModal" tabindex="-1" aria-labelledby="thankyouModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="butn-close close-btn" data-bs-dismiss="modal" aria-label="Close">X</button>
+    </div>
+    <div class="modal-body p-3">
+      <div class="row mb-4">
+        <div class="col-12">
+          <h1><span class="thank-you">Thank You</span> <span class="for-subscribing">For Subscribing!</span></h1>
+        </div>
+      </div>
+      
+      <div class="row mb-3">
+        <div class="col-12">
+          <p class="fs-5 mb-0">We've sent the <strong>Discount Code</strong> to your <strong>email address</strong>.</p>
+        </div>
+      </div>
+      
+      <div class="row mb-4">
+        <div class="col-12">
+          <p class="fs-4">Additionally, <span class="youve-won">YOU'VE WON</span> <span class="free-text">FREE</span> <span class="consultation">CONSULTATION!</span></p>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-7 mb-4">
+          <p class="fs-5 mb-3">If you want to avail this offer, Please provide:</p>
+          
+          <form>
+            <input type="text" class="form-control thankyou-input" placeholder="Your Name:">
+            <input type="tel" class="form-control thankyou-input" placeholder="Phone Number:" pattern="[0-9]+" inputmode="numeric">
+            <input type="datetime-local" class="form-control thankyou-input" placeholder="Preferred Date & Time:">
+            <textarea class="form-control thankyou-input" rows="3" placeholder="Add a Note:"></textarea>
+            
+            <button type="submit" class="submit-btn mt-3">Submit</button>
+          </form>
+        </div>
+        
+        <div class="col-md-5">
+          <div class="benefits-box">
+            <p class="benefits-title mb-4">BENEFITS OF <span style="color: #ffa500;">FREE CONSULTATION</span>:</p>
+            
+            <ul class="list-unstyled">
+              <li class="benefit-item">• <span class="highlight-text">FREE</span> Virtual Consultation</li>
+              <li class="benefit-item">• <span class="highlight-text">FREE</span> Design Advice</li>
+              <li class="benefit-item">• <span class="highlight-text">FREE</span> Efficient Planning</li>
+              <li class="benefit-item">• Schedule at your <span class="convenience-text">CONVENIENCE</span></li>
+              <li class="benefit-item">• <span class="highlight-text">NO OBLIGATION</span> to Purchase</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
     @push('scripts')
     <script>
+
+
+function newsletterModalOrderFn(){
+    
+     document.getElementById('subscribeBtnOrder').addEventListener('click',function(){
+                    console.log("btn clicked")
+                    const emailInput = document.getElementById('emailInput');
+                    const email = emailInput.value.trim();
+                    console.log(email);
+                    
+                    // Basic email validation
+                    if (email && email.includes('@') && email.includes('.')) {
+                        // Hide newsletter modal
+                        var newsletterModalOrder = bootstrap.Modal.getInstance(document.getElementById('newsletterModalOrder'));
+                        newsletterModalOrder.hide();
+                        
+                        // Show discount modal after a short delay
+                        setTimeout(function() {
+                            var thankyouModal = new bootstrap.Modal(document.getElementById('thankyouModal'));
+                            // discountModal.show();
+                            sendEmail();
+                            thankyouModal.show();
+                            
+                        }, 500);
+                    } else {
+                        // Simple error visual
+                        emailInput.style.borderColor = '#ef4444';
+                        setTimeout(() => {
+                            emailInput.style.borderColor = '#fde68a';
+                        }, 2000);
+                    }
+                    
+                    localStorage.setItem('subscribed', true);
+                });
+                   
+
+       
+
+}
+
+
         $(document).ready(function () {            
             
             var slug = $('#slug').val();
