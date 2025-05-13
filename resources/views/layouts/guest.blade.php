@@ -261,6 +261,30 @@ use App\Models\Style;
         }
 
         @media (max-width: 767px) {
+            .fs-mob
+            {
+                font-size: 22px !important;
+            }
+            .fs-mob-input
+            {
+                font-size: 16px !important;
+            }
+            .fs-mob-14
+            {
+                font-size: 14px !important;
+            }
+            .fs-mob-16  
+            {
+                font-size: 16px !important;
+            }
+            .fs-mob-18
+            {
+                font-size: 18px !important;
+            }
+            .fs-mob-30
+            {
+                font-size: 30px !important;
+            }
             .global-popup
             {
                 display: none;
@@ -1034,12 +1058,12 @@ use App\Models\Style;
                 <div class="col-lg-6">
                     {{-- <h5 class="mb-4">Buy Kitchen Online</h5> --}}
                     <img class="" src="{{ asset('images/bko-white-logo.png') }}" style="width: 180px; height:180px" />
-                    <p class="mb-4">Opulent home interiors operating as Buy Kitchen Online.</p>
+                    <p class="mb-4 fs-mob-18">Opulent home interiors operating as Buy Kitchen Online.</p>
                 </div>
 
                 <div class="col-lg-6 align-self-end">
                     <div class="mb-4">
-                        <p class="mb-2">Stay Updated:</p>
+                        <p class="mb-2 fs-mob-18">Stay Updated:</p>
                         <!-- <div class="input-group">
                             <input type="email" class="form-control " placeholder="Your Email">
                             <button class="btn" style="background-color:#febd49;" type="button">Subscribe</button>
@@ -1047,9 +1071,9 @@ use App\Models\Style;
                         <form method="POST" action="{{ route('contact_us_inquiry') }}">
                             @csrf
                             <div class="input-group">
-                                <input type="email" name="email" class="form-control" placeholder="Enter Your Email" aria-label="Email">
+                                <input type="email" name="email" class="form-control fs-mob-18" placeholder="Enter Your Email" aria-label="Email">
                                 <input type="hidden" name="catalogue_register_now" value="subscribed with email">
-                                <button class="btn" type="submit" style="background-color:#febd49">Subscribe!</button>
+                                <button class="btn fs-mob-18" type="submit" style="background-color:#febd49">Subscribe!</button>
                             </div>
                         </form>
                     </div>
@@ -1059,55 +1083,55 @@ use App\Models\Style;
                 
                
                 <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-4 text-white">Customer Service Hours</h5>
+                    <h5 class="mb-4 text-white fs-mob-18">Customer Service Hours</h5>
                     <div class="d-flex align-items-center mb-3">
-                        <i class="bi bi-telephone me-2"></i>
-                        <a href="tel:02080505605" class="text-white">020 805 05605</a>
+                        <i class="bi bi-telephone me-2 fs-mob-18"></i>
+                        <a href="tel:02080505605" class="text-white fs-mob-18">020 805 05605</a>
                     </div>
                     <div class="d-flex align-items-center mb-3">
-                        <i class="bi bi-clock me-2"></i>
-                        <span>Mon-Sat | 9am-5pm</span>
+                        <i class="bi bi-clock me-2 fs-mob-18"></i>
+                        <span class="fs-mob-18">Mon-Sat | 9am-5pm</span>
                     </div>
                     <div class="d-flex align-items-center mb-3">
-                        <i class="bi bi-envelope me-2"></i>
-                        <span>customerservices@bkonline.uk</span>
+                        <i class="bi bi-envelope me-2 fs-mob-18"></i>
+                        <span class="fs-mob-18">admin@bkonline.uk</span>
                     </div>
                     
                     <div class="d-flex align-items-center">
-                        <i class="bi bi-geo-alt me-2"></i>
-                        <span>44 Gillender St, Aberfeldy Village, London E14 6RP, United Kingdom</span>
+                        <i class="bi bi-geo-alt me-2 fs-mob-18"></i>
+                        <span class="fs-mob-18">44 Gillender St, Aberfeldy Village, London E14 6RP, United Kingdom</span>
                     </div>
                 </div>
 
                
                 <div class="col-lg-3 col-md-6 text-start">
-                    <h5 class="mb-4 text-white">Support</h5>
+                    <h5 class="mb-4 text-white fs-mob-18">Support</h5>
                     <ul class="list-unstyled">
                         <li class="mb-3">
-                            <a href="{{ route('downloadable') }}" class="footer-link">
+                            <a href="{{ route('downloadable') }}" class="footer-link fs-mob-18">
                                
-                                <i class="bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
+                                <i class="fs-mob-18 bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
                                 Downloadable Resources
                             </a>
                         </li>
                         <li class="mb-3">
-                            <a href="{{ route('installationvideos') }}" class="footer-link">
+                            <a href="{{ route('installationvideos') }}" class="footer-link fs-mob-18">
                               
-                                <i class="bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
+                                <i class="fs-mob-18 bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
                                 Installation Videos
                             </a>
                         </li>
                         <li class="mb-3">
-                            <a href="{{ route('printresources') }}" class="footer-link">
+                            <a href="{{ route('printresources') }}" class="footer-link fs-mob-18">
                                 
-                                <i class="bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
+                                <i class="fs-mob-18 bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
                                 Print Resources
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('deliveries') }}" class="footer-link">
+                            <a href="{{ route('deliveries') }}" class="footer-link fs-mob-18">
                                 
-                                <i class="bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
+                                <i class="fs-mob-18 bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
                                 Deliveries
                             </a>
                         </li>
@@ -1116,25 +1140,25 @@ use App\Models\Style;
 
                 <!-- Legal -->
                 <div class="col-lg-3 col-md-6 text-start">
-                    <h5 class="mb-4 text-white">Legal</h5>
+                    <h5 class="mb-4 text-white fs-mob-18">Legal</h5>
                     <ul class="list-unstyled">
                         <li class="mb-3">
-                            <a href="{{ route('cookies') }}" class="footer-link">
-                                <i class="bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
+                            <a href="{{ route('cookies') }}" class="footer-link fs-mob-18">
+                                <i class="bi bi-caret-right-fill fs-mob-18" style=" color:#febd49; margin-right:5px;"></i>
                                 Cookies Policy
                             </a>
                         </li>
                         <li class="mb-3">
-                            <a href="{{ route('pricepromise') }}" class="footer-link">
+                            <a href="{{ route('pricepromise') }}" class="footer-link fs-mob-18">
                                 {{-- <i class="bi bi-shield-check me-2"></i> --}}
-                                <i class="bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
+                                <i class="bi bi-caret-right-fill fs-mob-18" style=" color:#febd49; margin-right:5px;"></i>
                                 Price Promise Guarantee
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('termandcondition') }}" class="footer-link">
+                            <a href="{{ route('termandcondition') }}" class="footer-link fs-mob-18">
                                 
-                                <i class="bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
+                                <i class="fs-mob-18 bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
                                 Terms & Conditions
                             </a>
                         </li>
@@ -1142,48 +1166,48 @@ use App\Models\Style;
                 </div>
 
                 <div class="col-lg-3 col-md-6 text-start">
-                    <h5 class="mb-4 text-white">Connect</h5>
+                    <h5 class="mb-4 text-white fs-mob-18">Connect</h5>
                    
                     <div class="d-flex gap-2 flex-column">
                     
                         <div class = "d-flex">
-                                <a href="https://www.facebook.com/opulenthomeinteriorsltd" class="social-icon d-flex footer-link">
+                                <a href="https://www.facebook.com/opulenthomeinteriorsltd" class="fs-mob-18 social-icon d-flex footer-link">
                            
-                                    <i class="bi bi-facebook" ></i>
+                                    <i class="bi bi-facebook fs-mob-18" ></i>
                            
                            
                                 </a>
-                                <a href="https://www.facebook.com/opulenthomeinteriorsltd" class="text-white align-self-center social-link-text"> Facebook</a>
+                                <a href="https://www.facebook.com/opulenthomeinteriorsltd" class="fs-mob-18 text-white align-self-center social-link-text"> Facebook</a>
                        </div>
                     
 
                        <div class = "d-flex">
-                        <a href="https://www.instagram.com/bkonline__kitchen" class="social-icon d-flex footer-link">
+                        <a href="https://www.instagram.com/bkonline__kitchen" class="fs-mob-18 social-icon d-flex footer-link">
                    
-                            <i class="bi bi-instagram"></i>
+                            <i class="bi bi-instagram  fs-mob-18"></i>
                    
                    
                         </a>
-                        <a href="https://www.instagram.com/bkonline__kitchen" class="text-white align-self-center social-link-text"> Instagram</a>
+                        <a href="https://www.instagram.com/bkonline__kitchen" class="fs-mob-18 text-white align-self-center social-link-text"> Instagram</a>
                </div>
                <div class = "d-flex">
-                <a href="https://uk.pinterest.com/bkonline570/?actingBusinessId=1095219340539871510" class="social-icon d-flex footer-link">
+                <a href="https://uk.pinterest.com/bkonline570/?actingBusinessId=1095219340539871510" class="social-icon d-flex footer-link fs-mob-18">
            
-                    <i class="bi bi-pinterest"></i>
+                    <i class="bi bi-pinterest fs-mob-18"></i>
            
            
                 </a>
-                <a href="https://uk.pinterest.com/bkonline570/" class="text-white align-self-center social-link-text"> Pinterest</a>
+                <a href="https://uk.pinterest.com/bkonline570/" class="fs-mob-18 text-white align-self-center social-link-text"> Pinterest</a>
        </div>
 
        <div class = "d-flex">
-        <a href="https://www.youtube.com/@opulenthomeinteriors5595" class="social-icon d-flex footer-link ">
+        <a href="https://www.youtube.com/@opulenthomeinteriors5595" class="fs-mob-18 social-icon d-flex footer-link ">
   
-            <i class="bi bi-youtube"></i>
+            <i class="bi bi-youtube fs-mob-18"></i>
    
    
         </a>
-        <a href="https://www.youtube.com/@opulenthomeinteriors5595" class="text-white align-self-center social-link-text"> YouTube</a>
+        <a href="https://www.youtube.com/@opulenthomeinteriors5595" class="fs-mob-18 text-white align-self-center social-link-text"> YouTube</a>
 </div>
 
                       
@@ -1197,7 +1221,7 @@ use App\Models\Style;
     <div class="container-fluid">
         <div class="row py-2 justify-content-center align-items-center" style="background-color:#a8acb1">
             <div class="col-12">
-            <h5 class="text-center">Buy Kitchen Online.UK | ALL RIGHTS RESERVED.</h5>
+            <h5 class="text-center fs-mob-18">Buy Kitchen Online.UK | ALL RIGHTS RESERVED.</h5>
             </div>
         </div>
     </div>

@@ -2078,12 +2078,14 @@
                     <img src="{{asset('images/main-popup-image.png')}}" class="img-fluid w-100" alt="">
                 </div>
                 <div class="newsletter-content">
-                    <h2 class="content-title">Sign Up To <span class="discount-text">Get 21% Discount</span> On Your First Order</h2>
-                    <p class="offer-text">Take Advantage of our Limited Time Offer and Get <span class="free-text">FREE</span> Consultation & On-Site Survey.</p>
+                    <h2 class="content-title mt-5 text-black" style="font-size: 40px;">Subscribe To Get <span class="free-text">FREE On-Site Survey</span></h2>
+                        
+                    <p class="offer-text"><span class="discount-text">For your Peace of Mind, </span> expert installation is also provided<br> <span class="" style="color: green;">(Qoute Available)</span></p>
+                        
                     <p class="terms-text">Terms & Conditions Applied.</p>
                     <div class="subscribe-container">
                         <input type="email" id="emailInput" class="form-control news-letter-input" placeholder="Enter Your Email">
-                        <button class="subscribe-btn" id="subscribeBtnMax" onclick="newsletterMaxfn()">Subscribe</button>
+                        <button class="subscribe-btn" id="subscribeBtnMax" onclick="newsletterModalMaxFn()">Subscribe</button>
                     </div>
                     <p class="privacy-text">We respect your Privacy. Unsubscribe at any time.</p>
                 </div>
@@ -2163,6 +2165,46 @@
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
+
+
+function newsletterModalMaxFn(){
+    
+     document.getElementById('subscribeBtnMax').addEventListener('click',function(){
+                    console.log("btn clicked")
+                    const emailInput = document.getElementById('emailInput');
+                    const email = emailInput.value.trim();
+                    console.log(email);
+                    
+                    // Basic email validation
+                    if (email && email.includes('@') && email.includes('.')) {
+                        // Hide newsletter modal
+                        var newsletterModalMax = bootstrap.Modal.getInstance(document.getElementById('newsletterModalMax'));
+                        newsletterModalMax.hide();
+                        
+                        // Show discount modal after a short delay
+                        setTimeout(function() {
+                            var thankyouModalMax = new bootstrap.Modal(document.getElementById('thankyouModalMax'));
+                            // discountModal.show();
+                            sendEmail();
+                            thankyouModalMax.show();
+                            
+                        }, 500);
+                    } else {
+                        // Simple error visual
+                        emailInput.style.borderColor = '#ef4444';
+                        setTimeout(() => {
+                            emailInput.style.borderColor = '#fde68a';
+                        }, 2000);
+                    }
+                    
+                    localStorage.setItem('subscribed', true);
+                });
+                   
+
+       
+
+}
+
 
 const faqQuestions = document.querySelectorAll('.faq-question');
             
