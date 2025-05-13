@@ -29,6 +29,6 @@
     </style>
 </head>
 <body>
-    <button type="{{ $type }}" class="btn btn-yellow">{{$text}}</button>
+    <button type="{{ $type }}" class="btn btn-yellow fs-mob-input">{{$text}}</button>
 </body>
 </html>

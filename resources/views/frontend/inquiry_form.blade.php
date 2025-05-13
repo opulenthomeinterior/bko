@@ -84,38 +84,38 @@
 </head>
 <body>
     <div class="form-container">
-        <h5 class="form-title text-center text-uppercase">for free survey and quote <span style="color:#ffc107 ;">call us now!</span></h5>
+        <h5 class="form-title text-center text-uppercase fs-mob">for free survey and quote <span style="color:#ffc107 ;">call us now!</span></h5>
         <!-- <p class="form-subtitle text-center">020 805 05605</p> -->
-        <a href="tel:02080505605" class="btn btn-yellow" style="font-weight: 600;">
+        <a href="tel:02080505605" class="btn btn-yellow fs-mob" style="font-weight: 600;">
         
                 <i class="fas fa-phone pe-1"></i>
             020 805 05605
         </a>
-        <h6 class="form-title text-center my-2">OR</h6>
+        <h6 class="form-title text-center my-2 fs-mob">OR</h6>
         <hr class="border border-dark">
-        <h5 class="fomr-title mb-3 text-center">Book a free consultation now!</h5>
+        <h5 class="fomr-title mb-3 text-center fs-mob text-black">Book a free consultation now!</h5>
         
         <form method="POST" action="{{ route('contact_us_inquiry') }}">
             @csrf
             <div class="input-group">
                 <span class="input-group-text">
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-user fs-mob-input"></i>
                 </span>
-                <input type="text" class="form-control inquiry-form-control" placeholder="Enter your name" name="name" id="name" required >
+                <input type="text" class="form-control inquiry-form-control fs-mob-input" placeholder="Enter your name" name="name" id="name" required >
             </div>
 
             <div class="input-group">
                 <span class="input-group-text">
-                    <i class="fas fa-envelope"></i>
+                    <i class="fas fa-envelope fs-mob-input"></i>
                 </span>
-                <input type="email" class="form-control inquiry-form-control" placeholder="Enter your email" name="email" id="email" required>
+                <input type="email" class="form-control inquiry-form-control fs-mob-input" placeholder="Enter your email" name="email" id="email" required>
             </div>
 
             <div class="input-group">
                 <span class="input-group-text">
-                    <i class="fas fa-phone"></i>
+                    <i class="fas fa-phone fs-mob-input"></i>
                 </span>
-                <input type="number" class="form-control inquiry-form-control" placeholder="Enter your phone number" name="phone" id="phone" required>
+                <input type="number" class="form-control inquiry-form-control fs-mob-input" placeholder="Enter your phone number" name="phone" id="phone" required>
             </div>
 
             <!-- <div class="call-us">
@@ -126,14 +126,14 @@
                 
                 
                 <span class="input-group-text" style="background-color: #ffc107 !important; color: black !important;">
-                    <i class="fas fa-calendar-alt me-3"></i>
+                    <i class="fas fa-calendar-alt me-3 fs-mob-input"></i>
                     Call US AT
                 </span>
-                <input type="datetime-local" class="form-control inquiry-form-control" placeholder="Call US AT" name="call_time" required>
+                <input type="datetime-local" class="form-control inquiry-form-control fs-mob-input" placeholder="Call US AT" name="call_time" required>
             </div>
 
-            <div class="input-group text-area-container">
-                <textarea class="form-control inquiry-form-control" rows="1" name="message" placeholder="Enter your message" required></textarea>
+            <div class="input-group text-area-container ">
+                <textarea class="fs-mob-input form-control inquiry-form-control" rows="1" name="message" placeholder="Enter your message" required></textarea>
             </div>
 
              @include('frontend.button', ['type' =>'submit', 'text'=>'Submit'])

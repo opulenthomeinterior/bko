@@ -52,7 +52,7 @@
             width: 100%;
             height: 65vh; /* Responsive height */
             min-height: 300px; /* Minimum height */
-            background-image: url('{{ asset('images/handles-hero-image.png') }}');
+            background-image: url('{{ asset('images/doors-hero-image.png') }}');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -100,8 +100,15 @@
         .badge-link {
             display: block;
             transition: transform 0.3s ease;
-            width: clamp(70px, 15vw, 100px);
-            height: clamp(70px, 15vw, 100px);
+            /* width: clamp(120px, 25vw, 150px);
+            height: clamp(120px, 25vw, 150px); */
+          
+           
+            min-width: 150px;
+            min-height: 150px;
+
+            max-width: 150px;
+            max-height: 150px;
         }
 
         .badge-link:hover {
@@ -181,12 +188,15 @@
             }
             
             .badges-container {
-                gap: 10px;
+                gap: 5px;
             }
             
             .badge-link {
-                width: 60px;
-                height: 60px;
+                min-width: 80px;
+                min-height: 80px;
+
+                max-width: 80px;
+                max-height: 80px;
             }
             
             .promo-box {
@@ -211,6 +221,30 @@
             background-color:#febd49;
         }
 
+                .custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #2A6161; /* Bootstrap warning color */
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Firefox support */
+.custom-scrollbar {
+  scrollbar-color: #2A6161 transparent;
+  scrollbar-width: thin;
+}
+
+td
+{
+    vertical-align: middle;
+}
+
     </style>
 
 
@@ -219,14 +253,14 @@
 <section class="handles-section">
     <div class="handles-overlay"></div>
     <div class="handles-content">
-        <h2 class="handles-heading text-black">{{strtoupper($slug)}}</h2>
+        <h2 class="handles-heading text-black fs-mob-30">{{strtoupper($slug)}}</h2>
         <div class="badges-container">
             <a href="" class="badge-link">
                 <div class="badge">
                     <img src="{{ asset('images/premium-badge.png') }}" alt="">
                 </div>
             </a>
-            <a href="https://www.trustpilot.com/review/opulenthomeinteriors.com'" class="badge-link">
+            <a href="https://www.trustpilot.com/review/opulenthomeinteriors.com" class="badge-link">
                 <div class="badge trustpilot-badge">
                     
                     <img class="" src="{{ asset('images/trust-pilot-badge.png') }}" alt="">
@@ -241,22 +275,78 @@
     </div>
     <div class="promo-box">
         <div class="promo-text">For a Limited<br>Time Only!</div>
-        <div class="promo-cta">Get <span class="text-danger">FREE </span><br>On-Site<br>Survey!</div>
+        <div class="promo-cta btn" data-bs-toggle="modal" data-bs-target="#newsletterModalDoor">Get <span class="text-danger">FREE </span><br>On-Site<br>Survey!</div>
     </div>
 </section>
 
+<section class="container-fluid my-5 bg-light py-4">
+    <div class="container">
+    <div class="row">
+        {{-- <div class=" col-xl-8 col-12 align-self-center px-5 d-flex flex-column flex-md-row p-0">
+            <div class="row">
+                
+                <div class="align-self-center rounded shadow-lg order-sample position-relative col-12 col-xl-8 bg-white rounded-lg border-0 shadow-sm" style="">
+                    <h4 style="font-size:30px; font-weight:600;"><span class="text-danger">Try</span> <span class="text-black">Before You Buy<span>
+                       <br> <span class="text-danger"> FREE</span> Door Samples!</h4>
+                       <h4 class="text-primary my-4" style="font-size:24px;">£6 Delivery Charge Only.</h4>
+                    
+                    <a href="{{ route('ordercomponentbyname', 'doors') }}" class=" px-2 btn bg-orange px-1 fw-bold text-uppercase rounded-0 " style="font-size:14px;">  Order a Sample of your choice NOW!</a>
+                </div>
+                <div class="p-0 mb-3 mb-xl-0 col-12 col-xl-4">
+                 <img class="w-100 object-fit-cover rounded border border-warning" src="https://bkonline.uk/public/imgs/products/Cartmel-Cashmere-Flat-Door-A1720452961_668c0761d6f16.jpg"  class="img-fluid"  alt="Modern Kitchen" 
+                    style="width: 300px; height: 400px; object-fit: cover;">
+                
+               
+                </div>
+            </div>
 
+        </div> --}}
+        <div class="col-xl-6 mt-lg-5">
+            <h1 class="text-black fw-bold">Doors</h1>
+            <p class="fs-5 fs-mob">The doors are the first impression of your kitchen. You can <span class="fw-bold">transform your kitchen</span>by availing our <span class="fw-bold">kitchen cupboard and cabinet door replacement offer. </span>By selecting from our various colors and finishes you will give your kitchen a new life. Our doors are the essence of style and durability, creating an elegant look. </p>
+            <!-- <p class="fs-5">{!! $category->description !!} </p> -->
+            <p class="fs-5 fs-mob">
+                <span class="fw-bold">Buy Kitchen Online</span>  offers a wide range of kitchen doors in various sizes to suit your needs. Our <span class="fw-bold">replacement kitchen doors</span> are available in different height and width dimensions, ensuring a perfect fit for your kitchen.
+            </p>
+            <p class="fs-5 fs-mob">
+                The standard size, commonly used, is <span class="fw-bold">715 x 496mm.</span> For larger requirements, we provide doors up to <span class="fw-bold"> 1965 x 596mm,</span> while the smallest size available is <span class="fw-bold">110 x 596mm.</span> With this extensive selection, you can easily find the right door to upgrade or replace your kitchen cupboard & cabinet doors.
+            </p>
+        </div>
+        <div class="col-xl-2"></div>
+        <div class="col-xl-4 p-0 col-12">
+            @include('frontend.inquiry_form')
+        </div>
+    </div>
+   
+</div>
+</section>
 
+<div class="container">
+    <div class="row">
+    <div class="col-12">
+    <img class="img-fluid w-100 d-none d-md-block" src="{{ asset('images/replace-door.png') }}" alt="">
+    <img class="img-fluid w-100 d-md-none" src="{{ asset('images/replace-door-mobile.png') }}" alt="">
+   
+</div>
+    </div>
+    <div class="row justify-content-center mt-5">
+        <div class="col-lg-1 d-lg-block"></div>
+        <div class="col-lg-4 col-12">
+             <a  class="btn bg-orange px-3 fw-bold text-uppercase rounded-0 " style="font-size:14px;" data-bs-toggle="modal" data-bs-target="#exampleModal"> book your FREE CONSULTATION NOW!</a>
+        </div>
+    </div>
 
-    <section class="container px-lg-5 py-4 px-md-3 px-3">
+</div>
+
+    <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
 
         <div class="row">
-            <div class="col-lg-12 col-md-12  p-0 pb-4">
-                <div class="m-0">
+            <div class="col-lg-3">
+                {{-- <div class="m-0">
                     <!-- <h4 class="text-dark" style="font-weight: 600; font-size: 1.3rem">Filters</h4> -->
                     <h2 class="text-dark text-center" style="font-weight: 600;">Filters</h2>
                     <!-- <h3 style="font-weight: 600; font-size: 1.3rem" class="text-dark">CURRENT ITEMS:<span id="number-of-products">{{ $count }}</span></h3> -->
-                </div>
+                </div> --}}
                 <!-- <div class="bg-light border border-dark border-1 px-2 py-2 mt-2">
                     <h3 style="font-weight: 600; font-size: 1.3rem" class="text-dark">CURRENT ITEMS:<span id="number-of-products">{{ $count }}</span></h3>
                 </div> -->
@@ -265,16 +355,16 @@
                     <div class="row">
                         @if ($styles->count() > 0)
                             @if ($category->slug == 'doors' || $category->slug == 'accessories')
-                                <div class="col-md-3 accordion accordion-flush mt-3" id="accordionFlushExample3">
+                                <div class="col-12 accordion accordion-flush mt-3" id="accordionFlushExample3">
                                     <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
-                                        <h2 class="accordion-header" id="flush-headingThree">
-                                            <button class="accordion-button legend collapsed text-uppercase" type="button"
+                                        <h2 class="accordion-header " id="flush-headingThree">
+                                            <button class="accordion-button legend collapsed text-uppercase fs-mob-18" type="button"
                                                 data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
                                                 aria-expanded="true" aria-controls="flush-collapseThree">
                                                 Style
                                             </button>
                                         </h2>
-                                        <div id="flush-collapseThree" class="accordion-collapse my-2"
+                                        <div id="flush-collapseThree" class="accordion-collapse my-2 custom-scrollbar"
                                             aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample3" style="max-height: 150px; overflow-y: scroll">
                                             <div class="accordion-body px-0 py-0 pb-1">
                                                 <div class="row g-1">
@@ -282,7 +372,7 @@
                                                     @foreach ($styles as $index => $style)
                                                     <div class="col-12">
                                                         <div class="form-check form-check-inline">
-                                                            <input data-style-id="{{$style->id}}" class="form-check-input style-filter" {{ (!empty($urlStyleId) && ($urlStyleId == $style->id)) ? 'checked' : '' }} type="checkbox" name="styles[]" id="style{{ $index }}" value="{{ $style->id }}">
+                                                            <input data-style-id="{{$style->id}}" class="form-check-input  style-filter" {{ (!empty($urlStyleId) && ($urlStyleId == $style->id)) ? 'checked' : '' }} type="checkbox" name="styles[]" id="style{{ $index }}" value="{{ $style->id }}">
                                                             <label class="form-check-label"
                                                                 for="style{{ $index }}">{{ $style->name }}
                                                             </label>
@@ -305,7 +395,7 @@
                                                      <h2 class="text-black">Flawless Finishes. Reliable Function.</h2>
                                                 </div>
                              @endif                   
-                                <div class="col-md-3 accordion accordion-flush mt-3" id="accordionFlushExample4">
+                                <div class="col-12 accordion accordion-flush mt-3" id="accordionFlushExample4">
                                     <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
                                         <h2 class="accordion-header" id="flush-headingFour">
                                             <button class="accordion-button legend collapsed text-uppercase" type="button"
@@ -314,7 +404,7 @@
                                                 Colour
                                             </button>
                                         </h2>
-                                        <div id="flush-collapseFour" class="accordion-collapse my-2"
+                                        <div id="flush-collapseFour" class="accordion-collapse my-2 custom-scrollbar"
                                             aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample4" style="max-height: 150px; overflow-y: auto">
                                             <div class="accordion-body bg-light px-0 py-0 pb-1">
                                                 <div class="row g-1" id="colours-filter">
@@ -390,7 +480,7 @@
 
                         @if (strtolower($category->name) != 'handles')
                             @if ($heights->count() > 0)
-                                <div class="col-md-3 accordion accordion-flush mt-3" id="accordionFlushExample5">
+                                <div class="col-12 accordion accordion-flush mt-3" id="accordionFlushExample5">
                                     <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
                                         <h2 class="accordion-header" id="flush-headingFive">
                                             <button class="accordion-button legend collapsed text-uppercase" type="button"
@@ -399,7 +489,7 @@
                                                 Heights
                                             </button>
                                         </h2>
-                                        <div id="flush-collapseFive" class="accordion-collapse my-2"
+                                        <div id="flush-collapseFive" class="accordion-collapse my-2 custom-scrollbar"
                                             aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample5" style="max-height: 150px; overflow-y: auto">
                                             <div class="accordion-body px-0 py-0 pb-1">
                                                 <div class="ps-2">
@@ -428,7 +518,7 @@
 
                         @if (strtolower($category->name) == 'doors')
                             @if ($widths->count() > 0)
-                                <div class="col-md-3 accordion accordion-flush mt-3" id="accordionFlushExample5">
+                                <div class="col-12 accordion accordion-flush mt-3" id="accordionFlushExample5">
                                     <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
                                         <h2 class="accordion-header" id="flush-headingFive">
                                             <button class="accordion-button legend collapsed text-uppercase" type="button"
@@ -437,7 +527,7 @@
                                                 Widths
                                             </button>
                                         </h2>
-                                        <div id="flush-collapseFive" class="accordion-collapse my-2"
+                                        <div id="flush-collapseFive" class="accordion-collapse my-2 custom-scrollbar"
                                             aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample5" style="max-height: 150px; overflow-y: auto">
                                             <div class="accordion-body px-0 py-0 pb-1">
                                                 <div class="ps-2">
@@ -466,7 +556,7 @@
 
                         @if (strtolower($category->name) != 'doors' && strtolower($category->name) != 'handles' && strtolower($category->name) != 'taps' && strtolower($category->name) != 'worktops' && strtolower($category->name) != 'appliances' && strtolower($category->name) != 'upstands' && strtolower($category->name) != 'breakfast bars' && strtolower($category->name) != 'sinks' && strtolower($category->name) != 'internals') 
                             @if ($types->count() > 0)
-                                <div class="col-md-3 accordion accordion-flush mt-3" id="accordionFlushExample1">
+                                <div class="col-12 accordion accordion-flush mt-3" id="accordionFlushExample1">
                                     <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
                                         <h2 class="accordion-header" id="flush-headingOne">
                                             <button class="accordion-button legend collapsed text-uppercase" type="button"
@@ -475,7 +565,7 @@
                                                 @if (strtolower($category->name) != 'handles' && strtolower($category->name) != 'taps' && strtolower($category->name) != 'worktops' && strtolower($category->name) != 'appliances' && strtolower($category->name) != 'upstands' && strtolower($category->name) != 'breakfast bars' && strtolower($category->name) != 'sinks' && strtolower($category->name) != 'internals') SIZES @else TYPES @endif
                                             </button>
                                         </h2>
-                                        <div id="flush-collapseOne" class="accordion-collapse my-2"
+                                        <div id="flush-collapseOne" class="accordion-collapse my-2 custom-scrollbar"
                                             aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample1" style="max-height: 150px; overflow-y: auto">
                                             <div class="accordion-body px-0 py-0 pb-1">
                                                 <div class="ps-2">
@@ -505,8 +595,8 @@
                
             </div>
 
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="table-responsive">
+            <div class="col-lg-9 col-12 mt-md-3">
+                <div class="table-responsive custom-scrollbar">
                 <table class="table table-bordered">
                     <thead>
                         <th>Short Title</th>
@@ -559,11 +649,11 @@
                                                     {{$product->price == 0 ? 'disabled' : '' }} 
                                                     onclick="increaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}')" />
                                             </div>
-                                            <div class="col-6">
+                                            {{-- <div class="col-6">
                                                 <p class="fs-5 fw-bold mt-lg-2 text-dark">
                                                     {{ $product->price == 0 ? 'Out of Stock' : '£' . $product->price }}
                                                 </p>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                     </td>
                                     <td>{{ $product->price == 0 ? 'Out of Stock' : '£' . $product->price }}</td>
@@ -602,6 +692,8 @@
             </div>
             </div>
 
+            <div class="row justify-content-center">
+                <div class="col-lg-3">
             <div id="custom-pagination-container">
                 {{-- {{ $products->links() }} --}}
                 {{-- <nav aria-label="...">
@@ -650,6 +742,12 @@
 
             </div>
         </div>
+    </div>
+        </div>
+
+        
+
+
 
         <div class="row">
 
@@ -698,8 +796,213 @@
             
         </div>
     </section>
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          {{-- <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1> --}}
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class=" col-12">
+                @include('frontend.inquiry_form')
+                {{-- <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning p-4">
+                    @csrf
+                    <div>
+                        <div class="d-block">
+                            <div class="text-center text-dark fw-bold">FOR FREE SURVEY AND QUOTE <span class="text-warning"> CALL US NOW!</span></div>
+                             <div class="my-2 d-flex justify-content-center">
+                                <a href="tel:02080505605" class="btn btn-warning text-decoration-underline text-center text-dark fs-4 fw-bold">
+                                <i class="bi pt-2 me-2 bi-phone text-dark"></i> 
+                                    020 805 05605
+                                </a>
+                            </div> 
+                            
+                        </div>
+                    </div>
+                    <h6 class="text-dark text-center fw-bold">OR</h6>
+                    <hr class="border border-dark">
+
+                    
+                    <h4 id="blinking-text" class="bg-warning  fw-bold text-center py-2 rounded-pill">
+                        Book a free consultation now!
+                    </h4>
+                    <hr class="border border-dark">
+                    <div class="mb-3">
+                        <input type="text" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="name" id="name" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="email" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-3">
+                        <input type="number" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="phone" id="phone" placeholder="Enter your phone number">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="text-white py-2 px-3  text-end fw-bold" style="background-color:#2a6161;" >Call US AT</label>
+                        <input type="datetime-local" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="call_time">
+                    </div>
+                    <div class="mb-3">
+                        <textarea name="message" id="message" name="message" rows="3" class="w-100 rounded-0 border border-dark form-control text-dark" placeholder="Enter your message"></textarea>
+                    </div>
+                    <button type="submit" class=" btn py-2 px-4 rounded-0 fw-bolder text-uppercase text-white" style="background-color:#2a6161;">Submit</button>
+                </form> --}}
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+        <div class="modal fade" id="newsletterModalDoor" tabindex="-1" aria-labelledby="newsletterModalDoorLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+            <div class="newsletter-container">
+                <button type="button" class="close-btn subscribed-close" data-bs-dismiss="modal" aria-label="Close">
+                    &times;
+                </button>
+                 
+                <div class="popup-image">
+                    <img src="{{asset('images/main-popup-image.png')}}" class="img-fluid w-100" alt="">
+                </div>
+                <div class="newsletter-content">
+                    <h2 class="content-title mt-5 text-black" style="font-size: 40px;">Subscribe To Get <span class="free-text">FREE On-Site Survey</span></h2>
+                        
+                    <p class="offer-text"><span class="discount-text">For your Peace of Mind, </span> expert installation is also provided<br> <span class="" style="color: green;">(Qoute Available)</span></p>
+                        
+                    <p class="terms-text">Terms & Conditions Applied.</p>
+                    <div class="subscribe-container">
+                        <input type="email" id="emailInput" class="form-control news-letter-input" placeholder="Enter Your Email">
+                        <button class="subscribe-btn" id="subscribeBtnDoor" onclick="newsletterModalDoorFn()">Subscribe</button>
+                    </div>
+                    <p class="privacy-text">We respect your Privacy. Unsubscribe at any time.</p>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="thankyouModal" tabindex="-1" aria-labelledby="thankyouModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="butn-close close-btn" data-bs-dismiss="modal" aria-label="Close">X</button>
+    </div>
+    <div class="modal-body p-3">
+      <div class="row mb-4">
+        <div class="col-12">
+          <h1><span class="thank-you">Thank You</span> <span class="for-subscribing">For Subscribing!</span></h1>
+        </div>
+      </div>
+      
+      <div class="row mb-3">
+        <div class="col-12">
+          <p class="fs-5 mb-0">We've sent the <strong>Discount Code</strong> to your <strong>email address</strong>.</p>
+        </div>
+      </div>
+      
+      <div class="row mb-4">
+        <div class="col-12">
+          <p class="fs-4">Additionally, <span class="youve-won">YOU'VE WON</span> <span class="free-text">FREE</span> <span class="consultation">CONSULTATION!</span></p>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-7 mb-4">
+          <p class="fs-5 mb-3">If you want to avail this offer, Please provide:</p>
+          
+          <form>
+            <input type="text" class="form-control thankyou-input" placeholder="Your Name:">
+            <input type="tel" class="form-control thankyou-input" placeholder="Phone Number:" pattern="[0-9]+" inputmode="numeric">
+            <input type="datetime-local" class="form-control thankyou-input" placeholder="Preferred Date & Time:">
+            <textarea class="form-control thankyou-input" rows="3" placeholder="Add a Note:"></textarea>
+            
+            <button type="submit" class="submit-btn mt-3">Submit</button>
+          </form>
+        </div>
+        
+        <div class="col-md-5">
+          <div class="benefits-box">
+            <p class="benefits-title mb-4">BENEFITS OF <span style="color: #ffa500;">FREE CONSULTATION</span>:</p>
+            
+            <ul class="list-unstyled">
+              <li class="benefit-item">• <span class="highlight-text">FREE</span> Virtual Consultation</li>
+              <li class="benefit-item">• <span class="highlight-text">FREE</span> Design Advice</li>
+              <li class="benefit-item">• <span class="highlight-text">FREE</span> Efficient Planning</li>
+              <li class="benefit-item">• Schedule at your <span class="convenience-text">CONVENIENCE</span></li>
+              <li class="benefit-item">• <span class="highlight-text">NO OBLIGATION</span> to Purchase</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
     @push('scripts')
     <script>
+
+
+
+function newsletterModalDoorFn(){
+    
+     document.getElementById('subscribeBtnDoor').addEventListener('click',function(){
+                    console.log("btn clicked")
+                    const emailInput = document.getElementById('emailInput');
+                    const email = emailInput.value.trim();
+                    console.log(email);
+                    
+                    // Basic email validation
+                    if (email && email.includes('@') && email.includes('.')) {
+                        // Hide newsletter modal
+                        var newsletterModalDoor = bootstrap.Modal.getInstance(document.getElementById('newsletterModalDoor'));
+                        newsletterModalDoor.hide();
+                        
+                        // Show discount modal after a short delay
+                        setTimeout(function() {
+                            var thankyouModal = new bootstrap.Modal(document.getElementById('thankyouModal'));
+                            // discountModal.show();
+                            sendEmail();
+                            thankyouModal.show();
+                            
+                        }, 500);
+                    } else {
+                        // Simple error visual
+                        emailInput.style.borderColor = '#ef4444';
+                        setTimeout(() => {
+                            emailInput.style.borderColor = '#fde68a';
+                        }, 2000);
+                    }
+                    
+                    localStorage.setItem('subscribed', true);
+                });
+                   
+
+       
+
+}
+
+
+
+
+
+
+
         $(document).ready(function () {            
             
             var slug = $('#slug').val();

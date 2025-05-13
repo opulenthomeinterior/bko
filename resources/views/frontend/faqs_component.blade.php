@@ -79,7 +79,7 @@
             font-size: 1.1rem;
             transition: all 0.3s ease;
         }
-
+        
         .faq-question.active {
             background-color: var(--primary-color);
             color: var(--text-on-primary);
@@ -118,6 +118,7 @@
             margin-top: 1rem;
             flex-wrap: wrap;
         }
+
         
         .faq-card {
             flex: 1;
@@ -251,10 +252,25 @@
             }
 
             .faq-question {
-                font-size: 1rem;
+                font-size: 16px;
                 padding: 1rem 1.25rem;
             }
+          
+         
+            .faq-question i{
+            font-size: 16px !important;
+            }
+            .faq-card-desc
+            {
+                font-size: 16px !important;
+            }
+            .faq-answer p{
+                font-size: 16px !important;
+            }
+        
         }
+
+
     </style>
 
 </head>
@@ -262,7 +278,7 @@
 <body>
 {{-- <section class="container-fluid py-5 px-4 bg-white" style="border-bottom: 3px solid #ebc266; border-right: 3px solid #ebc266">
     <div class="row">
-        <h3 class="text-dark text-uppercase fw-bolder text-center">FAQs</h3>
+        <h3 class="text-black text-uppercase fw-bolder text-center">FAQs</h3>
     </div>
     <div class="row bg-white">
         <div class="col-lg-12 bg-white">
@@ -502,7 +518,7 @@
              <!-- FAQ Item 1 -->
              <div class="faq-item" data-category="general">
                 <div class="faq-question">
-                    <div>
+                    <div class="">
                         
                         What is the difference between an affordable kitchen unit and a custom kitchen unit?
                     </div>

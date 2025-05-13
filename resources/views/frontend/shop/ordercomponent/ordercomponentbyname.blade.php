@@ -90,6 +90,55 @@
             margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
         }
 
+         .badges-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: clamp(15px, 3vw, 40px);
+            max-width: 100%;
+        }
+
+        .badge-link {
+            display: block;
+            transition: transform 0.3s ease;
+            /* width: clamp(120px, 25vw, 150px);
+            height: clamp(120px, 25vw, 150px); */
+          
+           
+            min-width: 150px;
+            min-height: 150px;
+
+            max-width: 150px;
+            max-height: 150px;
+        }
+
+        .badge-link:hover {
+            transform: scale(1.05);
+        }
+
+        .badge {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* background-color: #fff; */
+            /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); */
+            overflow: hidden;
+        }
+
+        .badge img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+
+
+
+/* 
         .badges-container {
             display: flex;
             justify-content: center;
@@ -117,16 +166,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            /* background-color: #fff; */
-            /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); */
+            background-color: #fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-        }
-
+        } */
+/* 
         .badge img {
             width: 100%;
             height: 100%;
             object-fit: contain;
-        }
+        } */
 
         .premium-badge {
             border: 2px solid #e74c3c;
@@ -171,9 +220,29 @@
                 height: 40vh;
             }
             
-            .badges-container {
+            /* .badges-container {
                 gap: 15px;
             }
+            .badge{
+                margin-right: 5px;
+                min-height: 100px;
+                min-width: 100px;
+                max-height: 100px;
+                max-width: 100px;
+            } */
+
+             .badges-container {
+                gap: 10px;
+            }
+            
+            .badge-link {
+                min-width: 80px;
+                min-height: 80px;
+
+                max-width: 80px;
+                max-height: 80px;
+            }
+            
         }
 
         @media (max-width: 480px) {
@@ -246,8 +315,8 @@ td
     <div class="handles-overlay"></div>
     <div class="handles-content">
         <h2 class="handles-heading text-black">{{strtoupper($slug)}}</h2>
-        <div class="badges-container">
-            <a href="#" class="badge-link">
+         <div class="badges-container">
+            <a href="" class="badge-link">
                 <div class="badge">
                     <img src="{{ asset('images/premium-badge.png') }}" alt="">
                 </div>
@@ -339,7 +408,7 @@ td
                         Choosing the right handle is an important decision. Our sample service allows you to experience the material, Color and Quality of our Handles in your own kitchen before committing to a full order.
                       </p>
                    
-                    <a href="{{ route('ordercomponentbyname', 'doors') }}" class="btn bg-orange px-1 fw-bold text-uppercase rounded-0 " style="font-size:14px;">  Order a Sample of your choice NOW!</a>
+                    <a href="{{ route('ordercomponentbyname', 'doors') }}" class="btn bg-orange px-1 fw-bold text-uppercase rounded-0 " style="font-size:14px;">  Order a Sample</a>
                 </div>
             </div>
             <div class="col-lg-6">
