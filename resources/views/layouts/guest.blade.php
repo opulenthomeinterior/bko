@@ -1662,14 +1662,14 @@ use App\Models\Style;
                         if (response.success == true) {
                             $('.colour-item').each(function () { 
                                 var colourId = $(this).attr('data-colour-id'); // Get the value
-                                colourId = parseInt(colourId, 10);
+                                // colourId = parseInt(colourId, 10);
                                 console.log(response, colourId);
 
                                 $(this).attr('checked', false); // Uncheck the radio button
                                 if (colourId) {
-                                    console.log(response.colours.includes(colourId));
+                                    console.log(response.colours.includes(colourId.toString()));
                                     // Add your comparison logic here, e.g.:
-                                    if (response.colours.includes(colourId)) {
+                                    if (response.colours.includes(colourId.toString())) {
                                         // Perform an action if `colourId` matches
                                         $(this).attr('disabled', false); // Enable this element
                                         $(this).siblings('.textcolour').css("color", "black"); // Change text color
