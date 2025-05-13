@@ -306,6 +306,63 @@ td
 {
     vertical-align: middle;
 }
+
+
+
+   .toggle-box {
+      display: none !important;
+    }
+
+    .mobile-only {
+      display: none;
+    }
+
+    .desktop-only {
+      display: inline;
+    }
+
+    @media (max-width: 767px) {
+      .mobile-only {
+        display: inline;
+      }
+
+      .desktop-only {
+        display: none;
+      }
+
+      .toggle-box {
+        display: none;
+      }
+
+      .more-text {
+        display: none;
+      }
+
+      .toggle-box:checked + .text .more-text {
+        display: inline;
+      }
+
+      .toggle-box:checked + .text .dots {
+        display: none;
+      }
+
+      .read-toggle {
+        color: #0d6efd;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      .toggle-box:not(:checked) + .text .read-toggle::after {
+        content: " Read More";
+      }
+
+      .toggle-box:checked + .text .read-toggle::after {
+        content: " Read Less";
+      }
+    }
+
+
+
     </style>
 
 
@@ -370,11 +427,34 @@ td
         </div> --}}
         <div class="col-xl-6 mt-lg-5">
             <h1 class="text-black fw-bold">Handles</h1>
-            <p class="fs-5">A wide variety of handles for kitchen units are available at <span class="fw-bold"> Buy Kitchen Online.</span> The handles are suitable for drawers, cabinets and doors. You can <span class="fw-bold"> choose a handle according to your style preference and kitchen aesthetic. </span>To minimize space, you can go for a simple bar handle or select one of our drop handles if you want a statement piece. </p>
+            
+
+        
+             <p>
+      <!-- For large screens -->
+      <span class="desktop-only fs-5">
+        A wide variety of handles for kitchen units are available at <span class="fw-bold"> Buy Kitchen Online.</span> The handles are suitable for drawers, cabinets and doors. You can <span class="fw-bold"> choose a handle according to your style preference and kitchen aesthetic. </span>To minimize space, you can go for a simple bar handle or select one of our drop handles if you want a statement piece. <br>
+        We offer a diverse range of <span class="fw-bold">handles for kitchen doors, cabinets, cupboards, and drawers</span>  to suit every style and preference. Choose from <span class="fw-bold">bar handles, pull handles, D pull handles, bow handles,</span> and more for a sleek modern look. For a classic touch, explore options like drop pendant handles, knob handles, and drop ring handles. Profile handles, vertical side profiles, and Scilm Gola handles provide innovative designs for contemporary kitchens. With additional accessories like connectors, trim caps, and end profiles, <span class="fw-bold">you can customize your kitchen</span> to perfection.
+    </p>
             <!-- <p class="fs-5">{!! $category->description !!} </p> -->
-            <p class="fs-5">
-                We offer a diverse range of <span class="fw-bold">handles for kitchen doors, cabinets, cupboards, and drawers</span>  to suit every style and preference. Choose from <span class="fw-bold">bar handles, pull handles, D pull handles, bow handles,</span> and more for a sleek modern look. For a classic touch, explore options like drop pendant handles, knob handles, and drop ring handles. Profile handles, vertical side profiles, and Scilm Gola handles provide innovative designs for contemporary kitchens. With additional accessories like connectors, trim caps, and end profiles, <span class="fw-bold">you can customize your kitchen</span> to perfection.
-            </p>
+          
+                
+      </span>
+
+      <!-- For mobile screens -->
+      <span class="mobile-only">
+        <input type="checkbox" class="toggle-box" id="toggle-text" />
+        <span class="text fs-5 fs-mob">
+          A wide variety of handles for kitchen units are available at <span class="fw-bold"> Buy Kitchen Online.</span> The handles are suitable for drawers, cabinets and doors. You can <span class="fw-bold"> choose a handle according to your style preference and kitchen aesthetic. </span>To minimize space,<span class="dots"></span><span class="more-text"> you can go for a simple bar handle or select one of our drop handles if you want a statement piece. <br>
+                We offer a diverse range of <span class="fw-bold">handles for kitchen doors, cabinets, cupboards, and drawers</span>  to suit every style and preference. Choose from <span class="fw-bold">bar handles, pull handles, D pull handles, bow handles,</span> and more for a sleek modern look. For a classic touch, explore options like drop pendant handles, knob handles, and drop ring handles. Profile handles, vertical side profiles, and Scilm Gola handles provide innovative designs for contemporary kitchens. With additional accessories like connectors, trim caps, and end profiles, <span class="fw-bold">you can customize your kitchen</span> to perfection.</span>
+          <label for="toggle-text" class="read-toggle"></label>
+        </span>
+      </span>
+    </p>
+
+
+
+
         </div>
         <div class="col-xl-2"></div>
         <div class="col-xl-4 p-0 col-12">
