@@ -1658,6 +1658,8 @@ use App\Models\Style;
                         style_id: styleId
                     },
                     success: function(response) {
+                        console.log(response);
+                        
                         if (response.success == true) {
                             $('.colour-item').each(function () { 
                                 var colourId = $(this).attr('data-colour-id'); // Get the value
