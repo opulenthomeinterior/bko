@@ -1658,12 +1658,12 @@ use App\Models\Style;
                         style_id: styleId
                     },
                     success: function(response) {
-                        console.log(response);
                         
                         if (response.success == true) {
                             $('.colour-item').each(function () { 
                                 var colourId = $(this).attr('data-colour-id'); // Get the value
                                 colourId = parseInt(colourId, 10);
+                                console.log(response, colourId);
 
                                 $(this).attr('checked', false); // Uncheck the radio button
                                 if (colourId) {
