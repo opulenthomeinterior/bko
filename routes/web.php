@@ -30,6 +30,7 @@ use App\Http\Controllers\VideoGuideController;
 use App\Http\Controllers\InfoGraphicController;
 use App\Http\Controllers\DesignserviceController;
 use App\Http\Controllers\DownloadableGuideController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\SettingController;
 
 /*
@@ -344,6 +345,10 @@ Route::prefix('/')->middleware([])->group(function () {
     // Fallback route for any other route under /admin
     Route::fallback(function () {
         return redirect()->route('home');
+    });
+
+    Route::prefix('payment')->group(function() {
+        Route::get('worldpay/auth-token', [PaymentController::class, 'authToken'])->name('worldpay_auth_token');
     });
 });
 
