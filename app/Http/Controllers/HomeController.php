@@ -997,8 +997,11 @@ class HomeController extends Controller
                         
             if (!empty($request->style_ids)) {
                 $colours = $colours->whereIn('id', Product::whereIn('style_id', $request->style_ids)->where('status', 'active')->pluck('colour_id')->unique());
+                $heights = $heights->whereIn('style_id', $request->style_ids);
+                $widths = $widths->whereIn('style_id', $request->style_ids);
             } else if (!empty($request->colour_ids)) {
                 $heights = $heights->whereIn('style_id', $request->colour_style_ids)->whereIn('colour_id', $request->colour_ids);
+                $widths = $widths->whereIn('style_id', $request->colour_style_ids)->whereIn('colour_id', $request->colour_ids);
             } else if (!empty($request->height_ids)) {
                 $widths = $widths->whereIn('style_id', $request->height_style_ids)->whereIn('colour_id', $request->height_colour_ids)->whereIn('height', $request->height_ids);
             }

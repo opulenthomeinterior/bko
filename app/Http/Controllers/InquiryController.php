@@ -24,7 +24,7 @@ class InquiryController extends Controller
                 'name' => 'required|string|max:255',
                 'email' => 'required|string|email|max:255',
                 'phone' => 'required|string|max:255',
-                'call_time' => 'required|string|max:255',
+                // 'call_time' => 'required|string|max:255',
                 'message' => 'required|string|max:1000',
             ]);
         }
@@ -35,7 +35,7 @@ class InquiryController extends Controller
                 'name' => $request->name ?? '',
                 'email' => $request->email ?? '',
                 'phone' => $request->phone ?? '',
-                'call_time' => $request->call_time ?? '',
+                // 'call_time' => $request->call_time ?? '',
                 'message' => $request->message ?? '',
             ];
             if (!empty($request->first_order_discount)) {
