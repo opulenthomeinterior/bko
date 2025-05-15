@@ -512,6 +512,8 @@ class HomeController extends Controller
         $urlColourId = $request->colour_id ?? '';
         if ($slug == 'doors') {
             return view('frontend.shop.ordercomponent.doors', compact('urlStyleId', 'urlColourId', 'category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo', 'slug', 'widths'));
+        } else if ($slug == 'handles') {
+            return view('frontend.shop.ordercomponent.handles', compact('urlStyleId', 'urlColourId', 'category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo', 'slug', 'widths'));
         }
         return view('frontend.shop.ordercomponent.ordercomponentbyname', compact('urlStyleId', 'urlColourId', 'category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo', 'slug', 'widths'));
     }
