@@ -149,7 +149,7 @@
                     </div>
                 </div>
            
-                <button class="btn btn-primary w-100 py-3">PROCEED TO CHECKOUT</button>
+                <a href="{{ route('checkout') }}" class="btn btn-primary w-100 py-3">PROCEED TO CHECKOUT</a>
                 
                 <div class="d-flex justify-content-end mt-3">
                     {{-- <a style"hover: cursor:pointer"  id="clearShoppingCart" class="text-decoration-none text-danger" onClick="clearShoppingCart">Clear shopping cart</a> --}}
