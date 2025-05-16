@@ -522,7 +522,7 @@ td
                             </div>
                         @endif
                         @if ($colours->count() > 0)
-                            {{--<div class="col-12 accordion accordion-flush mt-3" id="accordionFlushExample4">
+                            <div class="col-12 accordion accordion-flush mt-3" id="accordionFlushExample4">
                                 <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
                                     <h2 class="accordion-header" id="flush-headingFour">
                                         <button class="accordion-button legend collapsed text-uppercase" type="button"
@@ -563,7 +563,7 @@ td
                                         </div>
                                     </div>
                                 </div>
-                            </div>--}}
+                            </div>
                         @endif
                     </div>
                 </form>
@@ -894,88 +894,57 @@ td
         }
         $(document).ready(function () {            
             var slug = $('#slug').val();
-            // $(document).on('click', '.type-filter', function() {
-            //     var typeIds = [];
-            //     $('.type-filter').each(function() {
-            //         if ($(this).is(':checked')) {
-            //             typeIds.push($(this).attr('data-type-id'));
-            //         }
-            //     });
-            //     $.ajax({
-            //         url: "{{ route('ordercomponent_filter') }}",
-            //         method: "POST",
-            //         data: {
-            //             _token: "{{ csrf_token() }}",
-            //             type_ids: typeIds,
-            //             slug: slug
-            //         },
-            //         success:function(response) {
-            //             if (response.status == true) {
-            //                 var _htmlColours = '';
-            //                 response.colours.forEach((colr, index) => {
-            //                     _htmlColours += `
-            //                         <div class="col-lg-12 col-md-12 col-6">
-            //                             <div class="form-check form-check-inline">
-            //                                 <input data-colour-id="${colr.id}"  class="form-check-input colour-filter" type="checkbox"
-            //                                     name="colours[]" id="colour${index}"
-            //                                     value="${colr.id}">`;
-            //                                     if (colr.colour_code != '' || colr.colour_code != undefined) {
-            //                                         _htmlColours += `<label class="form-check-label d-flex gap-1" for="colour${index}">
-            //                                             <div class="d-inline border border-dark"
-            //                                                 style="border-radius: 50px; width: 20px;height:20px; background-color:${colr.colour_code};">
-            //                                             </div>
-            //                                             ${ colr.trade_colour ? colr.trade_colour : colr.name }
-            //                                         </label>`;
-            //                                     } else {
-            //                                         _htmlColours += `<label class="form-check-label d-flex gap-1" for="colour${index}">
-            //                                             <div class="border border-dark" style="border-radius: 50px; width: 20px;height:20px; background: linear-gradient(to right, red, yellow, green);">
-            //                                             </div>
-            //                                             ${ colr.trade_colour ? colr.trade_colour : colr.name }
-            //                                         </label>`;
-            //                                     }
-            //                             _htmlColours += `</div>
-            //                         </div>
-            //                     `;
-            //                 });
-            //                 $('#colours-filter').html(_htmlColours);
-            //                 var _htmlHeights = '';
-            //                 response.heights.forEach((hght, index) => {
-            //                     _htmlHeights += `
-            //                         <div class="col-12">
-            //                             <div class="form-check form-check-inline">
-            //                                 <input data-heights-id="${hght.height}" class="form-check-input height-filter" type="checkbox"
-            //                                     name="heights[]" id="height${index}"
-            //                                     value="${hght.height}">
-            //                                 <label class="form-check-label"
-            //                                     for="height${index}">
-            //                                     ${hght.height}
-            //                                 </label>
-            //                             </div>
-            //                         </div>
-            //                     `;
-            //                 });
-            //                 $('#heights-filter').html(_htmlHeights);
-            //                 var _htmlWidths = '';                            
-            //                 response.sizes.forEach((wdth, index) => {
-            //                     _htmlWidths += `
-            //                         <div class="col-12">
-            //                             <div class="form-check form-check-inline">
-            //                                 <input data-widths-id="${wdth.id}" class="form-check-input width-filter" type="checkbox"
-            //                                     name="widths[]" id="width${index}"
-            //                                     value="${wdth.width}">
-            //                                 <label class="form-check-label"
-            //                                     for="width${index}">
-            //                                     ${wdth.width}
-            //                                 </label>
-            //                             </div>
-            //                         </div>
-            //                     `;
-            //                 });
-            //                 $('#widths-filter').html(_htmlWidths);
-            //             }
-            //         }
-            //     });
-            // });
+            
+            $(document).on('click', '.type-filter', function() {
+                var slug = $('#slug').val();
+                var selectedTypes = [];
+                $('.type-filter').each(function() {
+                    if ($(this).is(':checked')) {
+                        selectedTypes.push($(this).attr('data-type-id'));
+                    }
+                });
+                
+                $.ajax({
+                    url: orderComponent_filter,
+                    method: "POST",
+                    data: {
+                        _token: "{{ csrf_token() }}",
+                        type_ids: selectedTypes,
+                        slug: slug
+                    },
+                    success:function(response) {
+                        if (response.status == true) {
+                            var _htmlColours = '';
+                            response.colours.forEach((colr, index) => {
+                                _htmlColours += `
+                                    <div class="col-lg-12 col-md-12 col-6">
+                                        <div class="form-check form-check-inline">
+                                            <input data-colour-id="${colr.id}"  class="form-check-input colour-filter" type="checkbox"
+                                                name="colours[]" id="colour${index}"
+                                                value="${colr.id}">`;
+                                                if (colr.colour_code != '' || colr.colour_code != undefined) {
+                                                    _htmlColours += `<label class="form-check-label d-flex gap-1" for="colour${index}">
+                                                        <div class="d-inline border border-dark"
+                                                            style="border-radius: 50px; width: 20px;height:20px; background-color:${colr.colour_code};">
+                                                        </div>
+                                                        ${ colr.trade_colour ? colr.trade_colour : colr.name }
+                                                    </label>`;
+                                                } else {
+                                                    _htmlColours += `<label class="form-check-label d-flex gap-1" for="colour${index}">
+                                                        <div class="border border-dark" style="border-radius: 50px; width: 20px;height:20px; background: linear-gradient(to right, red, yellow, green);">
+                                                        </div>
+                                                        ${ colr.trade_colour ? colr.trade_colour : colr.name }
+                                                    </label>`;
+                                                }
+                                        _htmlColours += `</div>
+                                    </div>
+                                `;
+                            });
+                            $('#colours-filter').html(_htmlColours);
+                        }
+                    }
+                });
+            });
         });
         var order_component_filter = '{{ route('order_component_filter', $category->slug) }}';
         var orderComponent_filter = '{{ route('ordercomponent_filter') }}';
