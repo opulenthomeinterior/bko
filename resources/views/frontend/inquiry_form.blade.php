@@ -129,7 +129,7 @@
                     <i class="fas fa-calendar-alt me-3 fs-mob-input"></i>
                     Call US AT
                 </span>
-                <input style="cursor:pointer" onclick="document.getElementById('date').showPicker()" id="date" type="datetime-local" class="form-control inquiry-form-control fs-mob-input" placeholder="Call US AT" name="call_time" required>
+                <input style="cursor:pointer" onclick="document.getElementById('date').showPicker()" id="date" type="datetime-local" class="form-control inquiry-form-control fs-mob-input" placeholder="Call US AT" name="call_time">
             </div>
 
             <div class="input-group text-area-container ">
