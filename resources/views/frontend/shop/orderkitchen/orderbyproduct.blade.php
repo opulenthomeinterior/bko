@@ -53,6 +53,13 @@
             text-align: left;
             font-family: Arial, sans-serif;
         }
+        @media(min-width:991px)
+        {
+            .w-lg-25
+            {
+                width: 25%;
+            }
+        }
     </style>
     <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
         <nav aria-label="breadcrumb">
@@ -67,67 +74,243 @@
             </ol>
         </nav>
 
+
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-lg-6 col-12">
+                        <figure class="text-center position-relative">
+                            <!-- Button trigger modal -->
+                            <a class="modal-icon z-3" href="#" data-bs-toggle="modal" data-bs-target="#productImage">
+                                <i class="ri-add-circle-line text-black fs-4"></i>
+                            </a>
+                            <!-- Modal -->
+                            <div class="modal fade" id="productImage" tabindex="-1" aria-labelledby="productImage"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-xl modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!-- <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-md-5 col-12 mx-auto">
+                                                        <img src="{{ asset('imgs/products/' . $product->image_path) }}"
+                                                            class="img-fluid" />
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                                                <div class="carousel-indicators">
+                                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active control-button" aria-current="true" aria-label="Slide 1"></button>
+                                                    @if ($product->second_image_path)
+                                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="control-button" aria-label="Slide 2"></button>
+                                                    @endif
+                                                    @if ($product->third_image_path)
+                                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="control-button" aria-label="Slide 3"></button>
+                                                    @endif
+                                                    @if ($product->fourth_image_path)
+                                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" class="control-button" aria-label="Slide 4"></button>
+                                                    @endif
+                                                </div>
+                                                <div class="carousel-inner">
+                                                    <div class="carousel-item active">
+                                                        <img src="{{ asset('imgs/products/' . $product->image_path) }}" class="d-block" alt="Slide 1">
+                                                    </div>
+                                                    @if ($product->second_image_path)
+                                                    <div class="carousel-item">
+                                                        <img src="{{ asset('imgs/products/' . $product->second_image_path) }}" class="d-block" alt="Slide 2">
+                                                    </div>
+                                                    @endif
+                                                    @if ($product->third_image_path)
+                                                    <div class="carousel-item">
+                                                        <img src="{{ asset('imgs/products/' . $product->third_image_path) }}" class="d-block" alt="Slide 3">
+                                                    </div>
+                                                    @endif
+                                                    @if ($product->fourth_image_path)
+                                                    <div class="carousel-item">
+                                                        <img src="{{ asset('imgs/products/' . $product->fourth_image_path) }}" class="d-block" alt="Slide 4">
+                                                    </div>
+                                                    @endif
+                                                </div>
+                                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Previous</span>
+                                                </button>
+                                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Next</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <img class="img-fluid px-0" style="width: 100%; height: auto;"
+                                src="{{ asset('images/handle.jpg')}}"
+                                alt="Card image cap">
+                            {{-- <img class="img-fluid px-0" style="width: 300px; height: auto;"
+                                src="{{ $product->image_path ? asset('imgs/products/' . $product->image_path) : asset('images/no-image-available.jpg') }}"
+                                alt="Card image cap"> --}}
+                        </figure>
+
+                     
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <h2 class="fs-4 text-dark text-uppercase fw-bolder">
+                             {{ $product->full_title }}
+                        </h2>
+                         <small class="fs-6 fw-bold text-primary">{{ $product->dimensions }}</small>
+                         <p class="fs-4 fw-bold text-danger">£{{ $product->price }}</p>
+                         <div class="d-flex gap-5">
+                            <div class="d-flex flex-column">
+                                <p class="fs-6 fw-bold">Product Code </p>
+                                <p class="fs-6 border border-warning p-2">{{$product->product_code}}</p>
+                            </div>
+                            <div class="d-flex flex-column">
+                                <p class="fs-6 fw-bold">Hole Centre Spacing</p>
+                                <select name="" id="" class="p-2 border border-warning fs-6">
+                                    <option value="" class="fs-6">Choose an option</option>
+                                </select>
+                            </div>
+
+                        </div>
+                         <div class="d-flex flex-column">
+                         <p class="fs-6 fw-bold">Order a Free Sample </p>
+                         <a class="btn border-1 border-primary p-2 w-lg-25 ">Checkout</a>
+                         <p class="fs-6 mt-2 fw-bold text-danger">£6 Delivery Charges</p>
+                            
+                             <div class=" d-flex product-counter">
+                                    <input id="minus{{ $product->id }}" class="minus border bg-dark text-light p-0" type="button"
+                                        value="-"
+                                        onclick="decreaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}')" />
+                                    {{-- <input id="minus{{ $product->id }}" class="minus border bg-dark text-light p-0" type="button"
+                                        value="-"
+                                        onclick="decreaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }})" /> --}}
+
+
+                                        <input id="quantity{{ $product->id }}"
+                                                    class="quantity border border-black text-center"
+                                                    type="text" value="0" name="quantity"
+                                                    onkeyup="inputQty(this.value, '{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}'
+                                                    )" />
+
+                                    {{-- <input id="quantity{{ $product->id }}" class="quantity border border-black text-center"
+                                        type="text" value="0" name="quantity" disabled /> --}}
+                                    <input id="plus{{ $product->id }}" class="plus border bg-dark text-light p-0" type="button"
+                                        value="+"
+                                        {{$product->price == 0 ? 'disabled' : '' }}
+                                        onclick="increaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}')" />
+                                    {{-- <input id="plus{{ $product->id }}" class="plus border bg-dark text-light p-0" type="button"
+                                        value="+"
+                                        {{$product->price == 0 ? 'disabled' : '' }}
+                                        onclick="increaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }})" /> --}}
+                                </div>
+                               <button class="btn border-1 border-primary p-2 w-lg-25 mt-2 " onclick="
+                               let val = parseInt(document.querySelector('.quantity').value); document.querySelector('.quantity').value = ++val;
+                               addToCart('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}',val );">Add to cart</button>
+
+                                  <div class="accordion mt-2" id="productAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Details & Specifications
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#productAccordion">
+                                    <div class="accordion-body">
+                                        <table class="table table-striped specs-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td>SKU</td>
+                                                    <td>HK1122</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Brand</td>
+                                                    <td>Hafele</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Supplied With</td>
+                                                    <td>2x M4 x 45mm snap off handle screws</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Handle Shape</td>
+                                                    <td>T bar handles</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Handle Style</td>
+                                                    <td>Simple</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Diameter</td>
+                                                    <td>12 mm</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Fixings Included</td>
+                                                    <td>M4 Screw fixings required</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Handle Screws Included</td>
+                                                    <td>Order M4 handle screws separately</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Height</td>
+                                                    <td>32 mm</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Material</td>
+                                                    <td>Steel</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Dimensions</td>
+                                                    <td>
+                                                        Length<br>
+                                                        Hole centres<br>
+                                                        136 mm<br>
+                                                        96 mm<br>
+                                                        168 mm<br>
+                                                        136 mm<br>
+                                                        230 mm
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                         </div>
+                               
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+
+        <!-- <div class="container">
         <div class="row">
             <div class="col-lg-6 col-12">
-                <h1 class="fs-1 text-dark text-uppercase fw-bolder">
+                <h1 class="fs-3 text-dark text-uppercase fw-bolder">
                     {{ $product->full_title }}
                 </h1>
             </div>
-        </div>
+        </div> -->
     </section>
+    
 
-    <section class="container-fluid px-lg-5 px-md-3 px-3 py-2">
-        @if (count($relatedCategoryProducts) > 0)
-        <div class="row mb-4">
-            <div class="col-8 offset-4">
-                <div class="col-12">
-                    <h3 class="fw-bold text-dark py-1">Related Products</h3>
-                </div>
-                <div class="col-12">
-                <div class="row" style="max-height: 170px; overflow-x: hidden; overflow-y: scroll">
-                    @foreach ($relatedCategoryProducts as $relatedCategoryProduct)
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2">
-                            <a href="{{ route('orderbyproduct', [$relatedCategoryProduct->slug, $relatedCategoryProduct->id]) }}" class="btn btn-outline-warning rounded-0 text-dark fw-bold" style="display: flex; align-items: center; justify-content: start">
-                            <img class="img-fluid" width="50px" height="50px" src="{{ asset('imgs/products/'.$relatedCategoryProduct->image_path) }}" alt="">
-                            &nbsp;
-                            {{ $relatedCategoryProduct->colour?->name ? '' . strtoupper($relatedCategoryProduct->colour?->name) . '' : '' }}
-                            {{ $relatedCategoryProduct->height 
-                                ? ($relatedCategoryProduct->width 
-                                    ? '(H:'.$relatedCategoryProduct->height . 'x' . 'W:'.$relatedCategoryProduct->width . ' mm)' 
-                                    : '(H:'.$relatedCategoryProduct->height . ' mm)') 
-                                : ($relatedCategoryProduct->width ? '(W:'.$relatedCategoryProduct->width . ' mm)' : '') }}
-                            {{ ' (£' . $relatedCategoryProduct->price . ')' }}
-                            </a>
-                        </div>
-                    @endforeach
-                </div>
-                <hr>
-                    {{--<select class="form-control" id="productSelect">
-                        <option value="">Select Product</option>
-                        <select class="select-container">
-                            @foreach ($relatedCategoryProducts as $relatedCategoryProduct)
-                                <option value="{{ $relatedCategoryProduct->id }}" 
-                                        data-url="{{ route('orderbyproduct', [$relatedCategoryProduct->slug, $relatedCategoryProduct->id]) }}">
-                                    {{ $relatedCategoryProduct->colour?->name ? '(' . $relatedCategoryProduct->colour?->name . ')' : '' }}
-                                    {{ $relatedCategoryProduct->height ? '- (' . $relatedCategoryProduct->height . ')' : '' }}
-                                    {{ ' (£' . $relatedCategoryProduct->price . ')' }}
-                                </option>
-                            @endforeach
-                        </select>
-                    </select>--}}
-                </div>
-            </div>
-        </div>
-        @endif
+    <!-- <section class="container-fluid px-lg-5 px-md-3 px-3 py-2">
+        
         <div class="row">
             <div class="col-lg-4 col-md-6">
-                <figure class="text-center position-relative">
+                <figure class="text-center position-relative"> -->
                     <!-- Button trigger modal -->
-                    <a class="modal-icon z-3" href="#" data-bs-toggle="modal" data-bs-target="#productImage">
+                    <!-- <a class="modal-icon z-3" href="#" data-bs-toggle="modal" data-bs-target="#productImage">
                         <i class="ri-add-circle-line text-black fs-4"></i>
-                    </a>
+                    </a> -->
                     <!-- Modal -->
-                    <div class="modal fade" id="productImage" tabindex="-1" aria-labelledby="productImage"
+                    <!-- <div class="modal fade" id="productImage" tabindex="-1" aria-labelledby="productImage"
                         aria-hidden="true">
                         <div class="modal-dialog modal-xl modal-dialog-centered">
                             <div class="modal-content">
@@ -135,7 +318,7 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
-                                <div class="modal-body">
+                                <div class="modal-body"> -->
                                     <!-- <div class="container-fluid">
                                         <div class="row">
                                             <div class="col-lg-4 col-md-5 col-12 mx-auto">
@@ -144,7 +327,7 @@
                                             </div>
                                         </div>
                                     </div> -->
-                                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                                    <!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                                         <div class="carousel-indicators">
                                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active control-button" aria-current="true" aria-label="Slide 1"></button>
                                             @if ($product->second_image_path)
@@ -449,9 +632,9 @@
                 </div>
                 <hr>
                 @endif
-            </div>
+            </div> -->
 
-            <div class="col-lg-4">
+            <!-- <div class="col-lg-4">
                 @if (!empty($product->product_description))
                 <section class="container-fluid px-3 pb-4 pt-3" style="background-color: #f0f0f0;">
                     <div class="row">
@@ -470,16 +653,16 @@
                                 @endif
                             --}}
                             </div>
-                        </div>
-                        {{-- @if ($product->category?->image_path)
-                            <div class="col-lg-12 col-md-6 position-relative">
+                        </div> -->
+                        <!-- {{-- @if ($product->category?->image_path)
+                            <div class="col-lg-12 col-md-6 position-relative"> -->
                                 <!-- Button trigger modal -->
-                                <a class="modal-icon z-3" href="#" data-bs-toggle="modal"
+                                <!-- <a class="modal-icon z-3" href="#" data-bs-toggle="modal"
                                     data-bs-target="#productCat">
                                     <i class="ri-add-circle-line text-black fs-4"></i>
-                                </a>
+                                </a> -->
                                 <!-- Modal -->
-                                <div class="modal fade" id="productCat" tabindex="-1" aria-labelledby="productCat"
+                                <!-- <div class="modal fade" id="productCat" tabindex="-1" aria-labelledby="productCat"
                                     aria-hidden="true">
                                     <div class="modal-dialog modal-xl modal-dialog-centered">
                                         <div class="modal-content">
@@ -516,14 +699,14 @@
                 src="{{ asset('uploads/categories/' . $product->category?->parentCategory->image_path) }}"
                 alt="Card image cap">
         </div>
-        @endif --}}
-        </div>
-    </section>
+        @endif --}} -->
+        <!-- </div>
+                 </section>
     @endif
     </div>
-    </div>
+    </div> -->
 
-    <div class="row">
+    <!-- <div class="row">
         @if ($colours && count($colours) > 0)
         {{--<div class="col-lg-6 col-md-6 col-12 py-4">
             <h3 class="fw-bold text-dark pb-3">Colour Options</h3>
@@ -563,7 +746,55 @@
     </div>
 
 
-    </section>
+    </section> -->
+
+    <!-- <div class="container">
+        <div class="col-lg-8">
+            @if (count($relatedCategoryProducts) > 0)
+        <div class="row mb-4">
+            <div class="col-8 offset-4">
+                <div class="col-12">
+                    <h3 class="fw-bold text-dark py-1">Related Products</h3>
+                </div>
+                <div class="col-12">
+                <div class="row" style="max-height: 170px; overflow-x: hidden; overflow-y: scroll">
+                    @foreach ($relatedCategoryProducts as $relatedCategoryProduct)
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2">
+                            <a href="{{ route('orderbyproduct', [$relatedCategoryProduct->slug, $relatedCategoryProduct->id]) }}" class="btn btn-outline-warning rounded-0 text-dark fw-bold" style="display: flex; align-items: center; justify-content: start">
+                            <img class="img-fluid" width="50px" height="50px" src="{{ asset('imgs/products/'.$relatedCategoryProduct->image_path) }}" alt="">
+                            &nbsp;
+                            {{ $relatedCategoryProduct->colour?->name ? '' . strtoupper($relatedCategoryProduct->colour?->name) . '' : '' }}
+                            {{ $relatedCategoryProduct->height 
+                                ? ($relatedCategoryProduct->width 
+                                    ? '(H:'.$relatedCategoryProduct->height . 'x' . 'W:'.$relatedCategoryProduct->width . ' mm)' 
+                                    : '(H:'.$relatedCategoryProduct->height . ' mm)') 
+                                : ($relatedCategoryProduct->width ? '(W:'.$relatedCategoryProduct->width . ' mm)' : '') }}
+                            {{ ' (£' . $relatedCategoryProduct->price . ')' }}
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
+                <hr>
+                    {{--<select class="form-control" id="productSelect">
+                        <option value="">Select Product</option>
+                        <select class="select-container">
+                            @foreach ($relatedCategoryProducts as $relatedCategoryProduct)
+                                <option value="{{ $relatedCategoryProduct->id }}" 
+                                        data-url="{{ route('orderbyproduct', [$relatedCategoryProduct->slug, $relatedCategoryProduct->id]) }}">
+                                    {{ $relatedCategoryProduct->colour?->name ? '(' . $relatedCategoryProduct->colour?->name . ')' : '' }}
+                                    {{ $relatedCategoryProduct->height ? '- (' . $relatedCategoryProduct->height . ')' : '' }}
+                                    {{ ' (£' . $relatedCategoryProduct->price . ')' }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </select>--}}
+                </div>
+            </div>
+        </div>
+        @endif
+        </div>
+    </div> -->
+</div>
 
     <script>
         document.getElementById('productSelect').addEventListener('change', function() {
