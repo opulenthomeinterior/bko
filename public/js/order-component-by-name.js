@@ -423,13 +423,13 @@ $(document).ready(function () {
         // Calculate the range of pages to display
         var start = Math.max(1, currentPage - 4);
         var end = Math.min(pages, currentPage + 5);
-        if (end - start < 9) {
-            start = Math.max(1, end - 9);
-            end = Math.min(pages, start + 9);
+        if (end - start < 5) {
+            start = Math.max(1, end - 5);
+            end = Math.min(pages, start + 5);
         }
 
         // Ensure the range displays only 5 pages
-        for (var i = start; i <= end && i <= pages && i < start + 10; i++) {
+        for (var i = start; i <= end && i <= pages && i < start + 5; i++) {
             paginationHTML += `<li class="page-item ${currentPage == i ? 'active' : ''}"><a class="page-link" href="javascript:void(0)" data-page="${i}">${i}</a></li>`;
         }
 

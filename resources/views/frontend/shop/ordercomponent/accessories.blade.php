@@ -807,10 +807,10 @@ td
                         <!-- Page numbers -->
                         @php
                         $start = max(1, $currentPage - 4);
-                        $end = min($pages, $currentPage + 5);
-                        if ($end - $start < 9) {
-                            $start=max(1, $end - 9);
-                            $end=min($pages, $start + 9);
+                        $end = min($pages, $currentPage + 4);
+                        if ($end - $start < 4) {
+                            $start=max(1, $end - 4);
+                            $end=min($pages, $start + 4);
                             }
                             @endphp
 
