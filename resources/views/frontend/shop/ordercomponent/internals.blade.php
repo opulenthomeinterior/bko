@@ -549,48 +549,46 @@ td
                  <form action="" class="">
                     <input type="hidden" name="slug" id="slug" value="{{ $category->slug }}">
                     <div class="row">
-                        @if ($styles->count() > 0)
-                            @if ($category->slug == 'doors' || $category->slug == 'accessories')
-                                <div class="col-12 accordion accordion-flush mt-3 " id="accordionFlushExample3">
+
+                        @if (strtolower($category->name) != 'doors' && strtolower($category->name) != 'handles' && strtolower($category->name) != 'taps' && strtolower($category->name) != 'upstands' && strtolower($category->name) != 'worktops' && strtolower($category->name) != 'breakfast bars') 
+                            @if ($types->count() > 0)
+                                <div class="col-12 accordion accordion-flush mt-3" id="accordionFlushExample1">
                                     <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
-                                        <h2 class="accordion-header" id="flush-headingThree">
+                                        <h2 class="accordion-header" id="flush-headingOne">
                                             <button class="accordion-button legend collapsed text-uppercase" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
-                                                aria-expanded="true" aria-controls="flush-collapseThree">
-                                                Style
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                                aria-expanded="true" aria-controls="flush-collapseOne">
+                                                @if (strtolower($category->name) != 'handles' && strtolower($category->name) != 'taps' && strtolower($category->name) != 'appliances' && strtolower($category->name) != 'worktops' && strtolower($category->name) != 'upstands' && strtolower($category->name) != 'breakfast bars' && strtolower($category->name) != 'sinks' && strtolower($category->name) != 'internals') SIZES @else TYPES @endif
                                             </button>
                                         </h2>
-                                        <div id="flush-collapseThree" class="accordion-collapse my-2 custom-scrollbar "
-                                            aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample3" style="max-height: 150px; overflow-y: scroll">
+                                        <div id="flush-collapseOne" class="accordion-collapse my-2 custom-scrollbar"
+                                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample1" style="max-height: 150px; overflow-y: auto">
                                             <div class="accordion-body px-0 py-0 pb-1">
-                                                <div class="row g-1">
-                                                    <!-- updated -->
-                                                    @foreach ($styles as $index => $style)
-                                                    <div class="col-12">
-                                                        <div class="form-check form-check-inline">
-                                                            <input data-style-id="{{$style->id}}" class="form-check-input style-filter" {{ (!empty($urlStyleId) && ($urlStyleId == $style->id)) ? 'checked' : '' }} type="checkbox" name="styles[]" id="style{{ $index }}" value="{{ $style->id }}">
-                                                            <label class="form-check-label"
-                                                                for="style{{ $index }}">{{ $style->name }}
-                                                            </label>
+                                                <div class="ps-2">
+                                                    <div class="row g-1">
+                                                        @foreach ($types as $index => $type)
+                                                        <div class="col-12">
+                                                            <div class="form-check form-check-inline">
+                                                                <input data-type-id="{{$type->id}}" class="form-check-input type-filter" type="checkbox"
+                                                                    name="types[]" id="type{{ $index }}"
+                                                                    value="{{ $type->id }}">
+                                                                <label class="form-check-label"
+                                                                    for="type{{ $index }}">{{ $type->name }}
+                                                                </label>
+                                                            </div>
                                                         </div>
+                                                        @endforeach
                                                     </div>
-                                                    @endforeach
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                              
                             @endif
                         @endif
 
                         @if ($colours->count() > 0)
                             @if ($category->slug != 'appliances')
-                            <!-- @if ($category->slug =='handles') -->
-                            <!-- <div class="col-md-6 mt-3">
-                                                     <h2 class="text-black">Flawless Finishes. Reliable Function.</h2>
-                                                </div> -->
-                             <!-- @endif                    -->
                                 <div class="col-12 accordion accordion-flush mt-3" id="accordionFlushExample4">
                                     <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
                                         <h2 class="accordion-header" id="flush-headingFour">
@@ -634,117 +632,6 @@ td
                                     </div>
                                 </div>
                                                 
-                            @endif
-                        @endif
-
-                        @if ($assemblies->count() > 0)
-                            {{--<div class="col-3 accordion accordion-flush mt-3" id="accordionFlushExample2">
-                                <div class="accordion-item bg-transparent border border-warning border-1 rounded-0 px-2">
-                                    <h2 class="accordion-header" id="flush-headingTwo">
-                                        <button class="accordion-button legend collapsed text-uppercase" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
-                                            aria-expanded="true" aria-controls="flush-collapseTwo">
-                                            ASSEMBLY
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseTwo" class="accordion-collapse my-2 custom-scrollbar"
-                                        aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample2">
-                                        <div class="accordion-body px-0 py-0 pb-1">
-                                            <div class="row g-1">
-                                                @foreach ($assemblies as $index => $assembly)
-                                                    @if ($assembly->slug == 'stock' && ($category->slug == 'doors' || $category->slug == 'accessories' || $category->slug == 'handles' || $category->slug == 'sinks' || $category->slug == 'internals'))
-                                                        <div class="col-lg-12 col-md-12 col-6">
-                                                            <div class="form-check form-check-inline">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    name="assemblies[]" id="assembly{{ $index }}"
-                                                                    value="{{ $assembly->id }}">
-                                                                <label class="form-check-label"
-                                                                    for="assembly{{ $index }}">{{ $assembly->name }}
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    @else
-                                                        
-                                                    @endif
-                                                @endforeach
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>--}}
-                        @endif
-
-                        @if (strtolower($category->name) != 'handles' && strtolower($category->name) != 'appliances' && strtolower($category->name) != 'worktops' && strtolower($category->name) != 'upstands' && strtolower($category->name) != 'breakfast bars' && strtolower($category->name) != 'sinks' && strtolower($category->name) != 'internals')
-                            @if ($heights->count() > 0)
-                                <div class="col-12 accordion accordion-flush mt-3" id="accordionFlushExample5">
-                                    <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
-                                        <h2 class="accordion-header" id="flush-headingFive">
-                                            <button class="accordion-button legend collapsed text-uppercase" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseFive"
-                                                aria-expanded="true" aria-controls="flush-collapseFive">
-                                                Heights
-                                            </button>
-                                        </h2>
-                                        <div id="flush-collapseFive" class="accordion-collapse my-2 custom-scrollbar"
-                                            aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample5" style="max-height: 150px; overflow-y: auto">
-                                            <div class="accordion-body px-0 py-0 pb-1">
-                                                <div class="ps-2">
-                                                    <div class="row g-1" id="heights-filter">
-                                                        @foreach ($heights as $index => $height)
-                                                        <div class="col-12">
-                                                            <div class="form-check form-check-inline">
-                                                                <input data-heights-id="{{$height->id}}" id="height-filter" class="form-check-input" type="checkbox"
-                                                                    name="heights[]" id="height{{ $index }}"
-                                                                    value="{{ $height->height }}">
-                                                                <label class="form-check-label"
-                                                                    for="height{{ $index }}">
-                                                                    {{ $height->height }}
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        @endforeach
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endif
-                        @endif
-                        @if (strtolower($category->name) != 'doors' && strtolower($category->name) != 'handles' && strtolower($category->name) != 'taps' && strtolower($category->name) != 'upstands' && strtolower($category->name) != 'worktops' && strtolower($category->name) != 'breakfast bars') 
-                            @if ($types->count() > 0)
-                                <div class="col-12 accordion accordion-flush mt-3" id="accordionFlushExample1">
-                                    <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
-                                        <h2 class="accordion-header" id="flush-headingOne">
-                                            <button class="accordion-button legend collapsed text-uppercase" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
-                                                aria-expanded="true" aria-controls="flush-collapseOne">
-                                                @if (strtolower($category->name) != 'handles' && strtolower($category->name) != 'taps' && strtolower($category->name) != 'appliances' && strtolower($category->name) != 'worktops' && strtolower($category->name) != 'upstands' && strtolower($category->name) != 'breakfast bars' && strtolower($category->name) != 'sinks' && strtolower($category->name) != 'internals') SIZES @else TYPES @endif
-                                            </button>
-                                        </h2>
-                                        <div id="flush-collapseOne" class="accordion-collapse my-2 custom-scrollbar"
-                                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample1" style="max-height: 150px; overflow-y: auto">
-                                            <div class="accordion-body px-0 py-0 pb-1">
-                                                <div class="ps-2">
-                                                    <div class="row g-1">
-                                                        @foreach ($types as $index => $type)
-                                                        <div class="col-12">
-                                                            <div class="form-check form-check-inline">
-                                                                <input data-type-id="{{$type->id}}" id="type-filter" class="form-check-input" type="checkbox"
-                                                                    name="types[]" id="type{{ $index }}"
-                                                                    value="{{ $type->id }}">
-                                                                <label class="form-check-label"
-                                                                    for="type{{ $index }}">{{ $type->name }}
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        @endforeach
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             @endif
                         @endif
                     </div>
@@ -1099,71 +986,57 @@ function newsletterModalOrderFn(){
         $(document).ready(function () {            
             
             var slug = $('#slug').val();
-
-            // $(document).on('click', '.style-filter', function() {
-            //     var styleIds = [];
-            //     $('.style-filter').each(function() {
-            //         if ($(this).is(':checked')) {
-            //             styleIds.push($(this).attr('data-style-id'));
-            //         }
-            //     });
-            //     $.ajax({
-            //         url: "{{ route('ordercomponent_filter') }}",
-            //         method: "POST",
-            //         data: {
-            //             _token: "{{ csrf_token() }}",
-            //             style_ids: styleIds,
-            //             slug: slug
-            //         },
-            //         success:function(response) {
-            //             if (response.status == true) {
-            //                 var _html = '';
-            //                 response.colours.forEach((colr, index) => {
-            //                     _html += `
-            //                         <div class="col-lg-12 col-md-12 col-6">
-            //                             <div class="form-check form-check-inline">
-            //                                 <input data-colour-id="${colr.id}"  class="form-check-input colour-filter" type="checkbox"
-            //                                     name="colours[]" id="colour${index}"
-            //                                     value="${colr.id}">`;
-            //                                     if (colr.colour_code != '' || colr.colour_code != undefined) {
-            //                                         _html += `<label class="form-check-label d-flex gap-1" for="colour${index}">
-            //                                             <div class="d-inline border border-dark"
-            //                                                 style="border-radius: 50px; width: 20px;height:20px; background-color:${colr.colour_code};">
-            //                                             </div>
-            //                                             ${ colr.trade_colour ? colr.trade_colour : colr.name }
-            //                                         </label>`;
-            //                                     } else {
-            //                                         _html += `<label class="form-check-label d-flex gap-1" for="colour${index}">
-            //                                             <div class="border border-dark" style="border-radius: 50px; width: 20px;height:20px; background: linear-gradient(to right, red, yellow, green);">
-            //                                             </div>
-            //                                             ${ colr.trade_colour ? colr.trade_colour : colr.name }
-            //                                         </label>`;
-            //                                     }
-            //                             _html += `</div>
-            //                         </div>
-            //                     `;
-            //                 });
-            //                 $('#colours-filter').html(_html);
-            //             }
-            //         }
-            //     });
-            // });
-
-            // $(document).on('click', '#type-filter', function() {
-            //     let _this = $(this);
-            //     var widthId = _this.attr('data-type-id');
-            //     $.ajax({
-            //         url: "{{ route('ordercomponent_filter') }}",
-            //         method: "POST",
-            //         data: {
-            //             _token: "{{ csrf_token() }}",
-            //             type_ids: widthId
-            //         },
-            //         success:function(response) {
-                        
-            //         }
-            //     });
-            // }); 
+            
+            $(document).on('click', '.type-filter', function() {
+                var slug = $('#slug').val();
+                var selectedTypes = [];
+                $('.type-filter').each(function() {
+                    if ($(this).is(':checked')) {
+                        selectedTypes.push($(this).attr('data-type-id'));
+                    }
+                });
+                
+                $.ajax({
+                    url: orderComponent_filter,
+                    method: "POST",
+                    data: {
+                        _token: "{{ csrf_token() }}",
+                        type_ids: selectedTypes,
+                        slug: slug
+                    },
+                    success:function(response) {
+                        if (response.status == true) {
+                            var _htmlColours = '';
+                            response.colours.forEach((colr, index) => {
+                                _htmlColours += `
+                                    <div class="col-lg-12 col-md-12 col-6">
+                                        <div class="form-check form-check-inline">
+                                            <input data-colour-id="${colr.id}"  class="form-check-input colour-filter" type="checkbox"
+                                                name="colours[]" id="colour${index}"
+                                                value="${colr.id}">`;
+                                                if (colr.colour_code != '' || colr.colour_code != undefined) {
+                                                    _htmlColours += `<label class="form-check-label d-flex gap-1" for="colour${index}">
+                                                        <div class="d-inline border border-dark"
+                                                            style="border-radius: 50px; width: 20px;height:20px; background-color:${colr.colour_code};">
+                                                        </div>
+                                                        ${ colr.trade_colour ? colr.trade_colour : colr.name }
+                                                    </label>`;
+                                                } else {
+                                                    _htmlColours += `<label class="form-check-label d-flex gap-1" for="colour${index}">
+                                                        <div class="border border-dark" style="border-radius: 50px; width: 20px;height:20px; background: linear-gradient(to right, red, yellow, green);">
+                                                        </div>
+                                                        ${ colr.trade_colour ? colr.trade_colour : colr.name }
+                                                    </label>`;
+                                                }
+                                        _htmlColours += `</div>
+                                    </div>
+                                `;
+                            });
+                            $('#colours-filter').html(_htmlColours);
+                        }
+                    }
+                });
+            });
         });
         var order_component_filter = '{{ route('order_component_filter', $category->slug) }}';
         var orderComponent_filter = '{{ route('ordercomponent_filter') }}';

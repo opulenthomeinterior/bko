@@ -514,6 +514,12 @@ class HomeController extends Controller
             return view('frontend.shop.ordercomponent.doors', compact('urlStyleId', 'urlColourId', 'category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo', 'slug', 'widths'));
         } else if ($slug == 'handles') {
             return view('frontend.shop.ordercomponent.handles', compact('urlStyleId', 'urlColourId', 'category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo', 'slug', 'widths'));
+        } else if ($slug == 'accessories') {
+            return view('frontend.shop.ordercomponent.accessories', compact('urlStyleId', 'urlColourId', 'category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo', 'slug', 'widths'));
+        } else if ($slug == 'sinks') {
+            return view('frontend.shop.ordercomponent.sinks', compact('urlStyleId', 'urlColourId', 'category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo', 'slug', 'widths'));
+        } else if ($slug == 'internals') {
+            return view('frontend.shop.ordercomponent.internals', compact('urlStyleId', 'urlColourId', 'category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo', 'slug', 'widths'));
         }
         return view('frontend.shop.ordercomponent.ordercomponentbyname', compact('urlStyleId', 'urlColourId', 'category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo', 'slug', 'widths'));
     }
@@ -994,27 +1000,44 @@ class HomeController extends Controller
             $widths = Product::whereIn('category_id', $children)
                         ->where('status', 'active')
                         ->where('width', '!=', '');
+
+            $types = Product::where('status', 'active')
+                        ->where('width', '!=', '');
                         
             if (!empty($request->style_ids)) {
                 $colours = $colours->whereIn('id', Product::whereIn('style_id', $request->style_ids)->where('status', 'active')->pluck('colour_id')->unique());
                 $heights = $heights->whereIn('style_id', $request->style_ids);
                 $widths = $widths->whereIn('style_id', $request->style_ids);
-            } else if (!empty($request->colour_ids)) {
+            } else if (empty($request->style_ids)) {
+                $colours = $colours->whereIn('id', Product::whereIn('category_id', $children)->where('status', 'active')->pluck('colour_id')->unique());
+            }
+            if (!empty($request->colour_ids)) {
                 $heights = $heights->whereIn('style_id', $request->colour_style_ids)->whereIn('colour_id', $request->colour_ids);
                 $widths = $widths->whereIn('style_id', $request->colour_style_ids)->whereIn('colour_id', $request->colour_ids);
-            } else if (!empty($request->height_ids)) {
-                $widths = $widths->whereIn('style_id', $request->height_style_ids)->whereIn('colour_id', $request->height_colour_ids)->whereIn('height', $request->height_ids);
+            } else if (empty($request->colour_ids) && !empty($request->colour_style_ids)) {
+                $heights = $heights->whereIn('style_id', $request->colour_style_ids);
+                $widths = $widths->whereIn('style_id', $request->colour_style_ids);
             }
-            if (empty($request->style_ids)) {
+            if (!empty($request->height_ids)) {
+                $widths = $widths->whereIn('style_id', $request->height_style_ids)->whereIn('colour_id', $request->height_colour_ids)->whereIn('height', $request->height_ids);
+            } else if (empty($request->height_ids) && !empty($request->height_style_ids)) {
+                $heights = $heights->whereIn('style_id', $request->height_style_ids);
+                $widths = $widths->whereIn('style_id', $request->height_style_ids);
+            }
+            if (!empty($request->type_ids)) {
+                $colours = $colours->whereIn('id', Product::whereIn('category_id', $request->type_ids)->where('status', 'active')->pluck('colour_id')->unique());
+            } else if (empty($request->type_ids)) {
                 $colours = $colours->whereIn('id', Product::whereIn('category_id', $children)->where('status', 'active')->pluck('colour_id')->unique());
             }
             $heights = $heights->select('height', DB::raw('COUNT(*) as count'))->groupBy('height');
             $widths = $widths->select('width', DB::raw('COUNT(*) as count'))->groupBy('width');
+            
             return response()->json([
                 'status' => true,
                 'colours' => $colours->get(),
                 'heights' => $heights->get(),
-                'sizes' => $widths->get()
+                'sizes' => $widths->get(),
+                'types' => $types
             ]);
         } catch (\Exception $e) {
             dd($e);

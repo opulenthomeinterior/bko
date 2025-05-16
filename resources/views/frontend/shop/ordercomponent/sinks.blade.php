@@ -309,7 +309,7 @@ td
 
 
 
-    .toggle-box {
+   .toggle-box {
       display: none !important;
     }
 
@@ -360,210 +360,279 @@ td
         content: " Read Less";
       }
     }
+
+
+
     </style>
-    <section class="handles-section">
-        <div class="handles-overlay"></div>
-        <div class="handles-content">
-            <h2 class="handles-heading text-black">{{strtoupper($slug)}}</h2>
-            <div class="badges-container">
-                <a href="" class="badge-link">
-                    <div class="badge">
-                        <img src="{{ asset('images/premium-badge.png') }}" alt="">
-                    </div>
-                </a>
-                <a href="https://www.trustpilot.com/review/opulenthomeinteriors.com" class="badge-link">
-                    <div class="badge trustpilot-badge">
-                        
-                        <img class="" src="{{ asset('images/trust-pilot-badge.png') }}" alt="">
-                    </div>
-                </a>
-                <a href="https://www.google.com/maps/place/Buy+Kitchen+Online/@51.5192167,-0.0093268,17z/data=!4m8!3m7!1s0x48761d591fe166d7:0x456fed0ffc8a8222!8m2!3d51.5192167!4d-0.0093268!9m1!1b1!16s%2Fg%2F11vbf0zdzm?entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D" class="badge-link">
-                    <div class="badge google-badge">
-                        <img src="{{ asset('images/google-reviews-badge.png') }}" alt="">
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="promo-box">
-            <div class="promo-text">For a Limited<br>Time Only!</div>
 
-            <div class="promo-cta btn" data-bs-toggle="modal" data-bs-target="#newsletterModalOrder">Get <span class="text-danger">FREE </span><br>On-Site<br>Survey!</div>
-        </div>
-    </section>
 
-    <section class="container-fluid my-5 bg-light py-4">
-        <div class="container">
-        <div class="row">
-            {{-- <div class=" col-xl-8 col-12 align-self-center px-5 d-flex flex-column flex-md-row p-0">
-                <div class="row">
-                    
-                    <div class="align-self-center rounded shadow-lg order-sample position-relative col-12 col-xl-8 bg-white rounded-lg border-0 shadow-sm" style="">
-                        <h4 style="font-size:30px; font-weight:600;"><span class="text-danger">Try</span> <span class="text-black">Before You Buy<span>
-                        <br> <span class="text-danger"> FREE</span> Door Samples!</h4>
-                        <h4 class="text-primary my-4" style="font-size:24px;">£6 Delivery Charge Only.</h4>
-                        
-                        <a href="{{ route('ordercomponentbyname', 'doors') }}" class=" px-2 btn bg-orange px-1 fw-bold text-uppercase rounded-0 " style="font-size:14px;">  Order a Sample of your choice NOW!</a>
-                    </div>
-                    <div class="p-0 mb-3 mb-xl-0 col-12 col-xl-4">
-                    <img class="w-100 object-fit-cover rounded border border-warning" src="https://bkonline.uk/public/imgs/products/Cartmel-Cashmere-Flat-Door-A1720452961_668c0761d6f16.jpg"  class="img-fluid"  alt="Modern Kitchen" 
-                        style="width: 300px; height: 400px; object-fit: cover;">
-                    
-                
-                    </div>
+
+
+<section class="handles-section">
+    <div class="handles-overlay"></div>
+    <div class="handles-content">
+        <h2 class="handles-heading text-black">{{strtoupper($slug)}}</h2>
+         <div class="badges-container">
+            <a href="" class="badge-link">
+                <div class="badge">
+                    <img src="{{ asset('images/premium-badge.png') }}" alt="">
                 </div>
-
-            </div> --}}
-            <div class="col-xl-6 mt-lg-5">
-                <h1 class="text-black fw-bold">Handles</h1>
-                <p>
-                    <!-- For large screens -->
-                    <span class="desktop-only fs-5">
-                        A wide variety of handles for kitchen units are available at <span class="fw-bold"> Buy Kitchen Online.</span> The handles are suitable for drawers, cabinets and doors. You can <span class="fw-bold"> choose a handle according to your style preference and kitchen aesthetic. </span>To minimize space, you can go for a simple bar handle or select one of our drop handles if you want a statement piece. <br>
-                        We offer a diverse range of <span class="fw-bold">handles for kitchen doors, cabinets, cupboards, and drawers</span>  to suit every style and preference. Choose from <span class="fw-bold">bar handles, pull handles, D pull handles, bow handles,</span> and more for a sleek modern look. For a classic touch, explore options like drop pendant handles, knob handles, and drop ring handles. Profile handles, vertical side profiles, and Scilm Gola handles provide innovative designs for contemporary kitchens. With additional accessories like connectors, trim caps, and end profiles, <span class="fw-bold">you can customize your kitchen</span> to perfection.
-                    </span>
-                </p>
-
-        <!-- For mobile screens -->
-        <span class="mobile-only">
-            <input type="checkbox" class="toggle-box" id="toggle-text" />
-            <span class="text fs-5 fs-mob">
-            A wide variety of handles for kitchen units are available at <span class="fw-bold"> Buy Kitchen Online.</span> The handles are suitable for drawers, cabinets and doors. You can <span class="fw-bold"> choose a handle according to your style preference and kitchen aesthetic. </span>To minimize space,<span class="dots"></span><span class="more-text"> you can go for a simple bar handle or select one of our drop handles if you want a statement piece. <br>
-                    We offer a diverse range of <span class="fw-bold">handles for kitchen doors, cabinets, cupboards, and drawers</span>  to suit every style and preference. Choose from <span class="fw-bold">bar handles, pull handles, D pull handles, bow handles,</span> and more for a sleek modern look. For a classic touch, explore options like drop pendant handles, knob handles, and drop ring handles. Profile handles, vertical side profiles, and Scilm Gola handles provide innovative designs for contemporary kitchens. With additional accessories like connectors, trim caps, and end profiles, <span class="fw-bold">you can customize your kitchen</span> to perfection.</span>
-            <label for="toggle-text" class="read-toggle"></label>
-            </span>
-        </span>
-        </p>
-
-
-
-
-            </div>
-            <div class="col-xl-2"></div>
-            <div class="col-xl-4 p-0 col-12">
-                @include('frontend.inquiry_form')
-            </div>
+            </a>
+            <a href="https://www.trustpilot.com/review/opulenthomeinteriors.com" class="badge-link">
+                <div class="badge trustpilot-badge">
+                    
+                    <img class="" src="{{ asset('images/trust-pilot-badge.png') }}" alt="">
+                </div>
+            </a>
+            <a href="https://www.google.com/maps/place/Buy+Kitchen+Online/@51.5192167,-0.0093268,17z/data=!4m8!3m7!1s0x48761d591fe166d7:0x456fed0ffc8a8222!8m2!3d51.5192167!4d-0.0093268!9m1!1b1!16s%2Fg%2F11vbf0zdzm?entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D" class="badge-link">
+                <div class="badge google-badge">
+                    <img src="{{ asset('images/google-reviews-badge.png') }}" alt="">
+                </div>
+            </a>
         </div>
-    
     </div>
-    </section>
+    <div class="promo-box">
+        <div class="promo-text">For a Limited<br>Time Only!</div>
+
+        <div class="promo-cta btn" data-bs-toggle="modal" data-bs-target="#newsletterModalOrder">Get <span class="text-danger">FREE </span><br>On-Site<br>Survey!</div>
+    </div>
+</section>
+
+
+
+
+
+@if($slug == 'handles')
+<section class="container-fluid my-5 bg-light py-4">
     <div class="container">
-        <div class="col-12">
-            <img class="img-fluid w-100 rounded shadow-lg d-none d-md-block" src="{{ asset('images/handles.png') }}" alt="">
-            <img class="img-fluid w-100 rounded shadow-lg  d-md-none" src="{{ asset('images/handles-mobile.png') }}" alt="">
-            
-        </div>
-    </div>
-    <div class="container mt-5">
-        <div class="row">
-        
-            <div class="col-lg-6 align-self-center" >
-                    
-                    <div class=" p-5 rounded shadow-lg order-sample  bg-white rounded-lg border-0 shadow-sm pe-5">
-                        <h4 style="font-size:30px; font-weight:600; color:#FDB71A"><span class="">Order a Sample</span> <span class="text-black text-uppercase">of Your Favorite HANDLE<span>
-                        <br></h4>
-                        <p  style="font-size: 16px;" class="mt-4">
-                            Choosing the right handle is an important decision. Our sample service allows you to experience the material, Color and Quality of our Handles in your own kitchen before committing to a full order.
-                        </p>
-                    
-                        <a href="{{ route('ordercomponentbyname', 'doors') }}" class="btn bg-orange px-1 fw-bold text-uppercase rounded-0 " style="font-size:14px;">  Order a Sample</a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div style="height:400px">
-                    <img class="w-100 object-fit-cover rounded border border-warning" src="{{ asset('images/handles-right-section.png') }}"  class="img-fluid"  alt="Modern Kitchen" 
-                    style="height: 100%;"
-                    >
-                    </div>
-                </div>
+    <div class="row">
+        {{-- <div class=" col-xl-8 col-12 align-self-center px-5 d-flex flex-column flex-md-row p-0">
+            <div class="row">
                 
+                <div class="align-self-center rounded shadow-lg order-sample position-relative col-12 col-xl-8 bg-white rounded-lg border-0 shadow-sm" style="">
+                    <h4 style="font-size:30px; font-weight:600;"><span class="text-danger">Try</span> <span class="text-black">Before You Buy<span>
+                       <br> <span class="text-danger"> FREE</span> Door Samples!</h4>
+                       <h4 class="text-primary my-4" style="font-size:24px;">£6 Delivery Charge Only.</h4>
+                    
+                    <a href="{{ route('ordercomponentbyname', 'doors') }}" class=" px-2 btn bg-orange px-1 fw-bold text-uppercase rounded-0 " style="font-size:14px;">  Order a Sample of your choice NOW!</a>
+                </div>
+                <div class="p-0 mb-3 mb-xl-0 col-12 col-xl-4">
+                 <img class="w-100 object-fit-cover rounded border border-warning" src="https://bkonline.uk/public/imgs/products/Cartmel-Cashmere-Flat-Door-A1720452961_668c0761d6f16.jpg"  class="img-fluid"  alt="Modern Kitchen" 
+                    style="width: 300px; height: 400px; object-fit: cover;">
+                
+               
+                </div>
+            </div>
+
+        </div> --}}
+        <div class="col-xl-6 mt-lg-5">
+            <h1 class="text-black fw-bold">Handles</h1>
+            
 
         
+             <p>
+      <!-- For large screens -->
+      <span class="desktop-only fs-5">
+        A wide variety of handles for kitchen units are available at <span class="fw-bold"> Buy Kitchen Online.</span> The handles are suitable for drawers, cabinets and doors. You can <span class="fw-bold"> choose a handle according to your style preference and kitchen aesthetic. </span>To minimize space, you can go for a simple bar handle or select one of our drop handles if you want a statement piece. <br>
+        We offer a diverse range of <span class="fw-bold">handles for kitchen doors, cabinets, cupboards, and drawers</span>  to suit every style and preference. Choose from <span class="fw-bold">bar handles, pull handles, D pull handles, bow handles,</span> and more for a sleek modern look. For a classic touch, explore options like drop pendant handles, knob handles, and drop ring handles. Profile handles, vertical side profiles, and Scilm Gola handles provide innovative designs for contemporary kitchens. With additional accessories like connectors, trim caps, and end profiles, <span class="fw-bold">you can customize your kitchen</span> to perfection.
+    </p>
+            <!-- <p class="fs-5">{!! $category->description !!} </p> -->
+          
+                
+      </span>
+
+      <!-- For mobile screens -->
+      <span class="mobile-only">
+        <input type="checkbox" class="toggle-box" id="toggle-text" />
+        <span class="text fs-5 fs-mob">
+          A wide variety of handles for kitchen units are available at <span class="fw-bold"> Buy Kitchen Online.</span> The handles are suitable for drawers, cabinets and doors. You can <span class="fw-bold"> choose a handle according to your style preference and kitchen aesthetic. </span>To minimize space,<span class="dots"></span><span class="more-text"> you can go for a simple bar handle or select one of our drop handles if you want a statement piece. <br>
+                We offer a diverse range of <span class="fw-bold">handles for kitchen doors, cabinets, cupboards, and drawers</span>  to suit every style and preference. Choose from <span class="fw-bold">bar handles, pull handles, D pull handles, bow handles,</span> and more for a sleek modern look. For a classic touch, explore options like drop pendant handles, knob handles, and drop ring handles. Profile handles, vertical side profiles, and Scilm Gola handles provide innovative designs for contemporary kitchens. With additional accessories like connectors, trim caps, and end profiles, <span class="fw-bold">you can customize your kitchen</span> to perfection.</span>
+          <label for="toggle-text" class="read-toggle"></label>
+        </span>
+      </span>
+    </p>
+
+
+
+
+        </div>
+        <div class="col-xl-2"></div>
+        <div class="col-xl-4 p-0 col-12">
+            @include('frontend.inquiry_form')
         </div>
     </div>
+   
+</div>
+</section>
+
+@endif
+@if($slug == 'handles')
+<div class="container">
+    <div class="col-12">
+        <img class="img-fluid w-100 rounded shadow-lg d-none d-md-block" src="{{ asset('images/handles.png') }}" alt="">
+        <img class="img-fluid w-100 rounded shadow-lg  d-md-none" src="{{ asset('images/handles-mobile.png') }}" alt="">
+        
+    </div>
+</div>
+
+
+<div class="container mt-5">
+    <div class="row">
+       
+          <div class="col-lg-6 align-self-center" >
+                
+                <div class=" p-5 rounded shadow-lg order-sample  bg-white rounded-lg border-0 shadow-sm pe-5">
+                    <h4 style="font-size:30px; font-weight:600; color:#FDB71A"><span class="">Order a Sample</span> <span class="text-black text-uppercase">of Your Favorite HANDLE<span>
+                       <br></h4>
+                      <p  style="font-size: 16px;" class="mt-4">
+                        Choosing the right handle is an important decision. Our sample service allows you to experience the material, Color and Quality of our Handles in your own kitchen before committing to a full order.
+                      </p>
+                   
+                    <a href="{{ route('ordercomponentbyname', 'doors') }}" class="btn bg-orange px-1 fw-bold text-uppercase rounded-0 " style="font-size:14px;">  Order a Sample</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div style="height:400px">
+                <img class="w-100 object-fit-cover rounded border border-warning" src="{{ asset('images/handles-right-section.png') }}"  class="img-fluid"  alt="Modern Kitchen" 
+                style="height: 100%;"
+                >
+                </div>
+            </div>
+            
+
+      
+    </div>
+</div>
+@endif
+
+
+
+
     <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
+        <!-- <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('shop') }}" class="text-uppercase">Shop</a></li>
+                <li class="breadcrumb-item">
+                    <a href="{{ route('orderkitchen') }}" class="text-uppercase">
+                        Order Kitchen
+                    </a>
+                </li>
+            </ol>
+        </nav> -->
+
+        <!-- <div class="row mb-lg-5 mb-4">
+            <div class="col-12">
+                <h1 class="fs-1 fw-bolder text-dark text-uppercase">{{ $category->name }}</h1>
+            </div>
+            <div class="col-12">
+                <p class="text-dark">{!! $category->description !!}</p>
+            </div>
+        </div> -->
+
         <div class="row">
+            <!-- <div class="col-lg-12 col-md-12  p-0 pb-4"> -->
+                <!-- <div class="m-0"> -->
+                    <!-- <h4 class="text-dark" style="font-weight: 600; font-size: 1.3rem">Filters</h4> -->
+                    <!-- <h2 class="text-dark text-center" style="font-weight: 600;">Filters</h2> -->
+                    <!-- <h3 style="font-weight: 600; font-size: 1.3rem" class="text-dark">CURRENT ITEMS:<span id="number-of-products">{{ $count }}</span></h3> -->
+                <!-- </div> -->
+                <!-- <div class="bg-light border border-dark border-1 px-2 py-2 mt-2">
+                    <h3 style="font-weight: 600; font-size: 1.3rem" class="text-dark">CURRENT ITEMS:<span id="number-of-products">{{ $count }}</span></h3>
+                </div> -->
+
+
+               
+               
+            <!-- </div> -->
             <div class="col-lg-3">
-                    <form action="" class="">
+                 <form action="" class="">
                     <input type="hidden" name="slug" id="slug" value="{{ $category->slug }}">
                     <div class="row">
-                        
-                        @if ($types->count() > 0)
-                            <div class="col-12 accordion accordion-flush mt-3" id="accordionFlushExample1">
-                                <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
-                                    <h2 class="accordion-header" id="flush-headingOne">
-                                        <button class="accordion-button legend collapsed text-uppercase" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
-                                            aria-expanded="true" aria-controls="flush-collapseOne">
-                                            @if (strtolower($category->name) != 'handles' && strtolower($category->name) != 'taps' && strtolower($category->name) != 'worktops' && strtolower($category->name) != 'appliances' && strtolower($category->name) != 'upstands' && strtolower($category->name) != 'breakfast bars' && strtolower($category->name) != 'sinks' && strtolower($category->name) != 'internals') SIZES @else TYPES @endif
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseOne" class="accordion-collapse my-2 custom-scrollbar"
-                                        aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample1" style="max-height: 150px; overflow-y: auto">
-                                        <div class="accordion-body px-0 py-0 pb-1">
-                                            <div class="ps-2">
-                                                <div class="row g-1">
-                                                    @foreach ($types as $index => $type)
+
+                        @if (strtolower($category->name) != 'doors' && strtolower($category->name) != 'handles' && strtolower($category->name) != 'taps' && strtolower($category->name) != 'upstands' && strtolower($category->name) != 'worktops' && strtolower($category->name) != 'breakfast bars' && strtolower($category->name) != 'internals') 
+                            @if ($types->count() > 0)
+                                <div class="col-12 accordion accordion-flush mt-3" id="accordionFlushExample1">
+                                    <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
+                                        <h2 class="accordion-header" id="flush-headingOne">
+                                            <button class="accordion-button legend collapsed text-uppercase" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                                aria-expanded="true" aria-controls="flush-collapseOne">
+                                                @if (strtolower($category->name) != 'handles' && strtolower($category->name) != 'taps' && strtolower($category->name) != 'appliances' && strtolower($category->name) != 'worktops' && strtolower($category->name) != 'upstands' && strtolower($category->name) != 'breakfast bars' && strtolower($category->name) != 'sinks' && strtolower($category->name) != 'internals') SIZES @else TYPES @endif
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseOne" class="accordion-collapse my-2 custom-scrollbar"
+                                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample1" style="max-height: 150px; overflow-y: auto">
+                                            <div class="accordion-body px-0 py-0 pb-1">
+                                                <div class="ps-2">
+                                                    <div class="row g-1">
+                                                        @foreach ($types as $index => $type)
+                                                        <div class="col-12">
+                                                            <div class="form-check form-check-inline">
+                                                                <input data-type-id="{{$type->id}}" class="form-check-input type-filter" type="checkbox"
+                                                                    name="types[]" id="type{{ $index }}"
+                                                                    value="{{ $type->id }}">
+                                                                <label class="form-check-label"
+                                                                    for="type{{ $index }}">{{ $type->name }}
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        @endforeach
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                        @endif
+
+                        @if ($colours->count() > 0)
+                            @if ($category->slug != 'appliances')
+                                <div class="col-12 accordion accordion-flush mt-3" id="accordionFlushExample4">
+                                    <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
+                                        <h2 class="accordion-header" id="flush-headingFour">
+                                            <button class="accordion-button legend collapsed text-uppercase" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseFour"
+                                                aria-expanded="true" aria-controls="flush-collapseFour">
+                                                Colour
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseFour" class="accordion-collapse my-2 custom-scrollbar"
+                                            aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample4" style="max-height: 150px; overflow-y: auto">
+                                            <div class="accordion-body bg-light px-0 py-0 pb-1">
+                                                <div class="row g-1" id="colours-filter">
+                                                    @foreach ($colours as $index => $colour)
                                                     <div class="col-12">
                                                         <div class="form-check form-check-inline">
-                                                            <input data-type-id="{{$type->id}}" class="form-check-input type-filter" type="checkbox"
-                                                                name="types[]" id="type{{ $index }}"
-                                                                value="{{ $type->id }}">
-                                                            <label class="form-check-label"
-                                                                for="type{{ $index }}">{{ $type->name }}
-                                                            </label>
+                                                            <input data-colour-id="{{$colour->id}}" class="form-check-input colour-filter" type="checkbox" {{ (!empty($urlColourId) && ($urlColourId == $colour->id)) ? 'checked' : '' }}
+                                                                name="colours[]" id="colour{{ $index }}"
+                                                                value="{{ $colour->id }}">
+                                                                @if (!empty($colour->colour_code))
+                                                                <label class="form-check-label d-flex gap-1" for="colour{{ $index }}">
+                                                                    <div class="d-inline border border-dark"
+                                                                        style="border-radius: 50px; width: 20px;height:20px; background-color:{{ $colour->colour_code }};">
+                                                                    </div>
+                                                                    {{ $colour->trade_colour ? $colour->trade_colour : $colour->name }}
+                                                                </label>
+                                                                @else
+                                                                <label class="form-check-label d-flex gap-1" for="colour{{ $index }}">
+                                                                    <div class="border border-dark" style="border-radius: 50px; width: 20px;height:20px; background: linear-gradient(to right, red, yellow, green);">
+                                                                    </div>
+                                                                    {{ $colour->trade_colour ? $colour->trade_colour : $colour->name }}
+                                                                </label>
+                                                                @endif
                                                         </div>
                                                     </div>
                                                     @endforeach
                                                 </div>
+                                
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        @endif
-                        @if ($colours->count() > 0)
-                            {{--<div class="col-12 accordion accordion-flush mt-3" id="accordionFlushExample4">
-                                <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
-                                    <h2 class="accordion-header" id="flush-headingFour">
-                                        <button class="accordion-button legend collapsed text-uppercase" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseFour"
-                                            aria-expanded="true" aria-controls="flush-collapseFour">
-                                            Colour
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseFour" class="accordion-collapse my-2 custom-scrollbar"
-                                        aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample4" style="max-height: 150px; overflow-y: auto">
-                                        <div class="accordion-body bg-light px-0 py-0 pb-1">
-                                            <div class="row g-1" id="colours-filter">
-                                                @foreach ($colours as $index => $colour)
-                                                <div class="col-12">
-                                                    <div class="form-check form-check-inline">
-                                                        <input data-colour-id="{{$colour->id}}" class="form-check-input colour-filter" type="checkbox" {{ (!empty($urlColourId) && ($urlColourId == $colour->id)) ? 'checked' : '' }}
-                                                            name="colours[]" id="colour{{ $index }}"
-                                                            value="{{ $colour->id }}">
-                                                            @if (!empty($colour->colour_code))
-                                                            <label class="form-check-label d-flex gap-1" for="colour{{ $index }}">
-                                                                <div class="d-inline border border-dark"
-                                                                    style="border-radius: 50px; width: 20px;height:20px; background-color:{{ $colour->colour_code }};">
-                                                                </div>
-                                                                {{ $colour->trade_colour ? $colour->trade_colour : $colour->name }}
-                                                            </label>
-                                                            @else
-                                                            <label class="form-check-label d-flex gap-1" for="colour{{ $index }}">
-                                                                <div class="border border-dark" style="border-radius: 50px; width: 20px;height:20px; background: linear-gradient(to right, red, yellow, green);">
-                                                                </div>
-                                                                {{ $colour->trade_colour ? $colour->trade_colour : $colour->name }}
-                                                            </label>
-                                                            @endif
-                                                    </div>
-                                                </div>
-                                                @endforeach
-                                            </div>
-                            
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>--}}
+                                                
+                            @endif
                         @endif
                     </div>
                 </form>
@@ -582,11 +651,11 @@ td
                         <th>Price</th>
                         @if($slug != 'handles')
                         <th>Style</th>
-                            @endif
+                         @endif
                         <th>Colour</th>
-                            @if($slug != 'handles')
+                         @if($slug != 'handles')
                         <th>Assembly</th>
-                            @endif
+                         @endif
                     </thead>
                     <tbody id="products_container">
                         @if ($products->count() > 0)
@@ -634,7 +703,7 @@ td
                                         </div>
                                     </td>
                                     <td>{{ $product->price == 0 ? 'Out of Stock' : '£' . $product->price }}</td>
-                                    @if($slug != 'handles')
+                                   @if($slug != 'handles')
                                     <td>
                                         <div class="container-fluid">
                                             @if ($product->style)
@@ -650,7 +719,7 @@ td
                                             </small>
                                         @endif
                                     </td>
-                                        @if($slug != 'handles')
+                                     @if($slug != 'handles')
                                     <td>
                                         @if ($category->name != 'DOORS')
                                         @if ($product->assembly)
@@ -772,6 +841,11 @@ td
             
         </div>
     </section>
+
+
+
+
+
     <div class="modal fade" id="newsletterModalOrder" tabindex="-1" aria-labelledby="newsletterModalOrderLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-md">
             <div class="modal-content">
@@ -860,122 +934,109 @@ td
         </div>
     </div>
 
-@push('scripts')
+
+
+
+
+
+
+    @push('scripts')
     <script>
-        function newsletterModalOrderFn() {
-            document.getElementById('subscribeBtnOrder').addEventListener('click',function() {
-                console.log("btn clicked")
-                const emailInput = document.getElementById('emailInput');
-                const email = emailInput.value.trim();
-                console.log(email);
-                // Basic email validation
-                if (email && email.includes('@') && email.includes('.')) {
-                    // Hide newsletter modal
-                    var newsletterModalOrder = bootstrap.Modal.getInstance(document.getElementById('newsletterModalOrder'));
-                    newsletterModalOrder.hide();
+
+
+function newsletterModalOrderFn(){
+    
+     document.getElementById('subscribeBtnOrder').addEventListener('click',function(){
+                    console.log("btn clicked")
+                    const emailInput = document.getElementById('emailInput');
+                    const email = emailInput.value.trim();
+                    console.log(email);
                     
-                    // Show discount modal after a short delay
-                    setTimeout(function() {
-                        var thankyouModal = new bootstrap.Modal(document.getElementById('thankyouModal'));
-                        // discountModal.show();
-                        sendEmail();
-                        thankyouModal.show();
+                    // Basic email validation
+                    if (email && email.includes('@') && email.includes('.')) {
+                        // Hide newsletter modal
+                        var newsletterModalOrder = bootstrap.Modal.getInstance(document.getElementById('newsletterModalOrder'));
+                        newsletterModalOrder.hide();
                         
-                    }, 500);
-                } else {
-                    // Simple error visual
-                    emailInput.style.borderColor = '#ef4444';
-                    setTimeout(() => {
-                        emailInput.style.borderColor = '#fde68a';
-                    }, 2000);
-                }
-                localStorage.setItem('subscribed', true);
-            });
-        }
+                        // Show discount modal after a short delay
+                        setTimeout(function() {
+                            var thankyouModal = new bootstrap.Modal(document.getElementById('thankyouModal'));
+                            // discountModal.show();
+                            sendEmail();
+                            thankyouModal.show();
+                            
+                        }, 500);
+                    } else {
+                        // Simple error visual
+                        emailInput.style.borderColor = '#ef4444';
+                        setTimeout(() => {
+                            emailInput.style.borderColor = '#fde68a';
+                        }, 2000);
+                    }
+                    
+                    localStorage.setItem('subscribed', true);
+                });
+                   
+
+       
+
+}
+
+
         $(document).ready(function () {            
+            
             var slug = $('#slug').val();
-            // $(document).on('click', '.type-filter', function() {
-            //     var typeIds = [];
-            //     $('.type-filter').each(function() {
-            //         if ($(this).is(':checked')) {
-            //             typeIds.push($(this).attr('data-type-id'));
-            //         }
-            //     });
-            //     $.ajax({
-            //         url: "{{ route('ordercomponent_filter') }}",
-            //         method: "POST",
-            //         data: {
-            //             _token: "{{ csrf_token() }}",
-            //             type_ids: typeIds,
-            //             slug: slug
-            //         },
-            //         success:function(response) {
-            //             if (response.status == true) {
-            //                 var _htmlColours = '';
-            //                 response.colours.forEach((colr, index) => {
-            //                     _htmlColours += `
-            //                         <div class="col-lg-12 col-md-12 col-6">
-            //                             <div class="form-check form-check-inline">
-            //                                 <input data-colour-id="${colr.id}"  class="form-check-input colour-filter" type="checkbox"
-            //                                     name="colours[]" id="colour${index}"
-            //                                     value="${colr.id}">`;
-            //                                     if (colr.colour_code != '' || colr.colour_code != undefined) {
-            //                                         _htmlColours += `<label class="form-check-label d-flex gap-1" for="colour${index}">
-            //                                             <div class="d-inline border border-dark"
-            //                                                 style="border-radius: 50px; width: 20px;height:20px; background-color:${colr.colour_code};">
-            //                                             </div>
-            //                                             ${ colr.trade_colour ? colr.trade_colour : colr.name }
-            //                                         </label>`;
-            //                                     } else {
-            //                                         _htmlColours += `<label class="form-check-label d-flex gap-1" for="colour${index}">
-            //                                             <div class="border border-dark" style="border-radius: 50px; width: 20px;height:20px; background: linear-gradient(to right, red, yellow, green);">
-            //                                             </div>
-            //                                             ${ colr.trade_colour ? colr.trade_colour : colr.name }
-            //                                         </label>`;
-            //                                     }
-            //                             _htmlColours += `</div>
-            //                         </div>
-            //                     `;
-            //                 });
-            //                 $('#colours-filter').html(_htmlColours);
-            //                 var _htmlHeights = '';
-            //                 response.heights.forEach((hght, index) => {
-            //                     _htmlHeights += `
-            //                         <div class="col-12">
-            //                             <div class="form-check form-check-inline">
-            //                                 <input data-heights-id="${hght.height}" class="form-check-input height-filter" type="checkbox"
-            //                                     name="heights[]" id="height${index}"
-            //                                     value="${hght.height}">
-            //                                 <label class="form-check-label"
-            //                                     for="height${index}">
-            //                                     ${hght.height}
-            //                                 </label>
-            //                             </div>
-            //                         </div>
-            //                     `;
-            //                 });
-            //                 $('#heights-filter').html(_htmlHeights);
-            //                 var _htmlWidths = '';                            
-            //                 response.sizes.forEach((wdth, index) => {
-            //                     _htmlWidths += `
-            //                         <div class="col-12">
-            //                             <div class="form-check form-check-inline">
-            //                                 <input data-widths-id="${wdth.id}" class="form-check-input width-filter" type="checkbox"
-            //                                     name="widths[]" id="width${index}"
-            //                                     value="${wdth.width}">
-            //                                 <label class="form-check-label"
-            //                                     for="width${index}">
-            //                                     ${wdth.width}
-            //                                 </label>
-            //                             </div>
-            //                         </div>
-            //                     `;
-            //                 });
-            //                 $('#widths-filter').html(_htmlWidths);
-            //             }
-            //         }
-            //     });
-            // });
+            
+            $(document).on('click', '.type-filter', function() {
+                var slug = $('#slug').val();
+                var selectedTypes = [];
+                $('.type-filter').each(function() {
+                    if ($(this).is(':checked')) {
+                        selectedTypes.push($(this).attr('data-type-id'));
+                    }
+                });
+                
+                $.ajax({
+                    url: orderComponent_filter,
+                    method: "POST",
+                    data: {
+                        _token: "{{ csrf_token() }}",
+                        type_ids: selectedTypes,
+                        slug: slug
+                    },
+                    success:function(response) {
+                        if (response.status == true) {
+                            var _htmlColours = '';
+                            response.colours.forEach((colr, index) => {
+                                _htmlColours += `
+                                    <div class="col-lg-12 col-md-12 col-6">
+                                        <div class="form-check form-check-inline">
+                                            <input data-colour-id="${colr.id}"  class="form-check-input colour-filter" type="checkbox"
+                                                name="colours[]" id="colour${index}"
+                                                value="${colr.id}">`;
+                                                if (colr.colour_code != '' || colr.colour_code != undefined) {
+                                                    _htmlColours += `<label class="form-check-label d-flex gap-1" for="colour${index}">
+                                                        <div class="d-inline border border-dark"
+                                                            style="border-radius: 50px; width: 20px;height:20px; background-color:${colr.colour_code};">
+                                                        </div>
+                                                        ${ colr.trade_colour ? colr.trade_colour : colr.name }
+                                                    </label>`;
+                                                } else {
+                                                    _htmlColours += `<label class="form-check-label d-flex gap-1" for="colour${index}">
+                                                        <div class="border border-dark" style="border-radius: 50px; width: 20px;height:20px; background: linear-gradient(to right, red, yellow, green);">
+                                                        </div>
+                                                        ${ colr.trade_colour ? colr.trade_colour : colr.name }
+                                                    </label>`;
+                                                }
+                                        _htmlColours += `</div>
+                                    </div>
+                                `;
+                            });
+                            $('#colours-filter').html(_htmlColours);
+                        }
+                    }
+                });
+            });
         });
         var order_component_filter = '{{ route('order_component_filter', $category->slug) }}';
         var orderComponent_filter = '{{ route('ordercomponent_filter') }}';
