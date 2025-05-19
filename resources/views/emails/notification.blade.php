@@ -1,11 +1,11 @@
 @component('mail::message')
 
-<h3>{{$data['notification_type']}}</h3>
+<h3></h3>
 
-<p>Customer Name: {{$data['customer_name']}}</p>
-<p>Customer Email: {{$data['customer_email']}}</p>
-<p>Customer Contact: {{$data['customer_contact']}}</p>
-<p>Customer Payment Method: {{$data['payment_method']}}</p>
+<p>Customer Name: </p>
+<p>Customer Email: </p>
+<p>Customer Contact: </p>
+<p>Customer Payment Method: </p>
 
 <br>
 {{config('app.name')}}
