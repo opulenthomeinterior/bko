@@ -1056,7 +1056,7 @@
         <div class ="row justify-content-center" style="min-height:70vh">
          <div class="col-md-10 rounded position-relative" style="">
             
-            <iframe src="https://www.youtube.com/embed/4gpPxoqDezQ" 
+            <iframe src="https://www.youtube.com/embed/bk4_64zzKJI?si=YDMGTA1w622JuqTg" 
           
                 style="width: 100%; height: 100%;" 
                 frameborder="0" 
@@ -2264,7 +2264,7 @@ function sendEmail() {
                     email: email,
                     catalogue_register_now: 'catalogue_register_now',
                     first_order_discount: 'first_order_discount',
-                    message: 'You have successfully subscribed for 15% discount',
+                    message: 'Congratulations! You have won a free onsite survey <br> Your code is <b>May15</b>',
                     _token: '{{ csrf_token() }}' // if you're using Laravel
                 },
                 success: function (response) {

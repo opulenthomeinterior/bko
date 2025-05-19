@@ -52,7 +52,9 @@
             width: 100%;
             height: 65vh; /* Responsive height */
             min-height: 300px; /* Minimum height */
-            background-image: url('{{ asset('images/doors-hero-image.png') }}');
+            @if($slug == 'handles')
+            background-image: url('{{ asset('images/handles-hero-image.png') }}');
+            @endif
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -88,7 +90,7 @@
             margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
         }
 
-        .badges-container {
+         .badges-container {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -133,6 +135,48 @@
             object-fit: contain;
         }
 
+
+
+
+/* 
+        .badges-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: clamp(15px, 3vw, 40px);
+            max-width: 100%;
+        }
+
+        .badge-link {
+            display: block;
+            transition: transform 0.3s ease;
+            width: clamp(70px, 15vw, 100px);
+            height: clamp(70px, 15vw, 100px);
+        }
+
+        .badge-link:hover {
+            transform: scale(1.05);
+        }
+
+        .badge {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        } */
+/* 
+        .badge img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        } */
+
         .premium-badge {
             border: 2px solid #e74c3c;
         }
@@ -176,9 +220,29 @@
                 height: 40vh;
             }
             
-            .badges-container {
+            /* .badges-container {
                 gap: 15px;
             }
+            .badge{
+                margin-right: 5px;
+                min-height: 100px;
+                min-width: 100px;
+                max-height: 100px;
+                max-width: 100px;
+            } */
+
+             .badges-container {
+                gap: 10px;
+            }
+            
+            .badge-link {
+                min-width: 80px;
+                min-height: 80px;
+
+                max-width: 80px;
+                max-height: 80px;
+            }
+            
         }
 
         @media (max-width: 480px) {
@@ -188,15 +252,12 @@
             }
             
             .badges-container {
-                gap: 5px;
+                gap: 10px;
             }
             
             .badge-link {
-                min-width: 80px;
-                min-height: 80px;
-
-                max-width: 80px;
-                max-height: 80px;
+                width: 60px;
+                height: 60px;
             }
             
             .promo-box {
@@ -221,7 +282,8 @@
             background-color:#febd49;
         }
 
-                .custom-scrollbar::-webkit-scrollbar {
+
+        .custom-scrollbar::-webkit-scrollbar {
   width: 6px;
 }
 
@@ -244,6 +306,7 @@ td
 {
     vertical-align: middle;
 }
+
 
 
    .toggle-box {
@@ -299,6 +362,7 @@ td
     }
 
 
+
     </style>
 
 
@@ -307,8 +371,8 @@ td
 <section class="handles-section">
     <div class="handles-overlay"></div>
     <div class="handles-content">
-        <h2 class="handles-heading text-black fs-mob-30">{{strtoupper($slug)}}</h2>
-        <div class="badges-container">
+        <h2 class="handles-heading text-black">{{strtoupper($slug)}}</h2>
+         <div class="badges-container">
             <a href="" class="badge-link">
                 <div class="badge">
                     <img src="{{ asset('images/premium-badge.png') }}" alt="">
@@ -329,10 +393,16 @@ td
     </div>
     <div class="promo-box">
         <div class="promo-text">For a Limited<br>Time Only!</div>
-        <div class="promo-cta btn" data-bs-toggle="modal" data-bs-target="#newsletterModalDoor">Get <span class="text-danger">FREE </span><br>On-Site<br>Survey!</div>
+
+        <div class="promo-cta btn" data-bs-toggle="modal" data-bs-target="#newsletterModalOrder">Get <span class="text-danger">FREE </span><br>On-Site<br>Survey!</div>
     </div>
 </section>
 
+
+
+
+
+@if($slug == 'handles')
 <section class="container-fluid my-5 bg-light py-4">
     <div class="container">
     <div class="row">
@@ -356,53 +426,35 @@ td
 
         </div> --}}
         <div class="col-xl-6 mt-lg-5">
-            <h1 class="text-black fw-bold">Doors</h1>
+            <h1 class="text-black fw-bold">Handles</h1>
+            
 
-
-              
+        
              <p>
       <!-- For large screens -->
       <span class="desktop-only fs-5">
-        The doors are the first impression of your kitchen. You can <span class="fw-bold">transform your kitchen </span>by availing our <span class="fw-bold">kitchen cupboard and cabinet door replacement offer. </span>By selecting from our various colors and finishes you will give your kitchen a new life. Our doors are the essence of style and durability, creating an elegant look. <br>
-        <span class="fw-bold">Buy Kitchen Online</span>  offers a wide range of kitchen doors in various sizes to suit your needs. Our <span class="fw-bold">replacement kitchen doors</span> are available in different height and width dimensions, ensuring a perfect fit for your kitchen.
-        <br>
-         The standard size, commonly used, is <span class="fw-bold">715 x 496mm.</span> For larger requirements, we provide doors up to <span class="fw-bold"> 1965 x 596mm,</span> while the smallest size available is <span class="fw-bold">110 x 596mm.</span> With this extensive selection, you can easily find the right door to upgrade or replace your kitchen cupboard & cabinet doors.
-
+        A wide variety of handles for kitchen units are available at <span class="fw-bold"> Buy Kitchen Online.</span> The handles are suitable for drawers, cabinets and doors. You can <span class="fw-bold"> choose a handle according to your style preference and kitchen aesthetic. </span>To minimize space, you can go for a simple bar handle or select one of our drop handles if you want a statement piece. <br>
+        We offer a diverse range of <span class="fw-bold">handles for kitchen doors, cabinets, cupboards, and drawers</span>  to suit every style and preference. Choose from <span class="fw-bold">bar handles, pull handles, D pull handles, bow handles,</span> and more for a sleek modern look. For a classic touch, explore options like drop pendant handles, knob handles, and drop ring handles. Profile handles, vertical side profiles, and Scilm Gola handles provide innovative designs for contemporary kitchens. With additional accessories like connectors, trim caps, and end profiles, <span class="fw-bold">you can customize your kitchen</span> to perfection.
     </p>
             <!-- <p class="fs-5">{!! $category->description !!} </p> -->
           
                 
       </span>
 
-
-       <span class="mobile-only">
+      <!-- For mobile screens -->
+      <span class="mobile-only">
         <input type="checkbox" class="toggle-box" id="toggle-text" />
         <span class="text fs-5 fs-mob">
-          The doors are the first impression of your kitchen. You can <span class="fw-bold">transform your kitchen </span>by availing our <span class="fw-bold">kitchen cupboard and cabinet door replacement offer. </span>By selecting from our various colors and<span class="dots"></span><span class="more-text">  
-           finishes you will give your kitchen a new life. Our doors are the essence of style and durability, creating an elegant look.
-           <br>
-           <span class="fw-bold">Buy Kitchen Online</span>  offers a wide range of kitchen doors in various sizes to suit your needs. Our <span class="fw-bold">replacement kitchen doors</span> are available in different height and width dimensions, ensuring a perfect fit for your kitchen.
-           <br>
-           The standard size, commonly used, is <span class="fw-bold">715 x 496mm.</span> For larger requirements, we provide doors up to <span class="fw-bold"> 1965 x 596mm,</span> while the smallest size available is <span class="fw-bold">110 x 596mm.</span> With this extensive selection, you can easily find the right door to upgrade or replace your kitchen cupboard & cabinet doors.
-        
-        </span>
+          A wide variety of handles for kitchen units are available at <span class="fw-bold"> Buy Kitchen Online.</span> The handles are suitable for drawers, cabinets and doors. You can <span class="fw-bold"> choose a handle according to your style preference and kitchen aesthetic. </span>To minimize space,<span class="dots"></span><span class="more-text"> you can go for a simple bar handle or select one of our drop handles if you want a statement piece. <br>
+                We offer a diverse range of <span class="fw-bold">handles for kitchen doors, cabinets, cupboards, and drawers</span>  to suit every style and preference. Choose from <span class="fw-bold">bar handles, pull handles, D pull handles, bow handles,</span> and more for a sleek modern look. For a classic touch, explore options like drop pendant handles, knob handles, and drop ring handles. Profile handles, vertical side profiles, and Scilm Gola handles provide innovative designs for contemporary kitchens. With additional accessories like connectors, trim caps, and end profiles, <span class="fw-bold">you can customize your kitchen</span> to perfection.</span>
           <label for="toggle-text" class="read-toggle"></label>
         </span>
       </span>
+    </p>
 
 
-    
 
 
-<!-- 
-            <p class="fs-5 fs-mob">The doors are the first impression of your kitchen. You can <span class="fw-bold">transform your kitchen</span>by availing our <span class="fw-bold">kitchen cupboard and cabinet door replacement offer. </span>By selecting from our various colors and finishes you will give your kitchen a new life. Our doors are the essence of style and durability, creating an elegant look. </p> -->
-            <!-- <p class="fs-5">{!! $category->description !!} </p> -->
-            <!-- <p class="fs-5 fs-mob">
-                <span class="fw-bold">Buy Kitchen Online</span>  offers a wide range of kitchen doors in various sizes to suit your needs. Our <span class="fw-bold">replacement kitchen doors</span> are available in different height and width dimensions, ensuring a perfect fit for your kitchen.
-            </p>
-            <p class="fs-5 fs-mob">
-                The standard size, commonly used, is <span class="fw-bold">715 x 496mm.</span> For larger requirements, we provide doors up to <span class="fw-bold"> 1965 x 596mm,</span> while the smallest size available is <span class="fw-bold">110 x 596mm.</span> With this extensive selection, you can easily find the right door to upgrade or replace your kitchen cupboard & cabinet doors.
-            </p> -->
         </div>
         <div class="col-xl-2"></div>
         <div class="col-xl-4 p-0 col-12">
@@ -413,80 +465,130 @@ td
 </div>
 </section>
 
+@endif
+@if($slug == 'handles')
 <div class="container">
-    <div class="row">
     <div class="col-12">
-    <img class="img-fluid w-100 d-none d-md-block" src="{{ asset('images/replace-door.png') }}" alt="">
-    <img class="img-fluid w-100 d-md-none" src="{{ asset('images/replace-door-mobile.png') }}" alt="">
-   
+        <img class="img-fluid w-100 rounded shadow-lg d-none d-md-block" src="{{ asset('images/handles.png') }}" alt="">
+        <img class="img-fluid w-100 rounded shadow-lg  d-md-none" src="{{ asset('images/handles-mobile.png') }}" alt="">
+        
+    </div>
 </div>
-    </div>
-    <div class="row justify-content-center mt-5">
-        <div class="col-lg-1 d-lg-block"></div>
-        <div class="col-lg-4 col-12">
-             <a  class="btn bg-orange px-3 fw-bold text-uppercase rounded-0 " style="font-size:14px;" data-bs-toggle="modal" data-bs-target="#exampleModal"> book your FREE CONSULTATION NOW!</a>
-        </div>
-    </div>
 
+
+<div class="container mt-5">
+    <div class="row">
+       
+          <div class="col-lg-6 align-self-center" >
+                
+                <div class=" p-5 rounded shadow-lg order-sample  bg-white rounded-lg border-0 shadow-sm pe-5">
+                    <h4 style="font-size:30px; font-weight:600; color:#FDB71A"><span class="">Order a Sample</span> <span class="text-black text-uppercase">of Your Favorite HANDLE<span>
+                       <br></h4>
+                      <p  style="font-size: 16px;" class="mt-4">
+                        Choosing the right handle is an important decision. Our sample service allows you to experience the material, Color and Quality of our Handles in your own kitchen before committing to a full order.
+                      </p>
+                   
+                    <a href="{{ route('ordercomponentbyname', 'doors') }}" class="btn bg-orange px-1 fw-bold text-uppercase rounded-0 " style="font-size:14px;">  Order a Sample</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div style="height:400px">
+                <img class="w-100 object-fit-cover rounded border border-warning" src="{{ asset('images/handles-right-section.png') }}"  class="img-fluid"  alt="Modern Kitchen" 
+                style="height: 100%;"
+                >
+                </div>
+            </div>
+            
+
+      
+    </div>
 </div>
+@endif
+
+
+
 
     <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
+        <!-- <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('shop') }}" class="text-uppercase">Shop</a></li>
+                <li class="breadcrumb-item">
+                    <a href="{{ route('orderkitchen') }}" class="text-uppercase">
+                        Order Kitchen
+                    </a>
+                </li>
+            </ol>
+        </nav> -->
+
+        <!-- <div class="row mb-lg-5 mb-4">
+            <div class="col-12">
+                <h1 class="fs-1 fw-bolder text-dark text-uppercase">{{ $category->name }}</h1>
+            </div>
+            <div class="col-12">
+                <p class="text-dark">{!! $category->description !!}</p>
+            </div>
+        </div> -->
 
         <div class="row">
-            <div class="col-lg-3">
-                {{-- <div class="m-0">
+            <!-- <div class="col-lg-12 col-md-12  p-0 pb-4"> -->
+                <!-- <div class="m-0"> -->
                     <!-- <h4 class="text-dark" style="font-weight: 600; font-size: 1.3rem">Filters</h4> -->
-                    <h2 class="text-dark text-center" style="font-weight: 600;">Filters</h2>
+                    <!-- <h2 class="text-dark text-center" style="font-weight: 600;">Filters</h2> -->
                     <!-- <h3 style="font-weight: 600; font-size: 1.3rem" class="text-dark">CURRENT ITEMS:<span id="number-of-products">{{ $count }}</span></h3> -->
-                </div> --}}
+                <!-- </div> -->
                 <!-- <div class="bg-light border border-dark border-1 px-2 py-2 mt-2">
                     <h3 style="font-weight: 600; font-size: 1.3rem" class="text-dark">CURRENT ITEMS:<span id="number-of-products">{{ $count }}</span></h3>
                 </div> -->
-                <form action="" class="">
+
+
+               
+               
+            <!-- </div> -->
+            <div class="col-lg-3">
+                 <form action="" class="">
                     <input type="hidden" name="slug" id="slug" value="{{ $category->slug }}">
                     <div class="row">
-                        @if ($styles->count() > 0)
-                            @if ($category->slug == 'doors' || $category->slug == 'accessories')
-                                <div class="col-12 accordion accordion-flush mt-3" id="accordionFlushExample3">
+
+                        @if (strtolower($category->name) != 'doors' && strtolower($category->name) != 'handles' && strtolower($category->name) != 'taps' && strtolower($category->name) != 'upstands' && strtolower($category->name) != 'worktops' && strtolower($category->name) != 'breakfast bars') 
+                            @if ($types->count() > 0)
+                                <div class="col-12 accordion accordion-flush mt-3" id="accordionFlushExample1">
                                     <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
-                                        <h2 class="accordion-header " id="flush-headingThree">
-                                            <button class="accordion-button legend collapsed text-uppercase fs-mob-18" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
-                                                aria-expanded="true" aria-controls="flush-collapseThree">
-                                                Style
+                                        <h2 class="accordion-header" id="flush-headingOne">
+                                            <button class="accordion-button legend collapsed text-uppercase" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                                aria-expanded="true" aria-controls="flush-collapseOne">
+                                                @if (strtolower($category->name) != 'handles' && strtolower($category->name) != 'taps' && strtolower($category->name) != 'appliances' && strtolower($category->name) != 'worktops' && strtolower($category->name) != 'upstands' && strtolower($category->name) != 'breakfast bars' && strtolower($category->name) != 'sinks' && strtolower($category->name) != 'internals') SIZES @else TYPES @endif
                                             </button>
                                         </h2>
-                                        <div id="flush-collapseThree" class="accordion-collapse my-2 custom-scrollbar"
-                                            aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample3" style="max-height: 150px; overflow-y: scroll">
+                                        <div id="flush-collapseOne" class="accordion-collapse my-2 custom-scrollbar"
+                                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample1" style="max-height: 150px; overflow-y: auto">
                                             <div class="accordion-body px-0 py-0 pb-1">
-                                                <div class="row g-1">
-                                                    <!-- updated -->
-                                                    @foreach ($styles as $index => $style)
-                                                    <div class="col-12">
-                                                        <div class="form-check form-check-inline">
-                                                            <input data-style-id="{{$style->id}}" class="form-check-input  style-filter" {{ (!empty($urlStyleId) && ($urlStyleId == $style->id)) ? 'checked' : '' }} type="checkbox" name="styles[]" id="style{{ $index }}" value="{{ $style->id }}">
-                                                            <label class="form-check-label"
-                                                                for="style{{ $index }}">{{ $style->name }}
-                                                            </label>
+                                                <div class="ps-2">
+                                                    <div class="row g-1">
+                                                        @foreach ($types as $index => $type)
+                                                        <div class="col-12">
+                                                            <div class="form-check form-check-inline">
+                                                                <input data-type-id="{{$type->id}}" class="form-check-input type-filter" type="checkbox"
+                                                                    name="types[]" id="type{{ $index }}"
+                                                                    value="{{ $type->id }}">
+                                                                <label class="form-check-label"
+                                                                    for="type{{ $index }}">{{ $type->name }}
+                                                                </label>
+                                                            </div>
                                                         </div>
+                                                        @endforeach
                                                     </div>
-                                                    @endforeach
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                              
                             @endif
                         @endif
 
                         @if ($colours->count() > 0)
                             @if ($category->slug != 'appliances')
-                            @if ($category->slug =='handles')
-                            <div class="col-md-6 mt-3">
-                                                     <h2 class="text-black">Flawless Finishes. Reliable Function.</h2>
-                                                </div>
-                             @endif                   
                                 <div class="col-12 accordion accordion-flush mt-3" id="accordionFlushExample4">
                                     <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
                                         <h2 class="accordion-header" id="flush-headingFour">
@@ -532,162 +634,12 @@ td
                                                 
                             @endif
                         @endif
-
-                        @if ($assemblies->count() > 0)
-                            {{--<div class="col-3 accordion accordion-flush mt-3" id="accordionFlushExample2">
-                                <div class="accordion-item bg-transparent border border-warning border-1 rounded-0 px-2">
-                                    <h2 class="accordion-header" id="flush-headingTwo">
-                                        <button class="accordion-button legend collapsed text-uppercase" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
-                                            aria-expanded="true" aria-controls="flush-collapseTwo">
-                                            ASSEMBLY
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseTwo" class="accordion-collapse my-2"
-                                        aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample2">
-                                        <div class="accordion-body px-0 py-0 pb-1">
-                                            <div class="row g-1">
-                                                @foreach ($assemblies as $index => $assembly)
-                                                    @if ($assembly->slug == 'stock' && ($category->slug == 'doors' || $category->slug == 'accessories' || $category->slug == 'handles' || $category->slug == 'sinks' || $category->slug == 'internals'))
-                                                        <div class="col-lg-12 col-md-12 col-6">
-                                                            <div class="form-check form-check-inline">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    name="assemblies[]" id="assembly{{ $index }}"
-                                                                    value="{{ $assembly->id }}">
-                                                                <label class="form-check-label"
-                                                                    for="assembly{{ $index }}">{{ $assembly->name }}
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    @else
-                                                        
-                                                    @endif
-                                                @endforeach
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>--}}
-                        @endif
-
-                        @if (strtolower($category->name) != 'handles')
-                            @if ($heights->count() > 0)
-                                <div class="col-12 accordion accordion-flush mt-3" id="accordionFlushExample5">
-                                    <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
-                                        <h2 class="accordion-header" id="flush-headingFive">
-                                            <button class="accordion-button legend collapsed text-uppercase" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseFive"
-                                                aria-expanded="true" aria-controls="flush-collapseFive">
-                                                Heights
-                                            </button>
-                                        </h2>
-                                        <div id="flush-collapseFive" class="accordion-collapse my-2 custom-scrollbar"
-                                            aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample5" style="max-height: 150px; overflow-y: auto">
-                                            <div class="accordion-body px-0 py-0 pb-1">
-                                                <div class="ps-2">
-                                                    <div class="row g-1" id="heights-filter">
-                                                        @foreach ($heights as $index => $height)
-                                                        <div class="col-12">
-                                                            <div class="form-check form-check-inline">
-                                                                <input data-heights-id="{{$height->height}}" class="form-check-input height-filter" type="checkbox"
-                                                                    name="heights[]" id="height{{ $index }}"
-                                                                    value="{{ $height->height }}">
-                                                                <label class="form-check-label"
-                                                                    for="height{{ $index }}">
-                                                                    {{ $height->height }}
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        @endforeach
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endif
-                        @endif
-
-                        @if (strtolower($category->name) == 'doors')
-                            @if ($widths->count() > 0)
-                                <div class="col-12 accordion accordion-flush mt-3" id="accordionFlushExample5">
-                                    <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
-                                        <h2 class="accordion-header" id="flush-headingFive">
-                                            <button class="accordion-button legend collapsed text-uppercase" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseFive"
-                                                aria-expanded="true" aria-controls="flush-collapseFive">
-                                                Widths
-                                            </button>
-                                        </h2>
-                                        <div id="flush-collapseFive" class="accordion-collapse my-2 custom-scrollbar"
-                                            aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample5" style="max-height: 150px; overflow-y: auto">
-                                            <div class="accordion-body px-0 py-0 pb-1">
-                                                <div class="ps-2">
-                                                    <div class="row g-1" id="widths-filter">
-                                                        @foreach ($widths as $index => $width)
-                                                        <div class="col-12">
-                                                            <div class="form-check form-check-inline">
-                                                                <input data-widths-id="{{$width->id}}" class="form-check-input width-filter" type="checkbox"
-                                                                    name="widths[]" id="width{{ $index }}"
-                                                                    value="{{ $width->width }}">
-                                                                <label class="form-check-label"
-                                                                    for="width{{ $index }}">
-                                                                    {{ $width->width }}
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        @endforeach
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endif
-                        @endif
-
-                        @if (strtolower($category->name) != 'doors' && strtolower($category->name) != 'handles' && strtolower($category->name) != 'taps' && strtolower($category->name) != 'worktops' && strtolower($category->name) != 'appliances' && strtolower($category->name) != 'upstands' && strtolower($category->name) != 'breakfast bars' && strtolower($category->name) != 'sinks' && strtolower($category->name) != 'internals') 
-                            @if ($types->count() > 0)
-                                <div class="col-12 accordion accordion-flush mt-3" id="accordionFlushExample1">
-                                    <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
-                                        <h2 class="accordion-header" id="flush-headingOne">
-                                            <button class="accordion-button legend collapsed text-uppercase" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
-                                                aria-expanded="true" aria-controls="flush-collapseOne">
-                                                @if (strtolower($category->name) != 'handles' && strtolower($category->name) != 'taps' && strtolower($category->name) != 'worktops' && strtolower($category->name) != 'appliances' && strtolower($category->name) != 'upstands' && strtolower($category->name) != 'breakfast bars' && strtolower($category->name) != 'sinks' && strtolower($category->name) != 'internals') SIZES @else TYPES @endif
-                                            </button>
-                                        </h2>
-                                        <div id="flush-collapseOne" class="accordion-collapse my-2 custom-scrollbar"
-                                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample1" style="max-height: 150px; overflow-y: auto">
-                                            <div class="accordion-body px-0 py-0 pb-1">
-                                                <div class="ps-2">
-                                                    <div class="row g-1">
-                                                        @foreach ($types as $index => $type)
-                                                        <div class="col-12">
-                                                            <div class="form-check form-check-inline">
-                                                                <input data-type-id="{{$type->id}}" id="type-filter" class="form-check-input" type="checkbox"
-                                                                    name="types[]" id="type{{ $index }}"
-                                                                    value="{{ $type->id }}">
-                                                                <label class="form-check-label"
-                                                                    for="type{{ $index }}">{{ $type->name }}
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        @endforeach
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endif
-                        @endif
                     </div>
                 </form>
-               
             </div>
+            
 
-            <div class="col-lg-9 col-12 mt-md-3">
+            <div class=" col-lg-9 col-12 mt-md-3">
                 <div class="table-responsive custom-scrollbar">
                 <table class="table table-bordered">
                     <thead>
@@ -697,9 +649,13 @@ td
                         <th>Dimensions</th>
                         <th>Qty</th>
                         <th>Price</th>
+                        @if($slug != 'handles')
                         <th>Style</th>
+                         @endif
                         <th>Colour</th>
+                         @if($slug != 'handles')
                         <th>Assembly</th>
+                         @endif
                     </thead>
                     <tbody id="products_container">
                         @if ($products->count() > 0)
@@ -710,7 +666,7 @@ td
                                         <a href="{{ route('orderbyproduct', [$product->slug, $product->serial_number]) }}">
                                             <figure class="my-0" style="margin-bottom: 0px !important;">
                                                 <img class="product-image px-0"
-                                                    style="margin-bottom: 0px !important;min-height:175px;max-height:175px;max-width:225px;object-fit:contain"
+                                                    style="margin-bottom: 0px !important;min-height:100px;max-height:100px;max-width:100px;object-fit:contain"
                                                     src="{{ !empty($product->image_path) ? asset('imgs/products/'.$product->image_path) : asset('images/no-image-available.jpg') }}"
                                                     alt="Card image cap" data-bs-toggle="modal"
                                                     data-bs-target="#productModal{{ $index }}">
@@ -726,29 +682,28 @@ td
                                                 <input id="minus{{ $product->id }}"
                                                     class="minus border bg-dark text-light p-0"
                                                     type="button" value="-"
-                                                    onclick="decreaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}')" />
+                                                    onclick="decreaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}')" />
                                                 <input id="quantity{{ $product->id }}"
                                                     class="quantity border border-black text-center"
                                                     type="text" value="0" name="quantity"
-                                                    oninput="inputQty(this.value, '{{$product->id}}', 
-                                                    '{{$product->product_code}}',
-                                                    '{{ $product->full_title }}', '{{ $product->price }}', '{{ $product->discounted_price }}', 
-                                                    '{{ $product->discounted_percentage }}')" />
+                                                    onkeyup="inputQty(this.value, '{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}'
+                                                    )" />
                                                 <input id="plus{{ $product->id }}"
                                                     class="plus border bg-dark text-light p-0"
                                                     type="button" value="+" type="number"
                                                     max="10"
                                                     {{$product->price == 0 ? 'disabled' : '' }} 
-                                                    onclick="increaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}')" />
+                                                    onclick="increaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}')"  />
                                             </div>
-                                            {{-- <div class="col-6">
+                                            <!-- <div class="col-6">
                                                 <p class="fs-5 fw-bold mt-lg-2 text-dark">
                                                     {{ $product->price == 0 ? 'Out of Stock' : '£' . $product->price }}
                                                 </p>
-                                            </div> --}}
+                                            </div> -->
                                         </div>
                                     </td>
                                     <td>{{ $product->price == 0 ? 'Out of Stock' : '£' . $product->price }}</td>
+                                   @if($slug != 'handles')
                                     <td>
                                         <div class="container-fluid">
                                             @if ($product->style)
@@ -756,6 +711,7 @@ td
                                             @endif
                                         </div>
                                     </td>
+                                    @endif
                                     <td>
                                         @if ($product->colour)
                                             <small>
@@ -763,6 +719,7 @@ td
                                             </small>
                                         @endif
                                     </td>
+                                     @if($slug != 'handles')
                                     <td>
                                         @if ($category->name != 'DOORS')
                                         @if ($product->assembly)
@@ -770,6 +727,7 @@ td
                                         @endif
                                         @endif
                                     </td>
+                                    @endif
                                 </tr>
                             @endforeach
                         @else
@@ -783,7 +741,6 @@ td
                 </table>
             </div>
             </div>
-
             <div class="row justify-content-center">
                 <div class="col-lg-3">
             <div id="custom-pagination-container">
@@ -833,13 +790,9 @@ td
                 </nav>
 
             </div>
+            </div>
+            </div>
         </div>
-    </div>
-        </div>
-
-        
-
-
 
         <div class="row">
 
@@ -890,68 +843,10 @@ td
     </section>
 
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          {{-- <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1> --}}
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <div class=" col-12">
-                @include('frontend.inquiry_form')
-                {{-- <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning p-4">
-                    @csrf
-                    <div>
-                        <div class="d-block">
-                            <div class="text-center text-dark fw-bold">FOR FREE SURVEY AND QUOTE <span class="text-warning"> CALL US NOW!</span></div>
-                             <div class="my-2 d-flex justify-content-center">
-                                <a href="tel:02080505605" class="btn btn-warning text-decoration-underline text-center text-dark fs-4 fw-bold">
-                                <i class="bi pt-2 me-2 bi-phone text-dark"></i> 
-                                    020 805 05605
-                                </a>
-                            </div> 
-                            
-                        </div>
-                    </div>
-                    <h6 class="text-dark text-center fw-bold">OR</h6>
-                    <hr class="border border-dark">
-
-                    
-                    <h4 id="blinking-text" class="bg-warning  fw-bold text-center py-2 rounded-pill">
-                        Book a free consultation now!
-                    </h4>
-                    <hr class="border border-dark">
-                    <div class="mb-3">
-                        <input type="text" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="name" id="name" placeholder="Enter your name">
-                    </div>
-                    <div class="mb-3">
-                        <input type="email" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="email" id="email" placeholder="Enter your email">
-                    </div>
-                    <div class="mb-3">
-                        <input type="number" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="phone" id="phone" placeholder="Enter your phone number">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="text-white py-2 px-3  text-end fw-bold" style="background-color:#2a6161;" >Call US AT</label>
-                        <input type="datetime-local" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="call_time">
-                    </div>
-                    <div class="mb-3">
-                        <textarea name="message" id="message" name="message" rows="3" class="w-100 rounded-0 border border-dark form-control text-dark" placeholder="Enter your message"></textarea>
-                    </div>
-                    <button type="submit" class=" btn py-2 px-4 rounded-0 fw-bolder text-uppercase text-white" style="background-color:#2a6161;">Submit</button>
-                </form> --}}
-            </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-          {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
-        </div>
-      </div>
-    </div>
-  </div>
 
 
-        <div class="modal fade" id="newsletterModalDoor" tabindex="-1" aria-labelledby="newsletterModalDoorLabel" aria-hidden="true">
+
+      <div class="modal fade" id="newsletterModalOrder" tabindex="-1" aria-labelledby="newsletterModalOrderLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-md">
         <div class="modal-content">
             <div class="newsletter-container">
@@ -970,19 +865,17 @@ td
                     <p class="terms-text">Terms & Conditions Applied.</p>
                     <div class="subscribe-container">
                         <input type="email" id="emailInput" class="form-control news-letter-input" placeholder="Enter Your Email">
-                        <button class="subscribe-btn" id="subscribeBtnDoor" onclick="newsletterModalDoorFn()">Subscribe</button>
+                        <button class="subscribe-btn" id="subscribeBtnOrder" onclick="newsletterModalOrderFn()">Subscribe</button>
                     </div>
                     <p class="privacy-text">We respect your Privacy. Unsubscribe at any time.</p>
                 </div>
-
                 
             </div>
         </div>
     </div>
 </div>
 
-
-
+  <!-- Thank You Modal -->
 <div class="modal fade" id="thankyouModal" tabindex="-1" aria-labelledby="thankyouModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered">
   <div class="modal-content">
@@ -1046,14 +939,14 @@ td
 
 
 
+
     @push('scripts')
     <script>
 
 
-
-function newsletterModalDoorFn(){
+function newsletterModalOrderFn(){
     
-     document.getElementById('subscribeBtnDoor').addEventListener('click',function(){
+     document.getElementById('subscribeBtnOrder').addEventListener('click',function(){
                     console.log("btn clicked")
                     const emailInput = document.getElementById('emailInput');
                     const email = emailInput.value.trim();
@@ -1062,8 +955,8 @@ function newsletterModalDoorFn(){
                     // Basic email validation
                     if (email && email.includes('@') && email.includes('.')) {
                         // Hide newsletter modal
-                        var newsletterModalDoor = bootstrap.Modal.getInstance(document.getElementById('newsletterModalDoor'));
-                        newsletterModalDoor.hide();
+                        var newsletterModalOrder = bootstrap.Modal.getInstance(document.getElementById('newsletterModalOrder'));
+                        newsletterModalOrder.hide();
                         
                         // Show discount modal after a short delay
                         setTimeout(function() {
@@ -1090,28 +983,25 @@ function newsletterModalDoorFn(){
 }
 
 
-
-
-
-
-
         $(document).ready(function () {            
             
             var slug = $('#slug').val();
-
-            $(document).on('click', '.style-filter', function() {
-                var styleIds = [];
-                $('.style-filter').each(function() {
+            
+            $(document).on('click', '.type-filter', function() {
+                var slug = $('#slug').val();
+                var selectedTypes = [];
+                $('.type-filter').each(function() {
                     if ($(this).is(':checked')) {
-                        styleIds.push($(this).attr('data-style-id'));
+                        selectedTypes.push($(this).attr('data-type-id'));
                     }
                 });
+                
                 $.ajax({
-                    url: "{{ route('ordercomponent_filter') }}",
+                    url: orderComponent_filter,
                     method: "POST",
                     data: {
                         _token: "{{ csrf_token() }}",
-                        style_ids: styleIds,
+                        type_ids: selectedTypes,
                         slug: slug
                     },
                     success:function(response) {
@@ -1143,166 +1033,10 @@ function newsletterModalDoorFn(){
                                 `;
                             });
                             $('#colours-filter').html(_htmlColours);
-                            var _htmlHeights = '';
-                            response.heights.forEach((hght, index) => {
-                                _htmlHeights += `
-                                    <div class="col-12">
-                                        <div class="form-check form-check-inline">
-                                            <input data-heights-id="${hght.height}" class="form-check-input height-filter" type="checkbox"
-                                                name="heights[]" id="height${index}"
-                                                value="${hght.height}">
-                                            <label class="form-check-label"
-                                                for="height${index}">
-                                                ${hght.height}
-                                            </label>
-                                        </div>
-                                    </div>
-                                `;
-                            });
-                            $('#heights-filter').html(_htmlHeights);
-                            var _htmlWidths = '';                            
-                            response.sizes.forEach((wdth, index) => {
-                                _htmlWidths += `
-                                    <div class="col-12">
-                                        <div class="form-check form-check-inline">
-                                            <input data-widths-id="${wdth.id}" class="form-check-input width-filter" type="checkbox"
-                                                name="widths[]" id="width${index}"
-                                                value="${wdth.width}">
-                                            <label class="form-check-label"
-                                                for="width${index}">
-                                                ${wdth.width}
-                                            </label>
-                                        </div>
-                                    </div>
-                                `;
-                            });
-                            $('#widths-filter').html(_htmlWidths);
                         }
                     }
                 });
             });
-            
-            $(document).on('click', '.colour-filter', function() {
-                var slug = $('#slug').val();
-                var styleIds = [];
-                $('.style-filter').each(function() {
-                    if ($(this).is(':checked')) {
-                        styleIds.push($(this).attr('data-style-id'));
-                    }
-                });
-                var selectedColors = [];
-                $('.colour-filter').each(function() {
-                    if ($(this).is(':checked')) {
-                        selectedColors.push($(this).attr('data-colour-id'));
-                    }
-                });
-                
-                $.ajax({
-                    url: orderComponent_filter,
-                    method: "POST",
-                    data: {
-                        _token: "{{ csrf_token() }}",
-                        colour_style_ids: styleIds,
-                        colour_ids: selectedColors,
-                        slug: slug
-                    },
-                    success:function(response) {
-                        if (response.status == true) {
-                            var _html = '';
-                            response.heights.forEach((hght, index) => {
-                                _html += `
-                                    <div class="col-12">
-                                        <div class="form-check form-check-inline">
-                                            <input data-heights-id="${hght.height}" class="form-check-input height-filter" type="checkbox"
-                                                name="heights[]" id="height${index}"
-                                                value="${hght.height}">
-                                            <label class="form-check-label"
-                                                for="height${index}">
-                                                ${hght.height}
-                                            </label>
-                                        </div>
-                                    </div>
-                                `;
-                            });
-                            $('#heights-filter').html(_html);
-                            var _htmlWidths = '';                            
-                            response.sizes.forEach((wdth, index) => {
-                                _htmlWidths += `
-                                    <div class="col-12">
-                                        <div class="form-check form-check-inline">
-                                            <input data-widths-id="${wdth.id}" class="form-check-input width-filter" type="checkbox"
-                                                name="widths[]" id="width${index}"
-                                                value="${wdth.width}">
-                                            <label class="form-check-label"
-                                                for="width${index}">
-                                                ${wdth.width}
-                                            </label>
-                                        </div>
-                                    </div>
-                                `;
-                            });
-                            $('#widths-filter').html(_htmlWidths);
-                        }
-                    }
-                });
-            });
-            
-            $(document).on('click', '.height-filter', function() {
-                var slug = $('#slug').val();
-                var styleIds = [];
-                $('.style-filter').each(function() {
-                    if ($(this).is(':checked')) {
-                        styleIds.push($(this).attr('data-style-id'));
-                    }
-                });
-                var selectedColors = [];
-                $('.colour-filter').each(function() {
-                    if ($(this).is(':checked')) {
-                        selectedColors.push($(this).attr('data-colour-id'));
-                    }
-                });
-                var selectedHeights = [];
-                $('.height-filter').each(function() {
-                    if ($(this).is(':checked')) {
-                        selectedHeights.push($(this).attr('data-heights-id'));
-                    }
-                });
-                $.ajax({
-                    url: orderComponent_filter,
-                    method: "POST",
-                    data: {
-                        _token: "{{ csrf_token() }}",
-                        height_style_ids: styleIds,
-                        height_colour_ids: selectedColors,
-                        height_ids: selectedHeights,
-                        slug: slug
-                    },
-                    success:function(response) {
-                        if (response.status == true) {
-                            var _html = '';
-                            console.log(response.sizes, 'widths');
-                            
-                            response.sizes.forEach((wdth, index) => {
-                                _html += `
-                                    <div class="col-12">
-                                        <div class="form-check form-check-inline">
-                                            <input data-widths-id="${wdth.id}" class="form-check-input width-filter" type="checkbox"
-                                                name="widths[]" id="width${index}"
-                                                value="${wdth.width}">
-                                            <label class="form-check-label"
-                                                for="width${index}">
-                                                ${wdth.width}
-                                            </label>
-                                        </div>
-                                    </div>
-                                `;
-                            });
-                            $('#widths-filter').html(_html);
-                        }
-                    }
-                });
-            });
-
         });
         var order_component_filter = '{{ route('order_component_filter', $category->slug) }}';
         var orderComponent_filter = '{{ route('ordercomponent_filter') }}';

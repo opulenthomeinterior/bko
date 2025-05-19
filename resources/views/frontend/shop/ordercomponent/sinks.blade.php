@@ -549,48 +549,46 @@ td
                  <form action="" class="">
                     <input type="hidden" name="slug" id="slug" value="{{ $category->slug }}">
                     <div class="row">
-                        @if ($styles->count() > 0)
-                            @if ($category->slug == 'doors' || $category->slug == 'accessories')
-                                <div class="col-12 accordion accordion-flush mt-3 " id="accordionFlushExample3">
+
+                        @if (strtolower($category->name) != 'doors' && strtolower($category->name) != 'handles' && strtolower($category->name) != 'taps' && strtolower($category->name) != 'upstands' && strtolower($category->name) != 'worktops' && strtolower($category->name) != 'breakfast bars' && strtolower($category->name) != 'internals') 
+                            @if ($types->count() > 0)
+                                <div class="col-12 accordion accordion-flush mt-3" id="accordionFlushExample1">
                                     <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
-                                        <h2 class="accordion-header" id="flush-headingThree">
+                                        <h2 class="accordion-header" id="flush-headingOne">
                                             <button class="accordion-button legend collapsed text-uppercase" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
-                                                aria-expanded="true" aria-controls="flush-collapseThree">
-                                                Style
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                                aria-expanded="true" aria-controls="flush-collapseOne">
+                                                @if (strtolower($category->name) != 'handles' && strtolower($category->name) != 'taps' && strtolower($category->name) != 'appliances' && strtolower($category->name) != 'worktops' && strtolower($category->name) != 'upstands' && strtolower($category->name) != 'breakfast bars' && strtolower($category->name) != 'sinks' && strtolower($category->name) != 'internals') SIZES @else TYPES @endif
                                             </button>
                                         </h2>
-                                        <div id="flush-collapseThree" class="accordion-collapse my-2 custom-scrollbar "
-                                            aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample3" style="max-height: 150px; overflow-y: scroll">
+                                        <div id="flush-collapseOne" class="accordion-collapse my-2 custom-scrollbar"
+                                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample1" style="max-height: 150px; overflow-y: auto">
                                             <div class="accordion-body px-0 py-0 pb-1">
-                                                <div class="row g-1">
-                                                    <!-- updated -->
-                                                    @foreach ($styles as $index => $style)
-                                                    <div class="col-12">
-                                                        <div class="form-check form-check-inline">
-                                                            <input data-style-id="{{$style->id}}" class="form-check-input style-filter" {{ (!empty($urlStyleId) && ($urlStyleId == $style->id)) ? 'checked' : '' }} type="checkbox" name="styles[]" id="style{{ $index }}" value="{{ $style->id }}">
-                                                            <label class="form-check-label"
-                                                                for="style{{ $index }}">{{ $style->name }}
-                                                            </label>
+                                                <div class="ps-2">
+                                                    <div class="row g-1">
+                                                        @foreach ($types as $index => $type)
+                                                        <div class="col-12">
+                                                            <div class="form-check form-check-inline">
+                                                                <input data-type-id="{{$type->id}}" class="form-check-input type-filter" type="checkbox"
+                                                                    name="types[]" id="type{{ $index }}"
+                                                                    value="{{ $type->id }}">
+                                                                <label class="form-check-label"
+                                                                    for="type{{ $index }}">{{ $type->name }}
+                                                                </label>
+                                                            </div>
                                                         </div>
+                                                        @endforeach
                                                     </div>
-                                                    @endforeach
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                              
                             @endif
                         @endif
 
                         @if ($colours->count() > 0)
                             @if ($category->slug != 'appliances')
-                            <!-- @if ($category->slug =='handles') -->
-                            <!-- <div class="col-md-6 mt-3">
-                                                     <h2 class="text-black">Flawless Finishes. Reliable Function.</h2>
-                                                </div> -->
-                             <!-- @endif                    -->
                                 <div class="col-12 accordion accordion-flush mt-3" id="accordionFlushExample4">
                                     <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
                                         <h2 class="accordion-header" id="flush-headingFour">
@@ -634,117 +632,6 @@ td
                                     </div>
                                 </div>
                                                 
-                            @endif
-                        @endif
-
-                        @if ($assemblies->count() > 0)
-                            {{--<div class="col-3 accordion accordion-flush mt-3" id="accordionFlushExample2">
-                                <div class="accordion-item bg-transparent border border-warning border-1 rounded-0 px-2">
-                                    <h2 class="accordion-header" id="flush-headingTwo">
-                                        <button class="accordion-button legend collapsed text-uppercase" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
-                                            aria-expanded="true" aria-controls="flush-collapseTwo">
-                                            ASSEMBLY
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseTwo" class="accordion-collapse my-2 custom-scrollbar"
-                                        aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample2">
-                                        <div class="accordion-body px-0 py-0 pb-1">
-                                            <div class="row g-1">
-                                                @foreach ($assemblies as $index => $assembly)
-                                                    @if ($assembly->slug == 'stock' && ($category->slug == 'doors' || $category->slug == 'accessories' || $category->slug == 'handles' || $category->slug == 'sinks' || $category->slug == 'internals'))
-                                                        <div class="col-lg-12 col-md-12 col-6">
-                                                            <div class="form-check form-check-inline">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    name="assemblies[]" id="assembly{{ $index }}"
-                                                                    value="{{ $assembly->id }}">
-                                                                <label class="form-check-label"
-                                                                    for="assembly{{ $index }}">{{ $assembly->name }}
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    @else
-                                                        
-                                                    @endif
-                                                @endforeach
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>--}}
-                        @endif
-
-                        @if (strtolower($category->name) != 'handles' && strtolower($category->name) != 'appliances' && strtolower($category->name) != 'worktops' && strtolower($category->name) != 'upstands' && strtolower($category->name) != 'breakfast bars' && strtolower($category->name) != 'sinks' && strtolower($category->name) != 'internals')
-                            @if ($heights->count() > 0)
-                                <div class="col-12 accordion accordion-flush mt-3" id="accordionFlushExample5">
-                                    <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
-                                        <h2 class="accordion-header" id="flush-headingFive">
-                                            <button class="accordion-button legend collapsed text-uppercase" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseFive"
-                                                aria-expanded="true" aria-controls="flush-collapseFive">
-                                                Heights
-                                            </button>
-                                        </h2>
-                                        <div id="flush-collapseFive" class="accordion-collapse my-2 custom-scrollbar"
-                                            aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample5" style="max-height: 150px; overflow-y: auto">
-                                            <div class="accordion-body px-0 py-0 pb-1">
-                                                <div class="ps-2">
-                                                    <div class="row g-1" id="heights-filter">
-                                                        @foreach ($heights as $index => $height)
-                                                        <div class="col-12">
-                                                            <div class="form-check form-check-inline">
-                                                                <input data-heights-id="{{$height->id}}" id="height-filter" class="form-check-input" type="checkbox"
-                                                                    name="heights[]" id="height{{ $index }}"
-                                                                    value="{{ $height->height }}">
-                                                                <label class="form-check-label"
-                                                                    for="height{{ $index }}">
-                                                                    {{ $height->height }}
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        @endforeach
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endif
-                        @endif
-                        @if (strtolower($category->name) != 'doors' && strtolower($category->name) != 'handles' && strtolower($category->name) != 'taps' && strtolower($category->name) != 'upstands' && strtolower($category->name) != 'worktops' && strtolower($category->name) != 'breakfast bars') 
-                            @if ($types->count() > 0)
-                                <div class="col-12 accordion accordion-flush mt-3" id="accordionFlushExample1">
-                                    <div class="accordion-item bg-transparent border border-warning border-1 rounded-0">
-                                        <h2 class="accordion-header" id="flush-headingOne">
-                                            <button class="accordion-button legend collapsed text-uppercase" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
-                                                aria-expanded="true" aria-controls="flush-collapseOne">
-                                                @if (strtolower($category->name) != 'handles' && strtolower($category->name) != 'taps' && strtolower($category->name) != 'appliances' && strtolower($category->name) != 'worktops' && strtolower($category->name) != 'upstands' && strtolower($category->name) != 'breakfast bars' && strtolower($category->name) != 'sinks' && strtolower($category->name) != 'internals') SIZES @else TYPES @endif
-                                            </button>
-                                        </h2>
-                                        <div id="flush-collapseOne" class="accordion-collapse my-2 custom-scrollbar"
-                                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample1" style="max-height: 150px; overflow-y: auto">
-                                            <div class="accordion-body px-0 py-0 pb-1">
-                                                <div class="ps-2">
-                                                    <div class="row g-1">
-                                                        @foreach ($types as $index => $type)
-                                                        <div class="col-12">
-                                                            <div class="form-check form-check-inline">
-                                                                <input data-type-id="{{$type->id}}" id="type-filter" class="form-check-input" type="checkbox"
-                                                                    name="types[]" id="type{{ $index }}"
-                                                                    value="{{ $type->id }}">
-                                                                <label class="form-check-label"
-                                                                    for="type{{ $index }}">{{ $type->name }}
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        @endforeach
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             @endif
                         @endif
                     </div>
@@ -959,93 +846,93 @@ td
 
 
 
-      <div class="modal fade" id="newsletterModalOrder" tabindex="-1" aria-labelledby="newsletterModalOrderLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-md">
-        <div class="modal-content">
-            <div class="newsletter-container">
-                <button type="button" class="close-btn subscribed-close" data-bs-dismiss="modal" aria-label="Close">
-                    &times;
-                </button>
-                 
-                <div class="popup-image">
-                    <img src="{{asset('images/main-popup-image.png')}}" class="img-fluid w-100" alt="">
-                </div>
-                <div class="newsletter-content">
-                    <h2 class="content-title mt-5 text-black" style="font-size: 40px;">Subscribe To Get <span class="free-text">FREE On-Site Survey</span></h2>
-                        
-                    <p class="offer-text"><span class="discount-text">For your Peace of Mind, </span> expert installation is also provided<br> <span class="" style="color: green;">(Qoute Available)</span></p>
-                        
-                    <p class="terms-text">Terms & Conditions Applied.</p>
-                    <div class="subscribe-container">
-                        <input type="email" id="emailInput" class="form-control news-letter-input" placeholder="Enter Your Email">
-                        <button class="subscribe-btn" id="subscribeBtnOrder" onclick="newsletterModalOrderFn()">Subscribe</button>
+    <div class="modal fade" id="newsletterModalOrder" tabindex="-1" aria-labelledby="newsletterModalOrderLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+            <div class="modal-content">
+                <div class="newsletter-container">
+                    <button type="button" class="close-btn subscribed-close" data-bs-dismiss="modal" aria-label="Close">
+                        &times;
+                    </button>
+                    
+                    <div class="popup-image">
+                        <img src="{{asset('images/main-popup-image.png')}}" class="img-fluid w-100" alt="">
                     </div>
-                    <p class="privacy-text">We respect your Privacy. Unsubscribe at any time.</p>
+                    <div class="newsletter-content">
+                        <h2 class="content-title mt-5 text-black" style="font-size: 40px;">Subscribe To Get <span class="free-text">FREE On-Site Survey</span></h2>
+                            
+                        <p class="offer-text"><span class="discount-text">For your Peace of Mind, </span> expert installation is also provided<br> <span class="" style="color: green;">(Qoute Available)</span></p>
+                            
+                        <p class="terms-text">Terms & Conditions Applied.</p>
+                        <div class="subscribe-container">
+                            <input type="email" id="emailInput" class="form-control news-letter-input" placeholder="Enter Your Email">
+                            <button class="subscribe-btn" id="subscribeBtnOrder" onclick="newsletterModalOrderFn()">Subscribe</button>
+                        </div>
+                        <p class="privacy-text">We respect your Privacy. Unsubscribe at any time.</p>
+                    </div>
+                    
                 </div>
-                
             </div>
         </div>
     </div>
-</div>
 
-  <!-- Thank You Modal -->
-<div class="modal fade" id="thankyouModal" tabindex="-1" aria-labelledby="thankyouModalLabel" aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered">
-  <div class="modal-content">
-    <div class="modal-header">
-      <button type="button" class="butn-close close-btn" data-bs-dismiss="modal" aria-label="Close">X</button>
-    </div>
-    <div class="modal-body p-3">
-      <div class="row mb-4">
-        <div class="col-12">
-          <h1><span class="thank-you">Thank You</span> <span class="for-subscribing">For Subscribing!</span></h1>
-        </div>
-      </div>
-      
-      <div class="row mb-3">
-        <div class="col-12">
-          <p class="fs-5 mb-0">We've sent the <strong>Discount Code</strong> to your <strong>email address</strong>.</p>
-        </div>
-      </div>
-      
-      <div class="row mb-4">
-        <div class="col-12">
-          <p class="fs-4">Additionally, <span class="youve-won">YOU'VE WON</span> <span class="free-text">FREE</span> <span class="consultation">CONSULTATION!</span></p>
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="col-md-7 mb-4">
-          <p class="fs-5 mb-3">If you want to avail this offer, Please provide:</p>
-          
-          <form>
-            <input type="text" class="form-control thankyou-input" placeholder="Your Name:">
-            <input type="tel" class="form-control thankyou-input" placeholder="Phone Number:" pattern="[0-9]+" inputmode="numeric">
-            <input type="datetime-local" class="form-control thankyou-input" placeholder="Preferred Date & Time:">
-            <textarea class="form-control thankyou-input" rows="3" placeholder="Add a Note:"></textarea>
+    <!-- Thank You Modal -->
+    <div class="modal fade" id="thankyouModal" tabindex="-1" aria-labelledby="thankyouModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="butn-close close-btn" data-bs-dismiss="modal" aria-label="Close">X</button>
+            </div>
+            <div class="modal-body p-3">
+            <div class="row mb-4">
+                <div class="col-12">
+                <h1><span class="thank-you">Thank You</span> <span class="for-subscribing">For Subscribing!</span></h1>
+                </div>
+            </div>
             
-            <button type="submit" class="submit-btn mt-3">Submit</button>
-          </form>
-        </div>
-        
-        <div class="col-md-5">
-          <div class="benefits-box">
-            <p class="benefits-title mb-4">BENEFITS OF <span style="color: #ffa500;">FREE CONSULTATION</span>:</p>
+            <div class="row mb-3">
+                <div class="col-12">
+                <p class="fs-5 mb-0">We've sent the <strong>Discount Code</strong> to your <strong>email address</strong>.</p>
+                </div>
+            </div>
             
-            <ul class="list-unstyled">
-              <li class="benefit-item">• <span class="highlight-text">FREE</span> Virtual Consultation</li>
-              <li class="benefit-item">• <span class="highlight-text">FREE</span> Design Advice</li>
-              <li class="benefit-item">• <span class="highlight-text">FREE</span> Efficient Planning</li>
-              <li class="benefit-item">• Schedule at your <span class="convenience-text">CONVENIENCE</span></li>
-              <li class="benefit-item">• <span class="highlight-text">NO OBLIGATION</span> to Purchase</li>
-            </ul>
-          </div>
+            <div class="row mb-4">
+                <div class="col-12">
+                <p class="fs-4">Additionally, <span class="youve-won">YOU'VE WON</span> <span class="free-text">FREE</span> <span class="consultation">CONSULTATION!</span></p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-7 mb-4">
+                <p class="fs-5 mb-3">If you want to avail this offer, Please provide:</p>
+                
+                <form>
+                    <input type="text" class="form-control thankyou-input" placeholder="Your Name:">
+                    <input type="tel" class="form-control thankyou-input" placeholder="Phone Number:" pattern="[0-9]+" inputmode="numeric">
+                    <input type="datetime-local" class="form-control thankyou-input" placeholder="Preferred Date & Time:">
+                    <textarea class="form-control thankyou-input" rows="3" placeholder="Add a Note:"></textarea>
+                    
+                    <button type="submit" class="submit-btn mt-3">Submit</button>
+                </form>
+                </div>
+                
+                <div class="col-md-5">
+                <div class="benefits-box">
+                    <p class="benefits-title mb-4">BENEFITS OF <span style="color: #ffa500;">FREE CONSULTATION</span>:</p>
+                    
+                    <ul class="list-unstyled">
+                    <li class="benefit-item">• <span class="highlight-text">FREE</span> Virtual Consultation</li>
+                    <li class="benefit-item">• <span class="highlight-text">FREE</span> Design Advice</li>
+                    <li class="benefit-item">• <span class="highlight-text">FREE</span> Efficient Planning</li>
+                    <li class="benefit-item">• Schedule at your <span class="convenience-text">CONVENIENCE</span></li>
+                    <li class="benefit-item">• <span class="highlight-text">NO OBLIGATION</span> to Purchase</li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+            </div>
         </div>
-      </div>
+        </div>
     </div>
-  </div>
-</div>
-</div>
 
 
 
@@ -1099,71 +986,57 @@ function newsletterModalOrderFn(){
         $(document).ready(function () {            
             
             var slug = $('#slug').val();
-
-            // $(document).on('click', '.style-filter', function() {
-            //     var styleIds = [];
-            //     $('.style-filter').each(function() {
-            //         if ($(this).is(':checked')) {
-            //             styleIds.push($(this).attr('data-style-id'));
-            //         }
-            //     });
-            //     $.ajax({
-            //         url: "{{ route('ordercomponent_filter') }}",
-            //         method: "POST",
-            //         data: {
-            //             _token: "{{ csrf_token() }}",
-            //             style_ids: styleIds,
-            //             slug: slug
-            //         },
-            //         success:function(response) {
-            //             if (response.status == true) {
-            //                 var _html = '';
-            //                 response.colours.forEach((colr, index) => {
-            //                     _html += `
-            //                         <div class="col-lg-12 col-md-12 col-6">
-            //                             <div class="form-check form-check-inline">
-            //                                 <input data-colour-id="${colr.id}"  class="form-check-input colour-filter" type="checkbox"
-            //                                     name="colours[]" id="colour${index}"
-            //                                     value="${colr.id}">`;
-            //                                     if (colr.colour_code != '' || colr.colour_code != undefined) {
-            //                                         _html += `<label class="form-check-label d-flex gap-1" for="colour${index}">
-            //                                             <div class="d-inline border border-dark"
-            //                                                 style="border-radius: 50px; width: 20px;height:20px; background-color:${colr.colour_code};">
-            //                                             </div>
-            //                                             ${ colr.trade_colour ? colr.trade_colour : colr.name }
-            //                                         </label>`;
-            //                                     } else {
-            //                                         _html += `<label class="form-check-label d-flex gap-1" for="colour${index}">
-            //                                             <div class="border border-dark" style="border-radius: 50px; width: 20px;height:20px; background: linear-gradient(to right, red, yellow, green);">
-            //                                             </div>
-            //                                             ${ colr.trade_colour ? colr.trade_colour : colr.name }
-            //                                         </label>`;
-            //                                     }
-            //                             _html += `</div>
-            //                         </div>
-            //                     `;
-            //                 });
-            //                 $('#colours-filter').html(_html);
-            //             }
-            //         }
-            //     });
-            // });
-
-            // $(document).on('click', '#type-filter', function() {
-            //     let _this = $(this);
-            //     var widthId = _this.attr('data-type-id');
-            //     $.ajax({
-            //         url: "{{ route('ordercomponent_filter') }}",
-            //         method: "POST",
-            //         data: {
-            //             _token: "{{ csrf_token() }}",
-            //             type_ids: widthId
-            //         },
-            //         success:function(response) {
-                        
-            //         }
-            //     });
-            // }); 
+            
+            $(document).on('click', '.type-filter', function() {
+                var slug = $('#slug').val();
+                var selectedTypes = [];
+                $('.type-filter').each(function() {
+                    if ($(this).is(':checked')) {
+                        selectedTypes.push($(this).attr('data-type-id'));
+                    }
+                });
+                
+                $.ajax({
+                    url: orderComponent_filter,
+                    method: "POST",
+                    data: {
+                        _token: "{{ csrf_token() }}",
+                        type_ids: selectedTypes,
+                        slug: slug
+                    },
+                    success:function(response) {
+                        if (response.status == true) {
+                            var _htmlColours = '';
+                            response.colours.forEach((colr, index) => {
+                                _htmlColours += `
+                                    <div class="col-lg-12 col-md-12 col-6">
+                                        <div class="form-check form-check-inline">
+                                            <input data-colour-id="${colr.id}"  class="form-check-input colour-filter" type="checkbox"
+                                                name="colours[]" id="colour${index}"
+                                                value="${colr.id}">`;
+                                                if (colr.colour_code != '' || colr.colour_code != undefined) {
+                                                    _htmlColours += `<label class="form-check-label d-flex gap-1" for="colour${index}">
+                                                        <div class="d-inline border border-dark"
+                                                            style="border-radius: 50px; width: 20px;height:20px; background-color:${colr.colour_code};">
+                                                        </div>
+                                                        ${ colr.trade_colour ? colr.trade_colour : colr.name }
+                                                    </label>`;
+                                                } else {
+                                                    _htmlColours += `<label class="form-check-label d-flex gap-1" for="colour${index}">
+                                                        <div class="border border-dark" style="border-radius: 50px; width: 20px;height:20px; background: linear-gradient(to right, red, yellow, green);">
+                                                        </div>
+                                                        ${ colr.trade_colour ? colr.trade_colour : colr.name }
+                                                    </label>`;
+                                                }
+                                        _htmlColours += `</div>
+                                    </div>
+                                `;
+                            });
+                            $('#colours-filter').html(_htmlColours);
+                        }
+                    }
+                });
+            });
         });
         var order_component_filter = '{{ route('order_component_filter', $category->slug) }}';
         var orderComponent_filter = '{{ route('ordercomponent_filter') }}';

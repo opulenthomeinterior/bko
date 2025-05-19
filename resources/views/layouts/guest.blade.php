@@ -294,7 +294,8 @@ use App\Models\Style;
             }
             
             .popup-image {
-                min-height: 200px;
+                /* min-height: 200px; */
+                display: none;
 
             }
             
@@ -1531,7 +1532,7 @@ use App\Models\Style;
                 email: email,
                 catalogue_register_now: 'catalogue_register_now',
                 first_order_discount: 'first_order_discount',
-                message: 'You have successfully subscribed for 15% discount',
+                message: 'Congratulations! You have won a free onsite survey <br> Your code is <b>May15</b>',
                 _token: '{{ csrf_token() }}' // if you're using Laravel
             },
             success: function (response) {
