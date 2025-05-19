@@ -363,7 +363,7 @@ td
              <p>
       <!-- For large screens -->
       <span class="desktop-only fs-5">
-        The doors are the first impression of your kitchen. You can <span class="fw-bold">transform your kitchen</span>by availing our <span class="fw-bold">kitchen cupboard and cabinet door replacement offer. </span>By selecting from our various colors and finishes you will give your kitchen a new life. Our doors are the essence of style and durability, creating an elegant look. <br>
+        The doors are the first impression of your kitchen. You can <span class="fw-bold">transform your kitchen </span>by availing our <span class="fw-bold">kitchen cupboard and cabinet door replacement offer. </span>By selecting from our various colors and finishes you will give your kitchen a new life. Our doors are the essence of style and durability, creating an elegant look. <br>
         <span class="fw-bold">Buy Kitchen Online</span>  offers a wide range of kitchen doors in various sizes to suit your needs. Our <span class="fw-bold">replacement kitchen doors</span> are available in different height and width dimensions, ensuring a perfect fit for your kitchen.
         <br>
          The standard size, commonly used, is <span class="fw-bold">715 x 496mm.</span> For larger requirements, we provide doors up to <span class="fw-bold"> 1965 x 596mm,</span> while the smallest size available is <span class="fw-bold">110 x 596mm.</span> With this extensive selection, you can easily find the right door to upgrade or replace your kitchen cupboard & cabinet doors.
@@ -378,7 +378,7 @@ td
        <span class="mobile-only">
         <input type="checkbox" class="toggle-box" id="toggle-text" />
         <span class="text fs-5 fs-mob">
-          The doors are the first impression of your kitchen. You can <span class="fw-bold">transform your kitchen</span>by availing our <span class="fw-bold">kitchen cupboard and cabinet door replacement offer. </span>By selecting from our various colors and<span class="dots"></span><span class="more-text">  
+          The doors are the first impression of your kitchen. You can <span class="fw-bold">transform your kitchen </span>by availing our <span class="fw-bold">kitchen cupboard and cabinet door replacement offer. </span>By selecting from our various colors and<span class="dots"></span><span class="more-text">  
            finishes you will give your kitchen a new life. Our doors are the essence of style and durability, creating an elegant look.
            <br>
            <span class="fw-bold">Buy Kitchen Online</span>  offers a wide range of kitchen doors in various sizes to suit your needs. Our <span class="fw-bold">replacement kitchen doors</span> are available in different height and width dimensions, ensuring a perfect fit for your kitchen.
