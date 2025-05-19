@@ -167,10 +167,10 @@
                         data: 'image_path',
                         render: function(data, type, row) {
                             if (type === 'display' && data) {
-                                const encodedImagePath = encodeURIComponent(data);
+                                const encodedPath = encodeURIComponent(data);
                                 return `
-                                <a href="${imageURL}/${data}" class="d-inline-block" target="_blank" rel="noopener noreferrer">
-                                    <img src="${imageURL}/${data}" alt="Image Preview" width="100" class="img-thumbnail box-image-preview d-block" />
+                                <a href="${imageURL}/${encodedPath}" class="d-inline-block" target="_blank" rel="noopener noreferrer">
+                                    <img src="${imageURL}/${encodedPath}" alt="Image Preview" width="100" class="img-thumbnail box-image-preview d-block" />
                                 </a>`;
                             } else {
                                 return data;
