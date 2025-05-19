@@ -1,11 +1,6 @@
 @component('mail::message')
 
-<h3></h3>
-
-<p>Customer Name: </p>
-<p>Customer Email: </p>
-<p>Customer Contact: </p>
-<p>Customer Payment Method: </p>
+<h1>Congratulations! Payment Successfull</h1>
 
 <br>
 {{config('app.name')}}
