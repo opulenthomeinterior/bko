@@ -400,6 +400,35 @@ function cart_total_amount() {
    $('#cartTotalAmountWithVAT').html(`£${(totalAmount).toFixed(2)}`);
 }
 
+function incQty(id) {
+
+   console.log('increase quantity');
+   console.log('---------------------------');
+   console.log(id);
+    const input = document.getElementById('quantity' + id);
+    let currentValue = parseInt(input.value) || 0; 
+    input.value = currentValue + 1;
+}
+
+
+function decQty(id) {
+
+   console.log('decrease quantity');
+   console.log('---------------------------');
+   console.log(id);
+    const input = document.getElementById('quantity' + id);
+    let decBtn =  document.getElementById('dec-btn'+id);
+    console.log(decBtn);
+    let currentValue = parseInt(input.value) || 0; 
+
+    if (input.value >0) {
+    input.value = currentValue - 1;
+    }
+   
+}
+
+
+
 function increaseQuantity(id, productCode, full_title, price, discount_price, discount_percentage, p_category,image) {
    console.log('increase quantity');
    console.log('---------------------------');
