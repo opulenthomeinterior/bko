@@ -869,6 +869,141 @@
 
 
 
+
+
+         .internal-card-swiper {
+            position: relative !important;
+            padding: 30px 0 !important;
+        }
+        
+        .internal-card-swiper .swiper-slide {
+            /* width: 200px !important; */
+            height: 400px !important;
+            transition: all 0.4s ease !important;
+            transform: scale(0.85) !important;
+            opacity: 0.5 !important;
+        }
+        
+        .internal-card-swiper .swiper-slide-active {
+            transform: scale(1) !important;
+            opacity: 1 !important;
+        }
+        
+        .card {
+            height: 100% !important;
+            border-radius: 16px !important;
+            overflow: hidden !important;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+            background-color: #fff !important;
+            transition: all 0.3s ease !important;
+            position: relative !important;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px) !important;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2) !important;
+        }
+        
+        .card-img {
+            /* height: 65% !important; */
+            width: 100% !important;
+            /* height: 100% !important; */
+            overflow: hidden !important;
+        }
+        
+        .card-img img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            transition: all 0.5s ease !important;
+        }
+        
+        .card:hover .card-img img {
+            transform: scale(1.1) !important;
+        }
+        
+        .card-content {
+            padding: 20px !important;
+        }
+        
+        .card-title {
+            font-size: 1.3rem !important;
+            font-weight: 600 !important;
+            color: #333 !important;
+            margin-bottom: 12px !important;
+        }
+        
+        .card-desc {
+            font-size: 0.9rem !important;
+            color: #666 !important;
+            line-height: 1.5 !important;
+        }
+        
+        .swiper-button-next, .swiper-button-prev {
+            width: 40px !important;
+            height: 40px !important;
+            background-color: #fff !important;
+            border-radius: 50% !important;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1) !important;
+            color: #333 !important;
+        }
+        
+        .swiper-button-next:after, .swiper-button-prev:after {
+            font-size: 18px !important;
+            font-weight: bold !important;
+        }
+        
+        .swiper-pagination-bullet {
+            width: 10px !important;
+            height: 10px !important;
+            background-color: #333 !important;
+            opacity: 0.3 !important;
+        }
+        
+        .swiper-pagination-bullet-active {
+            opacity: 1 !important;
+            background-color: #333 !important;
+        }
+        
+        h1.heading {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+            font-size: 2.5rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h1.heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #333;
+            border-radius: 2px;
+        }
+        
+        /* Animation for card entrance */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0 !important;
+                transform: translateY(30px) !important;
+            }
+            to {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+        }
+        
+        .card {
+            animation: fadeInUp 0.6s ease forwards !important;
+        }
+
+
+
     </style>
 </head>
 
@@ -1370,14 +1505,14 @@
                 <img class="img-fluid w-100" src="{{ asset('images/max-cabinets.jpeg') }}"/>
             </div> --}}
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
-                <div class="card border-0">
+                <div class="card rounded-0 border-0">
                     <div class="" style="height: 250px; width: 100%">
                         <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="{{ asset('images/deepest.jpg') }}" alt="">
                     </div>
                 </div>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
-                <div class="card border-0">
+                <div class="card rounded-0 border-0">
                     <div class="p-5 bg-green-color d-flex flex-column align-items-center justify-content-center" style="height: 250px; width: 100%">
                         <h2 class="text-white fw-bold text-center">TALLEST UNITS</h2>
                         <p class="max-description suggestion text-white text-center">Floor-to-ceiling cabinets for extra storage. Ideal for small kitchens needing vertical space.</p>
@@ -1385,14 +1520,14 @@
                 </div>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
-                <div class="card border-0">
+                <div class="card rounded-0 border-0">
                     <div class="" style="height: 250px; width: 100%">
                         <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="{{ asset('images/widest.jpg') }}" alt="">
                     </div>
                 </div>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
-                <div class="card border-0">
+                <div class="card rounded-0 border-0">
                     <div class="p-5 bg-yellow-color2 d-flex flex-column align-items-center justify-content-center" style="height: 250px; width: 100%">
                         <h2 class="text-white fw-bold text-center">DEEPEST UNITS</h2>
                         <p class="max-description suggestion text-white text-center">Deeper storage than standard cabinets. Maximizes space for pots, pans and appliances.</p>
@@ -1400,14 +1535,14 @@
                 </div>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
-                <div class="card border-0">
+                <div class="card rounded-0 border-0">
                     <div class="" style="height: 250px; width: 100%">
                         <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="{{ asset('images/tallest.jpg') }}" alt="">
                     </div>
                 </div>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
-                <div class="card border-0">
+                <div class="card rounded-0 border-0">
                     <div class="p-5 bg-dark d-flex flex-column align-items-center justify-content-center" style="height: 250px; width: 100%">
                         <h2 class="text-white fw-bold text-center">WIDEST UNITS</h2>
                         <p class="suggestion max-description text-white text-center">Wide cabinets for organized storage of kitchens essentials. Make use of every inch efficiently.</p>
@@ -1681,7 +1816,12 @@
     </div> --}}
 
 
+    
+
     <div class="container mt-5 mb-5">
+
+        
+
         <div class="row justify-content-center">
             <div class="col-8">
                   <h2 class="text-center fw-bold">Smart storage solutions</h2>
@@ -1689,128 +1829,156 @@
                   <h5 class="text-center fw-bold">We Can Help!</h5>
             </div>
         </div>
-        <div class="row mt-5 mb-3 justify-content-center">
-            <div class="col-10 ">
-                
-                <div class="owl-carousel owl-theme overflow-hidden">
-                    <!-- @foreach (\App\Models\Product::where('parent_category_id', 17)->groupBy('short_title')->limit(10)->get() as $intenalProduct) -->
-                    <div class="item">
+
+        <div class="internal-card-swiper">
+            <div class="swiper internalCardSwiper">
+                <div class="swiper-wrapper">
+                    <!-- Card 1 -->
+                    <div class="swiper-slide">
                         <a href="https://bkonline.uk/shop/by-product/corner-pull-out-shelving-unit,-for-base-cabinets,-pole-free,-vauth-sagel-vs-cor-wheel-pro/14666" class="text-dark text-decoration-none">
-                            <div class="card" style="height: 280px;">
+
+                        <div class="card">
+                            <div class="card-img">
                                 <img src="{{ asset('images/pull-out-shelving-unit.jpeg') }}" class="card-img-top" alt="">
-                                <!-- <img src="{{ asset('imgs/products/'.$intenalProduct->image_path) }}" class="card-img-top" alt=""> -->
-                                <div class="card-body">
-                                    <h6 class="card-title">Corner pull out shelving Unit</h6>
-                                    <!-- <h6 class="card-title">{{ $intenalProduct->short_title }}</h6> -->
-                                </div>
+
                             </div>
+                            <div class="card-content">
+                                <h6 class="card-title">Corner pull out shelving Unit</h6>
+                            </div>
+                        </div>
                         </a>
                     </div>
-                    <div class="item">
+                    
+                    <!-- Card 2 -->
+                    <div class="swiper-slide">
                         <a href="https://bkonline.uk/shop/by-product/swing-out-larder--unit,-for-cabinet-width-500-600-mm,-with-planero-lava-grey-storage-baskets,-vauth-sagel-vs-tal-gate-n/14447" class="text-dark text-decoration-none">
-                            <div class="card" style="height: 280px;">
+
+                        <div class="card">
+                            <div class="card-img">
                                 <img src="{{ asset('images/swing-out-larder-unit.jpeg') }}" class="card-img-top" alt="">
-                                <!-- <img src="{{ asset('imgs/products/'.$intenalProduct->image_path) }}" class="card-img-top" alt=""> -->
-                                <div class="card-body">
-                                    <h6 class="card-title">Swing Out Larder Unit</h6>
-                                    <!-- <h6 class="card-title">{{ $intenalProduct->short_title }}</h6> -->
-                                </div>
                             </div>
+                            <div class="card-content">
+                                <h6 class="card-title">Swing Out Larder Unit</h6>
+                                
+                            </div>
+                        </div>
                         </a>
                     </div>
-                    <div class="item">
-                        <a href="https://bkonline.uk/shop/by-product/wicker-basket-set,-two-baskets-with-runners,-for-cabinet-widths-500-600-mm/14672" class="text-dark text-decoration-none">
-                            <div class="card" style="height: 280px;">
-                                <img src="{{ asset('images/wicker-basket-set-with-runners.jpeg') }}" class="card-img-top" alt="">
-                                <!-- <img src="{{ asset('imgs/products/'.$intenalProduct->image_path) }}" class="card-img-top" alt=""> -->
-                                <div class="card-body">
-                                    <h6 class="card-title">Wicker basket set  with runners</h6>
-                                    <!-- <h6 class="card-title">{{ $intenalProduct->short_title }}</h6> -->
-                                </div>
+                    
+                    <!-- Card 3 -->
+                    <div class="swiper-slide">
+                         <a href="https://bkonline.uk/shop/by-product/wicker-basket-set,-two-baskets-with-runners,-for-cabinet-widths-500-600-mm/14672" class="text-dark text-decoration-none"></a>
+                        <div class="card">
+                            <div class="card-img">
+                                     <img src="{{ asset('images/wicker-basket-set-with-runners.jpeg') }}" class="card-img-top" alt="">
                             </div>
+                            <div class="card-content">
+                                <h6 class="card-title">Wicker basket set  with runners</h6>
+                               
+                            </div>
+                        </div>
                         </a>
                     </div>
-                    <div class="item">
+                    
+                    <!-- Card 4 -->
+                    <div class="swiper-slide">
                         <a href="https://bkonline.uk/shop/by-product/swing-out-corner-storage,-artline-glass-sided-chrome-wire-baskets,-vauth-sagel-vs-cor-fold-%28left%29/14383" class="text-dark text-decoration-none">
-                            <div class="card" style="height: 280px;">
-                                <img src="{{ asset('images/swing-out-corner-storage.jpeg') }}" class="card-img-top" alt="">
-                                <!-- <img src="{{ asset('imgs/products/'.$intenalProduct->image_path) }}" class="card-img-top" alt=""> -->
-                                <div class="card-body">
-                                    <h6 class="card-title">Swing out corner storage</h6>
-                                    <!-- <h6 class="card-title">{{ $intenalProduct->short_title }}</h6> -->
-                                </div>
+
+                        <div class="card">
+                            <div class="card-img">
+                                 <img src="{{ asset('images/swing-out-corner-storage.jpeg') }}" class="card-img-top" alt="">
                             </div>
+                            <div class="card-content">
+                                <h6 class="card-title">Swing out corner storage</h6>
+                                
+                            </div>
+                        </div>
                         </a>
                     </div>
-                    <div class="item">
-                        <a href="https://bkonline.uk/shop/by-product/swing-out-larder--unit,-for-cabinet-width-500-600-mm,-artline-glass-side-baskets,-vs-tal-gate/14522" class="text-dark text-decoration-none">
-                            <div class="card" style="height: 280px;">
-                                <img src="{{ asset('images/swing-out-larder-unit-artline-glass-side-baskets.jpeg') }}" class="card-img-top" alt="">
-                                <!-- <img src="{{ asset('imgs/products/'.$intenalProduct->image_path) }}" class="card-img-top" alt=""> -->
-                                <div class="card-body">
-                                    <h6 class="card-title">Swing out larder unit artline glass side baskets</h6>
-                                    <!-- <h6 class="card-title">{{ $intenalProduct->short_title }}</h6> -->
-                                </div>
+                    
+                    <!-- Card 5 -->
+                    <div class="swiper-slide">
+    <a href="https://bkonline.uk/shop/by-product/swing-out-larder--unit,-for-cabinet-width-500-600-mm,-artline-glass-side-baskets,-vs-tal-gate/14522" class="text-dark text-decoration-none">
+                        <div class="card">
+                            <div class="card-img">
+                                          <img src="{{ asset('images/swing-out-larder-unit-artline-glass-side-baskets.jpeg') }}" class="card-img-top" alt="">
                             </div>
-                        </a>
+                            <div class="card-content">
+                                <h6 class="card-title">Swing out larder unit artline glass side baskets</h6>
+                            </div>
+                        </div>
+                    </a>
                     </div>
-                    <div class="item">
+                    
+                    <div class="swiper-slide">
                         <a href="https://bkonline.uk/shop/by-product/double-basket,-pull-out,-for-300/400-mm-cabinet-width/14653" class="text-dark text-decoration-none">
-                            <div class="card" style="height: 280px;">
-                                <img src="{{ asset('images/double-basket-pull-out.jpeg') }}" class="card-img-top" alt="">
-                                <!-- <img src="{{ asset('imgs/products/'.$intenalProduct->image_path) }}" class="card-img-top" alt=""> -->
-                                <div class="card-body">
-                                    <h6 class="card-title">Double basket pull out</h6>
-                                    <!-- <h6 class="card-title">{{ $intenalProduct->short_title }}</h6> -->
-                                </div>
+                        <div class="card">
+                            <div class="card-img">
+                                           <img src="{{ asset('images/double-basket-pull-out.jpeg') }}" class="card-img-top" alt="">
                             </div>
+                            <div class="card-content">
+                                <h6 class="card-title">Double basket pull out</h6>
+                            </div>
+                        </div>
                         </a>
                     </div>
-                    <div class="item">
-                        <a href="https://bkonline.uk/shop/by-product/extension-pole,-for-vauth-sagel-cornerstone%C2%AE-maxx/14316" class="text-dark text-decoration-none">
-                            <div class="card" style="height: 280px;">
-                                <img src="{{ asset('images/extension-pole.jpeg') }}" class="card-img-top" alt="">
-                                <!-- <img src="{{ asset('imgs/products/'.$intenalProduct->image_path) }}" class="card-img-top" alt=""> -->
-                                <div class="card-body">
-                                    <h6 class="card-title">Extension pole</h6>
-                                    <!-- <h6 class="card-title">{{ $intenalProduct->short_title }}</h6> -->
-                                </div>
+                    <div class="swiper-slide">
+                          <a href="https://bkonline.uk/shop/by-product/extension-pole,-for-vauth-sagel-cornerstone%C2%AE-maxx/14316" class="text-dark text-decoration-none">
+                        <div class="card">
+                            <div class="card-img">
+                                          <img src="{{ asset('images/extension-pole.jpeg') }}" class="card-img-top" alt="">
                             </div>
+                            <div class="card-content">
+                              <h6 class="card-title">Extension pole</h6>
+                            </div>
+                        </div>
                         </a>
                     </div>
-                    <div class="item">
-                        <a href="https://bkonline.uk/shop/by-product/base-inserts,-set,-white-plastic/14366" class="text-dark text-decoration-none">
-                            <div class="card" style="height: 280px;">
-                                <img src="{{ asset('images/base-insert-set-white-plastic.jpeg') }}" class="card-img-top" alt="">
-                                <!-- <img src="{{ asset('imgs/products/'.$intenalProduct->image_path) }}" class="card-img-top" alt=""> -->
-                                <div class="card-body">
-                                    <h6 class="card-title">Base insert set white plastic</h6>
-                                    <!-- <h6 class="card-title">{{ $intenalProduct->short_title }}</h6> -->
-                                </div>
+                    <div class="swiper-slide">
+                                         <a href="https://bkonline.uk/shop/by-product/base-inserts,-set,-white-plastic/14366" class="text-dark text-decoration-none">
+                        <div class="card">
+                            <div class="card-img">
+                                          <img src="{{ asset('images/base-insert-set-white-plastic.jpeg') }}" class="card-img-top" alt="">
                             </div>
+                            <div class="card-content">
+                             <h6 class="card-title">Base insert set white plastic</h6>
+                            </div>
+                        </div>
                         </a>
                     </div>
-                    <div class="item">
-                        <a href="https://bkonline.uk/shop/by-product/base-inserts,-for-pull-out-storage--unit/14746" class="text-dark text-decoration-none">
-                            <div class="card" style="height: 280px;">
-                                <img src="{{ asset('images/base-inserts-for-pull-out-storage.jpeg') }}" class="card-img-top" alt="">
-                                <!-- <img src="{{ asset('imgs/products/'.$intenalProduct->image_path) }}" class="card-img-top" alt=""> -->
-                                <div class="card-body">
-                                    <h6 class="card-title">Base inserts for pull out storage</h6>
-                                    <!-- <h6 class="card-title">{{ $intenalProduct->short_title }}</h6> -->
-                                </div>
+                    <div class="swiper-slide">
+                                         <a href="https://bkonline.uk/shop/by-product/base-inserts,-for-pull-out-storage--unit/14746" class="text-dark text-decoration-none">
+                        <div class="card">
+                            <div class="card-img">
+                                     <img src="{{ asset('images/base-inserts-for-pull-out-storage.jpeg') }}" class="card-img-top" alt="">
+
                             </div>
+                            <div class="card-content">
+                            <h6 class="card-title">Base inserts for pull out storage</h6>
+                            </div>
+                        </div>
                         </a>
                     </div>
-                    <!-- @endforeach -->
+
                 </div>
+                
+                <!-- Add Navigation Buttons -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
             </div>
-            <div class="row mt-5 justify-content-center">
+        </div>
+        
+         <div class="row mt-5 justify-content-center">
                 <div class="col-lg-4 col-8">
                     <a href="{{ route('ordercomponentbyname', ['slug' => 'internals']) }}" class="btn btn-warning px-3 text-uppercase rounded-0"> Explore Unique Storage Solutions</a>
                 </div>
             </div>
-        </div>
+
+
+     
       </div>
       
 
@@ -2167,6 +2335,64 @@
 <script>
 
 
+
+  document.addEventListener('DOMContentLoaded', function() {
+            const internalCardSwiper = new Swiper('.internalCardSwiper', {
+                // Essential Parameters
+                // effect: 'slide',
+                slidesPerView: 'auto',
+                centeredSlides: true,
+                spaceBetween: 30,
+                grabCursor: true,
+                loop: true,
+                
+                // Responsive Breakpoints
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1,
+                    },
+                    640: {
+                        slidesPerView: 2,
+                    },
+                    992: {
+                        slidesPerView: 3,
+                    }
+                },
+                
+                // Pagination
+                // pagination: {
+                //     el: '.swiper-pagination',
+                //     clickable: true,
+                // },
+                
+                // Navigation Arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                
+                // Autoplay
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                
+                // Animation Speed
+                speed: 600,
+                
+                // Add event listeners for animation effects
+                on: {
+                    slideChange: function () {
+                        // Add any custom slide change animations here if needed
+                    }
+                }
+            });
+        });
+
+
+
+
+
 function newsletterModalMaxFn(){
     
      document.getElementById('subscribeBtnMax').addEventListener('click',function(){
@@ -2244,6 +2470,9 @@ const faqQuestions = document.querySelectorAll('.faq-question');
                 item.style.transition = `all 0.5s ease ${index * 0.1}s`;
                 observer.observe(item);
             });
+
+
+            
 
 
 
