@@ -6,43 +6,7 @@
         {!! $seo?->schema_code !!}
     @endsection
     <style>
-        .product-card {
-            border: 1px solid transparent;
-            transition: border-color 0.3s ease;
-        }
-
-        .product-card:hover {
-            border-color: #ebc266;
-            /* Outline warning color on hover */
-        }
-
-        .product-short-title-container {
-            margin-bottom: 10px;
-            /* Space between the title and other content */
-        }
-
-        .product-short-title {
-            display: inline-block;
-            padding: 5px 10px;
-            color: #000;
-            /* Default text color */
-            text-decoration: none;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .product-card:hover,
-        .card-header {
-            background-color: #ebc266;
-            /* Warning color background on hover */
-            color: #000;
-            /* Text color on hover */
-        }
-
-        .product-image:hover {
-            transform: scale(1.1);
-            transition: 0.5s ease;
-        }
-
+      
 
 
         /* handles */
@@ -361,6 +325,225 @@ td
       }
     }
 
+        .product-card {
+      position: relative;
+      display:flex;
+      flex-direction:column;
+      justify-content: space-between;
+      width: 320px;
+      height:500px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+    
+    .product-image {
+      /* height: 220px; */
+      /* background-color:green; */
+      height: 180px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .product-image img {
+        /* width: 280px; */
+        width: 290px;
+      /* width: 100%;
+      height: 100%; */
+      /* height: 300px; */
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .product-card:hover .product-image img {
+      transform: scale(1.1);
+    }
+    
+    .category {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .product-details {
+      padding: 20px;
+    }
+    
+    .product-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    
+    .product-price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #4CAF50;
+      margin-bottom: 15px;
+    }
+    
+    .quantity-selector {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 15px;
+      background: #f5f7fa;
+      border-radius: 50px;
+      padding: 5px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+    
+    .quantity-selector:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .quantity-btn {
+      width: 38px;
+      height: 38px;
+      background: white;
+      border: none;
+      color: #4CAF50;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease;
+    }
+    
+    .quantity-btn:hover {
+      background: #4CAF50;
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    .quantity {
+      width: 60px;
+      height: 38px;
+      border: none;
+      background: transparent;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+      margin: 0 5px;
+    }
+    
+    .quantity:focus {
+      outline: none;
+    }
+    
+    .add-to-cart {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      margin-top: 20px;
+      background: #ffc107;
+      color: black;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    
+    .add-to-cart:hover {
+      /* background: #3e8e41; */
+      border:1px solid #ffc107;
+      background: white;
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .product-card {
+      animation: fadeIn 0.6s ease-out;
+    }
+    
+    /* Additional styles for quantity selector */
+    .quantity-btn:active {
+      transform: scale(0.85);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+    
+    .quantity::-webkit-outer-spin-button,
+    .quantity::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    
+    .quantity {
+      -moz-appearance: textfield;
+    }
+    
+    .add-to-cart:active {
+      transform: scale(0.98);
+    }
+
+    @media(max-width:576px)
+    {
+        .product-card
+        {
+
+            width:100%;
+            /* height:450px; */
+            /* justify-content: start; */
+            
+        }
+        .product-title
+        {
+            font-size:24px;
+        }
+        .product-price
+        {
+            font-size:18px;
+        }
+        .add-to-cart,
+        .quantity
+        {
+            font-size:16px;
+        }
+        .category
+        {
+            font-size:14px;
+        }
+        .quantity-btn
+        {
+            font-size:20px;
+        }
+    }
+/* product card end */
+
+
+
 
 
     </style>
@@ -638,8 +821,51 @@ td
                 </form>
             </div>
             
+               <div class="pb-5 col-lg-9 col-12 mt-md-3">
+                <div class="row g-4">
+                      @foreach ($products as $index => $product)
+                     <div class="col-lg-4">
+                      
+                        <div class="product-card">
+                            <a href="{{ route('orderbyproduct', [$product->slug, $product->serial_number]) }}">
+                                <div class="product-image">
+                                <img src="{{ !empty($product->image_path) ? asset('imgs/products/'.$product->image_path) : asset('images/no-image-available.jpg') }}" alt="">
+                                {{-- <img  src="{{ asset('images/handle.jpg') }}"> --}}
+                                <span class="category">{{$product->product_code}}</span>
+                                </div>
+                             </a>
+                            <div class="product-details">
+                                 <a href="{{ route('orderbyproduct', [$product->slug, $product->serial_number]) }}">
+                                     <h2 class="product-title">{{ $product->full_title }}</h2>
+                                 </a>
+                            <div class="product-price">£{{$product->price}}</div>
+                            <div class="quantity-selector">
+                                <button class="quantity-btn" id="dec-btn{{ $product->id }}" onclick="decQty({{ $product->id }})">−</button>
+                                <input name="quantity" type="text" class="quantity" value="0"  id="quantity{{ $product->id }}"
+                                onkeyup=""
+                                >
+                                
+                                <button class="quantity-btn" onclick="incQty({{ $product->id }})">+</button>
+                                {{-- <button class="quantity-btn" onclick="increaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}')">+</button> --}}
+                            </div>
+                            <button class="add-to-cart"
+                            onclick="inputQty(document.querySelector('#quantity{{ $product->id }}').value, '{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}'
+                                                    )"
+                            >Add to Cart</button>
+                            </div>
+                        </div>
+                      
+                    </div>
+                     @endforeach
+                    
+                </div>
+            </div>
 
-            <div class=" col-lg-9 col-12 mt-md-3">
+
+
+
+
+            {{-- <div class=" col-lg-9 col-12 mt-md-3">
                 <div class="table-responsive custom-scrollbar">
                 <table class="table table-bordered">
                     <thead>
@@ -739,7 +965,7 @@ td
                         @endif
                     </tbody>
                 </table>
-            </div>
+            </div> --}}
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-3">
