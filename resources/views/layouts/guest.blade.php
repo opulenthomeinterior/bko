@@ -1149,18 +1149,25 @@ use App\Models\Style;
                                 Cookies Policy
                             </a>
                         </li>
-                        <li class="mb-3">
+                        <!-- <li class="mb-3">
                             <a href="{{ route('pricepromise') }}" class="footer-link fs-mob-18">
                                 {{-- <i class="bi bi-shield-check me-2"></i> --}}
                                 <i class="bi bi-caret-right-fill fs-mob-18" style=" color:#febd49; margin-right:5px;"></i>
                                 Price Promise Guarantee
                             </a>
-                        </li>
-                        <li>
+                        </li> -->
+                        <li class="mb-3">
                             <a href="{{ route('termandcondition') }}" class="footer-link fs-mob-18">
                                 
                                 <i class="fs-mob-18 bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
                                 Terms & Conditions
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('privacy') }}" class="footer-link fs-mob-18">
+                                
+                                <i class="fs-mob-18 bi bi-caret-right-fill" style=" color:#febd49; margin-right:5px;"></i>
+                                Privacy & Policy
                             </a>
                         </li>
                     </ul>

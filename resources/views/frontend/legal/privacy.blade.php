@@ -20,10 +20,7 @@
             background-color: #fff;
             color:black;
         }
-        h1,h2,h3,h4,p
-        {
-            color:black;
-        }
+     
 
         .header-section {
             background: linear-gradient(135deg, var(--primary-color) 0%, #e6ac00 100%);
@@ -284,6 +281,16 @@
         }
 
 
+        }
+        .header-section,
+        .policy-section h2,
+        .policy-section h3,
+        .policy-section li,
+        .policy-section p,
+        .highlight-box p
+
+        {
+            color:black;
         }
     </style>
 </head>
