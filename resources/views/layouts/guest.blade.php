@@ -1090,7 +1090,7 @@ use App\Models\Style;
                         <form method="POST" action="{{ route('contact_us_inquiry') }}">
                             @csrf
                             <div class="input-group">
-                                <input type="email" name="email" class="form-control fs-mob-18" placeholder="Enter Your Email" aria-label="Email">
+                                <input type="email" required name="email" class="form-control fs-mob-18" placeholder="Enter Your Email" aria-label="Email">
                                 <input type="hidden" name="catalogue_register_now" value="subscribed with email">
                                 <button class="btn fs-mob-18" type="submit" style="background-color:#febd49">Subscribe!</button>
                             </div>
