@@ -822,7 +822,7 @@ td
             </div>
             
              <div class="pb-5 col-lg-9 col-12 mt-md-3">
-                <div class="row g-4">
+                <div class="row g-4" id="products_container">
                       @foreach ($products as $index => $product)
                      <div class="col-lg-4">
                       

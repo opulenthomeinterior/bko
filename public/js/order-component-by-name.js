@@ -115,69 +115,100 @@ $(document).ready(function () {
 
 
     function createProductCard(product, index) {
+        // var productCard = `
+        // <tr>
+        //     <td><a class="text-decoration-underline" href="/shop/by-product/${product.slug}/${product.serial_number}">${product.short_title}</a></td>
+        //     <td>
+        //         <figure class="my-0" style="margin-bottom: 0px !important;">
+        //             <img class="product-image px-0"
+        //                 style="margin-bottom: 0px !important;min-height:175px;max-width:225px;max-height:175px;object-fit:contain"
+        //                 src="${product.image_path ? product_BIU + '/' + product.image_path : ASSET_URL + 'images/no-image-available.jpg'}"
+        //                 alt="Card image cap" data-bs-toggle="modal"
+        //                 data-bs-target="#productModal${index}">
+        //         </figure>
+        //     </td>
+        //     <td>${product.product_code}</td>
+        //     <td>${product.dimensions}</td>
+        //     <td>
+        //         <div class="row justify-content-center">
+        //             <div
+        //                 class="col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center product-counter">
+        //                 <input id="minus${product.id}"
+        //                     class="minus border bg-dark text-light p-0"
+        //                     type="button" value="-"
+        //                     onclick="decreaseQuantity('${product.id}', '${product.product_code}', '${product.full_title}', ${product.price}, ${product.discounted_price}, ${product.discounted_percentage ?? 0}, '${product.parent_category.slug}')" />
+        //                 <input id="quantity${product.id}"
+        //                     class="quantity border border-black text-center"
+        //                     type="text" value="0" name="quantity"
+        //                     disabled />
+        //                 <input id="plus${product.id}"
+        //                     class="plus border bg-dark text-light p-0"
+        //                     type="button" value="+" type="number"
+        //                     max="10"
+        //                     ${product.price == 0 ? 'disabled' : ''} 
+        //                     onclick="increaseQuantity('${product.id }', '${product.product_code}', '${product.full_title}', ${product.price}, ${product.discounted_price}, ${product.discounted_percentage ?? 0}, '${product.parent_category.slug}')" />
+        //             </div>
+        //             <div class="col-6">
+        //                 <p class="fs-5 fw-bold mt-lg-2 text-dark">
+        //                 ${product.price == 0 ? 'Out of Stock' : '£' + product.price}
+        //                 </p>
+        //             </div>
+        //         </div>
+        //     </td>
+        //     <td>${product.price == 0 ? 'Out of Stock' : '£' + product.price}</td>
+        //     <td>
+        //         <div class="container-fluid">`;
+        //             if (product.style){
+        //                 productCard += `<small>${product.style.name}</small>`;
+        //             }
+        //     productCard += `</div>
+        //     </td>
+        //     <td>`;
+        //         if (product.colour){
+        //             productCard += `<small>
+        //                 ${product.colour.trade_colour ? product.colour.trade_colour : product.colour.name}
+        //             </small>`;
+        //         }
+        //     productCard += `</td>
+        //     <td>`;
+        //         if (product.category.name != 'DOORS'){
+        //             if (product.assembly){
+        //                 productCard += `<small>${product.assembly.name}</small>`;
+        //             }
+        //         }
+        //     productCard += `</td>
+        // </tr>
+        // `;
         var productCard = `
-        <tr>
-            <td><a class="text-decoration-underline" href="/shop/by-product/${product.slug}/${product.serial_number}">${product.short_title}</a></td>
-            <td>
-                <figure class="my-0" style="margin-bottom: 0px !important;">
-                    <img class="product-image px-0"
-                        style="margin-bottom: 0px !important;min-height:175px;max-width:225px;max-height:175px;object-fit:contain"
-                        src="${product.image_path ? product_BIU + '/' + product.image_path : ASSET_URL + 'images/no-image-available.jpg'}"
-                        alt="Card image cap" data-bs-toggle="modal"
-                        data-bs-target="#productModal${index}">
-                </figure>
-            </td>
-            <td>${product.product_code}</td>
-            <td>${product.dimensions}</td>
-            <td>
-                <div class="row justify-content-center">
-                    <div
-                        class="col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center product-counter">
-                        <input id="minus${product.id}"
-                            class="minus border bg-dark text-light p-0"
-                            type="button" value="-"
-                            onclick="decreaseQuantity('${product.id}', '${product.product_code}', '${product.full_title}', ${product.price}, ${product.discounted_price}, ${product.discounted_percentage ?? 0}, '${product.parent_category.slug}')" />
-                        <input id="quantity${product.id}"
-                            class="quantity border border-black text-center"
-                            type="text" value="0" name="quantity"
-                            disabled />
-                        <input id="plus${product.id}"
-                            class="plus border bg-dark text-light p-0"
-                            type="button" value="+" type="number"
-                            max="10"
-                            ${product.price == 0 ? 'disabled' : ''} 
-                            onclick="increaseQuantity('${product.id }', '${product.product_code}', '${product.full_title}', ${product.price}, ${product.discounted_price}, ${product.discounted_percentage ?? 0}, '${product.parent_category.slug}')" />
+            <div class="col-lg-4">
+                <div class="product-card">
+                    <a href="/shop/by-product/${product.slug}/${product.serial_number}">
+                        <div class="product-image">
+                            <img src="${product.image_path ? product_BIU + '/' + product.image_path : ASSET_URL + 'images/no-image-available.jpg'}" alt="">
+                        <span class="category">${product.product_code}</span>
+                        </div>
+                        </a>
+                    <div class="product-details">
+                            <a href="/shop/by-product/${product.slug}/${product.serial_number}">
+                                <h2 class="product-title">${product.short_title}</h2>
+                            </a>
+                    <div class="product-price">£${product.short_title}</div>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" id="dec-btn${product.id}" onclick="decQty(${product.id})">−</button>
+                        <input name="quantity" type="text" class="quantity" value="0"  id="quantity${product.id}"
+                        onkeyup=""
+                        >
+                        
+                        <button class="quantity-btn" onclick="incQty(${product.id})">+</button>
                     </div>
-                    <div class="col-6">
-                        <p class="fs-5 fw-bold mt-lg-2 text-dark">
-                        ${product.price == 0 ? 'Out of Stock' : '£' + product.price}
-                        </p>
+                    <button class="add-to-cart"
+                    onclick="inputQty(document.querySelector('#quantity${product.id}').value, '${product.id}', '${product.product_code}', '${product.full_title}', ${product.price}, ${product.discounted_price}, ${product.discounted_percentage}, '${product.parentCategory ? product.parentCategory.slug : ''}','${product.image_path}'
+                                            )"
+                    >Add to Cart</button>
                     </div>
                 </div>
-            </td>
-            <td>${product.price == 0 ? 'Out of Stock' : '£' + product.price}</td>
-            <td>
-                <div class="container-fluid">`;
-                    if (product.style){
-                        productCard += `<small>${product.style.name}</small>`;
-                    }
-            productCard += `</div>
-            </td>
-            <td>`;
-                if (product.colour){
-                    productCard += `<small>
-                        ${product.colour.trade_colour ? product.colour.trade_colour : product.colour.name}
-                    </small>`;
-                }
-            productCard += `</td>
-            <td>`;
-                if (product.category.name != 'DOORS'){
-                    if (product.assembly){
-                        productCard += `<small>${product.assembly.name}</small>`;
-                    }
-                }
-            productCard += `</td>
-        </tr>
+                
+            </div>
         `;
         return productCard;
     }
