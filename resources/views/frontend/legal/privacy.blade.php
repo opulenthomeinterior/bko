@@ -1,5 +1,504 @@
 <x-guest-layout>
-    <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
+
+
+
+ 
+<head>
+   
+   <style>
+        :root {
+            --primary-color: #ffc107;
+            --secondary-color: #fff9e6;
+            --text-color: #333;
+            --border-color: #ffe066;
+        }
+
+        body {
+            /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color); */
+            background-color: #fff;
+            color:black;
+        }
+        h1,h2,h3,h4,p
+        {
+            color:black;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #e6ac00 100%);
+            color: #333;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .header-section h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color:black;
+        }
+       
+
+        .header-section p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+            color:black
+        }
+
+        .content-section {
+            padding: 60px 0;
+        }
+
+        .policy-section {
+            margin-bottom: 50px;
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            border: 1px solid var(--border-color);
+        }
+
+        .policy-section h2 {
+            /* color: var(--primary-color); */
+            font-weight: 700;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+
+        .policy-section h3 {
+            /* color: var(--primary-color); */
+            font-weight: 600;
+            font-size: 1.4rem;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+
+        
+
+
+        .policy-section h4 {
+            /* color: #495057; */
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .policy-section p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+
+        
+
+        .policy-section ul {
+            margin-bottom: 20px;
+            padding-left: 0;
+        }
+
+        .policy-section li {
+            list-style: none;
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .policy-section li:before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        .table-responsive {
+            margin: 25px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .table {
+            margin-bottom: 0;
+        }
+
+        .table thead th {
+            background-color: var(--primary-color);
+            color: #333;
+            font-weight: 600;
+            border: none;
+            padding: 15px;
+        }
+
+        .table tbody td {
+            padding: 15px;
+            border-color: var(--border-color);
+            vertical-align: middle;
+        }
+
+        .table tbody tr:nth-child(even) {
+            background-color: var(--secondary-color);
+        }
+
+        .rights-list {
+            background: var(--secondary-color);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .rights-list li {
+            margin-bottom: 10px;
+            padding-left: 35px;
+        }
+
+        .rights-list li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+            font-size: 1.1rem;
+        }
+
+        .contact-section {
+            background: var(--secondary-color);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+
+        .contact-item i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3b3 100%);
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .website-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .website-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header-section h1 {
+                font-size: 2.2rem;
+            }
+            
+            .header-section p {
+                font-size: 1rem;
+            }
+            
+            .policy-section {
+                padding: 25px;
+                margin-bottom: 30px;
+            }
+            
+            .policy-section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .table-responsive {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .header-section {
+                padding: 40px 0;
+                
+            }
+            
+            .content-section {
+                padding: 40px 0;
+            }
+            
+            .policy-section {
+                padding: 20px;
+            }
+            
+            .contact-section {
+                padding: 25px;
+            }
+
+
+            .policy-section h4,
+            .header-section h1,
+            .policy-section h2,
+            .policy-section h3{
+                font-size:32px;
+            }
+
+            
+         .header-section p,
+        .policy-section p,
+       .policy-section ul li,
+       td {
+            font-size: 24px;
+        }
+
+
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <section class="header-section">
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p>Your privacy is important to us. Learn how we collect, use, and protect your personal information.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container content-section">
+        <!-- Introduction -->
+        <div class="policy-section">
+            <h2>1. Introduction</h2>
+            <p>Buy Kitchen Online ("we," "us," or "our") operates the website <a href="https://bkonline.uk/" class="website-link" target="_blank"><strong>https://bkonline.uk/</strong></a> and is responsible for safeguarding the privacy and security of our customer's personal data. This privacy policy states how we collect, process, store and protect your information when you visit our website, purchase any products or communicate with our team.</p>
+            <div class="highlight-box">
+                <p><strong>By accessing or using our website and services, you consent to all the practices stated below.</strong></p>
+            </div>
+        </div>
+
+        <!-- Information We Collect -->
+        <div class="policy-section">
+            <h2>2. Information We Collect</h2>
+            <p>We may collect and process the following categories of personal data:</p>
+
+            <h3>2.1 Personal Information</h3>
+            <ul>
+                <li><strong>Contact Details</strong>: Name, email address, phone number, billing/delivery address.</li>
+                <li><strong>Order Information</strong>: Product preferences, purchase history, payment details (processed securely via third-party gateways).</li>
+                <li><strong>Account Data</strong>: If you create an account, we store login credentials and profile details.</li>
+            </ul>
+
+            <h3>2.2 Technical & Usage Data</h3>
+            <ul>
+                <li><strong>Device & Browser Information</strong>: IP address, operating system, browser type, and version.</li>
+                <li><strong>Cookies & Tracking Technologies</strong>: We use cookies, pixels, and similar tools to enhance user experience, analyze trends, and improve our services (see <strong>Section 6</strong> for details).</li>
+                <li><strong>Website Analytics</strong>: Pages visited, session duration, referral sources (via tools like Google Analytics).</li>
+            </ul>
+
+            <h3>2.3 Communication Data</h3>
+            <ul>
+                <li>Emails, live chat transcripts, customer service calls, and feedback submissions.</li>
+                <li>Survey responses or promotional interactions (if opted-in).</li>
+            </ul>
+        </div>
+
+        <!-- How We Use Your Information -->
+        <div class="policy-section">
+            <h2>3. How We Use Your Information</h2>
+            <p>We process your data for the following lawful bases under the <strong>UK GDPR and Data Protection Act 2018</strong>:</p>
+            
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Purpose</th>
+                            <th>Legal Basis</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Order processing & fulfillment</td>
+                            <td>Contractual necessity</td>
+                        </tr>
+                        <tr>
+                            <td>Customer support & inquiries</td>
+                            <td>Legitimate interest</td>
+                        </tr>
+                        <tr>
+                            <td>Marketing communications</td>
+                            <td>Consent (where required)</td>
+                        </tr>
+                        <tr>
+                            <td>Fraud prevention & security</td>
+                            <td>Legal obligation & legitimate interest</td>
+                        </tr>
+                        <tr>
+                            <td>Website improvement & analytics</td>
+                            <td>Legitimate interest</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Data Sharing -->
+        <div class="policy-section">
+            <h2>4. Data Sharing & Third-Party Disclosures</h2>
+            <p><strong>We never sell your data.</strong> However, we are obligated to share it with:</p>
+            <ul>
+                <li><strong>Service Providers:</strong> Payment processors (e.g., Paypal, Stripe etc), Couriers (e.g., DHL. Royal Mail etc), and IT/cloud storage providers.</li>
+                <li><strong>Legal and Regulatory Bodies</strong>: If required by law (e.g., HMRC, courts or fraud investigations)</li>
+                <li><strong>Business Transfers:</strong> In mergers, acquisitions, or asset sales (with confidentiality safeguard)</li>
+            </ul>
+            <p>All third parties are contractually obligated to comply with data protection laws.</p>
+        </div>
+
+        <!-- International Data Transfers -->
+        <div class="policy-section">
+            <h2>5. International Data Transfers</h2>
+            <p>If data is transferred outside the UK/EEA (e.g., via cloud servers), we ensure adequate safeguards, such as:</p>
+            <ul>
+                <li>Standard Contractual Clauses (SCCs).</li>
+                <li>UK-approved international data transfer agreements.</li>
+            </ul>
+        </div>
+
+        <!-- Cookies & Tracking -->
+        <div class="policy-section">
+            <h2>6. Cookies & Tracking Technologies</h2>
+            <p>We use the following types of cookies:</p>
+            
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Cookie Type</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Essential</td>
+                            <td>Site functionality (e.g., shopping cart).</td>
+                        </tr>
+                        <tr>
+                            <td>Analytics</td>
+                            <td>Traffic analysis (Google Analytics).</td>
+                        </tr>
+                        <tr>
+                            <td>Marketing</td>
+                            <td>Personalized ads (if consented).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <p>You can manage preferences via your browser settings or our <strong>Cookie Consent Banner</strong>.</p>
+        </div>
+
+        <!-- Data Security -->
+        <div class="policy-section">
+            <h2>7. Data Security & Retention</h2>
+            <ul>
+                <li><strong>Security Measures</strong>: Encryption (SSL/TLS), secure payment gateways, access controls, and regular security audits.</li>
+                <li><strong>Retention Period</strong>: We retain data only as long as necessary (e.g., 7 years for tax records, 2 years for marketing consent).</li>
+            </ul>
+        </div>
+
+        <!-- Legal Rights -->
+        <div class="policy-section">
+            <h2>8. Your Legal Rights</h2>
+            <p>Under UK data protection laws, you may:</p>
+            <div class="rights-list">
+                <ul>
+                    <li><strong>Access</strong> your data (via a Subject Access Request).</li>
+                    <li><strong>Correct</strong> inaccurate information.</li>
+                    <li><strong>Request deletion</strong> (where no legal obligation exists).</li>
+                    <li><strong>Restrict or object</strong> to processing.</li>
+                    <li><strong>Withdraw consent</strong> (for marketing).</li>
+                    <li><strong>Lodge a complaint</strong> with the <strong>ICO</strong> (<a href="https://www.ico.org.uk/" class="website-link" target="_blank">www.ico.org.uk</a>).</li>
+                </ul>
+            </div>
+            <p>To exercise these rights, contact us at <strong>[Your Email]</strong> with proof of identity.</p>
+        </div>
+
+        <!-- Marketing Preferences -->
+        <div class="policy-section">
+            <h2>9. Marketing Preferences</h2>
+            <ul>
+                <li><strong>Opt-in</strong>: We only send promotions if you explicitly consent.</li>
+                <li><strong>Opt-out</strong>: Unsubscribe via email links or by contacting us.</li>
+            </ul>
+        </div>
+
+        <!-- Policy Updates -->
+        <div class="policy-section">
+            <h2>10. Policy Updates</h2>
+            <p>We may revise this policy periodically. Changes will be posted here, and material updates will be notified via email (where appropriate).</p>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="policy-section contact-section">
+            <h2>11. Contact Us</h2>
+            <p>For privacy-related inquiries, contact:</p>
+            <h4><strong>Buy Kitchen Online</strong></h4>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span><strong>Email:</strong> admin@bkonline.uk</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span><strong>Phone:</strong> 020 805 05605</span>
+                </div>
+            </div>
+            <div class="contact-item justify-content-center mt-3">
+                <i class="fas fa-map-marker-alt"></i>
+                <span><strong>Address:</strong> 44 Gillender St, Aberfeldy Village, London E14 6RP, United Kingdom</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+
+
+
+
+    {{-- <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase">Home</a></li>
@@ -333,6 +832,6 @@
 
             </div>
         </div>
-    </section>
+    </section> --}}
 
 </x-guest-layout>
