@@ -192,7 +192,7 @@ $(document).ready(function () {
                             <a href="/shop/by-product/${product.slug}/${product.serial_number}">
                                 <h2 class="product-title">${product.short_title}</h2>
                             </a>
-                    <div class="product-price">£${product.short_title}</div>
+                    <div class="product-price">£${product.price}</div>
                     <div class="quantity-selector">
                         <button class="quantity-btn" id="dec-btn${product.id}" onclick="decQty(${product.id})">−</button>
                         <input name="quantity" type="text" class="quantity" value="0"  id="quantity${product.id}"
