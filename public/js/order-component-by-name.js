@@ -190,7 +190,7 @@ $(document).ready(function () {
                         </a>
                     <div class="product-details">
                             <a href="/shop/by-product/${product.slug}/${product.serial_number}">
-                                <h2 class="product-title">${product.short_title}</h2>
+                                <h2 class="product-title">${product.full_title}</h2>
                             </a>
                     <div class="product-price">£${product.price}</div>
                     <div class="quantity-selector">
