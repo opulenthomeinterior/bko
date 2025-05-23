@@ -1073,7 +1073,7 @@ use App\Models\Style;
                             @csrf
                             <div class="input-group">
                                 <input type="email" name="email" class="form-control fs-mob-18" placeholder="Enter Your Email" aria-label="Email">
-                                <input type="hidden" name="catalogue_register_now" value="subscribed with email">
+                                <input type="hidden" name="catalogue_register_now" value="subscribed with email" required>
                                 <button class="btn fs-mob-18" type="submit" style="background-color:#febd49">Subscribe!</button>
                             </div>
                         </form>
