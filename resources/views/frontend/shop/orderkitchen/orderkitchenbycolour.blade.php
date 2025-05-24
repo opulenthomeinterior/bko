@@ -1,6 +1,6 @@
 <x-guest-layout>
     @section('meta_tags')
-        <title>Order Kitchen</title>
+        <title>{{$title}}</title>
         <meta name="description" content="">
         <link rel="canonical" href="" />
     @endsection
