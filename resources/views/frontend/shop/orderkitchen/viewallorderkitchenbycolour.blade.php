@@ -1,4 +1,8 @@
 <x-guest-layout>
+    @section('meta_tags')
+        <title>{{$title}}</title>
+        <meta name="description" content="">
+    @endsection
     <div class="container-fluid px-lg-5 py-4 px-md-3 px-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
