@@ -115,7 +115,7 @@
                 <span class="input-group-text">
                     <i class="fas fa-phone fs-mob-input"></i>
                 </span>
-                <input type="number" class="form-control inquiry-form-control fs-mob-input" placeholder="Enter your phone number" name="phone" id="phone" required>
+                <input type="number" class="form-control inquiry-form-control fs-mob-input" placeholder="Enter your phone number" name="phone" id="phone">
             </div>
 
             <!-- <div class="call-us">
@@ -133,7 +133,7 @@
             </div>
 
             <div class="input-group text-area-container ">
-                <textarea class="fs-mob-input form-control inquiry-form-control" rows="1" name="message" placeholder="Enter your message" required></textarea>
+                <textarea class="fs-mob-input form-control inquiry-form-control" rows="1" name="message" placeholder="Enter your message"></textarea>
             </div>
 
              @include('frontend.button', ['type' =>'submit', 'text'=>'Submit'])

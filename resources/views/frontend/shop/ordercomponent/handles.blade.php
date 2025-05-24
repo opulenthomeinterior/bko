@@ -681,7 +681,7 @@ td
             <div class="col-lg-6 align-self-center" >
                     
                     <div class=" p-5 rounded shadow-lg order-sample  bg-white rounded-lg border-0 shadow-sm pe-5">
-                        <h4 style="font-size:30px; font-weight:600; color:#FDB71A"><span class="">Order a Sample</span> <span class="text-black text-uppercase">of Your Favorite HANDLE<span>
+                        <h4 style="font-size:30px; font-weight:600; color:#FDB71A"><span class="text-uppercase">ORDER A SAMPLE</span> <span class="text-black text-uppercase">of Your Favorite HANDLE<span>
                         <br></h4>
                         <p  style="font-size: 16px;" class="mt-4">
                             Choosing the right handle is an important decision. Our sample service allows you to experience the material, Color and Quality of our Handles in your own kitchen before committing to a full order.

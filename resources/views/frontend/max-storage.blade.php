@@ -1818,6 +1818,37 @@
 
     
 
+      <div class="container">
+        <div class="row">
+
+
+            <div class="col-12 my-5 p-0">
+               
+                <img class=" p-0 w-100 rounded img-fluid d-none d-md-block" src="{{ asset('images/max-custom-sizes.png') }}"/>
+                
+                <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/max-custom-sizes-mobile.png') }}"/>
+               
+            </div>
+        </div>
+    </div>
+      <div class="container">
+        <div class="row">
+
+
+            <div class="col-12 my-5 p-0">
+               
+                <img class=" p-0 w-100 rounded img-fluid d-none d-md-block" src="{{ asset('images/max-appliances.png') }}"/>
+                
+                <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/max-appliances-mobile.png') }}"/>
+               
+            </div>
+        </div>
+    </div>
+
+
+
+
+
     <div class="container mt-5 mb-5">
 
         

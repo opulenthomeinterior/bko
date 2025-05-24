@@ -368,7 +368,7 @@
                 <div class="row mb-3">
                     <div class="col-lg-12">
 
-                        <h3 class="text-center">OUR CORE VALUES</h3>
+                        <h3 class="text-center text-black fw-bold">OUR CORE VALUES</h3>
                     </div>
                 </div>
                 <div class="row our-core-values">
@@ -376,9 +376,9 @@
                         <div class="card our-core-values-card d-flex flex-column align-items-center px-3" style="">
                             <img src="{{ asset('/images/honest.png') }}" style="width:139px; " class="mx-auto" />
                             <div class="card-body">
-                                <h5 class="card-title text-center">
+                                <h3 class="fw-bold card-title text-center">
                                     Honest & Fair Trade
-                                </h5>
+                                </h3>
                                 <p class="card-text">We believe in providing the best value for your money. Our design
                                     services are flexible, and you have complete control over your kitchen design. You can
                                     make adjustments at any time to suit your preferences—without any pressure from us.</p>
@@ -391,7 +391,7 @@
                         <div class="card our-core-values-card px-3" style="">
                             <img src="{{ asset('/images/transparency.png') }}" style="width:139px; " class="mx-auto" />
                             <div class="card-body">
-                                <h5 class="card-title text-center">Transparency & Fair Pricing</h5>
+                                <h3 class="fw-bold card-title text-center">Transparency & Fair Pricing</h3>
                                 <p class="card-text">
                                     At Buy Kitchen Online, our main objective is sustainability. We use the latest
                                     sustainable manufacturing techniques to create up-to-date designs while delivering the
@@ -410,9 +410,9 @@
                             <img src="{{  asset('/images/sustainability.png') }}" style="width:139px; " class="mx-auto" />
 
                             <div class="card-body">
-                                <h5 class="card-title text-center">
+                                <h3 class="fw-bold card-title text-center">
                                     Sustainability
-                                </h5>
+                                </h3>
                                 <p class="card-text">
                                     At Buy Kitchen Online, our main objective is sustainability. We use the latest
                                     sustainable manufacturing techniques to create up-to-date designs while delivering the
