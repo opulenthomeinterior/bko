@@ -1,6 +1,6 @@
 <x-guest-layout>
     @section('meta_tags')
-        <title>{{$seo?->meta_title}}</title>
+        <title>{{strtoupper($slug)}}</title>
         <meta name="description" content="{{$seo?->meta_description}}">
         <link rel="canonical" href="{{$seo?->canonical_tag}}" />
         {!! $seo?->schema_code !!}
