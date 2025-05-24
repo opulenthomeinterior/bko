@@ -1,4 +1,9 @@
 <x-guest-layout>
+    @section('meta_tags')
+        <title>Order Component</title>
+        <meta name="description" content="">
+        <link rel="canonical" href="" />
+    @endsection
     <style>
         
         
@@ -122,7 +127,7 @@
                                     @if ($component->slug == 'doors')
                                         <p class="card-text">The doors are the first impression of your kitchen. You can transform your kitchen by selecting from our various colors and finishes. Our doors are the essence of style and durability, creating an elegant look.</p>
                                         @elseif ($component->slug == 'handles')
-                                        <p class="card-text">A wide variety of handles for kitchen units are available at Buy Kitchen Online. The handles are suitable for drawers, cabinets and doors. You can choose a handle according to your style preference and kitchen aesthetic. To minimize space, you can go for a simple bar handle or select one of our drop handles if you want a statement piece.</p>
+                                        <p class="card-text">A wide variety of handles for kitchen units are available at Buy Kitchen Online. The handles are suitable for drawers, cabinets and doors. You can choose a handle according to your style preference and kitchen aesthetic.</p>
                                         @elseif ($component->slug == 'accessories')
                                         <p class="card-text">Enhance the style and functionality of your kitchen with our premium accessories. From smart storage solutions to innovative accessories, everything is designed to combine modern convenience with timeless elegance.</p>
                                         @elseif ($component->slug == 'appliances')
