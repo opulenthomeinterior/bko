@@ -561,9 +561,19 @@ use App\Models\Style;
         </div>
 
         <div class="whatsapp-icon d-flex justify-content-center bg-white rounded-circle" id="whatsapp-icon" style="height: 50px; width: 50px">
+          
             <a href="https://wa.me/+447847776297" target="_blank">
                 <i class="ri-whatsapp-line" style="font-size: 35px;">
                 </i>
+            </a>
+        </div>
+
+        <div class="survey-icon d-flex align-items-center justify-content-center bg-white rounded-circle" id="survey-icon" style="height: 50px; width: 50px;">
+        
+            <!-- <i class="ri-survey-fill" style="font-size: 35px;"></i> -->
+           
+            <a class="btn" data-bs-toggle="modal" data-bs-target="#newsletterModalGuest">
+            <i class="ri-survey-line" style="font-size: 35px;"  ></i>
             </a>
         </div>
 
@@ -1407,7 +1417,7 @@ use App\Models\Style;
                         <p class="terms-text mt-2">Terms & Conditions Applied.</p>
                         <div class="subscribe-container">
                             <input type="email" id="emailInputGuest" class="form-control news-letter-input" placeholder="Enter Your Email">
-                            <button class="subscribe-btn" id="subscribeBtnGuest">Subscribe</button>
+                            <button class="subscribe-btn" id="subscribeBtnGuest" onclick="newsletterModalGuestFn()">Subscribe</button>
                         </div>
                         <p class="privacy-text">We respect your Privacy. Unsubscribe at any time.</p>
                     </div>
@@ -1478,7 +1488,63 @@ use App\Models\Style;
     </div>
     </div>
     
-
+<div class="modal fade" id="thankyouModalGuest" tabindex="-1" aria-labelledby="thankyouModalGuestLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="butn-close close-btn" data-bs-dismiss="modal" aria-label="Close">X</button>
+    </div>
+    <div class="modal-body p-3">
+      <div class="row mb-4">
+        <div class="col-12">
+          <h1><span class="thank-you">Thank You</span> <span class="for-subscribing">For Subscribing!</span></h1>
+        </div>
+      </div>
+      
+      <div class="row mb-3">
+        <div class="col-12">
+          <p class="fs-5 mb-0">We've sent the <strong>Discount Code</strong> to your <strong>email address</strong>.</p>
+        </div>
+      </div>
+      
+      <div class="row mb-4">
+        <div class="col-12">
+          <p class="fs-4">Additionally, <span class="youve-won">YOU'VE WON</span> <span class="free-text">FREE</span> <span class="consultation">CONSULTATION!</span></p>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-7 mb-4">
+          <p class="fs-5 mb-3">If you want to avail this offer, Please provide:</p>
+          
+          <form>
+            <input type="text" class="form-control thankyou-input" placeholder="Your Name:">
+            <input type="tel" class="form-control thankyou-input" placeholder="Phone Number:" pattern="[0-9]+" inputmode="numeric">
+            <input type="datetime-local" class="form-control thankyou-input" placeholder="Preferred Date & Time:">
+            <textarea class="form-control thankyou-input" rows="3" placeholder="Add a Note:"></textarea>
+            
+            <button type="submit" class="submit-btn mt-3">Submit</button>
+          </form>
+        </div>
+        
+        <div class="col-md-5">
+          <div class="benefits-box">
+            <p class="benefits-title mb-4">BENEFITS OF <span style="color: #ffa500;">FREE CONSULTATION</span>:</p>
+            
+            <ul class="list-unstyled">
+              <li class="benefit-item">• <span class="highlight-text">FREE</span> Virtual Consultation</li>
+              <li class="benefit-item">• <span class="highlight-text">FREE</span> Design Advice</li>
+              <li class="benefit-item">• <span class="highlight-text">FREE</span> Efficient Planning</li>
+              <li class="benefit-item">• Schedule at your <span class="convenience-text">CONVENIENCE</span></li>
+              <li class="benefit-item">• <span class="highlight-text">NO OBLIGATION</span> to Purchase</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 
 
 
@@ -1539,6 +1605,50 @@ use App\Models\Style;
 
     ?>
     <script>
+
+
+
+function newsletterModalGuestFn(){
+    
+     document.getElementById('subscribeBtnGuest').addEventListener('click',function(){
+                    console.log("btn clicked")
+                    const emailInput = document.getElementById('emailInputGuest');
+                    const email = emailInput.value.trim();
+                    console.log(email);
+                    
+                    // Basic email validation
+                    if (email && email.includes('@') && email.includes('.')) {
+                        // Hide newsletter modal
+                        var newsletterModalGuest = bootstrap.Modal.getInstance(document.getElementById('newsletterModalGuest'));
+                        newsletterModalGuest.hide();
+                        
+                        // Show discount modal after a short delay
+                        setTimeout(function() {
+                            var thankyouModalGuest = new bootstrap.Modal(document.getElementById('thankyouModalGuest'));
+                            // discountModal.show();
+                            sendEmail();
+                            thankyouModalGuest.show();
+                            
+                        }, 500);
+                    } else {
+                        // Simple error visual
+                        emailInput.style.borderColor = '#ef4444';
+                        setTimeout(() => {
+                            emailInput.style.borderColor = '#fde68a';
+                        }, 2000);
+                    }
+                    
+                    localStorage.setItem('subscribed', true);
+                });
+                   
+
+       
+
+}
+
+
+
+
 
     function sendEmail() {
         var email = $('#emailInputGuest').val();
