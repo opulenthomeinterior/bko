@@ -221,6 +221,10 @@ $(document).ready(function () {
         handleInputChange();
     });
 
+    $(document).on('click', '.type-filter', function() {
+        handleInputChange();
+    });
+
     $(document).on('click', '.height-filter', function() {
         handleInputChange();
     });
