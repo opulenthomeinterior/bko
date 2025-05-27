@@ -1870,7 +1870,7 @@
 
                         <div class="card">
                             <div class="card-img">
-                                <img src="{{ asset('images/pull-out-shelving-unit.jpeg') }}" class="card-img-top" alt="">
+                                <img src="{{ asset('images/pull-out-shelving-unit.png') }}" class="card-img-top" alt="">
 
                             </div>
                             <div class="card-content">
@@ -1886,7 +1886,7 @@
 
                         <div class="card">
                             <div class="card-img">
-                                <img src="{{ asset('images/swing-out-larder-unit.jpeg') }}" class="card-img-top" alt="">
+                                <img src="{{ asset('images/swing-out-larder-unit.png') }}" class="card-img-top" alt="">
                             </div>
                             <div class="card-content">
                                 <h6 class="card-title">Swing Out Larder Unit</h6>
@@ -1901,7 +1901,7 @@
                          <a href="https://bkonline.uk/shop/by-product/wicker-basket-set,-two-baskets-with-runners,-for-cabinet-widths-500-600-mm/14672" class="text-dark text-decoration-none"></a>
                         <div class="card">
                             <div class="card-img">
-                                     <img src="{{ asset('images/wicker-basket-set-with-runners.jpeg') }}" class="card-img-top" alt="">
+                                     <img src="{{ asset('images/wicker-basket-set-with-runners.png') }}" class="card-img-top" alt="">
                             </div>
                             <div class="card-content">
                                 <h6 class="card-title">Wicker basket set  with runners</h6>
@@ -1917,7 +1917,7 @@
 
                         <div class="card">
                             <div class="card-img">
-                                 <img src="{{ asset('images/swing-out-corner-storage.jpeg') }}" class="card-img-top" alt="">
+                                 <img src="{{ asset('images/swing-out-corner-storage.png') }}" class="card-img-top" alt="">
                             </div>
                             <div class="card-content">
                                 <h6 class="card-title">Swing out corner storage</h6>
@@ -1932,7 +1932,7 @@
     <a href="https://bkonline.uk/shop/by-product/swing-out-larder--unit,-for-cabinet-width-500-600-mm,-artline-glass-side-baskets,-vs-tal-gate/14522" class="text-dark text-decoration-none">
                         <div class="card">
                             <div class="card-img">
-                                          <img src="{{ asset('images/swing-out-larder-unit-artline-glass-side-baskets.jpeg') }}" class="card-img-top" alt="">
+                                          <img src="{{ asset('images/swing-out-larder-unit-artline-glass-side-baskets.png') }}" class="card-img-top" alt="">
                             </div>
                             <div class="card-content">
                                 <h6 class="card-title">Swing out larder unit artline glass side baskets</h6>
@@ -1945,7 +1945,7 @@
                         <a href="https://bkonline.uk/shop/by-product/double-basket,-pull-out,-for-300/400-mm-cabinet-width/14653" class="text-dark text-decoration-none">
                         <div class="card">
                             <div class="card-img">
-                                           <img src="{{ asset('images/double-basket-pull-out.jpeg') }}" class="card-img-top" alt="">
+                                           <img src="{{ asset('images/double-basket-pull-out.png') }}" class="card-img-top" alt="">
                             </div>
                             <div class="card-content">
                                 <h6 class="card-title">Double basket pull out</h6>
@@ -1957,7 +1957,7 @@
                           <a href="https://bkonline.uk/shop/by-product/extension-pole,-for-vauth-sagel-cornerstone%C2%AE-maxx/14316" class="text-dark text-decoration-none">
                         <div class="card">
                             <div class="card-img">
-                                          <img src="{{ asset('images/extension-pole.jpeg') }}" class="card-img-top" alt="">
+                                          <img src="{{ asset('images/extension-pole.png') }}" class="card-img-top" alt="">
                             </div>
                             <div class="card-content">
                               <h6 class="card-title">Extension pole</h6>
@@ -1969,7 +1969,7 @@
                                          <a href="https://bkonline.uk/shop/by-product/base-inserts,-set,-white-plastic/14366" class="text-dark text-decoration-none">
                         <div class="card">
                             <div class="card-img">
-                                          <img src="{{ asset('images/base-insert-set-white-plastic.jpeg') }}" class="card-img-top" alt="">
+                                          <img src="{{ asset('images/base-insert-set-white-plastic.png') }}" class="card-img-top" alt="">
                             </div>
                             <div class="card-content">
                              <h6 class="card-title">Base insert set white plastic</h6>
@@ -1981,7 +1981,7 @@
                                          <a href="https://bkonline.uk/shop/by-product/base-inserts,-for-pull-out-storage--unit/14746" class="text-dark text-decoration-none">
                         <div class="card">
                             <div class="card-img">
-                                     <img src="{{ asset('images/base-inserts-for-pull-out-storage.jpeg') }}" class="card-img-top" alt="">
+                                     <img src="{{ asset('images/base-inserts-for-pull-out-storage.png') }}" class="card-img-top" alt="">
 
                             </div>
                             <div class="card-content">
