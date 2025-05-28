@@ -9,6 +9,48 @@
     /* Ensure it stays on top of other elements */
 }
 
+#survey-icon
+{
+   position: fixed;
+    /* Fix it in place relative to the viewport */
+    bottom: 85px;
+    /* Adjust the vertical position */
+    left: 20px;
+    /* Move it to the left side */
+    z-index: 1000;  
+    animation: pulse 2s ease-in-out infinite;
+}
+
+
+  @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+/* @media (max-width:576px)
+{
+    #survey-icon
+    {
+        
+    
+    bottom: 85px;
+    
+    right: 20px;
+   
+    z-index: 1000; 
+    }
+} */
+
 #whatsapp-icon i {
     font-size: 24px;
     /* Adjust the icon size as needed */
