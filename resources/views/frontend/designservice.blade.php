@@ -143,7 +143,25 @@
         </div>
     </section>
 
-    <section class="container px-lg-5 px-md-3 px-3 py-4">
+
+     <div class="container my-2">
+    
+
+    <!-- Nav Tabs -->
+    <ul class="nav nav-tabs justify-content-start ps-5" id="formTabs" role="tablist">
+      <li class="nav-item py-1" role="presentation">
+        <button class="nav-link active" id="form1-tab" data-bs-toggle="tab" data-bs-target="#form1" type="button" role="tab" aria-controls="form1" aria-selected="true">Upload Kitchen Measurements</button>
+      </li>
+      <li class="nav-item py-1" role="presentation">
+        <button class="nav-link" id="form2-tab" data-bs-toggle="tab" data-bs-target="#form2" type="button" role="tab" aria-controls="form2" aria-selected="false">Upload Kitchen Images</button>
+      </li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content" id="formTabsContent">
+      <!-- Form 1 -->
+      <div class="tab-pane fade show active" id="form1" role="tabpanel" aria-labelledby="form1-tab">
+       <section id="firstForm" class="container px-lg-5 px-md-3 px-3 py-4">
         <div class="row justify-content-center">
             <div class="col-lg-7">
                 <form action="{{ route('submit.designservice') }}" method="POST" enctype="multipart/form-data">
@@ -206,5 +224,155 @@
             </div>
         </div>
     </section>
+      </div>
+
+      <!-- Form 2 -->
+      <div class="tab-pane fade" id="form2" role="tabpanel" aria-labelledby="form2-tab">
+      
+        <section id="secondForm" class="container px-lg-5 px-md-3 px-3 py-4">
+        <div class="row ">
+            <div class="col-lg-7">
+                <form action="{{ route('submit.designservice') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <!-- <div class="border-bottom border-dark pb-2">
+                        <h3 class="text-dark fw-bolder text-uppercase">Request a meeting</h3>
+                    </div> -->
+
+                    <div class="row py-3">
+                        <div class="col-md-6 col-12">
+                            <label class="py-1">Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="name" required />
+                        </div>
+                          <div class="col-md-6 col-12">
+                            <label class="py-1">Email <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" name="email" required />
+                        </div>
+                    </div>
+
+                    <div class="row py-3">
+                      
+                        <div class="col-md-6 col-12">
+                            <label class="py-1">Phone Number <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control" name="phone" required />
+                        </div>
+                        
+                        <div class="col-md-6 col-12">
+                            <label class="py-1">Address <span class="text-danger">*</span></label>
+                            <!-- <input type="number" class="form-control" name="phone" required /> -->
+                             <textarea name="address" id="" class="form-control" required></textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="row py-3">
+                        <label class="py-1">Please upload your kitchen images <span class="text-danger">*</span></label>
+                        <div class="col-12 py-2 border border-grey border-2">
+                            <label class="py-1 fw-bold">Drop images here or</label>
+                            <input type="file" name="file" class="form-control border border-warning" accept=".jpg,.jpeg,.png" multiple />
+                            <label class="py-1">
+                                <small>Accepted file types: jpg, jpeg, png. Max file size: 10MB.</small>
+                            </label>
+                        </div>
+                    </div>
+
+
+                     <div class="row py-3">
+                        <div class="col-md-6 col-12">
+                            <label class="py-1">Please add a note <span class="text-danger">*</span></label>
+                            <!-- <input type="text" class="form-control" name="name" required /> -->
+                             <textarea name="note" id="" class="form-control"></textarea>
+                        </div>
+                         
+                    </div>
+
+
+                    <!-- <div class="row py-3">
+                        <div class="col-12">
+                            <p class="pt-1">Callbacks will take place during office hours.</p>
+                        </div>
+                    </div> -->
+
+
+                    <div class="row pt-3">
+                        <div class="col-12">
+                            <button class="btn btn-md text-uppercase fw-bolder rounded-0" type="submit" style="background-color:#2A6161; color:white">
+                                Request a design appointment
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+  </div>
+
+
+
+    <!-- <section id="first-form" class="container px-lg-5 px-md-3 px-3 py-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <form action="{{ route('submit.designservice') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="border-bottom border-dark pb-2">
+                        <h3 class="text-dark fw-bolder text-uppercase">Request a meeting</h3>
+                    </div>
+
+                    <div class="row py-3">
+                        <div class="col-md-6 col-12">
+                            <label class="py-1">First <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="first_name" required />
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <label class="py-1">Surname <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="sur_name" required />
+                        </div>
+                    </div>
+
+                    <div class="row py-3">
+                        <div class="col-md-6 col-12">
+                            <label class="py-1">Email <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" name="email" required />
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <label class="py-1">Phone Number <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control" name="phone" required />
+                        </div>
+                    </div>
+
+                    <div class="row py-3">
+                        <label class="py-1">Please upload your kitchen measurements and/or existing plans <span class="text-danger">*</span></label>
+                        <div class="col-12 py-2 border border-grey border-2">
+                            <label class="py-1 fw-bold">Drop files here or</label>
+                            <input type="file" name="file" class="form-control border border-warning" accept=".jpg,.jpeg,.png,.pdf,.doc,.docx,.ppt,.pptx" />
+                            <label class="py-1">
+                                <small>Accepted file types: jpg, jpeg, png, pdf, doc, docx, ppt, pptx. Max file size: 10MB.</small>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="row py-3">
+                        <div class="col-12">
+                            <p class="pt-1">Callbacks will take place during office hours.</p>
+                        </div>
+                    </div>
+
+                    <div class="row pt-3">
+                        <div class="col-12">
+                            <button class="btn btn-md text-uppercase fw-bolder rounded-0" type="submit" style="background-color:#2A6161; color:white">
+                                Request a design appointment
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="col-lg-5 d-flex justify-content-center align-items-center mt-4 mt-lg-0">
+                <img src="{{asset('images/consult.jpg')}}" class="img-fluid rounded" alt="Consultation Image"/>
+            </div>
+        </div>
+    </section> -->
+
+
 </x-guest-layout>
 
