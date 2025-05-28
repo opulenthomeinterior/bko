@@ -822,7 +822,7 @@ td
             </div>
             
                <div class="pb-5 col-lg-9 col-12 mt-md-3">
-                <div class="row g-4">
+                <div class="row g-4" id="products_container">
                       @foreach ($products as $index => $product)
                      <div class="col-lg-4">
                       
@@ -1170,45 +1170,37 @@ td
     <script>
 
 
-function newsletterModalOrderFn(){
-    
-     document.getElementById('subscribeBtnOrder').addEventListener('click',function(){
-                    console.log("btn clicked")
-                    const emailInput = document.getElementById('emailInput');
-                    const email = emailInput.value.trim();
-                    console.log(email);
+        function newsletterModalOrderFn(){
+            document.getElementById('subscribeBtnOrder').addEventListener('click',function(){
+                console.log("btn clicked")
+                const emailInput = document.getElementById('emailInput');
+                const email = emailInput.value.trim();
+                console.log(email);
+                
+                // Basic email validation
+                if (email && email.includes('@') && email.includes('.')) {
+                    // Hide newsletter modal
+                    var newsletterModalOrder = bootstrap.Modal.getInstance(document.getElementById('newsletterModalOrder'));
+                    newsletterModalOrder.hide();
                     
-                    // Basic email validation
-                    if (email && email.includes('@') && email.includes('.')) {
-                        // Hide newsletter modal
-                        var newsletterModalOrder = bootstrap.Modal.getInstance(document.getElementById('newsletterModalOrder'));
-                        newsletterModalOrder.hide();
+                    // Show discount modal after a short delay
+                    setTimeout(function() {
+                        var thankyouModal = new bootstrap.Modal(document.getElementById('thankyouModal'));
+                        // discountModal.show();
+                        sendEmail();
+                        thankyouModal.show();
                         
-                        // Show discount modal after a short delay
-                        setTimeout(function() {
-                            var thankyouModal = new bootstrap.Modal(document.getElementById('thankyouModal'));
-                            // discountModal.show();
-                            sendEmail();
-                            thankyouModal.show();
-                            
-                        }, 500);
-                    } else {
-                        // Simple error visual
-                        emailInput.style.borderColor = '#ef4444';
-                        setTimeout(() => {
-                            emailInput.style.borderColor = '#fde68a';
-                        }, 2000);
-                    }
-                    
-                    localStorage.setItem('subscribed', true);
-                });
-                   
-
-       
-
-}
-
-
+                    }, 500);
+                } else {
+                    // Simple error visual
+                    emailInput.style.borderColor = '#ef4444';
+                    setTimeout(() => {
+                        emailInput.style.borderColor = '#fde68a';
+                    }, 2000);
+                }
+                localStorage.setItem('subscribed', true);
+            });
+        }
         $(document).ready(function () {            
             
             var slug = $('#slug').val();

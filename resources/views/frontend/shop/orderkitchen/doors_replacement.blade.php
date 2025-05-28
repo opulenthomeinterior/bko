@@ -1281,11 +1281,11 @@
                     <div class="product-image-container">
                     <a href="{{ route('ordercomponentbyname', ['doors']) }}?style_id={{$style->id}}"><img src="https://bkonline.uk/public/imgs/products/vivo_vero_matt_light_grey1744270102_67f77316cd6eb.png" class=""  id="main-image" alt="Kitchen Cabinet"></a>
                     </div>
-                    @elseif($style->id == 10)
+                    @elseif($style->id == 9)
                     {{-- <div class="d-flex justify-content-center" style="margin-top: 10px; min-height: 250px !important;"><img src="https://bkonline.uk/public/imgs/products/Matt-Light-Grey-Door-with-Handle1730581810_67269532decf5.jpg" class="card-img-top" style="max-height: 200px; width: 120px" id="main-image" alt="Kitchen Cabinet"></div> --}}
-                    <!-- <div class="product-image-container">
+                    <div class="product-image-container">
                     <a href="{{ route('ordercomponentbyname', ['doors']) }}?style_id={{$style->id}}"><img src="https://bkonline.uk/public/imgs/products/Matt-Light-Grey-Door-with-Handle1730581810_67269532decf5.jpg" class=""  id="main-image" alt="Kitchen Cabinet"></a>
-                    </div> -->
+                    </div>
                     @endif
                     {{-- <div class="card-body text-center"> --}}
                         {{-- <div class="d-flex justify-content-center align-items-center mb-4"> --}}

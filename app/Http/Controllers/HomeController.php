@@ -647,7 +647,7 @@ class HomeController extends Controller
         $categoryShortTitle = $findProduct?->short_title;
         $parentSubCategory = $findProduct?->parent_sub_category;
 
-        $relatedCategoryProducts = Product::where('id', '!=', $product->id)
+        $relatedCategoryProducts = Product::with('colour')->where('id', '!=', $product->id)
             ->where('status', 'active')
             ->whereIn('parent_category_id', [6, 15])
             ->where(function ($q) use ($parentSubCategory, $categoryShortTitle) {

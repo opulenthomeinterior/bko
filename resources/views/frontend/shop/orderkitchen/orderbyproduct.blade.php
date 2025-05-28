@@ -171,118 +171,138 @@
                                 <p class="fs-6 border border-warning p-2">{{$product->product_code}}</p>
                             </div>
                             <div class="d-flex flex-column">
-                                <p class="fs-6 fw-bold">Hole Centre Spacing</p>
-                                <select name="" id="" class="p-2 border border-warning fs-6">
-                                    <option value="" class="fs-6">Choose an option</option>
-                                </select>
+                                <p class="fs-6 fw-bold">Order a Free Sample </p>
+                                <a class="btn border-1 border-primary p-2">Checkout</a>
+                                <p class="fs-6 mt-2 fw-bold text-danger">£6 Delivery Charges</p>
                             </div>
-
+                        </div>
+                         <div class="container-fluid p-0">
+                            <p class="fs-6 fw-bold">Available Colours</p>
+                            @if (count($relatedCategoryProducts) > 0)
+                            <div class="row mb-4">
+                                <div class="col-12">
+                                    <div class="row" style="max-height: 170px; overflow-x: hidden; overflow-y: scroll">
+                                        @foreach ($relatedCategoryProducts as $relatedCategoryProduct)
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2">
+                                                <a href="{{ route('orderbyproduct', [$relatedCategoryProduct->slug, $relatedCategoryProduct->id]) }}" class="btn btn-outline-warning rounded-0 text-dark fw-bold" style="display: flex; align-items: center; justify-content: start">
+                                                <img class="img-fluid" width="50px" height="50px" src="{{ asset('imgs/products/'.$relatedCategoryProduct->image_path) }}" alt="">
+                                                &nbsp;
+                                                {{ $relatedCategoryProduct->colour?->name ? '' . strtoupper($relatedCategoryProduct->colour?->name) . '' : '' }}
+                                                {{ $relatedCategoryProduct->height 
+                                                    ? ($relatedCategoryProduct->width 
+                                                        ? '(H:'.$relatedCategoryProduct->height . 'x' . 'W:'.$relatedCategoryProduct->width . ' mm)' 
+                                                        : '(H:'.$relatedCategoryProduct->height . ' mm)') 
+                                                    : ($relatedCategoryProduct->width ? '(W:'.$relatedCategoryProduct->width . ' mm)' : '') }}
+                                                {{ ' (£' . $relatedCategoryProduct->price . ')' }}
+                                                </a>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                    <hr>
+                                </div>
+                            </div>
+                            @endif
                         </div>
                          <div class="d-flex flex-column">
-                         <p class="fs-6 fw-bold">Order a Free Sample </p>
-                         <a class="btn border-1 border-primary p-2 w-lg-25 ">Checkout</a>
-                         <p class="fs-6 mt-2 fw-bold text-danger">£6 Delivery Charges</p>
-                            
-                             <div class=" d-flex product-counter">
-                                    <input id="minus{{ $product->id }}" class="minus border bg-dark text-light p-0" type="button"
-                                        value="-"
-                                        onclick="decreaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}')" />
-                                    {{-- <input id="minus{{ $product->id }}" class="minus border bg-dark text-light p-0" type="button"
-                                        value="-"
-                                        onclick="decreaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }})" /> --}}
+                                <div class=" d-flex product-counter">
+                                        <input id="minus{{ $product->id }}" class="minus border bg-dark text-light p-0" type="button"
+                                            value="-"
+                                            onclick="decreaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}')" />
+                                        {{-- <input id="minus{{ $product->id }}" class="minus border bg-dark text-light p-0" type="button"
+                                            value="-"
+                                            onclick="decreaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }})" /> --}}
 
 
-                                        <input id="quantity{{ $product->id }}"
-                                                    class="quantity border border-black text-center"
-                                                    type="text" value="0" name="quantity"
-                                                    onkeyup="inputQty(this.value, '{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}'
-                                                    )" />
+                                            <input id="quantity{{ $product->id }}"
+                                                        class="quantity border border-black text-center"
+                                                        type="text" value="0" name="quantity"
+                                                        onkeyup="inputQty(this.value, '{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}'
+                                                        )" />
 
-                                    {{-- <input id="quantity{{ $product->id }}" class="quantity border border-black text-center"
-                                        type="text" value="0" name="quantity" disabled /> --}}
-                                    <input id="plus{{ $product->id }}" class="plus border bg-dark text-light p-0" type="button"
-                                        value="+"
-                                        {{$product->price == 0 ? 'disabled' : '' }}
-                                        onclick="increaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}')" />
-                                    {{-- <input id="plus{{ $product->id }}" class="plus border bg-dark text-light p-0" type="button"
-                                        value="+"
-                                        {{$product->price == 0 ? 'disabled' : '' }}
-                                        onclick="increaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }})" /> --}}
-                                </div>
-                               <button class="btn border-1 border-primary p-2 w-lg-25 mt-2 " onclick="
-                               let val = parseInt(document.querySelector('.quantity').value); document.querySelector('.quantity').value = ++val;
-                               addToCart('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}',val );">Add to cart</button>
+                                        {{-- <input id="quantity{{ $product->id }}" class="quantity border border-black text-center"
+                                            type="text" value="0" name="quantity" disabled /> --}}
+                                        <input id="plus{{ $product->id }}" class="plus border bg-dark text-light p-0" type="button"
+                                            value="+"
+                                            {{$product->price == 0 ? 'disabled' : '' }}
+                                            onclick="increaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}')" />
+                                        {{-- <input id="plus{{ $product->id }}" class="plus border bg-dark text-light p-0" type="button"
+                                            value="+"
+                                            {{$product->price == 0 ? 'disabled' : '' }}
+                                            onclick="increaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }})" /> --}}
+                                    </div>
+                                <button class="btn border-1 border-primary p-2 w-lg-25 mt-2 " onclick="
+                                let val = parseInt(document.querySelector('.quantity').value); document.querySelector('.quantity').value = ++val;
+                                addToCart('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}',val );">Add to cart</button>
 
-                                  <div class="accordion mt-2" id="productAccordion">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        Details & Specifications
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#productAccordion">
-                                    <div class="accordion-body">
-                                        <table class="table table-striped specs-table">
-                                            <tbody>
-                                                <tr>
-                                                    <td>SKU</td>
-                                                    <td>HK1122</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Brand</td>
-                                                    <td>Hafele</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Supplied With</td>
-                                                    <td>2x M4 x 45mm snap off handle screws</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Handle Shape</td>
-                                                    <td>T bar handles</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Handle Style</td>
-                                                    <td>Simple</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Diameter</td>
-                                                    <td>12 mm</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Fixings Included</td>
-                                                    <td>M4 Screw fixings required</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Handle Screws Included</td>
-                                                    <td>Order M4 handle screws separately</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Height</td>
-                                                    <td>32 mm</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Material</td>
-                                                    <td>Steel</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Dimensions</td>
-                                                    <td>
-                                                        Length<br>
-                                                        Hole centres<br>
-                                                        136 mm<br>
-                                                        96 mm<br>
-                                                        168 mm<br>
-                                                        136 mm<br>
-                                                        230 mm
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                    <div class="accordion mt-2" id="productAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Details & Specifications
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#productAccordion">
+                                        <div class="accordion-body">
+                                            <table class="table table-striped specs-table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>SKU</td>
+                                                        <td>HK1122</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Brand</td>
+                                                        <td>Hafele</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Supplied With</td>
+                                                        <td>2x M4 x 45mm snap off handle screws</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Handle Shape</td>
+                                                        <td>T bar handles</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Handle Style</td>
+                                                        <td>Simple</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Diameter</td>
+                                                        <td>12 mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Fixings Included</td>
+                                                        <td>M4 Screw fixings required</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Handle Screws Included</td>
+                                                        <td>Order M4 handle screws separately</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Height</td>
+                                                        <td>32 mm</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Material</td>
+                                                        <td>Steel</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Dimensions</td>
+                                                        <td>
+                                                            Length<br>
+                                                            Hole centres<br>
+                                                            136 mm<br>
+                                                            96 mm<br>
+                                                            168 mm<br>
+                                                            136 mm<br>
+                                                            230 mm
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                         </div>
-                               
                         </div>
                     </div>
             </div>
