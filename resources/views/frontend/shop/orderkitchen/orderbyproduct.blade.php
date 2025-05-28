@@ -234,7 +234,7 @@
                                 let val = parseInt(document.querySelector('.quantity').value); document.querySelector('.quantity').value = ++val;
                                 addToCart('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}',val );">Add to cart</button>
 
-                                    <div class="accordion mt-2" id="productAccordion">
+                            <div class="accordion mt-2" id="productAccordion">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingOne">
                                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -245,58 +245,86 @@
                                         <div class="accordion-body">
                                             <table class="table table-striped specs-table">
                                                 <tbody>
-                                                    <tr>
+                                                    <!-- <tr>
                                                         <td>SKU</td>
                                                         <td>HK1122</td>
-                                                    </tr>
+                                                    </tr> -->
                                                     <tr>
                                                         <td>Brand</td>
                                                         <td>Hafele</td>
                                                     </tr>
+                                                    @if(!empty($product->style) && !empty($product->style?->name))
                                                     <tr>
-                                                        <td>Supplied With</td>
-                                                        <td>2x M4 x 45mm snap off handle screws</td>
+                                                        <td>Style</td>
+                                                        <td>
+                                                            {{ $product->style?->name }}
+                                                        </td>
                                                     </tr>
+                                                    @endif
+                                                    @if(!empty($product->colour) && !empty($product->colour?->finishing))
                                                     <tr>
-                                                        <td>Handle Shape</td>
-                                                        <td>T bar handles</td>
+                                                        <td>Finish</td>
+                                                        <td>
+                                                            {{ $product->colour?->finishing }}
+                                                        </td>
                                                     </tr>
+                                                    @endif
+                                                    @if(!empty($product->colour) && !empty($product->colour?->name))
                                                     <tr>
-                                                        <td>Handle Style</td>
-                                                        <td>Simple</td>
+                                                        <td>Colour</td>
+                                                        <td>
+                                                            {{ $product->colour?->name }}
+                                                        </td>
                                                     </tr>
+                                                    @endif
+                                                    @if(!empty($product->assembly) && !empty($product->assembly?->name))
                                                     <tr>
-                                                        <td>Diameter</td>
-                                                        <td>12 mm</td>
+                                                        <td>Assembly</td>
+                                                        <td>
+                                                            {{ $product->assembly?->name }}
+                                                        </td>
                                                     </tr>
-                                                    <tr>
-                                                        <td>Fixings Included</td>
-                                                        <td>M4 Screw fixings required</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Handle Screws Included</td>
-                                                        <td>Order M4 handle screws separately</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Height</td>
-                                                        <td>32 mm</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Material</td>
-                                                        <td>Steel</td>
-                                                    </tr>
+                                                    @endif
+                                                    @if(!empty($product->dimensions) && !empty($product->dimensions))
                                                     <tr>
                                                         <td>Dimensions</td>
                                                         <td>
-                                                            Length<br>
-                                                            Hole centres<br>
-                                                            136 mm<br>
-                                                            96 mm<br>
-                                                            168 mm<br>
-                                                            136 mm<br>
-                                                            230 mm
+                                                            {{ $product->dimensions }}
                                                         </td>
                                                     </tr>
+                                                    @endif
+                                                    @if(!empty($product->height) && !empty($product->height))
+                                                    <tr>
+                                                        <td>Height</td>
+                                                        <td>
+                                                            {{ $product->height }}
+                                                        </td>
+                                                    </tr>
+                                                    @endif
+                                                    @if(!empty($product->width))
+                                                    <tr>
+                                                        <td>Width</td>
+                                                        <td>
+                                                            {{ $product->width }}
+                                                        </td>
+                                                    </tr>
+                                                    @endif
+                                                    @if(!empty($product->depth))
+                                                    <tr>
+                                                        <td>Depth</td>
+                                                        <td>
+                                                            {{ $product->depth }}
+                                                        </td>
+                                                    </tr>
+                                                    @endif
+                                                    @if(!empty($product->product_description))
+                                                    <tr>
+                                                        <td>Description</td>
+                                                        <td>
+                                                            {!! $product->product_description !!}
+                                                        </td>
+                                                    </tr>
+                                                    @endif
                                                 </tbody>
                                             </table>
                                         </div>
