@@ -842,7 +842,24 @@
         @endif
         </div>
     </div> -->
-</div>
+    <section class="container px-lg-5 py-4 px-md-3 px-3">
+        @if ($relatedProducts && count($relatedProducts) > 0)
+        <div class="col-lg-12 col-md-12">
+            <h3 class="fw-bold text-dark pb-3">Related Products</h3>
+            <div class="row">
+                @foreach ($relatedProducts as $relatedProduct)
+                <div class="col-6 d-flex align-items-start py-2">
+                    <i class="ri-arrow-right-s-fill"></i>
+                    <a href="{{ route('orderbyproduct', [$relatedProduct->slug, $relatedProduct->serial_number]) }}"
+                        class="text-dark text-decoration-underline related-products-link">
+                        {{ \Str::limit($relatedProduct->full_title, 70) }}
+                    </a>
+                </div>
+                @endforeach
+            </div>
+        </div>
+        @endif
+    </section>
 
     <script>
         document.getElementById('productSelect').addEventListener('change', function() {
