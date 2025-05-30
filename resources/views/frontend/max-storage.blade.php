@@ -1943,7 +1943,7 @@
                     </div>
                     
                     <div class="swiper-slide">
-                        <a href="https://bkonline.uk/shop/by-product/double-basket,-pull-out,-for-300/400-mm-cabinet-width/14653" class="text-dark text-decoration-none">
+                        <a href="https://bkonline.uk/shop/by-product/double-basket,-pull-out,-for-300-400-mm-cabinet-width/14653" class="text-dark text-decoration-none">
                         <div class="card">
                             <div class="card-img">
                                            <img src="{{ asset('images/double-basket-pull-out.png') }}" class="card-img-top" alt="">
