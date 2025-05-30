@@ -1955,7 +1955,7 @@
                         </a>
                     </div>
                     <div class="swiper-slide">
-                          <a href="https://bkonline.uk/shop/by-product/extension-pole,-for-vauth-sagel-cornerstone%C2%AE-maxx/14316" class="text-dark text-decoration-none">
+                          <a href="https://bkonline.uk/shop/by-product/extension-pole,-for-vauth-sagel-cornerstone-maxx/14316" class="text-dark text-decoration-none">
                         <div class="card">
                             <div class="card-img">
                                           <img src="{{ asset('images/extension-pole.png') }}" class="card-img-top" alt="">
