@@ -81,9 +81,9 @@
                     <div class="col-lg-6 col-12">
                         <figure class="text-center position-relative">
                             <!-- Button trigger modal -->
-                            <a class="modal-icon z-3" href="#" data-bs-toggle="modal" data-bs-target="#productImage">
+                            <!-- <a class="modal-icon z-3" href="#" data-bs-toggle="modal" data-bs-target="#productImage">
                                 <i class="ri-add-circle-line text-black fs-4"></i>
-                            </a>
+                            </a> -->
                             <!-- Modal -->
                             <div class="modal fade" id="productImage" tabindex="-1" aria-labelledby="productImage"
                                 aria-hidden="true">
