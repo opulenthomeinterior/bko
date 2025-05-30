@@ -25,7 +25,7 @@
     </div>
     <div>
         <section class="container-fluid p-0 m-0"
-            style="background-image: url('{{ $styleHasColour->image_path ? asset('styles/colours/' . $styleHasColour->image_path) : asset('images/order-component.jpg') }}'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 50vh;">
+            style="background-image: url('{{ $styleHasColour->image_path ? asset('imgs/styles/colours/' . $styleHasColour->image_path) : asset('images/order-component.jpg') }}'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 50vh;">
         </section>
     </div>
     <div class="container-fluid px-lg-5 py-4 px-md-3 px-3">
