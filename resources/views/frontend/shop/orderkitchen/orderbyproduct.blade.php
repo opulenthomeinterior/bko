@@ -174,7 +174,7 @@
                             </div>
                             <div class="d-flex flex-column">
                                 <p class="fs-6 fw-bold">Order a Free Sample </p>
-                                <a class="btn border-1 border-primary p-2">Checkout</a>
+                                <a href="{{ route('checkout')}}" class="btn border-1 border-primary p-2">Checkout</a>
                                 <p class="fs-6 mt-2 fw-bold text-danger">£6 Delivery Charges</p>
                             </div>
                         </div>
@@ -235,7 +235,7 @@
                                 <button class="btn border-1 border-primary p-2 w-lg-25 mt-2 " onclick="
                                 let val = parseInt(document.querySelector('.quantity').value); document.querySelector('.quantity').value = ++val;
                                 addToCart('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}',val );">Add to cart</button>
-
+                
                             <div class="accordion mt-2" id="productAccordion">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingOne">
