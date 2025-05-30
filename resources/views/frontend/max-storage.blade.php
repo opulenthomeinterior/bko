@@ -1901,7 +1901,7 @@
                          <a href="https://bkonline.uk/shop/by-product/wicker-basket-set,-two-baskets-with-runners,-for-cabinet-widths-500-600-mm/14672" class="text-dark text-decoration-none"></a>
                         <div class="card">
                             <div class="card-img">
-                                     <img src="{{ asset('images/wicker-basket-set-with-runners.png') }}" class="card-img-top" alt="">
+                                <img src="{{ asset('images/wicker-basket-set-with-runners.png') }}" class="card-img-top" alt="">
                             </div>
                             <div class="card-content">
                                 <h6 class="card-title">Wicker basket set  with runners</h6>
@@ -1929,16 +1929,17 @@
                     
                     <!-- Card 5 -->
                     <div class="swiper-slide">
-    <a href="https://bkonline.uk/shop/by-product/swing-out-larder--unit,-for-cabinet-width-500-600-mm,-artline-glass-side-baskets,-vs-tal-gate/14522" class="text-dark text-decoration-none">
+                        <a href="https://bkonline.uk/shop/by-product/swing-out-larder--unit,-for-cabinet-width-500-600-mm,-artline-glass-side-baskets,-vs-tal-gate/14522" class="text-dark text-decoration-none">
+                        
                         <div class="card">
                             <div class="card-img">
-                                          <img src="{{ asset('images/swing-out-larder-unit-artline-glass-side-baskets.png') }}" class="card-img-top" alt="">
+                                <img src="{{ asset('images/swing-out-larder-unit-artline-glass-side-baskets.png') }}" class="card-img-top" alt="">
                             </div>
                             <div class="card-content">
                                 <h6 class="card-title">Swing out larder unit artline glass side baskets</h6>
                             </div>
                         </div>
-                    </a>
+                        </a>
                     </div>
                     
                     <div class="swiper-slide">
