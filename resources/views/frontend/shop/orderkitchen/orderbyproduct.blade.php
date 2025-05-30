@@ -209,8 +209,13 @@
                                 <div class=" d-flex product-counter">
                                         <input id="minus{{ $product->id }}" class="minus border bg-dark text-light p-0" type="button"
                                             value="-"
+                                            onclick="decQty({{ $product->id }})" />
+                                       
+                                        <!-- <input id="minus{{ $product->id }}" class="minus border bg-dark text-light p-0" type="button"
+                                            value="-"
                                             onclick="decreaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}')" />
-                                        {{-- <input id="minus{{ $product->id }}" class="minus border bg-dark text-light p-0" type="button"
+                                        -->
+                                            {{-- <input id="minus{{ $product->id }}" class="minus border bg-dark text-light p-0" type="button"
                                             value="-"
                                             onclick="decreaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }})" /> --}}
 
@@ -218,23 +223,42 @@
                                             <input id="quantity{{ $product->id }}"
                                                         class="quantity border border-black text-center"
                                                         type="text" value="0" name="quantity"
+                                                       
+                                                         />
+                                            <!-- <input id="quantity{{ $product->id }}"
+                                                        class="quantity border border-black text-center"
+                                                        type="text" value="0" name="quantity"
                                                         onkeyup="inputQty(this.value, '{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}'
-                                                        )" />
+                                                        )" /> -->
 
                                         {{-- <input id="quantity{{ $product->id }}" class="quantity border border-black text-center"
                                             type="text" value="0" name="quantity" disabled /> --}}
                                         <input id="plus{{ $product->id }}" class="plus border bg-dark text-light p-0" type="button"
                                             value="+"
                                             {{$product->price == 0 ? 'disabled' : '' }}
+                                            onclick="incQty({{ $product->id }})" />
+                                      
+                                        <!-- <input id="plus{{ $product->id }}" class="plus border bg-dark text-light p-0" type="button"
+                                            value="+"
+                                            {{$product->price == 0 ? 'disabled' : '' }}
                                             onclick="increaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}')" />
-                                        {{-- <input id="plus{{ $product->id }}" class="plus border bg-dark text-light p-0" type="button"
+                                       -->
+                                            {{-- <input id="plus{{ $product->id }}" class="plus border bg-dark text-light p-0" type="button"
                                             value="+"
                                             {{$product->price == 0 ? 'disabled' : '' }}
                                             onclick="increaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }})" /> --}}
                                     </div>
-                                <button class="btn border-1 border-primary p-2 w-lg-25 mt-2 " onclick="
-                                let val = parseInt(document.querySelector('.quantity').value); document.querySelector('.quantity').value = ++val;
-                                addToCart('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}',val );">Add to cart</button>
+                                <button class="btn border-1 border-primary p-2 w-lg-25 mt-2 " 
+                                onclick="inputQty(document.querySelector('#quantity{{ $product->id }}').value, '{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}'
+                                                    )">Add to cart</button>
+
+                                <!-- <button class="btn border-1 border-primary p-2 w-lg-25 mt-2 " 
+                                onclick="
+                                let val = parseInt(document.querySelector('.quantity').value); 
+                                document.querySelector('.quantity').value = ++val;
+                                addToCart('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', 
+                                {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, 
+                                '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}',val );">Add to cart</button> -->
                 
                             <div class="accordion mt-2" id="productAccordion">
                                 <div class="accordion-item">
