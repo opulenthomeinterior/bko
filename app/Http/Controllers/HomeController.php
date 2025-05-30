@@ -335,7 +335,9 @@ class HomeController extends Controller
     
             $accessories = Product::where('parent_category_id', 8)
                 ->where('style_id', $style->id)
-                ->where('assembly_id', $assembly->id)
+                ->where(function ($q) use ($assembly) {
+                    $q->where('assembly_id', $assembly->id)->orWhere('assembly_id', 1);
+                })
                 ->where('colour_id', $colour->id)
                 ->where('status', 'active')
                 ->get();
