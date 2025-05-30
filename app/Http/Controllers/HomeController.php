@@ -139,7 +139,7 @@ class HomeController extends Controller
             $style = Style::where('slug', $style)->where('status', 1)->firstOrFail();
             $assembly = Assembly::where('slug', $assembly)->where('status', 1)->firstOrFail();
             $colour = Colour::where('slug', $colour)->where('status', 1)->firstOrFail();
-
+            $styleHasColour = StyleHasColour::where('style_id', $style->id)->where('colour_id', $colour->id)->firstOrFail();
             $title = trim(($style->name ?? '') . ' ' . ($colour->trade_colour ?? '') . ' ' . ($assembly->name ?? ''));
 
             // echo '<pre>';
@@ -268,7 +268,7 @@ class HomeController extends Controller
             // echo '</pre>';
             // exit;
     
-            return view('frontend.shop.orderkitchen.orderkitchenbycolour', compact('style', 'assembly', 'colour', 'baseCabinets', 'wallCabinets', 'tallCabinets', 'panels', 'handles', 'golaHandlelessRails', 'accessories', 'appliances', 'worktops', 'worktopsAndUpStands', 'breakfastBars', 'edgings', 'taps', 'sinks', 'swatchesAndSamples', 'title', 'internals'));
+            return view('frontend.shop.orderkitchen.orderkitchenbycolour', compact('style', 'assembly', 'colour', 'baseCabinets', 'wallCabinets', 'tallCabinets', 'panels', 'handles', 'golaHandlelessRails', 'accessories', 'appliances', 'worktops', 'worktopsAndUpStands', 'breakfastBars', 'edgings', 'taps', 'sinks', 'swatchesAndSamples', 'title', 'internals', 'styleHasColour'));
         } catch (\Exception $e) {
             return redirect()->back();
         }
