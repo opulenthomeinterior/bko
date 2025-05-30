@@ -1780,7 +1780,7 @@
                                             </a>
                                             @endif
                                         @endforeach
-                                        <label for="" class="fw-bold d-flex justify-content-between"><span>ALL ACCESSORIES</span><span><a href="@if(!empty($accessoriesData->style) && !empty($accessoriesData->assembly) && !empty($accessoriesData->colour)){{route('viewallorderkitchenbycolour', ['style' => $accessoriesData->style?->slug , 'assembly' => $accessoriesData->assembly?->slug, 'colour' => $accessoriesData->colour?->slug])}}@else#@endif">View All</a></span></label>
+                                        <label for="" class="fw-bold d-flex justify-content-between"><span>ALL ACCESSORIES</span><span><a href="{{route('ordercomponentbyname', ['accessories'])}}">View All</a></span></label>
                                         <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="accessories-section">
                                             @foreach ($accessories as $index => $accessory)
                                             <option class="fw-bold" value="{{$accessory->id }}" data-product-short-title="{{ $accessory->short_title }}" data-product-fullname="{{ $accessory->full_title }}" data-product-image="{{ !empty($accessory->image_path) ? asset('imgs/products/'.$accessory->image_path) : asset('images/no-image-available.jpg') }}" data-product-price="{{ $accessory->price }}" data-product-parent-category-slug="{{ $accessory->ParentCategory?->slug }}" data-product-discountedprice="{{ $accessory->discounted_price }}" data-product-assembly-name="{{ $accessory->assembly?->name }}" data-product-discountedpercentage="{{ $accessory->discounted_percentage ?? 0 }}" data-product-code="{{ $accessory->product_code }}" data-product-dimensions="{{ $accessory->dimensions }}" data-product-style="{{ $accessory->style?->name }}" data-product-colour="{{ $accessory->colour?->trade_colour ? $accessory->colour?->trade_colour : $accessory->colour?->name }}" data-serial-number="{{ $accessory->serial_number }}" data-product-id="{{ $accessory->id }}">{{ $accessory->full_title }}</option>
@@ -2205,7 +2205,7 @@
                                         </a>
                                         @endif
                                     @endforeach
-                                    <label for="" class="fw-bold d-flex justify-content-between"><span>ALL INTERNALS</span><span><a href="@if(!empty($internalsData->style) && !empty($internalsData->assembly) && !empty($internalsData->colour)){{route('viewallorderkitchenbycolour', ['style' => $internalsData->style?->slug , 'assembly' => $internalsData->assembly?->slug, 'colour' => $internalsData->colour?->slug])}}@else#@endif">View All</a></span></label>
+                                    <label for="" class="fw-bold d-flex justify-content-between"><span>ALL INTERNALS</span><span><a href="{{route('ordercomponentbyname', ['internals'])}}">View All</a></span></label>
                                     <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="internals-section">
                                         @foreach ($internals as $index => $internal)
                                         <option class="fw-bold" value="{{$internal->id }}" data-product-short-title="{{ $internal->short_title }}" data-product-fullname="{{ $internal->full_title }}" data-product-image="{{ !empty($internal->image_path) ? asset('imgs/products/'.$internal->image_path) : asset('images/no-image-available.jpg') }}" data-product-price="{{ $internal->price }}" data-product-parent-category-slug="{{ $internal->ParentCategory?->slug }}" data-product-discountedprice="{{ $internal->discounted_price }}" data-product-assembly-name="{{ $internal->assembly?->name }}" data-product-discountedpercentage="{{ $internal->discounted_percentage ?? 0 }}" data-product-code="{{ $internal->product_code }}" data-product-dimensions="{{ $internal->dimensions }}" data-product-style="{{ $internal->style?->name }}" data-product-colour="{{ $internal->colour?->trade_colour ? $internal->colour?->trade_colour : $internal->colour?->name }}" data-serial-number="{{ $internal->serial_number }}" data-product-id="{{ $internal->id }}">{{ $internal->full_title }}</option>
@@ -2482,7 +2482,7 @@
                                         </a>
                                         @endif
                                     @endforeach
-                                    <label for="" class="fw-bold d-flex justify-content-between"><span>ALL HANDLES</span><span><a href="@if(!empty($handlesData->style) && !empty($handlesData->assembly) && !empty($handlesData->colour)){{route('viewallorderkitchenbycolour', ['style' => $handlesData->style?->slug , 'assembly' => $handlesData->assembly?->slug, 'colour' => $handlesData->colour?->slug])}}@else#@endif">View All</a></span></label>
+                                    <label for="" class="fw-bold d-flex justify-content-between"><span>ALL HANDLES</span><span><a href="{{route('ordercomponentbyname', ['handles'])}}">View All</a></span></label>
                                     <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="handles-section">
                                         @foreach ($handles as $index => $handle)
                                         <option class="fw-bold" value="{{$handle->id }}" data-product-short-title="{{ $handle->short_title }}" data-product-fullname="{{ $handle->full_title }}" data-product-image="{{ !empty($handle->image_path) ? asset('imgs/products/'.$handle->image_path) : asset('images/no-image-available.jpg') }}" data-product-price="{{ $handle->price }}" data-product-parent-category-slug="{{ $handle->ParentCategory?->slug }}" data-product-discountedprice="{{ $handle->discounted_price }}" data-product-assembly-name="{{ $handle->assembly?->name }}" data-product-discountedpercentage="{{ $handle->discounted_percentage ?? 0 }}" data-product-code="{{ $handle->product_code }}" data-product-dimensions="{{ $handle->dimensions }}" data-product-style="{{ $handle->style?->name }}" data-product-colour="{{ $handle->colour?->trade_colour ? $handle->colour?->trade_colour : $handle->colour?->name }}" data-serial-number="{{ $handle->serial_number }}" data-product-id="{{ $handle->id }}">{{ $handle->full_title }}</option>
@@ -2730,7 +2730,7 @@
                     <a class="fw-semibold text-dark text-uppercase collapse-heading" data-bs-toggle="collapse"
                         href="#worktops" role="button" aria-expanded="false" aria-controls="worktops">
                         <span
-                            class="bg-dark text-white fw-semibold py-2 px-2 text-center me-2 collapse-heading-number">4</span>WORKTOPS AND UPSTANDS
+                            class="bg-dark text-white fw-semibold py-2 px-2 text-center me-2 collapse-heading-number">4</span>UPSTANDS
                     </a>
                     <div class="collapse-container collapse mt-3" id="worktops">
                         <nav>
@@ -2740,7 +2740,7 @@
                                     aria-controls="nav-worktops" aria-selected="true">Worktops</button>
                                 <button class="nav-link" id="nav-upstands-tab" data-bs-toggle="tab"
                                     data-bs-target="#nav-upstands" type="button" role="tab"
-                                    aria-controls="nav-upstands" aria-selected="false">Worktops and Upstands</button>
+                                    aria-controls="nav-upstands" aria-selected="false">Upstands</button>
                                 <button class="nav-link" id="nav-breakfast-tab" data-bs-toggle="tab"
                                     data-bs-target="#nav-breakfast" type="button" role="tab"
                                     aria-controls="nav-breakfast" aria-selected="false">Breakfast Bars</button>
@@ -2780,7 +2780,7 @@
                                                 </a>
                                                 @endif
                                             @endforeach
-                                            <label for="" class="fw-bold d-flex justify-content-between"><span>ALL WORKTOPS</span><span><a href="@if(!empty($worktopsData->style) && !empty($worktopsData->assembly) && !empty($worktopsData->colour)){{route('viewallorderkitchenbycolour', ['style' => $worktopsData->style?->slug , 'assembly' => $worktopsData->assembly?->slug, 'colour' => $worktopsData->colour?->slug])}}@else#@endif">View All</a></span></label>
+                                            <label for="" class="fw-bold d-flex justify-content-between"><span>ALL WORKTOPS</span><span><a href="{{route('ordercomponentbyname', ['worktops'])}}">View All</a></span></label>
                                             <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="worktops-section">
                                                 @foreach ($worktops as $index => $worktop)
                                                 <option class="fw-bold" value="{{$worktop->id }}" data-product-short-title="{{ $worktop->short_title }}" data-product-fullname="{{ $worktop->full_title }}" data-product-image="{{ !empty($worktop->image_path) ? asset('imgs/products/'.$worktop->image_path) : asset('images/no-image-available.jpg') }}" data-product-price="{{ $worktop->price }}" data-product-parent-category-slug="{{ $worktop->ParentCategory?->slug }}" data-product-discountedprice="{{ $worktop->discounted_price }}" data-product-assembly-name="{{ $worktop->assembly?->name }}" data-product-discountedpercentage="{{ $worktop->discounted_percentage ?? 0 }}" data-product-code="{{ $worktop->product_code }}" data-product-dimensions="{{ $worktop->dimensions }}" data-product-style="{{ $worktop->style?->name }}" data-product-colour="{{ $worktop->colour?->trade_colour ? $worktop->colour?->trade_colour : $worktop->colour?->name }}" data-serial-number="{{ $worktop->serial_number }}" data-product-id="{{ $worktop->id }}">{{ $worktop->full_title }}</option>
@@ -3024,7 +3024,7 @@
                                 </div>
                             </div>
 
-                            {{-- Worktops and Upstands --}}
+                            {{-- Upstands --}}
                             <div class="tab-pane fade" id="nav-upstands" role="tabpanel"
                                 aria-labelledby="nav-upstands-tab" tabindex="0">
                                 <div class="row">
@@ -3052,7 +3052,7 @@
                                                 </a>
                                                 @endif
                                             @endforeach
-                                            <label for="" class="fw-bold d-flex justify-content-between"><span>ALL WORKTOPS</span><span><a href="@if(!empty($worktopsAndUpStandData->style) && !empty($worktopsAndUpStandData->assembly) && !empty($worktopsAndUpStandData->colour)){{route('viewallorderkitchenbycolour', ['style' => $worktopsAndUpStandData->style?->slug , 'assembly' => $worktopsAndUpStandData->assembly?->slug, 'colour' => $worktopsAndUpStandData->colour?->slug])}}@else#@endif">View All</a></span></label>
+                                            <label for="" class="fw-bold d-flex justify-content-between"><span>ALL UPSTANDS</span><span><a href="{{route('ordercomponentbyname', ['upstands'])}}">View All</a></span></label>
                                             <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="worktopandupstands-section">
                                                 @foreach ($worktopsAndUpStands as $index => $worktopsAndUpStand)
                                                 <option class="fw-bold" value="{{$worktopsAndUpStand->id }}" data-product-short-title="{{ $worktopsAndUpStand->short_title }}" data-product-fullname="{{ $worktopsAndUpStand->full_title }}" data-product-image="{{ !empty($worktopsAndUpStand->image_path) ? asset('imgs/products/'.$worktopsAndUpStand->image_path) : asset('images/no-image-available.jpg') }}" data-product-price="{{ $worktopsAndUpStand->price }}" data-product-parent-category-slug="{{ $worktopsAndUpStand->ParentCategory?->slug }}" data-product-discountedprice="{{ $worktopsAndUpStand->discounted_price }}" data-product-assembly-name="{{ $worktopsAndUpStand->assembly?->name }}" data-product-discountedpercentage="{{ $worktopsAndUpStand->discounted_percentage ?? 0 }}" data-product-code="{{ $worktopsAndUpStand->product_code }}" data-product-dimensions="{{ $worktopsAndUpStand->dimensions }}" data-product-style="{{ $worktopsAndUpStand->style?->name }}" data-product-colour="{{ $worktopsAndUpStand->colour?->trade_colour ? $worktopsAndUpStand->colour?->trade_colour : $worktopsAndUpStand->colour?->name }}" data-serial-number="{{ $worktopsAndUpStand->serial_number }}" data-product-id="{{ $worktopsAndUpStand->id }}">{{ $worktopsAndUpStand->full_title }}</option>
@@ -3290,7 +3290,7 @@
                                         </div>
                                     @else
                                         <div class="col-12">
-                                            <p class="">No Worktops and Upstands available</p>
+                                            <p class="">Upstands available</p>
                                         </div>
                                     @endif
                                 </div>
@@ -3324,7 +3324,7 @@
                                                 </a>
                                                 @endif
                                             @endforeach
-                                            <label for="" class="fw-bold d-flex justify-content-between"><span>ALL BREAKFAST BARS</span><span><a href="@if(!empty($breakfastBarData->style) && !empty($breakfastBarData->assembly) && !empty($breakfastBarData->colour)){{route('viewallorderkitchenbycolour', ['style' => $breakfastBarData->style?->slug , 'assembly' => $breakfastBarData->assembly?->slug, 'colour' => $breakfastBarData->colour?->slug])}}@else#@endif">View All</a></span></label>
+                                            <label for="" class="fw-bold d-flex justify-content-between"><span>ALL BREAKFAST BARS</span><span><a href="{{route('ordercomponentbyname', ['breakfast-bars'])}}">View All</a></span></label>
                                             <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="breakfastbars-section">
                                                 @foreach ($breakfastBars as $index => $breakfastBar)
                                                 <option class="fw-bold" value="{{$breakfastBar->id }}" data-product-short-title="{{ $breakfastBar->short_title }}" data-product-fullname="{{ $breakfastBar->full_title }}" data-product-image="{{ !empty($breakfastBar->image_path) ? asset('imgs/products/'.$breakfastBar->image_path) : asset('images/no-image-available.jpg') }}" data-product-price="{{ $breakfastBar->price }}" data-product-parent-category-slug="{{ $breakfastBar->ParentCategory?->slug }}" data-product-discountedprice="{{ $breakfastBar->discounted_price }}" data-product-assembly-name="{{ $breakfastBar->assembly?->name }}" data-product-discountedpercentage="{{ $breakfastBar->discounted_percentage ?? 0 }}" data-product-code="{{ $breakfastBar->product_code }}" data-product-dimensions="{{ $breakfastBar->dimensions }}" data-product-style="{{ $breakfastBar->style?->name }}" data-product-colour="{{ $breakfastBar->colour?->trade_colour ? $breakfastBar->colour?->trade_colour : $breakfastBar->colour?->name }}" data-serial-number="{{ $breakfastBar->serial_number }}" data-product-id="{{ $breakfastBar->id }}">{{ $breakfastBar->full_title }}</option>
@@ -3889,7 +3889,7 @@
                                                 </a>
                                                 @endif
                                             @endforeach
-                                            <label for="" class="fw-bold d-flex justify-content-between"><span>ALL WORKTOPS</span><span><a href="@if(!empty($sinkData->style) && !empty($sinkData->assembly) && !empty($sinkData->colour)){{route('viewallorderkitchenbycolour', ['style' => $sinkData->style?->slug , 'assembly' => $sinkData->assembly?->slug, 'colour' => $sinkData->colour?->slug])}}@else#@endif">View All</a></span></label>
+                                            <label for="" class="fw-bold d-flex justify-content-between"><span>ALL SINKS</span><span><a href="{{route('ordercomponentbyname', ['sinks'])}}">View All</a></span></label>
                                             <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="sinks-section">
                                                 @foreach ($sinks as $index => $sink)
                                                 <option class="fw-bold" value="{{$sink->id }}" data-product-short-title="{{ $sink->short_title }}" data-product-fullname="{{ $sink->full_title }}" data-product-image="{{ !empty($sink->image_path) ? asset('imgs/products/'.$sink->image_path) : asset('images/no-image-available.jpg') }}" data-product-price="{{ $sink->price }}" data-product-parent-category-slug="{{ $sink->ParentCategory?->slug }}" data-product-discountedprice="{{ $sink->discounted_price }}" data-product-assembly-name="{{ $sink->assembly?->name }}" data-product-discountedpercentage="{{ $sink->discounted_percentage ?? 0 }}" data-product-code="{{ $sink->product_code }}" data-product-dimensions="{{ $sink->dimensions }}" data-product-style="{{ $sink->style?->name }}" data-product-colour="{{ $sink->colour?->trade_colour ? $sink->colour?->trade_colour : $sink->colour?->name }}" data-serial-number="{{ $sink->serial_number }}" data-product-id="{{ $sink->id }}">{{ $sink->full_title }}</option>
@@ -4161,7 +4161,7 @@
                                                 </a>
                                                 @endif
                                             @endforeach
-                                            <label for="" class="fw-bold d-flex justify-content-between"><span>ALL TAPS</span><span><a href="@if(!empty($tapsData->style) && !empty($tapsData->assembly) && !empty($tapsData->colour)){{route('viewallorderkitchenbycolour', ['style' => $tapsData->style?->slug , 'assembly' => $tapsData->assembly?->slug, 'colour' => $tapsData->colour?->slug])}}@else#@endif">View All</a></span></label>
+                                            <label for="" class="fw-bold d-flex justify-content-between"><span>ALL TAPS</span><span><a href="{{route('ordercomponentbyname', ['taps'])}}">View All</a></span></label>
                                             <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="taps-section">
                                                 @foreach ($taps as $index => $tap)
                                                 <option class="fw-bold" value="{{$tap->id }}" data-product-short-title="{{ $tap->short_title }}" data-product-fullname="{{ $tap->full_title }}" data-product-image="{{ !empty($tap->image_path) ? asset('imgs/products/'.$tap->image_path) : asset('images/no-image-available.jpg') }}" data-product-price="{{ $tap->price }}" data-product-parent-category-slug="{{ $tap->ParentCategory?->slug }}" data-product-discountedprice="{{ $tap->discounted_price }}" data-product-assembly-name="{{ $tap->assembly?->name }}" data-product-discountedpercentage="{{ $tap->discounted_percentage ?? 0 }}" data-product-code="{{ $tap->product_code }}" data-product-dimensions="{{ $tap->dimensions }}" data-product-style="{{ $tap->style?->name }}" data-product-colour="{{ $tap->colour?->trade_colour ? $tap->colour?->trade_colour : $tap->colour?->name }}" data-serial-number="{{ $tap->serial_number }}" data-product-id="{{ $tap->id }}">{{ $tap->full_title }}</option>
@@ -4439,7 +4439,7 @@
                                         </a>
                                         @endif
                                     @endforeach
-                                    <label for="" class="fw-bold d-flex justify-content-between"><span>ALL APPLIANCES</span><span><a href="@if(!empty($applianceData->style) && !empty($applianceData->assembly) && !empty($applianceData->colour)){{route('viewallorderkitchenbycolour', ['style' => $applianceData->style?->slug , 'assembly' => $applianceData->assembly?->slug, 'colour' => $applianceData->colour?->slug])}}@else#@endif">View All</a></span></label>
+                                    <label for="" class="fw-bold d-flex justify-content-between"><span>ALL APPLIANCES</span><span><a href="{{route('ordercomponentbyname', ['appliances'])}}">View All</a></span></label>
                                     <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="sinks-section">
                                         @foreach ($appliances as $index => $appliance)
                                         <option class="fw-bold" value="{{$appliance->id }}" data-product-short-title="{{ $appliance->short_title }}" data-product-fullname="{{ $appliance->full_title }}" data-product-image="{{ !empty($appliance->image_path) ? asset('imgs/products/'.$appliance->image_path) : asset('images/no-image-available.jpg') }}" data-product-price="{{ $appliance->price }}" data-product-parent-category-slug="{{ $appliance->ParentCategory?->slug }}" data-product-discountedprice="{{ $appliance->discounted_price }}" data-product-assembly-name="{{ $appliance->assembly?->name }}" data-product-discountedpercentage="{{ $appliance->discounted_percentage ?? 0 }}" data-product-code="{{ $appliance->product_code }}" data-product-dimensions="{{ $appliance->dimensions }}" data-product-style="{{ $appliance->style?->name }}" data-product-colour="{{ $appliance->colour?->trade_colour ? $appliance->colour?->trade_colour : $appliance->colour?->name }}" data-serial-number="{{ $appliance->serial_number }}" data-product-id="{{ $appliance->id }}">{{ $appliance->full_title }}</option>
