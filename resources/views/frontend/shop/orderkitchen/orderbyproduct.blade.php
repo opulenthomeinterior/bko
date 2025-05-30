@@ -154,6 +154,7 @@
                                 alt="Card image cap"> -->
                              <img class="img-fluid px-0" style="width: 100%; height: auto;"
                                 src="{{ $product->image_path ? asset('imgs/products/' . $product->image_path) : asset('images/no-image-available.jpg') }}"
+                               
                                 alt="Card image cap"> 
                         </figure>
 
@@ -854,6 +855,7 @@
                         class="text-dark text-decoration-underline related-products-link">
                         {{ \Str::limit($relatedProduct->full_title, 70) }}
                     </a>
+                   
                 </div>
                 @endforeach
             </div>
