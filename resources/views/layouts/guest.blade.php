@@ -1066,11 +1066,11 @@ use App\Models\Style;
                                 </i>
                             </a>
                         </li>
-                        <li class="d-lg-flex d-none hide-small">
+                        <!-- <li class="d-lg-flex d-none hide-small">
                             <a href="#" id="openSidebar-desktop"
                                 class="d-flex align-items-center justify-content-center px-1 text-dark"><i
                                     class="ri-user-line"></i></a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </nav>
