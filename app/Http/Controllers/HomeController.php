@@ -345,7 +345,7 @@ class HomeController extends Controller
             $appliances = Product::where('parent_category_id', 9)
                 // ->where('style_id', $style->id)
                 // ->where('assembly_id', $assembly->id)
-                ->where('colour_id', $colour->id)
+                // ->where('colour_id', $colour->id)
                 ->where('status', 'active')
                 ->get();
     
