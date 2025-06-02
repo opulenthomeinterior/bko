@@ -131,58 +131,58 @@
        
 
         /* Responsive Line Styling */
-#line1,#line2,#line3 {
-    /* Base styles */
-    height: 4px;
-    width: 100%;
-    max-width: 200px;
-    background-color: #2A6161;
+        #line1,#line2,#line3 {
+            /* Base styles */
+            height: 4px;
+            width: 100%;
+            max-width: 200px;
+            background-color: #2A6161;
 
-    /* Responsive sizing */
-    margin: 0 auto; /* Center the line */
-    
-    /* Fluid sizing using viewport units and clamp */
-    width: clamp(100px, 50vw, 200px);
+            /* Responsive sizing */
+            margin: 0 auto; /* Center the line */
+            
+            /* Fluid sizing using viewport units and clamp */
+            width: clamp(100px, 50vw, 200px);
 
-    /* Responsive considerations */
-    /* display: block; */
-    
-    /* Ensure smooth scaling */
-    box-sizing: border-box;
-}
+            /* Responsive considerations */
+            /* display: block; */
+            
+            /* Ensure smooth scaling */
+            box-sizing: border-box;
+        }
 
-/* Mobile-first media queries */
-/* Small devices (phones) */
-@media screen and (max-width: 576px) {
-    #line1,#line2,#line3 {
-        display:none;
-        /* width: clamp(80px, 80%, 150px);
-        height: 3px; */
-    }
-}
+        /* Mobile-first media queries */
+        /* Small devices (phones) */
+        @media screen and (max-width: 576px) {
+            #line1,#line2,#line3 {
+                display:none;
+                /* width: clamp(80px, 80%, 150px);
+                height: 3px; */
+            }
+        }
 
-/* Medium devices (tablets) */
-@media screen and (min-width: 577px) and (max-width: 992px) {
-    #line1,#line2,#line3 {
-        width: clamp(120px, 60%, 180px);
-    }
-}
+        /* Medium devices (tablets) */
+        @media screen and (min-width: 577px) and (max-width: 992px) {
+            #line1,#line2,#line3 {
+                width: clamp(120px, 60%, 180px);
+            }
+        }
 
-/* Large devices (desktops) */
-@media screen and (min-width: 993px) {
-    #line1,#line2,#line3 {
-        width: clamp(150px, 40%, 200px);
-    }
-}
+        /* Large devices (desktops) */
+        @media screen and (min-width: 993px) {
+            #line1,#line2,#line3 {
+                width: clamp(150px, 40%, 200px);
+            }
+        }
 
-/* High-resolution displays */
-@media screen and (-webkit-min-device-pixel-ratio: 2), 
-       screen and (min-resolution: 192dpi) {
-    #line1 {
-        /* Crisp rendering on high-DPI screens */
-        transform: scale(1);
-    }
-}
+        /* High-resolution displays */
+        @media screen and (-webkit-min-device-pixel-ratio: 2), 
+            screen and (min-resolution: 192dpi) {
+            #line1 {
+                /* Crisp rendering on high-DPI screens */
+                transform: scale(1);
+            }
+        }
         /* * {
             margin: 0;
             padding: 0;
@@ -323,34 +323,34 @@
             background-color: #febd49;
         }
         #lines
-{
-    display: flex;
-}
- #line1
- {
-    height: 4px;
-    width: 200px;
-    background-color: #2A6161;
-    /* display: inline-block; */
- }
- #line2
- {
-    height: 4px;
-    width: 200px;
-    background-color: #EDA10E;
-    /* display: inline-block; */
- }
- #line3
- {
-    height: 4px;
-    width: 200px;
-    background-color: #222222;
- }
+        {
+            display: flex;
+        }
+        #line1
+        {
+            height: 4px;
+            width: 200px;
+            background-color: #2A6161;
+            /* display: inline-block; */
+        }
+        #line2
+        {
+            height: 4px;
+            width: 200px;
+            background-color: #EDA10E;
+            /* display: inline-block; */
+        }
+        #line3
+        {
+            height: 4px;
+            width: 200px;
+            background-color: #222222;
+        }
 
- .max-description
-            {
-                font-size:16px;
-            }
+        .max-description
+        {
+            font-size:16px;
+        }
         @media(max-width:760px)
         {
             .consultation-step p,
@@ -501,114 +501,114 @@
         }
 
         .demo-button {
-      margin: 100px auto;
-      display: block;
-    }
+            margin: 100px auto;
+            display: block;
+        }
     
     
     
-    .modal-content {
-      border-radius: 1rem;
-      border: none;
-      padding: 1rem;
-    }
+        .modal-content {
+            border-radius: 1rem;
+            border: none;
+            padding: 1rem;
+        }
+        
+        .modal-header {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .btn-close {
+            background-color: #dc3545;
+            opacity: 1;
+            padding: 0.5rem;
+            border-radius: 50%;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: white;
+            font-weight: bold;
+        }
     
-    .modal-header {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
+        .btn-close:focus {
+            box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+        }
+        
+        .thank-you {
+            color: #dc3545;
+            font-weight: bold;
+            font-size: 2.5rem;
+        }
+        
+        .for-subscribing {
+            color: #212529;
+            font-size: 2.5rem;
+        }
+        
+        .youve-won {
+            color: #ffa500;
+            font-weight: bold;
+        }
+        
+        .free-text {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        
+        .consultation {
+            color: #212529;
+            font-weight: bold;
+        }
     
-    .btn-close {
-      background-color: #dc3545;
-      opacity: 1;
-      padding: 0.5rem;
-      border-radius: 50%;
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      color: white;
-      font-weight: bold;
-    }
+        /* .form-control {
+            border: 1px solid #6c757d;
+            border-radius: 5px;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+        } */
+        
+        .submit-btn {
+            background-color: #ffc107;
+            color: #212529;
+            font-weight: bold;
+            border: none;
+            padding: 1rem;
+            width: 100%;
+            text-transform: uppercase;
+        }
+        
+        .benefits-box {
+            border: 1px solid #6c757d;
+            border-radius: 5px;
+            padding: 1.5rem;
+            height: 100%;
+        }
     
-    .btn-close:focus {
-      box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
-    }
-    
-    .thank-you {
-      color: #dc3545;
-      font-weight: bold;
-      font-size: 2.5rem;
-    }
-    
-    .for-subscribing {
-      color: #212529;
-      font-size: 2.5rem;
-    }
-    
-    .youve-won {
-      color: #ffa500;
-      font-weight: bold;
-    }
-    
-    .free-text {
-      color: #dc3545;
-      font-weight: bold;
-    }
-    
-    .consultation {
-      color: #212529;
-      font-weight: bold;
-    }
-    
-    /* .form-control {
-      border: 1px solid #6c757d;
-      border-radius: 5px;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-    } */
-    
-    .submit-btn {
-      background-color: #ffc107;
-      color: #212529;
-      font-weight: bold;
-      border: none;
-      padding: 1rem;
-      width: 100%;
-      text-transform: uppercase;
-    }
-    
-    .benefits-box {
-      border: 1px solid #6c757d;
-      border-radius: 5px;
-      padding: 1.5rem;
-      height: 100%;
-    }
-    
-    .benefits-title {
-      font-weight: bold;
-      font-size: 1.5rem;
-    }
-    
-    .benefit-item {
-      margin-bottom: 0.75rem;
-    }
-    
-    .highlight-text {
-      color: #dc3545;
-      font-weight: bold;
-    }
-    
-    .convenience-text {
-      color: #dc3545;
-      font-weight: bold;
-    }
-    
-    @media (max-width: 768px) {
-      .thank-you, .for-subscribing {
-        font-size: 2rem;
-      }
-    }
-    .news-letter-input {
+        .benefits-title {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .benefit-item {
+            margin-bottom: 0.75rem;
+        }
+        
+        .highlight-text {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        
+        .convenience-text {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .thank-you, .for-subscribing {
+                font-size: 2rem;
+            }
+        }
+        .news-letter-input {
             border-radius: 0 !important;
             border: 1px solid #ced4da !important;
             padding: 12px 15px !important;
@@ -866,12 +866,8 @@
                 padding: 1rem 1.25rem;
             }
         }
-
-
-
-
-
-         .internal-card-swiper {
+        
+        .internal-card-swiper {
             position: relative !important;
             padding: 30px 0 !important;
         }
@@ -1001,9 +997,7 @@
         .card {
             animation: fadeInUp 0.6s ease forwards !important;
         }
-
-
-
+        
     </style>
 </head>
 
@@ -1071,107 +1065,107 @@
         </div>
     </div>
     <div class="container-fluid py-3" style="background: linear-gradient(135deg,#f5f7fa 0%, #e0e4e9 100%)">
-    <section class="container my-5">
-        <div class="row">
-            {{-- <div class="col-xl-3 col-lg-3 col-md-2 col-sm-12 col-3"></div> --}}
-            <div class=" col-md-8 col-12 align-self-center mb-4 mb-sm-0 px-lg-4">
-                {{-- <div style="">
-                    <h1>
-                        <span class="text-warning">Standard Kitchens </span>
-                        <br>
-                        frequently require <span class="text-warning">compromises</span>
+        <section class="container my-5">
+            <div class="row">
+                {{-- <div class="col-xl-3 col-lg-3 col-md-2 col-sm-12 col-3"></div> --}}
+                <div class=" col-md-8 col-12 align-self-center mb-4 mb-sm-0 px-lg-4">
+                    {{-- <div style="">
+                        <h1>
+                            <span class="text-warning">Standard Kitchens </span>
+                            <br>
+                            frequently require <span class="text-warning">compromises</span>
 
-                   
-                    </h1>
-                   
-                    <h2>
-                        Limited layout, generic styles, and materials that do not suit your needs
-                    </h2>
-                 
+                    
+                        </h1>
+                    
+                        <h2>
+                            Limited layout, generic styles, and materials that do not suit your needs
+                        </h2>
+                    
 
-                    <h3 class="mt-5 fw-bold">
-                        Do you find yourself wishing for specific features, or a more personalized aesthetic that off-the-shelf options simply can't provide?
-                        <br>
-                        Stop Compromising!
-                    </h3>
+                        <h3 class="mt-5 fw-bold">
+                            Do you find yourself wishing for specific features, or a more personalized aesthetic that off-the-shelf options simply can't provide?
+                            <br>
+                            Stop Compromising!
+                        </h3>
 
-                    <h4 class="mt-5">
-                        <span class="text-danger fw-bold text-uppercase mb-2 mb-sm-0">FOR A LIMITED TIME, WE ARE OFFERING FREE CONSULTATION and on-site survey.</span>
-                        <br>
-                        Because we believe your kitchen should be more than just a place to cook – it should be a reflection of your personality and a hub for your lifestyle
-                    </h4>
-                </div> --}}
-                    <div class="row">
-                        <div class="col-12">
-                        <img class="pb-3 w-100 rounded img-fluid d-none d-md-block" src="{{ asset('images/standard-kitchen-disadvantages.png') }}" alt="">
-                        <img class="pb-3 w-100 rounded img-fluid d-none d-md-block" src="{{ asset('images/max-storage-kitchen-advantages.png') }}" alt="">     
-                        
+                        <h4 class="mt-5">
+                            <span class="text-danger fw-bold text-uppercase mb-2 mb-sm-0">FOR A LIMITED TIME, WE ARE OFFERING FREE CONSULTATION and on-site survey.</span>
+                            <br>
+                            Because we believe your kitchen should be more than just a place to cook – it should be a reflection of your personality and a hub for your lifestyle
+                        </h4>
+                    </div> --}}
+                        <div class="row">
+                            <div class="col-12">
+                            <img class="pb-3 w-100 rounded img-fluid d-none d-md-block" src="{{ asset('images/standard-kitchen-disadvantages.png') }}" alt="">
+                            <img class="pb-3 w-100 rounded img-fluid d-none d-md-block" src="{{ asset('images/max-storage-kitchen-advantages.png') }}" alt="">     
                             
-                    </div>
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col-12">
-                            <img class="w-100 mb-3 rounded img-fluid d-md-none" src="{{ asset('images/standard-kitchen-disadvantages-mobile.png') }}" alt="">
-                       
-                        <img class="w-100 rounded img-fluid d-md-none" src="{{ asset('images/max-storage-kitchen-advantages-mobile.png') }}" alt="">
-                        
+                                
                         </div>
-                    </div>
-                    
-                    {{-- <img class="w-100 rounded  rounded img-fluid d-none d-md-block" src="{{ asset('images/max-form-left-banner-desktop.png') }}"/>
-                    <img class="w-100 rounded rounded img-fluid d-md-none" src="{{ asset('images/max-form-left-banner-mob.png') }}"/>
-                     --}}
-            </div>
-            <div class="p-0 col-md-4 col-12">
-
-
-                @include('frontend.inquiry_form')
-
-                {{-- <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning p-4">
-                    @csrf
-                    <div>
-                        <div class="d-block">
-                            <div class="text-center text-dark fw-bold">FOR FREE SURVEY AND QUOTE <span class="text-warning"> CALL US NOW!</span></div>
-                            <div class="my-2 d-flex justify-content-center">
-                                <a href="tel:02080505605" class="btn btn-warning text-decoration-underline text-center text-dark fs-4 fw-bold">
-                                <i class="bi pt-2 me-2 bi-phone text-dark"></i> 
-                                    020 805 05605
-                                </a>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-12">
+                                <img class="w-100 mb-3 rounded img-fluid d-md-none" src="{{ asset('images/standard-kitchen-disadvantages-mobile.png') }}" alt="">
+                        
+                            <img class="w-100 rounded img-fluid d-md-none" src="{{ asset('images/max-storage-kitchen-advantages-mobile.png') }}" alt="">
+                            
                             </div>
                         </div>
-                    </div>
-                    <h6 class="text-dark text-center fw-bold">OR</h6>
-                    <hr class="border border-dark">
+                        
+                        {{-- <img class="w-100 rounded  rounded img-fluid d-none d-md-block" src="{{ asset('images/max-form-left-banner-desktop.png') }}"/>
+                        <img class="w-100 rounded rounded img-fluid d-md-none" src="{{ asset('images/max-form-left-banner-mob.png') }}"/>
+                        --}}
+                </div>
+                <div class="p-0 col-md-4 col-12">
 
-                    
-                    <h4 id="blinking-text" class="bg-warning  fw-bold text-center py-2 rounded-pill">
-                        Book a free consultation now!
-                    </h4>
-                    <hr class="border border-dark">
-                    <div class="mb-3">
-                        <input type="text" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="name" id="name" placeholder="Enter your name">
-                    </div>
-                    <div class="mb-3">
-                        <input type="email" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="email" id="email" placeholder="Enter your email">
-                    </div>
-                    <div class="mb-3">
-                        <input type="number" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="phone" id="phone" placeholder="Enter your phone number">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="text-white py-2 px-3  text-end fw-bold" style="background-color:#2a6161;" >Call US AT</label>
-                        <input type="datetime-local" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="call_time">
-                    </div>
-                    <div class="mb-3">
-                        <textarea name="message" id="message" name="message" rows="3" class="w-100 rounded-0 border border-dark form-control text-dark" placeholder="Enter your message"></textarea>
-                    </div>
-                    <button type="submit" class=" btn py-2 px-4 rounded-0 fw-bolder text-uppercase text-white" style="background-color:#2a6161;">Submit</button>
-                </form> --}}
+
+                    @include('frontend.inquiry_form')
+
+                    {{-- <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning p-4">
+                        @csrf
+                        <div>
+                            <div class="d-block">
+                                <div class="text-center text-dark fw-bold">FOR FREE SURVEY AND QUOTE <span class="text-warning"> CALL US NOW!</span></div>
+                                <div class="my-2 d-flex justify-content-center">
+                                    <a href="tel:02080505605" class="btn btn-warning text-decoration-underline text-center text-dark fs-4 fw-bold">
+                                    <i class="bi pt-2 me-2 bi-phone text-dark"></i> 
+                                        020 805 05605
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <h6 class="text-dark text-center fw-bold">OR</h6>
+                        <hr class="border border-dark">
+
+                        
+                        <h4 id="blinking-text" class="bg-warning  fw-bold text-center py-2 rounded-pill">
+                            Book a free consultation now!
+                        </h4>
+                        <hr class="border border-dark">
+                        <div class="mb-3">
+                            <input type="text" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="name" id="name" placeholder="Enter your name">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="email" id="email" placeholder="Enter your email">
+                        </div>
+                        <div class="mb-3">
+                            <input type="number" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="phone" id="phone" placeholder="Enter your phone number">
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="text-white py-2 px-3  text-end fw-bold" style="background-color:#2a6161;" >Call US AT</label>
+                            <input type="datetime-local" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="call_time">
+                        </div>
+                        <div class="mb-3">
+                            <textarea name="message" id="message" name="message" rows="3" class="w-100 rounded-0 border border-dark form-control text-dark" placeholder="Enter your message"></textarea>
+                        </div>
+                        <button type="submit" class=" btn py-2 px-4 rounded-0 fw-bolder text-uppercase text-white" style="background-color:#2a6161;">Submit</button>
+                    </form> --}}
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-2 col-sm-12 col-3"></div>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-2 col-sm-12 col-3"></div>
-        </div>
-    </section>
-</div>
+        </section>
+    </div>
 
     <!-- Key designs -->
     {{-- <section class="container-fluid bg-green-color py-4 mt-4">
@@ -1225,68 +1219,68 @@
     </section>
 
     {{-- <div class ="container-fluid py-3" style="background-color:#f2f4f5">
-    <section class="container  pb-4">
+        <section class="container  pb-4">
+            
+            <div class="row justify-content-center">
+                
+                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12" ">  
+                    <div class="card border-0" style="height: 300px; width:300px;">
+                        <div class="card-body text-center p-4">
+                            <div class="card-icon">
+                                <i class="bi bi-card-list" style=" color: #ffa500;
+                font-size: 3rem;
+                text-align: center;
+                margin-bottom: 1rem;"></i>
+                            </div>
+                            <h5 class="card-title mb-3 text-dark">01.</h5>
+                            <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Design Requirements</h5>
+                            <p class="card-text text-muted">You inform us about your requirements.</p>
+                        </div>
+                </div>
+            </div>
+            
+                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                    <div class="card border-0" style="height: 300px; width:300px;">
+                        <div class="card-body text-center p-4">
+                            <div class="card-icon">
+                                <i class="bi bi-cash-stack" style=" color: #ffa500;
+                font-size: 3rem;
+                text-align: center;
+                margin-bottom: 1rem;"></i>
+                            </div>
+                            <h5 class="card-title mb-3 text-dark">02.</h5>
+                            <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Upfront Pricing</h5>
+                            <p class="card-text text-muted">We create a personalized design and provide clear, upfront pricing.</p>
+                        </div>
+                </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                    <div class="card border-0" style="height: 300px; width:300px;">
+                        <div class="card-body text-center p-4">
+                            <div class="card-icon">
+                                <i class="bi bi-clipboard-check" style=" color: #ffa500;
+                font-size: 3rem;
+                text-align: center;
+                margin-bottom: 1rem;"></i>
+                            </div>
+                            <h5 class="card-title mb-3 text-dark">03.</h5>
+                            <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Custom Design Delivered</h5>
+                            <p class="card-text text-muted">The final design will be crafted to meet your needs without the pressure of upselling.</p>
+                        </div>
+                </div>
+                </div>
+                
+            
+            </div>
         
-        <div class="row justify-content-center">
-            
-            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12" ">  
-                <div class="card border-0" style="height: 300px; width:300px;">
-                    <div class="card-body text-center p-4">
-                        <div class="card-icon">
-                            <i class="bi bi-card-list" style=" color: #ffa500;
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: 1rem;"></i>
-                        </div>
-                        <h5 class="card-title mb-3 text-dark">01.</h5>
-                        <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Design Requirements</h5>
-                        <p class="card-text text-muted">You inform us about your requirements.</p>
-                    </div>
+        </section>
+        <div class = "row justify-content-center">
+            <div class="col-3 mb-5 mt-3">
+            <p>Stop dreaming and build a kitchen that reflects your needs and style</p>
+            <button  class="btn rounded-0 btn-warning px-5 mx-n4 text-uppercase">Start designing your Ideal Kitchen</button>
             </div>
         </div>
-           
-            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
-                <div class="card border-0" style="height: 300px; width:300px;">
-                    <div class="card-body text-center p-4">
-                        <div class="card-icon">
-                            <i class="bi bi-cash-stack" style=" color: #ffa500;
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: 1rem;"></i>
-                        </div>
-                        <h5 class="card-title mb-3 text-dark">02.</h5>
-                        <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Upfront Pricing</h5>
-                        <p class="card-text text-muted">We create a personalized design and provide clear, upfront pricing.</p>
-                    </div>
-            </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
-                <div class="card border-0" style="height: 300px; width:300px;">
-                    <div class="card-body text-center p-4">
-                        <div class="card-icon">
-                            <i class="bi bi-clipboard-check" style=" color: #ffa500;
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: 1rem;"></i>
-                        </div>
-                        <h5 class="card-title mb-3 text-dark">03.</h5>
-                        <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Custom Design Delivered</h5>
-                        <p class="card-text text-muted">The final design will be crafted to meet your needs without the pressure of upselling.</p>
-                    </div>
-            </div>
-            </div>
-            
-          
-        </div>
-       
-    </section>
-    <div class = "row justify-content-center">
-        <div class="col-3 mb-5 mt-3">
-        <p>Stop dreaming and build a kitchen that reflects your needs and style</p>
-        <button  class="btn rounded-0 btn-warning px-5 mx-n4 text-uppercase">Start designing your Ideal Kitchen</button>
-        </div>
-   </div>
-</div> --}}
+    </div> --}}
 
 
 <div class="container-fluid py-3" style="background-color:#f2f4f5">
@@ -1352,64 +1346,64 @@
       </div> --}}
     </div>
 
-{{-- <div class="container-fluid py-3" style="background-color:#f2f4f5">
-    <section class="container pb-4">
-        <div class="row gap-5 justify-content-center">
-            <div class="col-lg-3 col-md-6 col-9 mb-4">
-                <div class="card rounded-0 border-0 h-100" style="  box-shadow: 20px -20px 0px -1px rgb(242 244 245), 20px -20px 0px 0 rgb(42, 97, 97); ">
-                    <div class="card-body text-center p-4">
-                        <div class="card-icon">
-                            <i class="bi bi-card-list text-warning" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                            
+    {{-- <div class="container-fluid py-3" style="background-color:#f2f4f5">
+        <section class="container pb-4">
+            <div class="row gap-5 justify-content-center">
+                <div class="col-lg-3 col-md-6 col-9 mb-4">
+                    <div class="card rounded-0 border-0 h-100" style="  box-shadow: 20px -20px 0px -1px rgb(242 244 245), 20px -20px 0px 0 rgb(42, 97, 97); ">
+                        <div class="card-body text-center p-4">
+                            <div class="card-icon">
+                                <i class="bi bi-card-list text-warning" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                                
+                            </div>
+                            <h5 class="card-title mb-3 text-dark">01.</h5>
+                            <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Dream & Discuss</h5>
+                            <div class="px-5">
+                                <p class="card-text text-muted">Share your vision! We'll listen to your ideas, needs, and lifestyle to understand your dream kitchen.</p>
+                            </div>
                         </div>
-                        <h5 class="card-title mb-3 text-dark">01.</h5>
-                        <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Dream & Discuss</h5>
-                        <div class="px-5">
-                            <p class="card-text text-muted">Share your vision! We'll listen to your ideas, needs, and lifestyle to understand your dream kitchen.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-9 mb-4">
+                    <div class="card rounded-0 border-0 h-100" style="  box-shadow: 20px -20px 0px -1px rgb(242 244 245), 20px -20px 0px 0 rgb(42, 97, 97); ">
+                        <div class="card-body text-center p-4">
+                            <div class="card-icon">
+                                <i class="bi bi-cash-stack text-warning" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                            </div>
+                            <h5 class="card-title mb-3 text-dark">02.</h5>
+                            <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Design & Refine</h5>
+                            <div class="px-5">
+                            <p class="card-text text-muted">Our experts create a personalized design, including layouts, material selections. You'll have opportunities to refine every detail.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-9 mb-4">
+                    <div class="card rounded-0 border-0 h-100" style="  box-shadow: 20px -20px 0px -1px rgb(242 244 245), 20px -20px 0px 0 rgb(42, 97, 97); ">
+                        <div class="card-body text-center p-4">
+                            <div class="card-icon">
+                                <i class="bi bi-clipboard-check text-warning" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                            </div>
+                            <h5 class="card-title mb-3 text-dark">03.</h5>
+                            <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Craft & Create</h5>
+                            <div class="px-5">
+                            <p class="card-text text-muted">Our skilled craftsmen meticulously build and install your custom kitchen, ensuring a perfect fit and lasting beauty.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="col-lg-3 col-md-6 col-9 mb-4">
-                <div class="card rounded-0 border-0 h-100" style="  box-shadow: 20px -20px 0px -1px rgb(242 244 245), 20px -20px 0px 0 rgb(42, 97, 97); ">
-                    <div class="card-body text-center p-4">
-                        <div class="card-icon">
-                            <i class="bi bi-cash-stack text-warning" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                        </div>
-                        <h5 class="card-title mb-3 text-dark">02.</h5>
-                        <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Design & Refine</h5>
-                        <div class="px-5">
-                        <p class="card-text text-muted">Our experts create a personalized design, including layouts, material selections. You'll have opportunities to refine every detail.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-9 mb-4">
-                <div class="card rounded-0 border-0 h-100" style="  box-shadow: 20px -20px 0px -1px rgb(242 244 245), 20px -20px 0px 0 rgb(42, 97, 97); ">
-                    <div class="card-body text-center p-4">
-                        <div class="card-icon">
-                            <i class="bi bi-clipboard-check text-warning" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                        </div>
-                        <h5 class="card-title mb-3 text-dark">03.</h5>
-                        <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Craft & Create</h5>
-                        <div class="px-5">
-                        <p class="card-text text-muted">Our skilled craftsmen meticulously build and install your custom kitchen, ensuring a perfect fit and lasting beauty.</p>
-                        </div>
-                    </div>
-                </div>
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-6 col-md-8 col-sm-10 col-12 mb-5 mt-3">
+                <p class="fw-bold text-success">Stop dreaming and build a kitchen that reflects your needs and style</p>
+                <button class="btn btn-warning px-5 text-uppercase rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Start designing your Ideal Kitchen</button>
             </div>
         </div>
-    </section>
-
-    <div class="row justify-content-center text-center">
-        <div class="col-lg-6 col-md-8 col-sm-10 col-12 mb-5 mt-3">
-            <p class="fw-bold text-success">Stop dreaming and build a kitchen that reflects your needs and style</p>
-            <button class="btn btn-warning px-5 text-uppercase rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Start designing your Ideal Kitchen</button>
-        </div>
-    </div>
-</div> --}}
+    </div> --}}
 
 
 
@@ -1591,102 +1585,96 @@
     </section> -->
 
     <div class="container-fluid py-5" style="background-color:#f2f4f5;">
-    <section class="container mb-4">
-        <div class="row justify-content-center gap-md-2 gap-lg-5">
-        <div class="col-12 col-md-5 col-lg-3">
-            <img src="{{ asset('images/tall-cabinets.png') }}" 
-            class="img-fluid" 
-            alt="Modern Kitchen" 
-            style=" box-shadow: 20px 22px 0px 0px rgba(254,202,109,1); object-fit: cover;">
-            <div class="content mt-5">
-            <h3 class="text-uppercase fw-bold text-center">TALL CABINETS</h3>
-            <p class="text-center suggestion max-description"> Our tall cabinets are made up to 850mm deep and more to flush the American fridge and freezer (750mm deep). The kitchen looks seamless when all the appliances, and cabinets are perfectly aligned.</p>
-            </div>
-        </div>
-        <div class="col-12 col-md-5 col-lg-3">
-            <img src="{{ asset('images/bridging.png') }}" class="img-fluid border border-warning" alt="Smart Kitchen" style=" object-fit: cover; box-shadow: 20px 22px 0px 0px rgba(42, 97, 97,1);">
-            <div class="content mt-5">
-                <h3 class="text-uppercase fw-bold text-center">Bridging Units</h3>
-                <p class="text-center suggestion max-description"> Our bridging units are designed to seamlessly align with tall units, offering a custom fit for you. While the market standard typically offers a depth of 300mm, we provide options with depths of up to 850mm or more. </p>
+        <section class="container mb-4">
+            <div class="row justify-content-center gap-md-2 gap-lg-5">
+                <div class="col-12 col-md-5 col-lg-3">
+                    <img src="{{ asset('images/tall-cabinets.png') }}" 
+                    class="img-fluid" 
+                    alt="Modern Kitchen" 
+                    style=" box-shadow: 20px 22px 0px 0px rgba(254,202,109,1); object-fit: cover;">
+                    <div class="content mt-5">
+                    <h3 class="text-uppercase fw-bold text-center">TALL CABINETS</h3>
+                    <p class="text-center suggestion max-description"> Our tall cabinets are made up to 850mm deep and more to flush the American fridge and freezer (750mm deep). The kitchen looks seamless when all the appliances, and cabinets are perfectly aligned.</p>
+                    </div>
                 </div>
-        </div>
+                <div class="col-12 col-md-5 col-lg-3">
+                    <img src="{{ asset('images/bridging.png') }}" class="img-fluid border border-warning" alt="Smart Kitchen" style=" object-fit: cover; box-shadow: 20px 22px 0px 0px rgba(42, 97, 97,1);">
+                    <div class="content mt-5">
+                        <h3 class="text-uppercase fw-bold text-center">Bridging Units</h3>
+                        <p class="text-center suggestion max-description"> Our bridging units are designed to seamlessly align with tall units, offering a custom fit for you. While the market standard typically offers a depth of 300mm, we provide options with depths of up to 850mm or more. </p>
+                        </div>
+                </div>
+            </div>
+            {{-- <div class="row">
+                
+                <div class="col-xl-7 p-0 col-lg-7 col-sm-12 col-12 mb-4 d-flex align-items-center">
+                    <div class="card bg-white border-0 shadow-sm" style="padding:80px 170px 80px 50px;">
+                        <h2 class="">TALL CABINETS</h2>
+                        <p class="">Our tall cabinets are made up to 800mm deep to flush the American kitchen (750mm deep). The kitchen looks seamless when all the appliances, and cabinets are perfectly aligned. </p>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-lg-5 col-sm-12 col-12 p-0 mb-4">
+                    <img src="https://bkonline.uk/public/imgs/products/TALL-Larder-angled-12501720361557_668aa255bad6b.jpg" class="img-fluid" alt="Modern Kitchen" style="width: 520px; height: 540px; box-shadow: 20px 22px 0px 0px rgba(254,202,109,1); object-fit: cover;">
+                </div>
+            </div> --}}
+        </section>
     </div>
-        {{-- <div class="row">
-            
-            <div class="col-xl-7 p-0 col-lg-7 col-sm-12 col-12 mb-4 d-flex align-items-center">
-                <div class="card bg-white border-0 shadow-sm" style="padding:80px 170px 80px 50px;">
-                    <h2 class="">TALL CABINETS</h2>
-                    <p class="">Our tall cabinets are made up to 800mm deep to flush the American kitchen (750mm deep). The kitchen looks seamless when all the appliances, and cabinets are perfectly aligned. </p>
+    {{-- <div class="container-fluid py-5" style="background-color:#f2f4f5;">
+        <section class="container mb-4">
+            <div class="row">
+                <div class="col-xl-5 col-lg-5 col-md-4 col-sm-12 col-12 mb-4">
+                    <img src="https://bkonline.uk/public/imgs/products/bridging-unit1739481721_67ae627909ea3.jpg" class="img-fluid" alt="Smart Kitchen" style="width:520px; height:540px; object-fit: cover; box-shadow: -22px 20px 0px 0px rgba(42, 97, 97,1);">
                 </div>
-            </div>
-            <div class="col-xl-5 col-lg-5 col-sm-12 col-12 p-0 mb-4">
-                <img src="https://bkonline.uk/public/imgs/products/TALL-Larder-angled-12501720361557_668aa255bad6b.jpg" 
-     class="img-fluid" 
-     alt="Modern Kitchen" 
-     style="width: 520px; height: 540px; box-shadow: 20px 22px 0px 0px rgba(254,202,109,1); object-fit: cover;">
-
-               
-            </div>
-            
-        </div> --}}
-    </section>
-</div>
-{{-- <div class="container-fluid py-5" style="background-color:#f2f4f5;">
-    <section class="container mb-4">
-        <div class="row">
-            <div class="col-xl-5 col-lg-5 col-md-4 col-sm-12 col-12 mb-4">
-                <img src="https://bkonline.uk/public/imgs/products/bridging-unit1739481721_67ae627909ea3.jpg" class="img-fluid" alt="Smart Kitchen" style="width:520px; height:540px; object-fit: cover; box-shadow: -22px 20px 0px 0px rgba(42, 97, 97,1);">
-            </div>
-            <div class="col-xl-7 col-lg-7 col-md-5 col-sm-12 col-12 mb-4 d-flex align-items-center">
-                <div class= "card bg-white border-0 shadow-sm" style="padding:80px 60px 80px 50px;">
-                    <h2 class="">BRIDGING UNITS</h2>
-                    <small>Our bridging units are designed to seamlessly align with tall units, offering a custom fit for your space. While the market standard typically offers a depth of 300mm, we provide options with depths of up to 800mm for enhanced flexibility and storage capacity. Additionally, we ensure symmetry above your fridge for a clean, balanced aesthetic.</small>
+                <div class="col-xl-7 col-lg-7 col-md-5 col-sm-12 col-12 mb-4 d-flex align-items-center">
+                    <div class= "card bg-white border-0 shadow-sm" style="padding:80px 60px 80px 50px;">
+                        <h2 class="">BRIDGING UNITS</h2>
+                        <small>Our bridging units are designed to seamlessly align with tall units, offering a custom fit for your space. While the market standard typically offers a depth of 300mm, we provide options with depths of up to 800mm for enhanced flexibility and storage capacity. Additionally, we ensure symmetry above your fridge for a clean, balanced aesthetic.</small>
+                    </div>
                 </div>
+            
             </div>
-           
-        </div>
-    </section>
+        </section>
 
-</div> --}}
-{{-- <div class="container-fluid py-5" style="background-color:#f2f4f5;">
-    <section class="container mb-4">
-        <div class="row">
-           
-            <div class="col-xl-7  col-lg-7 col-md-6 col-sm-12 col-12 mb-4 d-flex align-items-center">
-                <div class="bg-white p-5">
-                    <h2 class="ms-3">WE OFFER</h2>
-                    <ul>
-                        <li class="font-weight-bold" style="list-style-type:disc">22 mm Thick ROBUST DOORS</li>
-                        <li>
-                            <li class="font-weight-bold" style="list-style-type:disc">18 mm+ THICK BACK AND SIDES</span>
-                            
-                                <li class ="fw-bold" style="list-style-type:disc">
-                                    Our units have 18mm+ back. It makes them solid, durable, and customized. They are more efficient than the standard 6-12 mm fragile unit backs available in the market.</li>
+    </div> --}}
+    {{-- <div class="container-fluid py-5" style="background-color:#f2f4f5;">
+            <section class="container mb-4">
+                <div class="row">
+                
+                    <div class="col-xl-7  col-lg-7 col-md-6 col-sm-12 col-12 mb-4 d-flex align-items-center">
+                        <div class="bg-white p-5">
+                            <h2 class="ms-3">WE OFFER</h2>
+                            <ul>
+                                <li class="font-weight-bold" style="list-style-type:disc">22 mm Thick ROBUST DOORS</li>
+                                <li>
+                                    <li class="font-weight-bold" style="list-style-type:disc">18 mm+ THICK BACK AND SIDES</span>
+                                    
+                                        <li class ="fw-bold" style="list-style-type:disc">
+                                            Our units have 18mm+ back. It makes them solid, durable, and customized. They are more efficient than the standard 6-12 mm fragile unit backs available in the market.</li>
+                                
+                                </li class="">
+                                <li class="font-weight-bold" style="list-style-type:disc">The height and depth of all the units is customized according to your preferences</li>
+                            </ul> 
                         
-                        </li class="">
-                        <li class="font-weight-bold" style="list-style-type:disc">The height and depth of all the units is customized according to your preferences</li>
-                    </ul> 
-                  
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12 mb-4">
+                        <img src="https://bkonline.uk/public/imgs/products/thick-doors1739481730_67ae6282e5549.jpg" class="img-fluid" alt="Smart Kitchen" style="width:400px; height:420px; box-shadow: 20px 22px 0px 0px rgba(254,202,109,1);">
+                    </div>
                 </div>
-            </div>
-            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12 mb-4">
-                <img src="https://bkonline.uk/public/imgs/products/thick-doors1739481730_67ae6282e5549.jpg" class="img-fluid" alt="Smart Kitchen" style="width:400px; height:420px; box-shadow: 20px 22px 0px 0px rgba(254,202,109,1);">
-            </div>
-        </div>
-    </section>
-</div> --}}
+            </section>
+        </div> --}}
 
     <section class="conatiner py-2 text-center mb-4">
         <div class="row">
-        <div class="col-12 ">
-            <a class="w-100 btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            <img class="rounded img-fluid w-100 d-none d-md-block" src="{{ asset('images/never-settle.png') }}"/>
-            {{-- <img class="rounded img-fluid w-100" src="{{ asset('images/never-settle.png') }}"/> --}}
-            
-            <img class="rounded shadow-lg img-fluid w-100 ol-12  d-md-none" src="{{ asset('images/never-settle-mobile.png') }}"/>
-            </a>
+            <div class="col-12 ">
+                <a class="w-100 btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <img class="rounded img-fluid w-100 d-none d-md-block" src="{{ asset('images/never-settle.png') }}"/>
+                {{-- <img class="rounded img-fluid w-100" src="{{ asset('images/never-settle.png') }}"/> --}}
+                
+                <img class="rounded shadow-lg img-fluid w-100 ol-12  d-md-none" src="{{ asset('images/never-settle-mobile.png') }}"/>
+                </a>
+            </div>
         </div>
-    </div>
         {{-- <div class="px-4 text-center">
             <h4 class="text-center text-danger">WHY settle for an average-sized kitchen  </h4>
             <h5 class="text-center" style="color:#2a6161">WHEN WE HAVE ELIMINATED THE PRICE ISSUE FOR A FULLY CUSTOMIZED KITCHEN? </h5>
@@ -1814,11 +1802,8 @@
             </div>
        </div>
     </div> --}}
-
-
     
-
-      <div class="container">
+    <div class="container">
         <div class="row">
 
 
@@ -1831,24 +1816,19 @@
             </div>
         </div>
     </div>
-      <div class="container">
+    <div class="container">
         <div class="row">
 
 
             <div class="col-12 my-5 p-0">
-               
+            
                 <img class=" p-0 w-100 rounded img-fluid d-none d-md-block" src="{{ asset('images/max-appliances.png') }}"/>
                 
                 <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/max-appliances-mobile.png') }}"/>
-               
+            
             </div>
         </div>
     </div>
-
-
-
-
-
     <div class="container mt-5 mb-5">
 
         
@@ -2362,64 +2342,64 @@
     <!-- Owl Carousel JS -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
 
 
 
-  document.addEventListener('DOMContentLoaded', function() {
-            const internalCardSwiper = new Swiper('.internalCardSwiper', {
-                // Essential Parameters
-                // effect: 'slide',
-                slidesPerView: 'auto',
-                centeredSlides: true,
-                spaceBetween: 30,
-                grabCursor: true,
-                loop: true,
-                
-                // Responsive Breakpoints
-                breakpoints: {
-                    320: {
-                        slidesPerView: 1,
-                    },
-                    640: {
-                        slidesPerView: 2,
-                    },
-                    992: {
-                        slidesPerView: 3,
-                    }
+    document.addEventListener('DOMContentLoaded', function() {
+        const internalCardSwiper = new Swiper('.internalCardSwiper', {
+            // Essential Parameters
+            // effect: 'slide',
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            spaceBetween: 30,
+            grabCursor: true,
+            loop: true,
+            
+            // Responsive Breakpoints
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
                 },
-                
-                // Pagination
-                // pagination: {
-                //     el: '.swiper-pagination',
-                //     clickable: true,
-                // },
-                
-                // Navigation Arrows
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
+                640: {
+                    slidesPerView: 2,
                 },
-                
-                // Autoplay
-                autoplay: {
-                    delay: 3000,
-                    disableOnInteraction: false,
-                },
-                
-                // Animation Speed
-                speed: 600,
-                
-                // Add event listeners for animation effects
-                on: {
-                    slideChange: function () {
-                        // Add any custom slide change animations here if needed
-                    }
+                992: {
+                    slidesPerView: 3,
                 }
-            });
+            },
+            
+            // Pagination
+            // pagination: {
+            //     el: '.swiper-pagination',
+            //     clickable: true,
+            // },
+            
+            // Navigation Arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            
+            // Autoplay
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            
+            // Animation Speed
+            speed: 600,
+            
+            // Add event listeners for animation effects
+            on: {
+                slideChange: function () {
+                    // Add any custom slide change animations here if needed
+                }
+            }
         });
+    });
 
 
 
