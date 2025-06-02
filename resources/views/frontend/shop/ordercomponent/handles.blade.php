@@ -807,9 +807,12 @@ td
                              </a>
                             <div class="product-details">
                                  <a href="{{ route('orderbyproduct', [$product->slug, $product->serial_number]) }}">
-                                     <h2 class="product-title">{{ $product->full_title }}</h2>
+                                    <h2 class="product-title">{{ \Str::limit($product->full_title, 20) }}</h2>
+                                    <div class="rounded bg-danger text-white text-center">{{$product->related_products_count > 0 ? $product->related_products_count : '1'}} available colours</div>
                                  </a>
-                            <div class="product-price">£{{$product->price}}</div>
+                                 <div class="d-flex-justify-content-between">
+                                    <div class="product-price">£{{$product->price}}</div>
+                                 </div>
                             <div class="quantity-selector">
                                 <button class="quantity-btn" id="dec-btn{{ $product->id }}" onclick="decQty({{ $product->id }})">−</button>
                                 <input name="quantity" type="text" class="quantity" value="0"  id="quantity{{ $product->id }}"

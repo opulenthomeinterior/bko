@@ -514,6 +514,28 @@ class HomeController extends Controller
 
         $urlStyleId = $request->style_id ?? '';
         $urlColourId = $request->colour_id ?? '';
+        
+        $products->map(function ($product) {
+            $findProduct = Product::where('style_id', $product->style_id)
+                            ->where('assembly_id', $product->assembly_id)
+                            ->where('colour_id', $product->colour_id)
+                            ->where('id', $product->id)->where('status', 'active')
+                            ->first();
+
+            $categoryShortTitle = $findProduct?->short_title;
+            $parentSubCategory = $findProduct?->parent_sub_category;
+
+            $relatedCategoryProducts = Product::with('colour')->where('id', '!=', $product->id)
+                ->where('status', 'active')
+                ->whereIn('parent_category_id', [6, 15])
+                ->where(function ($q) use ($parentSubCategory, $categoryShortTitle) {
+                    $q = $q->where('parent_sub_category', $parentSubCategory)
+                    ->where('short_title', $categoryShortTitle);
+                })
+                ->count();
+            $product->related_products_count = $relatedCategoryProducts;
+        });
+
         if ($slug == 'doors') {
             return view('frontend.shop.ordercomponent.doors', compact('urlStyleId', 'urlColourId', 'category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo', 'slug', 'widths'));
         } else if ($slug == 'handles') {

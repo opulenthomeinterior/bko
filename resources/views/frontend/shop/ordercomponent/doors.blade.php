@@ -927,7 +927,8 @@ td
                              </a>
                             <div class="product-details">
                                  <a href="{{ route('orderbyproduct', [$product->slug, $product->serial_number]) }}">
-                                     <h2 class="product-title">{{ $product->full_title }}</h2>
+                                    <h2 class="product-title">{{ \Str::limit($product->full_title, 20) }}</h2>
+                                    <div class="rounded bg-danger text-white text-center">{{$product->related_products_count > 0 ? $product->related_products_count : '1'}} available colours</div>
                                  </a>
                             <div class="product-price">£{{$product->price}}</div>
                             <div class="quantity-selector">
