@@ -62,6 +62,7 @@
         }
 
 
+
            .internal-card-swiper {
             position: relative !important;
             padding: 30px 0 !important;
@@ -89,6 +90,7 @@
             transition: all 0.3s ease !important;
             position: relative !important;
         }
+        
         
         .card:hover {
             transform: translateY(-10px) !important;
@@ -144,6 +146,15 @@
             font-weight: bold !important;
         }
         
+        @media (max-width:576px)
+        {
+            .swiper-button-next, .swiper-button-prev
+            {
+                top:30%;
+            } 
+        }
+
+
         .swiper-pagination-bullet {
             width: 10px !important;
             height: 10px !important;
