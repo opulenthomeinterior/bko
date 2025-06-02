@@ -103,9 +103,9 @@
         }
         
         .card-img img {
-            width: 100% !important;
-            height: 100% !important;
-            object-fit: cover !important;
+            /* width: 100% !important; */
+            height: 150px !important;
+            /* object-fit: cover !important; */
             transition: all 0.5s ease !important;
         }
         
