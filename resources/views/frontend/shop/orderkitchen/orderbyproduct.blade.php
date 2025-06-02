@@ -81,7 +81,7 @@
         }
         
         .card {
-            height: 100% !important;
+            /* height: 100% !important; */
             border-radius: 16px !important;
             overflow: hidden !important;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
@@ -969,6 +969,15 @@
         </div>
     </div> -->
 
+<div class="container mt-5 mb-2">
+
+    <div class="row justify-content-center">
+            <div class="col-8">
+                  <h2 class="text-center fw-bold text-black">Related Products</h2>
+                  
+            </div>
+        </div>
+
 
     <div class="internal-card-swiper">
             <div class="swiper internalCardSwiper">
@@ -1001,7 +1010,7 @@
                 <div class="swiper-pagination"></div>
             </div>
         </div>
-
+</div>
 
     <script>
 
