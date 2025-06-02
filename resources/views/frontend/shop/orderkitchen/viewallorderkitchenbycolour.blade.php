@@ -2152,7 +2152,7 @@
                     <a class="fw-semibold text-dark text-uppercase collapse-heading" data-bs-toggle="collapse"
                         href="#worktops" role="button" aria-expanded="false" aria-controls="worktops">
                         <span
-                            class="bg-dark text-white fw-semibold py-2 px-2 text-center me-2 collapse-heading-number">4</span>WORKTOPS AND UPSTANDS
+                            class="bg-dark text-white fw-semibold py-2 px-2 text-center me-2 collapse-heading-number">4</span>WORKTOPS / UPSTANDS / BREAKFAST BARS
                     </a>
                     <div class="collapse-container collapse mt-3" id="worktops">
                         <nav>
@@ -2162,7 +2162,7 @@
                                     aria-controls="nav-worktops" aria-selected="true">Worktops</button>
                                 <button class="nav-link" id="nav-upstands-tab" data-bs-toggle="tab"
                                     data-bs-target="#nav-upstands" type="button" role="tab"
-                                    aria-controls="nav-upstands" aria-selected="false">Worktops and Upstands</button>
+                                    aria-controls="nav-upstands" aria-selected="false">Upstands</button>
                                 <button class="nav-link" id="nav-breakfast-tab" data-bs-toggle="tab"
                                     data-bs-target="#nav-breakfast" type="button" role="tab"
                                     aria-controls="nav-breakfast" aria-selected="false">Breakfast Bars</button>
