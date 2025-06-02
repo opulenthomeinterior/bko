@@ -60,6 +60,104 @@
                 width: 25%;
             }
         }
+
+
+           .internal-card-swiper {
+            position: relative !important;
+            padding: 30px 0 !important;
+        }
+        
+        .internal-card-swiper .swiper-slide {
+            /* width: 200px !important; */
+            height: 400px !important;
+            transition: all 0.4s ease !important;
+            transform: scale(0.85) !important;
+            opacity: 0.5 !important;
+        }
+        
+        .internal-card-swiper .swiper-slide-active {
+            transform: scale(1) !important;
+            opacity: 1 !important;
+        }
+        
+        .card {
+            height: 100% !important;
+            border-radius: 16px !important;
+            overflow: hidden !important;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+            background-color: #fff !important;
+            transition: all 0.3s ease !important;
+            position: relative !important;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px) !important;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2) !important;
+        }
+        
+        .card-img {
+            /* height: 65% !important; */
+            width: 100% !important;
+            /* height: 100% !important; */
+            overflow: hidden !important;
+        }
+        
+        .card-img img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            transition: all 0.5s ease !important;
+        }
+        
+        .card:hover .card-img img {
+            transform: scale(1.1) !important;
+        }
+        
+        .card-content {
+            padding: 20px !important;
+        }
+        
+        .card-title {
+            font-size: 1.3rem !important;
+            font-weight: 600 !important;
+            color: #333 !important;
+            margin-bottom: 12px !important;
+        }
+        
+        .card-desc {
+            font-size: 0.9rem !important;
+            color: #666 !important;
+            line-height: 1.5 !important;
+        }
+        
+        .swiper-button-next, .swiper-button-prev {
+            width: 40px !important;
+            height: 40px !important;
+            background-color: #fff !important;
+            border-radius: 50% !important;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1) !important;
+            color: #333 !important;
+        }
+        
+        .swiper-button-next:after, .swiper-button-prev:after {
+            font-size: 18px !important;
+            font-weight: bold !important;
+        }
+        
+        .swiper-pagination-bullet {
+            width: 10px !important;
+            height: 10px !important;
+            background-color: #333 !important;
+            opacity: 0.3 !important;
+        }
+        
+        .swiper-pagination-bullet-active {
+            opacity: 1 !important;
+            background-color: #333 !important;
+        }
+
+
+
     </style>
     <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
         <nav aria-label="breadcrumb">
@@ -868,6 +966,46 @@
         @endif
         </div>
     </div> -->
+
+
+    <div class="internal-card-swiper">
+            <div class="swiper internalCardSwiper">
+                <div class="swiper-wrapper">
+                    <!-- Card 1 -->
+                    <div class="swiper-slide">
+                        <a href="">
+                            <div class="card">
+                            <div class="card-img">
+                                <img src="" class="card-img-top" alt="">
+                           
+                            </div>
+                            <div class="card-content">
+                                <h6 class="card-title">Title</h6>
+                                
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                    
+                
+                    
+                  
+
+                </div>
+                
+                <!-- Add Navigation Buttons -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+
+
+
+
+
     <section class="container px-lg-5 py-4 px-md-3 px-3">
         @if ($relatedProducts && count($relatedProducts) > 0)
         <div class="col-lg-12 col-md-12">
@@ -889,6 +1027,66 @@
     </section>
 
     <script>
+
+
+
+
+ document.addEventListener('DOMContentLoaded', function() {
+            const internalCardSwiper = new Swiper('.internalCardSwiper', {
+                // Essential Parameters
+                // effect: 'slide',
+                slidesPerView: 'auto',
+                centeredSlides: true,
+                spaceBetween: 30,
+                grabCursor: true,
+                loop: true,
+                
+                // Responsive Breakpoints
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1,
+                    },
+                    640: {
+                        slidesPerView: 2,
+                    },
+                    992: {
+                        slidesPerView: 3,
+                    }
+                },
+                
+                // Pagination
+                // pagination: {
+                //     el: '.swiper-pagination',
+                //     clickable: true,
+                // },
+                
+                // Navigation Arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                
+                // Autoplay
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                
+                // Animation Speed
+                speed: 600,
+                
+                // Add event listeners for animation effects
+                on: {
+                    slideChange: function () {
+                        // Add any custom slide change animations here if needed
+                    }
+                }
+            });
+        });
+
+
+
+
         document.getElementById('productSelect').addEventListener('change', function() {
             var selectedOption = this.options[this.selectedIndex];
             var url = selectedOption.getAttribute('data-url');
