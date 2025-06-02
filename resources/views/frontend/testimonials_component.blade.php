@@ -1,4 +1,4 @@
-<section class="container-fluid py-5 bg-white" style="background-image: url({{asset('images/homepage.jpeg')}}); opacity: 2; border-bottom: 3px solid #ebc266; border-left: 3px solid #ebc266; padding: 20px; width: 100% !important; overflow: hidden">
+{{-- <section class="container-fluid py-5 bg-white" style="background-image: url({{asset('images/homepage.jpeg')}}); opacity: 2; border-bottom: 3px solid #ebc266; border-left: 3px solid #ebc266; padding: 20px; width: 100% !important; overflow: hidden">
     <div class="row">
         <h3 class="text-dark text-uppercase fw-bolder text-center mb-4">Testimonials</h3>
     </div>
@@ -141,9 +141,9 @@
             });
         });
     </script>
-@endpush
+@endpush --}}
 
-{{-- 
+
 <head>
     <style>
         body {
@@ -248,11 +248,22 @@
         }
         
         .carousel-control-prev {
-            left: -20px;
+            /* left: -20px; */
+            left: 30%;
         }
         
         .carousel-control-next {
-            right: -20px;
+            /* right: -20px; */
+            right: 30%;
+        }
+        @media (max-width:576px)
+        {
+             .carousel-control-prev{
+                left:0;
+
+             } .carousel-control-next {
+                right:0;
+             }
         }
         
         .carousel-control-prev-icon, .carousel-control-next-icon {
@@ -385,13 +396,13 @@
             <h2 class="heading text-black">FACT, EVERYONE LOVES US</h2>
             
             
-            <img class="floating-profile profile-1 src="{{ asset('images/testimonial-image.png') }}">
+            {{-- <img class="floating-profile profile-1 src="{{ asset('images/testimonial-image.png') }}">
             <img class="floating-profile profile-2 src="{{ asset('images/testimonial-image.png') }}" >
             <img class="floating-profile profile-3 src="{{ asset('images/testimonial-image.png') }}" >
             <img class="floating-profile profile-4 src="{{ asset('images/testimonial-image.png') }}" >
             <img class="floating-profile profile-5 src="{{ asset('images/testimonial-image.png') }}" >
             <img class="floating-profile profile-6 src="{{ asset('images/testimonial-image.png') }}" >
-                             
+                              --}}
 
 
             <div class="dot dot-yellow"></div>
@@ -440,4 +451,4 @@
             </div>
         </div>
     </div>
-</body> --}}
+</body>
