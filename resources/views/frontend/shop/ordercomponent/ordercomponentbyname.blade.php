@@ -362,10 +362,10 @@ td
     
     .product-image img {
         /* width: 280px; */
-        width: 290px;
+        /* width: 290px; */
       /* width: 100%;
       height: 100%; */
-      /* height: 300px; */
+      height: 150px;
       object-fit: cover;
       transition: transform 0.5s ease;
     }

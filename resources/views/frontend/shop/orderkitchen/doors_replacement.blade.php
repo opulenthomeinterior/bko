@@ -3,6 +3,7 @@
         @section('meta_tags')
         <title>Kitchen Door Replacement | Kitchen Cupboards & Cabinet Doors </title>
         <meta name="description" content="Buy Kitchen Online is here with Affordable & Custom kitchen units in London, in J Pull, Shaker, Slab, MFC & True Handleless styles. Book Consultation Now.">
+       @endsection
         <script type="application/ld+json">
             {
             "@context": "https://schema.org",

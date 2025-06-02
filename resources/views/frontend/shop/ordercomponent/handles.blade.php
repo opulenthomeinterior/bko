@@ -395,8 +395,9 @@ td
     }
     
     .product-image img {
+        height:150px;
         /* width: 280px; */
-        width: 290px;
+        
       /* width: 100%;
       height: 100%; */
       /* height: 300px; */

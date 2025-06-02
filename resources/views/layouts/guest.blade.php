@@ -1133,7 +1133,7 @@ use App\Models\Style;
                 </div>
 
                
-                <div class="col-lg-3 col-md-6 text-start">
+                <!-- <div class="col-lg-3 col-md-6 text-start">
                     <h5 class="mb-4 text-white fs-mob-18">Support</h5>
                     <ul class="list-unstyled">
                         <li class="mb-3">
@@ -1165,7 +1165,7 @@ use App\Models\Style;
                             </a>
                         </li>
                     </ul>
-                </div>
+                </div> -->
 
                 <!-- Legal -->
                 <div class="col-lg-3 col-md-6 text-start">
