@@ -270,11 +270,13 @@
                                 <p class="fs-6 fw-bold">Product Code </p>
                                 <p class="fs-6 border border-warning p-2">{{$product->product_code}}</p>
                             </div>
+                            <!-- @if($product->category?->slug == 'doors' || $product->category?->slug == 'handles')
                             <div class="d-flex flex-column">
                                 <p class="fs-6 fw-bold">Order a Free Sample </p>
                                 <a href="{{ route('checkout')}}" class="btn border-1 border-primary p-2">Checkout</a>
                                 <p class="fs-6 mt-2 fw-bold text-danger">£6 Delivery Charges</p>
                             </div>
+                            @endif -->
                         </div>
                          <div class="container-fluid p-0">
                             <p class="fs-6 fw-bold">Available Colours</p>
