@@ -972,27 +972,25 @@
             <div class="swiper internalCardSwiper">
                 <div class="swiper-wrapper">
                     <!-- Card 1 -->
+                    @if ($relatedProducts && count($relatedProducts) > 0)
+                    @foreach ($relatedProducts as $relatedProduct)
                     <div class="swiper-slide">
-                        <a href="">
+                        <a href="{{ route('orderbyproduct', [$relatedProduct->slug, $relatedProduct->serial_number]) }}">
                             <div class="card">
                             <div class="card-img">
-                                <img src="" class="card-img-top" alt="">
+                                <img src="{{ asset('imgs/products/' . $product->second_image_path) }}" class="card-img-top" alt="">
                            
                             </div>
                             <div class="card-content">
-                                <h6 class="card-title">Title</h6>
+                                <h6 class="card-title">{{ \Str::limit($relatedProduct->full_title, 70) }}</h6>
                                 
                             </div>
                         </div>
                         </a>
                     </div>
-                    
-                
-                    
-                  
-
+                    @endforeach
+                    @endif
                 </div>
-                
                 <!-- Add Navigation Buttons -->
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
@@ -1002,29 +1000,6 @@
             </div>
         </div>
 
-
-
-
-
-    <section class="container px-lg-5 py-4 px-md-3 px-3">
-        @if ($relatedProducts && count($relatedProducts) > 0)
-        <div class="col-lg-12 col-md-12">
-            <h3 class="fw-bold text-dark pb-3">Related Products</h3>
-            <div class="row">
-                @foreach ($relatedProducts as $relatedProduct)
-                <div class="col-6 d-flex align-items-start py-2">
-                    <i class="ri-arrow-right-s-fill"></i>
-                    <a href="{{ route('orderbyproduct', [$relatedProduct->slug, $relatedProduct->serial_number]) }}"
-                        class="text-dark text-decoration-underline related-products-link">
-                        {{ \Str::limit($relatedProduct->full_title, 70) }}
-                    </a>
-                   
-                </div>
-                @endforeach
-            </div>
-        </div>
-        @endif
-    </section>
 
     <script>
 
