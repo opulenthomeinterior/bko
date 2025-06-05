@@ -405,9 +405,9 @@ function incQty(id) {
    console.log('increase quantity');
    console.log('---------------------------');
    console.log(id);
-    const input = document.getElementById('quantity' + id);
-    let currentValue = parseInt(input.value) || 0; 
-    input.value = currentValue + 1;
+   const input = document.getElementById('quantity' + id);
+   let currentValue = parseInt(input.value) || 0;
+   input.value = currentValue + 1;
 }
 
 
@@ -416,20 +416,20 @@ function decQty(id) {
    console.log('decrease quantity');
    console.log('---------------------------');
    console.log(id);
-    const input = document.getElementById('quantity' + id);
-    let decBtn =  document.getElementById('dec-btn'+id);
-    console.log(decBtn);
-    let currentValue = parseInt(input.value) || 0; 
+   const input = document.getElementById('quantity' + id);
+   let decBtn = document.getElementById('dec-btn' + id);
+   console.log(decBtn);
+   let currentValue = parseInt(input.value) || 0;
 
-    if (input.value >0) {
-    input.value = currentValue - 1;
-    }
-   
+   if (input.value > 0) {
+      input.value = currentValue - 1;
+   }
+
 }
 
 
 
-function increaseQuantity(id, productCode, full_title, price, discount_price, discount_percentage, p_category,image) {
+function increaseQuantity(id, productCode, full_title, price, discount_price, discount_percentage, p_category, image) {
    console.log('increase quantity');
    console.log('---------------------------');
    var $qtde = $('#quantity' + id);
@@ -438,18 +438,18 @@ function increaseQuantity(id, productCode, full_title, price, discount_price, di
    //    value = 10;
    //    $qtde.val(value);
    // } else {
-      value++;
+   value++;
    // }
    $qtde.val(value);
    $('#minus' + id).prop("disabled", false);
-   addToCart(id, productCode, full_title, price, discount_price, discount_percentage, p_category,image, value);
+   addToCart(id, productCode, full_title, price, discount_price, discount_percentage, p_category, image, value);
 
 }
 
-function increaseQuantityInCartPage(id, productCode, full_title, price, discount_price, discount_percentage, p_category,image) {
-  
+function increaseQuantityInCartPage(id, productCode, full_title, price, discount_price, discount_percentage, p_category, image) {
+
    console.log('increase Qty in cart page')
-  console.log('---------------------------------------');
+   console.log('---------------------------------------');
    console.log(`product code: ${productCode}, full_title: ${full_title}, price: ${price}, discount_price: ${discount_price}, discountP:${discount_percentage}, p_category: ${p_category}`);
    let products = localStorage.getItem('bko_cart')
    if (!products) {
@@ -465,31 +465,30 @@ function increaseQuantityInCartPage(id, productCode, full_title, price, discount
    //    value = 10;
    //    $qtde.val(value);
    // } else {
-      value++;
+   value++;
    // }
 
-   addToCart(id, productCode, full_title, price, discount_price, discount_percentage, p_category,image, value);
+   addToCart(id, productCode, full_title, price, discount_price, discount_percentage, p_category, image, value);
    cartTotalAmountCalculation();
 }
- 
-function inputQty(qty,id, productCode, full_title, price, discount_price, discount_percentage, p_category,image)
-{
+
+function inputQty(qty, id, productCode, full_title, price, discount_price, discount_percentage, p_category, image) {
    console.log("image: ", image);
    console.log('input QTY');
    console.log('---------------------ínput Qty-------------');
    console.log(`input qty: ${qty}`);
    // console.log(`product code: ${productCode}, full_title: ${full_title}, price: ${price}, discount_price: ${discount_price}, discountP:${discount_percentage}, p_category: ${p_category}`);
-  
+
    qty = parseInt(qty);
-   
+
    // let products = localStorage.getItem('bko_cart');
- 
+
    // if (!products) {
    //    products = [];
    //    console.log('cart empty in local storage');
-      
+
    //    products.push({ id: id, productCode: productCode, quantity: value, full_title: full_title, price: price, discount_price: discount_price, discount_percentage: discount_percentage, p_category: p_category,image_path:image});
-      
+
    //    localStorage.setItem('bko_cart', JSON.stringify(products));
    // } else {
    //    products = JSON.parse(products);
@@ -498,16 +497,16 @@ function inputQty(qty,id, productCode, full_title, price, discount_price, discou
    //    // value = foundProduct.quantity ? foundProduct.quantity : 0;
    //    // value=qty;
    //    console.log('updated qty ' +qty);
-   
+
    // }
 
-   
-addToCart(id, productCode, full_title, price, discount_price, discount_percentage, p_category,image, qty);
+
+   addToCart(id, productCode, full_title, price, discount_price, discount_percentage, p_category, image, qty);
    // cartTotalAmountCalculation();
 
 }
 // function decreaseQuantity(id, productCode, full_title, price, discount_price, discount_percentage, p_category) {
-function decreaseQuantity(id, productCode, full_title, price, discount_price, discount_percentage, p_category,image) {
+function decreaseQuantity(id, productCode, full_title, price, discount_price, discount_percentage, p_category, image) {
    var $qtde = $('#quantity' + id);
    var value = parseInt($qtde.val()) || 0;
    if (value > 0) {
@@ -518,13 +517,13 @@ function decreaseQuantity(id, productCode, full_title, price, discount_price, di
          removeFromCart(id, productCode);
       } else {
          // addToCart(id, productCode, full_title, price, discount_price, discount_percentage, p_category, value);
-         addToCart(id, productCode, full_title, price, discount_price, discount_percentage, p_category,image, value);
+         addToCart(id, productCode, full_title, price, discount_price, discount_percentage, p_category, image, value);
       }
    }
 }
 
 // function decreaseQuantityInCartPage(id, productCode, full_title, price, discount_price, discount_percentage, p_category) {
-function decreaseQuantityInCartPage(id, productCode, full_title, price, discount_price, discount_percentage, p_category,image) {
+function decreaseQuantityInCartPage(id, productCode, full_title, price, discount_price, discount_percentage, p_category, image) {
    let products = localStorage.getItem('bko_cart')
    if (!products) {
       products = [];
@@ -541,18 +540,18 @@ function decreaseQuantityInCartPage(id, productCode, full_title, price, discount
          removeFromCart(id, productCode);
       } else {
          // addToCart(id, productCode, full_title, price, discount_price, discount_percentage, p_category, value);
-          addToCart(id, productCode, full_title, price, discount_price, discount_percentage, p_category,image, value);
+         addToCart(id, productCode, full_title, price, discount_price, discount_percentage, p_category, image, value);
       }
    }
    cartTotalAmountCalculation();
 }
 
-function addToCart(id, productCode, full_title, price, discount_price, discount_percentage, p_category,image, value) {
+function addToCart(id, productCode, full_title, price, discount_price, discount_percentage, p_category, image, value) {
    console.log('add to cart');
    console.log('---------------------');
    console.log(`image: ${image}, product code: ${productCode}, full_title: ${full_title}, price: ${price}, discount_price: ${discount_price}, discountP:${discount_percentage}, p_category: ${p_category}, value: ${value}`);
    let products = localStorage.getItem('bko_cart');
-   console.log("stored in local storage: "+ products);
+   console.log("stored in local storage: " + products);
    if (!products) {
       products = [];
    } else {
@@ -562,8 +561,8 @@ function addToCart(id, productCode, full_title, price, discount_price, discount_
    const foundProductIndex = products.findIndex(product => product.productCode == productCode);
 
    if (foundProductIndex === -1 && value > 0) {
-      products.push({ id: id, productCode: productCode, quantity: value, full_title: full_title, price: price, discount_price: discount_price, discount_percentage: discount_percentage, p_category: p_category,image_path:image});
-      
+      products.push({ id: id, productCode: productCode, quantity: value, full_title: full_title, price: price, discount_price: discount_price, discount_percentage: discount_percentage, p_category: p_category, image_path: image });
+
    } else if (value > 0) {
       products[foundProductIndex].quantity = value;
    }
@@ -634,11 +633,13 @@ function orderKitchenCartItemsList() {
    $cartItemsList.empty();
 
    products.forEach(product => {
-      $cartItemsList.append(`<div class="col-12"><p class="text-white fw-bold m-0"><i class="ri-btn ri-delete-bin-line" onclick="removeFromCart(${product.id}, '${product.productCode}')" ></i>&nbsp; <small class="fw-normal">${product.quantity} x ${product.full_title}</small></p></div>`);
+      // $cartItemsList.append(`<div class="col-12"><p class="text-black fw-bold m-0"><i class="ri-btn ri-delete-bin-line" onclick="removeFromCart(${product.id}, '${product.productCode}')" ></i>&nbsp; <small class="fw-normal">${product.quantity} x ${product.full_title}</small></p></div>`);
+
+      $cartItemsList.append(`<li class="text-black fw-bold  list-group-item"><i class="ri-btn ri-delete-bin-line" onclick="removeFromCart(${product.id}, '${product.productCode}')" ></i>&nbsp; <small class="fw-normal">${product.quantity} x ${product.full_title}</small></li>`);
+
    });
 }
-function clearShoppingCart()
-{
+function clearShoppingCart() {
    localStorage.removeItem('bko_cart');
    const $cartContainer = $('#cartContainer');
    $cartContainer.empty();
@@ -654,9 +655,9 @@ function clearShoppingCart()
 
    // const $orderSummaryCard = $('#orderSummaryCard');
    // $orderSummaryCard.empty();
-   
+
    // $orderSummaryCard.html(`
-      
+
    //    <div class="card-header bg-white">
    //                      <h5 class="mb-0 fw-bold text-primary">ORDER SUMMARY</h5>
    //                  </div>
@@ -669,7 +670,7 @@ function clearShoppingCart()
    //                          <span>Sub Total</span>
    //                          <span id="cartTotalAmount">£0</span>
    //                      </div>
-                        
+
    //                      <hr>
    //                      <div class="d-flex justify-content-between fw-bold">
    //                          <span>Total</span>
@@ -677,15 +678,15 @@ function clearShoppingCart()
    //                      </div>
    //                  </div>
    //    `);
-  
+
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
    // Button par click hone par function call karen
-   $('#clearShoppingCart').click(function() {
-     clearShoppingCart();
+   $('#clearShoppingCart').click(function () {
+      clearShoppingCart();
    });
- });
+});
 
 function updateCartPage() {
    let products = localStorage.getItem('bko_cart');
@@ -696,14 +697,14 @@ function updateCartPage() {
    products = JSON.parse(products);
    console.log('update card page');
    console.log('---------------------------------------------');
-   console.log("products stored: ",products);
+   console.log("products stored: ", products);
 
    const $cartTableBody = $('#productCartTableBody');
    $cartTableBody.empty();
 
    var cartTableHtml = ``;
    products.forEach(product => {
-      cartTableHtml +=`
+      cartTableHtml += `
                             <tr class="border-bottom" >
                             <td class="py-3">
                                 <div class="d-flex align-items-center">
@@ -734,7 +735,7 @@ style="max-width: 100px; height: auto; object-fit: cover;"
                             <td class="py-3 text-end pe-4 align-middle">£${(product.quantity * product.price).toFixed(2)}</td>
      </tr>
       `;
-       //  <p class="text-muted mb-0">Color: gray | Assembly: Rigid</p>
+      //  <p class="text-muted mb-0">Color: gray | Assembly: Rigid</p>
       // cartTableHtml += `<tr>`;
       // cartTableHtml += `<td>`;
       // cartTableHtml += `<i class='fas fa-times' onclick="decreaseQuantityInCartPage('${product.id}', '${product.productCode}', '${product.full_title}', ${product.price}, ${product.discount_price}, ${product.discount_percentage}, '${product.p_category}')"></i>`;
@@ -756,7 +757,7 @@ style="max-width: 100px; height: auto; object-fit: cover;"
    //    cartTableHtml += `<td class="align-middle text-center" style="width: 40px;">`;
    //    cartTableHtml += `<span class="text-secondary fw-bold cursor-pointer" style="font-size: 18px; cursor: pointer;" onclick="removeFromCart(${product.id}, '${product.productCode}')">×</span>`;
    //    cartTableHtml += `</td>`;
-      
+
    //    // Product column with image and details
    //    cartTableHtml += `<td class="align-middle">`;
    //    cartTableHtml += `<div class="d-flex bg-danger justify-content-start align-items-center">`;
@@ -773,10 +774,10 @@ style="max-width: 100px; height: auto; object-fit: cover;"
    //    cartTableHtml += `</div>`;
    //    cartTableHtml += `</div>`;
    //    cartTableHtml += `</td>`;
-      
+
    //    // Price column
    //    cartTableHtml += `<td class="align-middle text-start" style="width: 100px;">£${(product.price).toFixed(2)}</td>`;
-      
+
    //    // Quantity column with +/- buttons
    //    cartTableHtml += `<td class="align-middle" style="width: 120px;">`;
    //    cartTableHtml += `<div class="d-flex border rounded">`;
@@ -785,12 +786,12 @@ style="max-width: 100px; height: auto; object-fit: cover;"
    //    cartTableHtml += `<button class="btn btn-sm border-0 px-2" style="background: none;" onclick="increaseQuantityInCartPage('${product.id}', '${product.productCode}', '${product.full_title}', ${product.price}, ${product.discount_price}, ${product.discount_percentage}, '${product.p_category}')">+</button>`;
    //    cartTableHtml += `</div>`;
    //    cartTableHtml += `</td>`;
-      
+
    //    // Subtotal column
    //    cartTableHtml += `<td class='align-middle text-end' style="width: 100px;">£${(product.quantity * product.price).toFixed(2)}</td>`;
    //    cartTableHtml += `</tr>`;
    // });
-   console.log('cart table html',cartTableHtml);
+   console.log('cart table html', cartTableHtml);
    $cartTableBody.html(cartTableHtml);
 }
 
@@ -927,7 +928,7 @@ $(document).ready(function () {
       var productQty = _this.data('product-qty');
       var _URL = "/get-category-products";
       var _html = '';
-      
+
       $.ajax({
          url: _URL,
          type: "POST",
@@ -942,17 +943,17 @@ $(document).ready(function () {
                if (response.products.length > 0) {
                   const $cartTableBody = $('#changeStyleTableBody');
                   $cartTableBody.empty();
-               
+
                   var cartTableHtml = ``;
                   var productDetails = response.product_details;
                   var _baseURL = response.base_url;
-                  
+
                   cartTableHtml += `
                      <div class="col-lg-12 col-md-12 col-sm-12 order-sm-1 order-xs-1">
                         <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="base-cabinets-section">`;
-               
-                           response.products.forEach(product => {
-                                 cartTableHtml += `<option class="fw-bold" 
+
+                  response.products.forEach(product => {
+                     cartTableHtml += `<option class="fw-bold" 
                                     value="${product.id}" 
                                     data-product-short-title="${product.short_title}" 
                                     data-product-fullname="${product.full_title}" 
@@ -969,9 +970,9 @@ $(document).ready(function () {
                                     data-product-id="${product.id}">
                                        ${product.full_title} &nbsp;&nbsp;(£${product.price})
                                  </option>`;
-                           });
-                           
-                           cartTableHtml += `</select>
+                  });
+
+                  cartTableHtml += `</select>
                      </div>
                      <div class="col-lg-12 col-md-12 col-sm-12 base-cabinets-section order-sm-2 order-xs-2 mt-4">
                         <div class="card bg-light p-0 border border-warning" style="border-radius: 0; border: none">
@@ -1067,7 +1068,7 @@ $(document).ready(function () {
                   // cartTableHtml += `<td>£</td>`;
                   // cartTableHtml += `<td></td>`;
                   // cartTableHtml += `</tr>`;
-            
+
                   $cartTableBody.html(cartTableHtml);
                }
             }
@@ -1586,7 +1587,7 @@ $(document).ready(function () {
                                     <input id="minus${productId}"
                                        class="minus border bg-dark text-light p-0"
                                        type="button" value="-"
-                                       onclick="decreaseQuantity('${productId}', '${ productCode }', '${fullTitle}', ${ price }, ${ discountedPercentage }, ${ discountedPercentage ?? 0 }, '${ parentCategorySlug }')" />
+                                       onclick="decreaseQuantity('${productId}', '${productCode}', '${fullTitle}', ${price}, ${discountedPercentage}, ${discountedPercentage ?? 0}, '${parentCategorySlug}')" />
                                     <input id="quantity${productId}"
                                        class="quantity border border-black text-center"
                                        type="text" value="0" name="quantity"
@@ -1596,7 +1597,7 @@ $(document).ready(function () {
                                        type="button" value="+" type="number"
                                        max="10"
                                        ${price == 0 ? 'disabled' : ''}
-                                       onclick="increaseQuantity('${productId}', '${ productCode }', '${fullTitle}', ${ price }, ${ discountedPercentage }, ${ discountedPercentage ?? 0 }, '${ parentCategorySlug }')" />
+                                       onclick="increaseQuantity('${productId}', '${productCode}', '${fullTitle}', ${price}, ${discountedPercentage}, ${discountedPercentage ?? 0}, '${parentCategorySlug}')" />
                                  </div>
                            </div>
                         </div>
@@ -1605,6 +1606,6 @@ $(document).ready(function () {
             </div>
          </div>
       `;
-      $('.'+dropdownType).html(_html);
+      $('.' + dropdownType).html(_html);
    });
- });
+});
