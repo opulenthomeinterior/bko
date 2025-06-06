@@ -2863,11 +2863,8 @@
         </div>
     </section>
 
-
-    
-
     <!-- Testimonials -->
-    @include('frontend.testimonials_component')
+    @include('frontend.testimonials_component', ['testimonials' => $testimonials])
 
     <!-- FAQs -->
     @include('frontend.faqs_component', ['faqsData' => $generalFaqs, 'home' => 'home'])

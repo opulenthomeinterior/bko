@@ -32,6 +32,7 @@ use App\Http\Controllers\DesignserviceController;
 use App\Http\Controllers\DownloadableGuideController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\SettingController;
+use App\Models\Testimonial;
 
 /*
 |--------------------------------------------------------------------------
@@ -252,7 +253,8 @@ Route::prefix('/')->middleware([])->group(function () {
         $deliveryFaqs = Faq::where('type', 'delivery')->get();
         $categories = Category::where('status', 1)->get();
         $styles = Style::where('status', 1)->get();
-        return view('frontend.home', compact('generalFaqs', 'deliveryFaqs', 'categories', 'styles'));
+        $testimonials = Testimonial::whereNull('style_id')->get();
+        return view('frontend.home', compact('generalFaqs', 'deliveryFaqs', 'categories', 'styles', 'testimonials'));
     })->name('home');
 
     Route::get('max-storage', function () {

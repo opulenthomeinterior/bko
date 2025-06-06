@@ -411,7 +411,8 @@
             
             <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" style="overflow:visible">
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
+                    @foreach($testimonials as $testimonial)
+                    <div class="carousel-item">
                         <div class="testimonial-card">
                             <div class="testimonial-content">
                                 
@@ -431,7 +432,7 @@
                             </div>
                         </div>
                     </div>
-                    
+                    @endforeach
                 </div>
                 
                 <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
