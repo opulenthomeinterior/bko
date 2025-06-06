@@ -12,6 +12,15 @@
         .text-green-color {
             color: #2a6161 !important;
         }
+
+        .bg-yellow{
+            background-color: #febd49;
+        }
+        
+        .nav.nav-tabs .nav-link.active
+        {
+            background-color: #2a6161 !important;
+        }
     </style>
     <div class="container-fluid px-lg-5 pt-4 px-md-3 px-3">
         <nav aria-label="breadcrumb">
@@ -36,7 +45,7 @@
                     <a class="fw-semibold text-dark text-uppercase collapse-heading" data-bs-toggle="collapse"
                         href="#cabinetspanels" role="button" aria-expanded="false" aria-controls="cabinetspanels">
                         <span
-                            class="text-white bg-dark fw-semibold py-2 px-2 text-center me-2 collapse-heading-number">1</span>
+                            class="text-black bg-yellow fw-semibold py-2 px-2 text-center me-2 collapse-heading-number">1</span>
                         Cabinets and Panels
                     </a>
                     <div class="collapse-container mt-3" id="cabinetspanels">
@@ -44,10 +53,10 @@
                             <div class="nav nav-tabs custom-nav" style="" id="nav-tab" role="tablist">
                                 <button class="nav-link active" id="nav-baseCabinet-tab" data-bs-toggle="tab"
                                     data-bs-target="#baseCabinet-tab" type="button" role="tab"
-                                    aria-controls="baseCabinet-tab" aria-selected="true">Base Cabinets</button>
+                                    aria-controls="baseCabinet-tab" aria-selected="true" >Base Cabinets</button>
                                 <button class="nav-link" id="nav-wallCabinet-tab" data-bs-toggle="tab"
                                     data-bs-target="#nav-wallCabinet" type="button" role="tab"
-                                    aria-controls="nav-wallCabinet" aria-selected="false">Wall Cabinets</button>
+                                    aria-controls="nav-wallCabinet" aria-selected="false" >Wall Cabinets</button>
                                 <button class="nav-link" id="nav-tallCabinet-tab" data-bs-toggle="tab"
                                     data-bs-target="#nav-tallCabinet" type="button" role="tab"
                                     aria-controls="nav-tallCabinet" aria-selected="false">Tall Cabinets</button>
@@ -223,22 +232,40 @@
                                         @php 
                                             $parentSubCategories = \App\Models\Product::where('parent_category_id', $baseCabinetData->parent_category_id)->where('style_id', $baseCabinetData->style_id)->where('colour_id', $baseCabinetData->colour_id)->where('assembly_id', $baseCabinetData->assembly_id)->groupBy('parent_sub_category')->get();
                                         @endphp
+                                        <div class="d-flex">
                                         @foreach ($parentSubCategories as $parentSubCategory)
                                             @if ($parentSubCategory->parent_sub_category == 'A')
+                                             <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'B'])}}" >
+                                                
+                                                <img src="{{ asset('images/highline.jpeg') }}" class="rounded" alt="" width="100">
+                                               </a>
                                             <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
                                                 Highline
                                             </a>
                                             @elseif ($parentSubCategory->parent_sub_category == 'B')
-                                            <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'B'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
-                                                Drawerline
-                                            </a>
+                                            
+                                            <div class="d-flex flex-column">
+                                                <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'B'])}}" >
+                                                
+                                                <img src="{{ asset('images/drawerline.jpeg') }}" class="rounded" alt="" width="100">
+                                               </a>
+                                                <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'B'])}}" class="text-dark ms-3">
+                                                
+                                                    Drawerline
+                                             </a>
+                                            </div>
                                             @elseif ($parentSubCategory->parent_sub_category == 'C')
+                                              <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'B'])}}" >
+                                                
+                                                <img src="{{ asset('images/corner.jpeg') }}" class="rounded" alt="" width="100">
+                                               </a>
                                             <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
                                                 Corner
                                             </a>
                                             @endif
                                         @endforeach
-                                        <label for="" class="fw-bold d-flex justify-content-between mt-4"><span>ALL BASE CABINETS</span><span><a href="@if(!empty($baseCabinetData->style) && !empty($baseCabinetData->assembly) && !empty($baseCabinetData->colour)){{route('viewallorderkitchenbycolour', ['style' => $baseCabinetData->style?->slug , 'assembly' => $baseCabinetData->assembly?->slug, 'colour' => $baseCabinetData->colour?->slug])}}@else#@endif">View All</a></span></label>
+                                        </div>
+                                        <label for="" class="fw-bold d-flex justify-content-between mt-4"><span>ALL BASE CABINETS</span><span><a class="text-decoration-underline text-primary" href="@if(!empty($baseCabinetData->style) && !empty($baseCabinetData->assembly) && !empty($baseCabinetData->colour)){{route('viewallorderkitchenbycolour', ['style' => $baseCabinetData->style?->slug , 'assembly' => $baseCabinetData->assembly?->slug, 'colour' => $baseCabinetData->colour?->slug])}}@else#@endif">View All ></a></span></label>
                                         <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="base-cabinets-section">
                                             @foreach ($baseCabinets as $index => $baseCabinet)
                                             <option class="fw-bold" value="{{$baseCabinet->id }}" data-product-short-title="{{ $baseCabinet->short_title }}" data-product-fullname="{{ $baseCabinet->full_title }}" data-product-image="{{ !empty($baseCabinet->image_path) ? asset('imgs/products/'.$baseCabinet->image_path) : asset('images/no-image-available.jpg') }}" data-product-price="{{ $baseCabinet->price }}" data-product-parent-category-slug="{{ $baseCabinet->ParentCategory?->slug }}" data-product-discountedprice="{{ $baseCabinet->discounted_price }}" data-product-assembly-name="{{ $baseCabinet->assembly?->name }}" data-product-discountedpercentage="{{ $baseCabinet->discounted_percentage ?? 0 }}" data-product-code="{{ $baseCabinet->product_code }}" data-product-dimensions="{{ $baseCabinet->dimensions }}" data-product-style="{{ $baseCabinet->style?->name }}" data-product-colour="{{ $baseCabinet->colour?->trade_colour ? $baseCabinet->colour?->trade_colour : $baseCabinet->colour?->name }}" data-serial-number="{{ $baseCabinet->serial_number }}" data-product-id="{{ $baseCabinet->id }}"><div>{{ $baseCabinet->full_title }}</div></option>
@@ -248,9 +275,9 @@
 
                                     <div class="col-lg-12 col-md-12 col-sm-12 base-cabinets-section order-sm-2 order-xs-2 mt-4">
                                         <div class="card bg-light p-0 border border-warning" style="border-radius: 0; border: none">
-                                            <div class="bg-warning card-header px-0 py-0">
+                                            <div class="bg-yellow card-header px-0 py-0">
                                                 <div class="py-2 text-center product-short-title-container w-100">
-                                                    <a href="#" class="product-short-title fw-bold text-decoration-underline fs-4">
+                                                    <a href="#" class="product-short-title fw-bold fs-4">
                                                         {{ $baseCabinetData->short_title }}
                                                     </a>
                                                 </div>
@@ -445,7 +472,7 @@
                                                             </div>
                                                             <div class="row justify-content-center border-top border-default">
                                                                 <div class="col-12">
-                                                                    <p class="fs-5 fw-bold text-dark">
+                                                                    <p class="fs-5 fw-bold text-danger">
                                                                         {{ $baseCabinetData->price == 0 ? 'Out of Stock' : '£' . $baseCabinetData->price }}
                                                                     </p>
                                                                 </div>
@@ -882,9 +909,9 @@
 
                                     <div class="col-lg-12 col-md-12 col-sm-12 wall-cabinets-section order-sm-2 order-xs-2 mt-4">
                                         <div class="card bg-light p-0 border border-warning" style="border-radius: 0; border: none">
-                                            <div class="bg-warning card-header px-0 py-0">
+                                            <div class="bg-yellow card-header px-0 py-0">
                                                 <div class="py-2 text-center product-short-title-container w-100">
-                                                    <a href="#" class="product-short-title fw-bold text-decoration-underline fs-4">
+                                                    <a href="#" class="product-short-title fw-bold  fs-4">
                                                         {{ $wallCabinetData->short_title }}
                                                     </a>
                                                 </div>
@@ -1079,7 +1106,7 @@
                                                             </div>
                                                             <div class="row justify-content-center border-top border-default">
                                                                 <div class="col-12">
-                                                                    <p class="fs-5 fw-bold text-dark">
+                                                                    <p class="fs-5 fw-bold text-danger">
                                                                         {{ $wallCabinetData->price == 0 ? 'Out of Stock' : '£' . $wallCabinetData->price }}
                                                                     </p>
                                                                 </div>
@@ -1516,9 +1543,9 @@
 
                                     <div class="col-lg-12 col-md-12 col-sm-12 tall-cabinets-section order-sm-2 order-xs-2 mt-4">
                                         <div class="card bg-light p-0 border border-warning" style="border-radius: 0; border: none">
-                                            <div class="bg-warning card-header px-0 py-0">
+                                            <div class="bg-yellow card-header px-0 py-0">
                                                 <div class="py-2 text-center product-short-title-container w-100">
-                                                    <a href="#" class="product-short-title fw-bold text-decoration-underline fs-4">
+                                                    <a href="#" class="product-short-title fw-bold  fs-4">
                                                         {{ $tallCabinetData->short_title }}
                                                     </a>
                                                 </div>
@@ -1713,7 +1740,7 @@
                                                             </div>
                                                             <div class="row justify-content-center border-top border-default">
                                                                 <div class="col-12">
-                                                                    <p class="fs-5 fw-bold text-dark">
+                                                                    <p class="fs-5 fw-bold text-danger">
                                                                         {{ $tallCabinetData->price == 0 ? 'Out of Stock' : '£' . $tallCabinetData->price }}
                                                                     </p>
                                                                 </div>
@@ -1790,9 +1817,9 @@
 
                                     <div class="col-lg-12 col-md-12 col-sm-12 accessories-section order-sm-2 order-xs-2 mt-4">
                                         <div class="card bg-light p-0 border border-warning" style="border-radius: 0; border: none">
-                                            <div class="bg-warning card-header px-0 py-0">
+                                            <div class="bg-yellow card-header px-0 py-0">
                                                 <div class="py-2 text-center product-short-title-container w-100">
-                                                    <a href="#" class="product-short-title fw-bold text-decoration-underline fs-4">
+                                                    <a href="#" class="product-short-title fw-bold  fs-4">
                                                         {{ $accessoriesData->short_title }}
                                                     </a>
                                                 </div>
@@ -1987,7 +2014,7 @@
                                                             </div>
                                                             <div class="row justify-content-center border-top border-default">
                                                                 <div class="col-12">
-                                                                    <p class="fs-5 fw-bold text-dark">
+                                                                    <p class="fs-5 fw-bold text-danger">
                                                                         {{ $accessoriesData->price == 0 ? 'Out of Stock' : '£' . $accessoriesData->price }}
                                                                     </p>
                                                                 </div>
@@ -2031,7 +2058,7 @@
                     <a class="fw-semibold text-dark text-uppercase collapse-heading" data-bs-toggle="collapse"
                         href="#internals" role="button" aria-expanded="false" aria-controls="internals">
                         <span
-                            class="bg-dark text-white fw-semibold py-2 px-2 text-center me-2 collapse-heading-number">2</span>
+                            class="bg-yellow text-black fw-semibold py-2 px-2 text-center me-2 collapse-heading-number">2</span>
                         Internals
                     </a>
                     <div class="collapse-container collapse mt-3" id="internals">
@@ -2205,7 +2232,7 @@
                                         </a>
                                         @endif
                                     @endforeach
-                                    <label for="" class="fw-bold d-flex justify-content-between"><span>ALL INTERNALS</span><span><a href="{{route('ordercomponentbyname', ['internals'])}}">View All</a></span></label>
+                                    <label for="" class="fw-bold d-flex justify-content-between"><span>ALL INTERNALS</span><span><a href="{{route('ordercomponentbyname', ['internals'])}}" class="text-decoration-underline text-primary">View All ></a></span></label>
                                     <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="internals-section">
                                         @foreach ($internals as $index => $internal)
                                         <option class="fw-bold" value="{{$internal->id }}" data-product-short-title="{{ $internal->short_title }}" data-product-fullname="{{ $internal->full_title }}" data-product-image="{{ !empty($internal->image_path) ? asset('imgs/products/'.$internal->image_path) : asset('images/no-image-available.jpg') }}" data-product-price="{{ $internal->price }}" data-product-parent-category-slug="{{ $internal->ParentCategory?->slug }}" data-product-discountedprice="{{ $internal->discounted_price }}" data-product-assembly-name="{{ $internal->assembly?->name }}" data-product-discountedpercentage="{{ $internal->discounted_percentage ?? 0 }}" data-product-code="{{ $internal->product_code }}" data-product-dimensions="{{ $internal->dimensions }}" data-product-style="{{ $internal->style?->name }}" data-product-colour="{{ $internal->colour?->trade_colour ? $internal->colour?->trade_colour : $internal->colour?->name }}" data-serial-number="{{ $internal->serial_number }}" data-product-id="{{ $internal->id }}">{{ $internal->full_title }}</option>
@@ -2216,8 +2243,8 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 internals-section order-sm-2 order-xs-2 mt-4">
                                     <div class="card bg-light p-0 border border-warning" style="border-radius: 0; border: none">
                                         <div class="bg-warning card-header px-0 py-0">
-                                            <div class="py-2 text-center product-short-title-container w-100">
-                                                <a href="#" class="product-short-title fw-bold text-decoration-underline fs-4">
+                                            <div class="bg-yellow py-2 text-center product-short-title-container w-100">
+                                                <a href="#" class="product-short-title fw-bold  fs-4">
                                                     {{ $internalsData->short_title }}
                                                 </a>
                                             </div>
@@ -2412,7 +2439,7 @@
                                                         </div>
                                                         <div class="row justify-content-center border-top border-default">
                                                             <div class="col-12">
-                                                                <p class="fs-5 fw-bold text-dark">
+                                                                <p class="fs-5 fw-bold text-danger">
                                                                     {{ $internalsData->price == 0 ? 'Out of Stock' : '£' . $internalsData->price }}
                                                                 </p>
                                                             </div>
@@ -2453,7 +2480,7 @@
                     <a class="fw-semibold text-dark text-uppercase collapse-heading" data-bs-toggle="collapse"
                         href="#handles" role="button" aria-expanded="false" aria-controls="handles">
                         <span
-                            class="bg-dark text-white fw-semibold py-2 px-2 text-center me-2 collapse-heading-number">3</span>
+                            class="bg-yellow text-black fw-semibold py-2 px-2 text-center me-2 collapse-heading-number">3</span>
                         Handles
                     </a>
                     <div class="collapse-container collapse mt-3" id="handles">
@@ -2482,7 +2509,7 @@
                                         </a>
                                         @endif
                                     @endforeach
-                                    <label for="" class="fw-bold d-flex justify-content-between"><span>ALL HANDLES</span><span><a href="{{route('ordercomponentbyname', ['handles'])}}">View All</a></span></label>
+                                    <label for="" class="fw-bold d-flex justify-content-between"><span>ALL HANDLES</span><span><a href="{{route('ordercomponentbyname', ['handles'])}}" class="text-decoration-underline text-primary">View All ></a></span></label>
                                     <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="handles-section">
                                         @foreach ($handles as $index => $handle)
                                         <option class="fw-bold" value="{{$handle->id }}" data-product-short-title="{{ $handle->short_title }}" data-product-fullname="{{ $handle->full_title }}" data-product-image="{{ !empty($handle->image_path) ? asset('imgs/products/'.$handle->image_path) : asset('images/no-image-available.jpg') }}" data-product-price="{{ $handle->price }}" data-product-parent-category-slug="{{ $handle->ParentCategory?->slug }}" data-product-discountedprice="{{ $handle->discounted_price }}" data-product-assembly-name="{{ $handle->assembly?->name }}" data-product-discountedpercentage="{{ $handle->discounted_percentage ?? 0 }}" data-product-code="{{ $handle->product_code }}" data-product-dimensions="{{ $handle->dimensions }}" data-product-style="{{ $handle->style?->name }}" data-product-colour="{{ $handle->colour?->trade_colour ? $handle->colour?->trade_colour : $handle->colour?->name }}" data-serial-number="{{ $handle->serial_number }}" data-product-id="{{ $handle->id }}">{{ $handle->full_title }}</option>
@@ -2493,8 +2520,8 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 handles-section order-sm-2 order-xs-2 mt-4">
                                     <div class="card bg-light p-0 border border-warning" style="border-radius: 0; border: none">
                                         <div class="bg-warning card-header px-0 py-0">
-                                            <div class="py-2 text-center product-short-title-container w-100">
-                                                <a href="#" class="product-short-title fw-bold text-decoration-underline fs-4">
+                                            <div class="bg-yellow py-2 text-center product-short-title-container w-100">
+                                                <a href="#" class="product-short-title fw-bold  fs-4">
                                                     {{ $handlesData->short_title }}
                                                 </a>
                                             </div>
@@ -2689,7 +2716,7 @@
                                                         </div>
                                                         <div class="row justify-content-center border-top border-default">
                                                             <div class="col-12">
-                                                                <p class="fs-5 fw-bold text-dark">
+                                                                <p class="fs-5 fw-bold text-danger">
                                                                     {{ $handlesData->price == 0 ? 'Out of Stock' : '£' . $handlesData->price }}
                                                                 </p>
                                                             </div>
@@ -2730,7 +2757,7 @@
                     <a class="fw-semibold text-dark text-uppercase collapse-heading" data-bs-toggle="collapse"
                         href="#worktops" role="button" aria-expanded="false" aria-controls="worktops">
                         <span
-                            class="bg-dark text-white fw-semibold py-2 px-2 text-center me-2 collapse-heading-number">4</span>WORKTOPS / UPSTANDS / BREAKFAST BARS
+                            class="bg-yellow text-black fw-semibold py-2 px-2 text-center me-2 collapse-heading-number">4</span>WORKTOPS / UPSTANDS / BREAKFAST BARS
                     </a>
                     <div class="collapse-container collapse mt-3" id="worktops">
                         <nav>
@@ -2780,7 +2807,7 @@
                                                 </a>
                                                 @endif
                                             @endforeach
-                                            <label for="" class="fw-bold d-flex justify-content-between"><span>ALL WORKTOPS</span><span><a href="{{route('ordercomponentbyname', ['worktops'])}}">View All</a></span></label>
+                                            <label for="" class="fw-bold d-flex justify-content-between"><span>ALL WORKTOPS</span><span><a href="{{route('ordercomponentbyname', ['worktops'])}}" class="text-decoration-underline text-primary">View All ></a></span></label>
                                             <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="worktops-section">
                                                 @foreach ($worktops as $index => $worktop)
                                                 <option class="fw-bold" value="{{$worktop->id }}" data-product-short-title="{{ $worktop->short_title }}" data-product-fullname="{{ $worktop->full_title }}" data-product-image="{{ !empty($worktop->image_path) ? asset('imgs/products/'.$worktop->image_path) : asset('images/no-image-available.jpg') }}" data-product-price="{{ $worktop->price }}" data-product-parent-category-slug="{{ $worktop->ParentCategory?->slug }}" data-product-discountedprice="{{ $worktop->discounted_price }}" data-product-assembly-name="{{ $worktop->assembly?->name }}" data-product-discountedpercentage="{{ $worktop->discounted_percentage ?? 0 }}" data-product-code="{{ $worktop->product_code }}" data-product-dimensions="{{ $worktop->dimensions }}" data-product-style="{{ $worktop->style?->name }}" data-product-colour="{{ $worktop->colour?->trade_colour ? $worktop->colour?->trade_colour : $worktop->colour?->name }}" data-serial-number="{{ $worktop->serial_number }}" data-product-id="{{ $worktop->id }}">{{ $worktop->full_title }}</option>
@@ -2790,9 +2817,9 @@
 
                                         <div class="col-lg-12 col-md-12 col-sm-12 worktops-section order-sm-2 order-xs-2 mt-4">
                                             <div class="card bg-light p-0 border border-warning" style="border-radius: 0; border: none">
-                                                <div class="bg-warning card-header px-0 py-0">
+                                                <div class="bg-yellow card-header px-0 py-0">
                                                     <div class="py-2 text-center product-short-title-container w-100">
-                                                        <a href="#" class="product-short-title fw-bold text-decoration-underline fs-4">
+                                                        <a href="#" class="product-short-title fw-bold fs-4">
                                                             {{ $worktopsData->short_title }}
                                                         </a>
                                                     </div>
@@ -2987,7 +3014,7 @@
                                                                 </div>
                                                                 <div class="row justify-content-center border-top border-default">
                                                                     <div class="col-12">
-                                                                        <p class="fs-5 fw-bold text-dark">
+                                                                        <p class="fs-5 fw-bold text-danger">
                                                                             {{ $worktopsData->price == 0 ? 'Out of Stock' : '£' . $worktopsData->price }}
                                                                         </p>
                                                                     </div>
@@ -3846,7 +3873,7 @@
                     <a class="fw-semibold text-dark text-uppercase collapse-heading" data-bs-toggle="collapse"
                         href="#sinkstaps" role="button" aria-expanded="false" aria-controls="sinkstaps">
                         <span
-                            class="bg-dark text-white fw-semibold py-2 px-2 text-center me-2 collapse-heading-number">5</span>
+                            class="bg-yellow text-black fw-semibold py-2 px-2 text-center me-2 collapse-heading-number">5</span>
                         Sinks and Taps
                     </a>
                     <div class="collapse-container collapse mt-3" id="sinkstaps">
@@ -3889,7 +3916,7 @@
                                                 </a>
                                                 @endif
                                             @endforeach
-                                            <label for="" class="fw-bold d-flex justify-content-between"><span>ALL SINKS</span><span><a href="{{route('ordercomponentbyname', ['sinks'])}}">View All</a></span></label>
+                                            <label for="" class="fw-bold d-flex justify-content-between"><span>ALL SINKS</span><span><a href="{{route('ordercomponentbyname', ['sinks'])}}" class="text-decoration-udnerline text-primary">View All ></a></span></label>
                                             <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="sinks-section">
                                                 @foreach ($sinks as $index => $sink)
                                                 <option class="fw-bold" value="{{$sink->id }}" data-product-short-title="{{ $sink->short_title }}" data-product-fullname="{{ $sink->full_title }}" data-product-image="{{ !empty($sink->image_path) ? asset('imgs/products/'.$sink->image_path) : asset('images/no-image-available.jpg') }}" data-product-price="{{ $sink->price }}" data-product-parent-category-slug="{{ $sink->ParentCategory?->slug }}" data-product-discountedprice="{{ $sink->discounted_price }}" data-product-assembly-name="{{ $sink->assembly?->name }}" data-product-discountedpercentage="{{ $sink->discounted_percentage ?? 0 }}" data-product-code="{{ $sink->product_code }}" data-product-dimensions="{{ $sink->dimensions }}" data-product-style="{{ $sink->style?->name }}" data-product-colour="{{ $sink->colour?->trade_colour ? $sink->colour?->trade_colour : $sink->colour?->name }}" data-serial-number="{{ $sink->serial_number }}" data-product-id="{{ $sink->id }}">{{ $sink->full_title }}</option>
@@ -3899,9 +3926,9 @@
 
                                         <div class="col-lg-12 col-md-12 col-sm-12 sinks-section order-sm-2 order-xs-2 mt-4">
                                             <div class="card bg-light p-0 border border-warning" style="border-radius: 0; border: none">
-                                                <div class="bg-warning card-header px-0 py-0">
+                                                <div class="bg-yellow card-header px-0 py-0">
                                                     <div class="py-2 text-center product-short-title-container w-100">
-                                                        <a href="#" class="product-short-title fw-bold text-decoration-underline fs-4">
+                                                        <a href="#" class="product-short-title fw-bold  fs-4">
                                                             {{ $sinkData->short_title }}
                                                         </a>
                                                     </div>
@@ -4096,7 +4123,7 @@
                                                                 </div>
                                                                 <div class="row justify-content-center border-top border-default">
                                                                     <div class="col-12">
-                                                                        <p class="fs-5 fw-bold text-dark">
+                                                                        <p class="fs-5 fw-bold text-danger">
                                                                             {{ $sinkData->price == 0 ? 'Out of Stock' : '£' . $sinkData->price }}
                                                                         </p>
                                                                     </div>
@@ -4411,7 +4438,7 @@
                     <a class="fw-semibold text-dark text-uppercase collapse-heading" data-bs-toggle="collapse"
                         href="#appliances" role="button" aria-expanded="false" aria-controls="appliances">
                         <span
-                            class="bg-dark text-white fw-semibold py-2 px-2 text-center me-2 collapse-heading-number">6</span>Appliances
+                            class="bg-yellow text-black fw-semibold py-2 px-2 text-center me-2 collapse-heading-number">6</span>Appliances
                     </a>
                     <div class="collapse-container collapse mt-3" id="appliances">
                         <div class="row">
@@ -4439,7 +4466,7 @@
                                         </a>
                                         @endif
                                     @endforeach
-                                    <label for="" class="fw-bold d-flex justify-content-between"><span>ALL APPLIANCES</span><span><a href="{{route('ordercomponentbyname', ['appliances'])}}">View All</a></span></label>
+                                    <label for="" class="fw-bold d-flex justify-content-between"><span>ALL APPLIANCES</span><span><a href="{{route('ordercomponentbyname', ['appliances'])}}" class ="text-decoration-underline text-primary">View All ></a></span></label>
                                     <select class="form-control order-component-dropdown select-2 fw-bold" data-dropdown-type="sinks-section">
                                         @foreach ($appliances as $index => $appliance)
                                         <option class="fw-bold" value="{{$appliance->id }}" data-product-short-title="{{ $appliance->short_title }}" data-product-fullname="{{ $appliance->full_title }}" data-product-image="{{ !empty($appliance->image_path) ? asset('imgs/products/'.$appliance->image_path) : asset('images/no-image-available.jpg') }}" data-product-price="{{ $appliance->price }}" data-product-parent-category-slug="{{ $appliance->ParentCategory?->slug }}" data-product-discountedprice="{{ $appliance->discounted_price }}" data-product-assembly-name="{{ $appliance->assembly?->name }}" data-product-discountedpercentage="{{ $appliance->discounted_percentage ?? 0 }}" data-product-code="{{ $appliance->product_code }}" data-product-dimensions="{{ $appliance->dimensions }}" data-product-style="{{ $appliance->style?->name }}" data-product-colour="{{ $appliance->colour?->trade_colour ? $appliance->colour?->trade_colour : $appliance->colour?->name }}" data-serial-number="{{ $appliance->serial_number }}" data-product-id="{{ $appliance->id }}">{{ $appliance->full_title }}</option>
@@ -4449,9 +4476,9 @@
 
                                 <div class="col-lg-12 col-md-12 col-sm-12 sinks-section order-sm-2 order-xs-2 mt-4">
                                     <div class="card bg-light p-0 border border-warning" style="border-radius: 0; border: none">
-                                        <div class="bg-warning card-header px-0 py-0">
+                                        <div class="bg-yellow card-header px-0 py-0">
                                             <div class="py-2 text-center product-short-title-container w-100">
-                                                <a href="#" class="product-short-title fw-bold text-decoration-underline fs-4">
+                                                <a href="#" class="product-short-title fw-bold  fs-4">
                                                     {{ $applianceData->short_title }}
                                                 </a>
                                             </div>
@@ -4646,7 +4673,7 @@
                                                         </div>
                                                         <div class="row justify-content-center border-top border-default">
                                                             <div class="col-12">
-                                                                <p class="fs-5 fw-bold text-dark">
+                                                                <p class="fs-5 fw-bold text-danger">
                                                                     {{ $applianceData->price == 0 ? 'Out of Stock' : '£' . $applianceData->price }}
                                                                 </p>
                                                             </div>
@@ -4686,11 +4713,32 @@
             </div>
             <div class="col-lg-3 p-4">
                 <div class="container">
-                    <div class="row bg-dark">
+                    <div class="row">
+                                           <ul class="list-group w-100 border border-primary pe-0">
+  <li class="list-group-item"> <h4 class="fw-bold text-green-color">Order Overview</h4></li>
+  <li class="list-group-item text-uppercase d-flex justify-content-between" ><span>style</span>
+    <span>{{ $style->name }}</span>
+</li>
+ 
+  <li class="list-group-item text-uppercase d-flex justify-content-between" ><span>Assembly</span>
+    <span>{{ $assembly->name }}</span>
+</li>
+  <li class="list-group-item text-uppercase d-flex justify-content-between" ><span>Colour</span>
+    <span>{{ $colour->trade_colour ? $colour->trade_colour : $colour->name }}</span>
+</li>
+ 
+</ul>
+</div>
+                    <!-- <div class="row border border-primary">
                         <div class="col-lg-12 px-4 py-3">
                             <div class="row border-bottom text-white">
-                                <h5 class="fw-bold text-white">Order Overview</h5>
+                               
                             </div>
+
+
+     
+
+
                             <div class="row text-white pt-2 bg-dark">
                                 <h6 class="text-white fw-bold">Style: <span
                                         class="fw-normal">{{ $style->name }}</span></h6>
@@ -4701,31 +4749,56 @@
                                 </h6>
                             </div>
                         </div>
+                    </div> -->
+
+
+      
+
+
+                    <div class="row mt-2">
+                        
+                        <ul class="list-group border border-primary border-bottom-0 pe-0">
+                            <li class="list-group-item"> <h4 class="fw-bold text-green-color">Items</h4></li>
+  </ul>
+                            
+                                  <ul class="list-group w-100 border border-primary border-top-0 pe-0" id="orderKitchenCartItemsList">
+  
+</ul>
+                            
+                       
                     </div>
-                    <div class="row bg-dark mt-2">
+
+               <div class="row mt-2">
+                                           <ul class=" list-group w-100  pe-0">
+  <li class="list-group-item active border-0 aria-current="true" style="background-color: #febd49;"> <h4 class="fw-bold  text-black">Kitchen Price</h4></li>
+  
+ 
+  
+  <li class="list-group-item  border border-primary  fw-bold py-2 m-0"><h3 class="text-danger" id="cartTotalAmount_side"></h3> 
+
+ <small class="text-dark">Price includes delivery costs.</small><br>
+                                <small class="text-dark">Surcharges may apply.</small>
+</li>
+  
+ 
+</ul>
+</div>
+                    
+
+                    <!-- <div class="row border border-primary mt-2">
                         <div class="col-lg-12 px-4 py-3">
-                            <div class="row border-bottom text-white">
-                                <h5 class="fw-bold text-white">Items</h5>
+                            <div class="row w-100 bg-yellow border-bottom text-white">
+                                <h5 class="fw-bold text-black">Kitchen Price</h5>
                             </div>
-                            <div class="row text-dark pt-1 bg-dark" id="orderKitchenCartItemsList">
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row bg-dark mt-2">
-                        <div class="col-lg-12 px-4 py-3">
-                            <div class="row border-bottom text-white">
-                                <h5 class="fw-bold text-white">Kitchen Price</h5>
-                            </div>
-                            <div class="row text-dark bg-dark">
-                                <h2 class="text-white fw-bold py-2 m-0" id="cartTotalAmount_side">
+                            <div class="row">
+                                <h2 class="text-danger fw-bold py-2 m-0" id="cartTotalAmount_side">
 
                                 </h2>
                                 <small class="text-white">Price includes delivery costs.</small>
                                 <small class="text-white">Surcharges may apply.</small>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
