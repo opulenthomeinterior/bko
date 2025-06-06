@@ -144,7 +144,8 @@
 @endpush --}}
 
 
-<head>
+{{-- <head>
+    
     <style>
         body {
             background-color: #f5f5f5;
@@ -387,22 +388,22 @@
             font-size:0.9rem;
         }
     </style>
-</head>
+</head> --}}
 
-<body>
+{{-- <body>
 
     <div class="container">
         <div class="testimonial-section" style="overflow:visible">
             <h2 class="heading text-black">FACT, EVERYONE LOVES US</h2>
             
             
-            {{-- <img class="floating-profile profile-1 src="{{ asset('images/testimonial-image.png') }}">
+             <img class="floating-profile profile-1 src="{{ asset('images/testimonial-image.png') }}">
             <img class="floating-profile profile-2 src="{{ asset('images/testimonial-image.png') }}" >
             <img class="floating-profile profile-3 src="{{ asset('images/testimonial-image.png') }}" >
             <img class="floating-profile profile-4 src="{{ asset('images/testimonial-image.png') }}" >
             <img class="floating-profile profile-5 src="{{ asset('images/testimonial-image.png') }}" >
             <img class="floating-profile profile-6 src="{{ asset('images/testimonial-image.png') }}" >
-                              --}}
+                              
 
 
             <div class="dot dot-yellow"></div>
@@ -411,13 +412,14 @@
             
             <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" style="overflow:visible">
                 <div class="carousel-inner">
-                    @foreach($testimonials as $testimonial)
+                    
                     <div class="carousel-item">
                         <div class="testimonial-card">
+                            <h2>Test</h2>
                             <div class="testimonial-content">
                                 
                                 <img src="{{ asset('images/testimonial-image.png') }}" class="img-fluid rounded-circle testimonial-img" >
-                                
+                                <h2>Test</h2>
                                 <div class="stars">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -425,14 +427,17 @@
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                 </div>
-                                <p>I discovered BKO Kitchen's online services through a recommendation from a colleague. Reaching out to them via WhatsApp was incredibly convenient, and they quickly arranged a free consultation call. From the initial planning to the seamless installation of my shaker kitchen, the entire experience was outstanding. I wouldn’t hesitate to recommend their design and installation services to others!</p>
+                                <p>
+                                    I discovered BKO Kitchen's online services through a recommendation from a colleague. Reaching out to them via WhatsApp was incredibly convenient, and they quickly arranged a free consultation call. From the initial planning to the seamless installation of my shaker kitchen, the entire experience was outstanding. I wouldn’t hesitate to recommend their design and installation services to others!
+                                
+                                </p>
                                 <div class="testimonial-author">— Jamie (Matt Dust Grey Handleless)</div>
                                 <div class="testimonial-time">8 Months Ago</div>
                                 <div class="quote-icon" >❞</div>
                             </div>
                         </div>
                     </div>
-                    @endforeach
+                 
                 </div>
                 
                 <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
@@ -452,4 +457,299 @@
             </div>
         </div>
     </div>
+       
+</body> --}}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial Carousel</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .testimonial-section {
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .heading {
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 50%;
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-content {
+            max-width: 80%;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .quote-icon {
+            color: #FFBD3D;
+            font-size: 5rem;
+            position: absolute;
+            right: 80px;
+            top: 150px;
+        }
+        
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* .carousel-control-prev, .carousel-control-next {
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 1;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .carousel-control-prev {
+            left: -20px;
+        }
+        
+        .carousel-control-next {
+            right: -20px;
+        }
+         */
+
+
+         .carousel-control-prev, .carousel-control-next {
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 1;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color:#ffbd3d;
+        }
+        
+        .carousel-control-prev {
+            /* left: -20px; */
+            left: 30%;
+        }
+        
+        .carousel-control-next {
+            /* right: -20px; */
+            right: 30%;
+        }
+
+
+        /* .carousel-control-prev-icon, .carousel-control-next-icon {
+            background-image: none;
+            color: #333;
+            width: auto;
+            height: auto;
+        } */
+
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            background-image: none;
+            color: #333;
+            width: auto;
+            height: auto;
+        }
+        
+        
+        .stars {
+            color: #FFBD3D;
+            margin: 10px 0;
+        }
+        
+        .floating-profile {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+        }
+        
+        .profile-1 {
+            top: 10%;
+            left: 5%;
+        }
+        
+        .profile-2 {
+            top: 50%;
+            left: 10%;
+        }
+        
+        .profile-3 {
+            bottom: 20%;
+            left: 25%;
+        }
+        
+        .profile-4 {
+            top: 15%;
+            right: 10%;
+        }
+        
+        .profile-5 {
+            top: 45%;
+            right: 5%;
+        }
+        
+        .profile-6 {
+            bottom: 15%;
+            right: 15%;
+        }
+        
+        .dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            position: absolute;
+        }
+        
+        .dot-yellow {
+            background-color: #FFBD3D;
+            left: 2%;
+            top: 25%;
+        }
+        
+        .dot-green {
+            background-color: #2C6D68;
+            right: 15%;
+            top: 20%;
+        }
+        
+        .dot-light {
+            border: 2px solid #FFBD3D;
+            background-color: transparent;
+            right: 20%;
+            bottom: 30%;
+        }
+        
+        .testimonial-author {
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        
+        .testimonial-time {
+            font-size: 0.85rem;
+            color: #777;
+        }
+        
+        .carousel-indicators {
+            bottom: -60px;
+        }
+        
+        .carousel-indicators button {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin: 0 5px;
+        }
+        
+        .carousel-indicators .active {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="testimonial-section">
+            <h2 class="heading">FACT, EVERYONE LOVES US:</h2>
+            
+            <!-- Floating profile images -->
+            {{-- <img src="/api/placeholder/150/150" alt="Profile" class="floating-profile profile-1">
+            <img src="/api/placeholder/150/150" alt="Profile" class="floating-profile profile-2">
+            <img src="/api/placeholder/150/150" alt="Profile" class="floating-profile profile-3">
+            <img src="/api/placeholder/150/150" alt="Profile" class="floating-profile profile-4">
+            <img src="/api/placeholder/150/150" alt="Profile" class="floating-profile profile-5">
+            <img src="/api/placeholder/150/150" alt="Profile" class="floating-profile profile-6">
+             --}}
+         
+            <div class="dot dot-yellow"></div>
+            <div class="dot dot-green"></div>
+            <div class="dot dot-light"></div>
+            
+            <!-- Testimonial Carousel -->
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <!-- <img src="/api/placeholder/150/150" alt="Jamie" class="profile-img mb-3"> -->
+                                <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" class="img-fluid rounded-circle" style="height: 100px; width: 100px">
+                       
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p>
+                                    I discovered BKO Kitchen's online services through a recommendation from a colleague. Reaching out to them via WhatsApp was incredibly convenient, and they quickly arranged a free consultation call. From the initial planning to the seamless installation of my shaker kitchen, the entire experience was outstanding. I wouldn’t hesitate to recommend their design and installation services to others!
+                                    
+                                </p>
+                                <div class="testimonial-author">— Jamie (Matt Dust Grey Handleless)</div>
+                                <div class="testimonial-time">8 Months Ago</div>
+                                <div class="quote-icon">❞</div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                </div>
+                
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+   
 </body>
