@@ -1038,14 +1038,27 @@ class HomeController extends Controller
                 $colours = $colours->whereIn('id', Product::whereIn('category_id', $children)->where('status', 'active')->pluck('colour_id')->unique());
             }
             if (!empty($request->colour_ids)) {
-                $heights = $heights->whereIn('style_id', $request->colour_style_ids)->whereIn('colour_id', $request->colour_ids);
-                $widths = $widths->whereIn('style_id', $request->colour_style_ids)->whereIn('colour_id', $request->colour_ids);
+                if(!empty($request->colour_style_ids)) {
+                    $heights = $heights->whereIn('style_id', $request->colour_style_ids);
+                }
+                $heights = $heights->whereIn('colour_id', $request->colour_ids);
+                
+                if (!empty($request->colour_style_ids)) {
+                    $widths = $widths->whereIn('style_id', $request->colour_style_ids);
+                }
+                $widths = $widths->whereIn('colour_id', $request->colour_ids);
             } else if (empty($request->colour_ids) && !empty($request->colour_style_ids)) {
                 $heights = $heights->whereIn('style_id', $request->colour_style_ids);
                 $widths = $widths->whereIn('style_id', $request->colour_style_ids);
             }
             if (!empty($request->height_ids)) {
-                $widths = $widths->whereIn('style_id', $request->height_style_ids)->whereIn('colour_id', $request->height_colour_ids)->whereIn('height', $request->height_ids);
+                if(!empty($request->height_style_ids)) {
+                    $widths = $widths->whereIn('style_id', $request->height_style_ids);
+                }
+                if(!empty($request->height_style_ids)) {
+                    $widths = $widths->whereIn('colour_id', $request->height_colour_ids);
+                }
+                $widths = $widths->whereIn('height', $request->height_ids);
             } else if (empty($request->height_ids) && !empty($request->height_style_ids)) {
                 $heights = $heights->whereIn('style_id', $request->height_style_ids);
                 $widths = $widths->whereIn('style_id', $request->height_style_ids);

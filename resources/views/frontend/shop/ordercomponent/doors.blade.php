@@ -1318,281 +1318,274 @@ td
 
 
 
-function newsletterModalDoorFn(){
-    
-     document.getElementById('subscribeBtnDoor').addEventListener('click',function(){
-                    console.log("btn clicked")
-                    const emailInput = document.getElementById('emailInput');
-                    const email = emailInput.value.trim();
-                    console.log(email);
-                    
-                    // Basic email validation
-                    if (email && email.includes('@') && email.includes('.')) {
-                        // Hide newsletter modal
-                        var newsletterModalDoor = bootstrap.Modal.getInstance(document.getElementById('newsletterModalDoor'));
-                        newsletterModalDoor.hide();
-                        
-                        // Show discount modal after a short delay
-                        setTimeout(function() {
-                            var thankyouModal = new bootstrap.Modal(document.getElementById('thankyouModal'));
-                            // discountModal.show();
-                            sendEmail();
-                            thankyouModal.show();
-                            
-                        }, 500);
-                    } else {
-                        // Simple error visual
-                        emailInput.style.borderColor = '#ef4444';
-                        setTimeout(() => {
-                            emailInput.style.borderColor = '#fde68a';
-                        }, 2000);
-                    }
-                    
-                    localStorage.setItem('subscribed', true);
-                });
-                   
-
-       
-
-}
-
-
-
-
-
-
-
-        $(document).ready(function () {            
-            
-            var slug = $('#slug').val();
-
-            $(document).on('click', '.style-filter', function() {
-                var styleIds = [];
-                $('.style-filter').each(function() {
-                    if ($(this).is(':checked')) {
-                        styleIds.push($(this).attr('data-style-id'));
-                    }
-                });
-                $.ajax({
-                    url: "{{ route('ordercomponent_filter') }}",
-                    method: "POST",
-                    data: {
-                        _token: "{{ csrf_token() }}",
-                        style_ids: styleIds,
-                        slug: slug
-                    },
-                    success:function(response) {
-                        if (response.status == true) {
-                            var _htmlColours = '';
-                            response.colours.forEach((colr, index) => {
-                                _htmlColours += `
-                                    <div class="col-lg-12 col-md-12 col-6">
-                                        <div class="form-check form-check-inline">
-                                            <input data-colour-id="${colr.id}"  class="form-check-input colour-filter" type="checkbox"
-                                                name="colours[]" id="colour${index}"
-                                                value="${colr.id}">`;
-                                                if (colr.colour_code != '' || colr.colour_code != undefined) {
-                                                    _htmlColours += `<label class="form-check-label d-flex gap-1" for="colour${index}">
-                                                        <div class="d-inline border border-dark"
-                                                            style="border-radius: 50px; width: 20px;height:20px; background-color:${colr.colour_code};">
-                                                        </div>
-                                                        ${ colr.trade_colour ? colr.trade_colour : colr.name }
-                                                    </label>`;
-                                                } else {
-                                                    _htmlColours += `<label class="form-check-label d-flex gap-1" for="colour${index}">
-                                                        <div class="border border-dark" style="border-radius: 50px; width: 20px;height:20px; background: linear-gradient(to right, red, yellow, green);">
-                                                        </div>
-                                                        ${ colr.trade_colour ? colr.trade_colour : colr.name }
-                                                    </label>`;
-                                                }
-                                        _htmlColours += `</div>
-                                    </div>
-                                `;
-                            });
-                            $('#colours-filter').html(_htmlColours);
-                            var _htmlHeights = '';
-                            response.heights.forEach((hght, index) => {
-                                _htmlHeights += `
-                                    <div class="col-12">
-                                        <div class="form-check form-check-inline">
-                                            <input data-heights-id="${hght.height}" class="form-check-input height-filter" type="checkbox"
-                                                name="heights[]" id="height${index}"
-                                                value="${hght.height}">
-                                            <label class="form-check-label"
-                                                for="height${index}">
-                                                ${hght.height}
-                                            </label>
-                                        </div>
-                                    </div>
-                                `;
-                            });
-                            $('#heights-filter').html(_htmlHeights);
-                            var _htmlWidths = '';                            
-                            response.sizes.forEach((wdth, index) => {
-                                _htmlWidths += `
-                                    <div class="col-12">
-                                        <div class="form-check form-check-inline">
-                                            <input data-widths-id="${wdth.id}" class="form-check-input width-filter" type="checkbox"
-                                                name="widths[]" id="width${index}"
-                                                value="${wdth.width}">
-                                            <label class="form-check-label"
-                                                for="width${index}">
-                                                ${wdth.width}
-                                            </label>
-                                        </div>
-                                    </div>
-                                `;
-                            });
-                            $('#widths-filter').html(_htmlWidths);
-                        }
-                    }
-                });
-            });
-            
-            $(document).on('click', '.colour-filter', function() {
-                var slug = $('#slug').val();
-                var styleIds = [];
-                $('.style-filter').each(function() {
-                    if ($(this).is(':checked')) {
-                        styleIds.push($(this).attr('data-style-id'));
-                    }
-                });
-                var selectedColors = [];
-                $('.colour-filter').each(function() {
-                    if ($(this).is(':checked')) {
-                        selectedColors.push($(this).attr('data-colour-id'));
-                    }
-                });
+    function newsletterModalDoorFn(){
+        document.getElementById('subscribeBtnDoor').addEventListener('click',function(){
+            console.log("btn clicked")
+            const emailInput = document.getElementById('emailInput');
+            const email = emailInput.value.trim();
+            console.log(email);
+            // Basic email validation
+            if (email && email.includes('@') && email.includes('.')) {
+                // Hide newsletter modal
+                var newsletterModalDoor = bootstrap.Modal.getInstance(document.getElementById('newsletterModalDoor'));
+                newsletterModalDoor.hide();
                 
-                $.ajax({
-                    url: orderComponent_filter,
-                    method: "POST",
-                    data: {
-                        _token: "{{ csrf_token() }}",
-                        colour_style_ids: styleIds,
-                        colour_ids: selectedColors,
-                        slug: slug
-                    },
-                    success:function(response) {
-                        if (response.status == true) {
-                            var _html = '';
-                            response.heights.forEach((hght, index) => {
-                                _html += `
-                                    <div class="col-12">
-                                        <div class="form-check form-check-inline">
-                                            <input data-heights-id="${hght.height}" class="form-check-input height-filter" type="checkbox"
-                                                name="heights[]" id="height${index}"
-                                                value="${hght.height}">
-                                            <label class="form-check-label"
-                                                for="height${index}">
-                                                ${hght.height}
-                                            </label>
-                                        </div>
+                // Show discount modal after a short delay
+                setTimeout(function() {
+                    var thankyouModal = new bootstrap.Modal(document.getElementById('thankyouModal'));
+                    // discountModal.show();
+                    sendEmail();
+                    thankyouModal.show();
+                    
+                }, 500);
+            } else {
+                // Simple error visual
+                emailInput.style.borderColor = '#ef4444';
+                setTimeout(() => {
+                    emailInput.style.borderColor = '#fde68a';
+                }, 2000);
+            }
+            localStorage.setItem('subscribed', true);
+        });
+    }
+
+
+
+
+
+
+
+    $(document).ready(function () {            
+        
+        var slug = $('#slug').val();
+
+        $(document).on('click', '.style-filter', function() {
+            var styleIds = [];
+            $('.style-filter').each(function() {
+                if ($(this).is(':checked')) {
+                    styleIds.push($(this).attr('data-style-id'));
+                }
+            });
+            $.ajax({
+                url: "{{ route('ordercomponent_filter') }}",
+                method: "POST",
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    style_ids: styleIds,
+                    slug: slug
+                },
+                success:function(response) {
+                    if (response.status == true) {
+                        var _htmlColours = '';
+                        response.colours.forEach((colr, index) => {
+                            _htmlColours += `
+                                <div class="col-lg-12 col-md-12 col-6">
+                                    <div class="form-check form-check-inline">
+                                        <input data-colour-id="${colr.id}"  class="form-check-input colour-filter" type="checkbox"
+                                            name="colours[]" id="colour${index}"
+                                            value="${colr.id}">`;
+                                            if (colr.colour_code != '' || colr.colour_code != undefined) {
+                                                _htmlColours += `<label class="form-check-label d-flex gap-1" for="colour${index}">
+                                                    <div class="d-inline border border-dark"
+                                                        style="border-radius: 50px; width: 20px;height:20px; background-color:${colr.colour_code};">
+                                                    </div>
+                                                    ${ colr.trade_colour ? colr.trade_colour : colr.name }
+                                                </label>`;
+                                            } else {
+                                                _htmlColours += `<label class="form-check-label d-flex gap-1" for="colour${index}">
+                                                    <div class="border border-dark" style="border-radius: 50px; width: 20px;height:20px; background: linear-gradient(to right, red, yellow, green);">
+                                                    </div>
+                                                    ${ colr.trade_colour ? colr.trade_colour : colr.name }
+                                                </label>`;
+                                            }
+                                    _htmlColours += `</div>
+                                </div>
+                            `;
+                        });
+                        $('#colours-filter').html(_htmlColours);
+                        var _htmlHeights = '';
+                        response.heights.forEach((hght, index) => {
+                            _htmlHeights += `
+                                <div class="col-12">
+                                    <div class="form-check form-check-inline">
+                                        <input data-heights-id="${hght.height}" class="form-check-input height-filter" type="checkbox"
+                                            name="heights[]" id="height${index}"
+                                            value="${hght.height}">
+                                        <label class="form-check-label"
+                                            for="height${index}">
+                                            ${hght.height}
+                                        </label>
                                     </div>
-                                `;
-                            });
-                            $('#heights-filter').html(_html);
-                            var _htmlWidths = '';                            
-                            response.sizes.forEach((wdth, index) => {
-                                _htmlWidths += `
-                                    <div class="col-12">
-                                        <div class="form-check form-check-inline">
-                                            <input data-widths-id="${wdth.id}" class="form-check-input width-filter" type="checkbox"
-                                                name="widths[]" id="width${index}"
-                                                value="${wdth.width}">
-                                            <label class="form-check-label"
-                                                for="width${index}">
-                                                ${wdth.width}
-                                            </label>
-                                        </div>
+                                </div>
+                            `;
+                        });
+                        $('#heights-filter').html(_htmlHeights);
+                        var _htmlWidths = '';                            
+                        response.sizes.forEach((wdth, index) => {
+                            _htmlWidths += `
+                                <div class="col-12">
+                                    <div class="form-check form-check-inline">
+                                        <input data-widths-id="${wdth.id}" class="form-check-input width-filter" type="checkbox"
+                                            name="widths[]" id="width${index}"
+                                            value="${wdth.width}">
+                                        <label class="form-check-label"
+                                            for="width${index}">
+                                            ${wdth.width}
+                                        </label>
                                     </div>
-                                `;
-                            });
-                            $('#widths-filter').html(_htmlWidths);
-                        }
+                                </div>
+                            `;
+                        });
+                        $('#widths-filter').html(_htmlWidths);
                     }
-                });
+                }
+            });
+        });
+        
+        $(document).on('click', '.colour-filter', function() {
+            var slug = $('#slug').val();
+            var styleIds = [];
+            $('.style-filter').each(function() {
+                if ($(this).is(':checked')) {
+                    styleIds.push($(this).attr('data-style-id'));
+                }
+            });
+            var selectedColors = [];
+            $('.colour-filter').each(function() {
+                if ($(this).is(':checked')) {
+                    selectedColors.push($(this).attr('data-colour-id'));
+                }
             });
             
-            $(document).on('click', '.height-filter', function() {
-                var slug = $('#slug').val();
-                var styleIds = [];
-                $('.style-filter').each(function() {
-                    if ($(this).is(':checked')) {
-                        styleIds.push($(this).attr('data-style-id'));
-                    }
-                });
-                var selectedColors = [];
-                $('.colour-filter').each(function() {
-                    if ($(this).is(':checked')) {
-                        selectedColors.push($(this).attr('data-colour-id'));
-                    }
-                });
-                var selectedHeights = [];
-                $('.height-filter').each(function() {
-                    if ($(this).is(':checked')) {
-                        selectedHeights.push($(this).attr('data-heights-id'));
-                    }
-                });
-                $.ajax({
-                    url: orderComponent_filter,
-                    method: "POST",
-                    data: {
-                        _token: "{{ csrf_token() }}",
-                        height_style_ids: styleIds,
-                        height_colour_ids: selectedColors,
-                        height_ids: selectedHeights,
-                        slug: slug
-                    },
-                    success:function(response) {
-                        if (response.status == true) {
-                            var _html = '';
-                            console.log(response.sizes, 'widths');
-                            
-                            response.sizes.forEach((wdth, index) => {
-                                _html += `
-                                    <div class="col-12">
-                                        <div class="form-check form-check-inline">
-                                            <input data-widths-id="${wdth.id}" class="form-check-input width-filter" type="checkbox"
-                                                name="widths[]" id="width${index}"
-                                                value="${wdth.width}">
-                                            <label class="form-check-label"
-                                                for="width${index}">
-                                                ${wdth.width}
-                                            </label>
-                                        </div>
+            $.ajax({
+                url: orderComponent_filter,
+                method: "POST",
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    colour_style_ids: styleIds,
+                    colour_ids: selectedColors,
+                    slug: slug
+                },
+                success:function(response) {
+                    if (response.status == true) {
+                        var _html = '';
+                        response.heights.forEach((hght, index) => {
+                            _html += `
+                                <div class="col-12">
+                                    <div class="form-check form-check-inline">
+                                        <input data-heights-id="${hght.height}" class="form-check-input height-filter" type="checkbox"
+                                            name="heights[]" id="height${index}"
+                                            value="${hght.height}">
+                                        <label class="form-check-label"
+                                            for="height${index}">
+                                            ${hght.height}
+                                        </label>
                                     </div>
-                                `;
-                            });
-                            $('#widths-filter').html(_html);
-                        }
+                                </div>
+                            `;
+                        });
+                        $('#heights-filter').html(_html);
+                        var _htmlWidths = '';                            
+                        response.sizes.forEach((wdth, index) => {
+                            _htmlWidths += `
+                                <div class="col-12">
+                                    <div class="form-check form-check-inline">
+                                        <input data-widths-id="${wdth.id}" class="form-check-input width-filter" type="checkbox"
+                                            name="widths[]" id="width${index}"
+                                            value="${wdth.width}">
+                                        <label class="form-check-label"
+                                            for="width${index}">
+                                            ${wdth.width}
+                                        </label>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                        $('#widths-filter').html(_htmlWidths);
                     }
-                });
+                }
             });
-
         });
-        var order_component_filter = '{{ route('order_component_filter', $category->slug) }}';
-        var orderComponent_filter = '{{ route('ordercomponent_filter') }}';
-        let selectedHeights = [];
+        
+        $(document).on('click', '.height-filter', function() {
+            var slug = $('#slug').val();
+            var styleIds = [];
+            $('.style-filter').each(function() {
+                if ($(this).is(':checked')) {
+                    styleIds.push($(this).attr('data-style-id'));
+                }
+            });
+            var selectedColors = [];
+            $('.colour-filter').each(function() {
+                if ($(this).is(':checked')) {
+                    selectedColors.push($(this).attr('data-colour-id'));
+                }
+            });
+            var selectedHeights = [];
+            $('.height-filter').each(function() {
+                if ($(this).is(':checked')) {
+                    selectedHeights.push($(this).attr('data-heights-id'));
+                }
+            });
+            $.ajax({
+                url: orderComponent_filter,
+                method: "POST",
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    height_style_ids: styleIds,
+                    height_colour_ids: selectedColors,
+                    height_ids: selectedHeights,
+                    slug: slug
+                },
+                success:function(response) {
+                    if (response.status == true) {
+                        var _html = '';
+                        console.log(response.sizes, 'widths');
+                        
+                        response.sizes.forEach((wdth, index) => {
+                            _html += `
+                                <div class="col-12">
+                                    <div class="form-check form-check-inline">
+                                        <input data-widths-id="${wdth.id}" class="form-check-input width-filter" type="checkbox"
+                                            name="widths[]" id="width${index}"
+                                            value="${wdth.width}">
+                                        <label class="form-check-label"
+                                            for="width${index}">
+                                            ${wdth.width}
+                                        </label>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                        $('#widths-filter').html(_html);
+                    }
+                }
+            });
+        });
 
-        function toggleHeightSelection(button) {
-            const heightId = button.getAttribute('data-height-id');
+    });
+    var order_component_filter = '{{ route('order_component_filter', $category->slug) }}';
+    var orderComponent_filter = '{{ route('ordercomponent_filter') }}';
+    let selectedHeights = [];
 
-            // Toggle selected state
-            if (selectedHeights.includes(heightId)) {
-                selectedHeights = selectedHeights.filter(id => id !== heightId);
-                button.classList.remove('btn-success');
-                button.classList.add('btn-primary');
-            } else {
-                selectedHeights.push(heightId);
-                button.classList.remove('btn-primary');
-                button.classList.add('btn-success');
-            }
+    function toggleHeightSelection(button) {
+        const heightId = button.getAttribute('data-height-id');
 
-            // Update the hidden input with selected heights
-            document.getElementById('selectedHeights').value = selectedHeights.join(',');
+        // Toggle selected state
+        if (selectedHeights.includes(heightId)) {
+            selectedHeights = selectedHeights.filter(id => id !== heightId);
+            button.classList.remove('btn-success');
+            button.classList.add('btn-primary');
+        } else {
+            selectedHeights.push(heightId);
+            button.classList.remove('btn-primary');
+            button.classList.add('btn-success');
         }
-    </script>
-    <script src="{{ asset('js/order-component-by-name.js') }}"></script>
-    @endpush
+
+        // Update the hidden input with selected heights
+        document.getElementById('selectedHeights').value = selectedHeights.join(',');
+    }
+</script>
+<script src="{{ asset('js/order-component-by-name.js') }}"></script>
+@endpush
 </x-guest-layout>

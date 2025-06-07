@@ -1079,148 +1079,136 @@ td
             
         </div>
     </section>
-
-
-
-
-
-      <div class="modal fade" id="newsletterModalOrder" tabindex="-1" aria-labelledby="newsletterModalOrderLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-md">
-        <div class="modal-content">
-            <div class="newsletter-container">
-                <button type="button" class="close-btn subscribed-close" data-bs-dismiss="modal" aria-label="Close">
-                    &times;
-                </button>
-                 
-                <div class="popup-image">
-                    <img src="{{asset('images/main-popup-image.png')}}" class="img-fluid w-100" alt="">
-                </div>
-                <div class="newsletter-content">
-                    <h2 class="content-title mt-5 text-black" style="font-size: 40px;">Subscribe To Get <span class="free-text">FREE On-Site Survey</span></h2>
-                        
-                    <p class="offer-text"><span class="discount-text">For your Peace of Mind, </span> expert installation is also provided<br> <span class="" style="color: green;">(Qoute Available)</span></p>
-                        
-                    <p class="terms-text">Terms & Conditions Applied.</p>
-                    <div class="subscribe-container">
-                        <input type="email" id="emailInput" class="form-control news-letter-input" placeholder="Enter Your Email">
-                        <button class="subscribe-btn" id="subscribeBtnOrder" onclick="newsletterModalOrderFn()">Subscribe</button>
+    
+    <div class="modal fade" id="newsletterModalOrder" tabindex="-1" aria-labelledby="newsletterModalOrderLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+            <div class="modal-content">
+                <div class="newsletter-container">
+                    <button type="button" class="close-btn subscribed-close" data-bs-dismiss="modal" aria-label="Close">
+                        &times;
+                    </button>
+                    
+                    <div class="popup-image">
+                        <img src="{{asset('images/main-popup-image.png')}}" class="img-fluid w-100" alt="">
                     </div>
-                    <p class="privacy-text">We respect your Privacy. Unsubscribe at any time.</p>
+                    <div class="newsletter-content">
+                        <h2 class="content-title mt-5 text-black" style="font-size: 40px;">Subscribe To Get <span class="free-text">FREE On-Site Survey</span></h2>
+                            
+                        <p class="offer-text"><span class="discount-text">For your Peace of Mind, </span> expert installation is also provided<br> <span class="" style="color: green;">(Qoute Available)</span></p>
+                            
+                        <p class="terms-text">Terms & Conditions Applied.</p>
+                        <div class="subscribe-container">
+                            <input type="email" id="emailInput" class="form-control news-letter-input" placeholder="Enter Your Email">
+                            <button class="subscribe-btn" id="subscribeBtnOrder" onclick="newsletterModalOrderFn()">Subscribe</button>
+                        </div>
+                        <p class="privacy-text">We respect your Privacy. Unsubscribe at any time.</p>
+                    </div>
+                    
                 </div>
-                
             </div>
         </div>
     </div>
-</div>
 
-  <!-- Thank You Modal -->
-<div class="modal fade" id="thankyouModal" tabindex="-1" aria-labelledby="thankyouModalLabel" aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered">
-  <div class="modal-content">
-    <div class="modal-header">
-      <button type="button" class="butn-close close-btn" data-bs-dismiss="modal" aria-label="Close">X</button>
-    </div>
-    <div class="modal-body p-3">
-      <div class="row mb-4">
-        <div class="col-12">
-          <h1><span class="thank-you">Thank You</span> <span class="for-subscribing">For Subscribing!</span></h1>
-        </div>
-      </div>
-      
-      <div class="row mb-3">
-        <div class="col-12">
-          <p class="fs-5 mb-0">We've sent the <strong>Discount Code</strong> to your <strong>email address</strong>.</p>
-        </div>
-      </div>
-      
-      <div class="row mb-4">
-        <div class="col-12">
-          <p class="fs-4">Additionally, <span class="youve-won">YOU'VE WON</span> <span class="free-text">FREE</span> <span class="consultation">CONSULTATION!</span></p>
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="col-md-7 mb-4">
-          <p class="fs-5 mb-3">If you want to avail this offer, Please provide:</p>
-          
-          <form>
-            <input type="text" class="form-control thankyou-input" placeholder="Your Name:">
-            <input type="tel" class="form-control thankyou-input" placeholder="Phone Number:" pattern="[0-9]+" inputmode="numeric">
-            <input type="datetime-local" class="form-control thankyou-input" placeholder="Preferred Date & Time:">
-            <textarea class="form-control thankyou-input" rows="3" placeholder="Add a Note:"></textarea>
+    <!-- Thank You Modal -->
+    <div class="modal fade" id="thankyouModal" tabindex="-1" aria-labelledby="thankyouModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="butn-close close-btn" data-bs-dismiss="modal" aria-label="Close">X</button>
+            </div>
+            <div class="modal-body p-3">
+            <div class="row mb-4">
+                <div class="col-12">
+                <h1><span class="thank-you">Thank You</span> <span class="for-subscribing">For Subscribing!</span></h1>
+                </div>
+            </div>
             
-            <button type="submit" class="submit-btn mt-3">Submit</button>
-          </form>
-        </div>
-        
-        <div class="col-md-5">
-          <div class="benefits-box">
-            <p class="benefits-title mb-4">BENEFITS OF <span style="color: #ffa500;">FREE CONSULTATION</span>:</p>
+            <div class="row mb-3">
+                <div class="col-12">
+                <p class="fs-5 mb-0">We've sent the <strong>Discount Code</strong> to your <strong>email address</strong>.</p>
+                </div>
+            </div>
             
-            <ul class="list-unstyled">
-              <li class="benefit-item">• <span class="highlight-text">FREE</span> Virtual Consultation</li>
-              <li class="benefit-item">• <span class="highlight-text">FREE</span> Design Advice</li>
-              <li class="benefit-item">• <span class="highlight-text">FREE</span> Efficient Planning</li>
-              <li class="benefit-item">• Schedule at your <span class="convenience-text">CONVENIENCE</span></li>
-              <li class="benefit-item">• <span class="highlight-text">NO OBLIGATION</span> to Purchase</li>
-            </ul>
-          </div>
+            <div class="row mb-4">
+                <div class="col-12">
+                <p class="fs-4">Additionally, <span class="youve-won">YOU'VE WON</span> <span class="free-text">FREE</span> <span class="consultation">CONSULTATION!</span></p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-7 mb-4">
+                <p class="fs-5 mb-3">If you want to avail this offer, Please provide:</p>
+                
+                <form>
+                    <input type="text" class="form-control thankyou-input" placeholder="Your Name:">
+                    <input type="tel" class="form-control thankyou-input" placeholder="Phone Number:" pattern="[0-9]+" inputmode="numeric">
+                    <input type="datetime-local" class="form-control thankyou-input" placeholder="Preferred Date & Time:">
+                    <textarea class="form-control thankyou-input" rows="3" placeholder="Add a Note:"></textarea>
+                    
+                    <button type="submit" class="submit-btn mt-3">Submit</button>
+                </form>
+                </div>
+                
+                <div class="col-md-5">
+                <div class="benefits-box">
+                    <p class="benefits-title mb-4">BENEFITS OF <span style="color: #ffa500;">FREE CONSULTATION</span>:</p>
+                    
+                    <ul class="list-unstyled">
+                    <li class="benefit-item">• <span class="highlight-text">FREE</span> Virtual Consultation</li>
+                    <li class="benefit-item">• <span class="highlight-text">FREE</span> Design Advice</li>
+                    <li class="benefit-item">• <span class="highlight-text">FREE</span> Efficient Planning</li>
+                    <li class="benefit-item">• Schedule at your <span class="convenience-text">CONVENIENCE</span></li>
+                    <li class="benefit-item">• <span class="highlight-text">NO OBLIGATION</span> to Purchase</li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+            </div>
         </div>
-      </div>
+        </div>
     </div>
-  </div>
-</div>
-</div>
-
-
-
-
-
-
-
+    
     @push('scripts')
     <script>
-
-
-function newsletterModalOrderFn(){
-    
-     document.getElementById('subscribeBtnOrder').addEventListener('click',function(){
-                    console.log("btn clicked")
-                    const emailInput = document.getElementById('emailInput');
-                    const email = emailInput.value.trim();
-                    console.log(email);
-                    
-                    // Basic email validation
-                    if (email && email.includes('@') && email.includes('.')) {
-                        // Hide newsletter modal
-                        var newsletterModalOrder = bootstrap.Modal.getInstance(document.getElementById('newsletterModalOrder'));
-                        newsletterModalOrder.hide();
-                        
-                        // Show discount modal after a short delay
-                        setTimeout(function() {
-                            var thankyouModal = new bootstrap.Modal(document.getElementById('thankyouModal'));
-                            // discountModal.show();
-                            sendEmail();
-                            thankyouModal.show();
+        
+        function newsletterModalOrderFn(){
+            
+            document.getElementById('subscribeBtnOrder').addEventListener('click',function(){
+                            console.log("btn clicked")
+                            const emailInput = document.getElementById('emailInput');
+                            const email = emailInput.value.trim();
+                            console.log(email);
                             
-                        }, 500);
-                    } else {
-                        // Simple error visual
-                        emailInput.style.borderColor = '#ef4444';
-                        setTimeout(() => {
-                            emailInput.style.borderColor = '#fde68a';
-                        }, 2000);
-                    }
-                    
-                    localStorage.setItem('subscribed', true);
-                });
-                   
+                            // Basic email validation
+                            if (email && email.includes('@') && email.includes('.')) {
+                                // Hide newsletter modal
+                                var newsletterModalOrder = bootstrap.Modal.getInstance(document.getElementById('newsletterModalOrder'));
+                                newsletterModalOrder.hide();
+                                
+                                // Show discount modal after a short delay
+                                setTimeout(function() {
+                                    var thankyouModal = new bootstrap.Modal(document.getElementById('thankyouModal'));
+                                    // discountModal.show();
+                                    sendEmail();
+                                    thankyouModal.show();
+                                    
+                                }, 500);
+                            } else {
+                                // Simple error visual
+                                emailInput.style.borderColor = '#ef4444';
+                                setTimeout(() => {
+                                    emailInput.style.borderColor = '#fde68a';
+                                }, 2000);
+                            }
+                            
+                            localStorage.setItem('subscribed', true);
+                        });
+                        
 
-       
+            
 
-}
-
-
+        }
+        
         $(document).ready(function () {            
             
             var slug = $('#slug').val();
