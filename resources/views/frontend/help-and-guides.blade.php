@@ -261,7 +261,7 @@
                     </div>
                 </div> -->
                 <div class="card guide-card border border-warning">
-                    <a href="{{ route('terminology') }}" class="position-absolute top-0 bottom-0 start-0 end-0"></a>
+                    <a href="{{ route('fittingguide') }}" class="position-absolute top-0 bottom-0 start-0 end-0"></a>
                     
                     <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" class="card-img-top">
                     <div class="card-body">
@@ -296,7 +296,7 @@
                     </div>
                 </div> -->
                 <div class="card guide-card border border-warning">
-                    <a href="{{ route('terminology') }}" class="position-absolute top-0 bottom-0 start-0 end-0"></a>
+                    <a href="{{ route('needhelp') }}" class="position-absolute top-0 bottom-0 start-0 end-0"></a>
                     
                     <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" class="card-img-top">
                     <div class="card-body">
