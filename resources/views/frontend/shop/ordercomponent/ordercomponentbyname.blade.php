@@ -1277,6 +1277,128 @@ td
             //         }
             //     });
             // }); 
+            
+            
+            $(document).on('click', '.colour-filter', function() {
+                var slug = $('#slug').val();
+                var styleIds = [];
+                $('.style-filter').each(function() {
+                    if ($(this).is(':checked')) {
+                        styleIds.push($(this).attr('data-style-id'));
+                    }
+                });
+                var selectedColors = [];
+                $('.colour-filter').each(function() {
+                    if ($(this).is(':checked')) {
+                        selectedColors.push($(this).attr('data-colour-id'));
+                    }
+                });
+                
+                $.ajax({
+                    url: orderComponent_filter,
+                    method: "POST",
+                    data: {
+                        _token: "{{ csrf_token() }}",
+                        colour_style_ids: styleIds,
+                        colour_ids: selectedColors,
+                        slug: slug
+                    },
+                    success:function(response) {
+                        if (response.status == true) {
+                            var _html = '';
+                            response.heights.forEach((hght, index) => {
+                                _html += `
+                                    <div class="col-12">
+                                        <div class="form-check form-check-inline">
+                                            <input data-heights-id="${hght.height}" class="form-check-input height-filter" type="checkbox"
+                                                name="heights[]" id="height${index}"
+                                                value="${hght.height}">
+                                            <label class="form-check-label"
+                                                for="height${index}">
+                                                ${hght.height}
+                                            </label>
+                                        </div>
+                                    </div>
+                                `;
+                            });
+                            $('#heights-filter').html(_html);
+                            var _htmlWidths = '';                            
+                            response.sizes.forEach((wdth, index) => {
+                                _htmlWidths += `
+                                    <div class="col-12">
+                                        <div class="form-check form-check-inline">
+                                            <input data-widths-id="${wdth.id}" class="form-check-input width-filter" type="checkbox"
+                                                name="widths[]" id="width${index}"
+                                                value="${wdth.width}">
+                                            <label class="form-check-label"
+                                                for="width${index}">
+                                                ${wdth.width}
+                                            </label>
+                                        </div>
+                                    </div>
+                                `;
+                            });
+                            $('#widths-filter').html(_htmlWidths);
+                        }
+                    }
+                });
+            });
+        
+            $(document).on('click', '.height-filter', function() {
+                var slug = $('#slug').val();
+                var styleIds = [];
+                $('.style-filter').each(function() {
+                    if ($(this).is(':checked')) {
+                        styleIds.push($(this).attr('data-style-id'));
+                    }
+                });
+                var selectedColors = [];
+                $('.colour-filter').each(function() {
+                    if ($(this).is(':checked')) {
+                        selectedColors.push($(this).attr('data-colour-id'));
+                    }
+                });
+                var selectedHeights = [];
+                $('.height-filter').each(function() {
+                    if ($(this).is(':checked')) {
+                        selectedHeights.push($(this).attr('data-heights-id'));
+                    }
+                });
+                $.ajax({
+                    url: orderComponent_filter,
+                    method: "POST",
+                    data: {
+                        _token: "{{ csrf_token() }}",
+                        height_style_ids: styleIds,
+                        height_colour_ids: selectedColors,
+                        height_ids: selectedHeights,
+                        slug: slug
+                    },
+                    success:function(response) {
+                        if (response.status == true) {
+                            var _html = '';
+                            console.log(response.sizes, 'widths');
+                            
+                            response.sizes.forEach((wdth, index) => {
+                                _html += `
+                                    <div class="col-12">
+                                        <div class="form-check form-check-inline">
+                                            <input data-widths-id="${wdth.id}" class="form-check-input width-filter" type="checkbox"
+                                                name="widths[]" id="width${index}"
+                                                value="${wdth.width}">
+                                            <label class="form-check-label"
+                                                for="width${index}">
+                                                ${wdth.width}
+                                            </label>
+                                        </div>
+                                    </div>
+                                `;
+                            });
+                            $('#widths-filter').html(_html);
+                        }
+                    }
+                });
+            });
         });
         var order_component_filter = '{{ route('order_component_filter', $category->slug) }}';
         var orderComponent_filter = '{{ route('ordercomponent_filter') }}';
