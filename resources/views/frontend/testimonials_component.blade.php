@@ -412,7 +412,6 @@
             
             <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" style="overflow:visible">
                 <div class="carousel-inner">
-                    
                     <div class="carousel-item">
                         <div class="testimonial-card">
                             <h2>Test</h2>
@@ -437,7 +436,6 @@
                             </div>
                         </div>
                     </div>
-                 
                 </div>
                 
                 <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
@@ -708,7 +706,8 @@
             <!-- Testimonial Carousel -->
             <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
+                    @foreach($testimonials as $index => $testimonial)
+                    <div class="carousel-item @if($index === 0) active @endif">
                         <div class="testimonial-card">
                             <div class="testimonial-content">
                                 <!-- <img src="/api/placeholder/150/150" alt="Jamie" class="profile-img mb-3"> -->
@@ -722,8 +721,7 @@
                                     <i class="fas fa-star"></i>
                                 </div>
                                 <p>
-                                    I discovered BKO Kitchen's online services through a recommendation from a colleague. Reaching out to them via WhatsApp was incredibly convenient, and they quickly arranged a free consultation call. From the initial planning to the seamless installation of my shaker kitchen, the entire experience was outstanding. I wouldn’t hesitate to recommend their design and installation services to others!
-                                    
+                                    {{$testimonial->testimonial}}
                                 </p>
                                 <div class="testimonial-author">— Jamie (Matt Dust Grey Handleless)</div>
                                 <div class="testimonial-time">8 Months Ago</div>
@@ -731,7 +729,7 @@
                             </div>
                         </div>
                     </div>
-                  
+                    @endforeach
                 </div>
                 
                 <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
