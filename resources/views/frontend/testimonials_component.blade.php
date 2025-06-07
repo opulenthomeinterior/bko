@@ -723,8 +723,8 @@
                                 <p>
                                     {{$testimonial->testimonial}}
                                 </p>
-                                <div class="testimonial-author">— Jamie (Matt Dust Grey Handleless)</div>
-                                <div class="testimonial-time">8 Months Ago</div>
+                                <div class="testimonial-author">— {{$testimonial->user_name}}</div>
+                                <div class="testimonial-time">{{$testimonial->date}}</div>
                                 <div class="quote-icon">❞</div>
                             </div>
                         </div>
