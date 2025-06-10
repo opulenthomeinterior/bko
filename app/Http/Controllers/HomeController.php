@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Assembly;
-use App\Models\Category;
+use App\Models\Faq;
+use App\Models\Blog;
+use App\Models\Order;
+use App\Models\Style;
 use App\Models\Colour;
 use App\Models\Product;
-use App\Models\Style;
-use App\Models\Blog;
-use App\Models\CategorySeo;
-use App\Models\Faq;
-use App\Models\DownloadableGuide;
-use App\Models\Order;
+use App\Models\Assembly;
+use App\Models\Category;
 use App\Models\Printing;
-use App\Models\StyleHasColour;
 use App\Models\StyleSeo;
 use App\Models\VideoGuide;
+use App\Models\CategorySeo;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
+use App\Models\StyleHasColour;
+use App\Models\DownloadableGuide;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -65,8 +66,9 @@ class HomeController extends Controller
 
             $data[$style->name] = $styleData;
         }
+        $testimonials = Testimonial::whereNull('style_id')->get();
 
-        return view('frontend.shop.orderkitchen.index', compact('data'));
+        return view('frontend.shop.orderkitchen.index', compact('data', 'testimonials'));
     }
 
 
@@ -424,7 +426,8 @@ class HomeController extends Controller
         // print_r($components);
         // echo '</pre>';
         // exit;
-        return view('frontend.shop.ordercomponent.index', compact('components'));
+        $testimonials = Testimonial::whereNull('style_id')->get();
+        return view('frontend.shop.ordercomponent.index', compact('components', 'testimonials'));
     }
 
     public function ordercomponentbyname(Request $request, $slug)
@@ -966,14 +969,14 @@ class HomeController extends Controller
 
         // Group products by style_id
         $groupedProducts = $products->groupBy('style_id');
-
+        $testimonials = Testimonial::whereNull('style_id')->get();
         $styles = $styles->map(function ($style) use ($groupedProducts) {
             $colours = $groupedProducts->get($style->id)?->pluck('colour_id')->unique()->values() ?? collect();
             $style['colours'] = $colours;
             return $style;
         });
 
-        return view('frontend.shop.orderkitchen.doors_replacement', compact('styles'));
+        return view('frontend.shop.orderkitchen.doors_replacement', compact('styles', 'testimonials'));
     }
 
     public function kitchenCupboardDoorsReplacement() {

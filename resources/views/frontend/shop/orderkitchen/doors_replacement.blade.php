@@ -1623,7 +1623,7 @@
     </div>
 
      <!-- Testimonials -->
-     @include('frontend.testimonials_component')
+     @include('frontend.testimonials_component', ['testimonials' => $testimonials])
 
 
 

@@ -217,7 +217,7 @@
     @include('frontend.why_choose_bkonline')
 
     <!-- Testimonials -->
-    @include('frontend.testimonials_component')
+    @include('frontend.testimonials_component', ['testimonials' => $testimonials])
 
     <!-- FAQs -->
     <section class="container-fluid py-5 px-4 bg-white" style="border-bottom: 3px solid #ebc266; border-right: 3px solid #ebc266">
