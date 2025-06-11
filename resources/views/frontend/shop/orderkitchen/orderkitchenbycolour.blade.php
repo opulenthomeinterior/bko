@@ -232,9 +232,10 @@
                                         @php 
                                             $parentSubCategories = \App\Models\Product::where('parent_category_id', $baseCabinetData->parent_category_id)->where('style_id', $baseCabinetData->style_id)->where('colour_id', $baseCabinetData->colour_id)->where('assembly_id', $baseCabinetData->assembly_id)->groupBy('parent_sub_category')->get();
                                         @endphp
-                                        <div class="d-flex">
+                                        <div class="d-flex gap-3">
                                         @foreach ($parentSubCategories as $parentSubCategory)
                                             @if ($parentSubCategory->parent_sub_category == 'A')
+                                               <div class="d-flex flex-column">
                                              <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'B'])}}" >
                                                 
                                                 <img src="{{ asset('images/highline.jpeg') }}" class="rounded" alt="" width="100">
@@ -242,6 +243,7 @@
                                             <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'A'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded">
                                                 Highline
                                             </a>
+                                            </div>
                                             @elseif ($parentSubCategory->parent_sub_category == 'B')
                                             
                                             <div class="d-flex flex-column">
@@ -255,6 +257,7 @@
                                              </a>
                                             </div>
                                             @elseif ($parentSubCategory->parent_sub_category == 'C')
+                                               <div class="d-flex flex-column">
                                               <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'B'])}}" >
                                                 
                                                 <img src="{{ asset('images/corner.jpeg') }}" class="rounded" alt="" width="100">
@@ -262,6 +265,7 @@
                                             <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'C'])}}" class="text-dark btn btn-sm btn-outline-warning p-2 rounded ms-2">
                                                 Corner
                                             </a>
+                                            </div>
                                             @endif
                                         @endforeach
                                         </div>
