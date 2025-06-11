@@ -287,8 +287,12 @@ function initializeQuantitiesFromLocalStorage() {
       // console.log($quantityInput);
       if ($quantityInput.length > 0) {
          $quantityInput.val(product.quantity);
+
       }
    });
+
+
+
 }
 
 $(document).ready(function () {
@@ -405,9 +409,12 @@ function incQty(id) {
    console.log('increase quantity');
    console.log('---------------------------');
    console.log(id);
+
    const input = document.getElementById('quantity' + id);
    let currentValue = parseInt(input.value) || 0;
    input.value = currentValue + 1;
+   totalQuantity++;
+
 }
 
 
@@ -552,10 +559,12 @@ function addToCart(id, productCode, full_title, price, discount_price, discount_
    console.log(`image: ${image}, product code: ${productCode}, full_title: ${full_title}, price: ${price}, discount_price: ${discount_price}, discountP:${discount_percentage}, p_category: ${p_category}, value: ${value}`);
    let products = localStorage.getItem('bko_cart');
    console.log("stored in local storage: " + products);
+
    if (!products) {
       products = [];
    } else {
-      products = JSON.parse(products)
+      products = JSON.parse(products);
+
    }
 
    const foundProductIndex = products.findIndex(product => product.productCode == productCode);
@@ -573,6 +582,10 @@ function addToCart(id, productCode, full_title, price, discount_price, discount_
    orderKitchenCartItemsList();
    calculateProductsQuantity();
    cart_total_amount();
+
+   // $('#calculateProductsQuantity').html(totalQty);
+   // $('#calculateProductsQuantity2').html(totalQty);
+   // $('#calculateProductsQuantityBottom').html(totalQty);
 }
 
 function removeFromCart(id, productCode) {
@@ -1107,6 +1120,7 @@ function replaceProduct(id, productCode, full_title, price, discount_price, disc
 
    $('#myModal').modal('hide');
 }
+// let totalQuantity = 0;
 
 function calculateProductsQuantity() {
    let products = localStorage.getItem('bko_cart');
@@ -1116,12 +1130,19 @@ function calculateProductsQuantity() {
 
    products = JSON.parse(products);
 
-   let totalQuantity = 0;
-   totalQuantity = products.length; // Add this line to calculate the total quantity of products
 
-   $('#calculateProductsQuantity').html(totalQuantity);
-   $('#calculateProductsQuantity2').html(totalQuantity);
-   $('#calculateProductsQuantityBottom').html(totalQuantity);
+   // totalQuantity = products.length; // Add this line to calculate the total quantity of products
+
+
+   let totalQty;
+   totalQty = products.reduce((total, product) => {
+      return total + product.quantity;
+   }, 0);
+   console.log("total Qty: " + totalQty);
+
+   $('#calculateProductsQuantity').html(totalQty);
+   $('#calculateProductsQuantity2').html(totalQty);
+   $('#calculateProductsQuantityBottom').html(totalQty);
 }
 
 function getProductsFromLocalStorage() {
