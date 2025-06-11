@@ -191,6 +191,7 @@ $(document).ready(function () {
                     <div class="product-details">
                             <a href="/shop/by-product/${product.slug}/${product.serial_number}">
                                 <h2 class="product-title">${product.full_title}</h2>
+                                <div class="rounded bg-danger text-white text-center">${product.related_products_count > 0 ? product.related_products_count : '1'} available colour/s</div>
                             </a>
                     <div class="product-price">£${product.price}</div>
                     <div class="quantity-selector">
@@ -384,43 +385,7 @@ $(document).ready(function () {
                 // Handle error response
                 console.error("AJAX error:", error);
             }
-        });
-
-
-        // if (selectedHeights.length > 0) {
-        //     $.ajax({
-        //         url: orderComponent_filter,
-        //         method: "POST",
-        //         headers: {
-        //             'X-CSRF-TOKEN': csrfToken
-        //         },
-        //         data: {
-        //             height_ids: selectedHeights,
-        //             slug: slug
-        //         },
-        //         success:function(response) {
-        //             if (response.status == true) {
-        //                 var _html = '';
-        //                 response.heights.forEach((hght, index) => {
-        //                     _html += `
-        //                         <div class="col-12">
-        //                             <div class="form-check form-check-inline">
-        //                                 <input data-heights-id="${hght.id}" id="height-filter" class="form-check-input" type="checkbox"
-        //                                     name="heights[]" id="height${index}"
-        //                                     value="${hght.height}">
-        //                                 <label class="form-check-label"
-        //                                     for="height${index}">
-        //                                     ${hght.height} (${hght.count})
-        //                                 </label>
-        //                             </div>
-        //                         </div>
-        //                     `;
-        //                 });
-        //                 $('#heights-filter').html(_html);
-        //             }
-        //         }
-        //     });
-        // }     
+        });    
     }
 
     // Bind change event to all input checkboxes
