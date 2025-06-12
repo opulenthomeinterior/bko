@@ -113,6 +113,9 @@ $(document).ready(function () {
         return productModal;
     }
 
+    function strLimit(text, limit = 20) {
+        return text.length > limit ? text.substring(0, limit) + '...' : text;
+    }
 
     function createProductCard(product, index) {
         // var productCard = `
@@ -190,7 +193,7 @@ $(document).ready(function () {
                         </a>
                     <div class="product-details">
                             <a href="/shop/by-product/${product.slug}/${product.serial_number}">
-                                <h2 class="product-title">${product.full_title}</h2>
+                                <h2 class="product-title">${strLimit(product.full_title)}</h2>
                                 <div class="rounded bg-danger text-white text-center">${product.related_products_count > 0 ? product.related_products_count : '1'} available colour/s</div>
                             </a>
                     <div class="product-price">£${product.price}</div>
@@ -336,7 +339,6 @@ $(document).ready(function () {
 
         // Get the CSRF token from the meta tag
         var csrfToken = $('meta[name="csrf-token"]').attr('content');
-        
         // Add the CSRF token to the AJAX request data
         $.ajax({
             url: order_component_filter,

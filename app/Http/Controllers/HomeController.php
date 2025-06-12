@@ -624,7 +624,28 @@ class HomeController extends Controller
         $products = $productsQuery->where('parent_category_id', $parent_category->id)
             ->with('ParentCategory', 'category', 'colour', 'style', 'assembly')
             ->offset($offset)->limit($limit)->get();
+            
+        $products->map(function ($product) {
+            $findProduct = Product::where('style_id', $product->style_id)
+                            ->where('assembly_id', $product->assembly_id)
+                            ->where('colour_id', $product->colour_id)
+                            ->where('id', $product->id)->where('status', 'active')
+                            ->first();
 
+            $categoryShortTitle = $findProduct?->short_title;
+            $parentSubCategory = $findProduct?->parent_sub_category;
+
+            $relatedCategoryProducts = Product::with('colour')->where('id', '!=', $product->id)
+                ->where('status', 'active')
+                ->whereIn('parent_category_id', [6, 15])
+                ->where(function ($q) use ($parentSubCategory, $categoryShortTitle) {
+                    $q = $q->where('parent_sub_category', $parentSubCategory)
+                    ->where('short_title', $categoryShortTitle);
+                })
+                ->count();
+            $product->related_products_count = $relatedCategoryProducts;
+        });
+        // $products = $this->categorizedProducts($products);
         // dd($products);
 
         $children = Category::where('parent_category_id', $parent_category->id)->pluck('id')->toArray();
@@ -648,7 +669,6 @@ class HomeController extends Controller
             'count' => $count
         ]);
     }
-
 
     public function orderbyproduct(Request $request, $slug, $serialNumber = null)
     {
@@ -1045,20 +1065,17 @@ class HomeController extends Controller
                 $colours = $colours->whereIn('id', Product::whereIn('style_id', $request->style_ids)->where('status', 'active')->pluck('colour_id')->unique());
                 $heights = $heights->whereIn('style_id', $request->style_ids);
                 $widths = $widths->whereIn('style_id', $request->style_ids);
-            } else if (empty($request->style_ids)) {
+            } else {
                 $colours = $colours->whereIn('id', Product::whereIn('category_id', $children)->where('status', 'active')->pluck('colour_id')->unique());
             }
             if (!empty($request->colour_ids)) {
                 if(!empty($request->colour_style_ids)) {
                     $heights = $heights->whereIn('style_id', $request->colour_style_ids);
-                }
-                $heights = $heights->whereIn('colour_id', $request->colour_ids);
-
-                if (!empty($request->colour_style_ids)) {
                     $widths = $widths->whereIn('style_id', $request->colour_style_ids);
                 }
+                $heights = $heights->whereIn('colour_id', $request->colour_ids);
                 $widths = $widths->whereIn('colour_id', $request->colour_ids);
-            } else if (empty($request->colour_ids) && !empty($request->colour_style_ids)) {
+            } else if (!empty($request->colour_style_ids)) {
                 $heights = $heights->whereIn('style_id', $request->colour_style_ids);
                 $widths = $widths->whereIn('style_id', $request->colour_style_ids);
             }
@@ -1070,12 +1087,17 @@ class HomeController extends Controller
                     $widths = $widths->whereIn('colour_id', $request->height_colour_ids);
                 }
                 $widths = $widths->whereIn('height', $request->height_ids);
-            } else if (empty($request->height_ids)) {
-                $heights = $heights->whereIn('style_id', $request->height_style_ids);
+            } else {
+                if (!empty($request->height_style_ids)) {
+                    $heights = $heights->whereIn('style_id', $request->height_style_ids);
+                }
+                if (!empty($request->height_colour_ids)) {
+                    $heights = $heights->whereIn('colour_id', $request->height_colour_ids);
+                }
             }
             if (!empty($request->type_ids)) {
                 $colours = $colours->whereIn('id', Product::whereIn('category_id', $request->type_ids)->where('status', 'active')->pluck('colour_id')->unique());
-            } else if (empty($request->type_ids)) {
+            } else {
                 $colours = $colours->whereIn('id', Product::whereIn('category_id', $children)->where('status', 'active')->pluck('colour_id')->unique());
             }
             $heights = $heights->select('height', DB::raw('COUNT(*) as count'))->groupBy('height');
