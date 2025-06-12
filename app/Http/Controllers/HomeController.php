@@ -682,9 +682,11 @@ class HomeController extends Controller
             ->get();
 
         $relatedProducts = Product::where('style_id', $product->style_id)
-            ->where('assembly_id', $product->assembly_id)
-            ->where('colour_id', $product->colour_id)
-            ->where('id', '!=', $product->id)->where('status', 'active')
+            // ->where('assembly_id', $product->assembly_id)
+            // ->where('colour_id', $product->colour_id)
+            // ->where('id', '!=', $product->id)
+            ->where('category_id', $product->category_id)
+            ->where('status', 'active')
             ->get();
         
         $findProduct = Product::where('style_id', $product->style_id)
