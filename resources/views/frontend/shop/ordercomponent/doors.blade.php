@@ -930,20 +930,20 @@ td
                                     <h2 class="product-title">{{ \Str::limit($product->full_title, 20) }}</h2>
                                     <div class="rounded bg-danger text-white text-center">{{$product->related_products_count > 0 ? $product->related_products_count : '1'}} available colour/s</div>
                                  </a>
-                            <div class="product-price">£{{$product->price}}</div>
-                            <div class="quantity-selector">
-                                <button class="quantity-btn" id="dec-btn{{ $product->id }}" onclick="decQty({{ $product->id }})">−</button>
-                                <input name="quantity" type="text" class="quantity" value="0"  id="quantity{{ $product->id }}"
-                                onkeyup=""
-                                >
-                                
-                                <button class="quantity-btn" onclick="incQty({{ $product->id }})">+</button>
-                                {{-- <button class="quantity-btn" onclick="increaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}')">+</button> --}}
-                            </div>
-                            <button class="add-to-cart"
-                            onclick="inputQty(document.querySelector('#quantity{{ $product->id }}').value, '{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}'
-                                                    )"
-                            >Add to Cart</button>
+                                <div class="product-price">£{{$product->price}}</div>
+                                <div class="quantity-selector">
+                                    <button class="quantity-btn" id="dec-btn{{ $product->id }}" onclick="decQty({{ $product->id }})">−</button>
+                                    <input name="quantity" type="text" class="quantity" value="0"  id="quantity{{ $product->id }}"
+                                    onkeyup=""
+                                    >
+                                    
+                                    <button class="quantity-btn" onclick="incQty({{ $product->id }})">+</button>
+                                    {{-- <button class="quantity-btn" onclick="increaseQuantity('{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}')">+</button> --}}
+                                </div>
+                                <button class="add-to-cart"
+                                onclick="inputQty(document.querySelector('#quantity{{ $product->id }}').value, '{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}'
+                                                        )"
+                                >Add to Cart</button>
                             </div>
                         </div>
                       
