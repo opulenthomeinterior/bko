@@ -1053,60 +1053,56 @@ td
 
             <div class="row justify-content-center">
                 <div class="col-lg-3">
-            <div id="custom-pagination-container">
-                {{-- {{ $products->links() }} --}}
-                {{-- <nav aria-label="...">
-                    <ul class="pagination">
-                        @for ($i = 1; $i <= $pages; $i++)
-                            <li class="page-item {{ $currentPage == $i ? 'active' : '' }}">
-                <a class="page-link" href="javascript:void(0)"
-                    data-page="{{ $i }}">{{ $i }}</a>
-                </li>
-                @endfor
-                </ul>
-                </nav> --}}
-                <nav aria-label="...">
-                    <ul class="pagination">
-                        <!-- Back arrow -->
-                        @if ($currentPage > 1)
-                        <li class="page-item">
-                            <a class="page-link" href="javascript:void(0)" data-page="{{ $currentPage - 1 }}">Back</a>
+                    <div id="custom-pagination-container">
+                        {{-- {{ $products->links() }} --}}
+                        {{-- <nav aria-label="...">
+                            <ul class="pagination">
+                                @for ($i = 1; $i <= $pages; $i++)
+                                    <li class="page-item {{ $currentPage == $i ? 'active' : '' }}">
+                        <a class="page-link" href="javascript:void(0)"
+                            data-page="{{ $i }}">{{ $i }}</a>
                         </li>
-                        @endif
-
-                        <!-- Page numbers -->
-                        @php
-                        $start = max(1, $currentPage - 4);
-                        $end = min($pages, $currentPage + 4);
-                        if ($end - $start < 4) {
-                            $start=max(1, $end - 4);
-                            $end=min($pages, $start + 4);
-                            }
-                            @endphp
-
-                            @for ($i=$start; $i <=$end; $i++)
-                            <li class="page-item {{ $currentPage == $i ? 'active' : '' }}">
-                            <a class="page-link" href="javascript:void(0)" data-page="{{ $i }}">{{ $i }}</a>
-                            </li>
-                            @endfor
-
-                            <!-- Next arrow -->
-                            @if ($currentPage < $pages)
+                        @endfor
+                        </ul>
+                        </nav> --}}
+                        <nav aria-label="...">
+                            <ul class="pagination">
+                                <!-- Back arrow -->
+                                @if ($currentPage > 1)
                                 <li class="page-item">
-                                <a class="page-link" href="javascript:void(0)" data-page="{{ $currentPage + 1 }}">Next</a>
+                                    <a class="page-link" href="javascript:void(0)" data-page="{{ $currentPage - 1 }}">Back</a>
                                 </li>
                                 @endif
-                    </ul>
-                </nav>
 
+                                <!-- Page numbers -->
+                                @php
+                                $start = max(1, $currentPage - 4);
+                                $end = min($pages, $currentPage + 4);
+                                if ($end - $start < 4) {
+                                    $start=max(1, $end - 4);
+                                    $end=min($pages, $start + 4);
+                                    }
+                                    @endphp
+
+                                    @for ($i=$start; $i <=$end; $i++)
+                                    <li class="page-item {{ $currentPage == $i ? 'active' : '' }}">
+                                    <a class="page-link" href="javascript:void(0)" data-page="{{ $i }}">{{ $i }}</a>
+                                    </li>
+                                    @endfor
+
+                                    <!-- Next arrow -->
+                                    @if ($currentPage < $pages)
+                                        <li class="page-item">
+                                        <a class="page-link" href="javascript:void(0)" data-page="{{ $currentPage + 1 }}">Next</a>
+                                        </li>
+                                        @endif
+                            </ul>
+                        </nav>
+
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-        </div>
-
-        
-
-
 
         <div class="row">
 
@@ -1158,95 +1154,95 @@ td
 
 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          {{-- <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1> --}}
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <div class=" col-12">
-                @include('frontend.inquiry_form')
-                {{-- <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning p-4">
-                    @csrf
-                    <div>
-                        <div class="d-block">
-                            <div class="text-center text-dark fw-bold">FOR FREE SURVEY AND QUOTE <span class="text-warning"> CALL US NOW!</span></div>
-                             <div class="my-2 d-flex justify-content-center">
-                                <a href="tel:02080505605" class="btn btn-warning text-decoration-underline text-center text-dark fs-4 fw-bold">
-                                <i class="bi pt-2 me-2 bi-phone text-dark"></i> 
-                                    020 805 05605
-                                </a>
-                            </div> 
-                            
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            {{-- <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1> --}}
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class=" col-12">
+                    @include('frontend.inquiry_form')
+                    {{-- <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning p-4">
+                        @csrf
+                        <div>
+                            <div class="d-block">
+                                <div class="text-center text-dark fw-bold">FOR FREE SURVEY AND QUOTE <span class="text-warning"> CALL US NOW!</span></div>
+                                <div class="my-2 d-flex justify-content-center">
+                                    <a href="tel:02080505605" class="btn btn-warning text-decoration-underline text-center text-dark fs-4 fw-bold">
+                                    <i class="bi pt-2 me-2 bi-phone text-dark"></i> 
+                                        020 805 05605
+                                    </a>
+                                </div> 
+                                
+                            </div>
                         </div>
+                        <h6 class="text-dark text-center fw-bold">OR</h6>
+                        <hr class="border border-dark">
+
+                        
+                        <h4 id="blinking-text" class="bg-warning  fw-bold text-center py-2 rounded-pill">
+                            Book a free consultation now!
+                        </h4>
+                        <hr class="border border-dark">
+                        <div class="mb-3">
+                            <input type="text" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="name" id="name" placeholder="Enter your name">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="email" id="email" placeholder="Enter your email">
+                        </div>
+                        <div class="mb-3">
+                            <input type="number" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="phone" id="phone" placeholder="Enter your phone number">
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="text-white py-2 px-3  text-end fw-bold" style="background-color:#2a6161;" >Call US AT</label>
+                            <input type="datetime-local" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="call_time">
+                        </div>
+                        <div class="mb-3">
+                            <textarea name="message" id="message" name="message" rows="3" class="w-100 rounded-0 border border-dark form-control text-dark" placeholder="Enter your message"></textarea>
+                        </div>
+                        <button type="submit" class=" btn py-2 px-4 rounded-0 fw-bolder text-uppercase text-white" style="background-color:#2a6161;">Submit</button>
+                    </form> --}}
+                </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="newsletterModalDoor" tabindex="-1" aria-labelledby="newsletterModalDoorLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+            <div class="modal-content">
+                <div class="newsletter-container">
+                    <button type="button" class="close-btn subscribed-close" data-bs-dismiss="modal" aria-label="Close">
+                        &times;
+                    </button>
+                    
+                    <div class="popup-image">
+                        <img src="{{asset('images/main-popup-image.png')}}" class="img-fluid w-100" alt="">
                     </div>
-                    <h6 class="text-dark text-center fw-bold">OR</h6>
-                    <hr class="border border-dark">
+                    <div class="newsletter-content">
+                        <h2 class="content-title mt-5 text-black" style="font-size: 40px;">Subscribe To Get <span class="free-text">FREE On-Site Survey</span></h2>
+                            
+                        <p class="offer-text"><span class="discount-text">For your Peace of Mind, </span> expert installation is also provided<br> <span class="" style="color: green;">(Qoute Available)</span></p>
+                            
+                        <p class="terms-text">Terms & Conditions Applied.</p>
+                        <div class="subscribe-container">
+                            <input type="email" id="emailInput" class="form-control news-letter-input" placeholder="Enter Your Email">
+                            <button class="subscribe-btn" id="subscribeBtnDoor" onclick="newsletterModalDoorFn()">Subscribe</button>
+                        </div>
+                        <p class="privacy-text">We respect your Privacy. Unsubscribe at any time.</p>
+                    </div>
 
                     
-                    <h4 id="blinking-text" class="bg-warning  fw-bold text-center py-2 rounded-pill">
-                        Book a free consultation now!
-                    </h4>
-                    <hr class="border border-dark">
-                    <div class="mb-3">
-                        <input type="text" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="name" id="name" placeholder="Enter your name">
-                    </div>
-                    <div class="mb-3">
-                        <input type="email" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="email" id="email" placeholder="Enter your email">
-                    </div>
-                    <div class="mb-3">
-                        <input type="number" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="phone" id="phone" placeholder="Enter your phone number">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="text-white py-2 px-3  text-end fw-bold" style="background-color:#2a6161;" >Call US AT</label>
-                        <input type="datetime-local" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="call_time">
-                    </div>
-                    <div class="mb-3">
-                        <textarea name="message" id="message" name="message" rows="3" class="w-100 rounded-0 border border-dark form-control text-dark" placeholder="Enter your message"></textarea>
-                    </div>
-                    <button type="submit" class=" btn py-2 px-4 rounded-0 fw-bolder text-uppercase text-white" style="background-color:#2a6161;">Submit</button>
-                </form> --}}
-            </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-          {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-        <div class="modal fade" id="newsletterModalDoor" tabindex="-1" aria-labelledby="newsletterModalDoorLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-md">
-        <div class="modal-content">
-            <div class="newsletter-container">
-                <button type="button" class="close-btn subscribed-close" data-bs-dismiss="modal" aria-label="Close">
-                    &times;
-                </button>
-                 
-                <div class="popup-image">
-                    <img src="{{asset('images/main-popup-image.png')}}" class="img-fluid w-100" alt="">
                 </div>
-                <div class="newsletter-content">
-                    <h2 class="content-title mt-5 text-black" style="font-size: 40px;">Subscribe To Get <span class="free-text">FREE On-Site Survey</span></h2>
-                        
-                    <p class="offer-text"><span class="discount-text">For your Peace of Mind, </span> expert installation is also provided<br> <span class="" style="color: green;">(Qoute Available)</span></p>
-                        
-                    <p class="terms-text">Terms & Conditions Applied.</p>
-                    <div class="subscribe-container">
-                        <input type="email" id="emailInput" class="form-control news-letter-input" placeholder="Enter Your Email">
-                        <button class="subscribe-btn" id="subscribeBtnDoor" onclick="newsletterModalDoorFn()">Subscribe</button>
-                    </div>
-                    <p class="privacy-text">We respect your Privacy. Unsubscribe at any time.</p>
-                </div>
-
-                
             </div>
         </div>
     </div>
-</div>
 
 
 
