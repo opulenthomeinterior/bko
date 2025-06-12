@@ -1000,7 +1000,7 @@
                         <a href="{{ route('orderbyproduct', [$relatedProduct->slug, $relatedProduct->serial_number]) }}">
                             <div class="card">
                             <div class="card-img">
-                                <img src="{{ asset('imgs/products/' . $relatedProduct->first_image_path) }}" class="card-img-top" alt="">
+                                <img src="{{ asset('imgs/products/' . $relatedProduct->image_path) }}" class="card-img-top" alt="">
                            
                             </div>
                             <div class="card-content">
