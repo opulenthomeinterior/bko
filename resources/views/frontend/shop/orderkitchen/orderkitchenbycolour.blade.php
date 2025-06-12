@@ -240,7 +240,7 @@
                                                 
                                                 <img src="{{ asset('images/highline.jpeg') }}" class="rounded" alt="" width="100">
                                                </a>
-                                            <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'A'])}}" class="text-dark ms-3 mt-1">
+                                            <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'A'])}}" class="text-dark text-center mt-1">
                                                 Highline
                                             </a>
                                             </div>
@@ -251,7 +251,7 @@
                                                 
                                                 <img src="{{ asset('images/drawerline.jpeg') }}" class="rounded" alt="" width="100">
                                                </a>
-                                                <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'B'])}}" class="text-dark ms-3 mt-1">
+                                                <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'B'])}}" class="text-dark text-center mt-1">
                                                 
                                                     Drawerline
                                              </a>
@@ -262,7 +262,7 @@
                                                 
                                                 <img src="{{ asset('images/corner.jpeg') }}" class="rounded" alt="" width="100">
                                                </a>
-                                            <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'C'])}}" class="text-dark ms-3 mt-1">
+                                            <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'C'])}}" class="text-dark text-center mt-1">
                                                 Corner
                                             </a>
                                             </div>
