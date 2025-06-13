@@ -235,14 +235,14 @@
                                         <div class="d-flex gap-3">
                                         @foreach ($parentSubCategories as $parentSubCategory)
                                             @if ($parentSubCategory->parent_sub_category == 'A')
-                                               <div class="d-flex flex-column">
-                                             <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'B'])}}" >
-                                                
-                                                <img src="{{ asset('images/highline.jpeg') }}" class="rounded" alt="" width="100">
-                                               </a>
-                                            <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'A'])}}" class="text-dark text-center mt-1">
-                                                Highline
-                                            </a>
+                                            <div class="d-flex flex-column">
+                                                <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'A'])}}" >
+                                                    
+                                                    <img src="{{ asset('images/highline.jpeg') }}" class="rounded" alt="" width="100">
+                                                </a>
+                                                <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'A'])}}" class="text-dark text-center mt-1">
+                                                    Highline
+                                                </a>
                                             </div>
                                             @elseif ($parentSubCategory->parent_sub_category == 'B')
                                             
@@ -258,7 +258,7 @@
                                             </div>
                                             @elseif ($parentSubCategory->parent_sub_category == 'C')
                                                <div class="d-flex flex-column">
-                                              <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'B'])}}" >
+                                              <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'C'])}}" >
                                                 
                                                 <img src="{{ asset('images/corner.jpeg') }}" class="rounded" alt="" width="100">
                                                </a>
