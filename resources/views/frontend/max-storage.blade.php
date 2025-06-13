@@ -1862,7 +1862,7 @@
                     
                     <!-- Card 2 -->
                     <div class="swiper-slide">
-                        <a href="https://bkonline.uk/shop/by-product/swing-out-larder--unit,-for-cabinet-width-500-600-mm,-with-planero-lava-grey-storage-baskets,-vauth-sagel-vs-tal-gate-n/14447" class="text-dark text-decoration-none">
+                        <a href="https://bkonline.uk/shop/by-product/swing-out-larder--unit,-for-cabinet-width-500-600-mm,-with-planero-lava-grey-storage-baskets,-vauth-sagel-vs-tal-gate/14447" class="text-dark text-decoration-none">
 
                         <div class="card">
                             <div class="card-img">
