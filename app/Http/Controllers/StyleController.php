@@ -103,6 +103,7 @@ class StyleController extends Controller
                         // Create new testimonial
                         $new_testimonial = new Testimonial();
                         $new_testimonial->style_id = $style->id;
+                        $new_testimonial->page_type = 'styles';
                         $new_testimonial->date = $testimonialDates[$key];
                         $new_testimonial->user_name = $testimonialUserNames[$key];
                         $new_testimonial->testimonial = $testimonial;

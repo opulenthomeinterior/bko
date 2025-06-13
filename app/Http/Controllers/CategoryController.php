@@ -166,6 +166,7 @@ class CategoryController extends Controller
                         // Create new testimonial
                         $new_testimonial = new Testimonial();
                         $new_testimonial->category_id = $category->id;
+                        $new_testimonial->page_type = 'categories';
                         $new_testimonial->date = $testimonialDates[$key];
                         $new_testimonial->user_name = $testimonialUserNames[$key];
                         $new_testimonial->testimonial = $testimonial;

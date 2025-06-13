@@ -140,7 +140,7 @@
     </section> --}}
 
     <!-- Testimonials -->
-    @include('frontend.testimonials_component', ['testimonials' => $testimonials])
+    @include('frontend.testimonials_component', ['testimonials' => $testimonials, 'header_name' => $styleData['data']->name])
 
     <!-- FAQs -->
     <section class="container-fluid py-5 px-4 bg-white" style="border-bottom: 3px solid #ebc266; border-right: 3px solid #ebc266">
