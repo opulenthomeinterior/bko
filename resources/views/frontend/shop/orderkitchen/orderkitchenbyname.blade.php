@@ -238,9 +238,9 @@
                                                         {{$styleData['data']['name']}} {{$styleHasColour->colour?->trade_colour}}
                                                     </div>
                                                     @if ($styleHasColour->page_status == 1)
-                                                    <div>
+                                                    <!-- <div>
                                                         <a href="{{ route('orderkitchenbycolourname', [$styleData['data']['slug'], $styleHasColour->colour?->slug]) }}" class="btn btn-outline-warning rounded-0 text-dark p-2">Explore</a>
-                                                    </div>
+                                                    </div> -->
                                                     @endif
                                                 </div>
                                                 @if ($styleHasColour->page_status == 0)
