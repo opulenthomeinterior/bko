@@ -263,24 +263,24 @@
                                                         Corner
                                                     </a>
                                                 </div>
-                                            @elseif ($parentSubCategory->parent_sub_category == 'd-five')
+                                            @elseif ($parentSubCategory->parent_sub_category == 'd-one')
                                                <div class="d-flex flex-column">
-                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'five-drawers'])}}" >
+                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'one-drawer'])}}" >
                                                         
-                                                        <img src="https://bkonline.uk/public/imgs/products/5-drw-base-6001728327254_67042e560429b.jpg" class="rounded" alt="" width="100">
+                                                        <img src="{{ asset('images/corner.jpeg') }}" class="rounded" alt="" width="100">
                                                     </a>
-                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'five-drawers'])}}" class="text-dark text-center mt-1">
-                                                        Five Drawers
+                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'one-drawer'])}}" class="text-dark text-center mt-1">
+                                                        One Drawer
                                                     </a>
                                                 </div>
-                                            @elseif ($parentSubCategory->parent_sub_category == 'd-four')
+                                            @elseif ($parentSubCategory->parent_sub_category == 'd-two')
                                                <div class="d-flex flex-column">
-                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'four-drawers'])}}" >
+                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'two-drawers'])}}" >
                                                         
-                                                        <img src="https://bkonline.uk/public/imgs/products/4-drw-base-new1728327098_67042dbae9eba.jpg" class="rounded" alt="" width="100">
+                                                        <img src="https://bkonline.uk/public/imgs/products/600-2-pan-drw1720360807_668a9f6737c72.jpeg" class="rounded" alt="" width="100">
                                                     </a>
-                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'four-drawers'])}}" class="text-dark text-center mt-1">
-                                                        Four Drawers
+                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'two-drawers'])}}" class="text-dark text-center mt-1">
+                                                        Two Drawers
                                                     </a>
                                                 </div>
                                             @elseif ($parentSubCategory->parent_sub_category == 'd-three')
@@ -293,14 +293,24 @@
                                                         Three Drawers
                                                     </a>
                                                 </div>
-                                            @elseif ($parentSubCategory->parent_sub_category == 'd-two')
+                                            @elseif ($parentSubCategory->parent_sub_category == 'd-four')
                                                <div class="d-flex flex-column">
-                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'two-drawers'])}}" >
+                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'four-drawers'])}}" >
                                                         
-                                                        <img src="https://bkonline.uk/public/imgs/products/600-2-pan-drw1720360807_668a9f6737c72.jpeg" class="rounded" alt="" width="100">
+                                                        <img src="https://bkonline.uk/public/imgs/products/4-drw-base-new1728327098_67042dbae9eba.jpg" class="rounded" alt="" width="100">
                                                     </a>
-                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'two-drawers'])}}" class="text-dark text-center mt-1">
-                                                        Two Drawers
+                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'four-drawers'])}}" class="text-dark text-center mt-1">
+                                                        Four Drawers
+                                                    </a>
+                                                </div>
+                                            @elseif ($parentSubCategory->parent_sub_category == 'd-five')
+                                               <div class="d-flex flex-column">
+                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'five-drawers'])}}" >
+                                                        
+                                                        <img src="https://bkonline.uk/public/imgs/products/5-drw-base-6001728327254_67042e560429b.jpg" class="rounded" alt="" width="100">
+                                                    </a>
+                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'five-drawers'])}}" class="text-dark text-center mt-1">
+                                                        Five Drawers
                                                     </a>
                                                 </div>
                                             @endif
