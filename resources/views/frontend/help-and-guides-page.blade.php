@@ -1,6 +1,6 @@
 <x-guest-layout>
     <head>
-
+    <title>Help and Guides </title>
     <style>
           :root {
             --primary-color: #3498db;

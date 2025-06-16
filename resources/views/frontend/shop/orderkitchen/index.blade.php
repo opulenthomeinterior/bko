@@ -1,4 +1,7 @@
 <x-guest-layout>
+    <head>
+    <title>Order Kitchen </title>
+    </head>
     <style>
         .arrow-ul {
             display: flex;

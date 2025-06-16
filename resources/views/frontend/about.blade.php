@@ -1,5 +1,5 @@
     <x-guest-layout>
-
+    <title>About </title>
         <head>
             <link rel="stylesheet" href="{{ asset('css/home.css') }}">
             <style>

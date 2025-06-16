@@ -1,6 +1,7 @@
 <x-guest-layout>
 
 <head>
+    <title>How will my kitchen arrive </title>
     <style>
                /* .image-container {
             position: relative;
