@@ -97,40 +97,40 @@
             @if (isset($firstContent))
                 <h2 class="text-center mb-4">{{ $firstContent->section_main_heading }}</h2>
                 <div class="row mb-5">
-                    <div class="col-md-6 mb-4">
+                    <div class="col-md-12 mb-4">
                         {!! $firstContent->section_content !!}
                     </div>
-                        <div class="col-md-6">
-                            <h5>Dimensions of the Units</h5>
-                            <div class="table-responsive">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th class="text-center">Standard Unit Sizes Available</th>
-                                            <th class="text-center">Width</th>
-                                            <th class="text-center">Height</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Base Cabinets</td>
-                                            <td>150mm-1000mm</td>
-                                            <td>720mm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Wall Cabinets</td>
-                                            <td>300mm-1000mm</td>
-                                            <td>720mm, 900mm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tall Cabinets</td>
-                                            <td>300mm-600mm</td>
-                                            <td>1970mm, 2150mm</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                    <!-- <div class="col-md-6">
+                        <h5>Dimensions of the Units</h5>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Standard Unit Sizes Available</th>
+                                        <th class="text-center">Width</th>
+                                        <th class="text-center">Height</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Base Cabinets</td>
+                                        <td>150mm-1000mm</td>
+                                        <td>720mm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wall Cabinets</td>
+                                        <td>300mm-1000mm</td>
+                                        <td>720mm, 900mm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tall Cabinets</td>
+                                        <td>300mm-600mm</td>
+                                        <td>1970mm, 2150mm</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
+                    </div> -->
                 </div>
             @endif
             <div class="row mb-5">
