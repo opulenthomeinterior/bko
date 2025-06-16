@@ -716,6 +716,7 @@ class HomeController extends Controller
                 $q = $q->where('parent_sub_category', $parentSubCategory)
                 ->where('short_title', $categoryShortTitle);
             })
+            ->groupBy('categorized_product')
             ->get();
 
         return view('frontend.shop.orderkitchen.orderbyproduct', compact('product', 'colours', 'relatedProducts', 'relatedCategoryProducts'));
