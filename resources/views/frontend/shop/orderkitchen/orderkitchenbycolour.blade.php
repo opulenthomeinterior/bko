@@ -235,37 +235,84 @@
                                         <div class="d-flex gap-3">
                                         @foreach ($parentSubCategories as $parentSubCategory)
                                             @if ($parentSubCategory->parent_sub_category == 'A')
-                                            <div class="d-flex flex-column">
-                                                <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'A'])}}" >
-                                                    
-                                                    <img src="{{ asset('images/highline.jpeg') }}" class="rounded" alt="" width="100">
-                                                </a>
-                                                <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'A'])}}" class="text-dark text-center mt-1">
-                                                    Highline
-                                                </a>
-                                            </div>
+                                                <div class="d-flex flex-column">
+                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'A'])}}" >
+                                                        
+                                                        <img src="{{ asset('images/highline.jpeg') }}" class="rounded" alt="" width="100">
+                                                    </a>
+                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'A'])}}" class="text-dark text-center mt-1">
+                                                        Highline
+                                                    </a>
+                                                </div>
                                             @elseif ($parentSubCategory->parent_sub_category == 'B')
-                                            
-                                            <div class="d-flex flex-column">
-                                                <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'B'])}}" >
-                                                
-                                                <img src="{{ asset('images/drawerline.jpeg') }}" class="rounded" alt="" width="100">
-                                               </a>
-                                                <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'B'])}}" class="text-dark text-center mt-1">
-                                                
-                                                    Drawerline
-                                             </a>
-                                            </div>
+                                                <div class="d-flex flex-column">
+                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'B'])}}" >
+                                                        <img src="{{ asset('images/drawerline.jpeg') }}" class="rounded" alt="" width="100">
+                                                    </a>
+                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'B'])}}" class="text-dark text-center mt-1">
+                                                        Drawerline
+                                                    </a>
+                                                </div>
                                             @elseif ($parentSubCategory->parent_sub_category == 'C')
                                                <div class="d-flex flex-column">
-                                              <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'C'])}}" >
-                                                
-                                                <img src="{{ asset('images/corner.jpeg') }}" class="rounded" alt="" width="100">
-                                               </a>
-                                            <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'C'])}}" class="text-dark text-center mt-1">
-                                                Corner
-                                            </a>
-                                            </div>
+                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'C'])}}" >
+                                                        
+                                                        <img src="{{ asset('images/corner.jpeg') }}" class="rounded" alt="" width="100">
+                                                    </a>
+                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'C'])}}" class="text-dark text-center mt-1">
+                                                        Corner
+                                                    </a>
+                                                </div>
+                                            @elseif ($parentSubCategory->parent_sub_category == 'd-one')
+                                               <div class="d-flex flex-column">
+                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'one-drawer'])}}" >
+                                                        
+                                                        <img src="{{ asset('images/corner.jpeg') }}" class="rounded" alt="" width="100">
+                                                    </a>
+                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'one-drawer'])}}" class="text-dark text-center mt-1">
+                                                        One Drawer
+                                                    </a>
+                                                </div>
+                                            @elseif ($parentSubCategory->parent_sub_category == 'd-two')
+                                               <div class="d-flex flex-column">
+                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'two-drawers'])}}" >
+                                                        
+                                                        <img src="{{ asset('images/corner.jpeg') }}" class="rounded" alt="" width="100">
+                                                    </a>
+                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'two-drawers'])}}" class="text-dark text-center mt-1">
+                                                        Two Drawers
+                                                    </a>
+                                                </div>
+                                            @elseif ($parentSubCategory->parent_sub_category == 'd-three')
+                                               <div class="d-flex flex-column">
+                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'three-drawers'])}}" >
+                                                        
+                                                        <img src="{{ asset('images/corner.jpeg') }}" class="rounded" alt="" width="100">
+                                                    </a>
+                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'three-drawers'])}}" class="text-dark text-center mt-1">
+                                                        Three Drawers
+                                                    </a>
+                                                </div>
+                                            @elseif ($parentSubCategory->parent_sub_category == 'd-four')
+                                               <div class="d-flex flex-column">
+                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'four-drawers'])}}" >
+                                                        
+                                                        <img src="{{ asset('images/corner.jpeg') }}" class="rounded" alt="" width="100">
+                                                    </a>
+                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'four-drawers'])}}" class="text-dark text-center mt-1">
+                                                        Four Drawers
+                                                    </a>
+                                                </div>
+                                            @elseif ($parentSubCategory->parent_sub_category == 'd-five')
+                                               <div class="d-flex flex-column">
+                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'five-drawers'])}}" >
+                                                        
+                                                        <img src="{{ asset('images/corner.jpeg') }}" class="rounded" alt="" width="100">
+                                                    </a>
+                                                    <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'five-drawers'])}}" class="text-dark text-center mt-1">
+                                                        Five Drawers
+                                                    </a>
+                                                </div>
                                             @endif
                                         @endforeach
                                         </div>

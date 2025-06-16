@@ -155,6 +155,17 @@ class HomeController extends Controller
                 ->where('assembly_id', $assembly->id)
                 ->where('colour_id', $colour->id)->where('status', 'active');
             if (!empty($parentSubCategory)) {
+                if ($parentSubCategory == 'one-drawer') {
+                    $parentSubCategory = 'd-one';
+                } else if ($parentSubCategory == 'two-drawers') {
+                    $parentSubCategory = 'd-two';
+                } else if ($parentSubCategory == 'three-drawers') {
+                    $parentSubCategory = 'd-three';
+                } else if ($parentSubCategory == 'four-drawers') {
+                    $parentSubCategory = 'd-four';
+                } else if ($parentSubCategory == 'five-drawers') {
+                    $parentSubCategory = 'd-five';
+                }
                 $baseCabinets = $baseCabinets->where('parent_sub_category', $parentSubCategory);
             }
             $baseCabinets = $baseCabinets->get();
