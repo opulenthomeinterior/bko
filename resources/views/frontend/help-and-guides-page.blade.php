@@ -262,7 +262,7 @@
                 </h1>
                 <h3 class="text-uppercase py-2 color-yellow">FIND OUT EVERYTHING YOU NEED TO KNOW </h3>
                 <h4 class="text-dark pt-1">
-                    At Buy Kitchen Online we want to make ordering a trade kitchen as easy as possible. From offering a <span class="color-yellow">FREE</span>
+                    At Buy Kitchen Online we want to make ordering a kitchen as easy as possible. From offering a <span class="color-yellow">FREE</span>
                     Virtual Design Kitchen Service to providing ‘How To Videos’ we are constantly looking at ways to
                     support you.
                     </h5>
@@ -284,7 +284,7 @@
             <h1>HELP & GUIDES</h1>
             <p class="accent-text mb-2 mb-md-3">FIND OUT EVERYTHING YOU NEED TO KNOW!</p>
             <p class="header-description">
-                At Buy Kitchen Online we want to make ordering a trade kitchen as easy as possible. From offering a 
+                At Buy Kitchen Online we want to make ordering a kitchen as easy as possible. From offering a 
                 <span class="free-tag">FREE</span> Virtual Design Kitchen Service to providing 'How To Videos' we are constantly looking at ways to support you.
             </p>
         </div>
