@@ -544,7 +544,7 @@
                                 <img src="{{asset('imgs/styles/colours/' . $styleColour->image_path)}}" alt="{{$styleColour->image_path}}" class="slide-image">
                                 <div class="slide-overlay"></div>
                                 <div class="color-square" style="background-color: {{$styleColour->colour?->colour_code}};">
-                                    <p class="color-name" style="color: #333333;">{{$styleColour->colour?->name}}</p>
+                                    <p class="color-name p-1 rounded" style="color: #fff; background: rgba(172, 172, 172, 0.5)">{{$styleColour->colour?->name}}</p>
                                 </div>
                             </div>
                         @endforeach
@@ -607,9 +607,9 @@
                                                         {{$styleData['data']['name']}} {{$styleHasColour->colour?->trade_colour}}
                                                     </div>
                                                     @if ($styleHasColour->page_status == 1)
-                                                    <!-- <div>
+                                                    <div>
                                                         <a href="{{ route('orderkitchenbycolourname', [$styleData['data']['slug'], $styleHasColour->colour?->slug]) }}" class="btn btn-outline-warning rounded-0 text-dark p-2">Explore</a>
-                                                    </div> -->
+                                                    </div>
                                                     @endif
                                                 </div>
                                                 @if ($styleHasColour->page_status == 0)
