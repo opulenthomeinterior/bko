@@ -119,7 +119,7 @@
                             </div>
                             @endif
                             <a href="{{ route('orderkitchenbycolour', ['style' => $styleData['data']->slug , 'assembly' => $assemblyData['data']->slug, 'colour' => $colour->slug]) }}" class="colour-btn btn w-100 rounded-0 sidebar-btn text-start">
-                                {{ $colour->trade_colour }}
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $colour->trade_colour }}
                             </a>
                         </div>
                         @endforeach
