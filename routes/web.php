@@ -68,6 +68,7 @@ Route::prefix('admin')->middleware(['auth', 'verified', 'role:super-admin'])->gr
     Route::get('attachments/get-images-data', [AttachmentController::class, 'getImagesData'])->name('attachments.getData');
 
     Route::get('settings', [SettingController::class, 'index'])->name('settings');
+    Route::post('settings/update', [SettingController::class, 'update'])->name('settings.update');
 
     Route::prefix('users')->group(function () {
         // Users
@@ -108,7 +109,7 @@ Route::prefix('admin')->middleware(['auth', 'verified', 'role:super-admin'])->gr
         Route::get('create', [StyleController::class, 'create'])->name('style.create');
         Route::post('create', [StyleController::class, 'store'])->name('style.store');
         Route::get('edit/{style}', [StyleController::class, 'edit'])->name('style.edit');
-        Route::put('update/{style}', [StyleController::class, 'update'])->name('style.update');
+        Route::put('update/{style?}', [StyleController::class, 'update'])->name('style.update');
         Route::delete('destroy/{style}', [StyleController::class, 'destroy'])->name('style.destroy');
         Route::post('remove-image/{style}', [StyleController::class, 'remove_image'])->name('style.removeImage');
 
@@ -253,7 +254,7 @@ Route::prefix('/')->middleware([])->group(function () {
         $deliveryFaqs = Faq::where('type', 'delivery')->get();
         $categories = Category::where('status', 1)->get();
         $styles = Style::where('status', 1)->get();
-        $testimonials = Testimonial::whereNull('style_id')->get();
+        $testimonials = Testimonial::whereNull('style_id')->where('page_type', 'homepage')->get();
         return view('frontend.home', compact('generalFaqs', 'deliveryFaqs', 'categories', 'styles', 'testimonials'));
     })->name('home');
 

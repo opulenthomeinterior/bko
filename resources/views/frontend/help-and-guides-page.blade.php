@@ -298,7 +298,7 @@
                     <div class="card-body">
                         <h5 class="card-title">KITCHEN TERMINOLOGY</h5>
                         <p class="card-text">Having been making, packing and distributing kitchens, we have developed trusted methods to get what it is you need to where you need it.</p>
-                        <a href="#" class="btn read-more-btn">Read More</a>
+                        <a href="{{route('terminology')}}" class="btn read-more-btn">Read More</a>
                     </div>
                 </div>
             </div>
@@ -310,7 +310,7 @@
                     <div class="card-body">
                         <h5 class="card-title">HOW WILL MY KITCHEN ARRIVE</h5>
                         <p class="card-text">Having been making, packing and distributing kitchens, we have developed trusted methods to get what it is you need to where you need it.</p>
-                        <a href="#" class="btn read-more-btn">Read More</a>
+                        <a href="{{route('kitchenarrive')}}" class="btn read-more-btn">Read More</a>
                     </div>
                 </div>
             </div>
@@ -322,7 +322,7 @@
                     <div class="card-body">
                         <h5 class="card-title">FITTING GUIDES</h5>
                         <p class="card-text">Having been making, packing and distributing kitchens, we have developed trusted methods to get what it is you need to where you need it.</p>
-                        <a href="#" class="btn read-more-btn">Read More</a>
+                        <a href="{{route('fittingguide')}}" class="btn read-more-btn">Read More</a>
                     </div>
                 </div>
             </div>
@@ -334,7 +334,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Buy Kitchen Online FAQS</h5>
                         <p class="card-text">Having been making, packing and distributing kitchens, we have developed trusted methods to get what it is you need to where you need it.</p>
-                        <a href="#" class="btn read-more-btn">Read More</a>
+                        <a href="{{route('faq')}}" class="btn read-more-btn">Read More</a>
                     </div>
                 </div>
             </div>
@@ -346,7 +346,7 @@
                     <div class="card-body">
                         <h5 class="card-title">ABOUT US</h5>
                         <p class="card-text">Having been making, packing and distributing kitchens, we have developed trusted methods to get what it is you need to where you need it.</p>
-                        <a href="#" class="btn read-more-btn">Read More</a>
+                        <a href="{{route('about')}}" class="btn read-more-btn">Read More</a>
                     </div>
                 </div>
             </div>
@@ -358,7 +358,7 @@
                     <div class="card-body">
                         <h5 class="card-title">NEED HELP MEASURING</h5>
                         <p class="card-text">Having been making, packing and distributing kitchens, we have developed trusted methods to get what it is you need to where you need it.</p>
-                        <a href="#" class="btn read-more-btn">Read More</a>
+                        <a href="{{route('needhelp')}}" class="btn read-more-btn">Read More</a>
                     </div>
                 </div>
             </div>
