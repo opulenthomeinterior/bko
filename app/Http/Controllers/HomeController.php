@@ -715,10 +715,23 @@ class HomeController extends Controller
             ->where(function ($q) use ($parentSubCategory, $categoryShortTitle) {
                 $q = $q->where('parent_sub_category', $parentSubCategory)
                 ->where('short_title', $categoryShortTitle);
+            })->first();
+        $categorizedProductCat = '';
+        if (isset($relatedCategoryProducts)) {
+            $categorizedProductCat = $relatedCategoryProducts->categorized_product;
+        }
+
+        $relatedCategoryProducts = Product::with('colour')->where('id', '!=', $product->id)
+            ->where('status', 'active')
+            ->whereIn('parent_category_id', [6, 15])
+            ->where(function ($q) use ($parentSubCategory, $categoryShortTitle) {
+                $q = $q->where('parent_sub_category', $parentSubCategory)
+                ->where('short_title', $categoryShortTitle);
             })
+            ->where('categorized_product', $categorizedProductCat)
             ->get();
 
-        return view('frontend.shop.orderkitchen.orderbyproduct', compact('product', 'colours', 'relatedProducts', 'relatedCategoryProducts'));
+        return view('frontend.shop.orderkitchen.orderbyproduct', compact('product', 'colours', 'relatedProducts', 'relatedCategoryProducts', 'categorizedProductCat'));
     }
 
     public function faq()

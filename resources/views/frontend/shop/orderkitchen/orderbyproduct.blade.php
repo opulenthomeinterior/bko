@@ -290,7 +290,11 @@
                             @endif
                         </div>
                          <div class="container-fluid p-0">
+                            @if($categorizedProductCat == 'one')
+                            <p class="fs-6 fw-bold">Available Dimensions</p>
+                            @elseif($categorizedProductCat == 'two')
                             <p class="fs-6 fw-bold">Available Colours</p>
+                            @endif
                             @if (count($relatedCategoryProducts) > 0)
                             <div class="row mb-4">
                                 <div class="col-12">
