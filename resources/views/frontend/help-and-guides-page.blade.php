@@ -294,7 +294,7 @@
             <!-- Card 1 -->
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="card guide-card">
-                    <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" alt="Kitchen design" class="card-img-top">
+                    <img src="https://bkonline.uk/public/images/order-component.jpg" alt="Kitchen design" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">KITCHEN TERMINOLOGY</h5>
                         <p class="card-text">Confused by kitchen terms? Our simple guide explains key terms like plinths, cornices, and end panels to help you plan with confidence.
@@ -308,7 +308,7 @@
             <!-- Card 2 -->
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="card guide-card">
-                    <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" alt="Kitchen design" class="card-img-top">
+                    <img src="https://bkonline.uk/public/imgs/styles/04_05_2025_063206_681709e62cd48-shaker(1).png" alt="Kitchen design" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">HOW WILL MY KITCHEN ARRIVE</h5>
                         <p class="card-text">Discover how your kitchen will be delivered—whether flat-pack or rigid—with secure packaging and trusted couriers.</p>
@@ -320,7 +320,7 @@
             <!-- Card 3 -->
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="card guide-card">
-                    <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" alt="Kitchen design" class="card-img-top">
+                    <img src="https://bkonline.uk/public/imgs/styles/04_05_2025_063345_68170a490b56f-slabedge(2).png" alt="Kitchen design" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">FITTING GUIDES</h5>
                         <p class="card-text">Need help installing your kitchen? Explore our step-by-step video guides and downloadable resources for smooth fitting.</p>
@@ -332,7 +332,7 @@
             <!-- Card 4 -->
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="card guide-card">
-                    <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" alt="Kitchen design" class="card-img-top">
+                    <img src="https://bkonline.uk/public/imgs/styles/04_05_2025_063253_68170a1592a60-shaker22(1).png" alt="Kitchen design" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">Buy Kitchen Online FAQS</h5>
                         <p class="card-text">Got questions? Our FAQ section covers everything from payment options to returns, helping you shop for your dream kitchen with ease.</p>
@@ -344,7 +344,7 @@
             <!-- Card 5 -->
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="card guide-card">
-                    <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" alt="Kitchen design" class="card-img-top">
+                    <img src="https://bkonline.uk/public/imgs/styles/04_05_2025_063733_68170b2d90a9e-slabedgepainted(1).png" alt="Kitchen design" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">ABOUT US</h5>
                         <p class="card-text">Experience premium quality at wholesale prices—backed by expert consultations and fast, hassle-free service. Get to know us more.</p>
