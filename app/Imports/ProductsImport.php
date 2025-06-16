@@ -162,6 +162,7 @@ class ProductsImport implements ToCollection, WithChunkReading
                     $product->short_title = $sheetShortTitle;
                     $product->full_title = $sheetFullTitle;
                     $product->product_description = $sheetProductDesc;
+                    $product->categorized_product = $sheetChildCatDesc;
                     if (empty(trim($sheetPrice))) {
                         $product->price = 0;
                         // skip this row
@@ -229,6 +230,7 @@ class ProductsImport implements ToCollection, WithChunkReading
                     $product->short_title = $sheetShortTitle;
                     $product->full_title = $sheetFullTitle;
                     $product->product_description = $sheetProductDesc;
+                    $product->categorized_product = $sheetChildCatDesc;
                     if (empty(trim($sheetPrice))) {
                         $product->price = 0;
                         // skip this row
