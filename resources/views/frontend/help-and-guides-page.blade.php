@@ -297,7 +297,9 @@
                     <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" alt="Kitchen design" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">KITCHEN TERMINOLOGY</h5>
-                        <p class="card-text">Having been making, packing and distributing kitchens, we have developed trusted methods to get what it is you need to where you need it.</p>
+                        <p class="card-text">Confused by kitchen terms? Our simple guide explains key terms like plinths, cornices, and end panels to help you plan with confidence.
+
+</p>
                         <a href="{{route('terminology')}}" class="btn read-more-btn">Read More</a>
                     </div>
                 </div>
@@ -309,7 +311,7 @@
                     <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" alt="Kitchen design" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">HOW WILL MY KITCHEN ARRIVE</h5>
-                        <p class="card-text">Having been making, packing and distributing kitchens, we have developed trusted methods to get what it is you need to where you need it.</p>
+                        <p class="card-text">Discover how your kitchen will be delivered—whether flat-pack or rigid—with secure packaging and trusted couriers.</p>
                         <a href="{{route('kitchenarrive')}}" class="btn read-more-btn">Read More</a>
                     </div>
                 </div>
@@ -321,7 +323,7 @@
                     <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" alt="Kitchen design" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">FITTING GUIDES</h5>
-                        <p class="card-text">Having been making, packing and distributing kitchens, we have developed trusted methods to get what it is you need to where you need it.</p>
+                        <p class="card-text">Need help installing your kitchen? Explore our step-by-step video guides and downloadable resources for smooth fitting.</p>
                         <a href="{{route('fittingguide')}}" class="btn read-more-btn">Read More</a>
                     </div>
                 </div>
@@ -333,7 +335,7 @@
                     <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" alt="Kitchen design" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">Buy Kitchen Online FAQS</h5>
-                        <p class="card-text">Having been making, packing and distributing kitchens, we have developed trusted methods to get what it is you need to where you need it.</p>
+                        <p class="card-text">Got questions? Our FAQ section covers everything from payment options to returns, helping you shop for your dream kitchen with ease.</p>
                         <a href="{{route('faq')}}" class="btn read-more-btn">Read More</a>
                     </div>
                 </div>
@@ -345,7 +347,7 @@
                     <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" alt="Kitchen design" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">ABOUT US</h5>
-                        <p class="card-text">Having been making, packing and distributing kitchens, we have developed trusted methods to get what it is you need to where you need it.</p>
+                        <p class="card-text">Experience premium quality at wholesale prices—backed by expert consultations and fast, hassle-free service. Get to know us more.</p>
                         <a href="{{route('about')}}" class="btn read-more-btn">Read More</a>
                     </div>
                 </div>
@@ -357,7 +359,7 @@
                     <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" alt="Kitchen design" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">NEED HELP MEASURING</h5>
-                        <p class="card-text">Having been making, packing and distributing kitchens, we have developed trusted methods to get what it is you need to where you need it.</p>
+                        <p class="card-text">Struggling with measurements? We help you plan everything perfectly, and ensure a smooth installation. Get expert support for accurate sizing and layout.</p>
                         <a href="{{route('needhelp')}}" class="btn read-more-btn">Read More</a>
                     </div>
                 </div>
