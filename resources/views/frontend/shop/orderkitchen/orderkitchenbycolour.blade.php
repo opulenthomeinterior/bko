@@ -230,7 +230,7 @@
 
                                     <div class="col-lg-12 col-md-12 col-sm-12 order-sm-1 order-xs-1">
                                         @php 
-                                            $parentSubCategories = \App\Models\Product::where('parent_category_id', $baseCabinetData->parent_category_id)->where('style_id', $baseCabinetData->style_id)->where('colour_id', $baseCabinetData->colour_id)->where('assembly_id', $baseCabinetData->assembly_id)->groupBy('parent_sub_category')->orderBy('parent_sub_category', 'asc')->get();
+                                            $parentSubCategories = \App\Models\Product::where('parent_category_id', $baseCabinetData->parent_category_id)->where('style_id', $baseCabinetData->style_id)->where('colour_id', $baseCabinetData->colour_id)->where('assembly_id', $baseCabinetData->assembly_id)->groupBy('parent_sub_category')->orderBy('parent_sub_category', 'desc')->get();
                                         @endphp
                                         <div class="d-flex gap-3">
                                         @foreach ($parentSubCategories as $parentSubCategory)
