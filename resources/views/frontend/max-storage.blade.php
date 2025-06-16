@@ -1878,14 +1878,15 @@
                     
                     <!-- Card 3 -->
                     <div class="swiper-slide">
-                         <a href="https://bkonline.uk/shop/by-product/wicker-basket-set,-two-baskets-with-runners,-for-cabinet-widths-500-600-mm/14672" class="text-dark text-decoration-none"></a>
+                        <a href="https://bkonline.uk/shop/by-product/wicker-basket-set,-two-baskets-with-runners,-for-cabinet-widths-500-600-mm/14672" class="text-dark text-decoration-none">
+
                         <div class="card">
                             <div class="card-img">
                                 <img src="{{ asset('images/wicker-basket-set-with-runners.png') }}" class="card-img-top" alt="">
                             </div>
                             <div class="card-content">
                                 <h6 class="card-title">Wicker basket set  with runners</h6>
-                               
+                                
                             </div>
                         </div>
                         </a>
