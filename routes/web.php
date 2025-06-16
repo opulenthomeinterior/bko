@@ -271,6 +271,7 @@ Route::prefix('/')->middleware([])->group(function () {
     // Shop Prefix
     Route::prefix('/shop')->group(function () {
         Route::get('/', [HomeController::class, 'shop'])->name('shop');
+        Route::get('/kitchen-name-page', [HomeController::class, 'kitchenNamePage'])->name('kitchen_name_page');
 
         // Doors replacement
         Route::get('/doors-replacement', [HomeController::class, 'doorsReplacement'])->name('doors_replacement');

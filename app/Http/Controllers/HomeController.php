@@ -75,7 +75,7 @@ class HomeController extends Controller
     public function orderkitchenbyname(Request $request, $slug)
     {
         try {
-            $style = Style::with('testimonials')->where('slug', $slug)->where('status', 1)->firstOrFail();
+            $style = Style::with('testimonials', 'styleHasColours.colour')->where('slug', $slug)->where('status', 1)->firstOrFail();
 
             // Fetch all products with the given style_id and status
             $styleProducts = Product::where('style_id', $style->id)->where('status', 'active')->get();
@@ -1147,5 +1147,10 @@ class HomeController extends Controller
                 'sizes' => []
             ]);
         }
+    }
+
+    public function kitchenNamePage()
+    {
+        return view('frontend.shop.orderkitchen.kitchen-name-page');
     }
 }
