@@ -541,7 +541,7 @@
                         @if(!empty($styleData['data']->styleHasColours))
                         @foreach ($styleData['data']->styleHasColours as $styleColour)
                             <div class="slide active" data-color="{{$styleColour->colour?->colour_code}}">
-                                <img src="{{asset('imgs/styles/colours/' . $styleColour->image_path)}}" alt="Modern Kitchen Light Grey" class="slide-image">
+                                <img src="{{asset('imgs/styles/colours/' . $styleColour->image_path)}}" alt="{{$styleColour->image_path}}" class="slide-image">
                                 <div class="slide-overlay"></div>
                                 <div class="color-square" style="background-color: {{$styleColour->colour?->colour_code}};">
                                     <p class="color-name" style="color: #333333;">{{$styleColour->colour?->name}}</p>
