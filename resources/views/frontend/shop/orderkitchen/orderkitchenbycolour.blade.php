@@ -277,7 +277,7 @@
                                                <div class="d-flex flex-column">
                                                     <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'two-drawers'])}}" >
                                                         
-                                                        <img src="{{ asset('images/corner.jpeg') }}" class="rounded" alt="" width="100">
+                                                        <img src="https://bkonline.uk/public/imgs/products/600-2-pan-drw1720360807_668a9f6737c72.jpeg" class="rounded" alt="" width="100">
                                                     </a>
                                                     <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'two-drawers'])}}" class="text-dark text-center mt-1">
                                                         Two Drawers
@@ -287,7 +287,7 @@
                                                <div class="d-flex flex-column">
                                                     <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'three-drawers'])}}" >
                                                         
-                                                        <img src="{{ asset('images/corner.jpeg') }}" class="rounded" alt="" width="100">
+                                                        <img src="https://bkonline.uk/public/imgs/products/2-drw-base-with-1-pan-drw-600-wide-(1)1728330112_67043980f07ef.jpg" class="rounded" alt="" width="100">
                                                     </a>
                                                     <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'three-drawers'])}}" class="text-dark text-center mt-1">
                                                         Three Drawers
@@ -297,7 +297,7 @@
                                                <div class="d-flex flex-column">
                                                     <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'four-drawers'])}}" >
                                                         
-                                                        <img src="{{ asset('images/corner.jpeg') }}" class="rounded" alt="" width="100">
+                                                        <img src="https://bkonline.uk/public/imgs/products/4-drw-base-new1728327098_67042dbae9eba.jpg" class="rounded" alt="" width="100">
                                                     </a>
                                                     <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'four-drawers'])}}" class="text-dark text-center mt-1">
                                                         Four Drawers
