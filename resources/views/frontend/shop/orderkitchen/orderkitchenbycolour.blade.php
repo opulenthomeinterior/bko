@@ -307,7 +307,7 @@
                                                <div class="d-flex flex-column">
                                                     <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'five-drawers'])}}" >
                                                         
-                                                        <img src="{{ asset('images/corner.jpeg') }}" class="rounded" alt="" width="100">
+                                                        <img src="https://bkonline.uk/public/imgs/products/5-drw-base-6001728327254_67042e560429b.jpg" class="rounded" alt="" width="100">
                                                     </a>
                                                     <a href="{{route('orderkitchenbycolour', [$baseCabinetData->style?->slug, $baseCabinetData->assembly?->slug, $baseCabinetData->colour?->slug, 'five-drawers'])}}" class="text-dark text-center mt-1">
                                                         Five Drawers
