@@ -1020,8 +1020,9 @@ class HomeController extends Controller
             $style['colours'] = $colours;
             return $style;
         });
+        $testimonials = Testimonial::whereNull('style_id')->get();
 
-        return view('frontend.shop.orderkitchen.kitchen_cupboard_doors_replacement', compact('styles'));
+        return view('frontend.shop.orderkitchen.kitchen_cupboard_doors_replacement', compact('styles', 'testimonials'));
     }
 
     public function kitchenCabinetDoorsReplacement() {
@@ -1043,8 +1044,9 @@ class HomeController extends Controller
             $style['colours'] = $colours;
             return $style;
         });
+        $testimonials = Testimonial::whereNull('style_id')->get();
 
-        return view('frontend.shop.orderkitchen.kitchen_cabinet_doors_replacement', compact('styles'));
+        return view('frontend.shop.orderkitchen.kitchen_cabinet_doors_replacement', compact('styles', 'testimonials'));
     }
 
     public function orderComponentFilter(Request $request) {
