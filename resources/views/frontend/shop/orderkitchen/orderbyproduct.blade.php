@@ -305,11 +305,7 @@
                                                 <img class="img-fluid" width="50px" height="50px" src="{{ asset('imgs/products/'.$relatedCategoryProduct->image_path) }}" alt="">
                                                 &nbsp;
                                                 {{ $relatedCategoryProduct->colour?->name ? '' . strtoupper($relatedCategoryProduct->colour?->name) . '' : '' }}
-                                                {{ $relatedCategoryProduct->height 
-                                                    ? ($relatedCategoryProduct->width 
-                                                        ? '(H:'.$relatedCategoryProduct->height . 'x' . 'W:'.$relatedCategoryProduct->width . ' mm)' 
-                                                        : '(H:'.$relatedCategoryProduct->height . ' mm)') 
-                                                    : ($relatedCategoryProduct->width ? '(W:'.$relatedCategoryProduct->width . ' mm)' : '') }}
+                                                {{ $relatedCategoryProduct->dimensions }}
                                                 {{ ' (£' . $relatedCategoryProduct->price . ')' }}
                                                 </a>
                                             </div>
