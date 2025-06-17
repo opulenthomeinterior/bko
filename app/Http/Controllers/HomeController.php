@@ -66,7 +66,7 @@ class HomeController extends Controller
 
             $data[$style->name] = $styleData;
         }
-        $testimonials = Testimonial::whereNull('style_id')->get();
+        $testimonials = Testimonial::where('page_type', 'homepage')->get();
 
         return view('frontend.shop.orderkitchen.index', compact('data', 'testimonials'));
     }
@@ -107,9 +107,10 @@ class HomeController extends Controller
             // echo '</pre>';
             // exit;
 
+            $testimonials = Testimonial::where('style_id', $style->id)->where('page_type', 'styles')->get();
             $seo = StyleSeo::where('style_id', $style->id)->first();
 
-            return view('frontend.shop.orderkitchen.orderkitchenbyname', compact('styleData', 'colours', 'styleHasColours', 'seo'));
+            return view('frontend.shop.orderkitchen.orderkitchenbyname', compact('styleData', 'colours', 'styleHasColours', 'seo', 'testimonials'));
         } catch (\Exception $e) {
             return redirect()->route('orderkitchen');
         }
@@ -437,7 +438,7 @@ class HomeController extends Controller
         // print_r($components);
         // echo '</pre>';
         // exit;
-        $testimonials = Testimonial::whereNull('style_id')->get();
+        $testimonials = Testimonial::whereNotNull('category_id')->get();
         return view('frontend.shop.ordercomponent.index', compact('components', 'testimonials'));
     }
 
@@ -550,18 +551,20 @@ class HomeController extends Controller
             $product->related_products_count = $relatedCategoryProducts;
         });
 
+        $testimonials = Testimonial::where('category_id', $category->id)->where('page_type', 'categories')->get();
+
         if ($slug == 'doors') {
-            return view('frontend.shop.ordercomponent.doors', compact('urlStyleId', 'urlColourId', 'category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo', 'slug', 'widths'));
+            return view('frontend.shop.ordercomponent.doors', compact('urlStyleId', 'urlColourId', 'category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo', 'slug', 'widths', 'testimonials'));
         } else if ($slug == 'handles') {
-            return view('frontend.shop.ordercomponent.handles', compact('urlStyleId', 'urlColourId', 'category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo', 'slug', 'widths'));
+            return view('frontend.shop.ordercomponent.handles', compact('urlStyleId', 'urlColourId', 'category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo', 'slug', 'widths', 'testimonials'));
         } else if ($slug == 'accessories') {
-            return view('frontend.shop.ordercomponent.accessories', compact('urlStyleId', 'urlColourId', 'category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo', 'slug', 'widths'));
+            return view('frontend.shop.ordercomponent.accessories', compact('urlStyleId', 'urlColourId', 'category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo', 'slug', 'widths', 'testimonials'));
         } else if ($slug == 'sinks') {
-            return view('frontend.shop.ordercomponent.sinks', compact('urlStyleId', 'urlColourId', 'category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo', 'slug', 'widths'));
+            return view('frontend.shop.ordercomponent.sinks', compact('urlStyleId', 'urlColourId', 'category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo', 'slug', 'widths', 'testimonials'));
         } else if ($slug == 'internals') {
-            return view('frontend.shop.ordercomponent.internals', compact('urlStyleId', 'urlColourId', 'category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo', 'slug', 'widths'));
+            return view('frontend.shop.ordercomponent.internals', compact('urlStyleId', 'urlColourId', 'category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo', 'slug', 'widths', 'testimonials'));
         }
-        return view('frontend.shop.ordercomponent.ordercomponentbyname', compact('urlStyleId', 'urlColourId', 'category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo', 'slug', 'widths'));
+        return view('frontend.shop.ordercomponent.ordercomponentbyname', compact('urlStyleId', 'urlColourId', 'category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo', 'slug', 'widths', 'testimonials'));
     }
 
     public function order_component_by_filter(Request $request, $slug)

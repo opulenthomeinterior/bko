@@ -410,7 +410,7 @@
             <div class="dot dot-green"></div>
             <div class="dot dot-light"></div>
             
-            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" style="overflow:visible">
+            <div id="" class="carousel slide" data-bs-ride="carousel" style="overflow:visible">
                 <div class="carousel-inner">
                     <div class="carousel-item">
                         <div class="testimonial-card">
@@ -689,15 +689,6 @@
     <div class="container">
         <div class="testimonial-section">
             <h2 class="heading">FACT, EVERYONE LOVES US:</h2>
-            
-            <!-- Floating profile images -->
-            {{-- <img src="/api/placeholder/150/150" alt="Profile" class="floating-profile profile-1">
-            <img src="/api/placeholder/150/150" alt="Profile" class="floating-profile profile-2">
-            <img src="/api/placeholder/150/150" alt="Profile" class="floating-profile profile-3">
-            <img src="/api/placeholder/150/150" alt="Profile" class="floating-profile profile-4">
-            <img src="/api/placeholder/150/150" alt="Profile" class="floating-profile profile-5">
-            <img src="/api/placeholder/150/150" alt="Profile" class="floating-profile profile-6">
-             --}}
          
             <div class="dot dot-yellow"></div>
             <div class="dot dot-green"></div>

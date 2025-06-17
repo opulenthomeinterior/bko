@@ -1107,7 +1107,10 @@ td
         <div class="row">
 
             @if (count($category->testimonials) > 0)
-            <section class="container-fluid py-5 bg-white" style="background-image: url({{asset('images/homepage.jpeg')}}); opacity: 2; border-bottom: 3px solid #ebc266; border-left: 3px solid #ebc266; padding: 20px; width: 100% !important; overflow: hidden">
+
+            @include('frontend.testimonials_component', ['testimonials' => $testimonials, 'header_name' => $category->name])
+
+            {{--<section class="container-fluid py-5 bg-white" style="background-image: url({{asset('images/homepage.jpeg')}}); opacity: 2; border-bottom: 3px solid #ebc266; border-left: 3px solid #ebc266; padding: 20px; width: 100% !important; overflow: hidden">
                 <div class="row">
                     <h3 class="text-dark text-uppercase fw-bolder text-center mb-4">Testimonials</h3>
                 </div>
@@ -1126,12 +1129,6 @@ td
                                     <div class="col-12 mb-4 d-flex justify-content-center">
                                         <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" class="img-fluid rounded-circle" style="height: 100px; width: 100px">
                                     </div>
-                                    <!-- <div class="fw-bold text-center">
-                                        Smith
-                                    </div>
-                                    <div class="text-center">
-                                        <small class="text-center">2023-11-19</small>
-                                    </div> -->
                                 </div>
                                 <div class="card-footer carousel-card-footer" style="border-radius: 20px;">
                                     <small class="text-dark text-center" style="font-size: 12px">
@@ -1143,7 +1140,7 @@ td
                         @endforeach
                     </div>
                 </div>
-            </section>
+            </section>--}}
             @endif
             
             <!-- FAQs -->

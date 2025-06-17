@@ -1021,7 +1021,9 @@ td
         <div class="row">
 
             @if (count($category->testimonials) > 0)
-            <section class="container-fluid py-5 bg-white" style="background-image: url({{asset('images/homepage.jpeg')}}); opacity: 2; border-bottom: 3px solid #ebc266; border-left: 3px solid #ebc266; padding: 20px; width: 100% !important; overflow: hidden">
+
+            @include('frontend.testimonials_component', ['testimonials' => $testimonials, 'header_name' => $category->name])
+            {{--<section class="container-fluid py-5 bg-white" style="background-image: url({{asset('images/homepage.jpeg')}}); opacity: 2; border-bottom: 3px solid #ebc266; border-left: 3px solid #ebc266; padding: 20px; width: 100% !important; overflow: hidden">
                 <div class="row">
                     <h3 class="text-dark text-uppercase fw-bolder text-center mb-4">Testimonials</h3>
                 </div>
@@ -1057,7 +1059,7 @@ td
                         @endforeach
                     </div>
                 </div>
-            </section>
+            </section>--}}
             @endif
             
             <!-- FAQs -->
