@@ -24,7 +24,7 @@
                         <div class="card">
                             <div class="card-header p-0">
                                 <!-- Use blog's image_path here -->
-                                <img src="{{ asset('/uploads/blogs/' . $blog->image_path) }}" class="img-fluid" />
+                                <img src="{{ asset('/imgs/blogs/' . $blog->image_path) }}" class="img-fluid" />
                             </div>
                             <div class="card-body">
                                 <!-- Use blog's created_at to display date -->

@@ -25,7 +25,7 @@
                 <h5><a href="{{ route('blog') }}">Blog</a> / {{ $blog->created_at->format('d F Y') }}</h5>
             </div>
             <div class="col-12">
-                <img src="{{ asset('/uploads/blogs/' . $blog->image_path) }}" class="img-fluid" />
+                <img src="{{ asset('/imgs/blogs/' . $blog->image_path) }}" class="img-fluid" />
                 <p class="text-dark pt-3"> {!! $blog->content !!}
                 </p>
             </div>
