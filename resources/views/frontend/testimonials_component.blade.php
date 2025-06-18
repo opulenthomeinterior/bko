@@ -569,7 +569,11 @@
             /* right: -20px; */
             right: 30%;
         }
-
+.carousel-control-next:hover 
+.carousel-control-prev:hover
+{
+    color:black;
+}
 
         /* .carousel-control-prev-icon, .carousel-control-next-icon {
             background-image: none;
@@ -695,7 +699,8 @@
             <div class="dot dot-light"></div>
             
             <!-- Testimonial Carousel -->
-            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+            {{-- <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel"> --}}
+                <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-wrap="true">
                 <div class="carousel-inner">
                     @foreach($testimonials as $index => $testimonial)
                     <div class="carousel-item @if($index === 0) active @endif">
@@ -724,21 +729,41 @@
                 </div>
                 
                 <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-                    <span aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+                    <span aria-hidden="true"><i class="fas fa-chevron-left text-warning"></i></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-                    <span aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+                    <span aria-hidden="true"><i class="text-warning fas fa-chevron-right"></i></span>
                     <span class="visually-hidden">Next</span>
                 </button>
                 
-                <div class="carousel-indicators">
+                {{-- <div class="carousel-indicators">
                     <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
                     <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
+                </div> --}}
+
+                <div class="carousel-indicators">
+    @foreach($testimonials as $index => $testimonial)
+    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="{{$index}}" 
+            @if($index === 0) class="active" aria-current="true" @endif 
+            aria-label="Slide {{$index + 1}}"></button>
+    @endforeach
+</div>
             </div>
         </div>
     </div>
    
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = new bootstrap.Carousel(document.getElementById('testimonialCarousel'), {
+        interval: 5000,
+        wrap: true,
+        touch: true
+    });
+});
+</script>
 </body>

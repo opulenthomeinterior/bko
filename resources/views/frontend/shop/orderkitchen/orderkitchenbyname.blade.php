@@ -196,8 +196,8 @@
         }
 
         .color-square {
-            width: 280px;
-            height: 280px;
+            width: 150px;
+            height: 150px;
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -208,7 +208,9 @@
             overflow: hidden;
             z-index: 3;
             backdrop-filter: blur(5px);
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            /* border: 5px solid rgba(255, 255, 255, 0.2); */
+            border: 5px solid white;
+            
         }
 
         .color-square:hover {
@@ -344,30 +346,50 @@
             </ol>
         </nav>
 
-        <div class="row mb-lg-5 mb-4">
+        {{-- <div class="row mb-lg-5 mb-4">
             <div class="col-12">
                 <h1 class="fs-1 fw-bolder text-dark text-uppercase text-center">
                     {{ $styleData['data']['name'] }} Kitchen
                 </h1>
             </div>
-        </div>
+        </div> --}}
 
-        <div class="row">
-            <div class="col-12">
+       
+    </section>
+    <div class="container mb-5">
+         <div class="row mt-4">
+            <div class="col-md-6">
+                 <h1 class="fs-1 fw-bolder text-dark text-uppercase">
+                    {{ $styleData['data']['name'] }} Kitchen
+                </h1>
                 <!-- <h1 class="fs-3 fw-bold text-uppercase text-dark">
                     Ordering a {{ $styleData['data']['name'] }} Kitchen
                 </h1> -->
-                <p class="text-center">To start ordering a {{ $styleData['data']['name'] }} kitchen, first choose your preferred assembly,
+                <p class="">To start ordering a {{ $styleData['data']['name'] }} kitchen, first choose your preferred assembly,
                     then from our range of colours and finishes.</p>
-                <hr>
-            </div>
-            @if ($styleData['data']['style_description'])
-                <div class="col-md-12 text-center">
+                {{-- <hr> --}}
+                @if ($styleData['data']['style_description'])
+                {{-- <div class="col-md-6 text-center"> --}}
+                    
                     {!! $styleData['data']['style_description'] !!}
-                </div>
+                    
+                {{-- </div> --}}
             @endif
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-5 p-0 col-12">
+                @include('frontend.inquiry_form')
+            </div>
+            
         </div>
-    </section>
+    </div>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-12">
+                <img src="{{ asset('images/bulky-handles.png') }}" alt="">
+            </div>
+        </div>
+    </div>
     
     {{--<section class="container-fluid">
         <div class="row">
@@ -551,18 +573,18 @@
                         @endif
                         
                         <!-- Navigation Arrows -->
-                        <button class="nav-arrows prev-btn" onclick="changeSlide(-1)">‹</button>
+                        <!-- <button class="nav-arrows prev-btn" onclick="changeSlide(-1)">‹</button>
                         <button class="nav-arrows next-btn" onclick="changeSlide(1)">›</button>
-                        
+                         -->
                         <!-- Slide Controls -->
-                        <div class="slide-controls">
+                        <!-- <div class="slide-controls">
                             <button class="control-dot active" onclick="currentSlide(1)"></button>
                             <button class="control-dot" onclick="currentSlide(2)"></button>
                             <button class="control-dot" onclick="currentSlide(3)"></button>
                             <button class="control-dot" onclick="currentSlide(4)"></button>
                             <button class="control-dot" onclick="currentSlide(5)"></button>
                             <button class="control-dot" onclick="currentSlide(6)"></button>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
