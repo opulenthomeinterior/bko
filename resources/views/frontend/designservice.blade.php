@@ -150,10 +150,10 @@
     <!-- Nav Tabs -->
     <ul class="nav nav-tabs justify-content-start ps-5" id="formTabs" role="tablist">
       <li class="nav-item py-1" role="presentation">
-        <button class="nav-link active" id="form1-tab" data-bs-toggle="tab" data-bs-target="#form1" type="button" role="tab" aria-controls="form1" aria-selected="true">Upload Kitchen Measurements</button>
+        <button class="nav-link active" id="form1-tab" data-bs-toggle="tab" data-bs-target="#form1" type="button" role="tab" aria-controls="form1" aria-selected="true">Book a Consultation</button>
       </li>
       <li class="nav-item py-1" role="presentation">
-        <button class="nav-link" id="form2-tab" data-bs-toggle="tab" data-bs-target="#form2" type="button" role="tab" aria-controls="form2" aria-selected="false">Upload Kitchen Images</button>
+        <button class="nav-link" id="form2-tab" data-bs-toggle="tab" data-bs-target="#form2" type="button" role="tab" aria-controls="form2" aria-selected="false">Book an on site Survey</button>
       </li>
     </ul>
 
@@ -184,7 +184,7 @@
                     <div class="row py-3">
                         <div class="col-md-6 col-12">
                             <label class="py-1">Email <span class="text-danger">*</span></label>
-                            <input type="email" class="form-control" name="email" required />
+                            <input type="email" class="form-control" name="email" required />   
                         </div>
                         <div class="col-md-6 col-12">
                             <label class="py-1">Phone Number <span class="text-danger">*</span></label>
@@ -261,7 +261,11 @@
                             <!-- <input type="number" class="form-control" name="phone" required /> -->
                              <textarea name="address" id="" class="form-control" required></textarea>
                         </div>
-
+                            <div class=" col-12">
+                            <label class="py-1">Discount Code</label>
+                            <input type="text" class="form-control" name="discountCode"  />
+                        </div>
+                        
                     </div>
 
                     <div class="row py-3">

@@ -232,7 +232,7 @@
                                         @php 
                                             $parentSubCategories = \App\Models\Product::where('parent_category_id', $baseCabinetData->parent_category_id)->where('style_id', $baseCabinetData->style_id)->where('colour_id', $baseCabinetData->colour_id)->where('assembly_id', $baseCabinetData->assembly_id)->groupBy('parent_sub_category')->orderBy('parent_sub_category', 'desc')->get();
                                         @endphp
-                                        <div class="d-flex gap-3">
+                                        <div class="d-flex gap-3 flex-wrap">
                                         @foreach ($parentSubCategories as $parentSubCategory)
                                             @if ($parentSubCategory->parent_sub_category == 'A')
                                                 <div class="d-flex flex-column">
