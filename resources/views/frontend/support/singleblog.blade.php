@@ -1,4 +1,7 @@
 <x-guest-layout>
+    <head>
+        <title>Blogs</title>
+    </head>
     <style>
         ol li {
             list-style-type: unset;
