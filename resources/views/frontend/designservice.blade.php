@@ -175,16 +175,13 @@
 
                     <div class="row py-3">
                         <div class="col-md-6 col-12">
-                            <label class="py-1">First <span class="text-danger">*</span></label>
+                            <label class="py-1">First Name <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" name="first_name" required />
                         </div>
                         <div class="col-md-6 col-12">
-                            <label class="py-1">Surname <span class="text-danger">*</span></label>
+                            <label class="py-1">Sur Name</label>
                             <input type="text" class="form-control" name="sur_name" required />
                         </div>
-                    </div>
-
-                    <div class="row py-3">
                         <div class="col-md-6 col-12">
                             <label class="py-1">Email <span class="text-danger">*</span></label>
                             <input type="email" class="form-control" name="email" required />   
@@ -237,42 +234,41 @@
             <div class="col-lg-7">
                 <form action="{{ route('submit.designservice') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <!-- <div class="border-bottom border-dark pb-2">
-                        <h3 class="text-dark fw-bolder text-uppercase">Request a meeting</h3>
-                    </div> -->
-
-                    <div class="row py-3">
-                        <div class="col-md-6 col-12">
-                            <label class="py-1">Name <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" name="name" required />
-                        </div>
-                          <div class="col-md-6 col-12">
-                            <label class="py-1">Email <span class="text-danger">*</span></label>
-                            <input type="email" class="form-control" name="email" required />
-                        </div>
+                    <div class="border-bottom border-dark pb-2">
+                        <h3 class="text-dark fw-bolder text-uppercase">Book an on site survey</h3>
                     </div>
 
                     <div class="row py-3">
-                      
+                        <div class="col-md-6 col-12">
+                            <label class="py-1">First Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="first_name" required />
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <label class="py-1">Surname</label>
+                            <input type="text" class="form-control" name="sur_name" />
+                        </div>
+
+                        <div class="col-md-6 col-12">
+                            <label class="py-1">Email <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" name="email" required />
+                        </div>
                         <div class="col-md-6 col-12">
                             <label class="py-1">Phone Number <span class="text-danger">*</span></label>
                             <input type="number" class="form-control" name="phone" required />
                         </div>
-                        
-                        <div class="col-md-6 col-12">
-                            <label class="py-1">Address <span class="text-danger">*</span></label>
-                            <!-- <input type="number" class="form-control" name="phone" required /> -->
-                             <textarea name="address" id="" class="form-control" required></textarea>
-                        </div>
-                            <div class=" col-12">
+                        <div class=" col-6">
                             <label class="py-1">Discount Code</label>
                             <input type="text" class="form-control" name="discountCode"  />
+                        </div>
+                        <div class="col-md-12">
+                            <label class="py-1">Address</label>
+                             <textarea name="address" class="form-control"></textarea>
                         </div>
                         
                     </div>
 
                     <div class="row py-3">
-                        <label class="py-1">Please upload your kitchen images <span class="text-danger">*</span></label>
+                        <label class="py-1">Please upload your kitchen images</label>
                         <div class="col-12 py-2 border border-grey border-2">
                             <label class="py-1 fw-bold">Drop images here or</label>
                             <input type="file" name="file" class="form-control border border-warning" accept=".jpg,.jpeg,.png" multiple />
@@ -284,10 +280,10 @@
 
 
                      <div class="row py-3">
-                        <div class="col-md-6 col-12">
-                            <label class="py-1">Please add a note <span class="text-danger">*</span></label>
+                        <div class="col-md-12 col-12">
+                            <label class="py-1">Please add a note</label>
                             <!-- <input type="text" class="form-control" name="name" required /> -->
-                             <textarea name="note" id="" class="form-control"></textarea>
+                             <textarea name="note" class="form-control"></textarea>
                         </div>
                          
                     </div>
