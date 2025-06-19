@@ -562,6 +562,7 @@
                         <!-- Slide 1 - Light Grey -->
                         @if(!empty($styleData['data']->styleHasColours))
                         @foreach ($styleData['data']->styleHasColours as $styleColour)
+                            @if ($styleColour->status == 1)
                             <div class="slide active" data-color="{{$styleColour->colour?->colour_code}}">
                                 <img src="{{asset('imgs/styles/colours/' . $styleColour->image_path)}}" alt="{{$styleColour->image_path}}" class="slide-image">
                                 <div class="slide-overlay"></div>
@@ -569,6 +570,7 @@
                                     <p class="color-name p-1 rounded" style="color: #fff; background: rgba(172, 172, 172, 0.5)">{{$styleColour->colour?->name}}</p>
                                 </div>
                             </div>
+                            @endif
                         @endforeach
                         @endif
                         
