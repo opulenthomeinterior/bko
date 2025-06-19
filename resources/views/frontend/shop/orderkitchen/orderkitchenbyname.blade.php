@@ -726,7 +726,7 @@
         }
 
         function startAutoSlide() {
-            autoSlideInterval = setInterval(nextSlide, 4000);
+            autoSlideInterval = setInterval(nextSlide, 1500);
         }
 
         // Initialize slideshow
@@ -797,7 +797,7 @@
                 stagePadding: 15, // Add padding to avoid clipping
                 rtl: false,
                 autoplay: true,
-                autoplayTimeout: 3000,
+                autoplayTimeout: 1500,
                 autoplayHoverPause: true,
                 responsive: {
                     0: {
