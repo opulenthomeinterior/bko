@@ -87,6 +87,30 @@ class StyleController extends Controller
                 $style->image_path = mmadev_store_and_get_image_path('styles', $file);
             }
 
+            // Handle image upload (if a new image is provided)
+            if ($request->hasFile('header_image')) {
+                // Delete old image if it exists
+                if (!empty($style->header_image)) {
+                    mmadev_delete_style_image_attachment_from_directory($style->header_image, 'styles');
+                }
+
+                $file = $request->file('header_image');
+                // store image in folder and return image path
+                $style->header_image = mmadev_store_and_get_image_path('styles', $file);
+            }
+
+            // Handle image upload (if a new image is provided)
+            if ($request->hasFile('image_path_two')) {
+                // Delete old image if it exists
+                if (!empty($style->image_path_two)) {
+                    mmadev_delete_style_image_attachment_from_directory($style->image_path_two, 'styles');
+                }
+
+                $file = $request->file('image_path_two');
+                // store image in folder and return image path
+                $style->image_path_two = mmadev_store_and_get_image_path('styles', $file);
+            }
+
             $style->save();
 
             $testimonialDates = $request->date;

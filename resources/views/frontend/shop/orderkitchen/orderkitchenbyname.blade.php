@@ -328,7 +328,7 @@
         }
     </style>
     <section class="container-fluid"
-        style="background-image: url('{{ $styleData['data']['image_path'] ? asset('imgs/styles/' . $styleData['data']['image_path']) : asset('images/order-component.jpg') }}'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 50vh;">
+        style="background-image: url('{{ $styleData['data']['header_image'] ? asset('imgs/styles/' . $styleData['data']['header_image']) : asset('images/order-component.jpg') }}'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 50vh;">
     </section>
     <section class="container-fluid px-lg-5 py-lg-5 py-4 px-md-3 px-3" style="background-color: #f0f0f0;">
         <nav aria-label="breadcrumb">
