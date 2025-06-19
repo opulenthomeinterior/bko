@@ -127,6 +127,9 @@
 {{-- </x-guest-layout> --}}
 
 <x-guest-layout>
+    <head>
+        <title>Design Service</title>
+    </head>
     <section class="container-fluid d-flex align-items-center justify-content-center"
         style="background-image: url('{{ asset('images/backgrounds/Virtual-Design-Service-banner.jpg') }}'); background-position: center; background-repeat: no-repeat; background-size: cover; min-height: 60vh;">
     </section>
