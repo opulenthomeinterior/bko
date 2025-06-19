@@ -35,15 +35,15 @@ class InquiryController extends Controller
                 'name' => $request->name ?? '',
                 'email' => $request->email ?? '',
                 'phone' => $request->phone ?? '',
-                // 'call_time' => $request->call_time ?? '',
+                'call_time' => $request->call_time ?? '',
                 'message' => $request->message ?? '',
             ];
             if (!empty($request->first_order_discount)) {
                 $data = [
-                    // 'name' => $request->name ?? '',
+                    'name' => $request->name ?? '',
                     'email' => $request->email ?? '',
-                    // 'phone' => $request->phone ?? '',
-                    // 'call_time' => $request->call_time ?? '',
+                    'phone' => $request->phone ?? '',
+                    'call_time' => $request->call_time ?? '',
                     'message' => $request->message ?? '',
                 ];
                 Mail::to('admin@bkonline.uk')->cc(['bkonline570@gmail.com', $request->email ?? ''])->send(new InquiryEmail($data));
