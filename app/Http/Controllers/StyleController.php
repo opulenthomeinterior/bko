@@ -283,6 +283,7 @@ class StyleController extends Controller
             StyleHasColour::where('id', $styleHasColourId)->update([
                 'suitable_components' => $suitableComponents
             ]);
+            ColourPageContent::where('style_has_colour_id', $styleHasColourId)->delete();
             foreach ($section_main_headings as $key => $section_main_heading) {
                 $colourPageContent = ColourPageContent::where('id', $request->colour_page_content_id[$key] ?? 0)->first();
                 if (isset($colourPageContent)) {

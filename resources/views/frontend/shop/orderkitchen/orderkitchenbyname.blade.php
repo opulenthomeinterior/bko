@@ -25,7 +25,7 @@
         }
         
 
-.hero-section {
+        .hero-section {
             min-height: 100vh;
             position: relative;
             overflow: hidden;
@@ -326,12 +326,6 @@
                 font-size: 1.2rem;
             }
         }
-
-
-
-
-
-
     </style>
     <section class="container-fluid"
         style="background-image: url('{{ $styleData['data']['image_path'] ? asset('imgs/styles/' . $styleData['data']['image_path']) : asset('images/order-component.jpg') }}'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 50vh;">

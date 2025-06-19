@@ -37,7 +37,8 @@ class AttachmentController extends Controller
             $all_images[$key]['name'] = $imageName;
 
             $extension = $image->getClientOriginalExtension(); // Get the original extension
-            $imageName = str_replace(' ', '-', trim($imageName)) . time() . '_' . uniqid() . '.' . $extension; // Construct the new file name
+            // $imageName = str_replace(' ', '-', trim($imageName)) . time() . '_' . uniqid() . '.' . $extension; // Construct the new file name
+            $imageName = $imageName . $extension; // Construct the new file name
 
             // $imageName = time() . '_' . uniqid() . '.' . $image->extension();
 
