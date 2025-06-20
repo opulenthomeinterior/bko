@@ -308,6 +308,13 @@
         }
 
         </style>
+
+<div class="container-fluid">
+    <div class="col-12" >
+        <img src="{{ asset('images/need-help-main-image.png') }}" class="w-100 h-100" alt="">
+    </div>
+</div>
+
     <title>Need Help Measuring </title></head>
     <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
         <nav aria-label="breadcrumb">
