@@ -16,9 +16,7 @@
             width: 100%;
             height: 65vh; /* Responsive height */
             min-height: 300px; /* Minimum height */
-            @if($slug == 'handles')
-            background-image: url('{{ asset('images/handles-hero-image.png') }}');
-            @endif
+            background-image: url("{{ asset('imgs/categories/'.$category->header_image) }}");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;

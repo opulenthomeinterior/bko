@@ -66,7 +66,7 @@ class HomeController extends Controller
 
             $data[$style->name] = $styleData;
         }
-        $testimonials = Testimonial::where('page_type', 'homepage')->get();
+        $testimonials = Testimonial::where('page_type', 'styles')->limit(5)->get();
 
         return view('frontend.shop.orderkitchen.index', compact('data', 'testimonials'));
     }
@@ -438,7 +438,7 @@ class HomeController extends Controller
         // print_r($components);
         // echo '</pre>';
         // exit;
-        $testimonials = Testimonial::whereNotNull('category_id')->get();
+        $testimonials = Testimonial::where('page_type', 'categories')->get();
         return view('frontend.shop.ordercomponent.index', compact('components', 'testimonials'));
     }
 

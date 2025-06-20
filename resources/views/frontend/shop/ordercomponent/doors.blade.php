@@ -52,7 +52,7 @@
             width: 100%;
             height: 65vh; /* Responsive height */
             min-height: 300px; /* Minimum height */
-            background-image: url('{{ asset('images/doors-hero-image.png') }}');
+            background-image: url("{{ asset('imgs/categories/'.$category->header_image) }}");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;

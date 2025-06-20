@@ -744,12 +744,12 @@
                 </div> --}}
 
                 <div class="carousel-indicators">
-    @foreach($testimonials as $index => $testimonial)
-    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="{{$index}}" 
-            @if($index === 0) class="active" aria-current="true" @endif 
-            aria-label="Slide {{$index + 1}}"></button>
-    @endforeach
-</div>
+                    @foreach($testimonials as $index => $testimonial)
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="{{$index}}" 
+                            @if($index === 0) class="active" aria-current="true" @endif 
+                            aria-label="Slide {{$index + 1}}"></button>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>

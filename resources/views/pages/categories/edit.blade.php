@@ -246,6 +246,17 @@
                                         class="btn btn-danger mt-2 {{ $category->image_path ? 'd-block' : 'd-none' }}"
                                         onclick="removeImage(this, {{ $category->id }}, '{{ $category->image_path }}')">Remove</button>
                                 </div>
+                                <div class="col-lg-12 form-group mb-4">
+                                    <label for="header_image" class="form-label">Upload Header Image</label>
+                                    <input type="file" accept="image/*" class="form-control" id="header_image"
+                                        name="header_image">
+                                </div>
+                                
+                                <div class="col-lg-12 form-group mb-4">
+                                    <label for="image_path_two" class="form-label">Upload Second Image (Not Compulsory)</label>
+                                    <input type="file" accept="image/*" class="form-control" id="image_path_two"
+                                        name="image_path_two">
+                                </div>
                                 <div class="col-lg-6">
                                     <label for="header_item" class="form-label">Header Item</label>
                                     <br>
