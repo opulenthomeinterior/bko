@@ -357,7 +357,7 @@
             <!-- Left side - Image -->
             <div class="col-lg-6 col-md-6 p-4">
                 <div class="image-container">
-                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                    <img src="{{asset('images/preperation-tools.png')  }}"
                          alt="Hand drawing floor plan with pen on paper" 
                          class="image">
                 </div>
@@ -513,9 +513,15 @@
                                     <li style="list-style: disc;" class="fs-5 fw-bold">
                                         Measure from the top of the door frame to the ceiling.
                                     </li>
+
+
+                                   
+                      
                                 </ul>
                             
-                                
+                                      <span class="tool-name">4. Radiators/Other Obstructions:</span>
+                            <span class="tool-description">  Measure their height from the floor and their depth from the wall.  <br></span>
+                      
                             
                         </li>
                         
@@ -528,8 +534,7 @@
             <!-- right side - Image -->
             <div class="col-lg-6 col-md-6">
                 <div class="image-container">
-                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                         alt="Hand drawing floor plan with pen on paper" 
+                    <img src="{{ asset('images/radiators.png') }}"
                          class="image">
                 </div>
             </div>
@@ -548,12 +553,7 @@
                     
                     <ul class="tools-list">
                         <li>
-                            <span class="tool-name">4. Radiators/Other Obstructions:</span>
-                            <span class="tool-description">  Measure their height from the floor and their depth from the wall.  <br></span>
-                             <div class="image-container mb-3">
-                    <img src="{{ asset('images/radiators.png') }}" 
-                         class="image">
-                </div>
+                           
                             <span class="tool-name">d. Measure depths:</span>
                                 <ul >
                                     <li style="list-style: number;">
@@ -565,41 +565,10 @@
                             <span class="tool-name">Door swing:</span>
                             <span class="tool-description"> If doors open into the kitchen, measure the depth of their swing to ensure they won't interfere with cabinets or appliances. </span>
                             </li>
-                                    
-                                </ul>
-                            
-                         <span class="tool-name">f. Appliance dimensions (existing and planned):<br></span>
-                     <span class="tool-description">If you're keeping any existing appliances, measure their exact width, depth and height. Don’t forget to account for door swings and required ventilation space.
-In case of buying new appliances, make a note of the planned dimensions. This information is important for the kitchen designer. </span><br>
-                         <span class="tool-name">3. Important tips:<br></span>
-                         <ul>
-                            <li  style="list-style: disc;"><b class="text-black">Measure Thrice, Cut Once:</b>Or in this case, measure thrice, design once. Accuracy is paramount.</li>
-                            <li  style="list-style: disc;"><b class="text-black">Consistency:</b>Always use the same unit of measurement (inches or centimeters) throughout your entire drawing.</li>
-                            <li  style="list-style: disc;"><b class="text-black">Take Photos:</b>Take clear photos of your current kitchen from various angles. These can provide valuable context for the designer.</li>
-                         </ul>
-                       
-                    </ul>
-
-                                          <div class="image-container mb-3">
-                    <img src="{{ asset('images/take-photo.png') }}" 
-                         class="image">
-                </div>
-                <ul>
-                     <li  style="list-style: disc;"><b class="text-black">Bring Your Sketch:</b>When you visit us, bring your detailed sketch, measurements, and photos. This will give us a solid foundation to start designing your new kitchen.</li>
-                </ul>
-                <p class="fs-3">
-                    By following this comprehensive guide, you'll be well-prepared to provide us all the necessary information for a precise and effective kitchen design.
-                </p>
-                </div>
-            </div>
-            <div class="col-6">
-                
+                                   
                                      <span class="tool-name">e. Note utility locations:</span>
                                  <ul >
-                                           <div class="image-container mb-3">
-                    <img src="{{ asset('images/utility.png') }}" 
-                         class="image">
-                </div>
+                    
                                     <li style="list-style: none;" class="fs-5 ">
                                      <span class="fw-bold">  1. Plumbing: </span> 
                                         <ul>
@@ -625,21 +594,62 @@ In case of buying new appliances, make a note of the planned dimensions. This in
                                 
                             
                         </li>
+                                </ul>
+                            
                         
+                </div>
             </div>
+         
             <!-- right side - Image -->
-            <!-- <div class="col-lg-6 col-md-6">
-                <div class="image-container">
-                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                         alt="Hand drawing floor plan with pen on paper" 
+             <div class="col-lg-6 col-md-6">
+                                       <div class="image-container mb-3">
+                    <img src="{{ asset('images/utility.png') }}" 
                          class="image">
                 </div>
-            </div> -->
+
+
+
+
+
+ 
+            </div> 
             
       
          </div>
     </div>
 
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-6 col-12">
+             <span class="tool-name">f. Appliance dimensions (existing and planned):<br></span>
+                     <span class="tool-description">If you're keeping any existing appliances, measure their exact width, depth and height. Don’t forget to account for door swings and required ventilation space.
+In case of buying new appliances, make a note of the planned dimensions. This information is important for the kitchen designer. </span><br>
+                         <span class="tool-name">3. Important tips:<br></span>
+                         <ul>
+                            <li  style="list-style: disc;"><b class="text-black">Measure Thrice, Cut Once:</b>Or in this case, measure thrice, design once. Accuracy is paramount.</li>
+                            <li  style="list-style: disc;"><b class="text-black">Consistency:</b>Always use the same unit of measurement (inches or centimeters) throughout your entire drawing.</li>
+                            <li  style="list-style: disc;"><b class="text-black">Take Photos:</b>Take clear photos of your current kitchen from various angles. These can provide valuable context for the designer.</li>
+                         </ul>
+                       
+                    </ul>
+
+                   
+                <ul>
+                     <li  style="list-style: disc;"><b class="text-black">Bring Your Sketch:</b>When you visit us, bring your detailed sketch, measurements, and photos. This will give us a solid foundation to start designing your new kitchen.</li>
+                </ul>
+                <p class="fs-3">
+                    By following this comprehensive guide, you'll be well-prepared to provide us all the necessary information for a precise and effective kitchen design.
+                </p>
+             </div>
+             <div class="col-md-6 col-12">
+                                       <div class="image-container mb-3">
+                    <img src="{{ asset('images/take-photo.png') }}" 
+                         class="image">
+                </div>
+             </div>
+        </div>
+    </div>
 
     <div class="container">
         <div class="row">
