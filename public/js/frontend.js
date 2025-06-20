@@ -731,8 +731,7 @@ style="max-width: 100px; height: auto; object-fit: cover;"
                                     </div>
                                     <div>
                                         <h5 class="mb-1 fw-bold">${product.full_title}</h5>
-                                       
-                                      
+                                        <a href="javascript:void(0)" data-productId="${product.id}" class="openCompareModel text-decoration-underline text-danger" style="font-size: 12px;" data-toggle="modal" data-target="#myModal">Compare</a>&nbsp;&nbsp;<a href="javascript:void(0)" data-productId="${product.id}" class="openChangeStyleModal text-decoration-underline text-primary" style="font-size: 12px;" data-bs-toggle="modal" data-bs-target="#cart-items-modal" data-product-id="${product.id}">Change Style</a>
                                     </div>
                                 </div>
                             </td>

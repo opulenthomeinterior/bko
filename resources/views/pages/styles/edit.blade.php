@@ -281,7 +281,7 @@
                                     <br>
                                     <input type="checkbox" id="style_status" name="status" {{$style->status == 1 ? 'checked' : ''}}>
                                 </div>
-                                <div class="col-lg-6 form-group mb-2 preview-image-wrapper {{ $style->image_path ? 'd-block' : 'd-none' }}">
+                                <div class="col-lg-6 form-group mb-4 preview-image-wrapper {{ $style->image_path ? 'd-block' : 'd-none' }}">
                                     <label for="image_preview" class="form-label">Image Preview</label>
                                     <img id="image_preview"
                                         src="{{ $style->image_path ? asset('imgs/styles/' . $style->image_path) : '#' }}"
@@ -291,6 +291,23 @@
                                         class="btn btn-danger mt-2 {{ $style->image_path ? 'd-block' : 'd-none' }}"
                                         onclick="removeImage(this, {{ $style->id }}, '{{ $style->image_path }}')">Remove</button>
                                 </div>
+
+
+                                
+                                
+                                <div class="col-lg-12 form-group mb-4">
+                                    <label for="header_image" class="form-label">Upload Header Image</label>
+                                    <input type="file" accept="image/*" class="form-control" id="header_image"
+                                        name="header_image" onchange="display_image(this)">
+                                </div>
+                                
+                                <div class="col-lg-12 form-group mb-4">
+                                    <label for="image_path_two" class="form-label">Upload Second Image (Not Compulsory)</label>
+                                    <input type="file" accept="image/*" class="form-control" id="image_path_two"
+                                        name="image_path_two" onchange="display_image(this)">
+                                </div>
+
+
                                 <div class="col-lg-12 form-group mt-2">
                                     <button class="btn btn-primary" type="submit">
                                         Update Style

@@ -1,4 +1,7 @@
 <x-guest-layout>
+    <head>
+        <title>Blogs</title>
+    </head>
     <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -24,7 +27,7 @@
                         <div class="card">
                             <div class="card-header p-0">
                                 <!-- Use blog's image_path here -->
-                                <img src="{{ asset('/uploads/blogs/' . $blog->image_path) }}" class="img-fluid" />
+                                <img src="{{ asset('/imgs/blogs/' . $blog->image_path) }}" class="img-fluid" />
                             </div>
                             <div class="card-body">
                                 <!-- Use blog's created_at to display date -->

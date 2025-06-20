@@ -25,7 +25,7 @@
         }
         
 
-.hero-section {
+        .hero-section {
             min-height: 100vh;
             position: relative;
             overflow: hidden;
@@ -326,15 +326,9 @@
                 font-size: 1.2rem;
             }
         }
-
-
-
-
-
-
     </style>
     <section class="container-fluid"
-        style="background-image: url('{{ $styleData['data']['image_path'] ? asset('imgs/styles/' . $styleData['data']['image_path']) : asset('images/order-component.jpg') }}'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 50vh;">
+        style="background-image: url('{{ $styleData['data']['header_image'] ? asset('imgs/styles/' . $styleData['data']['header_image']) : asset('images/order-component.jpg') }}'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 50vh;">
     </section>
     <section class="container-fluid px-lg-5 py-lg-5 py-4 px-md-3 px-3" style="background-color: #f0f0f0;">
         <nav aria-label="breadcrumb">
@@ -562,6 +556,7 @@
                         <!-- Slide 1 - Light Grey -->
                         @if(!empty($styleData['data']->styleHasColours))
                         @foreach ($styleData['data']->styleHasColours as $styleColour)
+                            @if ($styleColour->status == 1)
                             <div class="slide active" data-color="{{$styleColour->colour?->colour_code}}">
                                 <img src="{{asset('imgs/styles/colours/' . $styleColour->image_path)}}" alt="{{$styleColour->image_path}}" class="slide-image">
                                 <div class="slide-overlay"></div>
@@ -569,6 +564,7 @@
                                     <p class="color-name p-1 rounded" style="color: #fff; background: rgba(172, 172, 172, 0.5)">{{$styleColour->colour?->name}}</p>
                                 </div>
                             </div>
+                            @endif
                         @endforeach
                         @endif
                         
@@ -724,7 +720,7 @@
         }
 
         function startAutoSlide() {
-            autoSlideInterval = setInterval(nextSlide, 4000);
+            autoSlideInterval = setInterval(nextSlide, 1500);
         }
 
         // Initialize slideshow
@@ -795,7 +791,7 @@
                 stagePadding: 15, // Add padding to avoid clipping
                 rtl: false,
                 autoplay: true,
-                autoplayTimeout: 3000,
+                autoplayTimeout: 1500,
                 autoplayHoverPause: true,
                 responsive: {
                     0: {

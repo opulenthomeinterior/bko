@@ -30,6 +30,9 @@ class DesignserviceController extends Controller
         $designservice->surname = $request->input('sur_name');
         $designservice->email = $request->input('email');
         $designservice->phone = $request->input('phone');
+        $designservice->discount_code = $request->input('discount_code');
+        $designservice->address = $request->input('address');
+        $designservice->note = $request->input('note');
         
         if ($request->hasFile('file')) {
             $file = $request->file('file');
