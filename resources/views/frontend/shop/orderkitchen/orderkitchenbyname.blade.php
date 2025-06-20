@@ -543,7 +543,7 @@
                         </div>
                         
                         <div class="content-wrapper">
-                            <h1 class="main-title">J-PULL KITCHEN</h1>
+                            <h1 class="main-title">{{ $styleData['data']['name'] }} Kitchen</h1>
                             <p class="subtitle">Where Minimalism Meets Elegance and Functionality.</p>
                         </div>
                     </div>
