@@ -270,6 +270,34 @@
                                                                             </div>
                                                                         </li>
                                                                         
+                                                                        <li class="nav-item">
+                                                                            <a class="nav-link menu-link {{ request()->is('admin/email-module', 'admin/email-module/*') ? 'active' : '' }}"
+                                                                                href="#sidebarEmailmanagement"
+                                                                                data-bs-toggle="collapse" role="button"
+                                                                                aria-expanded="false"
+                                                                                aria-controls="sidebarEmailmanagement">
+                                                                                <i class="las la-envelope"></i> <span
+                                                                                    data-key="t-emails">Emails</span>
+                                                                            </a>
+                                                                            <div class="collapse menu-dropdown {{ request()->is('admin/email-module', 'admin/email-module/*') ? 'show' : '' }}"
+                                                                                id="sidebarEmailmanagement">
+                                                                                <ul class="nav nav-sm flex-column">
+                                                                                    <li class="nav-item">
+                                                                                        <a href="{{ route('email_module.create') }}"
+                                                                                            class="nav-link {{ request()->is('admin/email-module/create') ? 'active' : '' }}"
+                                                                                            data-key="t-emails"> Create Email
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li class="nav-item">
+                                                                                        <a href="{{ route('email_module.index') }}"
+                                                                                            class="nav-link {{ request()->is('admin/email-module', 'admin/email-module/edit/*') ? 'active' : '' }}"
+                                                                                            data-key="t-emails"> Manage
+                                                                                            Email </a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </li>
+                                                                        
                                                                         <li class="menu-title">
                                                                             <span data-key="t-menu">Products</span>
                                                                         </li>

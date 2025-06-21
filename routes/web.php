@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\Assembly;
 use App\Models\Category;
 use App\Models\ProductFile;
+use App\Models\Testimonial;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FaqController;
@@ -17,7 +18,9 @@ use App\Http\Controllers\StyleController;
 use App\Http\Controllers\ColourController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\InquiryController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\AssemblyController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CheckoutController;
@@ -27,12 +30,10 @@ use App\Http\Controllers\PrintingController;
 use App\Http\Controllers\UserAuthController;
 use App\Http\Controllers\AttachmentController;
 use App\Http\Controllers\VideoGuideController;
+use App\Http\Controllers\EmailModuleController;
 use App\Http\Controllers\InfoGraphicController;
 use App\Http\Controllers\DesignserviceController;
 use App\Http\Controllers\DownloadableGuideController;
-use App\Http\Controllers\PaymentController;
-use App\Http\Controllers\SettingController;
-use App\Models\Testimonial;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,6 +62,14 @@ Route::get('thankyou', function () {
 Route::prefix('admin')->middleware(['auth', 'verified', 'role:super-admin'])->group(function () {
     // Dashboard
     Route::get('dashboard', [DashboardConroller::class, 'dashboard'])->name('dashboard')->middleware(['auth', 'verified']);
+
+    // EMAIL MODULE
+    Route::get('email-module', [EmailModuleController::class, 'index'])->name('email_module.index');
+    Route::get('email-module/create', [EmailModuleController::class, 'create'])->name('email_module.create');
+    Route::post('post-email-module', [EmailModuleController::class, 'store'])->name('email_module.store');
+    Route::get('test-email-template', function () {
+        return view('emails.test-email-template');
+    })->name('email_module.test_email_template');
 
     // attachments route add image, update image, remove image, showall images, single image
     Route::resource('attachments', AttachmentController::class);
