@@ -380,7 +380,7 @@
     <div class="container my-5">
         <div class="row">
             <div class="col-12">
-                <img src="{{ asset('$styleData['data']['style_image_path_two']') }}" alt="">
+                <img src="{{asset('imgs/styles/colours/' . $styleData['data']['image_path_two'])}}" alt="">
             </div>
         </div>
     </div>
