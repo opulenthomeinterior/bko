@@ -618,8 +618,30 @@ td
 </section>
 
 
+<div class="container">
+    <div class="row">
+         <div class="col-xl-6 mt-lg-5">
+              <h1 class="text-black fw-bold">ACCESSORIES</h1>
+              <p class="fs-5">
+                    Enhance the style and functionality of your kitchen with our premium accessories. From smart storage solutions to innovative accessories, everything is designed to combine modern convenience with timeless elegance.
+              </p>
+         </div>
+        <div class="col-xl-1"></div>
+        <div class="col-xl-5 p-0 col-12">
+            @include('frontend.inquiry_form')
+        </div>
+    </div>
+</div>
 
-
+<div class="container">
+    <div class="row my-5">
+            <div class="col-12">
+                <img class="img-fluid w-100 d-none d-md-block rounded shadow-lg" src="{{ asset('images/accessories-banner.png') }}" alt="">
+                <img class="img-fluid w-100 d-md-none rounded shadow-lg" src="{{ asset('images/accessories-mobile-banner.png') }}" alt="">
+            
+            </div>
+    </div>
+</div>
 
 @if($slug == 'handles')
 <section class="container-fluid my-5 bg-light py-4">

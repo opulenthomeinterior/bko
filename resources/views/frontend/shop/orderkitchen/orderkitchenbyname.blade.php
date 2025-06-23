@@ -380,7 +380,7 @@
     <div class="container my-5">
         <div class="row">
             <div class="col-12">
-                <img src="{{ asset('images/bulky-handles.png') }}" alt="">
+                <img src="{{ asset('$styleData['data']['style_image_path_two']') }}" alt="">
             </div>
         </div>
     </div>
@@ -640,7 +640,7 @@
                                             </div>
                                             <div class="card-body carousel-card-body p-0">
                                                 <div class="col-12 d-flex justify-content-center">
-                                                    <img src="@if(!empty($styleHasColour->image_path)){{asset('imgs/styles/colours/'.$styleHasColour->image_path)}}@else{{asset('images/no-image-available.jpg')}}@endif" class="img-fluid">
+                                                    <img style="height:450px;" src="@if(!empty($styleHasColour->image_path)){{asset('imgs/styles/colours/'.$styleHasColour->image_path)}}@else{{asset('images/no-image-available.jpg')}}@endif" class="img-fluid">
                                                 </div>
                                             </div>
                                         </div>

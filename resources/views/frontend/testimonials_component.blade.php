@@ -498,6 +498,33 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
         
+         @media(max-width:760px)
+        {
+            .testimonial-card
+            {
+                width:300px;
+                height:300px;
+            }
+            .testimonial-img
+            {
+                width:80px;
+                height:80px;
+                left:0;
+                top:-15px;
+                z-index:100;
+            }
+
+            .floating-profile
+            {
+                display:none;
+            }
+            .quote-icon
+            {
+                font-size:80px;
+            }
+        }
+       
+
         .testimonial-content {
             max-width: 80%;
             text-align: center;
@@ -593,6 +620,15 @@
         .stars {
             color: #FFBD3D;
             margin: 10px 0;
+        }
+        @media (max-width:576px)
+        {
+             .carousel-control-prev{
+                left:0;
+
+             } .carousel-control-next {
+                right:0;
+             }
         }
         
         .floating-profile {

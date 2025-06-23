@@ -1501,16 +1501,16 @@
     </div> -->
 
 
-    <div class="container" style="margin-top: 120px;">
+    <!-- <div class="container" style="margin-top: 120px;">
         <div class="row">
         <div class="col-12">
             <img class="d-md-none w-100" src="{{ asset('images/affordable-mobile.png') }}" alt="">
             <img class="d-none d-md-block w-100" src="{{ asset('images/affordable.png') }}" alt="">
         </div>
         <div class="row">
-            <div class="text-center">
+            <div class="text-center"> -->
                 <!-- <a href="#" class="btn cta-button">BOOK YOUR FREE CONSULTATION NOW!</a> -->
-                <button  class="btn btn-lg cta-button rounded-0" style="background-color:#ffc107;" data-bs-toggle="modal" data-bs-target="#exampleModal">book your FREE CONSULTATION NOW!</button>
+                <!-- <button  class="btn btn-lg cta-button rounded-0" style="background-color:#ffc107;" data-bs-toggle="modal" data-bs-target="#exampleModal">book your FREE CONSULTATION NOW!</button>
                
             </div>
         </div>
@@ -1525,7 +1525,7 @@
             <img class="d-none d-md-block w-100 border boder-primary" src="{{ asset('images/letting-us-handle.png') }}" alt="">
         </div>
     </div>
-    </div>
+    </div> -->
 
 <div class="container-fluid" style="background-color: #fffaf0;">
 
