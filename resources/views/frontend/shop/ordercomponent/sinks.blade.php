@@ -582,7 +582,21 @@ td
 </section>
 
 
-
+<div class="container">
+    <div class="row">
+         <div class="col-xl-6 mt-lg-5">
+              <h1 class="text-black fw-bold">{{$category->name}}</h1>
+             
+                    <!-- Enhance the style and functionality of your kitchen with our premium accessories. From smart storage solutions to innovative accessories, everything is designed to combine modern convenience with timeless elegance. -->
+                {!! $category->description !!}
+                
+         </div>
+        <div class="col-xl-1"></div>
+        <div class="col-xl-5 p-0 col-12">
+            @include('frontend.inquiry_form')
+        </div>
+    </div>
+</div>
 
 
 @if($slug == 'handles')
