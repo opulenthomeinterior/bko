@@ -173,7 +173,7 @@ use App\Models\Style;
         } */
 
         .modal-dialog {
-            max-width: 900px;
+            max-width: 900px !important;
             margin: 1.75rem auto;
         }
 
