@@ -306,6 +306,12 @@
                                     <input type="file" accept="image/*" class="form-control" id="image_path_two"
                                         name="image_path_two" onchange="display_image(this)">
                                 </div>
+                                
+                                <div class="col-lg-12 form-group mb-4">
+                                    <label for="mobile_image_path" class="form-label">Upload Mobile Image</label>
+                                    <input type="file" accept="image/*" class="form-control" id="mobile_image_path"
+                                        name="mobile_image_path">
+                                </div>
 
 
                                 <div class="col-lg-12 form-group mt-2">

@@ -80,6 +80,14 @@ class CategoryController extends Controller
                 $category->image_path = mmadev_store_and_get_image_path('categories', $file);
             }
 
+            // Handle image upload (if a new image is provided)
+            if ($request->hasFile('mobile_image_path')) {
+
+                $file = $request->file('mobile_image_path');
+                // store image in folder and return image path
+                $category->image_path = mmadev_store_and_get_image_path('categories', $file);
+            }
+
             $category->save();
 
             return redirect()->route('categories')->with('success', 'Category created successfully.');

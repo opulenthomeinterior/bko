@@ -111,6 +111,18 @@ class StyleController extends Controller
                 $style->image_path_two = mmadev_store_and_get_image_path('styles', $file);
             }
 
+            // Handle image upload (if a new image is provided)
+            if ($request->hasFile('mobile_image_path')) {
+                // Delete old image if it exists
+                if (!empty($style->mobile_image_path)) {
+                    mmadev_delete_style_image_attachment_from_directory($style->mobile_image_path, 'styles');
+                }
+
+                $file = $request->file('mobile_image_path');
+                // store image in folder and return image path
+                $style->image_path_two = mmadev_store_and_get_image_path('styles', $file);
+            }
+
             $style->save();
 
             $testimonialDates = $request->date;
