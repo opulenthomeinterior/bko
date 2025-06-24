@@ -637,7 +637,7 @@ td
     <div class="row my-5">
             <div class="col-12">
                 <img class="img-fluid w-100 d-none d-md-block rounded shadow-lg" src="{{ asset('imgs/categories/'.$category->image_path_two) }}" alt="">
-                <img class="img-fluid w-100 d-md-none rounded shadow-lg" src="{{ asset('imgs/categories/'.$category->mobile_image_path') }}" alt="">
+                <img class="img-fluid w-100 d-md-none rounded shadow-lg" src="{{ asset('imgs/categories/'.$category->mobile_image_path) }}" alt="">
             
             </div>
     </div>
