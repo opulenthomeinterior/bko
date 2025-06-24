@@ -639,19 +639,18 @@ td
 
 <div class="container">
     <div class="row">
-    <div class="col-12">
+        <div class="col-12">
             <img class="img-fluid w-100 d-none d-md-block rounded shadow-lg" src="{{ asset('imgs/categories/'.$category->image_path_two) }}" alt="">
-    <img class="img-fluid w-100 d-md-none" src="{{ asset('images/replace-door-mobile.png') }}" alt="">
-   
-</div>
-    </div>
-    <div class="row justify-content-center mt-5">
-        <div class="col-lg-1 d-lg-block"></div>
-        <div class="col-lg-4 col-12">
-             <a  class="btn bg-orange px-3 fw-bold text-uppercase rounded-0 " style="font-size:14px;" data-bs-toggle="modal" data-bs-target="#exampleModal"> book your FREE CONSULTATION NOW!</a>
+            <img class="img-fluid w-100 d-md-none" src="{{ asset('images/replace-door-mobile.png') }}" alt="">
+        
         </div>
     </div>
-
+    <div class="row justify-content-center mt-5">
+        <!-- <div class="col-lg-1 d-lg-block"></div>
+        <div class="col-lg-4 col-12">
+             <a  class="btn bg-orange px-3 fw-bold text-uppercase rounded-0 " style="font-size:14px;" data-bs-toggle="modal" data-bs-target="#exampleModal"> book your FREE CONSULTATION NOW!</a>
+        </div> -->
+    </div>
 </div>
 
     <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
