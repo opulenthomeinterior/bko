@@ -597,7 +597,6 @@ td
     </div>
 </div>
 
-@if($slug == 'handles')
 <section class="container-fluid my-5 bg-light py-4">
     <div class="container">
     <div class="row">
@@ -660,12 +659,10 @@ td
 </div>
 </section>
 
-@endif
-@if($slug == 'handles')
 <div class="container">
     <div class="col-12">
                 <img class="img-fluid w-100 d-none d-md-block rounded shadow-lg" src="{{ asset('imgs/categories/'.$category->image_path_two) }}" alt="">
-        <img class="img-fluid w-100 rounded shadow-lg  d-md-none" src="{{ asset('images/handles-mobile.png') }}" alt="">
+        <!-- <img class="img-fluid w-100 rounded shadow-lg  d-md-none" src="{{ asset('images/handles-mobile.png') }}" alt=""> -->
         
     </div>
 </div>
@@ -698,7 +695,6 @@ td
       
     </div>
 </div>
-@endif
 
 
 
