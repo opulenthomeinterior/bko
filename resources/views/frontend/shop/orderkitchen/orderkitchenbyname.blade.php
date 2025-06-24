@@ -381,6 +381,7 @@
         <div class="row">
             <div class="col-12">
                 <img src="{{asset('imgs/styles/' . $styleData['data']['image_path_two'])}}" alt="">
+                <img src="{{asset('imgs/styles/' . $styleData['data']['mobile_image_path'])}}" alt="">
             </div>
         </div>
     </div>
