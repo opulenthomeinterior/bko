@@ -595,110 +595,13 @@ td
         </div>
     </div>
 </div>
-
-
-@if($slug == 'handles')
-<section class="container-fluid my-5 bg-light py-4">
-    <div class="container">
-    <div class="row">
-        {{-- <div class=" col-xl-8 col-12 align-self-center px-5 d-flex flex-column flex-md-row p-0">
-            <div class="row">
-                
-                <div class="align-self-center rounded shadow-lg order-sample position-relative col-12 col-xl-8 bg-white rounded-lg border-0 shadow-sm" style="">
-                    <h4 style="font-size:30px; font-weight:600;"><span class="text-danger">Try</span> <span class="text-black">Before You Buy<span>
-                       <br> <span class="text-danger"> FREE</span> Door Samples!</h4>
-                       <h4 class="text-primary my-4" style="font-size:24px;">£6 Delivery Charge Only.</h4>
-                    
-                    <a href="{{ route('ordercomponentbyname', 'doors') }}" class=" px-2 btn bg-orange px-1 fw-bold text-uppercase rounded-0 " style="font-size:14px;">  Order a Sample of your choice NOW!</a>
-                </div>
-                <div class="p-0 mb-3 mb-xl-0 col-12 col-xl-4">
-                 <img class="w-100 object-fit-cover rounded border border-warning" src="https://bkonline.uk/public/imgs/products/Cartmel-Cashmere-Flat-Door-A1720452961_668c0761d6f16.jpg"  class="img-fluid"  alt="Modern Kitchen" 
-                    style="width: 300px; height: 400px; object-fit: cover;">
-                
-               
-                </div>
-            </div>
-
-        </div> --}}
-        <div class="col-xl-6 mt-lg-5">
-            <h1 class="text-black fw-bold">Handles</h1>
-            
-
-        
-             <p>
-      <!-- For large screens -->
-      <span class="desktop-only fs-5">
-        A wide variety of handles for kitchen units are available at <span class="fw-bold"> Buy Kitchen Online.</span> The handles are suitable for drawers, cabinets and doors. You can <span class="fw-bold"> choose a handle according to your style preference and kitchen aesthetic. </span>To minimize space, you can go for a simple bar handle or select one of our drop handles if you want a statement piece. <br>
-        We offer a diverse range of <span class="fw-bold">handles for kitchen doors, cabinets, cupboards, and drawers</span>  to suit every style and preference. Choose from <span class="fw-bold">bar handles, pull handles, D pull handles, bow handles,</span> and more for a sleek modern look. For a classic touch, explore options like drop pendant handles, knob handles, and drop ring handles. Profile handles, vertical side profiles, and Scilm Gola handles provide innovative designs for contemporary kitchens. With additional accessories like connectors, trim caps, and end profiles, <span class="fw-bold">you can customize your kitchen</span> to perfection.
-    </p>
-            <!-- <p class="fs-5">{!! $category->description !!} </p> -->
-          
-                
-      </span>
-
-      <!-- For mobile screens -->
-      <span class="mobile-only">
-        <input type="checkbox" class="toggle-box" id="toggle-text" />
-        <span class="text fs-5 fs-mob">
-          A wide variety of handles for kitchen units are available at <span class="fw-bold"> Buy Kitchen Online.</span> The handles are suitable for drawers, cabinets and doors. You can <span class="fw-bold"> choose a handle according to your style preference and kitchen aesthetic. </span>To minimize space,<span class="dots"></span><span class="more-text"> you can go for a simple bar handle or select one of our drop handles if you want a statement piece. <br>
-                We offer a diverse range of <span class="fw-bold">handles for kitchen doors, cabinets, cupboards, and drawers</span>  to suit every style and preference. Choose from <span class="fw-bold">bar handles, pull handles, D pull handles, bow handles,</span> and more for a sleek modern look. For a classic touch, explore options like drop pendant handles, knob handles, and drop ring handles. Profile handles, vertical side profiles, and Scilm Gola handles provide innovative designs for contemporary kitchens. With additional accessories like connectors, trim caps, and end profiles, <span class="fw-bold">you can customize your kitchen</span> to perfection.</span>
-          <label for="toggle-text" class="read-toggle"></label>
-        </span>
-      </span>
-    </p>
-
-
-
-
-        </div>
-        <div class="col-xl-2"></div>
-        <div class="col-xl-4 p-0 col-12">
-            @include('frontend.inquiry_form')
-        </div>
-    </div>
-   
-</div>
-</section>
-
-@endif
-@if($slug == 'handles')
 <div class="container">
     <div class="col-12">
                 <img class="img-fluid w-100 d-none d-md-block rounded shadow-lg" src="{{ asset('imgs/categories/'.$category->image_path_two) }}" alt="">
-        <img class="img-fluid w-100 rounded shadow-lg  d-md-none" src="{{ asset('images/handles-mobile.png') }}" alt="">
+        <!-- <img class="img-fluid w-100 rounded shadow-lg  d-md-none" src="{{ asset('images/handles-mobile.png') }}" alt=""> -->
         
     </div>
 </div>
-
-
-<div class="container mt-5">
-    <div class="row">
-       
-          <div class="col-lg-6 align-self-center" >
-                
-                <div class=" p-5 rounded shadow-lg order-sample  bg-white rounded-lg border-0 shadow-sm pe-5">
-                    <h4 style="font-size:30px; font-weight:600; color:#FDB71A"><span class="">Order a Sample</span> <span class="text-black text-uppercase">of Your Favorite HANDLE<span>
-                       <br></h4>
-                      <p  style="font-size: 16px;" class="mt-4">
-                        Choosing the right handle is an important decision. Our sample service allows you to experience the material, Color and Quality of our Handles in your own kitchen before committing to a full order.
-                      </p>
-                   
-                    <a href="{{ route('ordercomponentbyname', 'doors') }}" class="btn bg-orange px-1 fw-bold text-uppercase rounded-0 " style="font-size:14px;">  Order a Sample</a>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div style="height:400px">
-                <img class="w-100 object-fit-cover rounded border border-warning" src="{{ asset('images/handles-right-section.png') }}"  class="img-fluid"  alt="Modern Kitchen" 
-                style="height: 100%;"
-                >
-                </div>
-            </div>
-            
-
-      
-    </div>
-</div>
-@endif
 
 
 
