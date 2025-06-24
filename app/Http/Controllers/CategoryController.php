@@ -64,6 +64,22 @@ class CategoryController extends Controller
                 $category->image_path = mmadev_store_and_get_image_path('categories', $file);
             }
 
+            // Handle image upload (if a new image is provided)
+            if ($request->hasFile('header_image')) {
+
+                $file = $request->file('header_image');
+                // store image in folder and return image path
+                $category->image_path = mmadev_store_and_get_image_path('categories', $file);
+            }
+
+            // Handle image upload (if a new image is provided)
+            if ($request->hasFile('image_path_two')) {
+
+                $file = $request->file('image_path_two');
+                // store image in folder and return image path
+                $category->image_path = mmadev_store_and_get_image_path('categories', $file);
+            }
+
             $category->save();
 
             return redirect()->route('categories')->with('success', 'Category created successfully.');
