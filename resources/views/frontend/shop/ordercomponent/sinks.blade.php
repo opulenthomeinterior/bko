@@ -664,7 +664,7 @@ td
 @if($slug == 'handles')
 <div class="container">
     <div class="col-12">
-        <img class="img-fluid w-100 rounded shadow-lg d-none d-md-block" src="{{ asset('images/handles.png') }}" alt="">
+                <img class="img-fluid w-100 d-none d-md-block rounded shadow-lg" src="{{ asset('imgs/categories/'.$category->image_path_two) }}" alt="">
         <img class="img-fluid w-100 rounded shadow-lg  d-md-none" src="{{ asset('images/handles-mobile.png') }}" alt="">
         
     </div>

@@ -640,7 +640,7 @@ td
 <div class="container">
     <div class="row">
     <div class="col-12">
-    <img class="img-fluid w-100 d-none d-md-block" src="{{ asset('images/replace-door.png') }}" alt="">
+            <img class="img-fluid w-100 d-none d-md-block rounded shadow-lg" src="{{ asset('imgs/categories/'.$category->image_path_two) }}" alt="">
     <img class="img-fluid w-100 d-md-none" src="{{ asset('images/replace-door-mobile.png') }}" alt="">
    
 </div>
