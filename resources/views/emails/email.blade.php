@@ -233,11 +233,11 @@
             text-align: center;
             margin-top: 15px;
             font-size: 12px;
-            color: #95a5a6;
+            color: white;
         }
 
         .unsubscribe {
-            color: #f4a261;
+            color: red;
             text-decoration: none;
         }
 
