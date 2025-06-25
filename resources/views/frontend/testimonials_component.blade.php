@@ -521,6 +521,8 @@
             .quote-icon
             {
                 font-size:80px;
+                right: 40px;
+                top: 73px;
             }
         }
        
