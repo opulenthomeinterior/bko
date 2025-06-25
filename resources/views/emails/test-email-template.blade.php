@@ -295,7 +295,7 @@
         <!-- Header -->
         <div class="header">
             <div class="logo">
-                <img src="https://via.placeholder.com/60x60/f4a261/ffffff?text=BKO" alt="Buy Kitchen Online Logo" class="logo-icon">
+                <img src="{{ asset('images/bko-black-logo.png') }}" alt="Buy Kitchen Online Logo" class="logo-icon">
             </div>
             <div class="contact-info">
                 <div>020 805 05605</div>
@@ -315,7 +315,7 @@
 
             <a href="#" class="cta-button">Book Your Consultation Now!</a>
 
-            <img src="https://images.unsplash.com/photo-1556912167-f556f1f39fdf?w=600&h=300&fit=crop&crop=center" alt="Modern Kitchen Design" class="kitchen-image">
+            <img src="{{ asset('images/email-image.png') }}" alt="Modern Kitchen Design" class="kitchen-image">
 
             <div class="content-text">
                 Morbi tristique libero eros, sed rhoncus libero posuere in. Phasellus vitae laoreet massa. Quisque magna arcu, blandit et ex et, lacinia luctus massa.
