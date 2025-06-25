@@ -1,15 +1,4 @@
-@component('mail::message')
-<h1>New Inquiry Received</h1>
-@if(!empty($data['name']))<p><strong>Name:</strong> {{ $data['name'] }}</p>@endif
-@if(!empty($data['email']))<p><strong>Email:</strong> {{ $data['email'] }}</p>@endif
-@if(!empty($data['phone']))<p><strong>Phone Number:</strong> {{ $data['phone'] }}</p>@endif
-@if(!empty($data['call_time']))<p><strong>Call Time:</strong> {{ $data['call_time'] }}</p>@endif
-@if(!empty($data['message']))<p><strong>Message:</strong> {{ $data['message'] }}</p>@endif
-<br>
-{{config('app.name')}}
-@endcomponent
-
-{{--<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -306,7 +295,7 @@
         <!-- Header -->
         <div class="header">
             <div class="logo">
-                <img src="https://via.placeholder.com/60x60/f4a261/ffffff?text=BKO" alt="Buy Kitchen Online Logo" class="logo-icon">
+                <img src="{{ asset('images/bko-black-logo.png') }}" alt="Buy Kitchen Online Logo" class="logo-icon">
             </div>
             <div class="contact-info">
                 <div>020 805 05605</div>
@@ -318,27 +307,19 @@
         <div class="main-content">
             <h1 class="welcome-title">Welcome to Buy Kitchen Online</h1>
             
-            <div class="greeting">Hey (First Name),</div>
+            <div class="greeting">Hey BKO User,</div>
             
             <div class="content-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel porttitor justo. Phasellus id elementum nulla. Aliquam faucibus ut elit quis consectetur ante scelerisque et. Mauris quis augue quis libero dignissim auctor at ut sem.
-            </div>
-            
-            <div class="content-text">
-                Nullam vel aliquet felis, a sollicitudin risus. Integer tristique sem non purus consectetur aliquet. Nunc tempor viverra eros, vitae eleifend mi tempus a. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse mollis sodales justo eget interdum.
+                @if(!empty($data['message'])){!! $data['message'] !!}@endif
             </div>
 
             <a href="#" class="cta-button">Book Your Consultation Now!</a>
 
             <img src="https://images.unsplash.com/photo-1556912167-f556f1f39fdf?w=600&h=300&fit=crop&crop=center" alt="Modern Kitchen Design" class="kitchen-image">
 
-            <div class="content-text">
-                Morbi tristique libero eros, sed rhoncus libero posuere in. Phasellus vitae laoreet massa. Quisque magna arcu, blandit et ex et, lacinia luctus massa.
-            </div>
-
             <div class="signature">
                 <div>Sincerely,</div>
-                <div class="signature-name">Olivia Wilson</div>
+                <div class="signature-name">Buy Kitchen Online Team</div>
                 <div class="signature-title">Business Owner</div>
             </div>
         </div>
@@ -396,4 +377,4 @@
         </div>
     </div>
 </body>
-</html>--}}
+</html>
