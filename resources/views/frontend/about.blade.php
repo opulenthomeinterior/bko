@@ -292,7 +292,7 @@
             <div class="hero-content">
 
                 <h1 class="text-white fw-bold text-center">Welcome To</h1>
-                <h1 class="text-yellow fw-bold text-center">Buy kitchen online (BKO)</h1>
+                <h1 class="text-yellow fw-bold text-center">Buy kitchen online</h1>
                 <p class="text-center fw-bold text-white">At BKO, we transform your dreams into reality. We're passionate
                     about making your kitchen lively and functional. Our mission is to make luxury kitchens accessible to
                     all by providing top-tier quality at affordable prices. </p>
