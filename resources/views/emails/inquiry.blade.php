@@ -295,7 +295,7 @@
         <!-- Header -->
         <div class="header">
             <div class="logo">
-                <img src="{{ asset('images/bko-black-logo.png') }}" alt="Buy Kitchen Online Logo" class="logo-icon">
+                <img src="https://bkonline.uk/public/images/bko-black-logo.png" alt="Buy Kitchen Online Logo" class="logo-icon">
             </div>
             <div class="contact-info">
                 <div>020 805 05605</div>
