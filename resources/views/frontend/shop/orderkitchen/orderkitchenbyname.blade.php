@@ -336,14 +336,14 @@
                 <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase">Home</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('orderkitchen') }}" class="text-uppercase">Order
                         Kitchen</a></li>
-                <li class="breadcrumb-item"><span href="" class="text-uppercase">{{ $styleData['data']['name'] }}</span></li>
+                <li class="breadcrumb-item"><span href="" class="text-uppercase">{{ str_replace('Kitchen', '', $styleData['data']['name']) }}</span></li>
             </ol>
         </nav>
 
         {{-- <div class="row mb-lg-5 mb-4">
             <div class="col-12">
                 <h1 class="fs-1 fw-bolder text-dark text-uppercase text-center">
-                    {{ $styleData['data']['name'] }} Kitchen
+                    {{ str_replace('Kitchen', '', $styleData['data']['name']) }} Kitchen
                 </h1>
             </div>
         </div> --}}
@@ -354,12 +354,12 @@
          <div class="row mt-4">
             <div class="col-md-6">
                  <h1 class="fs-1 fw-bolder text-dark text-uppercase">
-                    {{ $styleData['data']['name'] }} Kitchen
+                    {{ str_replace('Kitchen', '', $styleData['data']['name']) }} Kitchen
                 </h1>
                 <!-- <h1 class="fs-3 fw-bold text-uppercase text-dark">
-                    Ordering a {{ $styleData['data']['name'] }} Kitchen
+                    Ordering a {{ str_replace('Kitchen', '', $styleData['data']['name']) }} Kitchen
                 </h1> -->
-                <p class="">To start ordering a {{ $styleData['data']['name'] }} kitchen, first choose your preferred assembly,
+                <p class="">To start ordering a {{ str_replace('Kitchen', '', $styleData['data']['name']) }} kitchen, first choose your preferred assembly,
                     then from our range of colours and finishes.</p>
                 {{-- <hr> --}}
                 @if ($styleData['data']['style_description'])
@@ -389,7 +389,7 @@
     {{--<section class="container-fluid">
         <div class="row">
             <div class="col-12 bg-warning py-5">
-                <h1 class="fw-bold text-center text-dark text-decoration-underline">{{ $styleData['data']['name'] }} Kitchen</h1>
+                <h1 class="fw-bold text-center text-dark text-decoration-underline">{{ str_replace('Kitchen', '', $styleData['data']['name']) }} Kitchen</h1>
             </div>
             <div class="col-12">
                 <div class="card border-0">
@@ -544,7 +544,7 @@
                         </div>
                         
                         <div class="content-wrapper">
-                            <h1 class="main-title">{{ $styleData['data']['name'] }} Kitchen</h1>
+                            <h1 class="main-title">{{ str_replace('Kitchen', '', $styleData['data']['name']) }} Kitchen</h1>
                             <p class="subtitle">Where Minimalism Meets Elegance and Functionality.</p>
                         </div>
                     </div>
@@ -623,7 +623,7 @@
                                             <div class="card-header border-bottom border-default">
                                                 <div class="mb-2 d-flex justify-content-between">
                                                     <div class="fw-bold">
-                                                        {{$styleData['data']['name']}} {{$styleHasColour->colour?->trade_colour}}
+                                                        {{str_replace('Kitchen', '', $styleData['data']['name'])}} {{$styleHasColour->colour?->trade_colour}}
                                                     </div>
                                                     @if ($styleHasColour->page_status == 1)
                                                     <div>
