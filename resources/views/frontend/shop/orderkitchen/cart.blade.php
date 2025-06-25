@@ -230,7 +230,7 @@
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true">
         <div class="modal-dialog w-100" role="document">
-            <div class="modal-content">
+            <div class="modal-content p-4">
                 <div class="modal-header">
                     <h5 class="modal-title" id="myModalLabel">Compare Products</h5>
                 </div>
@@ -319,7 +319,7 @@
                             </div>
                         </div>
                         <div class="col-lg-8" style="height: 400px; overflow-y:auto">
-                            <div class="row p-4" id="compareProducts">
+                            <div class="row" id="compareProducts">
                                 {{-- <div class="col-lg-6 mb-3">
                                     <div class="card">
                                         <div class="card-body text-center">
@@ -411,12 +411,12 @@
     <div class="modal fade" id="cart-items-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true">
         <div class="modal-dialog w-100" role="document">
-            <div class="modal-content">
+            <div class="modal-content p-4">
                 <div class="modal-header">
                     <h3 class="modal-title" id="myModalLabel">Change Styles</h3>
                 </div>
                 <div class="modal-body">
-                    <div class="row p-4">
+                    <div class="row">
                         <div class="col-lg-12">
                             <table class="table">
                                 <thead>
