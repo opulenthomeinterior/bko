@@ -748,7 +748,7 @@ use App\Models\Style;
                                                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 py-2">
                                                         <li style="width: 100%; border-radius: 0px" class="border-bottom border-default drop-down-link">
                                                             <a style="width: 100%;" href="{{ route('orderkitchenbyname', [$style->slug]) }}" class="dropdown__link">
-                                                                <i class="ri-arrow-right-s-fill"></i> {{ $style->name }} KITCHEN
+                                                                <i class="ri-arrow-right-s-fill"></i> {{ str_replace('Kitchen', '',$style->name) }} KITCHEN
                                                             </a>
                                                         </li>
                                                     </div>
