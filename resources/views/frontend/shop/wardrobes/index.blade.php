@@ -1,79 +1,80 @@
 <x-guest-layout>
     <title>
-        Made to Measure Wardrobes in London | Buy Kitchen Online
+        Made to Measure Wardrobes London | Buy Kitchen Online
     </title>
     <meta name="description" content="Buy Kitchen Online offers Premium made-to-measure wardrobes & bespoke fitted bedroom wardrobes in London. Shop Now for Tailored Storage Solutions. ">
-    <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Kitchen Wardrobes",
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Kitchen Wardrobes",
+  "url": "https://bkonline.uk/wardrobes",
+  "logo": "https://bkonline.uk/public/images/bko-black-logo.png",
+  "description": "Buy Kitchen Online offers bespoke, high-quality wardrobes in London (North London, North East London, Central London & East London). Custom designs, smart storage solutions & expert fitting. Free quote & fast installation.",
+  "image": "https://bkonline.uk/public/imgs/products/Wardrobe-11745065753_68039719b478f.jpg",
+  "brand": {
+    "@type": "Brand",
+    "name": "Buy Kitchen Online"
+  },
+  "offers": {
+    "@type": "Offer",
     "url": "https://bkonline.uk/wardrobes",
+    "priceCurrency": "GBP",
+    "price": "0.00",
+    "priceValidUntil": "2025-12-31",
+    "itemCondition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "30"
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Verified Customer"
+    },
+    "reviewBody": "The wardrobe design exceeded my expectations! It's functional, stylish, and fit perfectly in my space. The installation was quick and professional. Highly recommended!"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://bkonline.uk/wardrobes"
+  },
+  "manufacturer": {
+    "@type": "Organization",
+    "name": "Buy Kitchen Online",
     "logo": "https://bkonline.uk/public/images/bko-black-logo.png",
-    "description": "Buy Kitchen Online offers bespoke, high-quality wardrobes in London (North London, North East London, Central London & East London). Custom designs, smart storage solutions & expert fitting. Free quote & fast installation.",
-    "image": "https://bkonline.uk/public/imgs/products/Wardrobe-11745065753_68039719b478f.jpg",
-    "brand": {
-        "@type": "Brand",
-        "name": "Buy Kitchen Online"
-    },
-    "offers": {
-        "@type": "Offer",
-        "url": "https://bkonline.uk/wardrobes",
-        "priceCurrency": "GBP",
-        "price": "0.00",
-        "priceValidUntil": "2025-12-31",
-        "itemCondition": "https://schema.org/NewCondition",
-        "availability": "https://schema.org/InStock"
-    },
-    "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "reviewCount": "30"
-    },
-    "review": {
-        "@type": "Review",
-        "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-        },
-        "author": {
-        "@type": "Person",
-        "name": "Verified Customer"
-        },
-        "reviewBody": "The wardrobe design exceeded my expectations! It's functional, stylish, and fit perfectly in my space. The installation was quick and professional. Highly recommended!"
-    },
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://bkonline.uk/wardrobes"
-    },
-    "manufacturer": {
-        "@type": "Organization",
-        "name": "Buy Kitchen Online",
-        "logo": "https://bkonline.uk/public/images/bko-black-logo.png",
-        "url": "https://bkonline.uk/"
-    },
-    "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Unit 7, 44 Gillender Street",
-        "addressLocality": "London",
-        "postalCode": "E14 6RP",
-        "addressCountry": "UK"
-    },
-    "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "020 805 05605",
-        "contactType": "Customer Service",
-        "areaServed": "London specifically in North London, North East London, Central London & East London.",
-        "availableLanguage": "English UK"
-    },
-    "sameAs": [
-        "https://www.facebook.com/opulenthomeinteriorsltd",
-        "https://www.instagram.com/bkonline__kitchen/?igsh=YWZqaDg4b2ppZ3Zw",
-        "https://www.youtube.com/@BKOnline570"
-    ]
-    }
-    </script>
+    "url": "https://bkonline.uk/"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Unit 7, 44 Gillender Street",
+    "addressLocality": "London",
+    "postalCode": "E14 6RP",
+    "addressCountry": "UK"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "020 805 05605",
+    "contactType": "Customer Service",
+    "areaServed": "London specifically in North London, North East London, Central London & East London.",
+    "availableLanguage": "English UK"
+  },
+  "sameAs": [
+    "https://www.facebook.com/opulenthomeinteriorsltd",
+    "https://www.instagram.com/bkonline__kitchen/?igsh=YWZqaDg4b2ppZ3Zw",
+    "https://www.youtube.com/@BKOnline570"
+  ]
+}
+</script>
+
     <link rel="canonical" href="https://bkonline.uk/wardrobes" />
     
     <style>
