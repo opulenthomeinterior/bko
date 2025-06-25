@@ -33,7 +33,8 @@
             border-radius: 8px;
             overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
-            height: 100%;
+            /* height: 100%; */
+            height: 430px !important;
             margin-bottom: 30px;
         }
         
@@ -43,8 +44,8 @@
         }
         
         .component-img {
-            height: 200px;
-            object-fit: cover;
+            height: 250px;
+            object-fit: contain;
         }
         
         .card-title {
