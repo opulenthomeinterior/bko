@@ -143,7 +143,7 @@
 <div class="mt-5 container container-features">
     <div class="row justify-content-center">
         <div class="col-lg-6 col-sm-12">
-            <h3 class="text-center mb-2">WHY CHOOSE BKONLINE</h3>
+            <h3 class="text-center mb-2">WHY CHOOSE Buy Kitchen Online</h3>
             <div id="lines" class="mb-3">
                 <div id="line1"></div>
                 <div id="line2"></div>

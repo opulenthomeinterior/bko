@@ -214,7 +214,7 @@
         </div>
     </section>
 
-    <!-- Why choose BKONLINE -->
+    <!-- Why choose Buy Kitchen Online -->
     @include('frontend.why_choose_bkonline')
 
     <!-- Testimonials -->
