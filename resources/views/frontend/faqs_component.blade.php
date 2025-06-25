@@ -549,7 +549,7 @@
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p>Affordable kitchen units can be a lifesaver when you need to renovate your kitchen on a budget. At BK Online, even our budget-friendly kitchen units have high-quality materials and craftsmanship.</p>
+                    <p>Affordable kitchen units can be a lifesaver when you need to renovate your kitchen on a budget. At Buy Kitchen Online, even our budget-friendly kitchen units have high-quality materials and craftsmanship.</p>
                 </div>
             </div>
 
@@ -560,7 +560,7 @@
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p>In order to design a custom kitchen unit with BK Online, we conduct an in-depth consultation. We discuss your style and functionality, measure your space, and then create a unique design for your home.</p>
+                    <p>In order to design a custom kitchen unit with Buy Kitchen Online, we conduct an in-depth consultation. We discuss your style and functionality, measure your space, and then create a unique design for your home.</p>
                    
                 </div>
             </div>

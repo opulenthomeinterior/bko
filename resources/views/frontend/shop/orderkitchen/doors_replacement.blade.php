@@ -1,81 +1,82 @@
 <x-guest-layout>
     <head>
         @section('meta_tags')
-        <title>Kitchen Door Replacement | Kitchen Cupboards & Cabinet Doors </title>
-        <meta name="description" content="Buy Kitchen Online is here with Affordable & Custom kitchen units in London, in J Pull, Shaker, Slab, MFC & True Handleless styles. Book Consultation Now.">
+        <title>Kitchen Door Replacement | Cupboards & Cabinet Doors </title>
+        <meta name="description" content="Buy Kitchen Online is here to Upgrade your space with replacement kitchen cupboard doors & cabinet doors by changing your kitchen unit doors in London. ">
        @endsection
         <script type="application/ld+json">
-            {
-            "@context": "https://schema.org",
-            "@type": "Product",
-            "name": "Kitchens Door Replacement",
+        {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Kitchens Door Replacement",
+        "url": "https://bkonline.uk/shop/doors-replacement",
+        "logo": "https://bkonline.uk/public/images/bko-black-logo.png",
+        "description": "Buy Kitchen Online is here to upgrade your space with kitchen cupboard doors & cabinet doors replacement by changing your kitchen unit doors in London (North London, North East London, Central London & East London).",
+        "image": "https://bkonline.uk/public/images/21offdesktop.png",
+        "brand": {
+            "@type": "Brand",
+            "name": "Buy Kitchen Online"
+        },
+        "offers": {
+            "@type": "Offer",
             "url": "https://bkonline.uk/shop/doors-replacement",
-            "logo": "https://bkonline.uk/public/images/bko-black-logo.png",
-            "description": "Buy Kitchen Online is here to upgrade your space with kitchen cupboard doors & cabinet doors replacement by changing your kitchen unit doors in London (North London, North East London, Central London & East London).",
-            "image": "https://bkonline.uk/public/images/21offdesktop.png",
-            "brand": {
-                "@type": "Brand",
-                "name": "Buy Kitchen Online"
+            "priceCurrency": "GBP",
+            "price": "0.00",
+            "priceValidUntil": "2025-12-31",
+            "itemCondition": "https://schema.org/NewCondition",
+            "availability": "https://schema.org/InStock"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "26"
+        },
+        "review": {
+            "@type": "Review",
+            "author": {
+            "@type": "Person",
+            "name": "Samantha Greer"
             },
-            "offers": {
-                "@type": "Offer",
-                "url": "https://bkonline.uk/shop/doors-replacement",
-                "priceCurrency": "GBP",
-                "price": "0.00",
-                "priceValidUntil": "2025-12-31",
-                "itemCondition": "https://schema.org/NewCondition",
-                "availability": "https://schema.org/InStock"
-            },
-            "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.8",
-                "reviewCount": "26"
-            },
-            "review": {
-                "@type": "Review",
-                "author": {
-                "@type": "Person",
-                "name": "Samantha Greer"
-                },
-                "datePublished": "2025-03-15",
-                "reviewBody": "We replaced all our kitchen cabinet doors through Buy Kitchen Online. The result looks like a brand new kitchen—very happy with the service and quality!",
-                "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5"
-                }
-            },
-            "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": "https://bkonline.uk/shop/doors-replacement"
-            },
-            "manufacturer": {
-                "@type": "Organization",
-                "name": "Buy Kitchen Online",
-                "logo": "https://bkonline.uk/public/images/bko-black-logo.png",
-                "url": "https://bkonline.uk/"
-            },
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Unit 7, 44 Gillender street",
-                "addressLocality": "London",
-                "postalCode": "E14 6RP",
-                "addressCountry": "UK"
-            },
-            "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "020 805 05605",
-                "contactType": "Customer Service",
-                "areaServed": "London specifically in North London, North East London, Central London & East London.",
-                "availableLanguage": "English UK"
-            },
-            "sameAs": [
-                "https://www.facebook.com/opulenthomeinteriorsltd",
-                "https://www.instagram.com/bkonline__kitchen/?igsh=YWZqaDg4b2ppZ3Zw",
-                "https://www.youtube.com/@BKOnline570"
-            ]
+            "datePublished": "2025-03-15",
+            "reviewBody": "We replaced all our kitchen cabinet doors through Buy Kitchen Online. The result looks like a brand new kitchen—very happy with the service and quality!",
+            "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
             }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://bkonline.uk/shop/doors-replacement"
+        },
+        "manufacturer": {
+            "@type": "Organization",
+            "name": "Buy Kitchen Online",
+            "logo": "https://bkonline.uk/public/images/bko-black-logo.png",
+            "url": "https://bkonline.uk/"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Unit 7, 44 Gillender street",
+            "addressLocality": "London",
+            "postalCode": "E14 6RP",
+            "addressCountry": "UK"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "020 805 05605",
+            "contactType": "Customer Service",
+            "areaServed": "London specifically in North London, North East London, Central London & East London.",
+            "availableLanguage": "English UK"
+        },
+        "sameAs": [
+            "https://www.facebook.com/opulenthomeinteriorsltd",
+            "https://www.instagram.com/bkonline__kitchen/?igsh=YWZqaDg4b2ppZ3Zw",
+            "https://www.youtube.com/@BKOnline570"
+        ]
+        }
         </script>
+
         <link rel="canonical" href="https://bkonline.uk/shop/doors-replacement" />
         <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 
@@ -1824,7 +1825,7 @@
                 <div class="newsletter-content">
                     <h2 class="content-title mt-5 text-black" style="font-size: 40px;">Subscribe To Get <span class="free-text">FREE On-Site Survey</span></h2>
                         
-                    <p class="offer-text"><span class="discount-text">For your Peace of Mind, </span> expert installation is also provided<br> <span class="" style="color: green;">(Qoute Available)</span></p>
+                    <p class="offer-text"><span class="discount-text">For your Peace of Mind, </span> expert installation is also provided<br> <span class="" style="color: green;">(Quote Available)</span></p>
                         
                     <p class="terms-text">Terms & Conditions Applied.</p>
                     <div class="subscribe-container">

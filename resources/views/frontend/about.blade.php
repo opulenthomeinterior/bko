@@ -292,8 +292,8 @@
             <div class="hero-content">
 
                 <h1 class="text-white fw-bold text-center">Welcome To</h1>
-                <h1 class="text-yellow fw-bold text-center">Buy kitchen online (BKO)</h1>
-                <p class="text-center fw-bold text-white">At BKO, we transform your dreams into reality. We're passionate
+                <h1 class="text-yellow fw-bold text-center">Buy Kitchen Online</h1>
+                <p class="text-center fw-bold text-white">At Buy Kitchen Online, we transform your dreams into reality. We're passionate
                     about making your kitchen lively and functional. Our mission is to make luxury kitchens accessible to
                     all by providing top-tier quality at affordable prices. </p>
             </div>
@@ -322,10 +322,10 @@
                       <div class="story-card" style="width:107%; padding:5rem 7rem 5rem 3rem;">
                         <h2 class="story-title">OUR STORY</h2>
                         <p class="mb-0">
-                          BKO was founded with the concept of providing <span class="highlight-text"> high-quality products 
+                          Buy Kitchen Online was founded with the concept of providing <span class="highlight-text"> high-quality products 
                           without a high price tag</span>. 
                           It does not matter if you want to build an entire kitchen, replace an existing component, 
-                          or want premium wardrobes; BKO is here to cater to all your needs. 
+                          or want premium wardrobes; Buy Kitchen Online is here to cater to all your needs. 
                           You can bring your kitchens to life through our cutting-edge virtual design 
                           consultations and personalized service.
                         </p>
@@ -347,9 +347,9 @@
             {{-- <div class="row my-3 position-relative our-story" style="">
                 <div class="col-12 my-3 col-lg-4 mt-lg-5 p-3 bg-dark">
                     <h2 class="text-black fw-bolder">Our Story</h3>
-                        <p class="fs-6">BKO was founded with the concept of providing high-quality products without a high
+                        <p class="fs-6">Buy Kitchen Online was founded with the concept of providing high-quality products without a high
                             price tag. It does not matter if you want to build an entire kitchen, replace an existing
-                            component, or want premium wardrobes; BKO is here to cater to all your needs. You can bring your
+                            component, or want premium wardrobes; Buy Kitchen Online is here to cater to all your needs. You can bring your
                             kitchens to life through our cutting-edge virtual design consultations and personalized
                             service. </p>
                 </div>
