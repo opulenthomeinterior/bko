@@ -1477,7 +1477,7 @@
                         <span>
                             <span class="text-black fw-bold">
                                 Are overcrowded </span> <span class="text-warning fw-bold"> cabinets and cluttered countertops </span> <span class="text-black fw-bold">causing you daily stress?</span><br>
-                            At BKO, we offer made to measure kitchens units to maximize your kitchen with the deepest, tallest, and widest units in the market, and they are customized to suit your needs. 
+                            At Buy Kitchen Online, we offer made to measure kitchens units to maximize your kitchen with the deepest, tallest, and widest units in the market, and they are customized to suit your needs. 
                         </span>
                         <br>
                     </small>
