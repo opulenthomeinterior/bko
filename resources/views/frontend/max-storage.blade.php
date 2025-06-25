@@ -2261,7 +2261,7 @@
                 <div class="newsletter-content">
                     <h2 class="content-title mt-5 text-black" style="font-size: 40px;">Subscribe To Get <span class="free-text">FREE On-Site Survey</span></h2>
                         
-                    <p class="offer-text"><span class="discount-text">For your Peace of Mind, </span> expert installation is also provided<br> <span class="" style="color: green;">(Qoute Available)</span></p>
+                    <p class="offer-text"><span class="discount-text">For your Peace of Mind, </span> expert installation is also provided<br> <span class="" style="color: green;">(Quote Available)</span></p>
                         
                     <p class="terms-text">Terms & Conditions Applied.</p>
                     <div class="subscribe-container">
