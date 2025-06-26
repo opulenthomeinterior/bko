@@ -48,7 +48,7 @@ class CategoryController extends Controller
         ]);
 
         try {
-
+            dd($request->all());
             $category = new Category();
             $category->name = $request->input('name');
             $category->slug = str_replace(' ', '-', strtolower($request->input('name')));
