@@ -326,9 +326,9 @@
     </div>
     <div class="container my-5">
         <div class="row">
-            <div class="col-12">
-                <img src="{{asset('imgs/styles/' . $styleData['data']['image_path_two'])}}" alt="">
-                <img src="{{asset('imgs/styles/' . $styleData['data']['mobile_image_path'])}}" alt="">
+            <div class="col-12 my-5 p-0">
+                <img class="p-0 w-100 rounded img-fluid d-none d-md-block" src="{{asset('imgs/styles/' . $styleData['data']['image_path_two'])}}" alt="">
+                <img class="w-100 img-fluid d-md-none mt-2" src="{{asset('imgs/styles/' . $styleData['data']['mobile_image_path'])}}" alt="">
             </div>
         </div>
     </div>
