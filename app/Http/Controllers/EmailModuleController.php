@@ -53,7 +53,12 @@ class EmailModuleController extends Controller
             'message' => $email->message,
             'cc' => $email->cc ? json_decode($email->cc) : ''
         ];
-        Mail::to($request->email)->cc(['bkonline570@gmail.com', 'admin@bkonline.uk', $data['cc'] ?? ''])->send(new MailEmailModule($data));
+        $ccList = array_filter([
+            'bkonline570@gmail.com',
+            'admin@bkonline.uk',
+            $data['cc'] ?? null,
+        ]);
+        Mail::to($request->email)->cc($ccList)->send(new MailEmailModule($data));
         return redirect()->back()->with('success', 'Email sent successfully');
     }
 
