@@ -48,7 +48,6 @@ class CategoryController extends Controller
         ]);
 
         try {
-            dd($request->all());
             $category = new Category();
             $category->name = $request->input('name');
             $category->slug = str_replace(' ', '-', strtolower($request->input('name')));
@@ -176,10 +175,6 @@ class CategoryController extends Controller
 
             // Handle image upload (if a new image is provided)
             if ($request->hasFile('header_image')) {
-                // Delete old image if it exists
-                if (!empty($category->header_image)) {
-                    mmadev_delete_style_image_attachment_from_directory($category->header_image, 'categories');
-                }
 
                 $file = $request->file('header_image');
                 // store image in folder and return image path
@@ -188,14 +183,18 @@ class CategoryController extends Controller
 
             // Handle image upload (if a new image is provided)
             if ($request->hasFile('image_path_two')) {
-                // Delete old image if it exists
-                if (!empty($category->image_path_two)) {
-                    mmadev_delete_style_image_attachment_from_directory($category->image_path_two, 'categories');
-                }
 
                 $file = $request->file('image_path_two');
                 // store image in folder and return image path
                 $category->image_path_two = mmadev_store_and_get_image_path('categories', $file);
+            }
+
+            // Handle image upload (if a new image is provided)
+            if ($request->hasFile('mobile_image_path')) {
+
+                $file = $request->file('mobile_image_path');
+                // store image in folder and return image path
+                $category->mobile_image_path = mmadev_store_and_get_image_path('categories', $file);
             }
 
             $category->save();
