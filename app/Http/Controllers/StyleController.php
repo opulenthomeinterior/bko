@@ -120,7 +120,7 @@ class StyleController extends Controller
 
                 $file = $request->file('mobile_image_path');
                 // store image in folder and return image path
-                $style->image_path_two = mmadev_store_and_get_image_path('styles', $file);
+                $style->mobile_image_path = mmadev_store_and_get_image_path('styles', $file);
             }
 
             $style->save();

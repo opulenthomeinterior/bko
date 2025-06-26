@@ -69,7 +69,7 @@ class CategoryController extends Controller
 
                 $file = $request->file('header_image');
                 // store image in folder and return image path
-                $category->image_path = mmadev_store_and_get_image_path('categories', $file);
+                $category->header_image = mmadev_store_and_get_image_path('categories', $file);
             }
 
             // Handle image upload (if a new image is provided)
@@ -77,7 +77,7 @@ class CategoryController extends Controller
 
                 $file = $request->file('image_path_two');
                 // store image in folder and return image path
-                $category->image_path = mmadev_store_and_get_image_path('categories', $file);
+                $category->image_path_two = mmadev_store_and_get_image_path('categories', $file);
             }
 
             // Handle image upload (if a new image is provided)
@@ -85,7 +85,7 @@ class CategoryController extends Controller
 
                 $file = $request->file('mobile_image_path');
                 // store image in folder and return image path
-                $category->image_path = mmadev_store_and_get_image_path('categories', $file);
+                $category->mobile_image_path = mmadev_store_and_get_image_path('categories', $file);
             }
 
             $category->save();
