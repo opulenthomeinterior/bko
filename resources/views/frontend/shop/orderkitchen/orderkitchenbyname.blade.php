@@ -25,7 +25,7 @@
         }
         
 
-        .hero-section {
+         .hero-section {
             min-height: 100vh;
             position: relative;
             overflow: hidden;
@@ -196,8 +196,8 @@
         }
 
         .color-square {
-            width: 150px;
-            height: 150px;
+            width: 280px;
+            height: 280px;
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -208,9 +208,7 @@
             overflow: hidden;
             z-index: 3;
             backdrop-filter: blur(5px);
-            /* border: 5px solid rgba(255, 255, 255, 0.2); */
-            border: 5px solid white;
-            
+            border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
         .color-square:hover {
@@ -238,62 +236,7 @@
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
-        .slide-controls {
-            position: absolute;
-            bottom: 5%;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 12px;
-            z-index: 10;
-        }
 
-        .control-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
-        }
-
-        .control-dot.active {
-            background: #fff;
-            transform: scale(1.2);
-        }
-
-        .nav-arrows {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.9);
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 10;
-            font-size: 1.2rem;
-            color: #495057;
-        }
-
-        .nav-arrows:hover {
-            background: #fff;
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .prev-btn {
-            left: 20px;
-        }
-
-        .next-btn {
-            right: 20px;
-        }
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
@@ -326,6 +269,10 @@
                 font-size: 1.2rem;
             }
         }
+
+
+
+
     </style>
     <section class="container-fluid"
         style="background-image: url('{{ $styleData['data']['header_image'] ? asset('imgs/styles/' . $styleData['data']['header_image']) : asset('images/order-component.jpg') }}'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 50vh;">
@@ -379,9 +326,9 @@
     </div>
     <div class="container my-5">
         <div class="row">
-            <div class="col-12">
-                <img src="{{asset('imgs/styles/' . $styleData['data']['image_path_two'])}}" alt="">
-                <img src="{{asset('imgs/styles/' . $styleData['data']['mobile_image_path'])}}" alt="">
+            <div class="col-12 my-5 p-0">
+                <img class="p-0 w-100 rounded img-fluid d-none d-md-block" src="{{asset('imgs/styles/' . $styleData['data']['image_path_two'])}}" alt="">
+                <img class="w-100 img-fluid d-md-none mt-2" src="{{asset('imgs/styles/' . $styleData['data']['mobile_image_path'])}}" alt="">
             </div>
         </div>
     </div>
@@ -558,13 +505,22 @@
                         @if(!empty($styleData['data']->styleHasColours))
                         @foreach ($styleData['data']->styleHasColours as $styleColour)
                             @if ($styleColour->status == 1)
-                            <div class="slide active" data-color="{{$styleColour->colour?->colour_code}}">
+
+                            <div class="slide" data-color="{{$styleColour->colour?->colour_code}}">
+                            <img src="{{asset('imgs/styles/colours/' . $styleColour->image_path)}}" alt="" class="slide-image">
+                            <div class="slide-overlay"></div>
+                            <div class="color-square" style="background-color:{{$styleColour->colour?->colour_code}};">
+                                <p class="color-name p-1 rounded" style="color: #fff; background: rgba(172, 172, 172, 0.5)">{{$styleColour->colour?->name}}</p>
+                            </div>
+                        </div>
+
+                            {{-- <div class="slide active" data-color="{{$styleColour->colour?->colour_code}}">
                                 <img src="{{asset('imgs/styles/colours/' . $styleColour->image_path)}}" alt="{{$styleColour->image_path}}" class="slide-image">
                                 <div class="slide-overlay"></div>
                                 <div class="color-square" style="background-color: {{$styleColour->colour?->colour_code}};">
                                     <p class="color-name p-1 rounded" style="color: #fff; background: rgba(172, 172, 172, 0.5)">{{$styleColour->colour?->name}}</p>
                                 </div>
-                            </div>
+                            </div> --}}
                             @endif
                         @endforeach
                         @endif
@@ -677,19 +633,16 @@
     <script>
         let currentSlideIndex = 0;
         const slides = document.querySelectorAll('.slide');
-        const dots = document.querySelectorAll('.control-dot');
         const rightContent = document.querySelector('.right-content');
         const totalSlides = slides.length;
         let autoSlideInterval;
 
         function showSlide(index) {
-            // Remove active class from all slides and dots
-            slides.forEach(slide => slide.classList.remove('active'));
-            dots.forEach(dot => dot.classList.remove('active'));
             
-            // Add active class to current slide and dot
+            slides.forEach(slide => slide.classList.remove('active'));
+            
+            
             slides[index].classList.add('active');
-            dots[index].classList.add('active');
             
             currentSlideIndex = index;
         }
@@ -714,23 +667,17 @@
             startAutoSlide();
         }
 
-        function currentSlide(index) {
-            clearInterval(autoSlideInterval);
-            showSlide(index - 1);
-            startAutoSlide();
-        }
-
         function startAutoSlide() {
-            autoSlideInterval = setInterval(nextSlide, 1500);
+            autoSlideInterval = setInterval(nextSlide, 4000);
         }
 
-        // Initialize slideshow
+       
         document.addEventListener('DOMContentLoaded', function() {
             showSlide(0);
             startAutoSlide();
         });
 
-        // Pause auto-slide on hover
+       
         rightContent.addEventListener('mouseenter', () => {
             clearInterval(autoSlideInterval);
         });
@@ -739,7 +686,7 @@
             startAutoSlide();
         });
 
-        // Touch/swipe support for mobile
+        
         let startX = 0;
         let startY = 0;
 
@@ -757,28 +704,19 @@
             const diffX = startX - endX;
             const diffY = startY - endY;
 
-            // Only trigger if horizontal swipe is greater than vertical
+            
             if (Math.abs(diffX) > Math.abs(diffY)) {
-                if (Math.abs(diffX) > 50) { // Minimum swipe distance
+                if (Math.abs(diffX) > 50) { 
                     if (diffX > 0) {
-                        changeSlide(1); // Swipe left - next slide
+                        changeSlide(1); 
                     } else {
-                        changeSlide(-1); // Swipe right - previous slide
+                        changeSlide(-1); 
                     }
                 }
             }
 
             startX = 0;
             startY = 0;
-        });
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') {
-                changeSlide(-1);
-            } else if (e.key === 'ArrowRight') {
-                changeSlide(1);
-            }
         });
     </script>
 
