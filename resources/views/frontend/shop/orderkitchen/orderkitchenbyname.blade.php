@@ -547,7 +547,7 @@
 
 
     @if ($styleData['data']['style_title'] || $styleData['data']['style_description'] || $styleData['data']['image_path'])
-        <section class="container" style="background-color: #fff;">
+        <section class="container" style="">
             <div class="row">
                 <div class="col-12 mb-lg-5 mb-4">
                     <h1 class="fs-1 fw-bolder text-dark text-uppercase">
@@ -574,7 +574,7 @@
                         <div class="col-lg-12">
                             <div class="row">
                                 @foreach ($styleHasColours as $key => $styleHasColour)
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 mb-4">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-12 mb-4">
                                         <div class="card w-100" style="border-radius: 0px; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);">
                                             <div class="card-header border-bottom border-default">
                                                 <div class="mb-2 d-flex justify-content-between">
@@ -597,7 +597,7 @@
                                             </div>
                                             <div class="card-body carousel-card-body p-0">
                                                 <div class="col-12 d-flex justify-content-center">
-                                                    <img style="height:450px;" src="@if(!empty($styleHasColour->image_path)){{asset('imgs/styles/colours/'.$styleHasColour->image_path)}}@else{{asset('images/no-image-available.jpg')}}@endif" class="img-fluid">
+                                                    <img style="" src="@if(!empty($styleHasColour->image_path)){{asset('imgs/styles/colours/'.$styleHasColour->image_path)}}@else{{asset('images/no-image-available.jpg')}}@endif" class="img-fluid">
                                                 </div>
                                             </div>
                                         </div>
