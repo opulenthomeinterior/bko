@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Buy Kitchen Online - Inquiry Email</title>
+    <title>Buy Kitchen Online - Welcome Email</title>
 </head>
 <body style="margin:0; padding:0; background-color:#f6f6f6; font-family:Arial, sans-serif;">
 
@@ -32,15 +32,14 @@
         <tr>
             <td style="padding:30px;">
                 <h2 style="margin:0 0 20px 0; font-size:24px; color:#333;">New Inquiry Received</h2>
-                
                 <p style="font-size:15px; color:#333; line-height:1.6;">
-                    <strong>Name: </strong>@if(!empty($data['name'])){!! $data['name'] !!}@endif
+                    Name: @if(!empty($data['name'])){!! $data['name'] !!}@endif
                 </p>
                 <p style="font-size:15px; color:#333; line-height:1.6;">
-                    <strong>Email: </strong>@if(!empty($data['email'])){!! $data['email'] !!}@endif
+                    Email: @if(!empty($data['email'])){!! $data['email'] !!}@endif
                 </p>
                 <p style="font-size:15px; color:#333; line-height:1.6;">
-                    <strong>Phone Number: </strong>@if(!empty($data['phone'])){!! $data['phone'] !!}@endif
+                    Phone: @if(!empty($data['phone'])){!! $data['phone'] !!}@endif
                 </p>
 
                 <!-- CTA Button -->
@@ -68,7 +67,7 @@
                 <table width="100%" cellpadding="0" cellspacing="0">
                     <tr>
                         <!-- Social & Info -->
-                        <td width="70%" valign="top">
+                        <td width="50%" valign="top">
                             <p style="margin:0 0 10px 0; font-weight:bold;">Follow Us at:</p>
                             <p style="margin:0 0 5px 0;">
                                 <a href="#" style="text-decoration:none;"><img src="https://bkonline.uk/public/facebook-app-symbol.png" alt="facebook_icon" width="15px"></a>
@@ -81,7 +80,7 @@
                         </td>
 
                         <!-- Contact Info -->
-                        <td width="30%" valign="top" style="text-align:right;">
+                        <td width="50%" valign="top" style="text-align:right;">
                             <p style="margin:0 0 5px 0; font-weight:bold;">BUY KITCHEN ONLINE</p>
                             <p style="margin:0; font-size:14px;">020 805 05605</p>
                             <p style="margin:0; font-size:14px;">
