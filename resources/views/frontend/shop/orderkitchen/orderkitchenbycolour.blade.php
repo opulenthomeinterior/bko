@@ -1199,12 +1199,14 @@
                                         @endif
                                     </div>
                                 </div>
-
+                            </div>
                                 {{-- Tall Cabinets --}}
                                 <div class="tab-pane fade" id="nav-tallCabinet" role="tabpanel"
                                     aria-labelledby="nav-tallCabinet-tab" tabindex="0">
-                                    <div class="row">
+                                   <div class="row">
+                                        
                                         @if ($tallCabinets->count() > 0)
+
                                         @foreach ($tallCabinets as $index => $tallCabinet)
                                         {{--<div class="col-lg-4 col-6 mb-3">
                                                 <div class="card">
@@ -1571,6 +1573,7 @@
                                         @endphp
 
                                         <div class="col-lg-12 col-md-12 col-sm-12 order-sm-1 order-xs-1">
+                                         
                                             @php 
                                                 $parentSubCategories = \App\Models\Product::where('parent_category_id', $tallCabinetData->parent_category_id)->where('style_id', $tallCabinetData->style_id)->where('colour_id', $tallCabinetData->colour_id)->where('assembly_id', $tallCabinetData->assembly_id)->groupBy('parent_sub_category')->get();
                                             @endphp
@@ -1838,6 +1841,7 @@
                                 {{-- Accessories --}}
                                 <div class="tab-pane fade" id="nav-accessories" role="tabpanel"
                                     aria-labelledby="nav-accessories-tab" tabindex="0">
+                                   
                                     <div class="row">
                                         @if ($accessories->count() > 0)
 
@@ -4769,9 +4773,7 @@
                     </div>
             </div>
            
-           
-        </div>
-         <div class="col-lg-3 p-4">
+             <div class="col-lg-3 p-4">
                     <div class="container">
                                     <div class="row">
                                         <ul class="list-group w-100 border border-primary pe-0">
@@ -4842,7 +4844,7 @@
             
             
                                                         </ul>
-                                    </div>
+                                 </div>
                                 
 
                                             <!-- <div class="row border border-primary mt-2">
@@ -4859,8 +4861,14 @@
                                                     </div>
                                                 </div>
                                             </div> -->
-                             </div>
-            </div>
+                                </div>
+                     </div>
+                    
+        </div>
+           
+        </div>
+        
+            
         
     </div>
 
