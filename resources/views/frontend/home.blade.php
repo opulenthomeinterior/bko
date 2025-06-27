@@ -2840,10 +2840,10 @@
                 <!-- Left Content -->
                 <div class="col-md-12 col-lg-6 text-center text-lg-start">
                     <div class="card rounded border-0 shadow-sm p-4">
-                        <h3 class="text-primary">Our Catalogue</h3>
+                        <h3 class="" style="color:#2a6161">Our Catalogue</h3>
                         <h2 class="mb-3 text-black">EXPLORE OUR EXCLUSIVE CATALOGUE</h2>
                         <p class="mb-3 max-description suggestion">Get access to our full catalogue for free, featuring custom kitchen designs, premium materials, and smart storage solutions. Whether you're seeking style, function, or both, we've got everything you need to bring your vision to life.</p>
-                        <p class="text-primary max-description suggestion">Register now to receive our free catalogue in your inbox.</p>
+                        <p class=" max-description suggestion" style="color:#2a6161" >Register now to receive our free catalogue in your inbox.</p>
                         <form method="POST" action="{{ route('contact_us_inquiry') }}">
                             @csrf
                             <div class="input-group">
