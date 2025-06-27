@@ -241,7 +241,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('shop') }}" class="text-uppercase">Shop</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('orderkitchen') }}" class="text-uppercase">Order Kitchen</a></li>
             </ol>
         </nav>
 

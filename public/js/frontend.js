@@ -487,6 +487,10 @@ function inputQty(qty, id, productCode, full_title, price, discount_price, disco
    // console.log(`product code: ${productCode}, full_title: ${full_title}, price: ${price}, discount_price: ${discount_price}, discountP:${discount_percentage}, p_category: ${p_category}`);
 
    qty = parseInt(qty);
+   if (qty <= 0 || !qty) {
+      removeFromCart(id, productCode);
+   }
+
 
    // let products = localStorage.getItem('bko_cart');
 
@@ -507,8 +511,8 @@ function inputQty(qty, id, productCode, full_title, price, discount_price, disco
 
    // }
 
-
    addToCart(id, productCode, full_title, price, discount_price, discount_percentage, p_category, image, qty);
+
    // cartTotalAmountCalculation();
 
 }
