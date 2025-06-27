@@ -9,13 +9,13 @@
     <table align="center" width="600" cellpadding="0" cellspacing="0" style="border:1px solid #ccc; background-color:#ffffff; border-radius:10px; overflow:hidden;">
         <!-- Header -->
         <tr>
-            <td style="padding:20px 30px;">
+            <td style="padding:10px;">
                 <table width="100%" cellpadding="0" cellspacing="0">
                     <tr>
                         <td align="left" valign="top">
                             <img src="https://bkonline.uk/public/images/bko-black-logo.png" alt="BKO Logo" width="90" style="display:block;">
                         </td>
-                        <td align="right" style="font-size:14px; color:#000;">
+                        <td align="right" style="font-size:14px; color:#000; padding-right: 20px">
                             <div>020 805 05605</div>
                             <div><a href="mailto:admin@bkonline.uk" style="color:#000; text-decoration:none;">admin@bkonline.uk</a></div>
                         </td>
@@ -48,7 +48,7 @@
 
                 <!-- Kitchen Image -->
                 <div style="text-align:center;">
-                    <img src="https://bkonline.uk/public/imgs/products/email-image.png" alt="Kitchen" width="100%" style="max-width:540px; border-radius:4px; display:block; margin:0 auto;">
+                    <img src="https://bkonline.uk/public/imgs/styles/21_06_2025_034510_68562ac6aea91-true-handleless-Painted(2).png" alt="Kitchen" width="100%" style="max-width:540px; border-radius:4px; display:block; margin:0 auto;">
                 </div>
 
                 <p style="margin-top:20px; font-size:15px; color:#333;">
