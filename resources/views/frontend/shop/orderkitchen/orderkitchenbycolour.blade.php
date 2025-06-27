@@ -27,7 +27,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase">Home</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('orderkitchen') }}" class="text-uppercase">Order Kitchen</a></li>
-               <li class="breadcrumb-item"><span href="" class="text-uppercase"> {{  $colour->name }}</span></li>
+               {{-- <li class="breadcrumb-item"><span href="" class="text-uppercase"> {{  $colour->name }}</span></li> --}}
             </ol>
         </nav>
     </div>
