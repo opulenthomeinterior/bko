@@ -1000,7 +1000,7 @@ $(document).ready(function () {
                                     <div class="row">
                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p-0">
                                              <figure class="my-0" style="margin-bottom: 0px !important;">
-                                                <img class="product-image px-0" style="height: 300px !important"  style="margin-bottom: 0px !important; object-fit:contain" 
+                                                <img class="product-image px-0" style="height: 200px !important"  style="margin-bottom: 0px !important; object-fit:contain" 
                                                    src="${productDetails.image_path ? `${_baseURL}imgs/products/${productDetails.image_path}` : `${_baseURL}images/no-image-available.jpg`}"
                                                    alt="Card image cap">
                                              </figure>
