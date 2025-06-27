@@ -814,7 +814,7 @@ function createProductCard(product, type, cart_product_id = null, cart_product_c
    productCard += `<div class="container-fluid">`;
    productCard += `<div class="row">`;
    productCard += `<div class="col-lg-6">`;
-   productCard += `<figure><img class="product-image px-0" style="height: 150px !important"  src="${product.image_path ? product_BIU + '/' + product.image_path : product_BIU + '/images/no-image-available.jpg'}" alt="${product.full_title}" style="height: 120px;object-fit: cover;"></figure>`;
+   productCard += `<figure><img class="product-image px-0" style=""  src="${product.image_path ? product_BIU + '/' + product.image_path : product_BIU + '/images/no-image-available.jpg'}" alt="${product.full_title}" style="height: 120px;object-fit: cover;"></figure>`;
    productCard += `</div>`;
    productCard += `<div class="col-lg-6">`;
    productCard += `<div class="text-start">`;
