@@ -1578,7 +1578,7 @@
                                 <!-- <img src="{{ asset('images/high-quality-materials.png') }}"/> -->
                                 <i class="fa-solid fa-medal"></i>
                             </div>
-                            <h4 class="fw-bold text-primary fs-5">High-Quality Materials</h4>
+                            <h4 class="fw-bold  fs-5">High-Quality Materials</h4>
                             <p>We use durable and stylish materials for long-lasting beauty.</p>
                         </div>
                     </div>
@@ -1588,7 +1588,7 @@
                                 <!-- <img src="{{ asset('images/wide-range-of-styles.png') }}"/> -->
                                 <i class="fa-solid fa-palette"></i>
                             </div>
-                            <h4 class="fw-bold text-primary fs-5">Wide Range of Styles & Colors</h4>
+                            <h4 class="fw-bold  fs-5">Wide Range of Styles & Colors</h4>
                             <p>Find the perfect match for your taste</p>
                         </div>
                     </div> <div class="col-md-3">
@@ -1597,7 +1597,7 @@
                                 <!-- <img src="{{ asset('images/experienced-installation.png') }}"/> -->
                                 <i class="fa-solid fa-people-group"></i>
                             </div>
-                            <h4 class="fw-bold text-primary fs-5">Experienced Installation Team</h4>
+                            <h4 class="fw-bold  fs-5">Experienced Installation Team</h4>
                             <p>Professional and reliable fitting services.</p>
                         </div>
                     </div>
@@ -1608,7 +1608,7 @@
                                <!-- <img src="{{ asset('images/excellence-customer-support.png') }}"/> -->
                                <i class="fa-solid fa-headset"></i>
                             </div>
-                            <h4 class="fw-bold text-primary fs-5">Excellent Customer Service</h4>
+                            <h4 class="fw-bold  fs-5">Excellent Customer Service</h4>
                             <p>We're here to help you every step of the way.</p>
                         </div>
                     </div>

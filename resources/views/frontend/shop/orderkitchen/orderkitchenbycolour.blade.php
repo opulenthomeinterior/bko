@@ -536,7 +536,8 @@
                                                                         <input id="quantity{{ $baseCabinetData->id }}"
                                                                             class="quantity border border-black text-center"
                                                                             type="text" value="0" name="quantity"
-                                                                            disabled />
+                                                                            onKeyup="inputQty(this.value, '{{ $baseCabinetData->id }}', '{{ $baseCabinetData->product_code }}', '{{ $baseCabinetData->full_title }}', {{ $baseCabinetData->price }},  {{ $baseCabinetData->discounted_price }}, {{ $baseCabinetData->discounted_percentage ?? 0 }}, '{{ $baseCabinetData->ParentCategory->slug }}','{{ $baseCabinetData->image_path }}')"
+                                                                             />
                                                                         <input id="plus{{ $baseCabinetData->id }}"
                                                                             class="plus border bg-dark text-light p-0"
                                                                             type="button" value="+" type="number"
@@ -1173,7 +1174,8 @@
                                                                         <input id="quantity{{ $wallCabinetData->id }}"
                                                                             class="quantity border border-black text-center"
                                                                             type="text" value="0" name="quantity"
-                                                                            disabled />
+                                                                            onKeyup="inputQty(this.value, '{{ $wallCabinetData->id }}', '{{ $wallCabinetData->product_code }}', '{{ $wallCabinetData->full_title }}', {{ $wallCabinetData->price }},  {{ $wallCabinetData->discounted_price }}, {{ $wallCabinetData->discounted_percentage ?? 0 }}, '{{ $wallCabinetData->ParentCategory->slug }}','{{ $wallCabinetData->image_path }}')"
+                                                                            />
                                                                         <input id="plus{{ $wallCabinetData->id }}"
                                                                             class="plus border bg-dark text-light p-0"
                                                                             type="button" value="+" type="number"
@@ -1812,7 +1814,8 @@
                                                                         <input id="quantity{{ $tallCabinetData->id }}"
                                                                             class="quantity border border-black text-center"
                                                                             type="text" value="0" name="quantity"
-                                                                            disabled />
+                                                                            onKeyup="inputQty(this.value, '{{ $tallCabinetData->id }}', '{{ $tallCabinetData->product_code }}', '{{ $tallCabinetData->full_title }}', {{ $tallCabinetData->price }},  {{ $tallCabinetData->discounted_price }}, {{ $tallCabinetData->discounted_percentage ?? 0 }}, '{{ $tallCabinetData->ParentCategory->slug }}','{{ $tallCabinetData->image_path }}')"
+                                                                            />
                                                                         <input id="plus{{ $tallCabinetData->id }}"
                                                                             class="plus border bg-dark text-light p-0"
                                                                             type="button" value="+" type="number"
@@ -2088,7 +2091,8 @@
                                                                         <input id="quantity{{ $accessoriesData->id }}"
                                                                             class="quantity border border-black text-center"
                                                                             type="text" value="0" name="quantity"
-                                                                            disabled />
+                                                                            onKeyup="inputQty(this.value, '{{ $accessoriesData->id }}', '{{ $accessoriesData->product_code }}', '{{ $accessoriesData->full_title }}', {{ $accessoriesData->price }},  {{ $accessoriesData->discounted_price }}, {{ $accessoriesData->discounted_percentage ?? 0 }}, '{{ $accessoriesData->ParentCategory->slug }}','{{ $accessoriesData->image_path }}')"
+                                                                            />
                                                                         <input id="plus{{ $accessoriesData->id }}"
                                                                             class="plus border bg-dark text-light p-0"
                                                                             type="button" value="+" type="number"
@@ -2513,7 +2517,8 @@
                                                                     <input id="quantity{{ $internalsData->id }}"
                                                                         class="quantity border border-black text-center"
                                                                         type="text" value="0" name="quantity"
-                                                                        disabled />
+                                                                        onKeyup="inputQty(this.value, '{{ $internalsData->id }}', '{{ $internalsData->product_code }}', '{{ $internalsData->full_title }}', {{ $internalsData->price }},  {{ $internalsData->discounted_price }}, {{ $internalsData->discounted_percentage ?? 0 }}, '{{ $internalsData->ParentCategory->slug }}','{{ $internalsData->image_path }}')"
+                                                                        />
                                                                     <input id="plus{{ $internalsData->id }}"
                                                                         class="plus border bg-dark text-light p-0"
                                                                         type="button" value="+" type="number"
@@ -2790,7 +2795,8 @@
                                                                     <input id="quantity{{ $handlesData->id }}"
                                                                         class="quantity border border-black text-center"
                                                                         type="text" value="0" name="quantity"
-                                                                        disabled />
+                                                                        onKeyup="inputQty(this.value, '{{ $handlesData->id }}', '{{ $handlesData->product_code }}', '{{ $handlesData->full_title }}', {{ $handlesData->price }},  {{ $handlesData->discounted_price }}, {{ $handlesData->discounted_percentage ?? 0 }}, '{{ $handlesData->ParentCategory->slug }}','{{ $handlesData->image_path }}')"
+                                                                         />
                                                                     <input id="plus{{ $handlesData->id }}"
                                                                         class="plus border bg-dark text-light p-0"
                                                                         type="button" value="+" type="number"
@@ -3088,7 +3094,9 @@
                                                                             <input id="quantity{{ $worktopsData->id }}"
                                                                                 class="quantity border border-black text-center"
                                                                                 type="text" value="0" name="quantity"
-                                                                                disabled />
+                                                                                onKeyup="inputQty(this.value, '{{ $worktopsData->id }}', '{{ $worktopsData->product_code }}', '{{ $worktopsData->full_title }}', {{ $worktopsData->price }},  {{ $worktopsData->discounted_price }}, {{ $worktopsData->discounted_percentage ?? 0 }}, '{{ $worktopsData->ParentCategory->slug }}','{{ $worktopsData->image_path }}')"
+                                                                                
+                                                                                />
                                                                             <input id="plus{{ $worktopsData->id }}"
                                                                                 class="plus border bg-dark text-light p-0"
                                                                                 type="button" value="+" type="number"
@@ -4197,7 +4205,8 @@
                                                                             <input id="quantity{{ $sinkData->id }}"
                                                                                 class="quantity border border-black text-center"
                                                                                 type="text" value="0" name="quantity"
-                                                                                disabled />
+                                                                                onKeyup="inputQty(this.value, '{{ $sinkData->id }}', '{{ $sinkData->product_code }}', '{{ $sinkData->full_title }}', {{ $sinkData->price }},  {{ $sinkData->discounted_price }}, {{ $sinkData->discounted_percentage ?? 0 }}, '{{ $sinkData->ParentCategory->slug }}','{{ $sinkData->image_path }}')"
+                                                                                />
                                                                             <input id="plus{{ $sinkData->id }}"
                                                                                 class="plus border bg-dark text-light p-0"
                                                                                 type="button" value="+" type="number"
@@ -4469,7 +4478,8 @@
                                                                             <input id="quantity{{ $tapsData->id }}"
                                                                                 class="quantity border border-black text-center"
                                                                                 type="text" value="0" name="quantity"
-                                                                                disabled />
+                                                                                onKeyup="inputQty(this.value, '{{ $tapsData->id }}', '{{ $tapsData->product_code }}', '{{ $tapsData->full_title }}', {{ $tapsData->price }},  {{ $tapsData->discounted_price }}, {{ $tapsData->discounted_percentage ?? 0 }}, '{{ $tapsData->ParentCategory->slug }}','{{ $tapsData->image_path }}')" 
+                                                                                />
                                                                             <input id="plus{{ $tapsData->id }}"
                                                                                 class="plus border bg-dark text-light p-0"
                                                                                 type="button" value="+" type="number"
@@ -4747,7 +4757,8 @@
                                                                     <input id="quantity{{ $applianceData->id }}"
                                                                         class="quantity border border-black text-center"
                                                                         type="text" value="0" name="quantity"
-                                                                        disabled />
+                                                                        onKeyup="inputQty(this.value, '{{ $applianceData->id }}', '{{ $applianceData->product_code }}', '{{ $applianceData->full_title }}', {{ $applianceData->price }},  {{ $applianceData->discounted_price }}, {{ $applianceData->discounted_percentage ?? 0 }}, '{{ $applianceData->ParentCategory->slug }}','{{ $applianceData->image_path }}')"
+                                                                        />
                                                                     <input id="plus{{ $applianceData->id }}"
                                                                         class="plus border bg-dark text-light p-0"
                                                                         type="button" value="+" type="number"
