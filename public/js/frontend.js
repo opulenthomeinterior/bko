@@ -1541,7 +1541,7 @@ $(document).ready(function () {
                      <div class="row">
                         <div class="col-lg-6 p-0">
                            <figure class="my-0" style="margin-bottom: 0px !important;">
-                                 <img class="product-image px-0" style="height: 300px !important" 
+                                 <img class="product-image px-0" style="height: 200px !important" 
                                     style="margin-bottom: 0px !important;object-fit:contain"
                                     src="${productImage}"
                                     alt="Card image cap" data-bs-toggle="modal"
