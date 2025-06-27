@@ -508,7 +508,7 @@
 
 
 <div class="container-fluid faq-body">
-<div class="container faq-container">
+<div class="container ">
     <div class="faq-header">
         <h1>FAQS</h1>
     </div>
@@ -518,14 +518,14 @@
              <!-- FAQ Item 1 -->
              <div class="faq-item" data-category="general">
                 <div class="faq-question">
-                    <div class="">
+                    <div class="fs-4">
                         
                         What is the difference between an affordable kitchen unit and a custom kitchen unit?
                     </div>
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-               <p>An affordable kitchen unit offers budget-friendly solutions without compromising the quality. In comparison, custom kitchen units are tailor-made to your style, space, and preferences. They are available at a higher cost as compared to affordable kitchen units.</p>
+               <p class="fs-5">An affordable kitchen unit offers budget-friendly solutions without compromising the quality. In comparison, custom kitchen units are tailor-made to your style, space, and preferences. They are available at a higher cost as compared to affordable kitchen units.</p>
                 </div>
             </div>
 
@@ -651,15 +651,15 @@
         <!-- FAQ Item 1 -->
         <div class="faq-item" data-category="general">
             <div class="faq-question">
-                <div>
+                <div class="fs-4">
                     {{-- <span class="faq-badge faq-badge-popular">Popular</span> --}}
                     {{-- What is the difference between an affordable kitchen unit and a custom kitchen unit? --}}
                     {{ $faq['question'] }}
                 </div>
                 <i class="fas fa-chevron-down"></i>
             </div>
-            <div class="faq-answer">
-           {{-- <p>An affordable kitchen unit offers budget-friendly solutions without compromising the quality. In comparison, custom kitchen units are tailor-made to your style, space, and preferences. They are available at a higher cost as compared to affordable kitchen units.</p> --}}
+            <div class="faq-answer fs-5">
+           
            {!! $faq['answer'] !!}
         </div>
         </div>
