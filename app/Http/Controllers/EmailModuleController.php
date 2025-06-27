@@ -58,7 +58,7 @@ class EmailModuleController extends Controller
             'admin@bkonline.uk',
             $data['cc'] ?? null,
         ]);
-        Mail::to($request->email)->cc($ccList)->send(new MailEmailModule($data));
+        Mail::to($request->recipient_email)->cc($ccList)->send(new MailEmailModule($data));
         return redirect()->back()->with('success', 'Email sent successfully');
     }
 
