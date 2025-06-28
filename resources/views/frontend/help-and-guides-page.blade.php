@@ -43,11 +43,11 @@
         }
         
         .page-header {
-            background-color: white;
+            /* background-color: white; */
             border-radius: 12px;
             padding: 1.5rem;
             margin-bottom: 1.5rem;
-            box-shadow: var(--card-shadow);
+            /* box-shadow: var(--card-shadow); */
             text-align: center;
         }
         
@@ -270,12 +270,12 @@
         </div>
     </section> --}}
 
-    <div class="container py-3 py-md-4">
-        <!-- Breadcrumb -->
-        <nav aria-label="breadcrumb">
+    <div class="container-fluid" style="background-color: #ececec;">
+         <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb" style="margin-left: 50px; margin-top">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home me-1"></i>HOME</a></li>
-                <li class="breadcrumb-item active" aria-current="page">HELP & GUIDES</li>
+                <li class="breadcrumb-item"><a href="#" style="color:#FEBD49; font-size:16px !important">HOME</a></li>
+                <li class="breadcrumb-item active" aria-current="page" style="color:#FEBD49; font-size:16px !important">HELP & GUIDES</li>
             </ol>
         </nav>
         
@@ -288,6 +288,9 @@
                 <span class="free-tag">FREE</span> Virtual Design Kitchen Service to providing 'How To Videos' we are constantly looking at ways to support you.
             </p>
         </div>
+    </div>
+    <div class="container py-3 py-md-4">
+       
         
         <!-- Guide Cards - First Row -->
         <div class="row g-3 g-md-4 mb-3 mb-md-4">

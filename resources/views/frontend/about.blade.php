@@ -101,7 +101,7 @@
                     height: 100%;
                     /* background: linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent); */
                     background-color:black;
-                    opacity:0.4;
+                    opacity:0.7;
                     z-index:0;
                     /* background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4), transparent); */
 
@@ -289,8 +289,15 @@
             <div class="overlay">
 
             </div>
+                    <nav aria-label="breadcrumb"  style="position:absolute; color:white; z-index:100; left:50px; top:30px">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase" style="color:#FEBD49; font-size:16px !important">Home</a></li>
+                <li class="breadcrumb-item"><span class="text-uppercase" style="color:#FEBD49; font-size:16px">About US</span></li>
+                
+            </ol>
+        </nav>  
             <div class="hero-content">
-
+        
                 <h1 class="text-white fw-bold text-center">Welcome To</h1>
                 <h1 class="text-yellow fw-bold text-center">Buy kitchen online (BKO)</h1>
                 <p class="text-center fw-bold text-white">At BKO, we transform your dreams into reality. We're passionate

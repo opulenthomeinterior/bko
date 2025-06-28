@@ -280,10 +280,9 @@
     <section class="container-fluid px-lg-5 py-4 px-md-3 px-3 border-bottom border-warning">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('shop') }}" class="text-uppercase">Shop</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('orderkitchen') }}" class="text-uppercase">Order
-                        Kitchen</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase" style=" font-size:16px !important">Home</a></li>
+                <li class="breadcrumb-item"><span class="text-uppercase" style=" font-size:16px !important">Order Component</span></li>
+                
             </ol>
         </nav>
 

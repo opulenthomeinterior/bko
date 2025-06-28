@@ -558,8 +558,22 @@ td
 </section>
 
 <section class="container-fluid my-5 bg-light py-4">
+   
     <div class="container">
+        <div class="row">
+               <nav aria-label="breadcrumb" class="">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase" style=" font-size:16px !important">Home</a></li>
+                  <li class="breadcrumb-item"><a href="{{ route('ordercomponent') }}" class="text-uppercase" style= "font-size:16px !important">Order
+                        Component</a></li>
+                <li class="breadcrumb-item"><span class="text-uppercase" style= "font-size:16px !important">{{$category->slug}}</span></li>
+            
+            </ol>
+        </nav>
+        </div>
     <div class="row">
+        
+
         {{-- <div class=" col-xl-8 col-12 align-self-center px-5 d-flex flex-column flex-md-row p-0">
             <div class="row">
                 

@@ -620,6 +620,18 @@ td
 
 <div class="container">
     <div class="row">
+        <nav aria-label="breadcrumb" class="">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase" style=" font-size:16px !important">Home</a></li>
+                  <li class="breadcrumb-item"><a href="{{ route('ordercomponent') }}" class="text-uppercase" style= "font-size:16px !important">Order
+                        Component</a></li>
+                <li class="breadcrumb-item"><span class="text-uppercase" style= "font-size:16px !important">{{$category->slug}}</span></li>
+            
+            </ol>
+        </nav>
+    </div>
+    
+    <div class="row">
          <div class="col-xl-6 mt-lg-5">
               <h1 class="text-black fw-bold">ACCESSORIES</h1>
               <p class="fs-5">
@@ -750,17 +762,7 @@ td
 
 
     <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
-        <!-- <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('shop') }}" class="text-uppercase">Shop</a></li>
-                <li class="breadcrumb-item">
-                    <a href="{{ route('orderkitchen') }}" class="text-uppercase">
-                        Order Kitchen
-                    </a>
-                </li>
-            </ol>
-        </nav> -->
+       
 
         <!-- <div class="row mb-lg-5 mb-4">
             <div class="col-12">

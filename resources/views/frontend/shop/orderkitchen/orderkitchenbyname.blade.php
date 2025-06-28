@@ -278,14 +278,7 @@
         style="background-image: url('{{ $styleData['data']['header_image'] ? asset('imgs/styles/' . $styleData['data']['header_image']) : asset('images/order-component.jpg') }}'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 50vh;">
     </section>
     <section class="container-fluid px-lg-5 py-lg-5 py-4 px-md-3 px-3" style="background-color: #f0f0f0;">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('orderkitchen') }}" class="text-uppercase">Order
-                        Kitchen</a></li>
-                <li class="breadcrumb-item"><span href="" class="text-uppercase">{{ $styleData['data']['name'] }}</span></li>
-            </ol>
-        </nav>
+       
 
         {{-- <div class="row mb-lg-5 mb-4">
             <div class="col-12">
@@ -298,6 +291,16 @@
        
     </section>
     <div class="container mb-5">
+        <div class="row">
+             <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase" style="font-size:16px !important">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('orderkitchen') }}" class="text-uppercase" style="font-size:16px !important">Order
+                        Kitchen</a></li>
+                <li class="breadcrumb-item"><span href="" class="text-uppercase" style="font-size:16px !important">{{ $styleData['data']['name'] }}</span></li>
+            </ol>
+        </nav>
+        </div>
          <div class="row mt-4">
             <div class="col-md-6">
                  <h1 class="fs-1 fw-bolder text-dark text-uppercase">
