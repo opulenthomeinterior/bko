@@ -2,11 +2,16 @@
     <head>
         <title>Blogs</title>
     </head>
-    <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
+    <section class="container-fluid px-lg-5 py-4 px-md-3 px-3" style="background-color:#ececec">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase">Home</a></li>
-                <li class="breadcrumb-item"><a class="text-uppercase">Support</a></li>
+               
+
+
+               <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase" style="color:#FEBD49; font-size:16px !important">Home</a></li>
+            
+                <li class="breadcrumb-item"><span href="" class="text-uppercase" style="color:#FEBD49; font-size:16px !important">Blog</span></li>
+
             </ol>
         </nav>
 

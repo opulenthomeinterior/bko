@@ -317,12 +317,7 @@
 
     <title>Need Help Measuring </title></head>
     <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('shop') }}" class="text-uppercase">Help & guides</a></li>
-            </ol>
-        </nav>
+       
 
         <!-- <div class="row">
             <div class="col-12 text-center">
@@ -333,8 +328,15 @@
         </div> -->
     </section>
     <section class="container-fluid mb-2 px-lg-5 py-5 px-md-3 px-3 bg-light">
+         <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase" style="color:#FEBD49; font-size:16px !important">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('shop') }}" class="text-uppercase" style="color:#FEBD49; font-size:16px !important">Help & guides</a></li>
+            </ol>
+        </nav>
 
     <div class="d-flex flex-row justify-content-center">
+        
         <div class="row w-75">
             <div class="col-12 text-center">
                 <h1 class="fs-1 text-dark text-uppercase fw-bolder">
