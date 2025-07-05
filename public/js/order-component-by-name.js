@@ -196,6 +196,9 @@ $(document).ready(function () {
                                 <h2 class="product-title">${strLimit(product.full_title)}</h2>
                                 <div class="rounded bg-danger text-white text-center">${product.related_products_count > 0 ? product.related_products_count : '1'} available colour/s</div>
                             </a>
+                            <a href="/shop/by-product/${product.slug}/${product.serial_number}">
+                                <div class="rounded bg-light text-dark text-center">${product.height} x ${product.width}</div>
+                            </a>
                     <div class="product-price">£${product.price}</div>
                     <div class="quantity-selector">
                         <button class="quantity-btn" id="dec-btn${product.id}" onclick="decQty(${product.id})">−</button>
