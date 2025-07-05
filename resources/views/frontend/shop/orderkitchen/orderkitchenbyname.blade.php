@@ -298,6 +298,16 @@
        
     </section>
     <div class="container mb-5">
+        <div class="row">
+             <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase" style="font-size:16px !important">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('orderkitchen') }}" class="text-uppercase" style="font-size:16px !important">Order
+                        Kitchen</a></li>
+                <li class="breadcrumb-item"><span href="" class="text-uppercase" style="font-size:16px !important">{{ $styleData['data']['name'] }}</span></li>
+            </ol>
+        </nav>
+        </div>
          <div class="row mt-4">
             <div class="col-md-6">
                  <h1 class="fs-1 fw-bolder text-dark text-uppercase">

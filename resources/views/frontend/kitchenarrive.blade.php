@@ -82,12 +82,7 @@
 </head>
     {{--
     <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase">Home</a></li>
-                <li class="breadcrumb-item"><a class="text-uppercase">Help & Guides</a></li>
-            </ol>
-        </nav>
+        
 
         <div class="row">
             <div class="col-12 text-center">
@@ -130,7 +125,13 @@ Every order is handled with the utmost care, ensuring that all components of you
 --}}
 
 
-<section class="container-fluid px-lg-5 py-4 px-md-3 px-3 bg-light">
+<section class="container-fluid px-lg-5 py-4 px-md-3 px-3 " style="background-color:#ececec">
+    <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase" style="color:#FEBD49; font-size:16px !important">Home</a></li>
+                <li class="breadcrumb-item"><a class="text-uppercase" style="color:#FEBD49; font-size:16px !important">Help & Guides</a></li>
+            </ol>
+        </nav>
         <div class="row justify-content-center">
             <div class="col-7 text-center">
                 <h1 class="fs-1 text-dark text-uppercase fw-bolder pt-5">
