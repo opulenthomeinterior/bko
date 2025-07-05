@@ -939,6 +939,11 @@ td
                                     <h2 class="product-title">{{ \Str::limit($product->full_title, 20) }}</h2>
                                     <div class="rounded bg-danger text-white text-center">{{$product->related_products_count > 0 ? $product->related_products_count : '1'}} available colour/s</div>
                                  </a>
+                                 @if (!empty($product->height) && !empty($product->width))
+                                 <a href="{{ route('orderbyproduct', [$product->slug, $product->serial_number]) }}">
+                                    <div class="rounded bg-light text-dark text-center">{{$product->height}} x {{$product->width}}</div>
+                                 </a>
+                                 @endif
                             <div class="product-price">£{{$product->price}}</div>
                             <div class="quantity-selector">
                                 <button class="quantity-btn" id="dec-btn{{ $product->id }}" onclick="decQty({{ $product->id }})">−</button>
