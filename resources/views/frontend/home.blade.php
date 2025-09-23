@@ -1547,9 +1547,9 @@
                         <span class="faq-badge faq-badge-popular">1</span>
                         Site Survey & Measurements
                     </div>
-                    <i class="fas fa-chevron-down"></i>
+                    {{-- <i class="fas fa-chevron-down"></i> --}}
                 </div>
-                <div class="faq-answer">
+                {{-- <div class="faq-answer">
                   
                     <div class="faq-card-container">
                         <div class="faq-card">
@@ -1573,7 +1573,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div class="faq-item" data-category="general">
                 <div class="faq-question">
@@ -1581,9 +1581,9 @@
                         <span class="faq-badge faq-badge-popular">2</span>
                         Kitchen Design
                     </div>
-                    <i class="fas fa-chevron-down"></i>
+                    {{-- <i class="fas fa-chevron-down"></i> --}}
                 </div>
-                <div class="faq-answer">
+                {{-- <div class="faq-answer">
                   
                     <div class="faq-card-container">
                         <div class="faq-card">
@@ -1607,7 +1607,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div class="faq-item" data-category="general">
                 <div class="faq-question">
@@ -1615,9 +1615,9 @@
                         <span class="faq-badge faq-badge-popular">3</span>
                         Ordering Process
                     </div>
-                    <i class="fas fa-chevron-down"></i>
+                    {{-- <i class="fas fa-chevron-down"></i> --}}
                 </div>
-                <div class="faq-answer">
+                {{-- <div class="faq-answer">
                   
                     <div class="faq-card-container">
                         <div class="faq-card">
@@ -1641,7 +1641,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div class="faq-item" data-category="general">
                 <div class="faq-question">
@@ -1649,9 +1649,9 @@
                         <span class="faq-badge faq-badge-popular">4</span>
                         Delivery & Quality Check
                     </div>
-                    <i class="fas fa-chevron-down"></i>
+                    {{-- <i class="fas fa-chevron-down"></i> --}}
                 </div>
-                <div class="faq-answer">
+                {{-- <div class="faq-answer">
                   
                     <div class="faq-card-container">
                         <div class="faq-card">
@@ -1675,7 +1675,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div class="faq-item" data-category="general">
                 <div class="faq-question">
@@ -1683,9 +1683,9 @@
                         <span class="faq-badge faq-badge-popular">5</span>
                         Installation
                     </div>
-                    <i class="fas fa-chevron-down"></i>
+                    {{-- <i class="fas fa-chevron-down"></i> --}}
                 </div>
-                <div class="faq-answer">
+                {{-- <div class="faq-answer">
                   
                     <div class="faq-card-container">
                         <div class="faq-card">
@@ -1713,16 +1713,16 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
             
             
         </div>
-        <h4 class="text-black fw-bold text-center">With Buy Kitchen Online, you get the best of both worlds—online prices with retail-store quality and service—all under one roof.</h4>
+        {{-- <h4 class="text-black fw-bold text-center">With Buy Kitchen Online, you get the best of both worlds—online prices with retail-store quality and service—all under one roof.</h4> --}}
     </div>
 </div>
 
-    <div class="container mt-4">
+    {{-- <div class="container mt-4">
         <div class="row">
             <h2 class="text-uppercase text-center mt-5 mb-4 text-black fw-bold">There are <span style="color: #FDB71A;">three types </span>of Kitchen buyers. <br> <span class="text-danger">Which one are you?</span></h2>
             
@@ -1740,11 +1740,11 @@
                     
                 <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/the-online-gambler-mobile.png') }}"/>
             </div>
-    </div>
+    </div> --}}
     </div>
 
 
-    <div class="container mt-4">
+    {{-- <div class="container mt-4">
         <div class="row">
         <div class="col-12">
             
@@ -1753,7 +1753,7 @@
             <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/the-smart-cookie-mobile.png') }}"/>
         </div>
     </div>
-    </div>
+    </div> --}}
 
     <div class="container py-5">
         <div class="row text-center mb-4">
@@ -1862,11 +1862,11 @@
         </div>
     </div>
 
-    <div class="container py-5 text-center">
-        <h2 class="section-heading">BESPOKE DESIGNER KITCHENS</h2>
-        <h3 class="section-subheading mb-5">WHERE DREAMS MEET PRECISION</h3>
+    {{-- <div class="container py-5 text-center"> --}}
+        {{-- <h2 class="section-heading">BESPOKE DESIGNER KITCHENS</h2>
+        <h3 class="section-subheading mb-5">WHERE DREAMS MEET PRECISION</h3> --}}
     
-        <div class="row justify-content-center gy-4">
+        {{-- <div class="row justify-content-center gy-4">
           <div class="col-md-3 col-sm-6">
             <div class="card-wrapper-bespoke">
               <div class="border-box-bespoke"></div>
@@ -1906,19 +1906,19 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> --}}
     
-        <div class="cta-text-bespoke">ARE YOU <span class="text-danger"> TIRED OF WASTED SPACE?</span></div>
+        {{-- <div class="cta-text-bespoke">ARE YOU <span class="text-danger"> TIRED OF WASTED SPACE?</span></div> --}}
         <!-- <button class="cta-button-bespoke">CHECK OUR MAX STORAGE KITCHENS</button> -->
-         <a href="{{ route('max_storage') }}" class="m-0 btn btn-lg cta-button rounded-0" style="background-color:#ffc107;">CHECK OUR MAX STORAGE KITCHENS</a>
+         {{-- <a href="{{ route('max_storage') }}" class="m-0 btn btn-lg cta-button rounded-0" style="background-color:#ffc107;">CHECK OUR MAX STORAGE KITCHENS</a> --}}
                
-      </div>
+      {{-- </div> --}}
     
 
 
     <!-- how we work -->
 
-    <section class="how-we-work">
+    {{-- <section class="how-we-work">
         <div class="container">
             <div class="section-title">
                 <h2 class="text-white">HOW <span>WE WORK</span></h2>
@@ -1991,22 +1991,22 @@
                
             </div>
         </div>
-    </section>
+    </section> --}}
 
 
 
     <!-- Our services -->
 
-    <section class="services-section">
-        <div class="container">
-            <h2 class="text-black text-center mb-3">OUR SERVICES</h2>
+    {{-- <section class="services-section"> --}}
+        {{-- <div class="container"> --}}
+            {{-- <h2 class="text-black text-center mb-3">OUR SERVICES</h2> --}}
             <!-- Slider Container -->
-<div class="swiper mySwiper">
-    <div class="swiper-wrapper">
+{{-- <div class="swiper mySwiper"> --}}
+    {{-- <div class="swiper-wrapper"> --}}
       <!-- Slide 1 -->
-      <div class="swiper-slide">
+      {{-- <div class="swiper-slide"> --}}
         
-            <a href="{{ route('max_storage') }}">
+            {{-- <a href="{{ route('max_storage') }}">
             <div class="service-card">
                 <div class="service-image-container">
                     
@@ -2089,7 +2089,7 @@
     <!-- Optional: Navigation -->
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
-  </div>
+  </div> --}}
 
 
             <!-- <div id="hvacServicesCarousel" class="carousel slide" data-bs-ride="carousel" style="overflow: visible;">
@@ -2100,7 +2100,7 @@
                                 <div class="service-card">
                                     <div class="service-image-container">
                                         
-                                <img class="service-image" src="{{asset('images/max-storage.png')}}" alt="">
+                                {{-- <img class="service-image" src="{{asset('images/max-storage.png')}}" alt=""> --}}
                                     </div>
                                     <div class="service-title">MAX STORAGE</div>
                                     <div class="arrow-btn">
@@ -2112,7 +2112,7 @@
                                 <div class="service-card">
                                     <div class="service-image-container">
                                         
-                                <img src="{{asset('images/door-replacement.png')}}" alt="" class="service-image">
+                                {{-- <img src="{{asset('images/door-replacement.png')}}" alt="" class="service-image"> --}}
                                     </div>
                                     <div class="service-title">DOOR REPLACEMENT</div>
                                     <div class="arrow-btn">
@@ -2124,7 +2124,7 @@
                                 <div class="service-card">
                                     <div class="service-image-container">
                                         
-                                <img class="service-image" src="{{asset('images/order-component.png')}}" alt="">
+                                {{-- <img class="service-image" src="{{asset('images/order-component.png')}}" alt=""> --}}
                                     </div>
                                     <div class="service-title">ORDER COMPONENT</div>
                                     <div class="arrow-btn">
@@ -2140,7 +2140,7 @@
                                 <div class="service-card">
                                     <div class="service-image-container">
                                         
-                                <img class="service-image" src="{{asset('images/on-site-survey.png')}}" alt="">
+                                {{-- <img class="service-image" src="{{asset('images/on-site-survey.png')}}" alt=""> --}}
                                     </div>
 
                                     <div class="service-title">ON-SITE SURVEY</div>
@@ -2153,7 +2153,7 @@
                                 <div class="service-card">
                                     <div class="service-image-container">
                                         
-                                <img class="service-image" src="{{asset('images/virtual-consultation.png')}}" alt="">
+                                {{-- <img class="service-image" src="{{asset('images/virtual-consultation.png')}}" alt=""> --}}
                                     </div>
                                     <div class="service-title">Virtual Consultation</div>
                                     <div class="arrow-btn">
@@ -2182,12 +2182,12 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div> -->
-        </div>
-    </section>
+        {{-- </div> --}}
+    {{-- </section> --}}
 
     
 
-    <section class="services-section">
+    {{-- <section class="services-section">
         <div class="container">
             <h2 class="text-black text-center mb-3">Why choose BUY KITCHEN ONLINE?</h2>
             <!-- Slider Container -->
@@ -2291,7 +2291,7 @@
 
             
         </div>
-    </section>
+    </section> --}}
 
 
     <!-- <div class="container"> -->
@@ -2834,7 +2834,7 @@
 
    
 
-    <section class="catalogue-bg py-5">
+    {{-- <section class="catalogue-bg py-5">
         <div class="container">
             <div class="row align-items-center mb-5">
                 <!-- Left Content -->
@@ -2861,7 +2861,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- Testimonials -->
     @include('frontend.testimonials_component', ['testimonials' => $testimonials])
