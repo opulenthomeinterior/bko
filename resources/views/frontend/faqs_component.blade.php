@@ -24,7 +24,8 @@
 
         .faq-header {
             text-align: center;
-            margin-bottom: 3rem;
+            /* margin-bottom: 3rem; */
+        
         }
 
         .faq-header h3 {
@@ -271,6 +272,182 @@
         }
 
 
+         .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-header {
+            text-align: center;
+            /* margin-bottom: 80px; */
+            margin-bottom:10px;
+        }
+
+        .faq-title {
+            color: black;
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .faqs-title
+        {
+             color: white;
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.2;
+
+        }
+        .subfaq-title {
+            color: #888;
+            font-size: 1rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .faqs {
+            list-style: none;
+        }
+
+        .faq-item-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 32px 0;
+            border-bottom: 1px solid #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-left {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+            flex: 1;
+        }
+
+        .faq-number {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 500;
+            width: 24px;
+        }
+
+        .faq-content {
+            flex: 1;
+        }
+
+        .faq-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+
+        .faq-description {
+            color: #888;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item-tags {
+            display: flex;
+            gap: 12px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease 0.1s;
+        }
+
+        .tag {
+            background: #333;
+            color: #ccc;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .faq-item-arrow {
+            width: 48px;
+            height: 48px;
+            background: #4285f4;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .arrow-icon {
+            width: 20px;
+            height: 20px;
+            stroke: white;
+            stroke-width: 2;
+        }
+
+        .faq-item-item.expanded .faq-description {
+            opacity: 1;
+            max-height: 300px;
+        }
+
+        .faq-item-item.expanded .faq-item-tags {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .faq-item-item.expanded .faq-item-arrow {
+            transform: rotate(90deg);
+        }
+
+        .other-faqs {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .other-faqs-btn {
+            background: #4285f4;
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .other-faqs-btn:hover {
+            background: #3367d6;
+            transform: translateY(-2px);
+        }
+
+        @media(max-width:768px) {
+            .faq-title {
+                font-size: 2.2rem;
+            }
+
+            .faq-left {
+                gap: 24px;
+            }
+
+            .faq-title {
+                font-size: 1.8rem;
+            }
+
+            .faq-container {
+                max-width: 100%;
+                padding: 0 20px;
+            }
+        }
+
     </style>
 
 </head>
@@ -290,13 +467,15 @@
                                 data-bs-toggle="collapse" data-bs-target="#flush-collapse1"
                                 aria-expanded="false" aria-controls="flush-collapse1" style="border-radius: 20px">
                                 What is the difference between an affordable kitchen unit and a custom kitchen unit?
+                            
                             </button>
                         </h2>
                         <div id="flush-collapse1" class="accordion-collapse collapse bg-white"
                             data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body bg-white text-dark">
                             An affordable kitchen unit offers budget-friendly solutions without compromising the quality. In comparison, custom kitchen units are tailor-made to your style, space, and preferences. They are available at a higher cost as compared to affordable kitchen units.
-                            </div>
+                            
+                        </div>
                             <hr class="border-bottom border-warning px-4 mx-4">
                         </div>
                     </div>
@@ -312,7 +491,8 @@
                             data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body bg-white text-dark">
                             Standard kitchens usually come in pre-set sizes and designs. In contrast, a bespoke designer kitchen is custom-made for you. You can choose details like layout, materials, and the aesthetic.
-                            </div>
+                           
+                        </div>
                             <hr class="border-bottom border-warning px-4 mx-4">
                         </div>
                     </div>
@@ -328,7 +508,8 @@
                             data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body bg-white text-dark">
                             Affordable kitchen units can be a lifesaver when you need to renovate your kitchen on a budget. At Buy Kitchen Online, even our budget-friendly kitchen units have high-quality materials and craftsmanship.
-                            </div>
+                           
+                        </div>
                             <hr class="border-bottom border-warning px-4 mx-4">
                         </div>
                     </div>
@@ -344,7 +525,8 @@
                             data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body bg-white text-dark">
                             In order to design a custom kitchen unit with Buy Kitchen Online, we conduct an in-depth consultation. We discuss your style and functionality, measure your space, and then create a unique design for your home.
-                            </div>
+                           
+                        </div>
                             <hr class="border-bottom border-warning px-4 mx-4">
                         </div>
                     </div>
@@ -360,7 +542,8 @@
                             data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body bg-white text-dark">
                             Yes, a designer kitchen can significantly increase the value of your property. A luxury kitchen from Buy Kitchen Online adds both aesthetic appeal and functionality, making it a desirable feature for potential buyers.
-                            </div>
+                            
+                        </div>
                             <hr class="border-bottom border-warning px-4 mx-4">
                         </div>
                     </div>
@@ -370,13 +553,15 @@
                                 data-bs-toggle="collapse" data-bs-target="#flush-collapse6"
                                 aria-expanded="false" aria-controls="flush-collapse6" style="border-radius: 20px">
                                 Are there any affordable kitchen units available that offer customization?
+                           
                             </button>
                         </h2>
                         <div id="flush-collapse6" class="accordion-collapse collapse bg-white"
                             data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body bg-white text-dark">
                             Yes, Buy Kitchen Online allows you to customize a budget-friendly kitchen unit to some extent. You get a personalized kitchen at an affordable price.
-                            </div>
+                           
+                        </div>
                             <hr class="border-bottom border-warning px-4 mx-4">
                         </div>
                     </div>
@@ -392,7 +577,8 @@
                             data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body bg-white text-dark">
                             The entire cost of a designer kitchen depends on many different factors like; materials, size, and design complexity. However, Buy Kitchen Online offers premium quality at affordable prices for various budgets.
-                            </div>
+                            
+                        </div>
                             <hr class="border-bottom border-warning px-4 mx-4">
                         </div>
                     </div>
@@ -402,13 +588,15 @@
                                 data-bs-toggle="collapse" data-bs-target="#flush-collapse8"
                                 aria-expanded="false" aria-controls="flush-collapse8" style="border-radius: 20px">
                                 Can Buy Kitchen Online design a custom kitchen unit to fit my small physical space?
+                           
                             </button>
                         </h2>
                         <div id="flush-collapse8" class="accordion-collapse collapse bg-white"
                             data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body bg-white text-dark">
                             Absolutely! The experts at Buy Kitchen Online specialize in building kitchen units according to your available space and lifestyle.
-                            </div>
+                           
+                        </div>
                             <hr class="border-bottom border-warning px-4 mx-4">
                         </div>
                     </div>
@@ -440,7 +628,8 @@
                             data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body bg-white text-dark">
                             The most popular materials include stainless steel, quarts, and wood (such as oak, maple, and cherry). Buy Kitchen Online helps you in choosing the perfect material according to your preference.
-                            </div>
+                           
+                        </div>
                             <hr class="border-bottom border-warning px-4 mx-4">
                         </div>
                     </div>
@@ -456,7 +645,8 @@
                             data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body bg-white text-dark">
                             Bespoke kitchens are worth it if you prefer customized, high-quality, long-lasting kitchens. The price may be higher than a standard kitchen, but the advantages of having a kitchen custom-made for your space and style are worth the investment.
-                            </div>
+                          
+                        </div>
                             <hr class="border-bottom border-warning px-4 mx-4">
                         </div>
                     </div>
@@ -472,7 +662,8 @@
                             data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body bg-white text-dark">
                             The kitchen styles offered by Buy Kitchen Online are J Pull, Shaker, True handleless, Slab-edged. If you want a luxurious kitchen with a contemporary look then you can choose from J Pull 22, Shaker 22, True handleless painted and Slab-Edged Painted. We also have budget-friendly kitchen option like MFC.
-                            </div>
+                            
+                        </div>
                             <hr class="border-bottom border-warning px-4 mx-4">
                         </div>
                     </div>
@@ -507,16 +698,16 @@
 --}}
 
 
-<div class="container-fluid faq-body">
+{{-- <div class="container-fluid faq-body">
 <div class="container ">
     <div class="faq-header">
         <h1>FAQS</h1>
-    </div>
+    </div> --}}
 
-    <div class="faq-list">
-        @if (!empty($home))
+    {{-- <div class="faq-list"> --}}
+        {{-- @if (!empty($home)) --}}
              <!-- FAQ Item 1 -->
-             <div class="faq-item" data-category="general">
+             {{-- <div class="faq-item" data-category="general">
                 <div class="faq-question">
                     <div class="fs-4">
                         
@@ -527,10 +718,10 @@
                 <div class="faq-answer">
                <p class="fs-5">An affordable kitchen unit offers budget-friendly solutions without compromising the quality. In comparison, custom kitchen units are tailor-made to your style, space, and preferences. They are available at a higher cost as compared to affordable kitchen units.</p>
                 </div>
-            </div>
+            </div> --}}
 
             <!-- FAQ Item 2 -->
-            <div class="faq-item" data-category="account">
+            {{-- <div class="faq-item" data-category="account">
                 <div class="faq-question">
                     <div>
                         How is a bespoke designer kitchen different from a standard kitchen?
@@ -540,10 +731,10 @@
                 <div class="faq-answer">
                    <p>Standard kitchens usually come in pre-set sizes and designs. In contrast, a bespoke designer kitchen is custom-made for you. You can choose details like layout, materials, and the aesthetic.</p>
                 </div>
-            </div>
+            </div> --}}
 
             <!-- FAQ Item 3 -->
-            <div class="faq-item" data-category="billing">
+            {{-- <div class="faq-item" data-category="billing">
                 <div class="faq-question">
                     <div>Can I use affordable kitchen units for a kitchen renovation?</div>
                     <i class="fas fa-chevron-down"></i>
@@ -551,10 +742,10 @@
                 <div class="faq-answer">
                     <p>Affordable kitchen units can be a lifesaver when you need to renovate your kitchen on a budget. At Buy Kitchen Online, even our budget-friendly kitchen units have high-quality materials and craftsmanship.</p>
                 </div>
-            </div>
+            </div> --}}
 
             <!-- FAQ Item 4 -->
-            <div class="faq-item" data-category="technical">
+            {{-- <div class="faq-item" data-category="technical">
                 <div class="faq-question">
                     <div>What is the process of designing custom kitchen units?</div>
                     <i class="fas fa-chevron-down"></i>
@@ -563,8 +754,8 @@
                     <p>In order to design a custom kitchen unit with Buy Kitchen Online, we conduct an in-depth consultation. We discuss your style and functionality, measure your space, and then create a unique design for your home.</p>
                    
                 </div>
-            </div>
-            <div class="faq-item" data-category="technical">
+            </div> --}}
+            {{-- <div class="faq-item" data-category="technical">
                 <div class="faq-question">
                     <div>Can a designer kitchen increase the value of my property?</div>
                     <i class="fas fa-chevron-down"></i>
@@ -573,8 +764,8 @@
                     <p>Yes, a designer kitchen can significantly increase the value of your property. A luxury kitchen from Buy Kitchen Online adds both aesthetic appeal and functionality, making it a desirable feature for potential buyers.</p>
                    
                 </div>
-            </div>
-            <div class="faq-item" data-category="technical">
+            </div> --}}
+            {{-- <div class="faq-item" data-category="technical">
                 <div class="faq-question">
                     <div>Are there any affordable kitchen units available that offer customization?</div>
                     <i class="fas fa-chevron-down"></i>
@@ -583,8 +774,8 @@
                     <p>Yes, Buy Kitchen Online allows you to customize a budget-friendly kitchen unit to some extent. You get a personalized kitchen at an affordable price.</p>
                    
                 </div>
-            </div>
-            <div class="faq-item" data-category="technical">
+            </div> --}}
+            {{-- <div class="faq-item" data-category="technical">
                 <div class="faq-question">
                     <div>How much does a designer kitchen unit cost?</div>
                     <i class="fas fa-chevron-down"></i>
@@ -593,8 +784,8 @@
                     <p> The entire cost of a designer kitchen depends on many different factors like; materials, size, and design complexity. However, Buy Kitchen Online offers premium quality at affordable prices for various budgets.</p>
                    
                 </div>
-            </div>
-            <div class="faq-item" data-category="technical">
+            </div> --}}
+            {{-- <div class="faq-item" data-category="technical">
                 <div class="faq-question">
                     <div> Can Buy Kitchen Online design a custom kitchen unit to fit my small physical space?</div>
                     <i class="fas fa-chevron-down"></i>
@@ -603,8 +794,8 @@
                     <p> Absolutely! The experts at Buy Kitchen Online specialize in building kitchen units according to your available space and lifestyle.</p>
                    
                 </div>
-            </div>
-            <div class="faq-item" data-category="technical">
+            </div> --}}
+            {{-- <div class="faq-item" data-category="technical">
                 <div class="faq-question">
                     <div>Does Buy Kitchen Online offer any flexible financing options for kitchen units?</div>
                     <i class="fas fa-chevron-down"></i>
@@ -613,8 +804,8 @@
                     <p>Yes, Buy Kitchen Online aims to make your dream kitchen a reality by offering different financing options. Please get in touch with us for any further details.</p>
                    
                 </div>
-            </div>
-            <div class="faq-item" data-category="technical">
+            </div> --}}
+            {{-- <div class="faq-item" data-category="technical">
                 <div class="faq-question">
                     <div>Which materials are used to make a kitchen unit?</div>
                     <i class="fas fa-chevron-down"></i>
@@ -623,8 +814,8 @@
                     <p>The most popular materials include stainless steel, quarts, and wood (such as oak, maple, and cherry). Buy Kitchen Online helps you in choosing the perfect material according to your preference.</p>
                    
                 </div>
-            </div>
-            <div class="faq-item" data-category="technical">
+            </div> --}}
+            {{-- <div class="faq-item" data-category="technical">
                 <div class="faq-question">
                     <div>Is a bespoke designer kitchen worth it?</div>
                     <i class="fas fa-chevron-down"></i>
@@ -633,8 +824,8 @@
                     <p>Bespoke kitchens are worth it if you prefer customized, high-quality, long-lasting kitchens. The price may be higher than a standard kitchen, but the advantages of having a kitchen custom-made for your space and style are worth the investment.</p>
                    
                 </div>
-            </div>
-            <div class="faq-item" data-category="technical">
+            </div> --}}
+            {{-- <div class="faq-item" data-category="technical">
                 <div class="faq-question">
                     <div>What kitchen styles are available at Buy Kitchen Online?</div>
                     <i class="fas fa-chevron-down"></i>
@@ -643,17 +834,16 @@
                     <p> The kitchen styles offered by Buy Kitchen Online are J Pull, Shaker, True handleless, Slab-edged. If you want a luxurious kitchen with a contemporary look then you can choose from J Pull 22, Shaker 22, True handleless painted and Slab-Edged Painted. We also have budget-friendly kitchen option like MFC.</p>
                    
                 </div>
-            </div>
+            </div> --}}
 
-        @else
-            @if (count($faqsData) > 0)
-                @foreach ($faqsData as $faq)
+        {{-- @else --}}
+            {{-- @if (count($faqsData) > 0) --}}
+                {{-- @foreach ($faqsData as $faq) --}}
         <!-- FAQ Item 1 -->
-        <div class="faq-item" data-category="general">
+        {{-- <div class="faq-item" data-category="general">
             <div class="faq-question">
                 <div class="fs-4">
-                    {{-- <span class="faq-badge faq-badge-popular">Popular</span> --}}
-                    {{-- What is the difference between an affordable kitchen unit and a custom kitchen unit? --}}
+                   
                     {{ $faq['question'] }}
                 </div>
                 <i class="fas fa-chevron-down"></i>
@@ -662,63 +852,358 @@
            
            {!! $faq['answer'] !!}
         </div>
-        </div>
-            @endforeach
+        </div> --}}
+            {{-- @endforeach --}}
        
-        @else
-        <div class="alert alert-light" role="alert">
+        {{-- @else --}}
+        {{-- <div class="alert alert-light" role="alert">
             No FAQ's found.
-        </div>
-        @endif
-    @endif
-    </div>
+        </div> --}}
+        {{-- @endif --}}
+    {{-- @endif --}}
+    {{-- </div>
 </div>
-</div>
+</div> --}}
 
+
+
+<div class="container-fluid pb-5" style="background-color: #1a1a1a;">
+ <div class="container">
+        <div class="faq-header">
+            <h1 class="faqs-title mb-0 pt-5" >FAQS</h1>
+            {{-- <p class="subfaq-title">
+               
+            </p> --}}
+        </div>
+
+        <ul class="faqs">
+        @if (!empty($home)) 
+            <li class="faq-item-item expanded">
+                <div class="faq-left">
+                    <span class="faq-number">01</span>
+                    <div class="faq-content">
+                        <h3 class="faq-title">What is the difference between an affordable kitchen unit and a custom
+                            kitchen unit?</h3>
+                        <p class="faq-description">
+                            An affordable kitchen unit offers budget-friendly solutions without compromising the
+                            quality. In comparison, custom kitchen units are tailor-made to your style, space, and
+                            preferences. They are available at a higher cost as compared to affordable kitchen units.
+
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item-arrow">
+                    <svg class="arrow-icon" fill="none" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+            </li>
+
+            <li class="faq-item-item">
+                <div class="faq-left">
+                    <span class="faq-number">02</span>
+                    <div class="faq-content">
+                        <h3 class="faq-title">How is a bespoke designer kitchen different from a standard kitchen?</h3>
+                        <p class="faq-description">
+                            Standard kitchens usually come in pre-set sizes and designs. In contrast, a bespoke designer
+                            kitchen is custom-made for you. You can choose details like layout, materials, and the
+                            aesthetic.
+
+                        </p>
+                      
+                    </div>
+                </div>
+                <div class="faq-item-arrow">
+                    <svg class="arrow-icon" fill="none" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+            </li>
+
+            <li class="faq-item-item">
+                <div class="faq-left">
+                    <span class="faq-number">03</span>
+                    <div class="faq-content">
+                        <h3 class="faq-title">Can I use affordable kitchen units for a kitchen renovation?</h3>
+                        <p class="faq-description">
+                            Affordable kitchen units can be a lifesaver when you need to renovate your kitchen on a
+                            budget. At Buy Kitchen Online, even our budget-friendly kitchen units have high-quality
+                            materials and craftsmanship.
+
+                        </p>
+
+                    </div>
+                </div>
+                <div class="faq-item-arrow">
+                    <svg class="arrow-icon" fill="none" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+            </li>
+
+            <li class="faq-item-item">
+                <div class="faq-left">
+                    <span class="faq-number">04</span>
+                    <div class="faq-content">
+                        <h3 class="faq-title">What is the process of designing custom kitchen units?</h3>
+                        <p class="faq-description">
+                            In order to design a custom kitchen unit with Buy Kitchen Online, we conduct an in-depth
+                            consultation. We discuss your style and functionality, measure your space, and then create a
+                            unique design for your home.
+
+                        </p>
+
+                    </div>
+                </div>
+                <div class="faq-item-arrow">
+                    <svg class="arrow-icon" fill="none" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+            </li>
+            <li class="faq-item-item">
+                <div class="faq-left">
+                    <span class="faq-number">05</span>
+                    <div class="faq-content">
+                        <h3 class="faq-title"> Can a designer kitchen increase the value of my property?</h3>
+                        <p class="faq-description">
+                            Yes, a designer kitchen can significantly increase the value of your property. A luxury
+                            kitchen from Buy Kitchen Online adds both aesthetic appeal and functionality, making it a
+                            desirable feature for potential buyers.
+
+
+                        </p>
+
+                    </div>
+                </div>
+                <div class="faq-item-arrow">
+                    <svg class="arrow-icon" fill="none" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+            </li>
+            <li class="faq-item-item">
+                <div class="faq-left">
+                    <span class="faq-number">06</span>
+                    <div class="faq-content">
+                        <h3 class="faq-title"> Are there any affordable kitchen units available that offer
+                            customization?
+                        </h3>
+                        <p class="faq-description">
+                            Yes, Buy Kitchen Online allows you to customize a budget-friendly kitchen unit to some
+                            extent. You get a personalized kitchen at an affordable price.
+
+
+                        </p>
+
+                    </div>
+                </div>
+                <div class="faq-item-arrow">
+                    <svg class="arrow-icon" fill="none" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+            </li>
+            <li class="faq-item-item">
+                <div class="faq-left">
+                    <span class="faq-number">07</span>
+                    <div class="faq-content">
+                        <h3 class="faq-title"> How much does a designer kitchen unit cost?
+                        </h3>
+                        <p class="faq-description">
+                            The entire cost of a designer kitchen depends on many different factors like; materials,
+                            size, and design complexity. However, Buy Kitchen Online offers premium quality at
+                            affordable prices for various budgets.
+
+
+                        </p>
+
+                    </div>
+                </div>
+                <div class="faq-item-arrow">
+                    <svg class="arrow-icon" fill="none" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+            </li>
+            <li class="faq-item-item">
+                <div class="faq-left">
+                    <span class="faq-number">08</span>
+                    <div class="faq-content">
+                        <h3 class="faq-title"> Can Buy Kitchen Online design a custom kitchen unit to fit my small
+                            physical space?
+
+                        </h3>
+                        <p class="faq-description">
+                            Absolutely! The experts at Buy Kitchen Online specialize in building kitchen units according
+                            to your available space and lifestyle.
+
+                        </p>
+
+                    </div>
+                </div>
+                <div class="faq-item-arrow">
+                    <svg class="arrow-icon" fill="none" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+            </li>
+            <li class="faq-item-item">
+                <div class="faq-left">
+                    <span class="faq-number">09</span>
+                    <div class="faq-content">
+                        <h3 class="faq-title"> Which materials are used to make a kitchen unit?
+
+                        </h3>
+                        <p class="faq-description">
+                            The most popular materials include stainless steel, quarts, and wood (such as oak, maple,
+                            and cherry). Buy Kitchen Online helps you in choosing the perfect material according to your
+                            preference.
+
+                        </p>
+
+                    </div>
+                </div>
+                <div class="faq-item-arrow">
+                    <svg class="arrow-icon" fill="none" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+            </li>
+            <li class="faq-item-item">
+                <div class="faq-left">
+                    <span class="faq-number">10</span>
+                    <div class="faq-content">
+                        <h3 class="faq-title"> Is a bespoke designer kitchen worth it?
+
+                        </h3>
+                        <p class="faq-description">
+                            Bespoke kitchens are worth it if you prefer customized, high-quality, long-lasting kitchens.
+                            The price may be higher than a standard kitchen, but the advantages of having a kitchen
+                            custom-made for your space and style are worth the investment.
+
+
+                        </p>
+
+                    </div>
+                </div>
+                <div class="faq-item-arrow">
+                    <svg class="arrow-icon" fill="none" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+            </li>
+            <li class="faq-item-item">
+                <div class="faq-left">
+                    <span class="faq-number">11</span>
+                    <div class="faq-content">
+                        <h3 class="faq-title"> What kitchen styles are available at Buy Kitchen Online?
+
+                        </h3>
+                        <p class="faq-description">
+                            The kitchen styles offered by Buy Kitchen Online are J Pull, Shaker, True handleless,
+                            Slab-edged. If you want a luxurious kitchen with a contemporary look then you can choose
+                            from J Pull 22, Shaker 22, True handleless painted and Slab-Edged Painted. We also have
+                            budget-friendly kitchen option like MFC.
+
+                        </p>
+
+                    </div>
+                </div>
+                <div class="faq-item-arrow">
+                    <svg class="arrow-icon" fill="none" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+            </li>
+            
+         @else
+            @if (count($faqsData) > 0)
+                @foreach ($faqsData as $faq)
+                        <li class="faq-item-item expanded">
+                            <div class="faq-left">
+                                <span class="faq-number">01</span>
+                                <div class="faq-content">
+                                    <h3 class="faq-title">{{ $faq['question'] }}</h3>
+                                    <p class="faq-description">
+                                        {{ strip_tags($faq['answer']) }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="faq-item-arrow">
+                                <svg class="arrow-icon" fill="none" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                                </svg>
+                            </div>
+                        </li>
+                 @endforeach
+                  @else
+                    <div class="alert alert-light" role="alert">
+                        No FAQ's found.
+                    </div>
+            @endif
+        @endif
+
+        </ul>
+
+     
+    </div>
+
+</div>
 
 <script>
 
 document.addEventListener('DOMContentLoaded', function() {
             
-            const faqQuestions = document.querySelectorAll('.faq-question');
+        //     const faqQuestions = document.querySelectorAll('.faq-question');
             
-            faqQuestions.forEach(question => {
-                question.addEventListener('click', function() {
+        //     faqQuestions.forEach(question => {
+        //         question.addEventListener('click', function() {
                     
-                    this.classList.toggle('active');
+        //             this.classList.toggle('active');
                     
-                    const answer = this.nextElementSibling;
-                    answer.classList.toggle('show');
+        //             const answer = this.nextElementSibling;
+        //             answer.classList.toggle('show');
                     
-                    faqQuestions.forEach(q => {
-                        if (q !== question) {
-                            q.classList.remove('active');
-                            q.nextElementSibling.classList.remove('show');
-                        }
-                    });
-                });
-            });
+        //             faqQuestions.forEach(q => {
+        //                 if (q !== question) {
+        //                     q.classList.remove('active');
+        //                     q.nextElementSibling.classList.remove('show');
+        //                 }
+        //             });
+        //         });
+        //     });
 
-            const observerOptions = {
-                threshold: 0.1
-            };
+        //     const observerOptions = {
+        //         threshold: 0.1
+        //     };
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
+        //     const observer = new IntersectionObserver((entries) => {
+        //         entries.forEach(entry => {
+        //             if (entry.isIntersecting) {
+        //                 entry.target.style.opacity = '1';
+        //                 entry.target.style.transform = 'translateY(0)';
+        //             }
+        //         });
+        //     }, observerOptions);
 
-            faqItems.forEach((item, index) => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(20px)';
-                item.style.transition = `all 0.5s ease ${index * 0.1}s`;
-                observer.observe(item);
+        //     faqItems.forEach((item, index) => {
+        //         item.style.opacity = '0';
+        //         item.style.transform = 'translateY(20px)';
+        //         item.style.transition = `all 0.5s ease ${index * 0.1}s`;
+        //         observer.observe(item);
+        //     });
+        
+         document.querySelectorAll('.faq-item-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const alreadyOpen = item.classList.contains('expanded');
+                document.querySelectorAll('.faq-item-item').forEach(i => i.classList.remove('expanded'));
+                if (!alreadyOpen) { item.classList.add('expanded'); }
             });
         });
+        });
+
+
 
 </script>
 

@@ -1115,12 +1115,13 @@ td
             </section>--}}
             @endif
             
-            <!-- FAQs -->
-            @include('frontend.faqs_component', ['faqsData' => $category->faqs])
             
         </div>
+        
     </section>
-    
+    <!-- FAQs -->
+            @include('frontend.faqs_component', ['faqsData' => $category->faqs])
+            
     <div class="modal fade" id="newsletterModalOrder" tabindex="-1" aria-labelledby="newsletterModalOrderLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-md">
             <div class="modal-content">
