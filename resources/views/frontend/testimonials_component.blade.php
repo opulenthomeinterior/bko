@@ -672,7 +672,7 @@
             bottom: 15%;
             right: 15%;
         }
-        
+/*         
         .dot {
             width: 20px;
             height: 20px;
@@ -723,29 +723,167 @@
         
         .carousel-indicators .active {
             background-color: #555;
+        } */
+
+          .testimonial-container {
+            max-width: 800px;
+            width: 100%;
+            position: relative;
+        }
+
+        .testimonial-slider-wrapper {
+            overflow: hidden;
+        }
+
+        .slider-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+           
+            padding-top: 60px;
+            text-align: center;
+            opacity: 0.3;
+            transform: scale(0.98);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .testimonial-slide.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .user-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            margin: 0 auto 24px;
+            background: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 500;
+            color: #64748b;
+        }
+
+        .testimonial-slide.active .user-avatar {
+            background: #1e293b;
+            color: #fff;
+        }
+
+        .testimonial-message {
+            font-size: 24px;
+            line-height: 1.6;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .user-info {
+            margin-top: 24px;
+        }
+
+        .user-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .testimonial-date {
+            font-size: 14px;
+            color: #999;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            /* margin-top: 48px; */
+            margin-top: 5px;
+        }
+
+        .slider-btn {
+            width: 40px;
+            height: 40px;
+            /* border-radius: 50%;
+            border: 1px solid #ccc;
+            background: #fff;
+            cursor: pointer; */
+              background: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 50%;
+    transition: all 0.3s ease; /* smooth animation */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        }
+        .slider-btn:hover {
+    background: #000;        /* black background */
+    color: #fff;             /* white icon */
+    transform: scale(1.1);   /* thoda zoom effect */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* soft shadow */
+}
+
+        .slider-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background: #1a1a1a;
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 2px;
+            background: #e2e8f0;
+            margin-top: 40px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #3b82f6, #1e40af);
+            transition: width 4s linear;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
+    {{-- <div class="container">
         <div class="testimonial-section">
             <h2 class="heading">FACT, EVERYONE LOVES US:</h2>
          
             <div class="dot dot-yellow"></div>
             <div class="dot dot-green"></div>
-            <div class="dot dot-light"></div>
+            <div class="dot dot-light"></div> --}}
             
             <!-- Testimonial Carousel -->
             {{-- <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel"> --}}
-                <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-wrap="true">
+                {{-- <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-wrap="true">
                 <div class="carousel-inner">
                     @foreach($testimonials as $index => $testimonial)
                     <div class="carousel-item @if($index === 0) active @endif">
                         <div class="testimonial-card">
-                            <div class="testimonial-content">
+                            <div class="testimonial-content"> --}}
                                 <!-- <img src="/api/placeholder/150/150" alt="Jamie" class="profile-img mb-3"> -->
-                                <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" class="img-fluid rounded-circle" style="height: 100px; width: 100px">
+                                {{-- <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" class="img-fluid rounded-circle" style="height: 100px; width: 100px">
                        
                                 <div class="stars">
                                     <i class="fas fa-star"></i>
@@ -774,14 +912,14 @@
                     <span aria-hidden="true"><i class="text-warning fas fa-chevron-right"></i></span>
                     <span class="visually-hidden">Next</span>
                 </button>
-                
+                 --}}
                 {{-- <div class="carousel-indicators">
                     <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
                     <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div> --}}
 
-                <div class="carousel-indicators">
+                {{-- <div class="carousel-indicators">
                     @foreach($testimonials as $index => $testimonial)
                         <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="{{$index}}" 
                             @if($index === 0) class="active" aria-current="true" @endif 
@@ -790,18 +928,139 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
    
+    <div class="container-fluid d-flex justify-content-center">
+  <div class=" testimonial-container">
+    <h2 class="text-center" style="font-weight: 700; font-size:2.5rem">FACT, EVERYONE LOVES US</h2>
+        <div class="testimonial-slider-wrapper">
+            <div class="slider-track" id="sliderTrack">
 
+                @foreach($testimonials as $index => $testimonial)
+                <div class="testimonial-slide active">
+                    <div class="user-avatar">SM</div>
+                    <div class="testimonial-message">
+                         {{$testimonial->testimonial}}
+                    </div>
+                    <div class="user-info">
+                        <div class="user-name">{{$testimonial->user_name}}</div>
+                        <div class="testimonial-date">{{$testimonial->date}}</div>
+                    </div>
+                </div>
+                @endforeach
+            
+            </div>
+        </div>
 
+        <div class="slider-controls">
+            <button class="slider-btn" id="prevBtn">
+             <i class="fas fa-chevron-left"></i>
+            </button>
+            {{-- <div class="slider-dots" id="sliderDots">
+                <div class="dot active" data-slide="0"></div>
+                <div class="dot" data-slide="1"></div>
+                <div class="dot" data-slide="2"></div>
+                <div class="dot" data-slide="3"></div>
+                <div class="dot" data-slide="4"></div>
+            </div> --}}
+            <div class="slider-dots" id="sliderDots">
+                @foreach($testimonials as $index => $testimonial)
+                    <div class="dot @if($index === 0) active @endif" data-slide="{{ $index }}"></div>
+                @endforeach
+            </div>
+            <button class="slider-btn" id="nextBtn">
+                 <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const carousel = new bootstrap.Carousel(document.getElementById('testimonialCarousel'), {
-        interval: 5000,
-        wrap: true,
-        touch: true
-    });
-});
+// document.addEventListener('DOMContentLoaded', function() {
+//     const carousel = new bootstrap.Carousel(document.getElementById('testimonialCarousel'), {
+//         interval: 5000,
+//         wrap: true,
+//         touch: true
+//     });
+// });
+
+   class MinimalTestimonialSlider {
+            constructor() {
+                this.currentSlide = 0;
+                this.slides = document.querySelectorAll('.testimonial-slide');
+                this.totalSlides = this.slides.length;
+                this.sliderTrack = document.getElementById('sliderTrack');
+                this.dots = document.querySelectorAll('.dot');
+                this.progressBar = document.querySelector('.progress-bar');
+                this.progressDuration = 4000;
+                this.progressTimeout = null;
+
+                this.init();
+                this.startProgress();
+            }
+
+            init() {
+                document.getElementById('prevBtn').addEventListener('click', () => {
+                    this.prevSlide(); this.restartProgress();
+                });
+                document.getElementById('nextBtn').addEventListener('click', () => {
+                    this.nextSlide(); this.restartProgress();
+                });
+                this.dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        this.goToSlide(index); this.restartProgress();
+                    });
+                });
+            }
+
+            updateSlider() {
+                const translateX = -this.currentSlide * 100;
+                this.sliderTrack.style.transform = `translateX(${translateX}%)`;
+                this.slides.forEach((s, i) => s.classList.toggle('active', i === this.currentSlide));
+                this.dots.forEach((d, i) => d.classList.toggle('active', i === this.currentSlide));
+            }
+
+            nextSlide() {
+                this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+                this.updateSlider();
+            }
+
+            prevSlide() {
+                this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+                this.updateSlider();
+            }
+
+            goToSlide(i) {
+                this.currentSlide = i;
+                this.updateSlider();
+            }
+
+            startProgress() {
+                this.progressBar.style.transition = "none";
+                this.progressBar.style.width = "0%";
+                void this.progressBar.offsetWidth; // reflow
+                this.progressBar.style.transition = `width ${this.progressDuration}ms linear`;
+                this.progressBar.style.width = "100%";
+
+                this.progressTimeout = setTimeout(() => {
+                    this.nextSlide();
+                    this.startProgress();
+                }, this.progressDuration);
+            }
+
+            restartProgress() {
+                clearTimeout(this.progressTimeout);
+                this.startProgress();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => { new MinimalTestimonialSlider(); });
+   
 </script>
 </body>
