@@ -825,8 +825,8 @@
     align-items: center;
         }
         .slider-btn:hover {
-    background: #000;        /* black background */
-    color: #fff;             /* white icon */
+    background: #ffc107 ;        /* black background */
+    color: black;             /* white icon */
     transform: scale(1.1);   /* thoda zoom effect */
     box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* soft shadow */
 }
@@ -938,7 +938,9 @@
 
                 @foreach($testimonials as $index => $testimonial)
                 <div class="testimonial-slide active">
-                    <div class="user-avatar">SM</div>
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
                     <div class="testimonial-message">
                          {{$testimonial->testimonial}}
                     </div>
@@ -973,8 +975,10 @@
             </button>
         </div>
 
-        <div class="progress-container">
+        <div class="row justify-content-center">
+        <div class="progress-container mb-5 w-50">
             <div class="progress-bar"></div>
+        </div>
         </div>
     </div>
 

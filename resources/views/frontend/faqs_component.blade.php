@@ -95,6 +95,12 @@
             transform: rotate(180deg);
             color: var(--text-on-primary);
         }
+        
+
+        
+        .faq-question.active i:hover {
+            transform: scale(1.3);
+        }
 
         .faq-answer {
             max-height: 0;
@@ -348,8 +354,9 @@
         }
 
         .faq-description {
-            color: #888;
-            font-size: 0.95rem;
+            /* color: #888; */
+            color: #9f9f9f;
+            font-size: 1rem;
             line-height: 1.6;
             margin-bottom: 20px;
             opacity: 0;
@@ -378,18 +385,27 @@
         .faq-item-arrow {
             width: 48px;
             height: 48px;
-            background: #4285f4;
+            /* background: #4285f4; */
+            background-color: #ffc107;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: transform 0.3s ease;
         }
-
+        .faq-item-arrow:hover
+        {
+             transform: scale(1.3);   /* thoda zoom effect */
+             box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* soft shadow */
+        }
+        .faq-item-arrow:hover .arrow-icon
+        {
+            transform: scale(1.3);
+        }
         .arrow-icon {
             width: 20px;
             height: 20px;
-            stroke: white;
+            stroke: black;
             stroke-width: 2;
         }
 

@@ -685,8 +685,9 @@
             overflow: hidden;
         }
         .left-slider-image{
+            height: 100%;
             width: 100%;
-            filter: brightness(0.8);
+            /* filter: brightness(0.8); */
             transition: transform 0.5s ease;
         }
         
@@ -1092,6 +1093,107 @@
             line-height: 1.6 !important;
         }
         
+
+         .bko-beats-title {
+            margin-top: 3.5rem;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            text-align: left;
+            margin-bottom: 50px;
+            line-height: 1.2;
+        }
+
+        .bko-beats-container {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .bko-beats-box {
+            /* background: white; */
+            border-radius: 12px;
+            padding: 30px 20px;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); */
+            border: 1px solid #e9ecef;
+        }
+
+        .bko-beats-icon-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .bko-beats-icon-1 {
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .bko-beats-icon-2 {
+            background-color: #f3e5f5;
+            color: #7b1fa2;
+        }
+
+        .bko-beats-icon-3 {
+            background-color: #fff3e0;
+            color: #f57c00;
+        }
+
+        .bko-beats-icon-4 {
+            background-color: #e8f5e8;
+            color: #388e3c;
+        }
+
+        .bko-beats-icon-5 {
+            background-color: #ffebee;
+            color: #d32f2f;
+        }
+
+        .feature-bko-beats-title {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+
+        @media (max-width: 768px) {
+         .feature-bko-beats-title {
+
+            font-size: 2rem;
+            text-align: left;
+         }
+            .bko-beats-title {
+                font-size: 2.2rem;
+                text-align: center;
+                margin-bottom: 40px;
+            }
+
+            .bko-beats-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .bko-beats-title {
+                font-size: 1.8rem;
+            }
+
+            
+
+            .bko-beats-box {
+                padding: 25px 15px;
+            }
+        }
     </style>
     @endsection
     </head>
@@ -1142,8 +1244,66 @@
         </div>
     </section> -->
 
-    <section class="container-fluid position-relative hero-section d-flex align-items-center" style="min-height: 100vh; overflow: hidden; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266;">
+    {{-- <section class="container-fluid position-relative hero-section d-flex align-items-center" style="min-height: 100vh; overflow: hidden; border-top: 3px solid #ebc266; border-bottom: 3px solid #ebc266;">
         
+        <div class="image-container">
+            <img src="{{ asset('images/homepage.jpeg') }}" alt="Image 1" class="fade-img active">
+            <img src="{{ asset('images/shaker-22.jpeg') }}" alt="Image 2" class="fade-img">
+            <img src="{{ asset('images/True-Handleless-SuperGloss-Graphite.jpg') }}" alt="Image 3" class="fade-img">
+            <img src="{{ asset('images/slab.jpeg') }}" alt="Image 4" class="fade-img">
+        </div>
+
+        <div class="container">
+            <div class="row justify-content-center main-image-content align-items-center " style="z-index: 1000;">
+                
+                <div class="col-md-9 text-start text-white px-4 p-0" style="z-index: 100;">
+                    <div class="ps-4 animated slide-top">
+                      
+                        <h6 class="text-white fw-bold text-center" style="letter-spacing:8px;">BUY KITCHEN ONLINE</h6>
+                    </div>
+                       
+                        <div class="text-green-color ps-3">
+                               
+                                <h1 class="text-yellow-color fw-bold animated slide-left text-uppercase text-center">Best of both worldS</h1>
+                               
+                                <p  class=" mt-4 text-white animated slide-bottom text-center text-uppercase fw-bold" style="font-size:30px"><span class="text-yellow-color">FINALLY!</span> Escape online risk & Ditch <br> high-street costs. <br>
+                                    
+                                </p>
+                                    <p class="text-white animated slide-bottom text-center" style="font-size:30px"> The <span class="text-yellow-color fw-bold">ONLY Online Platform </span> with <span> Online value </span> and professional <span class="text-yellow-color fw-bold">Survey</span> with <span class="text-yellow-color fw-bold">Installation</span>.</p>
+                            
+                            </div>
+                            <div class="container d-flex flex-column align-items-center text-center position-relative">
+                                <div class="col-xl-8 col-lg-10 col-md-10 col-sm-12 animated slide-top mx-auto" style="margin-top: 5px;">
+                                   
+                                     <div class="row justify-content-center column-badges" >
+                                        <img class="w-25" src="{{ asset('images/premium-badge.png') }}" alt="">
+                                          
+                                            <img style="cursor: pointer;" class="w-25" src="{{ asset('images/trust-pilot-badge.png') }}" 
+                                            onclick="window.location.href ='https://www.trustpilot.com/review/opulenthomeinteriors.com'">
+                                        
+
+                                         
+                                            <img style="cursor: pointer;" class="w-25" src="{{ asset('images/google-reviews-badge.png') }}" alt="" onclick="window.location.href ='https://www.google.com/maps/place/Buy+Kitchen+Online/@51.5192167,-0.0093268,17z/data=!4m8!3m7!1s0x48761d591fe166d7:0x456fed0ffc8a8222!8m2!3d51.5192167!4d-0.0093268!9m1!1b1!16s%2Fg%2F11vbf0zdzm?entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D'">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-xl-8 col-lg-10 col-md-10 col-sm-12 animated slide-bottom mt-4 mx-auto">
+                                   
+                                        <a href="{{ route('orderkitchen') }}" class="btn px-5 btn-md bg-yellow-color2 text-white text-uppercase">
+                                        Order Now
+                                    </a>
+                                </div>
+                            </div>
+                 
+                </div>
+                <div class="left-shadow"></div>
+            </div>
+        </div>
+    </section> --}}
+
+    <section class="container-fluid position-relative hero-section d-flex align-items-center"
+        style="min-height: 100vh; overflow: hidden;">
+
         <!-- Background Image -->
         <div class="image-container">
             <img src="{{ asset('images/homepage.jpeg') }}" alt="Image 1" class="fade-img active">
@@ -1156,62 +1316,313 @@
         <div class="container">
             <div class="row justify-content-center main-image-content align-items-center " style="z-index: 1000;">
                 <!-- Left Content -->
-                <div class="col-md-9 text-start text-white px-4 p-0" style="z-index: 100;">
-                    <div class="ps-4 animated slide-top">
-                        {{-- <h6 class="text-yellow-color fw-bold text-center" style="letter-spacing:8px;">BUY KITCHEN ONLINE</h6> --}}
-                        <h6 class="text-white fw-bold text-center" style="letter-spacing:8px;">BUY KITCHEN ONLINE</h6>
-                    </div>
-                    {{-- <div class="text-green-color ps-3" style="border-left: 3px solid; margin-bottom: 10px"> --}}
-                            <div class="text-green-color ps-3">
-                                {{-- <h1 class="text-white animated slide-right text-center">ELEVATE YOUR KITCHEN</h1> --}}
-                                {{-- <h1 class="text-yellow-color fw-bold animated slide-left text-center">ELEVATE YOUR LIFESTYLE</h1> --}}
-                                <h1 class="text-yellow-color fw-bold animated slide-left text-uppercase text-center">Best of both worldS</h1>
-                                <!-- <h2 class="text-white fw-bold animated slide-left text-uppercase text-center"> Retail QuAlity | Online Prices | Peace of Mind</h2> -->
-                                {{-- <p  class=" text-white animated slide-bottom text-center" style="font-size:20px">We specialize in virtually designing and delivering your dream kitchen that complements your needs and style. Whether you want to build a new kitchen or need to replace a single component, we are always at your service.</p> --}}
-                                <p  class=" mt-4 text-white animated slide-bottom text-center text-uppercase fw-bold" style="font-size:30px"><span class="text-yellow-color">FINALLY!</span> Escape online risk & Ditch <br> high-street costs. <br>
-                                    <!-- The <span class="text-yellow-color">ONLY Online Platform </span> with <span> Online value </span> and professional <span class="text-yellow-color">survey</span> with <span class="text-yellow-color">installation</span>. -->
-                                    </p>
-                                    <p class="text-white animated slide-bottom text-center" style="font-size:30px"> The <span class="text-yellow-color fw-bold">ONLY Online Platform </span> with <span> Online value </span> and professional <span class="text-yellow-color fw-bold">Survey</span> with <span class="text-yellow-color fw-bold">Installation</span>.</p>
-                            
-                            </div>
-                            <div class="container d-flex flex-column align-items-center text-center position-relative">
-                                <div class="col-xl-8 col-lg-10 col-md-10 col-sm-12 animated slide-top mx-auto" style="margin-top: 5px;">
-                                    <!-- <h4 class="unique-font text-white px-3 py-1 rounded-gradient-border w-100" id="typing-effect"></h4> -->
-                                     <!-- <img class="w-100" src="{{ asset('images/homepage-badges.png') }}" alt=""> -->
-                                    <div class="row justify-content-center column-badges" >
-                                        <img class="w-25" src="{{ asset('images/premium-badge.png') }}" alt="">
-                                        <!-- <a href="https://www.trustpilot.com/review/opulenthomeinteriors.com">
-                                         </a>    -->
-                                         <!-- <a class="btn" href="https://www.trustpilot.com/review/opulenthomeinteriors.com"> -->
-                                            <img style="cursor: pointer;" class="w-25" src="{{ asset('images/trust-pilot-badge.png') }}" 
-                                            onclick="window.location.href ='https://www.trustpilot.com/review/opulenthomeinteriors.com'">
-                                        
+                <div class="col-md-7 text-start text-white p-0" style="z-index: 100;">
+                    <div class=" animated slide-top">
 
-                                         
-                                            <img style="cursor: pointer;" class="w-25" src="{{ asset('images/google-reviews-badge.png') }}" alt="" onclick="window.location.href ='https://www.google.com/maps/place/Buy+Kitchen+Online/@51.5192167,-0.0093268,17z/data=!4m8!3m7!1s0x48761d591fe166d7:0x456fed0ffc8a8222!8m2!3d51.5192167!4d-0.0093268!9m1!1b1!16s%2Fg%2F11vbf0zdzm?entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D'">
-                                       
-                                    </div>
-                                </div>
-                                <div class="col-xl-8 col-lg-10 col-md-10 col-sm-12 animated slide-bottom mt-4 mx-auto">
-                                    <!-- <a href="{{ route('orderkitchen') }}" class="btn w-100 btn-md bg-yellow-color2 text-white text-uppercase border-green-color" style="border-radius: 50px;"> -->
-                                    <a href="{{ route('orderkitchen') }}" class="btn px-5 btn-md bg-yellow-color2 text-white text-uppercase">
-                                        Order Now
-                                    </a>
-                                </div>
-                            </div>
-                    {{-- </div> --}}
+                        <h6 class="text-white fw-bold text-md-start text-center" style="letter-spacing:8px;">BUY KITCHEN
+                            ONLINE</h6>
+                    </div>
+
+                    <div class="text-green-color">
+
+                        <h1
+                            class="text-white fw-bold animated slide-left text-uppercase text-md-start text-center d-none d-md-block">
+                            Best of both worldS</h1>
+
+
+                        <p class="text-white animated slide-bottom text-md-start text-center" style="font-size:30px">
+                            The <span class="text-white fw-bolder">Only Online Platform </span> with <span> Online value
+                            </span> and professional <span class="text-white fw-bolder">Survey</span> with <span
+                                class="text-white fw-bolder">Installation</span>.</p>
+
+                    </div>
+                    <div class="container d-flex flex-column align-items-center text-center position-relative ps-0">
+                        <div class="col-xl-8 col-lg-10 col-md-10 col-sm-12 animated slide-top mx-auto"
+                            style="margin-top: 5px;">
+
+                        </div>
+                        <div class=" col-sm-12 d-flex justify-content-start animated slide-bottom mt-1 mb-5 mb-md-0">
+
+                            <a href="{{ route('orderkitchen') }}"
+                                class="btn px-5 py-3 order-btn btn-md text-black text-uppercase rounded-pill"
+                                style="background-color: #ffc107;">
+                                Order Now
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
+
+                <div class="pb-4 align-self-center col-xl-5 col-lg-5 col-md-8 col-sm-12 col-12 " style="z-index: 100;">
+
+                    @include('frontend.inquiry_form')
+                </div>
+
                 <div class="left-shadow"></div>
             </div>
         </div>
     </section>
 
-    <div class="container-fluid py-3" style="background: linear-gradient(135deg,#f5f7fa 0%, #e0e4e9 100%)">
-    <!-- ORDER KITCHEN-->
-    <section class="container py-5 dots-background-section" style="position: relative; width: 100% !important; overflow: hidden">
-        <canvas id="dots" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></canvas>
-        <div class="row mt-4" id="stylesContainer" style="position: relative; z-index: 2">
-            <div class="col-lg-7  overflow-hidden  py-4">
+   
+
+    <!-- <div class="container" style="margin-top: 120px;">
+        <div class="row">
+        <div class="col-12">
+            <img class="d-md-none w-100" src="{{ asset('images/affordable-mobile.png') }}" alt="">
+            <img class="d-none d-md-block w-100" src="{{ asset('images/affordable.png') }}" alt="">
+        </div>
+        <div class="row">
+            <div class="text-center"> -->
+                <!-- <a href="#" class="btn cta-button">BOOK YOUR FREE CONSULTATION NOW!</a> -->
+                <!-- <button  class="btn btn-lg cta-button rounded-0" style="background-color:#ffc107;" data-bs-toggle="modal" data-bs-target="#exampleModal">book your FREE CONSULTATION NOW!</button>
+               
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="container mb-4">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="text-uppercase text-center mt-5 mb-4 text-black fw-bold">Ordering elsewhere <span class="text-danger">vs.</span> Letting us handle it</h2>
+            
+            <img class="d-md-none w-100 border boder-success" src="{{ asset('images/letting-us-mobile.png') }}" alt="">
+            <img class="d-none d-md-block w-100 border boder-primary" src="{{ asset('images/letting-us-handle.png') }}" alt="">
+        </div>
+    </div>
+    </div> -->
+
+{{-- <div class="container-fluid" style="background-color: #fffaf0;"> --}}
+
+    <!-- <div class="container faq-container"> -->
+    {{-- <div class="container faq-container"> --}}
+        {{-- <div class="faq-header"> --}}
+            {{-- <h3 class="text-black fw-bolder mb-1">WHY Buy Kitchen Online Beats Every Other Online Store?</h3> --}}
+            <!-- <h4 class="mt-4 text-black fw-bolder">Buy Kitchen Online <span class="text-danger"> VS</span> Other Online Stores</h4> -->
+        {{-- </div> --}}
+
+        
+        
+
+        {{-- <div class="faq-list"> --}}
+            <!-- FAQ Item 1 -->
+            {{-- <div class="faq-item" data-category="general"> --}}
+                {{-- <div class="faq-question"> --}}
+                    {{-- <div>
+                        <span class="faq-badge faq-badge-popular">1</span>
+                        Site Survey & Measurements
+                    </div> --}}
+                    {{-- <i class="fas fa-chevron-down"></i> --}}
+                {{-- </div> --}}
+                {{-- <div class="faq-answer">
+                  
+                    <div class="faq-card-container">
+                        <div class="faq-card">
+                            <div class="faq-card-title text-black text-center">
+                                <!-- <i class="fas fa-box-open"></i> -->
+                                Other Online Stores
+                            </div>
+                            <div class="faq-card-desc">
+                               <h4 class="text-black">You measure. You guess. You hope it fits.</h4>
+                               <p>– DIY site survey (risk of errors).</p>
+                            </div>
+                        </div>
+                        <div class="faq-card">
+                            <div class="faq-card-title text-center">
+                                <!-- <i class="fas fa-cloud-download-alt"></i> -->
+                                Buy Kitchen Online
+                            </div>
+                            <div class="faq-card-desc">
+                                <h4 class="text-black"> We measure. We plan. We guarantee it fits. </h4>
+                                <p>-Free professional site survey.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
+            {{-- </div> --}}
+            {{-- <div class="faq-item" data-category="general">
+                <div class="faq-question">
+                    <div>
+                        <span class="faq-badge faq-badge-popular">2</span>
+                        Kitchen Design
+                    </div> --}}
+                    {{-- <i class="fas fa-chevron-down"></i> --}}
+                {{-- </div> --}}
+                {{-- <div class="faq-answer">
+                  
+                    <div class="faq-card-container">
+                        <div class="faq-card">
+                            <div class="faq-card-title text-black text-center">
+                                <!-- <i class="fas fa-box-open"></i> -->
+                                Other Online Stores
+                            </div>
+                            <div class="faq-card-desc">
+                               <h4 class="text-black">You design alone (with generic software).</h4>
+                               <p>– No personalized advice.</p>
+                            </div>
+                        </div>
+                        <div class="faq-card">
+                            <div class="faq-card-title text-center">
+                                <!-- <i class="fas fa-cloud-download-alt"></i> -->
+                                Buy Kitchen Online
+                            </div>
+                            <div class="faq-card-desc">
+                                <h4 class="text-black">We design with you (for your actual space).</h4>
+                                <p>– Expert designers tailor layouts to suit your needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
+            {{-- </div>
+            <div class="faq-item" data-category="general">
+                <div class="faq-question">
+                    <div>
+                        <span class="faq-badge faq-badge-popular">3</span>
+                        Ordering Process
+                    </div> --}}
+                    {{-- <i class="fas fa-chevron-down"></i> --}}
+                {{-- </div> --}}
+                {{-- <div class="faq-answer">
+                  
+                    <div class="faq-card-container">
+                        <div class="faq-card">
+                            <div class="faq-card-title text-black text-center">
+                                <!-- <i class="fas fa-box-open"></i> -->
+                                Other Online Stores
+                            </div>
+                            <div class="faq-card-desc">
+                               <h4 class="text-black">You play project manager.</h4>
+                               <p>– Manually add items to cart (risk of mistakes or reordering).</p>
+                            </div>
+                        </div>
+                        <div class="faq-card">
+                            <div class="faq-card-title text-center">
+                                <!-- <i class="fas fa-cloud-download-alt"></i> -->
+                                Buy Kitchen Online
+                            </div>
+                            <div class="faq-card-desc">
+                                <h4 class="text-black">We handle everything for you.</h4>
+                                <p>– We place your order (accurate products, every time).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
+            {{-- </div>
+            <div class="faq-item" data-category="general">
+                <div class="faq-question">
+                    <div>
+                        <span class="faq-badge faq-badge-popular">4</span>
+                        Delivery & Quality Check
+                    </div> --}}
+                    {{-- <i class="fas fa-chevron-down"></i> --}}
+                {{-- </div> --}}
+                {{-- <div class="faq-answer">
+                  
+                    <div class="faq-card-container">
+                        <div class="faq-card">
+                            <div class="faq-card-title text-black text-center">
+                                <!-- <i class="fas fa-box-open"></i> -->
+                                Other Online Stores
+                            </div>
+                            <div class="faq-card-desc">
+                               <h4 class="text-black">You inspect. You stress. You’re on your own.</h4>
+                               <p>– Faulty items? Return deadlines apply.</p>
+                            </div>
+                        </div>
+                        <div class="faq-card">
+                            <div class="faq-card-title text-center">
+                                <!-- <i class="fas fa-cloud-download-alt"></i> -->
+                                Buy Kitchen Online
+                            </div>
+                            <div class="faq-card-desc">
+                                <h4 class="text-black">We inspect. You relax.</h4>
+                                <p>– Our team verifies all items before installation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
+            {{-- </div>
+            <div class="faq-item" data-category="general">
+                <div class="faq-question">
+                    <div>
+                        <span class="faq-badge faq-badge-popular">5</span>
+                        Installation
+                    </div> --}}
+                    {{-- <i class="fas fa-chevron-down"></i> --}}
+                {{-- </div> --}}
+                {{-- <div class="faq-answer">
+                  
+                    <div class="faq-card-container">
+                        <div class="faq-card">
+                            <div class="faq-card-title text-black text-center">
+                                <!-- <i class="fas fa-box-open"></i> -->
+                                Other Online Stores
+                            </div>
+                            <div class="faq-card-desc">
+                               <h4 class="text-black">You hire a fitter. You cross your fingers.</h4>
+                               <p>– Third-party installers charge extra for fixes. <br>
+                                – Mistakes = reorder & repay shipping (You pay the price for the mistake of others)
+                                </p>
+                            </div>
+                        </div>
+                        <div class="faq-card">
+                            <div class="faq-card-title text-center">
+                                <!-- <i class="fas fa-cloud-download-alt"></i> -->
+                                Buy Kitchen Online
+                            </div>
+                            <div class="faq-card-desc">
+                                <h4 class="text-black">We install. We guarantee. We prioritize your peace of mind.</h4>
+                                <p>– Expert fitters (no strangers in your home). <br>
+                                    – Full project management accountability—if something’s wrong, we handle it.
+                                    </p>
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
+            {{-- </div> --}}
+            
+            
+        {{-- </div> --}}
+        {{-- <h4 class="text-black fw-bold text-center">With Buy Kitchen Online, you get the best of both worlds—online prices with retail-store quality and service—all under one roof.</h4> --}}
+    {{-- </div> --}}
+{{-- </div> --}}
+
+    {{-- <div class="container mt-4">
+        <div class="row">
+            <h2 class="text-uppercase text-center mt-5 mb-4 text-black fw-bold">There are <span style="color: #FDB71A;">three types </span>of Kitchen buyers. <br> <span class="text-danger">Which one are you?</span></h2>
+            
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-12">
+                
+                <img class="w-100 img-fluid d-none d-md-block" src="{{ asset('images/the-luxury-lover.png') }}"/>
+                    
+                <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/the-luxury-lover-mobile.png') }}"/>
+            </div>
+            <div class="col-md-6 col-12">
+                
+                <img class="w-100 img-fluid d-none d-md-block" src="{{ asset('images/the-online-gambler.png') }}"/>
+                    
+                <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/the-online-gambler-mobile.png') }}"/>
+            </div>
+    </div> --}}
+    {{-- </div> --}}
+
+
+    {{-- <div class="container mt-4">
+        <div class="row">
+        <div class="col-12">
+            
+            <img class="w-100 img-fluid d-none d-md-block" src="{{ asset('images/the-smart-cookie.png') }}"/>
+                
+            <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/the-smart-cookie-mobile.png') }}"/>
+        </div>
+    </div>
+    </div> --}}
+
+
+    <div class="container">
+        <div class="row">
+             <div class="col-12  overflow-hidden  py-4">
                 <div class="row">
                     <h3 class="text-uppercase fw-bolder text-dark mb-4">ORDER KITCHEN</h3>
                 </div>
@@ -1230,8 +1641,8 @@
                                     <div class="left-slider-card">
                                         <div class="left-slider-image-container">
                                             
-                                            <img  src="{{asset('imgs/styles/'.$style->image_path)}}" class="left-slider-image" />
-                                        <!-- <img  src="{{asset('images/shaker-22-500.png')}}" class="left-slider-image" /> -->
+                                            {{-- <img  src="{{asset('imgs/styles/'.$style->image_path)}}" class="left-slider-image" /> --}}
+                                         <img  src="{{asset('images/shaker-22-500.png')}}" class="left-slider-image" /> 
                                   
                                     </div>
                                     
@@ -1281,8 +1692,8 @@
                            <a href="{{route('ordercomponentbyname', [$category->slug])}}">
                             <div class="left-slider-card">
                                 <div class="left-slider-image-container">
-                            <!-- <img  src="{{asset('images/shaker-22-slide.png')}}" class="left-slider-image" /> -->
-                            <img  class="left-slider-image" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt="">
+                                <img  src="{{asset('images/shaker-22-slide.png')}}" class="left-slider-image" /> 
+                            {{-- <img  class="left-slider-image" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt=""> --}}
                             </div> 
                                   
                             <!-- <h3 class="swiper-order-kitchen-title text-center py-2">{{Str::limit($category->name, 13)}}</h3> -->
@@ -1295,9 +1706,9 @@
                         @endforeach
                         </div>
                         
-<!-- Navigation buttons -->
-<div class="swiper-button-next swiper-button-next-order-kitchen"></div>
-<div class="swiper-button-prev swiper-button-prev-order-kitchen"></div>
+                        <!-- Navigation buttons -->
+                        <div class="swiper-button-next swiper-button-next-order-kitchen"></div>
+                        <div class="swiper-button-prev swiper-button-prev-order-kitchen"></div>
                 </div>
                 </div>
                 <!-- <div class="row">
@@ -1345,421 +1756,112 @@
                     @endforeach
                 </div> -->
             </div>
-            {{-- <div class = "col-md-5 col-12 "> --}}
-            <div class = "align-self-center col-xl-5 col-lg-5 col-md-8 col-sm-12 col-12 ">
-
-                @include('frontend.inquiry_form')
-
-                {{-- <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning p-4 my-4 mt-md-0">
-                    @csrf
-                    <div>
-                        <div class="d-block">
-                            <div class="text-center text-dark fw-bold">FOR FREE SURVEY AND QUOTE <span class="text-warning"> CALL US NOW!</span></div>
-                            <div class="my-2 d-flex justify-content-center">
-                                <a href="tel:02080505605" class="btn btn-warning text-decoration-underline text-center text-dark fs-4 fw-bold">
-                                <i class="bi pt-2 me-2 bi-phone text-dark"></i> 
-                                    020 805 05605
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <h6 class="text-dark text-center fw-bold">OR</h6>
-                    <hr class="border border-dark">
-
-                    
-                    <h4 id="blinking-text" class="bg-warning text-black  fw-bold text-center py-2 rounded-pill">
-                        Book a free consultation now!
-                    </h4>
-                    <hr class="border border-dark">
-                    <div class="mb-3">
-                        <input type="text" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="name" id="name" placeholder="Enter your name">
-                    </div>
-                    <div class="mb-3">
-                        <input type="email" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="email" id="email" placeholder="Enter your email">
-                    </div>
-                    <div class="mb-3">
-                        <input type="number" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="phone" id="phone" placeholder="Enter your phone number">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="text-white py-2 px-3  text-end fw-bold" style="background-color:#2a6161;" >Call US AT</label>
-                        <input type="datetime-local" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="call_time">
-                    </div>
-                    <div class="mb-3">
-                        <textarea name="message" id="message" name="message" rows="3" class="w-100 rounded-0 border border-dark form-control text-dark" placeholder="Enter your message"></textarea>
-                    </div>
-                    <button type="submit" class=" btn py-2 px-4 rounded-0 fw-bolder text-uppercase text-white" style="background-color:#2a6161;">Submit</button>
-                </form> --}}
-
-                 {{-- Right Form 
-                <div class="d-flex justify-content-center my-4 mt-md-0">
-                    <form method="POST" action="{{ route('contact_us_inquiry') }}" class="w-100 text-yellow-color2 p-4" style="border: 3px solid; border-radius: 25px; background-color: rgba(0, 0, 0, 0.6)">
-                        @csrf
-                        <h3 class="text-white text-center">For free survey, <b class="text-yellow-color2">CALL US NOW!</b></h3>
-                        <div class="text-center">
-                            <i class="bi bi-phone text-white"></i> <a href="tel:02080505605" class="text-decoration-underline text-white fs-4 fw-bold">020 805 05605</a>
-                        </div>
-                        <hr class="border-warning">
-                        <h6 class="text-white text-center fw-bold">OR</h6>
-                        <h4 class="bg-green-color text-white text-center py-2 rounded-5">BOOK A FREE CONSULTATION NOW!</h4>
-                        <hr class="border-warning">
-                        <input type="text" class="form-control border-warning mb-3" name="name" placeholder="Enter your name">
-                        <input type="email" class="form-control border-warning mb-3" name="email" placeholder="Enter your email">
-                        <label for="" class="text-white bg-yellow-color2 p-2">Call me at</label>
-                        <input type="number" class="form-control border-warning mb-3" name="phone" placeholder="Enter your phone number">
-                        <input type="datetime-local" class="form-control border-warning mb-3" name="call_time">
-                        <textarea name="message" rows="3" class="form-control border-warning mb-3" placeholder="Enter your message"></textarea>
-                        <button type="submit" class="btn btn-warning bg-yellow-color2 fw-bolder text-uppercase w-100">Submit</button>
-                    </form>
-                </div> --}}
-            </div>
-        </div>
-        <!-- <div class="row mt-3">
-            <div class="col-12 text-center">
-                <button id="showMoreButton" class="btn btn-warning px-4 py-2 text-dark" style="border-radius: 20px;">Show More</button>
-            </div>
-        </div> -->
-    </section>
-    </div>
-    <!-- ORDER COMPONENT-->
-    <!-- <div class="container-fluid position-relative px-0 py-5  order-component-section" style="background-color:#F2F4F5;">
-        {{-- <img class="img-fluid position-absolute" src="{{ asset('/images/order-component-bg.png') }}"/> --}}
-        <section class="container py-5" style="width: 100%; ">
-        <div class="row">
-            <h3 class="text-uppercase fw-bolder text-white text-center py-3">ORDER COMPONENTS</h3>
-        </div>
-        <div class="row  justify-content-center">
-            @php
-                $categories = \App\Models\Category::where('parent_category_id', null)->where('status', 1)->whereNotIn('id', [2, 3, 4, 5, 7, 13, 16])->get();
-            @endphp
-          
-             <div style="" class="order-component-slider position-absolute  d-flex order-component-scroller" style="max-width: 1900px; overflow-x: scroll"> --}}
-            <div style="" class="order-component-slider position-absolute w-75  d-flex order-component-scroller" style="max-width: 1900px; overflow-x: scroll">
-                @foreach($categories as $category)
-                <div class="d-flex col-lg-2 card border-warning align-items-center justify-content-center" style="border-radius: 8px; margin: 0px 20px; padding: 15px 50px">
-                    <div class="text-center">
-                        <a class="text-dark btn d-flex align-items-center justify-content-center" href="{{route('ordercomponentbyname', [$category->slug])}}">
-                        {{-- <a class="text-dark btn btn-outline-warning d-flex align-items-center justify-content-center" style="height: 100px; width: 100px; border-radius: 100%; box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);" href="{{route('ordercomponentbyname', [$category->slug])}}"> --}}
-                            <div class="card-old "> 
-                                <div class="card-body d-flex">
-                                    <div>
-                                        <img height="55px" width="50px" class="rounded-circular-image" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt="">
-                                  
-                                    </div>
-                                    {{--
-                                    @if($category->slug == 'doors')
-                                    <div>
-                                        <img height="55px" width="50px" class="rounded-circular-image" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt="">
-                                    </div>
-                                    @elseif($category->slug == 'handles')
-                                    <div>
-                                        <img height="55px" width="50px" class="rounded-circular-image" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt="">
-                                    </div>
-                                    @elseif($category->slug == 'accessories')
-                                    <div>
-                                        <img height="55px" width="50px" class="rounded-circular-image" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt="">
-                                    </div>
-                                    @elseif($category->slug == 'sinks')
-                                    <div>
-                                        <img height="55px" width="50px" class="rounded-circular-image" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt="">
-                                    </div>
-                                    @elseif($category->slug == 'internals')
-                                    <div>
-                                        <img height="55px" width="50px" class="rounded-circular-image" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt="">
-                                    </div>
-                                    @elseif($category->slug == 'taps')
-                                    <div>
-                                        <img height="55px" width="50px" class="rounded-circular-image" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt="">
-                                    </div>
-                                    @elseif($category->slug == 'worktops')
-                                    <div>
-                                        <img height="55px" width="50px" class="rounded-circular-image" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt="">
-                                    </div>
-                                    @elseif($category->slug == 'upstands')
-                                    <div>
-                                        <img height="55px" width="50px" class="rounded-circular-image" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt="">
-                                    </div>
-                                    @elseif($category->slug == 'breakfast-bars')
-                                    <div>
-                                        <img height="55px" width="50px" class="rounded-circular-image" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt="">
-                                    </div>
-                                    @elseif($category->slug == 'appliances')
-                                    <div>
-                                        <img height="55px" width="50px" class="rounded-circular-image" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt="">
-                                    </div>
-                                    @endif
-                                    --}}
-                                </div>
-                            </div>
-                        </a>
-                        <h5 class="cat-card-title fw-bold mt-2 text-dark">{{Str::limit($category->name, 13)}}</h5>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
-    </div> -->
-
-
-    <!-- <div class="container" style="margin-top: 120px;">
-        <div class="row">
-        <div class="col-12">
-            <img class="d-md-none w-100" src="{{ asset('images/affordable-mobile.png') }}" alt="">
-            <img class="d-none d-md-block w-100" src="{{ asset('images/affordable.png') }}" alt="">
-        </div>
-        <div class="row">
-            <div class="text-center"> -->
-                <!-- <a href="#" class="btn cta-button">BOOK YOUR FREE CONSULTATION NOW!</a> -->
-                <!-- <button  class="btn btn-lg cta-button rounded-0" style="background-color:#ffc107;" data-bs-toggle="modal" data-bs-target="#exampleModal">book your FREE CONSULTATION NOW!</button>
-               
-            </div>
         </div>
     </div>
-    </div>
-    <div class="container mb-4">
-    <div class="row">
-        <div class="col-12">
-            <h2 class="text-uppercase text-center mt-5 mb-4 text-black fw-bold">Ordering elsewhere <span class="text-danger">vs.</span> Letting us handle it</h2>
+
+    <div class="container mb-5">
+        <h1 class="bko-beats-title">Why Buy Kitchen Online<br>Beats Every Other Online Store?</h1>
+
+        <div class="bko-beats-container">
+            <div class="bko-beats-box">
+                <div class="bko-beats-icon-number bko-beats-icon-1">1</div>
+                <h3 class="feature-bko-beats-title">Site Survey & Measurements</h3>
+            </div>
+
+            <div class="bko-beats-box">
+                <div class="bko-beats-icon-number bko-beats-icon-2">2</div>
+                <h3 class="feature-bko-beats-title">Kitchen Design</h3>
+            </div>
+
+            <div class="bko-beats-box">
+                <div class="bko-beats-icon-number bko-beats-icon-3">3</div>
+                <h3 class="feature-bko-beats-title">Ordering Process</h3>
+            </div>
+
+            <div class="bko-beats-box">
+                <div class="bko-beats-icon-number bko-beats-icon-4">4</div>
+                <h3 class="feature-bko-beats-title">Delivery & Quality Check</h3>
+            </div>
+
+            <div class="bko-beats-box">
+                <div class="bko-beats-icon-number bko-beats-icon-5">5</div>
+                <h3 class="feature-bko-beats-title">Installation</h3>
+            </div>
+        </div>
+
+
+          <h1 class="bko-beats-title">JOIN THE SMART LEAGUE!</h1>
+
+        <div class="bko-beats-container flex-column">
             
-            <img class="d-md-none w-100 border boder-success" src="{{ asset('images/letting-us-mobile.png') }}" alt="">
-            <img class="d-none d-md-block w-100 border boder-primary" src="{{ asset('images/letting-us-handle.png') }}" alt="">
-        </div>
-    </div>
-    </div> -->
+            <div class="row" >
+                <div class="col-lg-4 col-md-6 mb-2 mb-lg-0">
+                    <div class="bko-beats-box">
+                        <div class="bko-beats-icon-number bko-beats-icon-1">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h3 class="feature-bko-beats-title">Free on-site survey</h3>
+                    </div>
+                 </div>
+                 <div class="col-lg-4 col-md-6 mb-2 mb-lg-0">
+                    <div class="bko-beats-box">
+                        <div class="bko-beats-icon-number bko-beats-icon-2">
+                             <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="feature-bko-beats-title">Free virtual consultation</h3>
+                    </div>
+                 </div>
 
-<div class="container-fluid" style="background-color: #fffaf0;">
-
-    <!-- <div class="container faq-container"> -->
-    <div class="container faq-container">
-        <div class="faq-header">
-            <h3 class="text-black fw-bolder mb-1">WHY Buy Kitchen Online Beats Every Other Online Store?</h3>
-            <!-- <h4 class="mt-4 text-black fw-bolder">Buy Kitchen Online <span class="text-danger"> VS</span> Other Online Stores</h4> -->
-        </div>
-
-        
-        
-
-        <div class="faq-list">
-            <!-- FAQ Item 1 -->
-            <div class="faq-item" data-category="general">
-                <div class="faq-question">
-                    <div>
-                        <span class="faq-badge faq-badge-popular">1</span>
-                        Site Survey & Measurements
-                    </div>
-                    {{-- <i class="fas fa-chevron-down"></i> --}}
-                </div>
-                {{-- <div class="faq-answer">
-                  
-                    <div class="faq-card-container">
-                        <div class="faq-card">
-                            <div class="faq-card-title text-black text-center">
-                                <!-- <i class="fas fa-box-open"></i> -->
-                                Other Online Stores
-                            </div>
-                            <div class="faq-card-desc">
-                               <h4 class="text-black">You measure. You guess. You hope it fits.</h4>
-                               <p>– DIY site survey (risk of errors).</p>
-                            </div>
+                 <div class="col-lg-4 col-md-6 mb-2 mb-lg-0">
+                    <div class="bko-beats-box">
+                        
+                        <div class="bko-beats-icon-number bko-beats-icon-3">
+                                 <i class="fas fa-shopping-cart"></i>
                         </div>
-                        <div class="faq-card">
-                            <div class="faq-card-title text-center">
-                                <!-- <i class="fas fa-cloud-download-alt"></i> -->
-                                Buy Kitchen Online
-                            </div>
-                            <div class="faq-card-desc">
-                                <h4 class="text-black"> We measure. We plan. We guarantee it fits. </h4>
-                                <p>-Free professional site survey.</p>
-                            </div>
-                        </div>
+                        <h3 class="feature-bko-beats-title">No obligation to buy</h3>
                     </div>
-                </div> --}}
-            </div>
-            <div class="faq-item" data-category="general">
-                <div class="faq-question">
-                    <div>
-                        <span class="faq-badge faq-badge-popular">2</span>
-                        Kitchen Design
-                    </div>
-                    {{-- <i class="fas fa-chevron-down"></i> --}}
-                </div>
-                {{-- <div class="faq-answer">
-                  
-                    <div class="faq-card-container">
-                        <div class="faq-card">
-                            <div class="faq-card-title text-black text-center">
-                                <!-- <i class="fas fa-box-open"></i> -->
-                                Other Online Stores
-                            </div>
-                            <div class="faq-card-desc">
-                               <h4 class="text-black">You design alone (with generic software).</h4>
-                               <p>– No personalized advice.</p>
-                            </div>
-                        </div>
-                        <div class="faq-card">
-                            <div class="faq-card-title text-center">
-                                <!-- <i class="fas fa-cloud-download-alt"></i> -->
-                                Buy Kitchen Online
-                            </div>
-                            <div class="faq-card-desc">
-                                <h4 class="text-black">We design with you (for your actual space).</h4>
-                                <p>– Expert designers tailor layouts to suit your needs.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
-            </div>
-            <div class="faq-item" data-category="general">
-                <div class="faq-question">
-                    <div>
-                        <span class="faq-badge faq-badge-popular">3</span>
-                        Ordering Process
-                    </div>
-                    {{-- <i class="fas fa-chevron-down"></i> --}}
-                </div>
-                {{-- <div class="faq-answer">
-                  
-                    <div class="faq-card-container">
-                        <div class="faq-card">
-                            <div class="faq-card-title text-black text-center">
-                                <!-- <i class="fas fa-box-open"></i> -->
-                                Other Online Stores
-                            </div>
-                            <div class="faq-card-desc">
-                               <h4 class="text-black">You play project manager.</h4>
-                               <p>– Manually add items to cart (risk of mistakes or reordering).</p>
-                            </div>
-                        </div>
-                        <div class="faq-card">
-                            <div class="faq-card-title text-center">
-                                <!-- <i class="fas fa-cloud-download-alt"></i> -->
-                                Buy Kitchen Online
-                            </div>
-                            <div class="faq-card-desc">
-                                <h4 class="text-black">We handle everything for you.</h4>
-                                <p>– We place your order (accurate products, every time).</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
-            </div>
-            <div class="faq-item" data-category="general">
-                <div class="faq-question">
-                    <div>
-                        <span class="faq-badge faq-badge-popular">4</span>
-                        Delivery & Quality Check
-                    </div>
-                    {{-- <i class="fas fa-chevron-down"></i> --}}
-                </div>
-                {{-- <div class="faq-answer">
-                  
-                    <div class="faq-card-container">
-                        <div class="faq-card">
-                            <div class="faq-card-title text-black text-center">
-                                <!-- <i class="fas fa-box-open"></i> -->
-                                Other Online Stores
-                            </div>
-                            <div class="faq-card-desc">
-                               <h4 class="text-black">You inspect. You stress. You’re on your own.</h4>
-                               <p>– Faulty items? Return deadlines apply.</p>
-                            </div>
-                        </div>
-                        <div class="faq-card">
-                            <div class="faq-card-title text-center">
-                                <!-- <i class="fas fa-cloud-download-alt"></i> -->
-                                Buy Kitchen Online
-                            </div>
-                            <div class="faq-card-desc">
-                                <h4 class="text-black">We inspect. You relax.</h4>
-                                <p>– Our team verifies all items before installation.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
-            </div>
-            <div class="faq-item" data-category="general">
-                <div class="faq-question">
-                    <div>
-                        <span class="faq-badge faq-badge-popular">5</span>
-                        Installation
-                    </div>
-                    {{-- <i class="fas fa-chevron-down"></i> --}}
-                </div>
-                {{-- <div class="faq-answer">
-                  
-                    <div class="faq-card-container">
-                        <div class="faq-card">
-                            <div class="faq-card-title text-black text-center">
-                                <!-- <i class="fas fa-box-open"></i> -->
-                                Other Online Stores
-                            </div>
-                            <div class="faq-card-desc">
-                               <h4 class="text-black">You hire a fitter. You cross your fingers.</h4>
-                               <p>– Third-party installers charge extra for fixes. <br>
-                                – Mistakes = reorder & repay shipping (You pay the price for the mistake of others)
-                                </p>
-                            </div>
-                        </div>
-                        <div class="faq-card">
-                            <div class="faq-card-title text-center">
-                                <!-- <i class="fas fa-cloud-download-alt"></i> -->
-                                Buy Kitchen Online
-                            </div>
-                            <div class="faq-card-desc">
-                                <h4 class="text-black">We install. We guarantee. We prioritize your peace of mind.</h4>
-                                <p>– Expert fitters (no strangers in your home). <br>
-                                    – Full project management accountability—if something’s wrong, we handle it.
-                                    </p>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
+                 </div>
             </div>
             
-            
-        </div>
-        {{-- <h4 class="text-black fw-bold text-center">With Buy Kitchen Online, you get the best of both worlds—online prices with retail-store quality and service—all under one roof.</h4> --}}
-    </div>
-</div>
-
-    {{-- <div class="container mt-4">
-        <div class="row">
-            <h2 class="text-uppercase text-center mt-5 mb-4 text-black fw-bold">There are <span style="color: #FDB71A;">three types </span>of Kitchen buyers. <br> <span class="text-danger">Which one are you?</span></h2>
-            
-        </div>
-        <div class="row">
-            <div class="col-md-6 col-12">
-                
-                <img class="w-100 img-fluid d-none d-md-block" src="{{ asset('images/the-luxury-lover.png') }}"/>
-                    
-                <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/the-luxury-lover-mobile.png') }}"/>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-2 mb-lg-0">
+                    <div class="bko-beats-box">
+                        <div class="bko-beats-icon-number bko-beats-icon-4">
+                             <i class="fas fa-tags"></i>
+                        </div>
+                        <h3 class="feature-bko-beats-title">Transparent online displayed prices</h3>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-2 mb-lg-0">
+                    <div class="bko-beats-box">
+                        <div class="bko-beats-icon-number bko-beats-icon-5">
+                               <i class="fas fa-user-check"></i>
+                        </div>
+                        <h3 class="feature-bko-beats-title">Peace of mind</h3>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-2 mb-lg-0">   
+                    <div class="bko-beats-box">
+                        <div class="bko-beats-icon-number bko-beats-icon-5">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3 class="feature-bko-beats-title">Premium quality guaranteed</h3>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6 col-12">
-                
-                <img class="w-100 img-fluid d-none d-md-block" src="{{ asset('images/the-online-gambler.png') }}"/>
-                    
-                <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/the-online-gambler-mobile.png') }}"/>
+            <div class="row justify-content-center">
+                <div class="col-md-4 text-center" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    @include('frontend.button', ['type' =>'button', 'text'=>'SCHEDULE FREE CONSULTATION'])
+                </div>
             </div>
-    </div> --}}
+         </div>
     </div>
 
-
-    {{-- <div class="container mt-4">
-        <div class="row">
-        <div class="col-12">
-            
-            <img class="w-100 img-fluid d-none d-md-block" src="{{ asset('images/the-smart-cookie.png') }}"/>
-                
-            <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/the-smart-cookie-mobile.png') }}"/>
-        </div>
-    </div>
-    </div> --}}
-
-    <div class="container py-5">
+    {{-- <div class="container py-5">
         <div class="row text-center mb-4">
-            <div class="col-12">
-                <h1 class=" text-black fw-bold mb-2">JOIN THE SMART LEAGUE!</h1>
-                <!-- <div class="highlight-line"></div> -->
+            <div class="col-12"> --}}
+                {{-- <h1 class=" text-black fw-bold mb-2">JOIN THE SMART LEAGUE!</h1>
+                
                 <div class = "row mb-1 justify-content-center">
                     <div class="col-6">
                         <div id="lines" class="mb-3">
@@ -1776,14 +1878,14 @@
                 </h2>
             </div>
         </div>
-        
-        <div class="row g-4 mt-3">
+         --}}
+        {{-- <div class="row g-4 mt-3"> --}}
             <!-- Row 1 -->
-            <div class="col-md-4">
+            {{-- <div class="col-md-4">
                 <div class="feature-box">
-                    <div class="feature-icon">
-                        <!-- <i class="fas fa-clipboard-list"></i> -->
-                         <!-- <img src="{{ asset('images/survey.png') }}" alt=""> -->
+                    <div class="feature-icon"> --}}
+{{--                       
+                         
                          <img width="50" src="{{ asset('images/survey.svg') }}" alt="">
                     </div>
                     <div class="feature-text">
@@ -1794,8 +1896,8 @@
             
             <div class="col-md-4">
                 <div class="feature-box">
-                    <div class="feature-icon">
-                        <!-- <i class="fas fa-comments"></i> -->
+                    <div class="feature-icon"> --}}
+{{--                       
                          
                         <img width="50" src="{{ asset('images/virtual-consultation.svg') }}" alt="">
                     </div>
@@ -1807,22 +1909,22 @@
             
             <div class="col-md-4">
                 <div class="feature-box">
-                    <div class="feature-icon">
+                    <div class="feature-icon"> --}}
                         <!-- <i class="fas fa-shopping-cart"></i> -->
-                        <img width="50" src="{{ asset('images/cart.svg') }}" alt="">
+                        {{-- <img width="50" src="{{ asset('images/cart.svg') }}" alt="">
                     </div>
                     <div class="feature-text">
                         <h3 class="fs-5 mb-0">No obligation to buy</h3>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             
             <!-- Row 2 -->
-            <div class="col-md-4">
+            {{-- <div class="col-md-4">
                 <div class="feature-box">
-                    <div class="feature-icon">
+                    <div class="feature-icon"> --}}
                         <!-- <i class="fas fa-tag"></i> -->
-                        <img width="50" src="{{ asset('images/price-tag.svg') }}" alt="">
+                        {{-- <img width="50" src="{{ asset('images/price-tag.svg') }}" alt="">
                     </div>
                     <div class="feature-text">
                         <h3 class="fs-5 mb-0">Transparent online displayed prices</h3>
@@ -1832,16 +1934,15 @@
             
             <div class="col-md-4">
                 <div class="feature-box">
-                    <div class="feature-icon">
-                        <!-- <i class="fas fa-heart"></i> -->
-                         <img width="50" src="{{ asset('images/peace-of-mind.svg') }}" alt="">
+                    <div class="feature-icon"> --}}
+                         {{-- <img width="50" src="{{ asset('images/peace-of-mind.svg') }}" alt="">
                     </div>
                     <div class="feature-text">
                         <h3 class="fs-5 mb-0">Peace of mind</h3>
                     </div>
                 </div>
-            </div>
-            
+            </div> --}}
+{{--             
             <div class="col-md-4">
                 <div class="feature-box">
                     <div class="feature-icon">
@@ -1860,7 +1961,7 @@
                
             </div>
         </div>
-    </div>
+    </div> --}}
 
     {{-- <div class="container py-5 text-center"> --}}
         {{-- <h2 class="section-heading">BESPOKE DESIGNER KITCHENS</h2>
@@ -2788,7 +2889,7 @@
         </div>
         <div class="row justify-content-center bg-light">
             <div class="col-lg-3 col-12 text-center bg-light">
-                <a href="{{ route('max_storage') }}" class="btn w-100 px-3 px-lg-5 rounded-0" style="background-color:#febd49">Maximize your space now!</a>
+                {{-- <a href="{{ route('max_storage') }}" class="btn w-100 px-3 px-lg-5 rounded-0" style="background-color:#febd49">Maximize your space now!</a> --}}
             </div>
         </div>
         </div>
@@ -3073,7 +3174,7 @@ function newsletterModalHomeFn(){
 
 
 const swiper = new Swiper(".mySwiper", {
-    slidesPerView: 3,
+    slidesPerView: 5,
     spaceBetween: 30,
     loop: true,
     autoplay:true,
@@ -3091,7 +3192,7 @@ const swiper = new Swiper(".mySwiper", {
         slidesPerView: 2,
       },
       1024: {
-        slidesPerView: 3,
+        slidesPerView: 5,
       },
     },
   });

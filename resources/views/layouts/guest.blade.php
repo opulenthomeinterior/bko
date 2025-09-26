@@ -644,13 +644,13 @@ use App\Models\Style;
         <div class="navbar-wrapper">
             <nav class="container-fluid top-navbar1 p-0 text-white">
                 <div class="text-center bg-danger">
-
+{{-- 
                     <div class="ticker-wrapper">
-                        <!-- <div class="ticker-text"><strong class="fw-bold">LIMITED TIME OFFER:</strong> For your Peace Of Mind, we are offering FREE Consultation and On-site Survey. Book your slot now!</div> -->
-                         <a href="" class="text-white p-0 w-100 btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        
+                        <a href="" class="text-white p-0 w-100 btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <div class="ticker-text"><strong class="fw-bold">LIMITED TIME OFFER:</strong> For your Peace Of Mind, we are offering FREE Consultation and On-site Survey. Book your slot now!</div>
-                    </a>
-                    </div>
+                         </a>
+                    </div> --}}
                    
                     {{-- <span class="fw-bold text-white "> 
                         LIMITED TIME OFFER!
@@ -659,17 +659,17 @@ use App\Models\Style;
                         <small class="">For a limited time, we are offering free on-site surveys and consultations.</small>
                      --}}
                 </div>
-                <div class="py-2 px-5 position-relative d-flex flex-column flex-md-row justify-content-center" style="background-color:#222222; z-index:-100">
+                {{-- <div class="py-2 px-5 position-relative d-flex flex-column flex-md-row justify-content-center" style="background-color:#222222; z-index:-100">
                     <a class=" me-md-5 text-center text-warning btn-outline-default border-none " href="{{route('max_storage')}}" style="letter-spacing: 6px;"> 
-                    {{-- <a class="btn btn-dark mb-2 mb-sm-0 rounded text-warning btn-outline-default border-none px-4 " href="{{route('max_storage')}}" style="">  --}}
-                         MAX STORAGE KITCHEN
+                        
+                        MAX STORAGE KITCHEN
                     </a>
                     <div class="divider d-none d-md-block"></div>
                     <a class="ms-md-4 text-center text-warning  border-none  " href="{{route('doors_replacement')}}" style="letter-spacing: 6px;"> 
-                    {{-- <a class="btn btn-dark rounded text-warning btn-outline-default border-none px-4 " href="{{route('doors_replacement')}}" style="">  --}}
+                        
                         DOOR REPLACEMENT SERVICE
                    </a>
-                </div>
+                </div> --}}
             </nav>
             <!-- <nav class="nav container-fluid p-0 bg-dark second-navbar" style="border-bottom: 1px solid #ebc266"> -->
             <nav class="nav container-fluid p-sm-0 py-5 text-black second-navbar">
@@ -1052,7 +1052,7 @@ use App\Models\Style;
                         </li>
                     </ul>
                 </div>
-                <div class="nav__menu px-5" id="nav-menu" style="background-color: #ebc266; clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);">
+                <div class="nav__menu px-5" id="nav-menu" style="background-color: #ffc107 ; clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);">
                     <ul class="nav__list p-2">
                         <li class="d-lg-flex d-none hide-small">
                             <a href="#" class="nav__link" id="searchIcon-desktop"><i class="ri-search-2-line"></i></a>
@@ -1081,7 +1081,7 @@ use App\Models\Style;
         {{ $slot }}
     </div>
 
-    <footer class=" text-white py-5" style="background-color:#373737">
+    <footer class=" text-white py-5" style="background-color:#1A1A1A">
         <div class="container">
             <div class ="row align-items-center border-bottom mb-4">
                 <div class="col-lg-6">
@@ -1255,9 +1255,9 @@ use App\Models\Style;
       
     </footer>
     <div class="container-fluid">
-        <div class="row py-2 justify-content-center align-items-center" style="background-color:#a8acb1">
+        <div class="row py-2 justify-content-center align-items-center" style="background-color:#1A1A1A">
             <div class="col-12">
-            <h5 class="text-center fs-mob-18">Buy Kitchen Online.UK | ALL RIGHTS RESERVED.</h5>
+            <h5 class="text-center fs-mob-18 text-white">Buy Kitchen Online.UK | ALL RIGHTS RESERVED.</h5>
             </div>
         </div>
     </div>
