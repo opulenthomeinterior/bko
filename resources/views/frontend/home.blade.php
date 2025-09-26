@@ -1641,8 +1641,8 @@
                                     <div class="left-slider-card">
                                         <div class="left-slider-image-container">
                                             
-                                            {{-- <img  src="{{asset('imgs/styles/'.$style->image_path)}}" class="left-slider-image" /> --}}
-                                         <img  src="{{asset('images/shaker-22-500.png')}}" class="left-slider-image" /> 
+                                        <img  src="{{asset('imgs/styles/'.$style->image_path)}}" class="left-slider-image" />
+                                         <!-- <img  src="{{asset('images/shaker-22-500.png')}}" class="left-slider-image" />  -->
                                   
                                     </div>
                                     
@@ -1692,8 +1692,8 @@
                            <a href="{{route('ordercomponentbyname', [$category->slug])}}">
                             <div class="left-slider-card">
                                 <div class="left-slider-image-container">
-                                <img  src="{{asset('images/shaker-22-slide.png')}}" class="left-slider-image" /> 
-                            {{-- <img  class="left-slider-image" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt=""> --}}
+                                <!-- <img  src="{{asset('images/shaker-22-slide.png')}}" class="left-slider-image" />  -->
+                            <img  class="left-slider-image" src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt="">
                             </div> 
                                   
                             <!-- <h3 class="swiper-order-kitchen-title text-center py-2">{{Str::limit($category->name, 13)}}</h3> -->
