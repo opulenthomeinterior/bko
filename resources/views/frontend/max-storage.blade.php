@@ -198,7 +198,7 @@
         .hero {
             background: url('https://bkonline.uk/public/imgs/products/464785299_8512016742222733_5169156552107455268_n1739534754_67af31a285b0e.jpg') center/cover no-repeat;
             /* background: url('{{ asset('images/hero-image.jpeg') }}') center/cover no-repeat; */
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -616,7 +616,7 @@
         }
 
 
-        :root {
+        /* :root {
             --primary-color: #ffc01f;
             --primary-light: #ffd45e;
             --primary-dark: #e6a600;
@@ -721,9 +721,8 @@
             padding: 1rem 1.5rem 1.5rem;
             border-top: 1px solid #fff5e0;
         }
-        
-        /* Card styles for FAQ answers */
-        .faq-card-container {
+         */
+        /* .faq-card-container {
             display: flex;
             gap: 1rem;
             margin-top: 1rem;
@@ -766,7 +765,7 @@
             line-height: 1.5;
         }
 
-        /* Custom badge styles */
+       
         .faq-badge {
             display: inline-block;
             padding: 0.25rem 0.75rem;
@@ -786,7 +785,7 @@
             color: #b38000;
         }
 
-        /* Search box styles */
+        
         .faq-search {
             position: relative;
             margin-bottom: 2rem;
@@ -816,7 +815,7 @@
             color: var(--primary-color);
         }
 
-        /* Category filters */
+       
         .faq-categories {
             display: flex;
             flex-wrap: wrap;
@@ -843,7 +842,6 @@
             border-color: var(--primary-color);
         }
 
-        /* Responsive adjustments */
         @media (max-width: 768px) {
             .faq-categories {
                 flex-wrap: nowrap;
@@ -865,7 +863,7 @@
                 font-size: 1rem;
                 padding: 1rem 1.25rem;
             }
-        }
+        } */
         
         .internal-card-swiper {
             position: relative !important;
@@ -997,6 +995,306 @@
         .card {
             animation: fadeInUp 0.6s ease forwards !important;
         }
+
+
+        /* new FAQ */
+
+         
+
+        .faq-header {
+            text-align: center;
+            /* margin-bottom: 80px; */
+            margin-bottom:10px;
+        }
+
+        .faq-title {
+            color: black;
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .faqs-title
+        {
+             color: white;
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.2;
+
+        }
+        .subfaq-title {
+            color: #888;
+            font-size: 1rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .faqs {
+            list-style: none;
+        }
+
+        .faq-item-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 32px 0;
+            border-bottom: 1px solid #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-left {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+            flex: 1;
+        }
+
+        .faq-number {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 500;
+            width: 24px;
+        }
+
+        .faq-content {
+            flex: 1;
+        }
+
+        .faq-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+
+        .faq-description {
+            /* color: #888; */
+            color: #9f9f9f;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item-tags {
+            display: flex;
+            gap: 12px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease 0.1s;
+        }
+
+        .tag {
+            background: #333;
+            color: #ccc;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .faq-item-arrow {
+            width: 48px;
+            height: 48px;
+            /* background: #4285f4; */
+            background-color: #ffc107;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        .faq-item-arrow:hover
+        {
+             transform: scale(1.3);   /* thoda zoom effect */
+             box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* soft shadow */
+        }
+        .faq-item-arrow:hover .arrow-icon
+        {
+            transform: scale(1.3);
+        }
+        .arrow-icon {
+            width: 20px;
+            height: 20px;
+            stroke: black;
+            stroke-width: 2;
+        }
+
+        .faq-item-item.expanded .faq-description {
+            opacity: 1;
+            max-height: 300px;
+        }
+
+        .faq-item-item.expanded .faq-item-tags {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .faq-item-item.expanded .faq-item-arrow {
+            transform: rotate(90deg);
+        }
+
+        .other-faqs {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .other-faqs-btn {
+            background: #4285f4;
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .other-faqs-btn:hover {
+            background: #3367d6;
+            transform: translateY(-2px);
+        }
+
+        @media(max-width:768px) {
+            .faq-title {
+                font-size: 2.2rem;
+            }
+
+            .faq-left {
+                gap: 24px;
+            }
+
+            .faq-title {
+                font-size: 1.8rem;
+            }
+
+            .faq-container {
+                max-width: 100%;
+                padding: 0 20px;
+            }
+        }
+
+          .bko-beats-title {
+            /* margin-top: 3.5rem; */
+            margin-top: 5.5rem;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            text-align: left;
+            /* margin-bottom: 50px; */
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        .bko-beats-description
+        {
+            font-size: 1rem;
+
+        }
+
+        .bko-beats-container {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .bko-beats-box {
+            /* background: white; */
+            border-radius: 12px;
+            padding: 30px 45px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); */
+            border: 1px solid #dcdcdc;
+        }
+
+        .bko-beats-icon-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .bko-beats-icon-1 {
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .bko-beats-icon-2 {
+            background-color: #f3e5f5;
+            color: #7b1fa2;
+        }
+
+        .bko-beats-icon-3 {
+            background-color: #fff3e0;
+            color: #f57c00;
+        }
+
+        .bko-beats-icon-4 {
+            background-color: #e8f5e8;
+            color: #388e3c;
+        }
+
+        .bko-beats-icon-5 {
+            background-color: #ffebee;
+            color: #d32f2f;
+        }
+
+        .feature-bko-beats-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        @media (max-width: 768px) {
+         .feature-bko-beats-title {
+
+            font-size: 2rem;
+            text-align: left;
+         }
+            .bko-beats-title {
+                font-size: 2.2rem;
+                text-align: center;
+                margin-bottom: 40px;
+            }
+
+            .bko-beats-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .bko-beats-title {
+                font-size: 1.8rem;
+            }
+
+            
+
+            .bko-beats-box {
+                padding: 25px 15px;
+            }
+                    .bko-beats-description
+        {
+            font-size: 1.5rem;
+
+        }
+        }
         
     </style>
 </head>
@@ -1007,12 +1305,38 @@
         </a> 
     </nav> -->
 
+
+    
+    <header class="hero d-flex justify-content-center" style="padding:70px 0">
+        
+        <div class="container">
+           <div class="row justify-content-center main-image-content align-items-center " style="z-index: 1000;">
+            
+                <div class="col-md-7 mb-2 mb-md-0 text-start text-white px-1" style="z-index: 100;">
+                 
+                    <h5 class="text-md-start text-center text-white " style="font-size:14px; letter-spacing:5px;font-weight:bold">BUY KITCHEN  ONLINE</h5>
+                    <h1 class="text-md-start text-center text-white fw-bold mb-5">Bespoke designer <span > kitchens</span></h1>
+                    <p style="" class="mt-5 text-md-start text-center suggestion"><span style="font-size:22px;font-weight:700">Are You Settling for a Kitchen That Doesn't Fit Your Life?</span> <br><span style="font-size:22px;font-weight:700">We offer premium, Bespoke Kitchen Units at the price of standard kitchens</span></p>
+                    
+                    
+                    
+                </div>
+
+                   <div class="pb-4 align-self-center col-xl-5 col-lg-5 col-md-8 col-sm-12 col-12 " style="z-index: 100;">
+
+                    @include('frontend.inquiry_form')
+                </div>
+            </div>
+            
+        </div>
+        
+    </header>
+{{-- 
     <header class="hero">
         <div class="hero-content">
             <h1 class="fs-md-0  text-white fw-bold text-uppercase" style="font-size:48px;">Bespoke designer <span class="text-warning">kitchens</span></h1>
-            {{-- <h1 class="text-warning fw-bold">Timeless Elegance</h1> --}}
+          
             <p style="" class="mt-5 suggestion"><span class="suggestion">Are You Settling for a Kitchen That Doesn't Fit Your Life?</span> <br><span class="suggestion max-description">We offer premium, Bespoke Kitchen Units at the price of standard kitchens</span></p>
-            {{-- <div class="scroll-down">Scroll Down <i>&#x2193;</i></div> --}}
       
             <div class="container">
                 <div class="row justify-content-center">
@@ -1020,9 +1344,7 @@
                      <div class="col-md-6">
                         <div class="row justify-content-center column-badges" >
                             <img class="w-25" src="{{ asset('images/max-storage-badge.png') }}" alt="">
-                            <!-- <a href="https://www.trustpilot.com/review/opulenthomeinteriors.com">
-                             </a>    -->
-                             <!-- <a class="btn" href="https://www.trustpilot.com/review/opulenthomeinteriors.com"> -->
+                            
                                 <img style="cursor: pointer;" class="w-25" src="{{ asset('images/trust-pilot-badge.png') }}" 
                                 onclick="window.location.href ='https://www.trustpilot.com/review/opulenthomeinteriors.com'">
                             
@@ -1031,24 +1353,14 @@
                                 <img style="cursor: pointer;" class="w-25" src="{{ asset('images/google-reviews-badge.png') }}" alt="" onclick="window.location.href ='https://www.google.com/maps/place/Buy+Kitchen+Online/@51.5192167,-0.0093268,17z/data=!4m8!3m7!1s0x48761d591fe166d7:0x456fed0ffc8a8222!8m2!3d51.5192167!4d-0.0093268!9m1!1b1!16s%2Fg%2F11vbf0zdzm?entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D'">
                            
                         </div>
-                        {{-- <img src="{{ asset('images/max-badges.png') }}" class="img-fluid w-100 "/> --}}
+                      
                     </div>
-                    {{-- <div class="col-2">
-                        <img src="{{ asset('images/max-storage-badge.png') }}" class="img-fluid w-100 "/>
-                    </div>
-                    
-                   
-                    <div class="col-2">
-                        <img  src="{{ asset('images/trust-pilot-badge.png') }}" class="img-fluid w-100"/>
-                    </div>
-                    <div class="col-2">
-                        <img src="{{ asset('images/google-reviews-badge.png') }}" class="img-fluid w-100"/>
-                    </div> --}}
+                  
                    
                 </div>
             </div>
         </div>
-    </header>
+    </header> --}}
 
     <div class="container">
         <div class="row">
@@ -1064,10 +1376,10 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid py-3" style="background: linear-gradient(135deg,#f5f7fa 0%, #e0e4e9 100%)">
+    {{-- <div class="container-fluid py-3" style="background: linear-gradient(135deg,#f5f7fa 0%, #e0e4e9 100%)"> --}}
         <section class="container my-5">
             <div class="row">
-                {{-- <div class="col-xl-3 col-lg-3 col-md-2 col-sm-12 col-3"></div> --}}
+               
                 <div class=" col-md-8 col-12 align-self-center mb-4 mb-sm-0 px-lg-4">
                     {{-- <div style="">
                         <h1>
@@ -1095,20 +1407,20 @@
                             Because we believe your kitchen should be more than just a place to cook – it should be a reflection of your personality and a hub for your lifestyle
                         </h4>
                     </div> --}}
-                        <div class="row">
+                        {{-- <div class="row">
                             <div class="col-12">
-                            <img class="pb-3 w-100 rounded img-fluid d-none d-md-block" src="{{ asset('images/standard-kitchen-disadvantages.png') }}" alt="">
-                            <img class="pb-3 w-100 rounded img-fluid d-none d-md-block" src="{{ asset('images/max-storage-kitchen-advantages.png') }}" alt="">     
-                            
+                                <img class="pb-3 w-100 rounded img-fluid d-none d-md-block" src="{{ asset('images/standard-kitchen-disadvantages.png') }}" alt="">
+                                <img class="pb-3 w-100 rounded img-fluid d-none d-md-block" src="{{ asset('images/max-storage-kitchen-advantages.png') }}" alt="">     
                                 
-                        </div>
-                        </div>
+                                
+                             </div>
+                        </div> --}}
                         
                         <div class="row">
                             <div class="col-12">
                                 <img class="w-100 mb-3 rounded img-fluid d-md-none" src="{{ asset('images/standard-kitchen-disadvantages-mobile.png') }}" alt="">
                         
-                            <img class="w-100 rounded img-fluid d-md-none" src="{{ asset('images/max-storage-kitchen-advantages-mobile.png') }}" alt="">
+                                 <img class="w-100 rounded img-fluid d-md-none" src="{{ asset('images/max-storage-kitchen-advantages-mobile.png') }}" alt="">
                             
                             </div>
                         </div>
@@ -1117,55 +1429,16 @@
                         <img class="w-100 rounded rounded img-fluid d-md-none" src="{{ asset('images/max-form-left-banner-mob.png') }}"/>
                         --}}
                 </div>
-                <div class="p-0 col-md-4 col-12">
+                {{-- <div class="p-0 col-md-4 col-12">
 
 
                     @include('frontend.inquiry_form')
 
-                    {{-- <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning p-4">
-                        @csrf
-                        <div>
-                            <div class="d-block">
-                                <div class="text-center text-dark fw-bold">FOR FREE SURVEY AND QUOTE <span class="text-warning"> CALL US NOW!</span></div>
-                                <div class="my-2 d-flex justify-content-center">
-                                    <a href="tel:02080505605" class="btn btn-warning text-decoration-underline text-center text-dark fs-4 fw-bold">
-                                    <i class="bi pt-2 me-2 bi-phone text-dark"></i> 
-                                        020 805 05605
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <h6 class="text-dark text-center fw-bold">OR</h6>
-                        <hr class="border border-dark">
-
-                        
-                        <h4 id="blinking-text" class="bg-warning  fw-bold text-center py-2 rounded-pill">
-                            Book a free consultation now!
-                        </h4>
-                        <hr class="border border-dark">
-                        <div class="mb-3">
-                            <input type="text" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="name" id="name" placeholder="Enter your name">
-                        </div>
-                        <div class="mb-3">
-                            <input type="email" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="email" id="email" placeholder="Enter your email">
-                        </div>
-                        <div class="mb-3">
-                            <input type="number" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="phone" id="phone" placeholder="Enter your phone number">
-                        </div>
-                        <div class="mb-3">
-                            <label for="" class="text-white py-2 px-3  text-end fw-bold" style="background-color:#2a6161;" >Call US AT</label>
-                            <input type="datetime-local" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="call_time">
-                        </div>
-                        <div class="mb-3">
-                            <textarea name="message" id="message" name="message" rows="3" class="w-100 rounded-0 border border-dark form-control text-dark" placeholder="Enter your message"></textarea>
-                        </div>
-                        <button type="submit" class=" btn py-2 px-4 rounded-0 fw-bolder text-uppercase text-white" style="background-color:#2a6161;">Submit</button>
-                    </form> --}}
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-2 col-sm-12 col-3"></div>
+                  
+                </div> --}}
             </div>
         </section>
-    </div>
+    {{-- </div> --}}
 
     <!-- Key designs -->
     {{-- <section class="container-fluid bg-green-color py-4 mt-4">
@@ -1198,25 +1471,20 @@
          </div>
         </div>
     </div>
-    <div class="container mt-5">
-    </div>
-    <section class="container-fluid  pt-5 pb-3" style="background-color:#f2f4f5">
+    {{-- <div class="container mt-5">
+    </div> --}}
+    {{-- <section class="container-fluid  pt-5 pb-3" style="background-color:#f2f4f5">
         <div>
         <div class="col-12 d-flex flex-column align-items-center">
-            <h3 class="max-description suggestion text-center text-danger fw-bold">Are you tired of just dreaming about a better kitchen?</h3>
+            <h3 class="max-description suggestion text-center  fw-bold">Are you tired of just dreaming about a better kitchen?</h3>
             <h2 class="text-dark text-center fw-bolder">
                 BESPOKE DESIGN, STANDARD PRICE
             </h2>
-            <div id="lines" class="mb-3">
-                <div id="line1"></div>
-                <div id="line2"></div>
-                <div id="line3"></div>
-            
-        </div>
+           
         <p class="text-center text-dark w-md-75 w-100 max-description suggestion">
             We offer premium, bespoke designer kitchens at the price of standard kitchens. Our process is straightforward.
         </p>
-    </section>
+    </section> --}}
 
     {{-- <div class ="container-fluid py-3" style="background-color:#f2f4f5">
         <section class="container  pb-4">
@@ -1282,58 +1550,106 @@
         </div>
     </div> --}}
 
-
+{{-- 
 <div class="container-fluid py-3" style="background-color:#f2f4f5">
     <div class="container">
         <div class="row justify-content-center">
 
-             <!-- Step 1 -->
+            
              <div class="col-md-4 col-lg-3 text-center mb-4 mb-lg-0">
-                <div class="step-icon">
-                    <i class="text-warning fs-1 fa-solid fa-phone"></i>
+                <div class="step-icon" >
+                    <i class=" fs-1 fa-solid fa-phone" style="color:#1976d2"></i>
                 </div>
                 <div class="step-number">Step 01</div>
-                <h4 class="step-title">You Contact Us</h4>
+                <h4 class="fw-bold">You Contact Us</h4>
                 <p class="step-description px-3">Share your vision, we’ll listen to your ideas, needs, and lifestyle to understand your dream kitchen</p>
            
             </div>
             
-            <!-- Arrow 1 - Hidden on screens smaller than large -->
+           
             <div class="col-lg-1 d-none d-lg-flex justify-content-center align-items-center">
                 <div class="arrow-line w-100"></div>
             </div>
-            
-            <!-- Step 2 -->
+           
             <div class="col-md-4 col-lg-3 text-center mb-4 mb-lg-0">
                 <div class="step-icon">
-                    <i class="text-warning fs-1 fa-solid fa-handshake"></i>
+                    <i class=" fs-1 fa-solid fa-handshake" style="color:#1976d2"></i>
                 </div>
                 <div class="step-number">Step 02</div>
-                <h4 class="step-title">We handle everything for you</h4>
+                <h4 class="fw-bold">We handle everything for you</h4>
                 <p class="step-description px-3">Our experts create a personalized design for you, including layouts, materials, and colors etc.</p>
             </div>
             
-            <!-- Arrow 2 - Hidden on screens smaller than large -->
+           
             <div class="col-lg-1 d-none d-lg-flex justify-content-center align-items-center">
                 <div class="arrow-line w-100"></div>
             </div>
             
-            <!-- Step 3 -->
+          
             <div class="col-md-4 col-lg-3 text-center">
                 <div class="step-icon">
-                    <i class="fs-1 text-warning fa-solid fa-kitchen-set"></i>
+                    <i class="fs-1 fa-solid fa-kitchen-set" style="color:#1976d2"></i>
                 </div>
                 <div class="step-number">Step 03</div>
-                <h4 class="step-title">You enjoy your perfect kitchen</h4>
+                <h4 class="fw-bold">You enjoy your perfect kitchen</h4>
                 <p class="step-description px-3">Our skilled craftsmen build and install your custom kitchen. Ensuring a perfect fit and lasting beauty.</p>
             </div>
             <div class="text-center mt-5">
-                <!-- <a href="#" class="btn cta-button">BOOK YOUR FREE CONSULTATION NOW!</a> -->
-                <button  class="btn btn-lg cta-button rounded-0" style="background-color:#ffc107;" data-bs-toggle="modal" data-bs-target="#exampleModal">SCHEDULE YOUR FREE CONSULTATION NOW!</button>
+                
+                <div class="row justify-content-center">
+                 <div class="col-md-4 text-center" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    @include('frontend.button', ['type' =>'button', 'text'=>'SCHEDULE FREE CONSULTATION'])
+                </div>
+                 </div>
                
             </div>
-        </div>
+        </div> --}}
         
+         <div class="container my-5">
+        <h1 class="bko-beats-title">Are you tired of just dreaming<br> about a better kitchen?</h1>
+        <h4 class="fw-bold text-center text-md-start">BESPOKE DESIGN, STANDARD PRICE</h4>
+        
+        <p class=" mb-4 text-center text-md-start" style="font-size: 1.1rem">We offer premium, bespoke designer kitchens at the price of standard kitchens. <br> Our process is straightforward.</p>
+
+        <div class="bko-beats-container">
+            <div class="bko-beats-box">
+                <div class="bko-beats-icon-number bko-beats-icon-1">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <h3 class="feature-bko-beats-title">You Contact Us</h3>
+                <p class="text-center bko-beats-description">
+                    Share your vision, we’ll listen to your ideas, needs, and lifestyle to understand your dream kitchen
+                </p>
+            </div>
+
+            <div class="bko-beats-box">
+                <div class="bko-beats-icon-number bko-beats-icon-2">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+                <h3 class="feature-bko-beats-title">We handle everything for you</h3>
+                <p class="text-center bko-beats-description">
+                    Our experts create a personalized design for you, including layouts, materials, and colors etc.
+                </p>
+            </div>
+
+            <div class="bko-beats-box">
+                <div class="bko-beats-icon-number bko-beats-icon-3">
+                    <i class="fa-solid fa-kitchen-set"></i>
+                </div>
+                <h3 class="feature-bko-beats-title">You enjoy your perfect kitchen</h3>
+                <p class="text-center bko-beats-description">
+                    Our skilled craftsmen build and install your custom kitchen. Ensuring a perfect fit and lasting beauty.
+                </p>
+            </div>
+            
+            
+        </div>
+         <div class="row justify-content-center mt-4">
+                 <div class="col-md-4 text-center" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    @include('frontend.button', ['type' =>'button', 'text'=>'SCHEDULE FREE CONSULTATION'])
+                </div>
+                 </div>
+         </div>
 
         {{-- <div class="col-lg-4 col-12 mb-3 mb-sm-0">
              @include('frontend.card', ['icon_class'=>'fa-solid fa-phone','number'=>'01', 'title'=>'You Contact Us','description'=>"Share your vision, we’ll listen to your ideas, needs, and lifestyle to understand your dream kitchen"])
@@ -1467,8 +1783,8 @@
         <div class="row">
             <div class="col-12  d-flex align-items-center">
                 <div>
-                    <h3 class="mb-3 text-uppercase ">Are you <span class="text-danger"> STRUGGLING with STORAGE SPACE?</span></h3>
-                    <h3 class="text-uppercase" style="color: #2a6161">SOLUTION
+                    <h3 class="mb-3 text-uppercase ">Are you <span class=""> STRUGGLING with STORAGE SPACE?</span></h3>
+                    <h3 class="text-uppercase" style="">SOLUTION
                         
                          <br><b style="color: #000">BESPOKE MAX STORAGE KITCHENS</b></h3>
                     <small class=suggestion>
@@ -1476,7 +1792,7 @@
                         <br>
                         <span>
                             <span class="text-black fw-bold">
-                                Are overcrowded </span> <span class="text-warning fw-bold"> cabinets and cluttered countertops </span> <span class="text-black fw-bold">causing you daily stress?</span><br>
+                                Are overcrowded </span> <span class=" fw-bold"> cabinets and cluttered countertops </span> <span class="text-black fw-bold">causing you daily stress?</span><br>
                             At Buy Kitchen Online, we offer made to measure kitchens units to maximize your kitchen with the deepest, tallest, and widest units in the market, and they are customized to suit your needs. 
                         </span>
                         <br>
@@ -1584,8 +1900,31 @@
         </div>
     </section> -->
 
-    <div class="container-fluid py-5" style="background-color:#f2f4f5;">
-        <section class="container mb-4">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card" >
+                <img src="{{ asset('images/tall-cabinets.png') }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">TALL CABINETS</h5>
+                    <p class="card-text">Our tall cabinets are made up to 850mm deep and more to flush the American fridge and freezer (750mm deep). The kitchen looks seamless when all the appliances, and cabinets are perfectly aligned.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" >
+                <img src="{{ asset('images/bridging.png') }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Bridging Units</h5>
+                    <p class="card-text">Our bridging units are designed to seamlessly align with tall units, offering a custom fit for you. While the market standard typically offers a depth of 300mm, we provide options with depths of up to 850mm or more.</p>
+                </div>
+            </div>
+        </div>
+       
+        </div>
+    </div>
+    {{-- <div class="container-fluid py-5" style="background-color:#f2f4f5;"> --}}
+        {{-- <section class="container mb-4">
             <div class="row justify-content-center gap-md-2 gap-lg-5">
                 <div class="col-12 col-md-5 col-lg-3">
                     <img src="{{ asset('images/tall-cabinets.png') }}" 
@@ -1604,7 +1943,7 @@
                         <p class="text-center suggestion max-description"> Our bridging units are designed to seamlessly align with tall units, offering a custom fit for you. While the market standard typically offers a depth of 300mm, we provide options with depths of up to 850mm or more. </p>
                         </div>
                 </div>
-            </div>
+            </div> --}}
             {{-- <div class="row">
                 
                 <div class="col-xl-7 p-0 col-lg-7 col-sm-12 col-12 mb-4 d-flex align-items-center">
@@ -1618,7 +1957,7 @@
                 </div>
             </div> --}}
         </section>
-    </div>
+    {{-- </div> --}}
     {{-- <div class="container-fluid py-5" style="background-color:#f2f4f5;">
         <section class="container mb-4">
             <div class="row">
@@ -1665,16 +2004,15 @@
         </div> --}}
 
     <section class="conatiner py-2 text-center mb-4">
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-12 ">
                 <a class="w-100 btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <img class="rounded img-fluid w-100 d-none d-md-block" src="{{ asset('images/never-settle.png') }}"/>
-                {{-- <img class="rounded img-fluid w-100" src="{{ asset('images/never-settle.png') }}"/> --}}
                 
                 <img class="rounded shadow-lg img-fluid w-100 ol-12  d-md-none" src="{{ asset('images/never-settle-mobile.png') }}"/>
                 </a>
             </div>
-        </div>
+        </div> --}}
         {{-- <div class="px-4 text-center">
             <h4 class="text-center text-danger">WHY settle for an average-sized kitchen  </h4>
             <h5 class="text-center" style="color:#2a6161">WHEN WE HAVE ELIMINATED THE PRICE ISSUE FOR A FULLY CUSTOMIZED KITCHEN? </h5>
@@ -1682,32 +2020,51 @@
     </section>
 
     <section class="container mb-4">
-        <div class="row gap-lg-5 gap-md-2 justify-content-center mb-4">
-            <div class="col-lg-3 col-md-5  col-9 mb-4">
+        <div class="row gap-lg-2 justify-content-center mb-4">
+                <div class="col-md-5">
+                        <div class="card" >
+                            <img src="{{ asset('images/standard-sized-kitche.png') }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">NATIONAL RETAILER <br> STANDARD-SIZED</h5>
+                                
+                            </div>
+                        </div>
+                </div> 
+             <div class="col-md-5">
+                <div class="card" >
+                    <img src="{{ asset('images/max-storage-kitchen-image.png') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">BESPOKE MAX <br> STORAGE KITCHEN</h5>
+                       
+                    </div>
+                </div>
+               </div>
+       
+            {{-- <div class="col-lg-3 col-md-5  col-9 mb-4">
                 <h6 class="fw-bold text-center mb-4">NATIONAL RETAILER<br> STANDARD-SIZED KITCHEN</h6>
                 <img src="{{ asset('images/standard-sized-kitche.png') }}" class="img-fluid" alt="" style=" box-shadow: -22px -13px 0px 0px rgba(42, 97, 97,1);">
             </div>
             <div class="col-lg-3 col-md-5  col-9 mb-4" style="overflow: hidden;">
                 <h6 class="fw-bold text-center mb-4">BESPOKE MAX <br> STORAGE KITCHEN</h6>
-                {{-- <img style="max-height: 500px; overflow: hidden" src="https://bkonline.uk/public/imgs/products/421878074_891869916280279_5405404846063335271_n1739538312_67af3f882943d.jpg" class="img-fluid" alt="" > --}}
+               
                 <img style=" box-shadow: 18px -13px 0px 0px rgba(254,202,109,1);" src="{{ asset('images/max-storage-kitchen-image.png') }}" class="img-fluid" alt="" >
             
             </div>
-           
+            --}}
         </div>
     </section>
 
-    <div class="container">
+    <div class="container mt-2">
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-4 d-flex align-items-center">
                 <div class="table-responsive">
                 <table class="table table-bordered">
-                    <thead class="bg-warning text-white">
+                    <thead class=" text-white" style="background-color:#000; color:white !important">
                         <tr>
-                            <th class="align-middle">FEATURES</th>
-                            <th class="align-middle">NATIONAL RETAILER STANDARD-SIZED KITCHEN</th>
-                            <th class="align-middle">BESPOKE MAX STORAGE KITCHEN</th>
-                            <th class="align-middle">BENEFITS</th>
+                            <th class="align-middle text-white">FEATURES</th>
+                            <th class="align-middle text-white">NATIONAL RETAILER STANDARD-SIZED KITCHEN</th>
+                            <th class="align-middle text-white">BESPOKE MAX STORAGE KITCHEN</th>
+                            <th class="align-middle text-white">BENEFITS</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -1804,7 +2161,7 @@
     </div> --}}
     
     <div class="container">
-        <div class="row">
+        {{-- <div class="row">
 
 
             <div class="col-12 my-5 p-0">
@@ -1814,9 +2171,9 @@
                 <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/max-custom-sizes-mobile.png') }}"/>
                
             </div>
-        </div>
+        </div> --}}
     </div>
-    <div class="container">
+    {{-- <div class="container">
         <div class="row">
 
 
@@ -1828,7 +2185,7 @@
             
             </div>
         </div>
-    </div>
+    </div> --}}
     <div class="container mt-5 mb-5">
 
         
@@ -1836,7 +2193,7 @@
         <div class="row justify-content-center">
             <div class="col-8">
                   <h2 class="text-center fw-bold">Smart storage solutions</h2>
-                  <h5 class="text-success text-center mt-4"> Wish you could find that one spice without emptying the entire        cupboard?</h5>
+                  <h5 class=" text-center mt-4"> Wish you could find that one spice without emptying the entire        cupboard?</h5>
                   <h5 class="text-center fw-bold">We Can Help!</h5>
             </div>
         </div>
@@ -1992,12 +2349,13 @@
 
 
      
-      </div>
+        </div>
+    </div>
       
 
 
 
-      <div class="container">
+      {{-- <div class="container">
         <div class="row justify-content-center">
             <div class="col-6">
                 <h1 class=" text-center text-black mb-2"> MAX STORAGE KITCHENS</h1>
@@ -2007,8 +2365,8 @@
                     <div id="line3"></div>
                 
             </div>
-            <!-- <h3 style="font-style:28px;font-weight:600" class="text-black text-center mb-2"></h3> -->
-            </div>
+           
+        </div>
         </div>
         <div class="row">
             <div class="col-12 mb-2 mb-md-0 ">
@@ -2033,13 +2391,13 @@
         </div>
     </div>
 
+ --}}
 
 
 
 
 
-
-      @include('frontend.why_choose_bkonline')
+      {{-- @include('frontend.why_choose_bkonline') --}}
 
 
 
@@ -2047,7 +2405,7 @@
 
 
       
-     <div class="container-fluid faq-body">
+     {{-- <div class="container-fluid faq-body">
         <div class="container faq-container">
             <div class="faq-header">
                 <h1>FAQS</h1>
@@ -2064,7 +2422,8 @@
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                       <p>It is a fully customised kitchen that utilises every inch of your space. We use custom-sized units that suit your storage needs and kitchen layout.</p>
+                       <p>
+                        It is a fully customised kitchen that utilises every inch of your space. We use custom-sized units that suit your storage needs and kitchen layout.</p>
                         </div>
                     </div>
                      <div class="faq-item" data-category="general">
@@ -2103,7 +2462,9 @@
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                       <p>Absolutely! The main goal is to utilise the unused spaces in your kitchen to maximise storage through customised units</p>
+                       <p>Absolutely! The main goal is to utilise the unused spaces in your kitchen to maximise storage through customised units
+
+                       </p>
                         </div>
                     </div>
                      <div class="faq-item" data-category="general">
@@ -2161,20 +2522,223 @@
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                       <p>
-                        Our priority is to ensure that your appliances have their proper spots to prevent crowding on countertops.
-                        </p>
+                                <p>
+                                    Our priority is to ensure that your appliances have their proper spots to prevent crowding on countertops.
+                                </p>
                         </div>
                     </div>
                     
         
                 
         
-            </div>
+             </div>
         </div>
-        </div>
-     
+    </div>
+      --}}
 
+
+
+      <div class="container-fluid pb-5" style="background-color: #1a1a1a;">
+             <div class="container">
+                    <div class="faq-header">
+                        <h1 class="faqs-title mb-0 pt-5" >FAQS</h1>
+                    
+                    </div>
+
+                    <ul class="faqs">
+                
+                        <li class="faq-item-item expanded">
+                            <div class="faq-left">
+                                <span class="faq-number">01</span>
+                                <div class="faq-content">
+                                    <h3 class="faq-title">
+                                       What is meant by ‘Max storage kitchen’?
+                                    </h3>
+                                    <p class="faq-description">
+                                       
+                        It is a fully customised kitchen that utilises every inch of your space. We use custom-sized units that suit your storage needs and kitchen layout.
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="faq-item-arrow">
+                                <svg class="arrow-icon" fill="none" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                                </svg>
+                            </div>
+                        </li>
+
+                        <li class="faq-item-item">
+                            <div class="faq-left">
+                                <span class="faq-number">02</span>
+                                <div class="faq-content">
+                                    <h3 class="faq-title">
+                                        How is it different from a regular modular kitchen?
+                                    </h3>
+                                    <p class="faq-description">
+                                      Our Bespoke kitchens are made-to-measure; we optimise the horizontal and vertical spaces with specifically designed units for your kitchen’s dimensions, whereas regular modular kitchens use standard-sized kitchen units. 
+
+                                    </p>
+                                
+                                </div>
+                            </div>
+                            <div class="faq-item-arrow">
+                                <svg class="arrow-icon" fill="none" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                                </svg>
+                            </div>
+                        </li>
+
+                        <li class="faq-item-item">
+                            <div class="faq-left">
+                                <span class="faq-number">03</span>
+                                <div class="faq-content">
+                                    <h3 class="faq-title">
+                                        Will my cluttered countertop be managed with the design?
+                                    </h3>
+                                    <p class="faq-description">
+                                       Yes, one of the design’s main goals is to reduce clutter and free up your worktop by creating designated storage spaces for all the items.
+
+                                    </p>
+
+                                </div>
+                            </div>
+                            <div class="faq-item-arrow">
+                                <svg class="arrow-icon" fill="none" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                                </svg>
+                            </div>
+                        </li>
+
+                        <li class="faq-item-item">
+                            <div class="faq-left">
+                                <span class="faq-number">04</span>
+                                <div class="faq-content">
+                                    <h3 class="faq-title">
+                                        Can we add storage in unused spaces?
+                                    </h3>
+                                    <p class="faq-description">
+                                        Absolutely! The main goal is to utilise the unused spaces in your kitchen to maximise storage through customised units
+                                    </p>
+
+                                </div>
+                            </div>
+                            <div class="faq-item-arrow">
+                                <svg class="arrow-icon" fill="none" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="faq-item-item">
+                            <div class="faq-left">
+                                <span class="faq-number">05</span>
+                                <div class="faq-content">
+                                    <h3 class="faq-title">
+                                         Do I get to choose the colour and style of the kitchen?
+                                        </h3>
+                                    <p class="faq-description">
+                                       Yes, the layout, color, and design of all the cabinets will be according to your style, reflecting your taste and the overall outlook of your house.
+
+
+                                    </p>
+
+                                </div>
+                            </div>
+                            <div class="faq-item-arrow">
+                                <svg class="arrow-icon" fill="none" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="faq-item-item">
+                            <div class="faq-left">
+                                <span class="faq-number">06</span>
+                                <div class="faq-content">
+                                    <h3 class="faq-title"> 
+                                         How are tall units helpful in maximising storage?
+                                    </h3>
+                                    <p class="faq-description">
+                                       Vertical spaces are often wasted in the kitchen. Our tall units utilise those spaces for maximum storage, keeping your base cabinets free for your everyday cooking essentials
+
+
+                                    </p>
+
+                                </div>
+                            </div>
+                            <div class="faq-item-arrow">
+                                <svg class="arrow-icon" fill="none" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="faq-item-item">
+                            <div class="faq-left">
+                                <span class="faq-number">07</span>
+                                <div class="faq-content">
+                                    <h3 class="faq-title">
+                                         Will the kitchen be customised to suit my cooking habits and appliance needs?
+                                    </h3>
+                                    <p class="faq-description">
+                                       Definitely! We design the custom layout around the usage of your kitchen essentials.
+
+
+                                    </p>
+
+                                </div>
+                            </div>
+                            <div class="faq-item-arrow">
+                                <svg class="arrow-icon" fill="none" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="faq-item-item">
+                            <div class="faq-left">
+                                <span class="faq-number">08</span>
+                                <div class="faq-content">
+                                    <h3 class="faq-title">   
+                                        Can you add storage into tricky spaces like the corners or space above the fridge?
+
+                                    </h3>
+                                    <p class="faq-description">
+                                        Yes, we have specialised corner units and bridging units to convert unused spaces into valuable storage solutions.
+
+                                    </p>
+
+                                </div>
+                            </div>
+                            <div class="faq-item-arrow">
+                                <svg class="arrow-icon" fill="none" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="faq-item-item">
+                            <div class="faq-left">
+                                <span class="faq-number">09</span>
+                                <div class="faq-content">
+                                    <h3 class="faq-title"> 
+                                        What if my appliances don’t fit anymore?
+
+                                    </h3>
+                                    <p class="faq-description">
+                                          Our priority is to ensure that your appliances have their proper spots to prevent crowding on countertops.
+
+                                    </p>
+
+                                </div>
+                            </div>
+                            <div class="faq-item-arrow">
+                                <svg class="arrow-icon" fill="none" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                                </svg>
+                            </div>
+                        </li>
+                       
+                    </ul>
+
+            </div>
+        </div> 
 
 
 
@@ -2350,6 +2914,17 @@
 
 
     document.addEventListener('DOMContentLoaded', function() {
+        
+    document.querySelectorAll('.faq-item-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const alreadyOpen = item.classList.contains('expanded');
+                document.querySelectorAll('.faq-item-item').forEach(i => i.classList.remove('expanded'));
+                if (!alreadyOpen) { item.classList.add('expanded'); }
+            });
+        });
+       
+        
+
         const internalCardSwiper = new Swiper('.internalCardSwiper', {
             // Essential Parameters
             // effect: 'slide',
@@ -2484,7 +3059,7 @@ const faqQuestions = document.querySelectorAll('.faq-question');
                 observer.observe(item);
             });
 
-
+    
             
 
 
@@ -2595,5 +3170,10 @@ function newsletterMaxfn(){
                 }
     });
   });
+
+       
+
+
+
 </script>
 </x-guest-layout>
