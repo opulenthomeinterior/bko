@@ -1205,61 +1205,109 @@
             justify-content: space-between;
         }
 
-        .bko-beats-box {
-            /* background: white; */
-            border-radius: 12px;
-            padding: 30px 45px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); */
-            border: 1px solid #dcdcdc;
-        }
 
-        .bko-beats-icon-number {
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            font-weight: 600;
-            flex-shrink: 0;
-        }
+        
+
+
+        
+        .bko-beats-box {
+    
+    border-radius: 12px;
+    padding: 30px 45px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    
+    border: 1px solid #dcdcdc;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.bko-beats-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    border-color: #1976d2;
+}
+
+.bko-beats-icon-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.bko-beats-box:hover .bko-beats-icon-number {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+}
+
+
+
+.feature-bko-beats-title {
+    transition: color 0.3s ease;
+}
+
+
+       
 
         .bko-beats-icon-1 {
-            background-color: #e3f2fd;
-            color: #1976d2;
-        }
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+.bko-beats-box:hover .bko-beats-icon-1 {
+    box-shadow: 0 4px 12px rgba(25, 118, 210, 0.4);
+}
 
-        .bko-beats-icon-2 {
-            background-color: #f3e5f5;
-            color: #7b1fa2;
-        }
+.bko-beats-icon-2 {
+    background-color: #f3e5f5;
+    color: #7b1fa2;
+}
+.bko-beats-box:hover .bko-beats-icon-2 {
+    box-shadow: 0 4px 12px rgba(123, 31, 162, 0.4);
+}
 
-        .bko-beats-icon-3 {
-            background-color: #fff3e0;
-            color: #f57c00;
-        }
+.bko-beats-icon-3 {
+    background-color: #fff3e0;
+    color: #f57c00;
+}
+.bko-beats-box:hover .bko-beats-icon-3 {
+    box-shadow: 0 4px 12px rgba(245, 124, 0, 0.4);
+}
 
-        .bko-beats-icon-4 {
-            background-color: #e8f5e8;
-            color: #388e3c;
-        }
+.bko-beats-icon-4 {
+    background-color: #e8f5e8;
+    color: #388e3c;
+}
+.bko-beats-box:hover .bko-beats-icon-4 {
+    box-shadow: 0 4px 12px rgba(56, 142, 60, 0.4);
+}
 
-        .bko-beats-icon-5 {
-            background-color: #ffebee;
-            color: #d32f2f;
-        }
-
+.bko-beats-icon-5 {
+    background-color: #ffebee;
+    color: #d32f2f;
+}
+.bko-beats-box:hover .bko-beats-icon-5 {
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.4);
+}
         .feature-bko-beats-title {
             font-size: 1.3rem;
             font-weight: 600;
             color: #1a1a1a;
         }
+ .bko-beats-box:hover:has(.bko-beats-icon-2) {
+    border-color: #7b1fa2;
+}
+.bko-beats-box:hover:has(.bko-beats-icon-3) {
+    border-color: #f57c00;
+}
 
         @media (max-width: 768px) {
          .feature-bko-beats-title {
@@ -1295,6 +1343,9 @@
 
         }
         }
+
+
+        
         
     </style>
 </head>
