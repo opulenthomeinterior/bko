@@ -1036,6 +1036,20 @@ use App\Models\Style;
                                 </div>
                             </div>
                         </li>
+                         <li class="dropdown__item">
+                            <div class="nav__link dropdown__button">
+                                <a class="drop-down-link" href="{{route('max_storage')}}">
+                                    Max Storage Kitchen
+                                </a>
+                            </div>
+                        </li>
+                         <li class="dropdown__item">
+                            <div class="nav__link dropdown__button">
+                                <a class="drop-down-link" href="{{route('doors_replacement')}}">
+                                    Door Replacement Service
+                                </a>
+                            </div>
+                        </li>
                         <li class="dropdown__item">
                             <div class="nav__link dropdown__button">
                                 <a class="drop-down-link" href="{{ route('designservice') }}">

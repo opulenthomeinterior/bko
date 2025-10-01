@@ -88,12 +88,12 @@
             
             background: url('{{ asset('images/door-hero-image.png') }}') center/cover no-repeat;
            
-            height: 100vh;
-            display: flex;
+            min-height: 100vh;
+            /* display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white;
+            color: white; */
             position: relative;
         }
 
@@ -147,14 +147,15 @@
             }
             .product-card
             {
-                background-color:white;
+                /* background-color:white; */
                 border-radius: 12px;
-                box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+                /* box-shadow: 0 4px 16px rgba(0,0,0,0.08); */
                 overflow:hidden;
                 /* width:390px; */
                 width:100%;
-                padding: 32px;
-                min-height:600px;
+                /* padding: 32px; */
+                padding: 10px;
+                min-height:400px;
             }
             /* @media (max-width:576px)
             {
@@ -166,20 +167,20 @@
             .product-image-container
             {
                 width:100%;
-                height:300px;
+                height:200px;
                 /* min-height:250px; */
                 /* max-height:200px; */
                 /* height:auto; */
                 /* object-fit:fill;
                 object-position:center; */
                 border-radius:8px;
-                margin-bottom: 24px;
+                /* margin-bottom: 24px; */
                 
             }
             .product-image-container img
             {
                 width:100%;
-                height:100%;
+                height:90%;
                 object-fit:contain;
                 /* box-shadow: 0 2px 8px rgba(0,0,0,0.05); */
             }
@@ -194,15 +195,23 @@
             }
             
             .color-grid {
-                display: flex;
+                /* display: flex;
                 gap:12px;
                 flex-wrap: wrap;
+                justify-content: center; */
+                width: 250px;
+                display: flex;
+                gap: 12px;
+                flex-wrap: wrap;
                 justify-content: center;
-            }
+}
+            
             .color-option
             {
-                width:36px;
-                height:36px;
+                /* width:36px;
+                height:36px; */
+                width: 25px;
+                height: 25px;
                 border-radius:50%;
                 cursor:pointer;
                 position:relative;
@@ -215,7 +224,11 @@
             }
             .color-options
             {
-                margin-bottom:16px;
+                /* margin-bottom:16px; */
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 16px;
+                    align-items: center;
             }
             .option-title
             {
@@ -364,7 +377,7 @@
             transform: scale(1.1);
         } */
         .icon-circle i {
-            color: #ffc107;
+            /* color: #ffc107; */
             font-size: 42px;
         }
         .cta-button {
@@ -474,7 +487,7 @@
             
         }
         .step-title {
-            color: #2B5A5E;
+            /* color: #2B5A5E; */
             font-weight: 600;
             margin-bottom: 1rem;
             text-transform: uppercase;
@@ -767,7 +780,7 @@
             height: auto !important;
         }
 
-
+/* 
         :root {
             --primary-color: #ffc01f;
             --primary-light: #ffd45e;
@@ -872,7 +885,7 @@
             border-top: 1px solid #fff5e0;
         }
         
-        /* Card styles for FAQ answers */
+        
         .faq-card-container {
             display: flex;
             gap: 1rem;
@@ -916,7 +929,7 @@
             line-height: 1.5;
         }
 
-        /* Custom badge styles */
+        
         .faq-badge {
             display: inline-block;
             padding: 0.25rem 0.75rem;
@@ -936,7 +949,7 @@
             color: #b38000;
         }
 
-        /* Search box styles */
+       
         .faq-search {
             position: relative;
             margin-bottom: 2rem;
@@ -966,7 +979,7 @@
             color: var(--primary-color);
         }
 
-        /* Category filters */
+       
         .faq-categories {
             display: flex;
             flex-wrap: wrap;
@@ -991,10 +1004,10 @@
             background-color: var(--primary-color);
             color: var(--text-on-primary);
             border-color: var(--primary-color);
-        }
+        } */
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
+      
+        /* @media (max-width: 768px) {
             .faq-categories {
                 flex-wrap: nowrap;
                 overflow-x: auto;
@@ -1015,7 +1028,7 @@
                 font-size: 1rem;
                 padding: 1rem 1.25rem;
             }
-        }
+        } */
 
         .yt-video iframe
         {
@@ -1034,79 +1047,524 @@
             }
         }
 
+        /* new FAQ */
+
+         
+
+        .faq-header {
+            text-align: center;
+            /* margin-bottom: 80px; */
+            margin-bottom:10px;
+        }
+
+        .faq-title {
+            color: black;
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .faqs-title
+        {
+             color: white;
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.2;
+
+        }
+        .subfaq-title {
+            color: #888;
+            font-size: 1rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .faqs {
+            list-style: none;
+        }
+
+        .faq-item-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 32px 0;
+            border-bottom: 1px solid #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-left {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+            flex: 1;
+        }
+
+        .faq-number {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 500;
+            width: 24px;
+        }
+
+        .faq-content {
+            flex: 1;
+        }
+
+        .faq-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+
+        .faq-description {
+            /* color: #888; */
+            color: #9f9f9f;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item-tags {
+            display: flex;
+            gap: 12px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease 0.1s;
+        }
+
+        .tag {
+            background: #333;
+            color: #ccc;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .faq-item-arrow {
+            width: 48px;
+            height: 48px;
+            /* background: #4285f4; */
+            background-color: #ffc107;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        .faq-item-arrow:hover
+        {
+             transform: scale(1.3);   /* thoda zoom effect */
+             box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* soft shadow */
+        }
+        .faq-item-arrow:hover .arrow-icon
+        {
+            transform: scale(1.3);
+        }
+        .arrow-icon {
+            width: 20px;
+            height: 20px;
+            stroke: black;
+            stroke-width: 2;
+        }
+
+        .faq-item-item.expanded .faq-description {
+            opacity: 1;
+            max-height: 300px;
+        }
+
+        .faq-item-item.expanded .faq-item-tags {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .faq-item-item.expanded .faq-item-arrow {
+            transform: rotate(90deg);
+        }
+
+        .other-faqs {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .other-faqs-btn {
+            background: #4285f4;
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .other-faqs-btn:hover {
+            background: #3367d6;
+            transform: translateY(-2px);
+        }
+
+        @media(max-width:768px) {
+            .faq-title {
+                font-size: 2.2rem;
+            }
+
+            .faq-left {
+                gap: 24px;
+            }
+
+            .faq-title {
+                font-size: 1.8rem;
+            }
+
+            .faq-container {
+                max-width: 100%;
+                padding: 0 20px;
+            }
+        }
+          .bko-beats-title {
+            /* margin-top: 3.5rem; */
+            margin-top: 5.5rem;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            text-align: left;
+            /* margin-bottom: 50px; */
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        .bko-beats-description
+        {
+            font-size: 1rem;
+
+        }
+
+        .bko-beats-container {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .bko-beats-box {
+            /* background: white; */
+            border-radius: 12px;
+            padding: 30px 45px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); */
+            border: 1px solid #dcdcdc;
+        }
+
+        .bko-beats-icon-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .bko-beats-icon-1 {
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .bko-beats-icon-2 {
+            background-color: #f3e5f5;
+            color: #7b1fa2;
+        }
+
+        .bko-beats-icon-3 {
+            background-color: #fff3e0;
+            color: #f57c00;
+        }
+
+        .bko-beats-icon-4 {
+            background-color: #e8f5e8;
+            color: #388e3c;
+        }
+
+        .bko-beats-icon-5 {
+            background-color: #ffebee;
+            color: #d32f2f;
+        }
+
+        .feature-bko-beats-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        @media (max-width: 768px) {
+         .feature-bko-beats-title {
+
+            font-size: 2rem;
+            text-align: left;
+         }
+            .bko-beats-title {
+                font-size: 2.2rem;
+                text-align: center;
+                margin-bottom: 40px;
+            }
+
+            .bko-beats-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .bko-beats-title {
+                font-size: 1.8rem;
+            }
+
+            
+
+            .bko-beats-box {
+                padding: 25px 15px;
+            }
+              .bko-beats-description
+        {
+            font-size: 1.5rem;
+
+        }
+        }
+
+
+        /* new ui */
+        
+          .bko-beats-title {
+            /* margin-top: 3.5rem; */
+            margin-top: 5.5rem;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            text-align: left;
+            /* margin-bottom: 50px; */
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        .bko-beats-description
+        {
+            font-size: 1rem;
+
+        }
+
+        .bko-beats-container {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+
+        
+
+
+        
+        .bko-beats-box {
+    
+    border-radius: 12px;
+    padding: 30px 45px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    
+    border: 1px solid #dcdcdc;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.bko-beats-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    border-color: #1976d2;
+}
+
+.bko-beats-icon-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.bko-beats-box:hover .bko-beats-icon-number {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+}
+
+
+
+.feature-bko-beats-title {
+    transition: color 0.3s ease;
+}
+
+
+       
+
+        .bko-beats-icon-1 {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+.bko-beats-box:hover .bko-beats-icon-1 {
+    box-shadow: 0 4px 12px rgba(25, 118, 210, 0.4);
+}
+
+.bko-beats-icon-2 {
+    background-color: #f3e5f5;
+    color: #7b1fa2;
+}
+.bko-beats-box:hover .bko-beats-icon-2 {
+    box-shadow: 0 4px 12px rgba(123, 31, 162, 0.4);
+}
+
+.bko-beats-icon-3 {
+    background-color: #fff3e0;
+    color: #f57c00;
+}
+.bko-beats-box:hover .bko-beats-icon-3 {
+    box-shadow: 0 4px 12px rgba(245, 124, 0, 0.4);
+}
+
+.bko-beats-icon-4 {
+    background-color: #e8f5e8;
+    color: #388e3c;
+}
+.bko-beats-box:hover .bko-beats-icon-4 {
+    box-shadow: 0 4px 12px rgba(56, 142, 60, 0.4);
+}
+.bko-beats-box:hover:has(.bko-beats-icon-4) {
+    border-color: #388e3c;
+}
+
+.bko-beats-icon-5 {
+    background-color: #ffebee;
+    color: #d32f2f;
+}
+.bko-beats-box:hover .bko-beats-icon-5 {
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.4);
+}
+        .feature-bko-beats-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+ .bko-beats-box:hover:has(.bko-beats-icon-2) {
+    border-color: #7b1fa2;
+}
+.bko-beats-box:hover:has(.bko-beats-icon-3) {
+    border-color: #f57c00;
+}
+
+        @media (max-width: 768px) {
+         .feature-bko-beats-title {
+
+            font-size: 2rem;
+            text-align: left;
+         }
+            .bko-beats-title {
+                font-size: 2.2rem;
+                text-align: center;
+                margin-bottom: 40px;
+            }
+
+            .bko-beats-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .bko-beats-title {
+                font-size: 1.8rem;
+            }
+
+            
+
+            .bko-beats-box {
+                padding: 25px 15px;
+            }
+                    .bko-beats-description
+        {
+            font-size: 1.5rem;
+
+        }
+        }
+
+
         </style>
     </head>
 <body>
 
     
-    <header class="hero d-flex justify-content-center">
+    
+    <header class="hero d-flex justify-content-center" style="padding:70px 0">
         
-        <div class="hero-content">
-            <h5 class="text-center text-white " style="font-size:14px; letter-spacing:5px;font-weight:bold">BUY KITCHEN  ONLINE</h5>
-            <h1 class="text-white fw-bold mb-5">DOOR REPLACEMENT <span style="color:#ffe000"> SERVICE</span></h1>
-            <h2 class="text-white mb-4 yell">2-3 Months of full kitchen remodel nightmare or <br> <span style="font-size:32px;color:#ffe000;font-weight:700">
-                New CABINET Doors IN JUST 2-3 Days?</span></h2>
+        <div class="container">
+           <div class="row justify-content-center main-image-content align-items-center " style="z-index: 1000;">
             
-            <div class="container">
-                <div class="row justify-content-center">
+                <div class="col-md-7 text-md-start text-center text-white px-1" style="z-index: 100;">
+                 
+                    <h5 class="text-md-start text-white " style="font-size:14px; letter-spacing:5px;font-weight:bold">BUY KITCHEN  ONLINE</h5>
+                    <h1 class="text-md-start text-center text-white fw-bold mb-5">DOOR REPLACEMENT <span > SERVICE</span></h1>
+                    <h2 class="text-md-start text-white mb-4" style="font-size:22px">2-3 Months of full kitchen remodel nightmare or <br> <span style="font-size:30px;font-weight:700">
+                        New CABINET Doors IN JUST 2-3 Days?</span></h2>
+                    
+                    
+                    
+                </div>
 
-                    <div class="col-md-6">
-                        <!-- <img src="{{ asset('images/door-badges.png') }}" class="img-fluid w-100 "/> -->
-                        <div class="row justify-content-center column-badges" >
-                            <img class="w-25" src="{{ asset('images/premium-badge.png') }}" alt="">
-                            <!-- <a href="https://www.trustpilot.com/review/opulenthomeinteriors.com">
-                             </a>    -->
-                             <!-- <a class="btn" href="https://www.trustpilot.com/review/opulenthomeinteriors.com"> -->
-                                <img style="cursor: pointer;" class="w-25" src="{{ asset('images/trust-pilot-badge.png') }}" 
-                                onclick="window.location.href ='https://www.trustpilot.com/review/opulenthomeinteriors.com'">
-                            
+                   <div class="pb-4 align-self-center col-xl-5 col-lg-5 col-md-8 col-sm-12 col-12 " style="z-index: 100;">
 
-                             
-                                <img style="cursor: pointer;" class="w-25" src="{{ asset('images/google-reviews-badge.png') }}" alt="" onclick="window.location.href ='https://www.google.com/maps/place/Buy+Kitchen+Online/@51.5192167,-0.0093268,17z/data=!4m8!3m7!1s0x48761d591fe166d7:0x456fed0ffc8a8222!8m2!3d51.5192167!4d-0.0093268!9m1!1b1!16s%2Fg%2F11vbf0zdzm?entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D'">
-                           
-                        </div>
-                    </div>
-
-                    <!-- <div class="col-2">
-                        <img src="{{ asset('images/premium-doors-badge.png') }}" class="img-fluid w-100 "/>
-                    </div>
-                   
-                    <div class="col-2">
-                        <img src="{{ asset('images/trust-pilot-badge.png') }}" class="img-fluid w-100"/>
-                    </div>
-                   
-                    <div class="col-2">
-                        <img src="{{ asset('images/google-reviews-badge.png') }}" class="img-fluid w-100"/>
-                    </div> -->
-                   
+                    @include('frontend.inquiry_form')
                 </div>
             </div>
             
-            
         </div>
+        
     </header>
 
     
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <a class="btn p-0 w-100" data-bs-toggle="modal" data-bs-target="#newsletterModalDoor">
-                <img class="w-100 img-fluid d-none d-md-block" src="{{ asset('images/21offdesktop.png') }}"/>
+    <div class="container mt-5">
+        {{-- <div class="row">
+                <div class="col-12">
+                        <a class="btn p-0 w-100" data-bs-toggle="modal" data-bs-target="#newsletterModalDoor">
+                            <img class="w-100 img-fluid d-none d-md-block" src="{{ asset('images/21offdesktop.png') }}"/>
+                            
+                            <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/21offmobile.png') }}"/>
+                        </a>
+                </div>
+        </div> --}}
+        {{-- <div class="row my-5">
+                <div class="col-12">
+                    <img class="img-fluid w-100 d-none d-md-block rounded shadow-lg" src="{{ asset('images/tired-of.png') }}" alt="">
+                    <img class="img-fluid w-100 d-md-none rounded shadow-lg" src="{{ asset('images/tired-of-mobile.png') }}" alt="">
                 
-                <img class="w-100 img-fluid d-md-none mt-2" src="{{ asset('images/21offmobile.png') }}"/>
-            </a>
-            </div>
-        </div>
-        <div class="row my-5">
-            <div class="col-12">
-                <img class="img-fluid w-100 d-none d-md-block rounded shadow-lg" src="{{ asset('images/tired-of.png') }}" alt="">
-                <img class="img-fluid w-100 d-md-none rounded shadow-lg" src="{{ asset('images/tired-of-mobile.png') }}" alt="">
-                <!-- <h2 style="font-size:40px; font-weight:700" class="text-black text-center text-uppercase">Your kitchen looks <span class="text-danger">outdated</span> </h2>
-                <h3 style="font-size:40px; font-weight:700" class="text-black text-center text-uppercase"> <span class="font-weight:600"> because of those doors,</span>  <span style="font-weight:500">not the cabinets </span> </h3>
-             -->
-            </div>
+                </div>
             <div class="col-7"></div>
-        </div>
+        </div> --}}
         <div class="row">
             <div class="col-12 col-md-6">
                 <img class="img-fluid d-none d-sm-block" src="{{ asset('images/dream-to-reality.png') }}"/>
@@ -1133,78 +1591,34 @@
         </div>
     </div>
 
-    <section class="container-fluid my-5 bg-light py-4">
-        <div class="container">
-        <div class="row">
-            {{-- <div class="col-xl-3 col-lg-3 col-md-2 col-sm-12 col-3"></div> --}}
-            <div class=" col-xl-8 col-12 align-self-center px-5 d-flex flex-column flex-md-row p-0">
+    {{-- <section class="container-fluid my-5 bg-light py-4"> --}}
+        {{-- <div class="container"> --}}
+        {{-- <div class="row"> --}}
+           
+            {{-- <div class=" col-xl-8 col-12 align-self-center px-5 d-flex flex-column flex-md-row p-0">
                 <div class="row">
                     
                     <div class="align-self-center rounded shadow-lg order-sample position-relative col-12 col-xl-8 bg-white rounded-lg border-0 shadow-sm" style="">
                         <h4 style="font-size:30px; font-weight:600;"><span class="text-danger">Try</span> <span class="text-black">Before You Buy<span>
                            <br> <span class="text-danger"> FREE</span> Door Samples!</h4>
                            <h4 class="text-primary my-4" style="font-size:24px;">£6 Delivery Charge Only.</h4>
-                        {{-- <h4 class="fw-bold text-black">Does the thought of updating your kitchen feel overwhelming and expensive?</h4>
-                        <h2 class="fw-bolder"><span class="orange">Order a Sample</span> <span class=""text-black fw-bolder"> of Your Favorite Door</span></h2>
-                        <p class="">Choosing the right kitchen doors is an important decision. Our sample service allows you to experience the finish, material, and color of our doors in your own home before committing to a full order. </p>
-                        --}}
+                      
                         <a href="{{ route('ordercomponentbyname', 'doors') }}" class="btn bg-orange px-1 fw-bold text-uppercase rounded-0 " style="font-size:14px;">  Order a Sample of your choice NOW!</a>
                     </div>
                     <div class="p-0 mb-3 mb-xl-0 col-12 col-xl-4">
                      <img class="w-100 object-fit-cover rounded border border-warning" src="https://bkonline.uk/public/imgs/products/Cartmel-Cashmere-Flat-Door-A1720452961_668c0761d6f16.jpg"  class="img-fluid"  alt="Modern Kitchen" 
                         style="width: 300px; height: 400px; object-fit: cover;">
                     
-                    <!-- <img class="w-100 object-fit-cover rounded border border-warning" src="{{ asset('images/door-cabinets.png') }}"  class="img-fluid"  alt="Modern Kitchen" 
-                        style="width: 300px; height: 400px; object-fit: cover;"> -->
                    
                     </div>
                 </div>
 
-            </div>
-            <div class="col-xl-4 p-0 col-12">
+            </div> --}}
+            {{-- <div class="col-xl-4 p-0 col-12">
                 @include('frontend.inquiry_form')
-                {{-- <form method="POST" action="{{ route('contact_us_inquiry') }}" class="border border-warning p-4">
-                    @csrf
-                    <div>
-                        <div class="d-block">
-                            <div class="text-center text-dark fw-bold">FOR FREE SURVEY AND QUOTE <span class="text-warning"> CALL US NOW!</span></div>
-                            
-                            <div class="my-2 d-flex justify-content-center">
-                                <a href="tel:02080505605" class="btn btn-warning text-decoration-underline text-center text-dark fs-4 fw-bold">
-                                <i class="bi pt-2 me-2 bi-phone text-dark"></i> 
-                                    020 805 05605
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <h6 class="text-dark text-center fw-bold">OR</h6>
-                    <hr class="border border-dark">
-
-                    
-                    <h4 id="blinking-text" class="bg-warning  fw-bold text-center py-2 rounded-pill">
-                        Book a free consultation now!
-                    </h4>
-                    <hr class="border border-dark">
-                    <div class="mb-3">
-                        <input type="text" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="name" id="name" placeholder="Enter your name">
-                    </div>
-                    <div class="mb-3">
-                        <input type="email" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="email" id="email" placeholder="Enter your email">
-                    </div>
-                    <div class="mb-3">
-                        <input type="number" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="phone" id="phone" placeholder="Enter your phone number">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="text-white py-2 px-3  text-end fw-bold" style="background-color:#2a6161;" >Call US AT</label>
-                        <input type="datetime-local" style="color: black" class="border border-dark rounded-0 form-control text-dark" name="call_time">
-                    </div>
-                    <div class="mb-3">
-                        <textarea name="message" id="message" name="message" rows="3" class="w-100 rounded-0 border border-dark form-control text-dark" placeholder="Enter your message"></textarea>
-                    </div>
-                    <button type="submit" class=" btn py-2 px-4 rounded-0 fw-bolder text-uppercase text-white" style="background-color:#2a6161;">Submit</button>
-                </form> --}}
-            </div>
-        </div>
+              
+            </div> --}}
+        {{-- </div> --}}
         {{-- <div class="row flex-column my-5 align-items-center justify-content-center">
             <div class="col-sm-5">
             <h4 class="text-center mt-5">Benefit from our limited time offer and get a FREE QUOTE for Kitchen Door Replacement</h4>
@@ -1213,8 +1627,8 @@
                 <button class="w-100 btn bg-orange px-4 text-uppercase rounded-0" data-bs-toggle="modal" data-bs-target="#exampleModal">book your FREE CONSULTATION NOW!</button>
             </div>
         </div> --}}
-    </div>
-    </section>
+    {{-- </div> --}}
+    {{-- </section> --}}
 
     
 
@@ -1233,7 +1647,8 @@
 <div class="container-fluid" >
     <div class="container py-5">
         <div class="mb-3 row justify-content-center">
-            <h4 class="text-black  mb-4 text-center mb-2" style="font-size:26px; font-weight:500">Those <span class="text-danger">Awful OLD LOOKING KITCHEN CABINET DOORS </span> Are <br>Driving You Nuts, Aren’t they?</h4>
+                {{-- <h4 class="text-black  mb-4 text-center mb-2" style="font-size:26px; font-weight:500">Those <span class="text-danger">Awful OLD LOOKING KITCHEN CABINET DOORS </span> Are <br>Driving You Nuts, Aren’t they?</h4>
+                --}}
             <h1 class="mb-1 text-center text-black"> Discover the Perfect Doors for Your Kitchen</h1>
             <p class="text-center fs-6 w-75">Browse our extensive collection of kitchen door styles, available in a wide array of colors and finishes. Find the ideal match for your existing cabinets and buy kitchen doors to create the kitchen of your dreams</p>
 
@@ -1322,84 +1737,78 @@
         </div>
     </div>
 </div>
-
+{{-- 
 <div class="container mb-md-5 mb-3">
     <div class="col-12">
         <img class="img-fluid w-100 rounded shadow-lg d-none d-md-block" src="{{ asset('images/why-diy.png') }}" alt="">
         <img class="img-fluid w-100 rounded shadow-lg d-md-none" src="{{ asset('images/why-diy-mobile.png') }}" alt="">
     </div>
-</div>
-
+</div> --}}
+{{-- 
 <div class="container-fluid py-3" style="background-color:#f2f4f5">
-    <div class="container py-5">
-        <h2 class="section-title text-black">OUR <span class="highlight">SIMPLE 3-STEP</span> DOOR REPLACEMENT PROCESS</h2>
-        <div class="title-underline"></div>
-        
-        <h3 class="how-it-works text-black my-5">HOW IT WORKS</h3>
-        
-        <div class="row justify-content-center align-items-center">
-            <!-- Step 1 -->
-            <div class="col-md-4 col-lg-3 text-center mb-4 mb-lg-0">
-                <div class="step-icon">
-                    <i class="text-warning fs-1 fa-solid fa-phone"></i>
-                </div>
-                <div class="step-number">Step 01</div>
-                <h4 class="step-title">GET IN TOUCH</h4>
-                <p class="step-description px-3">Provide your contact information so we can schedule a convenient time to chat with you.</p>
-           
+                <div class="container py-5">
+                        <h2 class="section-title text-black">OUR <span class="fw-bold">SIMPLE 3-STEP</span> DOOR REPLACEMENT PROCESS</h2>
+                        
+                        <h3 class="how-it-works text-black my-5">HOW IT WORKS</h3>
+                        
+                        <div class="row justify-content-center align-items-center">
+                           
+                            <div class="col-md-4 col-lg-3 text-center mb-4 mb-lg-0">
+                                <div class="step-icon">
+                                    <i class=" fs-1 fa-solid fa-phone"></i>
+                                </div>
+                                <div class="step-number">Step 01</div>
+                                <h4 class="step-title">GET IN TOUCH</h4>
+                                <p class="step-description px-3">Provide your contact information so we can schedule a convenient time to chat with you.</p>
+                        
+                            </div>
+                            
+                           
+                            <div class="col-lg-1 d-none d-lg-flex justify-content-center align-items-center">
+                                <div class="arrow-line w-100"></div>
+                            </div>
+                            
+                           
+                            <div class="col-md-4 col-lg-3 text-center mb-4 mb-lg-0">
+                                <div class="step-icon">
+                                    <i class=" fs-1 fa-solid fa-kitchen-set"></i>
+                                </div>
+                                <div class="step-number">Step 02</div>
+                                <h4 class="step-title">WE PLAN YOUR PROJECT</h4>
+                                <p class="step-description px-3">Our agent will contact you within 24 hours to discuss your budget, preferred styles, and colors, for your kitchen doors.</p>
+                            </div>
+                            
+                           
+                            <div class="col-lg-1 d-none d-lg-flex justify-content-center align-items-center">
+                                <div class="arrow-line w-100"></div>
+                            </div>
+                            
+                           
+                            <div class="col-md-4 col-lg-3 text-center">
+                                <div class="step-icon">
+                                    <i class=" fs-1 fa-solid fa-wrench"></i>
+                                </div>
+                                <div class="step-number">Step 03</div>
+                                <h4 class="step-title">ENJOY THE UPGRADE</h4>
+                                <p class="step-description px-3">For your peace of mind, our experienced team will handle the entire installation process for you, if required.</p>
+                            </div>
+                        </div>
+                        
+                    
             </div>
-            
-            <!-- Arrow 1 - Hidden on screens smaller than large -->
-            <div class="col-lg-1 d-none d-lg-flex justify-content-center align-items-center">
-                <div class="arrow-line w-100"></div>
-            </div>
-            
-            <!-- Step 2 -->
-            <div class="col-md-4 col-lg-3 text-center mb-4 mb-lg-0">
-                <div class="step-icon">
-                    <i class="text-warning fs-1 fa-solid fa-kitchen-set"></i>
-                </div>
-                <div class="step-number">Step 02</div>
-                <h4 class="step-title">WE PLAN YOUR PROJECT</h4>
-                <p class="step-description px-3">Our agent will contact you within 24 hours to discuss your budget, preferred styles, and colors, for your kitchen doors.</p>
-            </div>
-            
-            <!-- Arrow 2 - Hidden on screens smaller than large -->
-            <div class="col-lg-1 d-none d-lg-flex justify-content-center align-items-center">
-                <div class="arrow-line w-100"></div>
-            </div>
-            
-            <!-- Step 3 -->
-            <div class="col-md-4 col-lg-3 text-center">
-                <div class="step-icon">
-                    <i class="text-warning fs-1 fa-solid fa-wrench"></i>
-                </div>
-                <div class="step-number">Step 03</div>
-                <h4 class="step-title">ENJOY THE UPGRADE</h4>
-                <p class="step-description px-3">For your peace of mind, our experienced team will handle the entire installation process for you, if required.</p>
-            </div>
-        </div>
-        
-        <p class="benefit-text mb-2 mt-5 fs-4">Benefit from our limited time offer and get a Free Quote for Door Replacement</p>
-        
-        <div class="text-center">
-            <a href="#" class="btn btn-consultation py-3 px-4 w-100" style="max-width: 500px;" data-bs-toggle="modal" data-bs-target="#exampleModal">BOOK YOUR FREE CONSULTATION NOW!</a>
-        </div>
-    </div>
-    </div>
+ </div> --}}
 
-    <div class="container my-5">
+    {{-- <div class="container my-5">
         <div class="col-12">
             <img class="img-fluid w-100 d-none d-md-block rounded shadow-lg" src="{{ asset('images/we-dont.png') }}" alt="">
             <img class="img-fluid w-100 d-md-none rounded shadow-lg" src="{{ asset('images/we-dont-mobile.png') }}" alt="">
         </div>
-    </div>
-
+    </div> --}}
+{{-- 
 <div class="container">
     <div class="row">
         <div class="col-12">
             <h1 class="mb-1 text-center text-black mb-5"> DOOR REPLACEMENT SERVICE</h1>
-        <!-- <h3 style="font-style:28px;font-weight:600" class="text-black text-center mb-2"></h3> -->
         </div>
     </div>
     <div class="row">
@@ -1424,7 +1833,7 @@
             <img class="img-fluid w-100" src="{{ asset('images/door-5.png') }}"/>
         </div>
     </div>
-</div>
+</div> --}}
 {{-- <div class ="container-fluid bg-white">
     <section class="consultation-section bg-white">
         <div class="container bg-white">
@@ -1556,19 +1965,12 @@
         </section>
     </div> --}}
 
-    <div class ="container-fluid bg-white">
+    {{-- <div class ="container-fluid bg-white">
         <section class="consultation-section bg-white">
             <div class="container bg-white">
                 <h2 class="mb-2 text-black">Why Choose Buy Kitchen Online for Door Replacement?</h2>
                 <div class = "row mb-1 justify-content-center">
-                    <div class="col-6">
-                        <div id="lines" class="mb-3">
-                            <div id="line1"></div>
-                            <div id="line2"></div>
-                            <div id="line3"></div>
-                        
-                    </div>
-                    </div>
+                   
                 </div>
                 
                 
@@ -1576,7 +1978,7 @@
                     <div class="col-md-3">
                         <div class="consultation-step rounded bg-light px-5">
                             <div class="icon-circle bg-white">
-                                <!-- <img src="{{ asset('images/high-quality-materials.png') }}"/> -->
+                              
                                 <i class="fa-solid fa-medal"></i>
                             </div>
                             <h4 class="fw-bold  fs-5">High-Quality Materials</h4>
@@ -1606,7 +2008,6 @@
                     <div class="col-md-3">
                         <div class="consultation-step rounded bg-light px-5">
                             <div class="icon-circle">
-                               <!-- <img src="{{ asset('images/excellence-customer-support.png') }}"/> -->
                                <i class="fa-solid fa-headset"></i>
                             </div>
                             <h4 class="fw-bold  fs-5">Excellent Customer Service</h4>
@@ -1614,39 +2015,133 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="">
-                    <h2 class="mb-2 text-black">Ready to Transform Your Kitchen?</h2>
-                    <a href="#" class="btn btn-lg cta-button rounded-0" style="background-color:#ffc107;" data-bs-toggle="modal" data-bs-target="#exampleModal">Get a Free Quote for Door Replacement NOW!</a>
-                </div>
+               
             </div>
         </section>
-    </div>
-
-     <!-- Testimonials -->
-     @include('frontend.testimonials_component', ['testimonials' => $testimonials])
+    </div> --}}
 
 
+       <div class="container my-5">
+        <h1 class="bko-beats-title">OUR SIMPLE 3-STEP<br>DOOR REPLACEMENT PROCESS</h1>
+        <h4 class="fw-bold mb-5 text-center text-md-start">HOW IT WORKS</h4>
+        
 
-     <div class="container-fluid faq-body">
+        <div class="bko-beats-container">
+            <div class="bko-beats-box">
+                <div class="bko-beats-icon-number bko-beats-icon-1">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <h3 class="feature-bko-beats-title text-center">
+                    GET IN TOUCH
+                </h3>
+                <p class="text-center bko-beats-description">
+                    Provide your contact information so we can schedule a convenient time to chat with you.
+            </p>
+            </div>
+
+            <div class="bko-beats-box">
+                <div class="bko-beats-icon-number bko-beats-icon-2">
+                    <i class=" fa-solid fa-kitchen-set"></i>
+                </div>
+                <h3 class="feature-bko-beats-title text-center">
+                    WE PLAN YOUR PROJECT
+                </h3>
+                <p class="text-center bko-beats-description">
+                Our agent will contact you within 24 hours to discuss your budget, preferred styles, and colors, for your kitchen doors.
+                </p>
+            </div>
+
+            <div class="bko-beats-box">
+                <div class="bko-beats-icon-number bko-beats-icon-3">
+                    <i class="fa-solid fa-wrench"></i>
+                </div>
+                <h3 class="feature-bko-beats-title text-center">ENJOY THE UPGRADE</h3>
+                <p class="text-center bko-beats-description">
+                   For your peace of mind, our experienced team will handle the entire installation process for you, if required.
+                </p>
+            </div>
+            
+           
+            
+            
+        </div>
+      
+         </div>
+
+       <div class="container my-5">
+        <h1 class="bko-beats-title mb-5">Why Choose Buy Kitchen Online<br>for Door Replacement?</h1>
+
+        <div class="bko-beats-container">
+            <div class="bko-beats-box">
+                <div class="bko-beats-icon-number bko-beats-icon-1">
+                  <i class="fa-solid fa-medal"></i>
+                </div>
+                <h3 class="feature-bko-beats-title text-center">High-Quality Materials</h3>
+                <p class="text-center bko-beats-description">
+                We use durable and stylish materials for long-lasting beauty.
+                 </p>
+            </div>
+
+            <div class="bko-beats-box">
+                <div class="bko-beats-icon-number bko-beats-icon-2">
+                    <i class="fa-solid fa-palette"></i>
+                </div>
+                <h3 class="feature-bko-beats-title text-center">Wide Range of Styles & Colors
+                </h3>
+                <p class="text-center bko-beats-description">
+                Find the perfect match for your taste
+                </p>
+            </div>
+
+            <div class="bko-beats-box">
+                <div class="bko-beats-icon-number bko-beats-icon-3">
+                    <i class="fa-solid fa-people-group"></i>
+                </div>
+                <h3 class="feature-bko-beats-title text-center">Experienced Installation Team</h3>
+                <p class="text-center bko-beats-description">
+                    Professional and reliable fitting services.
+                </p>
+            </div>
+            
+            <div class="bko-beats-box">
+                <div class="bko-beats-icon-number bko-beats-icon-4">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+                <h3 class="feature-bko-beats-title text-center">Excellent Customer Service</h3>
+                <p class="text-center bko-beats-description">
+                    We're here to help you every step of the way.
+                </p>
+            </div>
+            
+            
+        </div>
+      
+         </div>
+
+
+
+     {{-- <div class="container-fluid faq-body">
         <div class="container faq-container">
             <div class="faq-header">
                 <h1>FAQS</h1>
             </div>
         
             <div class="faq-list">
-                {{-- @if (!empty($home)) --}}
-                     <!-- FAQ Item 1 -->
+                
                      <div class="faq-item" data-category="general">
                         <div class="faq-question">
                             <div>
                                 
                                 Is it cheaper to replace the cabinets or just the doors?
+                            
                             </div>
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                       <p>Yes, the door replacement is cheaper as your carcasses (cabinets) and units remain the same. Replacing only the doors lowers both cost and labour.</p>
+                       <p>
+                        Yes, the door replacement is cheaper as your carcasses (cabinets) and units remain the same. Replacing only the doors lowers both cost and labour.
+                    
+                    </p>
                         </div>
                     </div>
                      <div class="faq-item" data-category="general">
@@ -1654,11 +2149,13 @@
                             <div>
                                 
                                 How do I measure the new kitchen doors?
+                           
                             </div>
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                       <p>Don’t worry about the measurements. Our experienced team will handle them for you, minimizing your hassle and ensuring a stress-free process.</p>
+                       <p>
+                        Don’t worry about the measurements. Our experienced team will handle them for you, minimizing your hassle and ensuring a stress-free process.</p>
                         </div>
                     </div>
                      <div class="faq-item" data-category="general">
@@ -1670,29 +2167,38 @@
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                       <p>Usually, it takes 2-3 days for installation after the cupboard doors are manufactured and ready.</p>
+                       <p>
+                        Usually, it takes 2-3 days for installation after the cupboard doors are manufactured and ready.
+                    
+                    </p>
                         </div>
                     </div>
                      <div class="faq-item" data-category="general">
                         <div class="faq-question">
                             <div>
                                 Is door replacement more cost-efficient than a complete kitchen remodel?
+                           
                             </div>
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                       <p>Yes, a full kitchen remodel cost includes charges for everything, whereas kitchen cupboard door replacement will only include the cost of doors.</p>
+                       <p>
+                        Yes, a full kitchen remodel cost includes charges for everything, whereas kitchen cupboard door replacement will only include the cost of doors.
+                    
+                    </p>
                         </div>
                     </div>
                      <div class="faq-item" data-category="general">
                         <div class="faq-question">
                             <div>
                                 Can the handles and hinges be replaced?
+                           
                             </div>
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                       <p>Absolutely, we can change the knobs, handles and hinges if you’d like to update them along with the kitchen doors.</p>
+                       <p>
+                        Absolutely, we can change the knobs, handles and hinges if you’d like to update them along with the kitchen doors.</p>
                         </div>
                     </div>
                      <div class="faq-item" data-category="general">
@@ -1737,7 +2243,197 @@
             </div>
         </div>
         </div>
-     
+      --}}
+
+     <!-- Testimonials -->
+    <div class="py-4"></div>
+     @include('frontend.testimonials_component', ['testimonials' => $testimonials])
+
+
+      <div class="container-fluid pb-5" style="background-color: #1a1a1a;">
+             <div class="container">
+                    <div class="faq-header">
+                        <h1 class="faqs-title mb-0 pt-5" >FAQS</h1>
+                    
+                    </div>
+
+                    <ul class="faqs">
+                
+                        <li class="faq-item-item expanded">
+                            <div class="faq-left">
+                                <span class="faq-number">01</span>
+                                <div class="faq-content">
+                                    <h3 class="faq-title">
+                                          Is it cheaper to replace the cabinets or just the doors?
+                            
+                                    </h3>
+                                    <p class="faq-description">
+                                       
+                                            Yes, the door replacement is cheaper as your carcasses (cabinets) and units remain the same. Replacing only the doors lowers both cost and labour.
+                    
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="faq-item-arrow">
+                                <svg class="arrow-icon" fill="none" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                                </svg>
+                            </div>
+                        </li>
+
+                        <li class="faq-item-item">
+                            <div class="faq-left">
+                                <span class="faq-number">02</span>
+                                <div class="faq-content">
+                                    <h3 class="faq-title">
+                                            How do I measure the new kitchen doors?
+                           
+                                    </h3>
+                                    <p class="faq-description">
+                                        Don’t worry about the measurements. Our experienced team will handle them for you, minimizing your hassle and ensuring a stress-free process.
+                                    </p>
+                                
+                                </div>
+                            </div>
+                            <div class="faq-item-arrow">
+                                <svg class="arrow-icon" fill="none" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                                </svg>
+                            </div>
+                        </li>
+
+                        <li class="faq-item-item">
+                            <div class="faq-left">
+                                <span class="faq-number">03</span>
+                                <div class="faq-content">
+                                    <h3 class="faq-title">
+                                   
+                                         How long does the process of door replacement take?
+                                    </h3>
+                                    <p class="faq-description">
+                                            Usually, it takes 2-3 days for installation after the cupboard doors are manufactured and ready.
+                    
+                                    </p>
+
+                                </div>
+                            </div>
+                            <div class="faq-item-arrow">
+                                <svg class="arrow-icon" fill="none" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                                </svg>
+                            </div>
+                        </li>
+
+                        <li class="faq-item-item">
+                            <div class="faq-left">
+                                <span class="faq-number">04</span>
+                                <div class="faq-content">
+                                    <h3 class="faq-title">
+                                            Is door replacement more cost-efficient than a complete kitchen remodel?
+                           
+                                    </h3>
+                                    <p class="faq-description">
+                                        Yes, a full kitchen remodel cost includes charges for everything, whereas kitchen cupboard door replacement will only include the cost of doors.
+                    
+                                    </p>
+
+                                </div>
+                            </div>
+                            <div class="faq-item-arrow">
+                                <svg class="arrow-icon" fill="none" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="faq-item-item">
+                            <div class="faq-left">
+                                <span class="faq-number">05</span>
+                                <div class="faq-content">
+                                    <h3 class="faq-title">
+                                             Can the handles and hinges be replaced?
+                           
+                                        </h3>
+                                    <p class="faq-description">
+                                       Absolutely, we can change the knobs, handles and hinges if you’d like to update them along with the kitchen doors.
+
+
+                                    </p>
+
+                                </div>
+                            </div>
+                            <div class="faq-item-arrow">
+                                <svg class="arrow-icon" fill="none" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="faq-item-item">
+                            <div class="faq-left">
+                                <span class="faq-number">06</span>
+                                <div class="faq-content">
+                                    <h3 class="faq-title"> 
+                                          Will the new doors work with my current appliance setup?
+                                    </h3>
+                                    <p class="faq-description">
+                                        Yes, the new doors will work perfectly with your current appliance setup. Replacing cupboard doors doesn’t affect plumbing, gas, electrical, or appliance layout, so you can be confident in their compatibility.
+
+                                    </p>
+
+                                </div>
+                            </div>
+                            <div class="faq-item-arrow">
+                                <svg class="arrow-icon" fill="none" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="faq-item-item">
+                            <div class="faq-left">
+                                <span class="faq-number">07</span>
+                                <div class="faq-content">
+                                    <h3 class="faq-title">
+                                          What if I want to change my kitchen's style (e.g., from modern to traditional)?
+                                    </h3>
+                                    <p class="faq-description">
+                                        Yes, you can select your preferred style and colour from our wide range of options on the website.
+
+                                    </p>
+
+                                </div>
+                            </div>
+                            <div class="faq-item-arrow">
+                                <svg class="arrow-icon" fill="none" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="faq-item-item">
+                            <div class="faq-left">
+                                <span class="faq-number">08</span>
+                                <div class="faq-content">
+                                    <h3 class="faq-title">   
+                                      Can you guide me if I am confused about my style preference?
+
+                                    </h3>
+                                    <p class="faq-description">
+                                         Yes, it is okay to feel confused and overwhelmed. We offer basic style guidance to help simplify your decision.
+
+                                    </p>
+
+                                </div>
+                            </div>
+                            <div class="faq-item-arrow">
+                                <svg class="arrow-icon" fill="none" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                                </svg>
+                            </div>
+                        </li>
+                       
+                       
+                    </ul>
+
+            </div>
+        </div> 
 
 
 
@@ -1906,44 +2602,54 @@
 @push('scripts')
     <script>
 
-const faqQuestions = document.querySelectorAll('.faq-question');
+         
+    document.querySelectorAll('.faq-item-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const alreadyOpen = item.classList.contains('expanded');
+                document.querySelectorAll('.faq-item-item').forEach(i => i.classList.remove('expanded'));
+                if (!alreadyOpen) { item.classList.add('expanded'); }
+            });
+        });
+       
+
+// const faqQuestions = document.querySelectorAll('.faq-question');
             
-            faqQuestions.forEach(question => {
-                question.addEventListener('click', function() {
+//             faqQuestions.forEach(question => {
+//                 question.addEventListener('click', function() {
                     
-                    this.classList.toggle('active');
+//                     this.classList.toggle('active');
                     
-                    const answer = this.nextElementSibling;
-                    answer.classList.toggle('show');
+//                     const answer = this.nextElementSibling;
+//                     answer.classList.toggle('show');
                     
-                    faqQuestions.forEach(q => {
-                        if (q !== question) {
-                            q.classList.remove('active');
-                            q.nextElementSibling.classList.remove('show');
-                        }
-                    });
-                });
-            });
+//                     faqQuestions.forEach(q => {
+//                         if (q !== question) {
+//                             q.classList.remove('active');
+//                             q.nextElementSibling.classList.remove('show');
+//                         }
+//                     });
+//                 });
+//             });
 
-            const observerOptions = {
-                threshold: 0.1
-            };
+//             const observerOptions = {
+//                 threshold: 0.1
+//             };
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
+//             const observer = new IntersectionObserver((entries) => {
+//                 entries.forEach(entry => {
+//                     if (entry.isIntersecting) {
+//                         entry.target.style.opacity = '1';
+//                         entry.target.style.transform = 'translateY(0)';
+//                     }
+//                 });
+//             }, observerOptions);
 
-            faqItems.forEach((item, index) => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(20px)';
-                item.style.transition = `all 0.5s ease ${index * 0.1}s`;
-                observer.observe(item);
-            });
+//             faqItems.forEach((item, index) => {
+//                 item.style.opacity = '0';
+//                 item.style.transform = 'translateY(20px)';
+//                 item.style.transition = `all 0.5s ease ${index * 0.1}s`;
+//                 observer.observe(item);
+//             });
 
 
 

@@ -965,11 +965,11 @@
                 <div class="dot" data-slide="3"></div>
                 <div class="dot" data-slide="4"></div>
             </div> --}}
-            <div class="slider-dots" id="sliderDots">
+            {{-- <div class="slider-dots" id="sliderDots">
                 @foreach($testimonials as $index => $testimonial)
                     <div class="dot @if($index === 0) active @endif" data-slide="{{ $index }}"></div>
                 @endforeach
-            </div>
+            </div> --}}
             <button class="slider-btn" id="nextBtn">
                  <i class="fas fa-chevron-right"></i>
             </button>
