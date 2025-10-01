@@ -147,14 +147,15 @@
             }
             .product-card
             {
-                background-color:white;
+                /* background-color:white; */
                 border-radius: 12px;
-                box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+                /* box-shadow: 0 4px 16px rgba(0,0,0,0.08); */
                 overflow:hidden;
                 /* width:390px; */
                 width:100%;
-                padding: 32px;
-                min-height:600px;
+                /* padding: 32px; */
+                padding: 10px;
+                min-height:400px;
             }
             /* @media (max-width:576px)
             {
@@ -166,20 +167,20 @@
             .product-image-container
             {
                 width:100%;
-                height:300px;
+                height:200px;
                 /* min-height:250px; */
                 /* max-height:200px; */
                 /* height:auto; */
                 /* object-fit:fill;
                 object-position:center; */
                 border-radius:8px;
-                margin-bottom: 24px;
+                /* margin-bottom: 24px; */
                 
             }
             .product-image-container img
             {
                 width:100%;
-                height:100%;
+                height:90%;
                 object-fit:contain;
                 /* box-shadow: 0 2px 8px rgba(0,0,0,0.05); */
             }
@@ -194,15 +195,23 @@
             }
             
             .color-grid {
-                display: flex;
+                /* display: flex;
                 gap:12px;
                 flex-wrap: wrap;
+                justify-content: center; */
+                width: 250px;
+                display: flex;
+                gap: 12px;
+                flex-wrap: wrap;
                 justify-content: center;
-            }
+}
+            
             .color-option
             {
-                width:36px;
-                height:36px;
+                /* width:36px;
+                height:36px; */
+                width: 25px;
+                height: 25px;
                 border-radius:50%;
                 cursor:pointer;
                 position:relative;
@@ -215,7 +224,11 @@
             }
             .color-options
             {
-                margin-bottom:16px;
+                /* margin-bottom:16px; */
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 16px;
+                    align-items: center;
             }
             .option-title
             {
