@@ -262,7 +262,7 @@ Route::prefix('/')->middleware([])->group(function () {
         $generalFaqs = Faq::where('type', 'general')->get();
         $deliveryFaqs = Faq::where('type', 'delivery')->get();
         $categories = Category::where('status', 1)->limit(10)->get();
-        $styles = Style::where('status', 1)->get();
+        $styles = Style::where('status', 1)->limit(12)->get();
         $testimonials = Testimonial::whereNull('style_id')->get();
         return view('frontend.home', compact('generalFaqs', 'deliveryFaqs', 'categories', 'styles', 'testimonials'));
     })->name('home');

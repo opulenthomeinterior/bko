@@ -378,19 +378,59 @@
         </div>
         <!-- SLIDER AREA END -->
 
+        <!-- SEARCH BY PLACE AREA START (testimonial-7) -->
+        <div class="ltn__search-by-place-area before-bg-top bg-image-top--- pt-115 pb-70" data-bs-bg="img/bg/20.jpg') }}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title-area ltn__section-title-2--- text-center---">
+                            <h6 class="section-subtitle section-subtitle-2--- black-color">Area Properties</h6>
+                            <h1 class="section-title">Find Your Dream House <br>
+                                Search By Area</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ltn__search-by-place-slider-1-active slick-arrow-1">
+                    @foreach($styles as $style)
+                    <div class="col-lg-4">
+                        <div class="ltn__search-by-place-item">
+                            <div class="search-by-place-img">
+                                <a href="product-details.html"><img src="{{ asset('imgs/styles/'.$style->image_path) }}" alt="#"></a>
+                                <!-- <div class="search-by-place-badge">
+                                    <ul>
+                                        <li>2 Properties</li>
+                                    </ul>
+                                </div> -->
+                            </div>
+                            <div class="search-by-place-info">
+                                <!-- <h6><a href="locations.html">San Francisco</a></h6> -->
+                                <h4><a href="product-details.html">{{$style->name}}</a></h4>
+                                <div class="search-by-place-btn">
+                                    <a href="product-details.html">View Kitchen <i class="flaticon-right-arrow"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                    <!--  -->
+                </div>
+            </div>
+        </div>
+        <!-- SEARCH BY PLACE AREA END -->
+
         <!-- CATEGORY AREA START -->
         <div class="ltn__category-area ltn__product-gutter section-bg-1--- pt-115 pb-70">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title-area ltn__section-title-2--- text-center">
-                            <h6 class="section-subtitle section-subtitle-2--- black-color">Our Components</h6>
-                            <h1 class="section-title">Kitchen Components</h1>
+                            <h6 class="section-subtitle section-subtitle-2--- black-color">Our Styles</h6>
+                            <h1 class="section-title">Kitchen Styles</h1>
                         </div>
                     </div>
                 </div>
                 <div class="row ltn__category-slider-active--- slick-arrow-1 justify-content-center">
-                    @foreach($categories as $key => $category)
+                    @foreach($styles as $key => $category)
                     <div class="col-lg-4 col-md-4 col-sm-6 col-6">
                         <div class="ltn__category-item ltn__category-item-5 ltn__category-item-5-2 text-center---">
                             <a href="shop.html">
@@ -405,32 +445,6 @@
                         </div>
                     </div>
                     @endforeach
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-6">
-                        <div class="ltn__category-item ltn__category-item-5 ltn__category-item-5-2 text-center---">
-                            <a href="shop.html">
-                                <span class="category-icon"><i class="flaticon-car"></i></span>
-                                <span class="category-number">11</span>
-                                <span class="category-title">Wardrobes</span>
-                                <span class="category-brief">
-                                    Enimad minim veniam quis no exercitation ullamco lab
-                                </span>
-                                <span class="category-btn d-none"><i class="flaticon-right-arrow"></i></span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-6">
-                        <div class="ltn__category-item ltn__category-item-5 ltn__category-item-5-2 text-center---">
-                            <a href="shop.html">
-                                <span class="category-icon"><i class="flaticon-car"></i></span>
-                                <span class="category-number">12</span>
-                                <span class="category-title">Doors Replacement</span>
-                                <span class="category-brief">
-                                    Enimad minim veniam quis no exercitation ullamco lab
-                                </span>
-                                <span class="category-btn d-none"><i class="flaticon-right-arrow"></i></span>
-                            </a>
-                        </div>
-                    </div>
                     {{--<div class="col-lg-3 col-md-4 col-sm-6 col-6">
                         <div class="ltn__category-item ltn__category-item-5 ltn__category-item-5-2 text-center---">
                             <a href="shop.html">
@@ -973,101 +987,6 @@
             </div>
         </div>
         <!-- APARTMENTS PLAN AREA END -->
-
-        <!-- SEARCH BY PLACE AREA START (testimonial-7) -->
-        <div class="ltn__search-by-place-area before-bg-top bg-image-top--- pt-115 pb-70" data-bs-bg="img/bg/20.jpg') }}">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-title-area ltn__section-title-2--- text-center---">
-                            <h6 class="section-subtitle section-subtitle-2--- black-color">Area Properties</h6>
-                            <h1 class="section-title">Find Your Dream House <br>
-                                Search By Area</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="row ltn__search-by-place-slider-1-active slick-arrow-1">
-                    <div class="col-lg-4">
-                        <div class="ltn__search-by-place-item">
-                            <div class="search-by-place-img">
-                                <a href="product-details.html"><img src="{{ asset('assets/img/product-3/1.jpg') }}" alt="#"></a>
-                                <div class="search-by-place-badge">
-                                    <ul>
-                                        <li>2 Properties</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="search-by-place-info">
-                                <h6><a href="locations.html">San Francisco</a></h6>
-                                <h4><a href="product-details.html">Mission District Area</a></h4>
-                                <div class="search-by-place-btn">
-                                    <a href="product-details.html">View Property <i class="flaticon-right-arrow"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="ltn__search-by-place-item">
-                            <div class="search-by-place-img">
-                                <a href="product-details.html"><img src="{{ asset('assets/img/product-3/2.jpg') }}" alt="#"></a>
-                                <div class="search-by-place-badge">
-                                    <ul>
-                                        <li>5 Properties</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="search-by-place-info">
-                                <h6><a href="locations.html">New York</a></h6>
-                                <h4><a href="product-details.html">Pacific Heights Area</a></h4>
-                                <div class="search-by-place-btn">
-                                    <a href="product-details.html">View Property <i class="flaticon-right-arrow"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="ltn__search-by-place-item">
-                            <div class="search-by-place-img">
-                                <a href="product-details.html"><img src="{{ asset('assets/img/product-3/3.jpg') }}" alt="#"></a>
-                                <div class="search-by-place-badge">
-                                    <ul>
-                                        <li>9 Properties</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="search-by-place-info">
-                                <h6><a href="locations.html">Sedona, Arizona</a></h6>
-                                <h4><a href="product-details.html">Noe Valley Zones</a></h4>
-                                <div class="search-by-place-btn">
-                                    <a href="product-details.html">View Property <i class="flaticon-right-arrow"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="ltn__search-by-place-item">
-                            <div class="search-by-place-img">
-                                <a href="product-details.html"><img src="{{ asset('assets/img/product-3/2.jpg') }}" alt="#"></a>
-                                <div class="search-by-place-badge">
-                                    <ul>
-                                        <li>5 Properties</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="search-by-place-info">
-                                <h6><a href="locations.html">New York</a></h6>
-                                <h4><a href="product-details.html">Pacific Heights Area</a></h4>
-                                <div class="search-by-place-btn">
-                                    <a href="product-details.html">View Property <i class="flaticon-right-arrow"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--  -->
-                </div>
-            </div>
-        </div>
-        <!-- SEARCH BY PLACE AREA END -->
 
         <!-- SELECT AVAILABILITY AREA START -->
         <div class="select-availability-area pb-120">
