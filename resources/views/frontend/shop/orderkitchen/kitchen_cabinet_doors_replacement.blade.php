@@ -363,7 +363,7 @@
             transform: scale(1.1);
         } */
         .icon-circle i {
-            color: #ffc107;
+            color: #febd49;
             font-size: 42px;
         }
         .cta-button {
@@ -718,7 +718,7 @@
     } */
     
     .submit-btn {
-      background-color: #ffc107;
+      background-color: #febd49;
       color: #212529;
       font-weight: bold;
       border: none;
@@ -1637,7 +1637,7 @@
                 
                 <div class="">
                     <h2 class="mb-2 text-black">Ready to Transform Your Kitchen?</h2>
-                    <a href="#" class="btn btn-lg cta-button rounded-0" style="background-color:#ffc107;" data-bs-toggle="modal" data-bs-target="#exampleModal">Get a Free Quote for Door Replacement NOW!</a>
+                    <a href="#" class="btn btn-lg cta-button rounded-0" style="background-color:#febd49;" data-bs-toggle="modal" data-bs-target="#exampleModal">Get a Free Quote for Door Replacement NOW!</a>
                 </div>
             </div>
         </section>

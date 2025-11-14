@@ -160,7 +160,7 @@ use App\Models\Style;
             height:115%;
             top:-5px;
             left:47%;
-            background-color:#ffc107;
+            background-color:#febd49;
             transform: rotate(15deg);
             z-index:0;
         }
@@ -400,7 +400,7 @@ use App\Models\Style;
     }
     
     .submit-btn {
-      background-color: #ffc107;
+      background-color: #febd49;
       color: #212529;
       font-weight: bold;
       border: none;

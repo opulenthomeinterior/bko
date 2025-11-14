@@ -2,7 +2,7 @@
     <style>
 .feature-icon {
         font-size: 3rem;
-        color: #ffc107;
+        color: #febd49;
         margin-bottom: 1rem;
     }
     .feature-card {
@@ -12,7 +12,7 @@
         background-color: #f8f9fa;
     }
     .explore-btn {
-        background-color: #ffc107;
+        background-color: #febd49;
         color: black;
         padding: 10px 20px;
         border: none;

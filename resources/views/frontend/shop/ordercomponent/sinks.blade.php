@@ -460,7 +460,7 @@ td
       width: 100%;
       padding: 15px;
       margin-top: 20px;
-      background: #ffc107;
+      background: #febd49;
       color: black;
       border: none;
       border-radius: 10px;
@@ -472,7 +472,7 @@ td
     
     .add-to-cart:hover {
       /* background: #3e8e41; */
-      border:1px solid #ffc107;
+      border:1px solid #febd49;
       background: white;
     }
     

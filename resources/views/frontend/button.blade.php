@@ -7,7 +7,7 @@
     <style>
          .btn-yellow
         {
-            background-color: #ffc107 !important;
+            background-color: #febd49 !important;
             border: none !important;
             border-radius: 50px !important;
             padding: 12px 20px !important;

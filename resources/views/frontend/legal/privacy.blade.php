@@ -7,7 +7,7 @@
    
    <style>
         :root {
-            --primary-color: #ffc107;
+            --primary-color: #febd49;
             --secondary-color: #fff9e6;
             --text-color: #333;
             --border-color: #ffe066;

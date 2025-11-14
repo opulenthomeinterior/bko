@@ -156,7 +156,7 @@
     appearance: none; /* Removes default style */
     width: 15px;
     height: 15px;
-    border: 2px solid #ffc107; /* Warning border color */
+    border: 2px solid #febd49; /* Warning border color */
     border-radius: 50%;
     position: relative;
     cursor: pointer;
@@ -171,7 +171,7 @@
     transform: translate(-50%, -50%);
     width: 6px;
     height: 6px;
-    background-color: #ffc107; /* Warning color for checked state */
+    background-color: #febd49; /* Warning color for checked state */
     border-radius: 50%;
 }
 

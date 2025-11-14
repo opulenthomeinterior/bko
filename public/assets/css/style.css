@@ -211,7 +211,7 @@ font-family: 'Poppins', sans-serif;
   /* Darken */
   --ltn__primary-color-3: #133236;
   /* Lighten */
-  --ltn__secondary-color: #ffc107;
+  --ltn__secondary-color: #febd49;
   --ltn__secondary-color-2: #cb3421;
   /* Darken */
   --ltn__secondary-color-3: #fb412a;
@@ -226,7 +226,7 @@ font-family: 'Poppins', sans-serif;
   --ltn__color-3: #A3BCC0;
   --ltn__color-4: #84A2A6;
   --ltn__color-5: #5C727D;
-  --ltn__color-6: #F5DFDC;
+  --ltn__color-6: #ffeac4;
   /* Gradient Colors */
   --gradient-color-1: linear-gradient(90deg, rgba(242,139,194,1) 0%, rgba(216,177,242,1) 50%);
   --gradient-color-2: linear-gradient(to top, rgba(7,28,31,0) 0%, rgba(7,28,31,1) 90%);
@@ -238,7 +238,7 @@ font-family: 'Poppins', sans-serif;
   /* White */
   --section-bg-2: #171B2A;
   /* Black */
-  --section-bg-5: #FFF2F0;
+  --section-bg-5: #ffeac4;
   /* White */
   --section-bg-6: #0B2C3D;
   /* Black */
@@ -251,7 +251,7 @@ font-family: 'Poppins', sans-serif;
   /* Black */
   --border-color-3: #5C617F;
   /* Black */
-  --border-color-4: #eb6954;
+  --border-color-4: #ffa80e;
   /* Red */
   --border-color-5: #bc3928;
   /* Red */

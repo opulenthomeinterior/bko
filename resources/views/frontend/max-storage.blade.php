@@ -568,7 +568,7 @@
         } */
         
         .submit-btn {
-            background-color: #ffc107;
+            background-color: #febd49;
             color: #212529;
             font-weight: bold;
             border: none;
@@ -1329,7 +1329,7 @@
             </div>
             <div class="text-center mt-5">
                 <!-- <a href="#" class="btn cta-button">BOOK YOUR FREE CONSULTATION NOW!</a> -->
-                <button  class="btn btn-lg cta-button rounded-0" style="background-color:#ffc107;" data-bs-toggle="modal" data-bs-target="#exampleModal">SCHEDULE YOUR FREE CONSULTATION NOW!</button>
+                <button  class="btn btn-lg cta-button rounded-0" style="background-color:#febd49;" data-bs-toggle="modal" data-bs-target="#exampleModal">SCHEDULE YOUR FREE CONSULTATION NOW!</button>
                
             </div>
         </div>
