@@ -391,7 +391,7 @@
                 </div>
                 <div class="row ltn__category-slider-active--- slick-arrow-1 justify-content-center">
                     @foreach($categories as $key => $category)
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-6">
                         <div class="ltn__category-item ltn__category-item-5 ltn__category-item-5-2 text-center---">
                             <a href="shop.html">
                                 <span class="category-icon"><i class="flaticon-car"></i></span>
@@ -405,7 +405,7 @@
                         </div>
                     </div>
                     @endforeach
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-6">
                         <div class="ltn__category-item ltn__category-item-5 ltn__category-item-5-2 text-center---">
                             <a href="shop.html">
                                 <span class="category-icon"><i class="flaticon-car"></i></span>
@@ -418,7 +418,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-6">
                         <div class="ltn__category-item ltn__category-item-5 ltn__category-item-5-2 text-center---">
                             <a href="shop.html">
                                 <span class="category-icon"><i class="flaticon-car"></i></span>
