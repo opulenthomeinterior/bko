@@ -401,7 +401,7 @@
                     <div class="col-lg-6 align-self-center">
                         <div class="about-us-info-wrap">
                             <div class="section-title-area ltn__section-title-2--- mb-30">
-                                <h6 class="section-subtitle section-subtitle-2--- ltn__secondary-color">About Us</h6>
+                                <h6 class="section-subtitle section-subtitle-2--- black-color">About Us</h6>
                                 <h1 class="section-title">Dream Living Spaces
                                     Setting New Build</h1>
                                 <p>Over 39,000 people work for us in more than 70 countries all over the
@@ -448,7 +448,7 @@
                     <div class="col-lg-6 align-self-center">
                         <div class="about-us-info-wrap">
                             <div class="section-title-area ltn__section-title-2--- mb-20">
-                                <h6 class="section-subtitle section-subtitle-2--- ltn__secondary-color">Building Facilities</h6>
+                                <h6 class="section-subtitle section-subtitle-2--- black-color">Building Facilities</h6>
                                 <h1 class="section-title">Making living spaces
                                     More Beautiful</h1>
                                 <p>Over 39,000 people work for us in more than 70 countries all over the
@@ -503,7 +503,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title-area ltn__section-title-2--- text-center">
-                            <h6 class="section-subtitle section-subtitle-2--- ltn__secondary-color">Our Services</h6>
+                            <h6 class="section-subtitle section-subtitle-2--- black-color">Our Services</h6>
                             <h1 class="section-title">Our Main Focus</h1>
                         </div>
                     </div>
@@ -559,8 +559,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title-area ltn__section-title-2--- text-center---">
-                            <h6 class="section-subtitle section-subtitle-2--- ltn__secondary-color--- white-color">Upcoming Projects</h6>
-                            <h1 class="section-title  white-color">Dream Living Space <br>
+                            <h6 class="section-subtitle section-subtitle-2--- ltn__secondary-color--- black-color">Upcoming Projects</h6>
+                            <h1 class="section-title  black-color">Dream Living Space <br>
                                 Setting New Standards</h1>
                         </div>
                     </div>
@@ -577,7 +577,7 @@
                                 </div>
                                 <div class="col-lg-5 section-bg-1">
                                     <div class="ltn__upcoming-project-info ltn__menu-widget">
-                                        <h6 class="section-subtitle ltn__secondary-color mb-0">About Projects</h6>
+                                        <h6 class="section-subtitle black-color mb-0">About Projects</h6>
                                         <h1 class="mb-30">Upcoming Projects</h1>
                                         <ul class="mt">
                                             <li>1. Project Name: <span>Quarter</span></li>
@@ -605,7 +605,7 @@
                                 </div>
                                 <div class="col-lg-5 section-bg-1">
                                     <div class="ltn__upcoming-project-info ltn__menu-widget">
-                                        <h6 class="ltn__secondary-color">About Projects</h6>
+                                        <h6 class="black-color">About Projects</h6>
                                         <h1>Upcoming Projects</h1>
                                         <ul>
                                             <li>1. Project Name: <span>Quarter</span></li>
@@ -633,7 +633,7 @@
                                 </div>
                                 <div class="col-lg-5 section-bg-1">
                                     <div class="ltn__upcoming-project-info ltn__menu-widget">
-                                        <h6 class="ltn__secondary-color">About Projects</h6>
+                                        <h6 class="black-color">About Projects</h6>
                                         <h1>Upcoming Projects</h1>
                                         <ul>
                                             <li>1. Project Name: <span>Quarter</span></li>
@@ -662,7 +662,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title-area ltn__section-title-2--- text-center">
-                            <h6 class="section-subtitle section-subtitle-2--- ltn__secondary-color">Apartment Sketch</h6>
+                            <h6 class="section-subtitle section-subtitle-2--- black-color">Apartment Sketch</h6>
                             <h1 class="section-title">Apartments Plan</h1>
                         </div>
                         <div class="ltn__tab-menu ltn__tab-menu-3 ltn__tab-menu-top-right-- text-uppercase--- text-center">
@@ -833,7 +833,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title-area ltn__section-title-2--- text-center---">
-                            <h6 class="section-subtitle section-subtitle-2--- ltn__secondary-color">Area Properties</h6>
+                            <h6 class="section-subtitle section-subtitle-2--- black-color">Area Properties</h6>
                             <h1 class="section-title">Find Your Dream House <br>
                                 Search By Area</h1>
                         </div>
@@ -928,7 +928,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title-area ltn__section-title-2--- text-center---">
-                            <h6 class="section-subtitle section-subtitle-2--- ltn__secondary-color">Avialable Spaces</h6>
+                            <h6 class="section-subtitle section-subtitle-2--- black-color">Avialable Spaces</h6>
                             <h1 class="section-title">Select Availability</h1>
                         </div>
                     </div>
@@ -1049,7 +1049,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title-area ltn__section-title-2--- text-center---">
-                            <h6 class="section-subtitle section-subtitle-2--- ltn__secondary-color">Explore Neighbour</h6>
+                            <h6 class="section-subtitle section-subtitle-2--- black-color">Explore Neighbour</h6>
                             <h1 class="section-title">What’s In Neighbour <br>
                                 Explore Below</h1>
                         </div>
@@ -1271,7 +1271,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title-area ltn__section-title-2--- text-center">
-                            <h6 class="section-subtitle section-subtitle-2--- ltn__secondary-color">Our Aminities</h6>
+                            <h6 class="section-subtitle section-subtitle-2--- black-color">Our Aminities</h6>
                             <h1 class="section-title">Building Aminities</h1>
                         </div>
                     </div>
@@ -1392,8 +1392,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title-area ltn__section-title-2--- text-center---">
-                            <h6 class="section-subtitle section-subtitle-2--- ltn__secondary-color--- white-color">Client,s Testimonial</h6>
-                            <h1 class="section-title white-color">See What,s Our Client <br>
+                            <h6 class="section-subtitle section-subtitle-2--- ltn__secondary-color--- black-color">Client,s Testimonial</h6>
+                            <h1 class="section-title black-color">See What,s Our Client <br>
                                 Says About Us</h1>
                         </div>
                     </div>
@@ -1551,7 +1551,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title-area ltn__section-title-2--- text-center">
-                            <h6 class="section-subtitle section-subtitle-2--- ltn__secondary-color">News & Blogs</h6>
+                            <h6 class="section-subtitle section-subtitle-2--- black-color">News & Blogs</h6>
                             <h1 class="section-title">Leatest News Feeds</h1>
                         </div>
                     </div>
