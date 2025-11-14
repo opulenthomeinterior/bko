@@ -63,7 +63,7 @@
                 <div class="col">
                     <div class="site-logo-wrap">
                         <div class="site-logo">
-                            <a href="index.html"><img src="{{ asset('assets/img/icons/logoBko.png') }}" height="60px" width="120px" alt="Logo"></a>
+                            <a href="index.html"><img src="{{ asset('assets/img/icons/logoBko.png') }}" height="50px" width="100px" alt="Logo"></a>
                         </div>
                         <div class="get-support clearfix d-none">
                             <div class="get-support-icon">

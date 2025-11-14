@@ -220,16 +220,14 @@
                                                         <i class="fa fa-play"></i>
                                                     </a>
                                                 </div>
-                                                <h6 class="slide-sub-title white-color--- animated"><span><i class="fas fa-home"></i></span> Real Estate Agency</h6>
-                                                <h1 class="slide-title animated ">Search and Find <br><span>Luxury</span> House</h1>
+                                                <h6 class="slide-sub-title white-color--- animated"><span><i class="fas fa-home"></i></span> BUY KITCHEN ONLINE</h6>
+                                                <h1 class="slide-title animated "><span>Best</span> of both worlds</h1>
                                                 <div class="slide-brief animated">
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                                                    <p>The <b>Only Online Platform</b> with online value and professional survey with installation.</p>
                                                 </div>
                                                 <div class="btn-wrapper animated">
-                                                    <a href="about.html" class="theme-btn-1 btn btn-effect-1">Make An Enquiry</a>
-                                                    <a class="ltn__video-play-btn bg-white" href="https://www.youtube.com/embed/HnbMYzdjuBs?autoplay=1&amp;showinfo=0" data-rel="lightcase">
-                                                        <i class="icon-play  ltn__secondary-color"></i>
-                                                    </a>
+                                                    <a href="#" class="theme-btn-1 btn btn-effect-1">Make An Enquiry</a>
+                                                    <a href="#" class="theme-btn-2 btn btn-effect-2">Order Now</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -379,6 +377,155 @@
             </div>
         </div>
         <!-- SLIDER AREA END -->
+
+        <!-- CATEGORY AREA START -->
+        <div class="ltn__category-area ltn__product-gutter section-bg-1--- pt-115 pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title-area ltn__section-title-2--- text-center">
+                            <h6 class="section-subtitle section-subtitle-2--- black-color">Our Components</h6>
+                            <h1 class="section-title">Kitchen Components</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ltn__category-slider-active--- slick-arrow-1 justify-content-center">
+                    @foreach($categories as $key => $category)
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                        <div class="ltn__category-item ltn__category-item-5 ltn__category-item-5-2 text-center---">
+                            <a href="shop.html">
+                                <span class="category-icon"><i class="flaticon-car"></i></span>
+                                <span class="category-number">{{$key+1}}</span>
+                                <span class="category-title">{{$category->name}}</span>
+                                <span class="category-brief">
+                                    Enimad minim veniam quis no exercitation ullamco lab
+                                </span>
+                                <span class="category-btn d-none"><i class="flaticon-right-arrow"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                    @endforeach
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                        <div class="ltn__category-item ltn__category-item-5 ltn__category-item-5-2 text-center---">
+                            <a href="shop.html">
+                                <span class="category-icon"><i class="flaticon-car"></i></span>
+                                <span class="category-number">11</span>
+                                <span class="category-title">Wardrobes</span>
+                                <span class="category-brief">
+                                    Enimad minim veniam quis no exercitation ullamco lab
+                                </span>
+                                <span class="category-btn d-none"><i class="flaticon-right-arrow"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                        <div class="ltn__category-item ltn__category-item-5 ltn__category-item-5-2 text-center---">
+                            <a href="shop.html">
+                                <span class="category-icon"><i class="flaticon-car"></i></span>
+                                <span class="category-number">12</span>
+                                <span class="category-title">Doors Replacement</span>
+                                <span class="category-brief">
+                                    Enimad minim veniam quis no exercitation ullamco lab
+                                </span>
+                                <span class="category-btn d-none"><i class="flaticon-right-arrow"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                    {{--<div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                        <div class="ltn__category-item ltn__category-item-5 ltn__category-item-5-2 text-center---">
+                            <a href="shop.html">
+                                <span class="category-icon"><i class="flaticon-swimming"></i></span>
+                                <span class="category-number">02</span>
+                                <span class="category-title">Swimming Pool</span>
+                                <span class="category-brief">
+                                    Enimad minim veniam quis no exercitation ullamco lab
+                                </span>
+                                <span class="category-btn d-none"><i class="flaticon-right-arrow"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                        <div class="ltn__category-item ltn__category-item-5 ltn__category-item-5-2 text-center---">
+                            <a href="shop.html">
+                                <span class="category-icon"><i class="flaticon-secure-shield"></i></span>
+                                <span class="category-number">03</span>
+                                <span class="category-title">Private Security</span>
+                                <span class="category-brief">
+                                    Enimad minim veniam quis no exercitation ullamco lab
+                                </span>
+                                <span class="category-btn d-none"><i class="flaticon-right-arrow"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                        <div class="ltn__category-item ltn__category-item-5 ltn__category-item-5-2 text-center---">
+                            <a href="shop.html">
+                                <span class="category-icon"><i class="flaticon-stethoscope"></i></span>
+                                <span class="category-number">04</span>
+                                <span class="category-title">Medical Center</span>
+                                <span class="category-brief">
+                                    Enimad minim veniam quis no exercitation ullamco lab
+                                </span>
+                                <span class="category-btn d-none"><i class="flaticon-right-arrow"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                        <div class="ltn__category-item ltn__category-item-5 ltn__category-item-5-2 text-center---">
+                            <a href="shop.html">
+                                <span class="category-icon"><i class="flaticon-book"></i></span>
+                                <span class="category-number">05</span>
+                                <span class="category-title">Library Area</span>
+                                <span class="category-brief">
+                                    Enimad minim veniam quis no exercitation ullamco lab
+                                </span>
+                                <span class="category-btn d-none"><i class="flaticon-right-arrow"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                        <div class="ltn__category-item ltn__category-item-5 ltn__category-item-5-2 text-center---">
+                            <a href="shop.html">
+                                <span class="category-icon"><i class="flaticon-bed-1"></i></span>
+                                <span class="category-number">06</span>
+                                <span class="category-title">King Size Beds</span>
+                                <span class="category-brief">
+                                    Enimad minim veniam quis no exercitation ullamco lab
+                                </span>
+                                <span class="category-btn d-none"><i class="flaticon-right-arrow"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                        <div class="ltn__category-item ltn__category-item-5 ltn__category-item-5-2 text-center---">
+                            <a href="shop.html">
+                                <span class="category-icon"><i class="flaticon-home-2"></i></span>
+                                <span class="category-number">07</span>
+                                <span class="category-title">Smart Homes</span>
+                                <span class="category-brief">
+                                    Enimad minim veniam quis no exercitation ullamco lab
+                                </span>
+                                <span class="category-btn d-none"><i class="flaticon-right-arrow"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                        <div class="ltn__category-item ltn__category-item-5 ltn__category-item-5-2 text-center---">
+                            <a href="shop.html">
+                                <span class="category-icon"><i class="flaticon-slider"></i></span>
+                                <span class="category-number">08</span>
+                                <span class="category-title">Kid’s Playland</span>
+                                <span class="category-brief">
+                                    Enimad minim veniam quis no exercitation ullamco lab
+                                </span>
+                                <span class="category-btn d-none"><i class="flaticon-right-arrow"></i></span>
+                            </a>
+                        </div>
+                    </div>--}}
+                </div>
+            </div>
+        </div>
+        <!-- CATEGORY AREA END -->
 
         <!-- ABOUT US AREA START -->
         <div class="ltn__about-us-area pt-115 pb-100 ">
@@ -1264,127 +1411,6 @@
             </div>
         </div>
         <!-- NEIGHBOUR AREA END -->
-
-        <!-- CATEGORY AREA START -->
-        <div class="ltn__category-area ltn__product-gutter section-bg-1--- pt-115 pb-70">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-title-area ltn__section-title-2--- text-center">
-                            <h6 class="section-subtitle section-subtitle-2--- black-color">Our Aminities</h6>
-                            <h1 class="section-title">Building Aminities</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="row ltn__category-slider-active--- slick-arrow-1 justify-content-center">
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                        <div class="ltn__category-item ltn__category-item-5 ltn__category-item-5-2 text-center---">
-                            <a href="shop.html">
-                                <span class="category-icon"><i class="flaticon-car"></i></span>
-                                <span class="category-number">01</span>
-                                <span class="category-title">Parking Space</span>
-                                <span class="category-brief">
-                                    Enimad minim veniam quis no exercitation ullamco lab
-                                </span>
-                                <span class="category-btn d-none"><i class="flaticon-right-arrow"></i></span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                        <div class="ltn__category-item ltn__category-item-5 ltn__category-item-5-2 text-center---">
-                            <a href="shop.html">
-                                <span class="category-icon"><i class="flaticon-swimming"></i></span>
-                                <span class="category-number">02</span>
-                                <span class="category-title">Swimming Pool</span>
-                                <span class="category-brief">
-                                    Enimad minim veniam quis no exercitation ullamco lab
-                                </span>
-                                <span class="category-btn d-none"><i class="flaticon-right-arrow"></i></span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                        <div class="ltn__category-item ltn__category-item-5 ltn__category-item-5-2 text-center---">
-                            <a href="shop.html">
-                                <span class="category-icon"><i class="flaticon-secure-shield"></i></span>
-                                <span class="category-number">03</span>
-                                <span class="category-title">Private Security</span>
-                                <span class="category-brief">
-                                    Enimad minim veniam quis no exercitation ullamco lab
-                                </span>
-                                <span class="category-btn d-none"><i class="flaticon-right-arrow"></i></span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                        <div class="ltn__category-item ltn__category-item-5 ltn__category-item-5-2 text-center---">
-                            <a href="shop.html">
-                                <span class="category-icon"><i class="flaticon-stethoscope"></i></span>
-                                <span class="category-number">04</span>
-                                <span class="category-title">Medical Center</span>
-                                <span class="category-brief">
-                                    Enimad minim veniam quis no exercitation ullamco lab
-                                </span>
-                                <span class="category-btn d-none"><i class="flaticon-right-arrow"></i></span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                        <div class="ltn__category-item ltn__category-item-5 ltn__category-item-5-2 text-center---">
-                            <a href="shop.html">
-                                <span class="category-icon"><i class="flaticon-book"></i></span>
-                                <span class="category-number">05</span>
-                                <span class="category-title">Library Area</span>
-                                <span class="category-brief">
-                                    Enimad minim veniam quis no exercitation ullamco lab
-                                </span>
-                                <span class="category-btn d-none"><i class="flaticon-right-arrow"></i></span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                        <div class="ltn__category-item ltn__category-item-5 ltn__category-item-5-2 text-center---">
-                            <a href="shop.html">
-                                <span class="category-icon"><i class="flaticon-bed-1"></i></span>
-                                <span class="category-number">06</span>
-                                <span class="category-title">King Size Beds</span>
-                                <span class="category-brief">
-                                    Enimad minim veniam quis no exercitation ullamco lab
-                                </span>
-                                <span class="category-btn d-none"><i class="flaticon-right-arrow"></i></span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                        <div class="ltn__category-item ltn__category-item-5 ltn__category-item-5-2 text-center---">
-                            <a href="shop.html">
-                                <span class="category-icon"><i class="flaticon-home-2"></i></span>
-                                <span class="category-number">07</span>
-                                <span class="category-title">Smart Homes</span>
-                                <span class="category-brief">
-                                    Enimad minim veniam quis no exercitation ullamco lab
-                                </span>
-                                <span class="category-btn d-none"><i class="flaticon-right-arrow"></i></span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                        <div class="ltn__category-item ltn__category-item-5 ltn__category-item-5-2 text-center---">
-                            <a href="shop.html">
-                                <span class="category-icon"><i class="flaticon-slider"></i></span>
-                                <span class="category-number">08</span>
-                                <span class="category-title">Kid’s Playland</span>
-                                <span class="category-brief">
-                                    Enimad minim veniam quis no exercitation ullamco lab
-                                </span>
-                                <span class="category-btn d-none"><i class="flaticon-right-arrow"></i></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- CATEGORY AREA END -->
 
         <!-- TESTIMONIAL AREA START (testimonial-8) -->
         <div class="ltn__testimonial-area section-bg-1--- bg-image-top pt-115 pb-65" data-bs-bg="img/bg/23.jpg') }}">
