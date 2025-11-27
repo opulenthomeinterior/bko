@@ -258,6 +258,13 @@ Route::prefix('my-account')->middleware(['auth', 'verified', 'role:user'])->grou
 // Front End
 Route::prefix('/')->middleware([])->group(function () {
 
+    Route::get('kitchens', function () {
+        return view('frontend.one-pager');
+    })->name('one_pager');
+    Route::get('tiles', function () {
+        return view('frontend.tiles');
+    })->name('tiles');
+
     Route::get('/', function () {
         $generalFaqs = Faq::where('type', 'general')->get();
         $deliveryFaqs = Faq::where('type', 'delivery')->get();
