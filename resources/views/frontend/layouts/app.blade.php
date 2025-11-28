@@ -45,11 +45,11 @@
         </div>
     </div>
     <!-- preloader area end -->
-
     <!-- All JS Plugins -->
     <script src="{{ asset('assets/js/plugins.js') }}"></script>
     <!-- Main JS -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
+    @yield('scripts')
 
 </body>
 
