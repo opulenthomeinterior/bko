@@ -250,14 +250,13 @@
                                     </div>
                                 </div>
                                 <div class="slide-item-img">
-                                    <img src="{{ asset('assets/img/slider/61.jpg') }}" alt="#">
+                                    <img src="{{ asset('assets/img/tiles/4 (1).jpg') }}" alt="#">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- slide-item -->
             <div class="ltn__slide-item ltn__slide-item-2 ltn__slide-item-3-normal ltn__slide-item-3 ltn__slide-item-11">
                 <div class="ltn__slide-item-inner">
                     <div class="container">
@@ -270,26 +269,29 @@
                                                 <i class="fa fa-play"></i>
                                             </a>
                                         </div>
-                                        <h6 class="slide-sub-title white-color--- animated"><span><i class="fas fa-home"></i></span> Real Estate Agency</h6>
-                                        <h1 class="slide-title animated ">Find Your Dream <br> House By Us</h1>
+                                        <h6 class="slide-sub-title white-color--- animated"><span><i class="fas fa-home"></i></span> BUY TILES ONLINE</h6>
+                                        <h1 class="slide-title animated "><span>Best</span> of both worlds</h1>
                                         <div class="slide-brief animated">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                                            <p>The Best-Selling tile in UK. Guaranteed on-time, damage free delivery</p>
                                         </div>
                                         <div class="btn-wrapper animated">
-                                            <a href="service.html" class="theme-btn-1 btn btn-effect-1">OUR SERVICES</a>
-                                            <a href="about.html" class="btn btn-transparent btn-effect-3">LEARN MORE</a>
+                                            <a href="#" class="theme-btn-1 btn btn-effect-1">Buy now & Get 10% OFF</a>
+                                            <a href="#" class="theme-btn-2 btn btn-effect-2">Order your free sample</a>
+                                        </div>
+                                        <div class="btn-wrapper animated">
+                                            <a href="#" class="btn btn-effect-1">Damage free guarantee</a>
+                                            <a href="#" class="btn btn-effect-2">Next day delivery available</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="slide-item-img">
-                                    <img src="{{ asset('assets/img/slider/62.jpg') }}" alt="#">
+                                    <img src="{{ asset('assets/img/tiles/8.jpg') }}" alt="#">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- slide-item -->
             <div class="ltn__slide-item ltn__slide-item-2 ltn__slide-item-3-normal ltn__slide-item-3 ltn__slide-item-11">
                 <div class="ltn__slide-item-inner">
                     <div class="container">
@@ -302,26 +304,29 @@
                                                 <i class="fa fa-play"></i>
                                             </a>
                                         </div>
-                                        <h6 class="slide-sub-title white-color--- animated"><span><i class="fas fa-home"></i></span> Real Estate Agency</h6>
-                                        <h1 class="slide-title animated ">Find Your Dream <br> House By Us</h1>
+                                        <h6 class="slide-sub-title white-color--- animated"><span><i class="fas fa-home"></i></span> BUY TILES ONLINE</h6>
+                                        <h1 class="slide-title animated "><span>Best</span> of both worlds</h1>
                                         <div class="slide-brief animated">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                                            <p>The Best-Selling tile in UK. Guaranteed on-time, damage free delivery</p>
                                         </div>
                                         <div class="btn-wrapper animated">
-                                            <a href="service.html" class="theme-btn-1 btn btn-effect-1">OUR SERVICES</a>
-                                            <a href="about.html" class="btn btn-transparent btn-effect-3">LEARN MORE</a>
+                                            <a href="#" class="theme-btn-1 btn btn-effect-1">Buy now & Get 10% OFF</a>
+                                            <a href="#" class="theme-btn-2 btn btn-effect-2">Order your free sample</a>
+                                        </div>
+                                        <div class="btn-wrapper animated">
+                                            <a href="#" class="btn btn-effect-1">Damage free guarantee</a>
+                                            <a href="#" class="btn btn-effect-2">Next day delivery available</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="slide-item-img">
-                                    <img src="{{ asset('assets/img/slider/63.jpg') }}" alt="#">
+                                    <img src="{{ asset('assets/img/tiles/7.jpg') }}" alt="#">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- slide-item -->
             <div class="ltn__slide-item ltn__slide-item-2 ltn__slide-item-3-normal ltn__slide-item-3 ltn__slide-item-11">
                 <div class="ltn__slide-item-inner">
                     <div class="container">
@@ -334,19 +339,58 @@
                                                 <i class="fa fa-play"></i>
                                             </a>
                                         </div>
-                                        <h6 class="slide-sub-title white-color--- animated"><span><i class="fas fa-home"></i></span> Real Estate Agency</h6>
-                                        <h1 class="slide-title animated ">Find Your Dream <br> House By Us</h1>
+                                        <h6 class="slide-sub-title white-color--- animated"><span><i class="fas fa-home"></i></span> BUY TILES ONLINE</h6>
+                                        <h1 class="slide-title animated "><span>Best</span> of both worlds</h1>
                                         <div class="slide-brief animated">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                                            <p>The Best-Selling tile in UK. Guaranteed on-time, damage free delivery</p>
                                         </div>
                                         <div class="btn-wrapper animated">
-                                            <a href="service.html" class="theme-btn-1 btn btn-effect-1">OUR SERVICES</a>
-                                            <a href="about.html" class="btn btn-transparent btn-effect-3">LEARN MORE</a>
+                                            <a href="#" class="theme-btn-1 btn btn-effect-1">Buy now & Get 10% OFF</a>
+                                            <a href="#" class="theme-btn-2 btn btn-effect-2">Order your free sample</a>
+                                        </div>
+                                        <div class="btn-wrapper animated">
+                                            <a href="#" class="btn btn-effect-1">Damage free guarantee</a>
+                                            <a href="#" class="btn btn-effect-2">Next day delivery available</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="slide-item-img">
-                                    <img src="{{ asset('assets/img/slider/64.jpg') }}" alt="#">
+                                    <img src="{{ asset('assets/img/tiles/6.jpg') }}" alt="#">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ltn__slide-item ltn__slide-item-2 ltn__slide-item-3-normal ltn__slide-item-3 ltn__slide-item-11">
+                <div class="ltn__slide-item-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 align-self-center">
+                                <div class="slide-item-info">
+                                    <div class="slide-item-info-inner ltn__slide-animation">
+                                        <div class="slide-video mb-50 d-none">
+                                            <a class="ltn__video-icon-2 ltn__video-icon-2-border" href="https://www.youtube.com/embed/tlThdr3O5Qo" data-rel="lightcase:myCollection">
+                                                <i class="fa fa-play"></i>
+                                            </a>
+                                        </div>
+                                        <h6 class="slide-sub-title white-color--- animated"><span><i class="fas fa-home"></i></span> BUY TILES ONLINE</h6>
+                                        <h1 class="slide-title animated "><span>Best</span> of both worlds</h1>
+                                        <div class="slide-brief animated">
+                                            <p>The Best-Selling tile in UK. Guaranteed on-time, damage free delivery</p>
+                                        </div>
+                                        <div class="btn-wrapper animated">
+                                            <a href="#" class="theme-btn-1 btn btn-effect-1">Buy now & Get 10% OFF</a>
+                                            <a href="#" class="theme-btn-2 btn btn-effect-2">Order your free sample</a>
+                                        </div>
+                                        <div class="btn-wrapper animated">
+                                            <a href="#" class="btn btn-effect-1">Damage free guarantee</a>
+                                            <a href="#" class="btn btn-effect-2">Next day delivery available</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide-item-img">
+                                    <img src="{{ asset('assets/img/tiles/5.jpg') }}" alt="#">
                                 </div>
                             </div>
                         </div>
@@ -372,16 +416,19 @@
             <div class="ltn__slider-11-img-slide-arrow-inner">
                 <div class="ltn__slider-11-img-slide-arrow-active">
                     <div class="image-slide-item">
-                        <img src="{{ asset('assets/img/slider/61.jpg') }}" alt="Flower Image">
+                        <img src="{{ asset('assets/img/tiles/4 (1).jpg') }}" alt="Flower Image">
                     </div>
                     <div class="image-slide-item">
-                        <img src="{{ asset('assets/img/slider/62.jpg') }}" alt="Flower Image">
+                        <img src="{{ asset('assets/img/tiles/8.jpg') }}" alt="Flower Image">
                     </div>
                     <div class="image-slide-item">
-                        <img src="{{ asset('assets/img/slider/63.jpg') }}" alt="Flower Image">
+                        <img src="{{ asset('assets/img/tiles/7.jpg') }}" alt="Flower Image">
                     </div>
                     <div class="image-slide-item">
-                        <img src="{{ asset('assets/img/slider/64.jpg') }}" alt="Flower Image">
+                        <img src="{{ asset('assets/img/tiles/6.jpg') }}" alt="Flower Image">
+                    </div>
+                    <div class="image-slide-item">
+                        <img src="{{ asset('assets/img/tiles/5.jpg') }}" alt="Flower Image">
                     </div>
                 </div>
                 <!-- slider-4-slide-item-count -->
@@ -410,7 +457,7 @@
                 <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
                     <div class="ltn__feature-icon">
                         <!-- <span><i class="flaticon-house"></i></span> -->
-                        <img src="img/icons/icon-img/21.png" alt="#">
+                        <img src="{{asset('assets/img/tiles/guarantee.jpg')}}" height="100px" alt="#">
                     </div>
                     <div class="ltn__feature-info">
                         <h3 class="animated fadeIn"><a href="service-details.html">Zero damage guarantee</a></h3>
@@ -422,7 +469,7 @@
                 <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1 active">
                     <div class="ltn__feature-icon">
                         <!-- <span><i class="flaticon-house-3"></i></span> -->
-                        <img src="img/icons/icon-img/22.png" alt="#">
+                        <img src="{{asset('assets/img/tiles/on_time.jpg')}}" height="100px" alt="#">
                     </div>
                     <div class="ltn__feature-info">
                         <h3 class="animated fadeIn"><a href="service-details.html">On Time, Every Time</a></h3>
@@ -434,7 +481,7 @@
                 <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
                     <div class="ltn__feature-icon">
                         <!-- <span><i class="flaticon-deal-1"></i></span> -->
-                        <img src="img/icons/icon-img/23.png" alt="#">
+                        <img src="{{asset('assets/img/tiles/expert.png')}}" height="100px" alt="#">
                     </div>
                     <div class="ltn__feature-info">
                         <h3 class="animated fadeIn"><a href="service-details.html">Expert Help</a></h3>
@@ -454,109 +501,109 @@
                     <div class="section-title-area ltn__section-title-2--- mb-30">
                         <h1 class="section-title">Product Details</h1>
                         <div>
-                            <img src="{{ asset('assets/img/product/1.png') }}" alt="">
+                            <img src="{{ asset('assets/img/tiles/5.jpg') }}" alt="">
                         </div>
                     </div>
                     <ul class="ltn__list-item-2 ltn__list-item-2-before--- ltn__list-item-2-img mb-50 d-flex justify-content-center">
                         <li>
-                            <a href="{{asset('assets/img/img-slide/11.jpg')}}" data-rel="lightcase:myCollection">
-                                <img src="{{asset('assets/img/img-slide/11.jpg')}}" alt="Image">
+                            <a href="{{ asset('assets/img/tiles/5.jpg') }}" data-rel="lightcase:myCollection">
+                                <img src="{{ asset('assets/img/tiles/5.jpg') }}" alt="Image">
                             </a>
                         </li>
                         <li>
-                            <a href="{{asset('assets/img/img-slide/11.jpg')}}" data-rel="lightcase:myCollection">
-                                <img src="{{asset('assets/img/img-slide/11.jpg')}}" alt="Image">
+                            <a href="{{ asset('assets/img/tiles/5.jpg') }}" data-rel="lightcase:myCollection">
+                                <img src="{{ asset('assets/img/tiles/5.jpg') }}" alt="Image">
                             </a>
                         </li>
                         <li>
-                            <a href="{{asset('assets/img/img-slide/11.jpg')}}" data-rel="lightcase:myCollection">
-                                <img src="{{asset('assets/img/img-slide/11.jpg')}}" alt="Image">
+                            <a href="{{ asset('assets/img/tiles/5.jpg') }}" data-rel="lightcase:myCollection">
+                                <img src="{{ asset('assets/img/tiles/5.jpg') }}" alt="Image">
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-6 align-self-center">
+            {{--<div class="col-lg-6 align-self-center">
                 <div class="about-us-img-wrap about-img-right">
                     <h5>Product Specification</h5>
 
                     <div class="product-card" role="region" aria-label="Product purchase options">
-    <!-- Optional image reference (uses uploaded local path) -->
-    <img class="sample-ref" src="/mnt/data/0573f554-930e-4319-a36e-378731ccea98.png" alt="Product panel reference">
+                        <!-- Optional image reference (uses uploaded local path) -->
+                        <img class="sample-ref" src="/mnt/data/0573f554-930e-4319-a36e-378731ccea98.png" alt="Product panel reference">
 
-    <!-- Size / Options / Calculator -->
-    <div class="row" style="align-items:flex-start;">
-      <div class="col" style="flex:0 0 40%;">
-        <label>Size</label>
-        <div class="option-box">—</div>
+                        <!-- Size / Options / Calculator -->
+                        <div class="row" style="align-items:flex-start;">
+                        <div class="col" style="flex:0 0 40%;">
+                            <label>Size</label>
+                            <div class="option-box">—</div>
 
-        <label style="margin-top:10px;">Material</label>
-        <div class="option-box">uuc</div>
+                            <label style="margin-top:10px;">Material</label>
+                            <div class="option-box">uuc</div>
 
-        <label style="margin-top:10px;">Finish</label>
-        <div class="option-box">—</div>
-      </div>
+                            <label style="margin-top:10px;">Finish</label>
+                            <div class="option-box">—</div>
+                        </div>
 
-      <div class="col" style="flex:0 0 30%;">
-        <label>Squ</label>
-        <div class="option-box">uuc<br>Fibrele</div>
-      </div>
+                        <div class="col" style="flex:0 0 30%;">
+                            <label>Squ</label>
+                            <div class="option-box">uuc<br>Fibrele</div>
+                        </div>
 
-      <div class="col" style="flex:0 0 30%;">
-        <label>Calculator</label>
-        <div class="calculator" aria-label="calculator">
-          <input type="text" placeholder="Enter sQur" aria-label="Calculator input">
-          <div style="display:flex; gap:6px;">
-            <input type="text" value="Both Dators" readonly style="flex:1; padding:8px; border:1px solid #ddd; border-radius:4px;">
-            <input type="text" value="Thick ness" readonly style="flex:1; padding:8px; border:1px solid #ddd; border-radius:4px;">
-          </div>
-        </div>
-      </div>
-    </div>
+                        <div class="col" style="flex:0 0 30%;">
+                            <label>Calculator</label>
+                            <div class="calculator" aria-label="calculator">
+                            <input type="text" placeholder="Enter sQur" aria-label="Calculator input">
+                            <div style="display:flex; gap:6px;">
+                                <input type="text" value="Both Dators" readonly style="flex:1; padding:8px; border:1px solid #ddd; border-radius:4px;">
+                                <input type="text" value="Thick ness" readonly style="flex:1; padding:8px; border:1px solid #ddd; border-radius:4px;">
+                            </div>
+                            </div>
+                        </div>
+                        </div>
 
-    <!-- Additional product details -->
-    <label>Slip Rating</label>
-    <div class="option-box">—</div>
+                        <!-- Additional product details -->
+                        <label>Slip Rating</label>
+                        <div class="option-box">—</div>
 
-    <label style="margin-top:10px;">Thickness</label>
-    <div class="option-box">—</div>
+                        <label style="margin-top:10px;">Thickness</label>
+                        <div class="option-box">—</div>
 
-    <p class="muted">All tiles for this order are guaranteed to come from the same production batch.</p>
+                        <p class="muted">All tiles for this order are guaranteed to come from the same production batch.</p>
 
-    <!-- Purchase Options -->
-    <h3 style="font-size:16px; margin:12px 0 8px;">Purchase Options</h3>
+                        <!-- Purchase Options -->
+                        <h3 style="font-size:16px; margin:12px 0 8px;">Purchase Options</h3>
 
-    <div class="purchase-row" style="margin-bottom:12px;">
-      <div class="col">
-        <label for="quantity">Quantity</label>
-        <select id="quantity" name="quantity" aria-label="Choose quantity">
-          <option>Choose quantity in boxes</option>
-          <option>1 box</option>
-          <option>2 boxes</option>
-          <option>3 boxes</option>
-          <option>4 boxes</option>
-        </select>
-      </div>
+                        <div class="purchase-row" style="margin-bottom:12px;">
+                        <div class="col">
+                            <label for="quantity">Quantity</label>
+                            <select id="quantity" name="quantity" aria-label="Choose quantity">
+                            <option>Choose quantity in boxes</option>
+                            <option>1 box</option>
+                            <option>2 boxes</option>
+                            <option>3 boxes</option>
+                            <option>4 boxes</option>
+                            </select>
+                        </div>
 
-      <div class="col">
-        <label for="finish-color">Finish/Colour</label>
-        <select id="finish-color" name="finish-color" aria-label="Finish or colour">
-          <option>Ee-d.</option>
-          <option>Matte</option>
-          <option>Gloss</option>
-          <option>Textured</option>
-        </select>
-      </div>
-    </div>
+                        <div class="col">
+                            <label for="finish-color">Finish/Colour</label>
+                            <select id="finish-color" name="finish-color" aria-label="Finish or colour">
+                            <option>Ee-d.</option>
+                            <option>Matte</option>
+                            <option>Gloss</option>
+                            <option>Textured</option>
+                            </select>
+                        </div>
+                        </div>
 
-    <div style="margin-bottom:8px;">
-      <button class="btn" type="button" aria-label="Add to basket">★ ADD TO BASKET</button>
-    </div>
+                        <div style="margin-bottom:8px;">
+                        <button class="btn" type="button" aria-label="Add to basket">★ ADD TO BASKET</button>
+                        </div>
 
-    <p class="sample-note">Still Undecided? Order Your Generous, Free Sample Today!</p>
-  </div>
+                        <p class="sample-note">Still Undecided? Order Your Generous, Free Sample Today!</p>
+                    </div>
                 </div>
-            </div>
+            </div>--}}
         </div>
     </div>
 </div>
