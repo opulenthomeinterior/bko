@@ -124,8 +124,15 @@
                             <div class="input-item">
                                 <select class="nice-select" style="display: none;" name="message" required>
                                     <option>Select Kitchen Type</option>
-                                    <option>J Pull</option>
-                                    <option>Shaker</option>
+                                    <option>J Pull Kitchen</option>
+                                    <option>Shaker Kitchen</option>
+                                    <option>Slab Edged Kitchen</option>
+                                    <option>True Handleless Kitchen</option>
+                                    <option>J Pull 22mm Kitchen</option>
+                                    <option>Shaker 22mm Kitchen</option>
+                                    <option>Slab Painted Kitchen</option>
+                                    <option>True Handleless Painted Kitchen</option>
+                                    <option>Budget Kitchen</option>
                                 </select>
                             </div>
                             <button class="btn btn-dark w-100" type="submit">
