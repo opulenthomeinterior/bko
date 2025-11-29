@@ -46,9 +46,9 @@ class InquiryController extends Controller
                     'call_time' => $request->call_time ?? '',
                     'message' => $request->message ?? '',
                 ];
-                Mail::to('admin@bkonline.uk')->cc(['bkonline570@gmail.com', $request->email ?? ''])->send(new InquiryEmail($data));
+                // Mail::to('admin@bkonline.uk')->cc(['bkonline570@gmail.com', $request->email ?? ''])->send(new InquiryEmail($data));
             } else {
-                Mail::to('admin@bkonline.uk')->cc(['bkonline570@gmail.com', $request->email ?? ''])->send(new InquiryEmail($data));
+                // Mail::to('admin@bkonline.uk')->cc(['bkonline570@gmail.com', $request->email ?? ''])->send(new InquiryEmail($data));
             }
     
             Inquiry::create($request->all());
@@ -56,6 +56,7 @@ class InquiryController extends Controller
             return view('frontend.thankyou');
             // return redirect()->back()->with('success', 'Your inquiry has been sent successfully!');
         } catch (\Exception $e) {
+            dd($e->getMessage());
             return view('frontend.thankyou');
         }
     }

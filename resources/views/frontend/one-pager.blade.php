@@ -46,9 +46,41 @@
     .slide-item-info {
         margin-left: auto;
     }
+    
+    input[type="number"] {
+        background-color: var(--white);
+        border: 2px solid;
+        border-color: var(--border-color-9);
+        height: 65px;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        padding-left: 20px;
+        font-size: 16px;
+        color: var(--ltn__paragraph-color);
+        width: 100%;
+        margin-bottom: 30px;
+        border-radius: 0;
+        padding-right: 40px;
+    }
+    .nice-select {
+        background-color: var(--white);
+        border: 2px solid;
+        border-color: var(--border-color-9);
+        height: 65px;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        padding-left: 20px;
+        font-size: 16px;
+        color: var(--ltn__paragraph-color);
+        width: 100%;
+        margin-bottom: 30px;
+        border-radius: 0;
+        padding-right: 40px;
+    }
+    
 </style>
 @endsection
-<div class="container mb-120">
+<div class="container mb-60">
     <section class="hero">
         <div class="container">
             <div class="row align-items-center">
@@ -83,12 +115,20 @@
                         <div class="mb-4">
                             <img src="{{ asset('images/homepage.jpeg') }}" class="border border-default img-fluid" alt="">
                         </div>
-                        <form>
-                            <input type="text" class="form-control mb-3" placeholder="Name">
-                            <input type="email" class="form-control mb-3" placeholder="Email">
-                            <input type="text" class="form-control mb-3" placeholder="Phone">
-                            <input type="text" class="form-control mb-3" placeholder="Postcode">
-                            <button class="btn btn-dark w-100">
+                        <form method="POST" action="{{ route('contact_us_inquiry') }}">
+                            @csrf
+                            <input type="text" class="form-control mb-3" placeholder="Name" name="name" required>
+                            <input type="email" class="form-control mb-3" placeholder="Email" name="email" required>
+                            <input type="number" class="form-control mb-3" placeholder="Phone" name="phone" required>
+                            <input type="number" class="form-control mb-3" placeholder="Postcode" name="postcode" required>
+                            <div class="input-item">
+                                <select class="nice-select" style="display: none;" name="message" required>
+                                    <option>Select Kitchen Type</option>
+                                    <option>J Pull</option>
+                                    <option>Shaker</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-dark w-100" type="submit">
                                 Start Designing My Dream Kitchen
                             </button>
                         </form>
@@ -100,7 +140,7 @@
     </section>
 </div>
 
-<div class="ltn__category-area ltn__product-gutter section-bg-1 pt-115 pb-90 ">
+<div class="ltn__category-area ltn__product-gutter section-bg-1 pt-60 pb-60 ">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -111,118 +151,118 @@
         </div>
         <div class="row ltn__category-slider-active--- slick-arrow-1 justify-content-center">
             <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                <div class="ltn__category-item ltn__category-item-5 text-center">
-                    <a href="#">
+                <div class="ltn__category-item ltn__category-item-5 text-center p-3">
+                    
                         <span class="category-ic">
                             <img src="https://bkonline.uk/public/imgs/styles/06_06_2025_104957_6842c7d5c26f5-j-pull(1).png" alt="">
                         </span>
-                        <span class="category-title">J Pull Kitchen</span>
-                        <p>Modern, smooth, and minimalist with an integrated handle groove for effortless opening.</p>
-                        <span class="category-btn"><i class="flaticon-right-arrow"></i></span>
-                    </a>
+                        <span class="category-title fw-bold border-bottom">J Pull Kitchen</span>
+                        <p class="category-title">Modern, smooth, and minimalist with an integrated handle groove for effortless opening.</p>
+                        
+                    
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                <div class="ltn__category-item ltn__category-item-5 text-center">
-                    <a href="#">
+                <div class="ltn__category-item ltn__category-item-5 text-center p-3">
+                    
                         <span class="category-ic">
                             <img src="https://bkonline.uk/public/imgs/styles/04_05_2025_063206_681709e62cd48-shaker(1).png" alt="">
                         </span>
-                        <span class="category-title">Shaker Kitchen</span>
-                        <p>Classic framed elegance with modern durability, forever stylish.</p>
-                        <span class="category-btn"><i class="flaticon-right-arrow"></i></span>
-                    </a>
+                        <span class="category-title fw-bold border-bottom">Shaker Kitchen</span>
+                        <p class="category-title">Classic framed elegance with modern durability, forever stylish.</p>
+                        
+                    
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                <div class="ltn__category-item ltn__category-item-5 text-center">
-                    <a href="#">
+                <div class="ltn__category-item ltn__category-item-5 text-center p-3">
+                    
                         <span class="category-ic">
                             <img src="https://bkonline.uk/public/imgs/styles/04_05_2025_063345_68170a490b56f-slabedge(2).png" alt="">
                         </span>
-                        <span class="category-title">Slab Edged Kitchen</span>
-                        <p>Flat, clean, contemporary doors for a bold, streamlined look.</p>
-                        <span class="category-btn"><i class="flaticon-right-arrow"></i></span>
-                    </a>
+                        <span class="category-title fw-bold border-bottom">Slab Edged Kitchen</span>
+                        <p class="category-title">Flat, clean, contemporary doors for a bold, streamlined look.</p>
+                        
+                    
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                <div class="ltn__category-item ltn__category-item-5 text-center">
-                    <a href="#">
+                <div class="ltn__category-item ltn__category-item-5 text-center p-3">
+                    
                         <span class="category-ic">
                             <img src="https://bkonline.uk/public/imgs/styles/04_05_2025_063809_68170b51b771f-truhandleless(1).png" alt="">
                         </span>
-                        <span class="category-title">True Handleless Kitchen</span>
-                        <p>A continuous rail system for a pure, uninterrupted modern design.</p>
-                        <span class="category-btn"><i class="flaticon-right-arrow"></i></span>
-                    </a>
+                        <span class="category-title fw-bold border-bottom">True Handleless Kitchen</span>
+                        <p class="category-title">A continuous rail system for a pure, uninterrupted modern design.</p>
+                        
+                    
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                <div class="ltn__category-item ltn__category-item-5 text-center">
-                    <a href="#">
+                <div class="ltn__category-item ltn__category-item-5 text-center p-3">
+                    
                         <span class="category-ic">
                             <img src="https://bkonline.uk/public/imgs/styles/31_05_2025_102009_683ad7d95310c-j-pull22.png" alt="">
                         </span>
-                        <span class="category-title">J Pull 22mm Kitchen</span>
-                        <p>A premium, thicker and more robust version of our classic J Pull range.</p>
-                        <span class="category-btn"><i class="flaticon-right-arrow"></i></span>
-                    </a>
+                        <span class="category-title fw-bold border-bottom">J Pull 22mm Kitchen</span>
+                        <p class="category-title">A premium, thicker and more robust version of our classic J Pull range.</p>
+                        
+                    
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                <div class="ltn__category-item ltn__category-item-5 text-center">
-                    <a href="#">
+                <div class="ltn__category-item ltn__category-item-5 text-center p-3">
+                    
                         <span class="category-ic">
                             <img src="https://bkonline.uk/public/imgs/styles/04_05_2025_063253_68170a1592a60-shaker22(1).png" alt="">
                         </span>
-                        <span class="category-title">Shaker 22mm Kitchen</span>
-                        <p>Heavy-duty craftsmanship with elegant design and premium finishes.</p>
-                        <span class="category-btn"><i class="flaticon-right-arrow"></i></span>
-                    </a>
+                        <span class="category-title fw-bold border-bottom">Shaker 22mm Kitchen</span>
+                        <p class="category-title">Heavy-duty craftsmanship with elegant design and premium finishes.</p>
+                        
+                    
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                <div class="ltn__category-item ltn__category-item-5 text-center">
-                    <a href="#">
+                <div class="ltn__category-item ltn__category-item-5 text-center p-3">
+                    
                         <span class="category-ic">
                             <img src="https://bkonline.uk/public/imgs/styles/04_05_2025_063733_68170b2d90a9e-slabedgepainted(1).png" alt="">
                         </span>
-                        <span class="category-title">Slab Painted Kitchen</span>
-                        <p>Smooth painted slab doors perfect for bespoke, high-end looks.</p>
-                        <span class="category-btn"><i class="flaticon-right-arrow"></i></span>
-                    </a>
+                        <span class="category-title fw-bold border-bottom">Slab Painted Kitchen</span>
+                        <p class="category-title">Smooth painted slab doors perfect for bespoke, high-end looks.</p>
+                        
+                    
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                <div class="ltn__category-item ltn__category-item-5 text-center">
-                    <a href="#">
+                <div class="ltn__category-item ltn__category-item-5 text-center p-3">
+                    
                         <span class="category-ic">
                             <img src="https://bkonline.uk/public/imgs/styles/04_05_2025_063854_68170b7e97ee8-truehandlelesspainted.png" alt="">
                         </span>
-                        <span class="category-title">True Handleless Painted Kitchen</span>
-                        <p>A luxury painted handleless design for premium contemporary homes.</p>
-                        <span class="category-btn"><i class="flaticon-right-arrow"></i></span>
-                    </a>
+                        <span class="category-title fw-bold border-bottom">True Handleless Painted Kitchen</span>
+                        <p class="category-title">A luxury painted handleless design for premium contemporary homes.</p>
+                        
+                    
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                <div class="ltn__category-item ltn__category-item-5 text-center">
-                    <a href="#">
+                <div class="ltn__category-item ltn__category-item-5 text-center p-3">
+                    
                         <span class="category-ic">
                             <img src="https://bkonline.uk/public/imgs/styles/04_05_2025_063653_68170b053487d-budgetkitchen.png" alt="">
                         </span>
-                        <span class="category-title">Budget Kitchen Collection</span>
-                        <p>Durable, stylish, and cost-effective — perfect for rentals, flips, and project kitchens.</p>
-                        <span class="category-btn"><i class="flaticon-right-arrow"></i></span>
-                    </a>
+                        <span class="category-title fw-bold border-bottom">Budget Kitchen Collection</span>
+                        <p class="category-title">Durable, stylish, and cost-effective — perfect for rentals, flips, and project kitchens.</p>
+                        
+                    
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="ltn__feature-area section-bg-0 pt-120 pb-90 mb-120---">
+<div class="ltn__feature-area section-bg-0 pt-60 pb-60 mb-60---">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -260,12 +300,11 @@
     </div>
 </div>
 
-<div class="ltn__search-by-place-area section-bg-1 pt-115 pb-70" data-bs-bg="img/bg/20.jpg">
+<div class="ltn__search-by-place-area section-bg-1 pt-60 pb-60" data-bs-bg="img/bg/20.jpg">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title-area ltn__section-title-2--- text-center---">
-                    <h6 class="section-subtitle section-subtitle-2--- ltn__secondary-color">Area Properties</h6>
                     <h1 class="section-title">Don't just take our word for it...</h1>
                 </div>
             </div>
@@ -334,7 +373,7 @@
     </div>
 </div>
 
-<div class="ltn__feature-area section-bg-0 pt-120 pb-90 mb-120---">
+<div class="ltn__feature-area section-bg-0 pt-60 pb-60 mb-60---">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">

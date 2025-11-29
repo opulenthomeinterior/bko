@@ -1,59 +1,7 @@
 @section('styles')
 @endsection
 <!-- HEADER AREA START (header-5) -->
-    <header class="ltn__header-area ltn__header-5 ltn__header-transparent--- gradient-color-4---">
-        <!-- ltn__header-top-area start -->
-        <div class="ltn__header-top-area section-bg-6 top-area-color-white---">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-7">
-                        <div class="ltn__top-bar-menu">
-                            <ul>
-                                <li><a href="mailto:admin@bkonline.uk?Subject=Flower%20greetings%20to%20you"><i class="icon-mail"></i> admin@bkonline.uk</a></li>
-                                <li><a href="locations.html"><i class="icon-placeholder"></i>44 Gillender St, Aberfeldy Village, London E14 6RP, United Kingdom</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="top-bar-right text-end">
-                            <div class="ltn__top-bar-menu">
-                                <ul>
-                                    <!-- <li class="d-none">
-                                        <div class="ltn__drop-menu ltn__currency-menu ltn__language-menu">
-                                            <ul>
-                                                <li><a href="#" class="dropdown-toggle"><span class="active-currency">English</span></a>
-                                                    <ul>
-                                                        <li><a href="#">Arabic</a></li>
-                                                        <li><a href="#">Bengali</a></li>
-                                                        <li><a href="#">Chinese</a></li>
-                                                        <li><a href="#">English</a></li>
-                                                        <li><a href="#">French</a></li>
-                                                        <li><a href="#">Hindi</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li> -->
-                                    <li>
-                                        <!-- ltn__social-media -->
-                                        <div class="ltn__social-media">
-                                            <ul>
-                                                <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                                                
-                                                <li><a href="#" title="Instagram"><i class="fab fa-instagram"></i></a></li>
-                                                <li><a href="#" title="Dribbble"><i class="fab fa-dribbble"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- ltn__header-top-area end -->
+    <header class="ltn__header-area ltn__header-5 section-bg-1 ltn__header-transparent--- gradient-color-4--- mb-4">
         
         <!-- ltn__header-middle-area start -->
         <div class="ltn__header-middle-area ltn__header-sticky ltn__sticky-bg-white">
@@ -61,17 +9,8 @@
                 <div class="row">
                     <div class="col">
                         <div class="site-logo-wrap">
-                            <div class="site-logo">
-                                <a href="index.html"><img src="{{ asset('assets/img/icons/logoBko.png') }}" height="60px" width="120px" alt="Logo"></a>
-                            </div>
-                            <div class="get-support clearfix d-none">
-                                <div class="get-support-icon">
-                                    <i class="icon-call"></i>
-                                </div>
-                                <div class="get-support-info">
-                                    <h6>Get Support</h6>
-                                    <h4><a href="tel:+123456789">123-456-789-10</a></h4>
-                                </div>
+                            <div class="site-logo p-0">
+                                <a href="#"><img src="{{ asset('images/bko-black-logo.png') }}" height="75px" width="100px" alt="Logo"></a>
                             </div>
                         </div>
                     </div>
@@ -83,7 +22,7 @@
                                         <li class="menu-icon"><a href="#">Home</a>
                                             <ul class="sub-menu menu-pages-img-show">
                                                 <li>
-                                                    <a href="index.html">Home Style 01</a>
+                                                    <a href="#">Home Style 01</a>
                                                     <img src="img/home-demos/home-1.jpg" alt="#">
                                                 </li>
                                                 <li>
