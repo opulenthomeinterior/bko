@@ -218,7 +218,7 @@
 <div class="ltn__utilize-overlay"></div>
 
 <!-- SLIDER AREA START (slider-11) -->
-<div class="ltn__slider-area ltn__slider-11 ltn__slider-11-slide-item-count-show--- ltn__slider-11-pagination-count-show--- section-bg-1">
+<div class="ltn__slider-area ltn__slider-11 ltn__slider-11-slide-item-count-show--- ltn__slider-11-pagination-count-show--- section-bg-0">
     <div class="ltn__slider-11-inner">
         <div class="ltn__slider-11-active">
             <!-- slide-item -->
@@ -240,8 +240,8 @@
                                             <p>The Best-Selling tile in UK. Guaranteed on-time, damage free delivery</p>
                                         </div>
                                         <div class="btn-wrapper animated">
-                                            <a href="#" class="theme-btn-1 btn btn-effect-1">Buy now & Get 10% OFF</a>
-                                            <a href="#" class="theme-btn-2 btn btn-effect-2">Order your free sample</a>
+                                            <a href="#" class="theme-btn-1 btn btn-effect-1" data-bs-toggle="modal" data-bs-target="#kitchenModal">Buy now & Get 10% OFF</a>
+                                            <a href="#" class="theme-btn-2 btn btn-effect-2" data-bs-toggle="modal" data-bs-target="#kitchenModal">Order your free sample</a>
                                         </div>
                                         <div class="btn-wrapper animated">
                                             <a href="#" class="btn btn-effect-1">Damage free guarantee</a>
@@ -257,178 +257,18 @@
                     </div>
                 </div>
             </div>
-            <div class="ltn__slide-item ltn__slide-item-2 ltn__slide-item-3-normal ltn__slide-item-3 ltn__slide-item-11">
-                <div class="ltn__slide-item-inner">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12 align-self-center">
-                                <div class="slide-item-info">
-                                    <div class="slide-item-info-inner ltn__slide-animation">
-                                        <div class="slide-video mb-50 d-none">
-                                            <a class="ltn__video-icon-2 ltn__video-icon-2-border" href="https://www.youtube.com/embed/tlThdr3O5Qo" data-rel="lightcase:myCollection">
-                                                <i class="fa fa-play"></i>
-                                            </a>
-                                        </div>
-                                        <h6 class="slide-sub-title white-color--- animated"><span><i class="fas fa-home"></i></span> BUY TILES ONLINE</h6>
-                                        <h1 class="slide-title animated "><span>Best</span> of both worlds</h1>
-                                        <div class="slide-brief animated">
-                                            <p>The Best-Selling tile in UK. Guaranteed on-time, damage free delivery</p>
-                                        </div>
-                                        <div class="btn-wrapper animated">
-                                            <a href="#" class="theme-btn-1 btn btn-effect-1">Buy now & Get 10% OFF</a>
-                                            <a href="#" class="theme-btn-2 btn btn-effect-2">Order your free sample</a>
-                                        </div>
-                                        <div class="btn-wrapper animated">
-                                            <a href="#" class="btn btn-effect-1">Damage free guarantee</a>
-                                            <a href="#" class="btn btn-effect-2">Next day delivery available</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slide-item-img">
-                                    <img src="{{ asset('assets/img/tiles/8.jpg') }}" alt="#">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="ltn__slide-item ltn__slide-item-2 ltn__slide-item-3-normal ltn__slide-item-3 ltn__slide-item-11">
-                <div class="ltn__slide-item-inner">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12 align-self-center">
-                                <div class="slide-item-info">
-                                    <div class="slide-item-info-inner ltn__slide-animation">
-                                        <div class="slide-video mb-50 d-none">
-                                            <a class="ltn__video-icon-2 ltn__video-icon-2-border" href="https://www.youtube.com/embed/tlThdr3O5Qo" data-rel="lightcase:myCollection">
-                                                <i class="fa fa-play"></i>
-                                            </a>
-                                        </div>
-                                        <h6 class="slide-sub-title white-color--- animated"><span><i class="fas fa-home"></i></span> BUY TILES ONLINE</h6>
-                                        <h1 class="slide-title animated "><span>Best</span> of both worlds</h1>
-                                        <div class="slide-brief animated">
-                                            <p>The Best-Selling tile in UK. Guaranteed on-time, damage free delivery</p>
-                                        </div>
-                                        <div class="btn-wrapper animated">
-                                            <a href="#" class="theme-btn-1 btn btn-effect-1">Buy now & Get 10% OFF</a>
-                                            <a href="#" class="theme-btn-2 btn btn-effect-2">Order your free sample</a>
-                                        </div>
-                                        <div class="btn-wrapper animated">
-                                            <a href="#" class="btn btn-effect-1">Damage free guarantee</a>
-                                            <a href="#" class="btn btn-effect-2">Next day delivery available</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slide-item-img">
-                                    <img src="{{ asset('assets/img/tiles/7.jpg') }}" alt="#">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="ltn__slide-item ltn__slide-item-2 ltn__slide-item-3-normal ltn__slide-item-3 ltn__slide-item-11">
-                <div class="ltn__slide-item-inner">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12 align-self-center">
-                                <div class="slide-item-info">
-                                    <div class="slide-item-info-inner ltn__slide-animation">
-                                        <div class="slide-video mb-50 d-none">
-                                            <a class="ltn__video-icon-2 ltn__video-icon-2-border" href="https://www.youtube.com/embed/tlThdr3O5Qo" data-rel="lightcase:myCollection">
-                                                <i class="fa fa-play"></i>
-                                            </a>
-                                        </div>
-                                        <h6 class="slide-sub-title white-color--- animated"><span><i class="fas fa-home"></i></span> BUY TILES ONLINE</h6>
-                                        <h1 class="slide-title animated "><span>Best</span> of both worlds</h1>
-                                        <div class="slide-brief animated">
-                                            <p>The Best-Selling tile in UK. Guaranteed on-time, damage free delivery</p>
-                                        </div>
-                                        <div class="btn-wrapper animated">
-                                            <a href="#" class="theme-btn-1 btn btn-effect-1">Buy now & Get 10% OFF</a>
-                                            <a href="#" class="theme-btn-2 btn btn-effect-2">Order your free sample</a>
-                                        </div>
-                                        <div class="btn-wrapper animated">
-                                            <a href="#" class="btn btn-effect-1">Damage free guarantee</a>
-                                            <a href="#" class="btn btn-effect-2">Next day delivery available</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slide-item-img">
-                                    <img src="{{ asset('assets/img/tiles/6.jpg') }}" alt="#">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="ltn__slide-item ltn__slide-item-2 ltn__slide-item-3-normal ltn__slide-item-3 ltn__slide-item-11">
-                <div class="ltn__slide-item-inner">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12 align-self-center">
-                                <div class="slide-item-info">
-                                    <div class="slide-item-info-inner ltn__slide-animation">
-                                        <div class="slide-video mb-50 d-none">
-                                            <a class="ltn__video-icon-2 ltn__video-icon-2-border" href="https://www.youtube.com/embed/tlThdr3O5Qo" data-rel="lightcase:myCollection">
-                                                <i class="fa fa-play"></i>
-                                            </a>
-                                        </div>
-                                        <h6 class="slide-sub-title white-color--- animated"><span><i class="fas fa-home"></i></span> BUY TILES ONLINE</h6>
-                                        <h1 class="slide-title animated "><span>Best</span> of both worlds</h1>
-                                        <div class="slide-brief animated">
-                                            <p>The Best-Selling tile in UK. Guaranteed on-time, damage free delivery</p>
-                                        </div>
-                                        <div class="btn-wrapper animated">
-                                            <a href="#" class="theme-btn-1 btn btn-effect-1">Buy now & Get 10% OFF</a>
-                                            <a href="#" class="theme-btn-2 btn btn-effect-2">Order your free sample</a>
-                                        </div>
-                                        <div class="btn-wrapper animated">
-                                            <a href="#" class="btn btn-effect-1">Damage free guarantee</a>
-                                            <a href="#" class="btn btn-effect-2">Next day delivery available</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slide-item-img">
-                                    <img src="{{ asset('assets/img/tiles/5.jpg') }}" alt="#">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <!-- slider-4-pagination -->
         <div class="ltn__slider-11-pagination-count">
             <span class="count"></span>
             <span class="total"></span>
         </div>
-        <!-- slider-sticky-icon -->
-        <div class="slider-sticky-icon-2">
-            <ul>
-                <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#" title="Linkedin"><i class="fab fa-linkedin"></i></a></li>
-            </ul>
-        </div>
-        <!-- slider-4-img-slide-arrow -->
+        
         <div class="ltn__slider-11-img-slide-arrow">
             <div class="ltn__slider-11-img-slide-arrow-inner">
                 <div class="ltn__slider-11-img-slide-arrow-active">
                     <div class="image-slide-item">
                         <img src="{{ asset('assets/img/tiles/4 (1).jpg') }}" alt="Flower Image">
-                    </div>
-                    <div class="image-slide-item">
-                        <img src="{{ asset('assets/img/tiles/8.jpg') }}" alt="Flower Image">
-                    </div>
-                    <div class="image-slide-item">
-                        <img src="{{ asset('assets/img/tiles/7.jpg') }}" alt="Flower Image">
-                    </div>
-                    <div class="image-slide-item">
-                        <img src="{{ asset('assets/img/tiles/6.jpg') }}" alt="Flower Image">
-                    </div>
-                    <div class="image-slide-item">
-                        <img src="{{ asset('assets/img/tiles/5.jpg') }}" alt="Flower Image">
                     </div>
                 </div>
                 <!-- slider-4-slide-item-count -->
@@ -604,6 +444,50 @@
                     </div>
                 </div>
             </div>--}}
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="kitchenModal" tabindex="-1" aria-labelledby="kitchenModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            
+            <div class="modal-header">
+                <button type="button" class="btn-close p-3" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="p-4 rounded bg-white">
+                    <form method="POST" action="{{ route('contact_us_inquiry') }}">
+                        @csrf
+
+                        <input type="text" class="form-control mb-3" placeholder="Name" name="name" required>
+                        <input type="email" class="form-control mb-3" placeholder="Email" name="email" required>
+                        <input type="number" class="form-control mb-3" placeholder="Phone" name="phone" required>
+                        <input type="number" class="form-control mb-3" placeholder="Postcode" name="postcode" required>
+
+                        <div class="input-item">
+                            <select class="nice-select w-100 mb-3" name="message" required>
+                                <option>Select Kitchen Type</option>
+                                <option>J Pull Kitchen</option>
+                                <option>Shaker Kitchen</option>
+                                <option>Slab Edged Kitchen</option>
+                                <option>True Handleless Kitchen</option>
+                                <option>J Pull 22mm Kitchen</option>
+                                <option>Shaker 22mm Kitchen</option>
+                                <option>Slab Painted Kitchen</option>
+                                <option>True Handleless Painted Kitchen</option>
+                                <option>Budget Kitchen</option>
+                            </select>
+                        </div>
+
+                        <button class="btn btn-dark w-100" type="submit">
+                            Start Designing My Dream Kitchen
+                        </button>
+                    </form>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

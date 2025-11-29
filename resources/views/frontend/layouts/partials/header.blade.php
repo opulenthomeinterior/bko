@@ -1,7 +1,7 @@
 @section('styles')
 @endsection
 <!-- HEADER AREA START (header-5) -->
-    <header class="ltn__header-area ltn__header-5 section-bg-1 ltn__header-transparent--- gradient-color-4--- mb-4">
+    <header class="ltn__header-area ltn__header-5 section-bg-1 ltn__header-transparent--- gradient-color-4---">
         
         <!-- ltn__header-middle-area start -->
         <div class="ltn__header-middle-area ltn__header-sticky ltn__sticky-bg-white">
