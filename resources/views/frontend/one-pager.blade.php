@@ -282,7 +282,7 @@
             <div class="col-lg-4 col-sm-6 col-12">
                 <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
                     <div class="ltn__feature-info">
-                        <h3 class="animated fadeIn"><a href="service-details.html">The Delivery Cat, Delay Trap</a></h3>
+                        <h3 class="animated fadeIn"><a href="#">The Delivery Cat, Delay Trap</a></h3>
                         <p>Forget the 5months wait. We deliver accurate orders on a schedule you trust.</p>
                     </div>
                 </div>
@@ -290,7 +290,7 @@
             <div class="col-lg-4 col-sm-6 col-12">
                 <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
                     <div class="ltn__feature-info">
-                        <h3 class="animated fadeIn"><a href="service-details.html">The Upfront Payment Trap</a></h3>
+                        <h3 class="animated fadeIn"><a href="#">The Upfront Payment Trap</a></h3>
                         <p>Pay for perfection, not promises. Never pay full price until your kitchen is confirmed, delivered and checked.</p>
                     </div>
                 </div>
@@ -298,7 +298,7 @@
             <div class="col-lg-4 col-sm-6 col-12">
                 <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
                     <div class="ltn__feature-info">
-                        <h3 class="animated fadeIn"><a href="service-details.html">No hidden fees ever</a></h3>
+                        <h3 class="animated fadeIn"><a href="#">No hidden fees ever</a></h3>
                         <p>Transparent pricing from design to delivery. The quote you receive is the final price - no fraudulent "upgrade" charges.</p>
                     </div>
                 </div>
@@ -323,49 +323,49 @@
                     <div class="col-lg-6 slick-slide slick-current slick-active" data-slick-index="2" aria-hidden="false" style="width: 400px;" tabindex="-1" role="option" aria-describedby="slick-slide42">
                         <div class="ltn__search-by-place-item">
                             <div class="search-by-place-info">
-                                <h4><a href="product-details.html" tabindex="0">J-Pull</a></h4>
+                                <h4><a href="#" tabindex="0">J-Pull</a></h4>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 slick-slide slick-current slick-active" data-slick-index="2" aria-hidden="false" style="width: 400px;" tabindex="-1" role="option" aria-describedby="slick-slide42">
                         <div class="ltn__search-by-place-item">
                             <div class="search-by-place-info">
-                                <h4><a href="product-details.html" tabindex="0">J-Pull</a></h4>
+                                <h4><a href="#" tabindex="0">J-Pull</a></h4>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 slick-slide slick-current slick-active" data-slick-index="2" aria-hidden="false" style="width: 400px;" tabindex="-1" role="option" aria-describedby="slick-slide42">
                         <div class="ltn__search-by-place-item">
                             <div class="search-by-place-info">
-                                <h4><a href="product-details.html" tabindex="0">J-Pull</a></h4>
+                                <h4><a href="#" tabindex="0">J-Pull</a></h4>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 slick-slide slick-current slick-active" data-slick-index="2" aria-hidden="false" style="width: 400px;" tabindex="-1" role="option" aria-describedby="slick-slide42">
                         <div class="ltn__search-by-place-item">
                             <div class="search-by-place-info">
-                                <h4><a href="product-details.html" tabindex="0">J-Pull</a></h4>
+                                <h4><a href="#" tabindex="0">J-Pull</a></h4>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 slick-slide slick-current slick-active" data-slick-index="2" aria-hidden="false" style="width: 400px;" tabindex="-1" role="option" aria-describedby="slick-slide42">
                         <div class="ltn__search-by-place-item">
                             <div class="search-by-place-info">
-                                <h4><a href="product-details.html" tabindex="0">J-Pull</a></h4>
+                                <h4><a href="#" tabindex="0">J-Pull</a></h4>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 slick-slide slick-current slick-active" data-slick-index="2" aria-hidden="false" style="width: 400px;" tabindex="-1" role="option" aria-describedby="slick-slide42">
                         <div class="ltn__search-by-place-item">
                             <div class="search-by-place-info">
-                                <h4><a href="product-details.html" tabindex="0">Delivery was exactly on schedule</a></h4>
+                                <h4><a href="#" tabindex="0">Delivery was exactly on schedule</a></h4>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 slick-slide slick-current slick-active" data-slick-index="2" aria-hidden="false" style="width: 400px;" tabindex="-1" role="option" aria-describedby="slick-slide42">
                         <div class="ltn__search-by-place-item">
                             <div class="search-by-place-info">
-                                <h4><a href="product-details.html" tabindex="0">Communication was fantastic</a></h4>
+                                <h4><a href="#" tabindex="0">Communication was fantastic</a></h4>
                             </div>
                         </div>
                     </div>

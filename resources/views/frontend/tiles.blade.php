@@ -101,7 +101,7 @@
                         <img src="{{asset('assets/img/tiles/guarantee.jpg')}}" height="100px" alt="#">
                     </div>
                     <div class="ltn__feature-info">
-                        <h3 class="animated fadeIn"><a href="service-details.html">Zero damage guarantee</a></h3>
+                        <h3 class="animated fadeIn"><a href="#">Zero damage guarantee</a></h3>
                         <p>Lorem ipsum dolor sit amet.</p>
                     </div>
                 </div>
@@ -113,7 +113,7 @@
                         <img src="{{asset('assets/img/tiles/on_time.jpg')}}" height="100px" alt="#">
                     </div>
                     <div class="ltn__feature-info">
-                        <h3 class="animated fadeIn"><a href="service-details.html">On Time, Every Time</a></h3>
+                        <h3 class="animated fadeIn"><a href="#">On Time, Every Time</a></h3>
                         <p>Choose your delivery slot and get live tracking updates</p>
                     </div>
                 </div>
@@ -125,7 +125,7 @@
                         <img src="{{asset('assets/img/tiles/expert.png')}}" height="100px" alt="#">
                     </div>
                     <div class="ltn__feature-info">
-                        <h3 class="animated fadeIn"><a href="service-details.html">Expert Help</a></h3>
+                        <h3 class="animated fadeIn"><a href="#">Expert Help</a></h3>
                         <p>Real tiles experts</p>
                     </div>
                 </div>
@@ -147,17 +147,17 @@
                     </div>
                     <ul class="ltn__list-item-2 ltn__list-item-2-before--- ltn__list-item-2-img mb-50 d-flex justify-content-center">
                         <li>
-                            <a href="{{ asset('assets/img/tiles/5.jpg') }}" data-rel="lightcase:myCollection">
+                            <a href="#" data-rel="lightcase:myCollection">
                                 <img src="{{ asset('assets/img/tiles/5.jpg') }}" alt="Image">
                             </a>
                         </li>
                         <li>
-                            <a href="{{ asset('assets/img/tiles/5.jpg') }}" data-rel="lightcase:myCollection">
+                            <a href="#" data-rel="lightcase:myCollection">
                                 <img src="{{ asset('assets/img/tiles/5.jpg') }}" alt="Image">
                             </a>
                         </li>
                         <li>
-                            <a href="{{ asset('assets/img/tiles/5.jpg') }}" data-rel="lightcase:myCollection">
+                            <a href="#" data-rel="lightcase:myCollection">
                                 <img src="{{ asset('assets/img/tiles/5.jpg') }}" alt="Image">
                             </a>
                         </li>
