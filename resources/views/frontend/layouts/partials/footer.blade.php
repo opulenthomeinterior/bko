@@ -1,16 +1,34 @@
+
+<div class="ltn__call-to-action-area call-to-action-6 before-bg-bottom" data-bs-bg="img/1.jpg--">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="call-to-action-inner call-to-action-inner-6 ltn__secondary-bg position-relative text-center---">
+                    <div class="coll-to-info text-color-white">
+                        <h1>Ready for a kitchen experience that isn't a Disaster?</h1>
+                    </div>
+                    <div class="btn-wrapper">
+                        <a class="btn btn-effect-3 btn-white" href="#">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- FOOTER AREA START -->
-<footer class="ltn__footer-area  ">
-    <div class="footer-top-area  section-bg-2 plr--5">
-        <div class="container-fluid">
+<footer class="ltn__footer-area ">
+    <div class="section-bg-2 plr--5">
+        <div class="container">
             <div class="row">
-                <div class="col-xl-3 col-md-6 col-sm-6 col-12">
+                <div class="col-xl-6 col-md-6 col-sm-6 col-12 mt-4">
                     <div class="footer-widget footer-about-widget">
                         <div class="footer-logo">
                             <div class="site-logo">
-                                <img src="{{ asset('assets/img/icons/logoBko.png') }}" height="60px" width="120px" style="background-color: white; padding: 5px" alt="Logo">
+                                <img src="https://bkonline.uk/public/images/bko-white-logo.png" height="200px" width="200px" alt="Logo">
                             </div>
                         </div>
-                        <p>Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.</p>
+                        <small class="text-white">Opulent home interiors operating as Buy Kitchen Online.</small>
                         <div class="footer-address">
                             <ul>
                                 <li>
@@ -18,7 +36,7 @@
                                         <i class="icon-placeholder"></i>
                                     </div>
                                     <div class="footer-address-info">
-                                        <p>Brooklyn, New York, United States</p>
+                                        <p>44 Gillender St, Aberfeldy Village, London E14 6RP, United Kingdom</p>
                                     </div>
                                 </li>
                                 <li>
@@ -26,7 +44,7 @@
                                         <i class="icon-call"></i>
                                     </div>
                                     <div class="footer-address-info">
-                                        <p><a href="tel:+0123-456789">+0123-456789</a></p>
+                                        <p><a href="tel:020 805 05605">020 805 05605</a></p>
                                     </div>
                                 </li>
                                 <li>
@@ -34,37 +52,33 @@
                                         <i class="icon-mail"></i>
                                     </div>
                                     <div class="footer-address-info">
-                                        <p><a href="mailto:example@example.com">example@example.com</a></p>
+                                        <p><a href="mailto:admin@bkonline.uk">admin@bkonline.uk</a></p>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                         <div class="ltn__social-media mt-20">
                             <ul>
-                                <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#" title="Linkedin"><i class="fab fa-linkedin"></i></a></li>
-                                <li><a href="#" title="Youtube"><i class="fab fa-youtube"></i></a></li>
+                                <li><a href="https://www.facebook.com/opulenthomeinteriorsltd" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://www.instagram.com/bkonline__kitchen" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="https://uk.pinterest.com/bkonline570" title="Pinterest"><i class="fab fa-pinterest"></i></a></li>
+                                <li><a href="https://www.youtube.com/@opulenthomeinteriors5595" title="Youtube"><i class="fab fa-youtube"></i></a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-2 col-md-6 col-sm-6 col-12">
+                <!-- <div class="col-xl-2 col-md-6 col-sm-6 col-12">
                     <div class="footer-widget footer-menu-widget clearfix">
                         <h4 class="footer-title">Company</h4>
                         <div class="footer-menu">
                             <ul>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="blog.html">Blog</a></li>
-                                <li><a href="shop.html">All Products</a></li>
-                                <li><a href="locations.html">Locations Map</a></li>
-                                <li><a href="faq.html">FAQ</a></li>
-                                <li><a href="contact.html">Contact us</a></li>
+                                <li><a href="https://bkonline.uk/site-pages/cookies-policy">Cookies Policy</a></li>
+                                <li><a href="https://bkonline.uk/site-pages/privacy-policy">Privacy Policy</a></li>
                             </ul>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-2 col-md-6 col-sm-6 col-12">
+                </div> -->
+                <!-- <div class="col-xl-2 col-md-6 col-sm-6 col-12">
                     <div class="footer-widget footer-menu-widget clearfix">
                         <h4 class="footer-title">Services</h4>
                         <div class="footer-menu">
@@ -78,8 +92,8 @@
                             </ul>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-2 col-md-6 col-sm-6 col-12">
+                </div> -->
+                <!-- <div class="col-xl-2 col-md-6 col-sm-6 col-12">
                     <div class="footer-widget footer-menu-widget clearfix">
                         <h4 class="footer-title">Customer Care</h4>
                         <div class="footer-menu">
@@ -93,10 +107,10 @@
                             </ul>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-3 col-md-6 col-sm-12 col-12">
+                </div> -->
+                <div class="col-xl-6 col-md-6 col-sm-12 col-12 d-flex justify-content-end mt-4">
                     <div class="footer-widget footer-newsletter-widget">
-                        <h4 class="footer-title">Newsletter</h4>
+                        <!-- <h4 class="footer-title">Newsletter</h4>
                         <p>Subscribe to our weekly Newsletter and receive updates via email.</p>
                         <div class="footer-newsletter">
                             <form action="#">
@@ -105,7 +119,7 @@
                                     <button class="theme-btn-1 btn" type="submit"><i class="fas fa-location-arrow"></i></button>
                                 </div>
                             </form>
-                        </div>
+                        </div> -->
                         <h5 class="mt-30">We Accept</h5>
                         <img src="{{ asset('assets/img/icons/payment-4.png') }}" alt="Payment Image">
                     </div>
@@ -114,7 +128,7 @@
         </div>
     </div>
     <div class="ltn__copyright-area ltn__copyright-2 section-bg-7  plr--5">
-        <div class="container-fluid ltn__border-top-2">
+        <div class="container ltn__border-top-2">
             <div class="row">
                 <div class="col-md-6 col-12">
                     <div class="ltn__copyright-design clearfix">
@@ -124,9 +138,8 @@
                 <div class="col-md-6 col-12 align-self-center">
                     <div class="ltn__copyright-menu text-end">
                         <ul>
-                            <li><a href="#">Terms & Conditions</a></li>
-                            <li><a href="#">Claim</a></li>
-                            <li><a href="#">Privacy & Policy</a></li>
+                            <li><a href="https://bkonline.uk/site-pages/cookies-policy">Cookies Policy</a></li>
+                            <li><a href="https://bkonline.uk/site-pages/privacy-policy">Privacy & Policy</a></li>
                         </ul>
                     </div>
                 </div>
