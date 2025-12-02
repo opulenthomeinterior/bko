@@ -98,6 +98,10 @@
             display: flex;
         }
     }
+    .card small {
+        display: block;
+        width: 100%;
+    }
     
 </style>
 @endsection
@@ -132,13 +136,13 @@
                     <div id="simpleSlider" class="carousel slide mb-4" data-bs-ride="carousel">
 
                         <div class="carousel-inner">
-                            <div class="carousel-item active" style="max-height: 280px;">
+                            <div class="carousel-item active" style="max-height: 350px;">
                                 <img src="{{asset('images/shaker-22.jpeg')}}" class="d-block w-100" alt="Slide 1">
                             </div>
-                            <div class="carousel-item" style="max-height: 280px;">
+                            <div class="carousel-item" style="max-height: 350px;">
                                 <img src="{{asset('images/True-Handleless-SuperGloss-Graphite.jpg')}}" class="d-block w-100" alt="Slide 2">
                             </div>
-                            <div class="carousel-item" style="max-height: 280px;">
+                            <div class="carousel-item" style="max-height: 350px;">
                                 <img src="{{asset('images/slab.jpeg')}}" class="d-block w-100" alt="Slide 3">
                             </div>
                         </div>
@@ -166,50 +170,50 @@
                         <!-- gallery-item -->
                         <div class="ltn__gallery-item filter_category_3 col-lg-3 col-sm-3 col-3">
                             <div class="ltn__gallery-item-inner">
-                                <div class="ltn__gallery-item-img">
-                                    <a href="#" data-rel="lightcase:myCollection">
+                                <div class="ltn__gallery-item">
+                                    <span data-rel="lightcase:myCollection">
                                         <img src="{{asset('imgs/styles/06_06_2025_104957_6842c7d5c26f5-j-pull(1).png')}}" alt="Image">
-                                    </a>
+                                    </span>
                                 </div>
-                                <div class="ltn__gallery-item-info">
+                                <!-- <div class="ltn__gallery-item-info">
                                     <h4><a href="portfolio-details.html">J Pull </a></h4>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <div class="ltn__gallery-item filter_category_3 col-lg-3 col-sm-3 col-3">
                             <div class="ltn__gallery-item-inner">
-                                <div class="ltn__gallery-item-img">
-                                    <a href="#" data-rel="lightcase:myCollection">
+                                <div class="ltn__gallery-item">
+                                    <span data-rel="lightcase:myCollection">
                                         <img src="{{asset('imgs/styles/04_05_2025_063206_681709e62cd48-shaker(1).png')}}" alt="Image">
-                                    </a>
+                                    </span>
                                 </div>
-                                <div class="ltn__gallery-item-info">
+                                <!-- <div class="ltn__gallery-item-info">
                                     <h4><a href="portfolio-details.html">Shaker </a></h4>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <div class="ltn__gallery-item filter_category_3 col-lg-3 col-sm-3 col-3">
                             <div class="ltn__gallery-item-inner">
-                                <div class="ltn__gallery-item-img">
-                                    <a href="#" data-rel="lightcase:myCollection">
+                                <div class="ltn__gallery-item">
+                                    <span data-rel="lightcase:myCollection">
                                         <img src="{{asset('imgs/styles/04_05_2025_063345_68170a490b56f-slabedge(2).png')}}" alt="Image">
-                                    </a>
+                                    </span>
                                 </div>
-                                <div class="ltn__gallery-item-info">
+                                <!-- <div class="ltn__gallery-item-info">
                                     <h4><a href="portfolio-details.html">Slab Edged </a></h4>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <div class="ltn__gallery-item filter_category_3 col-lg-3 col-sm-3 col-3">
                             <div class="ltn__gallery-item-inner">
-                                <div class="ltn__gallery-item-img">
-                                    <a href="#" data-rel="lightcase:myCollection">
+                                <div class="ltn__gallery-item">
+                                    <span data-rel="lightcase:myCollection">
                                         <img src="{{asset('imgs/styles/04_05_2025_063653_68170b053487d-budgetkitchen.png')}}" alt="Image">
-                                    </a>
+                                    </span>
                                 </div>
-                                <div class="ltn__gallery-item-info">
+                                <!-- <div class="ltn__gallery-item-info">
                                     <h4><a href="portfolio-details.html">Budget Kitchen </a></h4>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -274,18 +278,42 @@
                     <div class="row">
                         <!-- Image 1 (always shown) -->
                         <div class="col-12 col-sm-6 col-md-4">
-                            <img src="{{asset('imgs/styles/04_05_2025_063854_68170b7e97ee8-truehandlelesspainted.png')}}" class="d-block w-100" alt="">
+                            <div class="card">
+                                <img src="{{asset('imgs/styles/06_06_2025_104957_6842c7d5c26f5-j-pull(1).png')}}" class="d-block w-100" alt="">
+                                <div class="px-2 text-center mt-2">
+                                    <h6 class="text-decoration-underline">J Pull Kitchen</h6>
+                                    <p class="text-start px-2">Modern, smooth, and minimalist with an integrated handle groove for effortless opening. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="card">
+                                <img src="{{asset('imgs/styles/04_05_2025_063206_681709e62cd48-shaker(1).png')}}" class="d-block w-100" alt="">
+                                <div class="px-2 text-center mt-2">
+                                    <h6 class="text-decoration-underline">Shaker Kitchen </h6>
+                                    <p class="text-start px-2">Classic framed elegance with modern durability, forever stylish. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="card">
+                                <img src="{{asset('imgs/styles/04_05_2025_063345_68170a490b56f-slabedge(2).png')}}" class="d-block w-100" alt="">
+                                <div class="px-2 text-center mt-2">
+                                    <h6 class="text-decoration-underline">Slab Edged Kitchen </h6>
+                                    <p class="text-start px-2">Flat, clean, contemporary doors for a bold, streamlined look. </p>
+                                </div>
+                            </div>
                         </div>
 
                         <!-- Image 2 (hidden on mobile) -->
-                        <div class="col-12 col-sm-6 col-md-4 d-none d-sm-block">
+                        <!-- <div class="col-12 col-sm-6 col-md-4 d-none d-sm-block">
                             <img src="{{asset('imgs/styles/31_05_2025_102009_683ad7d95310c-j-pull22.png')}}" class="d-block w-100" alt="">
-                        </div>
+                        </div> -->
 
                         <!-- Image 3 (hidden on mobile + tablet) -->
-                        <div class="col-12 col-md-4 d-none d-md-block">
+                        <!-- <div class="col-12 col-md-4 d-none d-md-block">
                             <img src="{{asset('imgs/styles/04_05_2025_063253_68170a1592a60-shaker22(1).png')}}" class="d-block w-100" alt="">
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
@@ -293,13 +321,31 @@
                 <div class="carousel-item">
                     <div class="row">
                         <div class="col-12 col-sm-6 col-md-4">
-                            <img src="{{asset('imgs/styles/04_05_2025_063253_68170a1592a60-shaker22(1).png')}}" class="d-block w-100" alt="">
+                            <div class="card">
+                                <img src="{{asset('imgs/styles/04_05_2025_063809_68170b51b771f-truhandleless(1).png')}}" class="d-block w-100" alt="">
+                                <div class="px-2 text-center mt-2">
+                                    <h6 class="text-decoration-underline">True Handleless Kitchen </h6>
+                                    <p class="text-start px-2">A continuous rail system for a pure, uninterrupted modern design. </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-12 col-sm-6 col-md-4 d-none d-sm-block">
-                            <img src="{{asset('imgs/styles/04_05_2025_063854_68170b7e97ee8-truehandlelesspainted.png')}}" class="d-block w-100" alt="">
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="card">
+                                <img src="{{asset('imgs/styles/31_05_2025_102009_683ad7d95310c-j-pull22.png')}}" class="d-block w-100" alt="">
+                                <div class="px-2 text-center mt-2">
+                                    <h6 class="text-decoration-underline">J Pull 22mm Kitchen </h6>
+                                    <p class="text-start px-2">A premium, thicker and more robust version of our classic J Pull range. </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-12 col-md-4 d-none d-md-block">
-                            <img src="{{asset('imgs/styles/31_05_2025_102009_683ad7d95310c-j-pull22.png')}}" class="d-block w-100" alt="">
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="card">
+                                <img src="{{asset('imgs/styles/04_05_2025_063253_68170a1592a60-shaker22(1).png')}}" class="d-block w-100" alt="">
+                                <div class="px-2 text-center mt-2">
+                                    <h6 class="text-decoration-underline">Shaker 22mm Kitchen </h6>
+                                    <p class="text-start px-2">Heavy-duty craftsmanship with elegant design and premium finishes. </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -308,13 +354,31 @@
                 <div class="carousel-item">
                     <div class="row">
                         <div class="col-12 col-sm-6 col-md-4">
-                            <img src="{{asset('imgs/styles/04_05_2025_063253_68170a1592a60-shaker22(1).png')}}" class="d-block w-100" alt="">
+                            <div class="card">
+                                <img src="{{asset('imgs/styles/04_05_2025_063733_68170b2d90a9e-slabedgepainted(1).png')}}" class="d-block w-100" alt="">
+                                <div class="px-2 text-center mt-2">
+                                    <h6 class="text-decoration-underline">Slab Painted Kitchen </h6>
+                                    <p class="text-start px-2">Smooth painted slab doors perfect for bespoke, high-end looks. </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-12 col-sm-6 col-md-4 d-none d-sm-block">
-                            <img src="{{asset('imgs/styles/31_05_2025_102009_683ad7d95310c-j-pull22.png')}}" class="d-block w-100" alt="">
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="card">
+                                <img src="{{asset('imgs/styles/04_05_2025_063854_68170b7e97ee8-truehandlelesspainted.png')}}" class="d-block w-100" alt="">
+                                <div class="px-2 text-center mt-2">
+                                    <h6 class="text-decoration-underline">True Handleless Painted Kitchen </h6>
+                                    <p class="text-start px-2">A luxury painted handleless design for premium contemporary homes. </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-12 col-md-4 d-none d-md-block">
-                            <img src="{{asset('imgs/styles/04_05_2025_063854_68170b7e97ee8-truehandlelesspainted.png')}}" class="d-block w-100" alt="">
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="card">
+                                <img src="{{asset('imgs/styles/04_05_2025_063653_68170b053487d-budgetkitchen.png')}}" class="d-block w-100" alt="">
+                                <div class="px-2 text-center mt-2">
+                                    <h6 class="text-decoration-underline">Budget Kitchen Collection </h6>
+                                    <p class="text-start px-2">Durable, stylish, and cost-effective, perfect for rentals, flips, and project kitchens. </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -349,7 +413,7 @@
                         <i class="bi bi-truck fs-1 text-warning"></i>
                     </div>
                     <div class="ltn__feature-info">
-                        <h3><a href="#">The Delivery Cat, Delay Trap</a></h3>
+                        <h3>The Delivery Cat, Delay Trap</h3>
                         <p>Forget the 5 months wait. We deliver accurate orders on a schedule you trust.</p>
                     </div>
                 </div>
@@ -362,7 +426,7 @@
                         <i class="bi bi-credit-card fs-1 text-warning"></i>
                     </div>
                     <div class="ltn__feature-info">
-                        <h3><a href="#">The Upfront Payment Trap</a></h3>
+                        <h3>The Upfront Payment Trap</h3>
                         <p>Pay for perfection, not promises. Never pay full price until your kitchen is confirmed, delivered and checked.</p>
                     </div>
                 </div>
@@ -375,7 +439,7 @@
                         <i class="bi bi-shield-check fs-1 text-warning"></i>
                     </div>
                     <div class="ltn__feature-info">
-                        <h3><a href="#">No hidden fees ever</a></h3>
+                        <h3>No hidden fees ever</h3>
                         <p>Transparent pricing from design to delivery. The quote you receive is the final price — no fraudulent "upgrade" charges.</p>
                     </div>
                 </div>
@@ -385,71 +449,109 @@
 </div>
 
 
-<div class="ltn__testimonial-area section-bg-1 bg-image-top pt-115 pb-65 mb-5" id="testimonials-section" data-bs-bg="https://tunatheme.com/tf/html/quarter-preview/quarter/img/bg/23.jpg" style="background-image: url(https://tunatheme.com/tf/html/quarter-preview/quarter/img/bg/23.jpg);">
+<div class="ltn__feature-area section-bg-1 pt-60 pb-60 mb-60" id="testimonials-section">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="section-title-area ltn__section-title-2--- text-center---">
-                    <h1 class="section-title white-color">Don't just take our word for it...</h1>
+                <div class="section-title-area ltn__section-title-2--- text-center">
+                    <h1 class="section-title">Don't just take our word for it... </h1>
                 </div>
             </div>
         </div>
-        <div class="row ltn__testimonial-slider-6-active slick-arrow-3 slick-initialized slick-slider">
-            <a class="slick-prev slick-arrow" style="" data-bs-target="#multiImageSlider2" data-bs-slide="prev">
-                <i class="fas fa-arrow-left" alt="Arrow Icon"></i>
-            </a>
-            
-            <a class="slick-next slick-arrow" style="" data-bs-target="#multiImageSlider2" data-bs-slide="next">
-                <i class="fas fa-arrow-right" alt="Arrow Icon"></i>
-            </a>
-        </div>
-        
-        <div id="multiImageSlider2" class="carousel slide mt-4" data-bs-ride="carousel">
+        <div id="multiImageSlider2" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
 
                 <!-- Slide 1 -->
                 <div class="carousel-item active">
                     <div class="row">
-                        <div class="col-12 col-sm-6 col-md-6">
-                            <div class="ltn__testimonial-item ltn__testimonial-item-7 ltn__testimonial-item-8">
-                                <div class="ltn__testimoni-info">
-                                    <div class="ltn__testimoni-author-ratting">
-                                        <div class="ltn__testimoni-info-inner">
-                                            <div class="ltn__testimoni-img">
-                                                <img src="img/testimonial/1.jpg" alt="#">
-                                            </div>
-                                            <div class="ltn__testimoni-name-designation">
-                                                <h5>Jacob William</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p> 
-                                        Delivery was exactly on schedule</p>
+                         <div class="col-4 col-md-4">
+                            <div class="card py-2">
+                                <div class="text-center">
+                                    <!-- user icon-->
+                                    <i class="fa fa-user"></i>
+                                </div>
+                                <div class="px-2 text-center mt-2">
+                                    <h6 class="text-decoration-underline">William</h6>
+                                    <small class="">Amazing quality, transformed my home beautifully.</small>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-6 col-md-6">
-                            <div class="ltn__testimonial-item ltn__testimonial-item-7 ltn__testimonial-item-8">
-                                <div class="ltn__testimoni-info">
-                                    <div class="ltn__testimoni-author-ratting">
-                                        <div class="ltn__testimoni-info-inner">
-                                            <div class="ltn__testimoni-img">
-                                                <img src="img/testimonial/1.jpg" alt="#">
-                                            </div>
-                                            <div class="ltn__testimoni-name-designation">
-                                                <h5>Michael Smith</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p> 
-                                        Communication was fantastic</p>
+                         <div class="col-4 col-md-4">
+                            <div class="card py-2">
+                                <div class="text-center">
+                                    <!-- user icon-->
+                                    <i class="fa fa-user"></i>
+                                </div>
+                                <div class="px-2 text-center mt-2">
+                                    <h6 class="text-decoration-underline">James</h6>
+                                    <small class="">Elegant designs that perfectly fit my space.</small>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-4 col-md-4">
+                            <div class="card py-2">
+                                <div class="text-center">
+                                    <!-- user icon-->
+                                    <i class="fa fa-user"></i>
+                                </div>
+                                <div class="px-2 text-center mt-2">
+                                    <h6 class="text-decoration-underline">Harry</h6>
+                                    <small class="">Superb craftsmanship, exceeded all my expectations.</small>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="row">
+                         <div class="col-4 col-md-4">
+                            <div class="card py-2">
+                                <div class="text-center">
+                                    <!-- user icon-->
+                                    <i class="fa fa-user"></i>
+                                </div>
+                                <div class="px-2 text-center mt-2">
+                                    <h6 class="text-decoration-underline">Alfie</h6>
+                                    <small class="">Stylish, durable, and worth every penny.</small>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-4 col-md-4">
+                            <div class="card py-2">
+                                <div class="text-center">
+                                    <!-- user icon-->
+                                    <i class="fa fa-user"></i>
+                                </div>
+                                <div class="px-2 text-center mt-2">
+                                    <h6 class="text-decoration-underline">Thomas</h6>
+                                    <small class="">My kitchen finally looks modern and luxurious.</small>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-4 col-md-4">
+                            <div class="card py-2">
+                                <div class="text-center">
+                                    <!-- user icon-->
+                                    <i class="fa fa-user"></i>
+                                </div>
+                                <div class="px-2 text-center mt-2">
+                                    <h6 class="text-decoration-underline">Charlotte</h6>
+                                    <small class="">Brilliant service and stunning kitchen finish.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#multiImageSlider2" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#multiImageSlider2" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
         </div>
     </div>
 </div>

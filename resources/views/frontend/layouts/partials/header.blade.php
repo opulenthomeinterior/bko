@@ -18,7 +18,6 @@
                         <div class="ltn__top-bar-menu">
                             <ul>
                                 <li>
-                                    <!-- ltn__social-media -->
                                     <div class="ltn__social-media">
                                         <ul>
                                             <li><a href="https://www.facebook.com/opulenthomeinteriorsltd" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
