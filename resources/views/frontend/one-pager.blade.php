@@ -280,116 +280,116 @@
                 </div>
             </div>
         </div>
-<!-- Swiper HTML -->
-<div class="swiper mySwiper">
-  <div class="swiper-wrapper">
+        <!-- Swiper HTML -->
+        <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
 
-    <!-- Slide 1 -->
-    <div class="swiper-slide">
-      <div class="card p-2">
-        <img src="{{ asset('imgs/styles/06_06_2025_104957_6842c7d5c26f5-j-pull(1).png') }}" alt="J Pull Kitchen">
-        <div class="p-2 text-center">
-          <h6 class="mb-1">J Pull Kitchen</h6>
-          <small>Modern, smooth, minimalist handle groove.</small>
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+            <div class="card p-2">
+                <img src="{{ asset('imgs/styles/06_06_2025_104957_6842c7d5c26f5-j-pull(1).png') }}" alt="J Pull Kitchen">
+                <div class="p-2 text-center">
+                <h6 class="mb-1">J Pull Kitchen</h6>
+                <small>Modern, smooth, and minimalist with an integrated handle groove for effortless opening. </small>
+                </div>
+            </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+            <div class="card p-2">
+                <img src="{{ asset('imgs/styles/04_05_2025_063206_681709e62cd48-shaker(1).png') }}" alt="Shaker Kitchen">
+                <div class="p-2 text-center">
+                <h6 class="mb-1">Shaker Kitchen</h6>
+                <small>Classic framed elegance with modern durability, forever stylish. </small>
+                </div>
+            </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+            <div class="card p-2">
+                <img src="{{ asset('imgs/styles/04_05_2025_063345_68170a490b56f-slabedge(2).png') }}" alt="Slab Edged Kitchen">
+                <div class="p-2 text-center">
+                <h6 class="mb-1">Slab Edged Kitchen</h6>
+                <small>Flat, clean, contemporary doors for a bold, streamlined look. </small>
+                </div>
+            </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="swiper-slide">
+            <div class="card p-2">
+                <img src="{{ asset('imgs/styles/04_05_2025_063809_68170b51b771f-truhandleless(1).png') }}" alt="True Handleless">
+                <div class="p-2 text-center">
+                <h6 class="mb-1">True Handleless Kitchen</h6>
+                <small>A continuous rail system for a pure, uninterrupted modern design. </small>
+                </div>
+            </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="swiper-slide">
+            <div class="card p-2">
+                <img src="{{ asset('imgs/styles/31_05_2025_102009_683ad7d95310c-j-pull22.png') }}" alt="J Pull 22mm">
+                <div class="p-2 text-center">
+                <h6 class="mb-1">J Pull 22mm Kitchen</h6>
+                <small>A premium, thicker and more robust version of our classic J Pull range. </small>
+                </div>
+            </div>
+            </div>
+
+            <!-- Slide 6 -->
+            <div class="swiper-slide">
+            <div class="card p-2">
+                <img src="{{ asset('imgs/styles/04_05_2025_063253_68170a1592a60-shaker22(1).png') }}" alt="Shaker 22mm">
+                <div class="p-2 text-center">
+                <h6 class="mb-1">Shaker 22mm Kitchen</h6>
+                <small>Heavy-duty craftsmanship with elegant design and premium finishes. </small>
+                </div>
+            </div>
+            </div>
+
+            <!-- Slide 7 -->
+            <div class="swiper-slide">
+            <div class="card p-2">
+                <img src="{{ asset('imgs/styles/04_05_2025_063733_68170b2d90a9e-slabedgepainted(1).png') }}" alt="Slab Painted">
+                <div class="p-2 text-center">
+                <h6 class="mb-1">Slab Painted Kitchen</h6>
+                <small>Smooth painted slab doors perfect for bespoke, high-end looks. </small>
+                </div>
+            </div>
+            </div>
+
+            <!-- Slide 8 -->
+            <div class="swiper-slide">
+            <div class="card p-2">
+                <img src="{{ asset('imgs/styles/04_05_2025_063854_68170b7e97ee8-truehandlelesspainted.png') }}" alt="True Handleless Painted">
+                <div class="p-2 text-center">
+                <h6 class="mb-1">True Handleless Painted</h6>
+                <small>A luxury painted handleless design for premium contemporary homes. </small>
+                </div>
+            </div>
+            </div>
+
+            <!-- Slide 9 -->
+            <div class="swiper-slide">
+            <div class="card p-2">
+                <img src="{{ asset('imgs/styles/04_05_2025_063653_68170b053487d-budgetkitchen.png') }}" alt="Budget Kitchen">
+                <div class="p-2 text-center">
+                <h6 class="mb-1">Budget Kitchen Collection</h6>
+                <small>Durable, stylish, and cost-effective, perfect for rentals, flips, and project kitchens. </small>
+                </div>
+            </div>
+            </div>
+
         </div>
-      </div>
-    </div>
 
-    <!-- Slide 2 -->
-    <div class="swiper-slide">
-      <div class="card p-2">
-        <img src="{{ asset('imgs/styles/04_05_2025_063206_681709e62cd48-shaker(1).png') }}" alt="Shaker Kitchen">
-        <div class="p-2 text-center">
-          <h6 class="mb-1">Shaker Kitchen</h6>
-          <small>Classic framed elegance with modern durability.</small>
+        <!-- navigation & pagination (optional) -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <!-- <div class="swiper-pagination"></div> -->
         </div>
-      </div>
-    </div>
-
-    <!-- Slide 3 -->
-    <div class="swiper-slide">
-      <div class="card p-2">
-        <img src="{{ asset('imgs/styles/04_05_2025_063345_68170a490b56f-slabedge(2).png') }}" alt="Slab Edged Kitchen">
-        <div class="p-2 text-center">
-          <h6 class="mb-1">Slab Edged Kitchen</h6>
-          <small>Flat, clean, contemporary doors.</small>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slide 4 -->
-    <div class="swiper-slide">
-      <div class="card p-2">
-        <img src="{{ asset('imgs/styles/04_05_2025_063809_68170b51b771f-truhandleless(1).png') }}" alt="True Handleless">
-        <div class="p-2 text-center">
-          <h6 class="mb-1">True Handleless Kitchen</h6>
-          <small>Pure, uninterrupted modern design.</small>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slide 5 -->
-    <div class="swiper-slide">
-      <div class="card p-2">
-        <img src="{{ asset('imgs/styles/31_05_2025_102009_683ad7d95310c-j-pull22.png') }}" alt="J Pull 22mm">
-        <div class="p-2 text-center">
-          <h6 class="mb-1">J Pull 22mm Kitchen</h6>
-          <small>Thicker, premium J Pull range.</small>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slide 6 -->
-    <div class="swiper-slide">
-      <div class="card p-2">
-        <img src="{{ asset('imgs/styles/04_05_2025_063253_68170a1592a60-shaker22(1).png') }}" alt="Shaker 22mm">
-        <div class="p-2 text-center">
-          <h6 class="mb-1">Shaker 22mm Kitchen</h6>
-          <small>Heavy-duty craftsmanship, premium finish.</small>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slide 7 -->
-    <div class="swiper-slide">
-      <div class="card p-2">
-        <img src="{{ asset('imgs/styles/04_05_2025_063733_68170b2d90a9e-slabedgepainted(1).png') }}" alt="Slab Painted">
-        <div class="p-2 text-center">
-          <h6 class="mb-1">Slab Painted Kitchen</h6>
-          <small>High-end painted slab doors.</small>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slide 8 -->
-    <div class="swiper-slide">
-      <div class="card p-2">
-        <img src="{{ asset('imgs/styles/04_05_2025_063854_68170b7e97ee8-truehandlelesspainted.png') }}" alt="True Handleless Painted">
-        <div class="p-2 text-center">
-          <h6 class="mb-1">True Handleless Painted</h6>
-          <small>Luxury painted handleless design.</small>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slide 9 -->
-    <div class="swiper-slide">
-      <div class="card p-2">
-        <img src="{{ asset('imgs/styles/04_05_2025_063653_68170b053487d-budgetkitchen.png') }}" alt="Budget Kitchen">
-        <div class="p-2 text-center">
-          <h6 class="mb-1">Budget Kitchen Collection</h6>
-          <small>Durable, stylish, cost-effective.</small>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- navigation & pagination (optional) -->
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
-  <!-- <div class="swiper-pagination"></div> -->
-</div>
 
     </div>
 </div>
@@ -456,100 +456,94 @@
                 </div>
             </div>
         </div>
-        <div id="multiImageSlider2" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
+
+        <!-- Swiper HTML -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
 
                 <!-- Slide 1 -->
-                <div class="carousel-item active">
-                    <div class="row">
-                         <div class="col-4 col-md-4">
-                            <div class="card py-2">
-                                <div class="text-center">
-                                    <!-- user icon-->
-                                    <i class="fa fa-user"></i>
-                                </div>
-                                <div class="px-2 text-center mt-2">
-                                    <h6 class="text-decoration-underline">William</h6>
-                                    <small class="">Amazing quality, transformed my home beautifully.</small>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="col-4 col-md-4">
-                            <div class="card py-2">
-                                <div class="text-center">
-                                    <!-- user icon-->
-                                    <i class="fa fa-user"></i>
-                                </div>
-                                <div class="px-2 text-center mt-2">
-                                    <h6 class="text-decoration-underline">James</h6>
-                                    <small class="">Elegant designs that perfectly fit my space.</small>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="col-4 col-md-4">
-                            <div class="card py-2">
-                                <div class="text-center">
-                                    <!-- user icon-->
-                                    <i class="fa fa-user"></i>
-                                </div>
-                                <div class="px-2 text-center mt-2">
-                                    <h6 class="text-decoration-underline">Harry</h6>
-                                    <small class="">Superb craftsmanship, exceeded all my expectations.</small>
-                                </div>
-                            </div>
-                        </div>
+                <div class="swiper-slide">
+                <div class="card p-2">
+                    <div class="p-2 text-center">
+                        <i class="fa fa-user bg-light p-4 rounded-circle"></i>
+                    <h6 class="mb-1">Alfie</h6>
+                    <small>Stylish, durable, and worth every penny.</small>
                     </div>
                 </div>
+                </div>
+
                 <!-- Slide 2 -->
-                <div class="carousel-item">
-                    <div class="row">
-                         <div class="col-4 col-md-4">
-                            <div class="card py-2">
-                                <div class="text-center">
-                                    <!-- user icon-->
-                                    <i class="fa fa-user"></i>
-                                </div>
-                                <div class="px-2 text-center mt-2">
-                                    <h6 class="text-decoration-underline">Alfie</h6>
-                                    <small class="">Stylish, durable, and worth every penny.</small>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="col-4 col-md-4">
-                            <div class="card py-2">
-                                <div class="text-center">
-                                    <!-- user icon-->
-                                    <i class="fa fa-user"></i>
-                                </div>
-                                <div class="px-2 text-center mt-2">
-                                    <h6 class="text-decoration-underline">Thomas</h6>
-                                    <small class="">My kitchen finally looks modern and luxurious.</small>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="col-4 col-md-4">
-                            <div class="card py-2">
-                                <div class="text-center">
-                                    <!-- user icon-->
-                                    <i class="fa fa-user"></i>
-                                </div>
-                                <div class="px-2 text-center mt-2">
-                                    <h6 class="text-decoration-underline">Charlotte</h6>
-                                    <small class="">Brilliant service and stunning kitchen finish.</small>
-                                </div>
-                            </div>
-                        </div>
+                <div class="swiper-slide">
+                <div class="card p-2">
+                    <div class="p-2 text-center">
+                        <i class="fa fa-user bg-light p-4 rounded-circle"></i>
+                    <h6 class="mb-1">Thomas</h6>
+                    <small>My kitchen finally looks modern and luxurious.</small>
                     </div>
                 </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                <div class="card p-2">
+                    <div class="p-2 text-center">
+                        <i class="fa fa-user bg-light p-4 rounded-circle"></i>
+                    <h6 class="mb-1">Slab Edged Kitchen</h6>
+                    <small>Flat, clean, contemporary doors for a bold, streamlined look. </small>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="swiper-slide">
+                <div class="card p-2">
+                    <div class="p-2 text-center">
+                        <i class="fa fa-user bg-light p-4 rounded-circle"></i>
+                    <h6 class="mb-1">Charlotte</h6>
+                    <small>Brilliant service and stunning kitchen finish.</small>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Slide 5 -->
+                <div class="swiper-slide">
+                <div class="card p-2">
+                    <div class="p-2 text-center">
+                        <i class="fa fa-user bg-light p-4 rounded-circle"></i>
+                    <h6 class="mb-1">William</h6>
+                    <small>Amazing quality, transformed my home beautifully. </small>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Slide 6 -->
+                <div class="swiper-slide">
+                <div class="card p-2">
+                    <div class="p-2 text-center">
+                        <i class="fa fa-user bg-light p-4 rounded-circle"></i>
+                    <h6 class="mb-1">James</h6>
+                    <small>Elegant designs that perfectly fit my space.</small>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Slide 7 -->
+                <div class="swiper-slide">
+                <div class="card p-2">
+                    <div class="p-2 text-center">
+                        <i class="fa fa-user bg-light p-4 rounded-circle"></i>
+                    <h6 class="mb-1">Harry</h6>
+                    <small>Superb craftsmanship, exceeded all my expectations.</small>
+                    </div>
+                </div>
+                </div>
+
             </div>
 
-            <!-- Controls -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#multiImageSlider2" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#multiImageSlider2" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
+            <!-- navigation & pagination (optional) -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <!-- <div class="swiper-pagination"></div> -->
         </div>
     </div>
 </div>
