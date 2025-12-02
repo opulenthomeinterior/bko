@@ -59,10 +59,10 @@
                         </div>
                         <div class="ltn__social-media mt-20">
                             <ul>
-                                <li><a class="theme-btn-1 btn btn-effect-1 mb-4" href="https://www.facebook.com/opulenthomeinteriorsltd" title="Facebook"><i class="text-dark fab fa-facebook-f"></i></a></li>
-                                <li><a class="theme-btn-1 btn btn-effect-1 mb-4" href="https://www.instagram.com/bkonline__kitchen" title="Instagram"><i class="text-dark fab fa-instagram"></i></a></li>
-                                <li><a class="theme-btn-1 btn btn-effect-1 mb-4" href="https://uk.pinterest.com/bkonline570" title="Pinterest"><i class="text-dark fab fa-pinterest"></i></a></li>
-                                <li><a class="theme-btn-1 btn btn-effect-1 mb-4" href="https://www.youtube.com/@opulenthomeinteriors5595" title="Youtube"><i class="text-dark fab fa-youtube"></i></a></li>
+                                <li><a class="theme-btn-3 btn btn-effect-3 mb-4" href="https://www.facebook.com/opulenthomeinteriorsltd" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a class="theme-btn-3 btn btn-effect-3 mb-4" href="https://www.instagram.com/bkonline__kitchen" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                                <li><a class="theme-btn-3 btn btn-effect-3 mb-4" href="https://uk.pinterest.com/bkonline570" title="Pinterest"><i class="fab fa-pinterest"></i></a></li>
+                                <li><a class="theme-btn-3 btn btn-effect-3 mb-4" href="https://www.youtube.com/@opulenthomeinteriors5595" title="Youtube"><i class="fab fa-youtube"></i></a></li>
                             </ul>
                         </div>
                     </div>
