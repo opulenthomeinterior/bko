@@ -223,19 +223,19 @@
                 <!-- RIGHT COLUMN (FORM) -->
                 <div class="col-lg-5">
                     <div class="p-4 shadow rounded bg-white">
-                        <div class="mb-3">
+                        <div class="mb-4">
                             <img src="{{ asset('images/homepage.jpeg') }}" class="border border-default img-fluid" alt="">
                         </div>
                     <form method="POST" action="{{ route('contact_us_inquiry') }}">
                         @csrf
 
-                        <input type="text" class="form-control mb-3" placeholder="Name" name="name" required>
-                        <input type="email" class="form-control mb-3" placeholder="Email" name="email" required>
-                        <input type="number" class="form-control mb-3" placeholder="Phone" name="phone" required>
-                        <input type="number" class="form-control mb-3" placeholder="Postcode" name="postcode" required>
+                        <input type="text" class="form-control mb-4" placeholder="Name" name="name" required>
+                        <input type="email" class="form-control mb-4" placeholder="Email" name="email" required>
+                        <input type="number" class="form-control mb-4" placeholder="Phone" name="phone" required>
+                        <input type="number" class="form-control mb-4" placeholder="Postcode" name="postcode" required>
 
                         <div class="input-item">
-                            <select class="nice-select w-100 mb-3" name="message" required>
+                            <select class="nice-select w-100 mb-4" name="message" required>
                                 <option>Select Kitchen Type</option>
                                 <option>J Pull Kitchen</option>
                                 <option>Shaker Kitchen</option>
