@@ -2,6 +2,9 @@
 @section('content')
 @section('styles')
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
 <style>
     .ltn__slide-item-inner {
         display: flex;
@@ -102,6 +105,13 @@
         display: block;
         width: 100%;
     }
+    /* make sure slides and images fill space correctly */
+    .mySwiper { padding: 1rem 0; }
+    .swiper-slide { display: flex; justify-content: center; align-items: flex-start; }
+    .swiper-slide .card { width: 100%; max-width: 360px; } /* optional card width */
+    .swiper-slide img { width: 100%; height: auto; display: block; object-fit: cover; border-radius: 4px; }
+    .swiper-button-next, .swiper-button-prev { color: #000; } /* visible nav color */
+
     
 </style>
 @endsection
@@ -270,129 +280,117 @@
                 </div>
             </div>
         </div>
-        <div id="multiImageSlider" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
+<!-- Swiper HTML -->
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
 
-                <!-- Slide 1 -->
-                <div class="carousel-item active">
-                    <div class="row">
-                        <!-- Image 1 (always shown) -->
-                        <div class="col-4 col-sm-6 col-md-4">
-                            <div class="card">
-                                <img src="{{asset('imgs/styles/06_06_2025_104957_6842c7d5c26f5-j-pull(1).png')}}" class="d-block w-100" alt="">
-                                <div class="px-2 text-center mt-2">
-                                    <h6 class="text-decoration-underline">J Pull Kitchen</h6>
-                                    <p class="text-start px-2">Modern, smooth, and minimalist with an integrated handle groove for effortless opening. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 col-sm-6 col-md-4">
-                            <div class="card">
-                                <img src="{{asset('imgs/styles/04_05_2025_063206_681709e62cd48-shaker(1).png')}}" class="d-block w-100" alt="">
-                                <div class="px-2 text-center mt-2">
-                                    <h6 class="text-decoration-underline">Shaker Kitchen </h6>
-                                    <p class="text-start px-2">Classic framed elegance with modern durability, forever stylish. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 col-sm-6 col-md-4">
-                            <div class="card">
-                                <img src="{{asset('imgs/styles/04_05_2025_063345_68170a490b56f-slabedge(2).png')}}" class="d-block w-100" alt="">
-                                <div class="px-2 text-center mt-2">
-                                    <h6 class="text-decoration-underline">Slab Edged Kitchen </h6>
-                                    <p class="text-start px-2">Flat, clean, contemporary doors for a bold, streamlined look. </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Image 2 (hidden on mobile) -->
-                        <!-- <div class="col-12 col-sm-6 col-md-4 d-none d-sm-block">
-                            <img src="{{asset('imgs/styles/31_05_2025_102009_683ad7d95310c-j-pull22.png')}}" class="d-block w-100" alt="">
-                        </div> -->
-
-                        <!-- Image 3 (hidden on mobile + tablet) -->
-                        <!-- <div class="col-12 col-md-4 d-none d-md-block">
-                            <img src="{{asset('imgs/styles/04_05_2025_063253_68170a1592a60-shaker22(1).png')}}" class="d-block w-100" alt="">
-                        </div> -->
-                    </div>
-                </div>
-
-                <!-- Slide 2 -->
-                <div class="carousel-item">
-                    <div class="row">
-                        <div class="col-4 col-sm-6 col-md-4">
-                            <div class="card">
-                                <img src="{{asset('imgs/styles/04_05_2025_063809_68170b51b771f-truhandleless(1).png')}}" class="d-block w-100" alt="">
-                                <div class="px-2 text-center mt-2">
-                                    <h6 class="text-decoration-underline">True Handleless Kitchen </h6>
-                                    <p class="text-start px-2">A continuous rail system for a pure, uninterrupted modern design. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 col-sm-6 col-md-4">
-                            <div class="card">
-                                <img src="{{asset('imgs/styles/31_05_2025_102009_683ad7d95310c-j-pull22.png')}}" class="d-block w-100" alt="">
-                                <div class="px-2 text-center mt-2">
-                                    <h6 class="text-decoration-underline">J Pull 22mm Kitchen </h6>
-                                    <p class="text-start px-2">A premium, thicker and more robust version of our classic J Pull range. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 col-sm-6 col-md-4">
-                            <div class="card">
-                                <img src="{{asset('imgs/styles/04_05_2025_063253_68170a1592a60-shaker22(1).png')}}" class="d-block w-100" alt="">
-                                <div class="px-2 text-center mt-2">
-                                    <h6 class="text-decoration-underline">Shaker 22mm Kitchen </h6>
-                                    <p class="text-start px-2">Heavy-duty craftsmanship with elegant design and premium finishes. </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 3 -->
-                <div class="carousel-item">
-                    <div class="row">
-                        <div class="col-4 col-sm-6 col-md-4">
-                            <div class="card">
-                                <img src="{{asset('imgs/styles/04_05_2025_063733_68170b2d90a9e-slabedgepainted(1).png')}}" class="d-block w-100" alt="">
-                                <div class="px-2 text-center mt-2">
-                                    <h6 class="text-decoration-underline">Slab Painted Kitchen </h6>
-                                    <p class="text-start px-2">Smooth painted slab doors perfect for bespoke, high-end looks. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 col-sm-6 col-md-4">
-                            <div class="card">
-                                <img src="{{asset('imgs/styles/04_05_2025_063854_68170b7e97ee8-truehandlelesspainted.png')}}" class="d-block w-100" alt="">
-                                <div class="px-2 text-center mt-2">
-                                    <h6 class="text-decoration-underline">True Handleless Painted Kitchen </h6>
-                                    <p class="text-start px-2">A luxury painted handleless design for premium contemporary homes. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 col-sm-6 col-md-4">
-                            <div class="card">
-                                <img src="{{asset('imgs/styles/04_05_2025_063653_68170b053487d-budgetkitchen.png')}}" class="d-block w-100" alt="">
-                                <div class="px-2 text-center mt-2">
-                                    <h6 class="text-decoration-underline">Budget Kitchen Collection </h6>
-                                    <p class="text-start px-2">Durable, stylish, and cost-effective, perfect for rentals, flips, and project kitchens. </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Controls -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#multiImageSlider" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#multiImageSlider" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
+    <!-- Slide 1 -->
+    <div class="swiper-slide">
+      <div class="card p-2">
+        <img src="{{ asset('imgs/styles/06_06_2025_104957_6842c7d5c26f5-j-pull(1).png') }}" alt="J Pull Kitchen">
+        <div class="p-2 text-center">
+          <h6 class="mb-1">J Pull Kitchen</h6>
+          <small>Modern, smooth, minimalist handle groove.</small>
         </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="swiper-slide">
+      <div class="card p-2">
+        <img src="{{ asset('imgs/styles/04_05_2025_063206_681709e62cd48-shaker(1).png') }}" alt="Shaker Kitchen">
+        <div class="p-2 text-center">
+          <h6 class="mb-1">Shaker Kitchen</h6>
+          <small>Classic framed elegance with modern durability.</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="swiper-slide">
+      <div class="card p-2">
+        <img src="{{ asset('imgs/styles/04_05_2025_063345_68170a490b56f-slabedge(2).png') }}" alt="Slab Edged Kitchen">
+        <div class="p-2 text-center">
+          <h6 class="mb-1">Slab Edged Kitchen</h6>
+          <small>Flat, clean, contemporary doors.</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="swiper-slide">
+      <div class="card p-2">
+        <img src="{{ asset('imgs/styles/04_05_2025_063809_68170b51b771f-truhandleless(1).png') }}" alt="True Handleless">
+        <div class="p-2 text-center">
+          <h6 class="mb-1">True Handleless Kitchen</h6>
+          <small>Pure, uninterrupted modern design.</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 5 -->
+    <div class="swiper-slide">
+      <div class="card p-2">
+        <img src="{{ asset('imgs/styles/31_05_2025_102009_683ad7d95310c-j-pull22.png') }}" alt="J Pull 22mm">
+        <div class="p-2 text-center">
+          <h6 class="mb-1">J Pull 22mm Kitchen</h6>
+          <small>Thicker, premium J Pull range.</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 6 -->
+    <div class="swiper-slide">
+      <div class="card p-2">
+        <img src="{{ asset('imgs/styles/04_05_2025_063253_68170a1592a60-shaker22(1).png') }}" alt="Shaker 22mm">
+        <div class="p-2 text-center">
+          <h6 class="mb-1">Shaker 22mm Kitchen</h6>
+          <small>Heavy-duty craftsmanship, premium finish.</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 7 -->
+    <div class="swiper-slide">
+      <div class="card p-2">
+        <img src="{{ asset('imgs/styles/04_05_2025_063733_68170b2d90a9e-slabedgepainted(1).png') }}" alt="Slab Painted">
+        <div class="p-2 text-center">
+          <h6 class="mb-1">Slab Painted Kitchen</h6>
+          <small>High-end painted slab doors.</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 8 -->
+    <div class="swiper-slide">
+      <div class="card p-2">
+        <img src="{{ asset('imgs/styles/04_05_2025_063854_68170b7e97ee8-truehandlelesspainted.png') }}" alt="True Handleless Painted">
+        <div class="p-2 text-center">
+          <h6 class="mb-1">True Handleless Painted</h6>
+          <small>Luxury painted handleless design.</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 9 -->
+    <div class="swiper-slide">
+      <div class="card p-2">
+        <img src="{{ asset('imgs/styles/04_05_2025_063653_68170b053487d-budgetkitchen.png') }}" alt="Budget Kitchen">
+        <div class="p-2 text-center">
+          <h6 class="mb-1">Budget Kitchen Collection</h6>
+          <small>Durable, stylish, cost-effective.</small>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- navigation & pagination (optional) -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-pagination"></div>
+</div>
+
     </div>
 </div>
 
@@ -603,9 +601,28 @@
 @endsection
 
 @section('scripts')
-    <script>
-        $(document).ready(function() {
-            
-        });
-    </script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const swiper = new Swiper('.mySwiper', {
+    loop: true,
+    spaceBetween: 12,
+    slidesPerView: 1,
+    breakpoints: {
+      // when window width is >= 576px
+      576: { slidesPerView: 1.2 },   // small phones - optional slight peek
+      // when window width is >= 768px
+      768: { slidesPerView: 2 },
+      // when window width is >= 992px
+      992: { slidesPerView: 3 }
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: { el: '.swiper-pagination', clickable: true },
+    grabCursor: true,
+  });
+});
+</script>
 @endsection
