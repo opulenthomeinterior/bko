@@ -277,7 +277,7 @@
                 <div class="carousel-item active">
                     <div class="row">
                         <!-- Image 1 (always shown) -->
-                        <div class="col-12 col-sm-6 col-md-4">
+                        <div class="col-4 col-sm-6 col-md-4">
                             <div class="card">
                                 <img src="{{asset('imgs/styles/06_06_2025_104957_6842c7d5c26f5-j-pull(1).png')}}" class="d-block w-100" alt="">
                                 <div class="px-2 text-center mt-2">
@@ -286,7 +286,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-6 col-md-4">
+                        <div class="col-4 col-sm-6 col-md-4">
                             <div class="card">
                                 <img src="{{asset('imgs/styles/04_05_2025_063206_681709e62cd48-shaker(1).png')}}" class="d-block w-100" alt="">
                                 <div class="px-2 text-center mt-2">
@@ -295,7 +295,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-6 col-md-4">
+                        <div class="col-4 col-sm-6 col-md-4">
                             <div class="card">
                                 <img src="{{asset('imgs/styles/04_05_2025_063345_68170a490b56f-slabedge(2).png')}}" class="d-block w-100" alt="">
                                 <div class="px-2 text-center mt-2">
@@ -320,7 +320,7 @@
                 <!-- Slide 2 -->
                 <div class="carousel-item">
                     <div class="row">
-                        <div class="col-12 col-sm-6 col-md-4">
+                        <div class="col-4 col-sm-6 col-md-4">
                             <div class="card">
                                 <img src="{{asset('imgs/styles/04_05_2025_063809_68170b51b771f-truhandleless(1).png')}}" class="d-block w-100" alt="">
                                 <div class="px-2 text-center mt-2">
@@ -329,7 +329,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-6 col-md-4">
+                        <div class="col-4 col-sm-6 col-md-4">
                             <div class="card">
                                 <img src="{{asset('imgs/styles/31_05_2025_102009_683ad7d95310c-j-pull22.png')}}" class="d-block w-100" alt="">
                                 <div class="px-2 text-center mt-2">
@@ -338,7 +338,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-6 col-md-4">
+                        <div class="col-4 col-sm-6 col-md-4">
                             <div class="card">
                                 <img src="{{asset('imgs/styles/04_05_2025_063253_68170a1592a60-shaker22(1).png')}}" class="d-block w-100" alt="">
                                 <div class="px-2 text-center mt-2">
@@ -353,7 +353,7 @@
                 <!-- Slide 3 -->
                 <div class="carousel-item">
                     <div class="row">
-                        <div class="col-12 col-sm-6 col-md-4">
+                        <div class="col-4 col-sm-6 col-md-4">
                             <div class="card">
                                 <img src="{{asset('imgs/styles/04_05_2025_063733_68170b2d90a9e-slabedgepainted(1).png')}}" class="d-block w-100" alt="">
                                 <div class="px-2 text-center mt-2">
@@ -362,7 +362,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-6 col-md-4">
+                        <div class="col-4 col-sm-6 col-md-4">
                             <div class="card">
                                 <img src="{{asset('imgs/styles/04_05_2025_063854_68170b7e97ee8-truehandlelesspainted.png')}}" class="d-block w-100" alt="">
                                 <div class="px-2 text-center mt-2">
@@ -371,7 +371,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-6 col-md-4">
+                        <div class="col-4 col-sm-6 col-md-4">
                             <div class="card">
                                 <img src="{{asset('imgs/styles/04_05_2025_063653_68170b053487d-budgetkitchen.png')}}" class="d-block w-100" alt="">
                                 <div class="px-2 text-center mt-2">
