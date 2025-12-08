@@ -5,10 +5,10 @@
             <div class="col-lg-12">
                 <div class="call-to-action-inner call-to-action-inner-6 ltn__secondary-bg position-relative text-center---">
                     <div class="coll-to-info text-color-white">
-                        <h1>Ready for a kitchen experience that isn't a Disaster?</h1>
+                        <h2>Ready for a kitchen experience that isn't a Disaster?</h2>
                     </div>
                     <div class="btn-wrapper">
-                        <button class="btn btn-effect-3 btn-white" data-bs-toggle="modal" data-bs-target="#kitchenModal">Explore</button>
+                        <button class="btn btn-effect-3 btn-white" data-bs-toggle="modal" data-bs-target="#kitchenModal"><small>Make an Inquiry</small></button>
                     </div>
                 </div>
             </div>
