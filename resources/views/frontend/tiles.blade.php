@@ -391,6 +391,11 @@
                                             The premium finish delivers a clean, elegant aesthetic suitable for both homes and commercial interiors. 
                                             </p>
                                     </div>
+                                    <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                                        <div class="apartments-plan-img">
+                                            <img src="{{asset('assets/img/tiles/8.jpg')}}" alt="#">
+                                        </div>
+                                    </div>
                                     <div class="col-lg-6">
                                         <div class="apartments-plan-info text-color-black section-bg-1 py-4">
                                             <h6>Ideal for: </h6>
@@ -414,11 +419,6 @@
                                                     <li>Thickness: 8–10mm</li>
                                                 </ul>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                                        <div class="apartments-plan-img">
-                                            <img src="{{asset('assets/img/tiles/8.jpg')}}" alt="#">
                                         </div>
                                     </div>
                                 </div>
@@ -434,6 +434,11 @@
                                                 Perfect for kitchens, bathrooms, hallways, and commercial areas. 
                                             </p>
                                     </div>
+                                    <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                                        <div class="apartments-plan-img">
+                                            <img src="{{asset('assets/img/tiles/7.jpg')}}" alt="#">
+                                        </div>
+                                    </div>
                                     <div class="col-lg-6">
                                         <div class="apartments-plan-info text-color-black section-bg-1 py-4">
                                             <h6>Ideal for: </h6>
@@ -457,11 +462,6 @@
                                                     <li>Thickness: 8–10mm</li>
                                                 </ul>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                                        <div class="apartments-plan-img">
-                                            <img src="{{asset('assets/img/tiles/7.jpg')}}" alt="#">
                                         </div>
                                     </div>
                                 </div>
@@ -477,6 +477,11 @@
                                                 Ideal for contemporary bathrooms, kitchens, and statement floors. 
                                             </p>
                                     </div>
+                                    <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                                        <div class="apartments-plan-img">
+                                            <img src="{{asset('assets/img/tiles/6.jpg')}}" alt="#">
+                                        </div>
+                                    </div>
                                     <div class="col-lg-6">
                                         <div class="apartments-plan-info text-color-black section-bg-1 py-4">
                                             <h6>Ideal for: </h6>
@@ -500,11 +505,6 @@
                                                     <li>Thickness: 8–10mm</li>
                                                 </ul>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                                        <div class="apartments-plan-img">
-                                            <img src="{{asset('assets/img/tiles/6.jpg')}}" alt="#">
                                         </div>
                                     </div>
                                 </div>
@@ -520,6 +520,11 @@
                                                 Perfect for high-end bathrooms, hotel-style interiors, and luxury kitchens.  
                                             </p>
                                     </div>
+                                    <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                                        <div class="apartments-plan-img">
+                                            <img src="{{asset('assets/img/tiles/5.jpg')}}" alt="#">
+                                        </div>
+                                    </div>
                                     <div class="col-lg-6">
                                         <div class="apartments-plan-info text-color-black section-bg-1 py-4">
                                             <h6>Ideal for: </h6>
@@ -543,11 +548,6 @@
                                                     <li>Thickness: 8–10mm</li>
                                                 </ul>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                                        <div class="apartments-plan-img">
-                                            <img src="{{asset('assets/img/tiles/5.jpg')}}" alt="#">
                                         </div>
                                     </div>
                                 </div>
