@@ -137,7 +137,7 @@
 @endsection
 <div class="mt-4" id="home-section">
     <section class="hero mb-120">
-        <div class="container p-0">
+        <div class="container">
             <div class="row mb-4">
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <h1 style="font-size: 30px;">
