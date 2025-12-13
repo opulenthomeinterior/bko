@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{ asset('assets/img/icons/logoBko.png') }}" type="image/x-icon" />
     
     <!-- CSS Files -->
     <link rel="stylesheet" href="{{ asset('assets/css/font-icons.css') }}">
