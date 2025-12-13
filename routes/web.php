@@ -271,7 +271,7 @@ Route::prefix('/')->middleware([])->group(function () {
         $categories = Category::where('status', 1)->get();
         $styles = Style::where('status', 1)->get();
         $testimonials = Testimonial::whereNull('style_id')->where('page_type', 'homepage')->get();
-        return view('frontend.home', compact('generalFaqs', 'deliveryFaqs', 'categories', 'styles', 'testimonials'));
+        return view('frontend.new.home', compact('generalFaqs', 'deliveryFaqs', 'categories', 'styles', 'testimonials'));
     })->name('home');
 
     Route::get('max-storage', function () {
