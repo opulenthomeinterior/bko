@@ -127,7 +127,7 @@
             <!-- ltn__product-item -->
             <div class="col-lg-12">
                 <div class="ltn__product-item ltn__product-item-4 text-center---">
-                    <div class="product-img" style="height: 350px;">
+                    <div class="product-img" style="height: 350px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
                         <a href="#"><img src="{{ $category->image_path ? asset('imgs/categories/' . $category->image_path) : asset('images/no-image-available.jpg') }}" alt="#"></a>
                         <div class="product-badge">
                             <ul>
