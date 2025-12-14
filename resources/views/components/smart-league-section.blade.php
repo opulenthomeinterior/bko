@@ -127,7 +127,7 @@
         {{-- CTA button --}}
         <div class="row">
             <div class="col-12 text-center">
-                <a href="#" class="btn text-uppercase" style="background-color:#ffc107; color:#111; padding:12px 40px; border-radius:30px; font-weight:600;">Schedule Free Consultation</a>
+                <a href="#" class="btn text-uppercase" style="background-color:#febd49; color:#111; padding:12px 40px; border-radius:30px; font-weight:600;">Schedule Free Consultation</a>
             </div>
         </div>
     </div>

@@ -41,7 +41,7 @@
 
                         <a href="#"
                             class="btn px-5 py-3 order-btn btn-md text-black text-uppercase rounded-pill"
-                            style="background-color: #ffc107;">
+                            style="background-color: #febd49;">
                             Order Now
                         </a>
                     </div>
@@ -53,8 +53,8 @@
 
                 <div class="bg-white box-shadow-1 p-3 p-lg-4 rounded">
                     <div class="text-center mb-3">
-                        <h5 class="text-uppercase" style="color: #333; font-weight: 600;">For free survey and quote <span style="color:#ffc107;">call us now!</span></h5>
-                        <a href="tel:02080505605" class="btn btn-yellow" style="font-weight: 600; background-color: #ffc107; padding: 10px 20px; color: black;">
+                        <h5 class="text-uppercase" style="color: #333; font-weight: 600;">For free survey and quote <span style="color:#febd49;">call us now!</span></h5>
+                        <a href="tel:02080505605" class="btn btn-yellow" style="font-weight: 600; background-color: #febd49; padding: 10px 20px; color: black;">
                             <i class="fas fa-phone pe-1"></i> 020 805 05605
                         </a>
                         <h6 class="text-center my-2">OR</h6>

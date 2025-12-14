@@ -7,8 +7,8 @@
     <style>
         :root
         {
-            --main-color: #ffc107;
-            --main-light: #ffc107da;
+            --main-color: #febd49;
+            --main-light: #febd49da;
             --main-dark: #4f46e5;
             --t-dark: #1e293b;
             --t-light: #64748b;

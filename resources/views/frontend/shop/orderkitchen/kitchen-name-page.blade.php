@@ -38,7 +38,7 @@
         .dot-1 {
             width: 12px;
             height: 12px;
-            background: #ffc107;
+            background: #febd49;
             top: 15%;
             left: 10%;
             animation-delay: 0s;
@@ -56,7 +56,7 @@
         .dot-3 {
             width: 6px;
             height: 6px;
-            background: #ffc107;
+            background: #febd49;
             bottom: 30%;
             left: 15%;
             animation-delay: 4s;
@@ -81,7 +81,7 @@
         .triangle-1 {
             border-left: 15px solid transparent;
             border-right: 15px solid transparent;
-            border-bottom: 25px solid #ffc107;
+            border-bottom: 25px solid #febd49;
             top: 10%;
             right: 10%;
             animation: rotate 8s linear infinite;

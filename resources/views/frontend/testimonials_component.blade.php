@@ -825,7 +825,7 @@
     align-items: center;
         }
         .slider-btn:hover {
-    background: #ffc107 ;        /* black background */
+    background: #febd49 ;        /* black background */
     color: black;             /* white icon */
     transform: scale(1.1);   /* thoda zoom effect */
     box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* soft shadow */

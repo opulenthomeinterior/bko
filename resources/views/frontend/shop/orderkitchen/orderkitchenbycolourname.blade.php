@@ -8,7 +8,7 @@
     <!-- Custom CSS -->
     <style>
         .breadcrumb-item a {
-            color: #ffc107;
+            color: #febd49;
             text-decoration: none;
         }
         .product-title {
@@ -22,7 +22,7 @@
             cursor: pointer;
         }
         .option-box.active {
-            border-color: #ffc107;
+            border-color: #febd49;
         }
         .color-dropdown {
             width: 100%;
@@ -37,7 +37,7 @@
             margin: 0 auto 15px;
         }
         .table th {
-            background-color: #ffc107;
+            background-color: #febd49;
         }
     </style>
     

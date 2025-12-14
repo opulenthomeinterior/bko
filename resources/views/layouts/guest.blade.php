@@ -160,7 +160,7 @@ use App\Models\Style;
             height:115%;
             top:-5px;
             left:47%;
-            background-color:#ffc107;
+            background-color:#febd49;
             transform: rotate(15deg);
             z-index:0;
         }
@@ -400,7 +400,7 @@ use App\Models\Style;
     }
     
     .submit-btn {
-      background-color: #ffc107;
+      background-color: #febd49;
       color: #212529;
       font-weight: bold;
       border: none;
@@ -1066,7 +1066,7 @@ use App\Models\Style;
                         </li>
                     </ul>
                 </div>
-                <div class="nav__menu px-5" id="nav-menu" style="background-color: #ffc107 ; clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);">
+                <div class="nav__menu px-5" id="nav-menu" style="background-color: #febd49 ; clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);">
                     <ul class="nav__list p-2">
                         <li class="d-lg-flex d-none hide-small">
                             <a href="#" class="nav__link" id="searchIcon-desktop"><i class="ri-search-2-line"></i></a>

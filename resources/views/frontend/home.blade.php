@@ -152,14 +152,14 @@
             height: auto;
         }
         .register-btn {
-            background-color: #ffc107;
-            border-color: #ffc107;
+            background-color: #febd49;
+            border-color: #febd49;
             color: black;
         } */
 
         .feature-icon {
             font-size: 3rem;
-            color: #ffc107;
+            color: #febd49;
             margin-bottom: 1rem;
         }
         .feature-card {
@@ -169,7 +169,7 @@
             background-color: #f8f9fa;
         }
         .explore-btn {
-            background-color: #ffc107;
+            background-color: #febd49;
             color: black;
             padding: 10px 20px;
             border: none;
@@ -276,7 +276,7 @@
             transform: scale(1.1);
         } */
         .icon-circle i {
-            color: #ffc107;
+            color: #febd49;
             font-size: 42px;
         }
         .cta-button {
@@ -741,7 +741,7 @@
             align-items: center;
             justify-content: center;
             z-index: 10;
-            background-color: #ffc107;
+            background-color: #febd49;
             color: #000;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             animation: float 2s ease-in-out infinite;
@@ -794,14 +794,14 @@
         }
         
         .carousel-indicators .active {
-            background-color: #ffc107;
+            background-color: #febd49;
         }
         
         /* Modern carousel controls */
         .carousel-control-prev, .carousel-control-next {
             width: 50px;
             height: 50px;
-            background-color: #ffc107;
+            background-color: #febd49;
             border-radius: 50%;
             top: 50%;
             transform: translateY(-50%);
@@ -880,7 +880,7 @@
     .swiper-button-prev:hover,
     .swiper-button-next:hover
     {
-        background-color: #ffc107 !important;
+        background-color: #febd49 !important;
     }
     .swiper-button-prev:after,
     .swiper-button-next:after {
@@ -942,7 +942,7 @@
       margin: 0 10px 10px;
       padding: 6px 12px;
       /* background-color: #333; */
-      background-color: #ffc107;
+      background-color: #febd49;
       color: black;
       border: none;
       border-radius: 4px;
@@ -1480,7 +1480,7 @@
 
                             <a href="{{ route('orderkitchen') }}"
                                 class="btn px-5 py-3 order-btn btn-md text-black text-uppercase rounded-pill"
-                                style="background-color: #ffc107;">
+                                style="background-color: #febd49;">
                                 Order Now
                             </a>
                         </div>
@@ -1509,7 +1509,7 @@
         <div class="row">
             <div class="text-center"> -->
                 <!-- <a href="#" class="btn cta-button">BOOK YOUR FREE CONSULTATION NOW!</a> -->
-                <!-- <button  class="btn btn-lg cta-button rounded-0" style="background-color:#ffc107;" data-bs-toggle="modal" data-bs-target="#exampleModal">book your FREE CONSULTATION NOW!</button>
+                <!-- <button  class="btn btn-lg cta-button rounded-0" style="background-color:#febd49;" data-bs-toggle="modal" data-bs-target="#exampleModal">book your FREE CONSULTATION NOW!</button>
                
             </div>
         </div>
@@ -2092,7 +2092,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-md-5">
-                <button  class="btn btn-lg cta-button rounded-0 px-5" style="background-color:#ffc107;" data-bs-toggle="modal" data-bs-target="#exampleModal">SCHEDULE YOUR FREE CONSULTATION NOW!</button>
+                <button  class="btn btn-lg cta-button rounded-0 px-5" style="background-color:#febd49;" data-bs-toggle="modal" data-bs-target="#exampleModal">SCHEDULE YOUR FREE CONSULTATION NOW!</button>
                
             </div>
         </div>
@@ -2146,7 +2146,7 @@
     
         {{-- <div class="cta-text-bespoke">ARE YOU <span class="text-danger"> TIRED OF WASTED SPACE?</span></div> --}}
         <!-- <button class="cta-button-bespoke">CHECK OUR MAX STORAGE KITCHENS</button> -->
-         {{-- <a href="{{ route('max_storage') }}" class="m-0 btn btn-lg cta-button rounded-0" style="background-color:#ffc107;">CHECK OUR MAX STORAGE KITCHENS</a> --}}
+         {{-- <a href="{{ route('max_storage') }}" class="m-0 btn btn-lg cta-button rounded-0" style="background-color:#febd49;">CHECK OUR MAX STORAGE KITCHENS</a> --}}
                
       {{-- </div> --}}
     
@@ -2223,7 +2223,7 @@
             
             <div class="text-center">
                 <!-- <a href="#" class="btn cta-button">BOOK YOUR FREE CONSULTATION NOW!</a> -->
-                <button  class="btn btn-lg cta-button rounded-0" style="background-color:#ffc107;" data-bs-toggle="modal" data-bs-target="#exampleModal">SCHEDULE YOUR FREE CONSULTATION NOW!</button>
+                <button  class="btn btn-lg cta-button rounded-0" style="background-color:#febd49;" data-bs-toggle="modal" data-bs-target="#exampleModal">SCHEDULE YOUR FREE CONSULTATION NOW!</button>
                
             </div>
         </div>
@@ -2583,7 +2583,7 @@
                 
                 <div class="suggestion">
                     <p class="mb-2">Don't let time hold you back.</p>
-                    <button href="#" class="btn btn-lg cta-button rounded-0" style="background-color:#ffc107;" data-bs-toggle="modal" data-bs-target="#exampleModal">SCHEDULE YOUR FREE CONSULTATION NOW!</button>
+                    <button href="#" class="btn btn-lg cta-button rounded-0" style="background-color:#febd49;" data-bs-toggle="modal" data-bs-target="#exampleModal">SCHEDULE YOUR FREE CONSULTATION NOW!</button>
                
                 </div>
             </div>
@@ -2705,7 +2705,7 @@
                             Concerned about not getting the right measurements? Let our professionals handle it for you.
                         </h3>
                         <button href="#" class=" btn btn-lg px-5 rounded-0 " data-bs-toggle="modal" data-bs-target="#exampleModal" style="
-    background-color: #ffc107 ;">Start designing your Ideal Kitchen</button>
+    background-color: #febd49 ;">Start designing your Ideal Kitchen</button>
                     </div>
                 </div>
             </div>
@@ -2804,7 +2804,7 @@
     <div class = "row justify-content-center">
         <div class="col-3 mb-5 mt-3">
         <p>Stop dreaming and build a kitchen that reflects your needs and style</p>
-        <button  class="btn rounded-0 btn-warning px-5 mx-n4 text-uppercase text-black" style="background-color:#FFC107">Start designing your Ideal Kitchen</button>
+        <button  class="btn rounded-0 btn-warning px-5 mx-n4 text-uppercase text-black" style="background-color:#febd49">Start designing your Ideal Kitchen</button>
         </div>
    </div>
 </div> --}}
@@ -2901,7 +2901,7 @@
                 <div class="card border-0 h-100 bg-light">
                     <div class="card-body text-center p-4">
                         <div class="card-icon">
-                            <i class="bi bi-card-list text-warning" style="font-size: 3rem; margin-bottom: 1rem; color: #ffc107"></i>
+                            <i class="bi bi-card-list text-warning" style="font-size: 3rem; margin-bottom: 1rem; color: #febd49"></i>
                         </div>
                         <h5 class="card-title mb-3 text-dark">01.</h5>
                         <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Design Requirements</h5>
@@ -2914,7 +2914,7 @@
                 <div class="card border-0 h-100 bg-light">
                     <div class="card-body text-center p-4">
                         <div class="card-icon">
-                            <i class="bi bi-cash-stack" style="font-size: 3rem; margin-bottom: 1rem; color: #ffc107"></i>
+                            <i class="bi bi-cash-stack" style="font-size: 3rem; margin-bottom: 1rem; color: #febd49"></i>
                         </div>
                         <h5 class="card-title mb-3 text-dark">02.</h5>
                         <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Upfront Pricing</h5>
@@ -2927,7 +2927,7 @@
                 <div class="card border-0 h-100 bg-light">
                     <div class="card-body text-center p-4">
                         <div class="card-icon">
-                            <i class="bi  bi-clipboard-check" style="font-size: 3rem; margin-bottom: 1rem; color: #ffc107;"></i>
+                            <i class="bi  bi-clipboard-check" style="font-size: 3rem; margin-bottom: 1rem; color: #febd49;"></i>
                         </div>
                         <h5 class="card-title mb-3 text-dark">03.</h5>
                         <h5 class="card-subtitle mb-3 text-teal" style="color:#2a6161;">Custom Design Delivered</h5>
@@ -2941,7 +2941,7 @@
     <div class="row justify-content-center text-center">
         <div class="col-lg-6 col-md-8 col-sm-10 col-12 mb-5 mt-3">
             <p class="fw-bold">Stop dreaming and build a kitchen that reflects your needs and style</p>
-            <button class="btn btn-warning px-5 text-uppercase rounded-0 text-black" style="background-color: #ffc107;">Start designing your Ideal Kitchen</button>
+            <button class="btn btn-warning px-5 text-uppercase rounded-0 text-black" style="background-color: #febd49;">Start designing your Ideal Kitchen</button>
         </div>
     </div>
         </div> --}}

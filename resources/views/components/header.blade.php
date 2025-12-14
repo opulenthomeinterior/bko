@@ -1,9 +1,13 @@
+<?php
+    use App\Models\Category;
+    use App\Models\Style;
+?>
 {{-- HEADER AREA START --}}
 <header class="ltn__header-area ltn__header-5 ltn__header-transparent--- gradient-color-4---">
 
     
     <!-- ltn__header-middle-area start -->
-    <div class="ltn__header-middle-area ltn__header-sticky section-bg-1" style="border-bottom: 1px solid #ffc107">
+    <div class="ltn__header-middle-area ltn__header-sticky section-bg-1" style="border-bottom: 1px solid #febd49">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -77,33 +81,78 @@
                         <nav>
                             <div class="ltn__main-menu">
                                 <ul>
-                                    <li class="menu-icon"><a href="#">Explore</a>
-                                        <ul class="sub-menu menu-pages-img-show">
-                                            <li><a href="{{ route('home') }}">Home Style 01</a></li>
-                                            <li><a href="#">Home Style 02</a></li>
-                                            <li><a href="#">Home Style 03</a></li>
-                                            <li><a href="#">Home Style 04</a></li>
-                                            <li><a href="#">Home Style 05 <span class="menu-item-badge">video</span></a></li>
-                                            <li><a href="#">Home Style 06</a></li>
-                                            <li><a href="#">Home Style 07</a></li>
-                                            <li><a href="#">Home Style 08</a></li>
-                                            <li><a href="#">Home Style 09</a></li>
-                                            <li><a href="#">Home Style 10 <span class="menu-item-badge">Map</span></a></li>
-                                            <li><a href="#">Home Style 11</a></li>
+                                    <li class="menu-icon mega-menu-parent"><a href="{{ route('orderkitchen') }}">Explore</a>
+                                        <ul class="mega-menu column-3">
+                                            <div class="container px-4"><h5>Choose Style</h5></div>
+                                            <li><a href="#" class="text-dark">Standard Kitchens</a>
+                                                <ul>
+                                                    @foreach ($styles->slice(0, 4) as $style)
+                                                    <li><a href="{{ route('orderkitchenbyname', [$style->slug]) }}">{{ $style->name }} KITCHEN</a></li>
+                                                    @endforeach
+                                                </ul>
+                                            </li>
+                                            <li><a href="#" class="text-dark">Premium Kitchens</a>
+                                                <ul>
+                                                    @foreach ($styles->slice(4, 4) as $style)
+                                                    <li><a href="{{ route('orderkitchenbyname', [$style->slug]) }}">{{ $style->name }} KITCHEN</a></li>
+                                                    @endforeach
+                                                </ul>
+                                            </li>
+                                            <li><a href="#" class="text-dark">Budget Kitchens</a>
+                                                <ul>
+                                                    @foreach ($styles->slice(8, 4) as $style)
+                                                    <li><a href="{{ route('orderkitchenbyname', [$style->slug]) }}">{{ $style->name }} KITCHEN</a></li>
+                                                    @endforeach
+                                                </ul>
+                                            </li>
                                         </ul>
                                     </li>
-                                    <li class="menu-icon"><a href="#">Order Kitchen</a>
-                                        <ul>
-                                            <li><a href="#">About</a></li>
-                                            <li><a href="#">Services</a></li>
-                                            <li><a href="#">Service Details</a></li>
-                                            <li><a href="#">Portfolio</a></li>
-                                            <li><a href="#">Portfolio - 02</a></li>
-                                            <li><a href="#">Portfolio Details</a></li>
-                                            <li><a href="#">Team</a></li>
-                                            <li><a href="#">Team Details</a></li>
-                                            <li><a href="#">FAQ</a></li>
-                                            <li><a href="#">Google Map Locations</a></li>
+                                    <li class="menu-icon mega-menu-parent"><a href="{{ route('orderkitchen') }}">Order Kitchen</a>
+                                        <ul class="mega-menu row">
+                                            <div class="col-12">
+                                                <div class="container px-4"><h5>Choose Kitchen Type</h5></div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="px-4"><li class="text-dark bg-light p-2">Choose Style</li></div> 
+                                                <ul>
+                                                    @php
+                                                        $styles = Style::where('status', 1)->get();
+                                                    @endphp
+                                                    @if (!empty($styles))
+                                                    @foreach ($styles as $index => $style)
+                                                    <li class="p-2"><input data-style-id="{{$style->id}}" type="radio" value="{{$style->slug}}" name="style_name" class="radio-btn style-item me-2">{{ $style->name }} KITCHEN</li>
+                                                    @endforeach
+                                                    @endif
+                                                </ul>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="px-4"><li class="text-dark bg-light p-2">Choose Colour</li></div> 
+                                                <ul style="max-height: 320px; overflow-y: scroll">
+                                                    @php 
+                                                        $colours = \App\Models\Colour::distinct()->whereNotNull('finishing')->get();
+                                                    @endphp
+                                                    @foreach ($colours as $index => $colour)
+                                                    <li class="p-2"><input data-colour-id="{{$colour->id}}" type="radio" name="colour_name" class="colour_type radio-btn colour-item colour{{$colour->id}} me-2" id="superGlossWhite" value="{{$colour->slug}}">{{$colour->trade_colour}}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="px-4"><li class="text-dark bg-light p-2">Choose Assembly</li></div> 
+                                                <ul>
+                                                    @php 
+                                                        $assemblies = \App\Models\Assembly::whereNot('slug', 'stock')->get();
+                                                    @endphp
+                                                    @foreach ($assemblies as $index => $assembly)
+                                                    <li class="p-2"><input data-assembly-id="{{$assembly->id}}" type="radio" value="{{$assembly->slug}}" name="assembly_name" class="assembly_type assembly-item radio-btn me-2">{{$assembly->name}}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                            <hr>
+                                            <div class="col-12">
+                                                <div class="px-4 pb-3 d-flex justify-content-center">
+                                                    <a href="{{ route('orderkitchen') }}" id="order-kitchen-btn" class="btn btn-default text-black w-75" style="background-color: #febd49; font-weight: 600; clip-path: polygon(50% 15%, 60% 0, 100% 0, 100% 100%, 0 100%, 0 0, 40% 0);">Order Kitchen</a>
+                                                </div>
+                                            </div>
                                         </ul>
                                     </li>
                                     <li class="menu-icon"><a href="#">Order Component</a>

@@ -56,7 +56,7 @@
         {
             box-shadow: none !important; 
             border-color: #e0e4e9 !important;
-            /* border-color: #ffc107 !important; */
+            /* border-color: #febd49 !important; */
         }
         .text-area-container .form-control
         {
@@ -83,7 +83,7 @@
 </head>
 <body>
     <div class="form-container">
-        <h5 class="form-title text-center text-uppercase fs-mob">for free survey and quote <span style="color:#ffc107 ;">call us now!</span></h5>
+        <h5 class="form-title text-center text-uppercase fs-mob">for free survey and quote <span style="color:#febd49 ;">call us now!</span></h5>
         <!-- <p class="form-subtitle text-center">020 805 05605</p> -->
         <a href="tel:02080505605" class="btn btn-yellow fs-mob" style="font-weight: 600;">
         
@@ -124,7 +124,7 @@
             <div class="input-group">
                 
                 
-                <span  onclick="document.getElementById('date').showPicker()" class="input-group-text" style="background-color: #ffc107 !important; color: black !important;">
+                <span  onclick="document.getElementById('date').showPicker()" class="input-group-text" style="background-color: #febd49 !important; color: black !important;">
                     <i class="fas fa-calendar-alt me-3 fs-mob-input"></i>
                     Call US AT
                 </span>
