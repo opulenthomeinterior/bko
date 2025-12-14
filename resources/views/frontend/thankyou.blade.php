@@ -54,7 +54,7 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <a href="https://bkonline.uk/kitchens" class="header">
-        <img src="https://bkonline.uk/public/images/bko-black-logo.png" height="150px" width="150px" alt="">
+        <img src="https://bkonline.uk/public/images/bko-black-logo.png" height="120px" width="150px" alt="">
     </a>
     <div class="thank-you">Thank You!</div>
     <div class="thank-you-timer">Redirecting in 5 seconds...</div>

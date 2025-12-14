@@ -49,7 +49,7 @@
     <!-- JS Files -->
     <script src="{{ asset('assets/js/plugins.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
-    
+    @yield('scripts')
     @stack('scripts')
 </body>
 </html>

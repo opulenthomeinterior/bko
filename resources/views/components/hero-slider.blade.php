@@ -60,7 +60,7 @@
                         <h6 class="text-center my-2">OR</h6>
                         <h5 class="text-uppercase" style="color: #333;">Book a free consultation now!</h5>
                     </div>
-                    <form action="#" method="POST" class="row">
+                    <form action="{{ route('contact_us_inquiry') }}" method="POST" class="row">
                         @csrf
                         <div class="col-12 mb-2">
                             <div class="input-item input-item-name ltn__custom-icon">

@@ -83,7 +83,7 @@
                                 <ul>
                                     <li class="menu-icon mega-menu-parent"><a href="{{ route('orderkitchen') }}">Explore</a>
                                         <ul class="mega-menu column-3">
-                                            <div class="container px-4"><h5>Choose Style</h5></div>
+                                            <div class="container px-4"><h5>Choose Style Type</h5></div>
                                             <li><a href="#" class="text-dark">Standard Kitchens</a>
                                                 <ul>
                                                     @foreach ($styles->slice(0, 4) as $style)
@@ -150,44 +150,31 @@
                                             <hr>
                                             <div class="col-12">
                                                 <div class="px-4 pb-3 d-flex justify-content-center">
-                                                    <a href="{{ route('orderkitchen') }}" id="order-kitchen-btn" class="btn btn-default text-black w-75" style="background-color: #febd49; font-weight: 600; clip-path: polygon(50% 15%, 60% 0, 100% 0, 100% 100%, 0 100%, 0 0, 40% 0);">Order Kitchen</a>
+                                                    <button id="order-now" class="btn btn-default text-black w-75" style="background-color: #febd49; font-weight: 600; clip-path: polygon(50% 15%, 60% 0, 100% 0, 100% 100%, 0 100%, 0 0, 40% 0);">Order Kitchen</button>
                                                 </div>
                                             </div>
                                         </ul>
                                     </li>
-                                    <li class="menu-icon"><a href="#">Order Component</a>
-                                        <ul>
-                                            <li><a href="#">Shop</a></li>
-                                            <li><a href="#">Shop Grid</a></li>
-                                            <li><a href="#">Shop Left sidebar</a></li>
-                                            <li><a href="#">Shop right sidebar</a></li>
-                                            <li><a href="#">Shop details </a></li>
-                                            <li><a href="#">Other Pages <span class="float-right">>></span></a>
-                                                <ul>
-                                                    <li><a href="#">Cart</a></li>
-                                                    <li><a href="#">Wishlist</a></li>
-                                                    <li><a href="#">Checkout</a></li>
-                                                    <li><a href="#">Order Tracking</a></li>
-                                                    <li><a href="#">My Account</a></li>
-                                                    <li><a href="#">Sign in</a></li>
-                                                    <li><a href="#">Register</a></li>
+                                    <li class="menu-icon mega-menu-parent"><a href="{{ route('ordercomponent') }}">Order Component</a>
+                                        @php
+                                            $categories = Category::where('parent_category_id', null)->where('status', 1)->where('header_item', 1)->get();
+                                        @endphp
+                                        <ul class="mega-menu column-3">
+                                            <div class="container px-4"><h5>Choose Unit Type</h5></div>
+                                            @foreach ($categories as $category)
+                                            <li class="py-0 px-4">
+                                                <ul class="py-2">
+                                                    <li class="p-0"><a href="{{ route('orderkitchenbyname', [$category->slug]) }}">{{ $category->name }}</a></li>
                                                 </ul>
                                             </li>
+                                            @endforeach
                                         </ul>
                                     </li>
-                                    <li class="menu-icon"><a href="#">Help & Guides</a>
-                                        <ul>
-                                            <li><a href="#">News</a></li>
-                                            <li><a href="#">News Grid</a></li>
-                                            <li><a href="#">News Left sidebar</a></li>
-                                            <li><a href="#">News Right sidebar</a></li>
-                                            <li><a href="#">News details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Max Storage</a></li>
-                                    <li><a href="#">Doors Replacement</a></li>
-                                    <li><a href="#">Design Service</a></li>
-                                    <li><a href="#">Blogs</a></li>
+                                    <li><a href="{{ route('help_and_guides') }}">Help & Guides</a></li>
+                                    <li><a href="{{route('max_storage')}}">Max Storage</a></li>
+                                    <li><a href="{{route('doors_replacement')}}">Doors Replacement</a></li>
+                                    <li><a href="{{ route('designservice') }}">Design Service</a></li>
+                                    <li><a href="{{ route('blog') }}">Blogs</a></li>
                                 </ul>
                             </div>
                         </nav>
@@ -259,119 +246,103 @@
         </div>
         <div class="ltn__utilize-menu">
             <ul>
-                <li><a href="{{ route('home') }}">Home</a>
-                    <ul class="sub-menu">
-                        <li><a href="{{ route('home') }}">Home Style 01</a></li>
-                        <li><a href="#">Home Style 02</a></li>
-                        <li><a href="#">Home Style 03</a></li>
-                        <li><a href="#">Home Style 04</a></li>
-                        <li><a href="#">Home Style 05 <span class="menu-item-badge">video</span></a></li>
-                        <li><a href="#">Home Style 06</a></li>
-                        <li><a href="#">Home Style 07</a></li>
-                        <li><a href="#">Home Style 08</a></li>
-                        <li><a href="#">Home Style 09</a></li>
-                        <li><a href="#">Home Style 10 <span class="menu-item-badge">Map</span></a></li>
-                        <li><a href="#">Home Style 11</a></li>
-                    </ul>
+                <li><a href="{{ route('orderkitchen') }}">Explore</a>
                 </li>
-                <li><a href="#">About</a>
-                    <ul class="sub-menu">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Service Details</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Portfolio - 02</a></li>
-                        <li><a href="#">Portfolio Details</a></li>
-                        <li><a href="#">Team</a></li>
-                        <li><a href="#">Team Details</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Google Map Locations</a></li>
-                    </ul>
+                <li><a href="{{ route('orderkitchen') }}">Order Kitchen</a>
                 </li>
-                <li><a href="#">Shop</a>
-                    <ul class="sub-menu">
-                        <li><a href="#">Shop</a></li>
-                        <li><a href="#">Shop Grid</a></li>
-                        <li><a href="#">Shop Left sidebar</a></li>
-                        <li><a href="#">Shop right sidebar</a></li>
-                        <li><a href="#">Shop details </a></li>
-                        <li><a href="#">Cart</a></li>
-                        <li><a href="#">Wishlist</a></li>
-                        <li><a href="#">Checkout</a></li>
-                        <li><a href="#">Order Tracking</a></li>
-                        <li><a href="#">My Account</a></li>
-                        <li><a href="#">Sign in</a></li>
-                        <li><a href="#">Register</a></li>
-                    </ul>
+                <li><a href="{{ route('ordercomponent') }}">Order Component</a>
                 </li>
-                <li><a href="#">News</a>
-                    <ul class="sub-menu">
-                        <li><a href="#">News</a></li>
-                        <li><a href="#">News Grid</a></li>
-                        <li><a href="#">News Left sidebar</a></li>
-                        <li><a href="#">News Right sidebar</a></li>
-                        <li><a href="#">News details</a></li>
-                    </ul>
+                <li><a href="#">Help & Guides</a>
                 </li>
-                <li><a href="#">Pages</a>
-                    <ul class="sub-menu">
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Portfolio - 02</a></li>
-                        <li><a href="#">Portfolio Details</a></li>
-                        <li><a href="#">Team</a></li>
-                        <li><a href="#">Team Details</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">History</a></li>
-                        <li><a href="#">Add Listing</a></li>
-                        <li><a href="#">Google Map Locations</a></li>
-                        <li><a href="#">404</a></li>
-                        <li><a href="">Contact</a></li>
-                        <li><a href="#">Coming Soon</a></li>
-                    </ul>
+                <li><a href="#">Max Storage</a>
                 </li>
-                <li><a href="">Contact</a></li>
-                <li><a href="">Explore Kitchen</a></li>
-            </ul>
-        </div>
-        <div class="ltn__utilize-buttons ltn__utilize-buttons-2">
-            <ul>
-                <li>
-                    <a href="#" title="Search" class="ltn__utilize-toggle">
-                        <i class="icon-search"></i>
-                    </a>
+                <li><a href="#">Doors Replacement</a>
                 </li>
-                <li>
-                    <a href="#" title="User" class="ltn__utilize-toggle">
-                        <i class="icon-user"></i>
-                    </a>
+                <li><a href="#">Design Service</a>
                 </li>
-                <li>
-                    <a href="#" title="Wishlist" class="ltn__utilize-toggle">
-                        <i class="icon-heart"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#ltn__utilize-cart-menu" title="Cart" class="ltn__utilize-toggle">
-                        <i class="icon-shopping-cart"></i>
-                        <sup>2</sup>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="ltn__utilize-buttons">
-            <ul>
-                <li>
-                    <a href="tel:+123456789" title="Call" class="ltn__utilize-toggle">
-                        <i class="icon-phone"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Mail" class="ltn__utilize-toggle">
-                        <i class="icon-mail"></i>
-                    </a>
+                <li><a href="#">Blogs</a>
                 </li>
             </ul>
         </div>
     </div>
 </div>
 <!-- Utilize Mobile Menu End -->
+
+@section('scripts')
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '.style-item', function () {
+            var _this = $(this);
+            var styleId = _this.attr('data-style-id');
+            var _url = "{{route('style_colours')}}";
+            $.ajax({
+                url: _url,
+                type: "POST",
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    style_id: styleId
+                },
+                success: function(response) {
+                    
+                    if (response.success == true) {
+                        $('.colour-item').each(function () { 
+                            var colourId = $(this).attr('data-colour-id'); // Get the value
+                            colourId = parseInt(colourId, 10);
+                            response.colours = response.colours.map(Number);
+
+                            console.log(response.colours, colourId);
+                            $(this).attr('checked', false); // Uncheck the radio button
+                            if (colourId) {
+                                console.log(response.colours.includes(colourId));
+                                // Add your comparison logic here, e.g.:
+                                if (response.colours.includes(colourId)) {
+                                    // Perform an action if `colourId` matches
+                                    $(this).attr('disabled', false); // Enable this element
+                                    $(this).siblings('.textcolour').css("color", "black"); // Change text color
+                                } else {
+                                    $(this).attr('disabled', true); // Disable this element
+                                    $(this).siblings('.textcolour').css("color", "lightgray"); // Change text color
+                                }
+                                checkFilters();
+                            }
+                        });
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error("AJAX error:", error);
+                }
+            });
+        });
+        // Define url globally inside the scope of the document ready function
+        var url = '';
+        $(document).on('click', '.style_type, .colour_type, .assembly_type', function() {
+            // Get the latest values of the selected radios inside the event listener
+            checkFilters();
+        });
+        function checkFilters() {
+            var selectedStyle = $('input[name="style_name"]:checked').val();
+            var selectedColour = $('input[name="colour_name"]:checked').val();
+            var selectedAssembly = $('input[name="assembly_name"]:checked').val();
+
+            // Check if all selections are made and none are undefined, null, or empty
+            if (selectedStyle && selectedColour && selectedAssembly) {
+                $('#order-now').removeClass('disabled');
+
+                // Generate the URL with the selected values
+                url = "{{route('orderkitchenbycolour', [':style', ':assembly', ':colour'])}}";
+                url = url.replace(':style', selectedStyle)
+                    .replace(':colour', selectedColour)
+                    .replace(':assembly', selectedAssembly);
+            } else {
+                $('#order-now').addClass('disabled'); // Optionally, disable the button if not all values are selected
+            }
+        }
+        // Redirect to the generated URL when 'order-now' is clicked
+        $(document).on('click', '#order-now', function() {
+            if (url) {
+                window.location.href = url;
+            }
+        });
+    });
+</script>
+@endsection
