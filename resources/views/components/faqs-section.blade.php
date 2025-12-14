@@ -10,136 +10,155 @@
         <div class="row justify-content-center">
             <div class="col-lg-9 col-12">
                 <div class="ltn__faq-inner ltn__faq-inner-2">
-                    <div id="bkoFaqAccordion">
-                        <!-- card 1 -->
+                    <div id="accordion_2">
+                        <!-- card -->
                         <div class="card">
-                            <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq1" aria-expanded="false">
-                                What is the difference between an affordable kitchen unit and a custom kitchen unit?
+                            <h6 class="collapsed ltn__card-title" data-bs-toggle="collapse" data-bs-target="#faq-item-2-1" aria-expanded="false">
+                                What is the difference between an affordable kitchen unit and a custom
+                            kitchen unit?
                             </h6>
-                            <div id="faq1" class="collapse" data-parent="#bkoFaqAccordion">
+                            <div id="faq-item-2-1" class="collapse" data-bs-parent="#accordion_2">
                                 <div class="card-body">
-                                    <p>An affordable kitchen unit offers budget-friendly solutions without compromising quality. Custom kitchen units are tailor-made to your style, space and preferences, usually at a higher price point.</p>
+                                    <p>An affordable kitchen unit offers budget-friendly solutions without compromising the
+                            quality. In comparison, custom kitchen units are tailor-made to your style, space, and
+                            preferences. They are available at a higher cost as compared to affordable kitchen units.</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- card 2 -->
+                        <!-- card -->
                         <div class="card">
-                            <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq2" aria-expanded="false">
+                            <h6 class="ltn__card-title collapsed" data-bs-toggle="collapse" data-bs-target="#faq-item-2-2" aria-expanded="false"> 
                                 How is a bespoke designer kitchen different from a standard kitchen?
                             </h6>
-                            <div id="faq2" class="collapse" data-parent="#bkoFaqAccordion">
+                            <div id="faq-item-2-2" class="collapse" data-bs-parent="#accordion_2" style="">
                                 <div class="card-body">
-                                    <p>Standard kitchens come in preset sizes and designs. A bespoke designer kitchen is custom-made for you, including layout, materials and overall aesthetic tailored to your home.</p>
+                                    <div class="ltn__video-img alignleft">
+                                        <img src="img/bg/17.jpg" alt="video popup bg image">
+                                        <a class="ltn__video-icon-2 ltn__video-icon-2-small ltn__video-icon-2-border----" href="https://www.youtube.com/embed/LjCzPp-MK48?autoplay=1&amp;showinfo=0" data-rel="lightcase:myCollection">
+                                            <i class="fa fa-play"></i>
+                                        </a>
+                                    </div>
+                                    <p>Standard kitchens usually come in pre-set sizes and designs. In contrast, a bespoke designer
+                            kitchen is custom-made for you. You can choose details like layout, materials, and the
+                            aesthetic.</p>
                                 </div>
                             </div>
-                        </div>
-                        <!-- card 3 -->
+                        </div>                          
+                        <!-- card -->
                         <div class="card">
-                            <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq3" aria-expanded="false">
-                                Can I use affordable kitchen units for a renovation?
+                            <h6 class="ltn__card-title collapsed" data-bs-toggle="collapse" data-bs-target="#faq-item-2-3" aria-expanded="false">
+                                Can I use affordable kitchen units for a kitchen renovation?
                             </h6>
-                            <div id="faq3" class="collapse" data-parent="#bkoFaqAccordion">
+                            <div id="faq-item-2-3" class="collapse" data-bs-parent="#accordion_2" style="">
                                 <div class="card-body">
-                                    <p>Yes. Affordable kitchen units are ideal when renovating on a budget. At Buy Kitchen Online even our budget-friendly options use quality materials and craftsmanship.</p>
+                                    <p>Affordable kitchen units can be a lifesaver when you need to renovate your kitchen on a
+                            budget. At Buy Kitchen Online, even our budget-friendly kitchen units have high-quality
+                            materials and craftsmanship.</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- card 4 -->
+                        <!-- card -->
                         <div class="card">
-                            <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq4" aria-expanded="false">
+                            <h6 class="collapsed ltn__card-title" data-bs-toggle="collapse" data-bs-target="#faq-item-2-4" aria-expanded="false">
                                 What is the process of designing custom kitchen units?
                             </h6>
-                            <div id="faq4" class="collapse" data-parent="#bkoFaqAccordion">
+                            <div id="faq-item-2-4" class="collapse" data-bs-parent="#accordion_2">
                                 <div class="card-body">
-                                    <p>We start with an in-depth consultation, discuss your style and functionality needs, measure your space and then create a unique design proposal for your kitchen.</p>
+                                    <p>In order to design a custom kitchen unit with Buy Kitchen Online, we conduct an in-depth
+                            consultation. We discuss your style and functionality, measure your space, and then create a
+                            unique design for your home.</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- card 5 -->
+                        <!-- card -->
                         <div class="card">
-                            <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq5" aria-expanded="false">
+                            <h6 class="collapsed ltn__card-title" data-bs-toggle="collapse" data-bs-target="#faq-item-2-5" aria-expanded="false">
                                 Can a designer kitchen increase the value of my property?
                             </h6>
-                            <div id="faq5" class="collapse" data-parent="#bkoFaqAccordion">
+                            <div id="faq-item-2-5" class="collapse" data-bs-parent="#accordion_2">
                                 <div class="card-body">
-                                    <p>Yes. A well-designed luxury kitchen adds both aesthetic appeal and functionality, which can significantly increase the value and desirability of your property.</p>
+                                    <p>Yes, a designer kitchen can significantly increase the value of your property. A luxury
+                            kitchen from Buy Kitchen Online adds both aesthetic appeal and functionality, making it a
+                            desirable feature for potential buyers.</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- card 6 -->
+                        <!-- card -->
                         <div class="card">
-                            <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq6" aria-expanded="false">
-                                Are there any affordable kitchen units available that offer customization?
+                            <h6 class="collapsed ltn__card-title" data-bs-toggle="collapse" data-bs-target="#faq-item-2-6" aria-expanded="false">
+                                Are there any affordable kitchen units available that offer
+                            customization?
                             </h6>
-                            <div id="faq6" class="collapse" data-parent="#bkoFaqAccordion">
+                            <div id="faq-item-2-6" class="collapse" data-bs-parent="#accordion_2">
                                 <div class="card-body">
-                                    <p>Yes, Buy Kitchen Online allows you to customize a budget-friendly kitchen unit to some extent. You get a personalized kitchen at an affordable price.</p>
+                                    <p>Yes, Buy Kitchen Online allows you to customize a budget-friendly kitchen unit to some
+                            extent. You get a personalized kitchen at an affordable price.</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- card 7 -->
+                        <!-- card -->
                         <div class="card">
-                            <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq7" aria-expanded="false">
+                            <h6 class="collapsed ltn__card-title" data-bs-toggle="collapse" data-bs-target="#faq-item-2-7" aria-expanded="false">
                                 How much does a designer kitchen unit cost?
                             </h6>
-                            <div id="faq7" class="collapse" data-parent="#bkoFaqAccordion">
+                            <div id="faq-item-2-7" class="collapse" data-bs-parent="#accordion_2">
                                 <div class="card-body">
-                                    <p>The entire cost of a designer kitchen depends on many different factors like materials, size, and design complexity. However, Buy Kitchen Online offers premium quality at affordable prices for various budgets.</p>
+                                    <p>The entire cost of a designer kitchen depends on many different factors like; materials,
+                            size, and design complexity. However, Buy Kitchen Online offers premium quality at
+                            affordable prices for various budgets.</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- card 8 -->
+                        <!-- card -->
                         <div class="card">
-                            <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq8" aria-expanded="false">
-                                Can Buy Kitchen Online design a custom kitchen unit to fit my small physical space?
+                            <h6 class="collapsed ltn__card-title" data-bs-toggle="collapse" data-bs-target="#faq-item-2-8" aria-expanded="false">
+                                Can Buy Kitchen Online design a custom kitchen unit to fit my small
+                            physical space?
                             </h6>
-                            <div id="faq8" class="collapse" data-parent="#bkoFaqAccordion">
+                            <div id="faq-item-2-8" class="collapse" data-bs-parent="#accordion_2">
                                 <div class="card-body">
-                                    <p>Absolutely! The experts at Buy Kitchen Online specialize in building kitchen units according to your available space and lifestyle.</p>
+                                    <p>Absolutely! The experts at Buy Kitchen Online specialize in building kitchen units according
+                            to your available space and lifestyle.</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- card 9 -->
+                        <!-- card -->
                         <div class="card">
-                            <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq9" aria-expanded="false">
-                                Does Buy Kitchen Online offer any flexible financing options for kitchen units?
-                            </h6>
-                            <div id="faq9" class="collapse" data-parent="#bkoFaqAccordion">
-                                <div class="card-body">
-                                    <p>Yes, Buy Kitchen Online aims to make your dream kitchen a reality by offering different financing options. Please get in touch with us for any further details.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- card 10 -->
-                        <div class="card">
-                            <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq10" aria-expanded="false">
+                            <h6 class="collapsed ltn__card-title" data-bs-toggle="collapse" data-bs-target="#faq-item-2-9" aria-expanded="false">
                                 Which materials are used to make a kitchen unit?
                             </h6>
-                            <div id="faq10" class="collapse" data-parent="#bkoFaqAccordion">
+                            <div id="faq-item-2-9" class="collapse" data-bs-parent="#accordion_2">
                                 <div class="card-body">
-                                    <p>The most popular materials include stainless steel, quartz, and wood (such as oak, maple, and cherry). Buy Kitchen Online helps you in choosing the perfect material according to your preference.</p>
+                                    <p>The most popular materials include stainless steel, quarts, and wood (such as oak, maple,
+                            and cherry). Buy Kitchen Online helps you in choosing the perfect material according to your
+                            preference.</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- card 11 -->
+                        <!-- card -->
                         <div class="card">
-                            <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq11" aria-expanded="false">
+                            <h6 class="collapsed ltn__card-title" data-bs-toggle="collapse" data-bs-target="#faq-item-2-10" aria-expanded="false">
                                 Is a bespoke designer kitchen worth it?
                             </h6>
-                            <div id="faq11" class="collapse" data-parent="#bkoFaqAccordion">
+                            <div id="faq-item-2-10" class="collapse" data-bs-parent="#accordion_2">
                                 <div class="card-body">
-                                    <p>Bespoke kitchens are worth it if you prefer customized, high-quality, long-lasting kitchens. The price may be higher than a standard kitchen, but the advantages of having a kitchen custom-made for your space and style are worth the investment.</p>
+                                    <p>Bespoke kitchens are worth it if you prefer customized, high-quality, long-lasting kitchens.
+                            The price may be higher than a standard kitchen, but the advantages of having a kitchen
+                            custom-made for your space and style are worth the investment.</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- card 12 -->
+                        <!-- card -->
                         <div class="card">
-                            <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq12" aria-expanded="false">
+                            <h6 class="collapsed ltn__card-title" data-bs-toggle="collapse" data-bs-target="#faq-item-2-11" aria-expanded="false">
                                 What kitchen styles are available at Buy Kitchen Online?
                             </h6>
-                            <div id="faq12" class="collapse" data-parent="#bkoFaqAccordion">
+                            <div id="faq-item-2-11" class="collapse" data-bs-parent="#accordion_2">
                                 <div class="card-body">
-                                    <p>The kitchen styles offered by Buy Kitchen Online are J Pull, Shaker, True Handleless and Slab-edged. For a luxurious contemporary look you can choose J Pull 22, Shaker 22, True Handleless Painted and Slab-Edged Painted. We also have budget-friendly options like MFC.</p>
+                                    <p>The kitchen styles offered by Buy Kitchen Online are J Pull, Shaker, True handleless,
+                            Slab-edged. If you want a luxurious kitchen with a contemporary look then you can choose
+                            from J Pull 22, Shaker 22, True handleless painted and Slab-Edged Painted. We also have
+                            budget-friendly kitchen option like MFC.</p>
                                 </div>
                             </div>
                         </div>

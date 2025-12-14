@@ -49,7 +49,7 @@
 
             </div>
 
-            <div class="col-lg-5 col-md-6 col-12 " style="z-index: 100; margin-left: auto;">
+            <div class="col-lg-5 col-md-6 col-12" style="z-index: 100; margin-left: auto; margin-top: 30px; margin-bottom: 30px;">
 
                 <div class="bg-white box-shadow-1 p-3 p-lg-4 rounded">
                     <div class="text-center mb-3">
