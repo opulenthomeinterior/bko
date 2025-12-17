@@ -1,4 +1,6 @@
 /*=============== SHOW MENU ===============*/
+initializeQuantitiesFromLocalStorage();
+calculateProductsQuantity();
 const showMenu = (toggleId, navId) => {
    const toggle = document.getElementById(toggleId),
       nav = document.getElementById(navId)
@@ -1145,7 +1147,7 @@ function calculateProductsQuantity() {
 
    $('#calculateProductsQuantity').html(totalQty);
    $('#calculateProductsQuantity2').html(totalQty);
-   $('#calculateProductsQuantityBottom').html(totalQty);
+   $('.calculateProductsQuantityBottom').html(totalQty);
 }
 
 function getProductsFromLocalStorage() {

@@ -9,10 +9,12 @@ use App\Models\Category;
 use App\Models\ProductFile;
 use App\Models\Testimonial;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StyleController;
 use App\Http\Controllers\ColourController;
@@ -257,13 +259,20 @@ Route::prefix('my-account')->middleware(['auth', 'verified', 'role:user'])->grou
 
 // Front End
 Route::prefix('/')->middleware([])->group(function () {
-
+    Route::get('test-email', function () {
+        Mail::mailer('smtp')->raw('Mailtrap force test', function ($message) {
+            $message->to('test@example.com')
+                    ->subject('FORCED SMTP TEST');
+        });
+    })->name('test_email');
     Route::get('kitchens', function () {
         return view('frontend.one-pager');
     })->name('one_pager');
     Route::get('tiles', function () {
         return view('frontend.tiles');
     })->name('tiles');
+
+    Route::get('/super-gloss-white', [PageController::class, 'superGlossWhite'])->name('super-gloss-white');
 
     Route::get('/', function () {
         $generalFaqs = Faq::where('type', 'general')->get();

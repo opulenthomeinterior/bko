@@ -439,14 +439,16 @@ class HomeController extends Controller
         // echo '</pre>';
         // exit;
         $testimonials = Testimonial::where('page_type', 'categories')->get();
-        return view('frontend.shop.ordercomponent.index', compact('components', 'testimonials'));
+        $categories = Category::where('status', 1)->get();
+        $styles = Style::where('status', 1)->get();
+        return view('frontend.shop.ordercomponent.index', compact('components', 'testimonials', 'categories', 'styles'));
     }
 
     public function ordercomponentbyname(Request $request, $slug)
     {
         $category = Category::with('testimonials', 'faqs')->where('slug', $slug)->firstOrFail();
         $children = Category::where('parent_category_id', $category->id)->pluck('id')->toArray();
-
+        
         $types = Category::whereIn('id', $children)
                 ->select('id', 'name', 'status')
                 ->where('status', 1)
@@ -497,18 +499,40 @@ class HomeController extends Controller
         if ($currentPage < 1) {
             $currentPage = 1;
         }
+        $products = Product::where('status', 'active');
+        if (!empty($request->get('style_id'))) {
+            $products = $products->where('style_id', $request->get('style_id'));
+        }
+        if (!empty($request->get('colour_id'))) {
+            $products = $products->where('colour_id', $request->get('colour_id'));
+        }
+        if (!empty($request->get('height'))) {
+            $products = $products->where('height', $request->get('height'));
+        }
+        if (!empty($request->get('width'))) {
+            $products = $products->where('width', $request->get('width'));
+        }
         if ($slug == 'handles' || $slug == 'sinks') {
-            $products = Product::whereIn('category_id', $children)->where('status', 'active')->groupBy('parent_sub_category')->offset($offset)->limit($limit);
-            $products = $products->get();
+            $products = $products->whereIn('category_id', $children)->where('status', 'active')->groupBy('parent_sub_category');
+        } 
+        // else {
+        //     $products = Product::whereIn('category_id', $children)->where('status', 'active')->offset($offset)->limit($limit);
+        //     if (!empty($request->style_id)) {
+        //         $products = $products->where('style_id', $request->style_id);
+        //     }
+        //     if (!empty($request->colour_id)) {
+        //         $products = $products->where('colour_id', $request->colour_id);
+        //     }
+        //     $products = $products->get();
+        // }
+        if (in_array($slug, ['handles', 'sinks'])) {
+            $products = $products
+                ->select('parent_sub_category', DB::raw('MIN(id) as id'))
+                ->groupBy('parent_sub_category')
+                ->paginate(12)->onEachSide(2)->withQueryString();
         } else {
-            $products = Product::whereIn('category_id', $children)->where('status', 'active')->offset($offset)->limit($limit);
-            if (!empty($request->style_id)) {
-                $products = $products->where('style_id', $request->style_id);
-            }
-            if (!empty($request->colour_id)) {
-                $products = $products->where('colour_id', $request->colour_id);
-            }
-            $products = $products->get();
+
+            $products = $products->paginate(12)->onEachSide(2)->withQueryString();
         }
 
         $heights = Product::whereIn('category_id', $children)
@@ -530,25 +554,35 @@ class HomeController extends Controller
         $urlStyleId = $request->style_id ?? '';
         $urlColourId = $request->colour_id ?? '';
         
-        $products->map(function ($product) {
-            $findProduct = Product::where('style_id', $product->style_id)
-                            ->where('assembly_id', $product->assembly_id)
-                            ->where('colour_id', $product->colour_id)
-                            ->where('id', $product->id)->where('status', 'active')
-                            ->first();
+        // $products->map(function ($product) {
+        //     $findProduct = Product::where('style_id', $product->style_id)
+        //                     ->where('assembly_id', $product->assembly_id)
+        //                     ->where('colour_id', $product->colour_id)
+        //                     ->where('id', $product->id)->where('status', 'active')
+        //                     ->first();
 
-            $categoryShortTitle = $findProduct?->short_title;
-            $parentSubCategory = $findProduct?->parent_sub_category;
+        //     $categoryShortTitle = $findProduct?->short_title;
+        //     $parentSubCategory = $findProduct?->parent_sub_category;
 
-            $relatedCategoryProducts = Product::with('colour')->where('id', '!=', $product->id)
+        //     $relatedCategoryProducts = Product::with('colour')->where('id', '!=', $product->id)
+        //         ->where('status', 'active')
+        //         ->whereIn('parent_category_id', [6, 15])
+        //         ->where(function ($q) use ($parentSubCategory, $categoryShortTitle) {
+        //             $q = $q->where('parent_sub_category', $parentSubCategory)
+        //             ->where('short_title', $categoryShortTitle);
+        //         })
+        //         ->count();
+        //     $product->related_products_count = $relatedCategoryProducts;
+        // });
+
+        $products->getCollection()->transform(function ($product) {
+            $product->related_products_count = Product::where('id', '!=', $product->id)
                 ->where('status', 'active')
                 ->whereIn('parent_category_id', [6, 15])
-                ->where(function ($q) use ($parentSubCategory, $categoryShortTitle) {
-                    $q = $q->where('parent_sub_category', $parentSubCategory)
-                    ->where('short_title', $categoryShortTitle);
-                })
+                ->where('parent_sub_category', $product->parent_sub_category)
+                ->where('short_title', $product->short_title)
                 ->count();
-            $product->related_products_count = $relatedCategoryProducts;
+            return $product;
         });
 
         $testimonials = Testimonial::where('category_id', $category->id)->where('page_type', 'categories')->get();

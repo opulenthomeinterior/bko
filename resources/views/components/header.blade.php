@@ -54,7 +54,7 @@
                         <div class="mini-cart-icon">
                             <a href="#ltn__utilize-cart-menu" class="ltn__utilize-toggle">
                                 <i class="icon-shopping-cart"></i>
-                                <sup>2</sup>
+                                <sup class="calculateProductsQuantityBottom">2</sup>
                             </a>
                         </div>
                         <!-- mini-cart -->
@@ -73,7 +73,7 @@
             </div>
         </div>
     </div>
-    <div class="ltn__header-middle-area ltn__header-sticky section-bg-0">
+    <div class="ltn__header-middle-area ltn__header-sticky section-bg-0 sticky-scrollar">
         <div class="container">
             <div class="row">
                 <div class="col header-menu-column d-flex justify-content-end">
@@ -164,7 +164,7 @@
                                             @foreach ($categories as $category)
                                             <li class="py-0 px-4">
                                                 <ul class="py-2">
-                                                    <li class="p-0"><a href="{{ route('orderkitchenbyname', [$category->slug]) }}">{{ $category->name }}</a></li>
+                                                    <li class="p-0"><a href="{{ route('ordercomponentbyname', [$category->slug]) }}">{{ $category->name }}</a></li>
                                                 </ul>
                                             </li>
                                             @endforeach
@@ -181,6 +181,13 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <!-- Floating Cart Button -->
+        <div class="header-cart-float">
+            <a href="{{ route('cart') }}" class="cart-btn">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="calculateProductsQuantityBottom" style="font-size: 12px;">0</span>
+            </a>
         </div>
     </div>
     <!-- ltn__header-middle-area end -->
