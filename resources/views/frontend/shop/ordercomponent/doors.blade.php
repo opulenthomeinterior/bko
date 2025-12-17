@@ -261,7 +261,7 @@
                                     <div class="product-img-location">
                                         <ul>
                                             <li>
-                                                <a href="#" class="bg-light p-2"><i class="flaticon-pin"></i>{{$product->related_products_count > 0 ? $product->related_products_count : '1'}} available colour/s</a>
+                                                <a href="#" class="bg-light p-2">{{$product->related_products_count > 0 ? $product->related_products_count : '1'}} available colour/s</a>
                                             </li>
                                         </ul>
                                     </div>
