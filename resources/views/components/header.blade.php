@@ -54,7 +54,7 @@
                         <div class="mini-cart-icon">
                             <a href="#ltn__utilize-cart-menu" class="ltn__utilize-toggle">
                                 <i class="icon-shopping-cart"></i>
-                                <sup class="calculateProductsQuantityBottom">2</sup>
+                                <sup class="calculateProductsQuantityBottom"></sup>
                             </a>
                         </div>
                         <!-- mini-cart -->
@@ -194,7 +194,7 @@
             <span class="ltn__utilize-menu-title">Cart</span>
             <button class="ltn__utilize-close">×</button>
         </div>
-        <div class="mini-cart-product-area ltn__scrollbar">
+        <div class="mini-cart-product-area ltn__scrollbar" id="cartItemsList">
             <!-- <div class="mini-cart-item clearfix">
                 <div class="mini-cart-img">
                     <a href="#"><img src="{{ asset('img/product/1.png') }}" alt="Image"></a>
@@ -207,9 +207,6 @@
             </div> -->
         </div>
         <div class="mini-cart-footer">
-            <div class="mini-cart-total">
-                <h5>Subtotal: <span>£0.00</span></h5>
-            </div>
             <div class="btn-wrapper">
                 <a href="#" class="btn theme-btn-1 btn-effect-1">View Cart</a>
                 <a href="#" class="btn theme-btn-2 btn-effect-2">Checkout</a>

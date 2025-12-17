@@ -1,6 +1,7 @@
 /*=============== SHOW MENU ===============*/
 initializeQuantitiesFromLocalStorage();
 calculateProductsQuantity();
+updateCartItemsList();
 const showMenu = (toggleId, navId) => {
    const toggle = document.getElementById(toggleId),
       nav = document.getElementById(navId)
@@ -595,6 +596,7 @@ function addToCart(id, productCode, full_title, price, discount_price, discount_
 }
 
 function removeFromCart(id, productCode) {
+   alert(id, productCode);
    let products = localStorage.getItem('bko_cart');
    if (!products) {
       return;
@@ -636,7 +638,17 @@ function updateCartItemsList() {
    $cartItemsList.empty();
 
    products.forEach(product => {
-      $cartItemsList.append(`<h4><i class="ri-btn ri-delete-bin-line text-danger" onclick="removeFromCart(${product.id}, '${product.productCode}')" ></i>&nbsp; ${product.quantity} x ${product.full_title}</h4>`);
+      $cartItemsList.append(`
+         <div class="mini-cart-item clearfix">
+            <div class="mini-cart-img">
+               <a href="#"><img src="https://bkonline.uk/public/imgs/products/${product.image_path}" alt="Image"></a>
+               <span class="mini-cart-item-delete"><i class="icon-cancel" onclick="removeFromCart(${product.id}, '${product.productCode}')"></i></span>
+            </div>
+            <div class="mini-cart-info">
+               <h6><a href="#">${product.quantity} X ${product.full_title}</a></h6>
+            </div>
+         </div>
+      `);
    });
 }
 

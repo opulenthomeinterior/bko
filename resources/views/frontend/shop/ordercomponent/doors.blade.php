@@ -296,7 +296,14 @@
                                                 <button style="border-radius: 50px;" type="button" class="btn btn-outline-warning px-3 py-1 ms-1 quantity-btn" onclick="incQty({{ $product->id }})">+</button>
                                             </div>
                                         </div>
-                                            <button class="btn btn-warning p-2 w-100 mt-2 add-to-cart" onclick="inputQty(document.querySelector('#quantity{{ $product->id }}').value, '{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}')">Add to Cart</button>
+                                        <div class="d-flex justify-content-between mt-3">
+                                            <div>
+                                                <button class="btn btn-warning p-2 w-100 add-to-cart" onclick="inputQty(document.querySelector('#quantity{{ $product->id }}').value, '{{ $product->id }}', '{{ $product->product_code }}', '{{ $product->full_title }}', {{ $product->price }}, {{ $product->discounted_price }}, {{ $product->discounted_percentage ?? 0 }}, '{{ $product->ParentCategory->slug }}','{{ $product->image_path }}')">Add to Cart</button>
+                                            </div>
+                                            <div>
+                                                <a class="btn btn-dark p-2 w-100 ltn__utilize-toggle" href="#ltn__utilize-cart-menu">View Cart</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
