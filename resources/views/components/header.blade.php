@@ -202,7 +202,7 @@
             <button class="ltn__utilize-close">×</button>
         </div>
         <div class="mini-cart-product-area ltn__scrollbar">
-            <div class="mini-cart-item clearfix">
+            <!-- <div class="mini-cart-item clearfix">
                 <div class="mini-cart-img">
                     <a href="#"><img src="{{ asset('img/product/1.png') }}" alt="Image"></a>
                     <span class="mini-cart-item-delete"><i class="icon-cancel"></i></span>
@@ -211,21 +211,11 @@
                     <h6><a href="#">Wheel Bearing Retainer</a></h6>
                     <span class="cart-quantity">1 x <span class="price">£120.00</span></span>
                 </div>
-            </div>
-            <div class="mini-cart-item clearfix">
-                <div class="mini-cart-img">
-                    <a href="#"><img src="{{ asset('img/product/2.png') }}" alt="Image"></a>
-                    <span class="mini-cart-item-delete"><i class="icon-cancel"></i></span>
-                </div>
-                <div class="mini-cart-info">
-                    <h6><a href="#">Brake Shoe</a></h6>
-                    <span class="cart-quantity">1 x <span class="price">£80.00</span></span>
-                </div>
-            </div>
+            </div> -->
         </div>
         <div class="mini-cart-footer">
             <div class="mini-cart-total">
-                <h5>Subtotal: <span>£200.00</span></h5>
+                <h5>Subtotal: <span>£0.00</span></h5>
             </div>
             <div class="btn-wrapper">
                 <a href="#" class="btn theme-btn-1 btn-effect-1">View Cart</a>
