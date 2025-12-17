@@ -182,13 +182,6 @@
                 </div>
             </div>
         </div>
-        <!-- Floating Cart Button -->
-        <div class="header-cart-float">
-            <a href="{{ route('cart') }}" class="cart-btn">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="calculateProductsQuantityBottom" style="font-size: 12px;">0</span>
-            </a>
-        </div>
     </div>
     <!-- ltn__header-middle-area end -->
 </header>
