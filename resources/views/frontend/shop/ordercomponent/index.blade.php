@@ -81,7 +81,7 @@
                 <div class="ltn__gallery-sizer col-1"></div>
                 @foreach ($components as $index => $component)
                 <!-- gallery-item -->
-                <div class="ltn__gallery-item filter_category_3 col-lg-4 col-sm-6 col-12" style="position: absolute; left: 0%; top: 0px;">
+                <div class="ltn__gallery-item filter_category_3 col-lg-4 col-sm-6 col-12" style="height: 400px; position: absolute; left: 0%; top: 0px;">
                     <div class="ltn__gallery-item-inner">
                         <div class="ltn__gallery-item-img">
                             <a href="{{ $component->image_path ? asset('imgs/categories/' . $component->image_path) : asset('images/no-image-available.jpg') }}" data-rel="lightcase:myCollection">
