@@ -258,7 +258,6 @@
 @section('scripts')
 <script>
     $(document).ready(function() {
-        alert();
         $(document).on('click', '.style-item', function () {
             var _this = $(this);
             var styleId = _this.attr('data-style-id');
