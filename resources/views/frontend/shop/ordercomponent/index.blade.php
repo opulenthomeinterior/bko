@@ -92,7 +92,7 @@
                             </a>
                         </div>
                         <div class="ltn__gallery-item-info">
-                            <h4><a href="portfolio-details.html">{{ $component->name }} </a></h4>
+                            <h4><a href="{{ route('ordercomponentbyname', [$component->slug]) }}">{{ $component->name }} </a></h4>
                             @if ($component->slug == 'doors')
                                 <p class="card-text">The doors are the first impression of your kitchen. You can transform your kitchen by selecting from our various colors and finishes. Our doors are the essence of style and durability, creating an elegant look.</p>
                                 @elseif ($component->slug == 'handles')
