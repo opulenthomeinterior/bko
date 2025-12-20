@@ -67,8 +67,10 @@ class HomeController extends Controller
             $data[$style->name] = $styleData;
         }
         $testimonials = Testimonial::where('page_type', 'styles')->limit(5)->get();
+        $styles = Style::all();
+        $categories = Category::whereNull('parent_category_id')->get();
 
-        return view('frontend.shop.orderkitchen.index', compact('data', 'testimonials'));
+        return view('frontend.shop.orderkitchen.index', compact('data', 'testimonials', 'styles', 'categories'));
     }
 
 

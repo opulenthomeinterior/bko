@@ -92,7 +92,7 @@ $(document).ready(function () {
       row.find('#rigid').removeClass('d-none').addClass('d-block');
       row.find('#flatpacked').addClass('d-none');
       e.preventDefault();
-   })
+   });
 
    $('.collapse-heading').on('click', function () {
       var targetCollapse = $(this).attr('href');

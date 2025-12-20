@@ -1,655 +1,444 @@
-<x-guest-layout>
-    <head>
-    <title>Order Kitchen </title>
-    </head>
-    <style>
+@extends('layouts.guest2')
 
-           :root {
-            --primary-color: #ffc01f;
-            --primary-light: #ffd45e;
-            --primary-dark: #e6a600;
-            --dark-color: #333333;
-            --light-color: #f8fafc;
-            --text-on-primary: #333333;
-        }
-        .arrow-ul {
-            display: flex;
-            flex-wrap: wrap;
-            column-gap: 1rem;
-            justify-content: center;
-            padding-left: 0;
-            list-style: none; /* Remove default bullets */
-        }
+@section('title', 'Order Components | Buy Kitchen Online')
 
-        .arrow-ul .arrow-li {
-            white-space: nowrap;
-            position: relative;
-            padding-left: 20px; /* Space for custom bullet */
-        }
+@section('meta_description', 'Read customer reviews and Components about our kitchen design and installation services.')
 
-        .arrow-ul .arrow-li::before {
-            content: "▶"; /* Custom bullet (arrow) */
-            position: absolute;
-            left: 0;
-            color: #004d40; /* Bullet color */
-        }
+@section('styles')
+<style>
+    .backgroundimage {
+        background-image: url("{{ asset('images/order-component.jpg') }}");
+        background-size: cover;
+        background-position: center center;
+    }
+    .quantity-group {
+        width: 110px; /* controls overall size */
+    }
 
+    .quantity-input {
+        padding: 2px 4px;
+        font-size: 13px;
+    }
+</style>
+@endsection
 
-
-        
-  .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-
-        .faq-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .faq-header h1 {
-            color: var(--dark-color);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        /* .faq-header h1:after {
-            content: '';
-            position: absolute;
-            width: 50%;
-            height: 4px;
-            background-color: var(--primary-color);
-            bottom: -10px;
-            left: 25%;
-            border-radius: 2px;
-        } */
-
-        .faq-header p {
-            color: #64748b;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            margin-bottom: 1.5rem;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            border-left: 4px solid transparent;
-        }
-
-        .faq-item:hover {
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-            transform: translateY(-2px);
-            border-left: 4px solid var(--primary-color);
-        }
-
-        .faq-question {
-            cursor: pointer;
-            padding: 1.25rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--dark-color);
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-
-        .faq-question.active {
-            background-color: var(--primary-color);
-            color: var(--text-on-primary);
-        }
-
-        .faq-question i {
-            transition: transform 0.3s ease;
-            color: var(--primary-color);
-        }
-
-        .faq-question.active i {
-            transform: rotate(180deg);
-            color: var(--text-on-primary);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            padding: 0 1.5rem;
-            color: #475569;
-            line-height: 1.6;
-            transition: all 0.5s ease;
-            background-color: #fffdf7;
-        }
-
-        .faq-answer.show {
-            max-height: 500px;
-            padding: 1rem 1.5rem 1.5rem;
-            border-top: 1px solid #fff5e0;
-        }
-
-        /* Custom badge styles */
-        .faq-badge {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-right: 0.5rem;
-        }
-
-        .faq-badge-popular {
-            background-color: var(--primary-light);
-            color: var(--text-on-primary);
-        }
-
-        .faq-badge-new {
-            background-color: #ffe8a3;
-            color: #b38000;
-        }
-
-        /* Search box styles */
-        .faq-search {
-            position: relative;
-            margin-bottom: 2rem;
-        }
-
-        .faq-search input {
-            width: 100%;
-            padding: 1rem 1.5rem;
-            padding-left: 3rem;
-            border: 2px solid #e2e8f0;
-            border-radius: 50px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .faq-search input:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(255, 192, 31, 0.3);
-        }
-
-        .faq-search i {
-            position: absolute;
-            left: 1.25rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--primary-color);
-        }
-
-        /* Category filters */
-        .faq-categories {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-            justify-content: center;
-        }
-
-        .faq-category {
-            padding: 0.5rem 1rem;
-            background-color: white;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: #64748b;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 1px solid #e2e8f0;
-        }
-
-        .faq-category:hover, .faq-category.active {
-            background-color: var(--primary-color);
-            color: var(--text-on-primary);
-            border-color: var(--primary-color);
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .faq-categories {
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                padding-bottom: 0.5rem;
-                justify-content: flex-start;
-                scrollbar-width: none;
-            }
-
-            .faq-categories::-webkit-scrollbar {
-                display: none;
-            }
-
-            .faq-category {
-                white-space: nowrap;
-            }
-
-            .faq-question {
-                font-size: 1rem;
-                padding: 1rem 1.25rem;
-            }
-        }
-
-
-
-    </style>
-    
-    <div class="container-fluid px-lg-5 py-4 px-md-3 px-3 bg-light border-bottom border-warning">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('orderkitchen') }}" class="text-uppercase">Order Kitchen</a></li>
-            </ol>
-        </nav>
-
-        <div class="row">
-            <div class="col-8 container">
-                <h1 class="fs-1 fw-bolder text-center text-dark text-uppercase">Order Your New Kitchen</h1>
-                <p class="text-center">
-                    Choosing the proper kitchen can affect the aesthetic and functionality of your entire house. The most crucial factor is that your kitchen should reflect your personality while meeting your needs. It’s not just a place to cook; it is where life happens.
-                </p>
-                <p class="text-center text-warning fw-bold fs-5">
-                    THINGS TO CONSIDER BEFORE SELECTING YOUR KITCHEN
-                </p>
-            </div>
-        </div>
-
-        <div class="row py-2">
-            <div class="col-12 text-center"> <!-- Full width for better responsiveness -->
-                <ul class="arrow-ul">
-                    <li class="arrow-li">Functionality</li>
-                    <li class="arrow-li">Space constraints</li>
-                    <li class="arrow-li">Style preferences</li>
-                    <li class="arrow-li">Future trends</li>
-                    <li class="arrow-li">Storage needs</li>
-                    <li class="arrow-li">Materials</li>
-                </ul>
+@section('content')
+    {{-- Breadcrumb --}}
+    <div class="ltn__breadcrumb-area ltn__breadcrumb-area-1 ltn__breadcrumb-color-white--- pt-35 pb-35 backgroundimage mb-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ltn__breadcrumb-inner">
+                        <h1 class="page-title text-white p-3 w-50" style="background-color: #000000a1">Order Kitchen</h1>
+                        <!-- <div class="ltn__breadcrumb-list">
+                            <ul>
+                                <li><a href="{{ route('home') }}" class="text-white"><span class="text-dark"><i class="fas fa-home text-white"></i></span> Home</a></li>
+                                <li class="text-white">Order Components</li>
+                            </ul>
+                        </div> -->
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="container px-lg-5 py-4 px-md-3 px-3">
-        {{-- Loop through each style --}}
-        <div class="row mb-md-5 mb-4">
-        @foreach ($data as $styleName => $styleData)
-            @php
-            if ($loop->iteration % 2 == 0) {
-                $boxShadow = '20px -20px 0px rgba(254, 189, 73, 0.8)';
-            } else {
-            $boxShadow = '-20px -20px 0px rgba(42, 97, 97, 0.8)';
-            }
-            @endphp
-            <!-- <div class="col-lg-6 col-md-6 col-12 pr-4">
-                <img src="{{ $styleData['data']->image_path ? asset('uploads/styles/' . $styleData['data']->image_path) : asset('images/order-component.jpg') }}"
-                    class="img-fluid" />
-            </div> -->
-
-            <div class="row-class col-xl-6 col-lg-6 col-md-6 col-12 my-5">
-                <div class="col-12 px-3 mb-3">
-                    <!-- <img src="{{ $styleData['data']->image_path ? asset('uploads/styles/' . $styleData['data']->image_path) : asset('images/order-component.jpg') }}"
-                    class="img-fluid" /> -->
-                    <img src="{{asset('imgs/styles/'.$styleData['data']->image_path)}}"
-                    class="img-fluid" style="box-shadow: {{$boxShadow}}; height: 500px; object-fit: cover;" />
+    {{-- Left Heading + Right Form Section --}}
+    <div class="ltn__about-us-area pt-60 pt-md-80 pb-60 pb-md-80 section-bg-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-12">
+                    <div class="about-us-info-wrap">
+                        <div class="mb-20">
+                            <h4>THINGS TO CONSIDER BEFORE SELECTING YOUR KITCHEN</h4>
+                            <p>Choosing the proper kitchen can affect the aesthetic and functionality of your entire house. The most crucial factor is that your kitchen should reflect your personality while meeting your needs. It’s not just a place to cook; it is where life happens.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="d-flex justify-content-between align-items-center border-bottom border-warning mb-3 mx-3">
-                    <h1 class="fs-3 fw-bolder text-dark text-uppercase">{{ $styleData['data']->name }}</h1>
-                    <a class="btn btn-sm btn-outline-warning text-dark" href="{{route('orderkitchenbyname', [$styleData['data']->slug])}}" style="border-radius: 0;">Explore</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="ltn__product-slider-area ltn__product-gutter pt-115 pb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title-area ltn__section-title-2--- text-center">
+                        <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color">Property</h6>
+                        <h1 class="section-title">Latest Listings</h1>
+                    </div>
                 </div>
-
-                <!-- <p>
-                        18mm MDF slab doors available in 12 SuperGloss and UltraMatt finishes. Also available in 2 MFC
-                        standard finishes.
-                    </p> -->
-
-                <h2 class="fs-5 px-3 text-dark fw-bold text-uppercase">Dispatch</h2>
-                <p class="px-3">First select your choice of assembly:</p>
-
-                @foreach ($styleData['assemblies'] as $assemblyName => $assemblyData)
-                <button type="button" id="{{ $assemblyName == 'Rigid' ? 'rigid_btn' : 'flatpacked_btn' }}"
-                    class="btn btn-sm btn-outline-warning text-dark rounded-0 mx-3">{{ $assemblyName }}</button>
-                @endforeach
-
-                @foreach ($styleData['assemblies'] as $assemblyName => $assemblyData)
-                <div class="py-2 mt-3 d-none px-3" id="{{ $assemblyData['data']->slug == 'rigid' ? 'rigid' : 'flatpacked' }}">
-                    <h2 class="fs-6 text-dark fw-bold">MDF COLOURS ({{ $assemblyName }})</h2>
-                    <p>Choose a colour:</p>
-                    <div class="row g-1">
-                        @foreach ($assemblyData['colours'] as $colour)
-                        <div
-                            class="col-6 d-flex position-relative align-items-center justify-content-center">
-                            @if (!empty($colour->colour_code))
-                            <div
-                                class="colour-div position-absolute start-0 top-50 translate-middle-y ms-2 border border-dark" style="background-color: {{$colour->colour_code}};">
-                            </div>
-                            @else
-                            <div
-                                class="colour-div position-absolute start-0 top-50 translate-middle-y ms-2 border border-dark" style="background: linear-gradient(to right, red, yellow, green);">
-                            </div>
-                            @endif
-                            <a href="{{ route('orderkitchenbycolour', ['style' => $styleData['data']->slug , 'assembly' => $assemblyData['data']->slug, 'colour' => $colour->slug]) }}" class="colour-btn btn w-100 rounded-0 sidebar-btn text-start">
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $colour->trade_colour }}
+            </div>
+            <div class="row ltn__product-slider-item-three-active--- slick-arrow-1">
+                <!-- ltn__product-item -->
+                 @foreach ($data as $styleName => $styleData)
+                <div class="col-xl-6 col-sm-6 col-12">
+                    <div class="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
+                        <div class="product-img d-flex justify-content-center">
+                            <a href="product-details.html">
+                                <img src="https://bkonline.uk/public/imgs/styles/06_06_2025_104957_6842c7d5c26f5-j-pull(1).png" alt="#">
                             </a>
                         </div>
-                        @endforeach
+                        <div class="product-info row-class pb-3">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h2><a href="product-details.html">{{ $styleData['data']->name }}</a></h2>
+                                </div>
+                                <div>
+                                    <a class="btn btn-sm btn-outline-warning text-dark p-2" href="{{route('orderkitchenbyname', [$styleData['data']->slug])}}" style="border-radius: 0;">Explore</a>
+                                </div>
+                            </div>
+                            <div class="product-hover-action">
+                                <h6>DISPATCH</h6>
+                                <p>First select your choice of assembly</p>
+                            </div>
+                            <div class="d-flex gap-3">
+                                @foreach ($styleData['assemblies'] as $assemblyName => $assemblyData)
+                                <button type="button" class="btn btn-sm btn-outline-warning text-dark p-1" id="{{ $assemblyName == 'Rigid' ? 'rigid_btn' : 'flatpacked_btn' }}">{{ $assemblyName }}</button>
+                                @endforeach
+                            </div>
+                                @foreach ($styleData['assemblies'] as $assemblyName => $assemblyData)
+                                <div class="py-2 d-none" id="{{ $assemblyData['data']->slug == 'rigid' ? 'rigid' : 'flatpacked' }}">
+                                    <h2 class="fs-6 text-dark fw-bold">MDF COLOURS ({{ $assemblyName }})</h2>
+                                    <p class="my-0 text-dark">Choose a colour:</p>
+                                    <div class="row">
+                                        @foreach ($assemblyData['colours'] as $colour)
+                                        <div class="col-6 py-0 my-0">
+                                            @if (!empty($colour->colour_code))
+                                                <div class="colour-div position-absolute start-0 top-50 translate-middle-y ms-3 border border-dark" style="background-color: {{$colour->colour_code}}; width: 12px; height: 12px"></div>
+                                            @else
+                                                <div class="colour-div position-absolute start-0 top-50 translate-middle-y ms-3 border border-dark" style="background: linear-gradient(to right, red, yellow, green); width: 12px; height: 12px"></div>
+                                            @endif
+                                            <a class="ms-3" href="{{ route('orderkitchenbycolour', ['style' => $styleData['data']->slug , 'assembly' => $assemblyData['data']->slug, 'colour' => $colour->slug]) }}">
+                                                {{ $colour->trade_colour }}
+                                            </a>
+                                        </div>
+                                        <!-- <div class="col-6">
+                                            @if (!empty($colour->colour_code))
+                                            <div
+                                                class="colour-div position-absolute start-0 top-50 translate-middle-y ms-2 border border-dark" style="background-color: {{$colour->colour_code}};">
+                                            </div>
+                                            @else
+                                            <div
+                                                class="colour-div position-absolute start-0 top-50 translate-middle-y ms-2 border border-dark" style="background: linear-gradient(to right, red, yellow, green);">
+                                            </div>
+                                            @endif
+                                            <a href="{{ route('orderkitchenbycolour', ['style' => $styleData['data']->slug , 'assembly' => $assemblyData['data']->slug, 'colour' => $colour->slug]) }}" class="colour-btn btn w-100 rounded-0 sidebar-btn text-start">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $colour->trade_colour }}
+                                            </a>
+                                        </div> -->
+                                        @endforeach
+                                    </div>
+                                </div>
+                                @endforeach
+                        </div>
+                        
                     </div>
                 </div>
                 @endforeach
             </div>
-        @endforeach
         </div>
     </div>
-
-    {{-- <section class="container-fluid bg-light py-4">
-        <div class="col-12 d-flex flex-column align-items-center">
-        </div>
-    </section> --}}
-
-    <!-- Why choose Buy Kitchen Online -->
-    @include('frontend.why_choose_bkonline')
     
-    {{-- <section class="container-fluid bg-white" style="border-bottom: 40px solid #2a6161;">
-    </section> --}}
+    <div class="ltn__feature-area pt-80 pb-90 mb-120--- section-bg-1">
+        <div class="container">
+            {{-- Top heading --}}
+            <div class="row mb-3">
+                <div class="col-12 text-center">
+                    <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color">Why BKO?</h6>
+                    <h1 class="section-title">WHY BUY KITCHEN ONLINE?</h1>
+                </div>
+            </div>
 
-    <!-- Testimonials -->
-    @include('frontend.testimonials_component', ['testimonials' => $testimonials, 'header_name' => $styleData['data']->name])
-
-    <!-- FAQs -->
-
-
-      <div class="container faq-container">
-        <div class="faq-header">
-            <h1>FAQS</h1>
+            {{-- Stats row --}}
+            <div class="row justify-content-center mb-40">
+                <div class="col-lg-4 col-sm-4 col-6 mb-3">
+                    <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
+                        <div class="ltn__feature-info py-3">
+                            <span class="d-inline-flex justify-content-center align-items-center rounded-circle text-white mb-2" style="background:#2d9cdb; width:58px; height:58px; font-weight:700;">1</span>
+                            <h6 class="mb-0" style="min-height: 18px;">Site Survey and Measurements</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-4 col-6 mb-3">
+                    <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
+                        <div class="ltn__feature-info py-3">
+                            <span class="d-inline-flex justify-content-center align-items-center rounded-circle text-white mb-2" style="background:#9b51e0; width:58px; height:58px; font-weight:700;">2</span>
+                            <h6 class="mb-0" style="min-height: 18px;">Kitchen Design</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-4 col-6 mb-3">
+                    <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
+                        <div class="ltn__feature-info py-3">
+                            <span class="d-inline-flex justify-content-center align-items-center rounded-circle text-white mb-2" style="background:#f2994a; width:58px; height:58px; font-weight:700;">3</span>
+                            <h6 class="mb-0" style="min-height: 18px;">Ordering Process</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-4 col-6 mb-3">
+                    <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
+                        <div class="ltn__feature-info py-3">
+                            <span class="d-inline-flex justify-content-center align-items-center rounded-circle text-white mb-2" style="background:#27ae60; width:58px; height:58px; font-weight:700;">4</span>
+                            <h6 class="mb-0" style="min-height: 18px;">Delivery & Quality Check</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-4 col-6 mb-3">
+                    <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
+                        <div class="ltn__feature-info py-3">
+                            <span class="d-inline-flex justify-content-center align-items-center rounded-circle text-white mb-2" style="background:#eb5757; width:58px; height:58px; font-weight:700;">5</span>
+                            <h6 class="mb-0" style="min-height: 18px;">Installation</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-    <div class="faq-list">
-            <!-- FAQ Item 1 -->
-            <div class="faq-item">
-                <div class="faq-question">
-                    <div class="fs-4">
-                       
-                          Do we offer customised colours in Matt or Gloss?
-                    </div>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-               <p class="fs-5">
-                 Yes, we offer a customised range of colours in matt, gloss and painted finish for every kitchen style.       
-               </p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <div class="fs-4">
-                       
-                           What is the difference between J Pull and J Pull 22?
-                    </div>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-               <p class="fs-5">
-                 J Pull 22 is a premium, refined version of the classic J Pull design, The "22" signifies an upgraded version with an enhanced, contemporary edge compared to the traditional, softer J Pull.
-               </p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <div class="fs-4">
-                       
-                        What Is the Most Trending Kitchen Style in the UK?
-                    </div>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-               <p class="fs-5">
-                The most trending kitchen styles for 2024 include sleek, modern designs with minimalistic aesthetics.
-               </p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <div class="fs-4">
-                       
-                         What Is the Quality Difference Between a Slab Laminated and a Slab Painted?
-                    </div>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-               <p class="fs-5">
-                Laminated slabs are highly durable, scratch-resistant, and budget-friendly, while painted slabs provide a luxurious, smooth finish with vibrant colour depth, perfect for creating a premium look.
-               </p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <div class="fs-4">
-                       
-                            What Things Should You Know Before Ordering Any Kitchen?
-                    </div>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-               <p class="fs-5">
-                 Having a clear understanding of your kitchen space, budget, and personal preferences for colour and design is essential before ordering any kitchen.
-               </p>
-                </div>
-            </div>
     </div>
-</div>
 
-
-
-    {{-- <section class="container-fluid py-5 px-4 bg-white" style="border-bottom: 3px solid #ebc266; border-right: 3px solid #ebc266">
-        <div class="row">
-            <h3 class="text-dark text-uppercase fw-bolder text-center">FAQs</h3>
-        </div>
-        <div class="row bg-white">
-            <div class="col-lg-12 bg-white">
-                <div class="accordion accordion-flush bg-white" id="accordionFlushExample">
-                    <div class="accordion-item bg-white border-0">
-                        <h2 class="accordion-header bg-white border-0">
-                            <button class="mb-2 accordion-button collapsed fw-bolder text-dark border-bottom border-warning btn btn-outline-warning" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#flush-collapse1"
-                                aria-expanded="false" aria-controls="flush-collapse1" style="border-radius: 20px">
-                                Do we offer customised colours in Matt or Gloss?
-                            </button>
-                        </h2>
-                        <div id="flush-collapse1" class="accordion-collapse collapse bg-white"
-                            data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body bg-white text-dark">
-                            Yes, we offer a customised range of colours in matt, gloss and painted finish for every kitchen style.</div>
-                            <hr class="border-bottom border-warning px-4 mx-4">
+    <!-- TESTIMONIALS SECTION START -->
+    <div id="testimonials-section" class="ltn__testimonial-area section-bg-0 pt-90 pb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-40">
+                    <h3 class="text-uppercase fw-bolder text-dark mb-10">FACT, EVERYONE LOVES US</h3>
+                    <p>Real experiences from homeowners who trusted Buy Kitchen Online with their dream kitchens.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 col-12 mb-30">
+                    <div class="ltn__testimonial-item ltn__testimonial-item-4 box-shadow-1 bg-white">
+                        <div class="ltn__testimoni-info">
+                            <p>"I discovered BKO Kitchen through a colleague. From the free consultation call to final installation of my shaker kitchen, everything was outstanding. Highly recommended!"</p>
+                        </div>
+                        <div class="ltn__testimoni-info-inner d-flex align-items-center justify-content-between">
+                            <div>
+                                <h5 class="mb-0">Jamie</h5>
+                                <small>Shaker Kitchen Installation</small>
+                            </div>
+                            <div class="product-ratting">
+                                <ul>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-12 bg-white">
-                <div class="accordion accordion-flush bg-white" id="accordionFlushExample">
-                    <div class="accordion-item bg-white border-0">
-                        <h2 class="accordion-header bg-white border-0">
-                            <button class="mb-2 accordion-button collapsed fw-bolder text-dark border-bottom border-warning btn btn-outline-warning" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#flush-collapse1"
-                                aria-expanded="false" aria-controls="flush-collapse1" style="border-radius: 20px">
-                                What is the difference between J Pull and J Pull 22?
-                            </button>
-                        </h2>
-                        <div id="flush-collapse1" class="accordion-collapse collapse bg-white"
-                            data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body bg-white text-dark">
-                            J Pull 22 is a premium, refined version of the classic J Pull design, The "22" signifies an upgraded version with an enhanced, contemporary edge compared to the traditional, softer J Pull.</div>
-                           
-                            <hr class="border-bottom border-warning px-4 mx-4">
+                <div class="col-lg-4 col-md-6 col-12 mb-30">
+                    <div class="ltn__testimonial-item ltn__testimonial-item-4 box-shadow-1 bg-white">
+                        <div class="ltn__testimoni-info">
+                            <p>"I ordered a grey sink, tap and tall L-shaped corner unit. Delivery was on time and quality was better than expected, with very reasonable prices. Perfect blend of quality and affordability."</p>
+                        </div>
+                        <div class="ltn__testimoni-info-inner d-flex align-items-center justify-content-between">
+                            <div>
+                                <h5 class="mb-0">Sarah</h5>
+                                <small>Components Order</small>
+                            </div>
+                            <div class="product-ratting">
+                                <ul>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-12 bg-white">
-                <div class="accordion accordion-flush bg-white" id="accordionFlushExample">
-                    <div class="accordion-item bg-white border-0">
-                        <h2 class="accordion-header bg-white border-0">
-                            <button class="mb-2 accordion-button collapsed fw-bolder text-dark border-bottom border-warning btn btn-outline-warning" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#flush-collapse1"
-                                aria-expanded="false" aria-controls="flush-collapse1" style="border-radius: 20px">
-                                What Is the Most Trending Kitchen Style in the UK?
-                            </button>
-                        </h2>
-                        <div id="flush-collapse1" class="accordion-collapse collapse bg-white"
-                            data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body bg-white text-dark">
-                            The most trending kitchen styles for 2024 include sleek, modern designs with minimalistic aesthetics.</div>
-                            <hr class="border-bottom border-warning px-4 mx-4">
+                <div class="col-lg-4 col-md-6 col-12 mb-30">
+                    <div class="ltn__testimonial-item ltn__testimonial-item-4 box-shadow-1 bg-white">
+                        <div class="ltn__testimoni-info">
+                            <p>"BKO transformed my small space into a stunning handleless kitchen. Their precision, design sense and installation team made the whole process smooth and stress-free."</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-12 bg-white">
-                <div class="accordion accordion-flush bg-white" id="accordionFlushExample">
-                    <div class="accordion-item bg-white border-0">
-                        <h2 class="accordion-header bg-white border-0">
-                            <button class="mb-2 accordion-button collapsed fw-bolder text-dark border-bottom border-warning btn btn-outline-warning" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#flush-collapse1"
-                                aria-expanded="false" aria-controls="flush-collapse1" style="border-radius: 20px">
-                                What Is the Quality Difference Between a Slab Laminated and a Slab Painted?
-                            </button>
-                        </h2>
-                        <div id="flush-collapse1" class="accordion-collapse collapse bg-white"
-                            data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body bg-white text-dark">
-                            Laminated slabs are highly durable, scratch-resistant, and budget-friendly, while painted slabs provide a luxurious, smooth finish with vibrant colour depth, perfect for creating a premium look.</div>
-                            
-                            <hr class="border-bottom border-warning px-4 mx-4">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-12 bg-white">
-                <div class="accordion accordion-flush bg-white" id="accordionFlushExample">
-                    <div class="accordion-item bg-white border-0">
-                        <h2 class="accordion-header bg-white border-0">
-                            <button class="mb-2 accordion-button collapsed fw-bolder text-dark border-bottom border-warning btn btn-outline-warning" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#flush-collapse1"
-                                aria-expanded="false" aria-controls="flush-collapse1" style="border-radius: 20px">
-                                What Things Should You Know Before Ordering Any Kitchen?
-                            </button>
-                        </h2>
-                        <div id="flush-collapse1" class="accordion-collapse collapse bg-white"
-                            data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body bg-white text-dark">
-                            Having a clear understanding of your kitchen space, budget, and personal preferences for colour and design is essential before ordering any kitchen.</div>
-                           
-                            <hr class="border-bottom border-warning px-4 mx-4">
+                        <div class="ltn__testimoni-info-inner d-flex align-items-center justify-content-between">
+                            <div>
+                                <h5 class="mb-0">Ahmed</h5>
+                                <small>Handleless Kitchen</small>
+                            </div>
+                            <div class="product-ratting">
+                                <ul>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section> --}}
+    </div>
+    <!-- TESTIMONIALS SECTION END -->
 
-@push('scripts')
-    <script>
+    <!-- FAQS SECTION START -->
+    <div id="faqs-section" class="ltn__faq-area pt-90 pb-90 mb-100 section-bg-1">
+        <div class="container">
+            <div class="row justify-content-center mb-40">
+                <div class="col-lg-8 col-12 text-center">
+                    <h3 class="text-uppercase fw-bolder text-dark mb-10">Frequently Asked Questions</h3>
+                    <p>Answers to common questions about affordable units, bespoke designer kitchens and our process.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-9 col-12">
+                    <div class="ltn__faq-inner ltn__faq-inner-2">
+                        <div id="bkoFaqAccordion">
+                            <!-- card 1 -->
+                            <div class="card">
+                                <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq1" aria-expanded="false">
+                                    What is the difference between an affordable kitchen unit and a custom kitchen unit?
+                                </h6>
+                                <div id="faq1" class="collapse" data-parent="#bkoFaqAccordion">
+                                    <div class="card-body">
+                                        <p>An affordable kitchen unit offers budget-friendly solutions without compromising quality. Custom kitchen units are tailor-made to your style, space and preferences, usually at a higher price point.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card 2 -->
+                            <div class="card">
+                                <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq2" aria-expanded="false">
+                                    How is a bespoke designer kitchen different from a standard kitchen?
+                                </h6>
+                                <div id="faq2" class="collapse" data-parent="#bkoFaqAccordion">
+                                    <div class="card-body">
+                                        <p>Standard kitchens come in preset sizes and designs. A bespoke designer kitchen is custom-made for you, including layout, materials and overall aesthetic tailored to your home.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card 3 -->
+                            <div class="card">
+                                <h6 class="collapsed ltn__card-title"indr-toggle="collapse" data-target="#faq3" aria-expanded="false">
+                                    Can Iresso use affordable kitchen units for a renovation?
+                                </h6>
+                                <div id="faq3" class="collapse" data-parent="#bkoFaqAccordion">
+                                    <div class="card-body">
+                                        <p>Yes. Affordable kitchen units are ideal when renovating on a budget. At Buy Kitchen Online even our budget-friendly options use quality materials and craftsmanship.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card 4 -->
+                            <div class="card">
+                                <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq4" aria-expanded="false">
+                                    What is the process of designing custom kitchen units?
+                                </h6>
+                                <div id="faq4" class="collapse" data-parent="#bkoFaqAccordion">
+                                    <div class="card-body">
+                                        <p>We start with an in-depth consultation, discuss your style and functionality needs, measure your space and then create a unique design proposal for your kitchen.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card 5 -->
+                            <div class="card">
+                                <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq5" aria-expanded="false">
+                                    Can a designer kitchen increase the value of my property?
+                                </h6>
+                                <div id="faq5" class="collapse" data-parent="#bkoFaqAccordion">
+                                    <div class="card-body">
+                                        <p>Yes. A well-designed luxury kitchen adds both aesthetic appeal and functionality, which can significantly increase the value and desirability of your property.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card 6 -->
+                            <div class="card">
+                                <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq6" aria-expanded="false">
+                                    Are there any affordable kitchen units available that offer customization?
+                                </h6>
+                                <div id="faq6" class="collapse" data-parent="#bkoFaqAccordion">
+                                    <div class="card-body">
+                                        <p>Yes, Buy Kitchen Online allows you to customize a budget-friendly kitchen unit to some extent. You get a personalized kitchen at an affordable price.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card 7 -->
+                            <div class="card">
+                                <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq7" aria-expanded="false">
+                                    How much does a designer kitchen unit cost?
+                                </h6>
+                                <div id="faq7" class="collapse" data-parent="#bkoFaqAccordion">
+                                    <div class="card-body">
+                                        <p>The entire cost of a designer kitchen depends on many different factors like materials, size, and design complexity. However, Buy Kitchen Online offers premium quality at affordable prices for various budgets.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card 8 -->
+                            <div class="card">
+                                <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq8" aria-expanded="false">
+                                    Can Buy Kitchen Online design a custom kitchen unit to fit my small physical space?
+                                </h6>
+                                <div id="faq8" class="collapse" data-parent="#bkoFaqAccordion">
+                                    <div class="card-body">
+                                        <p>Absolutely! The experts at Buy Kitchen Online specialize in building kitchen units according to your available space and lifestyle.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card 9 -->
+                            <div class="card">
+                                <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq9" aria-expanded="false">
+                                    Does Buy Kitchen Online offer any flexible financing options for kitchen units?
+                                </h6>
+                                <div id="faq9" class="collapse" data-parent="#bkoFaqAccordion">
+                                    <div class="card-body">
+                                        <p>Yes, Buy Kitchen Online aims to make your dream kitchen a reality by offering different financing options. Please get in touch with us for any further details.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card 10 -->
+                            <div class="card">
+                                <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq10" aria-expanded="false">
+                                    Which materials are used to make a kitchen unit?
+                                </h6>
+                                <div id="faq10" class="collapse" data-parent="#bkoFaqAccordion">
+                                    <div class="card-body">
+                                        <p>The most popular materials include stainless steel, quartz, and wood (such as oak, maple, and cherry). Buy Kitchen Online helps you in choosing the perfect material according to your preference.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card 11 -->
+                            <div class="card">
+                                <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq11" aria-expanded="false">
+                                    Is a bespoke designer kitchen worth it?
+                                </h6>
+                                <div id="faq11" class="collapse" data-parent="#bkoFaqAccordion">
+                                    <div class="card-body">
+                                        <p>Bespoke kitchens are worth it if you prefer customized, high-quality, long-lasting kitchens. The price may be higher than a standard kitchen, but the advantages of having a kitchen custom-made for your space and style are worth the investment.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FAQS SECTION END -->
+
+@endsection
 
 
-document.addEventListener('DOMContentLoaded', function() {
-            
-            const faqQuestions = document.querySelectorAll('.faq-question');
-            
-            faqQuestions.forEach(question => {
-                question.addEventListener('click', function() {
-                    
-                    this.classList.toggle('active');
-                    
-                    const answer = this.nextElementSibling;
-                    answer.classList.toggle('show');
-                    
-                    faqQuestions.forEach(q => {
-                        if (q !== question) {
-                            q.classList.remove('active');
-                            q.nextElementSibling.classList.remove('show');
-                        }
-                    });
-                });
-            });
+@section('scripts')
 
-            const observerOptions = {
-                threshold: 0.1
-            };
+<script>
+$(document).ready(function() {
+   $(document).on('click', '#flatpacked_btn', function (e) {
+      e.preventDefault();
+      const row = $(e.target).closest('.row-class');
+      row.find(`#flatpacked`).removeClass('d-none').addClass('d-block');
+      row.find('#rigid').addClass('d-none');
+      e.preventDefault();
+   })
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            faqItems.forEach((item, index) => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(20px)';
-                item.style.transition = `all 0.5s ease ${index * 0.1}s`;
-                observer.observe(item);
-            });
-        });
-
-
-
-
-        $(document).ready(function () {            
-            const $carousel02 = $('.main-carousel-banner-02');
-            // Initialize OwlCarousel
-            $carousel02.owlCarousel({
-                loop: true,
-                margin: 30,
-                stagePadding: 15, // Add padding to avoid clipping
-                rtl: false,
-                autoplay: true,
-                autoplayTimeout: 3000,
-                autoplayHoverPause: true,
-                responsive: {
-                    0: {
-                        items: 1,
-                        nav: true
-                    },
-                    768: {
-                        items: 2,
-                        nav: true
-                    },
-                    992: {
-                        items: 3,
-                        loop: true,
-                        margin: 10,
-                        nav: true,
-                        dots: true,
-                        center: true,
-                    },
-                    1200: {
-                        items: 4,
-                        loop: true,
-                        margin: 20,
-                        nav: true,
-                        dots: true,
-                        center: true,
-                    },
-                    1400: {
-                        items: 4,
-                        loop: true,
-                        margin: 20,
-                        nav: true,
-                        dots: true,
-                        center: true,
-                    }
-                }
-            });
-            // Customize the autoplay behavior to reverse the direction
-            $carousel02.on('translated.owl.carousel', function() {
-                $carousel02.find('.owl-item.active').css('animation', 'move-left 0.3s ease-in-out');
-            });
-        });
-
-
-
-    </script>
-@endpush
-</x-guest-layout>
+   $(document).on('click', '#rigid_btn', function (e) {
+      const row = $(e.target).closest('.row-class');
+      row.find('#rigid').removeClass('d-none').addClass('d-block');
+      row.find('#flatpacked').addClass('d-none');
+      e.preventDefault();
+   });
+});
+</script>
+@endsection
