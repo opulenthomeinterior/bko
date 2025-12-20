@@ -596,7 +596,6 @@ function addToCart(id, productCode, full_title, price, discount_price, discount_
 }
 
 function removeFromCart(id, productCode) {
-   alert(id, productCode);
    let products = localStorage.getItem('bko_cart');
    if (!products) {
       return;

@@ -248,7 +248,7 @@
                         @foreach ($products as $index => $product)
                         <div class="col-xl-6 col-sm-6 col-12">
                             <div class="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
-                                <div class="product-img">
+                                <div class="product-img" style="height: 185px;">
                                     <a href="#"><img src="{{ !empty($product->image_path) ? asset('imgs/products/'.$product->image_path) : asset('images/no-image-available.jpg') }}" alt="#"></a>
                                     <div class="real-estate-agent">
                                         <div class="agent-img">
@@ -278,7 +278,7 @@
                                     <div class="product-hover-action">
                                         <div class="d-flex justify-content-center bg-light p-2">
                                             <div class="mx-0 p-0">
-                                                <button style="border-radius: 50px;" type="button" class="btn btn-outline-warning px-3 py-1 me-1 quantity-btn" id="dec-btn{{ $product->id }}" onclick="decQty({{ $product->id }})">−</button>
+                                                <button style="border-radius: 50px;" type="button" class="btn btn-outline-warning px-3 py-1 me-1 quantity-btn text-dark" id="dec-btn{{ $product->id }}" onclick="decQty({{ $product->id }})">−</button>
                                             </div>
                                             <div>
                                                 <input 
@@ -293,7 +293,7 @@
                                                 >
                                             </div>
                                             <div class="mx-0 p-0">
-                                                <button style="border-radius: 50px;" type="button" class="btn btn-outline-warning px-3 py-1 ms-1 quantity-btn" onclick="incQty({{ $product->id }})">+</button>
+                                                <button style="border-radius: 50px;" type="button" class="btn btn-outline-warning px-3 py-1 ms-1 quantity-btn text-dark" onclick="incQty({{ $product->id }})">+</button>
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-between mt-3">

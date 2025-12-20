@@ -467,39 +467,39 @@ class HomeController extends Controller
 
         // Include the current category in the list of children
         $children[] = $category->id;
-        if ($slug == 'handles' || $slug == 'sinks') {
-            // $count = Product::whereIn('category_id', $children)->where('status', 'active')->groupBy('parent_sub_category')->get();
-            $groups = Product::whereIn('category_id', $children)
-                ->where('status', 'active')
-                ->groupBy('parent_sub_category')
-                ->select('parent_sub_category');
-            $groups = $groups->get();
-            $count = $groups->count();
-        } else {
-            $count = Product::whereIn('category_id', $children)->where('status', 'active');
-            if (!empty($request->style_id)) {
-                $count = Product::whereIn('category_id', $children)->where('style_id', $request->style_id)->where('status', 'active');
-            }
-            if (!empty($request->colour_id)) {
-                $count = Product::whereIn('category_id', $children)->where('colour_id', $request->colour_id)->where('status', 'active');
-            }
-            $count = $count->count();
-        }
-        if ($slug == 'doors') {
-        }
-        $currentPage = 1;
-        $limit = 12;
-        $offset = ($currentPage - 1) * $limit;
-        $pages = ceil($count / $limit);
+        // if ($slug == 'handles' || $slug == 'sinks') {
+        //     // $count = Product::whereIn('category_id', $children)->where('status', 'active')->groupBy('parent_sub_category')->get();
+        //     $groups = Product::whereIn('category_id', $children)
+        //         ->where('status', 'active')
+        //         ->groupBy('parent_sub_category')
+        //         ->select('parent_sub_category');
+        //     $groups = $groups->get();
+            $count = 0;
+        // } else {
+        //     $count = Product::whereIn('category_id', $children)->where('status', 'active');
+        //     if (!empty($request->style_id)) {
+        //         $count = Product::whereIn('category_id', $children)->where('style_id', $request->style_id)->where('status', 'active');
+        //     }
+        //     if (!empty($request->colour_id)) {
+        //         $count = Product::whereIn('category_id', $children)->where('colour_id', $request->colour_id)->where('status', 'active');
+        //     }
+        //     $count = $count->count();
+        // }
+        // if ($slug == 'doors') {
+        // }
+        // $currentPage = 1;
+        // $limit = 12;
+        // $offset = ($currentPage - 1) * $limit;
+        $pages = 1;
 
-        if ($currentPage > $pages) {
-            $currentPage = $pages;
-        }
+        // if ($currentPage > $pages) {
+        //     $currentPage = $pages;
+        // }
 
-        if ($currentPage < 1) {
+        // if ($currentPage < 1) {
             $currentPage = 1;
-        }
-        $products = Product::where('status', 'active');
+        // }
+        $products = Product::where('status', 'active')->where('parent_category_id', $category->id);
         if (!empty($request->get('style_id'))) {
             $products = $products->where('style_id', $request->get('style_id'));
         }
@@ -512,8 +512,11 @@ class HomeController extends Controller
         if (!empty($request->get('width'))) {
             $products = $products->where('width', $request->get('width'));
         }
+        if (!empty($request->get('type_id'))) {
+            $products = $products->where('category_id', $request->get('type_id'));
+        }
         if ($slug == 'handles' || $slug == 'sinks') {
-            $products = $products->whereIn('category_id', $children)->where('status', 'active')->groupBy('parent_sub_category');
+            $products = $products->whereIn('category_id', $children);
         } 
         // else {
         //     $products = Product::whereIn('category_id', $children)->where('status', 'active')->offset($offset)->limit($limit);
@@ -526,12 +529,12 @@ class HomeController extends Controller
         //     $products = $products->get();
         // }
         if (in_array($slug, ['handles', 'sinks'])) {
-            $products = $products
-                ->select('parent_sub_category', DB::raw('MIN(id) as id'))
-                ->groupBy('parent_sub_category')
-                ->paginate(12)->onEachSide(2)->withQueryString();
+            // $products = $products
+            //     ->select('parent_sub_category', DB::raw('MIN(id) as id'))
+            //     ->groupBy('parent_sub_category')
+            //     ->paginate(12)->onEachSide(2)->withQueryString();
+            $products = $products->paginate(12)->onEachSide(2)->withQueryString();
         } else {
-
             $products = $products->paginate(12)->onEachSide(2)->withQueryString();
         }
 
