@@ -66,14 +66,12 @@
                 <div class="col-xl-6 col-sm-6 col-12">
                     <div class="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
                         <div class="product-img d-flex justify-content-center">
-                            <a href="product-details.html">
-                                <img src="https://bkonline.uk/public/imgs/styles/06_06_2025_104957_6842c7d5c26f5-j-pull(1).png" alt="#">
-                            </a>
+                            <img src="https://bkonline.uk/public/imgs/styles/06_06_2025_104957_6842c7d5c26f5-j-pull(1).png" alt="#">
                         </div>
                         <div class="product-info row-class pb-3">
                             <div class="d-flex justify-content-between">
                                 <div>
-                                    <h2><a href="product-details.html">{{ $styleData['data']->name }}</a></h2>
+                                    <h2>{{ $styleData['data']->name }}</h2>
                                 </div>
                                 <div>
                                     <a class="btn btn-sm btn-outline-warning text-dark p-2" href="{{route('orderkitchenbyname', [$styleData['data']->slug])}}" style="border-radius: 0;">Explore</a>
