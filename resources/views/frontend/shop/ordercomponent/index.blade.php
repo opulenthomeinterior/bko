@@ -130,7 +130,7 @@
     </div>
 
     {{-- SMART LEAGUE / KITCHEN EXCELLENCE SECTION START --}}
-<div class="ltn__feature-area pt-80 pb-90 mb-120--- section-bg-0">
+<div class="ltn__feature-area pt-80 pb-90 mb-120--- section-bg-1">
     <div class="container">
         {{-- Top heading --}}
         <div class="row mb-3">
@@ -185,7 +185,7 @@
         </div>
     </div>
 </div>
-<div class="ltn__feature-area pt-80 pb-90 mb-120--- section-bg-1">
+<div class="ltn__feature-area pt-80 pb-90 mb-120--- section-bg-0">
     <div class="container">
         {{-- Top heading --}}
         <!-- <div class="row mb-3">

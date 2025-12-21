@@ -20,7 +20,7 @@
                 <div class="col">
                     <div class="ltn__header-options ltn__header-options-2 mb-sm-20">
                         <!-- header-search-1 -->
-                        <div class="header-search-wrap">
+                        <!-- <div class="header-search-wrap">
                             <div class="header-search-1">
                                 <div class="search-icon">
                                     <i class="icon-search for-search-show"></i>
@@ -35,24 +35,22 @@
                                     </button>
                                 </form>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- user-menu -->
-                        <div class="ltn__drop-menu user-menu">
+                        <!-- <div class="ltn__drop-menu user-menu">
                             <ul>
                                 <li>
-                                    <a href="#"><i class="icon-user"></i></a>
+                                    <a href="#"><i class="icon-menu"></i></a>
                                     <ul>
-                                        <li><a href="#">Sign in</a></li>
-                                        <li><a href="#">Register</a></li>
-                                        <li><a href="#">My Account</a></li>
-                                        <li><a href="#">Wishlist</a></li>
+                                        <li><a href="{{ route('designservice') }}">Design Service</a></li>
+                                        <li><a href="{{ route('blog') }}">Blogs</a></li>
                                     </ul>
                                 </li>
                             </ul>
-                        </div>
+                        </div> -->
                         <!-- mini-cart -->
                         <div class="mini-cart-icon">
-                            <a href="#ltn__utilize-cart-menu" class="ltn__utilize-toggle">
+                            <a href="{{route('cart')}}" target="_blank" class="">
                                 <i class="icon-shopping-cart"></i>
                                 <sup class="calculateProductsQuantityBottom"></sup>
                             </a>
