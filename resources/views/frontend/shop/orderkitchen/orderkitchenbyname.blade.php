@@ -50,11 +50,7 @@
                     <div class="about-us-info-wrap">
                         <div class="mb-20">
                             <h4>THINGS TO CONSIDER BEFORE SELECTING YOUR KITCHEN</h4>
-                            <p>To start ordering a J Pull kitchen, first choose your preferred assembly, then from our range of colours and finishes.
-
-J-Pull Kitchens are sleek, handle-less style that looks exquisite in modern homes. The “J” refers to a groove or cut-out in the cabinet that resembles the letter "J." Users can hook their fingers in the groove and pull open drawers and doors without the traditional handles.
-
-Featuring laminated edge finishes, these J Pull Kitchen units include durable 18mm side panels, solid backs, and doors for long-lasting quality. Enjoy the smooth functionality of soft-close hinges and drawers. With wall units up to 900mm high and tall units reaching 2150mm, we cater to various storage needs. Bespoke sizes and over 50 stunning color options allow you to personalize your kitchen effortlessly. Plus, our virtual design and consultancy service ensures your dream J Profile kitchen comes to life with ease.</p>
+                            <p>{!! $styleData['data']['style_description'] !!}</p>
                         </div>
                     </div>
                 </div>
