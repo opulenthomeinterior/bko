@@ -111,8 +111,10 @@ class HomeController extends Controller
 
             $testimonials = Testimonial::where('style_id', $style->id)->where('page_type', 'styles')->get();
             $seo = StyleSeo::where('style_id', $style->id)->first();
+            $styles = Style::all();
+            $categories = Category::whereNull('parent_category_id')->get();
 
-            return view('frontend.shop.orderkitchen.orderkitchenbyname', compact('styleData', 'colours', 'styleHasColours', 'seo', 'testimonials'));
+            return view('frontend.shop.orderkitchen.orderkitchenbyname', compact('styleData', 'colours', 'styleHasColours', 'seo', 'testimonials', 'styles', 'categories'));
         } catch (\Exception $e) {
             return redirect()->route('orderkitchen');
         }
