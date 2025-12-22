@@ -1,525 +1,571 @@
-<x-guest-layout>
-    <head>
-        <title>Cart Page</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-   
-         <style>
-        .header-row {
-            background-color: #ffbb33;
-            color: #000;
-            font-weight: bold;
-        }
-        /* .product-image {
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-        } */
-        .quantity-input {
-            width: 50px;
-            text-align: center;
-        }
-        .remove-btn {
-            color: #aaa;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        .btn-quantity {
-            background-color: #f8f9fa;
-            border: 1px solid #ced4da;
-            width: 40px;
-        }
-    
-    </style>
-    </head>
-    <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('shop') }}" class="text-uppercase">Shop</a></li>
-                <li class="breadcrumb-item"><a class="text-uppercase">Cart</a></li>
-            </ol>
-        </nav>
-    </section>
-    <div class = "container-fluid">
-        <div class="row bg-light py-5">
-            <div class="col-12">
-                <h1 class="text-center mb-4">YOUR CART</h1>
-                <h3 class="text-center mb-4 text-danger" id="emptyCart"></h3>
-                
-        
-                <div class="d-flex justify-content-center mb-4">
-                    <a href="https://bkonline.uk/shop" class="btn btn-warning px-4 text-black">
-                    SHOP MORE <i class="fas fa-shopping-cart ms-2 text-black"></i>
-                    </a>
+@extends('layouts.guest2')
+
+@section('title', 'Order Components | Buy Kitchen Online')
+
+@section('meta_description', 'Read customer reviews and Components about our kitchen design and installation services.')
+
+@section('styles')
+<style>
+    .backgroundimage {
+        background-image: url("{{ asset('images/order-component.jpg') }}");
+        background-size: cover;
+        background-position: center center;
+    }
+    .quantity-group {
+        width: 110px; /* controls overall size */
+    }
+
+    .quantity-input {
+        padding: 2px 4px;
+        font-size: 13px;
+    }
+</style>
+@endsection
+
+@section('content')
+    {{-- Breadcrumb --}}
+    <div class="ltn__breadcrumb-area ltn__breadcrumb-area-1 ltn__breadcrumb-color-white--- pt-35 pb-35 backgroundimage mb-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ltn__breadcrumb-inner">
+                        <h1 class="page-title text-white p-3 w-50" style="background-color: #000000a1">Your Cart</h1>
+                        <!-- <div class="ltn__breadcrumb-list">
+                            <ul>
+                                <li><a href="{{ route('home') }}" class="text-white"><span class="text-dark"><i class="fas fa-home text-white"></i></span> Home</a></li>
+                                <li class="text-white">Order Components</li>
+                            </ul>
+                        </div> -->
+                    </div>
                 </div>
             </div>
-            {{-- <div class="col-12">
-                <h1 class="fs-1 text-dark text-uppercase fw-bolder text-center">
-                    Your Cart
-                </h1>
-            </div>
-            <div class="col-12 d-flex justify-content-center">
-                <button class="btn btn-warning">
-                    Shop more
-                </button>
-            </div> --}}
         </div>
-    
+    </div>
 
-    <section class="container px-lg-5 px-md-3 px-3 py-3" id="cartContainer">
-        <div class="row">
-            <div class="col-12 col-lg-8 p-0">
-                <div class="card border-primary p-0">
-                    <div class="card-body p-0">
-                        <!-- <h4 class="fw-bold text-dark ">Cart Summary</h4> -->   
-                         <div class="table-responsive">
-                            <table class="table table-card">
-                                <thead class="bg-warning text-dark">
-                                    <tr class="header-row">
-                                    {{-- <th class="bg-warning text-dark">&nbsp;</th> --}}
-                                    <th class="bg-warning text-dark ps-5">Product</th>
-                                    <th class="bg-warning text-dark text-center">Price</th>
-                                    <th class="bg-warning text-dark text-center">Qty</th>
-                                    <th class="text-end bg-warning text-dark">SubTotal</th>
-                                    </tr>
+    <div class="liton__shoping-cart-area mb-120 mt-90">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="shoping-cart-inner">
+                        <div class="shoping-cart-table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <th class="cart-product-remove">Remove</th>
+                                    <th class="cart-product-image">Image</th>
+                                    <th class="cart-product-info">Product</th>
+                                    <th class="cart-product-price">Price</th>
+                                    <th class="cart-product-quantity">Quantity</th>
+                                    <th class="cart-product-subtotal">Subtotal</th>
                                 </thead>
-                                <tbody id="productCartTableBody">
-                                    <td colspan="5" class="text-center py-5">No items in cart</td>
+                                <tbody>
+                                    <tr>
+                                        <td class="cart-product-remove">x</td>
+                                        <td class="cart-product-image">
+                                            <a href="product-details.html"><img src="img/product/1.png" alt="#"></a>
+                                        </td>
+                                        <td class="cart-product-info">
+                                            <h4><a href="product-details.html">
+                                                Sample Product Name
+                                            </a></h4>
+                                        </td>
+                                        <td class="cart-product-price">00.00</td>
+                                        <td class="cart-product-quantity">
+                                            <div class="cart-plus-minus">
+                                                <!-- <div class="dec qtybutton">-</div> -->
+                                                    <input type="text" value="0" name="qtybutton" class="cart-plus-minus-box">
+                                                <!-- <div class="inc qtybutton">+</div> -->
+                                            </div>
+                                        </td>
+                                        <td class="cart-product-subtotal">00.00</td>
+                                    </tr>
+                                    
+                                    <!-- <tr class="cart-coupon-row">
+                                        <td colspan="6">
+                                            <div class="cart-coupon">
+                                                <input type="text" name="cart-coupon" placeholder="Coupon code">
+                                                <button type="submit" class="btn theme-btn-2 btn-effect-2">Apply Coupon</button>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button type="submit" class="btn theme-btn-2 btn-effect-2-- disabled">Update Cart</button>
+                                        </td>
+                                    </tr> -->
                                 </tbody>
                             </table>
-                         </div>
+                        </div>
+                        <div class="shoping-cart-total mt-50">
+                            <h4>Cart Totals</h4>
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>Cart Subtotal</td>
+                                        <td>00.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shipping and Handing</td>
+                                        <td>00.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vat</td>
+                                        <td>00.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Order Total</strong></td>
+                                        <td><strong>00.00</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="btn-wrapper text-right">
+                                <a href="checkout.html" class="theme-btn-1 btn btn-effect-1">Proceed to checkout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ltn__gallery-area mb-120 mt-120">
+        <div class="container">
+            <!-- 
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ltn__gallery-menu">
+                        <div class="ltn__gallery-filter-menu portfolio-filter text-uppercase mb-50">
+                            <button data-filter="*" class="active">all</button>
+                            <button data-filter=".filter_category_1">Houses</button>
+                            <button data-filter=".filter_category_2">Retail</button>
+                            <button data-filter=".filter_category_3">Condos</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             -->
+
+            <!-- Portfolio Wrapper Start -->
+            <!-- (ltn__gallery-info-hide) Class for 'ltn__gallery-item-info' not showing -->
+            <div class="ltn__gallery-active row ltn__gallery-style-2 ltn__gallery-info-hide---" style="position: relative; height: 1251.75px;">
+                <div class="ltn__gallery-sizer col-1"></div>
+                @if(!empty($components) && count($components) > 0)
+                @foreach ($components as $index => $component)
+                <!-- gallery-item -->
+                <div class="ltn__gallery-item filter_category_3 col-lg-4 col-sm-6 col-12" style="height: 400px; position: absolute; left: 0%; top: 0px;">
+                    <div class="ltn__gallery-item-inner" style="height: 400px">
+                        <div class="ltn__gallery-item-img d-flex justify-content-center align-items-center" style="height: 400px">
+                            <a href="{{ route('ordercomponentbyname', [$component->slug]) }}" data-rel="lightcase:myCollection">
+                                <img src="{{ $component->image_path ? asset('imgs/categories/' . $component->image_path) : asset('images/no-image-available.jpg') }}" alt="Image">
+                                <span class="ltn__gallery-action-icon">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="ltn__gallery-item-info">
+                            <h4><a href="{{ route('ordercomponentbyname', [$component->slug]) }}">{{ $component->name }} </a></h4>
+                            @if ($component->slug == 'doors')
+                                <p class="card-text">The doors are the first impression of your kitchen. You can transform your kitchen by selecting from our various colors and finishes. Our doors are the essence of style and durability, creating an elegant look.</p>
+                                @elseif ($component->slug == 'handles')
+                                <p class="card-text">A wide variety of handles for kitchen units are available at Buy Kitchen Online. The handles are suitable for drawers, cabinets and doors. You can choose a handle according to your style preference and kitchen aesthetic.</p>
+                                @elseif ($component->slug == 'accessories')
+                                <p class="card-text">Enhance the style and functionality of your kitchen with our premium accessories. From smart storage solutions to innovative accessories, everything is designed to combine modern convenience with timeless elegance.</p>
+                                @elseif ($component->slug == 'appliances')
+                                <p class="card-text">Make your life hassle-free with our efficient and reliable appliances. Selected for their design, quality, and performance. You can pick from the highest-quality ovens, microwaves, dishwashers, or washing machines.</p>
+                                @elseif ($component->slug == 'worktops')
+                                <p class="card-text">Keep your kitchen’s form exquisite by selecting the perfect worktop. The worktops are designed to withstand daily use while enhancing the beauty of your kitchen. Choose from a range of worktops featuring Brazilian Greige, Maia®, and many others.</p>
+                                @elseif ($component->slug == 'upstands')
+                                <p class="card-text">Explore our range of upstands for a refined, contemporary finishing look. They provide a polished, clean finish and protect your walls from splashes and spills. Choose an upstand that will complement your worktop perfectly.</p>
+                                @elseif ($component->slug == 'breakfast-bars')
+                                <p class="card-text">Our customizable breakfast bars will be the perfect space for family breakfasts and social gatherings. They offer worktop space and additional storage while increasing the flow of your kitchen.</p>
+                                @elseif ($component->slug == 'taps')
+                                <p class="card-text">Add luxury to your kitchen with our stylish and functional taps. Whether you prefer a classic traditional or a modern design, our top-notch quality taps are built to add convenience and flair to your kitchen.</p>
+                                @elseif ($component->slug == 'sinks')
+                                <p class="card-text">The sink is not just the focal point of your kitchen but also the most used part. You can select one from our vast collection of durable stainless steel sinks, according to your preference. They are available in different styles and heights.</p>
+                                @elseif ($component->slug == 'internals')
+                                <p class="card-text">Use your kitchen space efficiently with our innovative internal storage solutions. Keep your kitchen clutter-free and organized by selecting from our smart storage options like wire carousel sets, pull-out storage baskets, swing-out corner storage, and many more.</p>
+                            @endif
+                        </div>
+                    </div>
+                </div>     
+                @endforeach      
+                @endif   
+            </div>
+
+            <!-- <div id="ltn__inline_description_1" style="display: none;">
+                <h4 class="first">This content comes from a hidden element on that page</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis mi eu elit tempor facilisis id et neque. Nulla sit amet sem sapien. Vestibulum imperdiet porta ante ac ornare. Nulla et lorem eu nibh adipiscing ultricies nec at lacus. Cras laoreet ultricies sem, at blandit mi eleifend aliquam. Nunc enim ipsum, vehicula non pretium varius, cursus ac tortor.</p>
+                <p>Vivamus fringilla congue laoreet. Quisque ultrices sodales orci, quis rhoncus justo auctor in. Phasellus dui eros, bibendum eu feugiat ornare, faucibus eu mi. Nunc aliquet tempus sem, id aliquam diam varius ac. Maecenas nisl nunc, molestie vitae eleifend vel.</p>
+            </div> -->
+
+        </div>
+    </div>
+
+    {{-- SMART LEAGUE / KITCHEN EXCELLENCE SECTION START --}}
+    <div class="ltn__feature-area pt-80 pb-90 mb-120--- section-bg-1">
+        <div class="container">
+            {{-- Top heading --}}
+            <div class="row mb-3">
+                <div class="col-12 text-center">
+                    <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color">Why BKO?</h6>
+                    <h1 class="section-title">WHY BUY KITCHEN ONLINE?</h1>
+                </div>
+            </div>
+
+            {{-- Stats row --}}
+            <div class="row justify-content-center mb-40">
+                <div class="col-lg-4 col-sm-4 col-6 mb-3">
+                    <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
+                        <div class="ltn__feature-info py-3">
+                            <span class="d-inline-flex justify-content-center align-items-center rounded-circle text-white mb-2" style="background:#2d9cdb; width:58px; height:58px; font-weight:700;">1</span>
+                            <h6 class="mb-0" style="min-height: 18px;">Site Survey and Measurements</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-4 col-6 mb-3">
+                    <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
+                        <div class="ltn__feature-info py-3">
+                            <span class="d-inline-flex justify-content-center align-items-center rounded-circle text-white mb-2" style="background:#9b51e0; width:58px; height:58px; font-weight:700;">2</span>
+                            <h6 class="mb-0" style="min-height: 18px;">Kitchen Design</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-4 col-6 mb-3">
+                    <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
+                        <div class="ltn__feature-info py-3">
+                            <span class="d-inline-flex justify-content-center align-items-center rounded-circle text-white mb-2" style="background:#f2994a; width:58px; height:58px; font-weight:700;">3</span>
+                            <h6 class="mb-0" style="min-height: 18px;">Ordering Process</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-4 col-6 mb-3">
+                    <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
+                        <div class="ltn__feature-info py-3">
+                            <span class="d-inline-flex justify-content-center align-items-center rounded-circle text-white mb-2" style="background:#27ae60; width:58px; height:58px; font-weight:700;">4</span>
+                            <h6 class="mb-0" style="min-height: 18px;">Delivery & Quality Check</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-4 col-6 mb-3">
+                    <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
+                        <div class="ltn__feature-info py-3">
+                            <span class="d-inline-flex justify-content-center align-items-center rounded-circle text-white mb-2" style="background:#eb5757; width:58px; height:58px; font-weight:700;">5</span>
+                            <h6 class="mb-0" style="min-height: 18px;">Installation</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ltn__feature-area pt-80 pb-90 mb-120--- section-bg-0">
+        <div class="container">
+            {{-- Top heading --}}
+            <!-- <div class="row mb-3">
+                <div class="col-12 text-center">
+                    <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color">Why BKO?</h6>
+                    <h1 class="section-title">WHY BUY KITCHEN ONLINE?</h1>
+                </div>
+            </div> -->
+
+
+            {{-- Join the Smart League heading --}}
+            <div class="row mb-3 justify-content-center">
+                <div class="col-12 text-center">
+                    <h3 class="fw-bold mb-3" style="color:#111;">JOIN THE SMART LEAGUE!</h3>
+                </div>
+            </div>
+
+            {{-- Benefit cards --}}
+            <div class="row ltn__custom-gutter--- justify-content-center mb-4">
+                <div class="col-lg-4 col-sm-6 col-12 mb-3">
+                    <div class="ltn__feature-item ltn__feature-item-6 text-start bg-white box-shadow-1">
+                        <div class="ltn__feature-info py-3 px-3 d-flex align-items-center">
+                            <span class="ltn__feature-icon me-2"><i class="flaticon-measure"></i></span>
+                            <h6 class="mb-0">Free on-site survey</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-12 mb-3">
+                    <div class="ltn__feature-item ltn__feature-item-6 text-start bg-white box-shadow-1">
+                        <div class="ltn__feature-info py-3 px-3 d-flex align-items-center">
+                            <span class="ltn__feature-icon me-2"><i class="flaticon-call-center-agent"></i></span>
+                            <h6 class="mb-0">Free virtual consultation</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-12 mb-3">
+                    <div class="ltn__feature-item ltn__feature-item-6 text-start bg-white box-shadow-1">
+                        <div class="ltn__feature-info py-3 px-3 d-flex align-items-center">
+                            <span class="ltn__feature-icon me-2"><i class="flaticon-select"></i></span>
+                            <h6 class="mb-0">No obligation to buy</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-12 mb-3">
+                    <div class="ltn__feature-item ltn__feature-item-6 text-start bg-white box-shadow-1">
+                        <div class="ltn__feature-info py-3 px-3 d-flex align-items-center">
+                            <span class="ltn__feature-icon me-2"><i class="flaticon-online-shop"></i></span>
+                            <h6 class="mb-0">Transparent online displayed prices</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-12 mb-3">
+                    <div class="ltn__feature-item ltn__feature-item-6 text-start bg-white box-shadow-1">
+                        <div class="ltn__feature-info py-3 px-3 d-flex align-items-center">
+                            <span class="ltn__feature-icon me-2"><i class="flaticon-secure-shield"></i></span>
+                            <h6 class="mb-0">Peace of mind</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-12 mb-3">
+                    <div class="ltn__feature-item ltn__feature-item-6 text-start bg-white box-shadow-1">
+                        <div class="ltn__feature-info py-3 px-3 d-flex align-items-center">
+                            <span class="ltn__feature-icon me-2"><i class="flaticon-washer"></i></span>
+                            <h6 class="mb-0">Premium quality guaranteed</h6>
+                        </div>
                     </div>
                 </div>
             </div>
 
+            {{-- CTA button --}}
+            <div class="row">
+                <div class="col-12 text-center">
+                    <a href="#" class="btn text-uppercase" style="background-color:#febd49; color:#111; padding:12px 40px; border-radius:30px; font-weight:600;">Schedule Free Consultation</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- SMART LEAGUE / WHY BKO SECTION END --}}
 
-            {{-- <div class="col-lg-4 mt-4 p-4 mb-3 pb-3 border border-primary rounded">
-                <h4 class="fw-bold text-dark ">Order Summary</h4>
-                <hr class="mx-n4">
-                <div class="bg-white py-2">
-                    <div class="row py-2 ">
-                        <div class="col-6">
-                            <span class="">Cart Total</span>
-                        </div>
-                        <div class="col-6">
-                            <h6 class="text-end" id="cartTotalAmount">£0</h6>
-                        </div>
-                    </div>
-                    <div id="add_discount_details">
 
-                    </div>
-                    <hr class="mx-n4">
-                    <div class="row py-2">
-                        <div class="col-6">
-                            <h6 class="fw-bold">Total Price</h6>
+    <!-- TESTIMONIALS SECTION START -->
+    <div id="testimonials-section" class="ltn__testimonial-area section-bg-1 pt-90 pb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-40">
+                    <h3 class="text-uppercase fw-bolder text-dark mb-10">FACT, EVERYONE LOVES US</h3>
+                    <p>Real experiences from homeowners who trusted Buy Kitchen Online with their dream kitchens.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 col-12 mb-30">
+                    <div class="ltn__testimonial-item ltn__testimonial-item-4 box-shadow-1 bg-white">
+                        <div class="ltn__testimoni-info">
+                            <p>"I discovered BKO Kitchen through a colleague. From the free consultation call to final installation of my shaker kitchen, everything was outstanding. Highly recommended!"</p>
                         </div>
-                        <div class="col-6">
-                            <h6 class="text-end" id="cartTotalAmountWithVAT">£0</h6>
-                        </div>
-                    </div>
-                    <hr class="mx-n4">
-                    <div class="row py-4">
-                        <div class="col-lg-12 text-lg-center text-md-center text-center">
-                            <a href="{{ route('checkout') }}" class="btn btn-md btn-primary rounded-5">Proceed to Checkout</a>
+                        <div class="ltn__testimoni-info-inner d-flex align-items-center justify-content-between">
+                            <div>
+                                <h5 class="mb-0">Jamie</h5>
+                                <small>Shaker Kitchen Installation</small>
+                            </div>
+                            <div class="product-ratting">
+                                <ul>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div> --}}
-
-             <!-- Order Summary -->
-             <div class="col-lg-4">
-                <div class="card mb-3" id="orderSummaryCard">
-                    <div class="card-header bg-white">
-                        <h5 class="mb-0 fw-bold text-primary">ORDER SUMMARY</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>Items</span>
-                            <span id="itemsCount">0</span>
+                <div class="col-lg-4 col-md-6 col-12 mb-30">
+                    <div class="ltn__testimonial-item ltn__testimonial-item-4 box-shadow-1 bg-white">
+                        <div class="ltn__testimoni-info">
+                            <p>"I ordered a grey sink, tap and tall L-shaped corner unit. Delivery was on time and quality was better than expected, with very reasonable prices. Perfect blend of quality and affordability."</p>
                         </div>
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>Sub Total</span>
-                            <span id="cartTotalAmount">£0</span>
-                        </div>
-                        
-                        <hr>
-                        <div class="d-flex justify-content-between fw-bold">
-                            <span>Total</span>
-                            <span id="cartTotalAmountWithVAT">£0</span>
+                        <div class="ltn__testimoni-info-inner d-flex align-items-center justify-content-between">
+                            <div>
+                                <h5 class="mb-0">Sarah</h5>
+                                <small>Components Order</small>
+                            </div>
+                            <div class="product-ratting">
+                                <ul>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-           
-                <a href="{{ route('checkout') }}" class="btn btn-primary w-100 py-3">PROCEED TO CHECKOUT</a>
-                
-                <div class="d-flex justify-content-end mt-3">
-                    {{-- <a style"hover: cursor:pointer"  id="clearShoppingCart" class="text-decoration-none text-danger" onClick="clearShoppingCart">Clear shopping cart</a> --}}
-                    <button  id="clearShoppingCart" class="border-0 text-danger bg-white">Clear Shopping Cart</button>
-                </div>
-
-
-            {{-- <div class="col-lg-8">
-                
-                <div class="row py-2">
-                    <div class="col-sm-4">
-                        < Back
+                <div class="col-lg-4 col-md-6 col-12 mb-30">
+                    <div class="ltn__testimonial-item ltn__testimonial-item-4 box-shadow-1 bg-white">
+                        <div class="ltn__testimoni-info">
+                            <p>"BKO transformed my small space into a stunning handleless kitchen. Their precision, design sense and installation team made the whole process smooth and stress-free."</p>
+                        </div>
+                        <div class="ltn__testimoni-info-inner d-flex align-items-center justify-content-between">
+                            <div>
+                                <h5 class="mb-0">Ahmed</h5>
+                                <small>Handleless Kitchen</small>
+                            </div>
+                            <div class="product-ratting">
+                                <ul>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-sm-4">
-                        <div class="row g-3 mb-3">
-                            <div class="col-12">
-                                <div class="d-flex justify-content-sm-end justify-content-center" style="position: relative;">
-                                    <input type="text" class="form-control" id="promoCode"
-                                        placeholder="Enter Promo Code" aria-label="Enter Promo Code"
-                                        style="width: 200px; border-radius: 50px">
-                                    <button type="button" class="btn btn-warning" style="width: 100px; border-radius: 50px"
-                                        id="addPromoCode">Apply</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- TESTIMONIALS SECTION END -->
+
+    <!-- FAQS SECTION START -->
+    <div id="faqs-section" class="ltn__faq-area pt-90 pb-90 mb-100">
+        <div class="container">
+            <div class="row justify-content-center mb-40">
+                <div class="col-lg-8 col-12 text-center">
+                    <h3 class="text-uppercase fw-bolder text-dark mb-10">Frequently Asked Questions</h3>
+                    <p>Answers to common questions about affordable units, bespoke designer kitchens and our process.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-9 col-12">
+                    <div class="ltn__faq-inner ltn__faq-inner-2">
+                        <div id="bkoFaqAccordion">
+                            <!-- card 1 -->
+                            <div class="card">
+                                <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq1" aria-expanded="false">
+                                    What is the difference between an affordable kitchen unit and a custom kitchen unit?
+                                </h6>
+                                <div id="faq1" class="collapse" data-parent="#bkoFaqAccordion">
+                                    <div class="card-body">
+                                        <p>An affordable kitchen unit offers budget-friendly solutions without compromising quality. Custom kitchen units are tailor-made to your style, space and preferences, usually at a higher price point.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card 2 -->
+                            <div class="card">
+                                <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq2" aria-expanded="false">
+                                    How is a bespoke designer kitchen different from a standard kitchen?
+                                </h6>
+                                <div id="faq2" class="collapse" data-parent="#bkoFaqAccordion">
+                                    <div class="card-body">
+                                        <p>Standard kitchens come in preset sizes and designs. A bespoke designer kitchen is custom-made for you, including layout, materials and overall aesthetic tailored to your home.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card 3 -->
+                            <div class="card">
+                                <h6 class="collapsed ltn__card-title"indr-toggle="collapse" data-target="#faq3" aria-expanded="false">
+                                    Can Iresso use affordable kitchen units for a renovation?
+                                </h6>
+                                <div id="faq3" class="collapse" data-parent="#bkoFaqAccordion">
+                                    <div class="card-body">
+                                        <p>Yes. Affordable kitchen units are ideal when renovating on a budget. At Buy Kitchen Online even our budget-friendly options use quality materials and craftsmanship.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card 4 -->
+                            <div class="card">
+                                <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq4" aria-expanded="false">
+                                    What is the process of designing custom kitchen units?
+                                </h6>
+                                <div id="faq4" class="collapse" data-parent="#bkoFaqAccordion">
+                                    <div class="card-body">
+                                        <p>We start with an in-depth consultation, discuss your style and functionality needs, measure your space and then create a unique design proposal for your kitchen.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card 5 -->
+                            <div class="card">
+                                <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq5" aria-expanded="false">
+                                    Can a designer kitchen increase the value of my property?
+                                </h6>
+                                <div id="faq5" class="collapse" data-parent="#bkoFaqAccordion">
+                                    <div class="card-body">
+                                        <p>Yes. A well-designed luxury kitchen adds both aesthetic appeal and functionality, which can significantly increase the value and desirability of your property.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card 6 -->
+                            <div class="card">
+                                <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq6" aria-expanded="false">
+                                    Are there any affordable kitchen units available that offer customization?
+                                </h6>
+                                <div id="faq6" class="collapse" data-parent="#bkoFaqAccordion">
+                                    <div class="card-body">
+                                        <p>Yes, Buy Kitchen Online allows you to customize a budget-friendly kitchen unit to some extent. You get a personalized kitchen at an affordable price.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card 7 -->
+                            <div class="card">
+                                <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq7" aria-expanded="false">
+                                    How much does a designer kitchen unit cost?
+                                </h6>
+                                <div id="faq7" class="collapse" data-parent="#bkoFaqAccordion">
+                                    <div class="card-body">
+                                        <p>The entire cost of a designer kitchen depends on many different factors like materials, size, and design complexity. However, Buy Kitchen Online offers premium quality at affordable prices for various budgets.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card 8 -->
+                            <div class="card">
+                                <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq8" aria-expanded="false">
+                                    Can Buy Kitchen Online design a custom kitchen unit to fit my small physical space?
+                                </h6>
+                                <div id="faq8" class="collapse" data-parent="#bkoFaqAccordion">
+                                    <div class="card-body">
+                                        <p>Absolutely! The experts at Buy Kitchen Online specialize in building kitchen units according to your available space and lifestyle.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card 9 -->
+                            <div class="card">
+                                <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq9" aria-expanded="false">
+                                    Does Buy Kitchen Online offer any flexible financing options for kitchen units?
+                                </h6>
+                                <div id="faq9" class="collapse" data-parent="#bkoFaqAccordion">
+                                    <div class="card-body">
+                                        <p>Yes, Buy Kitchen Online aims to make your dream kitchen a reality by offering different financing options. Please get in touch with us for any further details.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card 10 -->
+                            <div class="card">
+                                <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq10" aria-expanded="false">
+                                    Which materials are used to make a kitchen unit?
+                                </h6>
+                                <div id="faq10" class="collapse" data-parent="#bkoFaqAccordion">
+                                    <div class="card-body">
+                                        <p>The most popular materials include stainless steel, quartz, and wood (such as oak, maple, and cherry). Buy Kitchen Online helps you in choosing the perfect material according to your preference.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card 11 -->
+                            <div class="card">
+                                <h6 class="collapsed ltn__card-title" data-toggle="collapse" data-target="#faq11" aria-expanded="false">
+                                    Is a bespoke designer kitchen worth it?
+                                </h6>
+                                <div id="faq11" class="collapse" data-parent="#bkoFaqAccordion">
+                                    <div class="card-body">
+                                        <p>Bespoke kitchens are worth it if you prefer customized, high-quality, long-lasting kitchens. The price may be higher than a standard kitchen, but the advantages of having a kitchen custom-made for your space and style are worth the investment.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-4 text-end">
-                        Clear Shopping Cart
-                    </div>
-                </div>
-            </div> --}}
-
-            
-
-        </div>
-        <div class="row">
-            <div class="col-lg-8 p-0">
-                    <!-- Back button and Coupon -->
-                    <div class="d-flex justify-content-between align-items-center mt-3">
-                        <a href="#" class="btn btn-outline-primary text-dark" >
-                            <i class="fas fa-arrow-left me-2"></i> Back
-                        </a>
-                        
-                        <div class="d-flex">
-                            <input type="text" class="form-control border-primary me-2" placeholder="Coupon code">
-                            <button class="btn btn-warning text-dark">APPLY COUPON</button>
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="container px-lg-5 px-md-3 px-3 py-lg-5 py-3">
-        <div class="row">
-            <div class="col-12">
-                <div class="payment-logos d-inline-block position-relative px-4 py-3" style="border: 1px solid black">
-                    <small class="fw-bold text-uppercase position-absolute bg-white" style="top:-7px;left:15px">Transactions Secured By</small>
-                    <img width="100" height="72" class="logo lazyloaded" alt="Payments verified through Opayo" src="https://bkonline.uk/public/images/payments/opayo.png">
-                    <img width="100" height="72" class="logo lazyloaded" alt="Visa Payments Accepted" src="https://bkonline.uk/public/images/payments/visa.png">
-                    <img width="100" height="72" class="logo lazyloaded" alt="Mastercard Payments Accepted" src="https://bkonline.uk/public/images/payments/mastercard.png">
-                    <img width="100" height="72" class="logo lazyloaded" alt="Maestro Payments Accepted" src="https://bkonline.uk/public/images/payments/maestro.png">
-                    <img width="100" height="72" class="logo lazyloaded" alt="Payments accepted through PayPal" src="https://bkonline.uk/public/images/payments/paypal.png">
-                    <img width="100" height="72" class="logo lazyloaded" alt="Payments accepted through Klarna" src="https://bkonline.uk/public/images/payments/klarna.png">
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-    <style>
-        .modal {
-            --in-modal-width: 80% !important;
-        }
-    </style>
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog w-100" role="document">
-            <div class="modal-content p-4">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="myModalLabel">Compare Products</h5>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="row" id="cart_Product">
-                                {{-- <div class="col-lg-12 mb-3">
-                                    <div class="card">
-                                        <div class="card-body text-center">
-                                            <div class="container-fluid">
-                                                <div class="row">
-                                                    <div class="col-lg-6">
-                                                        <figure>
-                                                            <img class="product-image px-0"
-                                                                src="{{ asset('images/no-image-available.jpg') }}"
-                                                                alt="Card image cap">
-                                                        </figure>
-                                                    </div>
-                                                    <div class="col-lg-6">
-                                                        <div class="text-start">
-                                                            <a href=""
-                                                                class="text-start text-decoration-underline fs-5 fw-bold">
-                                                                new product
-                                                            </a>
-                                                            <p class="py-lg-3 py-2">
-                                                                <small class="fw-bold text-start">23x42x64mm</small>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <div class="container-fluid">
-                                                            <div class="row justify-content-center">
-                                                                <div class="col-12">
-                                                                    <p class="fs-5 fw-bold mt-lg-2">£7845</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="container-fluid">
-                                                            <div class="row">
-                                                                <div class="col-4 p-0 d-md-flex d-none">
-                                                                    <p
-                                                                        class="category-text text-start text-uppercase m-0 pt-1">
-                                                                        <small>Style</small>
-                                                                    </p>
-                                                                </div>
-                                                                <div class="col-md-8 col-sm-12 p-0 text-center">
-                                                                    <p class="category-value fw-semibold py-1 mb-2">
-                                                                        <small>Jpull</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-4 p-0 d-md-flex d-none">
-                                                                    <p
-                                                                        class="category-text text-start text-uppercase m-0 pt-1">
-                                                                        <small>Colour</small>
-                                                                    </p>
-                                                                </div>
-                                                                <div class="col-md-8 col-sm-12 p-0 text-center">
-                                                                    <p class="category-value fw-semibold py-1 mb-2">
-                                                                        <small>Cashmere ultra white</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-4 p-0 d-md-flex d-none">
-                                                                    <p
-                                                                        class="category-text text-start text-uppercase m-0 pt-1">
-                                                                        <small>Assembly</small>
-                                                                    </p>
-                                                                </div>
-                                                                <div class="col-md-8 col-sm-12 p-0 text-center">
-                                                                    <p class="category-value fw-semibold py-1 mb-2">
-                                                                        <small>Rigid</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> --}}
-                            </div>
-                        </div>
-                        <div class="col-lg-8" style="height: 400px; overflow-y:auto">
-                            <div class="row" id="compareProducts">
-                                {{-- <div class="col-lg-6 mb-3">
-                                    <div class="card">
-                                        <div class="card-body text-center">
-                                            <div class="container-fluid">
-                                                <div class="row">
-                                                    <div class="col-lg-6">
-                                                        <figure>
-                                                            <img class="product-image px-0"
-                                                                src="{{ asset('images/no-image-available.jpg') }}"
-                                                                alt="Card image cap">
-                                                        </figure>
-                                                    </div>
-                                                    <div class="col-lg-6">
-                                                        <div class="text-start">
-                                                            <a href=""
-                                                                class="text-start text-decoration-underline fs-5 fw-bold">
-                                                                new product
-                                                            </a>
-                                                            <p class="py-lg-3 py-2">
-                                                                <small class="fw-bold text-start">23x42x64mm</small>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <div class="container-fluid">
-                                                            <div class="row justify-content-center">
-                                                                <div class="col-12">
-                                                                    <p class="fs-5 fw-bold mt-lg-2">£7845</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="container-fluid">
-                                                            <div class="row">
-                                                                <div class="col-4 p-0 d-md-flex d-none">
-                                                                    <p
-                                                                        class="category-text text-start text-uppercase m-0 pt-1">
-                                                                        <small>Style</small>
-                                                                    </p>
-                                                                </div>
-                                                                <div class="col-md-8 col-sm-12 p-0 text-center">
-                                                                    <p class="category-value fw-semibold py-1 mb-2">
-                                                                        <small>Jpull</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-4 p-0 d-md-flex d-none">
-                                                                    <p
-                                                                        class="category-text text-start text-uppercase m-0 pt-1">
-                                                                        <small>Colour</small>
-                                                                    </p>
-                                                                </div>
-                                                                <div class="col-md-8 col-sm-12 p-0 text-center">
-                                                                    <p class="category-value fw-semibold py-1 mb-2">
-                                                                        <small>Cashmere ultra white</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-4 p-0 d-md-flex d-none">
-                                                                    <p
-                                                                        class="category-text text-start text-uppercase m-0 pt-1">
-                                                                        <small>Assembly</small>
-                                                                    </p>
-                                                                </div>
-                                                                <div class="col-md-8 col-sm-12 p-0 text-center">
-                                                                    <p class="category-value fw-semibold py-1 mb-2">
-                                                                        <small>Rigid</small>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> --}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-dark rounded-0 hideCompareModel" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="cart-items-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog w-100" role="document">
-            <div class="modal-content p-4">
-                <div class="modal-header">
-                    <h3 class="modal-title" id="myModalLabel">Change Styles</h3>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <table class="table">
-                                <thead>
-                                    <th>Item</th>
-                                </thead>
-                                <tbody id="changeStyleTableBody">
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-dark rounded-0 hideCompareModel" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- FAQS SECTION END -->
 
-    @push('scripts')
-        <script>
-            $(document).ready(function() {
-                var check_code_route = "{{ route('apply.promocode') }}";
-    
-                $(document).on('click', '#addPromoCode', function() {
-                    var promoCode = $('#promoCode').val();
-    
-                    let products = localStorage.getItem('bko_cart');
-                    if (!products) {
-                        return;
-                    }
-                    products = JSON.parse(products);
-                    let totalAmount = 0;
-                    products.forEach(product => {
-                        totalAmount += product.quantity * product.price;
-                    });
-    
-                    $.ajax({
-                        url: "{{ route('apply.promocode') }}",
-                        type: "POST",
-                        data: {
-                            code: promoCode
-                        },
-                        headers: {
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        },
-                        success: function(response) {
-                            if (response.status === 'success') {
-                                if (response.result) {
-                                    var code = response.result.id;
-                                    var name = response.result.name;
-                                    var discount = parseFloat(response.result.percent_off);
-    
-                                    // Save discount code in localStorage
-                                    localStorage.setItem('discountCode', code);
-    
-                                    var discountAmount = (totalAmount * discount) / 100;
-    
-                                    $('#add_discount_details').html(`
-                                        <div class="row py-2">
-                                            <div class="col-6">
-                                                <h6 class="fw-bold">Discount Percentage</h6>
-                                            </div>
-                                            <div class="col-6">
-                                                <h6 class="text-end">${discount}%</h6>
-                                            </div>
-                                        </div>
-                                        <div class="row py-2">
-                                            <div class="col-6">
-                                                <h6 class="fw-bold">Discount (${name})</h6>
-                                            </div>
-                                            <div class="col-6">
-                                                <h6 class="text-end">-£${discountAmount.toFixed(2)}</h6>
-                                            </div>
-                                        </div>
-                                    `);
-    
-                                    // Update total price after discount
-                                    var cartTotalAmountWithVAT = totalAmount - discountAmount;
-                                    $('#cartTotalAmountWithVAT').text(`£${cartTotalAmountWithVAT.toFixed(2)}`);
-    
-                                }
-                            } else {
-                                $('#add_discount_details').html(`
-                                    <div class="row py-2">
-                                        <div class="col-12">
-                                            <h6 class="text-danger text-end">Invalid promo code</h6>
-                                        </div>
-                                    </div>
-                                `);
-    
-                                localStorage.removeItem('discountCode');
-    
-                                // Update total price after discount
-                                var cartTotalAmountWithVAT = totalAmount;
-                                $('#cartTotalAmountWithVAT').text(`£${cartTotalAmountWithVAT.toFixed(2)}`);
-    
-                            }
-                        }
-                    });
-                });
-            });
+@endsection
 
-        </script>
-    @endpush
 
-</x-guest-layout>
+@section('scripts')
+
+<script>
+$(document).ready(function() {
+
+});
+</script>
+@endsection

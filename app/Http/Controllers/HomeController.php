@@ -787,7 +787,9 @@ class HomeController extends Controller
 
     public function cart()
     {
-        return view('frontend.shop.orderkitchen.cart');
+        $styles = Style::all();
+        $categories = Category::whereNull('parent_category_id')->get();
+        return view('frontend.shop.orderkitchen.cart', compact('styles', 'categories'));
     }
 
     public function checkout()
