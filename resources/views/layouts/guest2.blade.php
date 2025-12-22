@@ -49,7 +49,7 @@
     <!-- JS Files -->
     <script src="{{ asset('assets/js/plugins.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
-    <script src="{{ asset('js/frontend.js') }}?v={{ config('app.version') }}"></script>
+    <script src="{{ asset('js/frontend.js') }}"></script>
     @yield('scripts')
     <script>
     </script>

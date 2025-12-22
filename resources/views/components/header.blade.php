@@ -2,8 +2,16 @@
     use App\Models\Category;
     use App\Models\Style;
 ?>
+@section('styles')
+<style>
+    .sticky-active {
+        display: flex !important;
+        justify-content: flex-end !important;
+    }
+</style>
+@endsection
 {{-- HEADER AREA START --}}
-<header class="ltn__header-area ltn__header-5 ltn__header-transparent--- gradient-color-4---">
+{{--<header class="ltn__header-area ltn__header-5 ltn__header-transparent--- gradient-color-4---">
 
     
     <!-- ltn__header-middle-area start -->
@@ -20,34 +28,6 @@
                 <div class="col">
                     <div class="ltn__header-options ltn__header-options-2 mb-sm-20">
                         <!-- header-search-1 -->
-                        <!-- <div class="header-search-wrap">
-                            <div class="header-search-1">
-                                <div class="search-icon">
-                                    <i class="icon-search for-search-show"></i>
-                                    <i class="icon-cancel  for-search-close"></i>
-                                </div>
-                            </div>
-                            <div class="header-search-1-form">
-                                <form id="#" method="get"  action="#">
-                                    <input type="text" name="search" value="" placeholder="Search here..."/>
-                                    <button type="submit">
-                                        <span><i class="icon-search"></i></span>
-                                    </button>
-                                </form>
-                            </div>
-                        </div> -->
-                        <!-- user-menu -->
-                        <!-- <div class="ltn__drop-menu user-menu">
-                            <ul>
-                                <li>
-                                    <a href="#"><i class="icon-menu"></i></a>
-                                    <ul>
-                                        <li><a href="{{ route('designservice') }}">Design Service</a></li>
-                                        <li><a href="{{ route('blog') }}">Blogs</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div> -->
                         <!-- mini-cart -->
                         <div class="mini-cart-icon">
                             <a href="{{route('cart')}}" target="_blank" class="">
@@ -168,11 +148,11 @@
                                             @endforeach
                                         </ul>
                                     </li>
-                                    <li><a href="{{ route('help_and_guides') }}">Help & Guides</a></li>
+                                    <!-- <li><a href="{{ route('help_and_guides') }}">Help & Guides</a></li> -->
                                     <li><a href="{{route('max_storage')}}">Max Storage</a></li>
                                     <li><a href="{{route('doors_replacement')}}">Doors Replacement</a></li>
-                                    <li><a href="{{ route('designservice') }}">Design Service</a></li>
-                                    <li><a href="{{ route('blog') }}">Blogs</a></li>
+                                    <!-- <li><a href="{{ route('designservice') }}">Design Service</a></li> -->
+                                    <!-- <li><a href="{{ route('blog') }}">Blogs</a></li> -->
                                 </ul>
                             </div>
                         </nav>
@@ -182,8 +162,183 @@
         </div>
     </div>
     <!-- ltn__header-middle-area end -->
-</header>
+</header>--}}
 <!-- HEADER AREA END -->
+
+
+<header class="ltn__header-area ltn__header-3 section-bg-1---">        
+    <!-- ltn__header-middle-area start -->
+    <div class="ltn__header-middle-area section-bg-1 py-1">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="site-logo">
+                        <a href="index.html"><img src="{{ asset('images/bko-black-logo.png') }}" alt="Logo" style="max-height: 60px;"></a>
+                    </div>
+                </div>
+                <div class="col header-contact-serarch-column d-none d-xl-block">
+                    <div class="header-contact-search">
+                        <!-- header-feature-item -->
+                        <div class="header-feature-item">
+                            <div class="header-feature-icon">
+                                <i class="icon-phone"></i>
+                            </div>
+                            <div class="header-feature-info">
+                                <h6 class="fw-bold text-dark">Phone</h6>
+                                <p><a href="tel:0123456789">+0123-456-789</a></p>
+                            </div>
+                        </div>
+                        <!-- header-search-2 -->
+                        <div class="header-search-2">
+                            <form id="#123" method="get" action="#">
+                                <input type="text" name="search" value="" placeholder="Search here...">
+                                <button type="submit">
+                                    <span><i class="icon-search"></i></span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <!-- header-options -->
+                    <div class="ltn__header-options">
+                        <ul>
+                            <li>
+                                <!-- mini-cart 2 -->
+                                <div class="mini-cart-icon mini-cart-icon-2">
+                                    <!-- <a href="{{route('cart')}}" target="_blank" class=""> -->
+                                    <a href="#ltn__utilize-cart-menu" class="ltn__utilize-toggle">
+                                        <span class="mini-cart-icon">
+                                            <i class="icon-shopping-cart"></i>
+                                            <sup class="calculateProductsQuantityBottom">0</sup>
+                                        </span>
+                                        <h6><span>Your Cart</span> <span class="calculateProductsPriceBottom">$0.00</span></h6>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ltn__header-middle-area end -->
+    <div class="ltn__header-middle-area ltn__header-sticky section-bg-0 sticky-scrollar py-0">
+        <div class="container">
+            <div class="row">
+                <div class="col header-menu-column d-flex justify-content-end">
+                    <div class="header-menu d-none d-xl-block">
+                        <nav>
+                            <div class="ltn__main-menu py-0">
+                                <ul>
+                                    <li class="menu-icon mega-menu-parent"><a href="{{ route('orderkitchen') }}">Explore</a>
+                                        <ul class="mega-menu column-3">
+                                            <div class="container px-4"><h5>Choose Style Type</h5></div>
+                                            <li><a href="#" class="text-dark">Standard Kitchens</a>
+                                                <ul>
+                                                    @foreach ($styles->slice(0, 4) as $style)
+                                                    <li><a href="{{ route('orderkitchenbyname', [$style->slug]) }}">{{ $style->name }} KITCHEN</a></li>
+                                                    @endforeach
+                                                </ul>
+                                            </li>
+                                            <li><a href="#" class="text-dark">Premium Kitchens</a>
+                                                <ul>
+                                                    @foreach ($styles->slice(4, 4) as $style)
+                                                    <li><a href="{{ route('orderkitchenbyname', [$style->slug]) }}">{{ $style->name }} KITCHEN</a></li>
+                                                    @endforeach
+                                                </ul>
+                                            </li>
+                                            <li><a href="#" class="text-dark">Budget Kitchens</a>
+                                                <ul>
+                                                    @foreach ($styles->slice(8, 4) as $style)
+                                                    <li><a href="{{ route('orderkitchenbyname', [$style->slug]) }}">{{ $style->name }} KITCHEN</a></li>
+                                                    @endforeach
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-icon mega-menu-parent"><a href="{{ route('orderkitchen') }}">Order Kitchen</a>
+                                        <ul class="mega-menu row">
+                                            <div class="col-12">
+                                                <div class="container px-4"><h5>Choose Kitchen Type</h5></div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="px-4"><li class="text-dark bg-light p-2">Choose Style</li></div> 
+                                                <ul>
+                                                    @php
+                                                        $styles = Style::where('status', 1)->get();
+                                                    @endphp
+                                                    @if (!empty($styles))
+                                                    @foreach ($styles as $index => $style)
+                                                    <li class="p-2"><input data-style-id="{{$style->id}}" type="radio" value="{{$style->slug}}" name="style_name" class="radio-btn style-item me-2">{{ $style->name }} KITCHEN</li>
+                                                    @endforeach
+                                                    @endif
+                                                </ul>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="px-4"><li class="text-dark bg-light p-2">Choose Colour</li></div> 
+                                                <ul style="max-height: 320px; overflow-y: scroll">
+                                                    @php 
+                                                        $colours = \App\Models\Colour::distinct()->whereNotNull('finishing')->get();
+                                                    @endphp
+                                                    @foreach ($colours as $index => $colour)
+                                                    <li class="p-2"><input data-colour-id="{{$colour->id}}" type="radio" name="colour_name" class="colour_type radio-btn colour-item colour{{$colour->id}} me-2" id="superGlossWhite" value="{{$colour->slug}}">{{$colour->trade_colour}}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="px-4"><li class="text-dark bg-light p-2">Choose Assembly</li></div> 
+                                                <ul>
+                                                    @php 
+                                                        $assemblies = \App\Models\Assembly::whereNot('slug', 'stock')->get();
+                                                    @endphp
+                                                    @foreach ($assemblies as $index => $assembly)
+                                                    <li class="p-2"><input data-assembly-id="{{$assembly->id}}" type="radio" value="{{$assembly->slug}}" name="assembly_name" class="assembly_type assembly-item radio-btn me-2">{{$assembly->name}}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                            <hr>
+                                            <div class="col-12">
+                                                <div class="px-4 pb-3 d-flex justify-content-center">
+                                                    <button id="order-now" class="btn btn-default text-black w-75" style="background-color: #febd49; font-weight: 600; clip-path: polygon(50% 15%, 60% 0, 100% 0, 100% 100%, 0 100%, 0 0, 40% 0);">Order Kitchen</button>
+                                                </div>
+                                            </div>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-icon mega-menu-parent"><a href="{{ route('ordercomponent') }}">Order Component</a>
+                                        @php
+                                            $categories = Category::where('parent_category_id', null)->where('status', 1)->where('header_item', 1)->get();
+                                        @endphp
+                                        <ul class="mega-menu column-3">
+                                            <div class="container px-4"><h5>Choose Unit Type</h5></div>
+                                            @foreach ($categories as $category)
+                                            <li class="py-0 px-4">
+                                                <ul class="py-2">
+                                                    <li class="p-0"><a href="{{ route('ordercomponentbyname', [$category->slug]) }}">{{ $category->name }}</a></li>
+                                                </ul>
+                                            </li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                    <!-- <li><a href="{{ route('help_and_guides') }}">Help & Guides</a></li> -->
+                                    <li><a href="{{route('max_storage')}}">Max Storage</a></li>
+                                    <li><a href="{{route('doors_replacement')}}">Doors Replacement</a></li>
+                                    <!-- <li><a href="{{ route('designservice') }}">Design Service</a></li> -->
+                                    <!-- <li><a href="{{ route('blog') }}">Blogs</a></li> -->
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header-bottom-area start -->
+    
+    <!-- header-bottom-area end -->
+</header>
+
+
 
 <!-- Utilize Cart Menu Start -->
 <div id="ltn__utilize-cart-menu" class="ltn__utilize ltn__utilize-cart-menu">

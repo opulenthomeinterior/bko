@@ -2,6 +2,7 @@
 initializeQuantitiesFromLocalStorage();
 calculateProductsQuantity();
 updateCartItemsList();
+updateCartPage();
 const showMenu = (toggleId, navId) => {
    const toggle = document.getElementById(toggleId),
       nav = document.getElementById(navId)
@@ -644,7 +645,7 @@ function updateCartItemsList() {
                <span class="mini-cart-item-delete"><i class="icon-cancel" onclick="removeFromCart(${product.id}, '${product.productCode}')"></i></span>
             </div>
             <div class="mini-cart-info">
-               <h6><a href="#">${product.quantity} X ${product.full_title}</a></h6>
+               <h6><a href="#">(${product.quantity}) X ${product.full_title}</a></h6>
             </div>
          </div>
       `);
@@ -665,7 +666,7 @@ function orderKitchenCartItemsList() {
    products.forEach(product => {
       // $cartItemsList.append(`<div class="col-12"><p class="text-black fw-bold m-0"><i class="ri-btn ri-delete-bin-line" onclick="removeFromCart(${product.id}, '${product.productCode}')" ></i>&nbsp; <small class="fw-normal">${product.quantity} x ${product.full_title}</small></p></div>`);
 
-      $cartItemsList.append(`<li class="text-black fw-bold  list-group-item"><i class="ri-btn ri-delete-bin-line" onclick="removeFromCart(${product.id}, '${product.productCode}')" ></i>&nbsp; <small class="fw-normal">${product.quantity} x ${product.full_title}</small></li>`);
+      $cartItemsList.append(`<li class="text-black fw-bold  list-group-item"><i class="ri-btn ri-delete-bin-line" onclick="removeFromCart(${product.id}, '${product.productCode}')" ></i>&nbsp; <small class="fw-normal">(${product.quantity}) x ${product.full_title}</small></li>`);
 
    });
 }
@@ -735,35 +736,53 @@ function updateCartPage() {
    var cartTableHtml = ``;
    products.forEach(product => {
       cartTableHtml += `
-                            <tr class="border-bottom" >
-                            <td class="py-3">
-                                <div class="d-flex align-items-center">
-                                    <div class="me-3">
-                                        <span class="remove-btn" onClick="removeFromCart('${product.id}', '${product.productCode}')">&times;</span>
-                                    </div>
-                                    <div class="me-3">
-                                        <img src="https://bkonline.uk/public/imgs/products/${product.image_path}" alt="Kitchen" class="product-image img-fluid border border-primary" 
-style="max-width: 100px; height: auto; object-fit: cover;"
- >
-                                    </div>
-                                    <div>
-                                        <h5 class="mb-1 fw-bold">${product.full_title}</h5>
-                                        <a href="javascript:void(0)" data-productId="${product.id}" class="openCompareModel text-decoration-underline text-danger" style="font-size: 12px;" data-toggle="modal" data-target="#myModal">Compare</a>&nbsp;&nbsp;<a href="javascript:void(0)" data-productId="${product.id}" class="openChangeStyleModal text-decoration-underline text-primary" style="font-size: 12px;" data-bs-toggle="modal" data-bs-target="#cart-items-modal" data-product-id="${product.id}">Change Style</a>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="py-3 px-3 text-center align-middle">£${(product.price).toFixed(2)}</td>
-                            <td class="py-3 px-3 text-center align-middle">
-                             <div class="d-flex flex-lg-row flex-column align-items-center border border-dark justify-content-center " style="max-width: 200px; width: 100%;">
-    <button class="border-0 btn btn-quantity" onClick="decreaseQuantityInCartPage('${product.id}', '${product.productCode}')">-</button>
-    <input type="text" class="border-0 form-control text-center mx-2 flex-grow-1" value="${product.quantity}" oninput="inputQty(this.value, '${product.id}', '${product.productCode}')">
-    <button class="border-0 btn btn-quantity" onClick="increaseQuantityInCartPage('${product.id}', '${product.productCode}')">+</button>
-</div>
-
-                            </td>
-                            <td class="py-3 text-end pe-4 align-middle">£${(product.quantity * product.price).toFixed(2)}</td>
-     </tr>
+      <tr>
+                                        <td class="cart-product-remove">x</td>
+                                        <td class="cart-product-image">
+                                            <a href="product-details.html"><img src="img/product/1.png" alt="#"></a>
+                                        </td>
+                                        <td class="cart-product-info">
+                                            <h4><a href="product-details.html">
+                                                Sample Product Name
+                                            </a></h4>
+                                        </td>
+                                        <td class="cart-product-price">00.00</td>
+                                        <td class="cart-product-quantity">
+                                            <div class="cart-plus-minus">
+                                                <input type="text" value="0" name="qtybutton" class="cart-plus-minus-box">
+                                            </div>
+                                        </td>
+                                        <td class="cart-product-subtotal">00.00</td>
+                                    </tr>
       `;
+//       cartTableHtml += `
+//                             <tr class="border-bottom" >
+//                             <td class="py-3">
+//                                 <div class="d-flex align-items-center">
+//                                     <div class="me-3">
+//                                         <span class="remove-btn" onClick="removeFromCart('${product.id}', '${product.productCode}')">&times;</span>
+//                                     </div>
+//                                     <div class="me-3">
+//                                         <img src="https://bkonline.uk/public/imgs/products/${product.image_path}" alt="Kitchen" class="product-image img-fluid border border-primary" style="max-width: 70px; height: auto; object-fit: cover;">
+//                                     </div>
+//                                     <div>
+//                                         <h5 class="mb-1 fw-bold">${product.full_title}</h5>
+//                                         <a href="javascript:void(0)" data-productId="${product.id}" class="openCompareModel text-decoration-underline text-danger" style="font-size: 12px;" data-toggle="modal" data-target="#myModal">Compare</a>&nbsp;&nbsp;<a href="javascript:void(0)" data-productId="${product.id}" class="openChangeStyleModal text-decoration-underline text-primary" style="font-size: 12px;" data-bs-toggle="modal" data-bs-target="#cart-items-modal" data-product-id="${product.id}">Change Style</a>
+//                                     </div>
+//                                 </div>
+//                             </td>
+//                             <td class="py-3 text-center align-middle" style="min-width: 50px;">£${(product.price).toFixed(2)}</td>
+//                             <td class="py-3 px-3 text-center align-middle">
+//                              <div class="d-flex flex-lg-row flex-column align-items-center border border-dark justify-content-center " style="max-width: 200px; width: 100%;">
+//     <button class="border-0 btn btn-quantity" onClick="decreaseQuantityInCartPage('${product.id}', '${product.productCode}')">-</button>
+//     <input type="text" class="border-0 form-control text-center mx-2 flex-grow-1" value="${product.quantity}" oninput="inputQty(this.value, '${product.id}', '${product.productCode}')">
+//     <button class="border-0 btn btn-quantity" onClick="increaseQuantityInCartPage('${product.id}', '${product.productCode}')">+</button>
+// </div>
+
+//                             </td>
+//                             <td class="py-3 text-end pe-4 align-middle">£${(product.quantity * product.price).toFixed(2)}</td>
+//      </tr>
+//       `;
       //  <p class="text-muted mb-0">Color: gray | Assembly: Rigid</p>
       // cartTableHtml += `<tr>`;
       // cartTableHtml += `<td>`;
@@ -1151,14 +1170,19 @@ function calculateProductsQuantity() {
 
 
    let totalQty;
+   let totalPrice;
    totalQty = products.reduce((total, product) => {
       return total + product.quantity;
+   }, 0);
+   totalPrice = products.reduce((total, product) => {
+      return total + (product.quantity * product.price);
    }, 0);
    console.log("total Qty: " + totalQty);
 
    $('#calculateProductsQuantity').html(totalQty);
    $('#calculateProductsQuantity2').html(totalQty);
    $('.calculateProductsQuantityBottom').html(totalQty);
+   $('.calculateProductsPriceBottom').html(totalPrice.toFixed(2));
 }
 
 function getProductsFromLocalStorage() {

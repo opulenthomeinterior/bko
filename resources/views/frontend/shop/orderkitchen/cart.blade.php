@@ -43,21 +43,26 @@
     </div>
 
     <div class="liton__shoping-cart-area mb-120 mt-90">
-        <div class="container">
+        <div class="container" id="cartContainer">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="shoping-cart-inner">
                         <div class="shoping-cart-table table-responsive">
-                            <table class="table">
+                            <table class="table table-card" width="100%" style="table-layout: fixed; border-collapse: collapse; width: 100%;">
                                 <thead>
-                                    <th class="cart-product-remove">Remove</th>
-                                    <th class="cart-product-image">Image</th>
-                                    <th class="cart-product-info">Product</th>
-                                    <th class="cart-product-price">Price</th>
-                                    <th class="cart-product-quantity">Quantity</th>
-                                    <th class="cart-product-subtotal">Subtotal</th>
+                                    <tr class="header-row">
+                                        <th class="cart-product-remove" style="width: 50px;">Remove</th>
+                                        <th class="cart-product-image" style="width: 150px;">Image</th>
+                                        <th class="cart-product-info" style="width: 350px;">Product</th>
+                                        <th class="cart-product-price" style="width: 50px;">Price</th>
+                                        <th class="cart-product-quantity" style="width: 150px;">Quantity</th>
+                                        <th class="cart-product-subtotal" style="width: 50px;">Subtotal</th>
+                                    </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="productCartTableBody">
+                                    <td colspan="5" class="text-center py-5">No items in cart</td>
+                                </tbody>
+                                <!-- <tbody>
                                     <tr>
                                         <td class="cart-product-remove">x</td>
                                         <td class="cart-product-image">
@@ -71,15 +76,13 @@
                                         <td class="cart-product-price">00.00</td>
                                         <td class="cart-product-quantity">
                                             <div class="cart-plus-minus">
-                                                <!-- <div class="dec qtybutton">-</div> -->
-                                                    <input type="text" value="0" name="qtybutton" class="cart-plus-minus-box">
-                                                <!-- <div class="inc qtybutton">+</div> -->
+                                                <input type="text" value="0" name="qtybutton" class="cart-plus-minus-box">
                                             </div>
                                         </td>
                                         <td class="cart-product-subtotal">00.00</td>
                                     </tr>
                                     
-                                    <!-- <tr class="cart-coupon-row">
+                                    <tr class="cart-coupon-row">
                                         <td colspan="6">
                                             <div class="cart-coupon">
                                                 <input type="text" name="cart-coupon" placeholder="Coupon code">
@@ -89,8 +92,8 @@
                                         <td>
                                             <button type="submit" class="btn theme-btn-2 btn-effect-2-- disabled">Update Cart</button>
                                         </td>
-                                    </tr> -->
-                                </tbody>
+                                    </tr>
+                                </tbody> -->
                             </table>
                         </div>
                         <div class="shoping-cart-total mt-50">
