@@ -1,4 +1,11 @@
 {{-- SLIDER AREA START --}}
+@section('styles')
+<style>
+    .input-item.ltn__custom-icon::before {
+        color: #000 !important;
+    }
+</style>
+@endsection
 <section class="container-fluid position-relative hero-section d-flex align-items-center"
     style="min-height: 100vh; overflow: hidden;">
 
@@ -62,7 +69,7 @@
                     </div>
                     <form action="{{ route('contact_us_inquiry') }}" method="POST" class="row">
                         @csrf
-                        <div class="col-12 mb-2">
+                        <div class="col-12 mb-2 text-dark">
                             <div class="input-item input-item-name ltn__custom-icon">
                                 <input type="text" name="name" placeholder="Enter your name" required style="margin-bottom: 0px;">
                             </div>
