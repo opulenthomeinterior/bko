@@ -35,7 +35,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="product-img-gallery">
+                            <!-- <div class="product-img-gallery">
                                 <ul>
                                     <li>
                                         <a href="#"><i class="fas fa-camera"></i> 4</a>
@@ -44,11 +44,11 @@
                                         <a href="#"><i class="fas fa-film"></i> 2</a>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="product-info">
-                        <h2 class="product-title"><a href="#">{{$style->name}}</a></h2>
+                        <h2 class="product-title"><a href="{{route('orderkitchenbyname', ['style' => $style->name])}}">{{$style->name}}</a></h2>
                         <div class="product-description">
                             <p>Beautiful Modern {{$style->name}} Design</p>
                         </div>
@@ -142,7 +142,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="product-img-gallery">
+                            <!-- <div class="product-img-gallery">
                                 <ul>
                                     <li>
                                         <a href="#"><i class="fas fa-camera"></i> 4</a>
@@ -151,11 +151,11 @@
                                         <a href="#"><i class="fas fa-film"></i> 2</a>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="product-info">
-                        <h2 class="product-title"><a href="#">{{Str::limit($category->name, 13)}}</a></h2>
+                        <h2 class="product-title"><a href="{{route('ordercomponentbyname', [strtolower($category->slug)])}}">{{Str::limit($category->name, 13)}}</a></h2>
                         <div class="product-description">
                             <p>Premium Quality {{Str::limit($category->name, 13)}}</p>
                         </div>

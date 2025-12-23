@@ -859,6 +859,7 @@ code {
     Form input box
 ---------------------------------------------------- */
 input[type="text"],
+input[type="number"],
 input[type="email"],
 input[type="password"],
 input[type="submit"],
@@ -878,6 +879,7 @@ textarea {
   padding-right: 40px; }
 
 input[type="text"]::-webkit-input-placeholder,
+input[type="number"]::-webkit-input-placeholder,
 input[type="email"]::-webkit-input-placeholder,
 input[type="password"]::-webkit-input-placeholder,
 input[type="submit"]::-webkit-input-placeholder,
@@ -887,6 +889,7 @@ textarea::-webkit-input-placeholder {
   font-size: 14px; }
 
 input[type="text"]:focus,
+input[type="number"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus,
 textarea:focus {
@@ -913,6 +916,14 @@ button:focus {
   position: relative; }
 
 .form-input-box input[type="text"] {
+  width: 100%;
+  height: 50px;
+  padding: 0 70px 0 15px;
+  border-radius: 0 15px 0px 0px;
+  border: 1px solid var(--ltn__primary-color);
+  margin-bottom: 0; }
+
+.form-input-box input[type="number"] {
   width: 100%;
   height: 50px;
   padding: 0 70px 0 15px;
@@ -3472,6 +3483,19 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   color: var(--ltn__primary-color);
   font-size: 12px; }
 
+.ltn__search-widget input[type="number"] {
+  margin-bottom: 0;
+  padding-right: 65px;
+  padding-left: 20px;
+  height: 60px;
+  background-color: var(--section-bg-1);
+  font-weight: 600;
+  font-size: 14px; }
+
+.ltn__search-widget input[type="number"]::-webkit-input-placeholder {
+  color: var(--ltn__primary-color);
+  font-size: 12px; }
+
 .ltn__search-widget button {
   position: absolute;
   right: 0;
@@ -3511,6 +3535,13 @@ ul.wp-block-latest-posts.is-grid.alignwide {
     height: 70px;
     padding-left: 25px;
     padding-right: 70px; }
+  .ltn__newsletter-widget input[type="number"] {
+    background-color: #133236;
+    color: var(--white);
+    border-color: #133236;
+    height: 70px;
+    padding-left: 25px;
+    padding-right: 70px; }
   .ltn__newsletter-widget input[type="text"]::-webkit-input-placeholder {
     color: var(--white); }
   .ltn__newsletter-widget input[type="text"]:-ms-input-placeholder {
@@ -3518,6 +3549,14 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   .ltn__newsletter-widget input[type="text"]::-ms-input-placeholder {
     color: var(--white); }
   .ltn__newsletter-widget input[type="text"]::placeholder {
+    color: var(--white); }
+  .ltn__newsletter-widget input[type="number"]::-webkit-input-placeholder {
+    color: var(--white); }
+  .ltn__newsletter-widget input[type="number"]:-ms-input-placeholder {
+    color: var(--white); }
+  .ltn__newsletter-widget input[type="number"]::-ms-input-placeholder {
+    color: var(--white); }
+  .ltn__newsletter-widget input[type="number"]::placeholder {
     color: var(--white); }
   .ltn__newsletter-widget button {
     background-color: var(--ltn__secondary-color);
@@ -3828,6 +3867,21 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   margin-bottom: 20px; }
 
 .price_slider_amount > input[type="text"] {
+  font-weight: 700; }
+.price_slider_amount > input[type="number"],
+.price_slider_amount > input[type="submit"] {
+  background: transparent none repeat scroll 0 0;
+  border: medium none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  float: left;
+  height: 25px;
+  padding: 0;
+  text-align: left;
+  width: 140px;
+  margin-bottom: 20px; }
+
+.price_slider_amount > input[type="number"] {
   font-weight: 700; }
 
 .price_filter .ui-widget-content {
@@ -5467,6 +5521,8 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   margin-bottom: 30px;
   position: relative; }
   .ltn__utilize-menu-search-form input[type="text"] {
+    margin-bottom: 0; }
+  .ltn__utilize-menu-search-form input[type="number"] {
     margin-bottom: 0; }
   .ltn__utilize-menu-search-form button {
     background-color: transparent;
@@ -10127,6 +10183,7 @@ blockquote {
   padding: 50px;
   background-color: var(--white-5); }
   .ltn__comment-reply-area form input[type="text"],
+  .ltn__comment-reply-area form input[type="number"],
   .ltn__comment-reply-area form input[type="email"],
   .ltn__comment-reply-area form input[type="password"],
   .ltn__comment-reply-area form input[type="submit"],
@@ -11472,6 +11529,7 @@ input.cart-plus-minus-box {
       color: var(--white);
       border: 1px solid var(--border-color-3); }
     .coming-soon-inner .ltn__form-box input[type="text"]::-webkit-input-placeholder,
+    .coming-soon-inner .ltn__form-box input[type="number"]::-webkit-input-placeholder,
     .coming-soon-inner .ltn__form-box input[type="email"]::-webkit-input-placeholder {
       /* Chrome/Opera/Safari */
       color: var(--white); }
@@ -12874,6 +12932,7 @@ input.cart-plus-minus-box {
   content: "\f225"; }
 
 .ltn__car-dealer-form-box input[type="text"],
+.ltn__car-dealer-form-box input[type="number"],
 .ltn__car-dealer-form-box input[type="email"],
 .ltn__car-dealer-form-box input[type="password"],
 .ltn__car-dealer-form-box input[type="submit"],
@@ -12900,6 +12959,7 @@ input.cart-plus-minus-box {
   background-repeat: no-repeat; }
 
 .car-price-filter-range .price_slider_amount > input[type="text"],
+.car-price-filter-range .price_slider_amount > input[type="number"],
 .car-price-filter-range .price_slider_amount > input[type="submit"] {
   font-weight: 700; }
 

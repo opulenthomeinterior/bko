@@ -53,12 +53,12 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9TPPJK3"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <a href="https://bkonline.uk/kitchens" class="header">
+    <a href="https://bkonline.uk" class="header">
         <img src="https://bkonline.uk/public/images/bko-black-logo.png" height="120px" width="150px" alt="">
     </a>
     <div class="thank-you">Thank You!</div>
     <div class="thank-you-timer">Redirecting in 5 seconds...</div>
-    <a href="https://bkonline.uk/kitchens" class="footer">Buy Kitchen Online</a>
+    <a href="https://bkonline.uk" class="footer">Buy Kitchen Online</a>
     <script>
         // countdown function
         var countdown = 5; // Change this value to your desired countdown time in seconds.
@@ -71,7 +71,7 @@
             }
         }, 1000); // Change this value to your desired interval in milliseconds. For example, 1000 milliseconds = 1 second.
         setTimeout(function() {
-            window.location.href = "https://bkonline.uk/kitchens";
+            window.location.href = "https://bkonline.uk";
         }, 5000); // Change this value to your desired delay in milliseconds. For example, 5000 milliseconds = 5 seconds.
     </script>
 </body>

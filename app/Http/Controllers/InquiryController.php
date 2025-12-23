@@ -21,7 +21,7 @@ class InquiryController extends Controller
     {
         if (empty($request->catalogue_register_now)) {
             $request->validate([
-                'name' => 'required|string|max:255',
+                // 'name' => 'required|string|max:255',
                 'email' => 'required|string|email|max:255',
                 // 'phone' => 'required|string|max:255',
                 // 'call_time' => 'required|string|max:255',

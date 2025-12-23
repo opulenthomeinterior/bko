@@ -74,7 +74,7 @@
                         </div>
                         <div class="col-12 mb-2">
                             <div class="input-item input-item-phone ltn__custom-icon">
-                                <input type="text" name="phone" placeholder="Enter your phone number" style="margin-bottom: 0px;">
+                                <input type="number" name="phone" placeholder="Enter your phone number" required style="margin-bottom: 0px;">
                             </div>
                         </div>
                         <div class="col-12 mb-2">

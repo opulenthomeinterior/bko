@@ -54,7 +54,8 @@
                         <h4 class="footer-title text-white">Newsletter</h4>
                         <p>Subscribe to our weekly Newsletter and receive updates via email.</p>
                         <div class="footer-newsletter">
-                            <form action="#" method="POST">
+                            <form action="{{route('contact_us_inquiry')}}" method="POST">
+                                @csrf
                                 <input type="email" name="email" placeholder="Email*" required>
                                 <div class="btn-wrapper">
                                     <button class="theme-btn-1 btn" type="submit"><i class="fas fa-location-arrow"></i></button>

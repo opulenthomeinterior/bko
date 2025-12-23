@@ -32,12 +32,6 @@
                             </h6>
                             <div id="faq-item-2-2" class="collapse" data-bs-parent="#accordion_2" style="">
                                 <div class="card-body">
-                                    <div class="ltn__video-img alignleft">
-                                        <img src="img/bg/17.jpg" alt="video popup bg image">
-                                        <a class="ltn__video-icon-2 ltn__video-icon-2-small ltn__video-icon-2-border----" href="https://www.youtube.com/embed/LjCzPp-MK48?autoplay=1&amp;showinfo=0" data-rel="lightcase:myCollection">
-                                            <i class="fa fa-play"></i>
-                                        </a>
-                                    </div>
                                     <p>Standard kitchens usually come in pre-set sizes and designs. In contrast, a bespoke designer
                             kitchen is custom-made for you. You can choose details like layout, materials, and the
                             aesthetic.</p>
