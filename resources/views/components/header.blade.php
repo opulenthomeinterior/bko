@@ -238,16 +238,16 @@
                                     <li class="menu-icon mega-menu-parent"><a href="{{ route('orderkitchen') }}">Explore</a>
                                         <ul class="mega-menu column-3">
                                             <div class="container px-4"><h5>Choose Style Type</h5></div>
-                                            <li><a href="#" class="text-dark">Standard Kitchens</a>
+                                            <li><a href="#" class="text-dark">Premium Kitchens</a>
                                                 <ul>
-                                                    @foreach ($styles->slice(0, 4) as $style)
+                                                    @foreach ($styles->slice(4, 4) as $style)
                                                     <li><a href="{{ route('orderkitchenbyname', [$style->slug]) }}">{{ $style->name }} KITCHEN</a></li>
                                                     @endforeach
                                                 </ul>
                                             </li>
-                                            <li><a href="#" class="text-dark">Premium Kitchens</a>
+                                            <li><a href="#" class="text-dark">Standard Kitchens</a>
                                                 <ul>
-                                                    @foreach ($styles->slice(4, 4) as $style)
+                                                    @foreach ($styles->slice(0, 4) as $style)
                                                     <li><a href="{{ route('orderkitchenbyname', [$style->slug]) }}">{{ $style->name }} KITCHEN</a></li>
                                                     @endforeach
                                                 </ul>
