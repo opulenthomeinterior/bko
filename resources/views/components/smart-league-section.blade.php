@@ -23,7 +23,7 @@
                 <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
                     <div class="ltn__feature-info py-3">
                         <span class="icon-circle">
-                            <i class="fa-solid fa-ruler-combined fs-1"></i>
+                            <i class="text-warning fa-solid fa-ruler-combined fs-1"></i>
                         </span>
                         <h6 class="mb-0 mt-2">Site Survey & Measurements</h6>
                     </div>
@@ -35,7 +35,7 @@
                 <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
                     <div class="ltn__feature-info py-3">
                         <span class="icon-circle">
-                            <i class="fa-solid fa-sink fs-1"></i>
+                            <i class="text-warning fa-solid fa-sink fs-1"></i>
                         </span>
                         <h6 class="mb-0 mt-2">Kitchen Design</h6>
                     </div>
@@ -47,7 +47,7 @@
                 <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
                     <div class="ltn__feature-info py-3">
                         <span class="icon-circle">
-                            <i class="fa-solid fa-cart-shopping fs-1"></i>
+                            <i class="text-warning fa-solid fa-cart-shopping fs-1"></i>
                         </span>
                         <h6 class="mb-0 mt-2">Ordering Process</h6>
                     </div>
@@ -59,7 +59,7 @@
                 <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
                     <div class="ltn__feature-info py-3">
                         <span class="icon-circle">
-                            <i class="fa-solid fa-truck-fast fs-1"></i>
+                            <i class="text-warning fa-solid fa-truck-fast fs-1"></i>
                         </span>
                         <h6 class="mb-0 mt-2">Delivery & Quality Check</h6>
                     </div>
@@ -71,7 +71,7 @@
                 <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
                     <div class="ltn__feature-info py-3">
                         <span class="icon-circle">
-                            <i class="fa-solid fa-screwdriver-wrench fs-1"></i>
+                            <i class="text-warning fa-solid fa-screwdriver-wrench fs-1"></i>
                         </span>
                         <h6 class="mb-0 mt-2">Installation</h6>
                     </div>
