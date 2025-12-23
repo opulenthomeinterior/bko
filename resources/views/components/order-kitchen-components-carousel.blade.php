@@ -48,7 +48,7 @@
                         </div>
                     </div>
                     <div class="product-info">
-                        <h2 class="product-title"><a href="{{route('orderkitchenbyname', ['style' => $style->name])}}">{{$style->name}}</a></h2>
+                        <h2 class="product-title"><a href="{{route('orderkitchenbyname', ['style' => $style->slug])}}">{{$style->name}}</a></h2>
                         <div class="product-description">
                             <p>Beautiful Modern {{$style->name}} Design</p>
                         </div>
