@@ -1,23 +1,4 @@
-@section('styles')
-<style>
-    .icon-circle {
-        width: 58px;
-        height: 58px;
-        border-radius: 50%;
-        color: #fff;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 22px;
-    }
 
-    .bg-purple {
-        background: #9b51e0;
-    }
-
-</style>
-
-@endsection
 {{-- SMART LEAGUE / KITCHEN EXCELLENCE SECTION START --}}
 <div class="ltn__feature-area pt-80 pb-90 mb-120--- section-bg-0">
     <div class="container">
@@ -42,7 +23,7 @@
                 <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
                     <div class="ltn__feature-info py-3">
                         <span class="icon-circle">
-                            <i class="fa-solid fa-ruler-combined"></i>
+                            <i class="fa-solid fa-ruler-combined fs-1"></i>
                         </span>
                         <h6 class="mb-0 mt-2">Site Survey & Measurements</h6>
                     </div>
@@ -54,7 +35,7 @@
                 <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
                     <div class="ltn__feature-info py-3">
                         <span class="icon-circle">
-                            <i class="fa-solid fa-sink"></i>
+                            <i class="fa-solid fa-sink fs-1"></i>
                         </span>
                         <h6 class="mb-0 mt-2">Kitchen Design</h6>
                     </div>
@@ -66,7 +47,7 @@
                 <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
                     <div class="ltn__feature-info py-3">
                         <span class="icon-circle">
-                            <i class="fa-solid fa-cart-shopping"></i>
+                            <i class="fa-solid fa-cart-shopping fs-1"></i>
                         </span>
                         <h6 class="mb-0 mt-2">Ordering Process</h6>
                     </div>
@@ -78,7 +59,7 @@
                 <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
                     <div class="ltn__feature-info py-3">
                         <span class="icon-circle">
-                            <i class="fa-solid fa-truck-fast"></i>
+                            <i class="fa-solid fa-truck-fast fs-1"></i>
                         </span>
                         <h6 class="mb-0 mt-2">Delivery & Quality Check</h6>
                     </div>
@@ -90,7 +71,7 @@
                 <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
                     <div class="ltn__feature-info py-3">
                         <span class="icon-circle">
-                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                            <i class="fa-solid fa-screwdriver-wrench fs-1"></i>
                         </span>
                         <h6 class="mb-0 mt-2">Installation</h6>
                     </div>
