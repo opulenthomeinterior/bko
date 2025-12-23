@@ -7,6 +7,8 @@
     <meta name="robots" content="index, follow" />
     <meta name="description" content="@yield('meta_description', 'Professional kitchen design services with custom solutions')" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google-site-verification" content="XprnAzefcxw_6ShJcZrtRn21FuOT8qEGzuZRyhMp05I" />
+    @yield('meta_tags')
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('assets/img/icons/logoBko.png') }}" type="image/x-icon" />
@@ -46,13 +48,14 @@
         </div>
     </div>
 
-    <!-- JS Files -->
+    <!-- Existing plugins.js that includes jQuery -->
     <script src="{{ asset('assets/js/plugins.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
     <script src="{{ asset('js/frontend.js') }}"></script>
+<!-- Initialize Select2 safely -->
+<script>
+</script>
     @yield('scripts')
-    <script>
-    </script>
     @stack('scripts')
 </body>
 </html>

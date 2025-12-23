@@ -3,6 +3,8 @@ initializeQuantitiesFromLocalStorage();
 calculateProductsQuantity();
 updateCartItemsList();
 updateCartPage();
+orderKitchenCartItemsList();
+cart_total_amount();
 const showMenu = (toggleId, navId) => {
    const toggle = document.getElementById(toggleId),
       nav = document.getElementById(navId)
@@ -666,7 +668,22 @@ function orderKitchenCartItemsList() {
    products.forEach(product => {
       // $cartItemsList.append(`<div class="col-12"><p class="text-black fw-bold m-0"><i class="ri-btn ri-delete-bin-line" onclick="removeFromCart(${product.id}, '${product.productCode}')" ></i>&nbsp; <small class="fw-normal">${product.quantity} x ${product.full_title}</small></p></div>`);
 
-      $cartItemsList.append(`<li class="text-black fw-bold  list-group-item"><i class="ri-btn ri-delete-bin-line" onclick="removeFromCart(${product.id}, '${product.productCode}')" ></i>&nbsp; <small class="fw-normal">(${product.quantity}) x ${product.full_title}</small></li>`);
+      // $cartItemsList.append(`<li class="text-black fw-bold  list-group-item"><i class="ri-btn ri-delete-bin-line" onclick="removeFromCart(${product.id}, '${product.productCode}')" ></i>&nbsp; <small class="fw-normal">(${product.quantity}) x ${product.full_title}</small></li>`);
+      $cartItemsList.append(`
+         <li>
+            <div class="top-rated-product-item clearfix">
+                  <div class="top-rated-product-img">
+                     <a href="#"><img src="https://bkonline.uk/public/imgs/products/${product.image_path}" class="border border-default" alt="#"></a>
+                  </div>
+                  <div class="top-rated-product-info">
+                     <h6><a href="#">(${product.quantity}) x ${product.full_title}</a></h6>
+                     <div class="product-price">
+                        <h5 class="fw-bold">£${product.price}</h5>
+                     </div>
+                  </div>
+            </div>
+         </li>
+      `);
 
    });
 }

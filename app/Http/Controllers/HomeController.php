@@ -285,8 +285,10 @@ class HomeController extends Controller
             // print_r($baseCabinets);
             // echo '</pre>';
             // exit;
-    
-            return view('frontend.shop.orderkitchen.orderkitchenbycolour', compact('style', 'assembly', 'colour', 'baseCabinets', 'wallCabinets', 'tallCabinets', 'panels', 'handles', 'golaHandlelessRails', 'accessories', 'appliances', 'worktops', 'worktopsAndUpStands', 'breakfastBars', 'edgings', 'taps', 'sinks', 'swatchesAndSamples', 'title', 'internals', 'styleHasColour'));
+            $categories = Category::where('status', 1)->get();
+            $styles = Style::where('status', 1)->get();
+
+            return view('frontend.shop.orderkitchen.orderkitchenbycolour', compact('categories', 'styles', 'style', 'assembly', 'colour', 'baseCabinets', 'wallCabinets', 'tallCabinets', 'panels', 'handles', 'golaHandlelessRails', 'accessories', 'appliances', 'worktops', 'worktopsAndUpStands', 'breakfastBars', 'edgings', 'taps', 'sinks', 'swatchesAndSamples', 'title', 'internals', 'styleHasColour'));
         } catch (\Exception $e) {
             return redirect()->back();
         }

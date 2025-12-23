@@ -165,7 +165,7 @@
             <div class="row">
                 <div class="col">
                     <div class="site-logo">
-                        <a href="index.html"><img src="{{ asset('images/bko-black-logo.png') }}" alt="Logo" style="max-height: 60px;"></a>
+                        <a href="{{route('home')}}"><img src="{{ asset('images/bko-black-logo.png') }}" alt="Logo" style="max-height: 60px;"></a>
                     </div>
                 </div>
                 <div class="col header-contact-serarch-column d-none d-xl-block">
@@ -177,7 +177,7 @@
                             </div>
                             <div class="header-feature-info">
                                 <h6 class="fw-bold text-dark">Phone</h6>
-                                <p><a href="tel:0123456789">+0123-456-789</a></p>
+                                <p><a href="tel:02080505605">020 805 05605</a></p>
                             </div>
                         </div>
                         <!-- header-search-2 -->
