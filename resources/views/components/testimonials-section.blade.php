@@ -1,10 +1,14 @@
 {{-- TESTIMONIALS SECTION START --}}
 <div id="testimonials-section" class="ltn__testimonial-area section-bg-0 pt-90 pb-70">
     <div class="container">
-        <div class="row">
-            <div class="col-12 text-center mb-40">
-                <h3 class="text-uppercase fw-bolder text-dark mb-10">FACT, EVERYONE LOVES US</h3>
-                <p>Real experiences from homeowners who trusted Buy Kitchen Online with their dream kitchens.</p>
+        <div class="row mb-3">
+            <div class="col-12 text-center">
+                <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color">
+                    Testimonials
+                </h6>
+                <h1 class="section-title">
+                    FACT EVERYONE LOVES BKO KITCHEN
+                </h1>
             </div>
         </div>
         <div class="row justify-content-center">

@@ -1,10 +1,14 @@
 {{-- FAQS SECTION START --}}
 <div id="faqs-section" class="ltn__faq-area pt-90 pb-90 mb-100 section-bg-1">
     <div class="container">
-        <div class="row justify-content-center mb-40">
-            <div class="col-lg-8 col-12 text-center">
-                <h3 class="text-uppercase fw-bolder text-dark mb-10">Frequently Asked Questions</h3>
-                <p>Answers to common questions about affordable units, bespoke designer kitchens and our process.</p>
+        <div class="row mb-3">
+            <div class="col-12 text-center">
+                <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color">
+                    Frequently Asked Questions
+                </h6>
+                <h1 class="section-title">
+                    YOUR QUESTIONS ANSWERED
+                </h1>
             </div>
         </div>
         <div class="row justify-content-center">

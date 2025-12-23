@@ -10,7 +10,7 @@
                     Why Choose BKO?
                 </h6>
                 <h1 class="section-title">
-                    Your Kitchen Journey — Made Simple
+                    YOUR KITCHEN JOURNEY — MADE SIMPLE
                 </h1>
             </div>
         </div>
@@ -85,18 +85,14 @@
 <div class="ltn__feature-area pt-80 pb-90 mb-120--- section-bg-1">
     <div class="container">
         {{-- Top heading --}}
-        <!-- <div class="row mb-3">
+        <div class="row mb-3">
             <div class="col-12 text-center">
-                <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color">Why BKO?</h6>
-                <h1 class="section-title">WHY BUY KITCHEN ONLINE?</h1>
-            </div>
-        </div> -->
-
-
-        {{-- Join the Smart League heading --}}
-        <div class="row mb-3 justify-content-center">
-            <div class="col-12 text-center">
-                <h3 class="fw-bold mb-3" style="color:#111;">JOIN THE SMART LEAGUE!</h3>
+                <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color">
+                    Join Now
+                </h6>
+                <h1 class="section-title">
+                    JOIN THE SMART LEAGUE
+                </h1>
             </div>
         </div>
 
