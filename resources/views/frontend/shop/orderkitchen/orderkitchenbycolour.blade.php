@@ -282,7 +282,7 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-12">
-                                                                <h3 class="">3 Rooms Manhattan</h3>
+                                                                <h3 class="">White Gloss J-Pull 150 Base Cabinet Flat Pack</h3>
                                                             </div>
                                                         </div>
                                                         <div class="row">
