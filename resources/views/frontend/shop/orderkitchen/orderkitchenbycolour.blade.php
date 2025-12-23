@@ -294,7 +294,7 @@
                                                             <div class="col-lg-6 col-12">
                                                                 <div class="modal-product-info p-0">
                                                                     <div class="product-price">
-                                                                        <h6>$149.00</h6>
+                                                                        <h6>£00.00</h6>
                                                                     </div>
                                                                 </div>
                                                                 <div class="d-flex">
