@@ -41,7 +41,7 @@
             <div class="col-lg-4 col-sm-4 col-6 mb-3">
                 <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
                     <div class="ltn__feature-info py-3">
-                        <span class="icon-circle bg-primary">
+                        <span class="icon-circle">
                             <i class="fa-solid fa-ruler-combined"></i>
                         </span>
                         <h6 class="mb-0 mt-2">Site Survey & Measurements</h6>
@@ -53,8 +53,8 @@
             <div class="col-lg-4 col-sm-4 col-6 mb-3">
                 <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
                     <div class="ltn__feature-info py-3">
-                        <span class="icon-circle bg-purple">
-                            <i class="fa-solid fa-kitchen-set"></i>
+                        <span class="icon-circle">
+                            <i class="fa-solid fa-sink"></i>
                         </span>
                         <h6 class="mb-0 mt-2">Kitchen Design</h6>
                     </div>
@@ -65,7 +65,7 @@
             <div class="col-lg-4 col-sm-4 col-6 mb-3">
                 <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
                     <div class="ltn__feature-info py-3">
-                        <span class="icon-circle bg-warning">
+                        <span class="icon-circle">
                             <i class="fa-solid fa-cart-shopping"></i>
                         </span>
                         <h6 class="mb-0 mt-2">Ordering Process</h6>
@@ -77,7 +77,7 @@
             <div class="col-lg-4 col-sm-4 col-6 mb-3">
                 <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
                     <div class="ltn__feature-info py-3">
-                        <span class="icon-circle bg-success">
+                        <span class="icon-circle">
                             <i class="fa-solid fa-truck-fast"></i>
                         </span>
                         <h6 class="mb-0 mt-2">Delivery & Quality Check</h6>
@@ -89,7 +89,7 @@
             <div class="col-lg-4 col-sm-4 col-6 mb-3">
                 <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
                     <div class="ltn__feature-info py-3">
-                        <span class="icon-circle bg-danger">
+                        <span class="icon-circle">
                             <i class="fa-solid fa-screwdriver-wrench"></i>
                         </span>
                         <h6 class="mb-0 mt-2">Installation</h6>
