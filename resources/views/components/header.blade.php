@@ -160,7 +160,7 @@
 
 <header class="ltn__header-area ltn__header-3 section-bg-1---">        
     <!-- ltn__header-middle-area start -->
-    <div class="ltn__header-middle-area section-bg-1 py-1">
+    <div class="ltn__header-middle-area section-bg-1 py-1 border-bottom border-warning">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -227,7 +227,7 @@
         </div>
     </div>
     <!-- ltn__header-middle-area end -->
-    <div class="ltn__header-middle-area ltn__header-sticky section-bg-0 sticky-scrollar py-0">
+    <div class="ltn__header-middle-area ltn__header-sticky section-bg-0 sticky-scrollar py-0 border-bottom border-warning">
         <div class="container">
             <div class="row">
                 <div class="col header-menu-column d-flex justify-content-end">

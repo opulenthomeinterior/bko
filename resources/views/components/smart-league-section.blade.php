@@ -1,59 +1,106 @@
+@section('styles')
+<style>
+    .icon-circle {
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        color: #fff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+    }
+
+    .bg-purple {
+        background: #9b51e0;
+    }
+
+</style>
+
+@endsection
 {{-- SMART LEAGUE / KITCHEN EXCELLENCE SECTION START --}}
 <div class="ltn__feature-area pt-80 pb-90 mb-120--- section-bg-0">
     <div class="container">
+
         {{-- Top heading --}}
         <div class="row mb-3">
             <div class="col-12 text-center">
-                <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color">Why BKO?</h6>
-                <h1 class="section-title">WHY BUY KITCHEN ONLINE?</h1>
+                <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color">
+                    Why Choose BKO?
+                </h6>
+                <h1 class="section-title">
+                    Your Kitchen Journey — Made Simple
+                </h1>
             </div>
         </div>
 
-        {{-- Stats row --}}
+        {{-- Steps --}}
         <div class="row justify-content-center mb-40">
+
+            {{-- Step 1 --}}
             <div class="col-lg-4 col-sm-4 col-6 mb-3">
                 <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
                     <div class="ltn__feature-info py-3">
-                        <span class="d-inline-flex justify-content-center align-items-center rounded-circle text-white mb-2" style="background:#2d9cdb; width:58px; height:58px; font-weight:700;">1</span>
-                        <h6 class="mb-0" style="min-height: 18px;">Site Survey and Measurements</h6>
+                        <span class="icon-circle bg-primary">
+                            <i class="fa-solid fa-ruler-combined"></i>
+                        </span>
+                        <h6 class="mb-0 mt-2">Site Survey & Measurements</h6>
                     </div>
                 </div>
             </div>
+
+            {{-- Step 2 --}}
             <div class="col-lg-4 col-sm-4 col-6 mb-3">
                 <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
                     <div class="ltn__feature-info py-3">
-                        <span class="d-inline-flex justify-content-center align-items-center rounded-circle text-white mb-2" style="background:#9b51e0; width:58px; height:58px; font-weight:700;">2</span>
-                        <h6 class="mb-0" style="min-height: 18px;">Kitchen Design</h6>
+                        <span class="icon-circle bg-purple">
+                            <i class="fa-solid fa-kitchen-set"></i>
+                        </span>
+                        <h6 class="mb-0 mt-2">Kitchen Design</h6>
                     </div>
                 </div>
             </div>
+
+            {{-- Step 3 --}}
             <div class="col-lg-4 col-sm-4 col-6 mb-3">
                 <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
                     <div class="ltn__feature-info py-3">
-                        <span class="d-inline-flex justify-content-center align-items-center rounded-circle text-white mb-2" style="background:#f2994a; width:58px; height:58px; font-weight:700;">3</span>
-                        <h6 class="mb-0" style="min-height: 18px;">Ordering Process</h6>
+                        <span class="icon-circle bg-warning">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </span>
+                        <h6 class="mb-0 mt-2">Ordering Process</h6>
                     </div>
                 </div>
             </div>
+
+            {{-- Step 4 --}}
             <div class="col-lg-4 col-sm-4 col-6 mb-3">
                 <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
                     <div class="ltn__feature-info py-3">
-                        <span class="d-inline-flex justify-content-center align-items-center rounded-circle text-white mb-2" style="background:#27ae60; width:58px; height:58px; font-weight:700;">4</span>
-                        <h6 class="mb-0" style="min-height: 18px;">Delivery & Quality Check</h6>
+                        <span class="icon-circle bg-success">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </span>
+                        <h6 class="mb-0 mt-2">Delivery & Quality Check</h6>
                     </div>
                 </div>
             </div>
+
+            {{-- Step 5 --}}
             <div class="col-lg-4 col-sm-4 col-6 mb-3">
                 <div class="ltn__feature-item ltn__feature-item-6 text-center bg-white box-shadow-1">
                     <div class="ltn__feature-info py-3">
-                        <span class="d-inline-flex justify-content-center align-items-center rounded-circle text-white mb-2" style="background:#eb5757; width:58px; height:58px; font-weight:700;">5</span>
-                        <h6 class="mb-0" style="min-height: 18px;">Installation</h6>
+                        <span class="icon-circle bg-danger">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </span>
+                        <h6 class="mb-0 mt-2">Installation</h6>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
+
 <div class="ltn__feature-area pt-80 pb-90 mb-120--- section-bg-1">
     <div class="container">
         {{-- Top heading --}}
