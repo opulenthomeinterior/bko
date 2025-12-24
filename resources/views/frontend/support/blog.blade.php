@@ -43,7 +43,7 @@
         <div class="row">
             @if ($blogs->count())
                 @foreach ($blogs as $blog)
-                    <div class="col-lg-4 col-md-6 col-6 py-2">
+                    <div class="col-lg-4 col-md-6 col-12 py-2">
                         <div class="card">
                             <div class="card-header p-0">
                                 <!-- Use blog's image_path here -->
