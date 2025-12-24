@@ -21,8 +21,8 @@
     <div class="container">
         <div class="row justify-content-center main-image-content align-items-center " style="z-index: 1000;">
             <!-- Left Content -->
-            <div class="col-lg-6 col-md-6 text-start p-0" style="z-index: 100;">
-                <div class=" animated slide-top">
+            <div class="col-lg-6 col-md-6 text-start" style="z-index: 100; padding: 20px !important; padding: 0px 20px !important; margin-top: 50px !important">
+                <div class="animated slide-top">
 
                     <h6 class="fw-bold text-start text-white" style="letter-spacing:8px;">BUY KITCHEN
                         ONLINE</h6>
@@ -31,11 +31,11 @@
                 <div class="text-green-color">
 
                     <h1
-                        class="fw-bold animated slide-left text-uppercase d-none d-md-block text-white">
+                        class="fw-bold animated slide-left text-uppercase d-md-block text-white">
                         Best of both worldS</h1>
 
 
-                    <p class="animated slide-bottom text-white" style="font-size:30px;">
+                    <p class="animated slide-bottom text-white" style="font-size:20px;">
                         The <span class="fw-bold">Only Online Platform</span> with <span>Online value</span> and professional <span class="fw-bold">Survey</span> with <span class="fw-bold">Installation</span>.</p>
 
                 </div>
@@ -44,10 +44,10 @@
                         style="margin-top: 5px;">
 
                     </div>
-                    <div class=" col-sm-12 d-flex justify-content-start animated slide-bottom mt-1 mb-5 mb-md-0">
+                    <div class="col-sm-12 p-0">
 
                         <a href="#"
-                            class="btn px-5 py-3 order-btn btn-md text-black text-uppercase rounded-pill"
+                            class="btn py-3 order-btn btn-md text-black text-uppercase rounded-pill"
                             style="background-color: #febd49;">
                             Order Now
                         </a>
