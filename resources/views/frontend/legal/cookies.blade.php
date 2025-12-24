@@ -1,12 +1,6 @@
-<x-guest-layout>
+@extends('layouts.guest2')
+@section('content')
     <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase">Home</a></li>
-                <li class="breadcrumb-item"><a class="text-uppercase">Legal Pages</a></li>
-            </ol>
-        </nav>
-
         <div class="row">
             <div class="col-12">
                 <h1 class="fs-1 text-dark text-uppercase fw-bolder">
@@ -119,5 +113,4 @@
             </div>
         </div>
     </section>
-
-</x-guest-layout>
+@endsection

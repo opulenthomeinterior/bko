@@ -1,8 +1,5 @@
-<x-guest-layout>
-
-
-
- 
+@extends('layouts.guest2')
+@section('content')
 <head>
    
    <style>
@@ -840,5 +837,4 @@
             </div>
         </div>
     </section> --}}
-
-</x-guest-layout>
+@endsection

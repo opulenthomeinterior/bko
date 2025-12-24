@@ -1,15 +1,9 @@
-<x-guest-layout>
+@extends('layouts.guest2')
+@section('content')
     <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase">Home</a></li>
-                <li class="breadcrumb-item"><a class="text-uppercase">Legal Pages</a></li>
-            </ol>
-        </nav>
-
         <div class="row">
             <div class="col-12">
-                <h1 class="text-dark text-uppercase fw-bolder">
+                <h1 class="text-dark text-uppercase fw-bolder text-center">
                     Terms and Conditions
                 </h1>
             </div>
@@ -18,14 +12,14 @@
 
     <section class="container-fluid px-lg-5 px-md-3 px-3 py-lg-5 py-3" style="background-color: #f0f0f0;">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 text-center">
                 <h4 class="fw-bolder text-dark text-uppercase py-2">DOWNLOAD THE TERMS AND CONDITIONS</h4>
                 <p class="py-2">To download the terms and condition of our website <a href="#">click this link
                         here</a></p>
 
                 <h4 class="fw-bolder text-dark text-uppercase py-2">More terms and conditions</h4>
             </div>
-
+<hr>
             <div class="col-lg-4 col-md-6 col-12 py-1">
                 <a href="{{ route('promotion') }}">
                     <div class="card card-hover">
@@ -93,5 +87,4 @@
 
         </div>
     </section>
-
-</x-guest-layout>
+@endsection

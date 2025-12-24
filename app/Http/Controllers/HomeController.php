@@ -866,35 +866,49 @@ class HomeController extends Controller
 
     public function cookies()
     {
-        return view('frontend.legal.cookies');
+        $styles = Style::all();
+        $categories = Category::whereNull('parent_category_id')->get();
+        return view('frontend.legal.cookies', compact('styles', 'categories'));
     }
     public function termandcondition()
     {
-        return view('frontend.legal.termandcondition');
+        $styles = Style::all();
+        $categories = Category::whereNull('parent_category_id')->get();
+        return view('frontend.legal.termandcondition', compact('styles', 'categories'));
     }
 
     public function privacy()
     {
-        return view('frontend.legal.privacy');
+        $styles = Style::all();
+        $categories = Category::whereNull('parent_category_id')->get();
+        return view('frontend.legal.privacy', compact('styles', 'categories'));
     }
 
     public function pricepromise()
     {
+        $styles = Style::all();
+        $categories = Category::whereNull('parent_category_id')->get();
         return view('frontend.legal.pricepromise');
     }
 
     public function pricebeat()
     {
+        $styles = Style::all();
+        $categories = Category::whereNull('parent_category_id')->get();
         return view('frontend.legal.pricebeat');
     }
 
     public function promotion()
     {
+        $styles = Style::all();
+        $categories = Category::whereNull('parent_category_id')->get();
         return view('frontend.legal.promotion');
     }
 
     public function virtualdesignterm()
     {
+        $styles = Style::all();
+        $categories = Category::whereNull('parent_category_id')->get();
         return view('frontend.legal.virtualdesignterm');
     }
 
@@ -932,6 +946,8 @@ class HomeController extends Controller
 
     public function order_history()
     {
+        $styles = Style::all();
+        $categories = Category::whereNull('parent_category_id')->get();
         if (!auth()->user()) {
             return redirect()->route('login');
         }
@@ -965,6 +981,8 @@ class HomeController extends Controller
 
     public function compare_product(Request $request)
     {
+        $styles = Style::all();
+        $categories = Category::whereNull('parent_category_id')->get();
         try {
             $id = $request->productId;
 
@@ -1029,8 +1047,10 @@ class HomeController extends Controller
         // print_r($orderKitchen);
         // echo '</pre>';
         // exit;
+        $styles = Style::all();
+        $categories = Category::whereNull('parent_category_id')->get();
 
-        return view('frontend.legal.site-maps', compact('orderKitchen', 'orderComponent', 'downloadableResources', 'blogs'));
+        return view('frontend.legal.site-maps', compact('orderKitchen', 'orderComponent', 'downloadableResources', 'blogs', 'styles', 'categories'));
     }
 
     public function help_and_guides() {
@@ -1040,7 +1060,9 @@ class HomeController extends Controller
     }
 
     public function support_page() {
-        return view('frontend.support.index');
+        $styles = Style::all();
+        $categories = Category::whereNull('parent_category_id')->get();
+        return view('frontend.support.index', compact('styles', 'categories'));
     }
 
     public function styleColours(Request $request) {
@@ -1071,7 +1093,9 @@ class HomeController extends Controller
                 'dimensions' => rand(50, 200) . 'x' . rand(50, 200) . 'x' . rand(50, 200) . ' cm',
             ];
         });
-        return view('frontend.shop.wardrobes.index', compact('products'));
+        $styles = Style::all();
+        $categories = Category::whereNull('parent_category_id')->get();
+        return view('frontend.shop.wardrobes.index', compact('products', 'styles', 'categories'));
     }
 
     public function doorsReplacement() {
@@ -1095,7 +1119,7 @@ class HomeController extends Controller
             return $style;
         });
 
-        return view('frontend.shop.orderkitchen.doors_replacement', compact('styles', 'testimonials'));
+        return view('frontend.shop.orderkitchen.doors_replacement', compact('styles', 'testimonials', 'categories'));
     }
 
     public function kitchenCupboardDoorsReplacement() {
@@ -1224,6 +1248,8 @@ class HomeController extends Controller
 
     public function kitchenNamePage()
     {
-        return view('frontend.shop.orderkitchen.kitchen-name-page');
+        $styles = Style::all();
+        $categories = Category::whereNull('parent_category_id')->get();
+        return view('frontend.shop.orderkitchen.kitchen-name-page', compact('styles', 'categories'));
     }
 }
