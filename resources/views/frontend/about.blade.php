@@ -1,4 +1,5 @@
-    <x-guest-layout>
+@extends('layouts.guest2')
+@section('content')
     <title>About </title>
         <head>
             <link rel="stylesheet" href="{{ asset('css/home.css') }}">
@@ -36,8 +37,13 @@
 
                 }
 
+                .bg-yellow-new {
+                    background-color: #febd49;
+
+                }
+
                 .text-yellow {
-                    color: #FFE000;
+                    color: #febd49;
                 }
 
                 .bg-cyan {
@@ -289,13 +295,6 @@
             <div class="overlay">
 
             </div>
-                    <nav aria-label="breadcrumb"  style="position:absolute; color:white; z-index:100; left:50px; top:30px">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase" style="color:#FEBD49; font-size:16px !important">Home</a></li>
-                <li class="breadcrumb-item"><span class="text-uppercase" style="color:#FEBD49; font-size:16px">About US</span></li>
-                
-            </ol>
-        </nav>  
             <div class="hero-content">
         
                 <h1 class="text-white fw-bold text-center">Welcome To</h1>
@@ -309,7 +308,7 @@
         <div class="contaienr-fluid bg-light">
             <div class="container">
                 <div class="row mb-0 mb-lg-5 flex-lg-row flex-sm-column position-relative" style="top:-50px"">
-                    <div class=" col-lg-6 col-sm-12 bg-yellow rounded-3 p-5">
+                    <div class=" col-lg-6 col-sm-12 bg-yellow-new rounded-3 p-5">
                     <h2 class="text-black fw-bolder text-center">GET THE BEST OF BOTH WORLDS</h2>
                         <h4 class="lh-base text-center  text-black">We are the ONLY brand offering high-quality products at wholesale prices displayed online,
                             complemented by on-site surveys and expert consultations.</h4>
@@ -363,7 +362,7 @@
                 <div class="col-lg-6 our-story-image">
                     <img class=shadow" src="{{ asset('/images/story.png') }}" style="box-shadow: 17px 16px 0px 0px rgba(254,189,73,0.75);" />
                    
-                    {{-- <div class="our-story-image-shadow bg-yellow">
+                    {{-- <div class="our-story-image-shadow bg-yellow-new">
 
                     </div> --}}
                 {{-- </div> --}}
@@ -444,7 +443,7 @@
 
                     <div class="col-lg-6 our-team-image">
                         <img class=shadow" src="{{ asset('images/our-team.png') }}"" />
-                        <div class=" our-team-image-shadow bg-yellow">
+                        <div class=" our-team-image-shadow bg-yellow-new">
                     </div>
 
                     <div class="col-lg-4 mt-5 our-team-content bg-white py-4 px-5 rounded-3 shadow"
@@ -495,7 +494,7 @@
                         <h3 class="text-uppercase text-center">the Buy Kitchen Online experience</h3>
                     </div>
                     <div class="row">
-                        <div class="col-lg-4 bg-yellow p-5 d-flex flex-column">
+                        <div class="col-lg-4 bg-yellow-new p-5 d-flex flex-column">
                             <img src="{{ asset('/images/choose-the-comfort.png') }}"
                                 class="img-fluid py-3 align-self-center" style="width:55px" />
                             <h4 class="text-black text-center">Choose From The Comfort Of Your Home</h4>
@@ -515,7 +514,7 @@
                                 and installation services.
                             </p>
                         </div>
-                        <div class="col-lg-4 bg-yellow p-5 d-flex flex-column">
+                        <div class="col-lg-4 bg-yellow-new p-5 d-flex flex-column">
                             <img src="{{ asset('/images/premium-quality.png') }}" class="img-fluid py-3 align-self-center"
                                 style="width:55px" />
                             <h4 class="text-black text-center">Premium Quality</h3>
@@ -536,7 +535,7 @@
                                 the final installation, our team helps you every step of the way. 
                             </p>
                         </div>
-                        <div class="col-lg-4 bg-yellow p-5 d-flex flex-column">
+                        <div class="col-lg-4 bg-yellow-new p-5 d-flex flex-column">
                             <img src="{{ asset('/images/experince-transparency.png') }}"
                                 class="img-fluid py-3 align-self-center" style="width:55px" />
                             <h4 class="text-black text-center">
@@ -568,6 +567,5 @@
 
         </div>
 
-        @include('frontend.start_your_journey')
 
-    </x-guest-layout>
+        @endsection

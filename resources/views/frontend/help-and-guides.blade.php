@@ -209,41 +209,6 @@
             </a>
         </div>
 
-        {{-- <div class="px-3">
-            <a href="{{ route('faq') }}">
-                <!-- <div class="card card btn btn-outline-warning border-dark">
-                    <div class="card-header p-0">
-                        <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" class="img-fluid" />
-                    </div>
-
-                    <div class="card-body about-card-body">
-                        <div class="about-card-content">
-                            <h3 class="fw-bold text-dark text-uppercase">Buy Kitchen Online faqs</h3>
-                            <p>Having been making, packing and distributing kitchens, we have developed
-                                trusted
-                                methods to get what it is you need, to where you need it.</p>
-                        </div>
-                    </div>
-                </div> -->
-
-                <div class="card component-card  btn btn-outline-warning p-0 border-0">
-                    <a href="{{ route('terminology') }}" class="position-absolute top-0 bottom-0 start-0 end-0"></a>
-                    
-                    <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" style="width:100%" alt="">
-                    <div class="card-body about-card-body p-0">
-                        <div class="about-card-content text-start p-3" >
-                            <h4 class="text-uppercase fs-3 fw-bold text-white">FITTING GUIDES</h4>
-                            <div class="text-light">Having been making, packing and distributing kitchens, we have developed  trusted methods to get what it is you need, to where you need it.</div>
-                                <div class="d-flex flex-row justify-content-end">
-                                <button class="mt-3 btn btn-outline-warning text-white rounded-pill">Read More</button>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-
-            </a>
-        </div> --}}
-
         <div class="px-3">
             <a href="{{ route('fittingguide') }}">
                 <!-- <div class="card card btn btn-outline-warning border-dark">
@@ -303,42 +268,16 @@
                         
                             <h4 class="text-uppercase card-title">NEED HELP MEASURING</h4>
                             <div class=" card-text">Having been making, packing and distributing kitchens, we have developed  trusted methods to get what it is you need, to where you need it.</div>
-                                {{-- <div class="d-flex flex-row justify-content-end"> --}}
-                                {{-- <button class="mt-3 btn btn-outline-warning text-white rounded-pill">Read More</button> --}}
-                                <button class="btn read-more-btn">Read More</button>
-                                {{-- </div> --}}
                         
                     </div>
                 </div>
 
             </a>
         </div>
-
-        <div class="px-3">
-            <a href="{{ route('designservice') }}">
-                <!-- <div class="card card btn btn-outline-warning border-dark">
-                    <div class="card-header p-0">
-                        <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" class="img-fluid" />
-                    </div>
-
-                    <div class="card-body about-card-body">
-                        <div class="about-card-content">
-                            <h3 class="fw-bold text-dark text-uppercase">Virtual Design Service</h3>
-                            <p>Having been making, packing and distributing kitchens, we have developed trusted methods to get what it is you need, to where you need it.</p>
-                        </div>
-                    </div>
-                </div> -->
-            </a>
-        </div>
     </div>
 
 
 </section>
-  <!-- Start your journey -->
-  @include('frontend.start_your_journey')
-
-  <section class="container-fluid bg-white" style="border-bottom: 40px solid #2a6161;">
-    </section>
 
 @push('scripts')
     <script>

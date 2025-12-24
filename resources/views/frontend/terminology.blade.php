@@ -1,14 +1,9 @@
-<x-guest-layout>
+@extends('layouts.guest2')
+@section('content')
     <head>
     <title>Kitchen Terminology</title>
 </head>
     <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase">Home</a></li>
-                <li class="breadcrumb-item"><a class="text-uppercase">Help & Guides</a></li>
-            </ol>
-        </nav>
 
         <div class="row">
             <div class="col-12 text-center">
@@ -82,7 +77,11 @@
         </div>
     </section>
 
+    <section class="container-fluid px-lg-5 px-md-3 px-3">
+
     {{ view('frontend.help-and-guides') }}
+    </section>
+
 
     {{-- <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
         <div class="row slick-slider">
@@ -192,4 +191,5 @@
 
     </section> --}}
 
-</x-guest-layout>
+
+    @endsection

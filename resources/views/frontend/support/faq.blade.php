@@ -1,5 +1,6 @@
-<x-guest-layout>
-    <style>
+@extends('layouts.guest2')
+@section('content')
+<style>
         ol li {
             list-style-type: unset;
         }
@@ -10,12 +11,6 @@
     </style>
 
     <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase">Home</a></li>
-                <li class="breadcrumb-item"><a class="text-uppercase">Help & guides</a></li>
-            </ol>
-        </nav>
 
         <div class="row">
             <div class="col-12 text-center">
@@ -92,4 +87,4 @@
 
     </section>
 
-</x-guest-layout>
+    @endsection

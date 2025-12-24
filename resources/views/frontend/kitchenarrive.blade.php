@@ -1,5 +1,5 @@
-<x-guest-layout>
-
+@extends('layouts.guest2')
+@section('content')
 <head>
     <title>How will my kitchen arrive </title>
     <style>
@@ -126,19 +126,14 @@ Every order is handled with the utmost care, ensuring that all components of you
 
 
 <section class="container-fluid px-lg-5 py-4 px-md-3 px-3 " style="background-color:#ececec">
-    <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase" style="color:#FEBD49; font-size:16px !important">Home</a></li>
-                <li class="breadcrumb-item"><a class="text-uppercase" style="color:#FEBD49; font-size:16px !important">Help & Guides</a></li>
-            </ol>
-        </nav>
+    
         <div class="row justify-content-center">
             <div class="col-7 text-center">
                 <h1 class="fs-1 text-dark text-uppercase fw-bolder pt-5">
                 HOW WILL MY KITCHEN ARRIVE?
                 </h1>
                 
-                <h4 class="text-dark pt-1">
+                <h5 class="pt-1">
                 At Buy Kitchen Online, the most important thing for us is to deliver your kitchen safely and on time. With our years of experience in delivering kitchens, we make sure that every component of your kitchen is packed securely and reaches you in primal condition. 
                     </h5>
             </div>
@@ -332,4 +327,5 @@ Every order is handled with the utmost care, ensuring that all components of you
 
     </section> --}}
 
-</x-guest-layout>
+
+    @endsection

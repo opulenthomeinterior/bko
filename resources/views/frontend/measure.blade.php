@@ -1,4 +1,5 @@
-<x-guest-layout>
+@extends('layouts.guest2')
+@section('content')
     <head>
         <style>
 
@@ -328,12 +329,6 @@
         </div> -->
     </section>
     <section class="container-fluid mb-2 px-lg-5 py-5 px-md-3 px-3 bg-light">
-         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase" style="color:#FEBD49; font-size:16px !important">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('shop') }}" class="text-uppercase" style="color:#FEBD49; font-size:16px !important">Help & guides</a></li>
-            </ol>
-        </nav>
 
     <div class="d-flex flex-row justify-content-center">
         
@@ -866,5 +861,4 @@ In case of buying new appliances, make a note of the planned dimensions. This in
 
     </section> --}}
 
-
-</x-guest-layout>
+    @endsection

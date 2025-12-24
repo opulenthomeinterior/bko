@@ -784,7 +784,9 @@ class HomeController extends Controller
     {
         $generalFaqs = Faq::where('type', 'general')->get();
         $deliveryFaqs = Faq::where('type', 'delivery')->get();
-        return view('frontend.support.faq', compact('generalFaqs', 'deliveryFaqs'));
+        $styles = Style::all();
+        $categories = Category::whereNull('parent_category_id')->get();
+        return view('frontend.support.faq', compact('generalFaqs', 'deliveryFaqs', 'styles', 'categories'));
     }
 
     public function cart()
@@ -803,29 +805,39 @@ class HomeController extends Controller
 
     public function about()
     {
-        return view('frontend.about');
+        $styles = Style::all();
+        $categories = Category::whereNull('parent_category_id')->get();
+        return view('frontend.about', compact('styles', 'categories'));
     }
 
     public function fittingguide()
     {
         $downloadguide = DownloadableGuide::where('type', 'guide')->get();
         $videoguide = VideoGuide::where('type', 'guide')->get();
+        $categories = Category::where('status', 1)->get();
+        $styles = Style::where('status', 1)->get();
 
-        return view('frontend.fittingguide', compact('downloadguide', 'videoguide'));
+        return view('frontend.fittingguide', compact('downloadguide', 'videoguide', 'categories', 'styles'));
     }
 
     public function terminology()
     {
-        return view('frontend.terminology');
+        $categories = Category::where('status', 1)->get();
+        $styles = Style::where('status', 1)->get();
+        return view('frontend.terminology', compact('categories', 'styles'));
     }
     public function needhelp()
     {
-        return view('frontend.measure');
+        $categories = Category::where('status', 1)->get();
+        $styles = Style::where('status', 1)->get();
+        return view('frontend.measure', compact('categories', 'styles'));
     }
 
     public function kitchenarrive()
     {
-        return view('frontend.kitchenarrive');
+        $categories = Category::where('status', 1)->get();
+        $styles = Style::where('status', 1)->get();
+        return view('frontend.kitchenarrive', compact('categories', 'styles'));
     }
 
     public function deliveries()
@@ -1016,7 +1028,9 @@ class HomeController extends Controller
     }
 
     public function help_and_guides() {
-        return view('frontend.help-and-guides-page');
+        $categories = Category::where('status', 1)->get();
+        $styles = Style::where('status', 1)->get();
+        return view('frontend.help-and-guides-page', compact('categories', 'styles'));
     }
 
     public function support_page() {

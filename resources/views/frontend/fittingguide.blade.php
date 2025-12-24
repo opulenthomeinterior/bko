@@ -1,21 +1,44 @@
-<x-guest-layout>
+@extends('layouts.guest2')
+@section('content')
     <head>
     <title>Fitting Guides </title></head>
+
+@section('styles')
+<style>
+    .backgroundimage {
+        background-image: url("{{ asset('images/order-component.jpg') }}");
+        background-size: cover;
+        background-position: center center;
+    }
+    .quantity-group {
+        width: 110px; /* controls overall size */
+    }
+
+    .quantity-input {
+        padding: 2px 4px;
+        font-size: 13px;
+    }
+</style>
+@endsection
+
+    {{-- Breadcrumb --}}
+    <div class="ltn__breadcrumb-area ltn__breadcrumb-area-1 ltn__breadcrumb-color-white--- pt-35 pb-35 backgroundimage mb-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ltn__breadcrumb-inner">
+                        <h1 class="page-title text-white p-3 w-75" style="background-color: #000000a1">Fitting Guides</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase">Home</a></li>
-                <li class="breadcrumb-item"><a class="text-uppercase">help & guides</a></li>
-            </ol>
-        </nav>
 
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="fs-1 text-dark text-uppercase fw-bolder">
-                    Fitting Guides
-                </h1>
-                <h4 class="text-dark">We've put together a host of step-by-step videos and downloads to help you
-                    understand, plan and install Buy Kitchen Online kitchens.</h4>
+                <h5 class="text-dark">We've put together a host of step-by-step videos and downloads to help you
+                    understand, plan and install Buy Kitchen Online kitchens.</h5>
             </div>
         </div>
     </section>
@@ -79,119 +102,5 @@
     </section>
 
     {{ view('frontend.help-and-guides') }}
-
-    {{-- <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
-        <div class="row">
-            <div class="col-lg-6 py-lg-0 py-md-3 py-4">
-                <h2 class="text-uppercase fw-bolder text-dark">Help & Guides</h2>
-            </div>
-        </div>
-        <div class="row slick-slider">
-            <div class="px-3">
-                <a href="#">
-                    <div class="card">
-                        <div class="card-header p-0">
-                            <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" class="img-fluid" />
-                        </div>
-
-                        <div class="card-body">
-                            <h3 class="fw-bold text-dark text-uppercase">Kitchen Terminology</h3>
-                            <p>Having been making, packing and distributing kitchens, we have developed
-                                trusted
-                                methods to get what it is you need, to where you need it.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="px-3">
-                <a href="#">
-                    <div class="card">
-                        <div class="card-header p-0">
-                            <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" class="img-fluid" />
-                        </div>
-
-                        <div class="card-body h-100">
-                            <h3 class="fw-bold text-dark text-uppercase">How will my kitchen arrive?</h3>
-                            <p>Having been making, packing and distributing kitchens, we have developed
-                                trusted
-                                methods to get what it is you need, to where you need it.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="px-3">
-                <a href="#">
-                    <div class="card">
-                        <div class="card-header p-0">
-                            <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" class="img-fluid" />
-                        </div>
-
-                        <div class="card-body h-100">
-                            <h3 class="fw-bold text-dark text-uppercase">Buy Kitchen Online faqs</h3>
-                            <p>Having been making, packing and distributing kitchens, we have developed
-                                trusted
-                                methods to get what it is you need, to where you need it.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="px-3">
-                <a href="#">
-                    <div class="card">
-                        <div class="card-header p-0">
-                            <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" class="img-fluid" />
-                        </div>
-
-                        <div class="card-body">
-                            <h3 class="fw-bold text-dark text-uppercase">Fitting guides</h3>
-                            <p>Having been making, packing and distributing kitchens, we have developed
-                                trusted
-                                methods to get what it is you need, to where you need it.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="px-3">
-                <a href="#">
-                    <div class="card">
-                        <div class="card-header p-0">
-                            <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" class="img-fluid" />
-                        </div>
-
-                        <div class="card-body">
-                            <h3 class="fw-bold text-dark text-uppercase">Need help measuring?</h3>
-                            <p>Having been making, packing and distributing kitchens, we have developed
-                                trusted
-                                methods to get what it is you need, to where you need it.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="px-3">
-                <a href="#">
-                    <div class="card">
-                        <div class="card-header p-0">
-                            <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" class="img-fluid" />
-                        </div>
-
-                        <div class="card-body">
-                            <h3 class="fw-bold text-dark text-uppercase">Virtual Design Service</h3>
-                            <p>Having been making, packing and distributing kitchens, we have developed
-                                trusted
-                                methods to get what it is you need, to where you need it.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-
-    </section> --}}
-
-
-</x-guest-layout>
+    
+    @endsection

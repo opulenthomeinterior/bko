@@ -1,4 +1,5 @@
-<x-guest-layout>
+@extends('layouts.guest2')
+@section('content')
     <head>
     <title>Help and Guides </title>
     <style>
@@ -11,6 +12,11 @@
             --transition: all 0.3s ease;
         }
         
+    .backgroundimage {
+        background-image: url("{{ asset('images/order-component.jpg') }}");
+        background-size: cover;
+        background-position: center center;
+    }
         .read-more-btn
         {
             /* background-color: #d8a13e; */
@@ -254,39 +260,22 @@
         }
     </style>
 </head>
-    {{-- <section class="container-fluid px-lg-5 py-4 px-md-3 px-3 bg-light">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h1 class="fs-1 text-dark text-uppercase fw-bolder">
-                    HELP & GUIDES
-                </h1>
-                <h3 class="text-uppercase py-2 color-yellow">FIND OUT EVERYTHING YOU NEED TO KNOW </h3>
-                <h4 class="text-dark pt-1">
-                    At Buy Kitchen Online we want to make ordering a kitchen as easy as possible. From offering a <span class="color-yellow">FREE</span>
-                    Virtual Design Kitchen Service to providing ‘How To Videos’ we are constantly looking at ways to
-                    support you.
-                    </h5>
-            </div>
-        </div>
-    </section> --}}
 
-    <div class="container-fluid" style="background-color: #ececec;">
-         <!-- Breadcrumb -->
-        <nav aria-label="breadcrumb" style="margin-left: 50px; margin-top">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#" style="color:#FEBD49; font-size:16px !important">HOME</a></li>
-                <li class="breadcrumb-item active" aria-current="page" style="color:#FEBD49; font-size:16px !important">HELP & GUIDES</li>
-            </ol>
-        </nav>
-        
-        <!-- Header Section -->
-        <div class="page-header">
-            <h1>HELP & GUIDES</h1>
-            <p class="accent-text mb-2 mb-md-3">FIND OUT EVERYTHING YOU NEED TO KNOW!</p>
-            <p class="header-description">
-                At Buy Kitchen Online we want to make ordering a kitchen as easy as possible. From offering a 
-                <span class="free-tag">FREE</span> Virtual Design Kitchen Service to providing 'How To Videos' we are constantly looking at ways to support you.
-            </p>
+    <div class="ltn__breadcrumb-area ltn__breadcrumb-area-1 ltn__breadcrumb-color-white--- pt-35 pb-35 backgroundimage mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ltn__breadcrumb-inner">
+                        <h1 class="page-title text-white p-3 w-75" style="background-color: #000000a1">Help & Guides</h1>
+                        <!-- <div class="ltn__breadcrumb-list">
+                            <ul>
+                                <li><a href="{{ route('home') }}" class="text-white"><span class="text-dark"><i class="fas fa-home text-white"></i></span> Home</a></li>
+                                <li class="text-white">Order Components</li>
+                            </ul>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="container py-3 py-md-4">
@@ -369,259 +358,4 @@
             </div>
         </div>
     </div>
-
-
-    {{-- <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
-        <div class="row py-3">
-            <div class="col-lg-4 col-md-6 col-12 mb-4">
-                <div class="card component-card  btn btn-outline-warning p-0">
-                    <a href="{{ route('terminology') }}" class="position-absolute top-0 bottom-0 start-0 end-0"></a>
-                    <!-- <div class="card-header p-0 custom-card-img"
-                        style=" 
-                        background-image: url('{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}'); 
-                        min-height: 300px;
-                        background-size: cover;
-                        background-position: center center;
-                        background-repeat: no-repeat;">
-                    
-                    </div> -->
-                    <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" style="width:100%" alt="">
-                    <div class="card-body about-card-body p-0">
-                        <div class="about-card-content text-start p-3" >
-                            <h4 class="text-uppercase fs-3 fw-bold text-white">Kitchen Terminology</h4>
-                            <div class="text-light">Having been making, packing and distributing kitchens, we
-                                have developed
-                                trusted
-                                methods to get what it is you need, to where you need it.</div>
-                                <div class="d-flex flex-row justify-content-end">
-                                <button class="mt-3 btn btn-outline-warning text-white rounded-pill">Read More</button>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-12 mb-4">
-                <div class="card component-card  btn btn-outline-warning p-0">
-                    <a href="{{ route('terminology') }}" class="position-absolute top-0 bottom-0 start-0 end-0"></a>
-                    <!-- <div class="card-header p-0 custom-card-img"
-                        style=" 
-                        background-image: url('{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}'); 
-                        min-height: 300px;
-                        background-size: cover;
-                        background-position: center center;
-                        background-repeat: no-repeat;">
-                    
-                    </div> -->
-                    <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" style="width:100%" alt="">
-                    <div class="card-body about-card-body p-0">
-                        <div class="about-card-content text-start p-3" >
-                            <h4 class="text-uppercase fs-3 fw-bold text-white">Kitchen Terminology</h4>
-                            <div class="text-light">Having been making, packing and distributing kitchens, we
-                                have developed
-                                trusted
-                                methods to get what it is you need, to where you need it.</div>
-                                <div class="d-flex flex-row justify-content-end">
-                                <button class="mt-3 btn btn-outline-warning text-white rounded-pill">Read More</button>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-12 mb-4">
-                <div class="card component-card  btn btn-outline-warning p-0">
-                    <a href="{{ route('terminology') }}" class="position-absolute top-0 bottom-0 start-0 end-0"></a>
-                    <!-- <div class="card-header p-0 custom-card-img"
-                        style=" 
-                        background-image: url('{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}'); 
-                        min-height: 300px;
-                        background-size: cover;
-                        background-position: center center;
-                        background-repeat: no-repeat;">
-                    
-                    </div> -->
-                    <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" style="width:100%" alt="">
-                    <div class="card-body about-card-body p-0">
-                        <div class="about-card-content text-start p-3" >
-                            <h4 class="text-uppercase fs-3 fw-bold text-white">Kitchen Terminology</h4>
-                            <div class="text-light">Having been making, packing and distributing kitchens, we
-                                have developed
-                                trusted
-                                methods to get what it is you need, to where you need it.</div>
-                                <div class="d-flex flex-row justify-content-end">
-                                <button class="mt-3 btn btn-outline-warning text-white rounded-pill">Read More</button>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-12 mb-4">
-                <div class="card component-card  btn btn-outline-warning p-0">
-                    <a href="{{ route('terminology') }}" class="position-absolute top-0 bottom-0 start-0 end-0"></a>
-                    <!-- <div class="card-header p-0 custom-card-img"
-                        style=" 
-                        background-image: url('{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}'); 
-                        min-height: 300px;
-                        background-size: cover;
-                        background-position: center center;
-                        background-repeat: no-repeat;">
-                    
-                    </div> -->
-                    <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" style="width:100%" alt="">
-                    <div class="card-body about-card-body p-0">
-                        <div class="about-card-content text-start p-3 yellow-bg" >
-                            <h4 class="text-uppercase fs-3 fw-bold text-dark">Kitchen Terminology</h4>
-                            <div class="text-dark">Having been making, packing and distributing kitchens, we
-                                have developed
-                                trusted
-                                methods to get what it is you need, to where you need it.</div>
-                                <div class="d-flex flex-row justify-content-end">
-                                <button class="mt-3 btn btn-outline-dark text-dark rounded-pill">Read More</button>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-12 mb-4">
-                <div class="card component-card  btn btn-outline-warning p-0">
-                    <a href="{{ route('terminology') }}" class="position-absolute top-0 bottom-0 start-0 end-0"></a>
-                    <!-- <div class="card-header p-0 custom-card-img"
-                        style=" 
-                        background-image: url('{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}'); 
-                        min-height: 300px;
-                        background-size: cover;
-                        background-position: center center;
-                        background-repeat: no-repeat;">
-                    
-                    </div> -->
-                    <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" style="width:100%" alt="">
-                    <div class="card-body about-card-body p-0">
-                        <div class="about-card-content text-start p-3 yellow-bg" >
-                            <h4 class="text-uppercase fs-3 fw-bold text-dark">Kitchen Terminology</h4>
-                            <div class="text-dark">Having been making, packing and distributing kitchens, we
-                                have developed
-                                trusted
-                                methods to get what it is you need, to where you need it.</div>
-                                <div class="d-flex flex-row justify-content-end">
-                                <button class="mt-3 btn btn-outline-dark text-dark rounded-pill">Read More</button>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-            </div><div class="col-lg-4 col-md-6 col-12 mb-4">
-                <div class="card component-card  btn btn-outline-warning p-0">
-                    <a href="{{ route('terminology') }}" class="position-absolute top-0 bottom-0 start-0 end-0"></a>
-                    <!-- <div class="card-header p-0 custom-card-img"
-                        style=" 
-                        background-image: url('{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}'); 
-                        min-height: 300px;
-                        background-size: cover;
-                        background-position: center center;
-                        background-repeat: no-repeat;">
-                    
-                    </div> -->
-                    <img src="{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}" style="width:100%" alt="">
-                    <div class="card-body about-card-body p-0">
-                        <div class="about-card-content text-start p-3 yellow-bg" >
-                            <h4 class="text-uppercase fs-3 fw-bold text-dark">Kitchen Terminology</h4>
-                            <div class="text-dark">Having been making, packing and distributing kitchens, we
-                                have developed
-                                trusted
-                                methods to get what it is you need, to where you need it.</div>
-                                <div class="d-flex flex-row justify-content-end">
-                                <button class="mt-3 btn btn-outline-dark text-dark rounded-pill">Read More</button>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="col-lg-4 col-md-6 col-12 mb-4">
-                <div class="card component-card position-relative btn btn-outline-warning">
-                    <a href="{{ route('kitchenarrive') }}" class="position-absolute top-0 bottom-0 start-0 end-0"></a>
-                    <div class="card-header p-0"
-                        style="background-image: url('{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}'); min-height: 300px;background-size: cover;background-position: center center;background-repeat: no-repeat;">
-                    
-                    </div>
-                    <div class="card-body about-card-body">
-                        <div class="about-card-content">
-                            <h4 class="text-uppercase fs-3 fw-bold text-dark">How will my kitchen arrive</h4>
-                            <div class="text-dark">Having been making, packing and distributing kitchens, we
-                                have developed
-                                trusted
-                                methods to get what it is you need, to where you need it.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-12 mb-4">
-                <div class="card component-card position-relative btn btn-outline-warning">
-                    <a href="{{ route('fittingguide') }}" class="position-absolute top-0 bottom-0 start-0 end-0"></a>
-                    <div class="card-header p-0"
-                        style="background-image: url('{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}'); min-height: 300px;background-size: cover;background-position: center center;background-repeat: no-repeat;">
-                    </div>
-                    <div class="card-body about-card-body">
-                        <div class="about-card-content">
-                            <h4 class="text-uppercase fs-3 fw-bold text-dark">Fitting Guides</h4>
-                            <div class="text-dark">Having been making, packing and distributing kitchens, we
-                                have developed
-                                trusted
-                                methods to get what it is you need, to where you need it.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-12 mb-4">
-                <div class="card component-card position-relative btn btn-outline-warning">
-                    <a href="{{ route('faq') }}" class="position-absolute top-0 bottom-0 start-0 end-0"></a>
-                    <div class="card-header p-0"
-                        style="background-image: url('{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}'); min-height: 300px;background-size: cover;background-position: center center;background-repeat: no-repeat;">
-                    </div>
-                    <div class="card-body about-card-body">
-                        <div class="about-card-content">
-                            <h4 class="text-uppercase fs-3 fw-bold text-dark">Buy Kitchen Online Faqs</h4>
-                            <div class="text-dark">Having been making, packing and distributing kitchens, we
-                                have developed
-                                trusted
-                                methods to get what it is you need, to where you need it.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-12 mb-4">
-                <div class="card component-card position-relative btn btn-outline-warning">
-                    <a href="{{ route('about') }}" class="position-absolute top-0 bottom-0 start-0 end-0"></a>
-                    <div class="card-header p-0"
-                        style="background-image: url('{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}'); min-height: 300px;background-size: cover;background-position: center center;background-repeat: no-repeat;">
-                    </div>
-                    <div class="card-body about-card-body">
-                        <div class="about-card-content">
-                            <h4 class="text-uppercase fs-3 fw-bold text-dark">About us</h4>
-                            <div class="text-dark">Having been making, packing and distributing kitchens, we
-                                have developed
-                                trusted
-                                methods to get what it is you need, to where you need it.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-12 mb-4">
-                <div class="card component-card position-relative btn btn-outline-warning">
-                    <a href="{{ route('needhelp') }}" class="position-absolute top-0 bottom-0 start-0 end-0"></a>
-                    <div class="card-header p-0"
-                        style="background-image: url('{{ asset('/images/Strada-matt-porcelain-kitchen.jpg') }}'); min-height: 300px;background-size: cover;background-position: center center;background-repeat: no-repeat;">
-                    </div>
-                    <div class="card-body about-card-body">
-                        <div class="about-card-content">
-                            <h4 class="text-uppercase fs-3 fw-bold text-dark">Need help measuring?</h4>
-                            <div class="text-dark">Having been making, packing and distributing kitchens, we
-                                have developed
-                                trusted
-                                methods to get what it is you need, to where you need it.</div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-
-    </section> --}}
-
-</x-guest-layout>
+    @endsection
