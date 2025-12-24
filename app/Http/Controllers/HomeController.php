@@ -921,7 +921,9 @@ class HomeController extends Controller
 
     public function designservice()
     {
-        return view('frontend.designservice');
+        $styles = Style::all();
+        $categories = Category::whereNull('parent_category_id')->get();
+        return view('frontend.designservice', compact('styles', 'categories'));
     }
 
     public function order_history()
@@ -1070,6 +1072,7 @@ class HomeController extends Controller
 
     public function doorsReplacement() {
         $styles = Style::where('status', '1')->get();
+        $categories = Category::whereNull('parent_category_id')->get();
         // foreach ($styles as $style) {
         //     $colourIds = Product::where('parent_category_id', 1)->where('style_id', $style->id)->where('status', 'active')->groupBy('colour_id')->pluck('colour_id');
         //     $style['colours'] = $colourIds;

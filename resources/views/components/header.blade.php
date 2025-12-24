@@ -396,15 +396,15 @@
                 </li>
                 <li><a href="{{ route('ordercomponent') }}">Order Component</a>
                 </li>
-                <li><a href="#">Help & Guides</a>
+                <li><a href="{{route('help_and_guides')}}">Help & Guides</a>
                 </li>
-                <li><a href="#">Max Storage</a>
+                <li><a href="{{route('max_storage')}}">Max Storage</a>
                 </li>
-                <li><a href="#">Doors Replacement</a>
+                <li><a href="{{route('doors_replacement')}}">Doors Replacement</a>
                 </li>
-                <li><a href="#">Design Service</a>
+                <li><a href="{{route('designservice')}}">Design Service</a>
                 </li>
-                <li><a href="#">Blogs</a>
+                <li><a href="{{route('blogs')}}">Blogs</a>
                 </li>
             </ul>
         </div>
