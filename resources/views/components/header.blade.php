@@ -365,8 +365,8 @@
         </div>
         <div class="mini-cart-footer">
             <div class="btn-wrapper">
-                <a href="#" class="btn theme-btn-1 btn-effect-1">View Cart</a>
-                <a href="#" class="btn theme-btn-2 btn-effect-2">Checkout</a>
+                <a href="{{route('cart')}}" class="btn theme-btn-1 btn-effect-1">View Cart</a>
+                <a href="{{route('checkout')}}" class="btn theme-btn-2 btn-effect-2">Checkout</a>
             </div>
         </div>
     </div>

@@ -1,4 +1,5 @@
-<x-guest-layout>
+@extends('layouts.guest2')
+@section('content')
     <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -355,7 +356,200 @@
     </section>
 
     @push('scripts')
+    
     <script>
+
+        $(document).ready(function () {
+            // Function to check if all required inputs are filled within nav-checkout1 section
+            let next1Clicked = false;
+            let next2Clicked = false;
+            let next3Clicked = false;
+            function validateInputs(num) {
+                var isValid = true;
+
+                if (num === 1) {
+                    // Iterate over each required input within nav-checkout1 section
+                    $('#nav-checkout1 input[required]').each(function () {
+                        // If input is empty, add error message and mark it as invalid
+                        if (!$(this).val()) {
+                        $(this).addClass('is-invalid');
+                        $(this).siblings('.error-message').remove();
+                        const errorMessage = '<div class="error-message mt-1"><small class="text-danger">This field is required.</small></div>';
+                        const existingErrorMessage = $(this).siblings('.error-message');
+                        if (existingErrorMessage.length > 0) {
+                            existingErrorMessage.replaceWith(errorMessage);
+                        } else {
+                            $(this).after(errorMessage);
+                        }
+                        isValid = false;
+                        } else if ($(this).attr('type') === 'email' && !isValidEmail($(this).val())) {
+                        $(this).addClass('is-invalid');
+                        $(this).siblings('.error-message').remove();
+                        const errorMessage = '<div class="error-message mt-1"><small class="text-danger">Please enter a valid email address.</small></div>';
+                        const existingErrorMessage = $(this).siblings('.error-message');
+                        if (existingErrorMessage.length > 0) {
+                            existingErrorMessage.replaceWith(errorMessage);
+                        } else {
+                            $(this).after(errorMessage);
+                        }
+                        isValid = false;
+                        }
+                    });
+                } else if (num === 2) {
+                    // Iterate over each required input within nav-checkout2 section
+                    $('#nav-checkout2 input[required]').each(function () {
+                        // If input is empty, add error message and mark it as invalid
+                        if (!$(this).val()) {
+                        $(this).addClass('is-invalid');
+                        $(this).siblings('.error-message').remove();
+                        const errorMessage = '<div class="error-message mt-1"><small class="text-danger">This field is required.</small></div>';
+                        const existingErrorMessage = $(this).siblings('.error-message');
+                        if (existingErrorMessage.length > 0) {
+                            existingErrorMessage.replaceWith(errorMessage);
+                        } else {
+                            $(this).after(errorMessage);
+                        }
+                        isValid = false;
+                        } else if ($(this).attr('type') === 'email' && !isValidEmail($(this).val())) {
+                        $(this).addClass('is-invalid');
+                        $(this).siblings('.error-message').remove();
+                        const errorMessage = '<div class="error-message mt-1"><small class="text-danger">Please enter a valid email address.</small></div>';
+                        const existingErrorMessage = $(this).siblings('.error-message');
+                        if (existingErrorMessage.length > 0) {
+                            existingErrorMessage.replaceWith(errorMessage);
+                        } else {
+                            $(this).after(errorMessage);
+                        }
+                        isValid = false;
+                        }
+                    });
+                } else if (num === 3) {
+                    // Iterate over each required input within nav-checkout3 section
+                    $('#nav-checkout3 input[required]').each(function () {
+                        // If input is empty, add error message and mark it as invalid
+                        if (!$(this).val()) {
+                        $(this).addClass('is-invalid');
+                        $(this).siblings('.error-message').remove();
+                        const errorMessage = '<div class="error-message mt-1"><small class="text-danger">This field is required.</small></div>';
+                        const existingErrorMessage = $(this).siblings('.error-message');
+                        if (existingErrorMessage.length > 0) {
+                            existingErrorMessage.replaceWith(errorMessage);
+                        } else {
+                            $(this).after(errorMessage);
+                        }
+                        isValid = false;
+                        } else if ($(this).attr('type') === 'email' && !isValidEmail($(this).val())) {
+                        $(this).addClass('is-invalid');
+                        $(this).siblings('.error-message').remove();
+                        const errorMessage = '<div class="error-message mt-1"><small class="text-danger">Please enter a valid email address.</small></div>';
+                        const existingErrorMessage = $(this).siblings('.error-message');
+                        if (existingErrorMessage.length > 0) {
+                            existingErrorMessage.replaceWith(errorMessage);
+                        } else {
+                            $(this).after(errorMessage);
+                        }
+                        isValid = false;
+                        }
+                    });
+                }
+
+                return isValid;
+            }
+            // Click event handler for Next button
+            $('#checkout-next1').click(function () {
+                // Validate inputs within nav-checkout1 section
+                next1Clicked = true;
+                var valid = validateInputs(1);
+
+                // If all inputs are filled, proceed to next step
+                if (valid) {
+                    $('#nav-checkout-tab2').attr('disabled', false).click();
+                }
+            });
+            // Click event handler for Next button
+            $('#checkout-next2').click(function () {
+                // Validate inputs within nav-checkout1 section
+                next2Clicked = true;
+                var valid = validateInputs(2);
+
+                // If all inputs are filled, proceed to next step
+                if (valid) {
+                    $('#nav-checkout-tab3').attr('disabled', false).click();
+                }
+            });
+            // Click event handler for Next button
+            $('#checkout-next3').click(function () {
+                // Validate inputs within nav-checkout1 section
+                next3Clicked = true;
+                var valid = validateInputs(3);
+
+                // If all inputs are filled, proceed to next step
+                if (valid) {
+                    $('#checkout-form').submit();
+                }
+            });
+            // Change event handler for inputs within nav-checkout1 section
+            $('#nav-checkout1 input[required]').keyup(function () {
+                if (next1Clicked) {
+                    // Remove error message and validation class when input value changes
+                    if ($(this).val()) {
+                        $(this).removeClass('is-invalid');
+                        $(this).siblings('.error-message').remove();
+                    } else {
+                        $(this).addClass('is-invalid');
+                        $(this).siblings('.error-message').remove();
+                        const errorMessage = '<div class="error-message mt-1"><small class="text-danger">This field is required.</small></div>';
+                        const existingErrorMessage = $(this).siblings('.error-message');
+                        if (existingErrorMessage.length > 0) {
+                        existingErrorMessage.replaceWith(errorMessage);
+                        } else {
+                        $(this).after(errorMessage);
+                        }
+                    }
+                }
+            });
+            // Change event handler for inputs within nav-checkout2 section
+            $('#nav-checkout2 input[required]').keyup(function () {
+                if (next2Clicked) {
+                    // Remove error message and validation class when input value changes
+                    if ($(this).val()) {
+                        $(this).removeClass('is-invalid');
+                        $(this).siblings('.error-message').remove();
+                    } else {
+                        $(this).addClass('is-invalid');
+                        $(this).siblings('.error-message').remove();
+                        const errorMessage = '<div class="error-message mt-1"><small class="text-danger">This field is required.</small></div>';
+                        const existingErrorMessage = $(this).siblings('.error-message');
+                        if (existingErrorMessage.length > 0) {
+                        existingErrorMessage.replaceWith(errorMessage);
+                        } else {
+                        $(this).after(errorMessage);
+                        }
+                    }
+                }
+            });
+            // Change event handler for inputs within nav-checkout3 section
+            $('#nav-checkout3 input[required]').keyup(function () {
+                if (next3Clicked) {
+                    // Remove error message and validation class when input value changes
+                    if ($(this).val()) {
+                        $(this).removeClass('is-invalid');
+                        $(this).siblings('.error-message').remove();
+                    } else {
+                        $(this).addClass('is-invalid');
+                        $(this).siblings('.error-message').remove();
+                        const errorMessage = '<div class="error-message mt-1"><small class="text-danger">This field is required.</small></div>';
+                        const existingErrorMessage = $(this).siblings('.error-message');
+                        if (existingErrorMessage.length > 0) {
+                        existingErrorMessage.replaceWith(errorMessage);
+                        } else {
+                        $(this).after(errorMessage);
+                        }
+                    }
+                }
+            });
+        });
+
         $(document).ready(function() {
             var code = localStorage.getItem('discountCode');
             if (code) {
@@ -383,4 +577,4 @@
         });
     </script>
     @endpush
-</x-guest-layout>
+@endsection

@@ -5,6 +5,24 @@ updateCartItemsList();
 updateCartPage();
 orderKitchenCartItemsList();
 cart_total_amount();
+addProductsToCheckout();
+
+$(document).ready(function () {
+   const products = getProductsFromLocalStorage();
+   if (products.length === 0) {
+      $('#checkout-container').empty();
+
+      $html = ``;
+      $html += `<div class="text-start">`;
+      $html += `<p class="fs-5">You have no items in your cart, so cannot checkout.</p>`;
+      $html += `<a href="/shop" class="btn btn-dark rounded-0">Shop Now</a>`;
+      $html += `</div>`;
+      $('#checkout-container').html($html);
+      $('#checkout-container').removeClass('d-none');
+   } else {
+      $('#checkout-container').removeClass('d-none');
+   }
+});
 const showMenu = (toggleId, navId) => {
    const toggle = document.getElementById(toggleId),
       nav = document.getElementById(navId)
