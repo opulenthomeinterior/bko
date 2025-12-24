@@ -1,28 +1,43 @@
-<x-guest-layout>
+@extends('layouts.guest2')
+@section('content')
+@section('styles')
+<style>
+    .backgroundimage {
+        background-image: url("{{ asset('images/order-component.jpg') }}");
+        background-size: cover;
+        background-position: center center;
+    }
+    .quantity-group {
+        width: 110px; /* controls overall size */
+    }
+
+    .quantity-input {
+        padding: 2px 4px;
+        font-size: 13px;
+    }
+</style>
+@endsection
     <head>
         <title>Blogs</title>
     </head>
-    <section class="container-fluid px-lg-5 py-4 px-md-3 px-3" style="background-color:#ececec">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-               
-
-
-               <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-uppercase" style="color:#FEBD49; font-size:16px !important">Home</a></li>
-            
-                <li class="breadcrumb-item"><span href="" class="text-uppercase" style="color:#FEBD49; font-size:16px !important">Blog</span></li>
-
-            </ol>
-        </nav>
-
-        <div class="row">
-            <div class="col-12">
-                <h1 class="fs-1 text-dark text-uppercase fw-bolder">
-                    Blog
-                </h1>
+    {{-- Breadcrumb --}}
+    <div class="ltn__breadcrumb-area ltn__breadcrumb-area-1 ltn__breadcrumb-color-white--- pt-35 pb-35 backgroundimage mb-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ltn__breadcrumb-inner">
+                        <h1 class="page-title text-white p-3 w-75" style="background-color: #000000a1">Blogs</h1>
+                        <!-- <div class="ltn__breadcrumb-list">
+                            <ul>
+                                <li><a href="{{ route('home') }}" class="text-white"><span class="text-dark"><i class="fas fa-home text-white"></i></span> Home</a></li>
+                                <li class="text-white">Order Components</li>
+                            </ul>
+                        </div> -->
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <section class="container-fluid px-lg-5 px-md-3 px-3 py-5" style="background-color: #f0f0f0;">
         <div class="row">
@@ -55,5 +70,4 @@
             @endif
         </div>
     </section>
-
-</x-guest-layout>
+@endsection

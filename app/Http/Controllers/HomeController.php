@@ -901,11 +901,15 @@ class HomeController extends Controller
     public function blog()
     {
         $blogs = Blog::all();
-        return view('frontend.support.blog', compact('blogs'));
+        $styles = Style::all();
+        $categories = Category::whereNull('parent_category_id')->get();
+        return view('frontend.support.blog', compact('blogs', 'styles', 'categories'));
     }
 
     public function showBlog($slug)
     {
+        $styles = Style::all();
+        $categories = Category::whereNull('parent_category_id')->get();
         try {
             $blog = Blog::where('slug', $slug)->first();
 
@@ -913,7 +917,7 @@ class HomeController extends Controller
                 return redirect()->route('blog');
             }
 
-            return view('frontend.support.singleblog', compact('blog'));
+            return view('frontend.support.singleblog', compact('blog', 'styles', 'categories'));
         } catch (\Exception $e) {
             return redirect()->route('blog');
         }

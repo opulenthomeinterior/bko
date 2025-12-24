@@ -1,4 +1,5 @@
-<x-guest-layout>
+@extends('layouts.guest2')
+@section('content')
     <head>
         <title>Blogs</title>
     </head>
@@ -34,5 +35,4 @@
             </div>
         </div>
     </section>
-
-</x-guest-layout>
+@endsection
