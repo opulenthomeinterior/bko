@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="ltn__breadcrumb-inner">
-                        <h1 class="page-title text-white p-3 w-50" style="background-color: #000000a1">{{ str_replace('Kitchen', '', $styleData['data']['name']) }} Kitchen</h1>
+                        <h1 class="page-title text-white p-3 w-75" style="background-color: #000000a1">{{ str_replace('Kitchen', '', $styleData['data']['name']) }} Kitchen</h1>
                         <!-- <div class="ltn__breadcrumb-list">
                             <ul>
                                 <li><a href="{{ route('home') }}" class="text-white"><span class="text-dark"><i class="fas fa-home text-white"></i></span> Home</a></li>
