@@ -19,6 +19,11 @@
         padding: 2px 4px;
         font-size: 13px;
     }
+    
+    input[type="number"] {
+        padding: 0px !important;
+        margin: 0px !important;
+    }
 </style>
 @endsection
 
