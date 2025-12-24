@@ -936,7 +936,7 @@ class HomeController extends Controller
                         ->orWhere('full_title', 'like', '%' . $search . '%')
                         ->orWhere('product_description', 'like', '%' .  $search . '%');
                     })
-                    ->paginate(100);
+                    ->paginate(60);
         $categories = Category::where('status', 1)->get();
         $styles = Style::where('status', 1)->get();
 
