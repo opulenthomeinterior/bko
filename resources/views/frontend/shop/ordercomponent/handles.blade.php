@@ -23,6 +23,9 @@
 @endsection
 
 @section('content')
+
+
+
     {{-- Breadcrumb --}}
     <div class="ltn__breadcrumb-area ltn__breadcrumb-area-1 ltn__breadcrumb-color-white--- pt-35 pb-35 backgroundimage mb-0">
         <div class="container">
@@ -52,57 +55,11 @@
                             <h1 class="section-title">SEAMLESS REPAIRS • BEAUTIFUL RESULTS</h1>
                             <p>The doors are the first impression of your kitchen. You can transform your kitchen by availing our kitchen cupboard and cabinet door replacement offer. By selecting from our various colors and finishes you will give your kitchen a new life. Our doors are the essence of style and durability, creating an elegant look. Buy Kitchen Online  offers a wide range of kitchen doors in various sizes to suit your needs. Our replacement kitchen doors are available in different height and width dimensions, ensuring a perfect fit for your kitchen. The standard size, commonly used, is 715 x 496mm. For larger requirements, we provide doors up to 1965 x 596mm, while the smallest size available is 110 x 596mm. With this extensive selection, you can easily find the right door to upgrade or replace your kitchen cupboard & cabinet doors.</p>
                         </div>
-                        <!-- <ul class="ltn__list-item-half ltn__list-item-half-2 list-item-margin clearfix">
-                            <li>
-                                <i class="icon-done"></i>
-                                Living rooms are pre-wired for Surround
-                            </li>
-                            <li>
-                                <i class="icon-done"></i>
-                                Luxurious interior design and amenities
-                            </li>
-                            <li>
-                                <i class="icon-done"></i>
-                                Nestled in the Buckhead Vinings communities
-                            </li>
-                            <li>
-                                <i class="icon-done"></i>
-                                Private balconies with stunning views
-                            </li>
-                            <li>
-                                <i class="icon-done"></i>
-                                A rare combination of inspired architecture
-                            </li>
-                            <li>
-                                <i class="icon-done"></i>
-                                Outdoor grilling with dining court
-                            </li>
-                        </ul> -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    {{-- Full-width Image with Text Overlay Section --}}
-    <!-- <div class="ltn__slider-area pt-60 pt-md-80 pb-60 pb-md-80">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="position-relative overflow-hidden rounded-3" style="max-height: 320px;">
-                        <img src="{{ asset('images/homepage.jpeg') }}" alt="J-Pull Kitchen" class="img-fluid w-100" style="height: 300px; object-fit: cover;">
-                        <div class="position-absolute start-0" style="top: 18px; left: 18px; max-width: 380px;">
-                            <div style="background: rgba(255,255,255,0.7); backdrop-filter: blur(6px); padding: 14px 18px; border-radius: 10px;">
-                                <h3 class="fw-bold mb-1 text-dark" style="font-size: 22px;">Fingerprints, Scratches, &amp; Clutter?</h3>
-                                <h5 class="fw-bold mb-1 text-dark" style="font-size: 16px;">J-Pull 22's Handleless Design Keeps Your Kitchen Pristine.</h5>
-                                <p class="mb-0 text-dark" style="font-size: 14px;">Smooth, easy-to-clean surfaces with a modern handleless look, perfect for busy family kitchens.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
 
     <!-- SHOP SECTION START -->
     <div class="ltn__product-area ltn__product-gutter mb-120">
@@ -185,15 +142,15 @@
                         <div class="col-xl-6 col-sm-6 col-12">
                             <div class="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
                                 <div class="product-img" style="height: 185px;">
-                                    <a href="#"><img src="{{ !empty($product->image_path) ? asset('imgs/products/'.$product->image_path) : asset('images/no-image-available.jpg') }}" alt="#"></a>
+                                    <a data-bs-toggle="modal" data-bs-target="#product-modal-{{$product->id}}"><img src="{{ !empty($product->image_path) ? asset('imgs/products/'.$product->image_path) : asset('images/no-image-available.jpg') }}" alt="#"></a>
                                     <div class="real-estate-agent">
                                         <div class="agent-img">
-                                            <!-- <a href="#"><img src="{{ asset('img/blog/author.jpg') }}" alt="#"></a> -->
+                                            <!-- <a data-toggle="modal" data-target="#product-modal-{{$product->id}}"><img src="{{ asset('img/blog/author.jpg') }}" alt="#"></a> -->
                                         </div>
                                     </div>
                                 </div>
                                 <div class="product-info">
-                                    <h2 class="product-title"><a href="#">{{ \Str::limit($product->full_title, 20) }}</a></h2>
+                                    <h2 class="product-title"><a data-bs-toggle="modal" data-bs-target="#product-modal-{{$product->id}}">{{ \Str::limit($product->full_title, 20) }}</a></h2>
                                     <div class="product-img-location">
                                         <ul>
                                             <li>
@@ -244,6 +201,95 @@
                                 </div>
                             </div>
                         </div>
+                        
+                            <div class="modal fade" id="product-modal-{{$product->id}}" tabindex="-1">
+                                <div class="modal-dialog modal-xl" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                                <!-- <i class="fas fa-times"></i> -->
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="ltn__quick-view-modal-inner">
+                                                <div class="modal-product-item">
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-12">
+                                                            <div class="modal-product-img">
+                                                                <img src="{{ !empty($product->image_path) ? asset('imgs/products/'.$product->image_path) : asset('images/no-image-available.jpg') }}" alt="#">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6 col-12">
+                                                            <div class="modal-product-info">
+                                                                <h3 class="animated fadeIn">{{ $product->full_title }}</h3>
+                                                                <div class="product-price">
+                                                                    <span>${{ number_format($product->price, 2) }}</span>
+                                                                </div>
+                                                                <div class="modal-product-meta ltn__product-details-menu-1">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <strong>Categories:</strong> 
+                                                                            <span>
+                                                                                <a href="#">-</a>
+                                                                                <a href="#">-</a>
+                                                                                <a href="#">-</a>
+                                                                                <a href="#">-</a>
+                                                                            </span>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="ltn__product-details-menu-2">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <div class="cart-plus-minus">
+                                                                                <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#" class="theme-btn-1 btn btn-effect-1" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
+                                                                                <i class="fas fa-shopping-cart"></i>
+                                                                                <span>ADD TO CART</span>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="ltn__product-details-menu-3">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="#" class="" title="Wishlist" data-bs-toggle="modal" data-bs-target="#">
+                                                                                <i class="far fa-heart"></i>
+                                                                                <span>Add to Wishlist</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <!-- <li>
+                                                                            <a href="#" class="" title="Compare" data-bs-toggle="modal" data-bs-target="#">
+                                                                                <i class="fas fa-exchange-alt"></i>
+                                                                                <span>Compare</span>
+                                                                            </a>
+                                                                        </li> -->
+                                                                    </ul>
+                                                                </div>
+                                                                <hr>
+                                                                <div class="ltn__social-media">
+                                                                    <ul>
+                                                                        <li>Share:</li>
+                                                                        <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                                                        <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                                                                        <li><a href="#" title="Linkedin"><i class="fab fa-linkedin"></i></a></li>
+                                                                        <li><a href="#" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                                                                        
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         @endforeach
                         <!-- ltn__product-item -->
                     </div>
@@ -267,6 +313,8 @@
     </div>
     <!-- SHOP SECTION END -->
 
+    
+
     <!-- TESTIMONIALS SECTION START -->
     @include('components.testimonials-section')
     <!-- TESTIMONIALS SECTION END -->
@@ -274,6 +322,8 @@
     <!-- FAQS SECTION START -->
     @include('components.faqs-section')
     <!-- FAQS SECTION END -->
+
+    
 
 @endsection
 

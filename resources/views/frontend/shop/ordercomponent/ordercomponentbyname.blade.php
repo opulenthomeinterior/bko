@@ -52,57 +52,11 @@
                             <h1 class="section-title">SEAMLESS REPAIRS • BEAUTIFUL RESULTS</h1>
                             <p>The doors are the first impression of your kitchen. You can transform your kitchen by availing our kitchen cupboard and cabinet door replacement offer. By selecting from our various colors and finishes you will give your kitchen a new life. Our doors are the essence of style and durability, creating an elegant look. Buy Kitchen Online  offers a wide range of kitchen doors in various sizes to suit your needs. Our replacement kitchen doors are available in different height and width dimensions, ensuring a perfect fit for your kitchen. The standard size, commonly used, is 715 x 496mm. For larger requirements, we provide doors up to 1965 x 596mm, while the smallest size available is 110 x 596mm. With this extensive selection, you can easily find the right door to upgrade or replace your kitchen cupboard & cabinet doors.</p>
                         </div>
-                        <!-- <ul class="ltn__list-item-half ltn__list-item-half-2 list-item-margin clearfix">
-                            <li>
-                                <i class="icon-done"></i>
-                                Living rooms are pre-wired for Surround
-                            </li>
-                            <li>
-                                <i class="icon-done"></i>
-                                Luxurious interior design and amenities
-                            </li>
-                            <li>
-                                <i class="icon-done"></i>
-                                Nestled in the Buckhead Vinings communities
-                            </li>
-                            <li>
-                                <i class="icon-done"></i>
-                                Private balconies with stunning views
-                            </li>
-                            <li>
-                                <i class="icon-done"></i>
-                                A rare combination of inspired architecture
-                            </li>
-                            <li>
-                                <i class="icon-done"></i>
-                                Outdoor grilling with dining court
-                            </li>
-                        </ul> -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    {{-- Full-width Image with Text Overlay Section --}}
-    <!-- <div class="ltn__slider-area pt-60 pt-md-80 pb-60 pb-md-80">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="position-relative overflow-hidden rounded-3" style="max-height: 320px;">
-                        <img src="{{ asset('images/homepage.jpeg') }}" alt="J-Pull Kitchen" class="img-fluid w-100" style="height: 300px; object-fit: cover;">
-                        <div class="position-absolute start-0" style="top: 18px; left: 18px; max-width: 380px;">
-                            <div style="background: rgba(255,255,255,0.7); backdrop-filter: blur(6px); padding: 14px 18px; border-radius: 10px;">
-                                <h3 class="fw-bold mb-1 text-dark" style="font-size: 22px;">Fingerprints, Scratches, &amp; Clutter?</h3>
-                                <h5 class="fw-bold mb-1 text-dark" style="font-size: 16px;">J-Pull 22's Handleless Design Keeps Your Kitchen Pristine.</h5>
-                                <p class="mb-0 text-dark" style="font-size: 14px;">Smooth, easy-to-clean surfaces with a modern handleless look, perfect for busy family kitchens.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
 
     <!-- SHOP SECTION START -->
     <div class="ltn__product-area ltn__product-gutter mb-120">
@@ -249,7 +203,7 @@
                         <div class="col-xl-6 col-sm-6 col-12">
                             <div class="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
                                 <div class="product-img" style="height: 185px;">
-                                    <a href="#"><img src="{{ !empty($product->image_path) ? asset('imgs/products/'.$product->image_path) : asset('images/no-image-available.jpg') }}" alt="#"></a>
+                                    <span data-bs-toggle="modal" data-bs-target="#productModal{{ $product->id }}"><img src="{{ !empty($product->image_path) ? asset('imgs/products/'.$product->image_path) : asset('images/no-image-available.jpg') }}" alt="#"></span>
                                     <div class="real-estate-agent">
                                         <div class="agent-img">
                                             <!-- <a href="#"><img src="{{ asset('img/blog/author.jpg') }}" alt="#"></a> -->
@@ -257,7 +211,7 @@
                                     </div>
                                 </div>
                                 <div class="product-info">
-                                    <h2 class="product-title"><a href="#">{{ \Str::limit($product->full_title, 20) }}</a></h2>
+                                    <h2 class="product-title"><span data-toggle="modal" data-target="#productModal{{ $product->id }}">{{ \Str::limit($product->full_title, 20) }}</span></h2>
                                     <div class="product-img-location">
                                         <ul>
                                             <li>
@@ -329,6 +283,8 @@
             </div>
         </div>
     </div>
+
+
     <!-- SHOP SECTION END -->
 
     <!-- TESTIMONIALS SECTION START -->
