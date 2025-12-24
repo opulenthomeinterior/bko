@@ -182,7 +182,7 @@
                         </div>
                         <!-- header-search-2 -->
                         <div class="header-search-2">
-                            <form id="#123" method="get" action="#">
+                            <form method="get" action="{{route('search')}}">
                                 <input type="text" name="search" value="" placeholder="Search here...">
                                 <button type="submit">
                                     <span><i class="icon-search"></i></span>
@@ -383,8 +383,8 @@
             <button class="ltn__utilize-close">×</button>
         </div>
         <div class="ltn__utilize-menu-search-form">
-            <form action="#">
-                <input type="text" placeholder="Search...">
+            <form method="get" action="{{route('search')}}">
+                <input type="text" name="search" value="" placeholder="Search here...">
                 <button><i class="fas fa-search"></i></button>
             </form>
         </div>

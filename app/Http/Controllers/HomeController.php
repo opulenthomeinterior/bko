@@ -937,8 +937,10 @@ class HomeController extends Controller
                         ->orWhere('product_description', 'like', '%' .  $search . '%');
                     })
                     ->paginate(100);
+        $categories = Category::where('status', 1)->get();
+        $styles = Style::where('status', 1)->get();
 
-        return view('frontend.search', compact('products', 'search'));
+        return view('frontend.search', compact('products', 'search', 'categories', 'styles'));
     }
 
     public function compare_product(Request $request)
