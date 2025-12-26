@@ -1518,7 +1518,8 @@ $(document).ready(function () {
 
 // Products Filter
 $(document).ready(function () {
-   $(document).on('change', '.order-component-dropdown', function (e) {
+   $(document).on('change', '.order-component-dropdown-button', function (e) {
+      alert('changed');
       // Get the selected option
       var selectedOption = $(this).find('option:selected');
       var dropdownType = $(this).data('dropdown-type');
