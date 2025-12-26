@@ -389,7 +389,7 @@
                                                                     </div>
                                                                     <div class="row">
                                                                         <div class="col-12">
-                                                                            <div class="ltn__product-details-menu-2 my-0 d-flex justify-content-start gap-3">
+                                                                            <div class="ltn__product-details-menu-2 my-0 d-flex justify-content-start align-items-center gap-3">
                                                                                 <div class="cart-plus-minus">
                                                                                     <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
                                                                                 </div>
