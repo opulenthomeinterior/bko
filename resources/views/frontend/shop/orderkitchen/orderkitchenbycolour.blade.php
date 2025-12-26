@@ -395,7 +395,9 @@
                                                                         <div class="col-12">
                                                                             <div class="ltn__product-details-menu-2 my-0 d-flex justify-content-start align-items-center gap-3">
                                                                                 <div class="cart-plus-minus">
-                                                                                    <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
+                                                                                    <div class="dec qtybutton">-</div>
+                                                                                        <input type="text" value="0" name="qtybutton" class="cart-plus-minus-box">
+                                                                                    <div class="inc qtybutton">+</div>
                                                                                 </div>
                                                                                 <div>
                                                                                     <a href="#" class="theme-btn-1 btn btn-effect-1" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
@@ -538,7 +540,9 @@ jQuery(document).ready(function($) {$(document).ready(function () {
                     <div class="col-12">
                         <div class="ltn__product-details-menu-2 my-0 d-flex justify-content-start align-items-center gap-3">
                             <div class="cart-plus-minus">
-                                <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
+                                <div class="dec qtybutton">-</div>
+                                    <input type="text" value="0" name="qtybutton" class="cart-plus-minus-box">
+                                <div class="inc qtybutton">+</div>
                             </div>
                             <div>
                                 <a href="#" class="theme-btn-1 btn btn-effect-1" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
@@ -559,6 +563,20 @@ jQuery(document).ready(function($) {$(document).ready(function () {
     });
 
 });
+
+    $(document).on('click', '.qtybutton', function () {
+        var $button = $(this);
+        var $input = $button.siblings('.cart-plus-minus-box');
+        var currentVal = parseInt($input.val());
+
+        if ($button.hasClass('inc')) {
+            $input.val(currentVal + 1);
+        } else if ($button.hasClass('dec')) {
+            if (currentVal > 0) {
+                $input.val(currentVal - 1);
+            }
+        }
+    });
 
     // Show dropdown on focus
     $('.dropdown-search').on('focus', function() {
