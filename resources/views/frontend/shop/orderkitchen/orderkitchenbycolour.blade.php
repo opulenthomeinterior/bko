@@ -395,15 +395,15 @@
                                                                         <div class="col-12">
                                                                             <div class="ltn__product-details-menu-2 my-0 d-flex justify-content-start align-items-center gap-3">
                                                                                 <div class="cart-plus-minus">
-                                                                                    <div class="dec qtybutton">-</div>
-                                                                                        <input type="text" value="0" name="qtybutton" class="cart-plus-minus-box">
+                                                                                    <div class="dec qtybutton" id="dec-btn{{ $baseCabinetData->id }}">-</div>
+                                                                                        <input type="text" value="0" name="qtybutton" id="quantity{{ $baseCabinetData->id }}" class="cart-plus-minus-box">
                                                                                     <div class="inc qtybutton">+</div>
                                                                                 </div>
                                                                                 <div>
-                                                                                    <a href="#" class="theme-btn-1 btn btn-effect-1" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
+                                                                                    <button class="theme-btn-1 btn btn-effect-1">
                                                                                         <i class="fas fa-shopping-cart"></i>
-                                                                                        <span>ADD TO CART</span>
-                                                                                    </a>
+                                                                                        <span onclick="inputQty(document.querySelector('#quantity{{ $baseCabinetData->id }}').value, '{{ $baseCabinetData->id }}', '{{ $baseCabinetData->product_code }}', '{{ $baseCabinetData->full_title }}', {{ $baseCabinetData->price }}, {{ $baseCabinetData->discounted_price }}, {{ $baseCabinetData->discounted_percentage ?? 0 }}, '{{ $baseCabinetData->ParentCategory->slug }}','{{ $baseCabinetData->image_path }}')">ADD TO CART</span>
+                                                                                    </button>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -540,15 +540,15 @@ jQuery(document).ready(function($) {$(document).ready(function () {
                     <div class="col-12">
                         <div class="ltn__product-details-menu-2 my-0 d-flex justify-content-start align-items-center gap-3">
                             <div class="cart-plus-minus">
-                                <div class="dec qtybutton">-</div>
-                                    <input type="text" value="0" name="qtybutton" class="cart-plus-minus-box">
+                                <div class="dec qtybutton" id="dec-btn${productId}">-</div>
+                                    <input type="text" value="0" name="qtybutton" id="quantity${productId}" class="cart-plus-minus-box">
                                 <div class="inc qtybutton">+</div>
                             </div>
                             <div>
-                                <a href="#" class="theme-btn-1 btn btn-effect-1" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
+                                <button class="theme-btn-1 btn btn-effect-1">
                                     <i class="fas fa-shopping-cart"></i>
-                                    <span>ADD TO CART</span>
-                                </a>
+                                    <span onclick="inputQty(document.querySelector('#quantity${productId}').value, '${productId}', '${productCode}', '${fullTitle}', ${price}, ${discountedPrice}, ${discountedPercentage}, '${parentCategorySlug}','${productImage}')">ADD TO CART</span>
+                                </button>
                             </div>
                         </div>
                     </div>
