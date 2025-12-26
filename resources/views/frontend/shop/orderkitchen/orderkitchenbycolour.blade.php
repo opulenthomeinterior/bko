@@ -386,7 +386,7 @@
                                                                             </div>
                                                                             <div class="product-info">
                                                                                 <div class="product-price mb-0">
-                                                                                    <h1 class="p-0 m-0">£00.00</h1>
+                                                                                    <h1 class="p-0 m-0">£{{ $baseCabinetData->price }}</h1>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
