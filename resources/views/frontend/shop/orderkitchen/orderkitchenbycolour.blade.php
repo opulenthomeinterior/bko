@@ -108,6 +108,11 @@
     background-color: #f0f0f0;
 }
 
+.bg-yellow {
+    background-color: #febd49 !important;
+    color: #000 !important;
+}
+
 
     </style>
     
@@ -255,7 +260,7 @@
                                                         </label>
                                                         <div class="input-item py-0 my-2">
                                                             <div class="custom-dropdown py-0 my-0">
-                                                                <input type="text" class="dropdown-search py-0 my-0" placeholder="Search base cabinets...">
+                                                                <input type="text" class="dropdown-search py-0 my-0 order-component-dropdown" placeholder="Search base cabinets...">
                                                                 <ul class="dropdown-options">
                                                                     @foreach($baseCabinets as $baseCabinet)
                                                                     <li class="dropdown-option"
@@ -273,16 +278,33 @@
                                                                         data-product-style="{{ $baseCabinet->style?->name }}"
                                                                         data-product-colour="{{ $baseCabinet->colour?->trade_colour ?? $baseCabinet->colour?->name }}"
                                                                         data-serial-number="{{ $baseCabinet->serial_number }}">
-                                                                        {{ $baseCabinet->full_title }}
+
+                                                                        <div class="d-flex">
+                                                                            <img
+                                                                                src="https://bkonline.uk/public/imgs/products/Highline-Base1727814394_66fc5afa31d81.jpg"
+                                                                                height="60px" width="100px"
+                                                                                alt="{{ $baseCabinet->short_title }}"
+                                                                                class="dropdown-option-img"
+                                                                            >
+                                                                            <div class="d-flex flex-column ms-2">
+                                                                                <span class="dropdown-option-text my-0">
+                                                                                    {{ $baseCabinet->full_title }}
+                                                                                </span>
+                                                                                <span class="dropdown-option-price fw-bold text-dark my-0">
+                                                                                    (£{{ $baseCabinet->price }})
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
                                                                     </li>
                                                                     @endforeach
+
                                                                 </ul>
                                                                 <input type="hidden" class="selected-value" name="base_cabinet_id">
                                                             </div>
                                                         </div>
-                                                        <div class="row">
+                                                        {{--<div class="row">
                                                             <div class="col-12">
-                                                                <h3 class="">White Gloss J-Pull 150 Base Cabinet Flat Pack</h3>
+                                                                <h3 class="">{{$baseCabinetData->short_title}}</h3>
                                                             </div>
                                                         </div>
                                                         <div class="row">
@@ -308,6 +330,79 @@
                                                                     </a>
                                                                 </div>
 
+                                                            </div>
+                                                        </div>--}}
+                                                        <div class="row">
+                                                            <div class="ltn__quick-view-modal-inner">
+                                                                <div class="card px-1">
+                                                                    <div class="row mb-2">
+                                                                        <div class="col-12">
+                                                                            <h3 class="text-center bg-yellow p-2">{{ $baseCabinetData->full_title }}</h3>
+                                                                        </div>
+                                                                        <div class="col-lg-6 col-12">
+                                                                            <div class="modal-product-img border-grey border">
+                                                                                <!-- <img src="{{ !empty($baseCabinetData->image_path) ? asset('imgs/products/'.$baseCabinetData->image_path) : asset('images/no-image-available.jpg') }}" alt="#"> -->
+                                                                                <img src="https://bkonline.uk/public/imgs/products/Highline-Base1727814394_66fc5afa31d81.jpg" alt="#">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-6 col-12">
+                                                                            <div class="d-flex justify-content-start">   
+                                                                                <div class="p-0 m-0">                
+                                                                                    <ul class="p-0 m-0 border-0" style="list-style: none;">
+                                                                                        <li class="m-0 pb-2"><label class="fw-bold text-uppercase text-dark">Style:</label> @if ($baseCabinetData->style)<span>{{ $baseCabinetData->style->name }}</span>@endif</li>
+                                                                                        <li class="m-0 pb-2"><label class="fw-bold text-uppercase text-dark">Assembly: </label> @if ($baseCabinetData->assembly)<span>{{ $baseCabinetData->assembly->name }}</span>@endif</li>
+                                                                                        <li class="m-0 pb-2"><label class="fw-bold text-uppercase text-dark">Colour:</label> @if ($baseCabinetData->colour)<span>{{ $baseCabinetData->colour->trade_colour ? $baseCabinetData->colour->trade_colour : $baseCabinetData->colour->name }}</span>@endif</li>
+                                                                                    </ul>
+                                                                                </div>   
+                                                                                <div class="ms-2">
+                                                                                    <ul class="p-0 m-0 border-0" style="list-style: none;">
+                                                                                        <li class="m-0 pb-2">
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">HEIGHT:</small>
+                                                                                                {{ intval($baseCabinetData->height) }}mm
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        <li class="m-0 pb-2">
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">WIDTH:</small>
+                                                                                                {{ intval($baseCabinetData->width) }}mm
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        <li class="m-0 pb-2">
+                                                                                            <p class="mb-0">
+                                                                                                <small
+                                                                                                    class="fw-bold text-uppercase text-dark">DEPTH:</small>
+                                                                                                {{ intval($baseCabinetData->depth) }}mm
+                                                                                            </p>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="product-info">
+                                                                                <div class="product-price mb-0">
+                                                                                    <h1 class="p-0 m-0">£00.00</h1>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-12">
+                                                                            <div class="ltn__product-details-menu-2 my-0 d-flex justify-content-start gap-3">
+                                                                                <div class="cart-plus-minus">
+                                                                                    <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
+                                                                                </div>
+                                                                                <div>
+                                                                                    <a href="#" class="theme-btn-1 btn btn-effect-1" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
+                                                                                        <i class="fas fa-shopping-cart"></i>
+                                                                                        <span>ADD TO CART</span>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -388,7 +483,7 @@ jQuery(document).ready(function($) {
     // Select option
     $('.dropdown-option').on('click', function() {
         var value = $(this).data('id');
-        var text = $(this).text();
+        var text = $.trim($(this).text());
         var $dropdown = $(this).closest('.custom-dropdown');
 
         // Set hidden input value
