@@ -771,20 +771,22 @@ function updateCartPage() {
       <tr>
                                         <td class="cart-product-remove">x</td>
                                         <td class="cart-product-image">
-                                            <a href="product-details.html"><img src="img/product/1.png" alt="#"></a>
+                                            <a href="#"><img width="110px" height="70px" class="border border-default" src="https://bkonline.uk/public/imgs/products/${product.image_path}" alt="#"></a>
                                         </td>
                                         <td class="cart-product-info">
-                                            <h4><a href="product-details.html">
-                                                Sample Product Name
-                                            </a></h4>
+                                            <h5><a href="#">
+                                                ${product.full_title}
+                                            </a></h5>
                                         </td>
-                                        <td class="cart-product-price">00.00</td>
+                                        <td class="cart-product-price">£${(product.price).toFixed(2)}</td>
                                         <td class="cart-product-quantity">
-                                            <div class="cart-plus-minus">
-                                                <input type="text" value="0" name="qtybutton" class="cart-plus-minus-box">
-                                            </div>
+                                          <div class="cart-plus-minus">
+                                             <div class="dec qtybutton" id="dec-btn${product.id}">-</div>
+                                                   <input type="text" value="${product.quantity}" name="qtybutton" id="quantity${product.id}" class="cart-plus-minus-box">
+                                             <div class="inc qtybutton">+</div>
+                                          </div>
                                         </td>
-                                        <td class="cart-product-subtotal">00.00</td>
+                                        <td class="cart-product-subtotal">£${(product.quantity * product.price).toFixed(2)}</td>
                                     </tr>
       `;
 //       cartTableHtml += `
