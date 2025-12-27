@@ -684,9 +684,6 @@ function orderKitchenCartItemsList() {
    $cartItemsList.empty();
 
    products.forEach(product => {
-      // $cartItemsList.append(`<div class="col-12"><p class="text-black fw-bold m-0"><i class="ri-btn ri-delete-bin-line" onclick="removeFromCart(${product.id}, '${product.productCode}')" ></i>&nbsp; <small class="fw-normal">${product.quantity} x ${product.full_title}</small></p></div>`);
-
-      // $cartItemsList.append(`<li class="text-black fw-bold  list-group-item"><i class="ri-btn ri-delete-bin-line" onclick="removeFromCart(${product.id}, '${product.productCode}')" ></i>&nbsp; <small class="fw-normal">(${product.quantity}) x ${product.full_title}</small></li>`);
       $cartItemsList.append(`
          <li>
             <div class="top-rated-product-item clearfix">
@@ -1519,7 +1516,6 @@ $(document).ready(function () {
 // Products Filter
 $(document).ready(function () {
    $(document).on('change', '.order-component-dropdown-button', function (e) {
-      alert('changed');
       // Get the selected option
       var selectedOption = $(this).find('option:selected');
       var dropdownType = $(this).data('dropdown-type');
