@@ -404,7 +404,7 @@
                 </li>
                 <li><a href="{{route('designservice')}}">Design Service</a>
                 </li>
-                <li><a href="{{route('blogs')}}">Blogs</a>
+                <li><a href="{{route('blog')}}">Blogs</a>
                 </li>
             </ul>
         </div>

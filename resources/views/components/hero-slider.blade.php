@@ -71,17 +71,17 @@
                         @csrf
                         <div class="col-12 mb-2 text-dark">
                             <div class="input-item input-item-name ltn__custom-icon">
-                                <input type="text" name="name" placeholder="Enter your name" required style="margin-bottom: 0px;">
+                                <input type="text" name="name" placeholder="Enter your name *" required style="margin-bottom: 0px;">
                             </div>
                         </div>
                         <div class="col-12 mb-2">
                             <div class="input-item input-item-email ltn__custom-icon">
-                                <input type="email" name="email" placeholder="Enter your email" required style="margin-bottom: 0px;">
+                                <input type="email" name="email" placeholder="Enter your email *" required style="margin-bottom: 0px;">
                             </div>
                         </div>
                         <div class="col-12 mb-2">
                             <div class="input-item input-item-phone ltn__custom-icon">
-                                <input type="number" name="phone" placeholder="Enter your phone number" required style="margin-bottom: 0px;">
+                                <input type="number" name="phone" placeholder="Enter your phone number *" required style="margin-bottom: 0px;">
                             </div>
                         </div>
                         <div class="col-12 mb-2">

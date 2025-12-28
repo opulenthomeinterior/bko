@@ -151,8 +151,58 @@
         {{-- CTA button --}}
         <div class="row">
             <div class="col-12 text-center">
-                <a href="#" class="btn text-uppercase" style="background-color:#febd49; color:#111; padding:12px 40px; border-radius:30px; font-weight:600;">Schedule Free Consultation</a>
+                <button class="btn text-uppercase" data-bs-toggle="modal" data-bs-target="#kitchenModal" style="background-color:#febd49; color:#111; padding:12px 40px; border-radius:30px; font-weight:600;">Schedule Free Consultation</button>
             </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade mt-5" id="kitchenModal" tabindex="-1" aria-labelledby="kitchenModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            
+            <div class="modal-header">
+                <button type="button" class="btn-close p-3" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="p-4 rounded bg-white">
+
+                    <form action="{{ route('contact_us_inquiry') }}" method="POST" class="row">
+                        @csrf
+                        <div class="col-12 mb-2 text-dark">
+                            <div class="input-item input-item-name ltn__custom-icon">
+                                <input type="text" name="name" placeholder="Enter your name *" required style="margin-bottom: 0px;">
+                            </div>
+                        </div>
+                        <div class="col-12 mb-2">
+                            <div class="input-item input-item-email ltn__custom-icon">
+                                <input type="email" name="email" placeholder="Enter your email *" required style="margin-bottom: 0px;">
+                            </div>
+                        </div>
+                        <div class="col-12 mb-2">
+                            <div class="input-item input-item-phone ltn__custom-icon">
+                                <input type="number" name="phone" placeholder="Enter your phone number *" required style="margin-bottom: 0px;">
+                            </div>
+                        </div>
+                        <div class="col-12 mb-2">
+                            <div class="input-item input-item-date ltn__custom-icon" style="margin-bottom: 0px;">
+                                <input type="datetime-local" name="call_time" placeholder="Call Us At" class="form-control" style="height: 60px; margin-bottom: 0px;">
+                            </div>
+                        </div>
+                        <div class="col-12 mb-2">
+                            <div class="input-item input-item-textarea ltn__custom-icon">
+                                <input type="text" name="message" placeholder="Enter your message" style="margin-bottom: 0px;">
+                            </div>
+                        </div>
+                        <div class="col-12 text-center">
+                            <div class="btn-wrapper mt-0">
+                                <button type="submit" class="btn theme-btn-1 btn-effect-1 text-uppercase w-100">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

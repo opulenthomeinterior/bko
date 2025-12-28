@@ -70,21 +70,22 @@
     <div class="ltn__copyright-area ltn__copyright-2 section-bg-7 plr--5">
         <div class="container ltn__border-top-2">
             <div class="row">
-                <div class="col-md-6 col-12">
-                    <div class="ltn__copyright-design clearfix">
-                        <p>All Rights Reserved @ Buy Kitchen Online <span class="current-year"></span></p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-12 align-self-center">
-                    <div class="ltn__copyright-menu text-end">
-                        <ul>
-                            <li><a href="https://bkonline.uk/site-pages/cookies-policy">Cookies Policy</a></li>
-                            <li><a href="https://bkonline.uk/site-pages/privacy-policy">Privacy &amp; Policy</a></li>
+                <div class="col-md-12 col-12 align-self-center">
+                    <div class="ltn__copyright-menu">
+                        <ul class="d-flex justify-content-between">
+                            <li class="text-decoration-underline"><a href="{{route('designservice')}}">Design Service</a></li>
+                            <li class="text-decoration-underline"><a href="{{route('blog')}}">Blogs</a></li>
+                            <li class="text-decoration-underline"><a href="{{route('help_and_guides')}}">Help & Guides</a></li>
+                            <li class="text-decoration-underline"><a href="https://bkonline.uk/site-pages/cookies-policy">Cookies Policy</a></li>
+                            <li class="text-decoration-underline"><a href="https://bkonline.uk/site-pages/privacy-policy">Privacy &amp; Policy</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="col-md-12 col-12 text-center bg-dark m-0 p-0">
+        <p class="m-0 p-0 text-white">All Rights Reserved @ Buy Kitchen Online <span class="current-year"></span></p>
     </div>
 </footer>
 {{-- FOOTER AREA END --}}

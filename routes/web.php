@@ -284,7 +284,9 @@ Route::prefix('/')->middleware([])->group(function () {
     })->name('home');
 
     Route::get('max-storage', function () {
-        return view('frontend.max-storage');
+        $categories = Category::where('status', 1)->get();
+        $styles = Style::where('status', 1)->get();
+        return view('frontend.max-storage', compact('categories', 'styles'));
     })->name('max_storage');
 
     Route::post('contact-us-inquiry', [InquiryController::class, 'sendInquiry'])->name('contact_us_inquiry');

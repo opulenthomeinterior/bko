@@ -1216,7 +1216,7 @@ function calculateProductsQuantity() {
    $('#calculateProductsQuantity').html(totalQty);
    $('#calculateProductsQuantity2').html(totalQty);
    $('.calculateProductsQuantityBottom').html(totalQty);
-   $('.calculateProductsPriceBottom').html(totalPrice.toFixed(2));
+   $('.calculateProductsPriceBottom').html('£'+totalPrice.toFixed(2));
 }
 
 function getProductsFromLocalStorage() {

@@ -71,7 +71,7 @@
                         <div class="product-info row-class pb-3">
                             <div class="d-flex justify-content-between">
                                 <div>
-                                    <h2>{{ $styleData['data']->name }}</h2>
+                                    <a href="{{route('orderkitchenbyname', [$styleData['data']->slug])}}"><h2>{{ $styleData['data']->name }}</h2></a>
                                 </div>
                                 <div>
                                     <a class="btn btn-sm btn-outline-warning text-dark p-2" href="{{route('orderkitchenbyname', [$styleData['data']->slug])}}" style="border-radius: 0;">Explore</a>
