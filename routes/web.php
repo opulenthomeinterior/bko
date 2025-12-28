@@ -317,7 +317,7 @@ Route::prefix('/')->middleware([])->group(function () {
         Route::get('/order-component/{slug}', [HomeController::class, 'ordercomponentbyname'])->name('ordercomponentbyname');
         Route::post('/order-component/{slug}/filter', [HomeController::class, 'order_component_by_filter'])->name('order_component_filter');
 
-        Route::get('/by-product/{slug}/{serial_number?}', [HomeController::class, 'orderbyproduct'])->name('orderbyproduct');
+        Route::get('/by-product/{slug}/{serial_number}', [HomeController::class, 'orderbyproduct'])->name('orderbyproduct');
         Route::get('/cart', [HomeController::class, 'cart'])->name('cart');
         Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
         Route::post('/checkout/process', [CheckoutController::class, 'checkout'])->name('checkout.process');
