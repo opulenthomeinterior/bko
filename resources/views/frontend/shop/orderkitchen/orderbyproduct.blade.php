@@ -453,14 +453,14 @@
                         <div class="col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
                             <a href="{{ route('orderbyproduct', [$relatedProduct->slug, $relatedProduct->serial_number]) }}">
                                 <div class="card">
-                                <div class="card-img">
-                                    <img src="{{ asset('imgs/products/' . $relatedProduct->image_path) }}"  alt="">
-                                    <!-- <img src="{{ asset('images/connectors.jpg') }}" alt="" > -->
+                                    <div class="card-img d-flex justify-content-center align-items-center" style="height: 200px; overflow: hidden;">
+                                        <img src="{{ asset('imgs/products/' . $relatedProduct->image_path) }}"  alt="">
+                                        <!-- <img src="{{ asset('images/connectors.jpg') }}" alt="" > -->
+                                    </div>
+                                    <div class="card-content">
+                                        <h6 class="card-title">{{ \Str::limit($relatedProduct->full_title, 70) }}</h6>
+                                    </div>
                                 </div>
-                                <div class="card-content">
-                                    <h6 class="card-title">{{ \Str::limit($relatedProduct->full_title, 70) }}</h6>
-                                </div>
-                            </div>
                             </a>
                         </div>
                     @endforeach
