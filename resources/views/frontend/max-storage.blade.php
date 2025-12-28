@@ -2,6 +2,16 @@
 
 @section('title', 'Max Storage Solutions - Buy Kitchen Online')
 
+@section('styles')
+    <style>
+        .bg-yellow2 {
+            background-color: #f0a500 !important;
+        }
+        .bg-green2 {
+            background-color: #2a6161 !important;
+        }
+    </style>
+@endsection
 @section('content')
     {{-- Hero Slider (includes consultation form) --}}
     @include('components.hero-slider')
@@ -115,82 +125,79 @@
 
             <div class="row ltn__gallery-style-2 justify-content-center">
                 <!-- Tallest Units -->
-                <div class="col-lg-4 col-sm-6 col-12 mb-3">
-                    <div class="ltn__gallery-item-inner">
-                        <div class="ltn__gallery-item-img">
-                            <img src="{{ asset('img/gallery/1.jpg') }}" alt="Tallest Units" class="img-fluid">
+                <section class="container mb-5">
+                    <div class="row">
+                        
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
+                            <div class="card rounded-0 border-0">
+                                <div class="" style="height: 250px; width: 100%">
+                                    <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="https://bkonline.uk/public/images/deepest.jpg" alt="">
+                                </div>
+                            </div>
                         </div>
-                        <div class="ltn__gallery-item-info mt-2">
-                            <h4 class="fw-bold mb-1">Tallest Units</h4>
-                            <p class="mb-0">Floor-to-ceiling cabinets for extra storage. Ideal for small kitchens needing vertical space.</p>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
+                            <div class="card rounded-0 border-0">
+                                <div class="p-5 bg-yellow2 d-flex flex-column align-items-center justify-content-center" style="height: 250px; width: 100%">
+                                    <h2 class="text-white fw-bold text-center">TALLEST UNITS</h2>
+                                    <p class="max-description suggestion text-white text-center">Floor-to-ceiling cabinets for extra storage. Ideal for small kitchens needing vertical space.</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Deepest Units -->
-                <div class="col-lg-4 col-sm-6 col-12 mb-3">
-                    <div class="ltn__gallery-item-inner">
-                        <div class="ltn__gallery-item-img">
-                            <img src="{{ asset('img/gallery/2.jpg') }}" alt="Deepest Units" class="img-fluid">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
+                            <div class="card rounded-0 border-0">
+                                <div class="" style="height: 250px; width: 100%">
+                                    <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="https://bkonline.uk/public/images/widest.jpg" alt="">
+                                </div>
+                            </div>
                         </div>
-                        <div class="ltn__gallery-item-info mt-2">
-                            <h4 class="fw-bold mb-1">Deepest Units</h4>
-                            <p class="mb-0">Deeper cabinets than standard units to maximise space for pots, pans and appliances.</p>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
+                            <div class="card rounded-0 border-0">
+                                <div class="p-5 bg-green2 d-flex flex-column align-items-center justify-content-center" style="height: 250px; width: 100%">
+                                    <h2 class="text-white fw-bold text-center">DEEPEST UNITS</h2>
+                                    <p class="max-description suggestion text-white text-center">Deeper storage than standard cabinets. Maximizes space for pots, pans and appliances.</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Widest Units -->
-                <div class="col-lg-4 col-sm-6 col-12 mb-3">
-                    <div class="ltn__gallery-item-inner">
-                        <div class="ltn__gallery-item-img">
-                            <img src="{{ asset('img/gallery/3.jpg') }}" alt="Widest Units" class="img-fluid">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
+                            <div class="card rounded-0 border-0">
+                                <div class="" style="height: 250px; width: 100%">
+                                    <img class="img-fluid" style="height: 250px; width: 100%; object-fit: cover" src="https://bkonline.uk/public/images/tallest.jpg" alt="">
+                                </div>
+                            </div>
                         </div>
-                        <div class="ltn__gallery-item-info mt-2">
-                            <h4 class="fw-bold mb-1">Widest Units</h4>
-                            <p class="mb-0">Wide cabinets for organised storage of kitchen essentials. Make use of every inch efficiently.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Corner Solutions -->
-                <div class="col-lg-4 col-sm-6 col-12 mb-3">
-                    <div class="ltn__gallery-item-inner">
-                        <div class="ltn__gallery-item-img">
-                            <img src="{{ asset('img/gallery/4.jpg') }}" alt="Corner Solutions" class="img-fluid">
-                        </div>
-                        <div class="ltn__gallery-item-info mt-2">
-                            <h4 class="fw-bold mb-1">Corner Solutions</h4>
-                            <p class="mb-0">Smart corner pull-outs so no space is wasted in hard-to-reach areas.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pantry Organisation -->
-                <div class="col-lg-4 col-sm-6 col-12 mb-3">
-                    <div class="ltn__gallery-item-inner">
-                        <div class="ltn__gallery-item-img">
-                            <img src="{{ asset('img/gallery/5.jpg') }}" alt="Pantry Organisation" class="img-fluid">
-                        </div>
-                        <div class="ltn__gallery-item-info mt-2">
-                            <h4 class="fw-bold mb-1">Pantry Organisation</h4>
-                            <p class="mb-0">Beautifully organised pantry units with drawers, dividers and dedicated zones.</p>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 m-0 p-0">
+                            <div class="card rounded-0 border-0">
+                                <div class="p-5 bg-dark d-flex flex-column align-items-center justify-content-center" style="height: 250px; width: 100%">
+                                    <h2 class="text-white fw-bold text-center">WIDEST UNITS</h2>
+                                    <p class="suggestion max-description text-white text-center">Wide cabinets for organized storage of kitchens essentials. Make use of every inch efficiently.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Island Storage -->
-                <div class="col-lg-4 col-sm-6 col-12 mb-3">
-                    <div class="ltn__gallery-item-inner">
-                        <div class="ltn__gallery-item-img">
-                            <img src="{{ asset('img/gallery/6.jpg') }}" alt="Island Storage" class="img-fluid">
+                    <div class="container mt-5">
+                        <div class="row justify-content-center">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img src="https://bkonline.uk/public/images/tall-cabinets.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">TALL CABINETS</h5>
+                                    <p class="card-text text-dark">Our tall cabinets are made up to 850mm deep and more to flush the American fridge and freezer (750mm deep). The kitchen looks seamless when all the appliances, and cabinets are perfectly aligned.</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="ltn__gallery-item-info mt-2">
-                            <h4 class="fw-bold mb-1">Island Storage</h4>
-                            <p class="mb-0">Multi-functional islands with drawers, shelves and seating for added storage.</p>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img src="https://bkonline.uk/public/images/bridging.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Bridging Units</h5>
+                                    <p class="card-text text-dark">Our bridging units are designed to seamlessly align with tall units, offering a custom fit for you. While the market standard typically offers a depth of 300mm, we provide options with depths of up to 850mm or more.</p>
+                                </div>
+                            </div>
+                        </div>
+                    
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
         </div>
     </div>
@@ -198,65 +205,32 @@
     {{-- Tall Cabinets / Comparison Cards Section (2 small top, 2 wide bottom) --}}
     <div class="ltn__product-area bg-white pt-60 pb-90">
         <div class="container">
-            <div class="row mb-3">
-                <div class="col-12 text-center">
-                    <h2 class="fw-bold mb-2">Max Storage Unit Types</h2>
-                    <p class="mb-0">See how our tall cabinets, bridging units and full kitchens maximise every centimetre of space.</p>
-                </div>
-            </div>
-
-            {{-- Top row: two smaller cards --}}
-            <div class="row justify-content-center mb-4">
-                <div class="col-lg-4 col-md-6 mb-30">
-                    <div class="ltn__product-item ltn__product-item-4 text-center---">
-                        <div class="product-img">
-                            <img src="{{ asset('img/product-3/1.jpg') }}" alt="Tall Cabinets" class="img-fluid">
-                        </div>
-                        <div class="product-info text-start p-3">
-                            <h4 class="product-title mb-1">Tall Cabinets</h4>
-                            <p class="mb-0">Tall units up to 850mm deep to align with American-style fridge freezers and maximise vertical storage.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb-30">
-                    <div class="ltn__product-item ltn__product-item-4 text-center---">
-                        <div class="product-img">
-                            <img src="{{ asset('img/product-3/2.jpg') }}" alt="Bridging Units" class="img-fluid">
-                        </div>
-                        <div class="product-info text-start p-3">
-                            <h4 class="product-title mb-1">Bridging Units</h4>
-                            <p class="mb-0">Designed to sit perfectly above tall units, creating seamless storage around large appliances.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             {{-- Bottom row: two wider cards --}}
             <div class="row justify-content-center">
-                <div class="col-lg-5 col-md-6 mb-30">
-                    <div class="ltn__product-item ltn__product-item-4 text-center---">
-                        <div class="product-img">
-                            <img src="{{ asset('img/product-3/3.jpg') }}" alt="Standard-sized Kitchen" class="img-fluid">
+                <section class="container mb-4">
+                    <div class="row gap-lg-2 justify-content-center mb-4">
+                            <div class="col-md-5">
+                                    <div class="card">
+                                        <img src="https://bkonline.uk/public/images/standard-sized-kitche.png" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">NATIONAL RETAILER <br> STANDARD-SIZED</h5>
+                                            
+                                        </div>
+                                    </div>
+                            </div> 
+                        <div class="col-md-5">
+                            <div class="card">
+                                <img src="https://bkonline.uk/public/images/max-storage-kitchen-image.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">BESPOKE MAX <br> STORAGE KITCHEN</h5>
+                                
+                                </div>
+                            </div>
                         </div>
-                        <div class="product-info text-start p-3">
-                            <h4 class="product-title mb-1">National Retailer Standard-sized</h4>
-                            <p class="mb-0">Typical high street layouts with limited depth and width, often leaving unused and cluttered space.</p>
-                        </div>
+                
+                        
                     </div>
-                </div>
-
-                <div class="col-lg-5 col-md-6 mb-30">
-                    <div class="ltn__product-item ltn__product-item-4 text-center---">
-                        <div class="product-img">
-                            <img src="{{ asset('img/product-3/4.jpg') }}" alt="Bespoke Max Storage Kitchen" class="img-fluid">
-                        </div>
-                        <div class="product-info text-start p-3">
-                            <h4 class="product-title mb-1">Bespoke Max Storage Kitchen</h4>
-                            <p class="mb-0">Our made-to-measure layouts with deepest, tallest and widest units to transform everyday usability.</p>
-                        </div>
-                    </div>
-                </div>
+                </section>
             </div>
         </div>
     </div>
@@ -347,78 +321,6 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    {{-- Smart Storage Solutions Carousel --}}
-    <div class="ltn__product-slider-area bg-white ltn__product-gutter pt-60 pb-90">
-        <div class="container">
-            <div class="row mb-3">
-                <div class="col-12 text-center">
-                    <h2 class="fw-bold mb-2">Smart Storage Solutions</h2>
-                    <p class="mb-1">Wish you could find that one spice without emptying the entire cupboard? <strong>We can help!</strong></p>
-                </div>
-            </div>
-
-            <div class="row ltn__product-slider-item-four-active-full-width slick-arrow-1">
-                {{-- Slide 1 --}}
-                <div class="col-lg-12">
-                    <div class="ltn__product-item ltn__product-item-4 text-center--- d-flex flex-column h-100">
-                        <div class="product-img">
-                            <img src="{{ asset('img/product-3/5.jpg') }}" alt="Wicker basket set with runners">
-                        </div>
-                        <div class="product-info text-start p-3">
-                            <h4 class="product-title mb-1">Wicker basket set </h4>
-                            <p class="mb-0">Smooth sliding baskets that keep fruit and veg organised, visible and easy to reach.</p>
-                        </div>
-                    </div>
-                </div>
-
-                {{-- Slide 2 --}}
-                <div class="col-lg-12">
-                    <div class="ltn__product-item ltn__product-item-4 text-center--- d-flex flex-column h-100">
-                        <div class="product-img">
-                            <img src="{{ asset('img/product-3/6.jpg') }}" alt="Swing-out corner storage">
-                        </div>
-                        <div class="product-info text-start p-3">
-                            <h4 class="product-title mb-1">Swing-out corner storage</h4>
-                            <p class="mb-0">Corner pull-out units that bring hidden pots and pans right to you in one smooth motion.</p>
-                        </div>
-                    </div>
-                </div>
-
-                {{-- Slide 3 --}}
-                <div class="col-lg-12">
-                    <div class="ltn__product-item ltn__product-item-4 text-center--- d-flex flex-column h-100">
-                        <div class="product-img">
-                            <img src="{{ asset('img/product-3/7.jpg') }}" alt="Larder unit glass side baskets">
-                        </div>
-                        <div class="product-info text-start p-3">
-                            <h4 class="product-title mb-1">Larder unit glass side baskets</h4>
-                            <p class="mb-0">Tall larder pull-outs with clear glass sides so every item is visible at a glance.</p>
-                        </div>
-                    </div>
-                </div>
-
-                {{-- Slide 4 --}}
-                <div class="col-lg-12">
-                    <div class="ltn__product-item ltn__product-item-4 text-center--- d-flex flex-column h-100">
-                        <div class="product-img">
-                            <img src="{{ asset('img/product-3/8.jpg') }}" alt="Under-sink organiser">
-                        </div>
-                        <div class="product-info text-start p-3">
-                            <h4 class="product-title mb-1">Under-sink organiser</h4>
-                            <p class="mb-0">Smart trays and dividers that tame cleaning products under the sink and free up space.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mt-3">
-                <div class="col-12 text-center">
-                    <a href="#contactModal" data-bs-toggle="modal" data-bs-target="#contactModal" class="btn text-uppercase" style="background-color:#ffc107; color:#111; padding:12px 40px; border-radius:30px; font-weight:600;">Explore Unique Storage Solutions</a>
                 </div>
             </div>
         </div>
