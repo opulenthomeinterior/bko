@@ -147,13 +147,15 @@
                         <div class="col-xl-6 col-sm-6 col-12">
                             <div class="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
                                 <div class="product-img" style="height: 185px;">
-                                    <a data-bs-toggle="modal" data-bs-target="#product-modal-{{$product->id}}"><img src="{{ !empty($product->image_path) ? asset('imgs/products/'.$product->image_path) : asset('images/no-image-available.jpg') }}" alt="#"></a>
+                                    <!-- <a data-bs-toggle="modal" data-bs-target="#product-modal-{{$product->id}}"><img src="{{ !empty($product->image_path) ? asset('imgs/products/'.$product->image_path) : asset('images/no-image-available.jpg') }}" alt="#"></a> -->
+                                    <a href="{{route('orderbyproduct', $product->slug, $product->serial_number)}}"><img src="{{ !empty($product->image_path) ? asset('imgs/products/'.$product->image_path) : asset('images/no-image-available.jpg') }}" alt="#"></a>
                                     <div class="real-estate-agent">
                                         <div class="agent-img">
                                             <!-- <a data-toggle="modal" data-target="#product-modal-{{$product->id}}"><img src="{{ asset('img/blog/author.jpg') }}" alt="#"></a> -->
                                         </div>
                                     </div>
                                 </div>
+                                {{$product->serial_number}}
                                 <div class="product-info">
                                     <h2 class="product-title"><a data-bs-toggle="modal" data-bs-target="#product-modal-{{$product->id}}">{{ \Str::limit($product->full_title, 20) }}</a></h2>
                                     <div class="product-img-location">

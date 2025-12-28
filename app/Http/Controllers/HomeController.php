@@ -729,7 +729,7 @@ class HomeController extends Controller
 
     public function orderbyproduct(Request $request, $slug, $serialNumber = null)
     {
-        $product = Product::where('slug', $slug)->where('serial_number', $serialNumber)->where('status', 'active')->firstOrFail();
+        $product = Product::where('slug', $slug)->where('serial_number', $serialNumber)->firstOrFail();
 
         $products = Product::where('style_id', $product->style_id)->where('assembly_id', $product->assembly_id)->where('status', 'active')->get();
 
@@ -776,8 +776,10 @@ class HomeController extends Controller
             })
             ->where('categorized_product', $categorizedProductCat)
             ->get();
+        $categories = Category::where('status', 1)->get();
+        $styles = Style::where('status', 1)->get();
 
-        return view('frontend.shop.orderkitchen.orderbyproduct', compact('product', 'colours', 'relatedProducts', 'relatedCategoryProducts', 'categorizedProductCat'));
+        return view('frontend.shop.orderkitchen.orderbyproduct', compact('product', 'colours', 'relatedProducts', 'relatedCategoryProducts', 'categorizedProductCat', 'categories', 'styles'));
     }
 
     public function faq()

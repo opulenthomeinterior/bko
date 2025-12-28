@@ -254,7 +254,7 @@
                         <div class="col-xl-6 col-sm-6 col-12">
                             <div class="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
                                 <div class="product-img" style="height: 185px;">
-                                    <a href="#"><img src="{{ !empty($product->image_path) ? asset('imgs/products/'.$product->image_path) : asset('images/no-image-available.jpg') }}" alt="#"></a>
+                                    <a href="{{route('orderbyproduct', $product->slug, $product->serial_number)}}"><img src="{{ !empty($product->image_path) ? asset('imgs/products/'.$product->image_path) : asset('images/no-image-available.jpg') }}" alt="#"></a>
                                     <div class="real-estate-agent">
                                         <div class="agent-img">
                                             <!-- <a href="#"><img src="{{ asset('img/blog/author.jpg') }}" alt="#"></a> -->
