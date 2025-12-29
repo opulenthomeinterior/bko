@@ -97,29 +97,25 @@
                             </table>
                         </div>
                         <div class="shoping-cart-total mt-50">
-                            <h4>Cart Totals</h4>
+                            <h4>ORDER SUMMARY</h4>
                             <table class="table">
                                 <tbody>
                                     <tr>
-                                        <td>Cart Subtotal</td>
-                                        <td>00.00</td>
+                                        <td>Items Count</td>
+                                        <td id="itemsCount">00.00</td>
                                     </tr>
                                     <tr>
-                                        <td>Shipping and Handing</td>
-                                        <td>00.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Vat</td>
-                                        <td>00.00</td>
+                                        <td>Sub total</td>
+                                        <td id="cartTotalAmount">00.00</td>
                                     </tr>
                                     <tr>
                                         <td><strong>Order Total</strong></td>
-                                        <td><strong>00.00</strong></td>
+                                        <td><strong id="cartTotalAmountWithVAT">00.00</strong></td>
                                     </tr>
                                 </tbody>
                             </table>
                             <div class="btn-wrapper text-right">
-                                <a href="checkout.html" class="theme-btn-1 btn btn-effect-1">Proceed to checkout</a>
+                                <a href="{{ route('checkout') }}" class="theme-btn-1 btn btn-effect-1">Proceed to checkout</a>
                             </div>
                         </div>
                     </div>

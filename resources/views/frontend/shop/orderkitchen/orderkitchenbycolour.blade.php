@@ -260,9 +260,9 @@
                                                         <label for="" class="fw-bold d-flex justify-content-between mt-4">
                                                             <span class="text-dark">ALL BASE CABINETS</span>
                                                             <span>
-                                                                <a class="text-decoration-underline text-dark" href="@if(!empty($baseCabinetData->style) && !empty($baseCabinetData->assembly) && !empty($baseCabinetData->colour)){{route('viewallorderkitchenbycolour', ['style' => $baseCabinetData->style?->slug , 'assembly' => $baseCabinetData->assembly?->slug, 'colour' => $baseCabinetData->colour?->slug])}}@else#@endif">
+                                                                <!-- <a class="text-decoration-underline text-dark" href="@if(!empty($baseCabinetData->style) && !empty($baseCabinetData->assembly) && !empty($baseCabinetData->colour)){{route('viewallorderkitchenbycolour', ['style' => $baseCabinetData->style?->slug , 'assembly' => $baseCabinetData->assembly?->slug, 'colour' => $baseCabinetData->colour?->slug])}}@else#@endif">
                                                                     View All
-                                                                </a>
+                                                                </a> -->
                                                             </span>
                                                         </label>
                                                         <div class="input-item py-0 my-2">
@@ -504,9 +504,9 @@
                                                         <label for="" class="fw-bold d-flex justify-content-between mt-4">
                                                             <span class="text-dark">ALL WALL CABINETS</span>
                                                             <span>
-                                                                <a class="text-decoration-underline text-dark" href="@if(!empty($wallCabinetData->style) && !empty($wallCabinetData->assembly) && !empty($wallCabinetData->colour)){{route('viewallorderkitchenbycolour', ['style' => $wallCabinetData->style?->slug , 'assembly' => $wallCabinetData->assembly?->slug, 'colour' => $wallCabinetData->colour?->slug])}}@else#@endif">
+                                                                <!-- <a class="text-decoration-underline text-dark" href="@if(!empty($wallCabinetData->style) && !empty($wallCabinetData->assembly) && !empty($wallCabinetData->colour)){{route('viewallorderkitchenbycolour', ['style' => $wallCabinetData->style?->slug , 'assembly' => $wallCabinetData->assembly?->slug, 'colour' => $wallCabinetData->colour?->slug])}}@else#@endif">
                                                                     View All
-                                                                </a>
+                                                                </a> -->
                                                             </span>
                                                         </label>
                                                         <div class="input-item py-0 my-2">
@@ -748,9 +748,9 @@
                                                         <label for="" class="fw-bold d-flex justify-content-between mt-4">
                                                             <span class="text-dark">ALL TALL CABINETS</span>
                                                             <span>
-                                                                <a class="text-decoration-underline text-dark" href="@if(!empty($tallCabinetData->style) && !empty($tallCabinetData->assembly) && !empty($tallCabinetData->colour)){{route('viewallorderkitchenbycolour', ['style' => $tallCabinetData->style?->slug , 'assembly' => $tallCabinetData->assembly?->slug, 'colour' => $tallCabinetData->colour?->slug])}}@else#@endif">
+                                                                <!-- <a class="text-decoration-underline text-dark" href="@if(!empty($tallCabinetData->style) && !empty($tallCabinetData->assembly) && !empty($tallCabinetData->colour)){{route('viewallorderkitchenbycolour', ['style' => $tallCabinetData->style?->slug , 'assembly' => $tallCabinetData->assembly?->slug, 'colour' => $tallCabinetData->colour?->slug])}}@else#@endif">
                                                                     View All
-                                                                </a>
+                                                                </a> -->
                                                             </span>
                                                         </label>
                                                         <div class="input-item py-0 my-2">
@@ -992,9 +992,9 @@
                                                         <label for="" class="fw-bold d-flex justify-content-between mt-4">
                                                             <span class="text-dark">ALL ACCESSORIES</span>
                                                             <span>
-                                                                <a class="text-decoration-underline text-dark" href="@if(!empty($accessoriesData->style) && !empty($accessoriesData->assembly) && !empty($accessoriesData->colour)){{route('viewallorderkitchenbycolour', ['style' => $accessoriesData->style?->slug , 'assembly' => $accessoriesData->assembly?->slug, 'colour' => $accessoriesData->colour?->slug])}}@else#@endif">
+                                                                <!-- <a class="text-decoration-underline text-dark" href="@if(!empty($accessoriesData->style) && !empty($accessoriesData->assembly) && !empty($accessoriesData->colour)){{route('viewallorderkitchenbycolour', ['style' => $accessoriesData->style?->slug , 'assembly' => $accessoriesData->assembly?->slug, 'colour' => $accessoriesData->colour?->slug])}}@else#@endif">
                                                                     View All
-                                                                </a>
+                                                                </a> -->
                                                             </span>
                                                         </label>
                                                         <div class="input-item py-0 my-2">
@@ -1262,9 +1262,9 @@
                                                         <label for="" class="fw-bold d-flex justify-content-between mt-4">
                                                             <span class="text-dark">ALL INTERNALS</span>
                                                             <span>
-                                                                <a class="text-decoration-underline text-dark" href="@if(!empty($internalsData->style) && !empty($internalsData->assembly) && !empty($internalsData->colour)){{route('viewallorderkitchenbycolour', ['style' => $internalsData->style?->slug , 'assembly' => $internalsData->assembly?->slug, 'colour' => $internalsData->colour?->slug])}}@else#@endif">
+                                                                <!-- <a class="text-decoration-underline text-dark" href="@if(!empty($internalsData->style) && !empty($internalsData->assembly) && !empty($internalsData->colour)){{route('viewallorderkitchenbycolour', ['style' => $internalsData->style?->slug , 'assembly' => $internalsData->assembly?->slug, 'colour' => $internalsData->colour?->slug])}}@else#@endif">
                                                                     View All
-                                                                </a>
+                                                                </a> -->
                                                             </span>
                                                         </label>
                                                         <div class="input-item py-0 my-2">
@@ -1533,9 +1533,9 @@
                                                         <label for="" class="fw-bold d-flex justify-content-between mt-4">
                                                             <span class="text-dark">ALL HANDLES</span>
                                                             <span>
-                                                                <a class="text-decoration-underline text-dark" href="@if(!empty($handlesData->style) && !empty($handlesData->assembly) && !empty($handlesData->colour)){{route('viewallorderkitchenbycolour', ['style' => $handlesData->style?->slug , 'assembly' => $handlesData->assembly?->slug, 'colour' => $handlesData->colour?->slug])}}@else#@endif">
+                                                                <!-- <a class="text-decoration-underline text-dark" href="@if(!empty($handlesData->style) && !empty($handlesData->assembly) && !empty($handlesData->colour)){{route('viewallorderkitchenbycolour', ['style' => $handlesData->style?->slug , 'assembly' => $handlesData->assembly?->slug, 'colour' => $handlesData->colour?->slug])}}@else#@endif">
                                                                     View All
-                                                                </a>
+                                                                </a> -->
                                                             </span>
                                                         </label>
                                                         <div class="input-item py-0 my-2">
@@ -1803,9 +1803,9 @@
                                                         <label for="" class="fw-bold d-flex justify-content-between mt-4">
                                                             <span class="text-dark">ALL WORKTOPS</span>
                                                             <span>
-                                                                <a class="text-decoration-underline text-dark" href="@if(!empty($worktopsData->style) && !empty($worktopsData->assembly) && !empty($worktopsData->colour)){{route('viewallorderkitchenbycolour', ['style' => $worktopsData->style?->slug , 'assembly' => $worktopsData->assembly?->slug, 'colour' => $worktopsData->colour?->slug])}}@else#@endif">
+                                                                <!-- <a class="text-decoration-underline text-dark" href="@if(!empty($worktopsData->style) && !empty($worktopsData->assembly) && !empty($worktopsData->colour)){{route('viewallorderkitchenbycolour', ['style' => $worktopsData->style?->slug , 'assembly' => $worktopsData->assembly?->slug, 'colour' => $worktopsData->colour?->slug])}}@else#@endif">
                                                                     View All
-                                                                </a>
+                                                                </a> -->
                                                             </span>
                                                         </label>
                                                         <div class="input-item py-0 my-2">
@@ -2045,9 +2045,9 @@
                                                         <label for="" class="fw-bold d-flex justify-content-between mt-4">
                                                             <span class="text-dark">ALL UPSTANDS</span>
                                                             <span>
-                                                                <a class="text-decoration-underline text-dark" href="@if(!empty($worktopsAndUpStandsData->style) && !empty($worktopsAndUpStandsData->assembly) && !empty($worktopsAndUpStandsData->colour)){{route('viewallorderkitchenbycolour', ['style' => $worktopsAndUpStandsData->style?->slug , 'assembly' => $worktopsAndUpStandsData->assembly?->slug, 'colour' => $worktopsAndUpStandsData->colour?->slug])}}@else#@endif">
+                                                                <!-- <a class="text-decoration-underline text-dark" href="@if(!empty($worktopsAndUpStandsData->style) && !empty($worktopsAndUpStandsData->assembly) && !empty($worktopsAndUpStandsData->colour)){{route('viewallorderkitchenbycolour', ['style' => $worktopsAndUpStandsData->style?->slug , 'assembly' => $worktopsAndUpStandsData->assembly?->slug, 'colour' => $worktopsAndUpStandsData->colour?->slug])}}@else#@endif">
                                                                     View All
-                                                                </a>
+                                                                </a> -->
                                                             </span>
                                                         </label>
                                                         <div class="input-item py-0 my-2">
@@ -2287,9 +2287,9 @@
                                                         <label for="" class="fw-bold d-flex justify-content-between mt-4">
                                                             <span class="text-dark">ALL BREAKFASTBARS</span>
                                                             <span>
-                                                                <a class="text-decoration-underline text-dark" href="@if(!empty($breakfastBarsData->style) && !empty($breakfastBarsData->assembly) && !empty($breakfastBarsData->colour)){{route('viewallorderkitchenbycolour', ['style' => $breakfastBarsData->style?->slug , 'assembly' => $breakfastBarsData->assembly?->slug, 'colour' => $breakfastBarsData->colour?->slug])}}@else#@endif">
+                                                                <!-- <a class="text-decoration-underline text-dark" href="@if(!empty($breakfastBarsData->style) && !empty($breakfastBarsData->assembly) && !empty($breakfastBarsData->colour)){{route('viewallorderkitchenbycolour', ['style' => $breakfastBarsData->style?->slug , 'assembly' => $breakfastBarsData->assembly?->slug, 'colour' => $breakfastBarsData->colour?->slug])}}@else#@endif">
                                                                     View All
-                                                                </a>
+                                                                </a> -->
                                                             </span>
                                                         </label>
                                                         <div class="input-item py-0 my-2">
@@ -2556,9 +2556,9 @@
                                                         <label for="" class="fw-bold d-flex justify-content-between mt-4">
                                                             <span class="text-dark">ALL SINKS</span>
                                                             <span>
-                                                                <a class="text-decoration-underline text-dark" href="@if(!empty($sinksData->style) && !empty($sinksData->assembly) && !empty($sinksData->colour)){{route('viewallorderkitchenbycolour', ['style' => $sinksData->style?->slug , 'assembly' => $sinksData->assembly?->slug, 'colour' => $sinksData->colour?->slug])}}@else#@endif">
+                                                                <!-- <a class="text-decoration-underline text-dark" href="@if(!empty($sinksData->style) && !empty($sinksData->assembly) && !empty($sinksData->colour)){{route('viewallorderkitchenbycolour', ['style' => $sinksData->style?->slug , 'assembly' => $sinksData->assembly?->slug, 'colour' => $sinksData->colour?->slug])}}@else#@endif">
                                                                     View All
-                                                                </a>
+                                                                </a> -->
                                                             </span>
                                                         </label>
                                                         <div class="input-item py-0 my-2">
@@ -2799,9 +2799,9 @@
                                                         <label for="" class="fw-bold d-flex justify-content-between mt-4">
                                                             <span class="text-dark">ALL TAPS</span>
                                                             <span>
-                                                                <a class="text-decoration-underline text-dark" href="@if(!empty($tapsData->style) && !empty($tapsData->assembly) && !empty($tapsData->colour)){{route('viewallorderkitchenbycolour', ['style' => $tapsData->style?->slug , 'assembly' => $tapsData->assembly?->slug, 'colour' => $tapsData->colour?->slug])}}@else#@endif">
+                                                                <!-- <a class="text-decoration-underline text-dark" href="@if(!empty($tapsData->style) && !empty($tapsData->assembly) && !empty($tapsData->colour)){{route('viewallorderkitchenbycolour', ['style' => $tapsData->style?->slug , 'assembly' => $tapsData->assembly?->slug, 'colour' => $tapsData->colour?->slug])}}@else#@endif">
                                                                     View All
-                                                                </a>
+                                                                </a> -->
                                                             </span>
                                                         </label>
                                                         <div class="input-item py-0 my-2">
@@ -3062,9 +3062,9 @@
                                                         <label for="" class="fw-bold d-flex justify-content-between mt-4">
                                                             <span class="text-dark">ALL APPLIANCES</span>
                                                             <span>
-                                                                <a class="text-decoration-underline text-dark" href="@if(!empty($appliancesData->style) && !empty($appliancesData->assembly) && !empty($appliancesData->colour)){{route('viewallorderkitchenbycolour', ['style' => $appliancesData->style?->slug , 'assembly' => $appliancesData->assembly?->slug, 'colour' => $appliancesData->colour?->slug])}}@else#@endif">
+                                                                <!-- <a class="text-decoration-underline text-dark" href="@if(!empty($appliancesData->style) && !empty($appliancesData->assembly) && !empty($appliancesData->colour)){{route('viewallorderkitchenbycolour', ['style' => $appliancesData->style?->slug , 'assembly' => $appliancesData->assembly?->slug, 'colour' => $appliancesData->colour?->slug])}}@else#@endif">
                                                                     View All
-                                                                </a>
+                                                                </a> -->
                                                             </span>
                                                         </label>
                                                         <div class="input-item py-0 my-2">

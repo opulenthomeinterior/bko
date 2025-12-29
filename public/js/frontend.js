@@ -661,11 +661,11 @@ function updateCartItemsList() {
       $cartItemsList.append(`
          <div class="mini-cart-item clearfix">
             <div class="mini-cart-img">
-               <a href="#"><img src="https://bkonline.uk/public/imgs/products/${product.image_path}" alt="Image"></a>
+               <img src="https://bkonline.uk/public/imgs/products/${product.image_path}" alt="Image">
                <span class="mini-cart-item-delete"><i class="icon-cancel" onclick="removeFromCart(${product.id}, '${product.productCode}')"></i></span>
             </div>
             <div class="mini-cart-info">
-               <h6><a href="#">(${product.quantity}) X ${product.full_title}</a></h6>
+               <h6>(${product.quantity}) X ${product.full_title}</h6>
             </div>
          </div>
       `);
@@ -688,10 +688,10 @@ function orderKitchenCartItemsList() {
          <li>
             <div class="top-rated-product-item clearfix">
                   <div class="top-rated-product-img">
-                     <a href="#"><img src="https://bkonline.uk/public/imgs/products/${product.image_path}" class="border border-default" alt="#"></a>
+                     <img src="https://bkonline.uk/public/imgs/products/${product.image_path}" class="border border-default" alt="#">
                   </div>
                   <div class="top-rated-product-info">
-                     <h6><a href="#">(${product.quantity}) x ${product.full_title}</a></h6>
+                     <h6>(${product.quantity}) x ${product.full_title}</h6>
                      <div class="product-price">
                         <h5 class="fw-bold">£${product.price}</h5>
                      </div>

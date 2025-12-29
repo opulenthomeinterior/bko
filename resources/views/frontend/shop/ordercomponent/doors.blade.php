@@ -257,16 +257,15 @@
                                     <a href="{{route('orderbyproduct', [$product->slug, $product->serial_number])}}"><img src="{{ !empty($product->image_path) ? asset('imgs/products/'.$product->image_path) : asset('images/no-image-available.jpg') }}" alt="#"></a>
                                     <div class="real-estate-agent">
                                         <div class="agent-img">
-                                            <!-- <a href="#"><img src="{{ asset('img/blog/author.jpg') }}" alt="#"></a> -->
                                         </div>
                                     </div>
                                 </div>
                                 <div class="product-info">
-                                    <h2 class="product-title"><a href="#">{{ \Str::limit($product->full_title, 20) }}</a></h2>
+                                    <h2 class="product-title"><a href="{{route('orderbyproduct', [$product->slug, $product->serial_number])}}">{{ \Str::limit($product->full_title, 20) }}</a></h2>
                                     <div class="product-img-location">
                                         <ul>
                                             <li>
-                                                <a href="#" class="bg-light p-2">{{$product->related_products_count > 0 ? $product->related_products_count : '1'}} available colour/s</a>
+                                                <span class="bg-light p-2">{{$product->related_products_count > 0 ? $product->related_products_count : '1'}} available colour/s</span>
                                             </li>
                                         </ul>
                                     </div>
