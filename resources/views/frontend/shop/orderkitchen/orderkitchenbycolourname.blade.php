@@ -1,4 +1,5 @@
-<x-guest-layout>
+@extends('layouts.guest2')
+@section('content')
     @section('meta_tags')
         <title>{{$seo?->meta_title}}</title>
         <meta name="description" content="{{$seo?->meta_description}}">
@@ -42,17 +43,9 @@
     </style>
     
     <div class="container py-4">
-        <!-- Breadcrumb -->
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">HOME</a></li>
-                <li class="breadcrumb-item"><a href="#">SHOP</a></li>
-                <li class="breadcrumb-item active" aria-current="page">ORDER KITCHEN</li>
-            </ol>
-        </nav>
 
         <!-- Product Title -->
-        <h1 class="product-title text-center my-4">{{ $styleHasColour->colour->trade_colour ?? '' }}</h1>
+        <h1 class="text-center my-4">{{ $styleHasColour->colour->trade_colour ?? '' }}</h1>
 
         <!-- Product Description -->
         <div class="row mb-5">
@@ -74,7 +67,7 @@
                 </div>
                 <div class="mt-4">
                     <h5>Other available Colours</h5>
-                    <select class="form-select color-dropdown" id="colour-dropdown">
+                    <select class="color-dropdown">
                         <option selected disabled>Select colour options</option>
                         @foreach (\App\Models\StyleHasColour::where('style_id', $styleHasColour->style_id ?? '')->where('status', 1)->get() as $colourOption)
                             <option value="{{ $colourOption->colour->slug ?? '' }}" {{ $styleHasColour->colour_id == $colourOption->colour_id ? 'selected' : '' }}>{{ $colourOption->colour->trade_colour ?? '' }}</option>
@@ -84,10 +77,10 @@
             </div>
             <div class="col-md-6">
                 <h5>Finish:</h5>
-                <div class="option-box active">{{ $styleHasColour->colour->finishing ?? '' }}</div>
+                <span class="fs-5 text-white bg-dark p-2">{{ $styleHasColour->colour->finishing ?? '' }}</span>
                 <p class="mt-2">This finish makes your kitchen reflective and smooth, making it easy to keep your surfaces clean.</p>
                 <h5>Main Colour:</h5>
-                <div class="option-box active mb-4">{{ $styleHasColour->colour->name ?? '' }}</div>
+                <span class="fs-5 text-white bg-dark p-2 mb-4">{{ $styleHasColour->colour->name ?? '' }}</span>
             </div>
         </div>
 
@@ -136,7 +129,7 @@
             <div class="row mb-5">
             @foreach ($styleHasColour->colourPageContent->slice(1) as $colourPageContent)
                 <div class="col-md-6 mb-4">
-                    <h2 class="text-center mb-4">{{ $colourPageContent->section_main_heading }}</h2>
+                    <h2 class="text-center mb-4 text-decoration-underline">{{ $colourPageContent->section_main_heading }}</h2>
                     {!! $colourPageContent->section_content !!}
                 </div>
             @endforeach
@@ -227,5 +220,4 @@
             });
         </script>
     @endpush
-    
-</x-guest-layout>
+@endsection

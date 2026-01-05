@@ -133,8 +133,10 @@ class HomeController extends Controller
             if (!isset($style) || !isset($colour) || !isset($styleHasColour) || !isset($seo)) {
                 return redirect()->route('orderkitchen');
             }
+            $styles = Style::all();
+            $categories = Category::whereNull('parent_category_id')->get();
 
-            return view('frontend.shop.orderkitchen.orderkitchenbycolourname', compact('style', 'styleHasColour', 'seo'));
+            return view('frontend.shop.orderkitchen.orderkitchenbycolourname', compact('style', 'styleHasColour', 'seo', 'styles', 'categories'));
         } catch (\Exception $e) {
             return redirect()->route('orderkitchen');
         }
@@ -468,8 +470,25 @@ class HomeController extends Controller
                 ->get();
         $assemblies = Assembly::where('slug', 'stock')->where('status', 1)->get();
         $styles = Style::where('status', 1)->get();
-
-        $colours = Colour::whereIn('id', Product::whereIn('category_id', $children)->pluck('colour_id')->unique())->where('status', 1)->get();
+        if ($request->get('style_id')) {
+            // check with only style
+            $colours = Colour::whereIn('id', Product::whereIn('category_id', $children)->where('style_id', $request->get('style_id'))->pluck('colour_id')->unique())->where('status', 1)->get();
+        } 
+        if ($request->get('colour_id')) {
+            // check with style + colour
+            $colours = Colour::whereIn('id', Product::whereIn('category_id', $children)->where('style_id', $request->get('style_id'))->pluck('colour_id')->unique())->where('status', 1)->get();
+        } 
+        if ($request->get('height')) {
+            // check with style + colour + height
+            $colours = Colour::whereIn('id', Product::whereIn('category_id', $children)->where('style_id', $request->get('style_id'))->pluck('colour_id')->unique())->where('status', 1)->get();
+        } 
+        if ($request->get('width')) {
+            // check with style + colour + height + width
+            $colours = Colour::whereIn('id', Product::whereIn('category_id', $children)->where('style_id', $request->get('style_id'))->pluck('colour_id')->unique())->where('status', 1)->get();
+        } 
+        else {
+            $colours = Colour::whereIn('id', Product::whereIn('category_id', $children)->pluck('colour_id')->unique())->where('status', 1)->get();
+        }
 
         // Include the current category in the list of children
         $children[] = $category->id;
