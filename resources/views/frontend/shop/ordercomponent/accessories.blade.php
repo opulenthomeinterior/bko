@@ -55,7 +55,7 @@
                     <div class="about-us-info-wrap">
                         <div class="mb-20">
                             <h1 class="section-title">SEAMLESS REPAIRS • BEAUTIFUL RESULTS</h1>
-                            <p>The doors are the first impression of your kitchen. You can transform your kitchen by availing our kitchen cupboard and cabinet door replacement offer. By selecting from our various colors and finishes you will give your kitchen a new life. Our doors are the essence of style and durability, creating an elegant look. Buy Kitchen Online  offers a wide range of kitchen doors in various sizes to suit your needs. Our replacement kitchen doors are available in different height and width dimensions, ensuring a perfect fit for your kitchen. The standard size, commonly used, is 715 x 496mm. For larger requirements, we provide doors up to 1965 x 596mm, while the smallest size available is 110 x 596mm. With this extensive selection, you can easily find the right door to upgrade or replace your kitchen cupboard & cabinet doors.</p>
+                            <p>{!!$category->description!!}</p>
                         </div>
                         <!-- <ul class="ltn__list-item-half ltn__list-item-half-2 list-item-margin clearfix">
                             <li>

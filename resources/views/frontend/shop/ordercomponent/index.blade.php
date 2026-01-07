@@ -55,7 +55,7 @@
                     <div class="about-us-info-wrap">
                         <div class="mb-20">
                             <h4>SEAMLESS REPAIRS • BEAUTIFUL RESULTS</h4>
-                            <p>Many small components make up your entire kitchen. One faulty or old component can affect its beauty and functionality. Whether it's a broken hinge, a worn-out faucet, or a rusty handle, let us help you get your kitchen back on track. You can also change your kitchen aesthetics by replacing the old cabinet doors, the floor everything you need: from traditional replacements to modern upgrades, to keep your kitchen functioning flawlessly.</p>
+                            <p>{!!$category->description!!}</p>
                         </div>
                     </div>
                 </div>

@@ -456,6 +456,17 @@ class HomeController extends Controller
     {
         $category = Category::with('testimonials', 'faqs')->where('slug', $slug)->firstOrFail();
         $children = Category::where('parent_category_id', $category->id)->pluck('id')->toArray();
+
+        $colours = Colour::where('status', 1);
+        $heights = Product::whereIn('category_id', $children)
+                    ->where('status', 'active')
+                    ->where('height', '!=', '');
+        $widths = Product::whereIn('category_id', $children)
+                    ->where('status', 'active')
+                    ->where('width', '!=', '');
+
+        // $types = Product::where('status', 'active')
+        //             ->where('width', '!=', '');
         
         $types = Category::whereIn('id', $children)
                 ->select('id', 'name', 'status')
@@ -470,25 +481,48 @@ class HomeController extends Controller
                 ->get();
         $assemblies = Assembly::where('slug', 'stock')->where('status', 1)->get();
         $styles = Style::where('status', 1)->get();
-        if ($request->get('style_id')) {
-            // check with only style
-            $colours = Colour::whereIn('id', Product::whereIn('category_id', $children)->where('style_id', $request->get('style_id'))->pluck('colour_id')->unique())->where('status', 1)->get();
-        } 
-        if ($request->get('colour_id')) {
-            // check with style + colour
-            $colours = Colour::whereIn('id', Product::whereIn('category_id', $children)->where('style_id', $request->get('style_id'))->pluck('colour_id')->unique())->where('status', 1)->get();
-        } 
-        if ($request->get('height')) {
-            // check with style + colour + height
-            $colours = Colour::whereIn('id', Product::whereIn('category_id', $children)->where('style_id', $request->get('style_id'))->pluck('colour_id')->unique())->where('status', 1)->get();
-        } 
-        if ($request->get('width')) {
-            // check with style + colour + height + width
-            $colours = Colour::whereIn('id', Product::whereIn('category_id', $children)->where('style_id', $request->get('style_id'))->pluck('colour_id')->unique())->where('status', 1)->get();
-        } 
-        else {
-            $colours = Colour::whereIn('id', Product::whereIn('category_id', $children)->pluck('colour_id')->unique())->where('status', 1)->get();
+                    
+        if (!empty($request->style_id)) {
+            $colours = $colours->whereIn('id', Product::whereIn('style_id', [$request->style_id])->where('status', 'active')->pluck('colour_id')->unique());
+            $heights = $heights->whereIn('style_id', [$request->style_id]);
+            $widths = $widths->whereIn('style_id', [$request->style_id]);
+        } else {
+            $colours = $colours->whereIn('id', Product::whereIn('category_id', $children)->where('status', 'active')->pluck('colour_id')->unique());
         }
+        if (!empty($request->colour_id)) {
+            if(!empty($request->style_id)) {
+                $heights = $heights->whereIn('style_id', [$request->style_id]);
+                $widths = $widths->whereIn('style_id', [$request->style_id]);
+            }
+            $heights = $heights->whereIn('colour_id', [$request->colour_id]);
+            $widths = $widths->whereIn('colour_id', [$request->colour_id]);
+        } else if (!empty($request->style_id)) {
+            $heights = $heights->whereIn('style_id', [$request->style_id]);
+            $widths = $widths->whereIn('style_id', [$request->style_id]);
+        }
+        if (!empty($request->height)) {
+            if(!empty($request->style_id)) {
+                $widths = $widths->whereIn('style_id', [$request->style_id]);
+            }
+            if(!empty($request->colour_id)) {
+                $widths = $widths->whereIn('colour_id', [$request->colour_id]);
+            }
+            $widths = $widths->whereIn('height', [$request->height]);
+        } else {
+            if (!empty($request->style_id)) {
+                $heights = $heights->whereIn('style_id', [$request->style_id]);
+            }
+            if (!empty($request->colour_id)) {
+                $heights = $heights->whereIn('colour_id', [$request->colour_id]);
+            }
+        }
+        if (!empty($request->type_id)) {
+            $colours = $colours->whereIn('id', Product::whereIn('category_id', [$request->type_id])->where('status', 'active')->pluck('colour_id')->unique());
+        } else {
+            $colours = $colours->whereIn('id', Product::whereIn('category_id', $children)->where('status', 'active')->pluck('colour_id')->unique());
+        }
+        $heights = $heights->select('height', DB::raw('COUNT(*) as count'))->groupBy('height');
+        $widths = $widths->select('width', DB::raw('COUNT(*) as count'))->groupBy('width');
 
         // Include the current category in the list of children
         $children[] = $category->id;
@@ -563,19 +597,19 @@ class HomeController extends Controller
             $products = $products->paginate(12)->onEachSide(2)->withQueryString();
         }
 
-        $heights = Product::whereIn('category_id', $children)
-                ->where('status', 'active')
-                ->select('height', DB::raw('COUNT(*) as count'), 'id')
-                ->where('height', '!=', '')
-                ->groupBy('height')
-                ->get();
+        // $heights = Product::whereIn('category_id', $children)
+        //         ->where('status', 'active')
+        //         ->select('height', DB::raw('COUNT(*) as count'), 'id')
+        //         ->where('height', '!=', '')
+        //         ->groupBy('height')
+        //         ->get();
 
-        $widths = Product::whereIn('category_id', $children)
-                ->where('status', 'active')
-                ->select('width', DB::raw('COUNT(*) as count'), 'id')
-                ->where('width', '!=', '')
-                ->groupBy('width')
-                ->get();
+        // $widths = Product::whereIn('category_id', $children)
+        //         ->where('status', 'active')
+        //         ->select('width', DB::raw('COUNT(*) as count'), 'id')
+        //         ->where('width', '!=', '')
+        //         ->groupBy('width')
+        //         ->get();
 
         $seo = CategorySeo::where('category_id', $category->id)->first();
 
@@ -614,7 +648,9 @@ class HomeController extends Controller
         });
 
         $testimonials = Testimonial::where('category_id', $category->id)->where('page_type', 'categories')->get();
-
+        $colours = $colours->get();
+        $heights = $heights->get();
+        $widths = $widths->get();
         if ($slug == 'doors') {
             return view('frontend.shop.ordercomponent.doors', compact('urlStyleId', 'urlColourId', 'category', 'products', 'types', 'assemblies', 'styles', 'colours', 'currentPage', 'pages', 'count', 'heights', 'seo', 'slug', 'widths', 'testimonials'));
         } else if ($slug == 'handles') {
