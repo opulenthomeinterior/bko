@@ -780,10 +780,10 @@ function updateCartPage() {
                                         </td>
                                         <td class="cart-product-price">£${(product.price).toFixed(2)}</td>
                                         <td class="cart-product-quantity">
-                                          <div class="cart-plus-minus">
-                                             <div class="dec qtybutton" id="dec-btn${product.id}">-</div>
-                                                   <input type="text" value="${product.quantity}" name="qtybutton" id="quantity${product.id}" class="cart-plus-minus-box">
-                                             <div class="inc qtybutton">+</div>
+                                          <div class="cart-plus-minuss">
+                                             
+                                                   <input type="text" readonly value="${product.quantity}" name="qtybutton" id="quantity${product.id}" class="cart-plus-minus-box">
+                                             
                                           </div>
                                         </td>
                                         <td class="cart-product-subtotal">£${(product.quantity * product.price).toFixed(2)}</td>

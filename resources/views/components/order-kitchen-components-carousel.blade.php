@@ -28,13 +28,13 @@
                             </ul>
                         </div>
                         <div class="product-img-location-gallery">
-                            <div class="product-img-location">
+                            <!-- <div class="product-img-location">
                                 <ul>
                                     <li>
                                         <a href="#"><i class="flaticon-pin"></i> Premium Design</a>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> -->
                             <!-- <div class="product-img-gallery">
                                 <ul>
                                     <li>
@@ -135,13 +135,13 @@
                             </ul>
                         </div>
                         <div class="product-img-location-gallery">
-                            <div class="product-img-location">
+                            <!-- <div class="product-img-location">
                                 <ul>
                                     <li>
                                         <a href="#"><i class="flaticon-pin"></i> High Quality</a>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> -->
                             <!-- <div class="product-img-gallery">
                                 <ul>
                                     <li>
