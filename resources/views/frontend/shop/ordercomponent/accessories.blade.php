@@ -253,8 +253,17 @@
                         @foreach ($products as $index => $product)
                         <div class="col-xl-6 col-sm-6 col-12">
                             <div class="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
-                                <div class="product-img" style="height: 185px;">
+                                <!-- <div class="product-img" style="height: 185px;">
                                     <a href="{{route('orderbyproduct', [$product->slug, $product->serial_number])}}"><img src="{{ !empty($product->image_path) ? asset('imgs/products/'.$product->image_path) : asset('images/no-image-available.jpg') }}" alt="#"></a>
+                                    <div class="real-estate-agent">
+                                        <div class="agent-img">
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <div class="product-img" style="height: 100%; display: flex; justify-content: center; align-items: center;">
+                                    <a href="{{route('orderbyproduct', [$product->slug, $product->serial_number])}}">
+                                        <img style="height: 200px;" src="{{ !empty($product->image_path) ? asset('imgs/products/'.$product->image_path) : asset('images/no-image-available.jpg') }}" alt="#">
+                                    </a>
                                     <div class="real-estate-agent">
                                         <div class="agent-img">
                                         </div>
