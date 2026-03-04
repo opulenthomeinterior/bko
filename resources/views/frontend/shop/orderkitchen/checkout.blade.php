@@ -1,4 +1,26 @@
 @extends('layouts.guest2')
+@section('styles')
+<style>
+    .nice-select {
+        background-color: var(--white);
+        border: 2px solid;
+        border-color: var(--border-color-9);
+        height: 65px;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        padding-left: 20px;
+        font-size: 16px;
+        color: var(--ltn__paragraph-color);
+        width: 100%;
+        margin-bottom: 30px;
+        border-radius: 0;
+        padding-right: 40px;
+    }
+    .nice-select::after {
+        display: none;
+    }
+</style>
+@endsection
 @section('content')
     <section class="container-fluid px-lg-5 py-4 px-md-3 px-3">
         <nav aria-label="breadcrumb">
@@ -87,7 +109,7 @@
                                             class="text-danger">*</span></label>
                                     <select class="form-select" id="delivery_country" name="delivery_country"
                                         aria-label="Default select example" required>
-                                        <option selected>Select your country</option>
+                                        <option value="">Select your country</option>
                                         <!-- <option value="United States">United States</option>
                                         <option value="Ireland">Ireland</option> -->
                                         <option value="United Kingdom" selected>United Kingdom</option>
