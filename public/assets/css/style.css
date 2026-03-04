@@ -955,7 +955,7 @@ button:focus {
   position: relative; }
   .input-item.ltn__custom-icon::before {
     position: absolute;
-    top: 35%;
+    top: 46%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
