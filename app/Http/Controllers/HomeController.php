@@ -1018,7 +1018,7 @@ class HomeController extends Controller
         $search = $request->search;
 
         if (!$search) {
-            return redirect()->route('shop');
+            return redirect()->back();
         }
         $products = Product::where('price', '!=', 0)
                     ->where('status', 'active')
