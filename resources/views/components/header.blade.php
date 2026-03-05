@@ -134,7 +134,7 @@
                                             @foreach ($categories as $category)
                                             <li class="py-0 px-4">
                                                 <ul class="py-2">
-                                                    <li class="p-0"><a href="{{ route('ordercomponentbyname', [$category->slug]) }}">{{ $category->name }}</a></li>
+                                                    <li class="p-0"><a href="{{ route('ordercomponentbytypename', [$category->slug]) }}">{{ $category->name }}</a></li>
                                                 </ul>
                                             </li>
                                             @endforeach
@@ -318,7 +318,7 @@
                                             @foreach ($categories as $category)
                                             <li class="py-0 px-4">
                                                 <ul class="py-2">
-                                                    <li class="p-0"><a href="{{ route('ordercomponentbyname', [$category->slug]) }}">{{ $category->name }}</a></li>
+                                                    <li class="p-0"><a href="{{ route('ordercomponentbytypename', [$category->slug]) }}">{{ $category->name }}</a></li>
                                                 </ul>
                                             </li>
                                             @endforeach

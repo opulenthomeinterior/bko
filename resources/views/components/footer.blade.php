@@ -7,7 +7,9 @@
                     <div class="footer-widget footer-about-widget">
                         <div class="footer-logo">
                             <div class="site-logo">
-                                <img src="{{ asset('images/bko-white-logo.png') }}" alt="Buy Kitchen Online Logo" style="max-width:200px;">
+                                <a href="{{ route('home') }}">
+                                    <img src="{{ asset('images/bko-white-logo.png') }}" alt="Buy Kitchen Online Logo" style="max-width:200px;">
+                                </a>
                             </div>
                         </div>
                         <small class="text-white d-block mb-2">Opulent home interiors operating as Buy Kitchen Online.</small>

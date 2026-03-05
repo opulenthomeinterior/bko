@@ -314,6 +314,7 @@ Route::prefix('/')->middleware([])->group(function () {
 
         // Order By Component
         Route::get('/order-component', [HomeController::class, 'ordercomponent'])->name('ordercomponent');
+        Route::get('/order-component-type/{slug}', [HomeController::class, 'ordercomponentbytypename'])->name('ordercomponentbytypename');
         Route::get('/order-component/{slug}', [HomeController::class, 'ordercomponentbyname'])->name('ordercomponentbyname');
         Route::post('/order-component/{slug}/filter', [HomeController::class, 'order_component_by_filter'])->name('order_component_filter');
 

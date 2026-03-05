@@ -452,6 +452,39 @@ class HomeController extends Controller
         return view('frontend.shop.ordercomponent.index', compact('components', 'testimonials', 'categories', 'styles'));
     }
 
+    public function ordercomponentbytypename(Request $request, $slug)
+    {
+        $category = Category::with('testimonials', 'faqs')->where('slug', $slug)->firstOrFail();
+        $children = Category::where('parent_category_id', $category->id)->pluck('id')->toArray();
+
+        $colours = Colour::where('status', 1);
+        $heights = Product::whereIn('category_id', $children)
+                    ->where('status', 'active')
+                    ->where('height', '!=', '');
+
+        $widths = Product::whereIn('category_id', $children)
+                    ->where('status', 'active')
+                    ->where('width', '!=', '');
+        
+        $types = Category::with('products', 'parentCategory')->whereIn('id', $children)
+                ->select('id', 'name', 'slug', 'status', 'image_path', 'parent_category_id')
+                ->where('status', 1)
+                ->whereIn('id', function($query) use ($children) {
+                    $query->select(DB::raw('MIN(id)'))
+                        ->from('categories')
+                        ->whereIn('id', $children)
+                        ->groupBy('name');
+                })
+                ->orderBy('name', 'ASC')
+                ->get();
+        $assemblies = Assembly::where('slug', 'stock')->where('status', 1)->get();
+        $styles = Style::where('status', 1)->get();
+        if ($slug == 'appliances' || $slug == 'worktops' || $slug == 'taps' || $slug == 'sinks' || $slug == 'internals') {
+            return redirect()->route('ordercomponentbyname', ['slug' => $slug]);
+        }
+        return view('frontend.shop.ordercomponent.ordercomponentbytypename', compact('types', 'assemblies', 'styles', 'colours', 'heights', 'widths', 'category', 'slug'));
+    }
+
     public function ordercomponentbyname(Request $request, $slug)
     {
         $category = Category::with('testimonials', 'faqs')->where('slug', $slug)->firstOrFail();
@@ -461,15 +494,13 @@ class HomeController extends Controller
         $heights = Product::whereIn('category_id', $children)
                     ->where('status', 'active')
                     ->where('height', '!=', '');
+
         $widths = Product::whereIn('category_id', $children)
                     ->where('status', 'active')
                     ->where('width', '!=', '');
-
-        // $types = Product::where('status', 'active')
-        //             ->where('width', '!=', '');
         
-        $types = Category::whereIn('id', $children)
-                ->select('id', 'name', 'status')
+        $types = Category::with('products')->whereIn('id', $children)
+                ->select('id', 'name', 'slug', 'status', 'image_path')
                 ->where('status', 1)
                 ->whereIn('id', function($query) use ($children) {
                     $query->select(DB::raw('MIN(id)'))

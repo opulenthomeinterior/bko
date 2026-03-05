@@ -89,12 +89,12 @@
                 <div class="ltn__gallery-item filter_category_3 col-lg-4 col-sm-6 col-12" style="height: 400px; position: absolute; left: 0%; top: 0px;">
                     <div class="ltn__gallery-item-inner border border-default" style="height: 400px">
                         <div class="ltn__gallery-item-img d-flex justify-content-center align-items-center" style="height: 400px">
-                            <a href="{{ route('ordercomponentbyname', [$component->slug]) }}">
+                            <a href="{{ route('ordercomponentbytypename', [$component->slug]) }}">
                                 <img src="{{ $component->image_path ? asset('imgs/categories/' . $component->image_path) : asset('images/no-image-available.jpg') }}" alt="Image">
                             </a>
                         </div>
                         <div class="ltn__gallery-item-info">
-                            <h4><a href="{{ route('ordercomponentbyname', [$component->slug]) }}">{{ $component->name }} </a></h4>
+                            <h4><a href="{{ route('ordercomponentbytypename', [$component->slug]) }}">{{ $component->name }} </a></h4>
                             @if ($component->slug == 'doors')
                                 <p class="card-text">The doors are the first impression of your kitchen. You can transform your kitchen by selecting from our various colors and finishes. Our doors are the essence of style and durability, creating an elegant look.</p>
                                 @elseif ($component->slug == 'handles')

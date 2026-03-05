@@ -60,7 +60,7 @@
                         <ul style="list-style: square">
                             @foreach ($orderComponent as $component)
                                 <li>
-                                    <a href="{{ route('ordercomponentbyname', $component->slug) }}" class="text-dark">
+                                    <a href="{{ route('ordercomponentbytypename', $component->slug) }}" class="text-dark">
                                         {{ $component->name }}
                                     </a>
                                 </li>
