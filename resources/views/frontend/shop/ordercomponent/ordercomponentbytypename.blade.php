@@ -70,7 +70,7 @@
                         <div class="ltn__gallery-item-inner border border-default" style="height: 400px">
                             <div class="ltn__gallery-item-img d-flex justify-content-center align-items-center" style="height: 400px">
                                 <a href="{{ route('ordercomponentbyname', [$slug]) }}?type_id={{ $component->id }}">
-                                    <img src="{{ $component->image_path ? asset('imgs/categories/' . $component->image_path) : ($component->products->first()->image_path ?? asset('images/no-image-available.jpg')) }}" alt="Image">
+                                    <img src="{{ $component->image_path ? asset('imgs/categories/' . $component->image_path) : (asset('imgs/products/' . $component->products->first()->image_path) ?? asset('images/no-image-available.jpg')) }}" alt="Image">
                                 </a>
                             </div>
                             <div class="ltn__gallery-item-info">
