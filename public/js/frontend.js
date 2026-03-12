@@ -6,7 +6,7 @@ updateCartPage();
 orderKitchenCartItemsList();
 cart_total_amount();
 addProductsToCheckout();
-
+var totalQuantity = 0;
 $(document).ready(function () {
    const products = getProductsFromLocalStorage();
    if (products.length === 0) {
@@ -429,33 +429,47 @@ function cart_total_amount() {
 }
 
 function incQty(id) {
-
-   console.log('increase quantity');
-   console.log('---------------------------');
-   console.log(id);
-
    const input = document.getElementById('quantity' + id);
    let currentValue = parseInt(input.value) || 0;
    input.value = currentValue + 1;
    totalQuantity++;
-
+   
+   // need to add values from data attributes of the product
+   let productCode = input.getAttribute('data-product-code');
+   let full_title = input.getAttribute('data-full-title');
+   let price = parseFloat(input.getAttribute('data-price'));
+   let discount_price = parseFloat(input.getAttribute('data-discount-price'));
+   let discount_percentage = parseFloat(input.getAttribute('data-discount-percentage'));
+   let p_category = input.getAttribute('data-p-category');
+   let image = input.getAttribute('data-image');
+   let qty = parseInt(input.getAttribute('data-qty'));
+   var $qtde = $('#quantity' + id);
+   var value = parseInt($qtde.val()) || 0;
+   increaseQuantityInCartPage(id, productCode, full_title, price, discount_price, discount_percentage, p_category, image);
 }
 
 
 function decQty(id) {
-
-   console.log('decrease quantity');
-   console.log('---------------------------');
-   console.log(id);
    const input = document.getElementById('quantity' + id);
    let decBtn = document.getElementById('dec-btn' + id);
    console.log(decBtn);
    let currentValue = parseInt(input.value) || 0;
-
    if (input.value > 0) {
       input.value = currentValue - 1;
    }
-
+   
+   // need to add values from data attributes of the product
+   let productCode = input.getAttribute('data-product-code');
+   let full_title = input.getAttribute('data-full-title');
+   let price = parseFloat(input.getAttribute('data-price'));
+   let discount_price = parseFloat(input.getAttribute('data-discount-price'));
+   let discount_percentage = parseFloat(input.getAttribute('data-discount-percentage'));
+   let p_category = input.getAttribute('data-p-category');
+   let image = input.getAttribute('data-image');
+   let qty = parseInt(input.getAttribute('data-qty'));
+   var $qtde = $('#quantity' + id);
+   var value = parseInt($qtde.val()) || 0;
+   decreaseQuantityInCartPage(id, productCode, full_title, price, discount_price, discount_percentage, p_category, image);
 }
 
 
@@ -780,11 +794,35 @@ function updateCartPage() {
                                         </td>
                                         <td class="cart-product-price">£${(product.price).toFixed(2)}</td>
                                         <td class="cart-product-quantity">
-                                          <div class="cart-plus-minuss">
-                                             
-                                                   <input type="text" readonly value="${product.quantity}" name="qtybutton" id="quantity${product.id}" class="cart-plus-minus-box">
-                                             
-                                          </div>
+                                        <div class="d-flex justify-content-center p-2">
+                                            <div class="mx-0 p-0">
+                                                <button style="border-radius: 50px;" type="button" class="btn btn-outline-warning px-3 py-1 me-1 quantity-btn text-dark" id="dec-btn${product.id}" onclick="decQty(${product.id})">−</button>
+                                            </div>
+                                            <div>
+                                                <input 
+                                                name="quantity"
+                                                type="number"
+                                                readonly
+                                                class="form-control text-center quantity-input mx-0 border border-warning quantity"
+                                                id="quantity${product.id}"
+                                                value="${product.quantity}"
+                                                min="1"
+                                                style="border-radius: 50px; width: 60px !important; height: 34px !important; padding: 0 !important; background-color: transparent;"
+                                                onkeyup=""
+                                                data-product-code="${product.productCode}"
+                                                data-full-title="${product.full_title}"
+                                                data-price="${product.price}"
+                                                data-discount-price="${product.discount_price}"
+                                                data-discount-percentage="${product.discount_percentage}"
+                                                data-p-category="${product.p_category}"
+                                                data-image="${product.image_path}"
+                                                data-qty="${product.quantity}"
+                                                >
+                                            </div>
+                                            <div class="mx-0 p-0">
+                                                <button style="border-radius: 50px;" type="button" class="btn btn-outline-warning px-3 py-1 ms-1 add-qty-btn-add-to-cart quantity-btn text-dark" onclick="incQty(${product.id})" >+</button>
+                                            </div>
+                                        </div>
                                         </td>
                                         <td class="cart-product-subtotal">£${(product.quantity * product.price).toFixed(2)}</td>
                                     </tr>
