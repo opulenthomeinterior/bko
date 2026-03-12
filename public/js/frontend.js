@@ -446,6 +446,7 @@ function incQty(id) {
    var $qtde = $('#quantity' + id);
    var value = parseInt($qtde.val()) || 0;
    increaseQuantityInCartPage(id, productCode, full_title, price, discount_price, discount_percentage, p_category, image);
+   cart_total_amount();
 }
 
 

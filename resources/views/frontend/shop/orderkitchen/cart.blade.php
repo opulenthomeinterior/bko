@@ -100,10 +100,10 @@
                             <h4>ORDER SUMMARY</h4>
                             <table class="table">
                                 <tbody>
-                                    <tr>
+                                    <!-- <tr>
                                         <td>Items Count</td>
                                         <td id="itemsCount">00.00</td>
-                                    </tr>
+                                    </tr> -->
                                     <tr>
                                         <td>Sub total</td>
                                         <td id="cartTotalAmount">00.00</td>
