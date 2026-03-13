@@ -793,7 +793,7 @@ function updateCartPage() {
                                                 ${product.full_title}
                                             </a></h5>
                                         </td>
-                                        <td class="cart-product-price">£${product.price}</td>
+                                        <td class="cart-product-price">£${(Number(product.price) || 0).toFixed(2)}</td>
                                         <td class="cart-product-quantity">
                                         <div class="d-flex justify-content-center p-2">
                                             <div class="mx-0 p-0">
