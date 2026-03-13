@@ -420,7 +420,7 @@
 <div class="floating-cart">
     <a href="#">
         <!-- mini-cart 2 -->
-        <div class="mini-cart-icon mini-cart-icon-2">
+        <div class="mini-cart-icon mini-cart-icon-2 bg-light">
             <!-- <a href="{{route('cart')}}" target="_blank" class=""> -->
             <a href="#ltn__utilize-cart-menu" class="ltn__utilize-toggle">
                 <span class="mini-cart-icon">
