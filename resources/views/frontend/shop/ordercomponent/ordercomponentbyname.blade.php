@@ -71,39 +71,59 @@
                     <aside class="sidebar ltn__shop-sidebar ltn__right-sidebar">
                         <!-- Advance Information widget -->
                         <form method="GET" id="filterForm">
-                            @if($slug != 'appliances' && $slug != 'worktops' && $slug != 'upstands' && $slug != 'breakfast-bars' && $slug != 'taps' && $slug != 'internals')
-                            <div class="widget ltn__menu-widget">
-                                <div class="d-flex justify-content-between">
-                                    <h4 class="ltn__widget-title">
-                                        Styles
-                                    </h4>
-                                    <a href="{{ request()->fullUrlWithQuery(['style_id' => null, 'page' => 1]) }}" class="text-decoration-underline">Clear</a>
-                                </div>
-                                <ul style="height: 200px; overflow-y: scroll">
-                                    @foreach ($styles as $styleKey => $style)
-                                        <li>
-                                            <label class="checkbox-item">
-                                                {{ $style->name }}
-                                                <input
-                                                    type="radio"
-                                                    name="style_id"
-                                                    value="{{ $style->id }}"
-                                                    {{ request('style_id') == $style->id ? 'checked' : '' }}
-                                                    onchange="this.form.submit();"
-                                                >
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                            @endif
 
-                            {{-- Preserve other filters --}}
-                            @foreach(request()->except(['style_id', 'page']) as $style_id_key => $value)
-                                <input type="hidden" name="{{ $style_id_key }}" value="{{ $value }}">
-                            @endforeach
-                        </form>
+@if($slug != 'appliances' && $slug != 'worktops' && $slug != 'upstands' && $slug != 'breakfast-bars' && $slug != 'taps' && $slug != 'internals')
+<div class="widget ltn__menu-widget">
+
+    <div class="d-flex justify-content-between">
+        <h4 class="ltn__widget-title">Styles</h4>
+
+        <a href="{{ request()->fullUrlWithQuery(['style_id' => null, 'page' => 1]) }}" class="text-decoration-underline">
+            Clear
+        </a>
+    </div>
+
+    <ul style="height:200px; overflow-y:scroll">
+        @foreach ($styles as $style)
+        <li>
+            <label class="checkbox-item">
+                {{ $style->name }}
+
+                <input
+                    type="checkbox"
+                    name="style_id[]"
+                    value="{{ $style->id }}"
+                    {{ in_array($style->id, request()->input('style_id', [])) ? 'checked' : '' }}
+                >
+
+                <span class="checkmark"></span>
+            </label>
+        </li>
+        @endforeach
+    </ul>
+
+    <button type="submit" class="btn btn-warning w-100 mt-3">
+        Apply Filter
+    </button>
+
+</div>
+@endif
+
+
+{{-- Preserve other filters --}}
+@foreach(request()->except(['style_id','page']) as $key => $value)
+
+    @if(is_array($value))
+        @foreach($value as $v)
+            <input type="hidden" name="{{ $key }}[]" value="{{ $v }}">
+        @endforeach
+    @else
+        <input type="hidden" name="{{ $key }}" value="{{ $value }}">
+    @endif
+
+@endforeach
+
+</form>
                         <form method="GET" id="filterForm">
                             <div class="widget ltn__menu-widget">
                                 <div class="d-flex justify-content-between">
