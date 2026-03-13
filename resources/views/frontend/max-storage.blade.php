@@ -20,20 +20,14 @@
     <div class="ltn__slider-area pt-60 pt-md-80 pb-60 pb-md-80">
             <div class="container">
                 <div class="col-12">
-                    <div class="position-relative overflow-hidden" style="max-height: 320px;">
-                        <a href="#contactModal" data-bs-toggle="modal" data-bs-target="#contactModal">
-                            <img src="https://bkonline.uk/public/images/max-storage-after-hero.png" alt="Max Storage Kitchen" class="img-fluid w-100" style="height: 300px; object-fit: cover;">
-                        </a>
-                        <!-- <div class="position-absolute start-0" style="top: 18px; left: 18px; max-width: 380px; margin: 20px">
-                            <div style="background: rgba(255,255,255,0.7); backdrop-filter: blur(6px); padding: 14px 18px; border-radius: 10px;">
-                                <h3 class="fw-bold mb-1 text-dark" style="font-size: 22px;">Maximize Your Kitchen</h3>
-                                <h5 class="fw-bold mb-1 text-dark" style="font-size: 16px;">Not Your Budget.</h5>
-                                <p class="mb-2 text-dark" style="font-size: 14px;">Premium quality max storage kitchens at the price of a national retailer.</p>
-                                <a href="#" class="btn btn-warning text-uppercase px-4 py-2" style="font-weight: 600; border-radius: 999px;">Subscribe</a>
-                            </div>
-                        </div> -->
-                    </div>
-                </div>
+    <div class="position-relative overflow-hidden">
+        <a href="#contactModal" data-bs-toggle="modal" data-bs-target="#contactModal">
+            <img src="https://bkonline.uk/public/images/max-storage-after-hero.png"
+                 alt="Max Storage Kitchen"
+                 class="img-fluid w-100">
+        </a>
+    </div>
+</div>
             </div>
     </div>
     
