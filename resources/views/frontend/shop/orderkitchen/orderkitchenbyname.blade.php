@@ -64,9 +64,9 @@
                 @foreach ($styleHasColours as $key => $styleHasColour)
                 <div class="col-xl-6 col-sm-6 col-12">
                     <div class="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
-                        <div class="product-img d-flex justify-content-center">
-                            <img src="@if(!empty($styleHasColour->image_path)){{asset('imgs/styles/colours/'.$styleHasColour->image_path)}}@else{{asset('images/no-image-available.jpg')}}@endif" alt="#">
-                        </div>
+<div class="product-img d-flex justify-content-center align-items-center product-image-box">
+    <img src="@if(!empty($styleHasColour->image_path)){{asset('imgs/styles/colours/'.$styleHasColour->image_path)}}@else{{asset('images/no-image-available.jpg')}}@endif" alt="#">
+</div>
                         <div class="product-info row-class pb-3">
                             <div class="d-flex justify-content-between">
                                 <div>
