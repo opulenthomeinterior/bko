@@ -3237,112 +3237,112 @@
     </div>
     @endsection
 
-@section('scripts')
+@push('scripts')
 <script>
-jQuery(document).ready(function($) {$(document).ready(function () {
-    $(document).on('click', '.dropdown-option', function (e) {
-        e.preventDefault();
+    jQuery(document).ready(function($) {$(document).ready(function () {
+        $(document).on('click', '.dropdown-option', function (e) {
+            e.preventDefault();
 
-        // Get the selected option
-        var selectedOption = $(this);
-        var dropdownType = $(this).data('dropdown-type');
+            // Get the selected option
+            var selectedOption = $(this);
+            var dropdownType = $(this).data('dropdown-type');
 
-        // Access all data attributes
-        var productId = selectedOption.data('id');
-        var fullTitle = selectedOption.data('product-fullname');
-        var shortTitle = selectedOption.data('product-short-title');
-        var productImage = selectedOption.data('product-image');
-        var price = selectedOption.data('product-price');
-        var parentCategorySlug = selectedOption.data('product-parent-category-slug');
-        var discountedPrice = selectedOption.data('product-discountedprice');
-        var assemblyName = selectedOption.data('product-assembly-name');
-        var styleName = selectedOption.data('product-style');
-        var discountedPercentage = selectedOption.data('product-discountedpercentage');
-        var productCode = selectedOption.data('product-code');
-        var productDimensions = selectedOption.data('product-dimensions');
-        var productColour = selectedOption.data('product-colour');
-        var height = selectedOption.data('product-height'); // if you added height
-        var width = selectedOption.data('product-width');   // if you added width
-        var depth = selectedOption.data('product-depth');   // if you added depth
+            // Access all data attributes
+            var productId = selectedOption.data('id');
+            var fullTitle = selectedOption.data('product-fullname');
+            var shortTitle = selectedOption.data('product-short-title');
+            var productImage = selectedOption.data('product-image');
+            var price = selectedOption.data('product-price');
+            var parentCategorySlug = selectedOption.data('product-parent-category-slug');
+            var discountedPrice = selectedOption.data('product-discountedprice');
+            var assemblyName = selectedOption.data('product-assembly-name');
+            var styleName = selectedOption.data('product-style');
+            var discountedPercentage = selectedOption.data('product-discountedpercentage');
+            var productCode = selectedOption.data('product-code');
+            var productDimensions = selectedOption.data('product-dimensions');
+            var productColour = selectedOption.data('product-colour');
+            var height = selectedOption.data('product-height'); // if you added height
+            var width = selectedOption.data('product-width');   // if you added width
+            var depth = selectedOption.data('product-depth');   // if you added depth
 
-        // Build HTML using jQuery variables
-        var _html = `
-        <div class="ltn__quick-view-modal-inner">
-            <div class="card px-1">
+            // Build HTML using jQuery variables
+            var _html = `
+            <div class="ltn__quick-view-modal-inner">
+                <div class="card px-1">
 
-                <!-- PRODUCT TITLE -->
-                <div class="row mb-2">
-                    <div class="col-12">
-                        <h3 class="text-center bg-yellow p-2">${fullTitle}</h3>
-                    </div>
-
-                    <!-- IMAGE -->
-                    <div class="col-lg-6 col-12">
-                        <div class="modal-product-img border-grey border">
-                            <img src="${productImage}" alt="${shortTitle}" class="w-100">
+                    <!-- PRODUCT TITLE -->
+                    <div class="row mb-2">
+                        <div class="col-12">
+                            <h3 class="text-center bg-yellow p-2">${fullTitle}</h3>
                         </div>
-                    </div>
 
-                    <!-- PRODUCT DETAILS -->
-                    <div class="col-lg-6 col-12">
-                        <div class="d-flex justify-content-start">
-
-                            <!-- STYLING -->
-                            <div class="p-0 m-0">
-                                <ul class="p-0 m-0 border-0" style="list-style: none;">
-                                    <li class="m-0 pb-2"><label class="fw-bold text-uppercase text-dark">Style:</label> ${styleName || ''}</li>
-                                    <li class="m-0 pb-2"><label class="fw-bold text-uppercase text-dark">Assembly:</label> ${assemblyName || ''}</li>
-                                    <li class="m-0 pb-2"><label class="fw-bold text-uppercase text-dark">Colour:</label> ${productColour || ''}</li>
-                                </ul>
-                            </div>
-
-                            <!-- DIMENSIONS -->
-                            <div class="ms-2">
-                                <ul class="p-0 m-0 border-0" style="list-style: none;">
-                                    <li class="m-0 pb-2"><small class="fw-bold text-uppercase text-dark">HEIGHT:</small> ${height || '0'}mm</li>
-                                    <li class="m-0 pb-2"><small class="fw-bold text-uppercase text-dark">WIDTH:</small> ${width || '0'}mm</li>
-                                    <li class="m-0 pb-2"><small class="fw-bold text-uppercase text-dark">DEPTH:</small> ${depth || '0'}mm</li>
-                                </ul>
+                        <!-- IMAGE -->
+                        <div class="col-lg-6 col-12">
+                            <div class="modal-product-img border-grey border">
+                                <img src="${productImage}" alt="${shortTitle}" class="w-100">
                             </div>
                         </div>
 
-                        <!-- PRICE -->
-                        <div class="product-info">
-                            <div class="product-price mb-0">
-                                <h1 class="p-0 m-0">£${price || '00.00'}</h1>
+                        <!-- PRODUCT DETAILS -->
+                        <div class="col-lg-6 col-12">
+                            <div class="d-flex justify-content-start">
+
+                                <!-- STYLING -->
+                                <div class="p-0 m-0">
+                                    <ul class="p-0 m-0 border-0" style="list-style: none;">
+                                        <li class="m-0 pb-2"><label class="fw-bold text-uppercase text-dark">Style:</label> ${styleName || ''}</li>
+                                        <li class="m-0 pb-2"><label class="fw-bold text-uppercase text-dark">Assembly:</label> ${assemblyName || ''}</li>
+                                        <li class="m-0 pb-2"><label class="fw-bold text-uppercase text-dark">Colour:</label> ${productColour || ''}</li>
+                                    </ul>
+                                </div>
+
+                                <!-- DIMENSIONS -->
+                                <div class="ms-2">
+                                    <ul class="p-0 m-0 border-0" style="list-style: none;">
+                                        <li class="m-0 pb-2"><small class="fw-bold text-uppercase text-dark">HEIGHT:</small> ${height || '0'}mm</li>
+                                        <li class="m-0 pb-2"><small class="fw-bold text-uppercase text-dark">WIDTH:</small> ${width || '0'}mm</li>
+                                        <li class="m-0 pb-2"><small class="fw-bold text-uppercase text-dark">DEPTH:</small> ${depth || '0'}mm</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- PRICE -->
+                            <div class="product-info">
+                                <div class="product-price mb-0">
+                                    <h1 class="p-0 m-0">£${price || '00.00'}</h1>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- CART -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="ltn__product-details-menu-2 my-0 d-flex justify-content-start align-items-center gap-3">
+                                <div class="cart-plus-minus">
+                                    <div class="dec qtybutton" id="dec-btn${productId}">-</div>
+                                        <input type="text" value="0" name="qtybutton" id="quantity${productId}" class="cart-plus-minus-box">
+                                    <div class="inc qtybutton">+</div>
+                                </div>
+                                <div>
+                                    <button class="theme-btn-1 btn btn-effect-1">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        <span onclick="inputQty(document.querySelector('#quantity${productId}').value, '${productId}', '${productCode}', '${fullTitle}', ${price}, ${discountedPrice}, ${discountedPercentage}, '${parentCategorySlug}','${productImage}')">ADD TO CART</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-
-                <!-- CART -->
-                <div class="row">
-                    <div class="col-12">
-                        <div class="ltn__product-details-menu-2 my-0 d-flex justify-content-start align-items-center gap-3">
-                            <div class="cart-plus-minus">
-                                <div class="dec qtybutton" id="dec-btn${productId}">-</div>
-                                    <input type="text" value="0" name="qtybutton" id="quantity${productId}" class="cart-plus-minus-box">
-                                <div class="inc qtybutton">+</div>
-                            </div>
-                            <div>
-                                <button class="theme-btn-1 btn btn-effect-1">
-                                    <i class="fas fa-shopping-cart"></i>
-                                    <span onclick="inputQty(document.querySelector('#quantity${productId}').value, '${productId}', '${productCode}', '${fullTitle}', ${price}, ${discountedPrice}, ${discountedPercentage}, '${parentCategorySlug}','${productImage}')">ADD TO CART</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-        </div>
-        `;
+            `;
 
-        // Inject into the target container
-        $('.' + dropdownType).html(_html);
+            // Inject into the target container
+            $('.' + dropdownType).html(_html);
+        });
+
     });
-
-});
 
     $(document).on('click', '.qtybutton', function () {
         var $button = $(this);
@@ -3402,4 +3402,4 @@ jQuery(document).ready(function($) {$(document).ready(function () {
 });
 
 </script>
-@endsection
+@endpush

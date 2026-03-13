@@ -594,7 +594,7 @@
 
 @endsection
 
-@section('scripts')
+@push('scripts')
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -619,4 +619,4 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 </script>
-@endsection
+@endpush

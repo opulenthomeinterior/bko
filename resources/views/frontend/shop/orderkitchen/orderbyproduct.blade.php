@@ -477,7 +477,7 @@
         </div>
 </div>
 @endsection
-@section('scripts')
+@push('scripts')
     <script>
         $(document).ready(function() {
             // Initialize any required jQuery plugins or custom scripts here
@@ -557,4 +557,4 @@
             }
         });
     </script>
-    @endsection
+    @endpush

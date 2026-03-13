@@ -92,7 +92,7 @@
 @endsection
 
 
-@section('scripts')
+@push('scripts')
 
 <script>
 $(document).ready(function() {
@@ -112,4 +112,4 @@ $(document).ready(function() {
    });
 });
 </script>
-@endsection
+@endpush

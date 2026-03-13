@@ -412,7 +412,7 @@
 </div>
 <!-- Utilize Mobile Menu End -->
 
-@section('scripts')
+@push('scripts')
 <script>
     $(document).ready(function() {
         $(document).on('click', '.style-item', function () {
@@ -489,4 +489,4 @@
         });
     });
 </script>
-@endsection
+@endpush

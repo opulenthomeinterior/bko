@@ -349,11 +349,11 @@
 @endsection
 
 
-@section('scripts')
+@push('scripts')
 
 <script>
 $(document).ready(function() {
 
 });
 </script>
-@endsection
+@endpush

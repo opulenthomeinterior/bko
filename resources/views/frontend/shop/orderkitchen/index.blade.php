@@ -136,8 +136,7 @@
 @endsection
 
 
-@section('scripts')
-
+@push('scripts')
 <script>
 $(document).ready(function() {
    $(document).on('click', '#flatpacked_btn', function (e) {
@@ -156,4 +155,4 @@ $(document).ready(function() {
    });
 });
 </script>
-@endsection
+@endpush
