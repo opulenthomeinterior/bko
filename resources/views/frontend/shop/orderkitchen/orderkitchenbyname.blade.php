@@ -21,7 +21,7 @@
     }
 
     .product-image-box{
-        height: 260px;
+        height: 350px;
         overflow: hidden;
     }
 
