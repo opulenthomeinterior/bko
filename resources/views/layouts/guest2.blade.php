@@ -18,6 +18,36 @@
     <link rel="stylesheet" href="{{ asset('assets/css/plugins.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
+    
+    
+    <style>
+        .floating-cart{
+            position: fixed;
+            bottom: 20px;
+            left: 35px; /* change to left if you want */
+            width: 55px;
+            height: 55px;
+            /* background: #ffb400; */
+            color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+            z-index: 9999;
+            cursor: pointer;
+        }
+
+        .floating-cart a{
+            color: inherit;
+        }
+
+        .floating-cart:hover{
+            transform: scale(1.08);
+            transition: 0.2s;
+        }
+    </style>
     @yield('styles')
     @stack('styles')
 </head>
