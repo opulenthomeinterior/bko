@@ -20,14 +20,14 @@
     <div class="ltn__slider-area pt-60 pt-md-80 pb-60 pb-md-80">
             <div class="container">
                 <div class="col-12">
-    <div class="position-relative overflow-hidden">
-        <a href="#contactModal" data-bs-toggle="modal" data-bs-target="#contactModal">
-            <img src="https://bkonline.uk/public/images/max-storage-after-hero.png"
-                 alt="Max Storage Kitchen"
-                 class="img-fluid w-100">
-        </a>
-    </div>
-</div>
+                    <div class="position-relative overflow-hidden">
+                        <a href="#contactModal" data-bs-toggle="modal" data-bs-target="#contactModal">
+                            <img src="https://bkonline.uk/public/images/max-storage-after-hero.png"
+                                alt="Max Storage Kitchen"
+                                class="img-fluid w-100">
+                        </a>
+                    </div>
+                </div>
             </div>
     </div>
     
@@ -37,12 +37,16 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10 col-12 text-center">
                     <h2 class="fw-bold mb-4">
-                        Bespoke Storage Solutions That Fit Every Pot, Pan &amp; Gadget Guaranteed!
+                        Bespoke Storage Solutions That Fit Every Pot, Pan & Gadget Guaranteed!
                     </h2>
-                    <div class="col-md-12 rounded position-relative" style="height: 500px;">
-                        <iframe src="https://www.youtube.com/embed/bk4_64zzKJI?si=YDMGTA1w622JuqTg" style="width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/bk4_64zzKJI"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
                         </iframe>
                     </div>
+
                 </div>
             </div>
         </div>
