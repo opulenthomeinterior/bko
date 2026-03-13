@@ -19,6 +19,17 @@
         padding: 2px 4px;
         font-size: 13px;
     }
+
+    .product-image-box{
+        height: 260px;
+        overflow: hidden;
+    }
+
+    .product-image-box img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 </style>
 @endsection
 
