@@ -29,12 +29,10 @@
             height: 55px;
             /* background: #ffb400; */
             color: #000;
-            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 22px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.25);
             z-index: 9999;
             cursor: pointer;
         }
