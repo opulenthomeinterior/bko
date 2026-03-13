@@ -24,7 +24,7 @@
         .floating-cart{
             position: fixed;
             bottom: 20px;
-            left: 35px; /* change to left if you want */
+            left: 10px; /* change to left if you want */
             width: 55px;
             height: 55px;
             /* background: #ffb400; */
