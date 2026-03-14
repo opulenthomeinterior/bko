@@ -24,11 +24,8 @@
         .floating-cart{
             position: fixed;
             bottom: 20px;
-            left: 10px; /* change to left if you want */
-            width: 55px;
-            height: 55px;
-            /* background: #ffb400; */
-            color: #000;
+            /* left: 10px; change to left if you want */
+            color: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -38,7 +35,12 @@
         }
 
         .floating-cart a{
-            color: inherit;
+            color: #fff;
+            margin-left: 45px;
+            padding: 5px 25px;
+            background-color: #000;
+            border-radius: 50px;
+            border: 1px solid #febd49;
         }
 
         .floating-cart:hover{

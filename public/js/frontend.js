@@ -77,7 +77,7 @@ const toggleItem = (item) => {
 
 /*=============== DELETE DROPDOWN STYLES ===============*/
 const mediaQuery = matchMedia('(min-width: 1118px)'),
-   dropdownContainer = document.querySelectorAll('.dropdown__container')
+dropdownContainer = document.querySelectorAll('.dropdown__container')
 
 // Function to remove dropdown styles in mobile mode when browser resizes
 const removeStyle = () => {
@@ -96,7 +96,6 @@ const removeStyle = () => {
 }
 
 addEventListener('resize', removeStyle)
-
 
 $(document).ready(function () {
 
@@ -157,9 +156,6 @@ $(document).ready(function () {
    });
 });
 
-
-
-
 $(document).ready(function () {
    $("#openSidebar").click(function () {
       $("#sidebar").css("right", "0");
@@ -180,7 +176,6 @@ $(document).ready(function () {
       }
    });
 })
-
 
 // $(document).ready(function () {
 //    $('.cart-icon').click(function () {
@@ -296,7 +291,6 @@ $(document).ready(function () {
    //    adjustTopPosition(isSearchPopupShown);
    // });
 })
-
 
 function initializeQuantitiesFromLocalStorage() {
    let products = localStorage.getItem('bko_cart');
@@ -449,7 +443,6 @@ function incQty(id) {
    cart_total_amount();
 }
 
-
 function decQty(id) {
    const input = document.getElementById('quantity' + id);
    let decBtn = document.getElementById('dec-btn' + id);
@@ -472,8 +465,6 @@ function decQty(id) {
    var value = parseInt($qtde.val()) || 0;
    decreaseQuantityInCartPage(id, productCode, full_title, price, discount_price, discount_percentage, p_category, image);
 }
-
-
 
 function increaseQuantity(id, productCode, full_title, price, discount_price, discount_percentage, p_category, image) {
    console.log('increase quantity');
@@ -555,7 +546,7 @@ function inputQty(qty, id, productCode, full_title, price, discount_price, disco
    // cartTotalAmountCalculation();
 
 }
-// function decreaseQuantity(id, productCode, full_title, price, discount_price, discount_percentage, p_category) {
+
 function decreaseQuantity(id, productCode, full_title, price, discount_price, discount_percentage, p_category, image) {
    var $qtde = $('#quantity' + id);
    var value = parseInt($qtde.val()) || 0;
@@ -717,6 +708,7 @@ function orderKitchenCartItemsList() {
 
    });
 }
+
 function clearShoppingCart() {
    localStorage.removeItem('bko_cart');
    const $cartContainer = $('#cartContainer');
@@ -724,39 +716,6 @@ function clearShoppingCart() {
 
    const $emptyCart = $('#emptyCart');
    $emptyCart.html(`You have no items in your cart, so you cannot checkout.`);
-   // const $cartTableBody = $('#productCartTableBody');
-   // $cartTableBody.empty();
-   // $cartTableBody.html(`
-   //     <td colspan="5" class="text-center py-5">No items in cart</td>
-   //    `);
-
-
-   // const $orderSummaryCard = $('#orderSummaryCard');
-   // $orderSummaryCard.empty();
-
-   // $orderSummaryCard.html(`
-
-   //    <div class="card-header bg-white">
-   //                      <h5 class="mb-0 fw-bold text-primary">ORDER SUMMARY</h5>
-   //                  </div>
-   //                  <div class="card-body">
-   //                      <div class="d-flex justify-content-between mb-2">
-   //                          <span>Items</span>
-   //                          <span id="itemsCount">0</span>
-   //                      </div>
-   //                      <div class="d-flex justify-content-between mb-2">
-   //                          <span>Sub Total</span>
-   //                          <span id="cartTotalAmount">£0</span>
-   //                      </div>
-
-   //                      <hr>
-   //                      <div class="d-flex justify-content-between fw-bold">
-   //                          <span>Total</span>
-   //                          <span id="cartTotalAmountWithVAT">£0</span>
-   //                      </div>
-   //                  </div>
-   //    `);
-
 }
 
 $(document).ready(function () {
@@ -1516,7 +1475,6 @@ $(document).ready(function () {
    }
 });
 
-
 $(document).ready(function () {
    // Function to adjust card heights
    function adjustCardHeights() {
@@ -1552,7 +1510,6 @@ $(document).ready(function () {
       }
    });
 });
-
 
 // Products Filter
 $(document).ready(function () {

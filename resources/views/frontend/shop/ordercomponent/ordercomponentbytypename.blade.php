@@ -48,7 +48,7 @@
                 <div class="col-lg-12 col-12">
                     <div class="about-us-info-wrap">
                         <div class="mb-20">
-                            <!-- <h4>SEAMLESS REPAIRS • BEAUTIFUL RESULTS</h4> -->
+                            <!-- <h4>SEAMLESS REPAIRS - BEAUTIFUL RESULTS</h4> -->
                             <p>{!!$category->description!!}</p>
                         </div>
                     </div>

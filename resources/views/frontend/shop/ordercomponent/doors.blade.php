@@ -54,7 +54,7 @@
                 <div class="col-lg-12 col-12">
                     <div class="about-us-info-wrap">
                         <div class="mb-20">
-                            <h1 class="section-title">SEAMLESS REPAIRS • BEAUTIFUL RESULTS</h1>
+                            <h1 class="section-title">SEAMLESS REPAIRS - BEAUTIFUL RESULTS</h1>
                             <p>{!!$category->description!!}</p>
                         </div>
                         <!-- <ul class="ltn__list-item-half ltn__list-item-half-2 list-item-margin clearfix">

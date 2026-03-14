@@ -43,12 +43,12 @@
                         </div>
                         <div class="ltn__social-media mt-20">
                             <ul>
-                                <!-- <li><a class="theme-btn-3 btn btn-effect-3 mb-2" href="https://www.facebook.com/opulenthomeinteriorsltd" title="Facebook"><i class="fab fa-facebook-f"></i></a></li> -->
-                                <li><a class="theme-btn-3 btn btn-effect-3 mb-2" href="https://www.facebook.com/opulenthomeinteriorsltd" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a class="theme-btn-3 btn btn-effect-3 mb-2" href="https://www.instagram.com/bkonline__kitchen" title="Instagram"><i class="fab fa-instagram"></i></a></li>
-                                <li><a class="theme-btn-3 btn btn-effect-3 mb-2" href="https://uk.pinterest.com/bkonline570" title="Pinterest"><i class="fab fa-pinterest"></i></a></li>
-                                <!-- <li><a class="theme-btn-3 btn btn-effect-3 mb-2" href="https://www.youtube.com/@opulenthomeinteriors5595" title="Youtube"><i class="fab fa-youtube"></i></a></li> -->
-                                <li><a class="theme-btn-3 btn btn-effect-3 mb-2" href="https://www.youtube.com/@buykitchenonline/videos" title="Youtube"><i class="fab fa-youtube"></i></a></li>
+                                <!-- <li><a class="theme-btn-3 btn btn-effect-3 mb-2" href="https://www.facebook.com/opulenthomeinteriorsltd" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li> -->
+                                <li><a class="theme-btn-3 btn btn-effect-3 mb-2" href="https://www.facebook.com/opulenthomeinteriorsltd" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a class="theme-btn-3 btn btn-effect-3 mb-2" href="https://www.instagram.com/bkonline__kitchen" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                <li><a class="theme-btn-3 btn btn-effect-3 mb-2" href="https://uk.pinterest.com/bkonline570" title="Pinterest" target="_blank"><i class="fab fa-pinterest"></i></a></li>
+                                <!-- <li><a class="theme-btn-3 btn btn-effect-3 mb-2" href="https://www.youtube.com/@opulenthomeinteriors5595" title="Youtube" target="_blank"><i class="fab fa-youtube"></i></a></li> -->
+                                <li><a class="theme-btn-3 btn btn-effect-3 mb-2" href="https://www.youtube.com/@buykitchenonline/videos" title="Youtube" target="_blank"><i class="fab fa-youtube"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -66,28 +66,47 @@
                                 </div>
                             </form>
                         </div>
+                        <div class="ltn__social-media mt-20">
+                            <ul>
+                                <li><a class="theme-btn-2 border border-white btn btn-effect-2 mb-2" href="{{route('designservice')}}" title="Facebook" target="_blank">
+                                    Design Service
+                                </a></li>
+                                <li><a class="theme-btn-2 border border-white btn btn-effect-2 mb-2" href="{{route('blog')}}" title="Instagram" target="_blank">
+                                    Blogs
+                                </a></li>
+                                <li><a class="theme-btn-2 border border-white btn btn-effect-2 mb-2" href="{{route('help_and_guides')}}" title="Pinterest" target="_blank">
+                                    Help & Guides
+                                </a></li>
+                                <li><a class="theme-btn-2 border border-white btn btn-effect-2 mb-2" href="https://bkonline.uk/site-pages/cookies-policy" title="Youtube" target="_blank">
+                                    Cookies Policy
+                                </a></li>
+                                <li><a class="theme-btn-2 border border-white btn btn-effect-2 mb-2" href="https://bkonline.uk/site-pages/privacy-policy" title="Youtube" target="_blank">
+                                    Privacy &amp; Policy
+                                </a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="ltn__copyright-area ltn__copyright-2 section-bg-7 plr--5">
+    <!-- <div class="ltn__copyright-area ltn__copyright-2 section-bg-7 plr--5">
         <div class="container ltn__border-top-2">
             <div class="row">
                 <div class="col-md-12 col-12 align-self-center">
                     <div class="ltn__copyright-menu">
                         <ul class="d-flex justify-content-between">
-                            <li class="text-decoration-underline"><a href="{{route('designservice')}}">Design Service</a></li>
-                            <li class="text-decoration-underline"><a href="{{route('blog')}}">Blogs</a></li>
-                            <li class="text-decoration-underline"><a href="{{route('help_and_guides')}}">Help & Guides</a></li>
-                            <li class="text-decoration-underline"><a href="https://bkonline.uk/site-pages/cookies-policy">Cookies Policy</a></li>
-                            <li class="text-decoration-underline"><a href="https://bkonline.uk/site-pages/privacy-policy">Privacy &amp; Policy</a></li>
+                            <li class="text-decoration-underline"><a href="{{route('designservice')}}" target="_blank">Design Service</a></li>
+                            <li class="text-decoration-underline"><a href="{{route('blog')}}" target="_blank">Blogs</a></li>
+                            <li class="text-decoration-underline"><a href="{{route('help_and_guides')}}" target="_blank">Help & Guides</a></li>
+                            <li class="text-decoration-underline"><a href="https://bkonline.uk/site-pages/cookies-policy" target="_blank">Cookies Policy</a></li>
+                            <li class="text-decoration-underline"><a href="https://bkonline.uk/site-pages/privacy-policy" target="_blank">Privacy &amp; Policy</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="col-md-12 col-12 text-center bg-dark m-0 p-0">
         <p class="m-0 p-0 text-white">All Rights Reserved @ Buy Kitchen Online <span class="current-year"></span></p>
     </div>

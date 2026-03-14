@@ -81,7 +81,7 @@
                         <div class="product-info row-class pb-3">
                             <div class="d-flex justify-content-between">
                                 <div>
-                                    <h4>{{str_replace('Kitchen', '', $styleData['data']['name'])}} {{$styleHasColour->colour?->trade_colour}}</h4>
+                                    <a href="{{ route('orderkitchenbycolourname', [$styleData['data']['slug'], $styleHasColour->colour?->slug]) }}" style="border-radius: 0;"><h4>{{str_replace('Kitchen', '', $styleData['data']['name'])}} {{$styleHasColour->colour?->trade_colour}}</h4></a>
                                 </div>
                                 <div>
                                     <a class="btn btn-sm btn-outline-warning text-dark p-2" href="{{ route('orderkitchenbycolourname', [$styleData['data']['slug'], $styleHasColour->colour?->slug]) }}" style="border-radius: 0;">Explore</a>
